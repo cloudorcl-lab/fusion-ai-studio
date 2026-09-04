@@ -25219,6 +25219,7 @@ function f7(e, t) {
   return e === "darwin" ? { command: "open", args: [t] } : e === "win32" ? { command: "rundll32.exe", args: ["url.dll,FileProtocolHandler", t] } : { command: "xdg-open", args: [t] };
 }
 function m7(e) {
+  console.log("\n=================================================================\nPLEASE OPEN THIS URL IN YOUR BROWSER TO AUTHENTICATE:\n" + e + "\n=================================================================\n");
   const { command: t, args: n } = f7(process.platform, e);
   IR(t, n, {
     stdio: "ignore",
@@ -64077,6 +64078,30 @@ function Wve() {
       ],
       renderText: (l) => String(l),
       run: async () => hX.version
+    },
+    {
+      name: "list-remote-workflows",
+      summary: "List all remote workflows on the server.",
+      description: "List all remote workflows on the server.",
+      outputStyle: "text",
+      options: [],
+      examples: [
+        "aistudio list-remote-workflows"
+      ],
+      renderText: (e) => JSON.stringify(e, null, 2),
+      run: async (l, g) => {
+        const n = await mt(g.cwd, { allowProcessEnvFallback: !0 });
+        const o = g.verbose === !0 || n.debug === !0 ? { verbose: !0 } : void 0;
+        const r = _t(n, o);
+        const response = await Tn({
+          resource: "workflows",
+          params: {
+            fields: "workflowCode,name,status,family,product"
+          },
+          restProxy: r
+        });
+        return response.items;
+      }
     },
     {
       name: "configure-basic-auth",
