@@ -1,0 +1,598 @@
+(node:30712) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/dasu/Documents/GitHub/fusion-ai-studio-1/.agents/skills/aistudio/scripts/aistudio.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\Users\dasu\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+aistudio
+
+AI Studio CLI for local scaffold, prompt retrieval, workflow/app artifact mutation, AI-proxy-backed search, and debugger sidecars.
+
+Usage:
+  aistudio <command> [options]
+  aistudio <command> --help
+  aistudio --help
+
+Commands:
+  version
+      Print the CLI version.
+  list-remote-workflows
+      List all remote workflows on the server.
+  list-remote-applications
+      List remote AI Studio applications on the server.
+  configure-basic-auth
+      Prompt once and save the FA basic-auth password encrypted in env.properties.
+  authenticate
+      Authenticate the CLI via OAuth PKCE.
+  login-with-key
+      Log in with an OAuth key for non-interactive token exchange.
+  whoami
+      Print the current CLI user.
+  logout
+      Remove stored OAuth/token credentials.
+  init
+      Create a blank project scaffold with `src` artifact folders and workflow test folders.
+  init-app-package
+      Create an AI Studio app package scaffold.
+  do-fetch-workflow
+      Fetch a workflow from the server by workflow code.
+  do-fetch-app
+      Fetch an app from the server by app code.
+  do-fetch-tool
+      Fetch a tool from the server by tool code.
+  do-fetch-approval-process
+      Fetch an approval process from the server by module identifier.
+  do-fetch-agent
+      Fetch an agent from the server by agent code.
+  do-fetch-signal
+      Fetch a signal definition from the server by signal code.
+  do-fetch-bo
+      Fetch a business object from the server by object code.
+  do-fetch-deeplink
+      Fetch a deeplink from the server by deeplink code.
+  do-fetch-topic
+      Fetch a topic from the server by topic code.
+  do-fetch-function
+      Fetch a function template from the server by template code.
+  do-fetch-policy
+      Fetch a policy from the server by policy code.
+  do-fetch-policy-template
+      Fetch a policy template from the server by template code.
+  list-workflow-families
+      List workflow families supported by the CLI.
+  list-workflow-products
+      List workflow products supported by the CLI for a family.
+  do-create-workflow
+      Create a new workflow file.
+  do-save-workflow
+      Save a local workflow file to the remote draft workflow.
+  get-workflow-test-context
+      Print local workflow context for workflow test authoring.
+  get-workflow-conversation-test-context
+      Print bounded workflow facts for model-authored conversation tests.
+  get-workflow-test-judge-context
+      Read semantic judge authoring context for one workflow-test scenario.
+  get-workflow-test-scenarios
+      Suggest workflow test scenarios from local workflow structure.
+  get-workflow-test-sync-plan
+      Plan automatic workflow test create/update actions.
+  get-workflow-test-final-summary
+      Render the final workflow test summary from existing reports.
+  list-workflow-tests
+      List workflow test files in the workspace.
+  do-generate-workflow-test
+      Materialize a workflow test.
+  do-update-workflow-test
+      Update an existing workflow test for the current workflow.
+  do-delete-workflow-test
+      Delete one source-controlled workflow test and refresh its reports.
+  mark-workflow-test-unable-to-generate
+      Mark a workflow sync-plan scenario as unable to generate.
+  get-app-test-context
+      Print local app context for app test authoring.
+  get-app-test-sync-plan
+      Plan automatic app test create/update actions.
+  get-app-test-final-summary
+      Render the final app test summary from existing app and workflow reports.
+  do-sync-app-tests
+      Synchronize app tests after backing workflow sync is complete.
+  list-app-tests
+      List app test files in the workspace.
+  do-generate-app-test
+      Materialize a single-file app test.
+  do-update-app-test
+      Update an existing single-file app test for the current app.
+  do-record-app-test-data
+      Record app test data from a real debug run.
+  do-apply-app-test-data
+      Apply compacted or generated app test data.
+  run-app-test
+      Run and evaluate an app test.
+  run-app-tests
+      Run all or filtered app tests.
+  do-attach-app-test-judge-results
+      Attach local app test judge results to reports.
+  get-test-data-masking-context
+      Inspect maskable workflow or app test data fields.
+  do-create-test-data-masking-profile
+      Create a reusable test-data masking profile.
+  do-mask-test-data
+      Mask recorded test data consistently before source control.
+  do-record-workflow-test
+      Record workflow test data from a real debug run.
+  do-apply-workflow-test-data
+      Apply compacted or generated workflow test data.
+  list-workflow-model-configurations
+      List supported workflow LLM model configurations.
+  get-workflow-model-configuration
+      Get one workflow LLM model configuration with parameter details.
+  get-workflow-model-override-targets
+      Inspect model-overrideable nodes in a local workflow.
+  propose-sweep-candidates
+      Analyse available models and propose an intelligent optimization sweep for a workflow.
+  run-workflow-test
+      Run and evaluate a workflow test.
+  run-workflow-tests
+      Run all or filtered workflow tests.
+  compare-workflow-test-runs
+      Compare two labeled workflow test suite runs.
+  run-optimization-sweep
+      Compile optimization sweep reports from already judged workflow test runs.
+  analyze-token-usage
+      Analyse per-node token usage from a completed workflow test run and suggest reductions.
+  generate-optimization-report
+      Generate a comprehensive optimization report for a completed workflow test run.
+  attach-workflow-test-judge-result
+      Attach a local assistant judge result to a workflow test report.
+  attach-workflow-test-judge-results
+      Attach all available local judge results for a workflow test suite.
+  do-create-policy
+      Create a new Policy Store file.
+  do-update-policy
+      Patch a local Policy Store file.
+  validate-policy
+      Validate a local Policy Store file.
+  do-save-policy
+      Save a local Policy Store file as a remote draft.
+  do-publish-policy
+      Save and publish a local Policy Store file.
+  list-policies
+      List remote Policy Store policies.
+  get-policy
+      Fetch a remote Policy Store policy.
+  do-create-policy-template
+      Create a new Policy Template file.
+  do-update-policy-template
+      Patch a local Policy Template file.
+  validate-policy-template
+      Validate a local Policy Template file.
+  do-save-policy-template
+      Save a local Policy Template file to prompt templates.
+  list-policy-templates
+      List Policy Store prompt templates.
+  get-policy-template
+      Fetch one Policy Store prompt template.
+  do-delete-policy-template
+      Delete a local Policy Template file and optionally the remote prompt template.
+  do-create-policy-template-function
+      Create one function contract in a local Policy Template file.
+  do-modify-policy-template-function
+      Modify one function contract in a local Policy Template file.
+  do-delete-policy-template-function
+      Delete one function contract from a local Policy Template file.
+  do-add-policy-template-function-input
+      Add an input parameter to a Policy Template function.
+  do-modify-policy-template-function-input
+      Modify an input parameter on a Policy Template function.
+  do-delete-policy-template-function-input
+      Delete an input parameter from a Policy Template function.
+  do-set-policy-template-function-return
+      Set the return contract on a Policy Template function.
+  list-policy-workflow-contexts
+      List published workflows usable as Policy Store generation context.
+  get-policy-workflow-trigger-configuration
+      Fetch workflow trigger metadata for Policy Store context generation.
+  do-add-policy-documents
+      Add documents to a local Policy Store file.
+  do-remove-policy-document
+      Remove document metadata from a local Policy Store file.
+  do-generate-policy-functions
+      Generate Policy Store functions from documents.
+  do-create-policy-function
+      Add a function to a local Policy Store file.
+  do-modify-policy-function
+      Patch a function in a local Policy Store file.
+  do-delete-policy-function
+      Delete a function from a local Policy Store file.
+  do-customize-policy
+      Create a local customization draft for a remote policy.
+  do-delete-policy
+      Delete a local Policy Store file and optionally the remote policy.
+  do-create-document-schema
+      Create a new Document Schema file.
+  do-update-document-schema
+      Patch a local Document Schema file.
+  validate-document-schema
+      Validate a local Document Schema file.
+  do-add-document-schema-document
+      Add the source document to a local Document Schema file.
+  do-remove-document-schema-document
+      Remove source document metadata from a local Document Schema file.
+  do-generate-document-schema
+      Generate a Document Schema specification from the uploaded source document.
+  do-save-document-schema
+      Save a local Document Schema file as a remote draft.
+  do-publish-document-schema
+      Save and publish a local Document Schema file.
+  list-document-schemas
+      List remote Document Schemas.
+  get-document-schema
+      Fetch a remote Document Schema.
+  do-customize-document-schema
+      Create a local customization draft for a remote Document Schema.
+  do-delete-document-schema
+      Delete a local Document Schema file and optionally the remote schema.
+  do-create-function
+      Create a new Function file.
+  do-update-function
+      Patch a local Function file.
+  validate-function
+      Validate a local Function file.
+  do-save-function
+      Save a local Function file as a remote draft.
+  do-publish-function
+      Save and publish a local Function file.
+  list-functions
+      List remote Function Templates.
+  get-function
+      Fetch a remote Function Template.
+  do-add-function-documents
+      Add documents to a local Function file.
+  do-remove-function-document
+      Remove document metadata from a local Function file.
+  do-create-function-definition
+      Create a function definition in a local Function file.
+  do-modify-function-definition
+      Patch a function definition in a local Function file.
+  do-delete-function-definition
+      Delete a function definition from a local Function file.
+  do-generate-function-implementation
+      Generate JavaScript implementation for a local function definition.
+  do-generate-function-test-cases
+      Generate test cases for local function definitions.
+  do-create-function-test-cases
+      Create or upsert local function test cases.
+  do-modify-function-test-case
+      Patch one local function test case.
+  do-delete-function-test-case
+      Delete one local function test case.
+  run-function
+      Run one local function definition.
+  run-function-test-cases
+      Run local function test cases.
+  do-customize-function
+      Create a local customization draft for a remote Function Template.
+  do-delete-function
+      Delete a local Function file and optionally the remote Function Template.
+  list-approval-processes
+      List approval processes available to workflow HUMAN approval nodes.
+  get-approval-process
+      Fetch approval-process details by process code.
+  search-approval-users
+      Search approval users for approval-process routing.
+  list-approval-email-accounts
+      List approval email accounts for approval processes.
+  list-approval-manager-types
+      List approval manager types for management-hierarchy routing.
+  list-approval-representative-types
+      List approval representative types for representative routing.
+  list-approval-management-hierarchy-starts-with
+      List management-hierarchy Start With values for approval processes.
+  do-create-approval-process
+      Create a new approval-process file.
+  do-save-approval-process
+      Save a local approval-process file to the server.
+  validate-approval-process
+      Validate the current approval-process without mutating it.
+  do-modify-approval-process
+      Patch an approval-process create payload locally.
+  do-create-approval-payload
+      Replace the local approval payload schema.
+  do-create-approval-attribute
+      Add an approval payload attribute to the local draft.
+  do-modify-approval-attribute
+      Replace an approval payload attribute in the local draft.
+  do-modify-approver-type
+      Change the approver type for one local approval level.
+  do-modify-notification-channel
+      Replace supported notification channels in the local draft.
+  do-modify-email-account
+      Set the local approval email account.
+  do-delete-approval-process
+      Delete an approval-process locally and remotely when present.
+  do-create-approval-rule
+      Append a rule to a local approval-process file.
+  do-modify-approval-rule
+      Replace an approval rule in a local approval-process file.
+  do-delete-approval-rule
+      Delete an approval rule from a local approval-process file.
+  run-workflow
+      Run a workflow through the orchestrator debug endpoint.
+  run-workflow-chat
+      Run a workflow through the orchestrator chat endpoint.
+  do-create-app
+      Create a new app file.
+  do-save-app
+      Save a local app file to the remote draft application.
+  do-create-agent
+      Create a new local Agent file.
+  do-save-agent
+      Save a local Agent file to the server.
+  validate-agent
+      Validate the current Agent without mutating it.
+  do-update-agent
+      Modify Agent fields in a local `.agent` file.
+  do-add-agent-tool
+      Add or replace one tool mapping in a local Agent `.agent` file.
+  do-remove-agent-tool
+      Remove one tool mapping from a local Agent `.agent` file.
+  do-add-agent-topic
+      Add or replace one topic mapping in a local Agent `.agent` file.
+  do-remove-agent-topic
+      Remove one topic mapping from a local Agent `.agent` file.
+  do-create-bo
+      Create a new local Business Object file.
+  do-save-bo
+      Save a local Business Object file to the remote draft BO.
+  list-bo-resource-types
+      List supported Business Object resource types.
+  list-bo-data-source-applications
+      List existing Oracle Data Source Applications for Other Data Source BOs.
+  validate-bo
+      Validate the current Business Object without mutating it.
+  do-create-deeplink
+      Create a new local Deeplink file.
+  do-save-deeplink
+      Save a local Deeplink file to the server.
+  validate-deeplink
+      Validate the current Deeplink without mutating it.
+  do-update-deeplink
+      Modify top-level Deeplink fields in a local `.dl` file.
+  do-modify-deeplink-parameter
+      Modify one URL-token parameter in a local `.dl` file.
+  do-create-topic
+      Create a new local Topic file.
+  do-save-topic
+      Save a local Topic file to the server.
+  validate-topic
+      Validate the current Topic without mutating it.
+  do-update-topic
+      Modify top-level Topic fields in a local `.topic` file.
+  do-add-topic-instruction
+      Add one instruction to a local Topic `.topic` file.
+  do-modify-topic-instruction
+      Modify one instruction in a local Topic `.topic` file.
+  do-delete-topic-instruction
+      Delete one instruction from a local Topic `.topic` file.
+  list-tool-families
+      List tool families from the server.
+  list-tool-products
+      List tool products for a family from the server.
+  list-supported-business-objects
+      List supported business objects for Business Object tools.
+  list-deep-links
+      List deep links for Deep Link tools.
+  list-km-connectors
+      List Knowledge Management connectors for Connector tools.
+  list-km-connector-tools
+      List tools exposed by a Knowledge Management connector.
+  do-create-tool
+      Create a local Tool file by type.
+  do-create-business-object-tool
+      Backward-compatible alias for creating a local Business Object Tool file.
+  do-create-deeplink-tool
+      Backward-compatible alias for creating a local Deep Link Tool file.
+  do-create-document-tool
+      Backward-compatible alias for creating a local Document Tool file.
+  do-create-email-tool
+      Backward-compatible alias for creating a local Email Tool file.
+  do-create-external-rest-tool
+      Backward-compatible alias for creating a local External REST Tool file without credentials.
+  do-create-mcp-tool
+      Backward-compatible alias for creating a local MCP Tool file without credentials.
+  do-create-connector-tool
+      Backward-compatible alias for creating a local Connector Tool file.
+  do-update-tool
+      Modify fields in a local Tool `.tool` file.
+  validate-tool
+      Validate the current Tool without mutating it.
+  do-save-tool
+      Save a local Tool file to BOSS.
+  do-generate-connector-definition
+      Generate a Connector Definition from an OpenAPI/MCP spec.
+  do-update-connector-definition
+      Patch a local Connector Definition file.
+  validate-connector-definition
+      Validate a local Connector Definition file.
+  do-save-connector-definition
+      Patch an existing server Connector Definition from a local file.
+  do-fetch-connector-definition
+      Fetch a Connector Definition detail from the server.
+  do-publish-connector-definition
+      Publish a Connector Definition.
+  do-unpublish-connector-definition
+      Unpublish a Connector Definition.
+  search-connector-definitions
+      Search Connector Definitions for Connector Instance creation.
+  get-connector-definition-form
+      Inspect a Connector Definition dynamic form schema.
+  suggest-connector-instance-prefix
+      Suggest a unique Connector Instance prefix.
+  list-connector-user-groups
+      List Connector Instance user groups for a family and product.
+  prepare-connector-instance-create
+      Plan the next staged Connector Instance creation prompt.
+  do-create-connector-instance
+      Create a local Connector Instance file from a Connector Definition.
+  do-update-connector-instance
+      Patch a local Connector Instance file.
+  validate-connector-instance
+      Validate a local Connector Instance file.
+  do-save-connector-instance
+      Save a local Connector Instance file to Knowledge Management.
+  do-fetch-connector-instance
+      Fetch a Connector Instance from Knowledge Management into a local file.
+  do-delete-connector-instance
+      Delete a server Connector Instance.
+  get-business-object-functions
+      Inspect a Business Object and list its available functions.
+  get-bo-function-output-specification
+      Resolve a workflow-ready output specification for a Business Object function.
+  get-bo-function-example-guidance
+      Inspect the example requirements for a Business Object function.
+  prepare-bo-function-example-inputs
+      Validate and normalize a user reply containing BO example input values.
+  do-update-bo
+      Modify top-level Business Object fields in a local `.bo` file.
+  do-create-bo-function-from-operation
+      Add a Business Object function from an OpenAPI operation.
+  do-add-bo-function
+      Manually add a Business Object function to a local `.bo` file.
+  do-modify-bo-function
+      Modify a Business Object function in a local `.bo` file.
+  do-rename-bo-function
+      Rename a Business Object function in a local `.bo` file.
+  do-delete-bo-function
+      Delete a Business Object function from a local `.bo` file.
+  do-add-bo-function-parameter
+      Add a token parameter or field to a Business Object function.
+  do-modify-bo-function-parameter
+      Modify a token parameter or field on a Business Object function.
+  do-delete-bo-function-parameter
+      Delete a token parameter or field from a Business Object function.
+  do-add-bo-function-header
+      Add a header to a Business Object function.
+  do-modify-bo-function-header
+      Modify a header on a Business Object function.
+  do-delete-bo-function-header
+      Delete a header from a Business Object function.
+  do-add-bo-function-example
+      Add an example to a Business Object function.
+  do-modify-bo-function-example
+      Modify an example on a Business Object function.
+  do-delete-bo-function-example
+      Delete an example from a Business Object function.
+  do-generate-bo-function-description
+      Generate and apply a function description in a local `.bo` file.
+  do-generate-bo-function-example-description
+      Generate and apply an example description in a local `.bo` file.
+  do-fetch-bo-function-example-sample
+      Fetch a sample response and populate the function example.
+  do-apply-bo-function-example-payload
+      Apply an example payload to a Business Object function.
+  validate-app
+      Validate the current app without mutating it.
+  get-configured-workflow-agents
+      List agents configured in the current app file.
+  get-panel-metadata
+      Inspect panel layout and agent placement for an app file.
+  get-communication
+      Inspect a communication in the current app file.
+  get-template
+      Inspect a template in the current app file.
+  get-action
+      Inspect an action in the current app file.
+  do-modify-page-pattern
+      Modify app page layout in a local app file.
+  do-modify-app-config
+      Modify top-level app configuration fields in a local app file.
+  do-add-agent
+      Add an agent to a local app file.
+  do-modify-agent-display-prompt
+      Modify a shared agent display prompt in a local app file.
+  do-modify-agent-config
+      Modify an agent config in a local app file.
+  do-remove-agent
+      Remove an agent from a local app file.
+  do-add-communication
+      Add a communication to a local app file.
+  do-modify-communication
+      Modify a communication in a local app file.
+  do-remove-communication
+      Remove a communication from a local app file.
+  do-add-template
+      Add a template to a local app file.
+  do-modify-template
+      Modify a template in a local app file.
+  do-remove-template
+      Remove a template from a local app file.
+  do-add-action
+      Add an action to a local app file.
+  do-modify-action
+      Modify an action in a local app file.
+  do-remove-action
+      Remove an action from a local app file.
+  do-modify-workflow-metadata
+      Patch workflow-level metadata.
+  get-workflow-node-structure
+      Return workflow graph structure by node code.
+  get-nodes-metadata-by-code
+      Summarize nodes by node code.
+  validate-workflow
+      Validate the current workflow without mutating it.
+  do-create-node
+      Create a new workflow node.
+  do-modify-node
+      Patch an existing workflow node.
+  do-modify-node-edges
+      Add or remove workflow edges by node code.
+  do-delete-node
+      Delete a workflow node by node code.
+  list-policy-node-policies
+      List published policies available to workflow POLICY nodes.
+  list-policy-node-functions
+      List functions available for a workflow POLICY node.
+  do-create-policy-node
+      Create a workflow POLICY node.
+  do-modify-policy-node
+      Modify a workflow POLICY node.
+  do-delete-policy-node
+      Delete a workflow POLICY node.
+  list-function-node-templates
+      List published Function Templates available to workflow reusable-function CODE nodes.
+  list-function-node-functions
+      List reusable functions available for a workflow CODE node.
+  do-create-function-node
+      Create a workflow reusable-function CODE node.
+  do-modify-function-node
+      Modify a workflow reusable-function CODE node.
+  do-delete-function-node
+      Delete a workflow reusable-function CODE node.
+  do-prettify-workflow
+      Prettify workflow node layout.
+  search-business-objects
+      Run the business-object recommendation workflow through the one-shot AI proxy module.
+  search-deeplink-tools
+      Run the deeplink-tool recommendation workflow through the one-shot AI proxy module.
+  search-external-rest-tools
+      Run the external-rest recommendation workflow through the one-shot AI proxy module.
+  search-document-tools
+      Run the document-tool recommendation workflow through the one-shot AI proxy module.
+  search-agents
+      Run the reusable-agent recommendation workflow through the one-shot AI proxy module.
+  search-workflows
+      Run the workflow recommendation workflow through the one-shot AI proxy module.
+  get-nodes-executed-on-last-debug
+      Return the node execution order stored in the debugger sidecar.
+  get-debugger-results-for-nodes
+      Return debugger result data for selected node codes.
+  list-pinned-outputs
+      List pinned node outputs from the debugger sidecar.
+  get-debugger-node-override-schema
+      List editable debugger override keys by node type.
+  do-modify-node-overrides
+      Modify debugger metadata and input overrides for a node.
+  do-clear-node-override
+      Clear debugger overrides for a node.
+  do-node-override-output
+      Pin or override a node output in the debugger sidecar.
+  do-clear-node-output-override
+      Clear a pinned node output in the debugger sidecar.

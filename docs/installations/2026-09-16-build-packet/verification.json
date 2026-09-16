@@ -1,0 +1,10 @@
+{
+  "verifiedUtc": "2026-09-16T18:51:15.0313224Z",
+  "installedFiles": 85,
+  "unchangedExistingFiles": 302,
+  "packetVerification": "PASS",
+  "startupVerification": "PASS",
+  "installedSha256Verification": "PASS",
+  "existingFilesPreserved": "PASS",
+  "activation": "Completed subsequently; see ACTIVATION-RECEIPT.md and activation-verification.txt"
+}

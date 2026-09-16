@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "packetName": "agent-app-build-install-packet",
+  "generatedAtUtc": "2026-09-16T17:33:29.6521894Z",
+  "sourceCommit": "fc2dce08c39dcbbe6fe447e71d50a97bdb15feea",
+  "payload": [
+    {
+      "path": "agent-app-build-startup/AGENTS.md",
+      "sha256": "9422e4ec98b1643e6e1ebcb499bde0da710813bbad8fbc358f0544d0083e1a14"
+    },
+    {
+      "path": "agent-app-build-startup/docs/operations/AISTUDIO_ATLAS.md",
+      "sha256": "eea814765a9d4a6ac7f4e97b77ec9889660acfe3f6c6c776e161890764a42817"
+    },
+    {
+      "path": "agent-app-build-startup/docs/operations/ARCHITECTURE_SELF_REVIEW.md",
+      "sha256": "14748dc67ba8edeab1eb701f518b6e03e8c71f3ed5a0be4d9c519da25f292e1c"
+    },
+    {
+      "path": "agent-app-build-startup/docs/operations/CARRY_FORWARD_INVENTORY.md",
+      "sha256": "d7f35cd6f72c17054024a1c313c3ed09de4503ccbde04ff3530e3ed8aa5eec2d"
+    },
+    {
+      "path": "agent-app-build-startup/docs/operations/CONTEXT_RESET.md",
+      "sha256": "442eee60bdfe27f93146a6eeab4898d097b3912634fef706787d57adee395afc"
+    },
+    {
+      "path": "agent-app-build-startup/docs/operations/PROJECT_STRUCTURE.md",
+      "sha256": "dfaeaf44614dbc9351a1293c508b9d739dc4edb6578cf2b716ee475c56d47c93"
+    },
+    {
+      "path": "agent-app-build-startup/docs/operations/ROLLBACK_UNINSTALL.md",
+      "sha256": "af39c6281d7a57095a30a5546313565031cf868bb40221a3e22b032ec01fd4a0"
+    },
+    {
+      "path": "agent-app-build-startup/docs/operations/TEST_GUARDRAILS.md",
+      "sha256": "33c5a41b2e43b7e375fa5f18c122dad6f066be34e86339b43fca39e4d1a20cc0"
+    },
+    {
+      "path": "agent-app-build-startup/docs/operations/TIME_TRACKER.md",
+      "sha256": "7d661687ba904505bb96a233b76c80db83515b8de4680aab2d71ca3857af3a25"
+    },
+    {
+      "path": "agent-app-build-startup/README.md",
+      "sha256": "dc66e7bb261a5bc8e5ef79fbe08512dcad51c31afc786f9e80699b9f9d4f8e6f"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/app-best-practices.md",
+      "sha256": "e18bcdcbaace2e935b4885436b01e4e0863e14c4c5e2dd13407a70eea9c8a121"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/app-ingestion.md",
+      "sha256": "ada3f2ceb27479f3c5c5af1fe6c871d3aaa0b69e253114e03b0bb9636cd4f10b"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/app-test-authoring.md",
+      "sha256": "6ba05f31c5076219cc0ab8f173fb5e014c6ae22d67f713960a57484276e47808"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/app-vibe-actions.md",
+      "sha256": "69e8cba9cb3ae4209c6ce76af06b0cca20e75a8ecfa3e27605083c39a359db82"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/app-vibe-master.md",
+      "sha256": "e0fbec136ff7351342fb3f3121e203021c0126d525c78bc6ec472ba81e90de13"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/app-vibe-plan.md",
+      "sha256": "d03de8102430f0ec44feacbcc9f660ce54bedd988e682e9ea76863efa2e9a74a"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/app-vibe-templates.md",
+      "sha256": "215e8fc58cf99e1d081ec748cc99896c463640b7fe03c7a84161cc157506b448"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/app-vibe-widgets.md",
+      "sha256": "210a18c89e4a3030d5581e3be1b67303d1c391c1e3982a59acbbfbf1b617fd05"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/approval-process-builder.md",
+      "sha256": "35cb1dbfaf6d9008c85262eb1044454a946f58398427b8eb96e698fb8ddf932d"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/approval-process-cli-compat.md",
+      "sha256": "2220d5d33a32052071360dc8755e4c177ff7af278f06274d383277b829d82605"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/artifact-conventions.md",
+      "sha256": "22bd1f60bda17a76eb417bfb9c3e829cdbb18fa64839f1acf6e665aad34bd6a7"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/business-object-builder.md",
+      "sha256": "4e6ded16e1ce13613a68b2a59d4bc1e7dfd4acda6b11852e1c9d9f0672cf426d"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/business-object-cli-compat.md",
+      "sha256": "785045b4bbd5c0d02a6beaf0337f86293ff36e8d958e7ee815e2d0a143fcedae"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/connector-definition-cli-compat.md",
+      "sha256": "560e34c05b2880f6f41c01b7644c53aaeb86d1b0d792e9bb3af2c688b6e38fc0"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/connector-instance-cli-compat.md",
+      "sha256": "3d7476df79a66c043d9fb7707f2e266c3334f3c7b49a8f0d712c66cab327432f"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/document-schema-builder.md",
+      "sha256": "fa6bad910269c676125088db16aa9f305d8d68dd7d890f0ef3da5311742e0eaf"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/document-schema-cli-compat.md",
+      "sha256": "c511735d6112fac8103ee3a28d7e57ca871f47f5bc2bbdaf75bca117128f9f3f"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/function-builder.md",
+      "sha256": "5a2afed58b1e6ef6a2be4a9ad35cd6d76861fd93b9700bbe5bea48fa5fcb6425"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/function-cli-compat.md",
+      "sha256": "e5a7be52439b4d426fe698695c465e6f8c58c3ac862e46ba226f9ca039dda8c6"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/index.md",
+      "sha256": "a674f100c0536852724b322d1fad13c4c0c30e3967ca9924806ef044e14fc3c1"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/policy-store-builder.md",
+      "sha256": "1fcaacbaa8b3c5c927e99376f1671a161c653c69f27eb9ef465f92378589f0a4"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/policy-store-cli-compat.md",
+      "sha256": "61c9a3c1ea8ed6277f60a9807c175ab0b9f07347d935e4fec861d4a2f845fd5d"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/tools-builder.md",
+      "sha256": "4f508f207f07f8b77e3f503feda08e905ebbd82ab663edde5b542420a5bc193f"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/tools-cli-compat.md",
+      "sha256": "532ba444d65f9fd52c56b61de215906829f0eba6088b2084c28040c4554b86cd"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-cli-compat.md",
+      "sha256": "aab8eacfdaef5a083345a4e9bf42cc78bad8cf48bbd2689c870aa490d76db10b"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-conversation-test-authoring.md",
+      "sha256": "faa37f87d5a84baf080f748452fc110fd6b745f40920b9a1e929b08b88c0a4fd"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-debug-plan.md",
+      "sha256": "53348e2c3c0233fe751c914aef7acde376b577fe0e755562b361fc7a71922224"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-debug.md",
+      "sha256": "04d96ee23585c2835460f412d19a8740cc7310653a3de26a17f388f71458508f"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/agent.md",
+      "sha256": "5939cfc5cb255c7ee8d5bf50306e437135e5876fea13218bd2f6c4fae70b4ae5"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/bo-function.md",
+      "sha256": "0becb04f0446e0ff521672d25bb53ea37852f58cf0a97f14424025b85d478c71"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/code.md",
+      "sha256": "fe71794487b18c4a83bf4750aac5e60808b851acc51f758ec46a2cc9b310c8eb"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/comment-diagram-only.md",
+      "sha256": "d55ec50ad245d8ad99d94f2403597ad622c30ca8397d8cea3efb018903a77ce0"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/document-processor.md",
+      "sha256": "2c39c0055aadac48784fdae4a5516d4f0c6263399e283190b269f70605917f36"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/email.md",
+      "sha256": "7954395eae5d10ce2eac3c53230f9fbfe4825af090f62234e201105c6e3eb24a"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/external-rest.md",
+      "sha256": "3562eceacc1ff2df2c822308e4e4ff440549a5f1e7e708ed49f8791f03ed35e2"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/for-loop.md",
+      "sha256": "acf4a8e8969548a2ee763d60f71b619f12031638100105bf1783328186df8ebc"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/human-approval.md",
+      "sha256": "e2da4ca2264b7a3a5eeb9d6c6eedf06de6fbc30b2b5ee7324b4a049ae478d13b"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/if-condition.md",
+      "sha256": "cd3e3a2a48e5933c05a9ae079eb9895891f4a2b5657947388dbb55b17910e701"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/index.md",
+      "sha256": "23b111762605278c0a23087adb0184ec4a20cd4f427d7db110ddfc6e072d5c3f"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/llm.md",
+      "sha256": "cb7ea6c6dc3b3b052cbe97e176095e251ab3872acedb97ceb629950d68838457"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/parallel.md",
+      "sha256": "a80f2b2887de90421679e0448f95d4295d56c7ae8039ea4c27f850ef98770475"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/rag-document-tool.md",
+      "sha256": "076a227c91108b6818dcad7d69f460f111b86c39cf601d6f4d2917a314f1eaf5"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/reference-block.md",
+      "sha256": "4d2f1f3d7d4ac1c8715d29d8070e01814d3bd53d3331a4e260a05b233e7c88dc"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/reference.md",
+      "sha256": "9889c800e20b4eced83a4dc20dd20bac29356e0063bd6c432d89e7380f662bdf"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/return.md",
+      "sha256": "3c9ea50fa46af1c9cc0b6708c2f818614ea491b5eb87c11f5ec1b6e2b48a192b"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/set-variables.md",
+      "sha256": "16300daccc215bd16aa38e0298ab7ca6e94ed81c1f4334ae278c744ff2d14b7b"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/start-end.md",
+      "sha256": "6461487f15d60babf1028f96eb4f6d281035a47c29b22fddcface481d7eef6eb"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/switch.md",
+      "sha256": "fbd8adc071f3e4a288ee521e927eeb9f5de84e1065bfc2846fb61da58a1aff85"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/tool.md",
+      "sha256": "090737625eb73d624a09abac7c9f08cc85d1bfb0af1c05b6e84978b6cc0fbee1"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/vector-db-reader.md",
+      "sha256": "1d522de422279b89127774cee3773ccad0b4420fab13868b2a0443b01c8d8d7d"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/vector-db-writer.md",
+      "sha256": "3793bb4fa8b2658b1b6d1ca02b66bb1c4f534e8bc0aad7c2d5490dd4b8598acc"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/wait.md",
+      "sha256": "1d7e23d830b1ff3327d232dfd51806667e380559dfdbd0fecb8ccabc3a2d91b7"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/while-loop.md",
+      "sha256": "81df8e6893b79daddb7d477e2dbe0717ef117922ee3f34c48be14d1b5f6327d3"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-node-prompts/workflow.md",
+      "sha256": "a501b38fa3b955b4d03f51d579a19f223a649c6254150879bd374da9ed1f7566"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-test-authoring.md",
+      "sha256": "a5fad3459c41c190789ca39a02c5747ca44199c511050171bd3ea47fd4525bb3"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/references/prompts/workflow-vibe.md",
+      "sha256": "04a1c801d7cdcd86175119113eed1cf3cbd0368d3d607848ceadf69b82c8f154"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/resources/app-samples/index.md",
+      "sha256": "0136302ecd4f1965bc22de41cf98c8b9883c8432f3a6a0766a2b4942b15a0af8"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/scripts/aistudio.js",
+      "sha256": "5f58e5284cacfdb0fb96f1d81e35e068caa0eb3458d57fc1f0b80010d2b25e13"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/.agents/skills/aistudio/SKILL.md",
+      "sha256": "8c195edb9116c35d6dae83d9ac49ae1c50e1b3c18aae835f6aced92dcc0cb819"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/AGENTS.md",
+      "sha256": "7d296e347203ef338db7028e11d2148874d3764cde953ff09b01d4b6b6d4abfd"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "4a9ff7905c2ef3d617662de7eb1b58bab90b395dee1a1fb83b6b4f564abd9753"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "f60bf694f0cbe678c09d819a5196cf0a9739e5ae102cb73b7890559fbb664b5e"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/scripts/verify-living-build-contract.ps1",
+      "sha256": "b00fae1e86d12b6ccbe9c27fbc9c5676e8fce8a72e4b8aa79371008ee5b05cf1"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/tests/test-living-build-contract.ps1",
+      "sha256": "a101ce15fe35fb07582ed693b47b0ecd0434b88411ec8114b47bb93de887acbb"
+    },
+    {
+      "path": "agent-app-build-startup/scripts/Add-BuildTimeRecord.ps1",
+      "sha256": "e1992a29479f00efe1a6e41d6ce97365a23455f2d83cd8b865dfe0c681bd3afe"
+    },
+    {
+      "path": "agent-app-build-startup/scripts/New-AgentAppBuildWorktree.ps1",
+      "sha256": "76e60773b9228951d58a8acadd88db046e83fead2bf4fca9f361e0690d745756"
+    },
+    {
+      "path": "agent-app-build-startup/scripts/Verify-AgentAppBuildStartup.ps1",
+      "sha256": "80391494d04d3b4610ec5c5ce851ec8b5db8684f1fd3637cdb4a8635ab50e1a9"
+    },
+    {
+      "path": "agent-app-build-startup/templates/active-handoff.md",
+      "sha256": "4a9ff7905c2ef3d617662de7eb1b58bab90b395dee1a1fb83b6b4f564abd9753"
+    },
+    {
+      "path": "agent-app-build-startup/templates/checkpoint.md",
+      "sha256": "a248b108bbd7893f55f84aa35e64a5d4258b36c2daaa0336293c4176c277bd51"
+    },
+    {
+      "path": "agent-app-build-startup/templates/delivery-receipt.md",
+      "sha256": "a0cae191965bc0eb1ceb0fedc638f58b9f75acdb1611b603418e9e7707954b6b"
+    },
+    {
+      "path": "agent-app-build-startup/templates/dependency-inventory.md",
+      "sha256": "c82fcbce567791cfe3df6d40435f5c53bfbf42d9507721ea0f873d799297e5a2"
+    },
+    {
+      "path": "agent-app-build-startup/templates/golden-path-test-manifest.md",
+      "sha256": "13c72766f44059fd32100b800af510ff130f5d44387414e35230e3286eddd9b7"
+    },
+    {
+      "path": "agent-app-build-startup/templates/intake-and-learning-register.md",
+      "sha256": "23ad0654a956622e9e00d35876f7942b6bd0adb8ac1f6f5023e7892d237c38fa"
+    },
+    {
+      "path": "agent-app-build-startup/templates/requirement-slice-register.md",
+      "sha256": "78cd83a49dc9a25b625eb76501e66c74b52f31cddd2de5ec03033c555fb531ea"
+    },
+    {
+      "path": "agent-app-build-startup/templates/time-tracker.md",
+      "sha256": "7d661687ba904505bb96a233b76c80db83515b8de4680aab2d71ca3857af3a25"
+    },
+    {
+      "path": "Install-AgentAppBuildStartup.ps1",
+      "sha256": "e1d3fbfc87b5c50da8ec5540bbdd3df8e1cabced83f475960823accef65f4d86"
+    },
+    {
+      "path": "INSTALL.md",
+      "sha256": "d55d9eea8b041bd1c6a88868b1b15edaaaa38affbdeebbc19f5e718dd4c56605"
+    },
+    {
+      "path": "Verify-AgentAppBuildInstallPacket.ps1",
+      "sha256": "4e54d3d5b7ea9a134f93070cf901ac039a002c2bfbc7e2dfaf9cab856200f181"
+    }
+  ]
+}

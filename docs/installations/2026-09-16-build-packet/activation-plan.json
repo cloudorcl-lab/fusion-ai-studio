@@ -1,0 +1,386 @@
+[
+  {
+    "path": "AGENTS.md",
+    "beforeSha256": null,
+    "seedSha256": "7D296E347203EF338DB7028E11D2148874D3764CDE953FF09B01D4B6B6D4ABFD",
+    "action": "add"
+  },
+  {
+    "path": ".agents/skills/aistudio/SKILL.md",
+    "beforeSha256": "CCD53823B2ACB3600ECE692CC5378EF1C0AC0C7CC019835BA0D51E441B425FAA",
+    "seedSha256": "8C195EDB9116C35D6DAE83D9AC49AE1C50E1B3C18AAE835F6ACED92DCC0CB819",
+    "action": "replace"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-best-practices.md",
+    "beforeSha256": "E18BCDCBAACE2E935B4885436B01E4E0863E14C4C5E2DD13407A70EEA9C8A121",
+    "seedSha256": "E18BCDCBAACE2E935B4885436B01E4E0863E14C4C5E2DD13407A70EEA9C8A121",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-ingestion.md",
+    "beforeSha256": "ADA3F2CEB27479F3C5C5AF1FE6C871D3AAA0B69E253114E03B0BB9636CD4F10B",
+    "seedSha256": "ADA3F2CEB27479F3C5C5AF1FE6C871D3AAA0B69E253114E03B0BB9636CD4F10B",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-test-authoring.md",
+    "beforeSha256": "6BA05F31C5076219CC0AB8F173FB5E014C6AE22D67F713960A57484276E47808",
+    "seedSha256": "6BA05F31C5076219CC0AB8F173FB5E014C6AE22D67F713960A57484276E47808",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-vibe-actions.md",
+    "beforeSha256": "69E8CBA9CB3AE4209C6CE76AF06B0CCA20E75A8ECFA3E27605083C39A359DB82",
+    "seedSha256": "69E8CBA9CB3AE4209C6CE76AF06B0CCA20E75A8ECFA3E27605083C39A359DB82",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-vibe-master.md",
+    "beforeSha256": "E0FBEC136FF7351342FB3F3121E203021C0126D525C78BC6EC472BA81E90DE13",
+    "seedSha256": "E0FBEC136FF7351342FB3F3121E203021C0126D525C78BC6EC472BA81E90DE13",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-vibe-plan.md",
+    "beforeSha256": "D03DE8102430F0EC44FEACBCC9F660CE54BEDD988E682E9EA76863EFA2E9A74A",
+    "seedSha256": "D03DE8102430F0EC44FEACBCC9F660CE54BEDD988E682E9EA76863EFA2E9A74A",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-vibe-templates.md",
+    "beforeSha256": "215E8FC58CF99E1D081EC748CC99896C463640B7FE03C7A84161CC157506B448",
+    "seedSha256": "215E8FC58CF99E1D081EC748CC99896C463640B7FE03C7A84161CC157506B448",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-vibe-widgets.md",
+    "beforeSha256": "210A18C89E4A3030D5581E3BE1B67303D1C391C1E3982A59ACBBFBF1B617FD05",
+    "seedSha256": "210A18C89E4A3030D5581E3BE1B67303D1C391C1E3982A59ACBBFBF1B617FD05",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/approval-process-builder.md",
+    "beforeSha256": "35CB1DBFAF6D9008C85262EB1044454A946F58398427B8EB96E698FB8DDF932D",
+    "seedSha256": "35CB1DBFAF6D9008C85262EB1044454A946F58398427B8EB96E698FB8DDF932D",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/approval-process-cli-compat.md",
+    "beforeSha256": "2220D5D33A32052071360DC8755E4C177FF7AF278F06274D383277B829D82605",
+    "seedSha256": "2220D5D33A32052071360DC8755E4C177FF7AF278F06274D383277B829D82605",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/artifact-conventions.md",
+    "beforeSha256": "22BD1F60BDA17A76EB417BFB9C3E829CDBB18FA64839F1ACF6E665AAD34BD6A7",
+    "seedSha256": "22BD1F60BDA17A76EB417BFB9C3E829CDBB18FA64839F1ACF6E665AAD34BD6A7",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/business-object-builder.md",
+    "beforeSha256": "4E6DED16E1CE13613A68B2A59D4BC1E7DFD4ACDA6B11852E1C9D9F0672CF426D",
+    "seedSha256": "4E6DED16E1CE13613A68B2A59D4BC1E7DFD4ACDA6B11852E1C9D9F0672CF426D",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/business-object-cli-compat.md",
+    "beforeSha256": "785045B4BBD5C0D02A6BEAF0337F86293FF36E8D958E7EE815E2D0A143FCEDAE",
+    "seedSha256": "785045B4BBD5C0D02A6BEAF0337F86293FF36E8D958E7EE815E2D0A143FCEDAE",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/connector-definition-cli-compat.md",
+    "beforeSha256": "560E34C05B2880F6F41C01B7644C53AAEB86D1B0D792E9BB3AF2C688B6E38FC0",
+    "seedSha256": "560E34C05B2880F6F41C01B7644C53AAEB86D1B0D792E9BB3AF2C688B6E38FC0",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/connector-instance-cli-compat.md",
+    "beforeSha256": "3D7476DF79A66C043D9FB7707F2E266C3334F3C7B49A8F0D712C66CAB327432F",
+    "seedSha256": "3D7476DF79A66C043D9FB7707F2E266C3334F3C7B49A8F0D712C66CAB327432F",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/document-schema-builder.md",
+    "beforeSha256": "FA6BAD910269C676125088DB16AA9F305D8D68DD7D890F0EF3DA5311742E0EAF",
+    "seedSha256": "FA6BAD910269C676125088DB16AA9F305D8D68DD7D890F0EF3DA5311742E0EAF",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/document-schema-cli-compat.md",
+    "beforeSha256": "C511735D6112FAC8103EE3A28D7E57CA871F47F5BC2BBDAF75BCA117128F9F3F",
+    "seedSha256": "C511735D6112FAC8103EE3A28D7E57CA871F47F5BC2BBDAF75BCA117128F9F3F",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/function-builder.md",
+    "beforeSha256": "5A2AFED58B1E6EF6A2BE4A9AD35CD6D76861FD93B9700BBE5BEA48FA5FCB6425",
+    "seedSha256": "5A2AFED58B1E6EF6A2BE4A9AD35CD6D76861FD93B9700BBE5BEA48FA5FCB6425",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/function-cli-compat.md",
+    "beforeSha256": "E5A7BE52439B4D426FE698695C465E6F8C58C3AC862E46BA226F9CA039DDA8C6",
+    "seedSha256": "E5A7BE52439B4D426FE698695C465E6F8C58C3AC862E46BA226F9CA039DDA8C6",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/index.md",
+    "beforeSha256": "A674F100C0536852724B322D1FAD13C4C0C30E3967CA9924806EF044E14FC3C1",
+    "seedSha256": "A674F100C0536852724B322D1FAD13C4C0C30E3967CA9924806EF044E14FC3C1",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/policy-store-builder.md",
+    "beforeSha256": "1FCAACBAA8B3C5C927E99376F1671A161C653C69F27EB9EF465F92378589F0A4",
+    "seedSha256": "1FCAACBAA8B3C5C927E99376F1671A161C653C69F27EB9EF465F92378589F0A4",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/policy-store-cli-compat.md",
+    "beforeSha256": "61C9A3C1EA8ED6277F60A9807C175AB0B9F07347D935E4FEC861D4A2F845FD5D",
+    "seedSha256": "61C9A3C1EA8ED6277F60A9807C175AB0B9F07347D935E4FEC861D4A2F845FD5D",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/tools-builder.md",
+    "beforeSha256": "4F508F207F07F8B77E3F503FEDA08E905EBBD82AB663EDDE5B542420A5BC193F",
+    "seedSha256": "4F508F207F07F8B77E3F503FEDA08E905EBBD82AB663EDDE5B542420A5BC193F",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/tools-cli-compat.md",
+    "beforeSha256": "532BA444D65F9FD52C56B61DE215906829F0EBA6088B2084C28040C4554B86CD",
+    "seedSha256": "532BA444D65F9FD52C56B61DE215906829F0EBA6088B2084C28040C4554B86CD",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-cli-compat.md",
+    "beforeSha256": "AAB8EACFDAEF5A083345A4E9BF42CC78BAD8CF48BBD2689C870AA490D76DB10B",
+    "seedSha256": "AAB8EACFDAEF5A083345A4E9BF42CC78BAD8CF48BBD2689C870AA490D76DB10B",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-conversation-test-authoring.md",
+    "beforeSha256": "FAA37F87D5A84BAF080F748452FC110FD6B745F40920B9A1E929B08B88C0A4FD",
+    "seedSha256": "FAA37F87D5A84BAF080F748452FC110FD6B745F40920B9A1E929B08B88C0A4FD",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-debug-plan.md",
+    "beforeSha256": "53348E2C3C0233FE751C914AEF7ACDE376B577FE0E755562B361FC7A71922224",
+    "seedSha256": "53348E2C3C0233FE751C914AEF7ACDE376B577FE0E755562B361FC7A71922224",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-debug.md",
+    "beforeSha256": "04D96EE23585C2835460F412D19A8740CC7310653A3DE26A17F388F71458508F",
+    "seedSha256": "04D96EE23585C2835460F412D19A8740CC7310653A3DE26A17F388F71458508F",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-test-authoring.md",
+    "beforeSha256": "A5FAD3459C41C190789CA39A02C5747CA44199C511050171BD3EA47FD4525BB3",
+    "seedSha256": "A5FAD3459C41C190789CA39A02C5747CA44199C511050171BD3EA47FD4525BB3",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-vibe.md",
+    "beforeSha256": "04A1C801D7CDCD86175119113EED1CF3CBD0368D3D607848CEADF69B82C8F154",
+    "seedSha256": "04A1C801D7CDCD86175119113EED1CF3CBD0368D3D607848CEADF69B82C8F154",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/agent.md",
+    "beforeSha256": "5939CFC5CB255C7EE8D5BF50306E437135E5876FEA13218BD2F6C4FAE70B4AE5",
+    "seedSha256": "5939CFC5CB255C7EE8D5BF50306E437135E5876FEA13218BD2F6C4FAE70B4AE5",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/bo-function.md",
+    "beforeSha256": "0BECB04F0446E0FF521672D25BB53EA37852F58CF0A97F14424025B85D478C71",
+    "seedSha256": "0BECB04F0446E0FF521672D25BB53EA37852F58CF0A97F14424025B85D478C71",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/code.md",
+    "beforeSha256": "FE71794487B18C4A83BF4750AAC5E60808B851ACC51F758EC46A2CC9B310C8EB",
+    "seedSha256": "FE71794487B18C4A83BF4750AAC5E60808B851ACC51F758EC46A2CC9B310C8EB",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/comment-diagram-only.md",
+    "beforeSha256": "D55EC50AD245D8AD99D94F2403597AD622C30CA8397D8CEA3EFB018903A77CE0",
+    "seedSha256": "D55EC50AD245D8AD99D94F2403597AD622C30CA8397D8CEA3EFB018903A77CE0",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/document-processor.md",
+    "beforeSha256": "2C39C0055AADAC48784FDAE4A5516D4F0C6263399E283190B269F70605917F36",
+    "seedSha256": "2C39C0055AADAC48784FDAE4A5516D4F0C6263399E283190B269F70605917F36",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/email.md",
+    "beforeSha256": "7954395EAE5D10CE2EAC3C53230F9FBFE4825AF090F62234E201105C6E3EB24A",
+    "seedSha256": "7954395EAE5D10CE2EAC3C53230F9FBFE4825AF090F62234E201105C6E3EB24A",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/external-rest.md",
+    "beforeSha256": "3562ECEACC1FF2DF2C822308E4E4FF440549A5F1E7E708ED49F8791F03ED35E2",
+    "seedSha256": "3562ECEACC1FF2DF2C822308E4E4FF440549A5F1E7E708ED49F8791F03ED35E2",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/for-loop.md",
+    "beforeSha256": "ACF4A8E8969548A2EE763D60F71B619F12031638100105BF1783328186DF8EBC",
+    "seedSha256": "ACF4A8E8969548A2EE763D60F71B619F12031638100105BF1783328186DF8EBC",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/human-approval.md",
+    "beforeSha256": "E2DA4CA2264B7A3A5EEB9D6C6EEDF06DE6FBC30B2B5EE7324B4A049AE478D13B",
+    "seedSha256": "E2DA4CA2264B7A3A5EEB9D6C6EEDF06DE6FBC30B2B5EE7324B4A049AE478D13B",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/if-condition.md",
+    "beforeSha256": "CD3E3A2A48E5933C05A9AE079EB9895891F4A2B5657947388DBB55B17910E701",
+    "seedSha256": "CD3E3A2A48E5933C05A9AE079EB9895891F4A2B5657947388DBB55B17910E701",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/index.md",
+    "beforeSha256": "23B111762605278C0A23087ADB0184EC4A20CD4F427D7DB110DDFC6E072D5C3F",
+    "seedSha256": "23B111762605278C0A23087ADB0184EC4A20CD4F427D7DB110DDFC6E072D5C3F",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/llm.md",
+    "beforeSha256": "CB7EA6C6DC3B3B052CBE97E176095E251AB3872ACEDB97CEB629950D68838457",
+    "seedSha256": "CB7EA6C6DC3B3B052CBE97E176095E251AB3872ACEDB97CEB629950D68838457",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/parallel.md",
+    "beforeSha256": "A80F2B2887DE90421679E0448F95D4295D56C7AE8039EA4C27F850EF98770475",
+    "seedSha256": "A80F2B2887DE90421679E0448F95D4295D56C7AE8039EA4C27F850EF98770475",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/rag-document-tool.md",
+    "beforeSha256": "076A227C91108B6818DCAD7D69F460F111B86C39CF601D6F4D2917A314F1EAF5",
+    "seedSha256": "076A227C91108B6818DCAD7D69F460F111B86C39CF601D6F4D2917A314F1EAF5",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/reference-block.md",
+    "beforeSha256": "4D2F1F3D7D4AC1C8715D29D8070E01814D3BD53D3331A4E260A05B233E7C88DC",
+    "seedSha256": "4D2F1F3D7D4AC1C8715D29D8070E01814D3BD53D3331A4E260A05B233E7C88DC",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/reference.md",
+    "beforeSha256": "9889C800E20B4ECED83A4DC20DD20BAC29356E0063BD6C432D89E7380F662BDF",
+    "seedSha256": "9889C800E20B4ECED83A4DC20DD20BAC29356E0063BD6C432D89E7380F662BDF",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/return.md",
+    "beforeSha256": "3C9EA50FA46AF1C9CC0B6708C2F818614EA491B5EB87C11F5EC1B6E2B48A192B",
+    "seedSha256": "3C9EA50FA46AF1C9CC0B6708C2F818614EA491B5EB87C11F5EC1B6E2B48A192B",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/set-variables.md",
+    "beforeSha256": "16300DACCC215BD16AA38E0298AB7CA6E94ED81C1F4334AE278C744FF2D14B7B",
+    "seedSha256": "16300DACCC215BD16AA38E0298AB7CA6E94ED81C1F4334AE278C744FF2D14B7B",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/start-end.md",
+    "beforeSha256": "6461487F15D60BABF1028F96EB4F6D281035A47C29B22FDDCFACE481D7EEF6EB",
+    "seedSha256": "6461487F15D60BABF1028F96EB4F6D281035A47C29B22FDDCFACE481D7EEF6EB",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/switch.md",
+    "beforeSha256": "FBD8ADC071F3E4A288EE521E927EEB9F5DE84E1065BFC2846FB61DA58A1AFF85",
+    "seedSha256": "FBD8ADC071F3E4A288EE521E927EEB9F5DE84E1065BFC2846FB61DA58A1AFF85",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/tool.md",
+    "beforeSha256": "090737625EB73D624A09ABAC7C9F08CC85D1BFB0AF1C05B6E84978B6CC0FBEE1",
+    "seedSha256": "090737625EB73D624A09ABAC7C9F08CC85D1BFB0AF1C05B6E84978B6CC0FBEE1",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/vector-db-reader.md",
+    "beforeSha256": "1D522DE422279B89127774CEE3773CCAD0B4420FAB13868B2A0443B01C8D8D7D",
+    "seedSha256": "1D522DE422279B89127774CEE3773CCAD0B4420FAB13868B2A0443B01C8D8D7D",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/vector-db-writer.md",
+    "beforeSha256": "3793BB4FA8B2658B1B6D1CA02B66BB1C4F534E8BC0AAD7C2D5490DD4B8598ACC",
+    "seedSha256": "3793BB4FA8B2658B1B6D1CA02B66BB1C4F534E8BC0AAD7C2D5490DD4B8598ACC",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/wait.md",
+    "beforeSha256": "1D7E23D830B1FF3327D232DFD51806667E380559DFDBD0FECB8CCABC3A2D91B7",
+    "seedSha256": "1D7E23D830B1FF3327D232DFD51806667E380559DFDBD0FECB8CCABC3A2D91B7",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/while-loop.md",
+    "beforeSha256": "81DF8E6893B79DADDB7D477E2DBE0717EF117922EE3F34C48BE14D1B5F6327D3",
+    "seedSha256": "81DF8E6893B79DADDB7D477E2DBE0717EF117922EE3F34C48BE14D1B5F6327D3",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/workflow.md",
+    "beforeSha256": "A501B38FA3B955B4D03F51D579A19F223A649C6254150879BD374DA9ED1F7566",
+    "seedSha256": "A501B38FA3B955B4D03F51D579A19F223A649C6254150879BD374DA9ED1F7566",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/resources/app-samples/index.md",
+    "beforeSha256": "0136302ECD4F1965BC22DE41CF98C8B9883C8432F3A6A0766A2B4942B15A0AF8",
+    "seedSha256": "0136302ECD4F1965BC22DE41CF98C8B9883C8432F3A6A0766A2B4942B15A0AF8",
+    "action": "unchanged"
+  },
+  {
+    "path": ".agents/skills/aistudio/scripts/aistudio.js",
+    "beforeSha256": "48AC5D9BABB98C940CAEBC904993F78E602C3DD0CE03EA61B2BAEEBC78292FAD",
+    "seedSha256": "5F58E5284CACFDB0FB96F1D81E35E068CAA0EB3458D57FC1F0B80010D2B25E13",
+    "action": "replace"
+  },
+  {
+    "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+    "beforeSha256": null,
+    "seedSha256": "4A9FF7905C2EF3D617662DE7EB1B58BAB90B395DEE1A1FB83B6B4F564ABD9753",
+    "action": "add"
+  },
+  {
+    "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+    "beforeSha256": null,
+    "seedSha256": "F60BF694F0CBE678C09D819A5196CF0A9739E5AE102CB73B7890559FBB664B5E",
+    "action": "add"
+  },
+  {
+    "path": "scripts/verify-living-build-contract.ps1",
+    "beforeSha256": null,
+    "seedSha256": "B00FAE1E86D12B6CCBE9C27FBC9C5676E8FCE8A72E4B8AA79371008EE5B05CF1",
+    "action": "add"
+  },
+  {
+    "path": "tests/test-living-build-contract.ps1",
+    "beforeSha256": null,
+    "seedSha256": "A101CE15FE35FB07582ED693B47B0ECD0434B88411EC8114B47BB93DE887ACBB",
+    "action": "add"
+  }
+]

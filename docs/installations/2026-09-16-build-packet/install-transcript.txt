@@ -1,0 +1,30 @@
+**********************
+PowerShell transcript start
+Start time: 20260916135038
+Username: P520\CodexSandboxOnline
+RunAs User: P520\CodexSandboxOnline
+Configuration Name: 
+Machine: P520 (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$ErrorActionPreference = 'Stop'; $recovery = 'C:\Users\dasu\AppData\Local\Temp\fusion-ai-studio-1-install-20260916-134951'; $packet = Join-Path $recovery 'extracted/agent-app-build-install-packet'; $root = (Get-Location).Path; $baseline = [ordered]@{targetRoot=$root; branch=(git branch --show-current); head=(git rev-parse HEAD); status=@(git status --short --untracked-files=all); zipSha256=(Get-FileHash 'docs/agent-app-build-install-packet.zip' -Algorithm SHA256).Hash; sourceCommit=(Get-Content -Raw (Join-Path $packet 'PACKET-MANIFEST.json') | ConvertFrom-Json).sourceCommit; recordedUtc=[DateTime]::UtcNow.ToString('o')}; $baseline | ConvertTo-Json -Depth 5 | Set-Content (Join-Path $recovery 'baseline.json'); Copy-Item -LiteralPath 'fusion-ai-studio-1.code-workspace' -Destination $recovery; Copy-Item -LiteralPath (Join-Path $packet 'PACKET-MANIFEST.json') -Destination $recovery; $files = @(Get-ChildItem -LiteralPath $root -Recurse -File -Force | Where-Object { $_.FullName -notlike "$root\.git\*" } | ForEach-Object { [pscustomobject]@{path=[IO.Path]::GetRelativePath($root,$_.FullName).Replace('\','/'); sha256=(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash} }); $files | ConvertTo-Json -Depth 4 | Set-Content (Join-Path $recovery 'before-files.json'); Start-Transcript -Path (Join-Path $recovery 'install-transcript.txt'); try { & (Join-Path $packet 'Install-AgentAppBuildStartup.ps1') -PacketRoot $packet -DestinationRoot $root } finally { Stop-Transcript }; Write-Output ('BASELINE_FILES=' + $files.Count); Write-Output ('RECOVERY=' + $recovery)
+Process ID: 32832
+PSVersion: 7.6.6
+PSEdition: Core
+GitCommitId: 7.6.6
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\Users\dasu\AppData\Local\Temp\fusion-ai-studio-1-install-20260916-134951\install-transcript.txt
+Agent-app build startup package: PASS
+
+Agent-app build install packet: PASS
+Agent-app build startup package: PASS
+Agent-app build startup package installed: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\agent-app-build-startup
+**********************
+PowerShell transcript end
+End time: 20260916135041
+**********************

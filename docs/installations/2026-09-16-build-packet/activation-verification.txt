@@ -1,0 +1,34 @@
+**********************
+PowerShell transcript start
+Start time: 20260916135904
+Username: P520\CodexSandboxOnline
+RunAs User: P520\CodexSandboxOnline
+Configuration Name: 
+Machine: P520 (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+$ErrorActionPreference = 'Stop'; $log = 'docs/installations/2026-09-16-build-packet/activation-verification.txt'; Start-Transcript -Path $log; try { pwsh -NoProfile -File scripts/verify-living-build-contract.ps1; if ($LASTEXITCODE) { throw 'Contract failed' }; pwsh -NoProfile -File tests/test-living-build-contract.ps1; if ($LASTEXITCODE) { throw 'Regression failed' }; pwsh -NoProfile -File agent-app-build-startup/scripts/Verify-AgentAppBuildStartup.ps1; if ($LASTEXITCODE) { throw 'Startup failed' }; node --check .agents/skills/aistudio/scripts/aistudio.js; if ($LASTEXITCODE) { throw 'CLI syntax failed' }; $help = node .agents/skills/aistudio/scripts/aistudio.js --help 2>&1; if ($LASTEXITCODE) { throw 'CLI help failed' }; $help | Set-Content 'docs/installations/2026-09-16-build-packet/cli-help.txt'; if (($help -join "`n") -notmatch 'list-remote-applications') { throw 'New command absent' }; Write-Output 'CLI syntax/help: PASS (list-remote-applications present)'; $plan = Get-Content -Raw docs/installations/2026-09-16-build-packet/activation-plan.json | ConvertFrom-Json; foreach ($entry in $plan | Where-Object { $_.path -notin @('AGENTS.md','docs/handoffs/ACTIVE_HANDOFF.md') }) { if ((Get-FileHash -LiteralPath $entry.path).Hash -ne $entry.seedSha256) { throw "Seed mismatch: $($entry.path)" } }; Write-Output 'Activated seed parity: PASS; AGENTS and handoff reviewed customizations'; $before = Get-Content -Raw docs/installations/2026-09-16-build-packet/before-files.json | ConvertFrom-Json; $changed = @($plan | Where-Object action -eq 'replace' | ForEach-Object path); $count = 0; foreach ($entry in $before | Where-Object path -NotIn $changed) { if ((Get-FileHash -LiteralPath $entry.path).Hash -ne $entry.sha256) { throw "Unrelated drift: $($entry.path)" }; $count++ }; Write-Output "Unrelated pre-existing files unchanged: PASS ($count files)"; $playbook = 'docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md'; foreach ($match in [regex]::Matches((Get-Content -Raw $playbook),'\[[^\]]+\]\(([^)]+)\)')) { $link = $match.Groups[1].Value; if ($link -match '^(https?://|#)') { continue }; if (-not (Test-Path (Join-Path (Split-Path $playbook) ($link -split '#')[0]))) { throw "Broken link: $link" } }; Write-Output 'Canonical playbook links: PASS'; git diff --check; if ($LASTEXITCODE) { throw 'Diff check failed' } } finally { Stop-Transcript }
+Process ID: 2720
+PSVersion: 7.6.6
+PSEdition: Core
+GitCommitId: 7.6.6
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is docs/installations/2026-09-16-build-packet/activation-verification.txt
+
+
+
+
+CLI syntax/help: PASS (list-remote-applications present)
+Activated seed parity: PASS; AGENTS and handoff reviewed customizations
+Unrelated pre-existing files unchanged: PASS (300 files)
+Canonical playbook links: PASS
+
+**********************
+PowerShell transcript end
+End time: 20260916135916
+**********************

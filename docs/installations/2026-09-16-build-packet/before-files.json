@@ -1,0 +1,1210 @@
+[
+  {
+    "path": "CONTRIBUTING.md",
+    "sha256": "0D4EBAD3DAF262FB8D84B7F608C11A8213CC3A0CA3ED46641282A2697501F47C"
+  },
+  {
+    "path": "env.properties",
+    "sha256": "B41D9C6DD0FAC6009CE97DBBE86088FA9D4F2E31E40DDA791921D6168360473A"
+  },
+  {
+    "path": "fusion-ai-studio-1.code-workspace",
+    "sha256": "69E7B37E2EBDAF8FC313BF6CB74882FED65895E5F853736E65759BAFB333BC6B"
+  },
+  {
+    "path": "LICENSE.txt",
+    "sha256": "A17620A021E960025BCFB4EAF26EE73E54CEDBAC9E78844120E6B910A5EFCCCC"
+  },
+  {
+    "path": "README.md",
+    "sha256": "544D88F77665C692639327A13F99C48EDA9BA9CFE326DBF35C34E80DEEF715DE"
+  },
+  {
+    "path": "SECURITY.md",
+    "sha256": "86826CD6F69050078A02FC233D2618F1BEBB1CF38B00625A1B39C9B45297D116"
+  },
+  {
+    "path": "THIRD_PARTY_LICENSES.txt",
+    "sha256": "883AE14320E7941B67ADF0D717463CB933037BEE55693D0C7F8EC04603BE3B6C"
+  },
+  {
+    "path": ".agents/skills/aistudio/SKILL.md",
+    "sha256": "CCD53823B2ACB3600ECE692CC5378EF1C0AC0C7CC019835BA0D51E441B425FAA"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-best-practices.md",
+    "sha256": "E18BCDCBAACE2E935B4885436B01E4E0863E14C4C5E2DD13407A70EEA9C8A121"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-ingestion.md",
+    "sha256": "ADA3F2CEB27479F3C5C5AF1FE6C871D3AAA0B69E253114E03B0BB9636CD4F10B"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-test-authoring.md",
+    "sha256": "6BA05F31C5076219CC0AB8F173FB5E014C6AE22D67F713960A57484276E47808"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-vibe-actions.md",
+    "sha256": "69E8CBA9CB3AE4209C6CE76AF06B0CCA20E75A8ECFA3E27605083C39A359DB82"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-vibe-master.md",
+    "sha256": "E0FBEC136FF7351342FB3F3121E203021C0126D525C78BC6EC472BA81E90DE13"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-vibe-plan.md",
+    "sha256": "D03DE8102430F0EC44FEACBCC9F660CE54BEDD988E682E9EA76863EFA2E9A74A"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-vibe-templates.md",
+    "sha256": "215E8FC58CF99E1D081EC748CC99896C463640B7FE03C7A84161CC157506B448"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/app-vibe-widgets.md",
+    "sha256": "210A18C89E4A3030D5581E3BE1B67303D1C391C1E3982A59ACBBFBF1B617FD05"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/approval-process-builder.md",
+    "sha256": "35CB1DBFAF6D9008C85262EB1044454A946F58398427B8EB96E698FB8DDF932D"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/approval-process-cli-compat.md",
+    "sha256": "2220D5D33A32052071360DC8755E4C177FF7AF278F06274D383277B829D82605"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/artifact-conventions.md",
+    "sha256": "22BD1F60BDA17A76EB417BFB9C3E829CDBB18FA64839F1ACF6E665AAD34BD6A7"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/business-object-builder.md",
+    "sha256": "4E6DED16E1CE13613A68B2A59D4BC1E7DFD4ACDA6B11852E1C9D9F0672CF426D"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/business-object-cli-compat.md",
+    "sha256": "785045B4BBD5C0D02A6BEAF0337F86293FF36E8D958E7EE815E2D0A143FCEDAE"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/connector-definition-cli-compat.md",
+    "sha256": "560E34C05B2880F6F41C01B7644C53AAEB86D1B0D792E9BB3AF2C688B6E38FC0"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/connector-instance-cli-compat.md",
+    "sha256": "3D7476DF79A66C043D9FB7707F2E266C3334F3C7B49A8F0D712C66CAB327432F"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/document-schema-builder.md",
+    "sha256": "FA6BAD910269C676125088DB16AA9F305D8D68DD7D890F0EF3DA5311742E0EAF"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/document-schema-cli-compat.md",
+    "sha256": "C511735D6112FAC8103EE3A28D7E57CA871F47F5BC2BBDAF75BCA117128F9F3F"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/function-builder.md",
+    "sha256": "5A2AFED58B1E6EF6A2BE4A9AD35CD6D76861FD93B9700BBE5BEA48FA5FCB6425"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/function-cli-compat.md",
+    "sha256": "E5A7BE52439B4D426FE698695C465E6F8C58C3AC862E46BA226F9CA039DDA8C6"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/index.md",
+    "sha256": "A674F100C0536852724B322D1FAD13C4C0C30E3967CA9924806EF044E14FC3C1"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/policy-store-builder.md",
+    "sha256": "1FCAACBAA8B3C5C927E99376F1671A161C653C69F27EB9EF465F92378589F0A4"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/policy-store-cli-compat.md",
+    "sha256": "61C9A3C1EA8ED6277F60A9807C175AB0B9F07347D935E4FEC861D4A2F845FD5D"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/tools-builder.md",
+    "sha256": "4F508F207F07F8B77E3F503FEDA08E905EBBD82AB663EDDE5B542420A5BC193F"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/tools-cli-compat.md",
+    "sha256": "532BA444D65F9FD52C56B61DE215906829F0EBA6088B2084C28040C4554B86CD"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-cli-compat.md",
+    "sha256": "AAB8EACFDAEF5A083345A4E9BF42CC78BAD8CF48BBD2689C870AA490D76DB10B"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-conversation-test-authoring.md",
+    "sha256": "FAA37F87D5A84BAF080F748452FC110FD6B745F40920B9A1E929B08B88C0A4FD"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-debug-plan.md",
+    "sha256": "53348E2C3C0233FE751C914AEF7ACDE376B577FE0E755562B361FC7A71922224"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-debug.md",
+    "sha256": "04D96EE23585C2835460F412D19A8740CC7310653A3DE26A17F388F71458508F"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-test-authoring.md",
+    "sha256": "A5FAD3459C41C190789CA39A02C5747CA44199C511050171BD3EA47FD4525BB3"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-vibe.md",
+    "sha256": "04A1C801D7CDCD86175119113EED1CF3CBD0368D3D607848CEADF69B82C8F154"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/agent.md",
+    "sha256": "5939CFC5CB255C7EE8D5BF50306E437135E5876FEA13218BD2F6C4FAE70B4AE5"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/bo-function.md",
+    "sha256": "0BECB04F0446E0FF521672D25BB53EA37852F58CF0A97F14424025B85D478C71"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/code.md",
+    "sha256": "FE71794487B18C4A83BF4750AAC5E60808B851ACC51F758EC46A2CC9B310C8EB"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/comment-diagram-only.md",
+    "sha256": "D55EC50AD245D8AD99D94F2403597AD622C30CA8397D8CEA3EFB018903A77CE0"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/document-processor.md",
+    "sha256": "2C39C0055AADAC48784FDAE4A5516D4F0C6263399E283190B269F70605917F36"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/email.md",
+    "sha256": "7954395EAE5D10CE2EAC3C53230F9FBFE4825AF090F62234E201105C6E3EB24A"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/external-rest.md",
+    "sha256": "3562ECEACC1FF2DF2C822308E4E4FF440549A5F1E7E708ED49F8791F03ED35E2"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/for-loop.md",
+    "sha256": "ACF4A8E8969548A2EE763D60F71B619F12031638100105BF1783328186DF8EBC"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/human-approval.md",
+    "sha256": "E2DA4CA2264B7A3A5EEB9D6C6EEDF06DE6FBC30B2B5EE7324B4A049AE478D13B"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/if-condition.md",
+    "sha256": "CD3E3A2A48E5933C05A9AE079EB9895891F4A2B5657947388DBB55B17910E701"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/index.md",
+    "sha256": "23B111762605278C0A23087ADB0184EC4A20CD4F427D7DB110DDFC6E072D5C3F"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/llm.md",
+    "sha256": "CB7EA6C6DC3B3B052CBE97E176095E251AB3872ACEDB97CEB629950D68838457"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/parallel.md",
+    "sha256": "A80F2B2887DE90421679E0448F95D4295D56C7AE8039EA4C27F850EF98770475"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/rag-document-tool.md",
+    "sha256": "076A227C91108B6818DCAD7D69F460F111B86C39CF601D6F4D2917A314F1EAF5"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/reference-block.md",
+    "sha256": "4D2F1F3D7D4AC1C8715D29D8070E01814D3BD53D3331A4E260A05B233E7C88DC"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/reference.md",
+    "sha256": "9889C800E20B4ECED83A4DC20DD20BAC29356E0063BD6C432D89E7380F662BDF"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/return.md",
+    "sha256": "3C9EA50FA46AF1C9CC0B6708C2F818614EA491B5EB87C11F5EC1B6E2B48A192B"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/set-variables.md",
+    "sha256": "16300DACCC215BD16AA38E0298AB7CA6E94ED81C1F4334AE278C744FF2D14B7B"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/start-end.md",
+    "sha256": "6461487F15D60BABF1028F96EB4F6D281035A47C29B22FDDCFACE481D7EEF6EB"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/switch.md",
+    "sha256": "FBD8ADC071F3E4A288EE521E927EEB9F5DE84E1065BFC2846FB61DA58A1AFF85"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/tool.md",
+    "sha256": "090737625EB73D624A09ABAC7C9F08CC85D1BFB0AF1C05B6E84978B6CC0FBEE1"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/vector-db-reader.md",
+    "sha256": "1D522DE422279B89127774CEE3773CCAD0B4420FAB13868B2A0443B01C8D8D7D"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/vector-db-writer.md",
+    "sha256": "3793BB4FA8B2658B1B6D1CA02B66BB1C4F534E8BC0AAD7C2D5490DD4B8598ACC"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/wait.md",
+    "sha256": "1D7E23D830B1FF3327D232DFD51806667E380559DFDBD0FECB8CCABC3A2D91B7"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/while-loop.md",
+    "sha256": "81DF8E6893B79DADDB7D477E2DBE0717EF117922EE3F34C48BE14D1B5F6327D3"
+  },
+  {
+    "path": ".agents/skills/aistudio/references/prompts/workflow-node-prompts/workflow.md",
+    "sha256": "A501B38FA3B955B4D03F51D579A19F223A649C6254150879BD374DA9ED1F7566"
+  },
+  {
+    "path": ".agents/skills/aistudio/resources/app-samples/index.md",
+    "sha256": "0136302ECD4F1965BC22DE41CF98C8B9883C8432F3A6A0766A2B4942B15A0AF8"
+  },
+  {
+    "path": ".agents/skills/aistudio/scripts/aistudio.js",
+    "sha256": "48AC5D9BABB98C940CAEBC904993F78E602C3DD0CE03EA61B2BAEEBC78292FAD"
+  },
+  {
+    "path": ".agents/skills/aistudio-apps-succession-management/SKILL.md",
+    "sha256": "C8ADD5BB8D623D8DBFFA56BD007050ADFF088F57557A41F0255C28B4E5245A31"
+  },
+  {
+    "path": ".agents/skills/aistudio-apps-succession-management/agents/openai.yaml",
+    "sha256": "99C8DFD854B0DEC78C951FFC17A516D1C674B0A00A230B51948385EFDE331B83"
+  },
+  {
+    "path": ".agents/skills/aistudio-apps-succession-management/references/aistudio-handoff.md",
+    "sha256": "0E79369C6A8313667636BCB2B0CA49C75DFA2068EC218B1F90A4C016B83FE1AE"
+  },
+  {
+    "path": ".agents/skills/aistudio-apps-succession-management/references/guardrails.md",
+    "sha256": "FBA5F67300A5F704D3568728D71884D2236A43CAE157ADF7AF2FDC452F954793"
+  },
+  {
+    "path": ".agents/skills/aistudio-apps-succession-management/references/workflow.md",
+    "sha256": "8D62C97D0F739054E2B42F816C3EE668A53FF9363C629CB4706D6E9D04DB16B0"
+  },
+  {
+    "path": ".agents/skills/aistudio-apps-warehouse-operations-shortages/SKILL.md",
+    "sha256": "1D25A4F12C70654D5417B4B9AE6C5FCD399D0798C6155253ABA9E965F957CF4C"
+  },
+  {
+    "path": ".agents/skills/aistudio-apps-warehouse-operations-shortages/agents/openai.yaml",
+    "sha256": "01AB68928F5A29D84825CADE25B456FE534E326BFFF26AF060F1BFA0E9B13DBC"
+  },
+  {
+    "path": ".agents/skills/aistudio-apps-warehouse-operations-shortages/references/aistudio-handoff.md",
+    "sha256": "153FC06BB14C7BAAD801CB136CE251703CA91ACB14A25E690ED0C4021C0D8700"
+  },
+  {
+    "path": ".agents/skills/aistudio-apps-warehouse-operations-shortages/references/guardrails.md",
+    "sha256": "3D2C9098CD1E19A6B4C6E696B5DC8F5D5F48DD0FB80C0C8C34FCB7E80C2656DA"
+  },
+  {
+    "path": ".agents/skills/aistudio-apps-warehouse-operations-shortages/references/workflow.md",
+    "sha256": "71530D09BB5246C68BBD475C9E2864D8BE67480A077D3D65E930348081562C63"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/apps/xx_fin_gl_ledger_insights_workspace.app",
+    "sha256": "F4781138D8743A9764630E6481231A63CB67A25884F250F7623F26808876C2C5"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_accountingexceptions_lookup.bo",
+    "sha256": "25EE2F5B55AECCCBD3B033E9F796F72EF24DF224D9F99B4ECD7BB4897D1410C2"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_accountingexceptionsessjobs.bo",
+    "sha256": "CF7C386249025872A720584020413731D52039AB6B55C2CF5558237F7B247C3A"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_chart_of_accounts_details.bo",
+    "sha256": "EEE7BC5A86BD86F05C7DF8ABCE10964B83C2F60E7B92BCFC7EE2F7F473F733F2"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_execute_boss_query_helper.bo",
+    "sha256": "362FB90321159EE11B5C411D27DE78EB87010ED92F963D07BFBEF096DABB06BB"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_fetch_accounting_periods.bo",
+    "sha256": "F247E3CDC662D6699B75019C6808867E605C6941516A4D1A92764B2C54C05E6F"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_general_standard_lookups.bo",
+    "sha256": "11E213F96AE08902D3930776CB05A8746FB2AD7C5A75FE4C104556F2FBC86CA9"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_insight_review_actions.bo",
+    "sha256": "DFED7FD73756E65292B5874054CC6F6DF8EAD7196C343F138CBD0C798E991B46"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_insights_list.bo",
+    "sha256": "FC9BBB0522AC3745A6667DB963A28AF2C8C7C3AE08A614FF6006637C9E6BC717"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_ledger_lookup.bo",
+    "sha256": "E04C9487FCF76BAD3826FD32DE0DAE76685931C4BD5B928A9A86EDDEF38BE75F"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_ledger_open_periods.bo",
+    "sha256": "99C59BBBB63EBF423076CD1A86FCDFF46491AF4954E86D64FF6D2FD6FFC214F2"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_ledger_preference_settings.bo",
+    "sha256": "8AB89CA0155F58859CF738B6BCA9968A09009A37AC4E1CDBB2189E4317824E93"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_period_expression_resolver.bo",
+    "sha256": "C47899CDEF4757FF3E803CA82BF13D274BD7E5E9F6B02CAB76A00B022FE03157"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_period_status.bo",
+    "sha256": "D6FB02A2F7B69B67DEF1C6D701C5441D2916AEC118A47EE0EAAC7D92871A7220"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/businessObjects/README.md",
+    "sha256": "F70466ABBA093B901CAD2A7059F1BDAE45B148C3EA80F449D015A51CA7BE7D47"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/workflows/README.md",
+    "sha256": "7334433275475D2EAB9B9C3514B51653E8CE980094668623FC46BF7DABA11C3E"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_accounting_exceptions_workflow.wf",
+    "sha256": "3A4EE4E8E91BDF041FDBD9215E783FDE71F66157735A2D5A4815409C6562B177"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_clearing_account_workflow.wf",
+    "sha256": "F4C2A496DF92E4DD9CFBB5D4BE7FA3237F915BD4095637BE76FCCEABE29CCEC7"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_controls_compliance_workflow.wf",
+    "sha256": "851D8198C949B4CD234F4D8C2F1FD298539A3E8FB1350388F2D38901664F3F2C"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_ledger_closure_workflow.wf",
+    "sha256": "763526F8CD38698E77FD3AFC69FC094E89ACC58DBAA6FEE0C28EFB47CCBA0D72"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_ledger_insights_context_workflow.wf",
+    "sha256": "CB00BFDC4CEF3D2CF4A4A15884EB4EF320B56C209F645118E7429637283E28C5"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_ledger_insights_query_helper.wf",
+    "sha256": "7425EBFF3B72C00A2D0AA4C3F267A1AD9E2A23BCBC7B9D6915210ED433357A6A"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_ledger_switch_workflow.wf",
+    "sha256": "823C9D4EE8E8A751D5E230DBA5B76EDB1E31EF3583744F2971F6B389157CB39D"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_period_status_workflow.wf",
+    "sha256": "E77BDA929E11903B926694ACC536B88805EB901D6A26219A12CF6613D0E10224"
+  },
+  {
+    "path": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_variance_analysis_workflow.wf",
+    "sha256": "2978C22E7D6ABF451E5F76DA2FB0A9AA96C1B9351CB578518EBBA5529390733E"
+  },
+  {
+    "path": "aiapps/hcm/absences/businessObjects/ora_hcm_absence_absence_details.bo",
+    "sha256": "5C9D0B73DCDD980CAB257E196A77B00AD9837009264EB9919B94920CEF37EFF2"
+  },
+  {
+    "path": "aiapps/hcm/absences/businessObjects/README.md",
+    "sha256": "F5D9AF0FA67C9755E8EC9CC46D7AC65BD41CD03D94967D7557F0FF91073CEDA0"
+  },
+  {
+    "path": "aiapps/hcm/absences/workflows/README.md",
+    "sha256": "ECEA6397442674F0C227FF89B78D12F0BD3FE254B1D367E64DBECD2901D5326C"
+  },
+  {
+    "path": "aiapps/hcm/absences/workflows/xx_my_upcoming_absences.wf",
+    "sha256": "DD38A94459365983B53CD1820BEB059ADD2D72E0BCA4D0DCFA1BB84E5099B967"
+  },
+  {
+    "path": "aiapps/hcm/absences/workflows/xx_team_upcoming_absences.wf",
+    "sha256": "D0CA856FFC398B326B60DE961F1BBC6C0118AACA976748D781B847851B7965A8"
+  },
+  {
+    "path": "aiapps/hcm/benefits/businessObjects/ora_hcm_benefits_personlifeeventstatusaggregations.bo",
+    "sha256": "BF00B5671E200FA09F3DF77FC14D4D8D950FE1410C75E7EE3E4FA5CED1A14371"
+  },
+  {
+    "path": "aiapps/hcm/benefits/businessObjects/README.md",
+    "sha256": "213319FC3D48D31EC91F0D70FBA56FB086BB1E905D83FAEDC109E54CDC563A3A"
+  },
+  {
+    "path": "aiapps/hcm/benefits/workflows/README.md",
+    "sha256": "5B4BA2C32B1A766286857DFE3CFA4B8E0BCF6D76B80FE991A315C6A1177DE60E"
+  },
+  {
+    "path": "aiapps/hcm/benefits/workflows/xx_benefits_person_life_events.wf",
+    "sha256": "8513B89F2ABB8CAD8C7D26D4C3365EBEAA416C88CAD390DE1561C5EF5647955B"
+  },
+  {
+    "path": "aiapps/hcm/career-development/businessObjects/ora_hcm_careerdevelopment_career_development_skills_lookup.bo",
+    "sha256": "89773129B4785B65FF2AB0846D31FF1A4B2EC8A4C00F4CAB00544E16A07691E5"
+  },
+  {
+    "path": "aiapps/hcm/career-development/businessObjects/README.md",
+    "sha256": "36DD50574C59B3E9DD32CA9C79032B07C59EC0E5C57DAEBA65E57A3AA4A684C2"
+  },
+  {
+    "path": "aiapps/hcm/career-development/workflows/README.md",
+    "sha256": "9576918A182D5E961AAE34F89F7904F81A283467DDA69BF92A8A9233133DBF80"
+  },
+  {
+    "path": "aiapps/hcm/career-development/workflows/xx_my_career_development_tasks.wf",
+    "sha256": "9A02C5727FACA7B0287C50EF9D0A89F54E11FE957A2C324ADB8136F8896B0462"
+  },
+  {
+    "path": "aiapps/hcm/career-development/workflows/xx_my_current_learning.wf",
+    "sha256": "96D7BFE66F08245FD6845EEF94DE0541B911F43383FCD7C0FB5362E26E1A2B28"
+  },
+  {
+    "path": "aiapps/hcm/career-development/workflows/xx_my_self_developing_skills.wf",
+    "sha256": "71E50A4449BF596A48284D9F39F00D71E9FD3B12E1B97695D8A4F7F6C914FD78"
+  },
+  {
+    "path": "aiapps/hcm/compensation/businessObjects/ora_hcm_comp_myteamcompensationdetailslookup.bo",
+    "sha256": "D7E2622982898C606B304B5A4ABBDF3B1A48967F6EC31924622581181001018F"
+  },
+  {
+    "path": "aiapps/hcm/compensation/businessObjects/README.md",
+    "sha256": "522496E8567E8981ABD812286ECA2B778B5CF4ACE936083D08911BBF1CB252AD"
+  },
+  {
+    "path": "aiapps/hcm/compensation/workflows/README.md",
+    "sha256": "A7192AD6713D62A87AE0DEB6B64AB560E52D5E9FAEFF41C1FB72E2A236C3482D"
+  },
+  {
+    "path": "aiapps/hcm/compensation/workflows/xx_direct_reports_below_compa_ratio.wf",
+    "sha256": "09A087833A2F4D20E152163702A97414B76CE1EAC3484C35450B2116B87FE8C8"
+  },
+  {
+    "path": "aiapps/hcm/compensation/workflows/xx_team_overdue_salary_reviews.wf",
+    "sha256": "99D01339C8A01F2C071601F4E3A0FBE582E2D65EAC378914FF29C69561677746"
+  },
+  {
+    "path": "aiapps/hcm/employment/apps/xx_attrition_analysis.app",
+    "sha256": "1F76BF5276F1D01A2268A824B0FBCF5E1C7AAA5AAF0D16D4E94A4A3C363430F0"
+  },
+  {
+    "path": "aiapps/hcm/employment/businessObjects/ora_hcm_globalhuma_xx_hr_attrition_all_reports.bo",
+    "sha256": "3D55B58A9B5554EEA7A9D900A00F071B097CDE7BD199615ED5439AA59E1A15F3"
+  },
+  {
+    "path": "aiapps/hcm/employment/businessObjects/ora_hcm_globalhuma_xx_hr_attrition_analytic_reports.bo",
+    "sha256": "F975CBD6633812C840C82B3F199B6414A365F38DD889AC96999154FD0D57E98A"
+  },
+  {
+    "path": "aiapps/hcm/employment/businessObjects/ora_hcm_globalhuma_xx_hr_attrition_person_searches.bo",
+    "sha256": "4761B91A151ABE93A16C32AEA0E401319CA242A07110D97022D50520D64AF87A"
+  },
+  {
+    "path": "aiapps/hcm/employment/businessObjects/README.md",
+    "sha256": "166034C1585EF2BB9357B54FF77C500138EDAA2B0C5699A8447F51C46BC3BD12"
+  },
+  {
+    "path": "aiapps/hcm/employment/deeplinks/ora_hcm_globalhuma_xx_hrattritionactiondeeplink.dl",
+    "sha256": "BBD26602BECF4E99173355ABB6C79C695188704846D576B4306272E511C470DC"
+  },
+  {
+    "path": "aiapps/hcm/employment/tools/xx_hr_attrition_action_tool.tool",
+    "sha256": "3718398685BE2EEEBF3AB0624FF557377361098A5550715B5EAF286B4D917958"
+  },
+  {
+    "path": "aiapps/hcm/employment/workflows/README.md",
+    "sha256": "0C853C8C852781B68ECB81ACA487B9FC4BDE803ACA91C028D178EF6421CDB01E"
+  },
+  {
+    "path": "aiapps/hcm/employment/workflows/xx_attrition_advisor.wf",
+    "sha256": "36C737C809AD4A883082A8E254800FCA319DC0376218753CFBB960A74B0D1EC6"
+  },
+  {
+    "path": "aiapps/hcm/employment/workflows/xx_attrition_summary.wf",
+    "sha256": "580512659CB2E66E472FB671B94EA518958C11A7B2782D8BD5915F1383373DF0"
+  },
+  {
+    "path": "aiapps/hcm/employment/workflows/xx_smartanswersexpert.wf",
+    "sha256": "970C9D263121E9EDFF39957E38B61CA9F89C49F1A9C86AAFBDFD9DD2135016EF"
+  },
+  {
+    "path": "aiapps/hcm/employment/workflows/xx_top_leavers_by_job.wf",
+    "sha256": "DCEADF4C03F97242E8AB0A69B853C974D13F30C88C7E8B5F45E2CB908E03EDBD"
+  },
+  {
+    "path": "aiapps/hcm/employment/workflows/xx_top_leavers_by_location.wf",
+    "sha256": "18DC6555CFCB1DAB2F5501AC3ECB8203A6E4C3A786F80D99D2FE253E8414A70F"
+  },
+  {
+    "path": "aiapps/hcm/employment/workflows/xx_top_leavers_by_manager.wf",
+    "sha256": "8ADAA1116529EFE87885F155E7C09FEB0891D6884125098964735270F6C24B62"
+  },
+  {
+    "path": "aiapps/hcm/employment/workflows/xx_top_leavers_by_reason.wf",
+    "sha256": "3E86558D596F35D82DAC5BA313AF37C9AF709CA75A95B7803F74D5D462F61830"
+  },
+  {
+    "path": "aiapps/hcm/employment/workflows/xx_top_leavers_by_tenure.wf",
+    "sha256": "F2C0224DDF2BB54F21679FBADB334B81CF0354699F003E60AF6732701B609D9A"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_documentrecordsexpiringlookup.bo",
+    "sha256": "CA430E34B3597B3DC08AFA4FAF5E26DD9378C2375F6379EAA2600BFCFEB54DD9"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_employmentghr.bo",
+    "sha256": "E0F589BFBD6E25C65F3638489D31197A9847044BAD370B6A1DEC4331E0ECCEAE"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_persondirectreportsV2.bo",
+    "sha256": "F3A99B6C28F10116660588BFE3A65081DB3D3AB6A505EA1B161E9AD1CD2F28B9"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_personnotesv2.bo",
+    "sha256": "BFB7079E7FF65BB1D589D875D1B1D64FD8DF08AE0364AECC7F2340232A9F49CB"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_personsearchesghr.bo",
+    "sha256": "888F0434240DB4363CA7E46630838B14B70715C748C1665C3192133E68C72BB9"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_representativessearchv2.bo",
+    "sha256": "98B921E5456ED6C098FF37D6ACD0F82A096D3A1B5C726E7C3D206910EF9B7483"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_talentpersonprofiles.bo",
+    "sha256": "9A8E9EF436F4025EA3A4C112DB97BB19914C6FF83E7FA0E0B4BDB335D682562D"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_workerdetailsghr.bo",
+    "sha256": "9622D485CA72A2162E725CEDCEEDA1CABD91146A11BF1467C491F34E2E4E188C"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/businessObjects/README.md",
+    "sha256": "0F89B78A2A485F6B301C07A770176880427FAE1E82C95E15F149B89323325B2E"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/README.md",
+    "sha256": "B08681B8906D148DE9496C902D6513484904EE51CED38881EECBD7260C4FE7C1"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_team_document_records_near_expiry.wf",
+    "sha256": "1D195ACF80E754A559987529E364741F46475BEC2D25807F355FB2EC805262B0"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_aboutme.wf",
+    "sha256": "8F319956650FD533B471378062A6B179C37B1EB7ECD09953E431B9F7D812E9ED"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_address_by_person.wf",
+    "sha256": "282633A2242FCAC1AF7C867AD4976B59F0AA2B3455BCDB2AD3BCE6BDE7977496"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_asg_history_by_person.wf",
+    "sha256": "C505B8DBA03159AC04D8CDD622CE06E21035B990292820418A14802B9E0E2455"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_asg_info_by_person.wf",
+    "sha256": "B54810E14CD83D3B4D4605A1786F297DA64D3F75257A14D5E12B8971B12964FF"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_card.wf",
+    "sha256": "97F3F380E49774FCFE71DF6A4BD44735EDE9D3708A123E84A4AAE090A5B763C7"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_bu.wf",
+    "sha256": "1D3902E53169F79F2A1760F7C86571E0CEE26CEBC70A4D76E7FB29636A277DC8"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_dept.wf",
+    "sha256": "2D7ABFEC467DBF10E46C70F46178E978691A04696DDEFF38129640AE678BDB9A"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_grd.wf",
+    "sha256": "FCCF47BB359F1C9294CE1CB41E61525372AAD776268E2481A826D0460D5CD752"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_job.wf",
+    "sha256": "6027CC7B8AF97E9D6F32B5D244EC03FE7DC2B5A56D0B951E94CF86DA5900ABAD"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_location.wf",
+    "sha256": "249535EF63D241AE623EC897FD37C8E2258A9A85ED75DB4D25C79019B248C37A"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_pos.wf",
+    "sha256": "2692E6656A1B57A089FC90313081F10FFA8DA9B58B449B8436CC84611908DD6E"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_workstr.wf",
+    "sha256": "A1CE56B4AA1390D71F04523FC891138EC800B843E78202B52A0233042FB26C47"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_grd_by_mgr.wf",
+    "sha256": "D499012E0C445CF500D8D7768FE43D0CAF3409D4D3822B9A65B55202EF22A676"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_job_by_mgr.wf",
+    "sha256": "CE372E6368A19E1B76305BD30B417A3B5FDE8874467E866C13268F4AFA3E20B9"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_loc_by_mgr.wf",
+    "sha256": "80C8377E9D6B73D3718597A9954C30D0C65B407C8D3ACB12DAF19862A25E7093"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_directs.wf",
+    "sha256": "9CED63FA9AA95FB29670715BA2D2BBD05A2E34B4161F0D740941DDCB12BC95B3"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_document_record_expiry.wf",
+    "sha256": "BB1225D8C0FEDBD128EFA7FFC9F57879DF1707373093843AC9B3310294EBCB76"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_email_by_person.wf",
+    "sha256": "1A265274DCA77CEC9C9215FA64BADE1BAF25D4B2875DA3C6C48A4ADED15CABB7"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_bu.wf",
+    "sha256": "80568E4F17A7AFB6493CBF624427C8C24D8C292E44CFAB9072429AD1912CD569"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_dept.wf",
+    "sha256": "F9A42B2A347C80B0259110888EE03355B0848D6FE6BF851A069D35C6A95449E3"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_grd.wf",
+    "sha256": "C589624A531E01BC44B2524A0A8075BAB66178F7F55AC2BE3F7B5B8062D7E60A"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_job.wf",
+    "sha256": "6BCB5245F9F950162E85C2F908F2EAF39460C257B88453E4AD3A95B738377F01"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_location.wf",
+    "sha256": "0AB10FC4F4615B32BA87E7CC9A139107BF7ECF1018927B8DBF182EF0A7EC3321"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_pos.wf",
+    "sha256": "4A75C26E03348FA15DB06674BE14AB34426402D52976DF4C2AB69B469CB4E11A"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_workstr.wf",
+    "sha256": "0BDF203B2F7529A094823709F9AAD770BC0B5A8630EA14D7B53684DE9C63A638"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_manager_by_person.wf",
+    "sha256": "132AFCB43E4BA378E971ACB64E246B55E77F732AE23C877A4DD959BA74487850"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_mngr_hierarchy_by_person.wf",
+    "sha256": "B6EDE3F76EED5D6150A9FA3CC9DA2A5EEF3D405D40511F770CD2BF91E9005A01"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_phone_by_person.wf",
+    "sha256": "0C7DA84645E444A7BEB37F7567DAFC675C7B3F0FF2F10F2DDF761AC70C2110CC"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_reps.wf",
+    "sha256": "6F8F8E90B5DEF7E2F208C90D7B88C0AB7ABDEE3F835047A8D6BAF560B230343F"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_search.wf",
+    "sha256": "81D3F1EA1E23FB0D84D029D95947B5C8852A87CF37A90E6C20363379936704BB"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_senr_info_by_mgr.wf",
+    "sha256": "960E22C3C0B9750F374F462525D22B467F5632C259DD8048EE3DEA91827D9D88"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_senr_info_by_person.wf",
+    "sha256": "FCC7E6E189B72FF4F12B578E34C686BFA9ADD0B76E5E8BC8B80E0B53F1F55BAC"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_srch_by_name.wf",
+    "sha256": "A45710DE8581C6B3345BD0B95A0C2A904517BFA8C41C1D8729B0EADBCD788338"
+  },
+  {
+    "path": "aiapps/hcm/human-resources/workflows/xx_worker_wrk_loc_weather.wf",
+    "sha256": "FD3483405BCFEED759A50F2267FC51D94E129C46EE8E5541B6A25D3F11D3BD1A"
+  },
+  {
+    "path": "aiapps/hcm/journeys/apps/README.md",
+    "sha256": "221175F503FC169CC8CEA13603A5C1F19C8B68AD7D76092A9192FDB8B1649329"
+  },
+  {
+    "path": "aiapps/hcm/journeys/businessObjects/ora_hcm_journeys_careerdevelopmentjourneysearchesandaggregation.bo",
+    "sha256": "5BFA4498546F045675C632B68A08D6F3F16B0E7999C7293A189BA3CE0D265FFE"
+  },
+  {
+    "path": "aiapps/hcm/journeys/businessObjects/ora_hcm_journeys_journeysearchesandaggregation.bo",
+    "sha256": "A05CAFBA3861919299B21565B47FFB2E4FCF64398DC16B175D46867A407C242C"
+  },
+  {
+    "path": "aiapps/hcm/journeys/businessObjects/ora_hcm_journeys_xx_collectiontaskaggregations.bo",
+    "sha256": "505CCE5DA39B17CB890BD42D85D8790CD5772489966C415C241C67C89D43D362"
+  },
+  {
+    "path": "aiapps/hcm/journeys/businessObjects/ora_hcm_journeys_xx_journeytaskcollections.bo",
+    "sha256": "5EB2BB4EB81E567FECCBFB85F411A85D6B15487A2F1D8D91CEFE4FC28D2F4031"
+  },
+  {
+    "path": "aiapps/hcm/journeys/businessObjects/README.md",
+    "sha256": "3F32AF0C0180FCFE66509F9408BACCEA985094AC7128065B3FE6DE2071E8FE6E"
+  },
+  {
+    "path": "aiapps/hcm/journeys/workflows/README.md",
+    "sha256": "801674C94ED82A3E7E5AD7D0D14C9269574F7CA331A0FADD34A6FEEE9D392382"
+  },
+  {
+    "path": "aiapps/hcm/journeys/workflows/xx_add_to_collection.wf",
+    "sha256": "7546A4291374A951BABD5EFABE7A163D6C9452FF631AB3EED4BD7F7BD6F7896D"
+  },
+  {
+    "path": "aiapps/hcm/journeys/workflows/xx_display_insights.wf",
+    "sha256": "CC7A4E04161DD876F92C0DFBEA9A65792416A57535AF99F1CBA60CC5152CF0CF"
+  },
+  {
+    "path": "aiapps/hcm/journeys/workflows/xx_overdue_onboarding_team_journeys_tasks.wf",
+    "sha256": "70DED9CDF5CE96D19BE87B733134651DCE6EBC12CBD101CCF0F75F630CE5061A"
+  },
+  {
+    "path": "aiapps/hcm/journeys/workflows/xx_overdue_onboarding_team_journeys.wf",
+    "sha256": "2D43E762A9258D753152128CA554FA29DCFF45C5B14A4483A66FEE403A79DB31"
+  },
+  {
+    "path": "aiapps/hcm/journeys/workflows/xx_overdue_team_journey_tasks.wf",
+    "sha256": "5819DF5835C86B64BB9B521762203AEC6E9B443FEC60743C9AEBAFE54FD1DA9C"
+  },
+  {
+    "path": "aiapps/hcm/journeys/workflows/xx_overdue_team_journeys.wf",
+    "sha256": "EC1B2D3EEFAA5D79366F10D8BFD579D143370FC88857532221C8E7787CE250BA"
+  },
+  {
+    "path": "aiapps/hcm/journeys/workflows/xx_team_journey_aggregation_chart.wf",
+    "sha256": "336CD0B5C0C18172CDE3299AAE38492C9EA8E276F9BBE43E318067D68DF23949"
+  },
+  {
+    "path": "aiapps/hcm/learning/businessObjects/ora_hcm_learning_learning_searches.bo",
+    "sha256": "D12BBB9480DC8E5561D2803417D2AAFDBC8ED36FC606FCC73913DF7E9549BB68"
+  },
+  {
+    "path": "aiapps/hcm/learning/businessObjects/ora_hcm_learning_learningitemsearcheslookup.bo",
+    "sha256": "6708BB99B0E27D176933D313616EF428311203DB7E30FB0D7562E97C29DFB723"
+  },
+  {
+    "path": "aiapps/hcm/learning/businessObjects/ora_hcm_learning_wlfrecommendationaggregationslookup.bo",
+    "sha256": "FF16F29769C7D189F2280E06EB9F314E700029E129BA588F74BAE2C198200AA9"
+  },
+  {
+    "path": "aiapps/hcm/learning/businessObjects/README.md",
+    "sha256": "2D53E6F6C0B9881D6B37AC02978DEDDCC1517292D50C6191E4BD36772349CB71"
+  },
+  {
+    "path": "aiapps/hcm/learning/workflows/README.md",
+    "sha256": "DCA3C6A8A5BCFD844372D75EC3BBA28E4B7E7C6A4C6B92374054B8454AB33226"
+  },
+  {
+    "path": "aiapps/hcm/learning/workflows/xx_team_learning_item_recommendations.wf",
+    "sha256": "9DAC87CC0AAD335B48948C825204571645951BB4FF33DBB210D96DDA9CD031B7"
+  },
+  {
+    "path": "aiapps/hcm/learning/workflows/xx_team_learning_status.wf",
+    "sha256": "C47D2DDE57EFEFB2736E9E7D9AB3019126843B442C377E67EF79AF62AF2F5A0F"
+  },
+  {
+    "path": "aiapps/hcm/learning/workflows/xx_team_overdue_learners.wf",
+    "sha256": "4F0FB5DB3F884A6D76BD9B2E8F1D5013BD7ED4EA4D43DFCCAFB5F6A6FC1E6FF3"
+  },
+  {
+    "path": "aiapps/hcm/learning/workflows/xx_team_overdue_learning_items.wf",
+    "sha256": "593059F302677AAE6ED948A9A867DE4D11B5B763506A357E230D1163E36F7B62"
+  },
+  {
+    "path": "aiapps/hcm/recruiting/businessObjects/ora_hcm_recruiting_expiredjobrequisitions.bo",
+    "sha256": "926EAD00E839C3D5B1F0CD13F838D898789BAC627ACB3AEE40EB586355FA6D6D"
+  },
+  {
+    "path": "aiapps/hcm/recruiting/businessObjects/README.md",
+    "sha256": "C3969E57D1B71BB2FA9363D5DB106A60112F0EA24608F454F0CF1553306D99FE"
+  },
+  {
+    "path": "aiapps/hcm/recruiting/workflows/README.md",
+    "sha256": "D7670630F28B57509A6390CDF162FF80FAFFDDB43A992E8F18132A768ADF98E3"
+  },
+  {
+    "path": "aiapps/hcm/recruiting/workflows/xx_expired_job_requisition_assistant.wf",
+    "sha256": "55D8B637FC8BC84B60CCBB5AD941AAFC5DA919CED149EDDD649911B2E05EF5AA"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/README.md",
+    "sha256": "CB93E3680C76C157BD54417D6B3E026E4E4DE1861D863F939C6BA7926B0227DA"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/apps/xx_person_succession_readiness_workspace.app",
+    "sha256": "056A99317FBE0D08900CADCF97F813AE54F1CA33CEB6CAC5280451D96FA4E8F3"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/apps/xx_succession_readiness_workspace.app",
+    "sha256": "1136E5F928A35C9C0C61F5B2B9CD4C8CA692D1C243874782BDCEB2C7287808FD"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/businessObjects/ora_hcm_empinfo_directreportscontext.bo",
+    "sha256": "876A25AF0A2704DE2A908D96EE910F5C8BBFDFCF9E68F3D4CF57283057101758"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/businessObjects/ora_hcm_empinfo_employeetreecontext.bo",
+    "sha256": "891E951132FE8EA6F19762AED3092D8FEFC6579A264F286C94E387DFBA88D01D"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/businessObjects/ora_hcm_empinfo_loggedinemployeecontext.bo",
+    "sha256": "0EBD2FEBC43379C04B9345BF1F51EE05780B74EF8FA89F07DDA8420BB37F792C"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/businessObjects/ora_hcm_empinfo_successionorgchartscreatepayloadinfo.bo",
+    "sha256": "354E44DAE5325F21A091EA7BAC902EE4CABD0659E8DE16A0C1D0A346DDACB28D"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/businessObjects/ora_hcm_globalpayr_compensationdetailslookup.bo",
+    "sha256": "367EC0CEF875DFC4D235B8C1B46610E0FD0C717812516DCFA0290416AF5F6B7D"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/businessObjects/ora_hcm_succession_successiondetailslookup.bo",
+    "sha256": "9AC7A5F6F0CC59B3F89885039263DF06260FDEF7D4F2CFD8D007B3BF70F745DF"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/businessObjects/ora_hcm_succession_successionplancreation.bo",
+    "sha256": "1A421EF64F7EE96A651A7EE03B48201F95E03A9F5111AE1C533141E2350962AC"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/businessObjects/ora_hcm_talent_jobcompetencieslookup.bo",
+    "sha256": "7973D88F2562AB3EE29C4FC8C829358D010087DA2CD2A1A2F59F574C7229D637"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/businessObjects/ora_hcm_talent_skillsandcompetencieslookup.bo",
+    "sha256": "CA8463F176EBCA8D03B6B6A6A2E97D2A9C7B2990F7B1A605ACB137920409EFD8"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/businessObjects/ora_hcm_talent_talentratingslookup.bo",
+    "sha256": "AC35249AB88167F1A3504917B6F7B80776A6E4536262B410A0B1DADF2940CE84"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/businessObjects/README.md",
+    "sha256": "1B6A60AFC874BEFF7846BFAC358658B45153DE916C21441C73DC40F53E3CD46B"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/README.md",
+    "sha256": "C992033C833F14F2F33B1C65245CF56115B7C6B2597D5B5508EEF3A7FABC66AA"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_bottom_talent_advisor.wf",
+    "sha256": "ED7D3928AE49FECFBBA53BC9B44F7A8F5A8FCCCDFAA94C2A0A4210F4CCAEA9C2"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_compensation_advisor.wf",
+    "sha256": "95C4041FC7A2AFADDFFBE87B1778369724FFD60D22D8160C62A449018D9CB34F"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_compensation_analysis.wf",
+    "sha256": "21C07330F91BF46C2E2723346CD349B23B0A49D61E15ED3CF6DF75049D79035E"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_fetch_compensation_details.wf",
+    "sha256": "45CEC78334E1E7FA24E4C9EC27F695085A0A0F662DA0236A57F34FFA6434296E"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_fetch_performers.wf",
+    "sha256": "68C90CEF12A6753EBD5A67D6DC74DF73384184AB34E359C6AD8B4CB2D1095DD4"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_impact_of_loss_advisor.wf",
+    "sha256": "AD86D47CAE437F417A819AD38E5FE45FE408C3008DCBBD464CCAEA2FE15A9E0F"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_impact_of_loss_analysis.wf",
+    "sha256": "FAED8FE6F791D7ABB353B966D97832E5091F38AE90FB633F4A7909712688047E"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_potential_succession_candidates.wf",
+    "sha256": "78160170731D3A1FFB0FDB2F725A6C063638D5E3828DF014134B808719C36805"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_risk_of_loss_advisor.wf",
+    "sha256": "AB752E1F5A2B8BA5DFA3D02C5EBFBE4C832AB03F01059C9C256E79AC3BDF97EE"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_risk_of_loss_analysis.wf",
+    "sha256": "15595AB7413EEE375618E3B76A0746C6EF6F901463695FFB14D8C71F80A7509A"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_succession_analysis.wf",
+    "sha256": "CD4AD649D0DE67CE65AD8DEFF55BD175864D0503DD2C65F8100EC50DBB9F9CB0"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_succession_overview_advisor.wf",
+    "sha256": "F1F573A7681B47F1604B6F5597ECFA8482F9FC34FA6DAADE4E5963AD6B0B3051"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_succession_overview_agent_team.wf",
+    "sha256": "87325EC4811D3856E2F0EA6E362BB4D6F8F9B479AC167AF38800C84F8F9923EB"
+  },
+  {
+    "path": "aiapps/hcm/succession-management/workflows/xx_top_talent_advisor.wf",
+    "sha256": "9AB3C47CC24B3132D111C9A61E5D3AFE81AADE562F57E082EA77D65CA2BC8CAA"
+  },
+  {
+    "path": "aiapps/hcm/talent-management/businessObjects/ora_hcm_talent_teamunscheduledcheckin.bo",
+    "sha256": "05A007ABFBDEAA1CB1FB03119D37CF1213E3B5FF02608131F213685AB535342B"
+  },
+  {
+    "path": "aiapps/hcm/talent-management/businessObjects/README.md",
+    "sha256": "468577CEDCF94FED9CCCDF8B03C085A1B21B4DE4C352F2AE30950DA55424D9E2"
+  },
+  {
+    "path": "aiapps/hcm/talent-management/workflows/README.md",
+    "sha256": "794B3E39FD44E3B5B293AB3F7C7A687CDEC746F7113DDE5AF7C12C911826AB5B"
+  },
+  {
+    "path": "aiapps/hcm/talent-management/workflows/xx_team_unscheduled_check_ins.wf",
+    "sha256": "8AED4EF0F2A67B7B80340D28AD3EE358CBB24FBE46840B9C1B7BC56CB93A10EC"
+  },
+  {
+    "path": "aiapps/hcm/time-and-labor/businessObjects/ora_hcm_timeandlab_missingpersontimecardaggregationslookup.bo",
+    "sha256": "D9441059E6494C0E4F640897CB90E24D41827C5B9EB0A7810C5E164DB5E9762F"
+  },
+  {
+    "path": "aiapps/hcm/time-and-labor/businessObjects/ora_hcm_timeandlab_timecardexceptionaggregationslookup.bo",
+    "sha256": "E73663FD2FC7E13BD7E06F39C4B6509A8B081480D85452942A9288469392D079"
+  },
+  {
+    "path": "aiapps/hcm/time-and-labor/businessObjects/ora_hcm_timeandlab_timecardexceptionsearcheslookup.bo",
+    "sha256": "E615409F49F293A70B4544B0936BDE372A6BCCBDB15200FD09DF819597475391"
+  },
+  {
+    "path": "aiapps/hcm/time-and-labor/businessObjects/ora_hcm_timeandlab_timecardsearcheslookup.bo",
+    "sha256": "8C02FFED4EFC1D46363A949CE8DA506BE2B69ADABEF0B6F6E9214833D2E3F3EC"
+  },
+  {
+    "path": "aiapps/hcm/time-and-labor/businessObjects/ora_hcm_timeandlab_timecardstatusaggregationslookup.bo",
+    "sha256": "BB809E1CBF0DB02D2BE9030835C520E77B5C3F095C62392EAE96311AEA817AD1"
+  },
+  {
+    "path": "aiapps/hcm/time-and-labor/businessObjects/README.md",
+    "sha256": "1C85871DC9856E4E02FE35F5AFDD6BE44FAF87983F98273F32D9ED0736D98A1E"
+  },
+  {
+    "path": "aiapps/hcm/time-and-labor/workflows/README.md",
+    "sha256": "914B64D223100C6FD46D8452C1FC0A57E79B5ECDBC99939840553ED0CAE712D1"
+  },
+  {
+    "path": "aiapps/hcm/time-and-labor/workflows/xx_team_under_reported_timecards.wf",
+    "sha256": "B64FB6251CF4E3F0218E1B6A701AAE16718075690A338727EFF5B6B7305BECF5"
+  },
+  {
+    "path": "aiapps/hcm/time-and-labor/workflows/xx_time_card_exception_summary.wf",
+    "sha256": "2DCE2800744E4B5B5223E65523BA442C410997B57AF48065C9750EECEE6BD109"
+  },
+  {
+    "path": "aiapps/hcm/time-and-labor/workflows/xx_time_card_status_aggregation.wf",
+    "sha256": "870D5BCAFFF0E8263BF45EBBB32F970DF6EE489E09839EB8F9FD431AF5F6DA74"
+  },
+  {
+    "path": "aiapps/prc/purchasing/businessObjects/ora_prc_purchasing_xx_compliancechecklist.bo",
+    "sha256": "B073F469AB8C4E49B419B35AA7C4D5C732422BDFE3D313C2F1B1F19B871D59A5"
+  },
+  {
+    "path": "aiapps/prc/purchasing/businessObjects/ora_prc_purchasing_xx_managepurchaseagreements.bo",
+    "sha256": "6A8F1A3CFE02F0395C9CBA699711000D45452F309433B1B791CEA63EE20D3BC5"
+  },
+  {
+    "path": "aiapps/prc/purchasing/businessObjects/ora_prc_purchasing_xx_managepurchaseorders.bo",
+    "sha256": "11D86F85691EC55385619777FC2DE94DAEA106BF4BAE6BEEAA6A725BAC47CCF8"
+  },
+  {
+    "path": "aiapps/prc/purchasing/businessObjects/ora_prc_purchasing_xx_myrequisitions.bo",
+    "sha256": "C613AA061311DD91D142ADCA5E0A20E1C8267B86F645365585B4658A30C7A9D9"
+  },
+  {
+    "path": "aiapps/prc/purchasing/businessObjects/README.md",
+    "sha256": "B84DD5EA0961D45839F37A5A60F379DB87CF099E0C1D250C226287A52E34CEDB"
+  },
+  {
+    "path": "aiapps/prc/purchasing/workflows/README.md",
+    "sha256": "BB82BD0B1D7E28E1CA5FED92BBE4DB92E3C139CA10A423F0A63C198DD1AE6A2B"
+  },
+  {
+    "path": "aiapps/prc/purchasing/workflows/xx_compliance_checklist.wf",
+    "sha256": "A0EB80A0944B948ACB4121E06E6C3F9243933152DE0B7A98F7855A6386990E83"
+  },
+  {
+    "path": "aiapps/prc/purchasing/workflows/xx_my_recent_purchase_requisitions.wf",
+    "sha256": "126C0ACC9B0C66912B03BCE9A4E114C14EB061E968B77714CE52B5BA3E13FF1E"
+  },
+  {
+    "path": "aiapps/prc/purchasing/workflows/xx_purchase_agreement_status_distribution.wf",
+    "sha256": "B91896651B26D13887D664890CC6802D3D5C31971796965301226DCD2D5764A6"
+  },
+  {
+    "path": "aiapps/prc/purchasing/workflows/xx_purchase_agreements.wf",
+    "sha256": "72546A12B5B375DB01477AD5DA52FA194A35137FD361CE2A0AC15989B590C54E"
+  },
+  {
+    "path": "aiapps/prc/purchasing/workflows/xx_purchase_order_status_distribution.wf",
+    "sha256": "D1C533ED04EF3C0E37112ABCF778C7BDA178D150047FE91408A29EEC5834D167"
+  },
+  {
+    "path": "aiapps/prc/purchasing/workflows/xx_purchase_orders.wf",
+    "sha256": "17EC134CD7268DAB408BD1FF89B9F20AD90CAFA23077BEF9C2BA15AED1BA2E16"
+  },
+  {
+    "path": "aiapps/scm/cost-management/businessObjects/ora_scm_costmanage_inventoryvaluationcomparisonadvisor.bo",
+    "sha256": "BC37751AA3509BC95707A6D2AF45FCB30C498345F28DEA808E00D6CAB6941BF8"
+  },
+  {
+    "path": "aiapps/scm/cost-management/businessObjects/ora_scm_costmanage_periodvalidationexceptionsadvisor.bo",
+    "sha256": "800D26ED63EC3FA92478F1CD0A5995CF23A307A115334D4480C318D7D5A8383F"
+  },
+  {
+    "path": "aiapps/scm/cost-management/businessObjects/README.md",
+    "sha256": "9D4FB7563F51055857AEDB0AA94E344860EC8BE54A298FFAE6886E2D7893D0FD"
+  },
+  {
+    "path": "aiapps/scm/cost-management/workflows/README.md",
+    "sha256": "5B8E6DF01E301E006D229DA050518EE205617DE0BDBC1F0866474192D3821F38"
+  },
+  {
+    "path": "aiapps/scm/cost-management/workflows/xx_inventory_valuation_comparison_advisor.wf",
+    "sha256": "664BCED63BB27DC4B8AF8AE7ADD9F0D3B32CA02DB08CF7E7A6F60B0D9C5754F6"
+  },
+  {
+    "path": "aiapps/scm/cost-management/workflows/xx_period_validation_exceptions_advisor.wf",
+    "sha256": "0A272868E76FE5A3A240DB80E93B900A6124DA58A5647F364B6D2C4081822EF2"
+  },
+  {
+    "path": "aiapps/scm/inventory/businessObjects/ora_scm_inventorym_expiring_inventory_lots.bo",
+    "sha256": "8971CA1899C6D1A8978029D59DBBDB12BDECACFC4A2F0FD90D0C49AE0E211313"
+  },
+  {
+    "path": "aiapps/scm/inventory/businessObjects/ora_scm_inventorym_fetchesdefaulto.bo",
+    "sha256": "0A38FF5DD7ADC155E21525CA3A353E4A69C38C62C3E3E1B51AD108C97CE75DB5"
+  },
+  {
+    "path": "aiapps/scm/inventory/businessObjects/ora_scm_inventorym_fetchitemsawaitinginspection.bo",
+    "sha256": "D3A53483851F4D2F8EFB98292A190D640104A2CADF6720681096303105DC0D73"
+  },
+  {
+    "path": "aiapps/scm/inventory/businessObjects/ora_scm_inventorym_inventoryorganizationslist.bo",
+    "sha256": "599AAB42478043CCCF6C35D154225F5521E5993C8B5CA5FC4709C561E1F8D329"
+  },
+  {
+    "path": "aiapps/scm/inventory/businessObjects/ora_scm_inventorym_retrieveitemstockoutsubinventorylocationsbo.bo",
+    "sha256": "873501B4E516ADE766E05D76679386F3127EA111B6813FC4A2447121DBE22EDF"
+  },
+  {
+    "path": "aiapps/scm/inventory/businessObjects/ora_scm_inventorym_transfer_lots_to_stockout_subinventories.bo",
+    "sha256": "C2D106BC33126B507DB6F84768E3BB30D045339E36BD39C8E762DB9FF8AF3545"
+  },
+  {
+    "path": "aiapps/scm/inventory/businessObjects/README.md",
+    "sha256": "D4284E3F4A5FDFC05560205EABC09A3A7C76B1FAFD70E246016AC91DE34124C9"
+  },
+  {
+    "path": "aiapps/scm/inventory/workflows/README.md",
+    "sha256": "217D3E8B38143051D78C73634EE876F118CE192EEA9F14E21CBAE4F3998748D2"
+  },
+  {
+    "path": "aiapps/scm/inventory/workflows/xx_inventory_context_switcher.wf",
+    "sha256": "41AC7BEA7A6CEDA22F574C3414A397E66635C457B46C2A7B7A2DA0458BA6FC1B"
+  },
+  {
+    "path": "aiapps/scm/inventory/workflows/xx_inventory_item_shortage_monitor.wf",
+    "sha256": "91FB9ED92BDD471A8D34668E5EF8A7F3123F061EEF12E7EBB835D3ECD3026B39"
+  },
+  {
+    "path": "aiapps/scm/inventory/workflows/xx_inventory_item_stockout_monitor.wf",
+    "sha256": "50445D71A4E30C49762527E0D203D0B05E3583A8BE5365410F24ADCCCB2B4827"
+  },
+  {
+    "path": "aiapps/scm/maintenance/businessObjects/ora_scm_inventory_shortage_uom.bo",
+    "sha256": "04A87872D0211368D9A0B2C73067E7D2F0D359B07201E61544911CAC40F7A255"
+  },
+  {
+    "path": "aiapps/scm/maintenance/businessObjects/ora_scm_maintenanc_materialitemassignmentsummaries.bo",
+    "sha256": "2F0D31EFD89FBEFB57E1D39B29CD88F293D6E84B72CDDFC8DAD62CF14023170F"
+  },
+  {
+    "path": "aiapps/scm/maintenance/businessObjects/ora_scm_maintenanc_materialworkorderassignmentsequences.bo",
+    "sha256": "D702AD2E69F582DB20C11E2433B3405E0F2EF4ED486110EA889FC3C23C54C399"
+  },
+  {
+    "path": "aiapps/scm/maintenance/businessObjects/ora_scm_maintenance_wo_searches.bo",
+    "sha256": "B083DC278DDF4C2B37AB9498A7A0321E2BE9C4E88122A37ABADFDE8FCE22C459"
+  },
+  {
+    "path": "aiapps/scm/maintenance/businessObjects/ora_scm_manufacturing_prod_expv2.bo",
+    "sha256": "DFCAD83D38DFCA66CBA3370A2ED4C417EE24FA6AE729955A075F7AF9117D9B25"
+  },
+  {
+    "path": "aiapps/scm/maintenance/businessObjects/ora_scm_productman_onhandqtybyitem.bo",
+    "sha256": "BBB74A09BA0E1A52B479DAE8B9CC6017B376A004B6764D3A9FB8BF5583B7A8D6"
+  },
+  {
+    "path": "aiapps/scm/maintenance/businessObjects/README.md",
+    "sha256": "DBCDB352274EA7973B9EE8196AE06EF33C8CC6C8A12E491DD9927905B1D9A1A2"
+  },
+  {
+    "path": "aiapps/scm/maintenance/workflows/README.md",
+    "sha256": "C33D860CEEFDEEB67A3CD0BEDAB19E89F4128E4CE2068CB4B2EF9F4A0363A5A1"
+  },
+  {
+    "path": "aiapps/scm/maintenance/workflows/xx_maintenance_material_readiness.wf",
+    "sha256": "3F034D803185505F940D11DEEE8CA33B224F6B98D306237B89F4EE141DA66E44"
+  },
+  {
+    "path": "aiapps/scm/maintenance/workflows/xx_maintenance_material_shortage.wf",
+    "sha256": "B038B62C4A821EDD4BF33B298C354C05F53561165604584DB76B8E49F7D7626B"
+  },
+  {
+    "path": "aiapps/scm/maintenance/workflows/xx_work_execution_exceptions.wf",
+    "sha256": "74B1040EA99F4842CBC39D6045915D493ED7BB8DADB444B90D9CFC3BBBEC0004"
+  },
+  {
+    "path": "aiapps/scm/maintenance/workflows/xx_work_order_current.wf",
+    "sha256": "2AFF5F2595C9009AAD0245DFA40DE806547A9BEF6C078773A43A5B2F78DEF779"
+  },
+  {
+    "path": "aiapps/scm/maintenance/workflows/xx_work_order_future.wf",
+    "sha256": "57B03D30F861762C907FBFE596D34C73AC0FA957DE06FE8D23FDBA752F7914F8"
+  },
+  {
+    "path": "aiapps/scm/maintenance/workflows/xx_work_order_overdue.wf",
+    "sha256": "2355E227F153D14A43702B42402BA53BEA860D57EF1E332CD9633EC609F559EB"
+  },
+  {
+    "path": "docs/agent-app-build-install-packet.zip",
+    "sha256": "C72C2B6C5AE1246E408128E394DBCD8395DCB08C651FEC818588D570427CBF6B"
+  },
+  {
+    "path": "extensions/aistudio-extension.vsix",
+    "sha256": "438C242D81E416FF608BD4C0E855E2B59A5AF6829C5ECD32CEA8F93B496607CE"
+  },
+  {
+    "path": "extensions/aistudio-extension.zip",
+    "sha256": "24EE44D63F9F8AA77C40BEF967A5D71E36177AF5A259F31E8EB0D377C672BB71"
+  },
+  {
+    "path": "extensions/aistudio-extension.zip.sha256",
+    "sha256": "BF44FECD3F52AF1C0C5896BF1859B9CD5ED1B18AE0ED01C74C3EF05878174D26"
+  },
+  {
+    "path": "how-to/how-to-configure-oauth-for-aistudio-cli.md",
+    "sha256": "B17ADDCAC3D38F82BB052F312176DA5BFFCC39705BAF8A33C1C0A453EECC48A0"
+  },
+  {
+    "path": "how-to/how-to-uptake-incremental-updates.md",
+    "sha256": "D79C51192A9B060312EF8D6141E9BE9785B51BA7034E5E3E6714E1FD4E890057"
+  },
+  {
+    "path": "how-to/install-and-use-fusion-ai-studio-CLI_vscode-codex.md",
+    "sha256": "F5B39378ECC5C5F88FB294575F107FDF6015331FF584C2F688C495E745A9D01E"
+  }
+]

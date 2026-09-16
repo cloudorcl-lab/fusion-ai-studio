@@ -1,0 +1,12 @@
+{
+  "targetRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "head": "3f4a1e380df7be2d30e6b21e6223aec4f97ef1cf",
+  "status": [
+    " M docs/agent-app-build-install-packet.zip",
+    "?? fusion-ai-studio-1.code-workspace"
+  ],
+  "zipSha256": "C72C2B6C5AE1246E408128E394DBCD8395DCB08C651FEC818588D570427CBF6B",
+  "sourceCommit": "fc2dce08c39dcbbe6fe447e71d50a97bdb15feea",
+  "recordedUtc": "2026-09-16T18:50:38.5606485Z"
+}

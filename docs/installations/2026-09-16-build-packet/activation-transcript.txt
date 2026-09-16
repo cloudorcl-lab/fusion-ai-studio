@@ -1,0 +1,32 @@
+**********************
+PowerShell transcript start
+Start time: 20260916135630
+Username: P520\dasu
+RunAs User: P520\dasu
+Configuration Name: 
+Machine: P520 (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -File C:\Users\dasu\AppData\Local\Temp\fusion-ai-studio-1-install-20260916-134951\Activate-Packet.ps1
+Process ID: 32512
+PSVersion: 7.6.6
+PSEdition: Core
+GitCommitId: 7.6.6
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\docs\installations\2026-09-16-build-packet\activation-transcript.txt
+add: AGENTS.md
+replace: .agents/skills/aistudio/SKILL.md
+replace: .agents/skills/aistudio/scripts/aistudio.js
+add: docs/handoffs/ACTIVE_HANDOFF.md
+add: docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md
+add: scripts/verify-living-build-contract.ps1
+add: tests/test-living-build-contract.ps1
+Verified backup: C:\Users\dasu\Documents\Codex-Install-Backups\fusion-ai-studio-1-20260916-134951
+**********************
+PowerShell transcript end
+End time: 20260916135630
+**********************
