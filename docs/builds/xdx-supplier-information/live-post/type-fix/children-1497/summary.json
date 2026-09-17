@@ -1,0 +1,29 @@
+{
+  "scope": "Three requested source API child GETs; parent proof reused from ../new-after.json; no child creation.",
+  "supplierNumber": "1497",
+  "cases": [
+    {
+      "count": 0,
+      "evidence": "ListSupplierAddresses.json",
+      "elapsedSeconds": 3.9905841,
+      "hasMore": false,
+      "function": "ListSupplierAddresses"
+    },
+    {
+      "count": 0,
+      "evidence": "ListSupplierSites.json",
+      "elapsedSeconds": 3.9864974,
+      "hasMore": false,
+      "function": "ListSupplierSites"
+    },
+    {
+      "count": 0,
+      "evidence": "ListSupplierContacts.json",
+      "elapsedSeconds": 2.1113081,
+      "hasMore": false,
+      "function": "ListSupplierContacts"
+    }
+  ],
+  "supplierId": "300000333813822",
+  "status": "PASS"
+}

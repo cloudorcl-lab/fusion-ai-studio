@@ -33,12 +33,12 @@ Run from the repository root:
 ```powershell
 node .agents/skills/aistudio/scripts/aistudio.js validate-bo --file src/businessObjects/xdx_supplier_information.bo
 pwsh -NoProfile -File tests/test-xdx-supplier-information.ps1
-pwsh -NoProfile -File scripts/verify-living-build-contract.ps1
+pwsh -NoProfile -File scripts/verify-living-build-contract.ps1 -PolicyOnly
 ```
 
 Live REST samples were fetched through the bundled CLI under CASEY.BROWN on eqih-dev21. All seven functions have source-API evidence. The extension passed 16 live cases for Office Depot: one profile and complete collections of 25 addresses, 24 sites and 13 contacts; ID and text filtering, offset paging and empty results passed. Full response data and input values are saved in [live-details](live-details/), with [core summary](live-details/summary.json) and [text-filter summary](live-details/text-filter-summary.json). This proves local function templates against that source API and identity. The BO has not been saved to a remote DRAFT or published; workflow/agent invocation has not been tested.
 
-To repeat the 13 core detail checks with an authenticated CLI connection, run `pwsh -NoProfile -File tests/test-xdx-supplier-details-live.ps1 -SupplierId 300000047507596 -SupplierName 'Office Depot'`. This overwrites the saved core evidence. The default preserves the BO; `-UpdateExamples` refreshes its baseline examples. The bounded test requires each collection to fit within 25 rows and fails otherwise. The three additional text-filter checks are captured separately with exact inputs and responses; they are not part of that runner.
+Reuse retained successful receipts. Only rerun live checks for an authorized changed requirement or invalidated result, using a new `-EvidenceDirectory`; never overwrite retained evidence or refresh immutable first-success examples. The bounded runner requires each collection to fit within 25 rows and fails otherwise. Its text-filter cases are retained separately. The policy-only command above does not authorize work or prove session readiness; follow the canonical Startup/Closeout session receipt gates.
 
 Child query contracts: [addresses](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-get.html), [sites](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-get.html), and [contacts](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-contacts-get.html).
 
@@ -49,3 +49,5 @@ Sources: [Suppliers REST API](https://docs.oracle.com/en/cloud/saas/procurement/
 CreateSupplier, CreateSupplierAddress, CreateSupplierSite and CreateSupplierContact extend the same BO. Each uses explicit field parameters; children also require suppliers_Id. Inputs have no sample defaults. See [POST verification and field contract](xdx_supplier_post_review.md) for original evidence and [SupplierType correction](xdx_supplier_type_correction.md) for the superseding fix. SupplierType is restored as a required create input; supplier 1496 was repaired and verified. Fresh POST supplier 1497 persisted SupplierType=Supplier and SupplierTypeCode=SUPPLIER; all four intended business fields passed read-back.
 
 Run local persisted-evidence checks with: pwsh -NoProfile -File tests/test-xdx-supplier-post-evidence.ps1. Do not repeat creates to refresh receipts.
+
+Supplier 1497 child verification: [addresses](live-post/type-fix/children-1497/ListSupplierAddresses.json), [sites](live-post/type-fix/children-1497/ListSupplierSites.json), [contacts](live-post/type-fix/children-1497/ListSupplierContacts.json). Each returned count 0 and hasMore false. Children created during the original POST cycle belong to 1496, not 1497. See the [compliance audit](xdx_compliance_audit.md) and [time tracker](time-tracker.md) for reconciled status and limits.

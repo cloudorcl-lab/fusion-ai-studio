@@ -47,7 +47,7 @@ Before declaring the build complete:
 The tracked root `AGENTS.md` is the automatic Codex entrypoint for this repository. It requires every new Codex session to review `docs/handoffs/ACTIVE_HANDOFF.md` first, and every build, deployment, test cycle, substantial modification, and architecture task to read this playbook and run:
 
 ```powershell
-pwsh -NoProfile -File scripts/verify-living-build-contract.ps1
+pwsh -NoProfile -File scripts/verify-living-build-contract.ps1 -PolicyOnly
 ```
 
 The AI Studio skill repeats the same short gate as a route-specific safeguard. Both entrypoints link here; this file remains the only owner of the detailed lifecycle.
@@ -61,6 +61,47 @@ Worktree propagation follows Git history:
 5. Treat a worktree that lacks the governance commit or fails the verifier as not ready to build.
 
 At closeout, rerun the verifier after integrating lessons and dependency cleanup. The handoff commit is the invocation mechanism for the next build; uncommitted guidance in another checkout does not propagate.
+
+### Session conformance receipt
+
+MUST apply in every new session and each material task, including repairs and governance work. Policy-only PASS proves instructions are installed, not followed. The default verifier rejects missing session evidence. Repository instructions are the invocation mechanism, not a runtime hook: the checker cannot force a client to invoke it or prove comprehension.
+
+1. Read the handoff first and capture UTC task start in the active time tracker, then read this entire playbook, registry and selected object references. Recover a late start from session metadata and label it retrospective; never backdate an acknowledgement.
+2. Put the actual session/task ID, scope, authority, selected references/releases, intended outcomes and required evidence in the existing intake/learning register. Reconcile the previous delivery tail and open actions when resuming.
+3. Save a task-specific `xdx_session_<task-id>.json` in the active build directory using the schema below. This is evidence, not a second handoff/playbook. Include reviewed SHA-256 hashes for AGENTS.md, active handoff, canonical playbook, object registry and each selected object reference. Hashes detect drift; they do not prove reading.
+4. Cover eight obligation groups exactly once: `learning` (Instruction 1), `intake` (Gate 0 and all intake contracts), `authority` (Gate 1), `objects` (Gate 2 and registry), `verification` (applicable Gates 3–9 and QA), `timing` (time/token controls), `cleanup` (dependency hygiene), `delivery` (Gate 10 and all Definition of Done categories). Explicitly explain excluded activities. Startup permits `planned`; `pass` requires existing local evidence paths; `not-applicable` requires a scope reason. Do not omit app-specific gates silently or run unrelated app tests.
+5. Run Startup before substantive work. Update corrections, phase checkpoints and approval waits as they occur. If scope or reviewed guidance changes, reconcile the record and rerun the gate.
+6. Before completion, execute missed authorized work or record the blocker. Independently compare intended requirements with evidence, including fields/tasks absent from test inputs. Reconcile every current-status document, label historical results, complete dependency decisions and timing, then set `phase` to `Closeout`. Refresh hashes only after reviewing changed guidance. Closeout rejects planned/unresolved obligations. A blocked handoff must state incomplete; never manufacture PASS.
+
+```powershell
+pwsh -NoProfile -File scripts/verify-living-build-contract.ps1 -SessionRecord docs/builds/<build-id>/xdx_session_<task-id>.json -SessionId <current-task-id> -Phase Startup
+pwsh -NoProfile -File scripts/verify-living-build-contract.ps1 -SessionRecord docs/builds/<build-id>/xdx_session_<task-id>.json -SessionId <current-task-id> -Phase Closeout
+```
+
+Receipt schema: paths are repository-relative except `repoRoot`; timestamps end in `Z`. Expand `reads`, `objectReferences` and `checks` to their complete inventories.
+
+```json
+{
+  "schemaVersion": 1,
+  "sessionId": "<actual task ID>",
+  "repoRoot": "<resolved checkout root>",
+  "branch": "<actual branch>",
+  "phase": "Startup",
+  "startedUtc": "<observed UTC>",
+  "checkpointUtc": "<observed UTC>",
+  "reads": [{"path": "<reviewed path>", "sha256": "<SHA-256>"}],
+  "reviewNotes": "<applied lessons and retrospective limits>",
+  "objectReferences": [{"path": "<selected reference>", "release": "<release>"}],
+  "noObjectsReason": "<needed only when no objects are in scope>",
+  "learningRegister": "docs/builds/<build-id>/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/<build-id>/time-tracker.md",
+  "checks": [{"id": "<obligation group>", "rule": "<canonical section>", "status": "planned", "reason": "<disposition>", "evidence": []}],
+  "unresolved": ["<required action>"],
+  "metrics": {"tokens": "<usage or reason unavailable>", "aiUnits": "<usage or reason unavailable>", "timingGaps": "<gaps and cutoff>"}
+}
+```
+
+Verify policy and session tests, including stale identity/content, missing timing/obligations and incomplete closeout. Keep one canonical lifecycle owner. A checker cannot guarantee compliance by an agent that ignores the entrypoint.
 
 ## Document identity
 
@@ -858,7 +899,7 @@ TEST AND EFFICIENCY CONTRACT
 - Time, token, and AI Unit targets: <TABLE>
 
 EXECUTION RULES
-1. Learn first and open the learning register.
+1. Read the active handoff first, learn and open the learning register/time tracker, then pass the current Session conformance receipt Startup gate.
 2. Validate source contracts before AI Studio authoring.
 3. Reconcile environment identity and exact artifact codes before mutation.
 4. Build data dependencies before specialists.
@@ -869,7 +910,7 @@ EXECUTION RULES
 9. Repair only the classified responsible owner and rerun only the affected test.
 10. Run one canonical configured-mode suite per completed workflow, resolve judges without rerunning, then complete app sync and final summary.
 11. Optimize models only after correctness.
-12. Learn and clean before completion: merge lifecycle lessons into the canonical playbook, merge operation-level lessons into the matching object references, retire duplicate or stale guidance, reconcile dependencies, update the relevant change records, and verify the documentation owners.
+12. Learn and clean before completion: merge lifecycle lessons into the canonical playbook, merge operation-level lessons into the matching object references, retire duplicate or stale guidance, reconcile dependencies and current-status records, update the relevant change records, and pass the current Session conformance receipt Closeout gate.
 
 STOP CONDITIONS
 - User stop.
@@ -915,14 +956,14 @@ After every update:
 10. Confirm the learning and hand-forward gate appears in the build sequence and Definition of Done.
 11. Review the diff to ensure the update refined one canonical owner rather than adding another.
 12. Confirm detailed GET, POST, request/response JSON, schema, filter, paging and object-key guidance remains in `docs/lessons/objects/` rather than this lifecycle playbook.
-12. Record the verification result in the active build handoff.
+13. Record the verification result in the active build handoff.
 
 ## Change log
 
-2026-09-17: Partial Supplier POST timing prompted the mandatory continuous-timing and retrospective-reconciliation policy, covering whole tasks, gaps, overlaps and delivery checkpoints. The verifier rejects removal of the policy heading, tested by a negative fixture. Task-level completeness also requires evidence review.
-
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
+| 2026-09-17 | Supplier compliance audit | Require a current session conformance receipt with reviewed hashes, all obligation dispositions, timing and evidence; distinguish policy installation from execution; reject incomplete closeout. Reconcile status documents and outstanding requested activities. | Policy/session positive and negative checks; missed evidence recovery; scoped delivery review. |
+| 2026-09-17 | Partial Supplier POST timing | Require continuous timing, retrospective recovery, gap/overlap accounting and delivery checkpoints. | Initial heading-only test was insufficient; session conformance now checks actual tracker and dispositions. |
 | 2026-09-17 | SupplierType omission after CLI placeholder false positive | Prohibit silently dropping source-backed business fields to satisfy tools; require intended-field coverage plus persisted-value verification and repair/help escalation. | CLI regression must fail before repair and pass afterward; restored BO field and live correction/create/read-back required. |
 | 2026-09-17 | Explicit user request during Supplier POST testing | Set terse, direct, professional communication as the canonical default without reducing quality gates. | Scoped document and living-build checks. |
 | 2026-09-17 | User clarification in Supplier POST extension; object registry policy history | Made local-sample suitability, documentation cross-reference and provisional-assumption decisions explicit write-test intake evidence; detailed policy remains in the object registry. | Living-build verifier and scoped documentation checks required; no runtime success inferred from guidance. |

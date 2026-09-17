@@ -13,7 +13,7 @@ function Invoke-ContractVerifier {
     [string] $TargetRoot
   )
 
-  $output = & pwsh -NoProfile -File $verifierPath -RepoRoot $TargetRoot 2>&1
+  $output = & pwsh -NoProfile -File $verifierPath -RepoRoot $TargetRoot -PolicyOnly 2>&1
   return [pscustomobject]@{
     ExitCode = $LASTEXITCODE
     Output = @($output) -join "`n"
@@ -30,6 +30,10 @@ if (-not $positive.Output.Contains('Living build contract: PASS')) {
 }
 
 $rootAgents = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'AGENTS.md')
+$missingSessionOutput = @(& pwsh -NoProfile -File $verifierPath 2>&1) -join "`n"
+if ($LASTEXITCODE -eq 0 -or -not $missingSessionOutput.Contains('SessionRecord and SessionId are required')) { throw 'Default verifier accepted missing session evidence.' }
+$bypassOutput = @(& pwsh -NoProfile -File $verifierPath -PolicyOnly -SessionId fake 2>&1) -join "`n"
+if ($LASTEXITCODE -eq 0 -or -not $bypassOutput.Contains('cannot bypass a session check')) { throw 'PolicyOnly bypassed session validation.' }
 foreach ($required in @(
   'docs/lessons/objects/README.md',
   'XDX_<UPPER_SNAKE_CASE>',
@@ -59,6 +63,12 @@ Copy-Item -LiteralPath (Join-Path $repoRoot 'docs/handoffs/ACTIVE_HANDOFF.md') -
 Copy-Item -LiteralPath (Join-Path $repoRoot '.agents/skills/aistudio/SKILL.md') -Destination (Join-Path $handoffFixtureRoot '.agents/skills/aistudio/SKILL.md')
 
 try {
+  $sessionAgentsPath = Join-Path $handoffFixtureRoot 'AGENTS.md'
+  $sessionAgentsOriginal = Get-Content -LiteralPath $sessionAgentsPath -Raw
+  Set-Content -LiteralPath $sessionAgentsPath -Value $sessionAgentsOriginal.Replace('-SessionRecord', '-OldRecord') -NoNewline
+  $sessionNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
+  if ($sessionNegative.ExitCode -eq 0 -or -not $sessionNegative.Output.Contains('must invoke session conformance')) { throw 'Missing startup session gate was not rejected.' }
+  Set-Content -LiteralPath $sessionAgentsPath -Value $sessionAgentsOriginal -NoNewline
   $timingPolicyPath = Join-Path $handoffFixtureRoot 'docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md'
   $timingPolicyOriginal = Get-Content -LiteralPath $timingPolicyPath -Raw
   Set-Content -LiteralPath $timingPolicyPath -Value $timingPolicyOriginal.Replace('### MUST: continuous timing and reconciliation', '### Timing') -NoNewline

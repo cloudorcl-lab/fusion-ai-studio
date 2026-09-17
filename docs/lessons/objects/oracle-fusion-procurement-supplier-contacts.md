@@ -112,6 +112,10 @@ The create operation ID is `create_suppliers-contacts`. The 26C OpenAPI request 
 
 In this test, omitting `InactiveDate` succeeded despite the 26C schema required/non-null annotations. The documented example also omits it. This is tenant-scoped observed behavior, not a universal schema correction. Email was supplied as a non-deliverable test destination; its omission was not tested. No user-account creation was requested.
 
+### Requiredness and uniqueness review
+
+The retained [26C schema](../../builds/xdx-supplier-information/live-post/contact-documentation.json) marks `Email` (maximum 320 characters) and `InactiveDate` required; the omission evidence above applies only to InactiveDate. FirstName and LastName each allow 150 characters and are nullable in that schema. Reviewed descriptions do not establish uniqueness for names, email or a composite key: scope and normalization remain unresolved. The successful test used distinctive XDX names and a non-operational destination under a new supplier. No duplicate-contact or account-provisioning test was performed. Revalidate before relying on contact uniqueness.
+
 ### Candidate request JSON
 
 ```json
@@ -137,6 +141,7 @@ Use an explicitly approved test identity derived from the requested basis and a 
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-17 | Retained 26C schema reviewed during compliance audit | Recorded name/email limits and unresolved uniqueness scope separately from omission evidence; no new POST. |
 | 2026-09-17 | Authorized POST request/response and parent-scoped GET under live-post | Confirmed omitted generated IDs for the tested tenant and recorded POST/schema limits; immutable first-success GET sample preserved. |
 | 2026-09-17 | First retained `ListSupplierContacts` BO response | Added immutable first-success GET excerpt and link to complete JSON; later GET evidence does not refresh it. |
 | 2026-09-17 | Parent-scoped live GET receipts and Oracle 26C GET/POST documentation | Established Supplier Contacts as the owner for GET filtering/paging, response JSON, create-request JSON, personal-data handling and the unresolved `Email`/`InactiveDate` vendor-example discrepancy. |

@@ -1,5 +1,9 @@
 param(
-  [string] $RepoRoot = (Split-Path -Parent $PSScriptRoot)
+  [string] $RepoRoot = (Split-Path -Parent $PSScriptRoot),
+  [switch] $PolicyOnly,
+  [string] $SessionRecord,
+  [string] $SessionId,
+  [ValidateSet('Startup', 'Closeout')][string] $Phase = 'Startup'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -58,6 +62,9 @@ $objectRegistryContent = Read-RequiredFile -Path $objectRegistryPath -Label 'Obj
 $skillContent = Read-RequiredFile -Path $skillPath -Label 'AI Studio skill entrypoint'
 
 if ($agentsContent) {
+  foreach ($marker in @('-SessionRecord', '-SessionId', '-Phase Closeout')) {
+    if (-not $agentsContent.Contains($marker)) { Add-ContractFailure "Root AGENTS.md must invoke session conformance: $marker" }
+  }
   if ((Get-FirstLevelTwoHeading -Content $agentsContent) -notmatch '^## Instruction 1\s+[—-]\s+Learn') {
     Add-ContractFailure 'Learning must be the first actionable section in root AGENTS.md.'
   }
@@ -100,6 +107,9 @@ if (-not (Test-Path -LiteralPath $activeHandoffPath -PathType Leaf)) {
 }
 
 if ($playbookContent) {
+  if (-not $playbookContent.Contains('### Session conformance receipt')) {
+    Add-ContractFailure 'Canonical session conformance receipt procedure is missing.'
+  }
   if ($playbookContent -notmatch '(?m)^### MUST: continuous timing and reconciliation\s*$') {
     Add-ContractFailure 'The canonical playbook must retain the mandatory timing reconciliation policy.'
   }
@@ -164,6 +174,7 @@ if ($objectRegistryContent) {
 }
 
 if ($skillContent) {
+  if (-not $skillContent.Contains('-SessionRecord')) { Add-ContractFailure 'AI Studio skill must invoke session conformance.' }
   $startHereFirstItem = [regex]::Match($skillContent, '(?ms)^## Start Here\s*\r?\n\s*1\.\s+([^\r\n]+)')
   if (-not $startHereFirstItem.Success) {
     Add-ContractFailure 'The AI Studio skill must have a numbered Start Here sequence.'
@@ -214,7 +225,21 @@ if ($failures.Count -gt 0) {
   exit 1
 }
 
+if ($PolicyOnly -and ($SessionRecord -or $SessionId)) {
+  Write-Output 'Living build contract: FAIL - PolicyOnly cannot bypass a session check.'
+  exit 1
+}
+if (-not $PolicyOnly) {
+  if (-not $SessionRecord -or -not $SessionId) {
+    Write-Output 'Living build contract: FAIL - SessionRecord and SessionId are required; PolicyOnly checks policy structure, not session readiness.'
+    exit 1
+  }
+  & node (Join-Path $PSScriptRoot 'verify-session-compliance.cjs') $repoRootPath $SessionRecord $SessionId $Phase
+  if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+}
+
 Write-Output 'Living build contract: PASS'
+if ($PolicyOnly) { Write-Output '- Policy structure only; session execution has not been verified.' }
 Write-Output "- Canonical owner: $canonicalRelativePath"
 Write-Output "- Object learning registry: $objectRegistryRelativePath"
 Write-Output '- Startup entrypoint: AGENTS.md'

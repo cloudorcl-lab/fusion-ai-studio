@@ -8,7 +8,7 @@ For every build, deployment, test cycle, substantial modification, or architectu
 
 1. Read the entire canonical playbook at `docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md` before planning or modifying artifacts.
 2. Read `docs/lessons/objects/README.md`, inventory every parent and child resource object in scope, and read each matching object reference.
-3. Run `pwsh -NoProfile -File scripts/verify-living-build-contract.ps1` from the repository root. If it fails, repair the startup contract before continuing.
+3. Run `pwsh -NoProfile -File scripts/verify-living-build-contract.ps1 -PolicyOnly` from the repository root. This verifies installed policy, not session conformance. Before substantive work, follow the canonical **Session conformance receipt** procedure: record the current session/task identity, reviewed document hashes, applicable obligations and timing; run the verifier with `-SessionRecord`, `-SessionId` and `-Phase Startup`. Repeat for each new session or material task, then use `-Phase Closeout` before completion. A missing/stale receipt or failed gate blocks substantive work except repairing the gate itself.
 4. Create or update the active build's learning register and intake contract as defined by the playbook, including the selected object references and documentation releases.
 5. Apply relevant evidence-backed lessons during design, implementation, testing, deployment, and optimization.
 6. After the first successful BO GET for a resource object, add its result once to that object's reference if no sample exists. Never rerun or refresh routine GETs for documentation.
@@ -54,7 +54,7 @@ Before declaring a build complete:
 2. Refine or retire overlapping, obsolete, contradictory, and app-specific main-path guidance instead of adding duplicate owners.
 3. Reconcile dependencies, stale references, scratch artifacts, tests, and configuration according to the playbook's cleanup boundaries.
 4. Update the playbook or object-reference change record as applicable, or explicitly record that the evidence review produced no reusable change.
-5. Run `pwsh -NoProfile -File scripts/verify-living-build-contract.ps1` and all artifact-specific verification required by the playbook.
+5. Run `pwsh -NoProfile -File scripts/verify-living-build-contract.ps1 -SessionRecord <repository-relative-record> -SessionId <current-task-id> -Phase Closeout` and all artifact-specific verification required by the playbook. A policy-only PASS is never completion evidence.
 6. Commit the governance and lesson changes to the branch handed to the next build so future worktrees inherit them.
 
 The build is not complete while this gate or any applicable playbook Definition of Done item remains open.

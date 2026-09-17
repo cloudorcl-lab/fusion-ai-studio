@@ -1,10 +1,16 @@
 # XDX Supplier Information - intake and learning register
 
+## Compliance audit intake — 2026-09-17
+
+Current user scope: explain missed canonical activities, repair session conformance and perform outstanding authorized activities. Read the full canonical and object registry; selected all four existing Oracle 26C / API 11.13.18.05 supplier references. Policy verifier passes. Governance/evidence repair on the existing branch; no new app/worktree or model. Preserve unrelated ZIP/environment/workspace changes. Reuse successful POST and parent GET evidence; perform only the missing 1497 child GETs requested earlier. No create, PATCH, delete, remote BO save, publication or push is needed. Acceptance: requirement-by-requirement audit, reconciled current status, missing child receipts, session-specific positive/negative gate checks, timing through delivery, links and scoped local commit. Current task id and start are in time-tracker.md.
+
 ## Timing recovery checkpoint — 2026-09-17
 
 User requested recovering all available timing and making tracking a MUST. Scope: local session metadata and retained receipt review only. Recovered 11 completed root turns, per-inference tokens, inter-turn gaps and 38 BO invocation receipts in [time-tracker.md](time-tracker.md) and its JSON ledger. No live operations repeated. Missing active-labor subdivisions, child-agent runtime, older-session intervals and AI Units are explicitly unavailable. Runtime counters and timestamp boundaries reconcile separately; receipt time is not added to turn time. Canonical timing controls and Definition of Done now require continuous capture, recovery and delivery reconciliation. Living-build positive/negative regression passes, including removal of the mandatory policy. No object-operation lesson changed; this is lifecycle guidance. Preserve unrelated changes and hand forward a scoped local commit.
 
 ## Approved scope
+
+Historical original GET scope follows. Later POST, correction and compliance-audit entries supersede it; current status is in verification.md and ACTIVE_HANDOFF.md. Historical pending-approval or commit-pending wording below is retained as dated process evidence, not an open action.
 
 User approved the three-function design and required intermediate build steps on 2026-09-16. This is a standalone Business Object, not a new agentic app; the new-app worktree and app/ATLAS gates do not apply. Work on the existing `TestingWFBuildTools` branch and preserve unrelated changes to `env.properties`, the supplied ZIP, and the workspace file.
 
@@ -114,3 +120,9 @@ Checkpoint: shared classifier repair passed a failing-then-passing regression; o
 User required fixing and retesting the dropped SupplierType and preventing recurrence. Source Lee GET already contains SupplierType=Supplier and SupplierTypeCode=SUPPLIER. Previous submitted-field-only tests were insufficient: they passed after the expected field was removed. Scope: repair the shipped CLI's cross-parameter placeholder false positive, retain explicit-placeholder rejection, restore SupplierType to CreateSupplier, PATCH only the task-created supplier 300000333813790 to repair its type, perform one new XDX supplier POST with the restored field, verify both by GET, and add intended-field assertions. No child changes, publication, push or deletion. CLI regression reproduced the exact false positive before repair and passes after removing parameter-name equality as placeholder evidence. All seven original GET functions remain unchanged.
 
 Four creates and 19 GET regression checks passed; 23 submitted fields match persisted records. Full evidence, request/schema/example cross-reference, generated-field confirmations, CLI preflight failures and limits are in xdx_supplier_post_review.md. Original GET definitions and immutable samples preserved. Final functions use explicit typed field tokens in valid JSON templates, superseding the initial whole-JSON requestBody proposal. SupplierType omitted after CLI rejected real label/code; null result disclosed. No ID omission failed in Fusion. No speculative retry or cleanup write performed. Reusable local-first/ID-hypothesis guidance was refined in the object registry; canonical playbook links it and records terse communication default. Scoped final checks and commit complete hand-forward.
+
+Current audit task identity: 01a0b0b0-2efa-7502-8fdf-427f5bdc8e95.
+
+## Compliance audit closeout
+
+Current task 01a0b0b0-2efa-7502-8fdf-427f5bdc8e95: eight obligation groups reconciled in xdx_compliance_audit.md. Missing 1497 child GETs completed (three terminal empty collections); stale status and overwrite guidance retired; Site/Contact unknown uniqueness scopes recorded from retained schema. Session gate, policy regression, link/fence checks and child JSON assertions pass. No artifact-runtime change or repeated POST. Timing and token cutoff are in xdx_compliance_verification.json. Remaining work after the delivery checkpoint is the scoped governance commit/final response; no required feature or live action remains.

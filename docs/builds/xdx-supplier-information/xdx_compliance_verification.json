@@ -1,0 +1,93 @@
+{
+  "capturedUtc": "2026-09-17T19:00:12.102Z",
+  "taskId": "01a0b0b0-2efa-7502-8fdf-427f5bdc8e95",
+  "checks": [
+    {
+      "command": "pwsh -NoProfile -File tests/test-living-build-contract.ps1",
+      "status": "PASS",
+      "coverage": "Policy fixture plus missing session, PolicyOnly bypass and removed entrypoint tests"
+    },
+    {
+      "command": "node tests/test-session-compliance.cjs",
+      "status": "PASS",
+      "coverage": "Startup/closeout positives; 11 negative cases"
+    },
+    {
+      "command": "node --check scripts/verify-session-compliance.cjs",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --exit-code -- src/businessObjects/xdx_supplier_information.bo .agents/skills/aistudio/scripts/aistudio.js",
+      "status": "PASS",
+      "meaning": "No BO or shipped CLI change; reuse bb8320f artifact QA"
+    },
+    {
+      "command": "Scoped Markdown local-link/code-fence and 1497 JSON assertion check",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "liveReads": {
+    "scope": "Three requested source API child GETs; parent proof reused from ../new-after.json; no child creation.",
+    "supplierNumber": "1497",
+    "cases": [
+      {
+        "count": 0,
+        "evidence": "ListSupplierAddresses.json",
+        "elapsedSeconds": 3.9905841,
+        "hasMore": false,
+        "function": "ListSupplierAddresses"
+      },
+      {
+        "count": 0,
+        "evidence": "ListSupplierSites.json",
+        "elapsedSeconds": 3.9864974,
+        "hasMore": false,
+        "function": "ListSupplierSites"
+      },
+      {
+        "count": 0,
+        "evidence": "ListSupplierContacts.json",
+        "elapsedSeconds": 2.1113081,
+        "hasMore": false,
+        "function": "ListSupplierContacts"
+      }
+    ],
+    "supplierId": "300000333813822",
+    "status": "PASS"
+  },
+  "metrics": {
+    "startedUtc": "2026-09-17T18:45:31.552Z",
+    "checkpointUtc": "2026-09-17T19:00:12.102Z",
+    "elapsedSeconds": 880.55,
+    "boInvocationSeconds": 10.088389600000001,
+    "tokenUsage": {
+      "input_tokens": 2766306,
+      "cached_input_tokens": 2670464,
+      "output_tokens": 21402,
+      "reasoning_output_tokens": 3458
+    },
+    "usageRecordCount": 26,
+    "sourceSessionFile": "rollout-2026-09-17T03-22-36-01a0ae75-e1f3-7681-a94e-555457cd87e3.jsonl",
+    "sourceLines": 1215,
+    "sourceLastTimestamp": "2026-09-17T19:00:04.909Z",
+    "aiUnits": "Unavailable; no workflow metering",
+    "limits": "Tokens/elapsed through capture only; inference cached tokens are included in input and reasoning tokens in output. BO invocation time is nested. Commit/final-response tail excluded. Prior recovery tail separately reconciled in tracker."
+  },
+  "delivery": {
+    "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+    "branch": "TestingWFBuildTools",
+    "preCommitHead": "f25adf7f2dd03f4aa2b96683d3ae697404749e00",
+    "upstream": "origin/TestingWFBuildTools",
+    "pushAuthorized": false,
+    "unrelatedPreserved": [
+      "docs/agent-app-build-install-packet.zip",
+      "env.properties",
+      "fusion-ai-studio-1.code-workspace"
+    ],
+    "intendedCommitSubject": "Enforce session evidence and close supplier audit gaps"
+  }
+}

@@ -107,6 +107,10 @@ The create operation ID is `create_suppliers-sites`. The 26C OpenAPI request sch
 
 `SupplierAddressId` remains a foreign reference, not a new-site generated ID. The successful request identified the newly created address by `SupplierAddressName`; Fusion resolved its ID. `ProcurementBUId` was supplied from the selected Lee site. Do not omit required parent or business-unit references under the generated-ID policy.
 
+### Requiredness and uniqueness review
+
+The retained [26C schema](../../builds/xdx-supplier-information/live-post/site-documentation.json) requires `SupplierSite` (maximum 240 characters) and `ProcurementBUId`. Its reviewed descriptions do not establish the duplicate-name key or case/normalization rules. Uniqueness scope is therefore unresolved, including whether procurement BU participates with supplier parent and site name; do not assert global or parent-only uniqueness. The successful test used a distinctive name under a newly created parent and verified the address/BU relationship. No duplicate POST was attempted. Revalidate this constraint before a test that depends on collision semantics.
+
 ### Candidate request JSON
 
 Start from the smallest schema-aligned review shape and add only approved requirements:
@@ -134,6 +138,7 @@ Verify a successful write by returned `SupplierSiteId` and parent-scoped GET. Co
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-17 | Retained 26C schema reviewed during compliance audit | Explicitly recorded requiredness, name length and unresolved duplicate-key scope; no new POST. |
 | 2026-09-17 | Authorized POST request/response and parent-scoped GET under live-post | Confirmed omitted generated IDs for the tested tenant and recorded POST/schema limits; immutable first-success GET sample preserved. |
 | 2026-09-17 | First retained `ListSupplierSites` BO response | Added immutable first-success GET excerpt and link to complete JSON; later GET evidence does not refresh it. |
 | 2026-09-17 | Parent-scoped live GET receipts and Oracle 26C GET/POST documentation | Established Supplier Sites as the owner for GET filtering/paging, response JSON, minimal create-request design and environment-specific site references. |

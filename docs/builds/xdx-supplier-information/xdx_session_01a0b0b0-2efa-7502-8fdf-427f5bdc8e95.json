@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "01a0b0b0-2efa-7502-8fdf-427f5bdc8e95",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-17T18:45:31.552Z",
+  "checkpointUtc": "2026-09-17T19:00:12.102Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d0a35a4078c0f844983e9182cefcdaebb12782998cbb6ce91b70bd60ad9f3e3c"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "4fee76e2504d0dd5f6ea4a29eed655ecb26a2cb664d060670d76df4a310ffcee"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "f4ddc817f50489e66c5eeb5580289921af877bdda89227e3f8b454aa6440d58e"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "4a749e013991f468a31b8293326731674741570ba28cc8916bdf54e5e1e6137e"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "93557d713a36398323f4d64e457fe01d4f61e3bad823e43d58e4f0d255e91449"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "9a14836be4e8bdba47367b56f5e234721a5fc41a4f5f84bc3cbe81334974067d"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "e2f2e8b08c58905bacab6efc9ba5b88edb66d1ec450bef4311e58ceea058ecbb"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "b1d394c702f17f7ffa05cfa6439e10a137c4293832bfb22715a8864bd748483d"
+    }
+  ],
+  "reviewNotes": "Full canonical and four 26C references reviewed; timing, independent intended-field coverage, local evidence reuse and closeout reconciliation applied. This new executable gate is being repaired during the audit, so it cannot retrospectively prove startup conformance.",
+  "objectReferences": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "release": "26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "release": "26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "release": "26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "release": "26C / API 11.13.18.05"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-information/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-information/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Canonical session conformance receipt and mapped gates",
+      "status": "pass",
+      "reason": "Reviewed canonical and four references; evidence-backed lessons integrated",
+      "evidence": [
+        "docs/builds/xdx-supplier-information/xdx_compliance_audit.md",
+        "docs/builds/xdx-supplier-information/xdx_compliance_verification.json"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Canonical session conformance receipt and mapped gates",
+      "status": "pass",
+      "reason": "Current BO/governance scope and all excluded app/workflow gates explicitly reconciled",
+      "evidence": [
+        "docs/builds/xdx-supplier-information/xdx_compliance_audit.md",
+        "docs/builds/xdx-supplier-information/xdx_compliance_verification.json"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Canonical session conformance receipt and mapped gates",
+      "status": "pass",
+      "reason": "Only three missing authorized GETs; no new persistent writes or deployment",
+      "evidence": [
+        "docs/builds/xdx-supplier-information/xdx_compliance_audit.md",
+        "docs/builds/xdx-supplier-information/xdx_compliance_verification.json"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Canonical session conformance receipt and mapped gates",
+      "status": "pass",
+      "reason": "All four references and 26C schemas reviewed; generated IDs retained; unresolved constraints documented",
+      "evidence": [
+        "docs/builds/xdx-supplier-information/xdx_compliance_audit.md",
+        "docs/builds/xdx-supplier-information/xdx_compliance_verification.json"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Canonical session conformance receipt and mapped gates",
+      "status": "pass",
+      "reason": "Applicable QA covered; missing child GETs and governance checks pass; unchanged artifact evidence reused",
+      "evidence": [
+        "docs/builds/xdx-supplier-information/xdx_compliance_audit.md",
+        "docs/builds/xdx-supplier-information/xdx_compliance_verification.json"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Canonical session conformance receipt and mapped gates",
+      "status": "pass",
+      "reason": "Current start, checkpoints, prior tail, observed token usage and remaining cutoff limits recorded",
+      "evidence": [
+        "docs/builds/xdx-supplier-information/xdx_compliance_audit.md",
+        "docs/builds/xdx-supplier-information/xdx_compliance_verification.json",
+        "docs/builds/xdx-supplier-information/time-tracker.md"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Canonical session conformance receipt and mapped gates",
+      "status": "pass",
+      "reason": "Stale instructions retired; historical evidence retained; task-only scratch removed before delivery",
+      "evidence": [
+        "docs/builds/xdx-supplier-information/xdx_compliance_audit.md",
+        "docs/builds/xdx-supplier-information/xdx_compliance_verification.json"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Canonical session conformance receipt and mapped gates",
+      "status": "pass",
+      "reason": "Status documents reconciled; scoped local governance commit; no push",
+      "evidence": [
+        "docs/builds/xdx-supplier-information/xdx_compliance_audit.md",
+        "docs/builds/xdx-supplier-information/xdx_compliance_verification.json"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "{\"input_tokens\":2766306,\"cached_input_tokens\":2670464,\"output_tokens\":21402,\"reasoning_output_tokens\":3458}; through delivery checkpoint only",
+    "aiUnits": "Unavailable: no workflow execution/metering",
+    "timingGaps": "Prior recovery tail reconciled; current phase subdivisions unavailable; commit/final-response tail excluded and next-session recoverable"
+  },
+  "startupGate": {
+    "recordCheckpointUtc": "2026-09-17T18:53:31.276Z",
+    "result": "PASS",
+    "limit": "New gate implemented during repair; not retrospective proof of initial session conformity"
+  }
+}

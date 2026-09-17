@@ -1,5 +1,11 @@
 # Build Time Tracker
 
+## Current compliance audit — 2026-09-17
+
+Task `01a0b0b0-2efa-7502-8fdf-427f5bdc8e95` started at 2026-09-17T18:45:31.552Z (session task_started). Initial review checkpoint: 2026-09-17T18:47:05.040Z. This start was reconstructed during intake, not captured before the first read. Work: canonical/evidence audit, missed-action recovery, session gate and local verification. Delivery checkpoint and recovered usage are recorded below; AI Units unavailable because no workflow execution is in scope.
+
+Prior recovery task completed at 2026-09-17T15:59:53.317Z, recorded duration 476790 ms. Its previous checkpoint was 15:59:12.879Z: the previously excluded tail is 40.438 seconds by timestamp boundary. This supplements, rather than changes, the immutable reconstruction ledger. The gap until this audit began is unobserved inter-turn time, not work.
+
 Record observed values only; unavailable values are not estimates.
 
 | Timestamp | Activity | Elapsed | Tokens | AI Units | Outcome | Evidence |
@@ -43,3 +49,9 @@ Root inference tokens recovered from individual usage records: input 14513580, c
 Gaps and limits: the long gap after the approval block is recorded as an inter-turn gap, not exact approval wait. Other gaps are unobserved activity. Within-turn approval pending overlapped work and cannot be isolated as idle. Phase-level authoring/debugging subdivisions and parallel-agent runtime cannot be recovered reliably. Earlier build phases outside this session retain their original measurements/unknowns.
 
 Current timing-recovery task: observed start 2026-09-17T15:51:56.527Z; delivery checkpoint 2026-09-17T15:59:12.879Z; elapsed through checkpoint **7.273 min**. Work includes evidence recovery, mandatory policy, verifier regression and closeout. Final-response/commit tail after checkpoint is excluded and recoverable next session.
+
+### Compliance audit delivery checkpoint
+
+Task 01a0b0b0-2efa-7502-8fdf-427f5bdc8e95: 2026-09-17T18:45:31.552Z to 2026-09-17T19:00:12.102Z; observed elapsed 880.550 seconds. Three missing child GETs took 10.088 seconds of nested BO invocation time. Input tokens 2766306; cached input 2670464 (subset); output 21402; reasoning output 3458 (subset), recovered from 26 per-inference records through the checkpoint. AI Units unavailable: no workflow executed. Source and checks: [xdx_compliance_verification.json](xdx_compliance_verification.json).
+
+Phases: intake/review start recovered at 18:45:31.552Z; initial review checkpoint 18:47:05.040Z; session-gate repair and three child reads completed before the 18:57:02.786Z audit checkpoint; final policy/session/link/evidence checks completed before this delivery checkpoint. Exact authoring/debugging subdivisions are not separately metered. Sandbox credential-store failure preceded successful authorized host retry; no extra records created. Commit/final-response tail after the checkpoint remains excluded until the next recovery.

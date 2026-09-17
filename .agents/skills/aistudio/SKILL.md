@@ -13,7 +13,7 @@ Use this skill to create or modify AI Studio app and workflow project resources,
 ## Start Here
 
 1. Review `docs/handoffs/ACTIVE_HANDOFF.md` before any other repository work in every new Codex session.
-2. Read `docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md` and run `pwsh -NoProfile -File scripts/verify-living-build-contract.ps1` from the project root before planning or modifying an AI Studio build. If the contract is missing or fails, restore it before continuing.
+2. Read `docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md` and follow its Session conformance receipt procedure before planning or modifying an AI Studio build. Run `pwsh -NoProfile -File scripts/verify-living-build-contract.ps1 -PolicyOnly` for installation checks, then require the current `-SessionRecord`, `-SessionId` and `-Phase Startup` gate; use `-Phase Closeout` before completion. Policy presence alone does not prove session conformance. If the contract is missing or fails, repair it before continuing.
 3. For API or Business Object work, read `docs/lessons/objects/README.md`, inventory every parent and child resource object, and read each matching object reference before design, mutation or testing. After a resource object's first successful BO GET, add its result to that reference only when no first-success sample exists; never rerun or refresh a GET for documentation.
 4. Classify the requested artifact before choosing prompts or commands.
 5. Before creating any new artifact, resolve package layout from the current project. If multiple app packages exist and the current user request did not explicitly name one, ask for the target app package and stop before any discovery, planning, generation, test sync, or create command.
