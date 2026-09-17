@@ -1,0 +1,134 @@
+{
+  "functionName": "CreateSupplierAddress",
+  "operationType": "POST",
+  "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses",
+  "examplePurpose": "response",
+  "exampleMode": "fetchResponse",
+  "defaultSampleInputValues": {},
+  "currentSampleInputValues": {
+    "suppliers_Id": "300000333813822",
+    "City": "LOS ANGELES",
+    "AddressName": "XDX Lee US1 1497 20260917201046",
+    "PostalCode": "90032",
+    "AddressPurposeRemitToFlag": "true",
+    "AddressPurposeRFQOrBiddingFlag": "false",
+    "Email": "xdx-address-1497-20260917201046@example.invalid",
+    "AddressPurposeOrderingFlag": "true",
+    "AddressLine1": "5000 CARTER DR.",
+    "CountryCode": "US",
+    "State": "CA"
+  },
+  "requiredSampleInputs": [
+    {
+      "name": "suppliers_Id",
+      "location": "path",
+      "dataType": "string",
+      "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "AddressName",
+      "location": "body",
+      "dataType": "string",
+      "description": "Name of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "CountryCode",
+      "location": "body",
+      "dataType": "string",
+      "description": "Abbreviation that identifies the country where the supplier address is located. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "AddressLine1",
+      "location": "body",
+      "dataType": "string",
+      "description": "First line of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "City",
+      "location": "body",
+      "dataType": "string",
+      "description": "City of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "State",
+      "location": "body",
+      "dataType": "string",
+      "description": "State of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "PostalCode",
+      "location": "body",
+      "dataType": "string",
+      "description": "Postal code of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "AddressPurposeOrderingFlag",
+      "location": "body",
+      "dataType": "boolean",
+      "description": "Contains one of the following values: true or false. If true, then you can use the supplier address for ordering. If false, then you can't use this address. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "AddressPurposeRemitToFlag",
+      "location": "body",
+      "dataType": "boolean",
+      "description": "Contains one of the following values: true or false. If true, then you can use the supplier address for requesting for a proposal or for bidding. If false, then you can't use this address. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "AddressPurposeRFQOrBiddingFlag",
+      "location": "body",
+      "dataType": "boolean",
+      "description": "Contains one of the following values: true or false. If true, then you can use the supplier address to send payment. If false, then you can't use this address. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "Email",
+      "location": "body",
+      "dataType": "string",
+      "description": "Email for the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    }
+  ],
+  "optionalSampleInputs": [],
+  "missingRequiredInputs": [],
+  "conflictingInputs": [],
+  "needsClarification": false,
+  "promptText": "",
+  "promptLines": [],
+  "replyExample": "",
+  "readyToFetch": true,
+  "guidance": "This POST function should use a fetched sample response for its example. Collect any missing required sample input values before calling the fetch command.",
+  "acceptedSampleInputValues": {
+    "suppliers_Id": "300000333813822",
+    "City": "LOS ANGELES",
+    "AddressName": "XDX Lee US1 1497 20260917201046",
+    "PostalCode": "90032",
+    "AddressPurposeRemitToFlag": "true",
+    "AddressPurposeRFQOrBiddingFlag": "false",
+    "Email": "xdx-address-1497-20260917201046@example.invalid",
+    "AddressPurposeOrderingFlag": "true",
+    "AddressLine1": "5000 CARTER DR.",
+    "CountryCode": "US",
+    "State": "CA"
+  },
+  "nextMissingRequiredInput": null
+}

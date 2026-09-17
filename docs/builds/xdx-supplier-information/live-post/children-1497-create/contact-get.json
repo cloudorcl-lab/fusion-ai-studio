@@ -1,0 +1,60 @@
+{
+  "timestampUtc": "2026-09-17T20:13:02.4600864+00:00",
+  "response": {
+    "items": [
+      {
+        "SupplierContactId": 300000333813861,
+        "SalutationCode": null,
+        "Salutation": null,
+        "FirstName": "XDX Ryan",
+        "MiddleName": null,
+        "LastName": "XDX Lee 1497 20260917201046",
+        "JobTitle": null,
+        "AdministrativeContactFlag": false,
+        "PhoneCountryCode": null,
+        "PhoneAreaCode": null,
+        "PhoneNumber": null,
+        "PhoneExtension": null,
+        "MobileCountryCode": null,
+        "MobileAreaCode": null,
+        "MobileNumber": null,
+        "FaxCountryCode": null,
+        "FaxAreaCode": null,
+        "FaxNumber": null,
+        "Email": "xdx-contact-1497-20260917201046@example.invalid",
+        "Status": "ACTIVE",
+        "InactiveDate": null,
+        "PersonProfileId": 300000333813861,
+        "CreationDate": "2026-09-17T15:13:00-05:00",
+        "CreatedBy": "CASEY.BROWN",
+        "LastUpdateDate": "2026-09-17T15:13:01.381-05:00",
+        "LastUpdatedBy": "CASEY.BROWN",
+        "DataAccessLevel": null,
+        "UserName": null,
+        "UserAccountStatus": null,
+        "ContactName": "XDX Lee 1497 20260917201046, XDX Ryan"
+      }
+    ],
+    "count": 1,
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813822/child/contacts",
+        "name": "contacts",
+        "kind": "collection"
+      }
+    ]
+  },
+  "function": "ListSupplierContacts",
+  "elapsedSeconds": 2.5843851,
+  "status": "SUCCESS",
+  "inputs": {
+    "suppliers_Id": "300000333813822",
+    "limit": "25",
+    "offset": "0",
+    "filter": "SupplierContactId=300000333813861"
+  }
+}

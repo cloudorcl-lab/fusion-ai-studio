@@ -1,0 +1,70 @@
+{
+  "supplierNumber": "1497",
+  "completedUtc": "2026-09-17T20:13:05.0545221+00:00",
+  "intendedFieldsVerified": 20,
+  "scope": "Three child POSTs, three persisted child GETs and parent GET before/after; no remote BO deployment.",
+  "supplierId": "300000333813822",
+  "sourceArtifactUnchanged": true,
+  "status": "PASS",
+  "created": [
+    {
+      "post": "address-post.json",
+      "resource": "address",
+      "id": "300000333813850",
+      "get": "address-get.json",
+      "fieldsVerified": 10
+    },
+    {
+      "post": "site-post.json",
+      "resource": "site",
+      "id": "300000333813859",
+      "get": "site-get.json",
+      "fieldsVerified": 6
+    },
+    {
+      "post": "contact-post.json",
+      "resource": "contact",
+      "id": "300000333813861",
+      "get": "contact-get.json",
+      "fieldsVerified": 4
+    }
+  ],
+  "parentBefore": "parent-before.json",
+  "parentAfter": "parent-after.json",
+  "verification": {
+    "test": "node tests/test-xdx-supplier-1497-children.cjs",
+    "status": "PASS",
+    "checks": [
+      "20 independently enumerated intended fields",
+      "generated own keys and parent-scoped GET identity",
+      "site references newly created address",
+      "no contact user account",
+      "seven parent fields unchanged after child creation",
+      "delivery BO and shipped CLI unchanged",
+      "Markdown links/fences and immutable samples unchanged"
+    ]
+  },
+  "deliveryCheckpointUtc": "2026-09-17T20:18:30.382Z",
+  "taskElapsedSeconds": 709.028,
+  "boInvocationSeconds": 25.5781277,
+  "tokensAtCheckpoint": {
+    "input_tokens": 4004392,
+    "cached_input_tokens": 3762304,
+    "output_tokens": 17383,
+    "reasoning_output_tokens": 3631
+  },
+  "aiUnits": "Unavailable: no workflow execution or metering",
+  "timingLimits": "Invocation elapsed is nested in task elapsed. Cached input/reasoning tokens are subsets. Commit/final-response tail excluded; next session can recover it.",
+  "delivery": {
+    "branch": "TestingWFBuildTools",
+    "preCommitHead": "58733c1a9ec50bd23575edc1302db9ef87117c2f",
+    "upstream": "origin/TestingWFBuildTools",
+    "pushAuthorized": false,
+    "commitSubject": "Create and verify supplier 1497 child records",
+    "unrelatedPreserved": [
+      "env.properties",
+      "docs/agent-app-build-install-packet.zip",
+      "fusion-ai-studio-1.code-workspace"
+    ]
+  }
+}

@@ -109,6 +109,8 @@ The create operation ID is `create_suppliers-sites`. The 26C OpenAPI request sch
 
 ### Requiredness and uniqueness review
 
+Additional confirmation: the [1497 site POST](../../builds/xdx-supplier-information/live-post/children-1497-create/site-post.json) omitted SupplierSiteId and returned a generated value; [GET](../../builds/xdx-supplier-information/live-post/children-1497-create/site-get.json) confirmed it and resolved SupplierAddressName to the newly created address ID, on 2026-09-17 in the same tenant/release. No generated-field or uniqueness scope is broadened.
+
 The retained [26C schema](../../builds/xdx-supplier-information/live-post/site-documentation.json) requires `SupplierSite` (maximum 240 characters) and `ProcurementBUId`. Its reviewed descriptions do not establish the duplicate-name key or case/normalization rules. Uniqueness scope is therefore unresolved, including whether procurement BU participates with supplier parent and site name; do not assert global or parent-only uniqueness. The successful test used a distinctive name under a newly created parent and verified the address/BU relationship. No duplicate POST was attempted. Revalidate this constraint before a test that depends on collision semantics.
 
 ### Candidate request JSON
@@ -138,6 +140,7 @@ Verify a successful write by returned `SupplierSiteId` and parent-scoped GET. Co
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-17 | Supplier 1497 child POST/GET | Added generated site ID and new-address relationship confirmation; six intended fields matched. |
 | 2026-09-17 | Retained 26C schema reviewed during compliance audit | Explicitly recorded requiredness, name length and unresolved duplicate-key scope; no new POST. |
 | 2026-09-17 | Authorized POST request/response and parent-scoped GET under live-post | Confirmed omitted generated IDs for the tested tenant and recorded POST/schema limits; immutable first-success GET sample preserved. |
 | 2026-09-17 | First retained `ListSupplierSites` BO response | Added immutable first-success GET excerpt and link to complete JSON; later GET evidence does not refresh it. |

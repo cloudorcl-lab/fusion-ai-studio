@@ -1,0 +1,339 @@
+{
+  "preparedUtc": "2026-09-17T20:10:46.051Z",
+  "supplierNumber": "1497",
+  "supplierId": "300000333813822",
+  "supplierName": "XDX Lee Supplies 20260917152534",
+  "host": "eqih-dev21",
+  "identity": "CASEY.BROWN",
+  "sourceArtifact": "src/businessObjects/xdx_supplier_information.bo",
+  "authority": "User: create child objects for supplier 1497. Existing XDX/Lee-based defaults apply.",
+  "localEvidence": "Saved 1497 parent and terminal empty child GETs, plus successful 1496 child requests and exact 26C schemas/examples; adequate without additional Lee reads.",
+  "limits": "Historical empty collections do not guarantee current absence. Distinct XDX numeric names used. Site/contact duplicate-key semantics unresolved; no duplicate POST testing. Own IDs omitted using confirmed tenant-scoped generation; contact InactiveDate omission already proven; no account provisioning.",
+  "cases": [
+    {
+      "resource": "address",
+      "fn": "CreateSupplierAddress",
+      "get": "ListSupplierAddresses",
+      "key": "SupplierAddressId",
+      "fields": [
+        "AddressName",
+        "CountryCode",
+        "AddressLine1",
+        "City",
+        "State",
+        "PostalCode",
+        "Email",
+        "AddressPurposeOrderingFlag",
+        "AddressPurposeRemitToFlag",
+        "AddressPurposeRFQOrBiddingFlag"
+      ],
+      "inputs": {
+        "suppliers_Id": "300000333813822",
+        "City": "LOS ANGELES",
+        "AddressName": "XDX Lee US1 1497 20260917201046",
+        "PostalCode": "90032",
+        "AddressPurposeRemitToFlag": "true",
+        "AddressPurposeRFQOrBiddingFlag": "false",
+        "Email": "xdx-address-1497-20260917201046@example.invalid",
+        "AddressPurposeOrderingFlag": "true",
+        "AddressLine1": "5000 CARTER DR.",
+        "CountryCode": "US",
+        "State": "CA"
+      },
+      "expected": {
+        "AddressName": "XDX Lee US1 1497 20260917201046",
+        "CountryCode": "US",
+        "AddressLine1": "5000 CARTER DR.",
+        "City": "LOS ANGELES",
+        "State": "CA",
+        "PostalCode": "90032",
+        "Email": "xdx-address-1497-20260917201046@example.invalid",
+        "AddressPurposeOrderingFlag": true,
+        "AddressPurposeRemitToFlag": true,
+        "AddressPurposeRFQOrBiddingFlag": false
+      },
+      "provenance": [
+        {
+          "field": "AddressName",
+          "value": "XDX Lee US1 1497 20260917201046",
+          "type": "string",
+          "required": false,
+          "maxLength": 240,
+          "inVendorExample": true,
+          "origin": "Generated XDX value or new-address reference",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html"
+        },
+        {
+          "field": "CountryCode",
+          "value": "US",
+          "type": "string",
+          "required": true,
+          "maxLength": 2,
+          "inVendorExample": false,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html"
+        },
+        {
+          "field": "AddressLine1",
+          "value": "5000 CARTER DR.",
+          "type": "string",
+          "required": false,
+          "maxLength": 240,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html"
+        },
+        {
+          "field": "City",
+          "value": "LOS ANGELES",
+          "type": "string",
+          "required": false,
+          "maxLength": 60,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html"
+        },
+        {
+          "field": "State",
+          "value": "CA",
+          "type": "string",
+          "required": false,
+          "maxLength": 60,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html"
+        },
+        {
+          "field": "PostalCode",
+          "value": "90032",
+          "type": "string",
+          "required": false,
+          "maxLength": 60,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html"
+        },
+        {
+          "field": "Email",
+          "value": "xdx-address-1497-20260917201046@example.invalid",
+          "type": "string",
+          "required": true,
+          "maxLength": 320,
+          "inVendorExample": false,
+          "origin": "Generated XDX value or new-address reference",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html"
+        },
+        {
+          "field": "AddressPurposeOrderingFlag",
+          "value": true,
+          "type": "boolean",
+          "required": false,
+          "maxLength": 255,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html"
+        },
+        {
+          "field": "AddressPurposeRemitToFlag",
+          "value": true,
+          "type": "boolean",
+          "required": false,
+          "maxLength": 255,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html"
+        },
+        {
+          "field": "AddressPurposeRFQOrBiddingFlag",
+          "value": false,
+          "type": "boolean",
+          "required": false,
+          "maxLength": 255,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html"
+        }
+      ],
+      "omittedRequired": [],
+      "documentation": {
+        "release": "26C",
+        "url": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html",
+        "retrievedUtc": "2026-09-17T08:34:29.9664747+00:00"
+      }
+    },
+    {
+      "resource": "site",
+      "fn": "CreateSupplierSite",
+      "get": "ListSupplierSites",
+      "key": "SupplierSiteId",
+      "fields": [
+        "SupplierSite",
+        "ProcurementBUId",
+        "SupplierAddressName",
+        "SitePurposePurchasingFlag",
+        "SitePurposePayFlag",
+        "SitePurposeSourcingOnlyFlag"
+      ],
+      "inputs": {
+        "SitePurposePurchasingFlag": "true",
+        "SupplierAddressName": "XDX Lee US1 1497 20260917201046",
+        "suppliers_Id": "300000333813822",
+        "SitePurposePayFlag": "true",
+        "ProcurementBUId": "300000046987012",
+        "SupplierSite": "XDX Lee US1 1497 20260917201046",
+        "SitePurposeSourcingOnlyFlag": "false"
+      },
+      "expected": {
+        "SupplierSite": "XDX Lee US1 1497 20260917201046",
+        "ProcurementBUId": 300000046987012,
+        "SupplierAddressName": "XDX Lee US1 1497 20260917201046",
+        "SitePurposePurchasingFlag": true,
+        "SitePurposePayFlag": true,
+        "SitePurposeSourcingOnlyFlag": false
+      },
+      "provenance": [
+        {
+          "field": "SupplierSite",
+          "value": "XDX Lee US1 1497 20260917201046",
+          "type": "string",
+          "required": true,
+          "maxLength": 240,
+          "inVendorExample": true,
+          "origin": "Generated XDX value or new-address reference",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-post.html"
+        },
+        {
+          "field": "ProcurementBUId",
+          "value": 300000046987012,
+          "type": "integer",
+          "required": true,
+          "maxLength": null,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-post.html"
+        },
+        {
+          "field": "SupplierAddressName",
+          "value": "XDX Lee US1 1497 20260917201046",
+          "type": "string",
+          "required": false,
+          "maxLength": 240,
+          "inVendorExample": true,
+          "origin": "Generated XDX value or new-address reference",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-post.html"
+        },
+        {
+          "field": "SitePurposePurchasingFlag",
+          "value": true,
+          "type": "boolean",
+          "required": false,
+          "maxLength": 1,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-post.html"
+        },
+        {
+          "field": "SitePurposePayFlag",
+          "value": true,
+          "type": "boolean",
+          "required": false,
+          "maxLength": 1,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-post.html"
+        },
+        {
+          "field": "SitePurposeSourcingOnlyFlag",
+          "value": false,
+          "type": "boolean",
+          "required": false,
+          "maxLength": 1,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-post.html"
+        }
+      ],
+      "omittedRequired": [],
+      "documentation": {
+        "release": "26C",
+        "url": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-post.html",
+        "retrievedUtc": "2026-09-17T08:34:30.3435690+00:00"
+      }
+    },
+    {
+      "resource": "contact",
+      "fn": "CreateSupplierContact",
+      "get": "ListSupplierContacts",
+      "key": "SupplierContactId",
+      "fields": [
+        "FirstName",
+        "LastName",
+        "Email",
+        "AdministrativeContactFlag"
+      ],
+      "inputs": {
+        "FirstName": "XDX Ryan",
+        "AdministrativeContactFlag": "false",
+        "LastName": "XDX Lee 1497 20260917201046",
+        "Email": "xdx-contact-1497-20260917201046@example.invalid",
+        "suppliers_Id": "300000333813822"
+      },
+      "expected": {
+        "FirstName": "XDX Ryan",
+        "LastName": "XDX Lee 1497 20260917201046",
+        "Email": "xdx-contact-1497-20260917201046@example.invalid",
+        "AdministrativeContactFlag": false
+      },
+      "provenance": [
+        {
+          "field": "FirstName",
+          "value": "XDX Ryan",
+          "type": "string",
+          "required": false,
+          "maxLength": 150,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-contacts-post.html"
+        },
+        {
+          "field": "LastName",
+          "value": "XDX Lee 1497 20260917201046",
+          "type": "string",
+          "required": false,
+          "maxLength": 150,
+          "inVendorExample": true,
+          "origin": "Generated XDX value or new-address reference",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-contacts-post.html"
+        },
+        {
+          "field": "Email",
+          "value": "xdx-contact-1497-20260917201046@example.invalid",
+          "type": "string",
+          "required": true,
+          "maxLength": 320,
+          "inVendorExample": false,
+          "origin": "Generated XDX value or new-address reference",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-contacts-post.html"
+        },
+        {
+          "field": "AdministrativeContactFlag",
+          "value": false,
+          "type": "boolean",
+          "required": false,
+          "maxLength": 255,
+          "inVendorExample": true,
+          "origin": "Retained authorized Lee-based test value",
+          "documentation": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-contacts-post.html"
+        }
+      ],
+      "omittedRequired": [
+        "InactiveDate"
+      ],
+      "documentation": {
+        "release": "26C",
+        "url": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-contacts-post.html",
+        "retrievedUtc": "2026-09-17T08:34:30.4505788+00:00"
+      }
+    }
+  ]
+}

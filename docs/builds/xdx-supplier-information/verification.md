@@ -1,5 +1,9 @@
 # Verification receipt
 
+## Latest: supplier 1497 children created
+
+The user subsequently requested creating children for 1497. Address 300000333813850, site 300000333813859 and contact 300000333813861 were created and verified by parent-scoped GET; all 20 intended fields match. Final parent GET preserves SupplierType and other intended fields. [Current receipt](xdx_1497_children.md). The empty-child audit state below is historical and superseded by these authorized writes. No delivery BO/CLI change.
+
 ## Current status — 2026-09-17 compliance audit
 
 Eleven local BO functions: seven GET and four POST. Original supplier 1496 and its three created children have retained POST/read-back proof; SupplierType was subsequently repaired. Supplier 1497 has corrected parent POST/GET proof and now three terminal empty child collections. See [SupplierType correction](xdx_supplier_type_correction.md), [1497 child summary](live-post/type-fix/children-1497/summary.json), and [compliance audit](xdx_compliance_audit.md). No additional create/PATCH, deployment or publication occurred during this audit. Sections below are historical milestones, not current scope or authority.

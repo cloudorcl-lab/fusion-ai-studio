@@ -1,0 +1,13 @@
+{
+  "suppliers_Id": "300000333813822",
+  "City": "LOS ANGELES",
+  "AddressName": "XDX Lee US1 1497 20260917201046",
+  "PostalCode": "90032",
+  "AddressPurposeRemitToFlag": "true",
+  "AddressPurposeRFQOrBiddingFlag": "false",
+  "Email": "xdx-address-1497-20260917201046@example.invalid",
+  "AddressPurposeOrderingFlag": "true",
+  "AddressLine1": "5000 CARTER DR.",
+  "CountryCode": "US",
+  "State": "CA"
+}

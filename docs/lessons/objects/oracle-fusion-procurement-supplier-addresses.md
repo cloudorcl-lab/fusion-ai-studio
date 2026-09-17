@@ -128,6 +128,8 @@ The create operation ID is `create_suppliers-addresses`. The 26C OpenAPI request
 
 ### Required and unique field constraints
 
+Additional confirmation: the [1497 address POST](../../builds/xdx-supplier-information/live-post/children-1497-create/address-post.json) again omitted SupplierAddressId and AddressPartyNumber and received both, with [persisted GET](../../builds/xdx-supplier-information/live-post/children-1497-create/address-get.json), on 2026-09-17 in the same tenant/release. This supplements the generated-field evidence without changing the immutable first-success sample.
+
 | Field | Requiredness | Uniqueness scope | Test-data treatment | Evidence |
 | --- | --- | --- | --- | --- |
 | `AddressName` | Present in the vendor example; requiredness is not established by the reviewed schema's required list | Within the selected supplier parent: `(SupplierId, AddressName)` | Generate a distinctive address name for that supplier; compare with available saved addresses under the same parent | User-confirmed uniqueness, 2026-09-17; no duplicate-name POST tested |
@@ -165,6 +167,7 @@ Resolve country and subdivision codes from authorized evidence. Reuse a source p
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-17 | Supplier 1497 child POST/GET | Added same-tenant confirmation of generated address ID/party number and all ten submitted fields. |
 | 2026-09-17 | Authorized POST request/response and parent-scoped GET under live-post | Confirmed omitted generated IDs for the tested tenant and recorded POST/schema limits; immutable first-success GET sample preserved. |
 | 2026-09-17 | User confirmation | Recorded supplier-parent-scoped `AddressName` uniqueness; kept requiredness distinct and GET samples unchanged. |
 | 2026-09-17 | First retained `ListSupplierAddresses` BO response | Added immutable first-success GET excerpt and link to complete JSON; later GET evidence does not refresh it. |

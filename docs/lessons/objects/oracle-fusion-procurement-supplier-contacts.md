@@ -114,6 +114,8 @@ In this test, omitting `InactiveDate` succeeded despite the 26C schema required/
 
 ### Requiredness and uniqueness review
 
+Additional confirmation: the [1497 contact POST](../../builds/xdx-supplier-information/live-post/children-1497-create/contact-post.json) omitted SupplierContactId and PersonProfileId and returned both; [GET](../../builds/xdx-supplier-information/live-post/children-1497-create/contact-get.json) confirmed them with null UserName/UserAccountStatus, on 2026-09-17 in the same tenant/release. InactiveDate omission again succeeded. Immutable first-success samples remain unchanged.
+
 The retained [26C schema](../../builds/xdx-supplier-information/live-post/contact-documentation.json) marks `Email` (maximum 320 characters) and `InactiveDate` required; the omission evidence above applies only to InactiveDate. FirstName and LastName each allow 150 characters and are nullable in that schema. Reviewed descriptions do not establish uniqueness for names, email or a composite key: scope and normalization remain unresolved. The successful test used distinctive XDX names and a non-operational destination under a new supplier. No duplicate-contact or account-provisioning test was performed. Revalidate before relying on contact uniqueness.
 
 ### Candidate request JSON
@@ -141,6 +143,7 @@ Use an explicitly approved test identity derived from the requested basis and a 
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-17 | Supplier 1497 child POST/GET | Added generated contact/profile ID and InactiveDate-omission confirmation; four intended fields matched with no user account. |
 | 2026-09-17 | Retained 26C schema reviewed during compliance audit | Recorded name/email limits and unresolved uniqueness scope separately from omission evidence; no new POST. |
 | 2026-09-17 | Authorized POST request/response and parent-scoped GET under live-post | Confirmed omitted generated IDs for the tested tenant and recorded POST/schema limits; immutable first-success GET sample preserved. |
 | 2026-09-17 | First retained `ListSupplierContacts` BO response | Added immutable first-success GET excerpt and link to complete JSON; later GET evidence does not refresh it. |

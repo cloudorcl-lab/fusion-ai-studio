@@ -1,0 +1,12 @@
+{
+  "identityEvidence": "Successful host-context bundled CLI whoami; cached token refreshed through supported flow.",
+  "artifact": "src/businessObjects/xdx_supplier_information.bo",
+  "schemaEvidence": "plan.json includes retained exact Oracle 26C cross-reference for all 20 intended fields.",
+  "supplierNumber": "1497",
+  "hostAlias": "eqih-dev21",
+  "timestampUtc": "2026-09-17T20:11:29.2856863+00:00",
+  "remoteArtifactMutation": false,
+  "supplierId": "300000333813822",
+  "identity": "CASEY.BROWN",
+  "authority": "User explicitly requested child objects for supplier 1497; one address, site and contact plus verification GETs."
+}

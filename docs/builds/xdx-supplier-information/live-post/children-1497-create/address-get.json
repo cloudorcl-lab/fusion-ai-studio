@@ -1,0 +1,75 @@
+{
+  "timestampUtc": "2026-09-17T20:12:49.6702749+00:00",
+  "response": {
+    "items": [
+      {
+        "SupplierAddressId": 300000333813850,
+        "AddressName": "XDX Lee US1 1497 20260917201046",
+        "CountryCode": "US",
+        "Country": "United States",
+        "AddressLine1": "5000 CARTER DR.",
+        "AddressLine2": null,
+        "AddressLine3": null,
+        "AddressLine4": null,
+        "City": "LOS ANGELES",
+        "State": "CA",
+        "PostalCode": "90032",
+        "PostalCodeExtension": null,
+        "Province": null,
+        "County": null,
+        "Building": null,
+        "FloorNumber": null,
+        "PhoneticAddress": null,
+        "LanguageCode": null,
+        "Language": null,
+        "Addressee": null,
+        "GlobalLocationNumber": null,
+        "AdditionalAddressAttribute1": null,
+        "AdditionalAddressAttribute2": null,
+        "AdditionalAddressAttribute3": null,
+        "AdditionalAddressAttribute4": null,
+        "AdditionalAddressAttribute5": null,
+        "FormattedAddress": "5000 CARTER DR.,LOS ANGELES, CA 90032",
+        "AddressPurposeOrderingFlag": true,
+        "AddressPurposeRemitToFlag": true,
+        "AddressPurposeRFQOrBiddingFlag": false,
+        "PhoneCountryCode": null,
+        "PhoneAreaCode": null,
+        "PhoneNumber": null,
+        "PhoneExtension": null,
+        "FaxCountryCode": null,
+        "FaxAreaCode": null,
+        "FaxNumber": null,
+        "Email": "xdx-address-1497-20260917201046@example.invalid",
+        "InactiveDate": "4712-12-31",
+        "Status": "ACTIVE",
+        "CreationDate": "2026-09-17T15:12:47.001-05:00",
+        "CreatedBy": "CASEY.BROWN",
+        "LastUpdateDate": "2026-09-17T15:12:47.413-05:00",
+        "LastUpdatedBy": "CASEY.BROWN",
+        "AddressPartyNumber": "1486631"
+      }
+    ],
+    "count": 1,
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813822/child/addresses",
+        "name": "addresses",
+        "kind": "collection"
+      }
+    ]
+  },
+  "function": "ListSupplierAddresses",
+  "elapsedSeconds": 2.52135,
+  "status": "SUCCESS",
+  "inputs": {
+    "suppliers_Id": "300000333813822",
+    "limit": "25",
+    "offset": "0",
+    "filter": "SupplierAddressId=300000333813850"
+  }
+}

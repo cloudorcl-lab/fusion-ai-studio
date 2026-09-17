@@ -1,0 +1,94 @@
+{
+  "functionName": "CreateSupplierSite",
+  "operationType": "POST",
+  "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites",
+  "examplePurpose": "response",
+  "exampleMode": "fetchResponse",
+  "defaultSampleInputValues": {},
+  "currentSampleInputValues": {
+    "SitePurposePurchasingFlag": "true",
+    "SupplierAddressName": "XDX Lee US1 1497 20260917201046",
+    "suppliers_Id": "300000333813822",
+    "SitePurposePayFlag": "true",
+    "ProcurementBUId": "300000046987012",
+    "SupplierSite": "XDX Lee US1 1497 20260917201046",
+    "SitePurposeSourcingOnlyFlag": "false"
+  },
+  "requiredSampleInputs": [
+    {
+      "name": "suppliers_Id",
+      "location": "path",
+      "dataType": "string",
+      "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "SupplierSite",
+      "location": "body",
+      "dataType": "string",
+      "description": "Name of the supplier site. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "ProcurementBUId",
+      "location": "body",
+      "dataType": "integer",
+      "description": "Value that uniquely identifies the procurement business unit where the supplier site resides. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "SupplierAddressName",
+      "location": "body",
+      "dataType": "string",
+      "description": "Name of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "SitePurposePurchasingFlag",
+      "location": "body",
+      "dataType": "boolean",
+      "description": "Contains one of the following values: true or false. If true, then a purchasing purpose exists for the supplier site. If false, then purpose doesn't exist. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "SitePurposePayFlag",
+      "location": "body",
+      "dataType": "boolean",
+      "description": "Contains one of the following values: true or false. If true, then a pay purpose exists for the supplier site. If false, then pay purpose doesn't exist. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "SitePurposeSourcingOnlyFlag",
+      "location": "body",
+      "dataType": "boolean",
+      "description": "Contains one of the following values: true or false. If true, then the supplier has sourcing only purpose. If false, then the supplier site doesn't have sourcing only purpose. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    }
+  ],
+  "optionalSampleInputs": [],
+  "missingRequiredInputs": [],
+  "conflictingInputs": [],
+  "needsClarification": false,
+  "promptText": "",
+  "promptLines": [],
+  "replyExample": "",
+  "readyToFetch": true,
+  "guidance": "This POST function should use a fetched sample response for its example. Collect any missing required sample input values before calling the fetch command.",
+  "acceptedSampleInputValues": {
+    "SitePurposePurchasingFlag": "true",
+    "SupplierAddressName": "XDX Lee US1 1497 20260917201046",
+    "suppliers_Id": "300000333813822",
+    "SitePurposePayFlag": "true",
+    "ProcurementBUId": "300000046987012",
+    "SupplierSite": "XDX Lee US1 1497 20260917201046",
+    "SitePurposeSourcingOnlyFlag": "false"
+  },
+  "nextMissingRequiredInput": null
+}

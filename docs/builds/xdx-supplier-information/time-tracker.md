@@ -1,5 +1,9 @@
 # Build Time Tracker
 
+## Supplier 1497 child creation — 2026-09-17
+
+Task `01a0b0fa-7cba-7b43-aacd-d86136194d00` started 2026-09-17T20:06:41.354Z (session metadata, recovered during intake); first clock observation 20:06:56.502Z. Review/intake in progress; delivery timing pending. Prior audit ended 19:00:57.420Z with recorded duration 925878 ms; its 19:00:12.102Z checkpoint omitted a 45.318-second delivery tail, now reconciled. The gap until this task is not active work.
+
 ## Current compliance audit — 2026-09-17
 
 Task `01a0b0b0-2efa-7502-8fdf-427f5bdc8e95` started at 2026-09-17T18:45:31.552Z (session task_started). Initial review checkpoint: 2026-09-17T18:47:05.040Z. This start was reconstructed during intake, not captured before the first read. Work: canonical/evidence audit, missed-action recovery, session gate and local verification. Delivery checkpoint and recovered usage are recorded below; AI Units unavailable because no workflow execution is in scope.
@@ -55,3 +59,9 @@ Current timing-recovery task: observed start 2026-09-17T15:51:56.527Z; delivery 
 Task 01a0b0b0-2efa-7502-8fdf-427f5bdc8e95: 2026-09-17T18:45:31.552Z to 2026-09-17T19:00:12.102Z; observed elapsed 880.550 seconds. Three missing child GETs took 10.088 seconds of nested BO invocation time. Input tokens 2766306; cached input 2670464 (subset); output 21402; reasoning output 3458 (subset), recovered from 26 per-inference records through the checkpoint. AI Units unavailable: no workflow executed. Source and checks: [xdx_compliance_verification.json](xdx_compliance_verification.json).
 
 Phases: intake/review start recovered at 18:45:31.552Z; initial review checkpoint 18:47:05.040Z; session-gate repair and three child reads completed before the 18:57:02.786Z audit checkpoint; final policy/session/link/evidence checks completed before this delivery checkpoint. Exact authoring/debugging subdivisions are not separately metered. Sandbox credential-store failure preceded successful authorized host retry; no extra records created. Commit/final-response tail after the checkpoint remains excluded until the next recovery.
+
+### Supplier 1497 children delivery checkpoint
+
+Task 01a0b0fa-7cba-7b43-aacd-d86136194d00: 2026-09-17T20:06:41.354Z to 2026-09-17T20:18:30.382Z; 709.028 seconds observed elapsed. Eight source-API invocations: three POSTs and five GETs; 25.578 seconds nested BO invocation time. Execution checkpoint 20:13:05.055Z: three children created/read back; final parent GET and local evidence checks followed. Initial local preparation-mode correction occurred before live calls, with no POST retry; sandbox whoami credential boundary was resolved by supported host-context retry.
+
+Input tokens 4004392; cached input 3762304 (included); output 17383; reasoning output 3631 (included), from 22 per-inference records through this checkpoint. AI Units unavailable: no workflow run. Exact phase effort is not separately metered; task elapsed includes tools and preparation. Commit/final-response tail excluded. [Receipts and timings](live-post/children-1497-create/summary.json).

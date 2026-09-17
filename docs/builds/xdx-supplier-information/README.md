@@ -1,5 +1,7 @@
 # XDX Supplier Information
 
+Latest result: [supplier 1497 address, site and contact created and GET-verified](xdx_1497_children.md). All 20 intended child fields and final parent preservation pass. Earlier empty-child evidence below remains historical.
+
 Local artifact: `src/businessObjects/xdx_supplier_information.bo`.
 
 | Function | Inputs | Behavior |

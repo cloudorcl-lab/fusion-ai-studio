@@ -1,0 +1,74 @@
+{
+  "functionName": "CreateSupplierContact",
+  "operationType": "POST",
+  "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts",
+  "examplePurpose": "response",
+  "exampleMode": "fetchResponse",
+  "defaultSampleInputValues": {},
+  "currentSampleInputValues": {
+    "FirstName": "XDX Ryan",
+    "AdministrativeContactFlag": "false",
+    "LastName": "XDX Lee 1497 20260917201046",
+    "Email": "xdx-contact-1497-20260917201046@example.invalid",
+    "suppliers_Id": "300000333813822"
+  },
+  "requiredSampleInputs": [
+    {
+      "name": "suppliers_Id",
+      "location": "path",
+      "dataType": "string",
+      "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "FirstName",
+      "location": "body",
+      "dataType": "string",
+      "description": "First name of the supplier contact. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "LastName",
+      "location": "body",
+      "dataType": "string",
+      "description": "Last name of the supplier contact. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "Email",
+      "location": "body",
+      "dataType": "string",
+      "description": "Email of the supplier contact. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "AdministrativeContactFlag",
+      "location": "body",
+      "dataType": "boolean",
+      "description": "Contains one of the following values: true or false. If true, then the supplier is an administrative contact. If false, then the supplier isn't an administrative contact.The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+      "defaultValue": "",
+      "required": true
+    }
+  ],
+  "optionalSampleInputs": [],
+  "missingRequiredInputs": [],
+  "conflictingInputs": [],
+  "needsClarification": false,
+  "promptText": "",
+  "promptLines": [],
+  "replyExample": "",
+  "readyToFetch": true,
+  "guidance": "This POST function should use a fetched sample response for its example. Collect any missing required sample input values before calling the fetch command.",
+  "acceptedSampleInputValues": {
+    "FirstName": "XDX Ryan",
+    "AdministrativeContactFlag": "false",
+    "LastName": "XDX Lee 1497 20260917201046",
+    "Email": "xdx-contact-1497-20260917201046@example.invalid",
+    "suppliers_Id": "300000333813822"
+  },
+  "nextMissingRequiredInput": null
+}
