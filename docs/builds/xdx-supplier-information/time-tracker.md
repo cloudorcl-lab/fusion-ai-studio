@@ -65,3 +65,9 @@ Phases: intake/review start recovered at 18:45:31.552Z; initial review checkpoin
 Task 01a0b0fa-7cba-7b43-aacd-d86136194d00: 2026-09-17T20:06:41.354Z to 2026-09-17T20:18:30.382Z; 709.028 seconds observed elapsed. Eight source-API invocations: three POSTs and five GETs; 25.578 seconds nested BO invocation time. Execution checkpoint 20:13:05.055Z: three children created/read back; final parent GET and local evidence checks followed. Initial local preparation-mode correction occurred before live calls, with no POST retry; sandbox whoami credential boundary was resolved by supported host-context retry.
 
 Input tokens 4004392; cached input 3762304 (included); output 17383; reasoning output 3631 (included), from 22 per-inference records through this checkpoint. AI Units unavailable: no workflow run. Exact phase effort is not separately metered; task elapsed includes tools and preparation. Commit/final-response tail excluded. [Receipts and timings](live-post/children-1497-create/summary.json).
+
+## Supplier app planning task
+
+Task 01a0b110-d7b6-7580-acd7-13938dd0c04b started 2026-09-17T20:31:06.188Z (session metadata); first clock observation 20:31:16.614Z. Scope: plan and reusable build prompt only. Prior child-create turn completed 20:19:38.334Z, duration 776985 ms; its 20:18:30.382Z checkpoint tail is 67.952 seconds, now recovered. No work attributed to the inter-turn gap. Delivery checkpoint pending.
+
+Planning delivery checkpoint 2026-09-17T20:40:40.385Z: 574.197 seconds since 2026-09-17T20:31:06.188Z. Task 01a0b110-d7b6-7580-acd7-13938dd0c04b. 12 per-inference usage records: input 1870315, cached input 1815040 (subset), output 17194, reasoning output 1563 (subset). AI Units unavailable: no workflow run. Zero live calls or email sends. Phase effort not separately metered; commit/final-response tail excluded. [Planning receipt](xdx_supplier_workspace_planning_receipt.json).

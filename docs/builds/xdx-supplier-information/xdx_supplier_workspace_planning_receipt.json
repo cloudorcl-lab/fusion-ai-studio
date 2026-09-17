@@ -1,0 +1,23 @@
+{
+  "taskId": "01a0b110-d7b6-7580-acd7-13938dd0c04b",
+  "startedUtc": "2026-09-17T20:31:06.188Z",
+  "checkpointUtc": "2026-09-17T20:40:40.385Z",
+  "elapsedSeconds": 574.197,
+  "perInferenceRecords": 12,
+  "tokens": {
+    "input_tokens": 1870315,
+    "cached_input_tokens": 1815040,
+    "output_tokens": 17194,
+    "reasoning_output_tokens": 1563
+  },
+  "aiUnits": "Unavailable: no workflow executed",
+  "liveCalls": 0,
+  "emailSends": 0,
+  "checks": {
+    "documentLinks": "14 links across plan, prompt and handoff PASS",
+    "fences": "PASS",
+    "scopeReview": "Five outcomes covered; email summary body only; PDF independent"
+  },
+  "timingLimits": "Elapsed includes planning and tools; phase effort not separately metered; commit/final-response tail excluded",
+  "source": "C:/Users/dasu/.codex/sessions/2026/09/17/rollout-2026-09-17T03-22-36-01a0ae75-e1f3-7681-a94e-555457cd87e3.jsonl"
+}
