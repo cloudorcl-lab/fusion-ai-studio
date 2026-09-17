@@ -1,0 +1,232 @@
+{
+  "name": "XDX Supplier Information",
+  "description": "Read-only supplier information: list suppliers and find suppliers by full or partial name, with explicit pagination and supplier identifiers.",
+  "objectCode": "XDX_SUPPLIER_INFORMATION",
+  "family": "PRC",
+  "product": "SUPPLIER",
+  "objectSource": "ADF_BC",
+  "restResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers",
+  "seededFlag": false,
+  "mandatoryFlag": false,
+  "objectProperties": {
+    "jsonSchemaName": "supportedObjectProperties",
+    "jsonSchemaVersion": 1,
+    "tools": [
+      {
+        "name": "ListSuppliers",
+        "description": "List one page of suppliers. Return items and count, limit, offset, hasMore. Continue from offset + count while hasMore is true; never describe one page as the full catalog. Includes active and inactive suppliers visible to the signed-in user.",
+        "operationId": "getall_suppliers",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers?fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,InactiveDate&onlyData=true&orderBy=SupplierId:asc&limit={limit}&offset={offset}",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "limit",
+            "dataType": "integer",
+            "description": "Page size: integer from 1 to 100; default 25. A page is not the complete supplier list.",
+            "id": 2,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": "25"
+          },
+          {
+            "name": "offset",
+            "dataType": "integer",
+            "description": "Zero-based nonnegative integer offset; default 0. For the next page use response offset + count while hasMore is true.",
+            "id": 3,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": "0"
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "Live first-page supplier response; page size 1. Paging metadata is retained.",
+            "query": {
+              "items": [
+                {
+                  "SupplierId": 300000047414503,
+                  "SupplierNumber": "1252",
+                  "Supplier": "Lee Supplies",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                }
+              ],
+              "count": 1,
+              "hasMore": true,
+              "limit": 1,
+              "offset": 0,
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
+                  "name": "suppliers",
+                  "kind": "collection"
+                }
+              ]
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "FindSupplierByFullName",
+        "description": "Find suppliers by full name using an equality comparison. Return every matching supplier and native pagination metadata. Name matching follows the Fusion REST service collation; no case-insensitive or fuzzy-match guarantee. Caller must escape embedded apostrophes by doubling them before supplying supplierName.",
+        "operationId": "getall_suppliers",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers?q=Supplier='{supplierName}'&fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,InactiveDate&onlyData=true&orderBy=SupplierId:asc&limit={limit}&offset={offset}",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "supplierName",
+            "dataType": "string",
+            "description": "Nonempty supplier name or name fragment. Double embedded apostrophes for the REST query literal (example: O'Brien becomes O''Brien). Do not include enclosing quotes. Partial-name search preserves percent and underscore as LIKE wildcards.",
+            "id": 7,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "limit",
+            "dataType": "integer",
+            "description": "Positive integer page size; use 25 unless a smaller page is needed. Recommended maximum 100; caller-enforced.",
+            "id": 8,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": "25"
+          },
+          {
+            "name": "offset",
+            "dataType": "integer",
+            "description": "Nonnegative integer page offset; default 0. Continue from response offset + count while hasMore is true.",
+            "id": 9,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": "0"
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "Live FindSupplierByFullName response verified against the supplier returned by ListSuppliers.",
+            "query": {
+              "items": [
+                {
+                  "SupplierId": 300000047414503,
+                  "SupplierNumber": "1252",
+                  "Supplier": "Lee Supplies",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                }
+              ],
+              "count": 1,
+              "hasMore": false,
+              "limit": 25,
+              "offset": 0,
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
+                  "name": "suppliers",
+                  "kind": "collection"
+                }
+              ]
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "FindSuppliersByPartialName",
+        "description": "Find suppliers whose name contains the supplied text using a LIKE contains comparison. Return every match with pagination metadata. Matching follows Fusion REST collation. Caller must double apostrophes; percent and underscore in the input retain LIKE wildcard semantics. Do not supply blank text; use ListSuppliers instead.",
+        "operationId": "getall_suppliers",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers?q=Supplier like '%{supplierName}%'&fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,InactiveDate&onlyData=true&orderBy=SupplierId:asc&limit={limit}&offset={offset}",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "supplierName",
+            "dataType": "string",
+            "description": "Nonempty supplier name or name fragment. Double embedded apostrophes for the REST query literal (example: O'Brien becomes O''Brien). Do not include enclosing quotes. Partial-name search preserves percent and underscore as LIKE wildcards.",
+            "id": 13,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "limit",
+            "dataType": "integer",
+            "description": "Positive integer page size; use 25 unless a smaller page is needed. Recommended maximum 100; caller-enforced.",
+            "id": 14,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": "25"
+          },
+          {
+            "name": "offset",
+            "dataType": "integer",
+            "description": "Nonnegative integer page offset; default 0. Continue from response offset + count while hasMore is true.",
+            "id": 15,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": "0"
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "Live FindSuppliersByPartialName response verified against the supplier returned by ListSuppliers.",
+            "query": {
+              "items": [
+                {
+                  "SupplierId": 300000047414503,
+                  "SupplierNumber": "1252",
+                  "Supplier": "Lee Supplies",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                }
+              ],
+              "count": 1,
+              "hasMore": false,
+              "limit": 25,
+              "offset": 0,
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
+                  "name": "suppliers",
+                  "kind": "collection"
+                }
+              ]
+            },
+            "sampleType": "response"
+          }
+        ]
+      }
+    ]
+  }
+}

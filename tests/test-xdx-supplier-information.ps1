@@ -1,0 +1,53 @@
+param([string]$RepoRoot = (Split-Path -Parent $PSScriptRoot))
+$ErrorActionPreference = 'Stop'
+$bo = Get-Content (Join-Path $RepoRoot 'src/businessObjects/xdx_supplier_information.bo') -Raw | ConvertFrom-Json
+function Assert-Contract([bool]$Condition, [string]$Message) {
+  if (-not $Condition) { throw $Message }
+}
+Assert-Contract ($bo.objectCode -ceq 'XDX_SUPPLIER_INFORMATION') 'Wrong BO identity.'
+$functions = @($bo.objectProperties.tools)
+$expected = @('ListSuppliers', 'FindSupplierByFullName', 'FindSuppliersByPartialName')
+Assert-Contract ($functions.Count -eq 3) 'Expected three read-only functions.'
+Assert-Contract (@(Compare-Object $expected @($functions.name)).Count -eq 0) 'Function set changed.'
+foreach ($fn in $functions) {
+  Assert-Contract ($fn.operationType -ceq 'GET') "Unsafe operation: $($fn.name)"
+  Assert-Contract ($fn.useNativeAuthentication -eq $true) 'Native authentication required.'
+  Assert-Contract ($fn.headers.'REST-Framework-Version' -ceq '4') 'Query syntax requires pinned framework version.'
+  Assert-Contract ($fn.resourcePath.StartsWith('/fscmRestApi/resources/11.13.18.05/suppliers?')) 'Unexpected endpoint.'
+  Assert-Contract ($fn.resourcePath.Contains('orderBy=SupplierId:asc')) 'Stable paging order missing.'
+  Assert-Contract ($fn.resourcePath.Contains('limit={limit}&offset={offset}')) 'Paging inputs missing.'
+  Assert-Contract ($fn.resourcePath.Contains('fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,InactiveDate&')) 'Output projection changed.'
+  foreach ($key in @('limit', 'offset')) {
+    $parameter = @($fn.parameterDefinitions | Where-Object name -eq $key)
+    Assert-Contract ($parameter.Count -eq 1 -and $parameter[0].dataType -eq 'integer') "Invalid $key parameter."
+  }
+  Assert-Contract (($fn.parameterDefinitions | Where-Object name -eq 'limit').defaultValue -eq '25') 'Wrong default limit.'
+  Assert-Contract (($fn.parameterDefinitions | Where-Object name -eq 'offset').defaultValue -eq '0') 'Wrong default offset.'
+  $sample = $fn.sampleQueries[0]
+  Assert-Contract ($sample.sampleType -eq 'response' -and $sample.description.Length -gt 0) 'Required response example missing.'
+  $payload = $sample.query
+  Assert-Contract ($payload.count -eq @($payload.items).Count) 'Captured response count does not match its items.'
+  foreach ($key in @('items', 'count', 'hasMore', 'limit', 'offset')) {
+    Assert-Contract ($key -in $payload.PSObject.Properties.Name) "Paging envelope lost $key."
+  }
+  foreach ($item in $payload.items) {
+    foreach ($key in @('SupplierId', 'SupplierNumber', 'Supplier', 'SupplierType', 'BusinessRelationship', 'InactiveDate')) {
+      Assert-Contract ($key -in $item.PSObject.Properties.Name) "Captured supplier missing $key."
+    }
+  }
+}
+$list = $functions | Where-Object name -eq 'ListSuppliers'
+$full = $functions | Where-Object name -eq 'FindSupplierByFullName'
+$partial = $functions | Where-Object name -eq 'FindSuppliersByPartialName'
+Assert-Contract (-not $list.resourcePath.Contains('?q=')) 'List must not impose a name filter.'
+Assert-Contract ($full.resourcePath.Contains("q=Supplier='{supplierName}'&")) 'Full name must use equality.'
+Assert-Contract ($partial.resourcePath.Contains("q=Supplier like '%{supplierName}%'&")) 'Partial name must search within the entire name.'
+foreach ($fn in @($full, $partial)) {
+  Assert-Contract ([string]::IsNullOrEmpty(($fn.parameterDefinitions | Where-Object name -eq 'supplierName').defaultValue)) 'Tenant-specific supplier must not be a default.'
+}
+$baseline = $list.sampleQueries[0].query.items[0]
+Assert-Contract ($baseline.SupplierId -in $full.sampleQueries[0].query.items.SupplierId) 'Full-name example lost baseline supplier.'
+Assert-Contract ($baseline.SupplierId -in $partial.sampleQueries[0].query.items.SupplierId) 'Partial-name example lost baseline supplier.'
+Assert-Contract ($full.sampleQueries[0].query.items[0].Supplier -ceq $baseline.Supplier) 'Full-name example returned a different name.'
+Write-Output 'Supplier BO contract: PASS (GET-only, query semantics, paging, captured response contracts).'
+Write-Output 'Local verification only; this does not rerun live requests or prove remote BO deployment.'
