@@ -60,3 +60,6 @@ Metadata discovery complete. Author the local BO through the CLI, then validate 
 - No new runtime dependency, obsolete source path, or remote state was introduced. Keep the CLI and seed unchanged; only task-owned temporary JSON arguments require cleanup.
 - Evidence review produced no reusable playbook change: existing source-evidence, no-fabricated-example, focused-repair and lifecycle-boundary rules cover the observations. CLI-specific details stay in this build record.
 - Local implementation and scoped checks are complete; final governance/diff checks and scoped commit are recorded in verification.md. No remote deployment claimed.
+
+## Requested ListSuppliers live retest
+User explicitly requested a fresh live ListSuppliers test and visible results. Scope: one default page (limit 25, offset 0), GET only, verify returned count, unique IDs and paging fields. Use a temporary BO copy to preserve the delivery artifact. Save the returned page and measured elapsed time; no remote BO save or supplier mutation. Existing playbook source-evidence and focused-test rules apply.

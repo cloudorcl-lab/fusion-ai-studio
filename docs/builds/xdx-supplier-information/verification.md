@@ -20,3 +20,6 @@ Governance, whitespace and scoped-commit receipt follow after the final checks.
 Final governance: living-build verifier PASS; startup-package verifier PASS. No canonical playbook change warranted by the evidence review.
 
 Commit scope: BO, focused contract check, supplier build records and the single active handoff only. Resolve the delivery commit with `git log -1 --format=%H -- src/businessObjects/xdx_supplier_information.bo`. Unrelated ZIP, environment and workspace changes are excluded. No push.
+
+## Requested live ListSuppliers retest
+2026-09-17 00:55:44 UTC: limit 25, offset 0; 25 rows returned, hasMore true; next offset 25. CLI call elapsed 5.242 seconds. Count, unique supplier IDs and pagination envelope checks passed. Full result: live-list-suppliers.json. The delivery BO was preserved by running the sample fetch against a temporary copy. No new reusable playbook lesson.
