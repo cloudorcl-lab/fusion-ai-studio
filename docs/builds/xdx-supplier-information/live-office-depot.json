@@ -1,0 +1,36 @@
+{
+  "timestampUtc": "2026-09-17T00:59:27.3365103+00:00",
+  "environment": "eqih-dev21",
+  "function": "FindSupplierByFullName",
+  "inputs": {
+    "offset": 0,
+    "limit": 25,
+    "supplierName": "Office Depot"
+  },
+  "elapsedSeconds": 2.479,
+  "checks": "PASS: full-name equality and returned count",
+  "response": {
+    "items": [
+      {
+        "SupplierId": 300000047507596,
+        "SupplierNumber": "1264",
+        "Supplier": "Office Depot",
+        "SupplierType": "Supplier",
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      }
+    ],
+    "count": 1,
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
+        "name": "suppliers",
+        "kind": "collection"
+      }
+    ]
+  }
+}

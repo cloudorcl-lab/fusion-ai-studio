@@ -16,4 +16,4 @@
 - Next milestone startup: when remote deployment is requested, reconcile exact code and current identity before saving, then verify the remote artifact and intended consumer. New app builds still require their own worktree, intake and approved golden path.
 - Installation history and rollback remain at `docs/installations/2026-09-16-build-packet/ACTIVATION-RECEIPT.md`; installed seed remains a delivery snapshot.
 
-- Latest user-requested live check: ListSuppliers, 2026-09-17 00:55:44 UTC; 25 rows, offset 0, hasMore true; 5.242 seconds. Result: docs/builds/xdx-supplier-information/live-list-suppliers.json. Delivery BO unchanged.
+- Latest user-requested live check: FindSupplierByFullName for Office Depot, 2026-09-17 00:59:27 UTC; one match, hasMore false; 2.479 seconds. Result: docs/builds/xdx-supplier-information/live-office-depot.json. Delivery BO unchanged.

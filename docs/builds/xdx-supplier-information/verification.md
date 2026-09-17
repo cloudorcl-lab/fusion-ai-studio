@@ -23,3 +23,6 @@ Commit scope: BO, focused contract check, supplier build records and the single 
 
 ## Requested live ListSuppliers retest
 2026-09-17 00:55:44 UTC: limit 25, offset 0; 25 rows returned, hasMore true; next offset 25. CLI call elapsed 5.242 seconds. Count, unique supplier IDs and pagination envelope checks passed. Full result: live-list-suppliers.json. The delivery BO was preserved by running the sample fetch against a temporary copy. No new reusable playbook lesson.
+
+## Office Depot full-name lookup
+2026-09-17 00:59:27 UTC: PASS; one exact match, hasMore false, limit 25, offset 0. Elapsed CLI time 2.479 seconds. Evidence: live-office-depot.json. InactiveDate is null; five non-null supplier fields returned. Delivery BO unchanged. No new reusable playbook lesson.

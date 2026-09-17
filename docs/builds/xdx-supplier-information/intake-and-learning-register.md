@@ -63,3 +63,6 @@ Metadata discovery complete. Author the local BO through the CLI, then validate 
 
 ## Requested ListSuppliers live retest
 User explicitly requested a fresh live ListSuppliers test and visible results. Scope: one default page (limit 25, offset 0), GET only, verify returned count, unique IDs and paging fields. Use a temporary BO copy to preserve the delivery artifact. Save the returned page and measured elapsed time; no remote BO save or supplier mutation. Existing playbook source-evidence and focused-test rules apply.
+
+## Requested Office Depot full-name test
+User requested live FindSupplierByFullName for Office Depot and all non-null returned fields. Scope: exact-name GET, limit 25, offset 0; preserve artifact through temporary copy; check every returned name and paging completeness. Existing source-evidence rules apply; no broader field projection or deployment requested.
