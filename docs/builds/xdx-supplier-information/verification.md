@@ -26,3 +26,18 @@ Commit scope: BO, focused contract check, supplier build records and the single 
 
 ## Office Depot full-name lookup
 2026-09-17 00:59:27 UTC: PASS; one exact match, hasMore false, limit 25, offset 0. Elapsed CLI time 2.479 seconds. Evidence: live-office-depot.json. InactiveDate is null; five non-null supplier fields returned. Delivery BO unchanged. No new reusable playbook lesson.
+
+## Approved detail extension: live verification
+
+2026-09-17 UTC, eqih-dev21 / CASEY.BROWN; supplier Office Depot, ID 300000047507596. All 16 live source-API checks passed. Full inputs, timestamps, durations and responses are in `live-details/`.
+
+| Function | Baseline result | Additional checks |
+| --- | --- | --- |
+| GetSupplierDetails | Profile identity and full scalar response verified | Correct supplier ID and exact name |
+| ListSupplierAddresses | 25 rows; hasMore false | ID equality, City equality, offset 1 / limit 1, empty predicate |
+| ListSupplierSites | 24 rows; hasMore false | ID equality, SupplierSite equality, offset 1 / limit 1, empty predicate |
+| ListSupplierContacts | 13 rows; hasMore false | ID equality, ContactName equality, offset 1 / limit 1, empty predicate |
+
+Core runner: `tests/test-xdx-supplier-details-live.ps1` (13 calls); receipt `live-details/summary.json`. Separate text-search checks: `live-details/text-filter-summary.json` (3 calls), each returned one exact expected match. Text results were checked against the full baseline subset by child IDs, not only HTTP status. No special-character, arbitrary partial child filter, authorization-failure or deployed-runtime coverage is claimed.
+
+Final local verification: seven-function contract PASS; CLI validate-bo result.ok true, errorCount 0; original three function definitions semantically unchanged against HEAD; living-build and startup-package verifiers PASS. Four new baseline samples retained in the BO; additional cases used a temporary copy. No dependency or CLI changes. Existing playbook rules cover the evidence; no reusable canonical change warranted. This extension remains local, with no remote BO save/publication or supplier writes.

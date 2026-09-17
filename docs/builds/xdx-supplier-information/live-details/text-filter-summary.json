@@ -1,0 +1,20 @@
+[
+  {
+    "status": "PASS",
+    "count": 1,
+    "filter": "City='BOCA RATON'",
+    "function": "ListSupplierAddresses"
+  },
+  {
+    "status": "PASS",
+    "count": 1,
+    "filter": "SupplierSite='OD US1'",
+    "function": "ListSupplierSites"
+  },
+  {
+    "status": "PASS",
+    "count": 1,
+    "filter": "ContactName='Gasol, Jim'",
+    "function": "ListSupplierContacts"
+  }
+]

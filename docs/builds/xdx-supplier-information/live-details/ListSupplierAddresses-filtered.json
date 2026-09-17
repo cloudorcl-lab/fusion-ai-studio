@@ -1,0 +1,75 @@
+{
+  "timestampUtc": "2026-09-17T01:15:29.3963003+00:00",
+  "function": "ListSupplierAddresses",
+  "case": "filtered",
+  "inputs": {
+    "limit": "25",
+    "offset": "0",
+    "filter": "SupplierAddressId=300000047507644",
+    "suppliers_Id": "300000047507596"
+  },
+  "elapsedSeconds": 2.217,
+  "response": {
+    "items": [
+      {
+        "SupplierAddressId": 300000047507644,
+        "AddressName": "OD US1",
+        "CountryCode": "US",
+        "Country": "United States",
+        "AddressLine1": "6600 N MILITARY TRL",
+        "AddressLine2": null,
+        "AddressLine3": null,
+        "AddressLine4": null,
+        "City": "BOCA RATON",
+        "State": "FL",
+        "PostalCode": "33496",
+        "PostalCodeExtension": "2434",
+        "Province": null,
+        "County": "PALM BEACH",
+        "Building": null,
+        "FloorNumber": null,
+        "PhoneticAddress": null,
+        "LanguageCode": "US",
+        "Language": "American English",
+        "Addressee": null,
+        "GlobalLocationNumber": null,
+        "AdditionalAddressAttribute1": null,
+        "AdditionalAddressAttribute2": null,
+        "AdditionalAddressAttribute3": null,
+        "AdditionalAddressAttribute4": null,
+        "AdditionalAddressAttribute5": null,
+        "FormattedAddress": "6600 N MILITARY TRL,BOCA RATON, FL 33496 PALM BEACH",
+        "AddressPurposeOrderingFlag": true,
+        "AddressPurposeRemitToFlag": true,
+        "AddressPurposeRFQOrBiddingFlag": false,
+        "PhoneCountryCode": null,
+        "PhoneAreaCode": null,
+        "PhoneNumber": null,
+        "PhoneExtension": null,
+        "FaxCountryCode": null,
+        "FaxAreaCode": null,
+        "FaxNumber": null,
+        "Email": null,
+        "InactiveDate": "4712-12-31",
+        "Status": "ACTIVE",
+        "CreationDate": "2013-11-12T15:49:20.398-06:00",
+        "CreatedBy": "CALVIN.ROTH",
+        "LastUpdateDate": "2018-12-04T14:14:57.692-06:00",
+        "LastUpdatedBy": "CALVIN.ROTH",
+        "AddressPartyNumber": "1150"
+      }
+    ],
+    "count": 1,
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000047507596/child/addresses",
+        "name": "addresses",
+        "kind": "collection"
+      }
+    ]
+  }
+}

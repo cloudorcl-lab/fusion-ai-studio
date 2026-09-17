@@ -47,7 +47,7 @@ Retain the canonical CLI, existing skill references, public Suppliers API docume
 
 ## Checkpoint
 
-Metadata discovery complete. Author the local BO through the CLI, then validate and reconcile evidence. Build remains in progress.
+Local BO authoring and source-API verification complete, including the approved detail extension below. Current evidence and delivery boundaries are recorded in verification.md.
 
 ## Closeout review
 
@@ -66,3 +66,8 @@ User explicitly requested a fresh live ListSuppliers test and visible results. S
 
 ## Requested Office Depot full-name test
 User requested live FindSupplierByFullName for Office Depot and all non-null returned fields. Scope: exact-name GET, limit 25, offset 0; preserve artifact through temporary copy; check every returned name and paging completeness. Existing source-evidence rules apply; no broader field projection or deployment requested.
+
+## Approved supplier detail extension (2026-09-17 UTC)
+Extend the existing BO with GetSupplierDetails, ListSupplierAddresses, ListSupplierSites and ListSupplierContacts. Preserve the original three functions. User approved each part being tested against live Fusion with saved response evidence. Scope is local authoring and GET-only API tests for Office Depot, whose ID was obtained by the explicitly requested live name lookup. Child lists accept SupplierId, a documented REST rowmatch filter with an all-records default, limit and offset; each preserves its own paging envelope. Parent identity is mandatory and never defaults to a sample ID. Detail returns scalar supplier profile fields without automatic child expansion. Empty collections remain valid; errors remain errors. Acceptance SUP-06 through SUP-09: each new function validates and returns the correct parent-scoped shape; child filtering, paging and empty results are verified. No remote BO save, publication, writes or new dependencies. Reuse existing source-evidence, focused-test and hand-forward rules; capture CLI-specific corrections here.
+
+Extension closeout: SUP-06 through SUP-09 passed with 16 live GET checks, including child ID and text equality filters, offset paging and empty collections. Office Depot returned 25 addresses, 24 sites and 13 contacts, each terminal. CLI-authored source uses canonical `suppliers_Id`, mandatory with no default. Original three function definitions are unchanged. Seven-function validation, focused contract and both governance verifiers pass. Saved data is intentional verification evidence requested by the user; task-only temporary BO and argument files were cleaned. No new dependencies or remote state. Evidence review produced no reusable playbook change; existing source-contract, scoped-test and release-boundary rules remain sufficient. A one-off PowerShell text-test parsing typo was corrected before any API request.

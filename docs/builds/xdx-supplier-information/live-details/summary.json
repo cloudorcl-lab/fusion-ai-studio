@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "supplierId": "300000047507596",
+  "supplierName": "Office Depot",
+  "cases": [
+    {
+      "function": "GetSupplierDetails",
+      "case": "baseline",
+      "elapsedSeconds": 3.195,
+      "evidence": "GetSupplierDetails-baseline.json"
+    },
+    {
+      "function": "ListSupplierAddresses",
+      "case": "baseline",
+      "elapsedSeconds": 3.64,
+      "evidence": "ListSupplierAddresses-baseline.json"
+    },
+    {
+      "function": "ListSupplierAddresses",
+      "case": "filtered",
+      "elapsedSeconds": 2.217,
+      "evidence": "ListSupplierAddresses-filtered.json"
+    },
+    {
+      "function": "ListSupplierAddresses",
+      "case": "offset-one",
+      "elapsedSeconds": 2.974,
+      "evidence": "ListSupplierAddresses-offset-one.json"
+    },
+    {
+      "function": "ListSupplierAddresses",
+      "case": "empty",
+      "elapsedSeconds": 2.595,
+      "evidence": "ListSupplierAddresses-empty.json"
+    },
+    {
+      "function": "ListSupplierSites",
+      "case": "baseline",
+      "elapsedSeconds": 4.137,
+      "evidence": "ListSupplierSites-baseline.json"
+    },
+    {
+      "function": "ListSupplierSites",
+      "case": "filtered",
+      "elapsedSeconds": 3.511,
+      "evidence": "ListSupplierSites-filtered.json"
+    },
+    {
+      "function": "ListSupplierSites",
+      "case": "offset-one",
+      "elapsedSeconds": 3.737,
+      "evidence": "ListSupplierSites-offset-one.json"
+    },
+    {
+      "function": "ListSupplierSites",
+      "case": "empty",
+      "elapsedSeconds": 3.323,
+      "evidence": "ListSupplierSites-empty.json"
+    },
+    {
+      "function": "ListSupplierContacts",
+      "case": "baseline",
+      "elapsedSeconds": 2.99,
+      "evidence": "ListSupplierContacts-baseline.json"
+    },
+    {
+      "function": "ListSupplierContacts",
+      "case": "filtered",
+      "elapsedSeconds": 2.669,
+      "evidence": "ListSupplierContacts-filtered.json"
+    },
+    {
+      "function": "ListSupplierContacts",
+      "case": "offset-one",
+      "elapsedSeconds": 2.451,
+      "evidence": "ListSupplierContacts-offset-one.json"
+    },
+    {
+      "function": "ListSupplierContacts",
+      "case": "empty",
+      "elapsedSeconds": 2.421,
+      "evidence": "ListSupplierContacts-empty.json"
+    }
+  ],
+  "scope": "Live source API through local BO definitions; no remote BO deployment."
+}

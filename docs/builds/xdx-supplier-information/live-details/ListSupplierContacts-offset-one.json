@@ -1,0 +1,60 @@
+{
+  "timestampUtc": "2026-09-17T01:16:01.4491976+00:00",
+  "function": "ListSupplierContacts",
+  "case": "offset-one",
+  "inputs": {
+    "limit": "1",
+    "offset": "1",
+    "filter": "SupplierContactId is not null",
+    "suppliers_Id": "300000047507596"
+  },
+  "elapsedSeconds": 2.451,
+  "response": {
+    "items": [
+      {
+        "SupplierContactId": 300000051065977,
+        "SalutationCode": "MR.",
+        "Salutation": "Mr.",
+        "FirstName": "Sophie",
+        "MiddleName": null,
+        "LastName": "Joly",
+        "JobTitle": null,
+        "AdministrativeContactFlag": true,
+        "PhoneCountryCode": null,
+        "PhoneAreaCode": null,
+        "PhoneNumber": null,
+        "PhoneExtension": null,
+        "MobileCountryCode": null,
+        "MobileAreaCode": null,
+        "MobileNumber": null,
+        "FaxCountryCode": null,
+        "FaxAreaCode": null,
+        "FaxNumber": null,
+        "Email": "sjoly_eqih-dev21@oraclepdemos.com",
+        "Status": "ACTIVE",
+        "InactiveDate": null,
+        "PersonProfileId": 300000051065977,
+        "CreationDate": "2014-01-21T14:42:29.634-06:00",
+        "CreatedBy": "MARC.GRANDE",
+        "LastUpdateDate": "2017-11-08T10:48:27.359-06:00",
+        "LastUpdatedBy": "JOHN.DUNBAR",
+        "DataAccessLevel": "SUPPLIER",
+        "UserName": "SOPHIE.JOLY",
+        "UserAccountStatus": "A",
+        "ContactName": "Joly, Sophie"
+      }
+    ],
+    "count": 1,
+    "hasMore": true,
+    "limit": 1,
+    "offset": 1,
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000047507596/child/contacts",
+        "name": "contacts",
+        "kind": "collection"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "timestampUtc": "2026-09-17T01:15:35.4495862+00:00",
+  "function": "ListSupplierAddresses",
+  "case": "empty",
+  "inputs": {
+    "limit": "25",
+    "offset": "0",
+    "filter": "SupplierAddressId is null",
+    "suppliers_Id": "300000047507596"
+  },
+  "elapsedSeconds": 2.595,
+  "response": {
+    "items": [],
+    "count": 0,
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000047507596/child/addresses",
+        "name": "addresses",
+        "kind": "collection"
+      }
+    ]
+  }
+}

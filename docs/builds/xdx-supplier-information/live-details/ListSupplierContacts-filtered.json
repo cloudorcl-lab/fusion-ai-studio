@@ -1,0 +1,60 @@
+{
+  "timestampUtc": "2026-09-17T01:15:58.3217478+00:00",
+  "function": "ListSupplierContacts",
+  "case": "filtered",
+  "inputs": {
+    "limit": "25",
+    "offset": "0",
+    "filter": "SupplierContactId=300000047507658",
+    "suppliers_Id": "300000047507596"
+  },
+  "elapsedSeconds": 2.669,
+  "response": {
+    "items": [
+      {
+        "SupplierContactId": 300000047507658,
+        "SalutationCode": "MR.",
+        "Salutation": "Mr.",
+        "FirstName": "Jim ",
+        "MiddleName": null,
+        "LastName": "Gasol",
+        "JobTitle": null,
+        "AdministrativeContactFlag": true,
+        "PhoneCountryCode": null,
+        "PhoneAreaCode": null,
+        "PhoneNumber": null,
+        "PhoneExtension": null,
+        "MobileCountryCode": null,
+        "MobileAreaCode": null,
+        "MobileNumber": null,
+        "FaxCountryCode": null,
+        "FaxAreaCode": null,
+        "FaxNumber": null,
+        "Email": "jgasol_eqih-dev21@oraclepdemos.com",
+        "Status": "ACTIVE",
+        "InactiveDate": null,
+        "PersonProfileId": 300000047507658,
+        "CreationDate": "2013-11-12T15:51:28.224-06:00",
+        "CreatedBy": "CALVIN.ROTH",
+        "LastUpdateDate": "2017-11-08T10:48:27.359-06:00",
+        "LastUpdatedBy": "JOHN.DUNBAR",
+        "DataAccessLevel": "SUPPLIER",
+        "UserName": "JIM.GASOL",
+        "UserAccountStatus": "A",
+        "ContactName": "Gasol, Jim"
+      }
+    ],
+    "count": 1,
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000047507596/child/contacts",
+        "name": "contacts",
+        "kind": "collection"
+      }
+    ]
+  }
+}
