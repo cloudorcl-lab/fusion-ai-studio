@@ -1,6 +1,6 @@
 # API learning review — 2026-09-17
 
-Evidence register only. Reusable guidance is owned by [the canonical playbook](../../lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md), Gate 2 API subsections. The user explicitly requested recording lessons for all API domains and future sessions.
+Evidence register only. Reusable operation guidance is routed through the [object learning registry](../../lessons/objects/README.md) and owned by the matching Suppliers, Addresses, Sites and Contacts references. The [canonical playbook](../../lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md) owns lifecycle and architecture. The user explicitly requested recording lessons for future builds without keeping object-level GET, POST or JSON guidance in the canonical playbook.
 
 ## Intake
 
@@ -28,7 +28,16 @@ Documentation and memory hand-forward only. Baseline: fusion-ai-studio-1, Testin
 | Scoped approved requests outside sandbox returned HTTP 200 with normal certificate validation | Verified browser-free route; no TLS bypass, credential requirement, plugin installation or repair of web.run |
 | Supplier page contained 185 parseable JSON blocks; first was a schema; request heading was a styled p | Select semantic request-example section, HTML-decode and parse its code block; do not assume h3 or first JSON block |
 | No explicit web_search setting found in inspected local config | Effective runtime mode and relation to failure remain unproven; do not change config on speculation |
-| Startup/handoff/playbook/time/scoped-commit rules already apply | Retain one lifecycle owner and promote committed governance to future worktrees; installed seed stays a snapshot |
+| Startup/handoff/playbook/time/scoped-commit rules already apply | Retain one lifecycle owner plus one operation reference per resource object; promote committed governance to future worktrees; installed seed stays a snapshot |
+
+## Reusable object-reference owners
+
+| Resource object | Reusable reference | Evidence retained here |
+| --- | --- | --- |
+| Suppliers | [Suppliers](../../lessons/objects/oracle-fusion-procurement-suppliers.md) | Collection/detail GET behavior, supplier POST schema/example discrepancy and execution boundary |
+| Supplier Addresses | [Supplier addresses](../../lessons/objects/oracle-fusion-procurement-supplier-addresses.md) | Parent-scoped GET filters/paging and address POST schema/example discrepancy |
+| Supplier Sites | [Supplier sites](../../lessons/objects/oracle-fusion-procurement-supplier-sites.md) | Parent-scoped GET filters/paging and site POST reference-field risks |
+| Supplier Contacts | [Supplier contacts](../../lessons/objects/oracle-fusion-procurement-supplier-contacts.md) | Parent-scoped GET filters/paging, contact-data boundary and contact POST schema/example discrepancy |
 
 ## Browser-free retrieval receipts
 
@@ -45,8 +54,10 @@ The supplier example omits SupplierId, SupplierNumber and SupplierPartyId while 
 
 ## Closeout boundary
 
-Earlier build receipts saying “no reusable playbook change” describe their then-current closeout. This later review supersedes that conclusion with cross-domain learning promotion, retrieval evidence and the write-test design. POST execution remains untested; no POST function, remote save, publication or push is part of this review. Browser-free access was demonstrated for these pages, not guaranteed for every site.
+Earlier build receipts saying “no reusable playbook change” describe their then-current closeout. The first learning promotion placed detailed operation guidance in the canonical playbook; the later approved ownership restructure supersedes that placement. GET, POST, JSON, schema, filter, paging and key guidance now belongs to the four object references. POST execution remains untested; no POST function, remote save, publication or push is part of this review. Browser-free access was demonstrated for these pages, not guaranteed for every site.
 
 Retain existing CLI, skill references and live evidence; no new dependency or parallel playbook. Memory receives a short cross-domain pointer with no tenant data or credentials. Existing runtime QA is reused for this documentation-only change. Tokens/AI Units are unavailable, not estimated.
 
-Verification: living-build and startup-package verifiers PASS; changed-document local links and code fences PASS; scoped whitespace checks PASS. Reviewed new main-path rules for cross-domain scope and kept operation-specific evidence here. No runtime tests rerun. Canonical playbook remains the single lifecycle owner; skill and installed seed were not duplicated or edited.
+Verification for the original promotion: living-build and startup-package verifiers PASS; changed-document local links and code fences PASS; scoped whitespace checks PASS. Ownership-restructure verification is recorded after the registry, four object references, entrypoint and verifier are checked together. No runtime tests are required because the source definitions and prior live evidence are unchanged. The canonical playbook remains the single lifecycle owner; the installed seed remains an unchanged delivery snapshot.
+
+Ownership-restructure verification: living-build contract and positive/negative fixture test PASS; changed Markdown files have valid local links and balanced code fences; object references contain no tenant host, identity, tested supplier name or live numeric ID; scoped whitespace check PASS. Current Oracle 26C OpenAPI readback confirmed nine operation IDs across five resource paths and the four POST schema/example field sets used by the references. No live Fusion API, BO mutation, remote save, publication or push occurred.

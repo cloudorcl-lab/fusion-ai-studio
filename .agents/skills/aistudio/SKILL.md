@@ -14,14 +14,15 @@ Use this skill to create or modify AI Studio app and workflow project resources,
 
 1. Review `docs/handoffs/ACTIVE_HANDOFF.md` before any other repository work in every new Codex session.
 2. Read `docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md` and run `pwsh -NoProfile -File scripts/verify-living-build-contract.ps1` from the project root before planning or modifying an AI Studio build. If the contract is missing or fails, restore it before continuing.
-3. Classify the requested artifact before choosing prompts or commands.
-4. Before creating any new artifact, resolve package layout from the current project. If multiple app packages exist and the current user request did not explicitly name one, ask for the target app package and stop before any discovery, planning, generation, test sync, or create command.
-5. Read `references/prompts/index.md` to see available prompt references.
-6. Load only the prompt files relevant to the task.
-7. Keep the shell working directory at the AI Studio project root. Do not `cd` into the skill directory to run commands.
-8. Run the bundled CLI by path, for example `node .agents/skills/aistudio/scripts/aistudio.js <command> ...` from the project root. If the skill is installed elsewhere, use that skill directory's `scripts/aistudio.js` path while keeping cwd at the project root.
-9. Treat prompt examples that start with `aistudio` as shorthand for the bundled script path. Do not search `PATH`, install a global CLI, or run `which aistudio` / `command -v aistudio` unless the user explicitly asks for global CLI setup.
-10. Run `init` only when the user explicitly asks to initialize or scaffold a blank project. Do not run `init` as a prerequisite for creating apps, workflows, or other artifacts in an existing workspace.
+3. For API or Business Object work, read `docs/lessons/objects/README.md`, inventory every parent and child resource object, and read each matching object reference before design, mutation or testing.
+4. Classify the requested artifact before choosing prompts or commands.
+5. Before creating any new artifact, resolve package layout from the current project. If multiple app packages exist and the current user request did not explicitly name one, ask for the target app package and stop before any discovery, planning, generation, test sync, or create command.
+6. Read `references/prompts/index.md` to see available prompt references.
+7. Load only the prompt files relevant to the task.
+8. Keep the shell working directory at the AI Studio project root. Do not `cd` into the skill directory to run commands.
+9. Run the bundled CLI by path, for example `node .agents/skills/aistudio/scripts/aistudio.js <command> ...` from the project root. If the skill is installed elsewhere, use that skill directory's `scripts/aistudio.js` path while keeping cwd at the project root.
+10. Treat prompt examples that start with `aistudio` as shorthand for the bundled script path. Do not search `PATH`, install a global CLI, or run `which aistudio` / `command -v aistudio` unless the user explicitly asks for global CLI setup.
+11. Run `init` only when the user explicitly asks to initialize or scaffold a blank project. Do not run `init` as a prerequisite for creating apps, workflows, or other artifacts in an existing workspace.
 
 ## Artifact Routing
 

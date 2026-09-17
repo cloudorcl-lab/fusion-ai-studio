@@ -31,6 +31,7 @@ if (-not $positive.Output.Contains('Living build contract: PASS')) {
 
 $rootAgents = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'AGENTS.md')
 foreach ($required in @(
+  'docs/lessons/objects/README.md',
   'XDX_<UPPER_SNAKE_CASE>',
   'xdx_<lower_snake_case>.<extension>',
   'XDX <Human Readable Name>',
@@ -52,6 +53,7 @@ New-Item -ItemType Directory -Path (Join-Path $handoffFixtureRoot 'docs/lessons'
 New-Item -ItemType Directory -Path (Join-Path $handoffFixtureRoot '.agents/skills/aistudio') -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $repoRoot 'AGENTS.md') -Destination (Join-Path $handoffFixtureRoot 'AGENTS.md')
 Copy-Item -LiteralPath (Join-Path $repoRoot 'docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md') -Destination (Join-Path $handoffFixtureRoot 'docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md')
+Copy-Item -LiteralPath (Join-Path $repoRoot 'docs/lessons/objects') -Destination (Join-Path $handoffFixtureRoot 'docs/lessons/objects') -Recurse
 New-Item -ItemType Directory -Path (Join-Path $handoffFixtureRoot 'docs/handoffs') -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $repoRoot 'docs/handoffs/ACTIVE_HANDOFF.md') -Destination (Join-Path $handoffFixtureRoot 'docs/handoffs/ACTIVE_HANDOFF.md')
 Copy-Item -LiteralPath (Join-Path $repoRoot '.agents/skills/aistudio/SKILL.md') -Destination (Join-Path $handoffFixtureRoot '.agents/skills/aistudio/SKILL.md')
@@ -81,6 +83,18 @@ try {
 
   if (-not $namingNegative.Output.Contains('XDX naming policy marker')) {
     throw "Expected the missing XDX naming marker to be reported, received:`n$($namingNegative.Output)"
+  }
+
+  Set-Content -LiteralPath $handoffAgentsPath -Value $originalAgentsContent -NoNewline
+  $objectRegistryFixturePath = Join-Path $handoffFixtureRoot 'docs/lessons/objects/README.md'
+  Remove-Item -LiteralPath $objectRegistryFixturePath -Force
+  $objectRegistryNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
+  if ($objectRegistryNegative.ExitCode -eq 0) {
+    throw 'Expected a repository fixture without the object learning registry to fail living-build verification.'
+  }
+
+  if (-not $objectRegistryNegative.Output.Contains('Object learning registry is missing')) {
+    throw "Expected the missing object learning registry to be reported, received:`n$($objectRegistryNegative.Output)"
   }
 }
 finally {
@@ -115,4 +129,4 @@ finally {
   }
 }
 
-Write-Output 'Living build contract test: PASS (positive repository and negative fixture)'
+Write-Output 'Living build contract test: PASS (positive repository and handoff, naming, object-registry, incomplete negative fixtures)'

@@ -7,9 +7,10 @@ Review `docs/handoffs/ACTIVE_HANDOFF.md` before any other repository work in eve
 For every build, deployment, test cycle, substantial modification, or architecture task in every worktree of this repository:
 
 1. Read the entire canonical playbook at `docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md` before planning or modifying artifacts.
-2. Run `pwsh -NoProfile -File scripts/verify-living-build-contract.ps1` from the repository root. If it fails, repair the startup contract before continuing.
-3. Create or update the active build's learning register and intake contract as defined by the playbook.
-4. Apply relevant evidence-backed lessons during design, implementation, testing, deployment, and optimization.
+2. Read `docs/lessons/objects/README.md`, inventory every parent and child resource object in scope, and read each matching object reference.
+3. Run `pwsh -NoProfile -File scripts/verify-living-build-contract.ps1` from the repository root. If it fails, repair the startup contract before continuing.
+4. Create or update the active build's learning register and intake contract as defined by the playbook, including the selected object references and documentation releases.
+5. Apply relevant evidence-backed lessons during design, implementation, testing, deployment, and optimization.
 
 These instructions are loaded at the start of a Codex run. After a worktree first receives or updates this contract, start a fresh Codex run in that worktree before beginning the next build.
 
@@ -20,7 +21,7 @@ These instructions are loaded at the start of a Codex run. After a worktree firs
 - Unless another application form is required, build applications as web apps.
 - For a new project or architecture, brainstorm and recommend an implementation design before implementation. This design-first gate is not required for code fixes or QA-result reporting.
 - Preserve unrelated working-tree changes and never include them in a scoped commit.
-- Use the canonical playbook as the detailed lifecycle owner. Do not create a competing build playbook in another file.
+- Use the canonical playbook as the detailed lifecycle owner. Use `docs/lessons/objects/` for operation-level GET, POST, request/response JSON, schema, filter, paging and resource-key guidance. Do not create a competing build playbook.
 
 ## Repository-wide Agent Studio naming convention
 
@@ -46,10 +47,10 @@ including every branch and worktree:
 
 Before declaring a build complete:
 
-1. Review the active learning register and integrate each reusable, evidence-backed lesson into the canonical playbook.
+1. Review the active learning register and route reusable lifecycle or architecture lessons to the canonical playbook and operation-level resource lessons to the matching object reference.
 2. Refine or retire overlapping, obsolete, contradictory, and app-specific main-path guidance instead of adding duplicate owners.
 3. Reconcile dependencies, stale references, scratch artifacts, tests, and configuration according to the playbook's cleanup boundaries.
-4. Update the playbook change log, or explicitly record that the evidence review produced no reusable change.
+4. Update the playbook or object-reference change record as applicable, or explicitly record that the evidence review produced no reusable change.
 5. Run `pwsh -NoProfile -File scripts/verify-living-build-contract.ps1` and all artifact-specific verification required by the playbook.
 6. Commit the governance and lesson changes to the branch handed to the next build so future worktrees inherit them.
 

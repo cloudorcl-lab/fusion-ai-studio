@@ -13,10 +13,11 @@ Before architecture design, artifact creation, remote mutation, or testing:
 
 1. Read this entire playbook.
 2. Review its change log and the most recent evidence-backed lessons.
-3. Identify which lessons apply to the proposed app, data sources, tools, workflows, app stages, tests, runtime, and release boundary.
-4. Create a learning register in the active build checkpoint or work record.
-5. Record the playbook rules that the build will enforce and any rule that requires current-product verification.
-6. Do not begin the build until the learning register and build intake contract are complete.
+3. Review the [object learning registry](objects/README.md), inventory every parent and child resource object in scope, and read each matching object reference.
+4. Identify which lifecycle lessons and object references apply to the proposed app, data sources, tools, workflows, app stages, tests, runtime, and release boundary.
+5. Create a learning register in the active build checkpoint or work record.
+6. Record the playbook rules and object references that the build will enforce, including every rule or operation contract that requires current-product verification.
+7. Do not begin the build until the learning register and build intake contract are complete.
 
 During the build:
 
@@ -24,14 +25,15 @@ During the build:
 2. Record the evidence, root cause, corrective action, time/token impact, and whether the lesson is reusable.
 3. Update the active build checkpoint after every material architecture or QA correction. Do not rely on chat history as the only record.
 4. Prefer refining an existing rule over adding another overlapping rule or fallback.
+5. Record operation-level GET, POST, request JSON, response JSON, schema, filter, paging and object-key lessons in the matching object reference, not in this lifecycle playbook.
 
 Before declaring the build complete:
 
 1. Review the complete learning register.
-2. Generalize reusable lessons so they apply to future agent apps, not only the current customer, app, workflow, data set, or tenant.
-3. Merge those generalized lessons into this canonical file:
-   `docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md`.
-4. Refine existing guidance when the new evidence changes or sharpens it.
+2. Classify each reusable lesson as lifecycle/architecture guidance or resource-object guidance.
+3. Merge lifecycle and architecture lessons into this canonical file:
+   `docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md`; merge operation-level object lessons into the matching reference under `docs/lessons/objects/`.
+4. Generalize reusable guidance without customer, tenant or run-specific values and refine the correct existing owner when evidence changes or sharpens it.
 5. Remove or consolidate duplicate, obsolete, contradictory, and app-specific main-path guidance.
 6. Clean stale dependencies, references, scratch artifacts, unused internal paths, superseded tests, and dead configuration that the build introduced or made obsolete. Destructive cleanup of external contracts or persistent data still requires explicit scoped authority.
 7. Revalidate every changed command, link, path, lifecycle boundary, and completion rule.
@@ -140,7 +142,7 @@ A new or changed rule belongs in this playbook only when:
 Do not add:
 
 - Raw chat recollections without evidence.
-- One-off customer facts in the universal sections.
+- One-off customer facts or resource-object operation details in the universal sections.
 - Tenant IDs, artifact IDs, versions, ETags, credentials, or host-specific secrets.
 - A new fallback when the correct owner can be repaired.
 - A second permanent playbook for the same lifecycle.
@@ -172,7 +174,7 @@ The build checkpoint must define and track these measures:
 | Fewer tokens | Focused evidence is loaded; oversized boundaries are compacted coherently; broad reruns and premature model sweeps are avoided |
 | Complete solution | Workflow and app sync plans are complete, required judges are resolved, and final scoped evidence has no required action |
 | Clean dependencies | Every retained dependency has an owner and purpose; obsolete internal dependencies are removed or have an explicit retirement decision |
-| Hand forward | Reusable lessons are integrated into this file and the change log is current |
+| Hand forward | Reusable lessons are integrated into the correct lifecycle or object-reference owner and the change logs are current |
 
 ## Universal intake contract
 
@@ -207,6 +209,7 @@ For every source:
 - Connectivity, indexing, or access evidence:
 - Expected runtime response shape:
 - Runnable local contract test:
+- Matching object-learning reference and documentation release:
 - Masking policy:
 - DRAFT/PUBLISHED or environment boundary:
 
@@ -261,6 +264,7 @@ For every source:
 - Review checkpoints:
 - Closeout reviewer:
 - Playbook sections likely to change:
+- Object references likely to change:
 - Dependency-cleanup scope:
 - Change-log evidence required:
 
@@ -302,10 +306,11 @@ Every dependency must have:
 
 1. Complete Instruction 1.
 2. Open the active learning register.
-3. Complete business, data, architecture, runtime, test, and learning contracts.
-4. Identify product-version-sensitive assumptions that require current CLI or runtime verification.
-5. Create executable local tests for source keys, calculations, schemas, cardinality, safety vocabulary, and expected examples.
-6. Separate required stage-freeze work from optional research, model sweeps, and later-stage features. Name the later gate for deferred work instead of expanding the current build.
+3. Inventory parent and child resource objects, read their entries from the object learning registry, and record the selected references and releases.
+4. Complete business, data, architecture, runtime, test, and learning contracts.
+5. Identify product-version-sensitive assumptions that require current CLI or runtime verification.
+6. Create executable local tests for source keys, calculations, schemas, cardinality, safety vocabulary, and expected examples.
+7. Separate required stage-freeze work from optional research, model sweeps, and later-stage features. Name the later gate for deferred work instead of expanding the current build.
 
 **Exit evidence:** prior lessons acknowledged, learning register active, contract approved, and source-level tests passing.
 
@@ -349,45 +354,13 @@ node .agents\skills\aistudio\scripts\aistudio.js validate-tool --file src\tools\
 
 **Exit evidence:** every source dependency is available, validated, owned, and mapped to a consumer.
 
-#### API and Business Object source contracts
+#### Object-specific API and Business Object references
 
-These rules apply to every API domain and resource, not only the resource used to establish the lesson. Protocol-specific details must be revalidated against the selected service and release.
+The [object learning registry](objects/README.md) owns operation-level GET, POST, request JSON, response JSON, schema, filter, paging, key and object-specific documentation-retrieval guidance. Before creating or changing an API or Business Object dependency, select and read every matching parent and child resource reference and record them in the active intake.
 
-- Discover existing capabilities before creating duplicates. Extend an existing BO when domain, ownership, authentication and lifecycle remain coherent; split when those boundaries differ. Separate summary lookup, full detail and independently paged child collections when their contracts differ. Do not silently expand every child or change an existing function's projection.
-- Verify the exact HTTP method, endpoint, API version, operation identifier, request schema, required/conditional fields, queryable fields, headers, authentication, permissions, response and error contracts. A catalog name or an HTTP error alone is not endpoint proof. If discovery search fails, use a supported catalog/specification command; do not guess endpoints or reverse-engineer hidden implementation contracts.
-- For specification-backed BOs, inspect the selected operation and its request/response shapes, then generate through the supported CLI. For manual sources, follow the documented manual-function flow. Preserve generated canonical parameter names and serialize mutations per artifact; inspect the resulting source rather than assuming the requested edit was applied.
-- A declarative template does not enforce validation merely because parameter descriptions mention it. Identify the caller that validates inputs, escapes query literals, encodes request values and enforces paging bounds. Document wildcard/case semantics and unsupported behavior; do not promise fuzzy or case-insensitive search without evidence. Raw natural language must not become an executable filter expression.
-- Authenticate through the supported connection flow and verify environment/identity. Keep passwords, tokens and authentication output out of examples, evidence and memory. Browser login is not proof that the CLI or runtime connection is authenticated. Follow the skill's approved credential-store recovery when the sandbox cannot access it; do not reinterpret a host security-context error as a bad password.
-- Use the documented example-guidance and input-preparation flow. GET examples normally capture responses; POST/PUT/PATCH examples normally describe requests. Fetching a response from a write operation can perform the write: example generation is not permission to execute it. Recheck version-sensitive example selectors and serialization against current CLI help and readback.
-- Separate transport/command success from validation success. Check the nested validation result and issue count when the CLI wraps results. Parse the documented JSON envelope rather than treating prefixed diagnostic output as JSON; inspect whether a saved payload is an object or a string before decoding it. Never preserve credential-bearing diagnostics in reports.
+If a required object reference is missing, incomplete or stale for the selected release, inspect the exact current specification and authorized evidence, then create or update that reference before relying on the behavior. Keep tenant values and raw run evidence in the build record. An object reference does not expand live-read, live-write, remote-save, publication or cleanup authority.
 
-#### Live API verification and evidence
-
-- Pin environment, identity, method, version, resource scope and actual function definition. Resolve test keys through authorized live discovery or user-supplied values. Keep supplied parent/reference IDs explicit, with no sample-key defaults.
-- For reads, assert expected identity, field projection, parent-child scope and stable keys, not just HTTP success. Verify representative ID and business-field filters, noninitial pages and empty results where supported. Check exact/partial matching, quoting and case behavior separately; disclose untested cases.
-- Honor each API's pagination contract independently for each collection. Validate returned counts and uniqueness; use stable ordering when supported. Follow continuation links/tokens or offsets as documented. Do not call a page a complete dataset while continuation remains, and stop if pagination cannot progress. Record concurrency limitations of offset paging. A bounded test may fail explicitly when the baseline exceeds its bound instead of claiming completeness.
-- Preserve passing delivery examples when running additional cases by using a task-owned temporary copy if the sample tool mutates the artifact. Remove only task-owned scratch after evidence is retained. Compare preexisting functions to their baseline when extending an artifact.
-- Save authorized evidence with timestamp, environment/identity metadata without secrets, function/method/path, input values, elapsed time, response, assertions and coverage limitations. Keep one run's artifacts together and ensure failed reruns cannot appear successful through stale summaries. Retain business data only within the agreed capture policy; request/response bodies may contain sensitive values even when they contain no credentials.
-- Distinguish local validation, live source-API execution through local definitions, remote DRAFT save, publication and deployed workflow/agent execution. Passing one does not prove the others. Reuse current live receipts for documentation-only changes; do not rerun network tests solely to refresh prose.
-
-#### Generated write-test payloads and vendor-example comparison
-
-This is the agreed design for future write tests; a design record alone is not evidence of a successful write.
-
-1. Retrieve the exact operation's version-matched request schema and vendor Example Request Body. Read field descriptions and conditional requirements as well as schema annotations. If an example conflicts with the schema or tenant metadata, record and resolve the discrepancy before execution; examples are illustrative, not exhaustive requirements.
-2. Generate the payload automatically from a writable-field allowlist. Map selected values from authorized GET results, resolve valid foreign/parent reference keys, omit server-generated keys and audit/read-only fields, and generate distinctive test business keys only where the contract permits them. Never clone an entire GET response or blindly substitute every ID. Do not invent legal/tax/bank identifiers or copy operational contact destinations merely to satisfy a field; resolve approved test values or omit optional fields.
-3. Compare the generated JSON with the vendor example for field names, types, nesting, arrays and value formats. Validate it against the request contract, document intentional differences and omissions, and check environment-specific lookup values. Vendor sample IDs and values are structural examples, not valid runtime defaults.
-4. Present a plain-language review of the target, intended effects, copied fields, generated values, unresolved choices and cleanup/retention plan. The agent creates the JSON file; the user need not author it. Ask only for missing business decisions or execution authority that the existing session does not already provide. Design approval, local authoring, live writes, remote artifact save and publication are distinct scopes.
-5. Start with one minimal valid case, then approved optional-field cases. Run local schema/contract checks before live execution. Negative cases and cleanup must fit the agreed side-effect scope. On a timeout or uncertain write result, reconcile state using returned IDs, unique test keys or documented idempotency support before retrying; never assume the write failed.
-6. Verify the result by a subsequent read using the returned identity; for asynchronous operations, first observe the documented terminal state. Compare intended writable values with returned/persisted values while accounting for documented normalization and defaults. Save the generated request, vendor comparison, response, verification and created IDs under the evidence policy above. Report cleanup/retention truthfully; do not assume deletion or rollback is supported.
-
-#### Browser-free documentation retrieval
-
-- Distinguish the hosted web/search tool, local HTTP client, browser plugin and application CLI. An error in one is not proof that another is broken. Record the failing layer and exact error; a hosted tool's generic URL-safety message does not establish that the public page is unsafe or reveal its root cause.
-- For authorized public documentation, use direct HTTPS retrieval when the hosted tool cannot fetch the page and browser-free access is required. Validate status, final URL, content type and expected section before extracting examples. Use bounded timeouts and normal certificate validation; do not send application credentials to public documentation hosts.
-- A local Windows TLS/security-context failure may be sandbox-specific. Inspect the inner error and use the supported approval/escalation path for a scoped retry when appropriate. A successful retry is evidence for that route, not proof that the hosted web tool is repaired. Do not disable TLS validation, broaden permissions globally or change search configuration on speculation.
-- Locate the semantic Example Request Body section in the actual HTML, then extract and HTML-decode its code block and parse it as JSON. Do not assume a heading tag such as `h3`: a styled `p` may be the heading. Do not take the first JSON block on a page; it may be a schema or response. Keep full large pages out of model context when a bounded section answers the question.
-- For repeatable use, preserve source URL, release, retrieval timestamp and the selected example/schema evidence, subject to retention requirements. Revalidate on documentation, API or tool changes. Browser-free retrieval was demonstrated for several operation pages, not universally guaranteed. Keep unresolved hosted-tool failures labeled unresolved; retire temporary retrieval workarounds only after the primary route is proven working.
+This playbook owns the lifecycle: complete object discovery before architecture, validate artifacts before mutation, serialize writes, distinguish local/live/DRAFT/PUBLISHED evidence, capture authorized proof and route reusable operation findings back to the correct object reference. Do not copy detailed object contracts back into this file.
 
 ### Gate 3 — Build complete specialists
 
@@ -591,7 +564,7 @@ Do not treat an isolated node recommendation as proof that a combined cross-work
 This gate is mandatory and returns to Instruction 1.
 
 1. Review the active learning register and all material corrections.
-2. Integrate reusable lessons into this playbook.
+2. Integrate reusable lifecycle and architecture lessons into this playbook and operation-level resource lessons into the matching object references.
 3. Refine or retire conflicting guidance.
 4. Reconcile the final dependency graph.
 5. Remove obsolete internal dependencies when safe and authorized.
@@ -764,8 +737,9 @@ contract.
 ### Learning and hand-forward
 
 - [ ] This playbook was the first build instruction reviewed.
+- [ ] Every in-scope parent and child resource was matched to the object registry, and the selected references and releases were recorded in intake.
 - [ ] The active learning register captured material corrections and optimizations.
-- [ ] Reusable lessons were generalized and integrated into this file.
+- [ ] Reusable lessons were generalized and integrated into their correct lifecycle or object-reference owner.
 - [ ] Duplicate, obsolete, conflicting, and app-specific main-path guidance was refined or removed.
 - [ ] The change log was updated.
 - [ ] The next build can apply the updated rules without reading the prior chat.
@@ -811,7 +785,7 @@ contract.
 ## Copy/paste kickoff prompt for every new build
 
 ```text
-Instruction 1: Read docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md in full before planning or changing anything. Create an active learning register. Apply prior lessons to the intake and architecture. During the build, capture evidence-backed lessons, corrections, delays, token/time costs, and dependency changes. Before completion, generalize reusable lessons, update the canonical playbook, refine or retire stale guidance, clean dependency drift, validate the playbook, and update its change log.
+Instruction 1: Read docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md and docs/lessons/objects/README.md in full before planning or changing anything. Inventory every parent and child resource object, read each matching object reference, and record the selected references and releases in the active learning register. Apply prior lessons to the intake and architecture. During the build, capture evidence-backed lessons, corrections, delays, token/time costs, and dependency changes. Before completion, route lifecycle and architecture lessons to the canonical playbook, route GET/POST/JSON/schema/filter/paging lessons to the matching object references, refine or retire stale guidance, clean dependency drift, validate the documentation, and update the relevant change records.
 
 Build this Oracle Fusion AI Studio agent app using a contract-first, golden-path-first lifecycle.
 
@@ -830,6 +804,7 @@ BUSINESS OUTCOME
 
 DATA AND DEPENDENCIES
 - Approved sources: <LIST>
+- Required object-learning references and releases: <LIST>
 - Source-to-tool-to-specialist mapping: <TABLE>
 - Required keys, fields, units, relationships, and row counts: <LIST>
 - Expected runtime response shapes: <CONTRACT>
@@ -875,7 +850,7 @@ EXECUTION RULES
 9. Repair only the classified responsible owner and rerun only the affected test.
 10. Run one canonical configured-mode suite per completed workflow, resolve judges without rerunning, then complete app sync and final summary.
 11. Optimize models only after correctness.
-12. Learn and clean before completion: merge reusable lessons into the canonical playbook, retire duplicate or stale internal guidance, reconcile dependencies, update the change log, and verify the living document.
+12. Learn and clean before completion: merge lifecycle lessons into the canonical playbook, merge operation-level lessons into the matching object references, retire duplicate or stale guidance, reconcile dependencies, update the relevant change records, and verify the documentation owners.
 
 STOP CONDITIONS
 - User stop.
@@ -920,12 +895,14 @@ After every update:
 9. Confirm dependency cleanup guidance did not authorize persistent-state deletion.
 10. Confirm the learning and hand-forward gate appears in the build sequence and Definition of Done.
 11. Review the diff to ensure the update refined one canonical owner rather than adding another.
+12. Confirm detailed GET, POST, request/response JSON, schema, filter, paging and object-key guidance remains in `docs/lessons/objects/` rather than this lifecycle playbook.
 12. Record the verification result in the active build handoff.
 
 ## Change log
 
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
+| 2026-09-17 | [Supplier object-learning ownership restructure](objects/README.md) | Moved operation-level GET, POST, request/response JSON, schema, filter, paging and object-key guidance to one reference per resource object. Added required registry routing at intake and closeout while preserving this file as the lifecycle and architecture owner. | Living-build contract, registry ownership/link checks, Markdown structure and scoped diff required; prior live GET and documentation receipts reused without runtime calls. |
 | 2026-09-17 | API/BO read testing, write-test design and documentation retrieval review; [evidence register](../builds/xdx-supplier-information/api-learning-review.md) | Added cross-domain API/BO contracts, live evidence boundaries, schema-and-vendor-example comparison for generated write tests, and scoped browser-free retrieval diagnosis. Refined sample-ID reuse to permit authorized current-environment references without embedding defaults. | Documentation-only review; live GET evidence retained; four public POST pages retrieved and request examples parsed without a browser. POST execution remains untested. Governance/link/structure checks recorded in the evidence register. |
 | 2026-08-26 | Living-playbook review | Generalized the document for every agent-app build; made learning the first instruction; added mandatory capture, refinement, dependency cleanup, anti-entropy, self-verification, and hand-forward gates; retired the app-specific canonical filename. | Passed file, link, structure, terminology, command, and lingering-reference checks. |
 | 2026-08-26 | Worktree invocation review | Added the tracked root startup contract, AI Studio skill safeguard, deterministic verifier, fresh-run boundary, and Git propagation rule so every worktree invokes one canonical playbook. | RED test detected the missing verifier; focused contract and negative-fixture checks required before handoff. |

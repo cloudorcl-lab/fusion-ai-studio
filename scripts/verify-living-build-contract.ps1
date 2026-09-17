@@ -6,11 +6,13 @@ $ErrorActionPreference = 'Stop'
 
 $canonicalRelativePath = 'docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md'
 $activeHandoffRelativePath = 'docs/handoffs/ACTIVE_HANDOFF.md'
+$objectRegistryRelativePath = 'docs/lessons/objects/README.md'
 $retiredPlaybookName = 'AltaLink_AI_Studio_Lessons_Learned_and_Next_Build_Playbook.md'
 $repoRootPath = [System.IO.Path]::GetFullPath($RepoRoot)
 $agentsPath = Join-Path $repoRootPath 'AGENTS.md'
 $playbookPath = Join-Path $repoRootPath $canonicalRelativePath
 $activeHandoffPath = Join-Path $repoRootPath $activeHandoffRelativePath
+$objectRegistryPath = Join-Path $repoRootPath $objectRegistryRelativePath
 $skillPath = Join-Path $repoRootPath '.agents/skills/aistudio/SKILL.md'
 $lessonsPath = Join-Path $repoRootPath 'docs/lessons'
 $retiredPlaybookPath = Join-Path $lessonsPath $retiredPlaybookName
@@ -52,6 +54,7 @@ function Get-FirstLevelTwoHeading {
 
 $agentsContent = Read-RequiredFile -Path $agentsPath -Label 'Root AGENTS.md'
 $playbookContent = Read-RequiredFile -Path $playbookPath -Label 'Canonical living build playbook'
+$objectRegistryContent = Read-RequiredFile -Path $objectRegistryPath -Label 'Object learning registry'
 $skillContent = Read-RequiredFile -Path $skillPath -Label 'AI Studio skill entrypoint'
 
 if ($agentsContent) {
@@ -60,6 +63,9 @@ if ($agentsContent) {
   }
   if (-not $agentsContent.Contains($canonicalRelativePath)) {
     Add-ContractFailure 'Root AGENTS.md must reference the canonical living build playbook path.'
+  }
+  if (-not $agentsContent.Contains($objectRegistryRelativePath)) {
+    Add-ContractFailure 'Root AGENTS.md must reference the object learning registry path.'
   }
   if ($agentsContent -notmatch '(?s)Review\s+`docs/handoffs/ACTIVE_HANDOFF\.md`\s+before any other repository work in every new Codex session\.') {
     Add-ContractFailure 'Root AGENTS.md must require the session-start handoff review.'
@@ -100,6 +106,49 @@ if ($playbookContent) {
   if ($playbookContent -notmatch '(?i)root `AGENTS\.md`') {
     Add-ContractFailure 'The canonical playbook must identify root AGENTS.md as the automatic Codex entrypoint.'
   }
+  if (-not $playbookContent.Contains('objects/README.md')) {
+    Add-ContractFailure 'The canonical playbook must route object-level learning through the object registry.'
+  }
+  foreach ($retiredHeading in @(
+    '#### API and Business Object source contracts',
+    '#### Live API verification and evidence',
+    '#### Generated write-test payloads and vendor-example comparison',
+    '#### Browser-free documentation retrieval'
+  )) {
+    if ($playbookContent.Contains($retiredHeading)) {
+      Add-ContractFailure "Object-level detailed guidance returned to the canonical playbook: $retiredHeading"
+    }
+  }
+}
+
+if ($objectRegistryContent) {
+  if ($objectRegistryContent -notmatch '(?m)^# Object learning registry\s*$') {
+    Add-ContractFailure 'The object registry must retain its reference-document identity.'
+  }
+
+  $requiredObjectReferences = @(
+    'oracle-fusion-procurement-suppliers.md',
+    'oracle-fusion-procurement-supplier-addresses.md',
+    'oracle-fusion-procurement-supplier-sites.md',
+    'oracle-fusion-procurement-supplier-contacts.md'
+  )
+
+  foreach ($referenceName in $requiredObjectReferences) {
+    if (-not $objectRegistryContent.Contains($referenceName)) {
+      Add-ContractFailure "Object registry is missing required reference: $referenceName"
+      continue
+    }
+
+    $referencePath = Join-Path (Split-Path -Parent $objectRegistryPath) $referenceName
+    $referenceContent = Read-RequiredFile -Path $referencePath -Label "Object reference $referenceName"
+    if ($referenceContent) {
+      foreach ($requiredSection in @('## GET operation', '## POST operation', '### Response JSON', '### Candidate request JSON', '## Evidence and limits', '## Change history')) {
+        if (-not $referenceContent.Contains($requiredSection)) {
+          Add-ContractFailure "Object reference $referenceName is missing section: $requiredSection"
+        }
+      }
+    }
+  }
 }
 
 if ($skillContent) {
@@ -114,6 +163,11 @@ if ($skillContent) {
   $startHereSecondItem = [regex]::Match($skillContent, '(?ms)^## Start Here\s*\r?\n\s*1\.\s+[^\r\n]+\r?\n\s*2\.\s+([^\r\n]+)')
   if (-not $startHereSecondItem.Success -or -not $startHereSecondItem.Groups[1].Value.Contains($canonicalRelativePath)) {
     Add-ContractFailure 'The canonical playbook gate must be the second Start Here action in the AI Studio skill.'
+  }
+
+  $startHereThirdItem = [regex]::Match($skillContent, '(?ms)^## Start Here\s*\r?\n\s*1\.\s+[^\r\n]+\r?\n\s*2\.\s+[^\r\n]+\r?\n\s*3\.\s+([^\r\n]+)')
+  if (-not $startHereThirdItem.Success -or -not $startHereThirdItem.Groups[1].Value.Contains($objectRegistryRelativePath)) {
+    Add-ContractFailure 'The object learning registry gate must be the third Start Here action in the AI Studio skill.'
   }
 }
 
@@ -147,6 +201,7 @@ if ($failures.Count -gt 0) {
 
 Write-Output 'Living build contract: PASS'
 Write-Output "- Canonical owner: $canonicalRelativePath"
+Write-Output "- Object learning registry: $objectRegistryRelativePath"
 Write-Output '- Startup entrypoint: AGENTS.md'
 Write-Output "- Session-start handoff: $activeHandoffRelativePath"
 Write-Output '- AI Studio fallback: .agents/skills/aistudio/SKILL.md'
