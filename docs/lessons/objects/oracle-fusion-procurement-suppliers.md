@@ -55,6 +55,39 @@ Collection functions preserve the native paging envelope:
 
 `SupplierId: 0` is a type placeholder, not a reusable ID. Item detail returns a single scalar object rather than this collection envelope.
 
+## First successful BO GET sample
+
+Captured once from `XDX_SUPPLIER_INFORMATION.ListSuppliers`; evidence run recorded 2026-09-16 19:20:11 -05:00. Source: the retained first response example in [xdx_supplier_information.bo](../../../src/businessObjects/xdx_supplier_information.bo). This sample is immutable; later supplier GETs do not replace it.
+
+```json
+{
+  "items": [
+    {
+      "SupplierId": 300000047414503,
+      "SupplierNumber": "1252",
+      "Supplier": "Lee Supplies",
+      "SupplierType": "Supplier",
+      "BusinessRelationship": "Spend Authorized",
+      "InactiveDate": null
+    }
+  ],
+  "count": 1,
+  "hasMore": true,
+  "limit": 1,
+  "offset": 0,
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
+      "name": "suppliers",
+      "kind": "collection"
+    }
+  ]
+}
+```
+
+The later 25-row list retest and supplier-detail GET remain verification evidence; they do not create or refresh this first-success sample.
+
 ## POST operation
 
 The create operation ID is `create_suppliers`. The current 26C OpenAPI request schema has 78 properties and marks `Supplier`, `SupplierNumber` and `SupplierPartyId` as required. Oracle's vendor Example Request Body contains eight fields—`Supplier`, `TaxOrganizationType`, `SupplierType`, `BusinessRelationship`, `DUNSNumber`, `OneTimeSupplierFlag`, `TaxpayerCountry` and `TaxpayerId`—and omits `SupplierNumber` and `SupplierPartyId`.
@@ -91,4 +124,5 @@ Use `Upsert-Mode: false` for the first create test. Check for the unique supplie
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-17 | First retained `ListSuppliers` BO response | Added immutable first-success GET sample; later GET evidence does not refresh it. |
 | 2026-09-17 | Supplier BO live GET receipts and Oracle 26C GET/POST documentation | Established Suppliers as the owner for collection/detail GET, response JSON, create-request JSON and the unresolved `SupplierNumber`/`SupplierPartyId` requirement discrepancy. |

@@ -50,6 +50,51 @@ The collection operation ID is `getall_suppliers-sites`. Resolve the parent supp
 
 The full native site response is much larger. Do not infer that the displayed structural fields are the complete item schema.
 
+## First successful BO GET sample
+
+Captured once from `XDX_SUPPLIER_INFORMATION.ListSupplierSites` at `2026-09-16T20:15:38.4574151-05:00`. [Complete retained JSON](../../builds/xdx-supplier-information/live-details/ListSupplierSites-baseline.json) contains 24 items and every returned site property. This bounded excerpt copies selected fields from the exact first item and preserves the original envelope values; remaining fields and 23 items are omitted. Later site GETs do not replace this sample.
+
+```json
+{
+  "items": [
+    {
+      "SupplierSiteId": 300000047507684,
+      "SupplierSite": "OD US1",
+      "ProcurementBUId": 300000046987012,
+      "ProcurementBU": "US1 Business Unit",
+      "SupplierAddressId": 300000047507644,
+      "SupplierAddressName": "OD US1",
+      "Address": "6600 N MILITARY TRL,BOCA RATON, FL 33496 PALM BEACH",
+      "InactiveDate": null,
+      "Status": "ACTIVE",
+      "SitePurposeSourcingOnlyFlag": false,
+      "SitePurposePurchasingFlag": true,
+      "SitePurposeProcurementCardFlag": false,
+      "SitePurposePayFlag": true,
+      "SitePurposePrimaryPayFlag": true,
+      "IncomeTaxReportingSiteFlag": false,
+      "B2BCommunicationMethodCode": "NONE",
+      "B2BCommunicationMethod": "No",
+      "PayOnReceiptFlag": true,
+      "InvoiceSummaryLevelCode": "RECEIPT",
+      "InvoiceSummaryLevel": "Receipt",
+      "ReceiptRoutingId": 3,
+      "ReceiptRouting": "Direct delivery",
+      "InvoiceMatchOptionCode": "R",
+      "InvoiceMatchOption": "Receipt",
+      "CreationDate": "2013-11-12T15:52:16.736-06:00",
+      "CreatedBy": "CALVIN.ROTH",
+      "LastUpdateDate": "2016-04-12T10:12:45.406-05:00",
+      "LastUpdatedBy": "CALVIN.ROTH"
+    }
+  ],
+  "count": 24,
+  "hasMore": false,
+  "limit": 25,
+  "offset": 0
+}
+```
+
 ## POST operation
 
 The create operation ID is `create_suppliers-sites`. The 26C OpenAPI request schema has 120 properties and marks `ProcurementBUId` and `SupplierSite` as required. Oracle's vendor example includes those fields plus a large set of purchasing, receiving, invoicing, payment, transportation and communication defaults. Those IDs, codes, names, tolerances and operational settings are examples, not portable values.
@@ -81,4 +126,5 @@ Verify a successful write by returned `SupplierSiteId` and parent-scoped GET. Co
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-17 | First retained `ListSupplierSites` BO response | Added immutable first-success GET excerpt and link to complete JSON; later GET evidence does not refresh it. |
 | 2026-09-17 | Parent-scoped live GET receipts and Oracle 26C GET/POST documentation | Established Supplier Sites as the owner for GET filtering/paging, response JSON, minimal create-request design and environment-specific site references. |

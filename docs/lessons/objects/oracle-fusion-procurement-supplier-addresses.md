@@ -53,6 +53,68 @@ Raw natural language must not become the `q` filter. The caller owns field allow
 
 The native item contains additional scalar fields. The shown fields document the structural contract, not a projection or reusable data record.
 
+## First successful BO GET sample
+
+Captured once from `XDX_SUPPLIER_INFORMATION.ListSupplierAddresses` at `2026-09-16T20:15:25.2865354-05:00`. [Complete retained JSON](../../builds/xdx-supplier-information/live-details/ListSupplierAddresses-baseline.json) contains 25 items. The excerpt below preserves the exact first item and original envelope values; 24 remaining items are omitted from this document. Later address GETs do not replace this sample.
+
+```json
+{
+  "items": [
+    {
+      "SupplierAddressId": 300000047507644,
+      "AddressName": "OD US1",
+      "CountryCode": "US",
+      "Country": "United States",
+      "AddressLine1": "6600 N MILITARY TRL",
+      "AddressLine2": null,
+      "AddressLine3": null,
+      "AddressLine4": null,
+      "City": "BOCA RATON",
+      "State": "FL",
+      "PostalCode": "33496",
+      "PostalCodeExtension": "2434",
+      "Province": null,
+      "County": "PALM BEACH",
+      "Building": null,
+      "FloorNumber": null,
+      "PhoneticAddress": null,
+      "LanguageCode": "US",
+      "Language": "American English",
+      "Addressee": null,
+      "GlobalLocationNumber": null,
+      "AdditionalAddressAttribute1": null,
+      "AdditionalAddressAttribute2": null,
+      "AdditionalAddressAttribute3": null,
+      "AdditionalAddressAttribute4": null,
+      "AdditionalAddressAttribute5": null,
+      "FormattedAddress": "6600 N MILITARY TRL,BOCA RATON, FL 33496 PALM BEACH",
+      "AddressPurposeOrderingFlag": true,
+      "AddressPurposeRemitToFlag": true,
+      "AddressPurposeRFQOrBiddingFlag": false,
+      "PhoneCountryCode": null,
+      "PhoneAreaCode": null,
+      "PhoneNumber": null,
+      "PhoneExtension": null,
+      "FaxCountryCode": null,
+      "FaxAreaCode": null,
+      "FaxNumber": null,
+      "Email": null,
+      "InactiveDate": "4712-12-31",
+      "Status": "ACTIVE",
+      "CreationDate": "2013-11-12T15:49:20.398-06:00",
+      "CreatedBy": "CALVIN.ROTH",
+      "LastUpdateDate": "2018-12-04T14:14:57.692-06:00",
+      "LastUpdatedBy": "CALVIN.ROTH",
+      "AddressPartyNumber": "1150"
+    }
+  ],
+  "count": 25,
+  "hasMore": false,
+  "limit": 25,
+  "offset": 0
+}
+```
+
 ## POST operation
 
 The create operation ID is `create_suppliers-addresses`. The 26C OpenAPI request schema has 38 properties and marks `CountryCode` and `Email` as required. The nine-field vendor example uses `Country` and omits both `CountryCode` and `Email`. Resolve this contradiction against current metadata before execution.
@@ -88,4 +150,5 @@ Resolve country and subdivision codes from the target environment. Do not copy a
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-17 | First retained `ListSupplierAddresses` BO response | Added immutable first-success GET excerpt and link to complete JSON; later GET evidence does not refresh it. |
 | 2026-09-17 | Parent-scoped live GET receipts and Oracle 26C GET/POST documentation | Established Supplier Addresses as the owner for GET filtering/paging, response JSON, create-request JSON and the unresolved `CountryCode`/`Email` vendor-example discrepancy. |

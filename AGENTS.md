@@ -11,6 +11,7 @@ For every build, deployment, test cycle, substantial modification, or architectu
 3. Run `pwsh -NoProfile -File scripts/verify-living-build-contract.ps1` from the repository root. If it fails, repair the startup contract before continuing.
 4. Create or update the active build's learning register and intake contract as defined by the playbook, including the selected object references and documentation releases.
 5. Apply relevant evidence-backed lessons during design, implementation, testing, deployment, and optimization.
+6. After the first successful BO GET for a resource object, add its result once to that object's reference if no sample exists. Never rerun or refresh routine GETs for documentation.
 
 These instructions are loaded at the start of a Codex run. After a worktree first receives or updates this contract, start a fresh Codex run in that worktree before beginning the next build.
 

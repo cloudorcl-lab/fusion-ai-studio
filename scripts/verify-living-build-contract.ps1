@@ -67,6 +67,9 @@ if ($agentsContent) {
   if (-not $agentsContent.Contains($objectRegistryRelativePath)) {
     Add-ContractFailure 'Root AGENTS.md must reference the object learning registry path.'
   }
+  if ($agentsContent -notmatch '(?i)first successful BO GET') {
+    Add-ContractFailure 'Root AGENTS.md must enforce capture-once documentation for the first successful BO GET.'
+  }
   if ($agentsContent -notmatch '(?s)Review\s+`docs/handoffs/ACTIVE_HANDOFF\.md`\s+before any other repository work in every new Codex session\.') {
     Add-ContractFailure 'Root AGENTS.md must require the session-start handoff review.'
   }
@@ -109,6 +112,9 @@ if ($playbookContent) {
   if (-not $playbookContent.Contains('objects/README.md')) {
     Add-ContractFailure 'The canonical playbook must route object-level learning through the object registry.'
   }
+  if ($playbookContent -notmatch '(?i)first successful GET through a BO') {
+    Add-ContractFailure 'The canonical playbook must retain the capture-once first-success BO GET lifecycle rule.'
+  }
   foreach ($retiredHeading in @(
     '#### API and Business Object source contracts',
     '#### Live API verification and evidence',
@@ -124,6 +130,9 @@ if ($playbookContent) {
 if ($objectRegistryContent) {
   if ($objectRegistryContent -notmatch '(?m)^# Object learning registry\s*$') {
     Add-ContractFailure 'The object registry must retain its reference-document identity.'
+  }
+  if ($objectRegistryContent -notmatch '(?m)^## First successful BO GET sample policy\s*$') {
+    Add-ContractFailure 'The object registry must define the capture-once first-success BO GET sample policy.'
   }
 
   $requiredObjectReferences = @(
@@ -142,7 +151,7 @@ if ($objectRegistryContent) {
     $referencePath = Join-Path (Split-Path -Parent $objectRegistryPath) $referenceName
     $referenceContent = Read-RequiredFile -Path $referencePath -Label "Object reference $referenceName"
     if ($referenceContent) {
-      foreach ($requiredSection in @('## GET operation', '## POST operation', '### Response JSON', '### Candidate request JSON', '## Evidence and limits', '## Change history')) {
+      foreach ($requiredSection in @('## GET operation', '## First successful BO GET sample', '## POST operation', '### Response JSON', '### Candidate request JSON', '## Evidence and limits', '## Change history')) {
         if (-not $referenceContent.Contains($requiredSection)) {
           Add-ContractFailure "Object reference $referenceName is missing section: $requiredSection"
         }
@@ -168,6 +177,9 @@ if ($skillContent) {
   $startHereThirdItem = [regex]::Match($skillContent, '(?ms)^## Start Here\s*\r?\n\s*1\.\s+[^\r\n]+\r?\n\s*2\.\s+[^\r\n]+\r?\n\s*3\.\s+([^\r\n]+)')
   if (-not $startHereThirdItem.Success -or -not $startHereThirdItem.Groups[1].Value.Contains($objectRegistryRelativePath)) {
     Add-ContractFailure 'The object learning registry gate must be the third Start Here action in the AI Studio skill.'
+  }
+  if ($startHereThirdItem.Groups[1].Value -notmatch '(?i)first successful BO GET') {
+    Add-ContractFailure 'The AI Studio skill must enforce capture-once documentation for the first successful BO GET.'
   }
 }
 

@@ -87,6 +87,18 @@ try {
 
   Set-Content -LiteralPath $handoffAgentsPath -Value $originalAgentsContent -NoNewline
   $objectRegistryFixturePath = Join-Path $handoffFixtureRoot 'docs/lessons/objects/README.md'
+  $objectRegistryFixtureContent = Get-Content -LiteralPath $objectRegistryFixturePath -Raw
+  Set-Content -LiteralPath $objectRegistryFixturePath -Value $objectRegistryFixtureContent.Replace('## First successful BO GET sample policy', '## Sample policy') -NoNewline
+  $objectSamplePolicyNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
+  if ($objectSamplePolicyNegative.ExitCode -eq 0) {
+    throw 'Expected a repository fixture without the first-success BO GET sample policy to fail living-build verification.'
+  }
+
+  if (-not $objectSamplePolicyNegative.Output.Contains('capture-once first-success BO GET sample policy')) {
+    throw "Expected the missing first-success BO GET sample policy to be reported, received:`n$($objectSamplePolicyNegative.Output)"
+  }
+
+  Set-Content -LiteralPath $objectRegistryFixturePath -Value $objectRegistryFixtureContent -NoNewline
   Remove-Item -LiteralPath $objectRegistryFixturePath -Force
   $objectRegistryNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
   if ($objectRegistryNegative.ExitCode -eq 0) {
@@ -129,4 +141,4 @@ finally {
   }
 }
 
-Write-Output 'Living build contract test: PASS (positive repository and handoff, naming, object-registry, incomplete negative fixtures)'
+Write-Output 'Living build contract test: PASS (positive repository and handoff, naming, sample-policy, object-registry, incomplete negative fixtures)'

@@ -52,6 +52,53 @@ Contact responses can contain personal data. Retain only the fields and evidence
 
 The displayed values are placeholders. Do not reuse operational contact data from evidence as test input.
 
+## First successful BO GET sample
+
+Captured once from `XDX_SUPPLIER_INFORMATION.ListSupplierContacts` at `2026-09-16T20:15:54.9104884-05:00`. [Complete retained JSON](../../builds/xdx-supplier-information/live-details/ListSupplierContacts-baseline.json) contains 13 items. The excerpt below preserves the exact first item and original envelope values; 12 remaining items are omitted. Contact data is evidence, not reusable POST input. Later contact GETs do not replace this sample.
+
+```json
+{
+  "items": [
+    {
+      "SupplierContactId": 300000047507658,
+      "SalutationCode": "MR.",
+      "Salutation": "Mr.",
+      "FirstName": "Jim ",
+      "MiddleName": null,
+      "LastName": "Gasol",
+      "JobTitle": null,
+      "AdministrativeContactFlag": true,
+      "PhoneCountryCode": null,
+      "PhoneAreaCode": null,
+      "PhoneNumber": null,
+      "PhoneExtension": null,
+      "MobileCountryCode": null,
+      "MobileAreaCode": null,
+      "MobileNumber": null,
+      "FaxCountryCode": null,
+      "FaxAreaCode": null,
+      "FaxNumber": null,
+      "Email": "jgasol_eqih-dev21@oraclepdemos.com",
+      "Status": "ACTIVE",
+      "InactiveDate": null,
+      "PersonProfileId": 300000047507658,
+      "CreationDate": "2013-11-12T15:51:28.224-06:00",
+      "CreatedBy": "CALVIN.ROTH",
+      "LastUpdateDate": "2017-11-08T10:48:27.359-06:00",
+      "LastUpdatedBy": "JOHN.DUNBAR",
+      "DataAccessLevel": "SUPPLIER",
+      "UserName": "JIM.GASOL",
+      "UserAccountStatus": "A",
+      "ContactName": "Gasol, Jim"
+    }
+  ],
+  "count": 13,
+  "hasMore": false,
+  "limit": 25,
+  "offset": 0
+}
+```
+
 ## POST operation
 
 The create operation ID is `create_suppliers-contacts`. The 26C OpenAPI request schema has 24 properties and marks `Email` and `InactiveDate` as required. The seven-field vendor example contains `Salutation`, `FirstName`, `LastName`, `AdministrativeContactFlag`, `MobileCountryCode`, `MobileAreaCode` and `MobileNumber`, while omitting both schema-required fields. Resolve whether `InactiveDate` must be explicitly null and confirm current email requirements before execution.
@@ -82,4 +129,5 @@ Use a controlled test identity and notification destination. Do not copy an oper
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-17 | First retained `ListSupplierContacts` BO response | Added immutable first-success GET excerpt and link to complete JSON; later GET evidence does not refresh it. |
 | 2026-09-17 | Parent-scoped live GET receipts and Oracle 26C GET/POST documentation | Established Supplier Contacts as the owner for GET filtering/paging, response JSON, create-request JSON, personal-data handling and the unresolved `Email`/`InactiveDate` vendor-example discrepancy. |

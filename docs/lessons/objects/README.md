@@ -11,7 +11,7 @@ During build intake:
 3. Record the selected references, documented release and any required current-product revalidation in the active intake and learning register.
 4. If no matching reference exists, create one from current specification and direct evidence before relying on undocumented behavior.
 
-At closeout, update the matching object reference with reusable, verified operation behavior. Keep tenant IDs, credentials, customer data, raw request and response bodies, and run-specific timing in the build evidence. Promote only lifecycle or architecture rules that apply across resource objects to the canonical playbook.
+At closeout, update the matching object reference with reusable, verified operation behavior. Keep credentials and complete run receipts in the build evidence. An object reference may retain one approved first-success BO GET sample under the capture-once policy below. Promote only lifecycle or architecture rules that apply across resource objects to the canonical playbook.
 
 An object reference does not authorize a live read, write, remote artifact save, publication or cleanup. The active build authority contract controls those actions.
 
@@ -20,6 +20,15 @@ An object reference does not authorize a live read, write, remote artifact save,
 Use the exact operation page and version-matched specification for the selected release. For browser-free retrieval, require a successful HTTPS status, expected final URL and content type, bounded timeout and normal certificate validation; never send application credentials to a public documentation host. A failure in one hosted or local retrieval tool does not prove the page is unavailable.
 
 Locate the semantic Example Request Body section, HTML-decode its code block and parse that block as JSON. Do not assume the first JSON block is the request example or that the section uses a particular heading element. Compare the example with the request schema and field descriptions, record contradictions in the object reference, and treat all vendor values as structural examples. Preserve source URL, release and retrieval date in the build evidence.
+
+## First successful BO GET sample policy
+
+1. After the first successful GET through a BO for a resource object, add one `First successful BO GET sample` section to that object's reference if none exists.
+2. Use the exact first successful response already produced by the BO. Record function, capture time, release and durable evidence path.
+3. Do not execute a GET solely to create or refresh documentation. If the first success predates the reference, use the earliest retained successful response.
+4. Capture once. Later GETs must not append, replace or refresh the sample.
+5. For a large or capture-restricted response, include an exact bounded excerpt and link the complete authorized JSON evidence. State every omission.
+6. A changed API release or resource identity receives a new version-specific reference and its own first successful sample; it does not overwrite the earlier sample.
 
 ## References
 
@@ -41,6 +50,7 @@ Each object reference must state:
 - POST or other write schemas, required and conditional fields, generated fields, references and request JSON contract.
 - Vendor-example differences and unresolved schema contradictions.
 - Directly verified behavior, evidence links and untested boundaries.
+- One immutable first-success BO GET sample, or an explicit statement that no successful BO GET exists.
 - Revalidation triggers and last evidence date.
 - Change history tied to direct evidence.
 

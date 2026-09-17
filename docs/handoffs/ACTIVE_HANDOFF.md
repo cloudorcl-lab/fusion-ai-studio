@@ -1,6 +1,6 @@
 # Active Handoff
 
-- Objective: keep lifecycle governance in the canonical playbook and maintain GET, POST, JSON, schema, filter, paging and key lessons in one reference per Supplier resource object; prior supplier GET build remains complete.
+- Objective: maintain one object reference per Supplier resource and one immutable first-success BO GET sample per object; prior supplier GET build remains complete.
 - Repository: `C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1`; branch `TestingWFBuildTools`.
 - Canonical owner: `docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md`.
 - Object-learning registry: `docs/lessons/objects/README.md`; separate references exist for Suppliers, Supplier Addresses, Supplier Sites and Supplier Contacts.
@@ -20,6 +20,8 @@
 - Latest milestone: approved supplier detail extension and requested live verification completed locally, 2026-09-17 UTC. Core 13-case runner: `tests/test-xdx-supplier-details-live.ps1`; additional three text-filter receipts: `live-details/text-filter-summary.json` under the build records. Baseline examples are stored in the delivery BO. No further implementation is pending in this approved local scope.
 
 - Governance milestone: approved object-learning ownership restructure completed locally, 2026-09-17. Root `AGENTS.md`, AI Studio skill and verifier require future builds to inventory parent/child objects and load matching references. Living-build positive/negative tests, local links, code fences, tenant-data scan and whitespace checks pass. Installed startup seed and ZIP remain unchanged delivery snapshots.
+
+- Sample milestone: Suppliers, Addresses, Sites and Contacts now contain one first-success BO GET sample sourced only from retained BO/baseline JSON. Registry, root instructions, playbook, AI Studio skill and verifier enforce capture once and prohibit routine refresh. Sample/source comparison, JSON parsing and local links pass. No GET was executed.
 
 - Next testing boundary: use the Suppliers, Addresses, Sites and Contacts object references for GET and POST design. No POST has been executed. Resolve each documented schema/example discrepancy and current tenant reference before any authorized write.
 - Hand-forward: documentation-only governance; runtime receipts reused. Future worktrees must inherit this governance commit and start a fresh run before their next build.

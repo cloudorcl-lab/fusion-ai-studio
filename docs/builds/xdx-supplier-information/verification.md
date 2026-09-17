@@ -45,3 +45,7 @@ Final local verification: seven-function contract PASS; CLI validate-bo result.o
 ## Object-learning ownership restructure
 
 2026-09-17: documentation-only governance PASS. One registry and separate Suppliers, Supplier Addresses, Supplier Sites and Supplier Contacts references now own GET, POST, request/response JSON, schema, filter, paging and key guidance. Canonical operation-detail headings are absent. Root `AGENTS.md`, AI Studio skill and living-build verifier require future intake to load matching parent/child references. Positive/negative verifier tests, local Markdown links, code fences, tenant-data scan and scoped whitespace checks pass. No BO, runtime, remote or installed-seed state changed.
+
+## First-success BO GET samples
+
+2026-09-17: PASS using retained evidence only. Suppliers sample equals the first `ListSuppliers` BO response. Address and Contact excerpts equal the complete first returned items and original envelopes. Every selected Site field and its original envelope values equal the retained baseline. All 12 object-reference JSON blocks parse; local links, capture-once verifier checks and whitespace checks pass. No GET, other network request, BO mutation, remote save, publication or push occurred.
