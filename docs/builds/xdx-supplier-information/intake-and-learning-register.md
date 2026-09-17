@@ -1,5 +1,9 @@
 # XDX Supplier Information - intake and learning register
 
+## Timing recovery checkpoint — 2026-09-17
+
+User requested recovering all available timing and making tracking a MUST. Scope: local session metadata and retained receipt review only. Recovered 11 completed root turns, per-inference tokens, inter-turn gaps and 38 BO invocation receipts in [time-tracker.md](time-tracker.md) and its JSON ledger. No live operations repeated. Missing active-labor subdivisions, child-agent runtime, older-session intervals and AI Units are explicitly unavailable. Runtime counters and timestamp boundaries reconcile separately; receipt time is not added to turn time. Canonical timing controls and Definition of Done now require continuous capture, recovery and delivery reconciliation. Living-build positive/negative regression passes, including removal of the mandatory policy. No object-operation lesson changed; this is lifecycle guidance. Preserve unrelated changes and hand forward a scoped local commit.
+
 ## Approved scope
 
 User approved the three-function design and required intermediate build steps on 2026-09-16. This is a standalone Business Object, not a new agentic app; the new-app worktree and app/ATLAS gates do not apply. Work on the existing `TestingWFBuildTools` branch and preserve unrelated changes to `env.properties`, the supplied ZIP, and the workspace file.

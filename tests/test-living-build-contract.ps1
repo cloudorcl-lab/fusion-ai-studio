@@ -59,6 +59,14 @@ Copy-Item -LiteralPath (Join-Path $repoRoot 'docs/handoffs/ACTIVE_HANDOFF.md') -
 Copy-Item -LiteralPath (Join-Path $repoRoot '.agents/skills/aistudio/SKILL.md') -Destination (Join-Path $handoffFixtureRoot '.agents/skills/aistudio/SKILL.md')
 
 try {
+  $timingPolicyPath = Join-Path $handoffFixtureRoot 'docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md'
+  $timingPolicyOriginal = Get-Content -LiteralPath $timingPolicyPath -Raw
+  Set-Content -LiteralPath $timingPolicyPath -Value $timingPolicyOriginal.Replace('### MUST: continuous timing and reconciliation', '### Timing') -NoNewline
+  $timingNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
+  if ($timingNegative.ExitCode -eq 0 -or -not $timingNegative.Output.Contains('mandatory timing reconciliation policy')) {
+    throw 'Expected missing mandatory timing reconciliation policy to fail verification.'
+  }
+  Set-Content -LiteralPath $timingPolicyPath -Value $timingPolicyOriginal -NoNewline
   $handoffAgentsPath = Join-Path $handoffFixtureRoot 'AGENTS.md'
   $handoffAgentsContent = Get-Content -LiteralPath $handoffAgentsPath -Raw
   $originalAgentsContent = $handoffAgentsContent

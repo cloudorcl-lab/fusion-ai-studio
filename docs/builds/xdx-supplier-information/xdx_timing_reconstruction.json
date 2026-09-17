@@ -1,0 +1,584 @@
+{
+  "capturedUtc": "2026-09-17T15:59:12.879Z",
+  "source": {
+    "sessionId": "01a0ae75-e1f3-7681-a94e-555457cd87e3",
+    "file": "rollout-2026-09-17T03-22-36-01a0ae75-e1f3-7681-a94e-555457cd87e3.jsonl",
+    "lines": 991,
+    "sha256": "bcd2ff384669cc0b0f573d2e2b615f5fda67a4f04d0841ca1aedf9f1a611af65"
+  },
+  "method": "Retrospective task_complete duration_ms; timestamp boundaries separately reconcile span. Sum per-inference usage once, never cumulative counters. BO invocation receipts are nested and nonadditive to turn elapsed. Only top-level elapsedSeconds receipts under live-post are counted; historical GET evidence outside that directory is excluded.",
+  "limits": [
+    "No CPU or human labor measurement.",
+    "Inter-turn gaps are not active work.",
+    "Approval-pending intervals within active turns may overlap work; exact idle duration unknown.",
+    "Parallel child-agent duration and tokens excluded; independent runtime unavailable in this root log.",
+    "AI Units unavailable: no workflow metering receipt.",
+    "Prior-session build phases remain as originally recorded; this is not a whole-build lifetime total.",
+    "Current recovery remains checkpointed; final-response and commit tail excluded."
+  ],
+  "totals": {
+    "recordedTurnDurationMs": 3041963,
+    "boundaryTurnDurationMs": 3041814,
+    "interTurnGapMs": 23808986,
+    "completedSpanMs": 26850800,
+    "tokens": {
+      "input_tokens": 14513580,
+      "cached_input_tokens": 14192384,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 63020,
+      "reasoning_output_tokens": 12000,
+      "total_tokens": 14576600
+    },
+    "receiptCount": 38,
+    "receiptInvocationSeconds": 127.19164979999998
+  },
+  "turns": [
+    {
+      "turnId": "01a0ae77-049f-7932-8179-7ca708786e52",
+      "startUtc": "2026-09-17T08:23:50.914Z",
+      "startLine": 2,
+      "label": "Handoff review",
+      "endUtc": "2026-09-17T08:24:00.905Z",
+      "endLine": 22,
+      "recordedDurationMs": 10112,
+      "boundaryDurationMs": 9991,
+      "tokenRecordCount": 2,
+      "tokens": {
+        "input_tokens": 50424,
+        "cached_input_tokens": 37248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 132,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 50556
+      }
+    },
+    {
+      "turnId": "01a0ae77-ed12-7842-a345-6cd69f56e6e6",
+      "startUtc": "2026-09-17T08:24:50.219Z",
+      "startLine": 24,
+      "label": "Startup investigation delegation",
+      "endUtc": "2026-09-17T08:25:12.460Z",
+      "endLine": 54,
+      "recordedDurationMs": 22242,
+      "boundaryDurationMs": 22241,
+      "tokenRecordCount": 4,
+      "tokens": {
+        "input_tokens": 122624,
+        "cached_input_tokens": 112512,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 418,
+        "reasoning_output_tokens": 77,
+        "total_tokens": 123042
+      }
+    },
+    {
+      "turnId": "01a0ae78-fdff-7100-b09a-129cc1f284e4",
+      "startUtc": "2026-09-17T08:26:00.081Z",
+      "startLine": 56,
+      "label": "BO design",
+      "endUtc": "2026-09-17T08:26:42.834Z",
+      "endLine": 99,
+      "recordedDurationMs": 42753,
+      "boundaryDurationMs": 42753,
+      "tokenRecordCount": 5,
+      "tokens": {
+        "input_tokens": 256145,
+        "cached_input_tokens": 225280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 729,
+        "reasoning_output_tokens": 183,
+        "total_tokens": 256874
+      }
+    },
+    {
+      "turnId": "01a0ae7c-8c46-7032-956e-5d181ad0cd91",
+      "startUtc": "2026-09-17T08:29:53.113Z",
+      "startLine": 101,
+      "label": "Initial POST implementation and approval block",
+      "endUtc": "2026-09-17T08:37:28.349Z",
+      "endLine": 237,
+      "recordedDurationMs": 455236,
+      "boundaryDurationMs": 455236,
+      "tokenRecordCount": 17,
+      "tokens": {
+        "input_tokens": 1601148,
+        "cached_input_tokens": 1553920,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9481,
+        "reasoning_output_tokens": 886,
+        "total_tokens": 1610629
+      }
+    },
+    {
+      "turnId": "01a0ae83-7ea0-7bd3-b239-7f9c8aef6b6e",
+      "startUtc": "2026-09-17T08:37:28.373Z",
+      "startLine": 238,
+      "label": "Blocked continuation review",
+      "endUtc": "2026-09-17T08:37:54.597Z",
+      "endLine": 256,
+      "recordedDurationMs": 26224,
+      "boundaryDurationMs": 26224,
+      "tokenRecordCount": 2,
+      "tokens": {
+        "input_tokens": 222135,
+        "cached_input_tokens": 219648,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 471,
+        "reasoning_output_tokens": 275,
+        "total_tokens": 222606
+      }
+    },
+    {
+      "turnId": "01a0ae83-e529-7520-9f21-e23a49684aad",
+      "startUtc": "2026-09-17T08:37:54.621Z",
+      "startLine": 257,
+      "label": "Blocked checkpoint",
+      "endUtc": "2026-09-17T08:38:03.197Z",
+      "endLine": 270,
+      "recordedDurationMs": 8577,
+      "boundaryDurationMs": 8576,
+      "tokenRecordCount": 2,
+      "tokens": {
+        "input_tokens": 225698,
+        "cached_input_tokens": 223744,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 123,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 225821
+      }
+    },
+    {
+      "turnId": "01a0af94-05af-7f51-90c1-d5f3c1cf706c",
+      "startUtc": "2026-09-17T13:35:08.767Z",
+      "startLine": 272,
+      "label": "Documentation cross-reference and four POST tests",
+      "endUtc": "2026-09-17T13:57:32.351Z",
+      "endLine": 601,
+      "recordedDurationMs": 1343594,
+      "boundaryDurationMs": 1343584,
+      "tokenRecordCount": 40,
+      "tokens": {
+        "input_tokens": 5501984,
+        "cached_input_tokens": 5340160,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 26868,
+        "reasoning_output_tokens": 5384,
+        "total_tokens": 5528852
+      }
+    },
+    {
+      "turnId": "01a0afeb-ddcf-7490-8260-65ce4997c26c",
+      "startUtc": "2026-09-17T15:11:05.724Z",
+      "startLine": 603,
+      "label": "SupplierType omission investigation",
+      "endUtc": "2026-09-17T15:11:27.281Z",
+      "endLine": 618,
+      "recordedDurationMs": 21564,
+      "boundaryDurationMs": 21557,
+      "tokenRecordCount": 2,
+      "tokens": {
+        "input_tokens": 326675,
+        "cached_input_tokens": 325376,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 352,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 327027
+      }
+    },
+    {
+      "turnId": "01a0afed-3f8b-75a2-b1d2-4e4a7edb663a",
+      "startUtc": "2026-09-17T15:12:36.261Z",
+      "startLine": 620,
+      "label": "SupplierType repair and corrected POST retest",
+      "endUtc": "2026-09-17T15:30:30.671Z",
+      "endLine": 857,
+      "recordedDurationMs": 1074410,
+      "boundaryDurationMs": 1074410,
+      "tokenRecordCount": 29,
+      "tokens": {
+        "input_tokens": 5372728,
+        "cached_input_tokens": 5323776,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 23871,
+        "reasoning_output_tokens": 5195,
+        "total_tokens": 5396599
+      }
+    },
+    {
+      "turnId": "01a0b00f-8662-7533-8780-a22bb8a7382e",
+      "startUtc": "2026-09-17T15:50:02.656Z",
+      "startLine": 859,
+      "label": "1497 evidence links",
+      "endUtc": "2026-09-17T15:50:21.861Z",
+      "endLine": 874,
+      "recordedDurationMs": 19214,
+      "boundaryDurationMs": 19205,
+      "tokenRecordCount": 2,
+      "tokens": {
+        "input_tokens": 415639,
+        "cached_input_tokens": 414848,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 343,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 415982
+      }
+    },
+    {
+      "turnId": "01a0b010-74e6-7861-adda-474554fb9cb4",
+      "startUtc": "2026-09-17T15:51:03.677Z",
+      "startLine": 876,
+      "label": "Timing coverage review",
+      "endUtc": "2026-09-17T15:51:21.714Z",
+      "endLine": 891,
+      "recordedDurationMs": 18037,
+      "boundaryDurationMs": 18037,
+      "tokenRecordCount": 2,
+      "tokens": {
+        "input_tokens": 418380,
+        "cached_input_tokens": 415872,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 232,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 418612
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "startUtc": "2026-09-17T08:24:00.905Z",
+      "endUtc": "2026-09-17T08:24:50.219Z",
+      "durationMs": 49314,
+      "classification": "Inter-turn gap; activity unobserved"
+    },
+    {
+      "startUtc": "2026-09-17T08:25:12.460Z",
+      "endUtc": "2026-09-17T08:26:00.081Z",
+      "durationMs": 47621,
+      "classification": "Inter-turn gap; activity unobserved"
+    },
+    {
+      "startUtc": "2026-09-17T08:26:42.834Z",
+      "endUtc": "2026-09-17T08:29:53.113Z",
+      "durationMs": 190279,
+      "classification": "Inter-turn gap; activity unobserved"
+    },
+    {
+      "startUtc": "2026-09-17T08:37:28.349Z",
+      "endUtc": "2026-09-17T08:37:28.373Z",
+      "durationMs": 24,
+      "classification": "Inter-turn gap; activity unobserved"
+    },
+    {
+      "startUtc": "2026-09-17T08:37:54.597Z",
+      "endUtc": "2026-09-17T08:37:54.621Z",
+      "durationMs": 24,
+      "classification": "Inter-turn gap; activity unobserved"
+    },
+    {
+      "startUtc": "2026-09-17T08:38:03.197Z",
+      "endUtc": "2026-09-17T13:35:08.767Z",
+      "durationMs": 17825570,
+      "classification": "Inter-turn gap following approval block; exact human decision time unknown"
+    },
+    {
+      "startUtc": "2026-09-17T13:57:32.351Z",
+      "endUtc": "2026-09-17T15:11:05.724Z",
+      "durationMs": 4413373,
+      "classification": "Inter-turn gap; activity unobserved"
+    },
+    {
+      "startUtc": "2026-09-17T15:11:27.281Z",
+      "endUtc": "2026-09-17T15:12:36.261Z",
+      "durationMs": 68980,
+      "classification": "Inter-turn gap; activity unobserved"
+    },
+    {
+      "startUtc": "2026-09-17T15:30:30.671Z",
+      "endUtc": "2026-09-17T15:50:02.656Z",
+      "durationMs": 1171985,
+      "classification": "Inter-turn gap; activity unobserved"
+    },
+    {
+      "startUtc": "2026-09-17T15:50:21.861Z",
+      "endUtc": "2026-09-17T15:51:03.677Z",
+      "durationMs": 41816,
+      "classification": "Inter-turn gap; activity unobserved"
+    }
+  ],
+  "receipts": [
+    {
+      "path": "live-post/create-address-template-preflight-rejection.json",
+      "timestamp": "2026-09-17T13:45:13.5403537+00:00",
+      "function": "CreateSupplierAddress",
+      "status": "ERROR",
+      "elapsedSeconds": 0.2359048
+    },
+    {
+      "path": "live-post/create-address.json",
+      "timestamp": "2026-09-17T13:46:06.4523431+00:00",
+      "function": "CreateSupplierAddress",
+      "status": "SUCCESS",
+      "elapsedSeconds": 7.7675944
+    },
+    {
+      "path": "live-post/create-contact.json",
+      "timestamp": "2026-09-17T13:47:21.1879894+00:00",
+      "function": "CreateSupplierContact",
+      "status": "SUCCESS",
+      "elapsedSeconds": 15.6133403
+    },
+    {
+      "path": "live-post/create-site.json",
+      "timestamp": "2026-09-17T13:46:49.9342948+00:00",
+      "function": "CreateSupplierSite",
+      "status": "SUCCESS",
+      "elapsedSeconds": 7.4642394
+    },
+    {
+      "path": "live-post/create-supplier-cli-preflight-rejection.json",
+      "timestamp": "2026-09-17T13:40:09.0362677+00:00",
+      "function": "CreateSupplier",
+      "status": "ERROR",
+      "elapsedSeconds": 0.21785
+    },
+    {
+      "path": "live-post/create-supplier-code-preflight-rejection.json",
+      "timestamp": "2026-09-17T13:42:44.1818347+00:00",
+      "function": "CreateSupplier",
+      "status": "ERROR",
+      "elapsedSeconds": 0.2281777
+    },
+    {
+      "path": "live-post/create-supplier-label-preflight-rejection.json",
+      "timestamp": "2026-09-17T13:41:52.8188558+00:00",
+      "function": "CreateSupplier",
+      "status": "ERROR",
+      "elapsedSeconds": 0.2228038
+    },
+    {
+      "path": "live-post/create-supplier.json",
+      "timestamp": "2026-09-17T13:43:43.7545274+00:00",
+      "function": "CreateSupplier",
+      "status": "SUCCESS",
+      "elapsedSeconds": 18.0514816
+    },
+    {
+      "path": "live-post/lee-addresses.json",
+      "timestamp": "2026-09-17T13:37:13.5882667+00:00",
+      "function": "ListSupplierAddresses",
+      "status": "SUCCESS",
+      "elapsedSeconds": 3.0301087
+    },
+    {
+      "path": "live-post/lee-contacts.json",
+      "timestamp": "2026-09-17T13:37:21.1759494+00:00",
+      "function": "ListSupplierContacts",
+      "status": "SUCCESS",
+      "elapsedSeconds": 2.1502384
+    },
+    {
+      "path": "live-post/lee-profile.json",
+      "timestamp": "2026-09-17T13:36:33.6498839+00:00",
+      "function": "GetSupplierDetails",
+      "status": "SUCCESS",
+      "elapsedSeconds": 5.4268158
+    },
+    {
+      "path": "live-post/lee-sites.json",
+      "timestamp": "2026-09-17T13:37:17.0548302+00:00",
+      "function": "ListSupplierSites",
+      "status": "SUCCESS",
+      "elapsedSeconds": 3.68654
+    },
+    {
+      "path": "live-post/regression/GetSupplierDetails-baseline.json",
+      "timestamp": "2026-09-17T13:48:47.8038637+00:00",
+      "function": "GetSupplierDetails",
+      "status": null,
+      "elapsedSeconds": 2.737
+    },
+    {
+      "path": "live-post/regression/ListSupplierAddresses-baseline.json",
+      "timestamp": "2026-09-17T13:48:51.0121289+00:00",
+      "function": "ListSupplierAddresses",
+      "status": null,
+      "elapsedSeconds": 1.924
+    },
+    {
+      "path": "live-post/regression/ListSupplierAddresses-empty.json",
+      "timestamp": "2026-09-17T13:48:57.9867581+00:00",
+      "function": "ListSupplierAddresses",
+      "status": null,
+      "elapsedSeconds": 2.025
+    },
+    {
+      "path": "live-post/regression/ListSupplierAddresses-filtered.json",
+      "timestamp": "2026-09-17T13:48:53.3817113+00:00",
+      "function": "ListSupplierAddresses",
+      "status": null,
+      "elapsedSeconds": 1.937
+    },
+    {
+      "path": "live-post/regression/ListSupplierAddresses-offset-one.json",
+      "timestamp": "2026-09-17T13:48:55.7319019+00:00",
+      "function": "ListSupplierAddresses",
+      "status": null,
+      "elapsedSeconds": 1.845
+    },
+    {
+      "path": "live-post/regression/ListSupplierContacts-baseline.json",
+      "timestamp": "2026-09-17T13:49:09.5682890+00:00",
+      "function": "ListSupplierContacts",
+      "status": null,
+      "elapsedSeconds": 2.207
+    },
+    {
+      "path": "live-post/regression/ListSupplierContacts-empty.json",
+      "timestamp": "2026-09-17T13:49:16.8758368+00:00",
+      "function": "ListSupplierContacts",
+      "status": null,
+      "elapsedSeconds": 2.414
+    },
+    {
+      "path": "live-post/regression/ListSupplierContacts-filtered.json",
+      "timestamp": "2026-09-17T13:49:12.1930877+00:00",
+      "function": "ListSupplierContacts",
+      "status": null,
+      "elapsedSeconds": 1.963
+    },
+    {
+      "path": "live-post/regression/ListSupplierContacts-offset-one.json",
+      "timestamp": "2026-09-17T13:49:14.5559256+00:00",
+      "function": "ListSupplierContacts",
+      "status": null,
+      "elapsedSeconds": 1.907
+    },
+    {
+      "path": "live-post/regression/ListSupplierSites-baseline.json",
+      "timestamp": "2026-09-17T13:49:00.4230289+00:00",
+      "function": "ListSupplierSites",
+      "status": null,
+      "elapsedSeconds": 1.874
+    },
+    {
+      "path": "live-post/regression/ListSupplierSites-empty.json",
+      "timestamp": "2026-09-17T13:49:07.3206994+00:00",
+      "function": "ListSupplierSites",
+      "status": null,
+      "elapsedSeconds": 1.828
+    },
+    {
+      "path": "live-post/regression/ListSupplierSites-filtered.json",
+      "timestamp": "2026-09-17T13:49:02.7018922+00:00",
+      "function": "ListSupplierSites",
+      "status": null,
+      "elapsedSeconds": 1.949
+    },
+    {
+      "path": "live-post/regression/ListSupplierSites-offset-one.json",
+      "timestamp": "2026-09-17T13:49:05.0681922+00:00",
+      "function": "ListSupplierSites",
+      "status": null,
+      "elapsedSeconds": 1.848
+    },
+    {
+      "path": "live-post/regression-FindSupplierByFullName.json",
+      "timestamp": "2026-09-17T13:49:43.3328772+00:00",
+      "function": "FindSupplierByFullName",
+      "status": "SUCCESS",
+      "elapsedSeconds": 2.448349
+    },
+    {
+      "path": "live-post/regression-FindSuppliersByPartialName.json",
+      "timestamp": "2026-09-17T13:49:46.3477025+00:00",
+      "function": "FindSuppliersByPartialName",
+      "status": "SUCCESS",
+      "elapsedSeconds": 3.119291
+    },
+    {
+      "path": "live-post/regression-ListSupplierAddresses-text.json",
+      "timestamp": "2026-09-17T13:49:49.9680779+00:00",
+      "function": "ListSupplierAddresses",
+      "status": "SUCCESS",
+      "elapsedSeconds": 2.8167942
+    },
+    {
+      "path": "live-post/regression-ListSupplierContacts-text.json",
+      "timestamp": "2026-09-17T13:49:57.5889558+00:00",
+      "function": "ListSupplierContacts",
+      "status": "SUCCESS",
+      "elapsedSeconds": 2.5353279
+    },
+    {
+      "path": "live-post/regression-ListSuppliers.json",
+      "timestamp": "2026-09-17T13:49:39.1212614+00:00",
+      "function": "ListSuppliers",
+      "status": "SUCCESS",
+      "elapsedSeconds": 3.654166
+    },
+    {
+      "path": "live-post/regression-ListSupplierSites-text.json",
+      "timestamp": "2026-09-17T13:49:53.3380102+00:00",
+      "function": "ListSupplierSites",
+      "status": "SUCCESS",
+      "elapsedSeconds": 3.8008439
+    },
+    {
+      "path": "live-post/supplier-collision-check.json",
+      "timestamp": "2026-09-17T13:43:41.1334522+00:00",
+      "function": "FindSupplierByFullName",
+      "status": "SUCCESS",
+      "elapsedSeconds": 2.186089
+    },
+    {
+      "path": "live-post/type-fix/new-after.json",
+      "timestamp": "2026-09-17T15:26:44.5616460+00:00",
+      "function": "GetSupplierDetails",
+      "status": "SUCCESS",
+      "elapsedSeconds": 2.078666
+    },
+    {
+      "path": "live-post/type-fix/new-create.json",
+      "timestamp": "2026-09-17T15:26:40.1909444+00:00",
+      "function": "CreateSupplier",
+      "status": "SUCCESS",
+      "elapsedSeconds": 3.9026705
+    },
+    {
+      "path": "live-post/type-fix/new-name-check.json",
+      "timestamp": "2026-09-17T15:25:34.9044677+00:00",
+      "function": "FindSupplierByFullName",
+      "status": "SUCCESS",
+      "elapsedSeconds": 2.2132914
+    },
+    {
+      "path": "live-post/type-fix/original-after.json",
+      "timestamp": "2026-09-17T15:20:25.2741928+00:00",
+      "function": "GetSupplierDetails",
+      "status": "SUCCESS",
+      "elapsedSeconds": 1.970805
+    },
+    {
+      "path": "live-post/type-fix/original-before.json",
+      "timestamp": "2026-09-17T15:20:18.2310584+00:00",
+      "function": "GetSupplierDetails",
+      "status": "SUCCESS",
+      "elapsedSeconds": 2.6758816
+    },
+    {
+      "path": "live-post/type-fix/original-patch.json",
+      "timestamp": "2026-09-17T15:20:21.5762561+00:00",
+      "function": "RepairSupplierType",
+      "status": "SUCCESS",
+      "elapsedSeconds": 3.2363794
+    }
+  ],
+  "currentRecovery": {
+    "turnId": "01a0b011-4355-7f23-afb9-10c6f9823db4",
+    "startUtc": "2026-09-17T15:51:56.527Z",
+    "startLine": 893,
+    "label": "Timing reconstruction",
+    "checkpointUtc": "2026-09-17T15:59:12.879Z",
+    "checkpointElapsedMs": 436352
+  }
+}

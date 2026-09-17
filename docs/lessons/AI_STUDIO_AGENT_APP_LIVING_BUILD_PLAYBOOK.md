@@ -628,6 +628,16 @@ This gate is mandatory and returns to Instruction 1.
 
 ## Time, token, and AI Unit controls
 
+### MUST: continuous timing and reconciliation
+
+Every build, test cycle, repair and governance task MUST maintain the active build's `time-tracker.md` from its first action. Record UTC start, phase checkpoints, pause/resume or approval-pending intervals, and a delivery checkpoint before reporting completion or handing off. Include authoring, documentation, debugging, rework, verification and closeout, not only successful API calls.
+
+The tracker MUST distinguish observed task/turn elapsed time, tool or BO invocation elapsed time, inter-turn gaps and overlapping work. Never add nested tool durations, API receipts or parallel-agent durations to enclosing elapsed time. Approval-pending time can overlap active work; do not automatically classify it as idle or human effort.
+
+Missing tracking MUST be reconstructed from available session timestamps and retained receipts during the current task. Label retrospective values, cite evidence and its cutoff, retain earlier history, and state the reason for every unrecoverable interval. Never invent start times, active labor, token usage or AI Units; do not rerun live operations solely to recover timing.
+
+Before completion, the agent MUST reconcile the tracker through the delivery checkpoint, record available input/output/cached tokens and AI Units (or why unavailable), link it from the active handoff, and report material gaps. The final-response/commit tail after that checkpoint remains explicitly outside the captured interval until a later session can recover it. A missing tracker or unexplained timing gap blocks completion. The living-build verifier protects this policy; task-level reconciliation remains an evidence review obligation.
+
 Every test or sweep must record:
 
 | Timestamp | Artifact/test | Purpose | Mode | Elapsed | Workflow time | Input tokens | Output tokens | AI Units | Result | Rerun reason |
@@ -780,7 +790,7 @@ contract.
 - [ ] App synchronization has no required backing action.
 - [ ] Required app panel tests and widget contracts passed.
 - [ ] Scoped final summaries and HTML reports are current.
-- [ ] Timings, tokens, AI Units, and model placement are recorded.
+- [ ] Timings, tokens, AI Units, and model placement are recorded. Reconcile the active time tracker through a delivery checkpoint, link it in the handoff, and explain every gap under the mandatory timing policy.
 
 ### Dependency hygiene
 
@@ -908,6 +918,8 @@ After every update:
 12. Record the verification result in the active build handoff.
 
 ## Change log
+
+2026-09-17: Partial Supplier POST timing prompted the mandatory continuous-timing and retrospective-reconciliation policy, covering whole tasks, gaps, overlaps and delivery checkpoints. The verifier rejects removal of the policy heading, tested by a negative fixture. Task-level completeness also requires evidence review.
 
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |

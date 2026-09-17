@@ -1,6 +1,7 @@
 # Active Handoff
 
-- Objective: SupplierType correction and focused live retest verified; hand forward the scoped repair commit and canonical prevention guidance.
+- Objective: SupplierType correction verified in bb8320f; retrospective timing recovered and mandatory timing policy added. Hand forward timing evidence and enforcement.
+- Time tracker: [time-tracker.md](../builds/xdx-supplier-information/time-tracker.md), with [reconstruction ledger](../builds/xdx-supplier-information/xdx_timing_reconstruction.json). Root completed-turn elapsed is 3041.963 seconds; 127.192 seconds of BO invocation receipts are nested, not additive. Earlier-session and parallel-agent gaps remain explicit. Resume from the delivery checkpoint and recover the final-response/commit tail if needed; never rerun live calls for timing.
 - Repository: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1; branch TestingWFBuildTools.
 - Canonical owner: docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md.
 - Object-learning registry: docs/lessons/objects/README.md; Suppliers, Addresses, Sites and Contacts references contain generated-ID evidence.

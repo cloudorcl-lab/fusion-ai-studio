@@ -100,6 +100,9 @@ if (-not (Test-Path -LiteralPath $activeHandoffPath -PathType Leaf)) {
 }
 
 if ($playbookContent) {
+  if ($playbookContent -notmatch '(?m)^### MUST: continuous timing and reconciliation\s*$') {
+    Add-ContractFailure 'The canonical playbook must retain the mandatory timing reconciliation policy.'
+  }
   if ((Get-FirstLevelTwoHeading -Content $playbookContent) -notmatch '^## Instruction 1\s+[—-]\s+Learn') {
     Add-ContractFailure 'Learning must remain the first actionable section in the canonical playbook.'
   }
