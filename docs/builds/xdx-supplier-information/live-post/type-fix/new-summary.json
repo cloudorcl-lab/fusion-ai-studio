@@ -1,0 +1,13 @@
+{
+  "SupplierTypeCode": "SUPPLIER",
+  "checks": [
+    "name absent",
+    "POST includes intended type",
+    "GET preserves all four business fields and type code"
+  ],
+  "SupplierType": "Supplier",
+  "newSupplierName": "XDX Lee Supplies 20260917152534",
+  "status": "PASS",
+  "newSupplierId": 300000333813822,
+  "newSupplierNumber": "1497"
+}

@@ -46,6 +46,6 @@ Sources: [Suppliers REST API](https://docs.oracle.com/en/cloud/saas/procurement/
 
 ## POST functions
 
-CreateSupplier, CreateSupplierAddress, CreateSupplierSite and CreateSupplierContact extend the same BO. Each uses explicit field parameters; children also require suppliers_Id. Inputs have no sample defaults. See [POST verification and field contract](xdx_supplier_post_review.md) for exact scope, created IDs, documentation cross-reference and limitations. Four live creates and 19 read-back/regression checks passed. SupplierType is outside the tested minimal create template because CLI rejects the source label/code as illustrative; resulting supplier type is null.
+CreateSupplier, CreateSupplierAddress, CreateSupplierSite and CreateSupplierContact extend the same BO. Each uses explicit field parameters; children also require suppliers_Id. Inputs have no sample defaults. See [POST verification and field contract](xdx_supplier_post_review.md) for original evidence and [SupplierType correction](xdx_supplier_type_correction.md) for the superseding fix. SupplierType is restored as a required create input; supplier 1496 was repaired and verified. Fresh POST supplier 1497 persisted SupplierType=Supplier and SupplierTypeCode=SUPPLIER; all four intended business fields passed read-back.
 
 Run local persisted-evidence checks with: pwsh -NoProfile -File tests/test-xdx-supplier-post-evidence.ps1. Do not repeat creates to refresh receipts.

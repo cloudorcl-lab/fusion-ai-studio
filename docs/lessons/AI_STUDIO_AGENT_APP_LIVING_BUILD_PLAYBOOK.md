@@ -308,6 +308,8 @@ Every dependency must have:
 
 ### Gate 0 — Learn and freeze the contract
 
+Preserve source-backed business intent throughout repair and QA. A tool validation error does not authorize dropping a known valid business field, changing its value, or reducing acceptance criteria, even when the API marks that field optional. Diagnose and repair the responsible tool/contract; if a supported repair is unavailable, stop and ask for help. Compare the intended field set against the final request and persisted response, including omitted expected fields. Do not define success only as equality for the fields that happened to be submitted. Record any user-approved scope change before applying it.
+
 1. Complete Instruction 1.
 2. Open the active learning register.
 3. Inventory parent and child resource objects, read their entries from the object learning registry, and record the selected references and releases.
@@ -909,6 +911,7 @@ After every update:
 
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
+| 2026-09-17 | SupplierType omission after CLI placeholder false positive | Prohibit silently dropping source-backed business fields to satisfy tools; require intended-field coverage plus persisted-value verification and repair/help escalation. | CLI regression must fail before repair and pass afterward; restored BO field and live correction/create/read-back required. |
 | 2026-09-17 | Explicit user request during Supplier POST testing | Set terse, direct, professional communication as the canonical default without reducing quality gates. | Scoped document and living-build checks. |
 | 2026-09-17 | User clarification in Supplier POST extension; object registry policy history | Made local-sample suitability, documentation cross-reference and provisional-assumption decisions explicit write-test intake evidence; detailed policy remains in the object registry. | Living-build verifier and scoped documentation checks required; no runtime success inferred from guidance. |
 | 2026-09-17 | [Supplier first-success GET samples](objects/README.md) | Added capture-once lifecycle rule: retain one first successful BO GET sample per resource object, use saved evidence when the success predates documentation, and never rerun or refresh routine GETs for samples. | Existing BO and baseline JSON only; sample-to-source comparison, JSON parsing, links, living-build positive/negative tests and whitespace checks required. No GET executed. |

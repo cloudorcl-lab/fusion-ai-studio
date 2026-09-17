@@ -1,0 +1,22 @@
+{
+  "scope": "Focused SupplierType PATCH comparison; other schema fields omitted",
+  "exampleRequest": {
+    "CorporateWebsite": "http://www.example.com",
+    "YearEstablished": "2001",
+    "MissionStatement": "Provide the best quality whole foods",
+    "YearIncorporated": "2001"
+  },
+  "requestField": {
+    "title": "Supplier Type",
+    "maxLength": 80,
+    "type": "string",
+    "description": "Type of supplier.",
+    "nullable": true,
+    "x-hints": {
+      "controlType": "choice"
+    }
+  },
+  "retrievedUtc": "2026-09-17T15:20:16.7127185+00:00",
+  "url": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-patch.html",
+  "release": "26C"
+}

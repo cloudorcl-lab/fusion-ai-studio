@@ -93,7 +93,7 @@ foreach($name in $postContracts.Keys){
  Assert-Contract ($fn.useNativeAuthentication -and $fn.headers.'Upsert-Mode' -ceq 'false') "Create must use native authentication and prohibit upsert for $name."
  Assert-Contract ($fn.headers.'REST-Framework-Version' -ceq '4' -and $fn.headers.'Content-Type' -ceq 'application/json') "Incorrect POST headers for $name."
  $expectedParams=@{
-  CreateSupplier=@('Supplier','TaxOrganizationType','BusinessRelationship')
+  CreateSupplier=@('Supplier','TaxOrganizationType','BusinessRelationship','SupplierType')
   CreateSupplierAddress=@('AddressName','CountryCode','AddressLine1','City','State','PostalCode','AddressPurposeOrderingFlag','AddressPurposeRemitToFlag','AddressPurposeRFQOrBiddingFlag','Email','suppliers_Id')
   CreateSupplierSite=@('SupplierSite','ProcurementBUId','SupplierAddressName','SitePurposePurchasingFlag','SitePurposePayFlag','SitePurposeSourcingOnlyFlag','suppliers_Id')
   CreateSupplierContact=@('FirstName','LastName','Email','AdministrativeContactFlag','suppliers_Id')

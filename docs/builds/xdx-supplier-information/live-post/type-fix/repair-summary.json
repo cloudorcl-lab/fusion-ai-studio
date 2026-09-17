@@ -1,0 +1,12 @@
+{
+  "scope": "Existing-record repair only; no new POST performed",
+  "expectedType": "Supplier",
+  "status": "PASS",
+  "checks": [
+    "original identity",
+    "targeted PATCH",
+    "original GET type/code"
+  ],
+  "originalSupplierId": 300000333813790,
+  "expectedCode": "SUPPLIER"
+}

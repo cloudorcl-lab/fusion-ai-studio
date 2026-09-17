@@ -14,3 +14,5 @@ Record observed values only; unavailable values are not estimates.
 | 2026-09-17 02:57:49 -05:00 | First-success BO GET sample capture | unavailable | unavailable | unavailable | Four object references populated from retained BO/baseline JSON; capture-once policy and regression checks PASS; no GET executed | docs/lessons/objects/; source-to-sample comparison; living-build contract test |
 
 | 2026-09-17 | Authorized POST cycle and persisted read-back | 48.897 seconds measured across four successful POST calls; total task time unavailable | unavailable | none measured | Four creates and 19 GET regression cases pass | live-post/create-*.json; regression summaries |
+| 2026-09-17 | SupplierType repair and read-back | 5.207 seconds measured PATCH plus verification GET | unavailable | none measured | SupplierType=Supplier; SupplierTypeCode=SUPPLIER | live-post/type-fix/ |
+| 2026-09-17 | Corrected SupplierType POST retest | 5.981 seconds measured POST plus GET | unavailable | none measured | Supplier 1497 preserves all four intended fields and type code | live-post/type-fix/new-summary.json |

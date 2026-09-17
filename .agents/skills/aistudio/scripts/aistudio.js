@@ -16790,26 +16790,21 @@ function Hp(e) {
     };
   }
 }
-function $A(e) {
-  return String(e ?? "").trim().replace(/[`'"]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "");
-}
-function f0(e, t = []) {
+function f0(e) {
   const n = String(e ?? "").trim();
   if (!n)
     return !1;
   if (/<[^>\n]+>/.test(n) || /^\{[^{}\n]+\}$/.test(n) || /^\$\{[^}\n]+\}$/.test(n) || /^value(?:[_-]?\d+)?$/i.test(n) || /^(example|sample|placeholder|dummy|todo|tbd|replace(?:[_-]?me)?|changeme)(?:[_-]?\d+)?$/i.test(n))
     return !0;
-  const o = $A(n);
-  return t.some((r) => $A(r) === o);
+  // A real lookup value may equal a parameter name (SupplierType="Supplier").
+  // Parameter-name equality is not evidence of an unresolved placeholder.
+  return !1;
 }
-function lv(e, t) {
-  return typeof e == "string" ? f0(e, t) : Array.isArray(e) ? e.some((n) => lv(n, t)) : e && typeof e == "object" ? Object.values(e).some((n) => lv(n, t)) : !1;
-}
-function m0(e) {
-  return Lp(e).map((t) => t.name);
+function lv(e) {
+  return typeof e == "string" ? f0(e) : Array.isArray(e) ? e.some((n) => lv(n)) : e && typeof e == "object" ? Object.values(e).some((n) => lv(n)) : !1;
 }
 function X4(e, t) {
-  const n = m0(e), o = Object.entries(t).map(([r, a]) => [String(r).trim(), String(a ?? "").trim()]).filter(([r, a]) => r.length > 0 && a.length > 0 && f0(a, n)).map(([r]) => r);
+  const o = Object.entries(t).map(([r, a]) => [String(r).trim(), String(a ?? "").trim()]).filter(([r, a]) => r.length > 0 && a.length > 0 && f0(a)).map(([r]) => r);
   if (o.length > 0)
     throw new Error(
       `Sample input values look illustrative for ${o.join(", ")}. Ask the user for real values or use get-bo-function-example-guidance and prepare-bo-function-example-inputs before fetching a sample.`
@@ -16818,8 +16813,7 @@ function X4(e, t) {
 function Qk(e) {
   if (!e.payload.stringValue.trim())
     return;
-  const t = m0(e.fn);
-  if (!e.illustrative && lv(e.payload.query, t))
+  if (!e.illustrative && lv(e.payload.query))
     throw new Error(
       "Placeholder-like example payload values are not allowed by default. Ask the user for real example values, or set illustrative=true only when the user explicitly wants a manual illustrative example."
     );

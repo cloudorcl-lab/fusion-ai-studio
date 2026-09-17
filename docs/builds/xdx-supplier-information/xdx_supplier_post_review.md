@@ -1,5 +1,7 @@
 # Supplier POST extension — verification receipt
 
+**SupplierType acceptance correction:** the original cycle omitted a known valid business field and therefore did not satisfy full business intent. The [SupplierType correction](xdx_supplier_type_correction.md) supersedes the historical limitation below: the CLI and BO are fixed, supplier 1496 is repaired and verified, and fresh POST supplier 1497 passed intended-field and persisted-type checks. Historical receipts below remain unchanged.
+
 Four POST functions added to XDX_SUPPLIER_INFORMATION and executed successfully on eqih-dev21 as CASEY.BROWN, 2026-09-17. All seven original GET definitions and immutable object GET samples are preserved. This proves source API execution through local BO definitions; remote BO DRAFT/PUBLISHED deployment and workflow execution were not requested or tested.
 
 ## Created records

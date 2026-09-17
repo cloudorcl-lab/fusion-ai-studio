@@ -1,0 +1,26 @@
+{
+  "timestampUtc": "2026-09-17T15:25:34.9044677+00:00",
+  "function": "FindSupplierByFullName",
+  "inputs": {
+    "limit": "25",
+    "supplierName": "XDX Lee Supplies 20260917152534",
+    "offset": "0"
+  },
+  "response": {
+    "items": [],
+    "count": 0,
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
+        "name": "suppliers",
+        "kind": "collection"
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "elapsedSeconds": 2.2132914
+}
