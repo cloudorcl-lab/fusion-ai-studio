@@ -67,7 +67,7 @@ At closeout, rerun the verifier after integrating lessons and dependency cleanup
 - **Canonical owner:** This file
 - **Temporary steward:** The owner of each active agent-app build
 - **Applies to:** Every AI Studio agent app and its backing tools, workflows, tests, data, runtime dependencies, and release evidence
-- **Last reviewed:** 2026-08-27
+- **Last reviewed:** 2026-09-17
 
 ## Purpose
 
@@ -316,7 +316,7 @@ Every dependency must have:
 3. Confirm the configured host and expected environment.
 4. Confirm authenticated identity.
 5. Reconcile exact artifact codes before writes.
-6. Never reuse sample IDs, versions, ETags, or tenant-specific values.
+6. Never treat documentation, CLI-help, or another environment's sample IDs, versions, ETags, or tenant-specific values as runtime inputs. Reuse values from authorized current-environment discovery only after confirming their identity, scope and freshness; never make them reusable artifact defaults.
 7. Produce one timestamped preflight receipt covering layout, host, identity, authority, source scope, and remote-version safety. Reuse it within the build until configuration, authentication, authority, source scope, or remote state materially changes.
 
 From the project root:
@@ -348,6 +348,46 @@ node .agents\skills\aistudio\scripts\aistudio.js validate-tool --file src\tools\
 ```
 
 **Exit evidence:** every source dependency is available, validated, owned, and mapped to a consumer.
+
+#### API and Business Object source contracts
+
+These rules apply to every API domain and resource, not only the resource used to establish the lesson. Protocol-specific details must be revalidated against the selected service and release.
+
+- Discover existing capabilities before creating duplicates. Extend an existing BO when domain, ownership, authentication and lifecycle remain coherent; split when those boundaries differ. Separate summary lookup, full detail and independently paged child collections when their contracts differ. Do not silently expand every child or change an existing function's projection.
+- Verify the exact HTTP method, endpoint, API version, operation identifier, request schema, required/conditional fields, queryable fields, headers, authentication, permissions, response and error contracts. A catalog name or an HTTP error alone is not endpoint proof. If discovery search fails, use a supported catalog/specification command; do not guess endpoints or reverse-engineer hidden implementation contracts.
+- For specification-backed BOs, inspect the selected operation and its request/response shapes, then generate through the supported CLI. For manual sources, follow the documented manual-function flow. Preserve generated canonical parameter names and serialize mutations per artifact; inspect the resulting source rather than assuming the requested edit was applied.
+- A declarative template does not enforce validation merely because parameter descriptions mention it. Identify the caller that validates inputs, escapes query literals, encodes request values and enforces paging bounds. Document wildcard/case semantics and unsupported behavior; do not promise fuzzy or case-insensitive search without evidence. Raw natural language must not become an executable filter expression.
+- Authenticate through the supported connection flow and verify environment/identity. Keep passwords, tokens and authentication output out of examples, evidence and memory. Browser login is not proof that the CLI or runtime connection is authenticated. Follow the skill's approved credential-store recovery when the sandbox cannot access it; do not reinterpret a host security-context error as a bad password.
+- Use the documented example-guidance and input-preparation flow. GET examples normally capture responses; POST/PUT/PATCH examples normally describe requests. Fetching a response from a write operation can perform the write: example generation is not permission to execute it. Recheck version-sensitive example selectors and serialization against current CLI help and readback.
+- Separate transport/command success from validation success. Check the nested validation result and issue count when the CLI wraps results. Parse the documented JSON envelope rather than treating prefixed diagnostic output as JSON; inspect whether a saved payload is an object or a string before decoding it. Never preserve credential-bearing diagnostics in reports.
+
+#### Live API verification and evidence
+
+- Pin environment, identity, method, version, resource scope and actual function definition. Resolve test keys through authorized live discovery or user-supplied values. Keep supplied parent/reference IDs explicit, with no sample-key defaults.
+- For reads, assert expected identity, field projection, parent-child scope and stable keys, not just HTTP success. Verify representative ID and business-field filters, noninitial pages and empty results where supported. Check exact/partial matching, quoting and case behavior separately; disclose untested cases.
+- Honor each API's pagination contract independently for each collection. Validate returned counts and uniqueness; use stable ordering when supported. Follow continuation links/tokens or offsets as documented. Do not call a page a complete dataset while continuation remains, and stop if pagination cannot progress. Record concurrency limitations of offset paging. A bounded test may fail explicitly when the baseline exceeds its bound instead of claiming completeness.
+- Preserve passing delivery examples when running additional cases by using a task-owned temporary copy if the sample tool mutates the artifact. Remove only task-owned scratch after evidence is retained. Compare preexisting functions to their baseline when extending an artifact.
+- Save authorized evidence with timestamp, environment/identity metadata without secrets, function/method/path, input values, elapsed time, response, assertions and coverage limitations. Keep one run's artifacts together and ensure failed reruns cannot appear successful through stale summaries. Retain business data only within the agreed capture policy; request/response bodies may contain sensitive values even when they contain no credentials.
+- Distinguish local validation, live source-API execution through local definitions, remote DRAFT save, publication and deployed workflow/agent execution. Passing one does not prove the others. Reuse current live receipts for documentation-only changes; do not rerun network tests solely to refresh prose.
+
+#### Generated write-test payloads and vendor-example comparison
+
+This is the agreed design for future write tests; a design record alone is not evidence of a successful write.
+
+1. Retrieve the exact operation's version-matched request schema and vendor Example Request Body. Read field descriptions and conditional requirements as well as schema annotations. If an example conflicts with the schema or tenant metadata, record and resolve the discrepancy before execution; examples are illustrative, not exhaustive requirements.
+2. Generate the payload automatically from a writable-field allowlist. Map selected values from authorized GET results, resolve valid foreign/parent reference keys, omit server-generated keys and audit/read-only fields, and generate distinctive test business keys only where the contract permits them. Never clone an entire GET response or blindly substitute every ID. Do not invent legal/tax/bank identifiers or copy operational contact destinations merely to satisfy a field; resolve approved test values or omit optional fields.
+3. Compare the generated JSON with the vendor example for field names, types, nesting, arrays and value formats. Validate it against the request contract, document intentional differences and omissions, and check environment-specific lookup values. Vendor sample IDs and values are structural examples, not valid runtime defaults.
+4. Present a plain-language review of the target, intended effects, copied fields, generated values, unresolved choices and cleanup/retention plan. The agent creates the JSON file; the user need not author it. Ask only for missing business decisions or execution authority that the existing session does not already provide. Design approval, local authoring, live writes, remote artifact save and publication are distinct scopes.
+5. Start with one minimal valid case, then approved optional-field cases. Run local schema/contract checks before live execution. Negative cases and cleanup must fit the agreed side-effect scope. On a timeout or uncertain write result, reconcile state using returned IDs, unique test keys or documented idempotency support before retrying; never assume the write failed.
+6. Verify the result by a subsequent read using the returned identity; for asynchronous operations, first observe the documented terminal state. Compare intended writable values with returned/persisted values while accounting for documented normalization and defaults. Save the generated request, vendor comparison, response, verification and created IDs under the evidence policy above. Report cleanup/retention truthfully; do not assume deletion or rollback is supported.
+
+#### Browser-free documentation retrieval
+
+- Distinguish the hosted web/search tool, local HTTP client, browser plugin and application CLI. An error in one is not proof that another is broken. Record the failing layer and exact error; a hosted tool's generic URL-safety message does not establish that the public page is unsafe or reveal its root cause.
+- For authorized public documentation, use direct HTTPS retrieval when the hosted tool cannot fetch the page and browser-free access is required. Validate status, final URL, content type and expected section before extracting examples. Use bounded timeouts and normal certificate validation; do not send application credentials to public documentation hosts.
+- A local Windows TLS/security-context failure may be sandbox-specific. Inspect the inner error and use the supported approval/escalation path for a scoped retry when appropriate. A successful retry is evidence for that route, not proof that the hosted web tool is repaired. Do not disable TLS validation, broaden permissions globally or change search configuration on speculation.
+- Locate the semantic Example Request Body section in the actual HTML, then extract and HTML-decode its code block and parse it as JSON. Do not assume a heading tag such as `h3`: a styled `p` may be the heading. Do not take the first JSON block on a page; it may be a schema or response. Keep full large pages out of model context when a bounded section answers the question.
+- For repeatable use, preserve source URL, release, retrieval timestamp and the selected example/schema evidence, subject to retention requirements. Revalidate on documentation, API or tool changes. Browser-free retrieval was demonstrated for several operation pages, not universally guaranteed. Keep unresolved hosted-tool failures labeled unresolved; retire temporary retrieval workarounds only after the primary route is proven working.
 
 ### Gate 3 — Build complete specialists
 
@@ -860,6 +900,8 @@ Recheck current local CLI help and references when the bundled AI Studio skill c
 - [App authoring](../../.agents/skills/aistudio/references/prompts/app-vibe-master.md)
 - [App test authoring](../../.agents/skills/aistudio/references/prompts/app-test-authoring.md)
 - [Tool authoring](../../.agents/skills/aistudio/references/prompts/tools-builder.md)
+- [Business Object authoring](../../.agents/skills/aistudio/references/prompts/business-object-builder.md)
+- [Business Object CLI compatibility](../../.agents/skills/aistudio/references/prompts/business-object-cli-compat.md)
 - [Artifact conventions](../../.agents/skills/aistudio/references/prompts/artifact-conventions.md)
 - [Workflow node references](../../.agents/skills/aistudio/references/prompts/workflow-node-prompts/index.md)
 
@@ -884,6 +926,7 @@ After every update:
 
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
+| 2026-09-17 | API/BO read testing, write-test design and documentation retrieval review; [evidence register](../builds/xdx-supplier-information/api-learning-review.md) | Added cross-domain API/BO contracts, live evidence boundaries, schema-and-vendor-example comparison for generated write tests, and scoped browser-free retrieval diagnosis. Refined sample-ID reuse to permit authorized current-environment references without embedding defaults. | Documentation-only review; live GET evidence retained; four public POST pages retrieved and request examples parsed without a browser. POST execution remains untested. Governance/link/structure checks recorded in the evidence register. |
 | 2026-08-26 | Living-playbook review | Generalized the document for every agent-app build; made learning the first instruction; added mandatory capture, refinement, dependency cleanup, anti-entropy, self-verification, and hand-forward gates; retired the app-specific canonical filename. | Passed file, link, structure, terminology, command, and lingering-reference checks. |
 | 2026-08-26 | Worktree invocation review | Added the tracked root startup contract, AI Studio skill safeguard, deterministic verifier, fresh-run boundary, and Git propagation rule so every worktree invokes one canonical playbook. | RED test detected the missing verifier; focused contract and negative-fixture checks required before handoff. |
 | 2026-08-27 | AltaLink Capital Investment Financial Steward | Added the deterministic-plus-independent-verifier display gate, explicit signed-metric semantics, and repeated numeric-path model-placement rule. | Source and workflow contract tests passed; workflow 4/4 and app 1/1 suites passed on GPT-5 Mini high. |
