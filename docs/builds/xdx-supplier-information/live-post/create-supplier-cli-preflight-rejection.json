@@ -1,0 +1,11 @@
+{
+  "timestampUtc": "2026-09-17T13:40:09.0362677+00:00",
+  "function": "CreateSupplier",
+  "inputs": {
+    "requestBody": "{\"Supplier\":\"XDX Lee Supplies 0917133857\",\"TaxOrganizationType\":\"Corporation\",\"SupplierType\":\"Supplier\",\"BusinessRelationship\":\"Spend Authorized\"}"
+  },
+  "case": "create-supplier",
+  "status": "ERROR",
+  "error": "",
+  "elapsedSeconds": 0.21785
+}

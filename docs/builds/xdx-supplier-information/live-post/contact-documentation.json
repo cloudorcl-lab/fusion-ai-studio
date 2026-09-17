@@ -1,0 +1,294 @@
+{
+  "release": "26C",
+  "exampleRequest": {
+    "Salutation": "Ms.",
+    "FirstName": "Jill",
+    "LastName": "Smith",
+    "AdministrativeContactFlag": true,
+    "MobileCountryCode": "1",
+    "MobileAreaCode": "650",
+    "MobileNumber": "555-2234"
+  },
+  "url": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-contacts-post.html",
+  "retrievedUtc": "2026-09-17T08:34:30.4505788+00:00",
+  "requestSchema": {
+    "required": [
+      "Email",
+      "InactiveDate"
+    ],
+    "type": "object",
+    "properties": {
+      "AdministrativeContactFlag": {
+        "title": "Administrative Contact",
+        "maxLength": 255,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier is an administrative contact. If false, then the supplier isn't an administrative contact.The default value is false.",
+        "nullable": true,
+        "x-hints": {
+          "dependencies": [
+            "AdminContactRoleStatus"
+          ]
+        }
+      },
+      "DFF": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-contacts-DFF-item-post-request"
+        },
+        "x-cardinality": "1"
+      },
+      "Email": {
+        "title": "Email",
+        "maxLength": 320,
+        "type": "string",
+        "description": "Email of the supplier contact.",
+        "nullable": false,
+        "x-hints": {
+          "protectionKey": "EmailEO.EmailAddress",
+          "protectionObjectTitle": "Email",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Email",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "FaxAreaCode": {
+        "title": "Fax Area Code",
+        "maxLength": 20,
+        "type": "string",
+        "description": "Abbreviation that identifies the area for the fax number of the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PhoneEO.PhoneAreaCode",
+          "protectionObjectTitle": "Phone",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Area Code",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "FaxCountryCode": {
+        "title": "Fax Country Code",
+        "maxLength": 10,
+        "type": "string",
+        "description": "Abbreviation that identifies the country for the fax number of the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "controlType": "choice",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "FaxNumber": {
+        "title": "Fax",
+        "maxLength": 40,
+        "type": "string",
+        "description": "Fax number of the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PhoneEO.PhoneNumber",
+          "protectionObjectTitle": "Phone",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Phone",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "FirstName": {
+        "title": "First Name",
+        "maxLength": 150,
+        "type": "string",
+        "description": "First name of the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PersonDEO.PersonFirstName",
+          "protectionObjectTitle": "Contact",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "First Name"
+        }
+      },
+      "InactiveDate": {
+        "title": "Inactive Date",
+        "type": "string",
+        "description": "Date when the supplier contact is no longer active.",
+        "format": "date",
+        "nullable": false,
+        "x-queryable": false,
+        "x-hints": {
+          "DefaultValue": "FUTURE_DATE"
+        }
+      },
+      "JobTitle": {
+        "title": "Job Title",
+        "maxLength": 100,
+        "type": "string",
+        "description": "Job title of the supplier contact.",
+        "nullable": true
+      },
+      "LastName": {
+        "title": "Last Name",
+        "maxLength": 150,
+        "type": "string",
+        "description": "Last name of the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PersonDEO.PersonLastName",
+          "protectionObjectTitle": "Contact",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Last Name"
+        }
+      },
+      "MiddleName": {
+        "title": "Middle Name",
+        "maxLength": 60,
+        "type": "string",
+        "description": "Middle name of the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PersonDEO.PersonMiddleName",
+          "protectionObjectTitle": "Contact",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Middle Name"
+        }
+      },
+      "MobileAreaCode": {
+        "title": "Mobile Area Code",
+        "maxLength": 20,
+        "type": "string",
+        "description": "Abbreviation that identifies the area for the mobile phone number of the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PhoneEO.PhoneAreaCode",
+          "protectionObjectTitle": "Phone",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Area Code",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "MobileCountryCode": {
+        "title": "Mobile Country Code",
+        "maxLength": 10,
+        "type": "string",
+        "description": "Abbreviation that identifies the country for the mobile phone number of the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "controlType": "choice",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "MobileNumber": {
+        "title": "Mobile",
+        "maxLength": 40,
+        "type": "string",
+        "description": "Mobile phone number of the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PhoneEO.PhoneNumber",
+          "protectionObjectTitle": "Phone",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Phone",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "PersonProfileId": {
+        "type": "integer",
+        "description": "The unique identifier of the person profile.",
+        "format": "int64",
+        "nullable": false,
+        "x-hints": {
+          "precision": 18
+        }
+      },
+      "PhoneAreaCode": {
+        "title": "Phone Area Code",
+        "maxLength": 20,
+        "type": "string",
+        "description": "Abbreviation that identifies the area for the landline phone number of the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PhoneEO.PhoneAreaCode",
+          "protectionObjectTitle": "Phone",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Area Code",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "PhoneCountryCode": {
+        "title": "Phone Country Code",
+        "maxLength": 10,
+        "type": "string",
+        "description": "Abbreviation that identifies the country for the landline phone number of the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "controlType": "choice",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "PhoneExtension": {
+        "title": "Phone Extension",
+        "maxLength": 20,
+        "type": "string",
+        "description": "Landline phone extension for the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PhoneEO.PhoneExtension",
+          "protectionObjectTitle": "Phone",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Extension",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "PhoneNumber": {
+        "title": "Phone",
+        "maxLength": 40,
+        "type": "string",
+        "description": "Landline phone number for the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PhoneEO.PhoneNumber",
+          "protectionObjectTitle": "Phone",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Phone",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "Salutation": {
+        "title": "Salutation",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Honorific title of the supplier contact.",
+        "nullable": true,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "SalutationCode": {
+        "title": "Salutation",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies the honorific title of the supplier contact. A list of accepted values is defined in the lookup type CONTACT_TITLE. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true
+      },
+      "addresses": {
+        "title": "Contact Addresses",
+        "type": "array",
+        "description": "Supplier contact addresses are retrieved.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-contacts-addresses-item-post-request"
+        }
+      },
+      "dataaccess": {
+        "title": "Data Access",
+        "type": "array",
+        "description": "Data access of supplier contacts.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-contacts-dataaccess-item-post-request"
+        }
+      },
+      "roles": {
+        "title": "Roles",
+        "type": "array",
+        "description": "Supplier contact user roles are retrieved.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-contacts-roles-item-post-request"
+        }
+      }
+    }
+  }
+}

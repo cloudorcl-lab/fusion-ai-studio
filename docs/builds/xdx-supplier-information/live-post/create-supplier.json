@@ -1,0 +1,286 @@
+{
+  "timestampUtc": "2026-09-17T13:43:43.7545274+00:00",
+  "function": "CreateSupplier",
+  "inputs": {
+    "TaxOrganizationType": "Corporation",
+    "BusinessRelationship": "Spend Authorized",
+    "Supplier": "XDX Lee Supplies 0917133857"
+  },
+  "case": "create-supplier",
+  "response": {
+    "SupplierId": 300000333813790,
+    "SupplierPartyId": 300000333813791,
+    "Supplier": "XDX Lee Supplies 0917133857",
+    "SupplierNumber": "1496",
+    "AlternateName": null,
+    "TaxOrganizationTypeCode": "CORPORATION",
+    "TaxOrganizationType": "Corporation",
+    "SupplierTypeCode": null,
+    "SupplierType": null,
+    "InactiveDate": null,
+    "Status": "ACTIVE",
+    "BusinessRelationshipCode": "SPEND_AUTHORIZED",
+    "BusinessRelationship": "Spend Authorized",
+    "RelationshipDisplay": "Supplier",
+    "RequestNumber": null,
+    "ParentSupplierId": null,
+    "ParentSupplier": null,
+    "ParentSupplierNumber": null,
+    "CreationDate": "2026-09-17T08:43:45.001-05:00",
+    "CreatedBy": "CASEY.BROWN",
+    "LastUpdateDate": "2026-09-17T08:43:58.725-05:00",
+    "LastUpdatedBy": "CASEY.BROWN",
+    "CreationSourceCode": "WEB_SERVICE",
+    "CreationSource": "Web Service",
+    "DataFoxScore": null,
+    "DataFoxScoringCriteria": null,
+    "Alias": null,
+    "DUNSNumber": null,
+    "OneTimeSupplierFlag": false,
+    "RegistryId": "1143700",
+    "CustomerNumber": null,
+    "StandardIndustryClass": null,
+    "IndustryCategory": null,
+    "IndustrySubcategory": null,
+    "NationalInsuranceNumber": null,
+    "NationalInsuranceNumberExistsFlag": false,
+    "CorporateWebsite": null,
+    "YearEstablished": null,
+    "MissionStatement": null,
+    "YearIncorporated": null,
+    "ChiefExecutiveTitle": null,
+    "ChiefExecutiveName": null,
+    "PrincipalTitle": null,
+    "PrincipalName": null,
+    "FiscalYearEndMonthCode": null,
+    "FiscalYearEndMonth": null,
+    "CurrentFiscalYearPotentialRevenue": null,
+    "PreferredFunctionalCurrencyCode": null,
+    "PreferredFunctionalCurrency": null,
+    "TaxRegistrationCountryCode": null,
+    "TaxRegistrationCountry": null,
+    "TaxRegistrationNumber": null,
+    "TaxpayerCountryCode": null,
+    "TaxpayerCountry": null,
+    "TaxpayerId": null,
+    "TaxpayerIdExistsFlag": false,
+    "FederalReportableFlag": false,
+    "FederalIncomeTaxTypeCode": null,
+    "FederalIncomeTaxType": null,
+    "StateReportableFlag": false,
+    "TaxReportingName": null,
+    "NameControl": null,
+    "VerificationDate": null,
+    "UseWithholdingTaxFlag": false,
+    "WithholdingTaxGroupId": null,
+    "WithholdingTaxGroup": null,
+    "BusinessClassificationNotApplicableFlag": false,
+    "SpendAuthReviewStatus": null,
+    "SpendAuthReviewStatusDisplay": null,
+    "DataFoxId": null,
+    "DataFoxCompanyName": null,
+    "DataFoxLegalName": null,
+    "DataFoxCompanyPrimaryURL": null,
+    "DataFoxNAICSCode": null,
+    "DataFoxCountry": null,
+    "DataFoxEIN": null,
+    "DataFoxLastSyncDate": null,
+    "OBNEnabledFlag": null,
+    "OnOFACListFlag": null,
+    "OFACSources": null,
+    "SupplierRegId": null,
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790",
+        "name": "suppliers",
+        "kind": "item",
+        "properties": {
+          "changeIndicator": "ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A65787000000007770400000007737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000000017371007E0002000000017372001B6F7261636C652E6A626F2E646F6D61696E2E4E756C6C56616C75655899C1C58DAABEEB02000149000A6D53514C54797065496478700000000C7371007E00020000000171007E00077371007E00020000000171007E000778"
+        }
+      },
+      {
+        "rel": "canonical",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790",
+        "name": "suppliers",
+        "kind": "item"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/lov/CountryLookup",
+        "name": "CountryLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/lov/FiscalYearEndMonthLookup",
+        "name": "FiscalYearEndMonthLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/lov/ParentSupplierLookup",
+        "name": "ParentSupplierLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/lov/CurrencyLookup",
+        "name": "CurrencyLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/lov/BusinessRelationshipLookup",
+        "name": "BusinessRelationshipLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/lov/TaxOrganizationTypeLookup",
+        "name": "TaxOrganizationTypeLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/lov/SupplierTypeLookup",
+        "name": "SupplierTypeLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/lov/FederalIncomeTaxTypeLookup",
+        "name": "FederalIncomeTaxTypeLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/lov/WithholdingTaxGroupLookup",
+        "name": "WithholdingTaxGroupLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/DFF",
+        "name": "DFF",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/addresses",
+        "name": "addresses",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/attachments",
+        "name": "attachments",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/businessClassifications",
+        "name": "businessClassifications",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/contacts",
+        "name": "contacts",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/globalDFF",
+        "name": "globalDFF",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/mergeHistory",
+        "name": "mergeHistory",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/productsAndServices",
+        "name": "productsAndServices",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/productsAndServicesView",
+        "name": "productsAndServicesView",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites",
+        "name": "sites",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/spendAuthorizationApprovalRequests",
+        "name": "spendAuthorizationApprovalRequests",
+        "kind": "collection"
+      },
+      {
+        "rel": "action",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/action/scores",
+        "name": "scores",
+        "kind": "other"
+      },
+      {
+        "rel": "action",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/action/addRecentSupplier",
+        "name": "addRecentSupplier",
+        "kind": "other"
+      },
+      {
+        "rel": "action",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/action/markSupplierChanged",
+        "name": "markSupplierChanged",
+        "kind": "other"
+      },
+      {
+        "rel": "action",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/action/externalValidationForSupplierAttributes",
+        "name": "externalValidationForSupplierAttributes",
+        "kind": "other"
+      },
+      {
+        "rel": "action",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/action/signals",
+        "name": "signals",
+        "kind": "other"
+      },
+      {
+        "rel": "action",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/action/submitSpendAuthorizationRequest",
+        "name": "submitSpendAuthorizationRequest",
+        "kind": "other"
+      },
+      {
+        "rel": "action",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/action/getSupplierProfileOptions",
+        "name": "getSupplierProfileOptions",
+        "kind": "other"
+      },
+      {
+        "rel": "action",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/action/submitSpendAuthorizationRequestWithSites",
+        "name": "submitSpendAuthorizationRequestWithSites",
+        "kind": "other"
+      },
+      {
+        "rel": "action",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/action/resubmitSpendAuthorizationRequest",
+        "name": "resubmitSpendAuthorizationRequest",
+        "kind": "other"
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "elapsedSeconds": 18.0514816
+}

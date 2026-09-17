@@ -43,3 +43,9 @@ To repeat the 13 core detail checks with an authenticated CLI connection, run `p
 Child query contracts: [addresses](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-get.html), [sites](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-get.html), and [contacts](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-contacts-get.html).
 
 Sources: [Suppliers REST API](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-get.html), [query syntax](https://docs.oracle.com/en/cloud/saas/procurement/25b/fapra/Resource_Methods.html), and repository Business Object authoring guides.
+
+## POST functions
+
+CreateSupplier, CreateSupplierAddress, CreateSupplierSite and CreateSupplierContact extend the same BO. Each uses explicit field parameters; children also require suppliers_Id. Inputs have no sample defaults. See [POST verification and field contract](xdx_supplier_post_review.md) for exact scope, created IDs, documentation cross-reference and limitations. Four live creates and 19 read-back/regression checks passed. SupplierType is outside the tested minimal create template because CLI rejects the source label/code as illustrative; resulting supplier type is null.
+
+Run local persisted-evidence checks with: pwsh -NoProfile -File tests/test-xdx-supplier-post-evidence.ps1. Do not repeat creates to refresh receipts.

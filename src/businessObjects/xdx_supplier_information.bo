@@ -1,6 +1,6 @@
 {
   "name": "XDX Supplier Information",
-  "description": "Read-only supplier information: paginated supplier listing and full/partial name search, supplier profile details, and separately paginated/filterable addresses, sites and contacts by resolved supplier ID.",
+  "description": "Supplier lookup and details, paginated addresses/sites/contacts, and explicitly authorized create operations for suppliers and their children. POST callers validate writable JSON fields, parent references and uniqueness, then reconcile outcomes before retries.",
   "objectCode": "XDX_SUPPLIER_INFORMATION",
   "family": "PRC",
   "product": "SUPPLIER",
@@ -5136,6 +5136,393 @@
               ]
             },
             "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "CreateSupplier",
+        "description": "Create one Supplier with explicit schema-mapped fields. String values must be JSON-safe; callers validate names, lengths, lookup values and parent references. No generated IDs or audit fields are accepted. Reconcile uncertain results before retries.",
+        "operationId": "create_suppliers",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"Supplier\":\"{Supplier}\",\"TaxOrganizationType\":\"{TaxOrganizationType}\",\"BusinessRelationship\":\"{BusinessRelationship}\"}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "Supplier",
+            "dataType": "string",
+            "description": "Name of the supplier. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 44,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "TaxOrganizationType",
+            "dataType": "string",
+            "description": "Type of tax organization for the supplier. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 45,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "BusinessRelationship",
+            "dataType": "string",
+            "description": "Business relationship between the enterprise and the supplier. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 46,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Prepared authorized XDX Lee test request; names and references are evidence only, never reusable runtime defaults.",
+            "query": {
+              "Supplier": "XDX Lee Supplies 0917133857",
+              "TaxOrganizationType": "Corporation",
+              "BusinessRelationship": "Spend Authorized"
+            },
+            "sampleType": "request"
+          }
+        ]
+      },
+      {
+        "name": "CreateSupplierAddress",
+        "description": "Create one SupplierAddress with explicit schema-mapped fields. String values must be JSON-safe; callers validate names, lengths, lookup values and parent references. No generated IDs or audit fields are accepted. Reconcile uncertain results before retries.",
+        "operationId": "create_suppliers-addresses",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"AddressName\":\"{AddressName}\",\"CountryCode\":\"{CountryCode}\",\"AddressLine1\":\"{AddressLine1}\",\"City\":\"{City}\",\"State\":\"{State}\",\"PostalCode\":\"{PostalCode}\",\"AddressPurposeOrderingFlag\":\"{AddressPurposeOrderingFlag}\",\"AddressPurposeRemitToFlag\":\"{AddressPurposeRemitToFlag}\",\"AddressPurposeRFQOrBiddingFlag\":\"{AddressPurposeRFQOrBiddingFlag}\",\"Email\":\"{Email}\"}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
+            "id": 52,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "AddressName",
+            "dataType": "string",
+            "description": "Name of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 53,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "CountryCode",
+            "dataType": "string",
+            "description": "Abbreviation that identifies the country where the supplier address is located. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 54,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "AddressLine1",
+            "dataType": "string",
+            "description": "First line of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 55,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "description": "City of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 56,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "description": "State of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 57,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "description": "Postal code of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 58,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "AddressPurposeOrderingFlag",
+            "dataType": "boolean",
+            "description": "Contains one of the following values: true or false. If true, then you can use the supplier address for ordering. If false, then you can't use this address. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 59,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "AddressPurposeRemitToFlag",
+            "dataType": "boolean",
+            "description": "Contains one of the following values: true or false. If true, then you can use the supplier address for requesting for a proposal or for bidding. If false, then you can't use this address. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 60,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "AddressPurposeRFQOrBiddingFlag",
+            "dataType": "boolean",
+            "description": "Contains one of the following values: true or false. If true, then you can use the supplier address to send payment. If false, then you can't use this address. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 61,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "description": "Email for the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 62,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Prepared authorized XDX Lee test request; names and references are evidence only, never reusable runtime defaults.",
+            "query": {
+              "AddressName": "XDX Lee US1 0917133857",
+              "CountryCode": "US",
+              "AddressLine1": "5000 CARTER DR.",
+              "City": "LOS ANGELES",
+              "State": "CA",
+              "PostalCode": "90032",
+              "AddressPurposeOrderingFlag": true,
+              "AddressPurposeRemitToFlag": true,
+              "AddressPurposeRFQOrBiddingFlag": false,
+              "Email": "xdx-address-0917133857@example.invalid"
+            },
+            "sampleType": "request"
+          }
+        ]
+      },
+      {
+        "name": "CreateSupplierSite",
+        "description": "Create one SupplierSite with explicit schema-mapped fields. String values must be JSON-safe; callers validate names, lengths, lookup values and parent references. No generated IDs or audit fields are accepted. Reconcile uncertain results before retries.",
+        "operationId": "create_suppliers-sites",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"SupplierSite\":\"{SupplierSite}\",\"ProcurementBUId\":\"{ProcurementBUId}\",\"SupplierAddressName\":\"{SupplierAddressName}\",\"SitePurposePurchasingFlag\":\"{SitePurposePurchasingFlag}\",\"SitePurposePayFlag\":\"{SitePurposePayFlag}\",\"SitePurposeSourcingOnlyFlag\":\"{SitePurposeSourcingOnlyFlag}\"}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
+            "id": 68,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "SupplierSite",
+            "dataType": "string",
+            "description": "Name of the supplier site. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 69,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "ProcurementBUId",
+            "dataType": "integer",
+            "description": "Value that uniquely identifies the procurement business unit where the supplier site resides. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 70,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "SupplierAddressName",
+            "dataType": "string",
+            "description": "Name of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 71,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "SitePurposePurchasingFlag",
+            "dataType": "boolean",
+            "description": "Contains one of the following values: true or false. If true, then a purchasing purpose exists for the supplier site. If false, then purpose doesn't exist. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 72,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "SitePurposePayFlag",
+            "dataType": "boolean",
+            "description": "Contains one of the following values: true or false. If true, then a pay purpose exists for the supplier site. If false, then pay purpose doesn't exist. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 73,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "SitePurposeSourcingOnlyFlag",
+            "dataType": "boolean",
+            "description": "Contains one of the following values: true or false. If true, then the supplier has sourcing only purpose. If false, then the supplier site doesn't have sourcing only purpose. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 74,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Prepared authorized XDX Lee test request; names and references are evidence only, never reusable runtime defaults.",
+            "query": {
+              "SupplierSite": "XDX Lee US1 0917133857",
+              "ProcurementBUId": 300000046987012,
+              "SupplierAddressName": "XDX Lee US1 0917133857",
+              "SitePurposePurchasingFlag": true,
+              "SitePurposePayFlag": true,
+              "SitePurposeSourcingOnlyFlag": false
+            },
+            "sampleType": "request"
+          }
+        ]
+      },
+      {
+        "name": "CreateSupplierContact",
+        "description": "Create one SupplierContact with explicit schema-mapped fields. String values must be JSON-safe; callers validate names, lengths, lookup values and parent references. No generated IDs or audit fields are accepted. Reconcile uncertain results before retries.",
+        "operationId": "create_suppliers-contacts",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"FirstName\":\"{FirstName}\",\"LastName\":\"{LastName}\",\"Email\":\"{Email}\",\"AdministrativeContactFlag\":\"{AdministrativeContactFlag}\"}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
+            "id": 80,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "description": "First name of the supplier contact. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 81,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "description": "Last name of the supplier contact. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 82,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "description": "Email of the supplier contact. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 83,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "AdministrativeContactFlag",
+            "dataType": "boolean",
+            "description": "Contains one of the following values: true or false. If true, then the supplier is an administrative contact. If false, then the supplier isn't an administrative contact.The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 84,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Prepared authorized XDX Lee test request; names and references are evidence only, never reusable runtime defaults.",
+            "query": {
+              "FirstName": "XDX Ryan",
+              "LastName": "XDX Lee 0917133857",
+              "Email": "xdx-contact-0917133857@example.invalid",
+              "AdministrativeContactFlag": false
+            },
+            "sampleType": "request"
           }
         ]
       }

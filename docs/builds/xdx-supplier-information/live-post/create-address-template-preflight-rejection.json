@@ -1,0 +1,21 @@
+{
+  "timestampUtc": "2026-09-17T13:45:13.5403537+00:00",
+  "function": "CreateSupplierAddress",
+  "inputs": {
+    "AddressLine1": "5000 CARTER DR.",
+    "CountryCode": "US",
+    "City": "LOS ANGELES",
+    "AddressPurposeRFQOrBiddingFlag": "false",
+    "suppliers_Id": "300000333813790",
+    "AddressPurposeOrderingFlag": "true",
+    "Email": "xdx-address-0917133857@example.invalid",
+    "PostalCode": "90032",
+    "AddressPurposeRemitToFlag": "true",
+    "State": "CA",
+    "AddressName": "XDX Lee US1 0917133857"
+  },
+  "case": "create-address",
+  "status": "ERROR",
+  "error": "{\n  \"ok\": false,\n  \"error\": \"Sample response fetch for POST functions requires bodyTemplate to be valid JSON.\"\n}",
+  "elapsedSeconds": 0.2359048
+}

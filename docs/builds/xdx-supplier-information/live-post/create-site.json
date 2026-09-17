@@ -1,0 +1,391 @@
+{
+  "timestampUtc": "2026-09-17T13:46:49.9342948+00:00",
+  "function": "CreateSupplierSite",
+  "inputs": {
+    "SitePurposePurchasingFlag": "true",
+    "SupplierAddressName": "XDX Lee US1 0917133857",
+    "suppliers_Id": "300000333813790",
+    "SitePurposePayFlag": "true",
+    "ProcurementBUId": "300000046987012",
+    "SupplierSite": "XDX Lee US1 0917133857",
+    "SitePurposeSourcingOnlyFlag": "false"
+  },
+  "case": "create-site",
+  "response": {
+    "SupplierSiteId": 300000333813806,
+    "SupplierSite": "XDX Lee US1 0917133857",
+    "ProcurementBUId": 300000046987012,
+    "ProcurementBU": "US1 Business Unit",
+    "SupplierAddressId": 300000333813797,
+    "SupplierAddressName": "XDX Lee US1 0917133857",
+    "Address": null,
+    "InactiveDate": null,
+    "Status": "ACTIVE",
+    "SitePurposeSourcingOnlyFlag": false,
+    "SitePurposePurchasingFlag": true,
+    "SitePurposeProcurementCardFlag": false,
+    "SitePurposePayFlag": true,
+    "SitePurposePrimaryPayFlag": false,
+    "IncomeTaxReportingSiteFlag": false,
+    "AlternateSiteName": null,
+    "CustomerNumber": null,
+    "B2BCommunicationMethodCode": "NONE",
+    "B2BCommunicationMethod": "No",
+    "B2BSupplierSiteCode": null,
+    "CommunicationMethodCode": null,
+    "CommunicationMethod": null,
+    "Email": null,
+    "FaxCountryCode": null,
+    "FaxAreaCode": null,
+    "FaxNumber": null,
+    "HoldAllNewPurchasingDocumentsFlag": false,
+    "PurchasingHoldReason": null,
+    "AllNewPurchasingDocumentsHoldDate": null,
+    "AllNewPurchasingDocumentsHoldBy": null,
+    "RequiredAcknowledgmentCode": null,
+    "RequiredAcknowledgment": null,
+    "AcknowledgmentWithinDays": null,
+    "CarrierId": null,
+    "Carrier": null,
+    "ModeOfTransportCode": null,
+    "ModeOfTransport": null,
+    "ServiceLevelCode": null,
+    "ServiceLevel": null,
+    "FreightTermsCode": null,
+    "FreightTerms": null,
+    "PayOnReceiptFlag": false,
+    "FOBCode": null,
+    "FOB": null,
+    "CountryOfOriginCode": null,
+    "CountryOfOrigin": null,
+    "BuyerManagedTransportationCode": null,
+    "BuyerManagedTransportation": null,
+    "PayOnUseFlag": false,
+    "AgingOnsetPointCode": null,
+    "AgingOnsetPoint": null,
+    "AgingPeriodDays": null,
+    "ConsumptionAdviceFrequencyCode": null,
+    "ConsumptionAdviceFrequency": null,
+    "ConsumptionAdviceSummaryCode": null,
+    "ConsumptionAdviceSummary": null,
+    "AlternatePaySiteId": null,
+    "AlternatePaySite": null,
+    "InvoiceSummaryLevelCode": null,
+    "InvoiceSummaryLevel": null,
+    "GaplessInvoiceNumberingFlag": false,
+    "SellingCompanyIdentifier": null,
+    "CreateDebitMemoFromReturnFlag": false,
+    "ShipToExceptionCode": null,
+    "ShipToException": null,
+    "ReceiptRoutingId": null,
+    "ReceiptRouting": null,
+    "OverReceiptTolerance": null,
+    "OverReceiptActionCode": null,
+    "OverReceiptAction": null,
+    "EarlyReceiptToleranceInDays": null,
+    "LateReceiptToleranceInDays": null,
+    "AllowSubstituteReceiptsCode": null,
+    "AllowSubstituteReceipts": null,
+    "AllowUnorderedReceiptsFlag": false,
+    "ReceiptDateExceptionCode": null,
+    "ReceiptDateException": null,
+    "InvoiceCurrencyCode": null,
+    "InvoiceCurrency": null,
+    "InvoiceAmountLimit": null,
+    "InvoiceMatchOptionCode": null,
+    "InvoiceMatchOption": null,
+    "MatchApprovalLevelCode": null,
+    "MatchApprovalLevel": null,
+    "QuantityTolerancesId": null,
+    "QuantityTolerances": null,
+    "AmountTolerancesId": null,
+    "AmountTolerances": null,
+    "InvoiceChannelCode": null,
+    "InvoiceChannel": null,
+    "PaymentCurrencyCode": null,
+    "PaymentCurrency": null,
+    "PaymentPriority": null,
+    "PayGroupCode": null,
+    "PayGroup": null,
+    "HoldAllInvoicesFlag": false,
+    "HoldUnmatchedInvoicesCode": "D",
+    "HoldUnmatchedInvoices": "Default from Payables Options",
+    "HoldUnvalidatedInvoicesFlag": false,
+    "PaymentHoldDate": null,
+    "PaymentHoldReason": null,
+    "PaymentTermsId": null,
+    "PaymentTerms": null,
+    "PaymentTermsDateBasisCode": null,
+    "PaymentTermsDateBasis": null,
+    "PayDateBasisCode": null,
+    "PayDateBasis": null,
+    "BankChargeDeductionTypeCode": "D",
+    "BankChargeDeductionType": "Default from Payables Options",
+    "AlwaysTakeDiscountCode": "D",
+    "AlwaysTakeDiscount": "Default from Payables Options",
+    "ExcludeFreightFromDiscountCode": "D",
+    "ExcludeFreightFromDiscount": "Default from Payables Options",
+    "ExcludeTaxFromDiscountCode": "D",
+    "ExcludeTaxFromDiscount": "Default from Payables Options",
+    "CreateInterestInvoicesCode": "D",
+    "CreateInterestInvoices": "Default from Payables Options",
+    "CreationDate": "2026-09-17T08:46:53.001-05:00",
+    "CreatedBy": "CASEY.BROWN",
+    "LastUpdateDate": "2026-09-17T08:46:56.082-05:00",
+    "LastUpdatedBy": "CASEY.BROWN",
+    "OverrideB2BCommunicationforSpecialHandlingOrdersFlag": false,
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806",
+        "name": "sites",
+        "kind": "item",
+        "properties": {
+          "changeIndicator": "ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A65787000000001770400000001737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B02000078700000000278"
+        }
+      },
+      {
+        "rel": "canonical",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806",
+        "name": "sites",
+        "kind": "item"
+      },
+      {
+        "rel": "parent",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790",
+        "name": "suppliers",
+        "kind": "item"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/InvoiceSummaryLevelLookup",
+        "name": "InvoiceSummaryLevelLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/MatchApprovalLevelLookup",
+        "name": "MatchApprovalLevelLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/CommunicationMethodLookup",
+        "name": "CommunicationMethodLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/ConsumptionAdviceSummaryLookup",
+        "name": "ConsumptionAdviceSummaryLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/ProcurementBULookup",
+        "name": "ProcurementBULookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/ServiceLevelLookup",
+        "name": "ServiceLevelLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/ReceivingOptionLookup",
+        "name": "ReceivingOptionLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/QuantityTolerancesLookup",
+        "name": "QuantityTolerancesLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/HoldUnmatchedInvoicesLookup",
+        "name": "HoldUnmatchedInvoicesLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/BuyerManagedTransportationLookup",
+        "name": "BuyerManagedTransportationLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/InvoiceCurrencyLookup",
+        "name": "InvoiceCurrencyLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/ModeOfTransportLookup",
+        "name": "ModeOfTransportLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/PayDateBasisLookup",
+        "name": "PayDateBasisLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/RequiredAcknowledgmentLookup",
+        "name": "RequiredAcknowledgmentLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/B2BCommunicationMethodLookup",
+        "name": "B2BCommunicationMethodLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/AlternatePaySiteLookup",
+        "name": "AlternatePaySiteLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/CarrierLookup",
+        "name": "CarrierLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/CountryOfOriginLookup",
+        "name": "CountryOfOriginLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/FreightTermsLookup",
+        "name": "FreightTermsLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/YesNoLookup",
+        "name": "YesNoLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/InvoiceChannelLookup",
+        "name": "InvoiceChannelLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/PayGroupLookup",
+        "name": "PayGroupLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/SupplierAddressNameLookup",
+        "name": "SupplierAddressNameLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/AmountTolerancesLookup",
+        "name": "AmountTolerancesLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/PaymentTermsLookup",
+        "name": "PaymentTermsLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/AgingOnsetPointLookup",
+        "name": "AgingOnsetPointLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/PaymentTermsDateBasisLookup",
+        "name": "PaymentTermsDateBasisLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/BankChargeDeductionTypeLookup",
+        "name": "BankChargeDeductionTypeLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/ConsumptionAdviceFrequencyLookup",
+        "name": "ConsumptionAdviceFrequencyLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/ReceiptRoutingLookup",
+        "name": "ReceiptRoutingLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/InvoiceMatchOptionLookup",
+        "name": "InvoiceMatchOptionLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/FOBLookup",
+        "name": "FOBLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/lov/FaxCountryCodeLookup",
+        "name": "FaxCountryCodeLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/child/DFF",
+        "name": "DFF",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/child/assignments",
+        "name": "assignments",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/child/attachments",
+        "name": "attachments",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/child/globalDFF",
+        "name": "globalDFF",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/sites/300000333813806/child/thirdPartyPaymentRelationships",
+        "name": "thirdPartyPaymentRelationships",
+        "kind": "collection"
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "elapsedSeconds": 7.4642394
+}

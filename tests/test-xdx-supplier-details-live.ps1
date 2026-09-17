@@ -3,12 +3,14 @@ param(
   [Parameter(Mandatory)][string]$SupplierId,
   [Parameter(Mandatory)][string]$SupplierName,
   [string]$RepoRoot = (Split-Path -Parent $PSScriptRoot),
+  [string]$EvidenceDirectory = '',
   [switch]$UpdateExamples
 )
 $ErrorActionPreference = 'Stop'
 $cli = Join-Path $RepoRoot '.agents/skills/aistudio/scripts/aistudio.js'
 $source = Join-Path $RepoRoot 'src/businessObjects/xdx_supplier_information.bo'
 $evidence = Join-Path $RepoRoot 'docs/builds/xdx-supplier-information/live-details'
+if ($EvidenceDirectory) { $evidence = [IO.Path]::GetFullPath($EvidenceDirectory) }
 $scratch = Join-Path ([IO.Path]::GetTempPath()) ('xdx_supplier_information_' + [guid]::NewGuid().ToString('N') + '.bo')
 $argsFile = [IO.Path]::ChangeExtension($scratch, '.json')
 $results = [Collections.Generic.List[object]]::new()

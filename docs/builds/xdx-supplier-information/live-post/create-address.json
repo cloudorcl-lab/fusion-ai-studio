@@ -1,0 +1,108 @@
+{
+  "timestampUtc": "2026-09-17T13:46:06.4523431+00:00",
+  "function": "CreateSupplierAddress",
+  "inputs": {
+    "suppliers_Id": "300000333813790",
+    "City": "LOS ANGELES",
+    "AddressName": "XDX Lee US1 0917133857",
+    "PostalCode": "90032",
+    "AddressPurposeRemitToFlag": "true",
+    "AddressPurposeRFQOrBiddingFlag": "false",
+    "Email": "xdx-address-0917133857@example.invalid",
+    "AddressPurposeOrderingFlag": "true",
+    "AddressLine1": "5000 CARTER DR.",
+    "CountryCode": "US",
+    "State": "CA"
+  },
+  "case": "create-address",
+  "response": {
+    "SupplierAddressId": 300000333813797,
+    "AddressName": "XDX Lee US1 0917133857",
+    "CountryCode": "US",
+    "Country": "United States",
+    "AddressLine1": "5000 CARTER DR.",
+    "AddressLine2": null,
+    "AddressLine3": null,
+    "AddressLine4": null,
+    "City": "LOS ANGELES",
+    "State": "CA",
+    "PostalCode": "90032",
+    "PostalCodeExtension": null,
+    "Province": null,
+    "County": null,
+    "Building": null,
+    "FloorNumber": null,
+    "PhoneticAddress": null,
+    "LanguageCode": null,
+    "Language": null,
+    "Addressee": null,
+    "GlobalLocationNumber": null,
+    "AdditionalAddressAttribute1": null,
+    "AdditionalAddressAttribute2": null,
+    "AdditionalAddressAttribute3": null,
+    "AdditionalAddressAttribute4": null,
+    "AdditionalAddressAttribute5": null,
+    "FormattedAddress": "5000 CARTER DR.,LOS ANGELES, CA 90032",
+    "AddressPurposeOrderingFlag": true,
+    "AddressPurposeRemitToFlag": true,
+    "AddressPurposeRFQOrBiddingFlag": false,
+    "PhoneCountryCode": null,
+    "PhoneAreaCode": null,
+    "PhoneNumber": null,
+    "PhoneExtension": null,
+    "FaxCountryCode": null,
+    "FaxAreaCode": null,
+    "FaxNumber": null,
+    "Email": "xdx-address-0917133857@example.invalid",
+    "InactiveDate": "4712-12-31",
+    "Status": "ACTIVE",
+    "CreationDate": "2026-09-17T08:46:09.001-05:00",
+    "CreatedBy": "CASEY.BROWN",
+    "LastUpdateDate": "2026-09-17T08:46:11.729-05:00",
+    "LastUpdatedBy": "CASEY.BROWN",
+    "AddressPartyNumber": "1486630",
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/addresses/300000333813797",
+        "name": "addresses",
+        "kind": "item",
+        "properties": {
+          "changeIndicator": "ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A65787000000008770400000008737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000000017371007E0002000000017371007E0002000000017371007E0002000000017372001B6F7261636C652E6A626F2E646F6D61696E2E4E756C6C56616C75655899C1C58DAABEEB02000149000A6D53514C54797065496478700000000C71007E000971007E00097371007E00020000000178"
+        }
+      },
+      {
+        "rel": "canonical",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/addresses/300000333813797",
+        "name": "addresses",
+        "kind": "item"
+      },
+      {
+        "rel": "parent",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790",
+        "name": "suppliers",
+        "kind": "item"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/addresses/300000333813797/lov/CountryLookup",
+        "name": "CountryLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "lov",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/addresses/300000333813797/lov/LanguageLookup",
+        "name": "LanguageLookup",
+        "kind": "collection"
+      },
+      {
+        "rel": "child",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333813790/child/addresses/300000333813797/child/DFF",
+        "name": "DFF",
+        "kind": "collection"
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "elapsedSeconds": 7.7675944
+}

@@ -1,0 +1,14 @@
+{
+  "timestampUtc": "2026-09-17T13:42:44.1818347+00:00",
+  "function": "CreateSupplier",
+  "inputs": {
+    "Supplier": "XDX Lee Supplies 0917133857",
+    "BusinessRelationship": "Spend Authorized",
+    "SupplierTypeCode": "SUPPLIER",
+    "TaxOrganizationType": "Corporation"
+  },
+  "case": "create-supplier",
+  "status": "ERROR",
+  "error": "{\n  \"ok\": false,\n  \"error\": \"Sample input values look illustrative for SupplierTypeCode. Ask the user for real values or use get-bo-function-example-guidance and prepare-bo-function-example-inputs before fetching a sample.\"\n}",
+  "elapsedSeconds": 0.2281777
+}

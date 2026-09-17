@@ -1,0 +1,227 @@
+{
+  "timestampUtc": "2026-09-17T13:49:39.1212614+00:00",
+  "function": "ListSuppliers",
+  "inputs": {
+    "limit": "25",
+    "offset": "0"
+  },
+  "case": "regression-ListSuppliers",
+  "response": {
+    "items": [
+      {
+        "SupplierId": 300000047414503,
+        "SupplierNumber": "1252",
+        "Supplier": "Lee Supplies",
+        "SupplierType": "Supplier",
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047414571,
+        "SupplierNumber": "1253",
+        "Supplier": "Staffing Services",
+        "SupplierType": "Services",
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047414635,
+        "SupplierNumber": "1254",
+        "Supplier": "JGA",
+        "SupplierType": "Supplier",
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047414679,
+        "SupplierNumber": "1255",
+        "Supplier": "Dell Inc.",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047507113,
+        "SupplierNumber": "1256",
+        "Supplier": "US Gas and Electric",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047507170,
+        "SupplierNumber": "1257",
+        "Supplier": "Howell Engineering Inc.",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047507225,
+        "SupplierNumber": "1258",
+        "Supplier": "United Parcel Service",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047507272,
+        "SupplierNumber": "1259",
+        "Supplier": "American Telephone and Telegraph",
+        "SupplierType": "Utility",
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047507340,
+        "SupplierNumber": "1260",
+        "Supplier": "Staples",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047507387,
+        "SupplierNumber": "1261",
+        "Supplier": "GE",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047507499,
+        "SupplierNumber": "1262",
+        "Supplier": "EIP Inc",
+        "SupplierType": "Supplier",
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047507546,
+        "SupplierNumber": "1263",
+        "Supplier": "Advanced Corp",
+        "SupplierType": "Supplier",
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047507596,
+        "SupplierNumber": "1264",
+        "Supplier": "Office Depot",
+        "SupplierType": "Supplier",
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047572113,
+        "SupplierNumber": "1265",
+        "Supplier": "Allied Manufacturing",
+        "SupplierType": "Manufacturing",
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047572163,
+        "SupplierNumber": "1266",
+        "Supplier": "Midtown Supplies",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047572210,
+        "SupplierNumber": "1267",
+        "Supplier": "Metal Works",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047572257,
+        "SupplierNumber": "1268",
+        "Supplier": "Northwest Electronic Supply",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047572304,
+        "SupplierNumber": "1269",
+        "Supplier": "Prouty Supply House",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047572371,
+        "SupplierNumber": "1270",
+        "Supplier": "Building Management",
+        "SupplierType": "Services",
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047837151,
+        "SupplierNumber": "1271",
+        "Supplier": "EDF",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000047837244,
+        "SupplierNumber": "1272",
+        "Supplier": "Consolidated Supplies",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000049521119,
+        "SupplierNumber": "1273",
+        "Supplier": "British Telecom",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000049521222,
+        "SupplierNumber": "1274",
+        "Supplier": "Progressive Corp",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000049521294,
+        "SupplierNumber": "1275",
+        "Supplier": "Windsor Inc",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      },
+      {
+        "SupplierId": 300000049521443,
+        "SupplierNumber": "1276",
+        "Supplier": "Edison Co",
+        "SupplierType": null,
+        "BusinessRelationship": "Spend Authorized",
+        "InactiveDate": null
+      }
+    ],
+    "count": 25,
+    "hasMore": true,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
+        "name": "suppliers",
+        "kind": "collection"
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "elapsedSeconds": 3.654166
+}

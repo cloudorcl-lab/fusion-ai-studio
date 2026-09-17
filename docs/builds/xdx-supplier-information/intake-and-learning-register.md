@@ -47,6 +47,20 @@ Retain the canonical CLI, existing skill references, public Suppliers API docume
 
 ## Checkpoint
 
+### Active POST extension — 2026-09-17
+
+User clarification after approval-review rejection: inspect local object JSON first; when unusable, live reads are authorized; the remaining live create/verification scope stays the same. Cross-reference exact documentation before testing. For own-resource IDs omitted by the POST example, test derivation as a provisional assumption; record successful evidence, or stop and ask for help after failure. Local inspection confirms retained Lee data contains only projected supplier fields; full profile and all three retained child collections belong to Office Depot. Therefore Lee profile/child reads are needed, while the saved Lee ID/name/type/relationship can be reused. No adequate retained GET is being refreshed. Four exact Oracle 26C schemas/examples were already retrieved and parsed; final field-by-field payload comparison remains required.
+
+User approved four POST functions and the full live test cycle, using Lee Supplies (or Lee Suppliers) as the basis and XDX-prefixed supplier, address, site and contact names. This supersedes the historical GET-only authority below for this extension. Extend the existing BO on TestingWFBuildTools; retain all seven GET definitions and immutable first-success samples. Local authoring and live source-API creates/read-back checks are authorized. No remote BO save, publication, account provisioning or Git push is needed for this scope.
+
+Reviewed canonical playbook and registry; selected Oracle 26C Suppliers, Supplier Addresses, Supplier Sites and Supplier Contacts references under docs/lessons/objects/. Living-build verifier passed. Current CLI identity CASEY.BROWN on eqih-dev21 verified through host credential store. Initial sandbox credential failure was resolved by the documented unsandboxed retry.
+
+Design: CreateSupplier, CreateSupplierAddress, CreateSupplierSite, CreateSupplierContact in the existing BO. Each owns one POST request and native response. Child functions require an explicit parent SupplierId. Supplier and address precede site creation; contacts use the new supplier. Omit confirmed generated SupplierNumber/SupplierPartyId; classify other fields against exact documentation. Use distinct XDX names; retained data only establishes known collisions, not current absence. Reuse retained Lee values where available; fetch missing Lee details only when needed for the newly authorized live test. Exclude legal identifiers and operational email/telephone destinations; do not provision contact user accounts.
+
+Acceptance: all eleven functions validate; original seven GET definitions unchanged; four successful POST responses with generated keys; parent-scoped read-back confirms submitted fields and relationships; GET regression exercises lookup, paging, filtering and empty responses; negative cases must avoid creating unwanted records. Persist requests/responses, timing and assertions. No automatic POST retry after uncertainty: reconcile by unique name first. A partial success is retained and reported, never silently rolled back or recreated.
+
+Learning register: capture schema discrepancies, generated fields and normalization in the four existing object references; keep run-specific data under live-post. Closeout requires focused local/live evidence, governance checks, current handoff/time record and a scoped commit. No new app, workflow, model, judge or ATLAS suite is introduced.
+
 Local BO authoring and source-API verification complete, including the approved detail extension below. Current evidence and delivery boundaries are recorded in verification.md.
 
 ## Closeout review
@@ -84,3 +98,7 @@ Scope is documentation and governance only: add the registry and four object ref
 ## Approved first-success GET sample policy (2026-09-17)
 
 Use only previously retained BO GET evidence; do not execute another GET. Add a first-success sample section to Suppliers, Supplier Addresses, Supplier Sites and Supplier Contacts. For each distinct BO GET operation, retain the earliest successful response once. Later successful GETs must not append, replace or refresh the object sample. Large or capture-restricted responses may use an exact bounded excerpt plus a link to the complete authorized evidence. Update repository routing and verification so future builds enforce this capture-once rule. No runtime, BO, remote, installed-seed, ZIP, environment or push change is authorized.
+
+## POST extension closeout — 2026-09-17
+
+Four creates and 19 GET regression checks passed; 23 submitted fields match persisted records. Full evidence, request/schema/example cross-reference, generated-field confirmations, CLI preflight failures and limits are in xdx_supplier_post_review.md. Original GET definitions and immutable samples preserved. Final functions use explicit typed field tokens in valid JSON templates, superseding the initial whole-JSON requestBody proposal. SupplierType omitted after CLI rejected real label/code; null result disclosed. No ID omission failed in Fusion. No speculative retry or cleanup write performed. Reusable local-first/ID-hypothesis guidance was refined in the object registry; canonical playbook links it and records terse communication default. Scoped final checks and commit complete hand-forward.

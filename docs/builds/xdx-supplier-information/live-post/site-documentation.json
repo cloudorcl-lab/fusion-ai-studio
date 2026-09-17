@@ -1,0 +1,1305 @@
+{
+  "release": "26C",
+  "exampleRequest": {
+    "SupplierSite": "REST1",
+    "ProcurementBUId": 204,
+    "ProcurementBU": "Vision Operations",
+    "SupplierAddressName": "Sales",
+    "InactiveDate": null,
+    "SitePurposeSourcingOnlyFlag": false,
+    "SitePurposePurchasingFlag": true,
+    "SitePurposeProcurementCardFlag": false,
+    "SitePurposePayFlag": true,
+    "SitePurposePrimaryPayFlag": null,
+    "IncomeTaxReportingSiteFlag": true,
+    "AlternateSiteName": "site_alt",
+    "CustomerNumber": "12349",
+    "B2BCommunicationMethodCode": "NONE",
+    "B2BCommunicationMethod": "None",
+    "B2BSupplierSiteCode": null,
+    "CommunicationMethodCode": "EMAIL",
+    "CommunicationMethod": "E-Mail",
+    "Email": "aaTest@oracle.com",
+    "FaxCountryCode": null,
+    "FaxAreaCode": null,
+    "FaxNumber": null,
+    "HoldAllNewPurchasingDocumentsFlag": true,
+    "PurchasingHoldReason": "Test Reason",
+    "RequiredAcknowledgmentCode": "D",
+    "RequiredAcknowledgment": "Document",
+    "AcknowledgmentWithinDays": 7,
+    "CarrierId": 33089,
+    "ModeOfTransportCode": "AIR",
+    "ServiceLevelCode": "EXP",
+    "FreightTermsCode": "AIR",
+    "FreightTerms": "AIR",
+    "PayOnReceiptFlag": true,
+    "FOBCode": "DEST",
+    "FOB": "DEST",
+    "CountryOfOriginCode": "US",
+    "CountryOfOrigin": "United States",
+    "BuyerManagedTransportationCode": "Y",
+    "BuyerManagedTransportation": "Yes",
+    "PayOnUseFlag": true,
+    "AgingOnsetPointCode": "SHIPMENT",
+    "AgingOnsetPoint": "Shipment",
+    "AgingPeriodDays": 10,
+    "ConsumptionAdviceFrequencyCode": "DAILY",
+    "ConsumptionAdviceFrequency": "Daily",
+    "ConsumptionAdviceSummaryCode": "ALL_INVENTORY_ORGS",
+    "ConsumptionAdviceSummary": "All organizations",
+    "AlternatePaySiteId": null,
+    "AlternatePaySite": null,
+    "InvoiceSummaryLevelCode": "PACKING_SLIP",
+    "InvoiceSummaryLevel": "Packing Slip",
+    "GaplessInvoiceNumberingFlag": true,
+    "SellingCompanyIdentifier": "1234545",
+    "CreateDebitMemoFromReturnFlag": true,
+    "ShipToExceptionCode": "REJECT",
+    "ShipToException": "Reject",
+    "ReceiptRoutingId": 3,
+    "ReceiptRouting": "Direct delivery",
+    "OverReceiptTolerance": 1231212,
+    "OverReceiptActionCode": "REJECT",
+    "OverReceiptAction": "Reject",
+    "EarlyReceiptToleranceInDays": 10,
+    "LateReceiptToleranceInDays": 10,
+    "AllowSubstituteReceiptsCode": "Y",
+    "AllowSubstituteReceipts": "Yes",
+    "AllowUnorderedReceiptsFlag": true,
+    "ReceiptDateExceptionCode": "REJECT",
+    "ReceiptDateException": "Reject",
+    "InvoiceCurrencyCode": "USD",
+    "InvoiceCurrency": "US Dollar",
+    "InvoiceAmountLimit": 1500,
+    "InvoiceMatchOptionCode": "P",
+    "InvoiceMatchOption": "Order",
+    "MatchApprovalLevelCode": "THREE",
+    "MatchApprovalLevel": "3 Way",
+    "QuantityTolerancesId": 100000010014144,
+    "QuantityTolerances": "Quantity Based QA",
+    "AmountTolerancesId": 100000010014148,
+    "AmountTolerances": "Amount Based QA",
+    "PaymentCurrencyCode": "USD",
+    "PaymentCurrency": "US Dollar",
+    "PaymentPriority": 2,
+    "PayGroupCode": "DOMESTIC",
+    "PayGroup": "Domestic",
+    "HoldAllInvoicesFlag": true,
+    "HoldUnmatchedInvoicesCode": "D",
+    "HoldUnmatchedInvoices": "Default from Payables Options",
+    "HoldUnvalidatedInvoicesFlag": false,
+    "PaymentHoldDate": "2019-10-31",
+    "PaymentHoldReason": "Test Hola All invoices",
+    "PaymentTermsId": 10045,
+    "PaymentTerms": "1/10 NET 30",
+    "PaymentTermsDateBasisCode": "Invoice Received",
+    "PaymentTermsDateBasis": "Invoice received date",
+    "PayDateBasisCode": "DISCOUNT",
+    "PayDateBasis": "Discount",
+    "BankChargeDeductionTypeCode": "S",
+    "BankChargeDeductionType": "Standard",
+    "AlwaysTakeDiscountCode": "D",
+    "AlwaysTakeDiscount": "Default from Payables Options",
+    "ExcludeFreightFromDiscountCode": "Y",
+    "ExcludeFreightFromDiscount": "Yes",
+    "ExcludeTaxFromDiscountCode": "N",
+    "ExcludeTaxFromDiscount": "No",
+    "CreateInterestInvoicesCode": "N",
+    "CreateInterestInvoices": "No"
+  },
+  "url": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-post.html",
+  "retrievedUtc": "2026-09-17T08:34:30.3435690+00:00",
+  "requestSchema": {
+    "required": [
+      "ProcurementBUId",
+      "SupplierSite"
+    ],
+    "type": "object",
+    "properties": {
+      "AcknowledgmentWithinDays": {
+        "title": "Acknowledge Within Days",
+        "type": "integer",
+        "description": "Number of days that the supplier site can use to acknowledge the purchasing document.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "AgingOnsetPoint": {
+        "title": "Aging Onset Point",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Point where the supplier and the buying organization agree to begin to age consigned material.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "AgingOnsetPointCode": {
+        "title": "Aging Onset Point",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies the point where the supplier and the buying organization agree to begin to age consigned material. A list of accepted values is defined in the lookup type AGING_ONSET_POINT. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "AgingPeriodDays": {
+        "title": "Aging Period Days",
+        "type": "integer",
+        "description": "Maximum number of days that material can remain on consignment.",
+        "format": "int32",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "precision": 5
+        }
+      },
+      "AllNewPurchasingDocumentsHoldDate": {
+        "type": "string",
+        "description": "Date when the person who placed a hold on new purchasing documents for the supplier site.",
+        "format": "date-time",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "AllowSubstituteReceipts": {
+        "title": "Allow Substitute Receipts",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Indicates whether the supplier site allows a substitute receipt. Values include Y for Yes or N for No.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "AllowSubstituteReceiptsCode": {
+        "maxLength": 1,
+        "type": "string",
+        "description": "Abbreviation that identifies whether the supplier site allows a substitute receipt. A list of accepted values is defined in the lookup type YES_NO. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "AllowUnorderedReceiptsFlag": {
+        "title": "Allow unordered receipts",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier site can receive a receipt that doesn't include a purchase order. If false, then the supplier site requires a purchase order. The default value is false.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "AlternatePaySite": {
+        "title": "Alternate Pay Site",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Name of the alternate pay site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "AlternatePaySiteId": {
+        "title": "Alternate Pay Site",
+        "type": "integer",
+        "description": "Value that uniquely identifies the alternate pay site.",
+        "format": "int64",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice",
+          "precision": 18
+        }
+      },
+      "AlternateSiteName": {
+        "title": "Alternate Site Name",
+        "maxLength": 320,
+        "type": "string",
+        "description": "Alternate name of the supplier site.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "AlwaysTakeDiscount": {
+        "title": "Always Take Discount",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Determines whether to apply a discount on the payment. Contains one of the following values: Y, apply discount. N, don't apply discount. D, use the default from the payables options to determine whether to apply the discount.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "AlwaysTakeDiscountCode": {
+        "maxLength": 1,
+        "type": "string",
+        "description": "Abbreviation that determines whether to apply a discount on the payment. A list of accepted values is defined in the lookup type POZ_PAYABLES_OPTIONS. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "AmountTolerances": {
+        "title": "Amount Tolerances",
+        "maxLength": 255,
+        "type": "string",
+        "description": "Tolerance to apply to the amount when creating an invoice for the supplier site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "AmountTolerancesId": {
+        "title": "Amount Tolerances",
+        "type": "integer",
+        "description": "Value that uniquely identifies the tolerance to apply to the quantity when creating an invoice for the supplier site.",
+        "format": "int64",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "combo_lov",
+          "precision": 18
+        }
+      },
+      "B2BCommunicationMethod": {
+        "title": "Enable B2B Messaging",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Attribute renamed as Enable B2B Messaging. Indicates if the application should communicate the documents during a business-to-business procurement transaction through common messaging framework for the supplier site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "B2BCommunicationMethodCode": {
+        "title": "Enable B2B Messaging",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies whether the communication of the documents during a business-to-business procurement transaction is enabled for the supplier site. A list of accepted values is defined in the lookup type ORA_POZ_B2B_COMM_METHOD. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "default": "NONE",
+        "x-queryable": false
+      },
+      "B2BSupplierSiteCode": {
+        "title": "B2B Supplier Site Code",
+        "maxLength": 256,
+        "type": "string",
+        "description": "Abbreviation that uniquely identifies a specific supplier site, which is used in the punchout for Self Service Procurement.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "BankChargeDeductionType": {
+        "title": "Bank Charge Deduction Type",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Determines how to deduct bank charges when paying the invoice. Contains one of the following values: S, use the standard deduction. D, use the default value from payables options. N, use the negotiated deduction. X, don't use any deduction.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "BankChargeDeductionTypeCode": {
+        "title": "Bank Charge Deduction Type",
+        "maxLength": 1,
+        "type": "string",
+        "description": "Abbreviation that identifies whether and how to deduct bank charges when paying the invoice. A list of accepted values is defined in the lookup type BANK_CHARGE_DEDUCTION_TYPE. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Payables Lookups task.",
+        "nullable": true,
+        "default": "D",
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "BuyerManagedTransportation": {
+        "title": "Buyer Managed Transportation",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Indicates whether the buyer manages transportation. Values include Y for Yes, N for No, or empty.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "BuyerManagedTransportationCode": {
+        "title": "Buyer Managed Transportation",
+        "maxLength": 1,
+        "type": "string",
+        "description": "Abbreviation that identifies whether the buyer manages transportation. A list of accepted values is defined in the lookup type YES_NO. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "Carrier": {
+        "title": "Carrier",
+        "maxLength": 360,
+        "type": "string",
+        "description": "Carrier that the supplier uses for shipping.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "CarrierId": {
+        "title": "Carrier",
+        "type": "number",
+        "description": "Value that uniquely identifies the carrier that the supplier site uses for shipping.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "combo_lov"
+        }
+      },
+      "CommunicationMethod": {
+        "title": "Communication Method",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Preferred method of communication for the supplier site. Values include NONE, FAX, EMAIL, or PRINT.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "CommunicationMethodCode": {
+        "title": "Communication Method",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Abbreviation that identifies the preferred method of communication for the supplier site. A list of accepted values is defined in the lookup type DOCUMENT_COMMUNICATION_METHOD. You can't modify this lookup.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "ConsumptionAdviceFrequency": {
+        "title": "Consumption Advice Frequency",
+        "maxLength": 80,
+        "type": "string",
+        "description": "How frequently the Create Consumption Advice application runs for consumption transactions. This application runs for consigned inventory that the customer purchased under one agreement.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "ConsumptionAdviceFrequencyCode": {
+        "title": "Consumption Advice Frequency",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies how frequently the Create Consumption Advice application runs for consumption transactions. The application runs for consigned inventory that the customer purchased under one agreement. A list of accepted values is defined in the lookup type CONSUMPTION_ADVICE_FREQUENCY. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "ConsumptionAdviceSummary": {
+        "title": "Consumption Advice Summary",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Level of detail to use when creating the consumption advice.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "ConsumptionAdviceSummaryCode": {
+        "title": "Consumption Advice Summary",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies the level of detail to use when creating the consumption advice. A list of accepted values is defined in the lookup type CONSUMPTION_ADVICE_SUMMARY. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "CountryOfOrigin": {
+        "title": "Country of Origin",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Country of origin that the supplier site uses to calculate freight.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "CountryOfOriginCode": {
+        "title": "Country of Origin",
+        "maxLength": 2,
+        "type": "string",
+        "description": "Abbreviation that identifies the country of origin that the supplier site uses to calculate freight.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "combo_lov"
+        }
+      },
+      "CreateDebitMemoFromReturnFlag": {
+        "title": "Create debit memo from return",
+        "maxLength": 25,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier site creates a debit memo from the return transaction. If false, then the supplier site doesn't create this memo. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "CreateInterestInvoices": {
+        "title": "Create Interest Invoices",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Determines whether to create an interest invoice. Contains one of the following values: Y, create an invoice. N, don't create an invoice. D, use the default from the payables options to determine whether to create an invoice.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "CreateInterestInvoicesCode": {
+        "maxLength": 1,
+        "type": "string",
+        "description": "Abbreviation that determines whether to create an interest invoice. A list of accepted values is defined in the lookup type POZ_PAYABLES_OPTIONS. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "CustomerNumber": {
+        "title": "Customer Number",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Number that identifies the site of the buying organization.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "DFF": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-sites-DFF-item-post-request"
+        },
+        "x-cardinality": "1"
+      },
+      "EarlyReceiptToleranceInDays": {
+        "title": "Early Receipt Tolerance in Days",
+        "type": "number",
+        "description": "Number of days that the receiving location can receive receipts before the expected receipt date.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "Email": {
+        "title": "Email",
+        "maxLength": 2000,
+        "type": "string",
+        "description": "Email that the communication method uses.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "ExcludeFreightFromDiscount": {
+        "title": "Exclude Freight from Discount",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Determines whether to exclude freight when calculating discount. Contains one of the following values: Y, exclude freight. N, include freight. D, use the default from the payables options to determine whether to exclude freight.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "ExcludeFreightFromDiscountCode": {
+        "maxLength": 1,
+        "type": "string",
+        "description": "Abbreviation that determines whether to exclude freight when calculating discount. A list of accepted values is defined in the lookup type POZ_PAYABLES_OPTIONS. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "ExcludeTaxFromDiscount": {
+        "title": "Exclude Tax from Discount",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Determines whether to exclude tax when calculating the discount. Contains one of the following values: Y, exclude tax. N, include tax. D, use the default from the payables options to determine whether to exclude tax.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "ExcludeTaxFromDiscountCode": {
+        "maxLength": 1,
+        "type": "string",
+        "description": "Abbreviation that determines whether to exclude tax when calculating the discount. A list of accepted values is defined in the lookup type POZ_PAYABLES_OPTIONS. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "FOB": {
+        "title": "FOB",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Free on Board (FOB) value for the supplier site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "FOBCode": {
+        "title": "FOB",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Abbreviation that identifies the Free On Board value for the supplier site. A list of accepted values is defined in the lookup type FOB. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage FOB Lookup task.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "FaxAreaCode": {
+        "title": "Fax Area Code",
+        "maxLength": 10,
+        "type": "string",
+        "description": "Abbreviation that identifies the area for the fax that the communication method uses at the supplier site.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "FaxCountryCode": {
+        "title": "Fax Country Code",
+        "maxLength": 10,
+        "type": "string",
+        "description": "Abbreviation that identifies the country for the fax that the communication method uses at the supplier site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "combo_lov"
+        }
+      },
+      "FaxNumber": {
+        "title": "Fax",
+        "maxLength": 15,
+        "type": "string",
+        "description": "Fax number for communication.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "FreightTerms": {
+        "title": "Freight Terms",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Terms for shipping from the supplier site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "FreightTermsCode": {
+        "title": "Freight Terms",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Agreement that describes terms for shipping from the supplier site. A list of accepted values is defined in the lookup type FREIGHT TERMS. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Freight Terms Lookup task.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "GaplessInvoiceNumberingFlag": {
+        "title": "Gapless invoice numbering",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier site numbers their invoices so they're consecutive and don't include gaps. If false, then the supplier site doesn't use this numbering. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "HoldAllInvoicesFlag": {
+        "title": "Hold All Invoices",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier site puts a hold on all invoices. If false, then the site does put them on hold. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "HoldAllNewPurchasingDocumentsFlag": {
+        "title": "Hold all new purchasing documents",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then place all new purchasing documents on hold. If false, then don't place them on hold. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "HoldUnmatchedInvoices": {
+        "title": "Hold Unmatched Invoices",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Determines whether to place a hold on each invoice that doesn't contain a relationship with a purchase order, receipt, or consumption advice. Values include Y for Yes, N for No, or empty.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "HoldUnmatchedInvoicesCode": {
+        "maxLength": 1,
+        "type": "string",
+        "description": "Abbreviation that identifies whether to place a hold on each invoice that doesn't contain a relationship with a purchase order, receipt, or consumption advice. A list of accepted values is defined in the lookup type POZ_PAYABLES_OPTIONS. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "HoldUnvalidatedInvoicesFlag": {
+        "title": "Hold Unvalidated Invoices",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier site places all invoices that it can't validate on hold. If false, then the supplier site doesn't put them hold. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "InactiveDate": {
+        "title": "Inactive Date",
+        "type": "string",
+        "description": "Date when the supplier site is no longer active.",
+        "format": "date",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "IncomeTaxReportingSiteFlag": {
+        "title": "Income tax reporting site",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier site is a tax reporting site. If false, then supplier site isn't a tax reporting site. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "InvoiceAmountLimit": {
+        "title": "Invoice Amount Limit",
+        "type": "number",
+        "description": "Indicates the maximum amount for which an invoice can be created beyond which an invoice will go on hold.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "InvoiceChannel": {
+        "title": "Invoice Channel",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Channel that the supplier uses to provide invoices for the supplier site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "InvoiceChannelCode": {
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies the channel that the supplier uses to provide invoices for the supplier site. A list of accepted values is defined in the lookup type ORA_POZ_INVOICE_CHANNEL. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "InvoiceCurrency": {
+        "title": "Invoice Currency",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Currency that the invoice uses.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "InvoiceCurrencyCode": {
+        "title": "Invoice Currency",
+        "maxLength": 15,
+        "type": "string",
+        "description": "Abbreviation that identifies the currency that the invoice uses.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "combo_lov"
+        }
+      },
+      "InvoiceMatchOption": {
+        "title": "Invoice Match Option",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Indicates whether to create a relationship between the invoice and a purchase order, receipt, or consumption advice.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "InvoiceMatchOptionCode": {
+        "title": "Invoice Match Option",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Abbreviation that identifies whether to create a relationship between the invoice and a purchase order, receipt, or consumption advice. A list of accepted values is defined in the lookup type INVOICE_MATCH_OPTION. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Payables Lookups task.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "InvoiceSummaryLevel": {
+        "title": "Invoice Summary Level",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Determines how to group and summarize invoices for the supplier site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "InvoiceSummaryLevelCode": {
+        "title": "Invoice Summary Level",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Abbreviation that identifies how to group and summarize invoices for the supplier site. A list of accepted values is defined in the lookup type POZ_ERS_INVOICE_SUMMARY. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "LateReceiptToleranceInDays": {
+        "title": "Late Receipt Tolerance in Days",
+        "type": "number",
+        "description": "Number of days that the receiving location can receive receipts after the expected receipt date.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "MatchApprovalLevel": {
+        "title": "Match Approval Level",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Approval level to use when creating a relationship between the invoice and a purchase order, receipt, or consumption advice.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "MatchApprovalLevelCode": {
+        "maxLength": 10,
+        "type": "string",
+        "description": "Abbreviation that identifies the approval level to use when creating a relationship between the invoice and a purchase order, receipt, or consumption advice. A list of accepted values is defined in the lookup type INVOICE_MATCH. You can't modify this lookup.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "ModeOfTransport": {
+        "title": "Mode of Transport",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Mode of transport that the supplier site uses for shipping.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "ModeOfTransportCode": {
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies the mode of transport that the supplier site uses for shipping. A list of accepted values is defined in the lookup type WSH_MODE_OF_TRANSPORT. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "OverReceiptAction": {
+        "title": "Overreceipt Action",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Action to take when the receiving location receives quantity that exceeds the tolerance.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "OverReceiptActionCode": {
+        "title": "Overreceipt Action",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Abbreviation that identifies the action to take when the receiving location receives quantity that exceeds the tolerance. A list of accepted values is defined in the lookup type RCV_RECEIVING_OPTION. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "OverReceiptTolerance": {
+        "title": "Overreceipt Tolerance",
+        "type": "number",
+        "description": "Tolerance to use when the receiving location receives more than the requested quantity.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "OverrideB2BCommunicationforSpecialHandlingOrdersFlag": {
+        "title": "Override B2B communication for special handling orders",
+        "maxLength": 30,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, the configured B2B communication is overridden for the supplier site's special handling purchase orders. If false, then the B2B configuration for the supplier site is honored. The default value is true.",
+        "nullable": true,
+        "default": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "PayDateBasis": {
+        "title": "Pay Date Basis",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Date that the application scheduled to run payment for the invoice.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "PayDateBasisCode": {
+        "title": "Pay Date Basis",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Abbreviation that identifies the date the application scheduled to run payment for the invoice. A list of accepted values is defined in the lookup type POZ_PAY_DATE_BASIS. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Payables Lookups task.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "PayGroup": {
+        "title": "Pay Group",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Withholding tax group for the site assignment.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "PayGroupCode": {
+        "title": "Pay Group",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Abbreviation that identifies the withholding tax group for the site assignment. A list of accepted values is defined in the lookup type PAY_GROUP. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Payables Lookups task.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "combo_lov"
+        }
+      },
+      "PayOnReceiptFlag": {
+        "title": "Pay on receipt",
+        "maxLength": 25,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier site allows pay on receipt. If false, then the supplier site doesn't allow pay on receipt. The default value is false.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "PayOnUseFlag": {
+        "title": "Pay on use",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier site allows pay on use. If false, then the supplier site doesn't allow pay on use. The default value is false.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "PaymentCurrency": {
+        "title": "Payment Currency",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Currency that the payment uses to pay the invoice.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "PaymentCurrencyCode": {
+        "title": "Payment Currency",
+        "maxLength": 15,
+        "type": "string",
+        "description": "Abbreviation that identifies the currency that the payment uses to pay the invoice.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "combo_lov"
+        }
+      },
+      "PaymentHoldDate": {
+        "title": "Payment Hold Date",
+        "type": "string",
+        "description": "Date when the application places payments to the supplier site on hold.",
+        "format": "date",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "PaymentHoldReason": {
+        "title": "Payment Hold Reason",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Reason why the application placed the invoices that it created for the supplier site on hold.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "PaymentPriority": {
+        "title": "Payment Priority",
+        "type": "number",
+        "description": "Priority to assign to an invoice during payment.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "PaymentTerms": {
+        "title": "Payment Terms",
+        "maxLength": 50,
+        "type": "string",
+        "description": "Terms of payment for the supplier site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "PaymentTermsDateBasis": {
+        "title": "Terms Date Basis",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Date when the application scheduled to run payment terms for the invoice.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "PaymentTermsDateBasisCode": {
+        "title": "Terms Date Basis",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Abbreviation that identifies the date the application scheduled to run payment terms for the invoice. A list of accepted values is defined in the lookup type TERMS_DATE_BASIS. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Payables Lookups task.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "PaymentTermsId": {
+        "title": "Payment Terms",
+        "type": "integer",
+        "description": "Value that uniquely identifies each payment term for the supplier site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "combo_lov",
+          "fnd:APPLCORE_SETID_DETERMINANT_ATTR": "PrcBuId"
+        }
+      },
+      "ProcurementBU": {
+        "title": "Procurement BU",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Procurement business unit where the supplier site resides.",
+        "nullable": true,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "ProcurementBUId": {
+        "title": "Procurement BU",
+        "type": "integer",
+        "description": "Value that uniquely identifies the procurement business unit where the supplier site resides.",
+        "format": "int64",
+        "nullable": false,
+        "x-hints": {
+          "precision": 18,
+          "fnd:APPLCORE_SETID_DETERMINANT_TYPE": "BU"
+        }
+      },
+      "PurchasingHoldReason": {
+        "title": "Hold Reason",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Reason why the person who placed the hold on purchasing for the supplier site.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "QuantityTolerances": {
+        "title": "Quantity Tolerances",
+        "maxLength": 255,
+        "type": "string",
+        "description": "Tolerance to apply to the quantity when creating an invoice for the supplier site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "QuantityTolerancesId": {
+        "title": "Quantity Tolerances",
+        "type": "integer",
+        "description": "Value that uniquely identifies the tolerance to apply to quantity when creating an invoice for the supplier site.",
+        "format": "int64",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "combo_lov",
+          "precision": 18
+        }
+      },
+      "ReceiptDateException": {
+        "title": "Receipt Date Exception",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Action to take when the supplier site receives an item before Early Receipt Tolerance in Days or after Late Receipt Tolerance in Days.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "ReceiptDateExceptionCode": {
+        "title": "Receipt Date Exception",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Abbreviation that identifies the action to taken when the supplier site receives an item before Early Receipt Tolerance in Days or after Late Receipt Tolerance in Days. A list of accepted values is defined in the lookup type RCV_RECEIVING_OPTION. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "ReceiptRouting": {
+        "title": "Receipt Routing",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Indicates how to route each receipt for the supplier site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "ReceiptRoutingId": {
+        "title": "Receipt Routing",
+        "type": "number",
+        "description": "Value that uniquely identifies how to route each receipt for the supplier site.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "RequiredAcknowledgment": {
+        "title": "Required Acknowledgment",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Type of acknowledgment. This attribute is used when the purchasing document that the application created for the supplier site requires an acknowledgment. Valid values include Document, Document and Schedule, and None.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "RequiredAcknowledgmentCode": {
+        "title": "Required Acknowledgment",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies the acknowledgment. This attribute is used when the purchasing document that the application created for the supplier site requires an acknowledgment. Valid values include D, Y, and N.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "SellingCompanyIdentifier": {
+        "title": "Selling Company Identifier",
+        "maxLength": 10,
+        "type": "string",
+        "description": "Value that uniquely identifies the selling company. This attribute is required when the supplier site uses gapless invoice numbering.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "ServiceLevel": {
+        "title": "Service Level",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Service level that the supplier site uses for shipping.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "ServiceLevelCode": {
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies the service levels that the supplier site uses for shipping. A list of accepted values is defined in the lookup type WSH_SERVICE_LEVELS. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "ShipToException": {
+        "title": "Ship-to Exception Action",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Action to take when the receiving location is different from the ship-to location.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "ShipToExceptionCode": {
+        "title": "Ship-to Exception Action",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Abbreviation that identifies the action to take when the receiving location is different from the ship-to location. A list of accepted values is defined in the lookup type RCV_RECEIVING_OPTION. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "SitePurposePayFlag": {
+        "title": "Pay",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then a pay purpose exists for the supplier site. If false, then pay purpose doesn't exist. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "SitePurposePrimaryPayFlag": {
+        "title": "Primary pay",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then primary pay purpose exists for the supplier site. If false, then primary pay purpose doesn't exist. The default value is false.",
+        "nullable": true,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "SitePurposeProcurementCardFlag": {
+        "title": "Procurement card",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then a procurement card exists for the supplier site. If false, then procurement card doesn't exist. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "SitePurposePurchasingFlag": {
+        "title": "Purchasing",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then a purchasing purpose exists for the supplier site. If false, then purpose doesn't exist. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "SitePurposeSourcingOnlyFlag": {
+        "title": "Sourcing only",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier has sourcing only purpose. If false, then the supplier site doesn't have sourcing only purpose. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "SupplierAddressId": {
+        "type": "integer",
+        "description": "Value that uniquely identifies the supplier address.",
+        "format": "int64",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "precision": 18
+        }
+      },
+      "SupplierAddressName": {
+        "title": "Address Name",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Name of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "SupplierSite": {
+        "title": "Site",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Name of the supplier site.",
+        "nullable": false
+      },
+      "SupplierSiteId": {
+        "title": "Site",
+        "type": "integer",
+        "description": "Value that uniquely identifies the supplier site.",
+        "format": "int64",
+        "nullable": false,
+        "x-hints": {
+          "precision": 18,
+          "fnd:GLOBALLY_UNIQUE": "true"
+        }
+      },
+      "assignments": {
+        "title": "Site Assignments",
+        "type": "array",
+        "description": "Supplier site assignments are retrieved.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-sites-assignments-item-post-request"
+        }
+      },
+      "attachments": {
+        "title": "Attachments",
+        "type": "array",
+        "description": "The attachments resource is used to view, create, and update attachments.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-sites-attachments-item-post-request"
+        }
+      },
+      "globalDFF": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-sites-globalDFF-item-post-request"
+        },
+        "x-cardinality": "1"
+      },
+      "thirdPartyPaymentRelationships": {
+        "title": "Third-Party Payment Relationships",
+        "type": "array",
+        "description": "Supplier site third-party relationships are retrieved.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-sites-thirdPartyPaymentRelationships-item-post-request"
+        }
+      }
+    }
+  }
+}

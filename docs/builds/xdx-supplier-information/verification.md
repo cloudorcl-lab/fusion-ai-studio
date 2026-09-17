@@ -49,3 +49,7 @@ Final local verification: seven-function contract PASS; CLI validate-bo result.o
 ## First-success BO GET samples
 
 2026-09-17: PASS using retained evidence only. Suppliers sample equals the first `ListSuppliers` BO response. Address and Contact excerpts equal the complete first returned items and original envelopes. Every selected Site field and its original envelope values equal the retained baseline. All 12 object-reference JSON blocks parse; local links, capture-once verifier checks and whitespace checks pass. No GET, other network request, BO mutation, remote save, publication or push occurred.
+
+## Supplier POST extension, 2026-09-17
+
+Current extension receipt: [xdx_supplier_post_review.md](xdx_supplier_post_review.md). Eleven-function BO passes validation; four live creates and 19 GET checks passed; 23 submitted fields matched read-back. Existing GET receipts above remain immutable. Full live requests/responses and documentation cross-reference are under live-post. Source-API scope only; no remote BO deployment or workflow proof.

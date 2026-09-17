@@ -5,9 +5,11 @@ function Assert-Contract([bool]$Condition, [string]$Message) {
   if (-not $Condition) { throw $Message }
 }
 Assert-Contract ($bo.objectCode -ceq 'XDX_SUPPLIER_INFORMATION') 'Wrong BO identity.'
-$functions = @($bo.objectProperties.tools)
+$allFunctions = @($bo.objectProperties.tools)
+$functions = @($allFunctions | Where-Object operationType -eq 'GET')
 $expected = @('ListSuppliers', 'FindSupplierByFullName', 'FindSuppliersByPartialName', 'GetSupplierDetails', 'ListSupplierAddresses', 'ListSupplierSites', 'ListSupplierContacts')
 Assert-Contract ($functions.Count -eq 7) 'Expected seven read-only functions.'
+Assert-Contract ($allFunctions.Count -eq 11) 'Expected seven GET and four POST functions.'
 Assert-Contract (@(Compare-Object $expected @($functions.name)).Count -eq 0) 'Function set changed.'
 foreach ($fn in $functions) {
   Assert-Contract ($fn.operationType -ceq 'GET') "Unsafe operation: $($fn.name)"
@@ -74,5 +76,31 @@ $baseline = $list.sampleQueries[0].query.items[0]
 Assert-Contract ($baseline.SupplierId -in $full.sampleQueries[0].query.items.SupplierId) 'Full-name example lost baseline supplier.'
 Assert-Contract ($baseline.SupplierId -in $partial.sampleQueries[0].query.items.SupplierId) 'Partial-name example lost baseline supplier.'
 Assert-Contract ($full.sampleQueries[0].query.items[0].Supplier -ceq $baseline.Supplier) 'Full-name example returned a different name.'
-Write-Output 'Supplier BO contract: PASS (GET-only, query semantics, paging, captured response contracts).'
+$postContracts=@{
+ CreateSupplier=@('create_suppliers','/fscmRestApi/resources/11.13.18.05/suppliers')
+ CreateSupplierAddress=@('create_suppliers-addresses','/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses')
+ CreateSupplierSite=@('create_suppliers-sites','/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites')
+ CreateSupplierContact=@('create_suppliers-contacts','/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts')
+}
+foreach($name in $postContracts.Keys){
+ $fn=@($allFunctions|Where-Object name -ceq $name)
+ Assert-Contract ($fn.Count -eq 1) "Missing or duplicate POST function $name."
+ $fn=$fn[0]
+ Assert-Contract ($fn.operationType -ceq 'POST' -and $fn.operationId -ceq $postContracts[$name][0]) "Wrong create operation for $name."
+ Assert-Contract ($fn.resourcePath -ceq $postContracts[$name][1]) "Wrong create endpoint for $name."
+ Assert-Contract ($fn.bodyTemplate.StartsWith('{') -and $fn.bodyTemplate.EndsWith('}') -and -not $fn.bodyTemplate.Contains('{requestBody}')) "POST must use explicit field tokens for $name."
+ $null=$fn.bodyTemplate|ConvertFrom-Json -ErrorAction Stop
+ Assert-Contract ($fn.useNativeAuthentication -and $fn.headers.'Upsert-Mode' -ceq 'false') "Create must use native authentication and prohibit upsert for $name."
+ Assert-Contract ($fn.headers.'REST-Framework-Version' -ceq '4' -and $fn.headers.'Content-Type' -ceq 'application/json') "Incorrect POST headers for $name."
+ $expectedParams=@{
+  CreateSupplier=@('Supplier','TaxOrganizationType','BusinessRelationship')
+  CreateSupplierAddress=@('AddressName','CountryCode','AddressLine1','City','State','PostalCode','AddressPurposeOrderingFlag','AddressPurposeRemitToFlag','AddressPurposeRFQOrBiddingFlag','Email','suppliers_Id')
+  CreateSupplierSite=@('SupplierSite','ProcurementBUId','SupplierAddressName','SitePurposePurchasingFlag','SitePurposePayFlag','SitePurposeSourcingOnlyFlag','suppliers_Id')
+  CreateSupplierContact=@('FirstName','LastName','Email','AdministrativeContactFlag','suppliers_Id')
+ }[$name]
+ Assert-Contract (@(Compare-Object $expectedParams @($fn.parameterDefinitions.name)).Count -eq 0) "Unexpected POST input contract for $name."
+ foreach($p in $fn.parameterDefinitions){Assert-Contract ([string]::IsNullOrEmpty($p.defaultValue)) "Create inputs must not default to sample values for $name."}
+ foreach($forbidden in @('SupplierId','SupplierPartyId','SupplierNumber','SupplierAddressId','SupplierSiteId','SupplierContactId','PersonProfileId','CreatedBy','CreationDate')){Assert-Contract (-not $fn.bodyTemplate.Contains('"'+$forbidden+'":')) "Generated/audit field exposed in $name."}
+}
+Write-Output 'Supplier BO contract: PASS (seven GET contracts and four POST endpoint/body/authentication contracts).'
 Write-Output 'Local verification only; this does not rerun live requests or prove remote BO deployment.'

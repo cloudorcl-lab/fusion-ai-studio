@@ -1,0 +1,12 @@
+{
+  "AddressName": "XDX Lee US1 0917133857",
+  "CountryCode": "US",
+  "AddressLine1": "5000 CARTER DR.",
+  "City": "LOS ANGELES",
+  "State": "CA",
+  "PostalCode": "90032",
+  "AddressPurposeOrderingFlag": true,
+  "AddressPurposeRemitToFlag": true,
+  "AddressPurposeRFQOrBiddingFlag": false,
+  "Email": "xdx-address-0917133857@example.invalid"
+}

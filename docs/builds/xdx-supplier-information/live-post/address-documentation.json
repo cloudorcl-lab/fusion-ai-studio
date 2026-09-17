@@ -1,0 +1,465 @@
+{
+  "release": "26C",
+  "exampleRequest": {
+    "AddressName": "Headquarter",
+    "Country": "United States",
+    "AddressLine1": "Example Road",
+    "City": "Redwood City",
+    "State": "CA",
+    "PostalCode": "94065",
+    "AddressPurposeOrderingFlag": true,
+    "AddressPurposeRemitToFlag": true,
+    "AddressPurposeRFQOrBiddingFlag": false
+  },
+  "url": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html",
+  "retrievedUtc": "2026-09-17T08:34:29.9664747+00:00",
+  "requestSchema": {
+    "required": [
+      "CountryCode",
+      "Email"
+    ],
+    "type": "object",
+    "properties": {
+      "AdditionalAddressAttribute1": {
+        "title": "Additional Address Element 1",
+        "maxLength": 150,
+        "type": "string",
+        "description": "First additional address attribute for the flexible supplier address format.",
+        "nullable": true,
+        "x-hints": {
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "AdditionalAddressAttribute2": {
+        "title": "Additional Address Element 2",
+        "maxLength": 150,
+        "type": "string",
+        "description": "Second additional address attribute for the flexible supplier address format.",
+        "nullable": true,
+        "x-hints": {
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "AdditionalAddressAttribute3": {
+        "title": "Additional Address Element 3",
+        "maxLength": 150,
+        "type": "string",
+        "description": "Third additional address attribute for the flexible supplier address format.",
+        "nullable": true,
+        "x-hints": {
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "AdditionalAddressAttribute4": {
+        "title": "Additional Address Element 4",
+        "maxLength": 150,
+        "type": "string",
+        "description": "Fourth additional address attribute for the flexible supplier address format.",
+        "nullable": true,
+        "x-hints": {
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "AdditionalAddressAttribute5": {
+        "title": "Additional Address Element 5",
+        "maxLength": 150,
+        "type": "string",
+        "description": "Fifth additional address attribute for the flexible supplier address format.",
+        "nullable": true,
+        "x-hints": {
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "AddressLine1": {
+        "title": "Address Line 1",
+        "maxLength": 240,
+        "type": "string",
+        "description": "First line of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PartySiteEO.Address1",
+          "protectionObjectTitle": "Address",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Address Line 1",
+          "protectionTokenizationScheme": "WORD",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "AddressLine2": {
+        "title": "Address Line 2",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Second line of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PartySiteEO.Address2",
+          "protectionObjectTitle": "Address",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Address Line 2",
+          "protectionTokenizationScheme": "WORD",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "AddressLine3": {
+        "title": "Address Line 3",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Third line of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PartySiteEO.Address3",
+          "protectionObjectTitle": "Address",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Address Line 3",
+          "protectionTokenizationScheme": "WORD",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "AddressLine4": {
+        "title": "Address Line 4",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Forth line of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PartySiteEO.Address4",
+          "protectionObjectTitle": "Address",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Address Line 4",
+          "protectionTokenizationScheme": "WORD",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "AddressName": {
+        "title": "Address Name",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Name of the supplier address.",
+        "nullable": true
+      },
+      "AddressPurposeOrderingFlag": {
+        "title": "Ordering",
+        "maxLength": 255,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then you can use the supplier address for ordering. If false, then you can't use this address. The default value is false.",
+        "nullable": true,
+        "x-hints": {
+          "dependencies": [
+            "PurUseStatus"
+          ]
+        }
+      },
+      "AddressPurposeRFQOrBiddingFlag": {
+        "title": "RFQ or Bidding",
+        "maxLength": 255,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then you can use the supplier address to send payment. If false, then you can't use this address. The default value is false.",
+        "nullable": true,
+        "x-hints": {
+          "dependencies": [
+            "RfqUseStatus"
+          ]
+        }
+      },
+      "AddressPurposeRemitToFlag": {
+        "title": "Remit to",
+        "maxLength": 255,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then you can use the supplier address for requesting for a proposal or for bidding. If false, then you can't use this address. The default value is false.",
+        "nullable": true,
+        "x-hints": {
+          "dependencies": [
+            "PayUseStatus"
+          ]
+        }
+      },
+      "Addressee": {
+        "title": "Addressee",
+        "maxLength": 360,
+        "type": "string",
+        "description": "Supplier contact who represents the Addressee.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PartySiteEO.Addressee",
+          "protectionObjectTitle": "Address",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Addressee"
+        }
+      },
+      "Building": {
+        "title": "Building",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Building of the supplier address.",
+        "nullable": true
+      },
+      "City": {
+        "title": "City or Locality",
+        "maxLength": 60,
+        "type": "string",
+        "description": "City of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PartySiteEO.City",
+          "protectionObjectTitle": "Address",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "City",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "Country": {
+        "title": "Country",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Country of the supplier address.",
+        "nullable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "CountryCode": {
+        "title": "Country Code",
+        "maxLength": 2,
+        "type": "string",
+        "description": "Abbreviation that identifies the country where the supplier address is located.",
+        "nullable": false,
+        "x-hints": {
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "County": {
+        "title": "County",
+        "maxLength": 60,
+        "type": "string",
+        "description": "County of supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PartySiteEO.County",
+          "protectionObjectTitle": "Address",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "County",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "DFF": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-addresses-DFF-item-post-request"
+        },
+        "x-cardinality": "1"
+      },
+      "Email": {
+        "title": "Email",
+        "maxLength": 320,
+        "type": "string",
+        "description": "Email for the supplier address.",
+        "nullable": false,
+        "x-hints": {
+          "protectionKey": "EmailEO.EmailAddress",
+          "protectionObjectTitle": "Email",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Email",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "FaxAreaCode": {
+        "title": "Fax Area Code",
+        "maxLength": 20,
+        "type": "string",
+        "description": "Abbreviation that identifies the area for the fax of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PhoneEO.PhoneAreaCode",
+          "protectionObjectTitle": "Phone",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Area Code",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "FaxCountryCode": {
+        "title": "Fax Country Code",
+        "maxLength": 10,
+        "type": "string",
+        "description": "Abbreviation that identifies the country for the fax of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "FaxNumber": {
+        "title": "Fax",
+        "maxLength": 40,
+        "type": "string",
+        "description": "Fax number of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PhoneEO.PhoneNumber",
+          "protectionObjectTitle": "Phone",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Phone",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "FloorNumber": {
+        "title": "Floor",
+        "maxLength": 40,
+        "type": "string",
+        "description": "Floor number of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "GlobalLocationNumber": {
+        "title": "Global Location Number",
+        "maxLength": 40,
+        "type": "string",
+        "description": "Global location number of the supplier address.",
+        "nullable": true
+      },
+      "InactiveDate": {
+        "title": "Inactive Date",
+        "type": "string",
+        "description": "Date when the supplier address is no longer active.",
+        "format": "date",
+        "nullable": true,
+        "x-hints": {
+          "DefaultValue": "FUTURE_DATE",
+          "NoTimeStamp": "Y",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "Language": {
+        "title": "Language",
+        "maxLength": 255,
+        "type": "string",
+        "description": "Language of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "LanguageCode": {
+        "title": "Language",
+        "maxLength": 4,
+        "type": "string",
+        "description": "Abbreviation that identifies the language of the supplier address.",
+        "nullable": true
+      },
+      "PhoneAreaCode": {
+        "title": "Phone Area Code",
+        "maxLength": 20,
+        "type": "string",
+        "description": "Abbreviation that identifies the area for phone number of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PhoneEO.PhoneAreaCode",
+          "protectionObjectTitle": "Phone",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Area Code",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "PhoneCountryCode": {
+        "title": "Phone Country Code",
+        "maxLength": 10,
+        "type": "string",
+        "description": "Abbreviation that identifies the country for the phone of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "PhoneExtension": {
+        "title": "Phone Extension",
+        "maxLength": 20,
+        "type": "string",
+        "description": "Phone extension of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PhoneEO.PhoneExtension",
+          "protectionObjectTitle": "Phone",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Extension",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "PhoneNumber": {
+        "title": "Phone",
+        "maxLength": 40,
+        "type": "string",
+        "description": "Phone number of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PhoneEO.PhoneNumber",
+          "protectionObjectTitle": "Phone",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Phone",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "PhoneticAddress": {
+        "title": "Phonetic Address Line",
+        "maxLength": 560,
+        "type": "string",
+        "description": "Japanese kana or Chinese kanji phonetic representation of the address lines.",
+        "nullable": true
+      },
+      "PostalCode": {
+        "title": "Postal Code",
+        "maxLength": 60,
+        "type": "string",
+        "description": "Postal code of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PartySiteEO.PostalCode",
+          "protectionObjectTitle": "Address",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Postal Code",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "PostalCodeExtension": {
+        "title": "Postal Plus 4 Code",
+        "maxLength": 20,
+        "type": "string",
+        "description": "Four-digit extension to the postal code of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PartySiteEO.PostalPlus4Code",
+          "protectionObjectTitle": "Address",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Postal Code Extension"
+        }
+      },
+      "Province": {
+        "title": "Province",
+        "maxLength": 60,
+        "type": "string",
+        "description": "Province of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PartySiteEO.Province",
+          "protectionObjectTitle": "Address",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "Province",
+          "HR_ATTRIBUTE": "Y"
+        }
+      },
+      "State": {
+        "title": "State or Region",
+        "maxLength": 60,
+        "type": "string",
+        "description": "State of the supplier address.",
+        "nullable": true,
+        "x-hints": {
+          "protectionKey": "PartySiteEO.State",
+          "protectionObjectTitle": "Address",
+          "protectionState": "TOKENIZED",
+          "protectionAttributeTitle": "State",
+          "HR_ATTRIBUTE": "Y"
+        }
+      }
+    }
+  }
+}

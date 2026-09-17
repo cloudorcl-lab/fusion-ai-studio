@@ -162,6 +162,10 @@ When new evidence conflicts with existing guidance:
 
 ## Universal build objectives and measures
 
+### Default communication style
+
+Use terse, direct, professional responses by default. State outcomes, blockers and the next required action briefly. Include only material evidence, limitations and artifact links; expand when the user requests detail or a decision requires it. This communication default does not reduce implementation, verification or hand-forward requirements.
+
 The build checkpoint must define and track these measures:
 
 | Objective | Required measure |
@@ -356,7 +360,7 @@ node .agents\skills\aistudio\scripts\aistudio.js validate-tool --file src\tools\
 
 #### Object-specific API and Business Object references
 
-The [object learning registry](objects/README.md) owns operation-level GET, POST, request JSON, response JSON, schema, filter, paging, key and object-specific documentation-retrieval guidance. Before creating or changing an API or Business Object dependency, select and read every matching parent and child resource reference and record them in the active intake.
+The [object learning registry](objects/README.md) owns operation-level GET, POST, request JSON, response JSON, schema, filter, paging, key and object-specific documentation-retrieval guidance. Before creating or changing an API or Business Object dependency, select and read every matching parent and child resource reference and record them in the active intake. Write-test intake must include local-sample suitability, the documentation cross-reference, and any provisional assumption and its success/failure decision; follow the registry's policy before live testing.
 
 If a required object reference is missing, incomplete or stale for the selected release, inspect the exact current specification and authorized evidence, then create or update that reference before relying on the behavior. Keep tenant values and raw run evidence in the build record. An object reference does not expand live-read, live-write, remote-save, publication or cleanup authority.
 
@@ -905,6 +909,8 @@ After every update:
 
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
+| 2026-09-17 | Explicit user request during Supplier POST testing | Set terse, direct, professional communication as the canonical default without reducing quality gates. | Scoped document and living-build checks. |
+| 2026-09-17 | User clarification in Supplier POST extension; object registry policy history | Made local-sample suitability, documentation cross-reference and provisional-assumption decisions explicit write-test intake evidence; detailed policy remains in the object registry. | Living-build verifier and scoped documentation checks required; no runtime success inferred from guidance. |
 | 2026-09-17 | [Supplier first-success GET samples](objects/README.md) | Added capture-once lifecycle rule: retain one first successful BO GET sample per resource object, use saved evidence when the success predates documentation, and never rerun or refresh routine GETs for samples. | Existing BO and baseline JSON only; sample-to-source comparison, JSON parsing, links, living-build positive/negative tests and whitespace checks required. No GET executed. |
 | 2026-09-17 | [Supplier object-learning ownership restructure](objects/README.md) | Moved operation-level GET, POST, request/response JSON, schema, filter, paging and object-key guidance to one reference per resource object. Added required registry routing at intake and closeout while preserving this file as the lifecycle and architecture owner. | Living-build contract, registry ownership/link checks, Markdown structure and scoped diff required; prior live GET and documentation receipts reused without runtime calls. |
 | 2026-09-17 | API/BO read testing, write-test design and documentation retrieval review; [evidence register](../builds/xdx-supplier-information/api-learning-review.md) | Added cross-domain API/BO contracts, live evidence boundaries, schema-and-vendor-example comparison for generated write tests, and scoped browser-free retrieval diagnosis. Refined sample-ID reuse to permit authorized current-environment references without embedding defaults. | Documentation-only review; live GET evidence retained; four public POST pages retrieved and request examples parsed without a browser. POST execution remains untested. Governance/link/structure checks recorded in the evidence register. |

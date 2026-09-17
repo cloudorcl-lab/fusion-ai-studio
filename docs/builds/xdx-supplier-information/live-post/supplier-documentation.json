@@ -1,0 +1,806 @@
+{
+  "release": "26C",
+  "exampleRequest": {
+    "Supplier": "Tall Manufacturing",
+    "TaxOrganizationType": "Corporation",
+    "SupplierType": "Services",
+    "BusinessRelationship": "Prospective",
+    "DUNSNumber": "221134568",
+    "OneTimeSupplierFlag": false,
+    "TaxpayerCountry": "United States",
+    "TaxpayerId": "98-03376373"
+  },
+  "url": "https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-post.html",
+  "retrievedUtc": "2026-09-17T08:34:29.8239642+00:00",
+  "requestSchema": {
+    "required": [
+      "Supplier",
+      "SupplierNumber",
+      "SupplierPartyId"
+    ],
+    "type": "object",
+    "properties": {
+      "Alias": {
+        "title": "Alias",
+        "maxLength": 360,
+        "type": "string",
+        "description": "Alternate internal name for the organization.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "HR_ATTRIBUTE": "Y",
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "AlternateName": {
+        "title": "Alternate Name",
+        "maxLength": 360,
+        "type": "string",
+        "description": "Alternate name of the supplier.",
+        "nullable": true,
+        "x-hints": {
+          "HR_ATTRIBUTE": "Y",
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "BusinessClassificationNotApplicableFlag": {
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then no current business classification applies for the supplier. If false, then business classifications do apply. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false
+      },
+      "BusinessRelationship": {
+        "title": "Business Relationship",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Business relationship between the enterprise and the supplier.",
+        "nullable": true,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "BusinessRelationshipCode": {
+        "title": "Business Relationship",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies the business relationship between the enterprise and the supplier. A list of accepted values is defined in the lookup type ORA_POZ_BUSINESS_RELATIONSHIP. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true
+      },
+      "ChiefExecutiveName": {
+        "title": "Chief Executive Name",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Name of the chief executive officer in the supplier organization.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "ChiefExecutiveTitle": {
+        "title": "Chief Executive Title",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Title of the chief executive officer in the supplier organization.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "CorporateWebsite": {
+        "title": "Website",
+        "maxLength": 150,
+        "type": "string",
+        "description": "Website of the supplier.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "CreationSourceCode": {
+        "title": "Creation Source",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Abbreviation that identifies the source that the application uses to create the supplier.",
+        "nullable": true,
+        "default": "WEB_SERVICE",
+        "x-queryable": false
+      },
+      "CurrentFiscalYearPotentialRevenue": {
+        "title": "Current Fiscal Year's Potential Revenue",
+        "type": "number",
+        "description": "Potential revenue for the supplier organization in the current fiscal year.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "CustomerNumber": {
+        "title": "Customer Number",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Number that the supplier uses to identify the buying organization.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "DFF": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-DFF-item-post-request"
+        },
+        "x-cardinality": "1"
+      },
+      "DUNSNumber": {
+        "title": "D-U-N-S Number",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Data Universal Numbering System (DUNS) that identifies the supplier business.",
+        "nullable": true
+      },
+      "DataFoxCompanyName": {
+        "maxLength": 360,
+        "type": "string",
+        "description": "Supplier descriptive flexfields are retrieved.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "DataFoxCompanyPrimaryURL": {
+        "maxLength": 150,
+        "type": "string",
+        "description": "Supplier descriptive flexfields are retrieved.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "DataFoxCountry": {
+        "maxLength": 2,
+        "type": "string",
+        "description": "Supplier descriptive flexfields are retrieved.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "DataFoxEIN": {
+        "maxLength": 30,
+        "type": "string",
+        "description": "Supplier descriptive flexfields are retrieved.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "DataFoxId": {
+        "maxLength": 30,
+        "type": "string",
+        "description": "Supplier descriptive flexfields are retrieved.",
+        "nullable": true
+      },
+      "DataFoxLastSyncDate": {
+        "type": "string",
+        "description": "Supplier descriptive flexfields are retrieved.",
+        "format": "date-time",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "DataFoxLegalName": {
+        "maxLength": 360,
+        "type": "string",
+        "description": "Supplier descriptive flexfields are retrieved.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "DataFoxNAICSCode": {
+        "maxLength": 25,
+        "type": "string",
+        "description": "Supplier descriptive flexfields are retrieved.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "DataFoxScore": {
+        "type": "integer",
+        "description": "Supplier descriptive flexfields are retrieved.",
+        "format": "int64",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "precision": 18,
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "DataFoxScoringCriteria": {
+        "maxLength": 4000,
+        "type": "string",
+        "description": "Supplier descriptive flexfields are retrieved.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "FederalIncomeTaxType": {
+        "title": "Federal Income Tax Type",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Type of income tax for the supplier.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "FederalIncomeTaxTypeCode": {
+        "title": "Taxpayer ID",
+        "maxLength": 10,
+        "type": "string",
+        "description": "Abbreviation that identifies the type of income tax for a reportable supplier according to the 1099 tax code in the United States.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "FederalReportableFlag": {
+        "title": "Federal Reportable",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then supplier is reportable to the Internal Revenue Service in the United States for the 1099 tax code. If false, then the supplier isn't reportable. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "FiscalYearEndMonth": {
+        "title": "Fiscal Year End Month",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Month when the fiscal year ends in the supplier organization.",
+        "nullable": true,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "FiscalYearEndMonthCode": {
+        "title": "Fiscal Year End Month",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies the month when the fiscal year ends in the supplier organization. A list of accepted values is defined in the lookup type MONTH. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Standard Lookups task.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "InactiveDate": {
+        "title": "Inactive Date",
+        "type": "string",
+        "description": "Date when the supplier is no longer active.",
+        "format": "date",
+        "nullable": true
+      },
+      "IndustryCategory": {
+        "maxLength": 30,
+        "type": "string",
+        "description": "Supplier descriptive flexfields are retrieved.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "IndustrySubcategory": {
+        "maxLength": 30,
+        "type": "string",
+        "description": "Supplier descriptive flexfields are retrieved.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "MissionStatement": {
+        "title": "Mission Statement",
+        "maxLength": 2000,
+        "type": "string",
+        "description": "Mission statement that the supplier uses.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "NameControl": {
+        "title": "Name Control",
+        "maxLength": 4,
+        "type": "string",
+        "description": "First four characters of the last name of a supplier who's reportable to the Internal Revenue Service in the United States for the 1099 tax code.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "NationalInsuranceNumber": {
+        "title": "National Insurance Number",
+        "type": "string",
+        "description": "Number that uniquely identifies a supplier who's a person. Some countries use this number to track work, taxation, and government benefits for each person.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "NationalInsuranceNumberExistsFlag": {
+        "title": "National Insurance Number Exists",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then a value exists for the National Insurance number. If false, then a value doesn't exist for the National Insurance number. This attribute isn't updatable. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false
+      },
+      "OFACSources": {
+        "maxLength": 4000,
+        "type": "string",
+        "description": "Contains details about specific lists in the US Government consolidated screening list that the supplier is currently on. The consolidated screening list includes, among others, those from the Office of Foreign Assets Control. This attribute isn't currently used.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate",
+            "OnOFACListFlag"
+          ]
+        }
+      },
+      "OnOFACListFlag": {
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier is on the US Government consolidated screening list, which includes, among others, those from the Office of Foreign Assets Control. If false, the supplier isn't on the list. This attribute isn't currently used.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "OneTimeSupplierFlag": {
+        "title": "One-time supplier",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier is a one-time supplier. If false, then the supplier isn't a one-time supplier. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "ParentSupplier": {
+        "title": "Parent Supplier",
+        "maxLength": 360,
+        "type": "string",
+        "description": "Name of the parent supplier.",
+        "nullable": true,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "ParentSupplierId": {
+        "type": "integer",
+        "description": "Value that uniquely identifies the parent supplier.",
+        "nullable": true
+      },
+      "PreferredFunctionalCurrency": {
+        "title": "Preferred Functional Currency",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Currency that the supplier uses.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "PreferredFunctionalCurrencyCode": {
+        "title": "Preferred Functional Currency",
+        "maxLength": 15,
+        "type": "string",
+        "description": "Abbreviation that identifies the currency that the supplier uses.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "PrincipalName": {
+        "title": "Principal Name",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Name of the principal officer in the supplier organization.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "PrincipalTitle": {
+        "title": "Principal Title",
+        "maxLength": 240,
+        "type": "string",
+        "description": "Title of the principal officer in the supplier organization.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "SpendAuthReviewStatus": {
+        "title": "Spend Authorization Review Status",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Spend authorization review status for the supplier.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "StandardIndustryClass": {
+        "title": "SIC",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Classification number that the industry uses.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "StateReportableFlag": {
+        "title": "State reportable",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the supplier is reportable to a state taxing authority in the United States. If false, then the supplier isn't reportable. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "Supplier": {
+        "title": "Supplier",
+        "maxLength": 360,
+        "type": "string",
+        "description": "Name of the supplier.",
+        "nullable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "SupplierNumber": {
+        "title": "Supplier Number",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Number that identifies the supplier.",
+        "nullable": false
+      },
+      "SupplierPartyId": {
+        "title": "Supplier Party ID",
+        "type": "integer",
+        "description": "Value that uniquely identifies the supplier party.",
+        "nullable": false
+      },
+      "SupplierType": {
+        "title": "Supplier Type",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Type of supplier.",
+        "nullable": true,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "SupplierTypeCode": {
+        "title": "Supplier Type",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies the type of supplier. A list of accepted values is defined in the lookup type POZ_VENDOR_TYPE. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Supplier Type Lookup task.",
+        "nullable": true,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "POZ_VENDOR_TYPE",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "10044"
+        }
+      },
+      "TaxOrganizationType": {
+        "title": "Tax Organization Type",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Type of tax organization for the supplier.",
+        "nullable": true,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "TaxOrganizationTypeCode": {
+        "title": "Tax Organization Type",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Abbreviation that identifies the type of tax organization for the supplier. A list of accepted values is defined in the lookup type POZ_ORGANIZATION_TYPE. Review and update the value for this attribute using the Setup and Maintenance work area, and the Manage Tax Organization Type Lookup task.",
+        "nullable": true
+      },
+      "TaxRegistrationCountry": {
+        "title": "Tax Registration Country",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Country where the supplier registered themselves for value added tax.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "TaxRegistrationCountryCode": {
+        "maxLength": 2,
+        "type": "string",
+        "description": "Abbreviation that identifies the country where the supplier registered themselves for value added tax.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "TaxRegistrationNumber": {
+        "title": "Tax Registration Number",
+        "maxLength": 50,
+        "type": "string",
+        "description": "Identification number for value added tax that some countries use, such as countries in the European Union.",
+        "nullable": true
+      },
+      "TaxReportingName": {
+        "title": "Tax Reporting Name",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Name of tax reporting for a supplier who's reportable for income tax to the Internal Revenue Service in the United States.",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "TaxpayerCountry": {
+        "title": "Taxpayer Country",
+        "maxLength": 80,
+        "type": "string",
+        "description": "Country where the supplier organization that's responsible for taxation resides.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "TaxpayerCountryCode": {
+        "maxLength": 2,
+        "type": "string",
+        "description": "Abbreviation that identifies the country where the supplier organization that's responsible for taxation is located.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "TaxpayerId": {
+        "title": "Taxpayer ID",
+        "maxLength": 30,
+        "type": "string",
+        "description": "Value that uniquely identifies the supplier for taxation purposes.",
+        "nullable": true,
+        "x-hints": {
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "TaxpayerIdExistsFlag": {
+        "title": "Taxpayer ID Exists",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then a value exists for the taxpayer identifier. If false, then value doesn't exist for the taxpayer identifier. This checkbox isn't updatable. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false
+      },
+      "UseWithholdingTaxFlag": {
+        "title": "Use withholding tax",
+        "maxLength": 1,
+        "type": "boolean",
+        "description": "Contains one of the following values: true or false. If true, then the withholding tax is applicable to the supplier. If false, then withholding tax isn't applicable. The default value is false.",
+        "nullable": true,
+        "default": false,
+        "x-queryable": false,
+        "x-hints": {
+          "fnd:APPLCORE_SETID_LOOKUP_TYPE": "YES_NO",
+          "fnd:APPLCORE_VIEW_APPLICATION_ID": "0"
+        }
+      },
+      "VerificationDate": {
+        "title": "Verification Date",
+        "type": "string",
+        "description": "Date when the supplier most recently received the 1099 tax verification.",
+        "format": "date",
+        "nullable": true,
+        "x-queryable": false
+      },
+      "WithholdingTaxGroup": {
+        "title": "Withholding Tax Group",
+        "maxLength": 25,
+        "type": "string",
+        "description": "Withholding tax group that the application assigned to the supplier.",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "controlType": "choice"
+        }
+      },
+      "WithholdingTaxGroupId": {
+        "type": "integer",
+        "description": "Value that uniquely identifies the tax group in which supplier is classified for withholding the tax.",
+        "format": "int64",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "precision": 18
+        }
+      },
+      "YearEstablished": {
+        "title": "Year Established",
+        "type": "integer",
+        "description": "Year when the supplier established themselves.",
+        "format": "int32",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "precision": 4,
+          "dependencies": [
+            "DataFoxId",
+            "DataFoxLastSyncDate"
+          ]
+        }
+      },
+      "YearIncorporated": {
+        "title": "Year Incorporated",
+        "type": "integer",
+        "description": "Year when the supplier incorporated themselves.",
+        "format": "int32",
+        "nullable": true,
+        "x-queryable": false,
+        "x-hints": {
+          "precision": 4
+        }
+      },
+      "addresses": {
+        "title": "Addresses",
+        "type": "array",
+        "description": "Supplier contact addresses are retrieved.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-addresses-item-post-request"
+        }
+      },
+      "attachments": {
+        "title": "Attachments",
+        "type": "array",
+        "description": "The attachments resource is used to view, create, and update attachments.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-attachments-item-post-request"
+        }
+      },
+      "businessClassifications": {
+        "title": "Business Classifications",
+        "type": "array",
+        "description": "Supplier business classifications are retrieved.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-businessClassifications-item-post-request"
+        }
+      },
+      "contacts": {
+        "title": "Contacts",
+        "type": "array",
+        "description": "Supplier contacts are retrieved.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-contacts-item-post-request"
+        }
+      },
+      "globalDFF": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-globalDFF-item-post-request"
+        },
+        "x-cardinality": "1"
+      },
+      "mergeHistory": {
+        "title": "Merge History",
+        "type": "array",
+        "description": "Merger history of suppliers.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-mergeHistory-item-post-request"
+        }
+      },
+      "productsAndServices": {
+        "title": "Products and Services",
+        "type": "array",
+        "description": "Supplier products and services are retrieved.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-productsAndServices-item-post-request"
+        }
+      },
+      "productsAndServicesView": {
+        "title": "Products and Services",
+        "type": "array",
+        "description": "Supplier products and services are retrieved.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-productsAndServicesView-item-post-request"
+        }
+      },
+      "sites": {
+        "title": "Sites",
+        "type": "array",
+        "description": "Supplier sites are retrieved.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-sites-item-post-request"
+        }
+      },
+      "spendAuthorizationApprovalRequests": {
+        "title": "Spend Authorization Requests",
+        "type": "array",
+        "description": "Supplier spend authorization approval requests are retrieved.",
+        "items": {
+          "$ref": "#/components/schemas/suppliers-spendAuthorizationApprovalRequests-item-post-request"
+        }
+      }
+    }
+  }
+}

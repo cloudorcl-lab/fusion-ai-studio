@@ -1,0 +1,35 @@
+{
+  "cases": [
+    {
+      "count": 25,
+      "function": "ListSuppliers",
+      "status": "PASS"
+    },
+    {
+      "count": 1,
+      "function": "FindSupplierByFullName",
+      "status": "PASS"
+    },
+    {
+      "count": 1,
+      "function": "FindSuppliersByPartialName",
+      "status": "PASS"
+    },
+    {
+      "function": "ListSupplierAddresses",
+      "status": "PASS",
+      "case": "text filter"
+    },
+    {
+      "function": "ListSupplierSites",
+      "status": "PASS",
+      "case": "text filter"
+    },
+    {
+      "function": "ListSupplierContacts",
+      "status": "PASS",
+      "case": "text filter"
+    }
+  ],
+  "status": "PASS"
+}
