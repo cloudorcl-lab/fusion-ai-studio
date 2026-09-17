@@ -119,6 +119,14 @@ Captured once from `XDX_SUPPLIER_INFORMATION.ListSupplierAddresses` at `2026-09-
 
 The create operation ID is `create_suppliers-addresses`. The 26C OpenAPI request schema has 38 properties and marks `CountryCode` and `Email` as required. The nine-field vendor example uses `Country` and omits both `CountryCode` and `Email`. Resolve this contradiction against current metadata before execution.
 
+### Required and unique fields
+
+| Field | Requiredness | Uniqueness scope | Test-data treatment | Evidence |
+| --- | --- | --- | --- | --- |
+| `AddressName` | Present in the vendor example; requiredness is not established by the reviewed schema's required list | Within the selected supplier parent: `(SupplierId, AddressName)` | Generate a distinctive address name for that supplier; compare with available saved addresses under the same parent | User-confirmed uniqueness, 2026-09-17; no duplicate-name POST tested |
+
+Do not impose collection-wide address-name uniqueness across different suppliers. Confirm requiredness, length and normalization from the exact Oracle operation documentation before executing a create; this user confirmation establishes uniqueness scope only. Saved addresses cannot prove current absence if their capture is incomplete or stale.
+
 ### Candidate request JSON
 
 ```json
@@ -150,5 +158,6 @@ Resolve country and subdivision codes from the target environment. Do not copy a
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-17 | User confirmation | Recorded supplier-parent-scoped `AddressName` uniqueness; kept requiredness distinct and GET samples unchanged. |
 | 2026-09-17 | First retained `ListSupplierAddresses` BO response | Added immutable first-success GET excerpt and link to complete JSON; later GET evidence does not refresh it. |
 | 2026-09-17 | Parent-scoped live GET receipts and Oracle 26C GET/POST documentation | Established Supplier Addresses as the owner for GET filtering/paging, response JSON, create-request JSON and the unresolved `CountryCode`/`Email` vendor-example discrepancy. |
