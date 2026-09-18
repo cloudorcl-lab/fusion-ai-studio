@@ -14,3 +14,11 @@
 - Preserve base docs/agent-app-build-install-packet.zip, env.properties, fusion-ai-studio-1.code-workspace and docs/TODO.md. No secrets copied into build records.
 
 - Base-checkout pointer only: perform all further build changes in the active worktree. Its checkpoint commit is the latest commit named Bootstrap supplier workspace with ATLAS and usage tracking.
+
+## Fresh-session command
+
+The canonical fresh-session rule requires the following command; approval and the full app objective carry forward.
+
+```powershell
+codex -C 'C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-workspace' 'Read docs/handoffs/ACTIVE_HANDOFF.md first, then continue the approved supplier app build.'
+```

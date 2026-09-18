@@ -62,6 +62,20 @@ Worktree propagation follows Git history:
 
 At closeout, rerun the verifier after integrating lessons and dependency cleanup. The handoff commit is the invocation mechanism for the next build; uncommitted guidance in another checkout does not propagate.
 
+### MUST: provide the fresh-session restart command
+
+Whenever work reaches a required fresh-session boundary, including a new worktree, a governance update or a context-limit handoff, the agent MUST give the user a complete, copyable command to start the next session. Do not provide only a directory link or say to restart.
+
+Before handing off, verify the intended existing worktree and branch, save the current handoff/checkpoint/time records, and place the concrete command in both the active handoff and the user-facing response. Use the resolved absolute worktree path, a handoff-first prompt carrying forward the approved objective, and quoting appropriate for the user's shell. Do not create another worktree, substitute a resume of the old session, or require renewed approval of unchanged scope. State the reason for the restart briefly and link this rule.
+
+PowerShell command template (replace the path and objective with verified values; escape any single quote inside an argument by doubling it):
+
+```powershell
+codex -C '<ABSOLUTE_WORKTREE_PATH>' 'Read docs/handoffs/ACTIVE_HANDOFF.md first, then continue the approved <BUILD_OBJECTIVE>.'
+```
+
+Verify current local CLI help if the command syntax changes. Providing the command does not prove a fresh session has started; keep remaining build work explicitly incomplete until the next session verifies the handoff.
+
 ### Session conformance receipt
 
 MUST apply in every new session and each material task, including repairs and governance work. Policy-only PASS proves instructions are installed, not followed. The default verifier rejects missing session evidence. Repository instructions are the invocation mechanism, not a runtime hook: the checker cannot force a client to invoke it or prove comprehension.
@@ -962,6 +976,7 @@ After every update:
 
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
+| 2026-09-18 | User requested an executable restart command after a directory-only handoff | Require a verified, shell-quoted fresh-session command in the handoff and user response at every restart boundary; preserve approved scope. | Local codex help, exact path/branch, command parsing, documentation and session gates. |
 | 2026-09-17 | Supplier compliance audit | Require a current session conformance receipt with reviewed hashes, all obligation dispositions, timing and evidence; distinguish policy installation from execution; reject incomplete closeout. Reconcile status documents and outstanding requested activities. | Policy/session positive and negative checks; missed evidence recovery; scoped delivery review. |
 | 2026-09-17 | Partial Supplier POST timing | Require continuous timing, retrospective recovery, gap/overlap accounting and delivery checkpoints. | Initial heading-only test was insufficient; session conformance now checks actual tracker and dispositions. |
 | 2026-09-17 | SupplierType omission after CLI placeholder false positive | Prohibit silently dropping source-backed business fields to satisfy tools; require intended-field coverage plus persisted-value verification and repair/help escalation. | CLI regression must fail before repair and pass afterward; restored BO field and live correction/create/read-back required. |
