@@ -1,0 +1,107 @@
+{
+  "timestampUtc": "2026-09-20T13:20:46.8937249Z",
+  "command": "list-supported-business-objects --query XDX --limit 100 --offset 0",
+  "ok": true,
+  "hasMore": false,
+  "offset": 0,
+  "matchedObjects": [
+    {
+      "supportedObjectId": "300000333852429",
+      "objectCode": "XDX_SUPPLIER_INFORMATION",
+      "name": "XDX Supplier Information",
+      "family": "PRC",
+      "product": "SUPPLIER",
+      "description": "Supplier lookup and details, paginated addresses/sites/contacts, and explicitly authorized create operations for suppliers and their children. POST callers validate writable JSON fields, parent references and uniqueness, then reconcile outcomes before retries.",
+      "functions": [
+        {
+          "id": "ListSuppliers",
+          "label": "ListSuppliers",
+          "summary": "List one page of suppliers. Return items and count, limit, offset, hasMore. Continue from offset + count while hasMore is true; never describe one page as the full catalog. Includes active and inactive suppliers visible to the signed-in user.",
+          "operationType": "GET"
+        },
+        {
+          "id": "FindSupplierByFullName",
+          "label": "FindSupplierByFullName",
+          "summary": "Find suppliers by full name using an equality comparison. Return every matching supplier and native pagination metadata. Name matching follows the Fusion REST service collation; no case-insensitive or fuzzy-match guarantee. Caller must escape embedded apostrophes by doubling them before supplying supplierName.",
+          "operationType": "GET"
+        },
+        {
+          "id": "FindSuppliersByPartialName",
+          "label": "FindSuppliersByPartialName",
+          "summary": "Find suppliers whose name contains the supplied text using a LIKE contains comparison. Return every match with pagination metadata. Matching follows Fusion REST collation. Caller must double apostrophes; percent and underscore in the input retain LIKE wildcard semantics. Do not supply blank text; use ListSuppliers instead.",
+          "operationType": "GET"
+        },
+        {
+          "id": "GetSupplierDetails",
+          "label": "GetSupplierDetails",
+          "summary": "Retrieve the scalar supplier profile by its previously resolved supplier ID. Native Fusion permissions apply. Child collections are retrieved separately; no automatic expansion.",
+          "operationType": "GET"
+        },
+        {
+          "id": "ListSupplierAddresses",
+          "label": "ListSupplierAddresses",
+          "summary": "Retrieve one page of addresses for one supplier. Optional narrowing through a caller-authored framework-v4 rowmatch filter; default selects all child IDs. Preserve count, limit, offset and hasMore. Empty items is valid; errors are not empty results. Continue at offset + count while hasMore is true.",
+          "operationType": "GET"
+        },
+        {
+          "id": "ListSupplierSites",
+          "label": "ListSupplierSites",
+          "summary": "Retrieve one page of sites for one supplier. Optional narrowing through a caller-authored framework-v4 rowmatch filter; default selects all child IDs. Preserve count, limit, offset and hasMore. Empty items is valid; errors are not empty results. Continue at offset + count while hasMore is true.",
+          "operationType": "GET"
+        },
+        {
+          "id": "ListSupplierContacts",
+          "label": "ListSupplierContacts",
+          "summary": "Retrieve one page of contacts for one supplier. Optional narrowing through a caller-authored framework-v4 rowmatch filter; default selects all child IDs. Preserve count, limit, offset and hasMore. Empty items is valid; errors are not empty results. Continue at offset + count while hasMore is true.",
+          "operationType": "GET"
+        },
+        {
+          "id": "CreateSupplier",
+          "label": "CreateSupplier",
+          "summary": "Create one Supplier with explicit schema-mapped fields. String values must be JSON-safe; callers validate names, lengths, lookup values and parent references. No generated IDs or audit fields are accepted. Reconcile uncertain results before retries.",
+          "operationType": "POST"
+        },
+        {
+          "id": "CreateSupplierAddress",
+          "label": "CreateSupplierAddress",
+          "summary": "Create one SupplierAddress with explicit schema-mapped fields. String values must be JSON-safe; callers validate names, lengths, lookup values and parent references. No generated IDs or audit fields are accepted. Reconcile uncertain results before retries.",
+          "operationType": "POST"
+        },
+        {
+          "id": "CreateSupplierSite",
+          "label": "CreateSupplierSite",
+          "summary": "Create one SupplierSite with explicit schema-mapped fields. String values must be JSON-safe; callers validate names, lengths, lookup values and parent references. No generated IDs or audit fields are accepted. Reconcile uncertain results before retries.",
+          "operationType": "POST"
+        },
+        {
+          "id": "CreateSupplierContact",
+          "label": "CreateSupplierContact",
+          "summary": "Create one SupplierContact with explicit schema-mapped fields. String values must be JSON-safe; callers validate names, lengths, lookup values and parent references. No generated IDs or audit fields are accepted. Reconcile uncertain results before retries.",
+          "operationType": "POST"
+        },
+        {
+          "id": "FindSuppliersByValidatedFilter",
+          "label": "FindSuppliersByValidatedFilter",
+          "summary": "Search suppliers by an application-validated ID, number, exact name or literal partial name filter; preserve paging and require explicit selection.",
+          "operationType": "GET"
+        }
+      ]
+    },
+    {
+      "supportedObjectId": "300000333870232",
+      "objectCode": "XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS",
+      "name": "XDX Supplier Procurement Business Units",
+      "family": "PRC",
+      "product": "PURCHASING",
+      "description": "Paged reference lookup of procurement business units and agent actions for supplier site forms; no write permission inference.",
+      "functions": [
+        {
+          "id": "getall_procurementBusinessUnitsLOV",
+          "label": "getall_procurementBusinessUnitsLOV",
+          "summary": "Retrieve a page of authenticated procurement BU and action rows. Follow hasMore; collapse choices by exact BU ID only after checking name consistency. This is not supplier-write authorization.",
+          "operationType": "GET"
+        }
+      ]
+    }
+  ]
+}

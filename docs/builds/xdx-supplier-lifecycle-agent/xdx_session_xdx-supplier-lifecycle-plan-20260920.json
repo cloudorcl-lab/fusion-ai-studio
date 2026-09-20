@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-lifecycle-plan-20260920",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Startup",
+  "startedUtc": "2026-09-20T13:19:09.7421614Z",
+  "checkpointUtc": "2026-09-20T13:27:31.8393893Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d0a35a4078c0f844983e9182cefcdaebb12782998cbb6ce91b70bd60ad9f3e3c"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "2c4f6c22a5045fe5ec36dc46657f97f466e87c6c97f22ee2866dc8c057efeb75"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "309c4938e48ef72819483bef3711de031f56f4697f953a75040168b4b13584c9"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "5d65c5262fc4cf986167196d13d1463c8675bbcb714b66b30770a3b4dc9a4bd3"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "93557d713a36398323f4d64e457fe01d4f61e3bad823e43d58e4f0d255e91449"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "942ea2b4f22994ee858c179dd82d7fa471920c8cadc9d6db458be087f7d0cffc"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "7b41bb7cb5ff67dcd99e96987a79fa3451b3378f6e920baad60ddbc7e7c8f29a"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "eec45775b263d00fe5a091babb089a7ef88a95ff39e4dc4382d72b4fbccbd0d7"
+    }
+  ],
+  "reviewNotes": "Planning/bootstrap only; no new field research or application tests. Prior failed attempt remains retired. Late timing recorded honestly.",
+  "objectReferences": [
+    {
+      "release": "26C / 11.13.18.05",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md"
+    },
+    {
+      "release": "26C / 11.13.18.05",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md"
+    },
+    {
+      "release": "26C / 11.13.18.05",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md"
+    },
+    {
+      "release": "26C / 11.13.18.05",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md",
+  "checks": [
+    {
+      "rule": "Canonical learning obligations",
+      "status": "planned",
+      "id": "learning",
+      "reason": "Planning/bootstrap scope; evidence finalized before closeout. Application execution belongs to fresh worktree session.",
+      "evidence": []
+    },
+    {
+      "rule": "Canonical intake obligations",
+      "status": "planned",
+      "id": "intake",
+      "reason": "Planning/bootstrap scope; evidence finalized before closeout. Application execution belongs to fresh worktree session.",
+      "evidence": []
+    },
+    {
+      "rule": "Canonical authority obligations",
+      "status": "planned",
+      "id": "authority",
+      "reason": "Planning/bootstrap scope; evidence finalized before closeout. Application execution belongs to fresh worktree session.",
+      "evidence": []
+    },
+    {
+      "rule": "Canonical objects obligations",
+      "status": "planned",
+      "id": "objects",
+      "reason": "Planning/bootstrap scope; evidence finalized before closeout. Application execution belongs to fresh worktree session.",
+      "evidence": []
+    },
+    {
+      "rule": "Canonical verification obligations",
+      "status": "planned",
+      "id": "verification",
+      "reason": "Planning/bootstrap scope; evidence finalized before closeout. Application execution belongs to fresh worktree session.",
+      "evidence": []
+    },
+    {
+      "rule": "Canonical timing obligations",
+      "status": "planned",
+      "id": "timing",
+      "reason": "Planning/bootstrap scope; evidence finalized before closeout. Application execution belongs to fresh worktree session.",
+      "evidence": []
+    },
+    {
+      "rule": "Canonical cleanup obligations",
+      "status": "planned",
+      "id": "cleanup",
+      "reason": "Planning/bootstrap scope; evidence finalized before closeout. Application execution belongs to fresh worktree session.",
+      "evidence": []
+    },
+    {
+      "rule": "Canonical delivery obligations",
+      "status": "planned",
+      "id": "delivery",
+      "reason": "Planning/bootstrap scope; evidence finalized before closeout. Application execution belongs to fresh worktree session.",
+      "evidence": []
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "timingGaps": "Pre-checkpoint preparation unavailable; final tail excluded",
+    "aiUnits": "Unavailable",
+    "tokens": "Unavailable"
+  }
+}
