@@ -1,24 +1,11 @@
 # Active Handoff
 
-- Objective: build the approved XDX Supplier Workspace app. User approved both plan and build prompt; do not reconfirm the same scope. Later steering makes ATLAS testing and AI Unit accounting explicit. Communicate tersely.
-- Active worktree: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-workspace; branch codex/xdx-supplier-workspace; base 3458c2c. Base checkout TestingWFBuildTools has unrelated changes; preserve them.
-- Canonical owner: docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md; read this handoff first, full canonical and four selected supplier object references.
-- [Approved plan](../../.worktrees/xdx-supplier-workspace/docs/builds/xdx-supplier-information/xdx_supplier_workspace_plan.md), [approved build prompt](../../.worktrees/xdx-supplier-workspace/docs/builds/xdx-supplier-information/xdx_supplier_workspace_build_prompt.md). Latest amended versions and build records live in the active worktree.
-- Full scope: query/create suppliers, addresses, sites and contacts; GET-verify and display complete authorized fields/pages; separate full PDF download; reviewed email summary BODY ONLY with no attachment.
-- Startup preparation complete: worktree created, templates initialized, both startup checks PASS. No app/workflow artifact or runtime test created; no live calls/writes/sends. Goal remains incomplete.
-- Mandatory next transition: start a fresh Codex run in the active worktree before build artifacts. Canonical worktree propagation requires a fresh run after a worktree first receives governance. Tooling here cannot reset the user's active run.
-- Next work: complete S0 capability proof for PDF/download, actual mail channel, reference lookups, state and exact lifecycle routes; resolve full architecture/test contracts; then construct and validate app/workflow and execute ATLAS plans. User approval covers implementation; review concrete live-test payloads/destinations and remote lifecycle scope before execution. No publication or push inferred.
-- [Checkpoint](../../.worktrees/xdx-supplier-workspace/docs/builds/xdx-supplier-workspace/checkpoint.md), [intake](../../.worktrees/xdx-supplier-workspace/docs/builds/xdx-supplier-workspace/intake-and-learning-register.md), [time tracker](../../.worktrees/xdx-supplier-workspace/docs/builds/xdx-supplier-workspace/time-tracker.md), [Startup receipt](../../.worktrees/xdx-supplier-workspace/docs/builds/xdx-supplier-workspace/xdx_session_01a0b1d0-f23a-7150-ab9e-610af5ff6ebf.json) are in the active worktree. New run must create its own session receipt; current unresolved Startup receipt is not a completed app gate.
-- Actual task start 2026-09-18T00:00:55.888Z recovered from metadata. Track elapsed continuously; capture unique-run AI Units/tokens from ATLAS reports without nested double counting; mark unavailable values. No workflow units measured yet.
-- Existing BO src/businessObjects/xdx_supplier_information.bo has seven GET/four POST functions. Supplier 1497 last retained evidence: supplier 300000333813822; address 300000333813850; site 300000333813859; contact 300000333813861. These are historic source-API receipts, not current app proof or reusable defaults. Keep immutable samples.
-- Preserve base docs/agent-app-build-install-packet.zip, env.properties, fusion-ai-studio-1.code-workspace and docs/TODO.md. No secrets copied into build records.
+Task: xdx-failed-attempt-review-20260919.
 
-- Base-checkout pointer only: perform all further build changes in the active worktree. Its checkpoint commit is the latest commit named Bootstrap supplier workspace with ATLAS and usage tracking.
+The XDX Supplier Workspace attempt is **FAILED and abandoned by user instruction**. It is not a completed or customer-deployable application. Do not resume, merge, cherry-pick, publish or push its implementation. No successor build is approved.
 
-## Fresh-session command
+The base owns the [attempts log](../../ATTEMPTS.md) and [failure review](../attempts/attempt-001.md). No active checkout link, branch command or restart instruction remains for the abandoned attempt. Existing supplier-information BO work predating that attempt is separate and retained.
 
-The canonical fresh-session rule requires the following command; approval and the full app objective carry forward.
+See the review [intake](../builds/xdx-attempt-review/intake-and-learning-register.md), [time tracker](../builds/xdx-attempt-review/time-tracker.md) and [verification](../builds/xdx-attempt-review/verification.md). Its Closeout concerns the review, never application acceptance.
 
-```powershell
-codex -C 'C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-workspace' 'Read docs/handoffs/ACTIVE_HANDOFF.md first, then continue the approved supplier app build.'
-```
+Preserve unrelated base changes in the install packet, environment configuration, editor workspace and TODO file. Local evidence is preserved. No application operations, remote publication, Git push or remote deletion are authorized by this handoff.

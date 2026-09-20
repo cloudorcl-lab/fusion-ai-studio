@@ -1,5 +1,7 @@
 # XDX Supplier Workspace — proposed plan
 
+> RETIRED 2026-09-19: failed attempt; historical planning only. All implementation/startup instructions below are inactive. Do not resume or publish. See [attempt 001](../../attempts/attempt-001.md). Checkout/branch destinations have been removed; original versions remain in local Git history.
+
 Planning draft for review. No app implementation or live operations are authorized by this document. Confirmed email scope: **summary in the message only; no attachment**. PDF is a separate download.
 
 ## Objective and recommended design
@@ -61,7 +63,7 @@ Each test maps to an approved requirement slice, owner, route and terminal outpu
 
 ## Build startup and approval boundary
 
-After scope approval, start a fresh run and create branch `codex/xdx-supplier-workspace` and worktree `.worktrees/xdx-supplier-workspace` from committed governance. Initialize build records under `docs/builds/xdx-supplier-workspace/`, carry forward approved planning documents, inspect package layout and complete startup verification, session gate, requirement slices, architecture self-review and MVP manifest. Reuse existing BO/evidence; do not replace current governance with an older installed seed.
+After scope approval, start a fresh run and create branch `[retired branch]` and worktree `[retired local checkout]` from committed governance. Initialize build records under `[retired build records]`, carry forward approved planning documents, inspect package layout and complete startup verification, session gate, requirement slices, architecture self-review and MVP manifest. Reuse existing BO/evidence; do not replace current governance with an older installed seed.
 
 Keep timing/tokens/AI Units or unavailability reasons, scoped test/export/send evidence, object learnings and one active handoff. Deployment, publication, live writes/sends and Git push require established scope. The full objective is incomplete until query, create, complete persisted display, PDF download and real summary email all have evidence.
 

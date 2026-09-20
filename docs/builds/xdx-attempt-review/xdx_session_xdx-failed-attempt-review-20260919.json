@@ -1,0 +1,128 @@
+{
+  "startedUtc": "2026-09-20T03:07:54.8147415Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d0a35a4078c0f844983e9182cefcdaebb12782998cbb6ce91b70bd60ad9f3e3c"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "a6113f912a18e7056ffcf27c53321fb296ec60a275a9a113c6725d1173289c53"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "309c4938e48ef72819483bef3711de031f56f4697f953a75040168b4b13584c9"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "5d65c5262fc4cf986167196d13d1463c8675bbcb714b66b30770a3b4dc9a4bd3"
+    }
+  ],
+  "metrics": {
+    "timingGaps": "Initial read-only inspection start unavailable; delivery checkpoint recorded; later verification/commit/response tail excluded.",
+    "aiUnits": "No AI Studio runtime operations in this review; historical partial ledger is separately bounded.",
+    "tokens": "Current assistant input/output/cached token telemetry unavailable."
+  },
+  "unresolved": [],
+  "objectReferences": [],
+  "schemaVersion": 1,
+  "checks": [
+    {
+      "reason": "Scoped retrospective obligation fulfilled; see intake and verification. Application release remains failed.",
+      "id": "learning",
+      "rule": "Canonical session conformance and scoped retrospective review",
+      "evidence": [
+        "docs/builds/xdx-attempt-review/intake-and-learning-register.md",
+        "docs/builds/xdx-attempt-review/verification.md",
+        "docs/attempts/attempt-001.md"
+      ],
+      "status": "pass"
+    },
+    {
+      "reason": "Scoped retrospective obligation fulfilled; see intake and verification. Application release remains failed.",
+      "id": "intake",
+      "rule": "Canonical session conformance and scoped retrospective review",
+      "evidence": [
+        "docs/builds/xdx-attempt-review/intake-and-learning-register.md",
+        "docs/builds/xdx-attempt-review/verification.md",
+        "docs/attempts/attempt-001.md"
+      ],
+      "status": "pass"
+    },
+    {
+      "reason": "Scoped retrospective obligation fulfilled; see intake and verification. Application release remains failed.",
+      "id": "authority",
+      "rule": "Canonical session conformance and scoped retrospective review",
+      "evidence": [
+        "docs/builds/xdx-attempt-review/intake-and-learning-register.md",
+        "docs/builds/xdx-attempt-review/verification.md",
+        "docs/attempts/attempt-001.md"
+      ],
+      "status": "pass"
+    },
+    {
+      "reason": "Scoped retrospective obligation fulfilled; see intake and verification. Application release remains failed.",
+      "id": "objects",
+      "rule": "Canonical session conformance and scoped retrospective review",
+      "evidence": [
+        "docs/builds/xdx-attempt-review/intake-and-learning-register.md",
+        "docs/builds/xdx-attempt-review/verification.md",
+        "docs/attempts/attempt-001.md"
+      ],
+      "status": "pass"
+    },
+    {
+      "reason": "Scoped retrospective obligation fulfilled; see intake and verification. Application release remains failed.",
+      "id": "verification",
+      "rule": "Canonical session conformance and scoped retrospective review",
+      "evidence": [
+        "docs/builds/xdx-attempt-review/intake-and-learning-register.md",
+        "docs/builds/xdx-attempt-review/verification.md",
+        "docs/attempts/attempt-001.md"
+      ],
+      "status": "pass"
+    },
+    {
+      "reason": "Scoped retrospective obligation fulfilled; see intake and verification. Application release remains failed.",
+      "id": "timing",
+      "rule": "Canonical session conformance and scoped retrospective review",
+      "evidence": [
+        "docs/builds/xdx-attempt-review/intake-and-learning-register.md",
+        "docs/builds/xdx-attempt-review/verification.md",
+        "docs/attempts/attempt-001.md"
+      ],
+      "status": "pass"
+    },
+    {
+      "reason": "Scoped retrospective obligation fulfilled; see intake and verification. Application release remains failed.",
+      "id": "cleanup",
+      "rule": "Canonical session conformance and scoped retrospective review",
+      "evidence": [
+        "docs/builds/xdx-attempt-review/intake-and-learning-register.md",
+        "docs/builds/xdx-attempt-review/verification.md",
+        "docs/attempts/attempt-001.md"
+      ],
+      "status": "pass"
+    },
+    {
+      "reason": "Scoped retrospective obligation fulfilled; see intake and verification. Application release remains failed.",
+      "id": "delivery",
+      "rule": "Canonical session conformance and scoped retrospective review",
+      "evidence": [
+        "docs/builds/xdx-attempt-review/intake-and-learning-register.md",
+        "docs/builds/xdx-attempt-review/verification.md",
+        "docs/attempts/attempt-001.md"
+      ],
+      "status": "pass"
+    }
+  ],
+  "timeTracker": "docs/builds/xdx-attempt-review/time-tracker.md",
+  "checkpointUtc": "2026-09-20T03:17:10.9194632Z",
+  "reviewNotes": "Historical evidence review only. Preserve source and write guards; no runtime reproduction or new architecture implementation. No objects operated on.",
+  "learningRegister": "docs/builds/xdx-attempt-review/intake-and-learning-register.md",
+  "sessionId": "xdx-failed-attempt-review-20260919",
+  "noObjectsReason": "Documentation and Git isolation only; no resource operation or schema changes.",
+  "branch": "TestingWFBuildTools",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "phase": "Closeout"
+}

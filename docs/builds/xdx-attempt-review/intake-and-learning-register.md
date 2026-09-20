@@ -1,0 +1,10 @@
+# Intake and learning register
+
+Task: xdx-failed-attempt-review-20260919
+Scope: retrospective design/prompt/evidence review, base-reference retirement and local publication safeguards. User explicitly terminated the attempt and prohibited GitHub upload. No new app build, runtime repair, API calls, deletion, remote mutation or publication is authorized by this review.
+Outcome: self-contained base attempts log; failed delivery classification; no operational links to the abandoned checkout; preserve unrelated changes and local evidence.
+Object inventory: suppliers, addresses, sites and contacts are historical outcome categories only. No operation contracts are changed or exercised; object-reference selection and release validation are not applicable to this documentation/Git task.
+Applicable guidance: canonical evidence boundaries, native InvokeAction versus Query distinction, scoped verification, dependency retirement and continuous timing. Review retained evidence without replaying writes. Root cause claims must distinguish observed symptoms, contributing design/process weaknesses and unknown platform mechanisms.
+Verification: scoped text/link scan, Git exclusion and publication checks, source hashes, clean task-owned diff, Startup and Closeout receipts. Application acceptance remains failed regardless of review closeout.
+
+Closeout disposition: review completed; failed delivery recorded in ATTEMPTS.md and the detailed assessment. Startup references retired at their base owners, historical planning preserved as inactive evidence, nested checkouts ignored, local Git push safeguards installed and tested. Existing canonical lifecycle rules already cover the evidence gap; no new reusable policy or resource-contract change established. No failed implementation imported. Unrelated base state and the abandoned evidence checkout remain unchanged. Confidence B: fresh local retirement/isolation checks pass; historical application defects remain technically unresolved and GitHub heads inspection is not a complete historical-object audit.

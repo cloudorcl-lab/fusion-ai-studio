@@ -1,0 +1,40 @@
+{
+  "capturedUtc": "2026-09-20T03:09:53.8859108Z",
+  "attempt": "001",
+  "head": "9441388bb0c5280e334a72e9ba4a310c363fa9c3",
+  "sources": [
+    {
+      "label": "plan",
+      "sha256": "c580d46a986285269bfcb082008cca1f9da4cc1caeb9e89d2ecd9dd98ecebe6a"
+    },
+    {
+      "label": "prompt",
+      "sha256": "7d5d98aeaa1d68cebe4933cfbc8a28e46c5c2119407ce16e5054c3a98970dd34"
+    },
+    {
+      "label": "tracker",
+      "sha256": "2765e664ec423b2d3999f7dfed4147a8f284e34e4fb53e7bf6f9e23d20a1731b"
+    },
+    {
+      "label": "nativeDiagnostic",
+      "sha256": "6652fcf703c415241dde2caa4907b58f7b4021d25ee8bb42e8cd95da6384003e"
+    },
+    {
+      "label": "guidedDelivery",
+      "sha256": "ea2fbfc7afc36b43f706138eac41e163d18c33d36cd2b15c87b2c59cbf4d470f"
+    },
+    {
+      "label": "persistence",
+      "sha256": "c23d9f7f9773409db2de3edfd0a669e95bf6a3a2d92244ab099f47e21a65551c"
+    },
+    {
+      "label": "browser",
+      "sha256": "3ff2eb6d958ffef522003226a61dd853885d89274cd45c88e47e972463539e03"
+    },
+    {
+      "label": "intake",
+      "sha256": "9c430c9723984db1f008f474bc57cbf2a186576296b496f6747c0006b30b8c93"
+    }
+  ],
+  "note": "Retained-source fingerprints only; no checkout paths, runtime artifacts or source payloads imported."
+}

@@ -1,5 +1,7 @@
 # XDX Supplier Workspace — reusable build prompt
 
+> RETIRED 2026-09-19: failed attempt; historical planning only. All implementation/startup instructions below are inactive. Do not resume or publish. See [attempt 001](../../attempts/attempt-001.md). Checkout/branch destinations have been removed; original versions remain in local Git history.
+
 Use after reviewing the [proposed plan](xdx_supplier_workspace_plan.md). This prompt is a build instruction draft, not evidence that implementation, publication or live tests are approved.
 
 ```text
@@ -15,7 +17,7 @@ Read docs/handoffs/ACTIVE_HANDOFF.md first, then the entire canonical playbook a
 
 Confirm the proposed intake checkpoint before app artifacts: business outcome, users, source, first-load experience, query/create/export/email actions, side effects, launch context and acceptance evidence. Carry forward the confirmed summary-only email choice. Resolve material business gaps; discover technical IDs and capabilities yourself. Do not reinterpret a request for a plan as authorization to implement.
 
-For the approved new build, follow agent-app-build-startup/AGENTS.md: committed current governance, branch codex/xdx-supplier-workspace, worktree .worktrees/xdx-supplier-workspace, fresh Codex run and build records under docs/builds/xdx-supplier-workspace/. Run both required verifiers. Complete requirement slices, architecture self-review and approved MVP golden-path manifest before artifact work. Preserve unrelated changes. Follow XDX artifact naming.
+For the approved new build, follow agent-app-build-startup/AGENTS.md: committed current governance, branch [retired branch], worktree [retired local checkout], fresh Codex run and build records under [retired build records]. Run both required verifiers. Complete requirement slices, architecture self-review and approved MVP golden-path manifest before artifact work. Preserve unrelated changes. Follow XDX artifact naming.
 
 DESIGN AND CAPABILITY PROOF
 Prefer one app-backed workflow with explicit routes and reuse src/businessObjects/xdx_supplier_information.bo (XDX_SUPPLIER_INFORMATION). Inspect its seven GET and four POST contracts; existing source-API evidence does not prove remote BO or app operation. Extend only for approved requirements. Initial children are addresses, sites and contacts; no updates/deletes, bulk import, bank details, site assignments or contact-user provisioning.
