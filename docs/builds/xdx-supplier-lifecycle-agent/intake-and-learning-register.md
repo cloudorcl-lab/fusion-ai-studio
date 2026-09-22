@@ -19,3 +19,13 @@ Environment: active root env.properties only. Reuse server XDX supplier BO defin
 
 ## Execution intake
 The plan owns outcomes, routes, state, phases, source scope and measurable correctness. P0 must fill authenticated execution identity, exact Ask Oracle binding, source field contracts/children, model placement, approved test identities and live-write counts before dependent artifacts or operations. These are execution gates, not completed planning evidence.
+
+## Worktree bootstrap reconciliation — 2026-09-22
+
+Session/task: `01a0c9e8-b085-7720-8d22-94df575b2834`. Authority: current explicit request to create the exact worktree, preserve one active goal without a token budget and execute the approved plan under canonical gates. This session began in the base; it can prepare governance evidence but cannot replace the required fresh worktree run.
+
+Observed correction: the prior handoff claimed an existing worktree, but `git worktree list --porcelain` listed only the base and the target path did not exist. Committed handoff `44c0d23` is a direct child of base HEAD `b1e9b4a` and changes only the handoff. Created the requested branch/worktree from that commit, leaving the base's modified handoff, skill-audit records and temp files untouched. Worktree owner is this task; cleanup only after accepted integration or explicit abandonment with evidence preservation.
+
+Selected reviewed references remain suppliers, addresses, sites and contacts (Oracle 26C/API 11.13.18.05). P0 must still inventory every additional/nested child and create capability before architecture reliance. The first-success samples remain immutable. No current tenant/schema claim is inferred from historical examples.
+
+All eight receipt groups remain planned for the full delivery goal. Startup preparation does not pass P0-P9. Runtime/app-stage/ATLAS/model/judge tests are pending, not excluded. Preserve exact-payload approval, version-safe BO reuse, intended-field/persisted-field comparison and independent UI acceptance. No new reusable lifecycle or resource lesson is established by bootstrap; the existing fresh-run and checkout-verification rules already cover this correction. Timing reconstruction and gaps are in time-tracker.md.

@@ -1,5 +1,7 @@
 # Planning and Bootstrap Verification
 
+Current 2026-09-22 bootstrap evidence is in [xdx_bootstrap_20260922.json](evidence/xdx_bootstrap_20260922.json), [package check](evidence/xdx_startup_package_20260922.txt) and [session Startup check](evidence/xdx_session_startup_20260922.txt). The worktree was absent at current inspection and recreated from `44c0d23` under explicit user authority. These local checks do not establish runtime acceptance. The following 2026-09-20 receipt is historical, including its former checkout state and live discovery identity.
+
 Observed delivery checkpoint: 2026-09-20T13:29:29.4207865Z
 
 - Base: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1 on TestingWFBuildTools; initial clean HEAD 150b301f3a3452851fbc65be455c45e4f11f6dc9.

@@ -1,0 +1,35 @@
+{
+  "sessionId": "01a0c9e8-b085-7720-8d22-94df575b2834",
+  "checkedUtc": "2026-09-22T16:23:54.7025481Z",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-lifecycle-agent",
+  "branch": "codex/xdx-supplier-lifecycle-agent",
+  "creationHead": "44c0d23d3222c6ea8e6a5ca43d4d29f973022197",
+  "initialWorktrees": "Only base checkout; target directory absent",
+  "creationAuthority": "Explicit user request",
+  "creationSource": "Verified committed goal handoff, direct child of base b1e9b4a",
+  "baseChangesPreserved": [
+    "docs/handoffs/ACTIVE_HANDOFF.md",
+    "docs/builds/xdx-aistudio-skill-audit-20260921/",
+    "temp/"
+  ],
+  "activeEnvMatchesBase": true,
+  "environmentValuesPrinted": false,
+  "tempPromptMatchesCanonical": true,
+  "tempPromptMatchesRequestedBaseFile": true,
+  "hostSessionRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "freshWorktreeSession": false,
+  "goalStatus": "active",
+  "tokenBudget": null,
+  "runtimePhasesAccepted": [],
+  "closeout": "pending",
+  "cleanupTrigger": "Accepted integration or explicit abandonment with evidence preservation",
+  "preparationCorrection": "Created missing evidence directory after first receipt-write attempt; existing receipt and timing retained.",
+  "gates": {
+    "closeout": "PENDING",
+    "policy": "PASS",
+    "startupPackage": "PASS",
+    "sessionStartup": "PASS",
+    "runtime": "PENDING"
+  },
+  "deliveryCheckpointUtc": "2026-09-22T16:25:15.7728356Z"
+}
