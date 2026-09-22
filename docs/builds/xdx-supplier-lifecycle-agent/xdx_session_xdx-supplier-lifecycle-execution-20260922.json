@@ -5,7 +5,7 @@
   "branch": "codex/xdx-supplier-lifecycle-agent",
   "phase": "Startup",
   "startedUtc": "2026-09-22T16:56:59.177006Z",
-  "checkpointUtc": "2026-09-22T20:39:10.9884867Z",
+  "checkpointUtc": "2026-09-22T20:44:09.6640312Z",
   "reads": [
     {
       "path": "AGENTS.md",
@@ -13,7 +13,7 @@
     },
     {
       "path": "docs/handoffs/ACTIVE_HANDOFF.md",
-      "sha256": "289c283965cd19b89848d310b27670e2711ee07dbb4079e0d4ac4b7a49181d82"
+      "sha256": "325565b26d4991534e3e9324770e24f53cde16761fe20763cabbc24eeb3cac9e"
     },
     {
       "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
@@ -84,7 +84,7 @@
       "sha256": "b0ea36438cc4697a781c05104895647ef0fda76b8a19dd9ce4a5a74df2940061"
     }
   ],
-  "reviewNotes": "Revalidated after P2 file-backed cumulative acceptance. Workflow DRAFT remains version 86040319/ETag12. Local P1/P2 contracts and structural validation pass; canonical workflow suite is 7/7 and app suite is 1/1 with no failures or pending judges. Exact post-checkpoint generation, Node wall, workflow runtime and parsing timings are retained in xdx_p2_timing.jsonl. Signed-in multi-turn child-query acceptance remains open. No BO POST or business-data write occurred.",
+  "reviewNotes": "Revalidated after P2 file-backed acceptance and the first signed-in UI attempt. Workflow 7/7 and app 1/1 remain passed. The live Chrome attempt reached the Oracle Fusion sign-in page; the tab is retained for user authentication, after which read-only Ask Oracle child-route acceptance resumes. No credentials were entered and no BO POST or business-data write occurred.",
   "objectReferences": [
     {
       "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
@@ -186,8 +186,8 @@
     {
       "id": "verification",
       "rule": "Gates 3-9 and QA",
-      "status": "pass",
-      "reason": "P1 and P2 file-backed gates pass: workflow 7/7 and app 1/1. P2 signed-in multi-turn child-query evidence plus P3-P9, final signed-in acceptance and Closeout remain pending.",
+      "status": "planned",
+      "reason": "P1 and P2 file-backed gates pass: workflow 7/7 and app 1/1. P2 signed-in UI acceptance is waiting at Oracle Fusion login; P3-P9, final UI acceptance and Closeout remain pending.",
       "evidence": [
         "scripts/tests/xdx-supplier-lifecycle/p1-state-contract.cjs",
         "scripts/tests/xdx-supplier-lifecycle/p2-query-contract.cjs",
@@ -221,7 +221,7 @@
     }
   ],
   "unresolved": [
-    "Complete signed-in read-only Ask Oracle P2 acceptance for selected-supplier child routes",
+    "User signs in on the retained Oracle Fusion Chrome tab, then complete read-only P2 Ask Oracle child-route acceptance",
     "Implement and accept P3-P9 plus final signed-in Ask Oracle runtime acceptance",
     "Obtain concrete live-write authority before the first supplier or child POST",
     "Complete model placement, learning/dependency review, Closeout verifier and scoped commits"
@@ -229,6 +229,6 @@
   "metrics": {
     "tokens": "Full input/output/cached breakdown unavailable; record tool receipts where supplied.",
     "aiUnits": "P1+P2 cumulative workflow suite: 35 AI Units; 8,861 input and 470 output tokens; app report did not emit token or AI Unit totals.",
-    "timingGaps": "P2 JSON-authoring and response-review intervals before 2026-09-22T20:23:12.1582639Z were not separately instrumented and remain explicitly unavailable. All subsequent test steps are recorded in evidence/xdx_p2_timing.jsonl; one failed parser stopwatch was lost when its assertion threw and is disclosed."
+    "timingGaps": "P2 JSON-authoring and response-review intervals before 2026-09-22T20:23:12.1582639Z were not separately instrumented and remain explicitly unavailable. All subsequent test steps, including the UI authentication boundary, are recorded in evidence/xdx_p2_timing.jsonl; one failed parser stopwatch was lost when its assertion threw and is disclosed."
   }
 }
