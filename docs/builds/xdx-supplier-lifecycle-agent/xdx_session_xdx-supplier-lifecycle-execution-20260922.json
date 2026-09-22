@@ -5,7 +5,7 @@
   "branch": "codex/xdx-supplier-lifecycle-agent",
   "phase": "Startup",
   "startedUtc": "2026-09-22T16:56:59.177006Z",
-  "checkpointUtc": "2026-09-22T20:44:09.6640312Z",
+  "checkpointUtc": "2026-09-22T22:21:08.7571743Z",
   "reads": [
     {
       "path": "AGENTS.md",
@@ -13,11 +13,11 @@
     },
     {
       "path": "docs/handoffs/ACTIVE_HANDOFF.md",
-      "sha256": "325565b26d4991534e3e9324770e24f53cde16761fe20763cabbc24eeb3cac9e"
+      "sha256": "ab4f28322a00599f519ab50d63b1a10f4031206f7c382864d74dc2c067294fb1"
     },
     {
       "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
-      "sha256": "ed973f9290d77441f82bd4719909d5265cbcf9a12c2af03bd20b1de742577782"
+      "sha256": "d479e779367865df57c77a3d5e843f5a668764a413bf847ccf68814d919015e0"
     },
     {
       "path": "docs/lessons/objects/README.md",
@@ -82,9 +82,13 @@
     {
       "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
       "sha256": "b0ea36438cc4697a781c05104895647ef0fda76b8a19dd9ce4a5a74df2940061"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-lifecycle-agent/child-resource-slice-review.md",
+      "sha256": "83989f5e21530a16498eb31e213ed0734cf50a24fec2787dfe99f632cfa99795"
     }
   ],
-  "reviewNotes": "Revalidated after P2 file-backed acceptance and the first signed-in UI attempt. Workflow 7/7 and app 1/1 remain passed. The live Chrome attempt reached the Oracle Fusion sign-in page; the tab is retained for user authentication, after which read-only Ask Oracle child-route acceptance resumes. No credentials were entered and no BO POST or business-data write occurred.",
+  "reviewNotes": "P0-P2 accepted. Current target AI Agent Studio preview passes supplier, address, site and contact reads; configured workflow 10/10 and app 1/1 pass with no pending judges. Eight impossible planner combinations are accounted under finalSummaryAllowed true and are not described as executed. No BO POST or business-data write occurred.",
   "objectReferences": [
     {
       "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
@@ -150,7 +154,7 @@
       "id": "learning",
       "rule": "Instruction 1",
       "status": "pass",
-      "reason": "P0/P1 evidence and reusable ATLAS/runtime lessons are recorded; later-phase learning review remains open.",
+      "reason": "P0-P2 evidence and reusable ATLAS/runtime lessons are recorded; later-phase learning review remains open.",
       "evidence": [
         "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md"
       ]
@@ -159,7 +163,7 @@
       "id": "intake",
       "rule": "Gate 0 and universal intake",
       "status": "pass",
-      "reason": "P0 and P1 contracts are complete; P2-P9 continue under the approved plan.",
+      "reason": "P0-P2 contracts are complete; P3-P9 continue under the approved plan and child-slice review.",
       "evidence": [
         "docs/builds/xdx-supplier-lifecycle-agent/requirement-slice-register.md",
         "docs/builds/xdx-supplier-lifecycle-agent/architecture-self-review.md"
@@ -186,8 +190,8 @@
     {
       "id": "verification",
       "rule": "Gates 3-9 and QA",
-      "status": "planned",
-      "reason": "P1 and P2 file-backed gates pass: workflow 7/7 and app 1/1. P2 signed-in UI acceptance is waiting at Oracle Fusion login; P3-P9, final UI acceptance and Closeout remain pending.",
+      "status": "pass",
+      "reason": "P1/P2 local contracts, target AI Agent Studio runtime, configured workflow 10/10 and app 1/1 pass; P3-P9 remain planned under the active goal.",
       "evidence": [
         "scripts/tests/xdx-supplier-lifecycle/p1-state-contract.cjs",
         "scripts/tests/xdx-supplier-lifecycle/p2-query-contract.cjs",
@@ -216,19 +220,18 @@
       "id": "delivery",
       "rule": "Gate 10 and Definition of Done",
       "status": "planned",
-      "reason": "P0/P1 accepted; P2-P9, signed-in runtime acceptance and Closeout remain pending.",
+      "reason": "P0-P2 accepted; P3-P9, authorized live create/readback evidence, model placement and Closeout remain pending.",
       "evidence": []
     }
   ],
   "unresolved": [
-    "User signs in on the retained Oracle Fusion Chrome tab, then complete read-only P2 Ask Oracle child-route acceptance",
-    "Implement and accept P3-P9 plus final signed-in Ask Oracle runtime acceptance",
-    "Obtain concrete live-write authority before the first supplier or child POST",
+    "Complete and accept P3-P9 plus final signed-in AI Agent Studio runtime journeys",
+    "Obtain exact environment/count/identity/required-field payload approval before the first live POST",
     "Complete model placement, learning/dependency review, Closeout verifier and scoped commits"
   ],
   "metrics": {
     "tokens": "Full input/output/cached breakdown unavailable; record tool receipts where supplied.",
-    "aiUnits": "P1+P2 cumulative workflow suite: 35 AI Units; 8,861 input and 470 output tokens; app report did not emit token or AI Unit totals.",
-    "timingGaps": "P2 JSON-authoring and response-review intervals before 2026-09-22T20:23:12.1582639Z were not separately instrumented and remain explicitly unavailable. All subsequent test steps, including the UI authentication boundary, are recorded in evidence/xdx_p2_timing.jsonl; one failed parser stopwatch was lost when its assertion threw and is disclosed."
+    "aiUnits": "Current cumulative workflow suite: 50 AI Units; 9,810 input and 920 output tokens; app report did not emit separate token or AI Unit totals.",
+    "timingGaps": "P2 JSON-authoring and response-review intervals before 2026-09-22T20:23:12.1582639Z were not separately instrumented. Later JSON generation, exact Node commands, Node wall, workflow runtime when exposed, result, evidence and rerun reasons are recorded in evidence/xdx_p2_timing.jsonl; null timing fields are not inferred."
   }
 }

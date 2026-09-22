@@ -66,6 +66,16 @@
         "nodeCode": "FIND_SUPPLIERS_BY_NAME"
       },
       {
+        "id": "path-must-execute-prepare_supplier_result",
+        "name": "PREPARE_SUPPLIER_RESULT executes",
+        "nodeCode": "PREPARE_SUPPLIER_RESULT"
+      },
+      {
+        "id": "path-must-execute-post_supplier_lookup_router",
+        "name": "POST_SUPPLIER_LOOKUP_ROUTER executes",
+        "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
+      },
+      {
         "id": "path-must-execute-normalize_read_result",
         "name": "NORMALIZE_READ_RESULT executes",
         "nodeCode": "NORMALIZE_READ_RESULT"
@@ -79,11 +89,6 @@
         "id": "path-must-execute-project_response_text",
         "name": "PROJECT_RESPONSE_TEXT executes",
         "nodeCode": "PROJECT_RESPONSE_TEXT"
-      },
-      {
-        "id": "path-must-execute-lifecycle_terminal",
-        "name": "LIFECYCLE_TERMINAL executes",
-        "nodeCode": "LIFECYCLE_TERMINAL"
       },
       {
         "id": "path-must-execute-query_response",
@@ -128,9 +133,9 @@
         "nodeCode": "LIST_SUPPLIER_CONTACTS"
       },
       {
-        "id": "path-must-not-execute-human_collect",
-        "name": "HUMAN_COLLECT does not execute",
-        "nodeCode": "HUMAN_COLLECT"
+        "id": "path-must-not-execute-save_prepared_read_state",
+        "name": "SAVE_PREPARED_READ_STATE does not execute",
+        "nodeCode": "SAVE_PREPARED_READ_STATE"
       }
     ]
   },
@@ -174,14 +179,14 @@
   "testData": {
     "status": "ready",
     "capturePolicy": "record-now",
-    "recordedAt": "2026-09-22T20:06:06.334Z",
+    "recordedAt": "2026-09-22T21:38:12.908Z",
     "nodes": {
       "FIND_SUPPLIERS_BY_NAME": {
         "nodeType": "BO_FUNCTION",
         "capture": {
           "mode": "raw",
           "responseTruncated": false,
-          "jobId": "771b1cd2-8d79-413c-9019-23d7bcc90ba3",
+          "jobId": "8d27fff1-7620-4045-8d03-c752d280c7a6",
           "finishReason": "stop"
         },
         "metadata": {
@@ -219,15 +224,5 @@
         }
       }
     }
-  },
-  "pathBinding": {
-    "derivedFrom": "live_execution",
-    "pathSource": "observed",
-    "inputHash": "7d890e7b78b7d32c",
-    "workflowDefinitionHash": "76a150d267c326f3",
-    "observedAt": "2026-09-22T20:06:06.334Z",
-    "observedTerminalNodeCode": "QUERY_RESPONSE",
-    "workflowStatus": "DRAFT",
-    "workflowVersion": 86040319
   }
 }

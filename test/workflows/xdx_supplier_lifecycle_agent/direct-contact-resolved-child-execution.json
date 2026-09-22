@@ -1,0 +1,315 @@
+{
+  "testName": "direct-contact-resolved-child-execution",
+  "tags": [
+    "ai-agent-studio",
+    "child-contact",
+    "p2",
+    "read-only"
+  ],
+  "scenario": {
+    "custom": true,
+    "source": "user",
+    "intent": "Resolve supplier number 1264, execute LIST_SUPPLIER_CONTACTS with the prepared SupplierId, and render the four-column contact result.",
+    "appStage": "Query"
+  },
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT"
+  },
+  "authoring": {
+    "source": "model-authored",
+    "createdAt": "2026-09-22T21:59:49.473Z",
+    "userPrompt": "Record the supported Agentic App Query that resolves supplier 1264 and executes the contact child BO."
+  },
+  "input": {
+    "message": "Show contacts for supplier number 1264",
+    "triggerType": "app",
+    "parameters": {
+      "appHint": "Query",
+      "OraUserContext": "",
+      "OraAppContext": ""
+    }
+  },
+  "defaults": {
+    "dataSource": "file",
+    "evaluationMode": "hybrid"
+  },
+  "assertions": {
+    "contains": [],
+    "notContains": []
+  },
+  "pathAssertions": {
+    "mustExecute": [
+      {
+        "id": "path-must-execute-app-stage-router",
+        "name": "APP_STAGE_ROUTER executes",
+        "nodeCode": "APP_STAGE_ROUTER"
+      },
+      {
+        "id": "path-must-execute-reduce-lifecycle",
+        "name": "REDUCE_LIFECYCLE executes",
+        "nodeCode": "REDUCE_LIFECYCLE"
+      },
+      {
+        "id": "path-must-execute-save-lifecycle",
+        "name": "SAVE_LIFECYCLE executes",
+        "nodeCode": "SAVE_LIFECYCLE"
+      },
+      {
+        "id": "path-must-execute-read-action-router",
+        "name": "READ_ACTION_ROUTER executes",
+        "nodeCode": "READ_ACTION_ROUTER"
+      },
+      {
+        "id": "path-must-execute-find-suppliers-by-number",
+        "name": "FIND_SUPPLIERS_BY_NUMBER executes",
+        "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+      },
+      {
+        "id": "path-must-execute-prepare-supplier-result",
+        "name": "PREPARE_SUPPLIER_RESULT executes",
+        "nodeCode": "PREPARE_SUPPLIER_RESULT"
+      },
+      {
+        "id": "path-must-execute-post-supplier-lookup-router",
+        "name": "POST_SUPPLIER_LOOKUP_ROUTER executes",
+        "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
+      },
+      {
+        "id": "path-must-execute-list-supplier-contacts",
+        "name": "LIST_SUPPLIER_CONTACTS executes",
+        "nodeCode": "LIST_SUPPLIER_CONTACTS"
+      },
+      {
+        "id": "path-must-execute-normalize-read-result",
+        "name": "NORMALIZE_READ_RESULT executes",
+        "nodeCode": "NORMALIZE_READ_RESULT"
+      },
+      {
+        "id": "path-must-execute-save-read-state",
+        "name": "SAVE_READ_STATE executes",
+        "nodeCode": "SAVE_READ_STATE"
+      },
+      {
+        "id": "path-must-execute-project-response-text",
+        "name": "PROJECT_RESPONSE_TEXT executes",
+        "nodeCode": "PROJECT_RESPONSE_TEXT"
+      },
+      {
+        "id": "path-must-execute-query-response",
+        "name": "QUERY_RESPONSE executes",
+        "nodeCode": "QUERY_RESPONSE"
+      }
+    ],
+    "mustNotExecute": [
+      {
+        "id": "path-must-not-execute-init-display-response",
+        "name": "INIT_DISPLAY_RESPONSE does not execute",
+        "nodeCode": "INIT_DISPLAY_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-init-actions-response",
+        "name": "INIT_ACTIONS_RESPONSE does not execute",
+        "nodeCode": "INIT_ACTIONS_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-summary-response",
+        "name": "SUMMARY_RESPONSE does not execute",
+        "nodeCode": "SUMMARY_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-find-suppliers-by-name",
+        "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+        "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+      },
+      {
+        "id": "path-must-not-execute-list-supplier-sites",
+        "name": "LIST_SUPPLIER_SITES does not execute",
+        "nodeCode": "LIST_SUPPLIER_SITES"
+      },
+      {
+        "id": "path-must-not-execute-save-prepared-read-state",
+        "name": "SAVE_PREPARED_READ_STATE does not execute",
+        "nodeCode": "SAVE_PREPARED_READ_STATE"
+      },
+      {
+        "id": "path-must-not-execute-list-supplier-addresses",
+        "name": "LIST_SUPPLIER_ADDRESSES does not execute",
+        "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+      }
+    ]
+  },
+  "pathBinding": {
+    "derivedFrom": "live_execution",
+    "pathSource": "observed",
+    "inputHash": "214a4295019fd7b4",
+    "workflowDefinitionHash": "7f6c426e9e533ef5",
+    "observedAt": "2026-09-22T21:59:56.120Z",
+    "observedTerminalNodeCode": "QUERY_RESPONSE",
+    "workflowStatus": "DRAFT",
+    "workflowVersion": 86044912
+  },
+  "judge": {
+    "minimumScore": 4,
+    "expectedOutcome": "The response shows grounded Office Depot contact rows in exactly Contact, Job title, Email and Status columns after resolving supplier number 1264. It does not expose SupplierId or report a 404 or Human/wait error.",
+    "rubric": [
+      {
+        "id": "recorded-data-grounding",
+        "name": "Response stays grounded in recorded data",
+        "criterion": "The output is grounded in the replayed test data."
+      },
+      {
+        "id": "child-executed",
+        "name": "Contact child executed",
+        "criterion": "The result contains grounded supplier contact data after parent resolution."
+      },
+      {
+        "id": "four-columns",
+        "name": "Four columns",
+        "criterion": "The response uses exactly Contact, Job title, Email and Status business columns."
+      },
+      {
+        "id": "safe",
+        "name": "Safe output",
+        "criterion": "The response does not expose SupplierId or report a 404 or Human/wait error."
+      }
+    ],
+    "authoring": {
+      "source": "model-authored",
+      "scenarioId": "custom:direct-contact-resolved-child-execution",
+      "semanticNodeCodes": [
+        "QUERY_RESPONSE"
+      ],
+      "terminalOwnerCodes": [
+        "QUERY_RESPONSE"
+      ],
+      "contractHash": "a16339c16a5727a3"
+    }
+  },
+  "testData": {
+    "status": "ready",
+    "capturePolicy": "record-now",
+    "nodes": {
+      "FIND_SUPPLIERS_BY_NUMBER": {
+        "nodeType": "BO_FUNCTION",
+        "capture": {
+          "mode": "raw",
+          "responseTruncated": false,
+          "jobId": "68687fd8-beb6-4a61-b19f-e73c65766666",
+          "finishReason": "stop"
+        },
+        "metadata": {
+          "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+          "functionName": "FindSuppliersByValidatedFilter"
+        },
+        "input": {
+          "filter": "SupplierNumber='1264'",
+          "limit": 10,
+          "offset": 0
+        },
+        "response": {
+          "count": 1,
+          "hasMore": false,
+          "items": [
+            {
+              "@context": {
+                "headers": {
+                  "ETag": "ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A65787000000007770400000007737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000001217371007E00020000003A7371007E0002000000017371007E0002000000827372001B6F7261636C652E6A626F2E646F6D61696E2E4E756C6C56616C75655899C1C58DAABEEB02000149000A6D53514C54797065496478700000000C7371007E0002000000037371007E00020000000578"
+                },
+                "key": "300000047507596"
+              },
+              "BusinessRelationship": "Spend Authorized",
+              "InactiveDate": null,
+              "Supplier": "Office Depot",
+              "SupplierId": "300000047507596",
+              "SupplierNumber": "1264",
+              "SupplierType": "Supplier"
+            }
+          ],
+          "limit": 10,
+          "links": [
+            {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
+              "kind": "collection",
+              "name": "suppliers",
+              "rel": "self"
+            }
+          ],
+          "offset": 0
+        }
+      },
+      "LIST_SUPPLIER_CONTACTS": {
+        "nodeType": "BO_FUNCTION",
+        "capture": {
+          "mode": "model-compacted",
+          "responseTruncated": true,
+          "jobId": "68687fd8-beb6-4a61-b19f-e73c65766666",
+          "finishReason": "stop"
+        },
+        "metadata": {
+          "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+          "functionName": "ListSupplierContacts"
+        },
+        "input": {
+          "filter": "",
+          "limit": 10,
+          "offset": 0,
+          "suppliers_Id": "300000047507596"
+        },
+        "response": {
+          "count": 5,
+          "hasMore": false,
+          "items": [
+            {
+              "SupplierContactId": 300000047507658,
+              "ContactName": "Gasol, Jim",
+              "FirstName": "Jim",
+              "LastName": "Gasol",
+              "JobTitle": null,
+              "Email": "jgasol_eqih-dev21@oraclepdemos.com",
+              "Status": "ACTIVE"
+            },
+            {
+              "SupplierContactId": 300000051065977,
+              "ContactName": "Joly, Sophie",
+              "FirstName": "Sophie",
+              "LastName": "Joly",
+              "JobTitle": null,
+              "Email": "sjoly_eqih-dev21@oraclepdemos.com",
+              "Status": "ACTIVE"
+            },
+            {
+              "SupplierContactId": 300000076247068,
+              "ContactName": "Wenn, Max",
+              "FirstName": "Max",
+              "LastName": "Wenn",
+              "JobTitle": null,
+              "Email": "mwenn_eqih-dev21@oraclepdemos.com",
+              "Status": "ACTIVE"
+            },
+            {
+              "SupplierContactId": 300000095598392,
+              "ContactName": "Hull, Asher",
+              "FirstName": "Asher",
+              "LastName": "Hull",
+              "JobTitle": null,
+              "Email": "asher.hull_eqih-dev21@oraclepdemos.com",
+              "Status": "ACTIVE"
+            },
+            {
+              "SupplierContactId": 300000101110282,
+              "ContactName": "Suzuki, Jiro",
+              "FirstName": "Jiro",
+              "LastName": "Suzuki",
+              "JobTitle": null,
+              "Email": "jiro.suzuki_eqih-dev21@oraclepdemos.com",
+              "Status": "ACTIVE"
+            }
+          ],
+          "limit": 10,
+          "offset": 0,
+          "links": []
+        }
+      }
+    }
+  }
+}

@@ -646,6 +646,28 @@ This gate is mandatory and returns to Instruction 1.
 
 ## Golden-path-first QA standard
 
+### Mandatory AI Agent Studio test context
+
+Every workflow, app, runtime and UI test in this lifecycle MUST run in an AI Agent Studio context that is explicitly bound to the target artifact. Qualifying surfaces include the target workflow's supported Studio test/debug runner, ATLAS invoked for that workflow, and the target application's **Run app preview** or a published-app launch whose Studio artifact identity is recorded. Before sending a test prompt, record the Studio surface, target artifact code and lifecycle state (for example DRAFT preview or published).
+
+The global Fusion **Ask** chat, Oracle Digital Assistant, a generic Ask Oracle link, and every other unrelated chatbot are not AI Agent Studio test surfaces and cannot satisfy runtime or UI acceptance. If a prompt lands in one of those surfaces, stop there, label the attempt rejected for wrong test context, return to the target artifact in AI Agent Studio and rerun only from its bound test surface. Never treat a plausible chatbot response as target-artifact evidence.
+
+### Agentic App Query routes are non-suspending
+
+Before an application binds a workflow as `applicationMetadata.queryAgent`, resolve the workflow's `Query` stage target and traverse every structurally reachable root and nested edge, including `outcomes`, `convergenceTargetId` and `metadata.loopBackNodeId`. If any reachable node is `HUMAN` or `WAIT`, the application/workflow contract is incompatible. Fail local validation, save or sync preflight, phase acceptance and final-summary eligibility with a diagnostic that records the application code, workflow code, stage, offending node code and type, and the complete path.
+
+`aiAppsCompatibleFlag`, an app-shaped trigger sent to a workflow debug runner, and passing workflow `HUMAN` or `WAIT` conversation tests do not waive this rule. Those results establish workflow-debug behavior only. Keep a suspending conversation in a standalone workflow that is not an Agentic App `queryAgent`, or redesign every app `Query` invocation to terminate through supported non-suspending nodes.
+
+The first Query-stage acceptance gate for every Agentic App must execute one live expected user path through the target application's **Run app preview** or the published target application. An `InitDisplay` app test, workflow debug test, local expression assertion or other stage cannot substitute for this proof. Do not accept the phase or expand downstream tests until this exact path passes.
+
+### Prove every REST path binding after a producer change
+
+For every `BO_FUNCTION` REST path token, prove before remote save that every incoming route resolves the matching node input from the current authoritative producer to a nonblank, type-valid value. Introducing or changing a resolver, preparer, normalizer or router invalidates prior binding evidence. Rebind every downstream consumer and rerun the focused binding tests before saving the DRAFT.
+
+A child route is not accepted by separately proving its parent lookup and injecting a mocked child response into a downstream normalizer. The configured golden path must execute the child BO node and trace that its path key equals the resolved parent key. Every enabled child BO needs at least one configured case in which the node MUST execute; a suite whose only assertions say the child node does not execute cannot satisfy that child's acceptance gate.
+
+Shared validation must inventory every `{pathToken}` in the referenced BO operation and require a matching workflow input. For each route reaching the BO node, it must reject a blank value, missing or unreachable producer, stale pre-transform owner, wrong-resource filter, or incompatible type. Regression fixtures must cover each supported route, including selection-state and self-contained parent-resolution paths, plus mutations for stale bindings, blank parents and missing producers.
+
 | Stage | Scope | Data/evaluation | Run condition | Exit |
 | --- | --- | --- | --- | --- |
 | Learning preflight | Prior lessons and build contract | Read-only review | First action | Applicable rules recorded |
@@ -978,6 +1000,9 @@ After every update:
 
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
+| 2026-09-22 | Explicit user correction during XDX Supplier Lifecycle signed-in testing | Require every runtime/UI test to originate from an AI Agent Studio surface bound to the target artifact. Reject global Fusion Ask, Digital Assistant and other chatbot evidence. | XDX draft app identity and DRAFT state verified in the Applications list; first query run from **Run app preview**; generic Fusion Ask attempt retained only as rejected-context evidence. |
+| 2026-09-22 | XDX Supplier Lifecycle Agent repeated runtime-boundary audit | Declare Agentic App Query routes non-suspending; require structural traversal for reachable `HUMAN`/`WAIT` nodes and a live target-app Query golden path before phase acceptance. | Independent audit showed P1 used a workflow-debug Human continuation while the only app test exercised `InitDisplay`; target DRAFT preview rejected the reachable Human/wait architecture. |
+| 2026-09-22 | XDX Supplier Lifecycle child-route 404 audit | Require route-complete REST path-token binding proof after every producer change and configured child-node execution evidence before DRAFT save or phase acceptance. | Independent audit found the new prepared parent state was not connected to address/site/contact BO inputs; local tests had injected child responses after the skipped boundary. |
 | 2026-09-22 | Explicit user correction after supplier worktree bootstrap | Removed mandatory fresh-session boundaries for worktree creation, governance changes and context checkpoints. Require in-session rereview, checkout verification and current-task Startup instead; retain optional restart commands. Supersedes the restart requirement in the 2026-09-18 and 2026-08-26 history rows. | Policy and session regressions, startup package checks and scoped governance Closeout recorded in the supplier build evidence. |
 | 2026-09-18 | User requested an executable restart command after a directory-only handoff | Require a verified, shell-quoted fresh-session command in the handoff and user response at every restart boundary; preserve approved scope. | Local codex help, exact path/branch, command parsing, documentation and session gates. |
 | 2026-09-17 | Supplier compliance audit | Require a current session conformance receipt with reviewed hashes, all obligation dispositions, timing and evidence; distinguish policy installation from execution; reject incomplete closeout. Reconcile status documents and outstanding requested activities. | Policy/session positive and negative checks; missed evidence recovery; scoped delivery review. |

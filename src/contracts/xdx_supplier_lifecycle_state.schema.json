@@ -22,7 +22,12 @@
     "lastMessage"
   ],
   "properties": {
-    "schemaVersion": { "type": "integer", "enum": [1] },
+    "schemaVersion": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
     "phase": {
       "type": "string",
       "enum": [
@@ -43,58 +48,181 @@
         "UNKNOWN"
       ]
     },
-    "revision": { "type": "integer", "minimum": 1 },
-    "requestId": { "type": "string", "minLength": 1, "maxLength": 128 },
-    "selectedSupplier": { "type": ["object", "null"] },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "selectedSupplier": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
     "query": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["kind", "term", "filter", "parentId", "limit", "offset", "hasMore", "status", "resource"],
+      "required": [
+        "kind",
+        "term",
+        "filter",
+        "parentId",
+        "targetKind",
+        "limit",
+        "offset",
+        "hasMore",
+        "status",
+        "resource"
+      ],
       "properties": {
-        "kind": { "type": "string", "maxLength": 40 },
-        "term": { "type": "string", "maxLength": 200 },
-        "filter": { "type": "string", "maxLength": 240 },
-        "parentId": { "type": "string", "maxLength": 80 },
-        "limit": { "type": "integer", "minimum": 1, "maximum": 25 },
-        "offset": { "type": "integer", "minimum": 0 },
-        "hasMore": { "type": "boolean" },
-        "status": { "type": "string", "enum": ["IDLE", "PENDING", "READY", "EMPTY", "ERROR"] },
-        "resource": { "type": "string", "maxLength": 80 }
+        "kind": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "term": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "filter": {
+          "type": "string",
+          "maxLength": 240
+        },
+        "parentId": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 25
+        },
+        "offset": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hasMore": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "IDLE",
+            "PENDING",
+            "READY",
+            "EMPTY",
+            "ERROR"
+          ]
+        },
+        "resource": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "targetKind": {
+          "type": "string",
+          "enum": [
+            "",
+            "ADDRESSES",
+            "SITES",
+            "CONTACTS"
+          ]
+        }
       }
     },
-    "queryResults": { "type": "array", "maxItems": 100 },
-    "selectionKeys": { "type": "array", "maxItems": 100 },
-    "referenceRecord": { "type": ["object", "null"] },
+    "queryResults": {
+      "type": "array",
+      "maxItems": 100
+    },
+    "selectionKeys": {
+      "type": "array",
+      "maxItems": 100
+    },
+    "referenceRecord": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
     "draft": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["resource", "intentText", "requiredFields"],
+      "required": [
+        "resource",
+        "intentText",
+        "requiredFields"
+      ],
       "properties": {
-        "resource": { "type": "string", "minLength": 1, "maxLength": 80 },
-        "intentText": { "type": "string", "maxLength": 2000 },
-        "requiredFields": { "type": "object" }
+        "resource": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "intentText": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "requiredFields": {
+          "type": "object"
+        }
       }
     },
-    "fieldProvenance": { "type": "object" },
-    "missingFields": { "type": "array", "items": { "type": "string" } },
+    "fieldProvenance": {
+      "type": "object"
+    },
+    "missingFields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "approvedSnapshot": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
-        "requestId": { "type": "string" },
-        "revision": { "type": "integer" },
-        "normalizedPayload": { "type": "object" },
-        "targetParent": { "type": ["object", "null"] }
+        "requestId": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "integer"
+        },
+        "normalizedPayload": {
+          "type": "object"
+        },
+        "targetParent": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
       }
     },
-    "operations": { "type": "array", "maxItems": 25 },
+    "operations": {
+      "type": "array",
+      "maxItems": 25
+    },
     "verification": {
       "type": "object",
-      "required": ["status", "checks"],
+      "required": [
+        "status",
+        "checks"
+      ],
       "properties": {
-        "status": { "type": "string" },
-        "checks": { "type": "array" }
+        "status": {
+          "type": "string"
+        },
+        "checks": {
+          "type": "array"
+        }
       }
     },
-    "lastMessage": { "type": "string", "maxLength": 2000 }
+    "lastMessage": {
+      "type": "string",
+      "maxLength": 2000
+    }
   }
 }

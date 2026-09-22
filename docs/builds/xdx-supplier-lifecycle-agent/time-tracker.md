@@ -93,3 +93,27 @@ The append-only machine-readable record at `docs/builds/xdx-supplier-lifecycle-a
 2026-09-22 P2 delivery state: local P1 and P2 contracts pass; workflow structure validates; canonical workflow suite passes 7/7; app suite passes 1/1; no failed or pending judges. The full timing JSONL preserves individual continuation, failure and repair steps that are summarized in the table. P2 signed-in child-query acceptance remains open because the three selected-supplier routes require multi-turn UI state. P3-P9, model placement and Closeout remain open, so the active goal is not complete.
 
 2026-09-22T20:42:58.5525785Z - P2 signed-in Ask Oracle attempt reached the Oracle Fusion sign-in page because no authenticated Fusion tab was open. Browser navigation took 1.9485s and DOM extraction took 0.0658s; these nested durations are not added to an enclosing task interval. The tab is retained for user login handoff. No credentials were entered, no test prompt was submitted and no BO operation occurred. The machine-readable timing log contains this UI step. Work is paused at the authentication boundary; the goal remains active.
+
+### P1/P2 recurrence-repair checkpoint — 2026-09-22
+
+The correct AI Agent Studio DRAFT preview exposed two repeated contract failures. The Human/wait failure invalidated P1 app-runtime acceptance because prior Human continuation evidence came from workflow debug and the sole app test exercised `InitDisplay`. The next direct address attempt proved the wait-free graph reached the BO, then failed with HTTP 404 because the child nodes still read the reducer's blank parent instead of the preparer's resolved `SupplierId`. Independent read-only sub-agents audited both recurrences; their rules were merged into the canonical playbook and build register.
+
+The machine-readable JSONL contains every repair command and affected runtime attempt. Key measured steps: local non-suspension contract 0.091173s Node wall; prepared child-binding contract 0.094766s; structural validation 0.253705s; corrected DRAFT save 3.517026s; address app-preview observation 5.8132s; initial site observation 4.9524s; contact observation 4.9316s. The focused site presentation repair saved DRAFT v86044912 in 2.927241s and the affected app-preview rerun completed in 9.0314s. AI Agent Studio exposed no separate workflow-runtime clock for these preview executions, so `workflowSeconds` remains null rather than inferred from browser round trips.
+
+Current runtime result: direct address, site and contact queries for supplier number 1264 each execute the child BO and render ten grounded rows with exactly four business columns. No Human/wait or 404 error remains. P1/P2 are still reopened until ATLAS configured child-node execution tests and the cumulative app/workflow gates are rebuilt for the current graph. No BO POST or business-data write occurred.
+
+### P2 configured child execution and cumulative closure — 2026-09-22
+
+ATLAS reached a deferred-only state with zero create/update actions and `finalSummaryAllowed: true`. Eight predicted branch combinations were accounted after two valid-route observations because they combine mutually exclusive upstream states. They are not reported as executed. Three custom observed-path tests provide the required executable coverage: address, site and contact each execute `FIND_SUPPLIERS_BY_NUMBER`, `PREPARE_SUPPLIER_RESULT`, the matching child BO and `QUERY_RESPONSE`.
+
+The cumulative workflow suite passed 10/10 after one local-judge continuation: 9,810 input tokens, 920 output tokens, 50 AI Units and 10.3 seconds of reported workflow time. The enclosing Node command took 24.791150 seconds. Judge-result JSON generation took 0.217962 seconds; one attachment command took 0.563255 seconds. The app path binding was refreshed without a BO write; the app suite then passed 1/1 after one local judge. App judge JSON generation took 0.104529 seconds, attachment 0.541540 seconds and final-summary retrieval 0.376711 seconds.
+
+Discrete configured test receipts:
+
+| Resource | Record Node wall | Apply Node wall | Test Node wall | Workflow time | Assertions | Executed BO |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| Addresses | 8.413135s | 0.230511s | 6.041728s | 5.038s | 21/21 | `LIST_SUPPLIER_ADDRESSES` |
+| Sites | 5.804615s | 0.226312s | 4.895334s | 4.272s | 21/21 | `LIST_SUPPLIER_SITES` |
+| Contacts | 6.902717s | 0.230662s | 5.692802s | 4.965s | 21/21 | `LIST_SUPPLIER_CONTACTS` |
+
+The JSONL records the rejected planner-path attempts, compaction validation failure and correction, exact Node commands, rerun reasons and all available JSON-generation, Node-wall and workflow-runtime measures. Response parse/review values remain null where no separate stopwatch was run; they are not inferred from tool wall time. No BO POST or business-data write occurred. P0-P2 are accepted; P3-P9 and Closeout remain open.

@@ -1,16 +1,15 @@
 {
-  "testName": "read-action-router-search-number-path",
+  "testName": "direct-address-resolved-child-execution",
   "tags": [
+    "ai-agent-studio",
+    "child-address",
     "p2",
-    "read-only",
-    "supplier-search"
+    "read-only"
   ],
   "scenario": {
-    "custom": false,
-    "source": "sync-plan",
-    "id": "app-query-READ_ACTION_ROUTER-search-number-path",
-    "kind": "branch-path",
-    "intent": "Exercise the SEARCH NUMBER path of READ_ACTION_ROUTER and verify branch-specific downstream behavior.",
+    "custom": true,
+    "source": "user",
+    "intent": "Resolve supplier number 1264, execute LIST_SUPPLIER_ADDRESSES with the prepared SupplierId, and render the four-column address result.",
     "appStage": "Query"
   },
   "workflow": {
@@ -18,11 +17,11 @@
   },
   "authoring": {
     "source": "model-authored",
-    "createdAt": "2026-09-22T20:08:48.279Z",
-    "userPrompt": "Exercise the SEARCH_NUMBER branch with validated supplier number 1264 and a real bounded GET."
+    "createdAt": "2026-09-22T21:55:15.390Z",
+    "userPrompt": "Record the supported Agentic App Query that resolves supplier 1264 and executes the address child BO."
   },
   "input": {
-    "message": "Find supplier number 1264",
+    "message": "Show addresses for supplier number 1264",
     "triggerType": "app",
     "parameters": {
       "appHint": "Query",
@@ -41,107 +40,117 @@
   "pathAssertions": {
     "mustExecute": [
       {
-        "id": "path-must-execute-app_stage_router",
+        "id": "path-must-execute-app-stage-router",
         "name": "APP_STAGE_ROUTER executes",
         "nodeCode": "APP_STAGE_ROUTER"
       },
       {
-        "id": "path-must-execute-reduce_lifecycle",
+        "id": "path-must-execute-reduce-lifecycle",
         "name": "REDUCE_LIFECYCLE executes",
         "nodeCode": "REDUCE_LIFECYCLE"
       },
       {
-        "id": "path-must-execute-save_lifecycle",
+        "id": "path-must-execute-save-lifecycle",
         "name": "SAVE_LIFECYCLE executes",
         "nodeCode": "SAVE_LIFECYCLE"
       },
       {
-        "id": "path-must-execute-read_action_router",
+        "id": "path-must-execute-read-action-router",
         "name": "READ_ACTION_ROUTER executes",
         "nodeCode": "READ_ACTION_ROUTER"
       },
       {
-        "id": "path-must-execute-find_suppliers_by_number",
+        "id": "path-must-execute-find-suppliers-by-number",
         "name": "FIND_SUPPLIERS_BY_NUMBER executes",
         "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
       },
       {
-        "id": "path-must-execute-prepare_supplier_result",
+        "id": "path-must-execute-prepare-supplier-result",
         "name": "PREPARE_SUPPLIER_RESULT executes",
         "nodeCode": "PREPARE_SUPPLIER_RESULT"
       },
       {
-        "id": "path-must-execute-post_supplier_lookup_router",
+        "id": "path-must-execute-post-supplier-lookup-router",
         "name": "POST_SUPPLIER_LOOKUP_ROUTER executes",
         "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
       },
       {
-        "id": "path-must-execute-normalize_read_result",
+        "id": "path-must-execute-list-supplier-addresses",
+        "name": "LIST_SUPPLIER_ADDRESSES executes",
+        "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+      },
+      {
+        "id": "path-must-execute-normalize-read-result",
         "name": "NORMALIZE_READ_RESULT executes",
         "nodeCode": "NORMALIZE_READ_RESULT"
       },
       {
-        "id": "path-must-execute-save_read_state",
+        "id": "path-must-execute-save-read-state",
         "name": "SAVE_READ_STATE executes",
         "nodeCode": "SAVE_READ_STATE"
       },
       {
-        "id": "path-must-execute-project_response_text",
+        "id": "path-must-execute-project-response-text",
         "name": "PROJECT_RESPONSE_TEXT executes",
         "nodeCode": "PROJECT_RESPONSE_TEXT"
       },
       {
-        "id": "path-must-execute-query_response",
+        "id": "path-must-execute-query-response",
         "name": "QUERY_RESPONSE executes",
         "nodeCode": "QUERY_RESPONSE"
       }
     ],
     "mustNotExecute": [
       {
-        "id": "path-must-not-execute-init_display_response",
+        "id": "path-must-not-execute-init-display-response",
         "name": "INIT_DISPLAY_RESPONSE does not execute",
         "nodeCode": "INIT_DISPLAY_RESPONSE"
       },
       {
-        "id": "path-must-not-execute-init_actions_response",
+        "id": "path-must-not-execute-init-actions-response",
         "name": "INIT_ACTIONS_RESPONSE does not execute",
         "nodeCode": "INIT_ACTIONS_RESPONSE"
       },
       {
-        "id": "path-must-not-execute-summary_response",
+        "id": "path-must-not-execute-summary-response",
         "name": "SUMMARY_RESPONSE does not execute",
         "nodeCode": "SUMMARY_RESPONSE"
       },
       {
-        "id": "path-must-not-execute-find_suppliers_by_name",
+        "id": "path-must-not-execute-find-suppliers-by-name",
         "name": "FIND_SUPPLIERS_BY_NAME does not execute",
         "nodeCode": "FIND_SUPPLIERS_BY_NAME"
       },
       {
-        "id": "path-must-not-execute-list_supplier_addresses",
-        "name": "LIST_SUPPLIER_ADDRESSES does not execute",
-        "nodeCode": "LIST_SUPPLIER_ADDRESSES"
-      },
-      {
-        "id": "path-must-not-execute-list_supplier_sites",
+        "id": "path-must-not-execute-list-supplier-sites",
         "name": "LIST_SUPPLIER_SITES does not execute",
         "nodeCode": "LIST_SUPPLIER_SITES"
       },
       {
-        "id": "path-must-not-execute-list_supplier_contacts",
+        "id": "path-must-not-execute-list-supplier-contacts",
         "name": "LIST_SUPPLIER_CONTACTS does not execute",
         "nodeCode": "LIST_SUPPLIER_CONTACTS"
       },
       {
-        "id": "path-must-not-execute-save_prepared_read_state",
+        "id": "path-must-not-execute-save-prepared-read-state",
         "name": "SAVE_PREPARED_READ_STATE does not execute",
         "nodeCode": "SAVE_PREPARED_READ_STATE"
       }
     ]
   },
+  "pathBinding": {
+    "derivedFrom": "live_execution",
+    "pathSource": "observed",
+    "inputHash": "705a02a2dd053bb0",
+    "workflowDefinitionHash": "7f6c426e9e533ef5",
+    "observedAt": "2026-09-22T21:55:23.400Z",
+    "observedTerminalNodeCode": "QUERY_RESPONSE",
+    "workflowStatus": "DRAFT",
+    "workflowVersion": 86044912
+  },
   "judge": {
     "minimumScore": 4,
-    "expectedOutcome": "The response shows the supplier returned by the validated supplier-number search as a readable result with no more than four business columns. It preserves the recorded supplier number and name, does not expose internal IDs, and does not claim a write occurred.",
+    "expectedOutcome": "The response shows grounded Office Depot address rows in exactly Address, City, State and Country columns after resolving supplier number 1264. It does not expose SupplierId or report a 404 or Human/wait error.",
     "rubric": [
       {
         "id": "recorded-data-grounding",
@@ -149,44 +158,43 @@
         "criterion": "The output is grounded in the replayed test data."
       },
       {
-        "id": "four-column-result",
-        "name": "Four-column supplier result",
-        "criterion": "The response presents supplier number, supplier name, type, and relationship with no additional displayed data column."
+        "id": "child-executed",
+        "name": "Address child executed",
+        "criterion": "The result contains grounded supplier address data after parent resolution."
       },
       {
-        "id": "supplier-number-match",
-        "name": "Supplier number match",
-        "criterion": "The displayed supplier number and name agree with the recorded GET response."
+        "id": "four-columns",
+        "name": "Four columns",
+        "criterion": "The response uses exactly Address, City, State and Country business columns."
       },
       {
-        "id": "safe-read-output",
-        "name": "Safe read output",
-        "criterion": "The response omits internal SupplierId values and does not claim that any record was created or submitted."
+        "id": "safe",
+        "name": "Safe output",
+        "criterion": "The response does not expose SupplierId or report a 404 or Human/wait error."
       }
     ],
     "authoring": {
       "source": "model-authored",
-      "scenarioId": "app-query-READ_ACTION_ROUTER-search-number-path",
+      "scenarioId": "custom:direct-address-resolved-child-execution",
       "semanticNodeCodes": [
         "QUERY_RESPONSE"
       ],
       "terminalOwnerCodes": [
         "QUERY_RESPONSE"
       ],
-      "contractHash": "e2f0e4ddb4b59095"
+      "contractHash": "c5fbdacb8ced4018"
     }
   },
   "testData": {
     "status": "ready",
     "capturePolicy": "record-now",
-    "recordedAt": "2026-09-22T21:39:31.462Z",
     "nodes": {
       "FIND_SUPPLIERS_BY_NUMBER": {
         "nodeType": "BO_FUNCTION",
         "capture": {
           "mode": "raw",
           "responseTruncated": false,
-          "jobId": "ecded321-ce46-44a0-b485-2bce31146ee4",
+          "jobId": "f5db4c7b-4c6a-4fc8-91c7-92d335b9d317",
           "finishReason": "stop"
         },
         "metadata": {
@@ -227,6 +235,69 @@
             }
           ],
           "offset": 0
+        }
+      },
+      "LIST_SUPPLIER_ADDRESSES": {
+        "nodeType": "BO_FUNCTION",
+        "capture": {
+          "mode": "model-compacted",
+          "responseTruncated": true,
+          "jobId": "f5db4c7b-4c6a-4fc8-91c7-92d335b9d317",
+          "finishReason": "stop"
+        },
+        "metadata": {
+          "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+          "functionName": "ListSupplierAddresses"
+        },
+        "input": {
+          "filter": "",
+          "limit": 10,
+          "offset": 0,
+          "suppliers_Id": "300000047507596"
+        },
+        "response": {
+          "count": 5,
+          "hasMore": false,
+          "items": [
+            {
+              "SupplierAddressId": 300000047507644,
+              "AddressName": "OD US1",
+              "City": "BOCA RATON",
+              "State": "FL",
+              "Country": "United States"
+            },
+            {
+              "SupplierAddressId": 300000051065945,
+              "AddressName": "OD France",
+              "City": "Senlis",
+              "State": "Nord-Pas-de-Calais",
+              "Country": "France"
+            },
+            {
+              "SupplierAddressId": 300000076247058,
+              "AddressName": "OD Progress US",
+              "City": "FAIRFAX",
+              "State": "VA",
+              "Country": "United States"
+            },
+            {
+              "SupplierAddressId": 300000095598381,
+              "AddressName": "OD Univ US",
+              "City": "PHOENIX",
+              "State": "AZ",
+              "Country": "United States"
+            },
+            {
+              "SupplierAddressId": 300000101110262,
+              "AddressName": "OD Japan",
+              "City": "MEGURO",
+              "State": "Tokyo",
+              "Country": "Japan"
+            }
+          ],
+          "limit": 10,
+          "offset": 0,
+          "links": []
         }
       }
     }

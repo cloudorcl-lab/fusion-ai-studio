@@ -1,28 +1,27 @@
 {
-  "testName": "read-action-router-search-number-path",
+  "testName": "post-supplier-lookup-router-normalize-path",
   "tags": [
+    "branch-path",
     "p2",
-    "read-only",
-    "supplier-search"
+    "read-only"
   ],
   "scenario": {
     "custom": false,
     "source": "sync-plan",
-    "id": "app-query-READ_ACTION_ROUTER-search-number-path",
+    "id": "POST_SUPPLIER_LOOKUP_ROUTER-normalize-path",
     "kind": "branch-path",
-    "intent": "Exercise the SEARCH NUMBER path of READ_ACTION_ROUTER and verify branch-specific downstream behavior.",
-    "appStage": "Query"
+    "intent": "Exercise the NORMALIZE path of POST_SUPPLIER_LOOKUP_ROUTER and verify branch-specific downstream behavior."
   },
   "workflow": {
     "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT"
   },
   "authoring": {
     "source": "model-authored",
-    "createdAt": "2026-09-22T20:08:48.279Z",
-    "userPrompt": "Exercise the SEARCH_NUMBER branch with validated supplier number 1264 and a real bounded GET."
+    "createdAt": "2026-09-22T21:35:26.531Z",
+    "userPrompt": "Exercise the NORMALIZE path after a supplier-name lookup and verify four-column read-only output."
   },
   "input": {
-    "message": "Find supplier number 1264",
+    "message": "Find supplier Office Depot",
     "triggerType": "app",
     "parameters": {
       "appHint": "Query",
@@ -61,9 +60,9 @@
         "nodeCode": "READ_ACTION_ROUTER"
       },
       {
-        "id": "path-must-execute-find_suppliers_by_number",
-        "name": "FIND_SUPPLIERS_BY_NUMBER executes",
-        "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+        "id": "path-must-execute-find_suppliers_by_name",
+        "name": "FIND_SUPPLIERS_BY_NAME executes",
+        "nodeCode": "FIND_SUPPLIERS_BY_NAME"
       },
       {
         "id": "path-must-execute-prepare_supplier_result",
@@ -113,9 +112,9 @@
         "nodeCode": "SUMMARY_RESPONSE"
       },
       {
-        "id": "path-must-not-execute-find_suppliers_by_name",
-        "name": "FIND_SUPPLIERS_BY_NAME does not execute",
-        "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+        "id": "path-must-not-execute-find_suppliers_by_number",
+        "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+        "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
       },
       {
         "id": "path-must-not-execute-list_supplier_addresses",
@@ -141,7 +140,7 @@
   },
   "judge": {
     "minimumScore": 4,
-    "expectedOutcome": "The response shows the supplier returned by the validated supplier-number search as a readable result with no more than four business columns. It preserves the recorded supplier number and name, does not expose internal IDs, and does not claim a write occurred.",
+    "expectedOutcome": "The response displays the recorded Office Depot supplier result using exactly Supplier number, Supplier, Type and Relationship columns, without exposing SupplierId or claiming a write.",
     "rubric": [
       {
         "id": "recorded-data-grounding",
@@ -149,83 +148,69 @@
         "criterion": "The output is grounded in the replayed test data."
       },
       {
-        "id": "four-column-result",
-        "name": "Four-column supplier result",
-        "criterion": "The response presents supplier number, supplier name, type, and relationship with no additional displayed data column."
+        "id": "grounded",
+        "name": "Grounded result",
+        "criterion": "The response is grounded in the recorded Office Depot supplier result."
       },
       {
-        "id": "supplier-number-match",
-        "name": "Supplier number match",
-        "criterion": "The displayed supplier number and name agree with the recorded GET response."
+        "id": "four-columns",
+        "name": "Four columns",
+        "criterion": "The response uses exactly Supplier number, Supplier, Type and Relationship business columns."
       },
       {
-        "id": "safe-read-output",
-        "name": "Safe read output",
-        "criterion": "The response omits internal SupplierId values and does not claim that any record was created or submitted."
+        "id": "read-only",
+        "name": "Read only",
+        "criterion": "The response does not expose SupplierId or claim any create or submission."
       }
     ],
     "authoring": {
       "source": "model-authored",
-      "scenarioId": "app-query-READ_ACTION_ROUTER-search-number-path",
+      "scenarioId": "POST_SUPPLIER_LOOKUP_ROUTER-normalize-path",
       "semanticNodeCodes": [
         "QUERY_RESPONSE"
       ],
       "terminalOwnerCodes": [
         "QUERY_RESPONSE"
       ],
-      "contractHash": "e2f0e4ddb4b59095"
+      "contractHash": "80d518028c6ae964"
     }
   },
   "testData": {
     "status": "ready",
-    "capturePolicy": "record-now",
-    "recordedAt": "2026-09-22T21:39:31.462Z",
+    "capturePolicy": "model-generated",
+    "generatedAt": "2026-09-22T21:35:26.534Z",
+    "generationPrompt": "Exercise the NORMALIZE path after a supplier-name lookup and verify four-column read-only output.",
     "nodes": {
-      "FIND_SUPPLIERS_BY_NUMBER": {
+      "FIND_SUPPLIERS_BY_NAME": {
         "nodeType": "BO_FUNCTION",
         "capture": {
-          "mode": "raw",
-          "responseTruncated": false,
-          "jobId": "ecded321-ce46-44a0-b485-2bce31146ee4",
-          "finishReason": "stop"
+          "mode": "model-generated",
+          "responseTruncated": false
         },
         "metadata": {
           "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
-          "functionName": "FindSuppliersByValidatedFilter"
+          "functionName": "FindSuppliersByPartialName"
         },
         "input": {
-          "filter": "SupplierNumber='1264'",
           "limit": 10,
-          "offset": 0
+          "offset": 0,
+          "supplierName": "Office Depot"
         },
         "response": {
           "count": 1,
           "hasMore": false,
           "items": [
             {
-              "@context": {
-                "headers": {
-                  "ETag": "ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A65787000000007770400000007737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000001217371007E00020000003A7371007E0002000000017371007E0002000000827372001B6F7261636C652E6A626F2E646F6D61696E2E4E756C6C56616C75655899C1C58DAABEEB02000149000A6D53514C54797065496478700000000C7371007E0002000000037371007E00020000000578"
-                },
-                "key": "300000047507596"
-              },
               "BusinessRelationship": "Spend Authorized",
               "InactiveDate": null,
               "Supplier": "Office Depot",
-              "SupplierId": "300000047507596",
+              "SupplierId": 300000047507596,
               "SupplierNumber": "1264",
               "SupplierType": "Supplier"
             }
           ],
           "limit": 10,
-          "links": [
-            {
-              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
-              "kind": "collection",
-              "name": "suppliers",
-              "rel": "self"
-            }
-          ],
+          "links": [],
           "offset": 0
         }
       }

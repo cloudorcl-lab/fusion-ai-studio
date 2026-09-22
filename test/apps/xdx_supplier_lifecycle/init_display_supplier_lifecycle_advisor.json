@@ -83,16 +83,6 @@
         "nodeCode": "PROJECT_RESPONSE_TEXT"
       },
       {
-        "id": "path-must-not-execute-lifecycle_terminal",
-        "name": "LIFECYCLE_TERMINAL does not execute",
-        "nodeCode": "LIFECYCLE_TERMINAL"
-      },
-      {
-        "id": "path-must-not-execute-human_collect",
-        "name": "HUMAN_COLLECT does not execute",
-        "nodeCode": "HUMAN_COLLECT"
-      },
-      {
         "id": "path-must-not-execute-query_response",
         "name": "QUERY_RESPONSE does not execute",
         "nodeCode": "QUERY_RESPONSE"
@@ -103,6 +93,16 @@
         "nodeCode": "FIND_SUPPLIERS_BY_NAME"
       },
       {
+        "id": "path-must-not-execute-prepare_supplier_result",
+        "name": "PREPARE_SUPPLIER_RESULT does not execute",
+        "nodeCode": "PREPARE_SUPPLIER_RESULT"
+      },
+      {
+        "id": "path-must-not-execute-post_supplier_lookup_router",
+        "name": "POST_SUPPLIER_LOOKUP_ROUTER does not execute",
+        "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
+      },
+      {
         "id": "path-must-not-execute-normalize_read_result",
         "name": "NORMALIZE_READ_RESULT does not execute",
         "nodeCode": "NORMALIZE_READ_RESULT"
@@ -111,11 +111,6 @@
         "id": "path-must-not-execute-save_read_state",
         "name": "SAVE_READ_STATE does not execute",
         "nodeCode": "SAVE_READ_STATE"
-      },
-      {
-        "id": "path-must-not-execute-find_suppliers_by_number",
-        "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
-        "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
       },
       {
         "id": "path-must-not-execute-list_supplier_addresses",
@@ -131,6 +126,16 @@
         "id": "path-must-not-execute-list_supplier_contacts",
         "name": "LIST_SUPPLIER_CONTACTS does not execute",
         "nodeCode": "LIST_SUPPLIER_CONTACTS"
+      },
+      {
+        "id": "path-must-not-execute-save_prepared_read_state",
+        "name": "SAVE_PREPARED_READ_STATE does not execute",
+        "nodeCode": "SAVE_PREPARED_READ_STATE"
+      },
+      {
+        "id": "path-must-not-execute-find_suppliers_by_number",
+        "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+        "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
       },
       {
         "id": "path-must-not-execute-init_actions_response",
@@ -190,17 +195,17 @@
   "testData": {
     "status": "ready",
     "capturePolicy": "record-later",
-    "recordedAt": "2026-09-22T20:31:28.182Z",
+    "recordedAt": "2026-09-22T22:09:19.335Z",
     "nodes": {}
   },
   "pathBinding": {
     "derivedFrom": "live_execution",
     "pathSource": "observed",
     "inputHash": "d562f1e3186b1b4b",
-    "workflowDefinitionHash": "76a150d267c326f3",
-    "observedAt": "2026-09-22T20:31:28.183Z",
+    "workflowDefinitionHash": "7f6c426e9e533ef5",
+    "observedAt": "2026-09-22T22:09:19.336Z",
     "observedTerminalNodeCode": "INIT_DISPLAY_RESPONSE",
     "workflowStatus": "DRAFT",
-    "workflowVersion": 86040319
+    "workflowVersion": 86044912
   }
 }

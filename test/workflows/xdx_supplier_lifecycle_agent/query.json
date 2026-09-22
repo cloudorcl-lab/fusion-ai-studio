@@ -10,7 +10,7 @@
     "source": "sync-plan",
     "id": "app-query",
     "kind": "app-stage",
-    "intent": "Verify the workflow routes the Agentic App Query trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+    "intent": "Verify the target Agentic App Query route terminates without Human or wait nodes and returns the deterministic no-write cancellation response.",
     "appStage": "Query"
   },
   "workflow": {
@@ -35,8 +35,16 @@
     "evaluationMode": "hybrid"
   },
   "assertions": {
-    "contains": [],
-    "notContains": []
+    "contains": [
+      "Cancelled",
+      "No supplier data was written"
+    ],
+    "notContains": [
+      "wait nodes",
+      "human in the loop",
+      "submitted",
+      "created"
+    ]
   },
   "pathAssertions": {
     "mustExecute": [
@@ -66,11 +74,6 @@
         "nodeCode": "PROJECT_RESPONSE_TEXT"
       },
       {
-        "id": "path-must-execute-lifecycle_terminal",
-        "name": "LIFECYCLE_TERMINAL executes",
-        "nodeCode": "LIFECYCLE_TERMINAL"
-      },
-      {
         "id": "path-must-execute-query_response",
         "name": "QUERY_RESPONSE executes",
         "nodeCode": "QUERY_RESPONSE"
@@ -98,6 +101,16 @@
         "nodeCode": "FIND_SUPPLIERS_BY_NAME"
       },
       {
+        "id": "path-must-not-execute-prepare_supplier_result",
+        "name": "PREPARE_SUPPLIER_RESULT does not execute",
+        "nodeCode": "PREPARE_SUPPLIER_RESULT"
+      },
+      {
+        "id": "path-must-not-execute-post_supplier_lookup_router",
+        "name": "POST_SUPPLIER_LOOKUP_ROUTER does not execute",
+        "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
+      },
+      {
         "id": "path-must-not-execute-normalize_read_result",
         "name": "NORMALIZE_READ_RESULT does not execute",
         "nodeCode": "NORMALIZE_READ_RESULT"
@@ -106,11 +119,6 @@
         "id": "path-must-not-execute-save_read_state",
         "name": "SAVE_READ_STATE does not execute",
         "nodeCode": "SAVE_READ_STATE"
-      },
-      {
-        "id": "path-must-not-execute-find_suppliers_by_number",
-        "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
-        "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
       },
       {
         "id": "path-must-not-execute-list_supplier_addresses",
@@ -128,30 +136,35 @@
         "nodeCode": "LIST_SUPPLIER_CONTACTS"
       },
       {
-        "id": "path-must-not-execute-human_collect",
-        "name": "HUMAN_COLLECT does not execute",
-        "nodeCode": "HUMAN_COLLECT"
+        "id": "path-must-not-execute-save_prepared_read_state",
+        "name": "SAVE_PREPARED_READ_STATE does not execute",
+        "nodeCode": "SAVE_PREPARED_READ_STATE"
+      },
+      {
+        "id": "path-must-not-execute-find_suppliers_by_number",
+        "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+        "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
       }
     ]
   },
   "judge": {
     "minimumScore": 4,
-    "expectedOutcome": "The Ask Oracle Query response confirms cancellation and states that no supplier data was written, without claiming any create or submission.",
+    "expectedOutcome": "The target Agentic App Query response confirms cancellation and states that no supplier data was written. It terminates in the Query response without requesting a Human or wait continuation.",
     "rubric": [
-      {
-        "id": "recorded-data-grounding",
-        "name": "Response stays grounded in recorded data",
-        "criterion": "The output is grounded in the replayed test data."
-      },
       {
         "id": "cancellation-confirmed",
         "name": "Cancellation confirmed",
-        "criterion": "The response clearly confirms that the supplier lifecycle request was cancelled."
+        "criterion": "The response clearly confirms cancellation."
       },
       {
         "id": "no-write-confirmed",
         "name": "No write confirmed",
         "criterion": "The response states that no supplier data was written and does not claim a create or submission."
+      },
+      {
+        "id": "non-suspending",
+        "name": "Non-suspending Query response",
+        "criterion": "The output is a completed Query response and does not request or report Human or wait continuation."
       }
     ],
     "authoring": {
@@ -163,7 +176,7 @@
       "terminalOwnerCodes": [
         "QUERY_RESPONSE"
       ],
-      "contractHash": "412056c6812c4f9d"
+      "contractHash": "06812bca4556e856"
     }
   },
   "testData": {

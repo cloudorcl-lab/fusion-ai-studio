@@ -15,10 +15,10 @@ const byCode = Object.fromEntries(nodes.map((node) => [node.code, node]));
 const reducer = new Function('$context', byCode.REDUCE_LIFECYCLE.metadata.sourceCode);
 const scalarResponseExpression = '{{$context.$nodes.PROJECT_RESPONSE_TEXT.$output.result}}';
 
-function reduce(message, prior, feedback = '') {
+function reduce(message, prior) {
   return reducer({
     $variables: { lifecycle: prior },
-    $nodes: { HUMAN_COLLECT: { $feedbackReceived: feedback } },
+    $nodes: {},
     $system: { $inputMessage: message }
   });
 }
@@ -46,11 +46,7 @@ assert.equal(
   byCode.APP_STAGE_ROUTER.inputs.find((input) => input.name === 'caseExpression').value,
   '{{$context.$app.$OraMessageHint}}'
 );
-assert.equal(byCode.HUMAN_COLLECT.metadata.channelType, 'CHAT');
-assert.equal(byCode.HUMAN_COLLECT.metadata.approvalEnabledFlag, false);
-assert.equal(byCode.HUMAN_COLLECT.metadata.feedbackEnabledFlag, true);
-assert.equal(byCode.HUMAN_COLLECT.metadata.loopBackNodeId, byCode.REDUCE_LIFECYCLE.id);
-assert.equal(byCode.LIFECYCLE_TERMINAL.outcomes.true, byCode.QUERY_RESPONSE.id);
+assert.equal(nodes.some((node) => node.type === 'HUMAN' || node.type === 'WAIT'), false);
 assert.equal(byCode.QUERY_RESPONSE.type, 'LLM');
 assert.ok(byCode.PROJECT_RESPONSE_TEXT, 'workflow must project the reducer response to a scalar');
 assert.equal(byCode.PROJECT_RESPONSE_TEXT.type, 'CODE');
@@ -59,12 +55,11 @@ assert.match(byCode.PROJECT_RESPONSE_TEXT.metadata.sourceCode, /REDUCE_LIFECYCLE
 assert.match(byCode.PROJECT_RESPONSE_TEXT.metadata.sourceCode, /return reduced\.prompt/);
 assert.equal(byCode.SAVE_LIFECYCLE.outcomes.success, byCode.READ_ACTION_ROUTER.id);
 assert.equal(byCode.READ_ACTION_ROUTER.outcomes.PROMPT, byCode.PROJECT_RESPONSE_TEXT.id);
-assert.equal(byCode.PROJECT_RESPONSE_TEXT.outcomes.success, byCode.LIFECYCLE_TERMINAL.id);
-assert.equal(byCode.HUMAN_COLLECT.inputs[0].value.messageTemplate.message, scalarResponseExpression);
+assert.equal(byCode.PROJECT_RESPONSE_TEXT.outcomes.success, byCode.QUERY_RESPONSE.id);
 const queryPrompt = byCode.QUERY_RESPONSE.inputs.find((input) => input.name === 'prompt').value;
 const querySystemPrompt = byCode.QUERY_RESPONSE.inputs.find((input) => input.name === 'systemPrompt').value;
-assert.equal(queryPrompt, `RESPONSE_TEXT:\n${scalarResponseExpression}`);
-assert.match(querySystemPrompt, /Output exactly the RESPONSE_TEXT block contents/);
+assert.equal(queryPrompt, `Copy only the text between the boundary lines. Do not output either boundary line.\n<<<XDX_RESPONSE_START>>>\n${scalarResponseExpression}\n<<<XDX_RESPONSE_END>>>`);
+assert.match(querySystemPrompt, /Preserve every Markdown table header, separator, row and newline/);
 
 const immediateCancel = reduce('cancel supplier lifecycle request', null);
 assertState(immediateCancel.state);
@@ -78,25 +73,25 @@ assert.equal(result.state.phase, 'GATHER');
 assert.equal(result.state.revision, 1);
 assert.equal(result.terminal, false);
 
-result = reduce('', result.state, 'review');
+result = reduce('review', result.state);
 assertState(result.state);
 assert.equal(result.state.phase, 'FINAL_REVIEW');
 assert.equal(result.state.revision, 2);
 
-result = reduce('', result.state, 'Change the supplier name to XDX Revised');
+result = reduce('Change the supplier name to XDX Revised', result.state);
 assertState(result.state);
 assert.equal(result.state.phase, 'GATHER');
 assert.equal(result.state.revision, 3);
 assert.equal(result.state.approvedSnapshot, null);
 
-const stale = reduce('', result.state, 'approve');
+const stale = reduce('approve', result.state);
 assertState(stale.state);
 assert.equal(stale.terminal, false);
 assert.equal(stale.state.phase, 'GATHER');
 assert.equal(stale.state.approvedSnapshot, null);
 
-const reviewed = reduce('', stale.state, 'review');
-const approved = reduce('', reviewed.state, 'approve');
+const reviewed = reduce('review', stale.state);
+const approved = reduce('approve', reviewed.state);
 assertState(approved.state);
 assert.equal(approved.terminal, true);
 assert.equal(approved.state.phase, 'APPROVED');
@@ -104,7 +99,7 @@ assert.equal(approved.state.approvedSnapshot.requestId, approved.state.requestId
 assert.equal(approved.state.approvedSnapshot.revision, approved.state.revision);
 assert.deepEqual(approved.state.approvedSnapshot.normalizedPayload, approved.state.draft.requiredFields);
 
-const cancelled = reduce('', result.state, 'cancel');
+const cancelled = reduce('cancel', result.state);
 assertState(cancelled.state);
 assert.equal(cancelled.terminal, true);
 assert.equal(cancelled.state.phase, 'CANCELLED');
@@ -122,7 +117,7 @@ console.log(JSON.stringify({
     'Ask Oracle Query route',
     'first-turn cancellation reaches the deterministic terminal path',
     'typed conversation state',
-    'Human Chat loopback',
+    'non-suspending Agentic App Query turns',
     'revision continuity',
     'correction invalidates approval',
     'stale approval rejected',
