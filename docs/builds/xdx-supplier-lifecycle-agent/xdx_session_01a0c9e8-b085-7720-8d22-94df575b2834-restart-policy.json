@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "01a0c9e8-b085-7720-8d22-94df575b2834-restart-policy",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-lifecycle-agent",
+  "branch": "codex/xdx-supplier-lifecycle-agent",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-22T16:45:56.5026218Z",
+  "checkpointUtc": "2026-09-22T16:53:45.1775889Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "c91690a3a2ea28e22d784c531d092db6a04afe9ebcc132c42784b38a4e9f2c5c"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "c98b907ec1b20d3ee0f89f69ba7177fe159f0ef62b320bbac3bfac583fe9ff12"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "ed973f9290d77441f82bd4719909d5265cbcf9a12c2af03bd20b1de742577782"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "4beedfc49b83db7d9551f958b4b3c30509cbfcb92c57ab7208cfed122c540a0a"
+    }
+  ],
+  "reviewNotes": "Canonical playbook and object registry reviewed earlier in this session; current handoff reviewed before worktree edits. User explicitly supersedes mandatory fresh-run rule. Governance-only correction; no resource operation or artifact authoring. Preserve session receipt and timing/Closeout evidence. Reviewed policy and handoff diffs after correction; refreshed hashes only for reviewed current guidance. Scope is the restart-policy repair; full app build is not complete.",
+  "objectReferences": [],
+  "noObjectsReason": "Only session-transition governance and its verifier are changed; no resource operations or payload contracts in scope.",
+  "learningRegister": "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md",
+  "checks": [
+    {
+      "rule": "Canonical learning obligations for governance repair",
+      "reason": "Scoped governance requirement verified; source policy, propagation, regression and evidence reconciliation complete. Full runtime build is outside this repair Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_verification.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_parity.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
+      ],
+      "id": "learning",
+      "status": "pass"
+    },
+    {
+      "rule": "Canonical intake obligations for governance repair",
+      "reason": "Scoped governance requirement verified; source policy, propagation, regression and evidence reconciliation complete. Full runtime build is outside this repair Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_verification.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_parity.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
+      ],
+      "id": "intake",
+      "status": "pass"
+    },
+    {
+      "rule": "Canonical authority obligations for governance repair",
+      "reason": "Scoped governance requirement verified; source policy, propagation, regression and evidence reconciliation complete. Full runtime build is outside this repair Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_verification.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_parity.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
+      ],
+      "id": "authority",
+      "status": "pass"
+    },
+    {
+      "rule": "Canonical objects obligations for governance repair",
+      "reason": "Governance-only policy and verifier correction; no BO/resource operation, schema or runtime artifact changed.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_verification.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_parity.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
+      ],
+      "id": "objects",
+      "status": "not-applicable"
+    },
+    {
+      "rule": "Canonical verification obligations for governance repair",
+      "reason": "Scoped governance requirement verified; source policy, propagation, regression and evidence reconciliation complete. Full runtime build is outside this repair Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_verification.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_parity.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
+      ],
+      "id": "verification",
+      "status": "pass"
+    },
+    {
+      "rule": "Canonical timing obligations for governance repair",
+      "reason": "Scoped governance requirement verified; source policy, propagation, regression and evidence reconciliation complete. Full runtime build is outside this repair Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_verification.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_parity.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
+      ],
+      "id": "timing",
+      "status": "pass"
+    },
+    {
+      "rule": "Canonical cleanup obligations for governance repair",
+      "reason": "Scoped governance requirement verified; source policy, propagation, regression and evidence reconciliation complete. Full runtime build is outside this repair Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_verification.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_parity.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
+      ],
+      "id": "cleanup",
+      "status": "pass"
+    },
+    {
+      "rule": "Canonical delivery obligations for governance repair",
+      "reason": "Scoped governance requirement verified; source policy, propagation, regression and evidence reconciliation complete. Full runtime build is outside this repair Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_verification.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_restart_policy_parity.json",
+        "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
+      ],
+      "id": "delivery",
+      "status": "pass"
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "aiUnits": "No runtime AI Studio calls",
+    "timingGaps": "Observed policy task checkpoint through delivery recorded; initial read-only discovery start unavailable in retained rollout; prior session history preserved; commit/response tail excluded.",
+    "tokens": "Usage breakdown unavailable"
+  }
+}

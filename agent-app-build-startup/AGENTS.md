@@ -8,7 +8,9 @@ authoritative.
 
 1. Read `docs/handoffs/ACTIVE_HANDOFF.md` at the target repository first, then
    the canonical playbook. Activate and commit the ZIP's repository seed before
-   beginning a build, following `INSTALL.md`; start a fresh Codex run afterward.
+   beginning a build, following `INSTALL.md`; reread the activated governance and
+   reconcile the current session/task receipt before the Startup gate. A new
+   session is optional.
 2. Create a **new Git worktree** for this app build. Do not build in the base
    checkout or reuse an existing worktree.
 3. Run `scripts/Verify-AgentAppBuildStartup.ps1` from this package and
@@ -24,9 +26,9 @@ authoritative.
 ## Context reset
 
 At 70–75% context usage, stop at a safe checkpoint. Update the active handoff,
-checkpoint, and time tracker; record the next smallest action; then start a
-fresh agent session. Do not continue into a new material edit, record-now
-operation, suite, deployment, or push after this threshold.
+checkpoint, and time tracker; record the next smallest action; then revalidate
+the checkpoint and current task evidence before continuing into a new material
+edit, record-now operation, suite, deployment, or push. A new session is optional.
 
 ## MVP and test boundary
 

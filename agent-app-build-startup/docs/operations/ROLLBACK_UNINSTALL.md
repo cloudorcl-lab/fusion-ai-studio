@@ -101,8 +101,9 @@ materialized `docs/builds/<build-id>/` records.
    build-ready under that contract; a missing verifier is not a passing check.
 6. Review the final diff/status and commit the scoped reversal. Record baseline,
    reversed commit(s), preserved files and verification in the retained project
-   handoff or external recovery receipt. Start a fresh Codex run after changing
-   active governance. Remove any remaining startup folder using the steps above.
+   handoff or external recovery receipt. Reread changed active governance and
+   reconcile current-task Startup evidence; a new session is optional. Remove
+   any remaining startup folder using the steps above.
 
 ## Upgrade rollback and full uninstall boundary
 

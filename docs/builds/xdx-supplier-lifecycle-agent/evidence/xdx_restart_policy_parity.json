@@ -1,0 +1,70 @@
+[
+  {
+    "path": "AGENTS.md",
+    "match": true
+  },
+  {
+    "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+    "match": true
+  },
+  {
+    "path": "scripts/verify-living-build-contract.ps1",
+    "match": true
+  },
+  {
+    "path": "tests/test-living-build-contract.ps1",
+    "match": true
+  },
+  {
+    "path": "agent-app-build-startup/AGENTS.md",
+    "match": true
+  },
+  {
+    "path": "agent-app-build-startup/README.md",
+    "match": true
+  },
+  {
+    "path": "agent-app-build-startup/docs/operations/CONTEXT_RESET.md",
+    "match": true
+  },
+  {
+    "path": "agent-app-build-startup/docs/operations/ROLLBACK_UNINSTALL.md",
+    "match": true
+  },
+  {
+    "path": "agent-app-build-startup/repository-seed/AGENTS.md",
+    "match": true
+  },
+  {
+    "path": "agent-app-build-startup/repository-seed/docs/handoffs/ACTIVE_HANDOFF.md",
+    "match": true
+  },
+  {
+    "path": "agent-app-build-startup/repository-seed/docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+    "match": true
+  },
+  {
+    "path": "agent-app-build-startup/repository-seed/scripts/verify-living-build-contract.ps1",
+    "match": true
+  },
+  {
+    "path": "agent-app-build-startup/templates/active-handoff.md",
+    "match": true
+  },
+  {
+    "path": "docs/builds/xdx-supplier-lifecycle-agent/xdx_supplier_lifecycle_plan.md",
+    "match": true
+  },
+  {
+    "path": "docs/builds/xdx-supplier-lifecycle-agent/xdx_supplier_lifecycle_build_prompt.md",
+    "match": true
+  },
+  {
+    "path": "docs/builds/xdx-supplier-lifecycle-agent/checkpoint.md",
+    "match": true
+  },
+  {
+    "path": "docs/builds/xdx-supplier-lifecycle-agent/delivery-receipt.md",
+    "match": true
+  }
+]

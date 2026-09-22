@@ -55,7 +55,7 @@ Worktree propagation follows Git history:
 1. Commit this playbook, `AGENTS.md`, `docs/handoffs/ACTIVE_HANDOFF.md`, the AI Studio skill gate, and the verifier together when their contract changes.
 2. Create future worktrees from a branch that contains that governance commit.
 3. Integrate the governance commit into an existing worktree branch before its next build.
-4. Start a fresh Codex run after a worktree first receives or updates the contract because repository instructions are assembled at run start.
+4. Continue in the current session after verifying the target checkout/branch, rereading its active handoff and applicable governance, reconciling the current session/task receipt and passing the Startup gate. A new session is optional; worktree creation and governance updates do not require a restart.
 5. Treat a worktree that lacks the governance commit or fails the verifier as not ready to build.
 
 At closeout, rerun the verifier after integrating lessons and dependency cleanup. The handoff commit is the invocation mechanism for the next build; uncommitted guidance in another checkout does not propagate.

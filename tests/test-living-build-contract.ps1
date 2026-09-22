@@ -65,6 +65,14 @@ Copy-Item -LiteralPath (Join-Path $repoRoot '.agents/skills/aistudio/SKILL.md') 
 try {
   $sessionAgentsPath = Join-Path $handoffFixtureRoot 'AGENTS.md'
   $sessionAgentsOriginal = Get-Content -LiteralPath $sessionAgentsPath -Raw
+  foreach ($marker in @('Reread the active handoff and applicable governance', 'A new session is optional')) {
+    Set-Content -LiteralPath $sessionAgentsPath -Value $sessionAgentsOriginal.Replace($marker, 'REMOVED') -NoNewline
+    $revalidationNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
+    if ($revalidationNegative.ExitCode -eq 0 -or -not $revalidationNegative.Output.Contains('in-session governance revalidation rule')) {
+      throw "Missing in-session continuation policy was not rejected: $marker"
+    }
+  }
+  Set-Content -LiteralPath $sessionAgentsPath -Value $sessionAgentsOriginal -NoNewline
   Set-Content -LiteralPath $sessionAgentsPath -Value $sessionAgentsOriginal.Replace('-SessionRecord', '-OldRecord') -NoNewline
   $sessionNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
   if ($sessionNegative.ExitCode -eq 0 -or -not $sessionNegative.Output.Contains('must invoke session conformance')) { throw 'Missing startup session gate was not rejected.' }
@@ -159,4 +167,4 @@ finally {
   }
 }
 
-Write-Output 'Living build contract test: PASS (positive repository and handoff, naming, sample-policy, object-registry, incomplete negative fixtures)'
+Write-Output 'Living build contract test: PASS (optional-session positive; revalidation, session, timing, handoff, naming, sample-policy, object-registry and incomplete negative fixtures)'

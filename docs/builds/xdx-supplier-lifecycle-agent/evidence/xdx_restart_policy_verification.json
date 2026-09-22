@@ -1,0 +1,52 @@
+{
+  "task": "01a0c9e8-b085-7720-8d22-94df575b2834-restart-policy",
+  "verifiedUtc": "2026-09-22T16:53:45.1775889Z",
+  "scope": "Remove mandatory fresh-session policy; preserve current-task conformance and runtime acceptance gates",
+  "tests": [
+    {
+      "exitCode": 0,
+      "command": "pwsh -NoProfile -File tests/test-living-build-contract.ps1",
+      "result": "PASS: optional-session positive and revalidation, session, timing, handoff, naming, sample-policy, object-registry, incomplete negatives",
+      "receipt": "exec session 8627 / chunk 05ef00"
+    },
+    {
+      "exitCode": 0,
+      "command": "node tests/test-session-compliance.cjs",
+      "result": "PASS: startup/closeout positives and 11 negative cases",
+      "receipt": "chunk e26290"
+    },
+    {
+      "exitCode": 0,
+      "command": "pwsh -NoProfile -File agent-app-build-startup/scripts/Verify-AgentAppBuildStartup.ps1",
+      "result": "PASS",
+      "receipt": "exec session 3030"
+    },
+    {
+      "exitCode": 0,
+      "command": "pwsh -NoProfile -File agent-app-build-startup/repository-seed/tests/test-living-build-contract.ps1",
+      "result": "PASS: seed positive and negative fixture",
+      "receipt": "chunk 1a0669"
+    },
+    {
+      "exitCode": 0,
+      "command": "base: pwsh -NoProfile -File scripts/verify-living-build-contract.ps1 -PolicyOnly",
+      "result": "PASS",
+      "receipt": "chunk f36a01"
+    }
+  ],
+  "activeRestartScan": "PASS: no mandatory fresh-run matches in current entrypoints, verifiers, startup guidance, handoff, plan, prompt or checkpoint",
+  "diffCheck": "PASS",
+  "sourceParity": "xdx_restart_policy_parity.json: 17 previously clean base files match target",
+  "authority": "Explicit current user instruction supersedes old rule",
+  "dependencies": {
+    "historicalReceipts": "Preserved as historical; old hashes/statuses are not current execution conformance",
+    "temp": "Both requested local execution-prompt copies refreshed from canonical prompt; retained for next execution",
+    "seed": "Matching restart rule and verifier updated in installed source snapshot",
+    "canonical": "Existing living playbook remains owner",
+    "skill": "AI Studio skill unchanged; already requires current-task conformance and delegates lifecycle to canonical playbook",
+    "archives": "Existing ZIP and installation receipts retained as historical snapshots, not regenerated or claimed to contain this update"
+  },
+  "runtime": "Not exercised; P0-P9 and full build Closeout remain pending",
+  "goal": "Historical blocked status remains in goal service; underlying mandatory-restart blocker removed",
+  "basePropagation": "Only verified clean policy/current-guidance files copied; pre-existing base handoff changed by exact paragraph replacement only; unrelated files not staged"
+}

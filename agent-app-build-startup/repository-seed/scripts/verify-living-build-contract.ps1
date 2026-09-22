@@ -67,8 +67,10 @@ if ($agentsContent) {
   if (-not $agentsContent.Contains('scripts/verify-living-build-contract.ps1')) {
     Add-ContractFailure 'Root AGENTS.md must invoke the living build verifier.'
   }
-  if ($agentsContent -notmatch '(?i)fresh Codex run') {
-    Add-ContractFailure 'Root AGENTS.md must state the fresh Codex run boundary for updated worktrees.'
+  foreach ($marker in @('Reread the active handoff and applicable governance', 'A new session is optional')) {
+    if (-not $agentsContent.Contains($marker)) {
+      Add-ContractFailure "Root AGENTS.md must state the in-session governance revalidation rule: $marker"
+    }
   }
   if ($agentsContent -notmatch '(?i)before declaring a build complete') {
     Add-ContractFailure 'Root AGENTS.md must contain the completion and hand-forward gate.'
@@ -150,5 +152,5 @@ Write-Output "- Canonical owner: $canonicalRelativePath"
 Write-Output '- Startup entrypoint: AGENTS.md'
 Write-Output "- Session-start handoff: $activeHandoffRelativePath"
 Write-Output '- AI Studio fallback: .agents/skills/aistudio/SKILL.md'
-Write-Output '- Worktree rule: integrate the governance commit and start a fresh Codex run'
+Write-Output '- Worktree rule: integrate governance, reread it and pass applicable Startup checks; a new session is optional'
 Write-Output '- Naming rule: XDX codes, display names, files, branches, and worktrees'

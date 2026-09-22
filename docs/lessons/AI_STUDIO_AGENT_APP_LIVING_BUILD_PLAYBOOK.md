@@ -57,16 +57,18 @@ Worktree propagation follows Git history:
 1. Commit this playbook, `AGENTS.md`, `docs/handoffs/ACTIVE_HANDOFF.md`, the AI Studio skill gate, and the verifier together when their contract changes.
 2. Create future worktrees from a branch that contains that governance commit.
 3. Integrate the governance commit into an existing worktree branch before its next build.
-4. Start a fresh Codex run after a worktree first receives or updates the contract because repository instructions are assembled at run start.
+4. Continue in the current session after verifying the target checkout/branch, rereading its active handoff and applicable governance, reconciling the current session/task receipt and passing the Startup gate. A new session is optional; worktree creation and governance updates do not require a restart.
 5. Treat a worktree that lacks the governance commit or fails the verifier as not ready to build.
 
 At closeout, rerun the verifier after integrating lessons and dependency cleanup. The handoff commit is the invocation mechanism for the next build; uncommitted guidance in another checkout does not propagate.
 
-### MUST: provide the fresh-session restart command
+### Continue in the current session; provide a command when handing off
 
-Whenever work reaches a required fresh-session boundary, including a new worktree, a governance update or a context-limit handoff, the agent MUST give the user a complete, copyable command to start the next session. Do not provide only a directory link or say to restart.
+Worktree creation, governance updates and context checkpoints do not require a new session. At a context checkpoint, save and revalidate the current objective, checkout, evidence, timing and next action before continuing. Reread changed guidance and reconcile the current task receipt; rerun Startup when scope, checkout or reviewed governance changes. Do not treat an in-session directory change as proof that the host session moved. Use the verified target worktree explicitly for commands.
 
-Before handing off, verify the intended existing worktree and branch, save the current handoff/checkpoint/time records, and place the concrete command in both the active handoff and the user-facing response. Use the resolved absolute worktree path, a handoff-first prompt carrying forward the approved objective, and quoting appropriate for the user's shell. Do not create another worktree, substitute a resume of the old session, or require renewed approval of unchanged scope. State the reason for the restart briefly and link this rule.
+When the user chooses a new session, or the host cannot continue the current one, provide a complete, copyable command to start it. Do not require a restart solely to reload repository instructions that can be read and applied in the current session.
+
+Before handing off, verify the intended existing worktree and branch, save the current handoff/checkpoint/time records, and place the concrete command in both the active handoff and the user-facing response. Use the resolved absolute worktree path, a handoff-first prompt carrying forward the approved objective, and quoting appropriate for the user's shell. Do not create another worktree or require renewed approval of unchanged scope. Explain whether the handoff is user-selected or required by an actual host limitation; a repository governance update is not such a limitation.
 
 PowerShell command template (replace the path and objective with verified values; escape any single quote inside an argument by doubling it):
 
@@ -74,7 +76,7 @@ PowerShell command template (replace the path and objective with verified values
 codex -C '<ABSOLUTE_WORKTREE_PATH>' 'Read docs/handoffs/ACTIVE_HANDOFF.md first, then continue the approved <BUILD_OBJECTIVE>.'
 ```
 
-Verify current local CLI help if the command syntax changes. Providing the command does not prove a fresh session has started; keep remaining build work explicitly incomplete until the next session verifies the handoff.
+Verify current local CLI help if the command syntax changes. Providing the command does not prove another session has started or any runtime work has passed. Current-session continuation and new-session entry both require applicable conformance evidence; keep the full build incomplete until its acceptance and Closeout pass.
 
 ### Session conformance receipt
 
@@ -976,6 +978,7 @@ After every update:
 
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
+| 2026-09-22 | Explicit user correction after supplier worktree bootstrap | Removed mandatory fresh-session boundaries for worktree creation, governance changes and context checkpoints. Require in-session rereview, checkout verification and current-task Startup instead; retain optional restart commands. Supersedes the restart requirement in the 2026-09-18 and 2026-08-26 history rows. | Policy and session regressions, startup package checks and scoped governance Closeout recorded in the supplier build evidence. |
 | 2026-09-18 | User requested an executable restart command after a directory-only handoff | Require a verified, shell-quoted fresh-session command in the handoff and user response at every restart boundary; preserve approved scope. | Local codex help, exact path/branch, command parsing, documentation and session gates. |
 | 2026-09-17 | Supplier compliance audit | Require a current session conformance receipt with reviewed hashes, all obligation dispositions, timing and evidence; distinguish policy installation from execution; reject incomplete closeout. Reconcile status documents and outstanding requested activities. | Policy/session positive and negative checks; missed evidence recovery; scoped delivery review. |
 | 2026-09-17 | Partial Supplier POST timing | Require continuous timing, retrospective recovery, gap/overlap accounting and delivery checkpoints. | Initial heading-only test was insufficient; session conformance now checks actual tracker and dispositions. |

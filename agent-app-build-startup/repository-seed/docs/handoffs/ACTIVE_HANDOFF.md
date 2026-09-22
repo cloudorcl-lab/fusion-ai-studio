@@ -15,7 +15,7 @@ This is a blank project record, not evidence of completed work. Materialize at
 | Blockers / deferred requirements / owner | `<LIST OR NONE>` |
 | Dependency and cleanup decisions | `<INVENTORY PATH>` |
 | Next smallest action | `<ONE ACTION>` |
-| Fresh-session requirement | Start a fresh Codex run after installing or updating governance, before the next build. |
+| Session continuation | Reread applicable governance, verify the target checkout and reconcile current-task Startup evidence after installation or updates. A new session is optional. |
 
 ## Resume verification
 

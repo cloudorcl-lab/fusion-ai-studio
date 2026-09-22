@@ -1,6 +1,6 @@
 # Execution prompt — XDX Supplier Lifecycle Agent
 
-Copy the block below into a fresh Codex session rooted in the prepared worktree. The plan is the requirement authority; the canonical playbook remains the lifecycle authority.
+Execute the block below in the prepared worktree after current-task Startup, in the current session or an optional new session. The plan is the requirement authority; the canonical playbook remains the lifecycle authority.
 
 ```text
 Read docs/handoffs/ACTIVE_HANDOFF.md FIRST.
@@ -64,7 +64,7 @@ Require final user approval of the exact normalized payload/revision/parent for 
 The planning request did not authorize new live test records. Complete local/fixture work, prepare concrete exact payloads and present the environment/count/controlled test identities for the first required live-write approval. Reuse accepted records across later phases; no allowance transfers from the failed attempt. Do not repeatedly seek approval for unchanged authorized actions. Obtain additional scoped authority only for new sensitive side effects, changed scope, publication, destructive cleanup or newer-remote overwrite. BO modification is authorized as necessary to this build, subject to compatibility and version checks.
 
 STOP/HANDOFF
-Continue until all phases are accepted or a concrete external/authority blocker prevents the next required action. Report partial work honestly. At the required context threshold, checkpoint and update the single ACTIVE_HANDOFF.md and timing; provide a complete codex -C restart command carrying forward this same plan. Do not create a competing handoff.
+Continue until all phases are accepted or a concrete external/authority blocker prevents the next required action. Report partial work honestly. At the required context threshold, checkpoint and update the single ACTIVE_HANDOFF.md and timing, then revalidate before continuing. Starting a new session is optional; when one is chosen, provide a complete codex -C command carrying forward this same plan. Do not create a competing handoff.
 Never publish workflows via CLI. Never push this branch without user instruction. Do not call the build complete while an included child, UI journey, field, required test/judge or closeout gate is unresolved.
 
 FINAL DELIVERY

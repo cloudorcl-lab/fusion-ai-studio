@@ -23,7 +23,7 @@ flowchart TD
   H --> I[AI Studio skill and ATLAS sync loop]
   I --> J[Focused evidence and delivery receipt]
 
-  D --> K[Context reset at 70-75 percent]
+  D --> K[Context checkpoint at 70-75 percent]
   K --> E
 
   subgraph Package[agent-app-build-startup]
@@ -50,8 +50,10 @@ flowchart TD
    the lifecycle entrypoint; this package's `AGENTS.md` supplies startup mechanics.
 3. Commit the activated files and this package so new worktrees inherit them.
 4. Create a new worktree using `scripts/New-AgentAppBuildWorktree.ps1` from that
-   committed base. Start a fresh Codex run, read its active handoff first, and run
-   the living-build and startup verifiers there.
+   committed base. Verify the target checkout, read its active handoff and applicable
+   governance, reconcile the current task receipt, and run the living-build and
+   startup verifiers there. Continue in the current session or optionally start
+   a new one.
 5. Materialize `templates/` in `docs/builds/<build-id>/`, except
    `active-handoff.md`, which belongs at `docs/handoffs/ACTIVE_HANDOFF.md`.
 

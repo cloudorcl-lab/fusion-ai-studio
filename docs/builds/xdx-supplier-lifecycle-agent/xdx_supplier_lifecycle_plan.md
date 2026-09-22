@@ -6,7 +6,7 @@ Status: implementation plan prepared; runtime acceptance has not begun. Planning
 
 Deliver Ask Oracle → query → prepare create → validate → explicit approval → create → independently confirm persisted results for suppliers and their child objects. Oracle AI Agents own the conversation. No Visual Builder, cloned record submission, or native custom form lifecycle is part of this design.
 
-The user authorized this plan, a separate new worktree, and reuse/modification of existing server BOs whose names/codes start with XDX and contain Supplier. Implement in `.worktrees/xdx-supplier-lifecycle-agent`, branch `codex/xdx-supplier-lifecycle-agent`, from the committed base, never from the abandoned attempt. The base remains available. No GitHub push is requested. Follow the repository's required fresh-session boundary before artifact implementation.
+The user authorized this plan, a separate new worktree, and reuse/modification of existing server BOs whose names/codes start with XDX and contain Supplier. Implement in `.worktrees/xdx-supplier-lifecycle-agent`, branch `codex/xdx-supplier-lifecycle-agent`, from the committed base, never from the abandoned attempt. The base remains available. No GitHub push is requested. Verify the target checkout, reread applicable governance and pass current-task Startup before artifact implementation; a new session is optional.
 
 The canonical [living playbook](../../lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md) owns lifecycle policy. This document owns only this build's scope, phases and acceptance. [Execution prompt](xdx_supplier_lifecycle_build_prompt.md) drives it; [requirement register](requirement-slice-register.md) and [golden-path manifest](golden-path-test-manifest.md) map evidence.
 

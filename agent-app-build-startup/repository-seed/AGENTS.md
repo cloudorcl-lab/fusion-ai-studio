@@ -11,7 +11,7 @@ For every build, deployment, test cycle, substantial modification, or architectu
 3. Create or update the active build's learning register and intake contract as defined by the playbook.
 4. Apply relevant evidence-backed lessons during design, implementation, testing, deployment, and optimization.
 
-These instructions are loaded at the start of a Codex run. After a worktree first receives or updates this contract, start a fresh Codex run in that worktree before beginning the next build.
+After a worktree first receives or updates this contract, verify the target checkout and branch. Reread the active handoff and applicable governance in that checkout, reconcile the current session/task receipt, and rerun the Startup gate before substantive work. A new session is optional; worktree creation or governance changes do not require a restart.
 
 ## Quality and architecture
 
