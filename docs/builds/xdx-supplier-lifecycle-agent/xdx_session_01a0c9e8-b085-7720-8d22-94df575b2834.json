@@ -5,7 +5,7 @@
   "branch": "codex/xdx-supplier-lifecycle-agent",
   "phase": "Startup",
   "startedUtc": "2026-09-22T16:17:46.898Z",
-  "checkpointUtc": "2026-09-22T16:25:15.7728356Z",
+  "checkpointUtc": "2026-09-22T16:28:28.9347808Z",
   "reads": [
     {
       "path": "AGENTS.md",
@@ -13,7 +13,7 @@
     },
     {
       "path": "docs/handoffs/ACTIVE_HANDOFF.md",
-      "sha256": "33a555e5a50ca3ce8d7cf5abc43c2501c94402da62f0ac61f22063671d2461c6"
+      "sha256": "b6f8ff3eb6285446188fa651afd1bc3a0775c582dcf9101f4020c0b58cc4f6c5"
     },
     {
       "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
@@ -132,7 +132,7 @@
   ],
   "metrics": {
     "timingGaps": "Retrospective session start recovered; historical delivery tail/inter-session gap not measured; final response/commit tail outside later delivery cutoff.",
-    "tokens": "Goal counter sample 63547 tokens since goal creation; not full session totals and no input/output/cached breakdown.",
+    "tokens": "Goal counter at blocked transition: 79751 tokens since goal creation; not full session totals; input/output/cached breakdown unavailable.",
     "aiUnits": "No AI Studio execution; metered runtime receipts unavailable."
   }
 }

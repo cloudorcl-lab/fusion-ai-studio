@@ -1,6 +1,6 @@
 {
   "sessionId": "01a0c9e8-b085-7720-8d22-94df575b2834",
-  "checkedUtc": "2026-09-22T16:23:54.7025481Z",
+  "checkedUtc": "2026-09-22T16:28:28.9347808Z",
   "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-lifecycle-agent",
   "branch": "codex/xdx-supplier-lifecycle-agent",
   "creationHead": "44c0d23d3222c6ea8e6a5ca43d4d29f973022197",
@@ -18,7 +18,7 @@
   "tempPromptMatchesRequestedBaseFile": true,
   "hostSessionRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
   "freshWorktreeSession": false,
-  "goalStatus": "active",
+  "goalStatus": "blocked",
   "tokenBudget": null,
   "runtimePhasesAccepted": [],
   "closeout": "pending",
@@ -31,5 +31,6 @@
     "sessionStartup": "PASS",
     "runtime": "PENDING"
   },
-  "deliveryCheckpointUtc": "2026-09-22T16:25:15.7728356Z"
+  "deliveryCheckpointUtc": "2026-09-22T16:25:15.7728356Z",
+  "blocker": "Required fresh worktree session unmet across three consecutive goal turns; default cwd remains base."
 }

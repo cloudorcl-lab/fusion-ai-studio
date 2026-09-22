@@ -6,6 +6,6 @@ Next smallest action: fresh worktree session, read active handoff, establish new
 
 ATLAS state: not invoked; no workflow artifact exists for this build. Live-create allowance: none granted for this new attempt. Detailed field research remains deferred to the appropriate slice.
 
-Context state: RESET REQUIRED before implementation because this is a newly prepared worktree and the current session began in the base checkout. Current goal is active with the exact handoff objective and no token budget. Bootstrap Startup is not runtime acceptance or fresh execution-session conformance. Keep the goal active through the restart.
+Context state: RESET REQUIRED before implementation because this is a newly prepared worktree and the current session began in the base checkout. After three consecutive goal turns verified that the fresh-session boundary remained unmet, the current thread goal was marked blocked, not complete. The exact objective and no-token-budget requirement remain unchanged for fresh execution. Bootstrap Startup is not runtime acceptance or fresh execution-session conformance.
 
 Current evidence: `evidence/xdx_bootstrap_20260922.json` and `xdx_session_01a0c9e8-b085-7720-8d22-94df575b2834.json`. P0 contracts, P1-P9 runtime, exact live-payload authority, actual Ask Oracle proof and Closeout remain unresolved. No BO/data/runtime writes or publication were attempted.

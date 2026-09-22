@@ -6,6 +6,8 @@ Session `01a0c9e8-b085-7720-8d22-94df575b2834` created the absent requested work
 
 The active worktree env.properties matches the base by hash; values were not printed. Both temporary execution-prompt copies match the canonical tracked prompt. The worktree-local temp copy is retained as the requested entry path; the tracked prompt remains its owner. No runtime artifact changed, live operation ran, or GitHub push occurred. Base changes were preserved. See the current checkpoint, time-tracker.md and `evidence/xdx_bootstrap_20260922.json`.
 
+Current continuation disposition: three consecutive goal turns remained in the base-rooted session; the goal is now blocked awaiting the mandatory fresh worktree run. The full objective is retained, and no completion is claimed. This supersedes the initial active-status observation above.
+
 ## Historical planning receipt — 2026-09-20
 
 Scope: planning, server BO discovery and new-worktree bootstrap only. Runtime query/create/confirm remains unimplemented.

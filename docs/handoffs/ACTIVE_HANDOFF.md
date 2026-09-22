@@ -14,7 +14,7 @@ Runtime implementation/tests remain pending. The first execution action after st
 
 ## Active goal for the restarted session
 
-This session created one active goal with the exact objective below and no token budget. It remains active. On fresh entry, inspect the current goal; preserve a matching active goal or create it only if none exists:
+This session created one goal with the exact objective below and no token budget. It was marked blocked, not complete, after three consecutive goal turns confirmed the required fresh worktree session had not started. The full objective is unchanged. On fresh entry, inspect the current goal; preserve a matching active goal or create it if none exists. A blocked goal in this base-rooted thread is not delivery completion:
 
 > Complete the XDX Supplier Lifecycle Agent according to `docs/builds/xdx-supplier-lifecycle-agent/xdx_supplier_lifecycle_plan.md`: deliver and verify the Ask Oracle query → create → confirm lifecycle for suppliers and every inventoried in-scope child object, reuse or safely modify the approved XDX supplier Business Objects, and complete every build, discrete-test, cumulative-test and Closeout gate. Keep the goal active across checkpoints and mark it complete only when required runtime acceptance and evidence pass.
 
