@@ -1,0 +1,1385 @@
+{
+  "testName": "p3-address-preparation-conversation",
+  "tags": [
+    "address",
+    "ai-agent-studio",
+    "conversation",
+    "no-write",
+    "p3"
+  ],
+  "scenario": {
+    "custom": true,
+    "source": "user",
+    "intent": "In AI Agent Studio, prove that an address draft carries the resolved supplier and address reference across turns, uses only required transaction fields, and remains no-write.",
+    "appStage": "Query"
+  },
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT"
+  },
+  "authoring": {
+    "source": "model-authored",
+    "createdAt": "2026-09-22T23:02:02.288Z",
+    "userPrompt": "Correct the expected node order while preserving the six-turn AI Agent Studio P3 address conversation."
+  },
+  "defaults": {
+    "dataSource": "file",
+    "evaluationMode": "deterministic"
+  },
+  "conversation": {
+    "mode": "scripted",
+    "goal": "Verify the no-write required-field address preparation lifecycle with parent-scoped reference reuse.",
+    "steps": [
+      {
+        "stepId": "resolve-supplier-addresses",
+        "intent": "Resolve supplier 1264 and list its addresses through the parent-scoped BO path.",
+        "assertions": {
+          "contains": [
+            {
+              "id": "resolve-supplier-addresses-contains-address",
+              "name": "Response includes Address",
+              "value": "Address"
+            },
+            {
+              "id": "resolve-supplier-addresses-contains-city",
+              "name": "Response includes City",
+              "value": "City"
+            },
+            {
+              "id": "resolve-supplier-addresses-contains-state",
+              "name": "Response includes State",
+              "value": "State"
+            },
+            {
+              "id": "resolve-supplier-addresses-contains-country",
+              "name": "Response includes Country",
+              "value": "Country"
+            }
+          ],
+          "notContains": [
+            {
+              "id": "resolve-supplier-addresses-not-contains-wait-nodes",
+              "name": "Response excludes wait nodes",
+              "value": "wait nodes"
+            },
+            {
+              "id": "resolve-supplier-addresses-not-contains-human-in-the-loop",
+              "name": "Response excludes human in the loop",
+              "value": "human in the loop"
+            },
+            {
+              "id": "resolve-supplier-addresses-not-contains-status-404",
+              "name": "Response excludes status 404",
+              "value": "status 404"
+            },
+            {
+              "id": "resolve-supplier-addresses-not-contains-created-successfully",
+              "name": "Response excludes created successfully",
+              "value": "created successfully"
+            }
+          ]
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "resolve-supplier-addresses-executes-app-stage-router",
+              "name": "APP_STAGE_ROUTER executes",
+              "nodeCode": "APP_STAGE_ROUTER"
+            },
+            {
+              "id": "resolve-supplier-addresses-executes-reduce-lifecycle",
+              "name": "REDUCE_LIFECYCLE executes",
+              "nodeCode": "REDUCE_LIFECYCLE"
+            },
+            {
+              "id": "resolve-supplier-addresses-executes-save-lifecycle",
+              "name": "SAVE_LIFECYCLE executes",
+              "nodeCode": "SAVE_LIFECYCLE"
+            },
+            {
+              "id": "resolve-supplier-addresses-executes-query-response",
+              "name": "QUERY_RESPONSE executes",
+              "nodeCode": "QUERY_RESPONSE"
+            },
+            {
+              "id": "resolve-supplier-addresses-executes-project-response-text",
+              "name": "PROJECT_RESPONSE_TEXT executes",
+              "nodeCode": "PROJECT_RESPONSE_TEXT"
+            },
+            {
+              "id": "resolve-supplier-addresses-executes-read-action-router",
+              "name": "READ_ACTION_ROUTER executes",
+              "nodeCode": "READ_ACTION_ROUTER"
+            },
+            {
+              "id": "resolve-supplier-addresses-executes-find-suppliers-by-number",
+              "name": "FIND_SUPPLIERS_BY_NUMBER executes",
+              "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+            },
+            {
+              "id": "resolve-supplier-addresses-executes-list-supplier-addresses",
+              "name": "LIST_SUPPLIER_ADDRESSES executes",
+              "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+            },
+            {
+              "id": "resolve-supplier-addresses-executes-normalize-read-result",
+              "name": "NORMALIZE_READ_RESULT executes",
+              "nodeCode": "NORMALIZE_READ_RESULT"
+            },
+            {
+              "id": "resolve-supplier-addresses-executes-save-read-state",
+              "name": "SAVE_READ_STATE executes",
+              "nodeCode": "SAVE_READ_STATE"
+            },
+            {
+              "id": "resolve-supplier-addresses-executes-prepare-supplier-result",
+              "name": "PREPARE_SUPPLIER_RESULT executes",
+              "nodeCode": "PREPARE_SUPPLIER_RESULT"
+            },
+            {
+              "id": "resolve-supplier-addresses-executes-post-supplier-lookup-router",
+              "name": "POST_SUPPLIER_LOOKUP_ROUTER executes",
+              "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "resolve-supplier-addresses-skips-init-display-response",
+              "name": "INIT_DISPLAY_RESPONSE does not execute",
+              "nodeCode": "INIT_DISPLAY_RESPONSE"
+            },
+            {
+              "id": "resolve-supplier-addresses-skips-init-actions-response",
+              "name": "INIT_ACTIONS_RESPONSE does not execute",
+              "nodeCode": "INIT_ACTIONS_RESPONSE"
+            },
+            {
+              "id": "resolve-supplier-addresses-skips-summary-response",
+              "name": "SUMMARY_RESPONSE does not execute",
+              "nodeCode": "SUMMARY_RESPONSE"
+            },
+            {
+              "id": "resolve-supplier-addresses-skips-find-suppliers-by-name",
+              "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+            },
+            {
+              "id": "resolve-supplier-addresses-skips-list-supplier-sites",
+              "name": "LIST_SUPPLIER_SITES does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITES"
+            },
+            {
+              "id": "resolve-supplier-addresses-skips-list-supplier-contacts",
+              "name": "LIST_SUPPLIER_CONTACTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACTS"
+            },
+            {
+              "id": "resolve-supplier-addresses-skips-save-prepared-read-state",
+              "name": "SAVE_PREPARED_READ_STATE does not execute",
+              "nodeCode": "SAVE_PREPARED_READ_STATE"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "resolve-supplier-addresses-node-order",
+            "name": "Resolve supplier 1264 and list its addresses through the parent-scoped BO path. follows the expected node order",
+            "nodeCodes": [
+              "APP_STAGE_ROUTER",
+              "REDUCE_LIFECYCLE",
+              "FIND_SUPPLIERS_BY_NUMBER",
+              "PREPARE_SUPPLIER_RESULT",
+              "LIST_SUPPLIER_ADDRESSES",
+              "NORMALIZE_READ_RESULT",
+              "SAVE_READ_STATE",
+              "PROJECT_RESPONSE_TEXT",
+              "QUERY_RESPONSE"
+            ]
+          },
+          "nodeCounts": {
+            "REDUCE_LIFECYCLE": {
+              "id": "resolve-supplier-addresses-single-reducer-execution",
+              "name": "Lifecycle reducer executes once",
+              "exact": 1
+            },
+            "QUERY_RESPONSE": {
+              "id": "resolve-supplier-addresses-single-query-response",
+              "name": "Query response renders once",
+              "exact": 1
+            }
+          }
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "record-later",
+          "nodes": {
+            "FIND_SUPPLIERS_BY_NUMBER": {
+              "nodeType": "BO_FUNCTION",
+              "capture": {
+                "mode": "raw",
+                "responseTruncated": false,
+                "finishReason": "stop"
+              },
+              "metadata": {
+                "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+                "functionName": "FindSuppliersByValidatedFilter"
+              },
+              "input": {
+                "filter": "SupplierNumber='1264'",
+                "limit": 10,
+                "offset": 0
+              },
+              "response": {
+                "count": 1,
+                "hasMore": false,
+                "items": [
+                  {
+                    "@context": {
+                      "headers": {
+                        "ETag": "ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A65787000000007770400000007737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000001217371007E00020000003A7371007E0002000000017371007E0002000000827372001B6F7261636C652E6A626F2E646F6D61696E2E4E756C6C56616C75655899C1C58DAABEEB02000149000A6D53514C54797065496478700000000C7371007E0002000000037371007E00020000000578"
+                      },
+                      "key": "300000047507596"
+                    },
+                    "BusinessRelationship": "Spend Authorized",
+                    "InactiveDate": null,
+                    "Supplier": "Office Depot",
+                    "SupplierId": "300000047507596",
+                    "SupplierNumber": "1264",
+                    "SupplierType": "Supplier"
+                  }
+                ],
+                "limit": 10,
+                "links": [
+                  {
+                    "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
+                    "kind": "collection",
+                    "name": "suppliers",
+                    "rel": "self"
+                  }
+                ],
+                "offset": 0
+              }
+            },
+            "LIST_SUPPLIER_ADDRESSES": {
+              "nodeType": "BO_FUNCTION",
+              "capture": {
+                "mode": "model-compacted",
+                "responseTruncated": true,
+                "finishReason": "stop"
+              },
+              "metadata": {
+                "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+                "functionName": "ListSupplierAddresses"
+              },
+              "input": {
+                "filter": "",
+                "limit": 10,
+                "offset": 0,
+                "suppliers_Id": "300000047507596"
+              },
+              "response": {
+                "count": 5,
+                "hasMore": false,
+                "items": [
+                  {
+                    "SupplierAddressId": 300000047507644,
+                    "AddressName": "OD US1",
+                    "City": "BOCA RATON",
+                    "State": "FL",
+                    "Country": "United States",
+                    "CountryCode": "US"
+                  },
+                  {
+                    "SupplierAddressId": 300000051065945,
+                    "AddressName": "OD France",
+                    "City": "Senlis",
+                    "State": "Nord-Pas-de-Calais",
+                    "Country": "France",
+                    "CountryCode": "FR"
+                  },
+                  {
+                    "SupplierAddressId": 300000076247058,
+                    "AddressName": "OD Progress US",
+                    "City": "FAIRFAX",
+                    "State": "VA",
+                    "Country": "United States",
+                    "CountryCode": "US"
+                  },
+                  {
+                    "SupplierAddressId": 300000095598381,
+                    "AddressName": "OD Univ US",
+                    "City": "PHOENIX",
+                    "State": "AZ",
+                    "Country": "United States",
+                    "CountryCode": "US"
+                  },
+                  {
+                    "SupplierAddressId": 300000101110262,
+                    "AddressName": "OD Japan",
+                    "City": "MEGURO",
+                    "State": "Tokyo",
+                    "Country": "Japan",
+                    "CountryCode": "JP"
+                  }
+                ],
+                "limit": 10,
+                "offset": 0,
+                "links": []
+              }
+            }
+          }
+        },
+        "type": "chat",
+        "input": {
+          "message": "Show addresses for supplier number 1264",
+          "triggerType": "app",
+          "parameters": {
+            "appHint": "Query",
+            "OraUserContext": "",
+            "OraAppContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "705a02a2dd053bb0",
+          "workflowDefinitionHash": "aa5ea8ea3b12e58a",
+          "observedAt": "2026-09-22T23:08:25.988Z",
+          "observedTerminalNodeCode": "QUERY_RESPONSE",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86049652,
+          "conversationPrefixHash": "b90cc849de156d5f"
+        }
+      },
+      {
+        "stepId": "prepare-address-draft",
+        "intent": "Prepare a required-field-only address draft for the supplier resolved in the earlier turn.",
+        "assertions": {
+          "contains": [
+            {
+              "id": "prepare-address-draft-contains-address-name",
+              "name": "Response includes address name",
+              "value": "address name"
+            },
+            {
+              "id": "prepare-address-draft-contains-address",
+              "name": "Response includes address",
+              "value": "address"
+            }
+          ],
+          "notContains": [
+            {
+              "id": "prepare-address-draft-not-contains-wait-nodes",
+              "name": "Response excludes wait nodes",
+              "value": "wait nodes"
+            },
+            {
+              "id": "prepare-address-draft-not-contains-human-in-the-loop",
+              "name": "Response excludes human in the loop",
+              "value": "human in the loop"
+            },
+            {
+              "id": "prepare-address-draft-not-contains-status-404",
+              "name": "Response excludes status 404",
+              "value": "status 404"
+            },
+            {
+              "id": "prepare-address-draft-not-contains-created-successfully",
+              "name": "Response excludes created successfully",
+              "value": "created successfully"
+            }
+          ]
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "prepare-address-draft-executes-app-stage-router",
+              "name": "APP_STAGE_ROUTER executes",
+              "nodeCode": "APP_STAGE_ROUTER"
+            },
+            {
+              "id": "prepare-address-draft-executes-reduce-lifecycle",
+              "name": "REDUCE_LIFECYCLE executes",
+              "nodeCode": "REDUCE_LIFECYCLE"
+            },
+            {
+              "id": "prepare-address-draft-executes-save-lifecycle",
+              "name": "SAVE_LIFECYCLE executes",
+              "nodeCode": "SAVE_LIFECYCLE"
+            },
+            {
+              "id": "prepare-address-draft-executes-query-response",
+              "name": "QUERY_RESPONSE executes",
+              "nodeCode": "QUERY_RESPONSE"
+            },
+            {
+              "id": "prepare-address-draft-executes-project-response-text",
+              "name": "PROJECT_RESPONSE_TEXT executes",
+              "nodeCode": "PROJECT_RESPONSE_TEXT"
+            },
+            {
+              "id": "prepare-address-draft-executes-read-action-router",
+              "name": "READ_ACTION_ROUTER executes",
+              "nodeCode": "READ_ACTION_ROUTER"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "prepare-address-draft-skips-init-display-response",
+              "name": "INIT_DISPLAY_RESPONSE does not execute",
+              "nodeCode": "INIT_DISPLAY_RESPONSE"
+            },
+            {
+              "id": "prepare-address-draft-skips-init-actions-response",
+              "name": "INIT_ACTIONS_RESPONSE does not execute",
+              "nodeCode": "INIT_ACTIONS_RESPONSE"
+            },
+            {
+              "id": "prepare-address-draft-skips-summary-response",
+              "name": "SUMMARY_RESPONSE does not execute",
+              "nodeCode": "SUMMARY_RESPONSE"
+            },
+            {
+              "id": "prepare-address-draft-skips-find-suppliers-by-name",
+              "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+            },
+            {
+              "id": "prepare-address-draft-skips-find-suppliers-by-number",
+              "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+            },
+            {
+              "id": "prepare-address-draft-skips-list-supplier-addresses",
+              "name": "LIST_SUPPLIER_ADDRESSES does not execute",
+              "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+            },
+            {
+              "id": "prepare-address-draft-skips-list-supplier-sites",
+              "name": "LIST_SUPPLIER_SITES does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITES"
+            },
+            {
+              "id": "prepare-address-draft-skips-list-supplier-contacts",
+              "name": "LIST_SUPPLIER_CONTACTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACTS"
+            },
+            {
+              "id": "prepare-address-draft-skips-normalize-read-result",
+              "name": "NORMALIZE_READ_RESULT does not execute",
+              "nodeCode": "NORMALIZE_READ_RESULT"
+            },
+            {
+              "id": "prepare-address-draft-skips-save-read-state",
+              "name": "SAVE_READ_STATE does not execute",
+              "nodeCode": "SAVE_READ_STATE"
+            },
+            {
+              "id": "prepare-address-draft-skips-prepare-supplier-result",
+              "name": "PREPARE_SUPPLIER_RESULT does not execute",
+              "nodeCode": "PREPARE_SUPPLIER_RESULT"
+            },
+            {
+              "id": "prepare-address-draft-skips-post-supplier-lookup-router",
+              "name": "POST_SUPPLIER_LOOKUP_ROUTER does not execute",
+              "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
+            },
+            {
+              "id": "prepare-address-draft-skips-save-prepared-read-state",
+              "name": "SAVE_PREPARED_READ_STATE does not execute",
+              "nodeCode": "SAVE_PREPARED_READ_STATE"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "prepare-address-draft-node-order",
+            "name": "Prepare a required-field-only address draft for the supplier resolved in the earlier turn. follows the expected node order",
+            "nodeCodes": [
+              "APP_STAGE_ROUTER",
+              "REDUCE_LIFECYCLE",
+              "SAVE_LIFECYCLE",
+              "READ_ACTION_ROUTER",
+              "PROJECT_RESPONSE_TEXT",
+              "QUERY_RESPONSE"
+            ]
+          },
+          "nodeCounts": {
+            "REDUCE_LIFECYCLE": {
+              "id": "prepare-address-draft-single-reducer-execution",
+              "name": "Lifecycle reducer executes once",
+              "exact": 1
+            },
+            "QUERY_RESPONSE": {
+              "id": "prepare-address-draft-single-query-response",
+              "name": "Query response renders once",
+              "exact": 1
+            }
+          }
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "record-now",
+          "recordedAt": "2026-09-22T23:03:58.640Z",
+          "nodes": {}
+        },
+        "type": "chat",
+        "input": {
+          "message": "Create an address named West Office at 100 Main Street",
+          "triggerType": "app",
+          "parameters": {
+            "appHint": "Query",
+            "OraUserContext": "",
+            "OraAppContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "e6905ac14ce377b1",
+          "workflowDefinitionHash": "aa5ea8ea3b12e58a",
+          "observedAt": "2026-09-22T23:08:25.988Z",
+          "observedTerminalNodeCode": "QUERY_RESPONSE",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86049652,
+          "conversationPrefixHash": "4cc74cd399cad6a8"
+        }
+      },
+      {
+        "stepId": "select-address-reference",
+        "intent": "Use the first previously displayed address as the source for eligible required defaults.",
+        "assertions": {
+          "contains": [
+            {
+              "id": "select-address-reference-contains-countrycode",
+              "name": "Response includes CountryCode",
+              "value": "CountryCode"
+            },
+            {
+              "id": "select-address-reference-contains-reference",
+              "name": "Response includes REFERENCE",
+              "value": "REFERENCE"
+            }
+          ],
+          "notContains": [
+            {
+              "id": "select-address-reference-not-contains-wait-nodes",
+              "name": "Response excludes wait nodes",
+              "value": "wait nodes"
+            },
+            {
+              "id": "select-address-reference-not-contains-human-in-the-loop",
+              "name": "Response excludes human in the loop",
+              "value": "human in the loop"
+            },
+            {
+              "id": "select-address-reference-not-contains-status-404",
+              "name": "Response excludes status 404",
+              "value": "status 404"
+            },
+            {
+              "id": "select-address-reference-not-contains-created-successfully",
+              "name": "Response excludes created successfully",
+              "value": "created successfully"
+            },
+            {
+              "id": "select-address-reference-not-contains-email",
+              "name": "Response excludes Email |",
+              "value": "Email |"
+            }
+          ]
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "select-address-reference-executes-app-stage-router",
+              "name": "APP_STAGE_ROUTER executes",
+              "nodeCode": "APP_STAGE_ROUTER"
+            },
+            {
+              "id": "select-address-reference-executes-reduce-lifecycle",
+              "name": "REDUCE_LIFECYCLE executes",
+              "nodeCode": "REDUCE_LIFECYCLE"
+            },
+            {
+              "id": "select-address-reference-executes-save-lifecycle",
+              "name": "SAVE_LIFECYCLE executes",
+              "nodeCode": "SAVE_LIFECYCLE"
+            },
+            {
+              "id": "select-address-reference-executes-query-response",
+              "name": "QUERY_RESPONSE executes",
+              "nodeCode": "QUERY_RESPONSE"
+            },
+            {
+              "id": "select-address-reference-executes-project-response-text",
+              "name": "PROJECT_RESPONSE_TEXT executes",
+              "nodeCode": "PROJECT_RESPONSE_TEXT"
+            },
+            {
+              "id": "select-address-reference-executes-read-action-router",
+              "name": "READ_ACTION_ROUTER executes",
+              "nodeCode": "READ_ACTION_ROUTER"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "select-address-reference-skips-init-display-response",
+              "name": "INIT_DISPLAY_RESPONSE does not execute",
+              "nodeCode": "INIT_DISPLAY_RESPONSE"
+            },
+            {
+              "id": "select-address-reference-skips-init-actions-response",
+              "name": "INIT_ACTIONS_RESPONSE does not execute",
+              "nodeCode": "INIT_ACTIONS_RESPONSE"
+            },
+            {
+              "id": "select-address-reference-skips-summary-response",
+              "name": "SUMMARY_RESPONSE does not execute",
+              "nodeCode": "SUMMARY_RESPONSE"
+            },
+            {
+              "id": "select-address-reference-skips-find-suppliers-by-name",
+              "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+            },
+            {
+              "id": "select-address-reference-skips-find-suppliers-by-number",
+              "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+            },
+            {
+              "id": "select-address-reference-skips-list-supplier-addresses",
+              "name": "LIST_SUPPLIER_ADDRESSES does not execute",
+              "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+            },
+            {
+              "id": "select-address-reference-skips-list-supplier-sites",
+              "name": "LIST_SUPPLIER_SITES does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITES"
+            },
+            {
+              "id": "select-address-reference-skips-list-supplier-contacts",
+              "name": "LIST_SUPPLIER_CONTACTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACTS"
+            },
+            {
+              "id": "select-address-reference-skips-normalize-read-result",
+              "name": "NORMALIZE_READ_RESULT does not execute",
+              "nodeCode": "NORMALIZE_READ_RESULT"
+            },
+            {
+              "id": "select-address-reference-skips-save-read-state",
+              "name": "SAVE_READ_STATE does not execute",
+              "nodeCode": "SAVE_READ_STATE"
+            },
+            {
+              "id": "select-address-reference-skips-prepare-supplier-result",
+              "name": "PREPARE_SUPPLIER_RESULT does not execute",
+              "nodeCode": "PREPARE_SUPPLIER_RESULT"
+            },
+            {
+              "id": "select-address-reference-skips-post-supplier-lookup-router",
+              "name": "POST_SUPPLIER_LOOKUP_ROUTER does not execute",
+              "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
+            },
+            {
+              "id": "select-address-reference-skips-save-prepared-read-state",
+              "name": "SAVE_PREPARED_READ_STATE does not execute",
+              "nodeCode": "SAVE_PREPARED_READ_STATE"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "select-address-reference-node-order",
+            "name": "Use the first previously displayed address as the source for eligible required defaults. follows the expected node order",
+            "nodeCodes": [
+              "APP_STAGE_ROUTER",
+              "REDUCE_LIFECYCLE",
+              "SAVE_LIFECYCLE",
+              "READ_ACTION_ROUTER",
+              "PROJECT_RESPONSE_TEXT",
+              "QUERY_RESPONSE"
+            ]
+          },
+          "nodeCounts": {
+            "REDUCE_LIFECYCLE": {
+              "id": "select-address-reference-single-reducer-execution",
+              "name": "Lifecycle reducer executes once",
+              "exact": 1
+            },
+            "QUERY_RESPONSE": {
+              "id": "select-address-reference-single-query-response",
+              "name": "Query response renders once",
+              "exact": 1
+            }
+          }
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "record-now",
+          "recordedAt": "2026-09-22T23:04:00.573Z",
+          "nodes": {}
+        },
+        "type": "chat",
+        "input": {
+          "message": "use reference 1 for address",
+          "triggerType": "app",
+          "parameters": {
+            "appHint": "Query",
+            "OraUserContext": "",
+            "OraAppContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "c8aff52e5a4a8e9d",
+          "workflowDefinitionHash": "aa5ea8ea3b12e58a",
+          "observedAt": "2026-09-22T23:08:25.988Z",
+          "observedTerminalNodeCode": "QUERY_RESPONSE",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86049652,
+          "conversationPrefixHash": "66777662f1e838cb"
+        }
+      },
+      {
+        "stepId": "apply-eligible-reference-values",
+        "intent": "Apply eligible reference values without treating that action as approval.",
+        "assertions": {
+          "contains": [
+            {
+              "id": "apply-eligible-reference-values-contains-missing-required-fields",
+              "name": "Response includes Missing required fields",
+              "value": "Missing required fields"
+            },
+            {
+              "id": "apply-eligible-reference-values-contains-email",
+              "name": "Response includes Email",
+              "value": "Email"
+            }
+          ],
+          "notContains": [
+            {
+              "id": "apply-eligible-reference-values-not-contains-wait-nodes",
+              "name": "Response excludes wait nodes",
+              "value": "wait nodes"
+            },
+            {
+              "id": "apply-eligible-reference-values-not-contains-human-in-the-loop",
+              "name": "Response excludes human in the loop",
+              "value": "human in the loop"
+            },
+            {
+              "id": "apply-eligible-reference-values-not-contains-status-404",
+              "name": "Response excludes status 404",
+              "value": "status 404"
+            },
+            {
+              "id": "apply-eligible-reference-values-not-contains-created-successfully",
+              "name": "Response excludes created successfully",
+              "value": "created successfully"
+            }
+          ]
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "apply-eligible-reference-values-executes-app-stage-router",
+              "name": "APP_STAGE_ROUTER executes",
+              "nodeCode": "APP_STAGE_ROUTER"
+            },
+            {
+              "id": "apply-eligible-reference-values-executes-reduce-lifecycle",
+              "name": "REDUCE_LIFECYCLE executes",
+              "nodeCode": "REDUCE_LIFECYCLE"
+            },
+            {
+              "id": "apply-eligible-reference-values-executes-save-lifecycle",
+              "name": "SAVE_LIFECYCLE executes",
+              "nodeCode": "SAVE_LIFECYCLE"
+            },
+            {
+              "id": "apply-eligible-reference-values-executes-query-response",
+              "name": "QUERY_RESPONSE executes",
+              "nodeCode": "QUERY_RESPONSE"
+            },
+            {
+              "id": "apply-eligible-reference-values-executes-project-response-text",
+              "name": "PROJECT_RESPONSE_TEXT executes",
+              "nodeCode": "PROJECT_RESPONSE_TEXT"
+            },
+            {
+              "id": "apply-eligible-reference-values-executes-read-action-router",
+              "name": "READ_ACTION_ROUTER executes",
+              "nodeCode": "READ_ACTION_ROUTER"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "apply-eligible-reference-values-skips-init-display-response",
+              "name": "INIT_DISPLAY_RESPONSE does not execute",
+              "nodeCode": "INIT_DISPLAY_RESPONSE"
+            },
+            {
+              "id": "apply-eligible-reference-values-skips-init-actions-response",
+              "name": "INIT_ACTIONS_RESPONSE does not execute",
+              "nodeCode": "INIT_ACTIONS_RESPONSE"
+            },
+            {
+              "id": "apply-eligible-reference-values-skips-summary-response",
+              "name": "SUMMARY_RESPONSE does not execute",
+              "nodeCode": "SUMMARY_RESPONSE"
+            },
+            {
+              "id": "apply-eligible-reference-values-skips-find-suppliers-by-name",
+              "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+            },
+            {
+              "id": "apply-eligible-reference-values-skips-find-suppliers-by-number",
+              "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+            },
+            {
+              "id": "apply-eligible-reference-values-skips-list-supplier-addresses",
+              "name": "LIST_SUPPLIER_ADDRESSES does not execute",
+              "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+            },
+            {
+              "id": "apply-eligible-reference-values-skips-list-supplier-sites",
+              "name": "LIST_SUPPLIER_SITES does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITES"
+            },
+            {
+              "id": "apply-eligible-reference-values-skips-list-supplier-contacts",
+              "name": "LIST_SUPPLIER_CONTACTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACTS"
+            },
+            {
+              "id": "apply-eligible-reference-values-skips-normalize-read-result",
+              "name": "NORMALIZE_READ_RESULT does not execute",
+              "nodeCode": "NORMALIZE_READ_RESULT"
+            },
+            {
+              "id": "apply-eligible-reference-values-skips-save-read-state",
+              "name": "SAVE_READ_STATE does not execute",
+              "nodeCode": "SAVE_READ_STATE"
+            },
+            {
+              "id": "apply-eligible-reference-values-skips-prepare-supplier-result",
+              "name": "PREPARE_SUPPLIER_RESULT does not execute",
+              "nodeCode": "PREPARE_SUPPLIER_RESULT"
+            },
+            {
+              "id": "apply-eligible-reference-values-skips-post-supplier-lookup-router",
+              "name": "POST_SUPPLIER_LOOKUP_ROUTER does not execute",
+              "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
+            },
+            {
+              "id": "apply-eligible-reference-values-skips-save-prepared-read-state",
+              "name": "SAVE_PREPARED_READ_STATE does not execute",
+              "nodeCode": "SAVE_PREPARED_READ_STATE"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "apply-eligible-reference-values-node-order",
+            "name": "Apply eligible reference values without treating that action as approval. follows the expected node order",
+            "nodeCodes": [
+              "APP_STAGE_ROUTER",
+              "REDUCE_LIFECYCLE",
+              "SAVE_LIFECYCLE",
+              "READ_ACTION_ROUTER",
+              "PROJECT_RESPONSE_TEXT",
+              "QUERY_RESPONSE"
+            ]
+          },
+          "nodeCounts": {
+            "REDUCE_LIFECYCLE": {
+              "id": "apply-eligible-reference-values-single-reducer-execution",
+              "name": "Lifecycle reducer executes once",
+              "exact": 1
+            },
+            "QUERY_RESPONSE": {
+              "id": "apply-eligible-reference-values-single-query-response",
+              "name": "Query response renders once",
+              "exact": 1
+            }
+          }
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "record-now",
+          "recordedAt": "2026-09-22T23:04:02.279Z",
+          "nodes": {}
+        },
+        "type": "chat",
+        "input": {
+          "message": "apply all",
+          "triggerType": "app",
+          "parameters": {
+            "appHint": "Query",
+            "OraUserContext": "",
+            "OraAppContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "fb041f0bb28039ec",
+          "workflowDefinitionHash": "aa5ea8ea3b12e58a",
+          "observedAt": "2026-09-22T23:08:25.989Z",
+          "observedTerminalNodeCode": "QUERY_RESPONSE",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86049652,
+          "conversationPrefixHash": "84a93e2445eae45e"
+        }
+      },
+      {
+        "stepId": "provide-address-email",
+        "intent": "Supply the missing operational email as a user-authored value.",
+        "assertions": {
+          "contains": [
+            {
+              "id": "provide-address-email-contains-saved-the-user-change",
+              "name": "Response includes Saved the user change",
+              "value": "Saved the user change"
+            }
+          ],
+          "notContains": [
+            {
+              "id": "provide-address-email-not-contains-wait-nodes",
+              "name": "Response excludes wait nodes",
+              "value": "wait nodes"
+            },
+            {
+              "id": "provide-address-email-not-contains-human-in-the-loop",
+              "name": "Response excludes human in the loop",
+              "value": "human in the loop"
+            },
+            {
+              "id": "provide-address-email-not-contains-status-404",
+              "name": "Response excludes status 404",
+              "value": "status 404"
+            },
+            {
+              "id": "provide-address-email-not-contains-created-successfully",
+              "name": "Response excludes created successfully",
+              "value": "created successfully"
+            }
+          ]
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "provide-address-email-executes-app-stage-router",
+              "name": "APP_STAGE_ROUTER executes",
+              "nodeCode": "APP_STAGE_ROUTER"
+            },
+            {
+              "id": "provide-address-email-executes-reduce-lifecycle",
+              "name": "REDUCE_LIFECYCLE executes",
+              "nodeCode": "REDUCE_LIFECYCLE"
+            },
+            {
+              "id": "provide-address-email-executes-save-lifecycle",
+              "name": "SAVE_LIFECYCLE executes",
+              "nodeCode": "SAVE_LIFECYCLE"
+            },
+            {
+              "id": "provide-address-email-executes-query-response",
+              "name": "QUERY_RESPONSE executes",
+              "nodeCode": "QUERY_RESPONSE"
+            },
+            {
+              "id": "provide-address-email-executes-project-response-text",
+              "name": "PROJECT_RESPONSE_TEXT executes",
+              "nodeCode": "PROJECT_RESPONSE_TEXT"
+            },
+            {
+              "id": "provide-address-email-executes-read-action-router",
+              "name": "READ_ACTION_ROUTER executes",
+              "nodeCode": "READ_ACTION_ROUTER"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "provide-address-email-skips-init-display-response",
+              "name": "INIT_DISPLAY_RESPONSE does not execute",
+              "nodeCode": "INIT_DISPLAY_RESPONSE"
+            },
+            {
+              "id": "provide-address-email-skips-init-actions-response",
+              "name": "INIT_ACTIONS_RESPONSE does not execute",
+              "nodeCode": "INIT_ACTIONS_RESPONSE"
+            },
+            {
+              "id": "provide-address-email-skips-summary-response",
+              "name": "SUMMARY_RESPONSE does not execute",
+              "nodeCode": "SUMMARY_RESPONSE"
+            },
+            {
+              "id": "provide-address-email-skips-find-suppliers-by-name",
+              "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+            },
+            {
+              "id": "provide-address-email-skips-find-suppliers-by-number",
+              "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+            },
+            {
+              "id": "provide-address-email-skips-list-supplier-addresses",
+              "name": "LIST_SUPPLIER_ADDRESSES does not execute",
+              "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+            },
+            {
+              "id": "provide-address-email-skips-list-supplier-sites",
+              "name": "LIST_SUPPLIER_SITES does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITES"
+            },
+            {
+              "id": "provide-address-email-skips-list-supplier-contacts",
+              "name": "LIST_SUPPLIER_CONTACTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACTS"
+            },
+            {
+              "id": "provide-address-email-skips-normalize-read-result",
+              "name": "NORMALIZE_READ_RESULT does not execute",
+              "nodeCode": "NORMALIZE_READ_RESULT"
+            },
+            {
+              "id": "provide-address-email-skips-save-read-state",
+              "name": "SAVE_READ_STATE does not execute",
+              "nodeCode": "SAVE_READ_STATE"
+            },
+            {
+              "id": "provide-address-email-skips-prepare-supplier-result",
+              "name": "PREPARE_SUPPLIER_RESULT does not execute",
+              "nodeCode": "PREPARE_SUPPLIER_RESULT"
+            },
+            {
+              "id": "provide-address-email-skips-post-supplier-lookup-router",
+              "name": "POST_SUPPLIER_LOOKUP_ROUTER does not execute",
+              "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
+            },
+            {
+              "id": "provide-address-email-skips-save-prepared-read-state",
+              "name": "SAVE_PREPARED_READ_STATE does not execute",
+              "nodeCode": "SAVE_PREPARED_READ_STATE"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "provide-address-email-node-order",
+            "name": "Supply the missing operational email as a user-authored value. follows the expected node order",
+            "nodeCodes": [
+              "APP_STAGE_ROUTER",
+              "REDUCE_LIFECYCLE",
+              "SAVE_LIFECYCLE",
+              "READ_ACTION_ROUTER",
+              "PROJECT_RESPONSE_TEXT",
+              "QUERY_RESPONSE"
+            ]
+          },
+          "nodeCounts": {
+            "REDUCE_LIFECYCLE": {
+              "id": "provide-address-email-single-reducer-execution",
+              "name": "Lifecycle reducer executes once",
+              "exact": 1
+            },
+            "QUERY_RESPONSE": {
+              "id": "provide-address-email-single-query-response",
+              "name": "Query response renders once",
+              "exact": 1
+            }
+          }
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "record-now",
+          "recordedAt": "2026-09-22T23:04:03.876Z",
+          "nodes": {}
+        },
+        "type": "chat",
+        "input": {
+          "message": "change Email=xdx-p3@example.invalid",
+          "triggerType": "app",
+          "parameters": {
+            "appHint": "Query",
+            "OraUserContext": "",
+            "OraAppContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "1e2641687a77d6d8",
+          "workflowDefinitionHash": "aa5ea8ea3b12e58a",
+          "observedAt": "2026-09-22T23:08:25.989Z",
+          "observedTerminalNodeCode": "QUERY_RESPONSE",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86049652,
+          "conversationPrefixHash": "2528320c6681c6f5"
+        }
+      },
+      {
+        "stepId": "review-exact-address-draft",
+        "intent": "Review the exact required-field-only address payload and provenance before any approval.",
+        "assertions": {
+          "contains": [
+            {
+              "id": "review-exact-address-draft-contains-exact-no-write-draft-review",
+              "name": "Response includes Exact no-write draft review",
+              "value": "Exact no-write draft review"
+            },
+            {
+              "id": "review-exact-address-draft-contains-parent-supplier",
+              "name": "Response includes Parent supplier",
+              "value": "Parent supplier"
+            },
+            {
+              "id": "review-exact-address-draft-contains-office-depot-1264",
+              "name": "Response includes Office Depot (1264)",
+              "value": "Office Depot (1264)"
+            },
+            {
+              "id": "review-exact-address-draft-contains-addressname",
+              "name": "Response includes AddressName",
+              "value": "AddressName"
+            },
+            {
+              "id": "review-exact-address-draft-contains-west-office",
+              "name": "Response includes West Office",
+              "value": "West Office"
+            },
+            {
+              "id": "review-exact-address-draft-contains-addressline1",
+              "name": "Response includes AddressLine1",
+              "value": "AddressLine1"
+            },
+            {
+              "id": "review-exact-address-draft-contains-100-main-street",
+              "name": "Response includes 100 Main Street",
+              "value": "100 Main Street"
+            },
+            {
+              "id": "review-exact-address-draft-contains-countrycode",
+              "name": "Response includes CountryCode",
+              "value": "CountryCode"
+            },
+            {
+              "id": "review-exact-address-draft-contains-reference",
+              "name": "Response includes REFERENCE",
+              "value": "REFERENCE"
+            },
+            {
+              "id": "review-exact-address-draft-contains-email",
+              "name": "Response includes Email",
+              "value": "Email"
+            },
+            {
+              "id": "review-exact-address-draft-contains-xdx-p3-example-invalid",
+              "name": "Response includes xdx-p3@example.invalid",
+              "value": "xdx-p3@example.invalid"
+            },
+            {
+              "id": "review-exact-address-draft-contains-user",
+              "name": "Response includes USER",
+              "value": "USER"
+            }
+          ],
+          "notContains": [
+            {
+              "id": "review-exact-address-draft-not-contains-wait-nodes",
+              "name": "Response excludes wait nodes",
+              "value": "wait nodes"
+            },
+            {
+              "id": "review-exact-address-draft-not-contains-human-in-the-loop",
+              "name": "Response excludes human in the loop",
+              "value": "human in the loop"
+            },
+            {
+              "id": "review-exact-address-draft-not-contains-status-404",
+              "name": "Response excludes status 404",
+              "value": "status 404"
+            },
+            {
+              "id": "review-exact-address-draft-not-contains-created-successfully",
+              "name": "Response excludes created successfully",
+              "value": "created successfully"
+            },
+            {
+              "id": "review-exact-address-draft-not-contains-supplieraddressid",
+              "name": "Response excludes SupplierAddressId",
+              "value": "SupplierAddressId"
+            },
+            {
+              "id": "review-exact-address-draft-not-contains-addresspartynumber",
+              "name": "Response excludes AddressPartyNumber",
+              "value": "AddressPartyNumber"
+            }
+          ]
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "review-exact-address-draft-executes-app-stage-router",
+              "name": "APP_STAGE_ROUTER executes",
+              "nodeCode": "APP_STAGE_ROUTER"
+            },
+            {
+              "id": "review-exact-address-draft-executes-reduce-lifecycle",
+              "name": "REDUCE_LIFECYCLE executes",
+              "nodeCode": "REDUCE_LIFECYCLE"
+            },
+            {
+              "id": "review-exact-address-draft-executes-save-lifecycle",
+              "name": "SAVE_LIFECYCLE executes",
+              "nodeCode": "SAVE_LIFECYCLE"
+            },
+            {
+              "id": "review-exact-address-draft-executes-query-response",
+              "name": "QUERY_RESPONSE executes",
+              "nodeCode": "QUERY_RESPONSE"
+            },
+            {
+              "id": "review-exact-address-draft-executes-project-response-text",
+              "name": "PROJECT_RESPONSE_TEXT executes",
+              "nodeCode": "PROJECT_RESPONSE_TEXT"
+            },
+            {
+              "id": "review-exact-address-draft-executes-read-action-router",
+              "name": "READ_ACTION_ROUTER executes",
+              "nodeCode": "READ_ACTION_ROUTER"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "review-exact-address-draft-skips-init-display-response",
+              "name": "INIT_DISPLAY_RESPONSE does not execute",
+              "nodeCode": "INIT_DISPLAY_RESPONSE"
+            },
+            {
+              "id": "review-exact-address-draft-skips-init-actions-response",
+              "name": "INIT_ACTIONS_RESPONSE does not execute",
+              "nodeCode": "INIT_ACTIONS_RESPONSE"
+            },
+            {
+              "id": "review-exact-address-draft-skips-summary-response",
+              "name": "SUMMARY_RESPONSE does not execute",
+              "nodeCode": "SUMMARY_RESPONSE"
+            },
+            {
+              "id": "review-exact-address-draft-skips-find-suppliers-by-name",
+              "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+            },
+            {
+              "id": "review-exact-address-draft-skips-find-suppliers-by-number",
+              "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+            },
+            {
+              "id": "review-exact-address-draft-skips-list-supplier-addresses",
+              "name": "LIST_SUPPLIER_ADDRESSES does not execute",
+              "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+            },
+            {
+              "id": "review-exact-address-draft-skips-list-supplier-sites",
+              "name": "LIST_SUPPLIER_SITES does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITES"
+            },
+            {
+              "id": "review-exact-address-draft-skips-list-supplier-contacts",
+              "name": "LIST_SUPPLIER_CONTACTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACTS"
+            },
+            {
+              "id": "review-exact-address-draft-skips-normalize-read-result",
+              "name": "NORMALIZE_READ_RESULT does not execute",
+              "nodeCode": "NORMALIZE_READ_RESULT"
+            },
+            {
+              "id": "review-exact-address-draft-skips-save-read-state",
+              "name": "SAVE_READ_STATE does not execute",
+              "nodeCode": "SAVE_READ_STATE"
+            },
+            {
+              "id": "review-exact-address-draft-skips-prepare-supplier-result",
+              "name": "PREPARE_SUPPLIER_RESULT does not execute",
+              "nodeCode": "PREPARE_SUPPLIER_RESULT"
+            },
+            {
+              "id": "review-exact-address-draft-skips-post-supplier-lookup-router",
+              "name": "POST_SUPPLIER_LOOKUP_ROUTER does not execute",
+              "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
+            },
+            {
+              "id": "review-exact-address-draft-skips-save-prepared-read-state",
+              "name": "SAVE_PREPARED_READ_STATE does not execute",
+              "nodeCode": "SAVE_PREPARED_READ_STATE"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "review-exact-address-draft-node-order",
+            "name": "Review the exact required-field-only address payload and provenance before any approval. follows the expected node order",
+            "nodeCodes": [
+              "APP_STAGE_ROUTER",
+              "REDUCE_LIFECYCLE",
+              "SAVE_LIFECYCLE",
+              "READ_ACTION_ROUTER",
+              "PROJECT_RESPONSE_TEXT",
+              "QUERY_RESPONSE"
+            ]
+          },
+          "nodeCounts": {
+            "REDUCE_LIFECYCLE": {
+              "id": "review-exact-address-draft-single-reducer-execution",
+              "name": "Lifecycle reducer executes once",
+              "exact": 1
+            },
+            "QUERY_RESPONSE": {
+              "id": "review-exact-address-draft-single-query-response",
+              "name": "Query response renders once",
+              "exact": 1
+            }
+          }
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "record-now",
+          "recordedAt": "2026-09-22T23:04:06.481Z",
+          "nodes": {}
+        },
+        "type": "chat",
+        "input": {
+          "message": "review",
+          "triggerType": "app",
+          "parameters": {
+            "appHint": "Query",
+            "OraUserContext": "",
+            "OraAppContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "d55f14890ee39d99",
+          "workflowDefinitionHash": "aa5ea8ea3b12e58a",
+          "observedAt": "2026-09-22T23:08:25.989Z",
+          "observedTerminalNodeCode": "QUERY_RESPONSE",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86049652,
+          "conversationPrefixHash": "b1e47249d6cf1194"
+        }
+      }
+    ]
+  }
+}

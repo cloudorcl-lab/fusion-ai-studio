@@ -142,3 +142,18 @@ P3 implementation produced one rejected local source-generation attempt before r
 | Final report parse | Node assertions over canonical workflow and app suite JSON | n/a | included | 10.2s workflow total | 0.099041s | Workflow 10/10; app 1/1; zero pending judges |
 
 Configured metrics remain 9,810 input tokens, 920 output tokens, 50 AI Units and 10.2 seconds total workflow time for 10 model-backed cases. The retained browser tab was checked after the DRAFT save and had expired to Oracle Cloud Sign In, so no P3 target-app prompt was submitted and the tab was retained for login handoff. P3 remains runtime-pending; no BO POST or business-data write occurred.
+
+### P3 configured conversation coverage closure — 2026-09-22
+
+The prior 10-case suite did not execute the new multi-turn preparation branches. A six-step AI Agent Studio conversation was added to close that evidence gap. It uses one runtime-managed conversation identity and proves parent-scoped address resolution, retained supplier/reference state, eligible `CountryCode` inheritance, explicit user Email, apply-all without approval and exact no-write review. It contains no Human or wait node.
+
+| Step | Exact command | JSON generation | Node wall | Workflow runtime | Parse/review | Result |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| Conversation definition | `node temp/generate-p3-address-conversation-definition.cjs` | 0.002210s | 0.272151s | n/a | n/a | Six steps generated |
+| Live read-only recording | `node .agents/skills/aistudio/scripts/aistudio.js do-record-workflow-test --test-file test/workflows/xdx_supplier_lifecycle_agent/p3-address-preparation-conversation.json --workflow-status DRAFT` | n/a | 15.947561s | recorded across six turns | n/a | Parent GET raw; address response required coordinated compaction |
+| Coordinated replay JSON | `node temp/prepare-p3-address-conversation-data.cjs` | 0.002507s | 0.297187s | n/a | n/a | Six step fixtures generated; captured real `CountryCode` values retained |
+| Initial discrete replay | `node .agents/skills/aistudio/scripts/aistudio.js run-workflow-test --test-file test/workflows/xdx_supplier_lifecycle_agent/p3-address-preparation-conversation.json --data-source file --evaluation-mode deterministic --refresh-conversation-path-bindings true` | n/a | 15.197158s | 4.758s | 0.001323s | Failed correctly: the older display fixture omitted `CountryCode`; routing/order/path checks passed |
+| Corrected discrete replay | same command | n/a | 17.789100s | 6.800s | 0.001303s | 6/6 steps and 196/196 assertions passed; 1,196 input, 447 output, 30 AI Units |
+| P1-P3 cumulative workflow suite | `node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --workflow-code XDX_SUPPLIER_LIFECYCLE_AGENT --data-source file --evaluation-mode deterministic --fail-fast false --run-label p3-cumulative-after-conversation` | n/a | 35.715s report duration | 15.4s | 0.001487s | 11/11 passed; 11,006 input, 1,367 output, 80 AI Units |
+
+The retained target-app tab was polled again after cumulative acceptance and still showed Oracle Cloud Sign In. It was marked for handoff as required by keep-alive procedure. No target-app prompt and no BO POST was submitted. P3 remains runtime-pending.

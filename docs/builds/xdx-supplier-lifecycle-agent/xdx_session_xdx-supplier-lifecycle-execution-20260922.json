@@ -5,7 +5,7 @@
   "branch": "codex/xdx-supplier-lifecycle-agent",
   "phase": "Startup",
   "startedUtc": "2026-09-22T16:56:59.177006Z",
-  "checkpointUtc": "2026-09-22T22:52:19.780Z",
+  "checkpointUtc": "2026-09-22T23:15:18.9743495Z",
   "reads": [
     {
       "path": "AGENTS.md",
@@ -13,7 +13,7 @@
     },
     {
       "path": "docs/handoffs/ACTIVE_HANDOFF.md",
-      "sha256": "c4b8f5ba34e442373a3d4472a491cda58b54e769badcfe6437489e012d049ffc"
+      "sha256": "d588dea9635f983914c3aa1b9ea9208bf5627de758891a52adf113d839b390e0"
     },
     {
       "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
@@ -88,7 +88,7 @@
       "sha256": "83989f5e21530a16498eb31e213ed0734cf50a24fec2787dfe99f632cfa99795"
     }
   ],
-  "reviewNotes": "P0-P2 accepted. P3 required-field preparation passes local 14/14, workflow validation, configured workflow 10/10 and app 1/1; signed-in target AI Agent Studio preview remains pending because the retained browser session expired. No BO POST or business-data write occurred.",
+  "reviewNotes": "P0-P2 accepted. P3 required-field preparation passes local 14/14, workflow validation, targeted AI Agent Studio conversation 6/6 with 196/196 assertions, cumulative workflow 11/11 and the previously accepted app suite 1/1. Signed-in target AI Agent Studio preview remains pending because the retained browser tab still shows Cloud Sign In. No BO POST or business-data write occurred.",
   "objectReferences": [
     {
       "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
@@ -191,11 +191,12 @@
       "id": "verification",
       "rule": "Gates 3-9 and QA",
       "status": "pass",
-      "reason": "P1/P2 accepted; P3 local 14/14, validation, configured workflow 10/10 and app 1/1 pass. P3 target AI Agent Studio preview remains pending after browser session expiry.",
+      "reason": "P1/P2 accepted; P3 local 14/14, validation, configured six-turn conversation 196/196 and cumulative workflow 11/11 pass. The previously accepted app suite remains 1/1. P3 target AI Agent Studio preview remains pending after browser session expiry.",
       "evidence": [
         "scripts/tests/xdx-supplier-lifecycle/p1-state-contract.cjs",
         "scripts/tests/xdx-supplier-lifecycle/p2-query-contract.cjs",
         "scripts/tests/xdx-supplier-lifecycle/p3-prepare-contract.cjs",
+        "test/workflows/xdx_supplier_lifecycle_agent/p3-address-preparation-conversation.json",
         "test-reports/workflows/xdx_supplier_lifecycle_agent/suite-result.json",
         "test-reports/apps/xdx_supplier_lifecycle/suite-result.json",
         "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_p3_timing.jsonl"
@@ -232,7 +233,7 @@
   ],
   "metrics": {
     "tokens": "Full input/output/cached breakdown unavailable; record tool receipts where supplied.",
-    "aiUnits": "Current cumulative workflow suite: 50 AI Units; 9,810 input and 920 output tokens; app report emitted no separate token or AI Unit totals.",
+    "aiUnits": "Current cumulative deterministic workflow suite: 80 AI Units; 11,006 input and 1,367 output tokens; app report emitted no separate token or AI Unit totals.",
     "timingGaps": "P3 separate measures are in evidence/xdx_p3_timing.jsonl. Browser and validation commands without explicit stopwatch receipts remain null rather than inferred."
   }
 }
