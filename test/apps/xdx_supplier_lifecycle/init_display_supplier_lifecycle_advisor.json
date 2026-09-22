@@ -195,17 +195,17 @@
   "testData": {
     "status": "ready",
     "capturePolicy": "record-later",
-    "recordedAt": "2026-09-22T22:09:19.335Z",
+    "recordedAt": "2026-09-22T22:45:18.146Z",
     "nodes": {}
   },
   "pathBinding": {
     "derivedFrom": "live_execution",
     "pathSource": "observed",
     "inputHash": "d562f1e3186b1b4b",
-    "workflowDefinitionHash": "7f6c426e9e533ef5",
-    "observedAt": "2026-09-22T22:09:19.336Z",
+    "workflowDefinitionHash": "aa5ea8ea3b12e58a",
+    "observedAt": "2026-09-22T22:45:18.147Z",
     "observedTerminalNodeCode": "INIT_DISPLAY_RESPONSE",
     "workflowStatus": "DRAFT",
-    "workflowVersion": 86044912
+    "workflowVersion": 86049652
   }
 }

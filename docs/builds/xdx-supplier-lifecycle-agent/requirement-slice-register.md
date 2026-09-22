@@ -1,13 +1,13 @@
 # Requirement Slice Register
 
-Root artifact owner: XDX_SUPPLIER_LIFECYCLE_AGENT. BOs own source contracts; CODE owns validation/state; root HUMAN owns user decisions. P0 and P1 are implemented and accepted; P2-P9 remain open.
+Root artifact owner: XDX_SUPPLIER_LIFECYCLE_AGENT. BOs own source contracts; CODE owns validation/state; the non-suspending Agentic App Query path owns user decisions. P0-P2 are implemented and accepted; P3 is implemented with signed-in runtime acceptance pending; P4-P9 remain open.
 
 | Requirement ID | User outcome / acceptance | Slice | Owner | Dependencies | Deferred? | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
 | R00 | Reuse existing BOs and reconcile all resource contracts | P0 | Root workflow / source BO | Previous phase; exact resource contract | No | Accepted: 22-child inventory, current BO snapshots, references and validation |
 | R01 | Ask Oracle preserves typed state over Human Chat pause/resume | P1 | Root workflow / source BO | Previous phase; exact resource contract | No | Accepted: DRAFT v86037127; 3/3 conversation steps and 73/73 assertions; canonical suite 5/5; app panel 1/1 |
-| R02 | Show grounded supplier and child results with at most four columns | P2 | Root workflow / source BO | Previous phase; exact resource contract | Execution pending | Pending |
-| R03 | Gather source defaults; apply-all prepares draft and explicit changes win | P3 | Root workflow / source BO | Previous phase; exact resource contract | Execution pending | Pending |
+| R02 | Show grounded supplier and child results with at most four columns | P2 | Root workflow / source BO | Previous phase; exact resource contract | No | Accepted: local 12/12, configured child routes 21/21 each, target app preview supplier/address/site/contact |
+| R03 | Gather source defaults; apply-all prepares draft and explicit changes win | P3 | Root workflow / source BO | Previous phase; exact resource contract | Signed-in app preview | Local 14/14; validation zero errors; configured workflow 10/10 and app 1/1; target app preview blocked by expired browser session |
 | R04 | Create approved supplier and verify every intended field independently | P4 | Root workflow / source BO | Previous phase; exact resource contract | Execution pending | Pending |
 | R05 | Create approved address under resolved supplier and verify | P5 | Root workflow / source BO | Previous phase; exact resource contract | Execution pending | Pending |
 | R06 | Create approved site with valid address and BU and verify | P6 | Root workflow / source BO | Previous phase; exact resource contract | Execution pending | Pending |

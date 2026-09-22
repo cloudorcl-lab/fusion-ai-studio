@@ -5,7 +5,7 @@
   "branch": "codex/xdx-supplier-lifecycle-agent",
   "phase": "Startup",
   "startedUtc": "2026-09-22T16:56:59.177006Z",
-  "checkpointUtc": "2026-09-22T22:21:08.7571743Z",
+  "checkpointUtc": "2026-09-22T22:52:19.780Z",
   "reads": [
     {
       "path": "AGENTS.md",
@@ -13,7 +13,7 @@
     },
     {
       "path": "docs/handoffs/ACTIVE_HANDOFF.md",
-      "sha256": "ab4f28322a00599f519ab50d63b1a10f4031206f7c382864d74dc2c067294fb1"
+      "sha256": "c4b8f5ba34e442373a3d4472a491cda58b54e769badcfe6437489e012d049ffc"
     },
     {
       "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
@@ -88,7 +88,7 @@
       "sha256": "83989f5e21530a16498eb31e213ed0734cf50a24fec2787dfe99f632cfa99795"
     }
   ],
-  "reviewNotes": "P0-P2 accepted. Current target AI Agent Studio preview passes supplier, address, site and contact reads; configured workflow 10/10 and app 1/1 pass with no pending judges. Eight impossible planner combinations are accounted under finalSummaryAllowed true and are not described as executed. No BO POST or business-data write occurred.",
+  "reviewNotes": "P0-P2 accepted. P3 required-field preparation passes local 14/14, workflow validation, configured workflow 10/10 and app 1/1; signed-in target AI Agent Studio preview remains pending because the retained browser session expired. No BO POST or business-data write occurred.",
   "objectReferences": [
     {
       "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
@@ -191,20 +191,21 @@
       "id": "verification",
       "rule": "Gates 3-9 and QA",
       "status": "pass",
-      "reason": "P1/P2 local contracts, target AI Agent Studio runtime, configured workflow 10/10 and app 1/1 pass; P3-P9 remain planned under the active goal.",
+      "reason": "P1/P2 accepted; P3 local 14/14, validation, configured workflow 10/10 and app 1/1 pass. P3 target AI Agent Studio preview remains pending after browser session expiry.",
       "evidence": [
         "scripts/tests/xdx-supplier-lifecycle/p1-state-contract.cjs",
         "scripts/tests/xdx-supplier-lifecycle/p2-query-contract.cjs",
+        "scripts/tests/xdx-supplier-lifecycle/p3-prepare-contract.cjs",
         "test-reports/workflows/xdx_supplier_lifecycle_agent/suite-result.json",
         "test-reports/apps/xdx_supplier_lifecycle/suite-result.json",
-        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_p2_timing.jsonl"
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_p3_timing.jsonl"
       ]
     },
     {
       "id": "timing",
       "rule": "Time, token, and AI Unit controls",
       "status": "pass",
-      "reason": "Execution checkpoints and all post-context P2 test steps are recorded. The detailed JSONL separates JSON generation, exact Node commands, Node wall, workflow runtime, response parsing/review, results and rerun reasons.",
+      "reason": "P3 evidence separates JSON generation, exact Node commands, Node wall, workflow runtime and response parsing/review where measured; null fields are not inferred.",
       "evidence": [
         "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
       ]
@@ -225,13 +226,13 @@
     }
   ],
   "unresolved": [
-    "Complete and accept P3-P9 plus final signed-in AI Agent Studio runtime journeys",
+    "Complete P3 signed-in AI Agent Studio runtime acceptance, then P4-P9 and final runtime journeys",
     "Obtain exact environment/count/identity/required-field payload approval before the first live POST",
     "Complete model placement, learning/dependency review, Closeout verifier and scoped commits"
   ],
   "metrics": {
     "tokens": "Full input/output/cached breakdown unavailable; record tool receipts where supplied.",
-    "aiUnits": "Current cumulative workflow suite: 50 AI Units; 9,810 input and 920 output tokens; app report did not emit separate token or AI Unit totals.",
-    "timingGaps": "P2 JSON-authoring and response-review intervals before 2026-09-22T20:23:12.1582639Z were not separately instrumented. Later JSON generation, exact Node commands, Node wall, workflow runtime when exposed, result, evidence and rerun reasons are recorded in evidence/xdx_p2_timing.jsonl; null timing fields are not inferred."
+    "aiUnits": "Current cumulative workflow suite: 50 AI Units; 9,810 input and 920 output tokens; app report emitted no separate token or AI Unit totals.",
+    "timingGaps": "P3 separate measures are in evidence/xdx_p3_timing.jsonl. Browser and validation commands without explicit stopwatch receipts remain null rather than inferred."
   }
 }

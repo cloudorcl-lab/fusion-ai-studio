@@ -117,3 +117,28 @@ Discrete configured test receipts:
 | Contacts | 6.902717s | 0.230662s | 5.692802s | 4.965s | 21/21 | `LIST_SUPPLIER_CONTACTS` |
 
 The JSONL records the rejected planner-path attempts, compaction validation failure and correction, exact Node commands, rerun reasons and all available JSON-generation, Node-wall and workflow-runtime measures. Response parse/review values remain null where no separate stopwatch was run; they are not inferred from tool wall time. No BO POST or business-data write occurred. P0-P2 are accepted; P3-P9 and Closeout remain open.
+
+### P3 preparation and configured cumulative gate — 2026-09-22
+
+P3 implementation produced one rejected local source-generation attempt before remote save: escaped newlines were materialized inside the CODE source, then the local workflow was restored from commit `37cf32a` and regenerated. A second discrete run exposed the fixture pair parser losing whitespace escapes and an initial revision increment; both were repaired locally before any DRAFT save. These are recorded as build failures, not passing evidence.
+
+| Step | Exact command | JSON generation | Node wall | Workflow runtime | Parse/review | Result |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| P3 discrete contract | `node scripts/tests/xdx-supplier-lifecycle/p3-prepare-contract.cjs` | n/a | 0.088136s | n/a | included in assertions | 14/14 passed |
+| P1 cumulative local | `node scripts/tests/xdx-supplier-lifecycle/p1-state-contract.cjs` | n/a | 0.085654s | n/a | included in assertions | 8/8 passed |
+| P2 cumulative local | `node scripts/tests/xdx-supplier-lifecycle/p2-query-contract.cjs` | n/a | 0.077633s | n/a | included in assertions | 12/12 passed |
+| Initial DRAFT save attempt | `node .agents/skills/aistudio/scripts/aistudio.js do-save-workflow --file src/workflows/xdx_supplier_lifecycle_agent.wf` | n/a | 2.655792s | n/a | n/a | Sandbox credential-store EPERM; no remote mutation |
+| DRAFT save credential retry | same command with host credential access | n/a | 4.230966s | n/a | n/a | Patched DRAFT v86049652, ETag 16 |
+| Workflow sync plan | `node .agents/skills/aistudio/scripts/aistudio.js get-workflow-test-sync-plan --file src/workflows/xdx_supplier_lifecycle_agent.wf` | n/a | 0.334673s | n/a | n/a | 7 up to date, 8 accounted deferred, `finalSummaryAllowed: true` |
+| P1-P3 workflow suite | `node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --workflow-code XDX_SUPPLIER_LIFECYCLE_AGENT` | n/a | 35.654533s | 10.2s | judge review followed | 10 deterministic passes; 10 local judges pending |
+| Workflow judge JSON | `node temp/generate_p3_judges.cjs` | 0.111211s | included | n/a | local rubric review | 10 result files |
+| Attach workflow judges | `node .agents/skills/aistudio/scripts/aistudio.js attach-workflow-test-judge-results --workflow-code XDX_SUPPLIER_LIFECYCLE_AGENT --cleanup-scratch true` | n/a | 0.502299s | n/a | n/a | 10/10 attached; suite rebuilt to pass |
+| App update definition | Node projection of the existing judge contract | 0.080155s | included | n/a | n/a | Definition written |
+| Update app test | `node .agents/skills/aistudio/scripts/aistudio.js do-update-app-test --file src/apps/xdx_supplier_lifecycle.app --test-file test/apps/xdx_supplier_lifecycle/init_display_supplier_lifecycle_advisor.json --definition '@.debug/p3-app-test-update-definition.json'` | n/a | 0.231896s | n/a | n/a | Updated; data pending |
+| Record app data | `node .agents/skills/aistudio/scripts/aistudio.js do-record-app-test-data --test-file test/apps/xdx_supplier_lifecycle/init_display_supplier_lifecycle_advisor.json` | n/a | 4.399690s | recorded in app report | n/a | Data ready; no BO write |
+| P1-P3 app suite | `node .agents/skills/aistudio/scripts/aistudio.js do-sync-app-tests --file src/apps/xdx_supplier_lifecycle.app` | n/a | 4.929899s | recorded in app report | judge review followed | 1 local judge pending |
+| App judge JSON | Node projection and local rubric review | 0.081026s | included | n/a | included | One result written |
+| Attach app judge | `node .agents/skills/aistudio/scripts/aistudio.js do-attach-app-test-judge-results --report-root-dir test-reports/apps --app-code XDX_SUPPLIER_LIFECYCLE --cleanup-scratch true` | n/a | 0.464237s | n/a | n/a | 1/1 attached; app suite rebuilt to pass |
+| Final report parse | Node assertions over canonical workflow and app suite JSON | n/a | included | 10.2s workflow total | 0.099041s | Workflow 10/10; app 1/1; zero pending judges |
+
+Configured metrics remain 9,810 input tokens, 920 output tokens, 50 AI Units and 10.2 seconds total workflow time for 10 model-backed cases. The retained browser tab was checked after the DRAFT save and had expired to Oracle Cloud Sign In, so no P3 target-app prompt was submitted and the tab was retained for login handoff. P3 remains runtime-pending; no BO POST or business-data write occurred.
