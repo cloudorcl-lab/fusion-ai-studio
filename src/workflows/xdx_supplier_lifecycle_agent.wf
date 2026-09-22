@@ -62,9 +62,9 @@
           "type": "CODE",
           "metadata": {
             "name": "Reduce Lifecycle State",
-            "description": "Validates the current Ask Oracle message or Human Chat feedback and advances one typed lifecycle state without side effects.",
+            "description": "Validates Ask Oracle or Human input, preserves typed lifecycle state, and emits one bounded read action without side effects.",
             "returnType": "object",
-            "sourceCode": "function clean(value, max) { if (value === undefined || value === null) return ''; return String(value).replace(/[\\u0000-\\u001F\\u007F]/g, ' ').replace(/\\s+/g, ' ').trim().slice(0, max); }\nfunction isObject(value) { return value !== null && typeof value === 'object' && !Array.isArray(value); }\nfunction blankState(message) { return { schemaVersion: 1, phase: 'GATHER', revision: 1, requestId: 'supplier-' + Date.now(), selectedSupplier: null, queryResults: [], selectionKeys: [], referenceRecord: null, draft: { resource: 'supplier', intentText: message, requiredFields: {} }, fieldProvenance: {}, missingFields: ['requiredFields'], approvedSnapshot: null, operations: [], verification: { status: 'NOT_STARTED', checks: [] }, lastMessage: message }; }\nvar prior = $context && $context.$variables ? $context.$variables.lifecycle : null;\nvar feedback = $context && $context.$nodes && $context.$nodes.HUMAN_COLLECT ? $context.$nodes.HUMAN_COLLECT.$feedbackReceived : '';\nvar currentMessage = clean(feedback || ($context && $context.$system ? $context.$system.$inputMessage : ''), 2000);\nvar validPrior = isObject(prior) && prior.schemaVersion === 1 && typeof prior.revision === 'number' && typeof prior.requestId === 'string' && isObject(prior.draft);\nvar lower = currentMessage.toLowerCase();\nif (!validPrior) { var initial = blankState(currentMessage); if (/^(cancel|stop|reject)\\b/.test(lower)) { initial.phase = 'CANCELLED'; return { state: initial, terminal: true, prompt: 'Cancelled. No supplier data was written.' }; } return { state: initial, terminal: false, prompt: 'I saved the request. Add or correct the required supplier details, type review to see the exact draft, or type cancel.' }; }\nif ((prior.phase === 'APPROVED' || prior.phase === 'CANCELLED') && /^(new|start over|new request)\\b/.test(lower)) { var restarted = blankState(currentMessage); return { state: restarted, terminal: false, prompt: 'I saved the new request. Add or correct the required supplier details, type review to see the exact draft, or type cancel.' }; }\nvar state = JSON.parse(JSON.stringify(prior));\nstate.lastMessage = currentMessage;\nif (state.phase === 'APPROVED' || state.phase === 'CANCELLED') { return { state: state, terminal: true, prompt: 'This request is already ' + state.phase.toLowerCase() + '. Start a new request to continue.' }; }\nif (/^(cancel|stop|reject)\\b/.test(lower)) { state.phase = 'CANCELLED'; state.revision += 1; state.approvedSnapshot = null; return { state: state, terminal: true, prompt: 'Cancelled. No supplier data was written.' }; }\nif (/^(approve|approved|confirm create)\\b/.test(lower)) { if (state.phase !== 'FINAL_REVIEW') { state.approvedSnapshot = null; return { state: state, terminal: false, prompt: 'Approval is stale or premature. Type review after the required fields are ready.' }; } state.approvedSnapshot = { requestId: state.requestId, revision: state.revision, normalizedPayload: JSON.parse(JSON.stringify(state.draft.requiredFields)), targetParent: state.selectedSupplier }; state.phase = 'APPROVED'; return { state: state, terminal: true, prompt: 'Approval captured for request ' + state.requestId + ' revision ' + state.revision + '. P1 is no-write, so no supplier data was submitted.' }; }\nif (/^review\\b/.test(lower)) { if (!clean(state.draft.intentText, 2000)) { return { state: state, terminal: false, prompt: 'The request is empty. Provide the required supplier details before review.' }; } state.phase = 'FINAL_REVIEW'; state.revision += 1; state.approvedSnapshot = null; return { state: state, terminal: false, prompt: 'Final no-write review for request ' + state.requestId + ', revision ' + state.revision + ': ' + JSON.stringify(state.draft.requiredFields) + '. Type approve, provide a correction, or type cancel.' }; }\nif (!currentMessage) { return { state: state, terminal: false, prompt: 'Provide a correction, type review, or type cancel.' }; }\nstate.draft.intentText = currentMessage; state.phase = 'GATHER'; state.revision += 1; state.approvedSnapshot = null; state.missingFields = ['requiredFields']; state.fieldProvenance = { intentText: 'USER' }; return { state: state, terminal: false, prompt: 'Saved correction at revision ' + state.revision + ' and invalidated any earlier approval. Type review when the required fields are ready, or type cancel.' };"
+            "sourceCode": "function clean(value, max) {\n  if (value === undefined || value === null) return '';\n  return String(value).replace(/[\\u0000-\\u001F\\u007F]/g, ' ').replace(/\\s+/g, ' ').trim().slice(0, max);\n}\nfunction isObject(value) { return value !== null && typeof value === 'object' && !Array.isArray(value); }\nfunction blankQuery() { return { kind: '', term: '', filter: '', parentId: '', limit: 10, offset: 0, hasMore: false, status: 'IDLE', resource: '' }; }\nfunction blankState(message) {\n  return {\n    schemaVersion: 1,\n    phase: 'GATHER',\n    revision: 1,\n    requestId: 'supplier-' + Date.now(),\n    selectedSupplier: null,\n    query: blankQuery(),\n    queryResults: [],\n    selectionKeys: [],\n    referenceRecord: null,\n    draft: { resource: 'supplier', intentText: message, requiredFields: {} },\n    fieldProvenance: {},\n    missingFields: ['requiredFields'],\n    approvedSnapshot: null,\n    operations: [],\n    verification: { status: 'NOT_STARTED', checks: [] },\n    lastMessage: message\n  };\n}\nfunction queryAction(state, kind, term, filter, resource, offset) {\n  state.phase = 'QUERY';\n  state.query = { kind: kind, term: term, filter: filter, parentId: '', limit: 10, offset: offset || 0, hasMore: false, status: 'PENDING', resource: resource };\n  state.queryResults = [];\n  state.selectionKeys = [];\n  state.revision += 1;\n  state.approvedSnapshot = null;\n  var actionByKind = {\n    SUPPLIER_NAME: 'SEARCH_NAME',\n    SUPPLIER_NUMBER: 'SEARCH_NUMBER',\n    ADDRESSES: 'LIST_ADDRESSES',\n    SITES: 'LIST_SITES',\n    CONTACTS: 'LIST_CONTACTS'\n  };\n  return { state: state, terminal: false, action: actionByKind[kind], query: state.query, prompt: '' };\n}\nfunction promptResult(state, prompt, terminal) { return { state: state, terminal: terminal === true, action: 'PROMPT', query: state.query, prompt: prompt }; }\n\nvar prior = $context && $context.$variables ? $context.$variables.lifecycle : null;\nvar feedback = $context && $context.$nodes && $context.$nodes.HUMAN_COLLECT ? $context.$nodes.HUMAN_COLLECT.$feedbackReceived : '';\nvar currentMessage = clean(feedback || ($context && $context.$system ? $context.$system.$inputMessage : ''), 2000);\nvar validPrior = isObject(prior) && prior.schemaVersion === 1 && typeof prior.revision === 'number' && typeof prior.requestId === 'string' && isObject(prior.draft);\nvar lower = currentMessage.toLowerCase();\n\nif (!validPrior) {\n  var initial = blankState(currentMessage);\n  if (/^(cancel|stop|reject)\\b/.test(lower)) {\n    initial.phase = 'CANCELLED';\n    return promptResult(initial, 'Cancelled. No supplier data was written.', true);\n  }\n  var seed = initial;\n  prior = seed;\n  validPrior = true;\n} else {\n  prior = JSON.parse(JSON.stringify(prior));\n  if (!isObject(prior.query)) prior.query = blankQuery();\n}\n\nif ((prior.phase === 'APPROVED' || prior.phase === 'CANCELLED') && /^(new|start over|new request)\\b/.test(lower)) {\n  var restarted = blankState(currentMessage);\n  return promptResult(restarted, 'I saved the new request. Add or correct the required supplier details, query suppliers, type review to see the exact draft, or type cancel.', false);\n}\n\nvar state = prior;\nstate.lastMessage = currentMessage;\nif (state.phase === 'APPROVED' || state.phase === 'CANCELLED') {\n  return promptResult(state, 'This request is already ' + state.phase.toLowerCase() + '. Start a new request to continue.', true);\n}\nif (/^(cancel|stop|reject)\\b/.test(lower)) {\n  state.phase = 'CANCELLED';\n  state.revision += 1;\n  state.approvedSnapshot = null;\n  return promptResult(state, 'Cancelled. No supplier data was written.', true);\n}\n\nvar numberMatch = currentMessage.match(/^(?:find|search|show|query|look up)\\s+(?:for\\s+)?supplier\\s+(?:number|#)\\s+([A-Za-z0-9._-]{1,30})\\s*$/i);\nif (numberMatch) {\n  var supplierNumber = numberMatch[1];\n  return queryAction(state, 'SUPPLIER_NUMBER', supplierNumber, \"SupplierNumber='\" + supplierNumber + \"'\", 'suppliers', 0);\n}\n\nvar nameMatch = currentMessage.match(/^(?:find|search|show|query|look up)\\s+(?:for\\s+)?suppliers?\\s+(?:(?:named?|called)\\s+)?(.+)$/i);\nif (nameMatch) {\n  var supplierName = clean(nameMatch[1], 200);\n  if (!supplierName || /[%_;]|\\bq\\s*=|[\\r\\n]/i.test(supplierName)) {\n    state.phase = 'VALIDATION_ERROR';\n    state.revision += 1;\n    return promptResult(state, 'Enter a safe supplier name using letters, numbers, spaces, apostrophes, ampersands, periods, commas, or hyphens.', false);\n  }\n  supplierName = supplierName.replace(/'/g, \"''\");\n  return queryAction(state, 'SUPPLIER_NAME', supplierName, '', 'suppliers', 0);\n}\n\nvar selectMatch = currentMessage.match(/^select\\s+(\\d{1,3})\\s*$/i);\nif (selectMatch) {\n  var selectionIndex = Number(selectMatch[1]) - 1;\n  if (selectionIndex < 0 || selectionIndex >= state.queryResults.length || !isObject(state.queryResults[selectionIndex])) {\n    state.phase = 'VALIDATION_ERROR';\n    return promptResult(state, 'That selection is not available. Choose one of the displayed supplier row numbers.', false);\n  }\n  state.selectedSupplier = JSON.parse(JSON.stringify(state.queryResults[selectionIndex]));\n  state.phase = 'GATHER';\n  state.revision += 1;\n  return promptResult(state, 'Selected supplier ' + clean(state.selectedSupplier.Supplier, 200) + ' (' + clean(state.selectedSupplier.SupplierNumber, 80) + '). You can show addresses, sites, or contacts.', false);\n}\n\nvar childMatch = currentMessage.match(/^(?:show|list|query)\\s+(?:supplier\\s+)?(addresses|sites|contacts)\\s*$/i);\nif (childMatch) {\n  if (!isObject(state.selectedSupplier) || state.selectedSupplier.SupplierId === undefined || state.selectedSupplier.SupplierId === null) {\n    state.phase = 'VALIDATION_ERROR';\n    return promptResult(state, 'Select one supplier before querying its addresses, sites, or contacts.', false);\n  }\n  var childKind = childMatch[1].toUpperCase();\n  var childFilter = childKind === 'ADDRESSES' ? 'SupplierAddressId is not null' : childKind === 'SITES' ? 'SupplierSiteId is not null' : 'SupplierContactId is not null';\n  var childResult = queryAction(state, childKind, '', childFilter, childKind.toLowerCase(), 0);\n  childResult.query.parentId = String(state.selectedSupplier.SupplierId);\n  return childResult;\n}\n\nif (/^(?:next|next page)\\s*$/i.test(currentMessage)) {\n  if (!isObject(state.query) || !state.query.kind || state.query.status !== 'READY' || state.query.hasMore !== true) {\n    return promptResult(state, 'There is no next page for the current query.', false);\n  }\n  var nextKind = state.query.kind;\n  var nextTerm = state.query.term;\n  var nextFilter = state.query.filter;\n  var nextResource = state.query.resource;\n  var nextOffset = state.query.offset + state.query.limit;\n  var nextResult = queryAction(state, nextKind, nextTerm, nextFilter, nextResource, nextOffset);\n  if (isObject(state.selectedSupplier) && state.selectedSupplier.SupplierId !== undefined && /^(ADDRESSES|SITES|CONTACTS)$/.test(nextKind)) {\n    nextResult.query.parentId = String(state.selectedSupplier.SupplierId);\n  }\n  return nextResult;\n}\n\nif (/^(approve|approved|confirm create)\\b/.test(lower)) {\n  if (state.phase !== 'FINAL_REVIEW') {\n    state.approvedSnapshot = null;\n    return promptResult(state, 'Approval is stale or premature. Type review after the required fields are ready.', false);\n  }\n  state.approvedSnapshot = { requestId: state.requestId, revision: state.revision, normalizedPayload: JSON.parse(JSON.stringify(state.draft.requiredFields)), targetParent: state.selectedSupplier };\n  state.phase = 'APPROVED';\n  return promptResult(state, 'Approval captured for request ' + state.requestId + ' revision ' + state.revision + '. P2 is read-only, so no supplier data was submitted.', true);\n}\nif (/^review\\b/.test(lower)) {\n  if (!clean(state.draft.intentText, 2000)) return promptResult(state, 'The request is empty. Provide the required supplier details before review.', false);\n  state.phase = 'FINAL_REVIEW';\n  state.revision += 1;\n  state.approvedSnapshot = null;\n  return promptResult(state, 'Final no-write review for request ' + state.requestId + ', revision ' + state.revision + ': ' + JSON.stringify(state.draft.requiredFields) + '. Type approve, provide a correction, or type cancel.', false);\n}\nif (!currentMessage) return promptResult(state, 'Provide a correction, query suppliers, type review, or type cancel.', false);\n\nif (state.revision === 1 && state.draft.intentText === currentMessage && state.fieldProvenance.intentText === undefined) {\n  return promptResult(state, 'I saved the request. Add or correct the required supplier details, query suppliers, type review to see the exact draft, or type cancel.', false);\n}\nstate.draft.intentText = currentMessage;\nstate.phase = 'GATHER';\nstate.revision += 1;\nstate.approvedSnapshot = null;\nstate.missingFields = ['requiredFields'];\nstate.fieldProvenance = { intentText: 'USER' };\nreturn promptResult(state, 'Saved correction at revision ' + state.revision + ' and invalidated any earlier approval. Query suppliers, type review when the required fields are ready, or type cancel.', false);\n"
           },
           "outcomes": {
             "success": "300"
@@ -85,7 +85,7 @@
             "description": "Persists the validated typed state for the current conversation."
           },
           "outcomes": {
-            "success": "350"
+            "success": "721"
           },
           "inputs": [
             {
@@ -117,12 +117,12 @@
               "id": "400_condition",
               "name": "condition",
               "type": "string",
-              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.terminal === true}}"
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.action !== 'PROMPT' || $context.$nodes.REDUCE_LIFECYCLE.$output.result.terminal === true}}"
             }
           ],
           "diagram": {
             "x": 5225,
-            "y": 6094
+            "y": 6982
           },
           "convergenceTargetId": "end"
         },
@@ -155,7 +155,7 @@
           ],
           "diagram": {
             "x": 5000,
-            "y": 6316
+            "y": 7204
           }
         },
         {
@@ -186,7 +186,7 @@
           ],
           "diagram": {
             "x": 5450,
-            "y": 6316
+            "y": 7204
           }
         },
         {
@@ -195,8 +195,8 @@
           "type": "CODE",
           "metadata": {
             "name": "Project Response Text",
-            "description": "Projects the reducer response to a scalar for Human Chat and terminal message bindings.",
-            "sourceCode": "return $context.$nodes.REDUCE_LIFECYCLE.$output.result.prompt;",
+            "description": "Projects the reducer or normalized read response to one scalar for Human Chat and terminal bindings.",
+            "sourceCode": "var reduced = $context.$nodes.REDUCE_LIFECYCLE.$output.result;\nif (reduced.action !== 'PROMPT' && $context.$nodes.NORMALIZE_READ_RESULT && $context.$nodes.NORMALIZE_READ_RESULT.$output) return $context.$nodes.NORMALIZE_READ_RESULT.$output.result.prompt;\nreturn reduced.prompt;",
             "returnType": "string"
           },
           "outcomes": {
@@ -205,7 +205,7 @@
           "inputs": [],
           "diagram": {
             "x": 5225,
-            "y": 5872
+            "y": 6760
           },
           "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"result\": {\n      \"type\": \"object\"\n    },\n    \"timeout\": {\n      \"type\": \"boolean\"\n    },\n    \"error\": {\n      \"type\": \"string\"\n    }\n  },\n  \"additionalProperties\": false,\n  \"required\": [\n    \"result\",\n    \"timeout\",\n    \"error\"\n  ]\n}"
         },
@@ -235,7 +235,7 @@
             }
           ],
           "diagram": {
-            "x": 5900,
+            "x": 6575,
             "y": 5428
           },
           "aiAppOutputSpecification": {
@@ -276,7 +276,7 @@
             }
           ],
           "diagram": {
-            "x": 6350,
+            "x": 7025,
             "y": 5428
           },
           "aiAppOutputSpecification": {
@@ -314,8 +314,296 @@
             }
           ],
           "diagram": {
-            "x": 6800,
+            "x": 7475,
             "y": 5428
+          }
+        },
+        {
+          "id": "721",
+          "code": "READ_ACTION_ROUTER",
+          "type": "SWITCH",
+          "metadata": {
+            "name": "Route Read Action",
+            "description": "Routes one validated P2 read action or the existing prompt path."
+          },
+          "outcomes": {
+            "PROMPT": "350",
+            "SEARCH_NAME": "722",
+            "SEARCH_NUMBER": "723",
+            "LIST_ADDRESSES": "724",
+            "LIST_SITES": "725",
+            "LIST_CONTACTS": "726",
+            "success": ""
+          },
+          "inputs": [
+            {
+              "id": "721_caseExpression",
+              "name": "caseExpression",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.action}}"
+            }
+          ],
+          "diagram": {
+            "x": 5225,
+            "y": 5872
+          },
+          "convergenceTargetId": "350"
+        },
+        {
+          "id": "722",
+          "code": "FIND_SUPPLIERS_BY_NAME",
+          "type": "BO_FUNCTION",
+          "metadata": {
+            "name": "Find Suppliers by Name",
+            "description": "Runs the bounded reused supplier-name GET.",
+            "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+            "functionName": "FindSuppliersByPartialName"
+          },
+          "outcomes": {
+            "success": "727"
+          },
+          "inputs": [
+            {
+              "id": "722_supplierName",
+              "name": "supplierName",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.term}}"
+            },
+            {
+              "id": "722_limit",
+              "name": "limit",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.limit}}"
+            },
+            {
+              "id": "722_offset",
+              "name": "offset",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.offset}}"
+            }
+          ],
+          "diagram": {
+            "x": 5675,
+            "y": 6094
+          },
+          "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"items\": { \"type\": \"object\" }\n    },\n    \"count\": { \"type\": \"integer\" },\n    \"hasMore\": { \"type\": \"boolean\" },\n    \"limit\": { \"type\": \"integer\" },\n    \"offset\": { \"type\": \"integer\" }\n  },\n  \"required\": [\"items\", \"count\", \"hasMore\", \"limit\", \"offset\"]\n}\n"
+        },
+        {
+          "id": "723",
+          "code": "FIND_SUPPLIERS_BY_NUMBER",
+          "type": "BO_FUNCTION",
+          "metadata": {
+            "name": "Find Suppliers by Number",
+            "description": "Runs the validated supplier-number GET.",
+            "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+            "functionName": "FindSuppliersByValidatedFilter"
+          },
+          "outcomes": {
+            "success": "727"
+          },
+          "inputs": [
+            {
+              "id": "723_filter",
+              "name": "filter",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.filter}}"
+            },
+            {
+              "id": "723_limit",
+              "name": "limit",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.limit}}"
+            },
+            {
+              "id": "723_offset",
+              "name": "offset",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.offset}}"
+            }
+          ],
+          "diagram": {
+            "x": 6125,
+            "y": 6094
+          },
+          "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"items\": { \"type\": \"object\" }\n    },\n    \"count\": { \"type\": \"integer\" },\n    \"hasMore\": { \"type\": \"boolean\" },\n    \"limit\": { \"type\": \"integer\" },\n    \"offset\": { \"type\": \"integer\" }\n  },\n  \"required\": [\"items\", \"count\", \"hasMore\", \"limit\", \"offset\"]\n}\n"
+        },
+        {
+          "id": "724",
+          "code": "LIST_SUPPLIER_ADDRESSES",
+          "type": "BO_FUNCTION",
+          "metadata": {
+            "name": "List Supplier Addresses",
+            "description": "Runs the selected-parent bounded addresses GET.",
+            "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+            "functionName": "ListSupplierAddresses"
+          },
+          "outcomes": {
+            "success": "727"
+          },
+          "inputs": [
+            {
+              "id": "724_suppliers_Id",
+              "name": "suppliers_Id",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.parentId}}"
+            },
+            {
+              "id": "724_filter",
+              "name": "filter",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.filter}}"
+            },
+            {
+              "id": "724_limit",
+              "name": "limit",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.limit}}"
+            },
+            {
+              "id": "724_offset",
+              "name": "offset",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.offset}}"
+            }
+          ],
+          "diagram": {
+            "x": 6575,
+            "y": 6094
+          },
+          "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"items\": { \"type\": \"object\" }\n    },\n    \"count\": { \"type\": \"integer\" },\n    \"hasMore\": { \"type\": \"boolean\" },\n    \"limit\": { \"type\": \"integer\" },\n    \"offset\": { \"type\": \"integer\" }\n  },\n  \"required\": [\"items\", \"count\", \"hasMore\", \"limit\", \"offset\"]\n}\n"
+        },
+        {
+          "id": "725",
+          "code": "LIST_SUPPLIER_SITES",
+          "type": "BO_FUNCTION",
+          "metadata": {
+            "name": "List Supplier Sites",
+            "description": "Runs the selected-parent bounded sites GET.",
+            "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+            "functionName": "ListSupplierSites"
+          },
+          "outcomes": {
+            "success": "727"
+          },
+          "inputs": [
+            {
+              "id": "725_suppliers_Id",
+              "name": "suppliers_Id",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.parentId}}"
+            },
+            {
+              "id": "725_filter",
+              "name": "filter",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.filter}}"
+            },
+            {
+              "id": "725_limit",
+              "name": "limit",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.limit}}"
+            },
+            {
+              "id": "725_offset",
+              "name": "offset",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.offset}}"
+            }
+          ],
+          "diagram": {
+            "x": 7025,
+            "y": 6094
+          },
+          "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"items\": { \"type\": \"object\" }\n    },\n    \"count\": { \"type\": \"integer\" },\n    \"hasMore\": { \"type\": \"boolean\" },\n    \"limit\": { \"type\": \"integer\" },\n    \"offset\": { \"type\": \"integer\" }\n  },\n  \"required\": [\"items\", \"count\", \"hasMore\", \"limit\", \"offset\"]\n}\n"
+        },
+        {
+          "id": "726",
+          "code": "LIST_SUPPLIER_CONTACTS",
+          "type": "BO_FUNCTION",
+          "metadata": {
+            "name": "List Supplier Contacts",
+            "description": "Runs the selected-parent bounded contacts GET.",
+            "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+            "functionName": "ListSupplierContacts"
+          },
+          "outcomes": {
+            "success": "727"
+          },
+          "inputs": [
+            {
+              "id": "726_suppliers_Id",
+              "name": "suppliers_Id",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.parentId}}"
+            },
+            {
+              "id": "726_filter",
+              "name": "filter",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.filter}}"
+            },
+            {
+              "id": "726_limit",
+              "name": "limit",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.limit}}"
+            },
+            {
+              "id": "726_offset",
+              "name": "offset",
+              "type": "string",
+              "value": "{{$context.$nodes.REDUCE_LIFECYCLE.$output.result.query.offset}}"
+            }
+          ],
+          "diagram": {
+            "x": 7475,
+            "y": 6094
+          },
+          "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"items\": { \"type\": \"object\" }\n    },\n    \"count\": { \"type\": \"integer\" },\n    \"hasMore\": { \"type\": \"boolean\" },\n    \"limit\": { \"type\": \"integer\" },\n    \"offset\": { \"type\": \"integer\" }\n  },\n  \"required\": [\"items\", \"count\", \"hasMore\", \"limit\", \"offset\"]\n}\n"
+        },
+        {
+          "id": "727",
+          "code": "NORMALIZE_READ_RESULT",
+          "type": "CODE",
+          "metadata": {
+            "name": "Normalize Supplier Read Result",
+            "description": "Normalizes one BO GET result into typed state and a deterministic four-column response; execution failure remains distinct from an empty collection.",
+            "returnType": "object",
+            "sourceCode": "function clean(value, max) {\n  if (value === undefined || value === null) return '';\n  return String(value).replace(/[\\u0000-\\u001F\\u007F|]/g, ' ').replace(/\\s+/g, ' ').trim().slice(0, max);\n}\nfunction cell(value) { var text = clean(value, 120); return text || '—'; }\nfunction table(headers, rows) {\n  var lines = [headers.join(' | '), headers.map(function () { return '---'; }).join(' | ')];\n  rows.forEach(function (row, index) { lines.push((index + 1) + '. ' + row.map(cell).join(' | ')); });\n  return lines.join('\\n');\n}\nvar reduced = $context.$nodes.REDUCE_LIFECYCLE.$output.result;\nvar state = JSON.parse(JSON.stringify(reduced.state));\nvar action = reduced.action;\nvar nodeByAction = {\n  SEARCH_NAME: 'FIND_SUPPLIERS_BY_NAME',\n  SEARCH_NUMBER: 'FIND_SUPPLIERS_BY_NUMBER',\n  LIST_ADDRESSES: 'LIST_SUPPLIER_ADDRESSES',\n  LIST_SITES: 'LIST_SUPPLIER_SITES',\n  LIST_CONTACTS: 'LIST_SUPPLIER_CONTACTS'\n};\nvar node = $context.$nodes[nodeByAction[action]];\nvar output = node && node.$output ? node.$output : null;\nif (!output || !Array.isArray(output.items)) {\n  state.phase = 'UNKNOWN';\n  state.query.status = 'ERROR';\n  state.query.hasMore = false;\n  state.verification = { status: 'READ_ERROR', checks: [] };\n  return { state: state, prompt: 'The supplier query could not be completed. No result was treated as an empty list; retry or refine the request.' };\n}\nvar items = output.items.slice(0, state.query.limit);\nstate.queryResults = JSON.parse(JSON.stringify(items));\nstate.query.offset = Number.isInteger(output.offset) ? output.offset : state.query.offset;\nstate.query.limit = Number.isInteger(output.limit) && output.limit > 0 ? Math.min(output.limit, 25) : state.query.limit;\nstate.query.hasMore = output.hasMore === true;\nstate.query.status = items.length ? 'READY' : 'EMPTY';\nstate.verification = { status: 'READ_COMPLETE', checks: ['parent-scope', 'four-column-projection'] };\nif (!items.length) {\n  state.phase = 'QUERY';\n  var emptyLabel = action === 'SEARCH_NAME' || action === 'SEARCH_NUMBER' ? 'suppliers matched' : state.query.resource + ' were found for the selected supplier';\n  return { state: state, prompt: 'No ' + emptyLabel + '. This was a successful empty result, not an execution error.' };\n}\nvar prompt;\nif (action === 'SEARCH_NAME' || action === 'SEARCH_NUMBER') {\n  state.selectionKeys = items.map(function (item) { return String(item.SupplierId); });\n  if (items.length === 1) {\n    state.selectedSupplier = JSON.parse(JSON.stringify(items[0]));\n    state.phase = 'GATHER';\n  } else {\n    state.phase = 'SELECT';\n  }\n  prompt = table(['Supplier number', 'Supplier', 'Type', 'Relationship'], items.map(function (item) {\n    return [item.SupplierNumber, item.Supplier, item.SupplierType, item.BusinessRelationship];\n  }));\n  prompt += items.length === 1 ? '\\nSelected the only matching supplier. You can show addresses, sites, or contacts.' : '\\nReply select 1 or select ' + items.length + ' to choose a supplier.';\n} else if (action === 'LIST_ADDRESSES') {\n  state.phase = 'GATHER';\n  state.selectionKeys = items.map(function (item) { return String(item.SupplierAddressId); });\n  prompt = table(['Address', 'City', 'State', 'Country'], items.map(function (item) { return [item.AddressName, item.City, item.State, item.Country]; }));\n} else if (action === 'LIST_SITES') {\n  state.phase = 'GATHER';\n  state.selectionKeys = items.map(function (item) { return String(item.SupplierSiteId); });\n  prompt = table(['Site', 'Procurement BU', 'Address', 'Status'], items.map(function (item) { return [item.SupplierSite, item.ProcurementBU, item.SupplierAddressName, item.Status]; }));\n} else {\n  state.phase = 'GATHER';\n  state.selectionKeys = items.map(function (item) { return String(item.SupplierContactId); });\n  prompt = table(['Contact', 'Job title', 'Email', 'Status'], items.map(function (item) { return [item.ContactName || ((item.FirstName || '') + ' ' + (item.LastName || '')), item.JobTitle, item.Email, item.Status]; }));\n}\nif (state.query.hasMore) prompt += '\\nMore results are available. Reply next to load the next page.';\nreturn { state: state, prompt: prompt };\n"
+          },
+          "outcomes": {
+            "success": "728"
+          },
+          "inputs": [],
+          "diagram": {
+            "x": 6575,
+            "y": 6316
+          },
+          "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"result\": {\n      \"type\": \"object\"\n    },\n    \"timeout\": {\n      \"type\": \"boolean\"\n    },\n    \"error\": {\n      \"type\": \"string\"\n    }\n  },\n  \"additionalProperties\": false,\n  \"required\": [\n    \"result\",\n    \"timeout\",\n    \"error\"\n  ]\n}"
+        },
+        {
+          "id": "728",
+          "code": "SAVE_READ_STATE",
+          "type": "SET_FIELDS",
+          "metadata": {
+            "name": "Save Read State",
+            "description": "Persists the normalized read state for selection and child scoping."
+          },
+          "outcomes": {
+            "success": "350"
+          },
+          "inputs": [
+            {
+              "id": "728_lifecycle",
+              "name": "lifecycle",
+              "type": "string",
+              "value": "{{$context.$nodes.NORMALIZE_READ_RESULT.$output.result.state}}"
+            }
+          ],
+          "diagram": {
+            "x": 6575,
+            "y": 6538
           }
         },
         {
@@ -367,7 +655,7 @@
     "defaultModelConfiguration": "ORA_MODEL_CONFIG_PREMIUM_OPEN_AI_GPT_4_1_MINI"
   },
   "status": "DRAFT",
-  "version": 86037127,
+  "version": 86040319,
   "family": "PRC",
   "product": "SUPPLIER",
   "ownerName": null,
@@ -381,6 +669,6 @@
   "aiAppsCompatibleFlag": true,
   "followupEnabledFlag": false,
   "header": {
-    "ETag": "\"10\""
+    "ETag": "\"12\""
   }
 }

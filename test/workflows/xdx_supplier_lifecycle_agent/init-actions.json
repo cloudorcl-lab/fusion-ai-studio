@@ -63,6 +63,11 @@
         "nodeCode": "SAVE_LIFECYCLE"
       },
       {
+        "id": "path-must-not-execute-read_action_router",
+        "name": "READ_ACTION_ROUTER does not execute",
+        "nodeCode": "READ_ACTION_ROUTER"
+      },
+      {
         "id": "path-must-not-execute-project_response_text",
         "name": "PROJECT_RESPONSE_TEXT does not execute",
         "nodeCode": "PROJECT_RESPONSE_TEXT"
@@ -81,6 +86,41 @@
         "id": "path-must-not-execute-query_response",
         "name": "QUERY_RESPONSE does not execute",
         "nodeCode": "QUERY_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-find_suppliers_by_name",
+        "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+        "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+      },
+      {
+        "id": "path-must-not-execute-normalize_read_result",
+        "name": "NORMALIZE_READ_RESULT does not execute",
+        "nodeCode": "NORMALIZE_READ_RESULT"
+      },
+      {
+        "id": "path-must-not-execute-save_read_state",
+        "name": "SAVE_READ_STATE does not execute",
+        "nodeCode": "SAVE_READ_STATE"
+      },
+      {
+        "id": "path-must-not-execute-find_suppliers_by_number",
+        "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+        "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+      },
+      {
+        "id": "path-must-not-execute-list_supplier_addresses",
+        "name": "LIST_SUPPLIER_ADDRESSES does not execute",
+        "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+      },
+      {
+        "id": "path-must-not-execute-list_supplier_sites",
+        "name": "LIST_SUPPLIER_SITES does not execute",
+        "nodeCode": "LIST_SUPPLIER_SITES"
+      },
+      {
+        "id": "path-must-not-execute-list_supplier_contacts",
+        "name": "LIST_SUPPLIER_CONTACTS does not execute",
+        "nodeCode": "LIST_SUPPLIER_CONTACTS"
       },
       {
         "id": "path-must-not-execute-init_display_response",

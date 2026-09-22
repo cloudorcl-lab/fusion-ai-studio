@@ -1,0 +1,233 @@
+{
+  "testName": "read-action-router-search-name-path",
+  "tags": [
+    "p2",
+    "read-only",
+    "supplier-search"
+  ],
+  "scenario": {
+    "custom": false,
+    "source": "sync-plan",
+    "id": "app-query-READ_ACTION_ROUTER-search-name-path",
+    "kind": "branch-path",
+    "intent": "Exercise the SEARCH NAME path of READ_ACTION_ROUTER and verify branch-specific downstream behavior.",
+    "appStage": "Query"
+  },
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT"
+  },
+  "authoring": {
+    "source": "model-authored",
+    "createdAt": "2026-09-22T20:05:57.608Z",
+    "userPrompt": "Exercise the SEARCH_NAME branch with a real bounded supplier-name GET and verify four-column disambiguation."
+  },
+  "input": {
+    "message": "Find supplier Office Depot",
+    "triggerType": "app",
+    "parameters": {
+      "appHint": "Query",
+      "OraUserContext": "",
+      "OraAppContext": ""
+    }
+  },
+  "defaults": {
+    "dataSource": "file",
+    "evaluationMode": "hybrid"
+  },
+  "assertions": {
+    "contains": [],
+    "notContains": []
+  },
+  "pathAssertions": {
+    "mustExecute": [
+      {
+        "id": "path-must-execute-app_stage_router",
+        "name": "APP_STAGE_ROUTER executes",
+        "nodeCode": "APP_STAGE_ROUTER"
+      },
+      {
+        "id": "path-must-execute-reduce_lifecycle",
+        "name": "REDUCE_LIFECYCLE executes",
+        "nodeCode": "REDUCE_LIFECYCLE"
+      },
+      {
+        "id": "path-must-execute-save_lifecycle",
+        "name": "SAVE_LIFECYCLE executes",
+        "nodeCode": "SAVE_LIFECYCLE"
+      },
+      {
+        "id": "path-must-execute-read_action_router",
+        "name": "READ_ACTION_ROUTER executes",
+        "nodeCode": "READ_ACTION_ROUTER"
+      },
+      {
+        "id": "path-must-execute-find_suppliers_by_name",
+        "name": "FIND_SUPPLIERS_BY_NAME executes",
+        "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+      },
+      {
+        "id": "path-must-execute-normalize_read_result",
+        "name": "NORMALIZE_READ_RESULT executes",
+        "nodeCode": "NORMALIZE_READ_RESULT"
+      },
+      {
+        "id": "path-must-execute-save_read_state",
+        "name": "SAVE_READ_STATE executes",
+        "nodeCode": "SAVE_READ_STATE"
+      },
+      {
+        "id": "path-must-execute-project_response_text",
+        "name": "PROJECT_RESPONSE_TEXT executes",
+        "nodeCode": "PROJECT_RESPONSE_TEXT"
+      },
+      {
+        "id": "path-must-execute-lifecycle_terminal",
+        "name": "LIFECYCLE_TERMINAL executes",
+        "nodeCode": "LIFECYCLE_TERMINAL"
+      },
+      {
+        "id": "path-must-execute-query_response",
+        "name": "QUERY_RESPONSE executes",
+        "nodeCode": "QUERY_RESPONSE"
+      }
+    ],
+    "mustNotExecute": [
+      {
+        "id": "path-must-not-execute-init_display_response",
+        "name": "INIT_DISPLAY_RESPONSE does not execute",
+        "nodeCode": "INIT_DISPLAY_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-init_actions_response",
+        "name": "INIT_ACTIONS_RESPONSE does not execute",
+        "nodeCode": "INIT_ACTIONS_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-summary_response",
+        "name": "SUMMARY_RESPONSE does not execute",
+        "nodeCode": "SUMMARY_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-find_suppliers_by_number",
+        "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+        "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+      },
+      {
+        "id": "path-must-not-execute-list_supplier_addresses",
+        "name": "LIST_SUPPLIER_ADDRESSES does not execute",
+        "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+      },
+      {
+        "id": "path-must-not-execute-list_supplier_sites",
+        "name": "LIST_SUPPLIER_SITES does not execute",
+        "nodeCode": "LIST_SUPPLIER_SITES"
+      },
+      {
+        "id": "path-must-not-execute-list_supplier_contacts",
+        "name": "LIST_SUPPLIER_CONTACTS does not execute",
+        "nodeCode": "LIST_SUPPLIER_CONTACTS"
+      },
+      {
+        "id": "path-must-not-execute-human_collect",
+        "name": "HUMAN_COLLECT does not execute",
+        "nodeCode": "HUMAN_COLLECT"
+      }
+    ]
+  },
+  "judge": {
+    "minimumScore": 4,
+    "expectedOutcome": "The response shows the recorded supplier-name search results as a readable table with no more than four business columns, preserves the actual supplier values, and asks the user to select a result when more than one supplier matches. It does not expose internal supplier IDs or claim that any record was created.",
+    "rubric": [
+      {
+        "id": "recorded-data-grounding",
+        "name": "Response stays grounded in recorded data",
+        "criterion": "The output is grounded in the replayed test data."
+      },
+      {
+        "id": "four-column-results",
+        "name": "Four-column supplier results",
+        "criterion": "The response presents supplier number, supplier name, type, and relationship with no additional displayed data column."
+      },
+      {
+        "id": "safe-disambiguation",
+        "name": "Safe disambiguation",
+        "criterion": "When multiple suppliers match, the response asks the user to select a displayed row without exposing internal SupplierId values."
+      },
+      {
+        "id": "read-only-claim",
+        "name": "Read-only claim",
+        "criterion": "The response does not claim that a supplier or child record was created or submitted."
+      }
+    ],
+    "authoring": {
+      "source": "model-authored",
+      "scenarioId": "app-query-READ_ACTION_ROUTER-search-name-path",
+      "semanticNodeCodes": [
+        "QUERY_RESPONSE"
+      ],
+      "terminalOwnerCodes": [
+        "QUERY_RESPONSE"
+      ],
+      "contractHash": "765879bd3f3e64c8"
+    }
+  },
+  "testData": {
+    "status": "ready",
+    "capturePolicy": "record-now",
+    "recordedAt": "2026-09-22T20:06:06.334Z",
+    "nodes": {
+      "FIND_SUPPLIERS_BY_NAME": {
+        "nodeType": "BO_FUNCTION",
+        "capture": {
+          "mode": "raw",
+          "responseTruncated": false,
+          "jobId": "771b1cd2-8d79-413c-9019-23d7bcc90ba3",
+          "finishReason": "stop"
+        },
+        "metadata": {
+          "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+          "functionName": "FindSuppliersByPartialName"
+        },
+        "input": {
+          "limit": 10,
+          "offset": 0,
+          "supplierName": "Office Depot"
+        },
+        "response": {
+          "count": 1,
+          "hasMore": false,
+          "items": [
+            {
+              "BusinessRelationship": "Spend Authorized",
+              "InactiveDate": null,
+              "Supplier": "Office Depot",
+              "SupplierId": 300000047507596,
+              "SupplierNumber": "1264",
+              "SupplierType": "Supplier"
+            }
+          ],
+          "limit": 10,
+          "links": [
+            {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
+              "kind": "collection",
+              "name": "suppliers",
+              "rel": "self"
+            }
+          ],
+          "offset": 0
+        }
+      }
+    }
+  },
+  "pathBinding": {
+    "derivedFrom": "live_execution",
+    "pathSource": "observed",
+    "inputHash": "7d890e7b78b7d32c",
+    "workflowDefinitionHash": "76a150d267c326f3",
+    "observedAt": "2026-09-22T20:06:06.334Z",
+    "observedTerminalNodeCode": "QUERY_RESPONSE",
+    "workflowStatus": "DRAFT",
+    "workflowVersion": 86040319
+  }
+}

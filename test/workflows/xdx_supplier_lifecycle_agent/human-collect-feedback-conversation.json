@@ -68,6 +68,11 @@
               "id": "request-text-projects",
               "name": "Request response text is projected",
               "nodeCode": "PROJECT_RESPONSE_TEXT"
+            },
+            {
+              "id": "request-supplier-lifecycle-read-router-executes",
+              "name": "Read action router preserves the prompt path",
+              "nodeCode": "READ_ACTION_ROUTER"
             }
           ],
           "mustNotExecute": [
@@ -90,19 +95,43 @@
               "id": "request-supplier-lifecycle-path-must-not-execute-summary_response",
               "name": "SUMMARY_RESPONSE does not execute",
               "nodeCode": "SUMMARY_RESPONSE"
+            },
+            {
+              "id": "request-supplier-lifecycle-path-must-not-execute-find_suppliers_by_name",
+              "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+            },
+            {
+              "id": "request-supplier-lifecycle-path-must-not-execute-find_suppliers_by_number",
+              "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+            },
+            {
+              "id": "request-supplier-lifecycle-path-must-not-execute-list_supplier_addresses",
+              "name": "LIST_SUPPLIER_ADDRESSES does not execute",
+              "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+            },
+            {
+              "id": "request-supplier-lifecycle-path-must-not-execute-list_supplier_sites",
+              "name": "LIST_SUPPLIER_SITES does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITES"
+            },
+            {
+              "id": "request-supplier-lifecycle-path-must-not-execute-list_supplier_contacts",
+              "name": "LIST_SUPPLIER_CONTACTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACTS"
+            },
+            {
+              "id": "request-supplier-lifecycle-path-must-not-execute-normalize_read_result",
+              "name": "NORMALIZE_READ_RESULT does not execute",
+              "nodeCode": "NORMALIZE_READ_RESULT"
+            },
+            {
+              "id": "request-supplier-lifecycle-path-must-not-execute-save_read_state",
+              "name": "SAVE_READ_STATE does not execute",
+              "nodeCode": "SAVE_READ_STATE"
             }
           ]
-        },
-        "pathBinding": {
-          "derivedFrom": "file_replay",
-          "pathSource": "observed",
-          "inputHash": "ebcb884f1c20600c",
-          "workflowDefinitionHash": "7af1af57f537bf48",
-          "observedAt": "2026-09-22T19:17:46.512Z",
-          "observedTerminalNodeCode": "HUMAN_COLLECT",
-          "workflowStatus": "DRAFT",
-          "workflowVersion": 86037127,
-          "conversationPrefixHash": "b84daf1977202d76"
         },
         "executionAssertions": {
           "orderedNodeCodes": {
@@ -110,6 +139,8 @@
             "name": "Request reaches Human Chat in order",
             "nodeCodes": [
               "REDUCE_LIFECYCLE",
+              "SAVE_LIFECYCLE",
+              "READ_ACTION_ROUTER",
               "PROJECT_RESPONSE_TEXT",
               "HUMAN_COLLECT"
             ]
@@ -154,6 +185,17 @@
             "OraUserContext": "",
             "OraAppContext": ""
           }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "ebcb884f1c20600c",
+          "workflowDefinitionHash": "76a150d267c326f3",
+          "observedAt": "2026-09-22T20:18:28.802Z",
+          "observedTerminalNodeCode": "HUMAN_COLLECT",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86040319,
+          "conversationPrefixHash": "b84daf1977202d76"
         }
       },
       {
@@ -192,6 +234,11 @@
               "id": "review-text-projects",
               "name": "Review response text is projected",
               "nodeCode": "PROJECT_RESPONSE_TEXT"
+            },
+            {
+              "id": "review-supplier-request-read-router-executes",
+              "name": "Read action router preserves the prompt path",
+              "nodeCode": "READ_ACTION_ROUTER"
             }
           ],
           "mustNotExecute": [
@@ -219,19 +266,43 @@
               "id": "review-supplier-request-path-must-not-execute-summary_response",
               "name": "SUMMARY_RESPONSE does not execute",
               "nodeCode": "SUMMARY_RESPONSE"
+            },
+            {
+              "id": "review-supplier-request-path-must-not-execute-find_suppliers_by_name",
+              "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+            },
+            {
+              "id": "review-supplier-request-path-must-not-execute-find_suppliers_by_number",
+              "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+            },
+            {
+              "id": "review-supplier-request-path-must-not-execute-list_supplier_addresses",
+              "name": "LIST_SUPPLIER_ADDRESSES does not execute",
+              "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+            },
+            {
+              "id": "review-supplier-request-path-must-not-execute-list_supplier_sites",
+              "name": "LIST_SUPPLIER_SITES does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITES"
+            },
+            {
+              "id": "review-supplier-request-path-must-not-execute-list_supplier_contacts",
+              "name": "LIST_SUPPLIER_CONTACTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACTS"
+            },
+            {
+              "id": "review-supplier-request-path-must-not-execute-normalize_read_result",
+              "name": "NORMALIZE_READ_RESULT does not execute",
+              "nodeCode": "NORMALIZE_READ_RESULT"
+            },
+            {
+              "id": "review-supplier-request-path-must-not-execute-save_read_state",
+              "name": "SAVE_READ_STATE does not execute",
+              "nodeCode": "SAVE_READ_STATE"
             }
           ]
-        },
-        "pathBinding": {
-          "derivedFrom": "file_replay",
-          "pathSource": "observed",
-          "inputHash": "da60eca2efd1f8be",
-          "workflowDefinitionHash": "7af1af57f537bf48",
-          "observedAt": "2026-09-22T19:17:46.512Z",
-          "observedTerminalNodeCode": "HUMAN_COLLECT",
-          "workflowStatus": "DRAFT",
-          "workflowVersion": 86037127,
-          "conversationPrefixHash": "d3f0210142983045"
         },
         "executionAssertions": {
           "orderedNodeCodes": {
@@ -239,6 +310,8 @@
             "name": "Review feedback returns to Human Chat in order",
             "nodeCodes": [
               "REDUCE_LIFECYCLE",
+              "SAVE_LIFECYCLE",
+              "READ_ACTION_ROUTER",
               "PROJECT_RESPONSE_TEXT",
               "HUMAN_COLLECT"
             ]
@@ -279,6 +352,17 @@
           "waitStepId": "request-supplier-lifecycle",
           "action": "feedback",
           "content": "review"
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "da60eca2efd1f8be",
+          "workflowDefinitionHash": "76a150d267c326f3",
+          "observedAt": "2026-09-22T20:18:28.802Z",
+          "observedTerminalNodeCode": "HUMAN_COLLECT",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86040319,
+          "conversationPrefixHash": "d3f0210142983045"
         }
       },
       {
@@ -335,6 +419,11 @@
               "id": "cancel-text-projects",
               "name": "Cancellation response text is projected",
               "nodeCode": "PROJECT_RESPONSE_TEXT"
+            },
+            {
+              "id": "cancel-reviewed-request-read-router-executes",
+              "name": "Read action router preserves the prompt path",
+              "nodeCode": "READ_ACTION_ROUTER"
             }
           ],
           "mustNotExecute": [
@@ -357,19 +446,43 @@
               "id": "cancel-reviewed-request-path-must-not-execute-summary_response",
               "name": "SUMMARY_RESPONSE does not execute",
               "nodeCode": "SUMMARY_RESPONSE"
+            },
+            {
+              "id": "cancel-reviewed-request-path-must-not-execute-find_suppliers_by_name",
+              "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+            },
+            {
+              "id": "cancel-reviewed-request-path-must-not-execute-find_suppliers_by_number",
+              "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+            },
+            {
+              "id": "cancel-reviewed-request-path-must-not-execute-list_supplier_addresses",
+              "name": "LIST_SUPPLIER_ADDRESSES does not execute",
+              "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+            },
+            {
+              "id": "cancel-reviewed-request-path-must-not-execute-list_supplier_sites",
+              "name": "LIST_SUPPLIER_SITES does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITES"
+            },
+            {
+              "id": "cancel-reviewed-request-path-must-not-execute-list_supplier_contacts",
+              "name": "LIST_SUPPLIER_CONTACTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACTS"
+            },
+            {
+              "id": "cancel-reviewed-request-path-must-not-execute-normalize_read_result",
+              "name": "NORMALIZE_READ_RESULT does not execute",
+              "nodeCode": "NORMALIZE_READ_RESULT"
+            },
+            {
+              "id": "cancel-reviewed-request-path-must-not-execute-save_read_state",
+              "name": "SAVE_READ_STATE does not execute",
+              "nodeCode": "SAVE_READ_STATE"
             }
           ]
-        },
-        "pathBinding": {
-          "derivedFrom": "file_replay",
-          "pathSource": "observed",
-          "inputHash": "dc068e98afd59c01",
-          "workflowDefinitionHash": "7af1af57f537bf48",
-          "observedAt": "2026-09-22T19:17:46.512Z",
-          "observedTerminalNodeCode": "QUERY_RESPONSE",
-          "workflowStatus": "DRAFT",
-          "workflowVersion": 86037127,
-          "conversationPrefixHash": "5185168bb3cda7be"
         },
         "executionAssertions": {
           "orderedNodeCodes": {
@@ -378,6 +491,8 @@
             "nodeCodes": [
               "HUMAN_COLLECT",
               "REDUCE_LIFECYCLE",
+              "SAVE_LIFECYCLE",
+              "READ_ACTION_ROUTER",
               "PROJECT_RESPONSE_TEXT",
               "QUERY_RESPONSE"
             ]
@@ -411,6 +526,17 @@
           "waitStepId": "review-supplier-request",
           "action": "feedback",
           "content": "cancel"
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "dc068e98afd59c01",
+          "workflowDefinitionHash": "76a150d267c326f3",
+          "observedAt": "2026-09-22T20:18:28.802Z",
+          "observedTerminalNodeCode": "QUERY_RESPONSE",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86040319,
+          "conversationPrefixHash": "5185168bb3cda7be"
         }
       }
     ],
