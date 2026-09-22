@@ -1,0 +1,166 @@
+{
+  "testName": "init_display_supplier_lifecycle_advisor",
+  "tags": [
+    "init-display",
+    "no-write",
+    "p1"
+  ],
+  "scenario": {
+    "custom": false,
+    "source": "sync-plan",
+    "id": "XDX_SUPPLIER_LIFECYCLE:supplierLifecyclePanel:InitDisplay",
+    "kind": "app-panel",
+    "intent": "Verify the Supplier Lifecycle Advisor panel InitDisplay response and widget contract.",
+    "appStage": "InitDisplay"
+  },
+  "app": {
+    "appCode": "XDX_SUPPLIER_LIFECYCLE"
+  },
+  "panel": {
+    "containerId": "supplierLifecyclePanel",
+    "panelId": "supplier_lifecycle",
+    "title": "Supplier Lifecycle Advisor",
+    "pathSegment": "supplier_lifecycle_advisor",
+    "displayPromptHash": "babe167a5d924e5f74f89e0b7cdf149cd915769d84b0c15fd944fb80add093e5"
+  },
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT"
+  },
+  "authoring": {
+    "source": "model-authored",
+    "createdAt": "2026-09-22T19:21:37.359Z",
+    "userPrompt": "Verify the Supplier Lifecycle Advisor InitDisplay renders the two-item no-write lifecycle orientation and widget contract."
+  },
+  "input": {
+    "message": "",
+    "triggerType": "app",
+    "parameters": {
+      "appHint": "InitDisplay",
+      "OraUserContext": "",
+      "OraAppContext": ""
+    }
+  },
+  "defaults": {
+    "dataSource": "file",
+    "evaluationMode": "hybrid"
+  },
+  "assertions": {
+    "contains": [],
+    "notContains": []
+  },
+  "pathAssertions": {
+    "mustExecute": [
+      {
+        "id": "path-must-execute-app_stage_router",
+        "name": "APP_STAGE_ROUTER executes",
+        "nodeCode": "APP_STAGE_ROUTER"
+      },
+      {
+        "id": "path-must-execute-init_display_response",
+        "name": "INIT_DISPLAY_RESPONSE executes",
+        "nodeCode": "INIT_DISPLAY_RESPONSE"
+      }
+    ],
+    "mustNotExecute": [
+      {
+        "id": "path-must-not-execute-reduce_lifecycle",
+        "name": "REDUCE_LIFECYCLE does not execute",
+        "nodeCode": "REDUCE_LIFECYCLE"
+      },
+      {
+        "id": "path-must-not-execute-save_lifecycle",
+        "name": "SAVE_LIFECYCLE does not execute",
+        "nodeCode": "SAVE_LIFECYCLE"
+      },
+      {
+        "id": "path-must-not-execute-project_response_text",
+        "name": "PROJECT_RESPONSE_TEXT does not execute",
+        "nodeCode": "PROJECT_RESPONSE_TEXT"
+      },
+      {
+        "id": "path-must-not-execute-lifecycle_terminal",
+        "name": "LIFECYCLE_TERMINAL does not execute",
+        "nodeCode": "LIFECYCLE_TERMINAL"
+      },
+      {
+        "id": "path-must-not-execute-human_collect",
+        "name": "HUMAN_COLLECT does not execute",
+        "nodeCode": "HUMAN_COLLECT"
+      },
+      {
+        "id": "path-must-not-execute-query_response",
+        "name": "QUERY_RESPONSE does not execute",
+        "nodeCode": "QUERY_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-init_actions_response",
+        "name": "INIT_ACTIONS_RESPONSE does not execute",
+        "nodeCode": "INIT_ACTIONS_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-summary_response",
+        "name": "SUMMARY_RESPONSE does not execute",
+        "nodeCode": "SUMMARY_RESPONSE"
+      }
+    ]
+  },
+  "widgetAssertions": {
+    "source": "panel-widget-list",
+    "allowedLayoutIds": [
+      "ORA_LAYOUT_MESSAGES_LIST"
+    ],
+    "allowedPatternIds": [
+      "messageListWidget"
+    ],
+    "requiredPatternIds": [],
+    "forbiddenPatternIds": []
+  },
+  "judge": {
+    "minimumScore": 4,
+    "expectedOutcome": "The panel renders one message-list orientation with exactly two items named Query suppliers and Create with confirmation; it adds no interactive actions and does not claim that a write occurred.",
+    "rubric": [
+      {
+        "id": "two-item-orientation",
+        "name": "Two-item orientation",
+        "criterion": "The panel renders one message-list orientation with exactly two items named Query suppliers and Create with confirmation."
+      },
+      {
+        "id": "no-interactive-actions",
+        "name": "No interactive actions",
+        "criterion": "The rendered items contain no interactive actions."
+      },
+      {
+        "id": "no-write-claim",
+        "name": "No write claim",
+        "criterion": "The panel does not claim that a supplier or child record was written."
+      }
+    ],
+    "authoring": {
+      "source": "model-authored",
+      "scenarioId": "XDX_SUPPLIER_LIFECYCLE:supplierLifecyclePanel:InitDisplay",
+      "semanticNodeCodes": [
+        "INIT_DISPLAY_RESPONSE"
+      ],
+      "terminalOwnerCodes": [
+        "INIT_DISPLAY_RESPONSE"
+      ],
+      "contractHash": "2b1db6a879b3e877"
+    }
+  },
+  "testData": {
+    "status": "ready",
+    "capturePolicy": "record-later",
+    "recordedAt": "2026-09-22T19:22:32.632Z",
+    "nodes": {}
+  },
+  "pathBinding": {
+    "derivedFrom": "live_execution",
+    "pathSource": "observed",
+    "inputHash": "d562f1e3186b1b4b",
+    "workflowDefinitionHash": "7af1af57f537bf48",
+    "observedAt": "2026-09-22T19:22:32.632Z",
+    "observedTerminalNodeCode": "INIT_DISPLAY_RESPONSE",
+    "workflowStatus": "DRAFT",
+    "workflowVersion": 86037127
+  }
+}

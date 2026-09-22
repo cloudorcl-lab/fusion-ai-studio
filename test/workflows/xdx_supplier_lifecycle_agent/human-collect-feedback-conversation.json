@@ -1,0 +1,434 @@
+{
+  "testName": "human-collect-feedback-conversation",
+  "tags": [
+    "conversation",
+    "human-feedback",
+    "no-write",
+    "p1"
+  ],
+  "scenario": {
+    "custom": false,
+    "source": "sync-plan",
+    "id": "HUMAN_COLLECT-feedback-conversation",
+    "kind": "conversation",
+    "intent": "Verify Human Chat feedback preserves supplier lifecycle state and reaches a deterministic no-write cancellation."
+  },
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT"
+  },
+  "authoring": {
+    "source": "model-authored",
+    "createdAt": "2026-09-22T18:03:52.284Z",
+    "userPrompt": "Verify that a supplier lifecycle request preserves conversation state through Human Chat feedback, reaches final review, and then cancels without a write.",
+    "modelNotes": "The review turn depends on the request text supplied only in the initial chat step; the final cancellation resumes the second Human wait."
+  },
+  "defaults": {
+    "dataSource": "file",
+    "evaluationMode": "deterministic"
+  },
+  "conversation": {
+    "mode": "scripted",
+    "goal": "Preserve one supplier request across review feedback and cancel it without writing supplier data.",
+    "steps": [
+      {
+        "stepId": "request-supplier-lifecycle",
+        "intent": "Start a supplier lifecycle request with a name that must remain in conversation state.",
+        "assertions": {
+          "contains": [],
+          "notContains": []
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "request-router-executes",
+              "name": "Request enters the stage router",
+              "nodeCode": "APP_STAGE_ROUTER"
+            },
+            {
+              "id": "request-reducer-executes",
+              "name": "Request state is reduced",
+              "nodeCode": "REDUCE_LIFECYCLE"
+            },
+            {
+              "id": "request-state-saves",
+              "name": "Request state is saved",
+              "nodeCode": "SAVE_LIFECYCLE"
+            },
+            {
+              "id": "request-terminal-checks",
+              "name": "Request terminal state is checked",
+              "nodeCode": "LIFECYCLE_TERMINAL"
+            },
+            {
+              "id": "request-human-waits",
+              "name": "Request waits in Human Chat",
+              "nodeCode": "HUMAN_COLLECT"
+            },
+            {
+              "id": "request-text-projects",
+              "name": "Request response text is projected",
+              "nodeCode": "PROJECT_RESPONSE_TEXT"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "request-query-response-skipped",
+              "name": "Terminal query response is skipped while waiting",
+              "nodeCode": "QUERY_RESPONSE"
+            },
+            {
+              "id": "request-supplier-lifecycle-path-must-not-execute-init_display_response",
+              "name": "INIT_DISPLAY_RESPONSE does not execute",
+              "nodeCode": "INIT_DISPLAY_RESPONSE"
+            },
+            {
+              "id": "request-supplier-lifecycle-path-must-not-execute-init_actions_response",
+              "name": "INIT_ACTIONS_RESPONSE does not execute",
+              "nodeCode": "INIT_ACTIONS_RESPONSE"
+            },
+            {
+              "id": "request-supplier-lifecycle-path-must-not-execute-summary_response",
+              "name": "SUMMARY_RESPONSE does not execute",
+              "nodeCode": "SUMMARY_RESPONSE"
+            }
+          ]
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "ebcb884f1c20600c",
+          "workflowDefinitionHash": "7af1af57f537bf48",
+          "observedAt": "2026-09-22T19:17:46.512Z",
+          "observedTerminalNodeCode": "HUMAN_COLLECT",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86037127,
+          "conversationPrefixHash": "b84daf1977202d76"
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "request-wait-order",
+            "name": "Request reaches Human Chat in order",
+            "nodeCodes": [
+              "REDUCE_LIFECYCLE",
+              "PROJECT_RESPONSE_TEXT",
+              "HUMAN_COLLECT"
+            ]
+          },
+          "nodeCounts": {
+            "REDUCE_LIFECYCLE": {
+              "id": "request-single-reduction",
+              "name": "Initial request reduces once",
+              "exact": 1
+            },
+            "HUMAN_COLLECT": {
+              "id": "request-single-suspension",
+              "name": "Initial request suspends once",
+              "exact": 1
+            }
+          }
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "record-now",
+          "recordedAt": "2026-09-22T19:17:25.176Z",
+          "nodes": {}
+        },
+        "expectedWait": {
+          "id": "initial-details-wait",
+          "name": "Initial request waits for lifecycle feedback",
+          "nodeCode": "HUMAN_COLLECT",
+          "nodeType": "HUMAN",
+          "channelType": "CHAT",
+          "allowedActions": [
+            "feedback"
+          ],
+          "expectedCurrentIterationCount": 0,
+          "expectedMaxIteration": 3
+        },
+        "type": "chat",
+        "input": {
+          "message": "Create a supplier named XDX Conversation Continuity",
+          "triggerType": "app",
+          "parameters": {
+            "appHint": "Query",
+            "OraUserContext": "",
+            "OraAppContext": ""
+          }
+        }
+      },
+      {
+        "stepId": "review-supplier-request",
+        "intent": "Request final review using the supplier request retained from the earlier step.",
+        "contextStepIds": [
+          "request-supplier-lifecycle"
+        ],
+        "assertions": {
+          "contains": [],
+          "notContains": []
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "review-reducer-executes",
+              "name": "Review feedback reduces retained state",
+              "nodeCode": "REDUCE_LIFECYCLE"
+            },
+            {
+              "id": "review-state-saves",
+              "name": "Reviewed state is saved",
+              "nodeCode": "SAVE_LIFECYCLE"
+            },
+            {
+              "id": "review-terminal-checks",
+              "name": "Review terminal state is checked",
+              "nodeCode": "LIFECYCLE_TERMINAL"
+            },
+            {
+              "id": "review-human-waits",
+              "name": "Review waits in Human Chat",
+              "nodeCode": "HUMAN_COLLECT"
+            },
+            {
+              "id": "review-text-projects",
+              "name": "Review response text is projected",
+              "nodeCode": "PROJECT_RESPONSE_TEXT"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "review-router-skipped",
+              "name": "Stage router does not restart on resume",
+              "nodeCode": "APP_STAGE_ROUTER"
+            },
+            {
+              "id": "review-query-response-skipped",
+              "name": "Terminal query response is skipped during review",
+              "nodeCode": "QUERY_RESPONSE"
+            },
+            {
+              "id": "review-supplier-request-path-must-not-execute-init_display_response",
+              "name": "INIT_DISPLAY_RESPONSE does not execute",
+              "nodeCode": "INIT_DISPLAY_RESPONSE"
+            },
+            {
+              "id": "review-supplier-request-path-must-not-execute-init_actions_response",
+              "name": "INIT_ACTIONS_RESPONSE does not execute",
+              "nodeCode": "INIT_ACTIONS_RESPONSE"
+            },
+            {
+              "id": "review-supplier-request-path-must-not-execute-summary_response",
+              "name": "SUMMARY_RESPONSE does not execute",
+              "nodeCode": "SUMMARY_RESPONSE"
+            }
+          ]
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "da60eca2efd1f8be",
+          "workflowDefinitionHash": "7af1af57f537bf48",
+          "observedAt": "2026-09-22T19:17:46.512Z",
+          "observedTerminalNodeCode": "HUMAN_COLLECT",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86037127,
+          "conversationPrefixHash": "d3f0210142983045"
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "review-wait-order",
+            "name": "Review feedback returns to Human Chat in order",
+            "nodeCodes": [
+              "REDUCE_LIFECYCLE",
+              "PROJECT_RESPONSE_TEXT",
+              "HUMAN_COLLECT"
+            ]
+          },
+          "nodeCounts": {
+            "REDUCE_LIFECYCLE": {
+              "id": "review-single-reduction",
+              "name": "Review feedback reduces once",
+              "exact": 1
+            },
+            "HUMAN_COLLECT": {
+              "id": "review-resume-and-suspension",
+              "name": "Review resumes and suspends at Human Chat",
+              "exact": 2
+            }
+          }
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "record-now",
+          "recordedAt": "2026-09-22T19:17:26.473Z",
+          "nodes": {}
+        },
+        "expectedWait": {
+          "id": "review-decision-wait",
+          "name": "Final review waits for a decision",
+          "nodeCode": "HUMAN_COLLECT",
+          "nodeType": "HUMAN",
+          "channelType": "CHAT",
+          "allowedActions": [
+            "feedback"
+          ],
+          "expectedCurrentIterationCount": 1,
+          "expectedMaxIteration": 3
+        },
+        "type": "resume",
+        "resume": {
+          "waitStepId": "request-supplier-lifecycle",
+          "action": "feedback",
+          "content": "review"
+        }
+      },
+      {
+        "stepId": "cancel-reviewed-request",
+        "intent": "Cancel the reviewed request and verify that no supplier data is written.",
+        "contextStepIds": [
+          "request-supplier-lifecycle",
+          "review-supplier-request"
+        ],
+        "assertions": {
+          "contains": [
+            {
+              "id": "conversation-cancellation-confirmed",
+              "name": "Conversation cancellation is confirmed",
+              "value": "Cancelled. No supplier data was written."
+            }
+          ],
+          "notContains": [
+            {
+              "id": "conversation-no-write-claim",
+              "name": "Conversation does not claim a create",
+              "value": "created successfully"
+            }
+          ]
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "cancel-reducer-executes",
+              "name": "Cancellation feedback reduces retained state",
+              "nodeCode": "REDUCE_LIFECYCLE"
+            },
+            {
+              "id": "cancel-state-saves",
+              "name": "Cancelled state is saved",
+              "nodeCode": "SAVE_LIFECYCLE"
+            },
+            {
+              "id": "cancel-terminal-checks",
+              "name": "Cancellation terminal state is checked",
+              "nodeCode": "LIFECYCLE_TERMINAL"
+            },
+            {
+              "id": "cancel-human-resumes",
+              "name": "Final Human wait resumes for cancellation",
+              "nodeCode": "HUMAN_COLLECT"
+            },
+            {
+              "id": "cancel-query-responds",
+              "name": "Cancellation response is returned",
+              "nodeCode": "QUERY_RESPONSE"
+            },
+            {
+              "id": "cancel-text-projects",
+              "name": "Cancellation response text is projected",
+              "nodeCode": "PROJECT_RESPONSE_TEXT"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "cancel-router-skipped",
+              "name": "Stage router does not restart for cancellation",
+              "nodeCode": "APP_STAGE_ROUTER"
+            },
+            {
+              "id": "cancel-reviewed-request-path-must-not-execute-init_display_response",
+              "name": "INIT_DISPLAY_RESPONSE does not execute",
+              "nodeCode": "INIT_DISPLAY_RESPONSE"
+            },
+            {
+              "id": "cancel-reviewed-request-path-must-not-execute-init_actions_response",
+              "name": "INIT_ACTIONS_RESPONSE does not execute",
+              "nodeCode": "INIT_ACTIONS_RESPONSE"
+            },
+            {
+              "id": "cancel-reviewed-request-path-must-not-execute-summary_response",
+              "name": "SUMMARY_RESPONSE does not execute",
+              "nodeCode": "SUMMARY_RESPONSE"
+            }
+          ]
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "dc068e98afd59c01",
+          "workflowDefinitionHash": "7af1af57f537bf48",
+          "observedAt": "2026-09-22T19:17:46.512Z",
+          "observedTerminalNodeCode": "QUERY_RESPONSE",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86037127,
+          "conversationPrefixHash": "5185168bb3cda7be"
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "cancel-terminal-order",
+            "name": "Cancellation reaches the terminal response in order",
+            "nodeCodes": [
+              "HUMAN_COLLECT",
+              "REDUCE_LIFECYCLE",
+              "PROJECT_RESPONSE_TEXT",
+              "QUERY_RESPONSE"
+            ]
+          },
+          "nodeCounts": {
+            "REDUCE_LIFECYCLE": {
+              "id": "cancel-single-reduction",
+              "name": "Cancellation feedback reduces once",
+              "exact": 1
+            },
+            "HUMAN_COLLECT": {
+              "id": "cancel-single-resumption",
+              "name": "Final Human wait resumes once",
+              "exact": 1
+            },
+            "QUERY_RESPONSE": {
+              "id": "cancel-single-response",
+              "name": "Cancellation response is returned once",
+              "exact": 1
+            }
+          }
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "record-now",
+          "recordedAt": "2026-09-22T19:17:28.673Z",
+          "nodes": {}
+        },
+        "type": "resume",
+        "resume": {
+          "waitStepId": "review-supplier-request",
+          "action": "feedback",
+          "content": "cancel"
+        }
+      }
+    ],
+    "executionAssertions": {
+      "waitLifecycles": [
+        {
+          "id": "supplier-feedback-lifecycle",
+          "name": "Supplier feedback suspends and resumes through review",
+          "waitNodeCode": "HUMAN_COLLECT",
+          "retryTargetNodeCode": "REDUCE_LIFECYCLE",
+          "configuredRetryLimit": 3,
+          "expectedInitialAttempts": 1,
+          "expectedRetries": 2,
+          "expectedSuspensions": 2,
+          "expectedResumptions": 2,
+          "expectedExhausted": false
+        }
+      ]
+    }
+  }
+}

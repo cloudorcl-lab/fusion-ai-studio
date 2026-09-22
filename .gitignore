@@ -1,2 +1,4 @@
 # Local checkouts and their uncommitted artifacts must never enter this repository.
 /.worktrees/
+.debug/
+test-reports/

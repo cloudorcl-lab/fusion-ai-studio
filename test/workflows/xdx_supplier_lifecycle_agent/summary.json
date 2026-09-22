@@ -1,0 +1,136 @@
+{
+  "testName": "summary",
+  "tags": [
+    "app-summary",
+    "no-write",
+    "p1"
+  ],
+  "scenario": {
+    "custom": false,
+    "source": "sync-plan",
+    "id": "app-summary",
+    "kind": "app-stage",
+    "intent": "Verify the workflow routes the Agentic App Summary trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+    "appStage": "Summary"
+  },
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT"
+  },
+  "authoring": {
+    "source": "model-authored",
+    "createdAt": "2026-09-22T19:16:04.798Z",
+    "userPrompt": "Verify the Agentic App Summary route states the supplier query, required-field draft, and explicit-confirmation scope without claiming a write."
+  },
+  "input": {
+    "message": "",
+    "triggerType": "app",
+    "parameters": {
+      "appHint": "Summary",
+      "OraUserContext": "",
+      "OraAppContext": ""
+    }
+  },
+  "defaults": {
+    "dataSource": "file",
+    "evaluationMode": "hybrid"
+  },
+  "assertions": {
+    "contains": [],
+    "notContains": []
+  },
+  "pathAssertions": {
+    "mustExecute": [
+      {
+        "id": "path-must-execute-app_stage_router",
+        "name": "APP_STAGE_ROUTER executes",
+        "nodeCode": "APP_STAGE_ROUTER"
+      },
+      {
+        "id": "path-must-execute-summary_response",
+        "name": "SUMMARY_RESPONSE executes",
+        "nodeCode": "SUMMARY_RESPONSE"
+      }
+    ],
+    "mustNotExecute": [
+      {
+        "id": "path-must-not-execute-reduce_lifecycle",
+        "name": "REDUCE_LIFECYCLE does not execute",
+        "nodeCode": "REDUCE_LIFECYCLE"
+      },
+      {
+        "id": "path-must-not-execute-save_lifecycle",
+        "name": "SAVE_LIFECYCLE does not execute",
+        "nodeCode": "SAVE_LIFECYCLE"
+      },
+      {
+        "id": "path-must-not-execute-project_response_text",
+        "name": "PROJECT_RESPONSE_TEXT does not execute",
+        "nodeCode": "PROJECT_RESPONSE_TEXT"
+      },
+      {
+        "id": "path-must-not-execute-lifecycle_terminal",
+        "name": "LIFECYCLE_TERMINAL does not execute",
+        "nodeCode": "LIFECYCLE_TERMINAL"
+      },
+      {
+        "id": "path-must-not-execute-human_collect",
+        "name": "HUMAN_COLLECT does not execute",
+        "nodeCode": "HUMAN_COLLECT"
+      },
+      {
+        "id": "path-must-not-execute-query_response",
+        "name": "QUERY_RESPONSE does not execute",
+        "nodeCode": "QUERY_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-init_display_response",
+        "name": "INIT_DISPLAY_RESPONSE does not execute",
+        "nodeCode": "INIT_DISPLAY_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-init_actions_response",
+        "name": "INIT_ACTIONS_RESPONSE does not execute",
+        "nodeCode": "INIT_ACTIONS_RESPONSE"
+      }
+    ]
+  },
+  "judge": {
+    "minimumScore": 4,
+    "expectedOutcome": "The Summary response states that the capability queries suppliers, prepares required-field lifecycle drafts, and requires explicit confirmation before each create, without claiming any write occurred.",
+    "rubric": [
+      {
+        "id": "recorded-data-grounding",
+        "name": "Response stays grounded in recorded data",
+        "criterion": "The output is grounded in the replayed test data."
+      },
+      {
+        "id": "capability-scope",
+        "name": "Capability scope",
+        "criterion": "The response covers supplier queries and required-field lifecycle draft preparation."
+      },
+      {
+        "id": "confirmation-boundary",
+        "name": "Confirmation boundary",
+        "criterion": "The response requires explicit confirmation before each create and does not claim a write occurred."
+      }
+    ],
+    "authoring": {
+      "source": "model-authored",
+      "scenarioId": "app-summary",
+      "semanticNodeCodes": [
+        "SUMMARY_RESPONSE"
+      ],
+      "terminalOwnerCodes": [
+        "SUMMARY_RESPONSE"
+      ],
+      "contractHash": "3a80b0bddb3b1b9e"
+    }
+  },
+  "testData": {
+    "status": "ready",
+    "capturePolicy": "model-generated",
+    "generatedAt": "2026-09-22T19:16:04.799Z",
+    "generationPrompt": "Verify the Agentic App Summary route states the supplier query, required-field draft, and explicit-confirmation scope without claiming a write.",
+    "nodes": {}
+  }
+}

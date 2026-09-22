@@ -1,0 +1,141 @@
+{
+  "testName": "init-display",
+  "tags": [
+    "app-init-display",
+    "no-write",
+    "p1"
+  ],
+  "scenario": {
+    "custom": false,
+    "source": "sync-plan",
+    "id": "app-init-display",
+    "kind": "app-stage",
+    "intent": "Verify the workflow routes the Agentic App InitDisplay trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+    "appStage": "InitDisplay"
+  },
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT"
+  },
+  "authoring": {
+    "source": "model-authored",
+    "createdAt": "2026-09-22T19:14:09.507Z",
+    "userPrompt": "Verify the Agentic App InitDisplay route renders the two-item supplier lifecycle orientation without claiming a write."
+  },
+  "input": {
+    "message": "",
+    "triggerType": "app",
+    "parameters": {
+      "appHint": "InitDisplay",
+      "OraUserContext": "",
+      "OraAppContext": ""
+    }
+  },
+  "defaults": {
+    "dataSource": "file",
+    "evaluationMode": "hybrid"
+  },
+  "assertions": {
+    "contains": [],
+    "notContains": []
+  },
+  "pathAssertions": {
+    "mustExecute": [
+      {
+        "id": "path-must-execute-app_stage_router",
+        "name": "APP_STAGE_ROUTER executes",
+        "nodeCode": "APP_STAGE_ROUTER"
+      },
+      {
+        "id": "path-must-execute-init_display_response",
+        "name": "INIT_DISPLAY_RESPONSE executes",
+        "nodeCode": "INIT_DISPLAY_RESPONSE"
+      }
+    ],
+    "mustNotExecute": [
+      {
+        "id": "path-must-not-execute-reduce_lifecycle",
+        "name": "REDUCE_LIFECYCLE does not execute",
+        "nodeCode": "REDUCE_LIFECYCLE"
+      },
+      {
+        "id": "path-must-not-execute-save_lifecycle",
+        "name": "SAVE_LIFECYCLE does not execute",
+        "nodeCode": "SAVE_LIFECYCLE"
+      },
+      {
+        "id": "path-must-not-execute-project_response_text",
+        "name": "PROJECT_RESPONSE_TEXT does not execute",
+        "nodeCode": "PROJECT_RESPONSE_TEXT"
+      },
+      {
+        "id": "path-must-not-execute-lifecycle_terminal",
+        "name": "LIFECYCLE_TERMINAL does not execute",
+        "nodeCode": "LIFECYCLE_TERMINAL"
+      },
+      {
+        "id": "path-must-not-execute-human_collect",
+        "name": "HUMAN_COLLECT does not execute",
+        "nodeCode": "HUMAN_COLLECT"
+      },
+      {
+        "id": "path-must-not-execute-query_response",
+        "name": "QUERY_RESPONSE does not execute",
+        "nodeCode": "QUERY_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-init_actions_response",
+        "name": "INIT_ACTIONS_RESPONSE does not execute",
+        "nodeCode": "INIT_ACTIONS_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-summary_response",
+        "name": "SUMMARY_RESPONSE does not execute",
+        "nodeCode": "SUMMARY_RESPONSE"
+      }
+    ]
+  },
+  "judge": {
+    "minimumScore": 4,
+    "expectedOutcome": "The InitDisplay response renders one message-list orientation with exactly two lifecycle choices: query an existing supplier first, and create using required fields with explicit review and confirmation; it does not claim a write occurred.",
+    "rubric": [
+      {
+        "id": "recorded-data-grounding",
+        "name": "Response stays grounded in recorded data",
+        "criterion": "The output is grounded in the replayed test data."
+      },
+      {
+        "id": "orientation-widget",
+        "name": "Orientation widget",
+        "criterion": "The response is a message-list orientation with exactly two items."
+      },
+      {
+        "id": "query-first",
+        "name": "Query first",
+        "criterion": "One item directs the user to query an existing supplier before creating."
+      },
+      {
+        "id": "confirmed-create",
+        "name": "Confirmed create",
+        "criterion": "One item explains required-field preparation, exact review, and explicit confirmation without claiming a write occurred."
+      }
+    ],
+    "authoring": {
+      "source": "model-authored",
+      "scenarioId": "app-init-display",
+      "semanticNodeCodes": [
+        "INIT_DISPLAY_RESPONSE"
+      ],
+      "terminalOwnerCodes": [
+        "INIT_DISPLAY_RESPONSE"
+      ],
+      "contractHash": "dd31f901daded7ed"
+    }
+  },
+  "testData": {
+    "status": "ready",
+    "capturePolicy": "model-generated",
+    "generatedAt": "2026-09-22T19:14:09.508Z",
+    "generationPrompt": "Verify the Agentic App InitDisplay route renders the two-item supplier lifecycle orientation without claiming a write.",
+    "nodes": {}
+  }
+}

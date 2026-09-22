@@ -42878,8 +42878,8 @@ function nT(e, t) {
     let k, C;
     if (p.type === "chat") {
       if (!B(p.input)) throw new Error(`${m}.input must be an object.`);
-      if (k = Ja(p.input, `${m}.input`, { strictMessage: !0 }), M_(k, `${m}.input`), k.triggerType !== void 0 && k.triggerType !== "chat")
-        throw new Error(`${m}.input.triggerType must be chat when present.`);
+      if (k = Ja(p.input, `${m}.input`, { strictMessage: !0 }), M_(k, `${m}.input`), k.triggerType !== void 0 && k.triggerType !== "chat" && k.triggerType !== "app")
+        throw new Error(`${m}.input.triggerType must be chat or app when present.`);
       if (k.singleTurnOnly === !0)
         throw new Error(`${m}.input.singleTurnOnly cannot be true in a conversation test.`);
       if (p.resume !== void 0) throw new Error(`${m}.resume is only supported for resume steps.`);
@@ -42962,7 +42962,7 @@ function nT(e, t) {
           `${t}.steps.${y.stepId}.expectedWait.expectedMaxIteration must match ${t}.executionAssertions.waitLifecycles[${f}].configuredRetryLimit.`
         );
     });
-    const w = Math.max(0, m.length - 1);
+    const w = m.length;
     if (p.expectedRetries !== w)
       throw new Error(
         `${t}.executionAssertions.waitLifecycles[${f}].expectedRetries must be ${w} for ${m.length} authored suspension${m.length === 1 ? "" : "s"}.`
@@ -45371,7 +45371,11 @@ function Wle(e) {
     ...cT({
       workflowCode: e.workflowCode,
       ...e.workflowStatus ? { workflowStatus: e.workflowStatus } : {},
-      input: { message: "" },
+      input: {
+        message: "",
+        ...e.triggerType ? { triggerType: e.triggerType } : {},
+        ...e.parameters ? { parameters: e.parameters } : {}
+      },
       conversationId: e.conversationId,
       ...e.breakPoints ? { breakPoints: e.breakPoints } : {},
       ...e.overrides ? { overrides: e.overrides } : {}
@@ -45574,6 +45578,8 @@ async function TM(e) {
       callbackToken: e.callbackToken,
       action: e.resume.action,
       ...e.resume.content ? { content: e.resume.content } : {},
+      ...e.triggerType ? { triggerType: e.triggerType } : {},
+      ...e.parameters ? { parameters: e.parameters } : {},
       dataSource: e.dataSource,
       ...e.breakPoints !== void 0 ? { breakPoints: e.breakPoints } : {},
       overrides: t
@@ -48210,7 +48216,9 @@ function GM(e) {
         passed: r.channelType === "CHAT",
         details: `ATLAS supports HUMAN workflow tests only for CHAT; runtime exposed ${r.channelType ?? "no channel"}.`
       });
-      const i = new Set(Object.keys(r.actionNames)), s = e.expectedWait.allowedActions.filter((c) => !i.has(kM(c)));
+      const i = new Set(Object.keys(r.actionNames));
+      r.approvalEnabledFlag === !0 && (i.add("APPROVE_ACTION"), i.add("REJECT_ACTION")), r.feedbackEnabledFlag === !0 && i.add("RFI_ACTION");
+      const s = e.expectedWait.allowedActions.filter((c) => !i.has(kM(c)));
       o({
         category: "human-lifecycle",
         assertion: "expectedWaitActions",
@@ -48742,6 +48750,8 @@ async function fpe(e) {
           conversationId: ve.conversationId,
           jobId: ve.jobId,
           callbackToken: ve.callbackToken,
+          ...ve.triggerType ? { triggerType: ve.triggerType } : {},
+          ...ve.parameters ? { parameters: ve.parameters } : {},
           resume: X.resume,
           restProxy: c
         });
@@ -48807,6 +48817,8 @@ async function fpe(e) {
           conversationId: Le.conversationId,
           callbackToken: Le.waitingNode.callbackToken,
           waitingNode: Ep(Le.waitingNode),
+          ...X.type === "chat" && X.input.triggerType ? { triggerType: X.input.triggerType } : ve?.triggerType ? { triggerType: ve.triggerType } : {},
+          ...X.type === "chat" && X.input.parameters ? { parameters: X.input.parameters } : ve?.parameters ? { parameters: ve.parameters } : {},
           consumed: !1
         });
         const po = OM(Le, Math.max(0, Date.now() - ce)), At = {

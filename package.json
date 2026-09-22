@@ -1,0 +1,13 @@
+{
+  "name": "xdx-supplier-lifecycle-agent",
+  "private": true,
+  "scripts": {
+    "test": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --judge-provider local",
+    "test:workflows": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --judge-provider local",
+    "test:workflows:file": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --data-source file --judge-provider local",
+    "test:workflows:local": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --data-source file --judge-provider local",
+    "test:workflows:remote": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --data-source file --judge-provider remote",
+    "test:workflows:live": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --data-source live --judge-provider local",
+    "test:workflows:live:remote": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --data-source live --judge-provider remote"
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-lifecycle-execution-20260922",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-lifecycle-agent",
+  "branch": "codex/xdx-supplier-lifecycle-agent",
+  "phase": "Startup",
+  "startedUtc": "2026-09-22T16:56:59.177006Z",
+  "checkpointUtc": "2026-09-22T19:35:39.3871481Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "c91690a3a2ea28e22d784c531d092db6a04afe9ebcc132c42784b38a4e9f2c5c"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "255675e0fef38a14e12bdb63e97cd12fa077712663ad3ded86ac322fc387349d"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "ed973f9290d77441f82bd4719909d5265cbcf9a12c2af03bd20b1de742577782"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "d8da5172f6143ecf5af7327c9b068328314867f693c3aad1489fc6bbdeeb16f4"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "f0f2220e7a54981e8aa5a51e06e92a76c2c9db9e16d0d89f63091b6babbb510d"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "cc6a38f8b0d2833311f5099fee8e3491b891e7d2e8464c69b2a5a449491ae526"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "ec2c5163c72a399c84d5ee6088db486b21a7a99ee4b7329ce3b4df74515aac2f"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "9351c3e5148cb27a0a54338e5b754eda6247880c0a7c8a4cf6f729a4840c3f9a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-lifecycle-agent/resource-inventory.md",
+      "sha256": "1791b6508388b2b7842d4317172a3c41049be0d7ca4e0dd7e2688350c17b69c3"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-business-classifications.md",
+      "sha256": "3535a593da69120e514ea9799c34675323cabcc2ae6a55dd9a41071be266ce2d"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contact-addresses.md",
+      "sha256": "d822625fa1f158109b6638b577907ab4456f5941255fc32b2e41726a11d5dfdf"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contact-data-access.md",
+      "sha256": "e8bd68d40cf05671310609ae565d11872201e9dcd29b5f2cfa611e2d4229034c"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contact-roles.md",
+      "sha256": "f7c6f0da51c6d73dd7a45cb22a04078cbf89d63efd0f04a75b286071bbc4ba76"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-merge-history.md",
+      "sha256": "c6e332c34e3f1a3d389916148bff1a7f7fb0f45f137cfe7e7d2f2e36ef64a202"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-products-and-services.md",
+      "sha256": "2dfe2d3ce8e92e6871bbccaeb50c524cc99ea46266f161de8fd097414008966a"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-products-and-services-view.md",
+      "sha256": "0c7785fa3b4baacb95a0c2796f8bbdc0c295b96b0f138559eafd0382052fcee8"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+      "sha256": "1af56e63adfdaa0a6c0ed5a4b27946253a24c7139f4c2ff89d204a7f4b2943c5"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-spend-authorization-requests.md",
+      "sha256": "532de6f8706b2e6c05d199fa3afefbed7fc29bb2e4b0b4c693336cdd9752de38"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "sha256": "b0ea36438cc4697a781c05104895647ef0fda76b8a19dd9ce4a5a74df2940061"
+    }
+  ],
+  "reviewNotes": "Reconciled after accepted P0/P1. Current handoff, playbook, registry, all selected object references and the 22-row resource inventory remain reviewed. P1 runtime evidence passes: workflow 5/5, Human continuation 73/73 assertions and app panel 1/1. No BO POST or business-data write occurred. P2 read-only query is next.",
+  "objectReferences": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-business-classifications.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contact-addresses.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contact-data-access.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contact-roles.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-merge-history.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-products-and-services.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-products-and-services-view.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-spend-authorization-requests.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Instruction 1",
+      "status": "pass",
+      "reason": "P0/P1 evidence and reusable ATLAS/runtime lessons are recorded; later-phase learning review remains open.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Gate 0 and universal intake",
+      "status": "pass",
+      "reason": "P0 and P1 contracts are complete; P2-P9 continue under the approved plan.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/requirement-slice-register.md",
+        "docs/builds/xdx-supplier-lifecycle-agent/architecture-self-review.md"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Gate 1",
+      "status": "pass",
+      "reason": "Authenticated read and DRAFT authority were applied; live POST authority remains explicitly absent.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_p0_p1_checkpoint_20260922.json"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Gate 2 and object registry",
+      "status": "pass",
+      "reason": "All 22 supplier child rows inventoried; core and in-scope P8 references plus BU LOV reviewed; ten excluded rows recorded explicitly.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/resource-inventory.md"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Gates 3-9 and QA",
+      "status": "planned",
+      "reason": "P1 workflow and app runtime gates pass; P2-P9, signed-in Ask Oracle acceptance and Closeout remain pending.",
+      "evidence": []
+    },
+    {
+      "id": "timing",
+      "rule": "Time, token, and AI Unit controls",
+      "status": "pass",
+      "reason": "Execution start, P0 and P1 checkpoint, runtime metrics and gaps are recorded; later phases must continue the tracker.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Dependency hygiene",
+      "status": "planned",
+      "reason": "P1 duplicate test was retired; remaining phase and final cleanup continue.",
+      "evidence": []
+    },
+    {
+      "id": "delivery",
+      "rule": "Gate 10 and Definition of Done",
+      "status": "planned",
+      "reason": "P0/P1 accepted; P2-P9, signed-in runtime acceptance and Closeout remain pending.",
+      "evidence": []
+    }
+  ],
+  "unresolved": [
+    "Implement and accept P2-P9 plus signed-in Ask Oracle runtime acceptance",
+    "Obtain concrete live-write authority before the first supplier or child POST",
+    "Complete model placement, learning/dependency review, Closeout verifier and scoped commits"
+  ],
+  "metrics": {
+    "tokens": "Full input/output/cached breakdown unavailable; record tool receipts where supplied.",
+    "aiUnits": "P1 canonical workflow suite: 25 AI Units; app report did not emit token or AI Unit totals.",
+    "timingGaps": "Execution-task tracking begins at the first observed checkpoint; earlier planning and policy work have separate retained records."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "supportedObjectId": "300000333870232",
+  "$context": {
+    "etag": "1"
+  },
+  "name": "XDX Supplier Procurement Business Units",
+  "description": "Paged reference lookup of procurement business units and agent actions for supplier site forms; no write permission inference.",
+  "objectCode": "XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS",
+  "family": "PRC",
+  "product": "PURCHASING",
+  "objectSource": "ADF_BC",
+  "restResourcePath": "/fscmRestApi/resources/11.13.18.05/procurementBusinessUnitsLOV",
+  "restResourceIdentifier": "-1",
+  "seededFlag": false,
+  "mandatoryFlag": false,
+  "objectProperties": {
+    "jsonSchemaName": "supportedObjectProperties",
+    "jsonSchemaVersion": 1,
+    "tools": [
+      {
+        "name": "getall_procurementBusinessUnitsLOV",
+        "description": "Retrieve a page of authenticated procurement BU and action rows. Follow hasMore; collapse choices by exact BU ID only after checking name consistency. This is not supplier-write authorization.",
+        "operationId": "getall_procurementBusinessUnitsLOV",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/procurementBusinessUnitsLOV?onlyData=true&limit={limit}&offset={offset}&orderBy=ProcurementBUId,AgentAction",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "limit",
+            "dataType": "string",
+            "description": "Positive page size; workflow bounds this to 100.",
+            "id": 2,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "offset",
+            "dataType": "string",
+            "description": "Nonnegative offset; advance by returned count only while hasMore is true.",
+            "id": 3,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "9"
+        },
+        "sampleQueries": [
+          {
+            "description": "This example response shows a paged collection of procurement business units with associated agent actions, including fields like ProcurementBU, ProcurementBUId, and AgentAction. It represents authenticated lookup data used for supplier site forms, indicating available business units and their permitted actions without implying write permissions. The response also includes pagination details such as count, hasMore, limit, and offset.",
+            "query": {
+              "items": [
+                {
+                  "ProcurementBU": "US1 Business Unit",
+                  "ProcurementBUId": "300000046987012",
+                  "AgentAction": "MANAGE_PURCHASE_ORDERS",
+                  "@context": {
+                    "key": "300000046987012,110"
+                  }
+                }
+              ],
+              "count": 1,
+              "hasMore": false,
+              "limit": 100,
+              "offset": 0,
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/procurementBusinessUnitsLOV",
+                  "name": "procurementBusinessUnitsLOV",
+                  "kind": "collection"
+                }
+              ]
+            },
+            "sampleType": "response"
+          }
+        ]
+      }
+    ]
+  }
+}

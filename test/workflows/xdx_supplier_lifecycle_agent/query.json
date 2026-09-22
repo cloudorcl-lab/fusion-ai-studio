@@ -1,0 +1,136 @@
+{
+  "testName": "query",
+  "tags": [
+    "app-query",
+    "no-write",
+    "p1"
+  ],
+  "scenario": {
+    "custom": false,
+    "source": "sync-plan",
+    "id": "app-query",
+    "kind": "app-stage",
+    "intent": "Verify the workflow routes the Agentic App Query trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+    "appStage": "Query"
+  },
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT"
+  },
+  "authoring": {
+    "source": "model-authored",
+    "createdAt": "2026-09-22T19:13:08.238Z",
+    "userPrompt": "Verify the Agentic App Query trigger routes through the supplier lifecycle workflow and returns the deterministic no-write cancellation result."
+  },
+  "input": {
+    "message": "Cancel the supplier lifecycle request.",
+    "triggerType": "app",
+    "parameters": {
+      "appHint": "Query",
+      "OraUserContext": "",
+      "OraAppContext": ""
+    }
+  },
+  "defaults": {
+    "dataSource": "file",
+    "evaluationMode": "hybrid"
+  },
+  "assertions": {
+    "contains": [],
+    "notContains": []
+  },
+  "pathAssertions": {
+    "mustExecute": [
+      {
+        "id": "path-must-execute-app_stage_router",
+        "name": "APP_STAGE_ROUTER executes",
+        "nodeCode": "APP_STAGE_ROUTER"
+      },
+      {
+        "id": "path-must-execute-reduce_lifecycle",
+        "name": "REDUCE_LIFECYCLE executes",
+        "nodeCode": "REDUCE_LIFECYCLE"
+      },
+      {
+        "id": "path-must-execute-save_lifecycle",
+        "name": "SAVE_LIFECYCLE executes",
+        "nodeCode": "SAVE_LIFECYCLE"
+      },
+      {
+        "id": "path-must-execute-project_response_text",
+        "name": "PROJECT_RESPONSE_TEXT executes",
+        "nodeCode": "PROJECT_RESPONSE_TEXT"
+      },
+      {
+        "id": "path-must-execute-lifecycle_terminal",
+        "name": "LIFECYCLE_TERMINAL executes",
+        "nodeCode": "LIFECYCLE_TERMINAL"
+      },
+      {
+        "id": "path-must-execute-query_response",
+        "name": "QUERY_RESPONSE executes",
+        "nodeCode": "QUERY_RESPONSE"
+      }
+    ],
+    "mustNotExecute": [
+      {
+        "id": "path-must-not-execute-init_display_response",
+        "name": "INIT_DISPLAY_RESPONSE does not execute",
+        "nodeCode": "INIT_DISPLAY_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-init_actions_response",
+        "name": "INIT_ACTIONS_RESPONSE does not execute",
+        "nodeCode": "INIT_ACTIONS_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-summary_response",
+        "name": "SUMMARY_RESPONSE does not execute",
+        "nodeCode": "SUMMARY_RESPONSE"
+      },
+      {
+        "id": "path-must-not-execute-human_collect",
+        "name": "HUMAN_COLLECT does not execute",
+        "nodeCode": "HUMAN_COLLECT"
+      }
+    ]
+  },
+  "judge": {
+    "minimumScore": 4,
+    "expectedOutcome": "The Ask Oracle Query response confirms cancellation and states that no supplier data was written, without claiming any create or submission.",
+    "rubric": [
+      {
+        "id": "recorded-data-grounding",
+        "name": "Response stays grounded in recorded data",
+        "criterion": "The output is grounded in the replayed test data."
+      },
+      {
+        "id": "cancellation-confirmed",
+        "name": "Cancellation confirmed",
+        "criterion": "The response clearly confirms that the supplier lifecycle request was cancelled."
+      },
+      {
+        "id": "no-write-confirmed",
+        "name": "No write confirmed",
+        "criterion": "The response states that no supplier data was written and does not claim a create or submission."
+      }
+    ],
+    "authoring": {
+      "source": "model-authored",
+      "scenarioId": "app-query",
+      "semanticNodeCodes": [
+        "QUERY_RESPONSE"
+      ],
+      "terminalOwnerCodes": [
+        "QUERY_RESPONSE"
+      ],
+      "contractHash": "412056c6812c4f9d"
+    }
+  },
+  "testData": {
+    "status": "ready",
+    "capturePolicy": "model-generated",
+    "generatedAt": "2026-09-22T19:13:08.239Z",
+    "generationPrompt": "Verify the Agentic App Query trigger routes through the supplier lifecycle workflow and returns the deterministic no-write cancellation result.",
+    "nodes": {}
+  }
+}

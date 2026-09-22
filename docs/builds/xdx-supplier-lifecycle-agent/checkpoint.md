@@ -1,11 +1,22 @@
 # Build Checkpoint
 
-Bootstrap session `01a0c9e8-b085-7720-8d22-94df575b2834`, 2026-09-22. The target worktree and branch were absent at live inspection; created from `44c0d23d3222c6ea8e6a5ca43d4d29f973022197` under the current explicit user instruction. Prior P0 metadata discovery is historical; two reusable BO baselines remain available, with current versions/consumers still requiring reconciliation. No runtime phases accepted.
+Execution task: `xdx-supplier-lifecycle-execution-20260922`. Worktree: `C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-lifecycle-agent`; branch: `codex/xdx-supplier-lifecycle-agent`. Goal remains active with its original objective and no token budget.
 
-Next smallest action: verify the target worktree, read applicable guidance, establish a current execution-task receipt and finish P0 contracts. This can proceed in the current session; starting another session is optional.
+P0 accepted. The current `XDX_SUPPLIER_INFORMATION` BO was adopted at ETag 8 with 32 functions; `XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS` remains ETag 1 with one GET. The Oracle 26C supplier tree contains 22 inventoried children. DFFs, attachments, payment behavior, third-party-payment relationships and optional create fields remain explicitly excluded. No BO DRAFT or business-data write occurred.
 
-ATLAS state: not invoked; no workflow artifact exists for this build. Live-create allowance: none granted for this new attempt. Detailed field research remains deferred to the appropriate slice.
+P1 accepted. Workflow `XDX_SUPPLIER_LIFECYCLE_AGENT` is saved as DRAFT id `300000333950759`, version `86037127`, ETag 10. App `XDX_SUPPLIER_LIFECYCLE` is saved as DRAFT id `300000333951268`, version 1, ETag 1. The workflow exposes separate Query, InitDisplay, InitActions and Summary terminals, one typed conversation state and one Human Chat continuation. It contains no BO POST node.
 
-Context state: mandatory restart removed by explicit user instruction on 2026-09-22. Reread changed governance, verify the target checkout and pass current-task Startup before implementation. The goal service's earlier blocked status is historical and may require resumption; it is not a current repository restart gate. The full objective and no-token-budget requirement remain unchanged. Bootstrap Startup is not runtime acceptance.
+Current P1 evidence:
 
-Historical bootstrap evidence: `evidence/xdx_bootstrap_20260922.json` and `xdx_session_01a0c9e8-b085-7720-8d22-94df575b2834.json`; those hashes/statuses predate the policy correction and are not current execution conformance. P0 contracts, P1-P9 runtime, exact live-payload authority, actual Ask Oracle proof and build Closeout remain unresolved. No BO/data/runtime writes or publication were attempted.
+- local state contract: 8 cases passed;
+- workflow and app validators: zero errors;
+- configured workflow suite: 5/5 passed, zero failed, zero pending judges;
+- Human continuation: 3/3 steps and 73/73 assertions passed;
+- app panel suite: 1/1 passed, zero failed, zero pending judges;
+- InitDisplay emitted one valid `messageListWidget` with the two required no-write orientation items.
+
+Shared ATLAS fixes under `.agents/skills/aistudio/` preserve app trigger context during Human resumes, infer Human feedback/approval capabilities from flags, count every resume retry and permit an app trigger in scripted conversations. Red/green runtime evidence is recorded in the learning register. The canonical workflow report is under `test-reports/workflows/`; the app report is under `test-reports/apps/xdx_supplier_lifecycle/`; generated reports remain ignored scratch evidence.
+
+Next smallest action: implement P2 read-only BO query, selection, empty/error and four-column display paths for suppliers and the enabled child-resource set. Complete discrete tests, then the P1+P2 cumulative configured suite. Do not add or execute live POST behavior. Before the first later live create, present the exact environment, counts, identities and payloads for explicit approval.
+
+Closeout remains pending through P9, signed-in Ask Oracle acceptance, model placement, live authorized create/readback evidence and final cleanup. The goal must remain active.

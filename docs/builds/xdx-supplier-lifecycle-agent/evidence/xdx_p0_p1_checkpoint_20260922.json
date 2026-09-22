@@ -1,0 +1,35 @@
+{
+  "taskId": "xdx-supplier-lifecycle-execution-20260922",
+  "checkpointUtc": "2026-09-22T19:25:16.5553346Z",
+  "phasesAccepted": ["P0", "P1"],
+  "businessDataWrites": 0,
+  "businessObjectDraftWrites": 0,
+  "workflow": {
+    "code": "XDX_SUPPLIER_LIFECYCLE_AGENT",
+    "id": "300000333950759",
+    "status": "DRAFT",
+    "version": 86037127,
+    "etag": "10",
+    "validationErrors": 0,
+    "suite": { "total": 5, "passed": 5, "failed": 0, "needsJudge": 0 },
+    "conversation": { "steps": 3, "passedSteps": 3, "assertions": 73, "passedAssertions": 73 }
+  },
+  "app": {
+    "code": "XDX_SUPPLIER_LIFECYCLE",
+    "id": "300000333951268",
+    "status": "DRAFT",
+    "version": 1,
+    "etag": "1",
+    "validationErrors": 0,
+    "suite": { "total": 1, "passed": 1, "failed": 0, "needsJudge": 0 }
+  },
+  "sourceContracts": {
+    "supplierBusinessObjectEtag": "8",
+    "supplierBusinessObjectFunctions": 32,
+    "procurementBusinessUnitBusinessObjectEtag": "1",
+    "procurementBusinessUnitFunctions": 1,
+    "inventoriedChildResources": 22
+  },
+  "nextPhase": "P2",
+  "closeoutComplete": false
+}

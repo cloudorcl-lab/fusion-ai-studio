@@ -73,6 +73,26 @@ Update the existing field entry and change history instead of creating duplicate
 | Oracle Fusion Procurement Supplier Addresses | GET, POST, request and response JSON | [Supplier addresses](oracle-fusion-procurement-supplier-addresses.md) | GET and one authorized POST/read-back live verified; tenant-scoped limits recorded |
 | Oracle Fusion Procurement Supplier Sites | GET, POST, request and response JSON | [Supplier sites](oracle-fusion-procurement-supplier-sites.md) | GET and one authorized POST/read-back live verified; tenant-scoped limits recorded |
 | Oracle Fusion Procurement Supplier Contacts | GET, POST, request and response JSON | [Supplier contacts](oracle-fusion-procurement-supplier-contacts.md) | GET and one authorized POST/read-back live verified; tenant-scoped limits recorded |
+| Oracle Fusion Procurement Supplier Address DFF | GET | [Supplier address DFF](oracle-fusion-procurement-supplier-address-dff.md) | 26C operation inventory; live BO execution pending |
+| Oracle Fusion Procurement Supplier Attachments | GET, POST | [Supplier attachments](oracle-fusion-procurement-supplier-attachments.md) | 26C operation inventory and current BO contract; live execution pending |
+| Oracle Fusion Procurement Supplier Business Classifications | GET, POST | [Supplier business classifications](oracle-fusion-procurement-supplier-business-classifications.md) | 26C operation inventory; detailed POST contract pending |
+| Oracle Fusion Procurement Supplier Business Classification Attachments | GET, POST | [Business classification attachments](oracle-fusion-procurement-supplier-business-classification-attachments.md) | 26C operation inventory; detailed POST contract pending |
+| Oracle Fusion Procurement Supplier Contact Addresses | GET, POST | [Supplier contact addresses](oracle-fusion-procurement-supplier-contact-addresses.md) | 26C operation inventory; detailed POST contract pending |
+| Oracle Fusion Procurement Supplier Contact Data Access | GET | [Supplier contact data access](oracle-fusion-procurement-supplier-contact-data-access.md) | 26C read-only operation inventory; live BO execution pending |
+| Oracle Fusion Procurement Supplier Contact DFF | GET | [Supplier contact DFF](oracle-fusion-procurement-supplier-contact-dff.md) | 26C read-only operation inventory; live BO execution pending |
+| Oracle Fusion Procurement Supplier Contact Roles | GET | [Supplier contact roles](oracle-fusion-procurement-supplier-contact-roles.md) | 26C read-only operation inventory; live BO execution pending |
+| Oracle Fusion Procurement Supplier DFF | GET, POST | [Supplier DFF](oracle-fusion-procurement-supplier-dff.md) | Configuration-dependent write contract; query only in current scope |
+| Oracle Fusion Procurement Supplier Global DFF | GET, POST | [Supplier global DFF](oracle-fusion-procurement-supplier-global-dff.md) | Configuration-dependent write contract; query only in current scope |
+| Oracle Fusion Procurement Supplier Merge History | GET | [Supplier merge history](oracle-fusion-procurement-supplier-merge-history.md) | 26C read-only operation inventory; live BO execution pending |
+| Oracle Fusion Procurement Supplier Products and Services | GET, POST | [Supplier products and services](oracle-fusion-procurement-supplier-products-and-services.md) | 26C operation inventory; detailed POST contract pending |
+| Oracle Fusion Procurement Supplier Products and Services View | GET | [Supplier products and services view](oracle-fusion-procurement-supplier-products-and-services-view.md) | 26C read-only view inventory; live BO execution pending |
+| Oracle Fusion Procurement Supplier Site Attachments | GET, POST | [Supplier site attachments](oracle-fusion-procurement-supplier-site-attachments.md) | 26C operation inventory; detailed POST contract pending |
+| Oracle Fusion Procurement Supplier Site DFF | GET, POST | [Supplier site DFF](oracle-fusion-procurement-supplier-site-dff.md) | Configuration-dependent write contract; query only in current scope |
+| Oracle Fusion Procurement Supplier Site Global DFF | GET, POST | [Supplier site global DFF](oracle-fusion-procurement-supplier-site-global-dff.md) | Configuration-dependent write contract; query only in current scope |
+| Oracle Fusion Procurement Supplier Site Assignments | GET, POST | [Supplier site assignments](oracle-fusion-procurement-supplier-site-assignments.md) | 26C operation inventory; detailed POST contract pending |
+| Oracle Fusion Procurement Supplier Site Third-Party Payment Relationships | GET, POST | [Supplier site third-party payment relationships](oracle-fusion-procurement-supplier-site-third-party-payment-relationships.md) | Sensitive write excluded pending separate authority |
+| Oracle Fusion Procurement Supplier Spend Authorization Requests | GET | [Supplier spend authorization requests](oracle-fusion-procurement-supplier-spend-authorization-requests.md) | 26C read-only operation inventory; live BO execution pending |
+| Oracle Fusion Procurement Procurement Business Units LOV | GET | [Procurement business units LOV](oracle-fusion-procurement-procurement-business-units-lov.md) | Current BO contract inventoried; live execution pending |
 
 ## Reference contract
 
