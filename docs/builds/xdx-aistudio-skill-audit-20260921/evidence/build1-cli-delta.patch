@@ -1,0 +1,361 @@
+diff --git a/.agents/skills/aistudio/scripts/aistudio.js b/.agents/skills/aistudio/scripts/aistudio.js
+index 3e1b1d5..eca370a 100644
+--- a/.agents/skills/aistudio/scripts/aistudio.js
++++ b/.agents/skills/aistudio/scripts/aistudio.js
+@@ -29604,6 +29604,10 @@ function VS(e) {
+ function cc(e) {
+   if (e.type !== O.CONDITION && e.type !== O.SWITCH && e.type !== "ROUTER")
+     return !1;
++  // A multi-stage Boolean guard does not own individual stage terminals.
++  // A downstream SWITCH still supplies the dedicated app-stage routes.
++  if (e.type === O.CONDITION && xdxAppHintGuard(e) !== void 0)
++    return !1;
+   const t = Fh(e);
+   return t.includes("$context.$app.$OraMessageHint") || t.includes("$context.$triggers.REST.$input.OraMessageHint");
+ }
+@@ -36950,6 +36954,19 @@ function wse(e, t) {
+   if (!n) throw new Error(`${t} must be a non-empty string when provided.`);
+   return n;
+ }
++function xdxRecordFormMessage(message) {
++  if (typeof message !== "string" || message.length > 65536) return false;
++  const match = /^<oraFormSubmit id="[A-Za-z0-9_-]{1,200}">([\s\S]*)<\/oraFormSubmit>$/.exec(message);
++  if (!match) return false;
++  try {
++    const entries = JSON.parse(match[1]), seen = new Set();
++    return Array.isArray(entries) && entries.length <= 64 && entries.every((entry) => {
++      if (!entry || typeof entry !== "object" || Array.isArray(entry) || Object.keys(entry).length !== 2 || typeof entry.id !== "string" || !entry.id || seen.has(entry.id) || !Object.prototype.hasOwnProperty.call(entry, "value")) return false;
++      seen.add(entry.id);
++      return entry.value === null || ["string", "number", "boolean"].includes(typeof entry.value);
++    });
++  } catch { return false; }
++}
+ function Ja(e, t, n) {
+   if (!B(e)) throw new Error(`${t} must be an object.`);
+   if (e.message !== void 0 && typeof e.message != "string")
+@@ -36960,7 +36977,7 @@ function Ja(e, t, n) {
+   if (e.singleTurnOnly !== void 0 && typeof e.singleTurnOnly != "boolean")
+     throw new Error(`${t}.singleTurnOnly must be a boolean.`);
+   return {
+-    message: GC({
++    message: r === "app" && xdxRecordFormMessage(o) ? o : GC({
+       value: o,
+       fieldName: `${t}.message`,
+       strict: n?.strictMessage === !0,
+@@ -38207,6 +38224,7 @@ function Ga(e) {
+   return t || (Wo(e).find(([o]) => !["default", "complete", "done"].includes(o.toLowerCase()))?.[1] ?? Zs(e, ["default", "complete", "done"]) ?? Wo(e)[0]?.[1]);
+ }
+ function qi(e, t) {
++  if (t?.get(e.id)?.length === 1) return t.get(e.id)[0];
+   return pf(e) ? e.type === O.CONDITION ? Zs(e, ["true"]) ?? Ga(e) : Ga(e) : t?.get(e.id)?.[0] ?? Ga(e);
+ }
+ function Mse(e) {
+@@ -38473,7 +38491,35 @@ function UE(e, t) {
+ function BE(e, t) {
+   return Wo(e).find(([n]) => n.toLowerCase() === t.toLowerCase())?.[1] ?? Zs(e, ["default"]) ?? Ga(e);
+ }
++function xdxAppHintGuard(node) {
++  const expression = Dc(node).replace(/^\s*\{\{/, "").replace(/\}\}\s*$/, "").trim();
++  const terms = expression.split("||");
++  if (terms.length < 2) return;
++  const values = terms.map((term) => term.trim().match(/^\$context\.\$app\.\$OraMessageHint\s*===\s*(['"])([A-Za-z]+)\1$/)?.[2]);
++  return values.every(Boolean) ? values : void 0;
++}
+ function Gse(e) {
++  // Resolve only this literal input predicate; never evaluate workflow JavaScript.
++  const messageGuard = Dc(e.node).trim().match(/^\{\{\s*String\(\$context\.\$system\.\$inputMessage\)\.startsWith\((['"])([^'"\\]*)\1\)\s*\}\}$/);
++  if (messageGuard && typeof e.input?.message === "string") return {
++    value: e.input.message.startsWith(messageGuard[2]),
++    dependency: {
++      nodeCode: e.node.code, nodeType: e.node.type,
++      source: "condition-expression", parameterPath: "message",
++      confidence: "exact", expressionText: Dc(e.node),
++      reason: "Condition tests a literal prefix of the supplied input message."
++    }
++  };
++  const appStages = xdxAppHintGuard(e.node), appHint = Hse(e.input);
++  if (appStages) return {
++    value: appStages.includes(appHint),
++    dependency: {
++      nodeCode: e.node.code, nodeType: e.node.type,
++      source: "condition-expression", parameterPath: "parameters.appHint",
++      requiredValue: appHint ?? "", confidence: "exact", expressionText: Dc(e.node),
++      reason: "Condition tests a literal disjunction of canonical app message hints."
++    }
++  };
+   const t = Dc(e.node), n = t.match(/\$context\.\$triggers\.REST\.\$input\.([A-Za-z_$][A-Za-z0-9_$]*)[\s\S]*?(?:===|==)\s*['"]([^'"]+)['"]/);
+   if (!n) return;
+   const o = n[1], r = n[2];
+@@ -40167,6 +40213,14 @@ function ma(e, t = {}) {
+       return;
+     }
+     const ce = yy(e, V, f);
++    // Use the same input-aware traversal as InvokeAction for other app stages.
++    const appTraversal = Xf({ nodes: n, input: ce, nodesById: r, nodesByCode: a, adjacencyById: o.adjacencyById });
++    const appPath = appTraversal.pathSource === "input-derived" ? appTraversal.path : V.expectedPath;
++    const appCodes = ee(appPath.mustExecute);
++    const appRecordable = appCodes.filter((nodeCode) => {
++      const node = a.get(nodeCode);
++      return node ? Ln(node) !== void 0 : !1;
++    });
+     s.push(Di({
+       id: `app-${fb(V.appStage)}`,
+       scenarioKind: "app-stage",
+@@ -40174,16 +40228,17 @@ function ma(e, t = {}) {
+       title: `Agentic App ${Cm(V.appStage)} Path`,
+       summary: `Verify the workflow routes the Agentic App ${V.appStage} trigger context through its dedicated app-stage path and returns the expected app-stage output.`,
+       testName: hg(V.appStage),
+-      dataCapturePolicy: Uce(V) ? "record-now" : "model-generated",
++      dataCapturePolicy: appRecordable.length > 0 ? "record-now" : "model-generated",
+       suggestedInput: ce,
+-      expectedPath: V.expectedPath,
++      expectedPath: appPath,
+       predictedPath: y,
+-      pathSource: "predicted",
+-      requiresRuntimePathValidation: !1,
++      pathSource: appTraversal.pathSource === "input-derived" ? "input-derived" : "predicted",
++      inputDependencies: appTraversal.inputDependencies,
++      requiresRuntimePathValidation: appTraversal.pathSource === "input-derived" && appTraversal.requiresRuntimePathValidation,
+       primaryClass: !0,
+       appStage: V.appStage,
+-      recordablePath: V.recordablePath,
+-      dataPathSignature: V.dataPathSignature,
++      recordablePath: appRecordable,
++      dataPathSignature: _d(appCodes, a),
+       notes: [
+         "Use suggestedInput as the test input so the test exercises Agentic App trigger parameters instead of a chat-only message.",
+         V.reason
+@@ -40305,13 +40360,34 @@ function ma(e, t = {}) {
+         ...ve ? { pathToBranchNodeIds: ve } : {}
+       });
+       if (!Le) return;
+-      const pt = Le.path;
++      // Branch coverage must use a stage that can reach the branch. Topology-only
++      // stage paths can cross a guard that rejects that very app hint.
++      let branchPlan = Le, branchStage;
++      if (w.appBacked) {
++        for (const stage of j) {
++          const adjacency = new Map(o.adjacencyById), input = yy(e, stage, f);
++          for (const node of n) {
++            const result = node.type === O.CONDITION && (node.id !== V.id || xdxAppHintGuard(node)) ? Gse({node, input}) : void 0;
++            if (result) {
++              adjacency.set(node.id, [UE(node, result.value)].filter(Boolean));
++            } else if (node.type === O.SWITCH && /^\s*\{\{\s*\$context\.\$app\.\$OraMessageHint\s*\}\}\s*$/.test(Dc(node))) {
++              adjacency.set(node.id, [BE(node, stage.appStage)].filter(Boolean));
++            }
++          }
++          if (adjacency.has(V.id) && !adjacency.get(V.id).includes(ye)) continue;
++          const candidate = ace({branchNode:V, outcomeName:ce, outcomeTarget:ye,
++            nodes:n, pathGraph:{...o, adjacencyById:adjacency}});
++          if (candidate) { branchPlan = candidate; branchStage = stage; break; }
++        }
++        if (!branchStage) return;
++      }
++      const pt = branchPlan.path;
+       if (w.appBacked && j.some((At) => Ki({
+         left: pt,
+         right: At.expectedPath,
+         workflowNodesByCode: a
+       })) || L.some((At) => ice(pt, At))) return;
+-      const xt = j.find((At) => ee(At.expectedPath.mustExecute).includes(V.code)), yn = ee(pt.mustExecute), vn = yn.filter((At) => {
++      const xt = branchStage ?? j.find((At) => ee(At.expectedPath.mustExecute).includes(V.code)), yn = ee(pt.mustExecute), vn = yn.filter((At) => {
+         const Ut = a.get(At);
+         return Ut ? Ln(Ut) !== void 0 : !1;
+       }), Ht = Fo(ce), po = Cm(ce);
+@@ -40344,7 +40420,7 @@ function ma(e, t = {}) {
+           nodeCode: V.code,
+           outcome: ce
+         },
+-        zeroIterationLoops: Le.zeroIterationLoops,
++        zeroIterationLoops: branchPlan.zeroIterationLoops,
+         appStage: xt?.appStage,
+         recordablePath: xt ? vn : void 0,
+         dataPathSignature: xt ? _d(yn, a) : void 0,
+@@ -40505,6 +40581,59 @@ async function jc(e = {}) {
+   }
+   return c.sort(zce);
+ }
++function xdxConversationBranchMatches({ workflow, scenario, test, report }) {
++  // Membership assertions are unordered; the trace below proves edge order.
++  const membership = path => ({
++    mustExecute: ee(path?.mustExecute ?? []).slice().sort(),
++    mustNotExecute: ee(path?.mustNotExecute ?? []).slice().sort()
++  });
++  if (scenario.scenarioKind !== "branch-path" || !scenario.targetBranch || !test.conversation ||
++      report?.status !== "passed" || report.dataSource !== "file" ||
++      report.workflowCode !== workflow.workflowCode || report.workflowDefinitionHash !== Jo(workflow) ||
++      report.steps?.length !== test.conversation.steps.length) return [];
++  let target, destination;
++  function visit(pipeline) {
++    for (const node of pipeline?.pipelineNodes ?? []) {
++      if (node.code === scenario.targetBranch.nodeCode) {
++        target = node;
++        destination = pipeline.pipelineNodes.find(n => String(n.id) === String(node.outcomes?.[scenario.targetBranch.outcome]));
++      }
++      if (node.metadata?.dataPipeline) visit(node.metadata.dataPipeline);
++    }
++  }
++  visit(workflow.specification?.dataPipeline);
++  if (!target || !destination || !["CONDITION", "SWITCH"].includes(target.type)) return [];
++  const matches = [];
++  for (const [index, step] of test.conversation.steps.entries()) {
++    const result = report.steps[index], binding = step.pathBinding;
++    if (!binding || binding.derivedFrom !== "file_replay" || binding.workflowDefinitionHash !== Jo(workflow) ||
++        binding.inputHash !== uc(step) || binding.conversationPrefixHash !== pc(test.conversation.steps, index) ||
++        result?.stepId !== step.stepId || result.status !== "passed" || !result.deterministic?.passed ||
++        !Ne(result.input, step.input) || !Ne(membership(result.pathAssertions), membership(step.pathAssertions))) return [];
++    if (scenario.appStage && step.input?.parameters?.appHint !== scenario.appStage) continue;
++    const required = new Set(ee(step.pathAssertions?.mustExecute ?? []));
++    if (!required.has(target.code) || !required.has(destination.code)) continue;
++    const trace = (result.run?.executionTrace ?? []).map(event => event.nodeCode).filter((code, i, codes) => i === 0 || code !== codes[i - 1]);
++    if (trace.some((code, i) => code === target.code && trace[i + 1] === destination.code))
++      matches.push({ stepId: step.stepId, nodeCode: target.code, outcome: scenario.targetBranch.outcome, destinationNodeCode: destination.code, pathAssertions: step.pathAssertions });
++  }
++  return matches;
++}
++async function xdxFindConversationBranchEvidence(e) {
++  const artifacts = await jc({ cwd: e.cwd, workflowCode: e.workflow.workflowCode, ...(e.testRootDir ? { testRootDir: e.testRootDir } : {}) });
++  const evidence = new Map();
++  for (const artifact of artifacts.filter(a => gn(a.testFileData))) {
++    const reportPath = Mc(e.cwd, e.workflow.workflowCode, artifact.testName, void 0, e.reportRootDir);
++    const report = await zn(reportPath);
++    if (!report || v.resolve(e.cwd, report.testFile ?? "") !== v.resolve(artifact.absoluteTestFilePath)) continue;
++    for (const scenario of e.scenarios) {
++      if (evidence.has(scenario.id)) continue;
++      const matches = xdxConversationBranchMatches({ workflow: e.workflow, scenario, test: artifact.testFileData, report });
++      if (matches.length) evidence.set(scenario.id, { testName: artifact.testName, testFile: artifact.testFile, reportPath: ne(e.cwd, reportPath), ...matches[0] });
++    }
++  }
++  return evidence;
++}
+ async function BC(e = {}) {
+   return (await jc(e)).filter((t) => wc(t.testFileData)).map((t) => ({
+     absoluteTestFilePath: t.absoluteTestFilePath,
+@@ -41522,7 +41651,14 @@ async function rw(e) {
+     }) : { mustExecute: [], mustNotExecute: [] };
+     return Ye && !hc(Ze, Ye) && Y.push("Existing test pathAssertions no longer match the current sync-plan expectedPath."), Y;
+   };
++  const xdxConversationEvidence = await xdxFindConversationBranchEvidence({ cwd: e.cwd, workflow: n, scenarios: j, testRootDir: e.testRootDir, reportRootDir: e.reportRootDir });
+   j.forEach((E) => {
++    const observed = xdxConversationEvidence.get(E.id);
++    if (observed) {
++      Dr += 1;
++      Ut.push({ status: "up_to_date", scenarioId: E.id, scenarioKind: E.scenarioKind, displayOrder: E.displayOrder, title: E.title, purpose: E.summary, testName: observed.testName, testFile: observed.testFile, appStage: E.appStage, dataCapturePolicy: "model-generated", expectedPath: observed.pathAssertions, pathSource: "observed", conversationBranchEvidence: observed, reason: "Current passing file conversation exercises and asserts the exact branch edge with its retained prefix." });
++      return;
++    }
+     const { existing: Z, testName: le, testFile: Te } = Le(E);
+     Z && Yo.add(Z.testFile);
+     const Y = po(E, Te), _ = ol({
+@@ -42858,6 +42994,9 @@ function wb(e, t) {
+     );
+   return n;
+ }
++function xdxConversationTriggerAllowed(input) {
++  return input.triggerType === void 0 || input.triggerType === "chat" || input.triggerType === "app";
++}
+ function nT(e, t) {
+   if (!B(e)) throw new Error(`${t} must be an object.`);
+   if (e.mode !== "scripted") throw new Error(`${t}.mode must be scripted.`);
+@@ -42867,6 +43006,8 @@ function nT(e, t) {
+     throw new Error(`${t}.steps must contain at least two steps.`);
+   if (e.steps.length > FE)
+     throw new Error(`${t}.steps exceeds the internal safety limit of ${FE}.`);
++  if (e.steps.some((step) => step.input?.triggerType === "app") && e.steps.some((step) => step.type !== "chat" || step.input?.triggerType !== "app" || step.expectedWait !== void 0))
++    throw new Error(`${t}: app conversations require ordinary app-trigger steps without suspension or mixed trigger types.`);
+   const o = /* @__PURE__ */ new Set(), r = /* @__PURE__ */ new Map(), a = /* @__PURE__ */ new Set(), i = e.steps.map((p, f) => {
+     const m = `${t}.steps[${f}]`;
+     if (!B(p)) throw new Error(`${m} must be an object.`);
+@@ -42878,8 +43019,8 @@ function nT(e, t) {
+     let k, C;
+     if (p.type === "chat") {
+       if (!B(p.input)) throw new Error(`${m}.input must be an object.`);
+-      if (k = Ja(p.input, `${m}.input`, { strictMessage: !0 }), M_(k, `${m}.input`), k.triggerType !== void 0 && k.triggerType !== "chat")
+-        throw new Error(`${m}.input.triggerType must be chat when present.`);
++      if (k = Ja(p.input, `${m}.input`, { strictMessage: !0 }), M_(k, `${m}.input`), !xdxConversationTriggerAllowed(k))
++        throw new Error(`${m}.input.triggerType must be chat or app when present.`);
+       if (k.singleTurnOnly === !0)
+         throw new Error(`${m}.input.singleTurnOnly cannot be true in a conversation test.`);
+       if (p.resume !== void 0) throw new Error(`${m}.resume is only supported for resume steps.`);
+@@ -44771,6 +44912,12 @@ async function Fle(e) {
+     updatedFields: P
+   };
+ }
++function xdxCurrentJudgeUpdateScenario({ scenario, definition, workflow, existingTestFile }) {
++  if (!scenario || !definition || !definition.judge || Object.keys(definition).some(key => key !== "judge")) return scenario;
++  const binding = Ole({ workflow, existingTestFile, input: existingTestFile.input, pathAssertions: existingTestFile.pathAssertions });
++  if (!binding || binding.pathSource !== "observed") return scenario;
++  return { ...scenario, expectedPath: existingTestFile.pathAssertions, pathSource: "observed", suggestedInput: existingTestFile.input };
++}
+ async function jle(e) {
+   const t = v.resolve(e.cwd, e.filePath), n = v.resolve(e.cwd, e.testFilePath), o = await Be(t), r = await uo(n);
+   if (gn(r))
+@@ -44850,6 +44997,7 @@ async function jle(e) {
+     const ye = Jl(P, o.workflowCode);
+     T = MC(a, ye) ?? ye.get(u);
+   }
++  T = xdxCurrentJudgeUpdateScenario({ scenario: T, definition: d, workflow: o, existingTestFile: a });
+   const I = J_({
+     existing: a.scenario,
+     definition: d.scenario,
+@@ -52680,6 +52828,33 @@ Recording attempt: ${te}`);
+       `Workflow reached mustNotExecute node ${w.pausedNode} while recording ${ne(t, n)}. Recording stopped before that node executed; update the test path assertions or workflow branch data. This indicates the live environment did not satisfy the scenario's expected path. Do not generate model-generated data for this same representative scenario unless the user explicitly requests intentionally synthetic coverage. Do not describe this as a privacy or sensitive-data blocker unless the user, CLI output, or an explicit policy says so. Recording attempt: ${z}`
+     );
+   }
++  // XDX: complete current app path partitions from observed execution. For
++  // data-bearing stages, preserve every prior required/prohibited assertion.
++  const xdxObservedCodes = new Set(Object.keys(w.nodeResults));
++  const xdxReadStage = ["app-query", "app-invoke-action"].includes(k.scenario?.id) ||
++    (k.scenario?.kind === "branch-path" && k.input?.triggerType === "app" &&
++      ["Query", "InvokeAction"].includes(k.input?.parameters?.appHint));
++  const xdxReadPathSatisfied = xdxReadStage &&
++    ee(k.pathAssertions?.mustExecute ?? []).every(code => xdxObservedCodes.has(code)) &&
++    ee(k.pathAssertions?.mustNotExecute ?? []).every(code => !xdxObservedCodes.has(code));
++  if ((["app-init-display", "app-init-actions", "app-summary"].includes(k.scenario?.id) || xdxReadPathSatisfied) &&
++      w.finishReason?.trim().toLowerCase() === "stop" &&
++      db(k.pathAssertions) === Object.keys(w.nodeResults).at(-1)) {
++    k.pathAssertions = dw({
++      pathAssertions: kL({ workflow: i, run: w, coverage: k.scenario?.coverage }),
++      existing: k.pathAssertions,
++      scope: "path"
++    });
++    const observedSkippable = gc({
++      workflowContext: s,
++      pathAssertions: k.pathAssertions,
++      pathScopedRequiredRecordableNodeCodes: zi({ testFile: k, workflowContext: s }),
++      loopReplayCoverage: k.scenario?.coverage,
++      loopReplayData: k.testData.loopReplay
++    });
++    f.clear();
++    observedSkippable.forEach((nodeCode) => f.add(nodeCode));
++  }
+   let P;
+   try {
+     P = await FU({ cwd: t, testFile: k, workflow: i, run: w });
+@@ -54412,7 +54587,17 @@ function sge(e) {
+     }
+   };
+ }
+-function cge(e) {
++function cge(e, workflow) {
++  // App panel startup must use the same input-aware traversal as workflow tests.
++  // Otherwise the structural shortest path invents a parent fetch behind a guard.
++  if (workflow) {
++    const nodes = Ct(workflow.specification?.dataPipeline?.pipelineNodes);
++    const graph = ew(workflow.specification?.dataPipeline?.pipelineNodes ?? []);
++    const traversal = Xf({nodes, nodesById: graph.nodesById,
++      nodesByCode: zl(nodes), adjacencyById: graph.adjacencyById,
++      input: {message: "", triggerType: "app", parameters: {appHint: Lo, OraUserContext: "", OraAppContext: ""}}});
++    if (traversal.pathSource === "input-derived") return traversal.path;
++  }
+   return {
+     mustExecute: e.expectedPath.mustExecute.slice(0),
+     mustNotExecute: e.expectedPath.mustNotExecute.slice(0)
+@@ -55112,7 +55297,7 @@ async function bw(e) {
+     const I = sme(p, w), R = cme(p, w) ?? [], $ = age(k.workflow, T), F = sge({
+       effectiveWidgetList: R,
+       workflowTerminalLayoutIds: $
+-    }), S = Vme(p, i), j = String((p.title ?? f) || p.id).trim(), L = Jme(S), H = `${o.code}:${p.id}:${Lo}`, D = cge(T), W = Ace(k.workflow, D), z = W.length > 0 ? {
++    }), S = Vme(p, i), j = String((p.title ?? f) || p.id).trim(), L = Jme(S), H = `${o.code}:${p.id}:${Lo}`, D = cge(T, k.workflow), W = Ace(k.workflow, D), z = W.length > 0 ? {
+       role: "loop-boundary",
+       loopReplay: {
+         loops: W.map((Pe) => ({ nodeCode: Pe.node.code, mode: "boundary-output" }))

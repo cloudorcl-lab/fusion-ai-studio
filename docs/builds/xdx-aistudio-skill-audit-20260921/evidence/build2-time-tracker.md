@@ -1,0 +1,33 @@
+# Build Time Tracker
+
+Task: xdx-supplier-lifecycle-plan-20260920.
+
+2026-09-20T13:19:09.7421614Z - first observed checkpoint: governance review. Start tracking is late; preceding read-only preparation duration unavailable (no retained start timestamp). No active-labor estimate. Final response/commit tail will remain outside delivery cutoff. Tokens and AI Units unavailable until command receipts provide them.
+
+2026-09-20T13:25:42.2184223Z - plan/prompt and template-derived registers authored; server metadata found and definitions fetched. No live data writes. CLI timing/token/AIUnit totals unavailable; tool durations not added to enclosing elapsed time.
+
+2026-09-20T13:29:29.4207865Z - delivery checkpoint: worktree created and verified, startup/policy gates passed, documents checked. Pre-first-checkpoint duration remains unavailable; final commit/response tail excluded until next session. Token/AI Unit totals unavailable from this task interface; no invented totals.
+
+## Execution session 01a0c19a-41a6-74f1-a699-31f0d2fda6db
+
+2026-09-21T01:35:30.0000000Z - retrospective first retained bound from goal creation receipt. Initial handoff-read duration before this bound unavailable. Acknowledgement recorded at 2026-09-21T01:38:12.0874100Z, not backdated.
+2026-09-21T01:38:12.0874100Z - governance read and policy PASS; startup receipt prepared. Prior planning delivery cutoff 2026-09-20T13:29:29.4207865Z to commit b1e9b4 at 13:29:52Z is a bounded commit tail; active labor/response tail unavailable. Commit 44c0d23 at 2026-09-21T01:19:29Z updated the handoff in a separate interval; intervening time is not assigned as active work.
+Tokens: aggregate goal tracking available; model token split unavailable. AI Units: no runtime invoked. Tool durations are nested and not added to task elapsed.
+
+2026-09-21T01:52:16.187Z - P0 checkpoint: current metadata adopted locally, specification inventory/referral complete, two BO validators passed, source coverage check passed. No workflow run or supplier data call; AI Units from executed workflow tests = none. Goal tool reported aggregate 168289 tokens at 2026-09-21T01:48:45Z; billing/token-category split unavailable and this is not a workflow metric. Approval-pending interval for payment/access overlapped active documentation and source work; user subsequently resolved it read-only. Tool/network durations remain nested, not additive.
+
+2026-09-21T01:57:43.8144680Z - delivery checkpoint: reconciled Startup PASS; 2 BO validators PASS; P0 source checks PASS; 31 Markdown files checked with zero broken local links/fence errors; git diff --check PASS. Task elapsed from retrospective goal-creation bound 2026-09-21T01:35:30Z through this timestamp; initial handoff read remains outside bound. Goal receipt at 2026-09-21T01:57:07Z reported 207710 aggregate tokens; token-category/billing breakdown unavailable. No workflow runs or AI Unit receipts. Commit/final-response tail after this checkpoint excluded until next-session recovery. Goal remains active; P0 entry/P1-P9/Closeout incomplete.
+
+## Execution session `01a0c19a-41a6-74f1-a699-31f0d2fda6db-p0-entry-20260921`
+
+2026-09-21T01:59:31.7326141Z - first retained UTC bound for this continuation. Initial handoff and skill reads immediately before this bound are unavailable and not backdated. Reviewed current handoff, checkpoint, plan, execution prompt, canonical playbook, registry, all 24 supplier/BU object references, active build records and AI Studio/plan-continuation guidance. Startup-package and policy-only checks passed. Prior final-response tail after commit `6a63425` is not assigned as active labor. Goal tool reported 446524 aggregate tokens at 2026-09-21T01:59:35Z; token-category/billing breakdown unavailable. No workflow runtime or AI Units yet.
+
+2026-09-21T03:30:25.3235664Z - P1 checkpoint prepared. DRAFT workflow/app authored and runtime-accepted after replacing the unsupported HUMAN/WAIT topology with ordinary Ask Oracle turns. Canonical workflow suite: 5 passed, 0 failed, 0 required judges; 10,725 input tokens, 1,378 output tokens, 12,103 total tokens, 45 AI Units (9 token units), 8.02 seconds workflow time. App suite: 1/1 passed and reported the same backing workflow metrics. Browser acceptance passed correction, stale/exact approval, rejection and cancellation with no create. Goal tool reported 1,430,029 aggregate task tokens at 2026-09-21T03:28:56Z; this is not a billing or workflow metric. P1 commit and response tail remain outside this checkpoint.
+
+2026-09-21T05:18:18.4511013Z - P2 checkpoint prepared. DRAFT workflow version 85899843 adds safe supplier/address/site/contact query routes, paging, stable parent selection and four-column visible results. Canonical workflow suite: 15 passed, 0 failed, 0 required judges; 28,313 input tokens, 5,587 output tokens, 33,900 total tokens, 145 AI Units (29 token units), 32.4 seconds workflow time. App suite: 1/1 passed. Focused sync has zero executable actions, four deferred single-turn paths with two attempts each and final summary allowed. Browser acceptance passed exact/ambiguous supplier lookup, address paging, site/contact scope and explicit no-match behavior. No POST or supplier-data mutation occurred. Commit/response tail remains outside this checkpoint.
+
+2026-09-21T06:09:32.7285445Z - P3 pre-browser checkpoint. DRAFT workflow version 85902239 passed local P1-P3 checks, workflow validation, focused sync and the cumulative workflow suite: 17 passed, 0 failed, 0 pending judges; 47,655 input tokens, 6,531 output tokens, 54,186 total tokens, 165 AI Units (33 token units), 38.1 seconds workflow time. App suite passed 1/1. Browser acceptance could not start because the Oracle session expired to Cloud Sign In. No POST or supplier-data mutation occurred; P3 and the goal remain active.
+
+2026-09-21T14:14:29.6285663Z - P3 browser acceptance passed after user-restored sign-in. The DRAFT app resolved supplier 1252, required exact reference `Lee US1`, exposed eligible defaults only, treated apply-all as draft preparation, preserved user-value precedence, advanced revision 4 to 5 on City correction and recorded exact revision 5 approval for no-write validation. No create was attempted; POST nodes and remote mutations remain zero. Payment and access children remain read-only. P4-P9 and Closeout remain; goal active.
+
+2026-09-21T14:20:29.8747803Z - P4 material-task intake checkpoint. Re-read the full canonical playbook, object registry, supplier reference and P4 plan/prompt; PolicyOnly PASS. Active slice is exact supplier-create contract and no-write implementation. Goal tool reported 3,252,954 aggregate task tokens; token-category split unavailable. No P4 workflow runtime, AI Units or POST occurred.

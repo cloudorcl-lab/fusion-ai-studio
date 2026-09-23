@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-09-21T14:49:47.3116067Z",
+  "root": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "rootHead": "b1e9b4a87c4bac24c4552bd5e0f732a43c4a4892",
+  "branch": "TestingWFBuildTools",
+  "build1Commit": "48bcd7b2fd6146c93f3c448d17b73e57f4baf076",
+  "build2": "Read-only snapshots of live files; no command executed in that worktree and no remote operation",
+  "skillSha256": "6F39B1126A291CDD224E6E70B0634035E018DEC7DA671F1A887C224E4F81FB65",
+  "cliSha256": "658A15BF857FC4A46144D85205F50346591669427B37C24EAE2500642128CC78",
+  "normalizedSkillAndCliEqualToBuild2": true,
+  "markdownFiles": 58,
+  "markdownWords": 111741,
+  "markdownBytes": 844483,
+  "coreRouteWords": 58862,
+  "playbookWords": 10834,
+  "cliBytes": 2935917,
+  "cliLines": 72576,
+  "helpMilliseconds": [
+    240,
+    194,
+    192,
+    195,
+    195
+  ],
+  "checks": [
+    "node --check: exit 0",
+    "BO real lookup values regression: PASS",
+    "run-app-test help: exit 0",
+    "--version: rejected Missing value for option --version",
+    "Policy and audit Startup receipt: PASS"
+  ]
+}
