@@ -10,7 +10,7 @@
 | Documentation release | 26C |
 | Required parent key | Live-resolved `SupplierId` |
 | Stable item key | `SupplierContactId` |
-| Last evidence review | 2026-09-17 |
+| Last evidence review | 2026-09-23 |
 
 Sources: [GET supplier contacts](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-contacts-get.html), [POST supplier contact](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-contacts-post.html), and [Oracle 26C OpenAPI](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/openapi.json).
 
@@ -118,18 +118,19 @@ Additional confirmation: the [1497 contact POST](../../builds/xdx-supplier-infor
 
 The retained [26C schema](../../builds/xdx-supplier-information/live-post/contact-documentation.json) marks `Email` (maximum 320 characters) and `InactiveDate` required; the omission evidence above applies only to InactiveDate. FirstName and LastName each allow 150 characters and are nullable in that schema. Reviewed descriptions do not establish uniqueness for names, email or a composite key: scope and normalization remain unresolved. The successful test used distinctive XDX names and a non-operational destination under a new supplier. No duplicate-contact or account-provisioning test was performed. Revalidate before relying on contact uniqueness.
 
+Runtime validation on 2026-09-23 adds a tenant-specific conditional rule: an email-only request was definitively rejected with HTTP 400 / `FND:::FND_CMN_REQ_ATTRIB_API_SERV` and “You must provide a value for the FirstName attribute.” A parent-scoped reconciliation then returned zero contacts. The materially changed request added the controlled first and last name plus the same email and succeeded. `FirstName` is therefore confirmed required for this tenant/release. `LastName` remains part of the minimum contact identity used by both retained successful examples; its requiredness was not isolated with a last-name-omission test because sequential negative probing was intentionally avoided.
+
 ### Candidate request JSON
 
 ```json
 {
   "FirstName": "<approved test value>",
   "LastName": "<unique approved test value>",
-  "Email": "<controlled test destination>",
-  "AdministrativeContactFlag": false
+  "Email": "<controlled test destination>"
 }
 ```
 
-Use an explicitly approved test identity derived from the requested basis and a non-operational notification destination. Do not copy operational email or telephone destinations. Verify a successful write by returned `SupplierContactId` and parent-scoped GET. The authorized 2026-09-17 create and read-back passed for the XDX-prefixed Lee-based identity; returned UserName and UserAccountStatus were null. See the [POST review](../../builds/xdx-supplier-information/xdx_supplier_post_review.md).
+Use an explicitly approved test identity derived from the requested basis and a non-operational notification destination. Do not copy operational email or telephone destinations. `AdministrativeContactFlag`, `InactiveDate`, phone/fax fields, account/security fields, roles, DFFs, attachments and generated IDs are excluded from the required-transaction payload. Verify a successful write by returned `SupplierContactId` and parent-scoped GET. The authorized 2026-09-23 create returned generated contact/profile ID `300000333814275`; the independent GET matched all three submitted fields and returned null UserName/UserAccountStatus. The earlier 2026-09-17 create and read-back also returned null account fields. See the [POST review](../../builds/xdx-supplier-information/xdx_supplier_post_review.md).
 
 ## Evidence and limits
 
@@ -143,6 +144,7 @@ Use an explicitly approved test identity derived from the requested basis and a 
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-23 | XDX Supplier Lifecycle rejected email-only POST, zero-contact reconciliation, materially changed POST and independent GET | Confirmed tenant-required `FirstName`; retained first name, last name and email as the minimum transaction identity; omitted administrative/account/phone/role/optional fields; captured generated contact/profile ID `300000333814275` and null account fields. |
 | 2026-09-17 | Supplier 1497 child POST/GET | Added generated contact/profile ID and InactiveDate-omission confirmation; four intended fields matched with no user account. |
 | 2026-09-17 | Retained 26C schema reviewed during compliance audit | Recorded name/email limits and unresolved uniqueness scope separately from omission evidence; no new POST. |
 | 2026-09-17 | Authorized POST request/response and parent-scoped GET under live-post | Confirmed omitted generated IDs for the tested tenant and recorded POST/schema limits; immutable first-success GET sample preserved. |

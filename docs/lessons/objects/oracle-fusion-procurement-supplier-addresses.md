@@ -133,6 +133,7 @@ Additional confirmation: the [1497 address POST](../../builds/xdx-supplier-infor
 | Field | Requiredness | Uniqueness scope | Test-data treatment | Evidence |
 | --- | --- | --- | --- | --- |
 | `AddressName` | Present in the vendor example; requiredness is not established by the reviewed schema's required list | Within the selected supplier parent: `(SupplierId, AddressName)` | Generate a distinctive address name for that supplier; compare with available saved addresses under the same parent | User-confirmed uniqueness, 2026-09-17; no duplicate-name POST tested |
+| At least one address-purpose flag | Conditionally required by the tenant: one of `AddressPurposeOrderingFlag`, `AddressPurposeRemitToFlag`, or `AddressPurposeRFQOrBiddingFlag` must be true | Per address | For the streamlined purchasing golden path, send only `AddressPurposeOrderingFlag: true`; omit the other purpose flags | Tenant rejection `POZ-2130428`, 2026-09-23, when all purpose flags were omitted |
 
 Do not impose collection-wide address-name uniqueness across different suppliers. Confirm requiredness, length and normalization from the exact Oracle operation documentation before executing a create; this user confirmation establishes uniqueness scope only. Saved addresses cannot prove current absence if their capture is incomplete or stale.
 
@@ -167,6 +168,7 @@ Resolve country and subdivision codes from authorized evidence. Reuse a source p
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-23 | Live create rejection `POZ-2130428` under supplier 1504 | Established the tenant's conditional purpose requirement. The streamlined golden path now sends only `AddressPurposeOrderingFlag: true`; the rejected POST created no address. |
 | 2026-09-17 | Supplier 1497 child POST/GET | Added same-tenant confirmation of generated address ID/party number and all ten submitted fields. |
 | 2026-09-17 | Authorized POST request/response and parent-scoped GET under live-post | Confirmed omitted generated IDs for the tested tenant and recorded POST/schema limits; immutable first-success GET sample preserved. |
 | 2026-09-17 | User confirmation | Recorded supplier-parent-scoped `AddressName` uniqueness; kept requiredness distinct and GET samples unchanged. |

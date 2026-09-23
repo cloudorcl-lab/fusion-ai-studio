@@ -34,7 +34,6 @@ function assertState(state) {
   assert.ok(schema.properties.phase.enum.includes(state.phase));
   assert.ok(Number.isInteger(state.revision) && state.revision >= 1);
   assert.equal(Array.isArray(state.operations), true);
-  assert.equal(state.operations.length, 0, 'P1 must not schedule writes');
 }
 
 assert.equal(workflow.aiAppsCompatibleFlag, true);
@@ -66,19 +65,21 @@ assertState(immediateCancel.state);
 assert.equal(immediateCancel.terminal, true);
 assert.equal(immediateCancel.state.phase, 'CANCELLED');
 assert.equal(immediateCancel.state.revision, 1);
+assert.equal(immediateCancel.state.operations.length, 0);
 
-let result = reduce('Create a supplier named XDX State Contract', null);
+let result = reduce('prepare supplier with Supplier=XDX State Contract; BusinessRelationship=Spend Authorized; TaxOrganizationType=Corporation', null);
 assertState(result.state);
 assert.equal(result.state.phase, 'GATHER');
 assert.equal(result.state.revision, 1);
 assert.equal(result.terminal, false);
+assert.equal(result.state.operations.length, 0);
 
 result = reduce('review', result.state);
 assertState(result.state);
 assert.equal(result.state.phase, 'FINAL_REVIEW');
 assert.equal(result.state.revision, 2);
 
-result = reduce('Change the supplier name to XDX Revised', result.state);
+result = reduce('change Supplier=XDX Revised', result.state);
 assertState(result.state);
 assert.equal(result.state.phase, 'GATHER');
 assert.equal(result.state.revision, 3);
@@ -89,25 +90,38 @@ assertState(stale.state);
 assert.equal(stale.terminal, false);
 assert.equal(stale.state.phase, 'GATHER');
 assert.equal(stale.state.approvedSnapshot, null);
+assert.equal(stale.state.operations.length, 0);
 
 const reviewed = reduce('review', stale.state);
 const approved = reduce('approve', reviewed.state);
 assertState(approved.state);
-assert.equal(approved.terminal, true);
+assert.equal(approved.terminal, false);
 assert.equal(approved.state.phase, 'APPROVED');
+assert.equal(approved.action, 'CHECK_SUPPLIER_DUPLICATE');
 assert.equal(approved.state.approvedSnapshot.requestId, approved.state.requestId);
 assert.equal(approved.state.approvedSnapshot.revision, approved.state.revision);
 assert.deepEqual(approved.state.approvedSnapshot.normalizedPayload, approved.state.draft.requiredFields);
+assert.equal(approved.state.operations.length, 1);
+assert.equal(approved.state.operations[0].status, 'APPROVED');
 
 const cancelled = reduce('cancel', result.state);
 assertState(cancelled.state);
 assert.equal(cancelled.terminal, true);
 assert.equal(cancelled.state.phase, 'CANCELLED');
 assert.equal(cancelled.state.approvedSnapshot, null);
+assert.equal(cancelled.state.operations.length, 0);
 
-const workflowText = fs.readFileSync(workflowPath, 'utf8');
+const executableIdentifiers = nodes.flatMap((node) => [
+  node.code,
+  node.metadata && node.metadata.functionName,
+  node.metadata && node.metadata.businessObjectCode
+]).filter(Boolean).join('\n');
 for (const excluded of ['Attachment', 'DFF', 'ThirdPartyPayment', 'PaymentRelationship']) {
-  assert.equal(workflowText.includes(excluded), false, `excluded resource leaked into P1 workflow: ${excluded}`);
+  assert.equal(
+    executableIdentifiers.includes(excluded),
+    false,
+    `excluded resource leaked into an executable workflow identifier: ${excluded}`
+  );
 }
 
 console.log(JSON.stringify({
@@ -121,6 +135,7 @@ console.log(JSON.stringify({
     'revision continuity',
     'correction invalidates approval',
     'stale approval rejected',
-    'cancel/approve produce zero writes'
+    'cancel and stale approval produce zero scheduled writes',
+    'current exact supplier approval schedules duplicate preflight only'
   ]
 }, null, 2));

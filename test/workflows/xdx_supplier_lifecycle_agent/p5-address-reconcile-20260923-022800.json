@@ -1,0 +1,1659 @@
+{
+  "testName": "p5-address-reconcile-20260923-022800",
+  "tags": [
+    "address-create",
+    "p5",
+    "read-only",
+    "reconciliation",
+    "required-fields"
+  ],
+  "scenario": {
+    "custom": true,
+    "source": "user",
+    "intent": "Read supplier 1504 addresses after the rejected create attempt without executing any write node."
+  },
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT"
+  },
+  "authoring": {
+    "source": "model-authored",
+    "createdAt": "2026-09-23T02:03:22.480Z",
+    "userPrompt": "In AI Agent Studio, verify supplier 1504 address required-field review, exact approval, one create and independent parent-scoped verification using file-backed data."
+  },
+  "defaults": {
+    "dataSource": "file",
+    "evaluationMode": "hybrid"
+  },
+  "conversation": {
+    "mode": "scripted",
+    "goal": "Confirm by parent-scoped GET whether XDX HQ 20260923-022800 exists after the rejected create attempt.",
+    "steps": [
+      {
+        "stepId": "resolve-parent-and-list-addresses",
+        "intent": "Resolve supplier 1504 and list its existing addresses without writing.",
+        "assertions": {
+          "contains": [
+            {
+              "id": "resolve-parent-and-list-addresses-contains-1",
+              "name": "Response includes No addresses were found for the selected supplier",
+              "value": "No addresses were found for the selected supplier"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-contains-2",
+              "name": "Response includes successful empty result",
+              "value": "successful empty result"
+            }
+          ],
+          "notContains": [
+            {
+              "id": "resolve-parent-and-list-addresses-excludes-1",
+              "name": "Response excludes created",
+              "value": "created"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-excludes-2",
+              "name": "Response excludes submitted",
+              "value": "submitted"
+            }
+          ]
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "resolve-parent-and-list-addresses-executes-app-stage-router",
+              "name": "APP_STAGE_ROUTER executes",
+              "nodeCode": "APP_STAGE_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-executes-reduce-lifecycle",
+              "name": "REDUCE_LIFECYCLE executes",
+              "nodeCode": "REDUCE_LIFECYCLE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-executes-save-lifecycle",
+              "name": "SAVE_LIFECYCLE executes",
+              "nodeCode": "SAVE_LIFECYCLE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-executes-query-response",
+              "name": "QUERY_RESPONSE executes",
+              "nodeCode": "QUERY_RESPONSE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-executes-project-response-text",
+              "name": "PROJECT_RESPONSE_TEXT executes",
+              "nodeCode": "PROJECT_RESPONSE_TEXT"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-executes-read-action-router",
+              "name": "READ_ACTION_ROUTER executes",
+              "nodeCode": "READ_ACTION_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-executes-find-suppliers-by-number",
+              "name": "FIND_SUPPLIERS_BY_NUMBER executes",
+              "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-executes-list-supplier-addresses",
+              "name": "LIST_SUPPLIER_ADDRESSES executes",
+              "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-executes-normalize-read-result",
+              "name": "NORMALIZE_READ_RESULT executes",
+              "nodeCode": "NORMALIZE_READ_RESULT"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-executes-save-read-state",
+              "name": "SAVE_READ_STATE executes",
+              "nodeCode": "SAVE_READ_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-executes-prepare-supplier-result",
+              "name": "PREPARE_SUPPLIER_RESULT executes",
+              "nodeCode": "PREPARE_SUPPLIER_RESULT"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-executes-post-supplier-lookup-router",
+              "name": "POST_SUPPLIER_LOOKUP_ROUTER executes",
+              "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "resolve-parent-and-list-addresses-skips-init-display-response",
+              "name": "INIT_DISPLAY_RESPONSE does not execute",
+              "nodeCode": "INIT_DISPLAY_RESPONSE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-init-actions-response",
+              "name": "INIT_ACTIONS_RESPONSE does not execute",
+              "nodeCode": "INIT_ACTIONS_RESPONSE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-summary-response",
+              "name": "SUMMARY_RESPONSE does not execute",
+              "nodeCode": "SUMMARY_RESPONSE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-find-suppliers-by-name",
+              "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-supplier-sites",
+              "name": "LIST_SUPPLIER_SITES does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITES"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-supplier-contacts",
+              "name": "LIST_SUPPLIER_CONTACTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACTS"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-prepared-read-state",
+              "name": "SAVE_PREPARED_READ_STATE does not execute",
+              "nodeCode": "SAVE_PREPARED_READ_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-check-supplier-duplicate",
+              "name": "CHECK_SUPPLIER_DUPLICATE does not execute",
+              "nodeCode": "CHECK_SUPPLIER_DUPLICATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-prepare-supplier-create",
+              "name": "PREPARE_SUPPLIER_CREATE does not execute",
+              "nodeCode": "PREPARE_SUPPLIER_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-supplier-create-router",
+              "name": "SUPPLIER_CREATE_ROUTER does not execute",
+              "nodeCode": "SUPPLIER_CREATE_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-executing-state",
+              "name": "SAVE_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_EXECUTING_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-create-supplier",
+              "name": "CREATE_SUPPLIER does not execute",
+              "nodeCode": "CREATE_SUPPLIER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-normalize-supplier-create",
+              "name": "NORMALIZE_SUPPLIER_CREATE does not execute",
+              "nodeCode": "NORMALIZE_SUPPLIER_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-create-result-state",
+              "name": "SAVE_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-supplier-verify-router",
+              "name": "SUPPLIER_VERIFY_ROUTER does not execute",
+              "nodeCode": "SUPPLIER_VERIFY_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-create-guard-state",
+              "name": "SAVE_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-verify-created-supplier",
+              "name": "VERIFY_CREATED_SUPPLIER does not execute",
+              "nodeCode": "VERIFY_CREATED_SUPPLIER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-unknown-create-state",
+              "name": "SAVE_UNKNOWN_CREATE_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_CREATE_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-compare-supplier-verification",
+              "name": "COMPARE_SUPPLIER_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_SUPPLIER_VERIFICATION"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-verified-supplier-state",
+              "name": "SAVE_VERIFIED_SUPPLIER_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_SUPPLIER_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-check-address-duplicate",
+              "name": "CHECK_ADDRESS_DUPLICATE does not execute",
+              "nodeCode": "CHECK_ADDRESS_DUPLICATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-prepare-address-create",
+              "name": "PREPARE_ADDRESS_CREATE does not execute",
+              "nodeCode": "PREPARE_ADDRESS_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-address-create-router",
+              "name": "ADDRESS_CREATE_ROUTER does not execute",
+              "nodeCode": "ADDRESS_CREATE_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-address-executing-state",
+              "name": "SAVE_ADDRESS_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_ADDRESS_EXECUTING_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-create-supplier-address",
+              "name": "CREATE_SUPPLIER_ADDRESS does not execute",
+              "nodeCode": "CREATE_SUPPLIER_ADDRESS"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-normalize-address-create",
+              "name": "NORMALIZE_ADDRESS_CREATE does not execute",
+              "nodeCode": "NORMALIZE_ADDRESS_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-address-create-result-state",
+              "name": "SAVE_ADDRESS_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_ADDRESS_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-address-verify-router",
+              "name": "ADDRESS_VERIFY_ROUTER does not execute",
+              "nodeCode": "ADDRESS_VERIFY_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-address-create-guard-state",
+              "name": "SAVE_ADDRESS_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_ADDRESS_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-verify-created-address",
+              "name": "VERIFY_CREATED_ADDRESS does not execute",
+              "nodeCode": "VERIFY_CREATED_ADDRESS"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-unknown-address-state",
+              "name": "SAVE_UNKNOWN_ADDRESS_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_ADDRESS_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-compare-address-verification",
+              "name": "COMPARE_ADDRESS_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_ADDRESS_VERIFICATION"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-verified-address-state",
+              "name": "SAVE_VERIFIED_ADDRESS_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_ADDRESS_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-procurement-bus",
+              "name": "LIST_PROCUREMENT_BUS does not execute",
+              "nodeCode": "LIST_PROCUREMENT_BUS"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-check-site-duplicate",
+              "name": "CHECK_SITE_DUPLICATE does not execute",
+              "nodeCode": "CHECK_SITE_DUPLICATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-prepare-site-create",
+              "name": "PREPARE_SITE_CREATE does not execute",
+              "nodeCode": "PREPARE_SITE_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-site-create-router",
+              "name": "SITE_CREATE_ROUTER does not execute",
+              "nodeCode": "SITE_CREATE_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-site-executing-state",
+              "name": "SAVE_SITE_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_SITE_EXECUTING_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-create-supplier-site",
+              "name": "CREATE_SUPPLIER_SITE does not execute",
+              "nodeCode": "CREATE_SUPPLIER_SITE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-normalize-site-create",
+              "name": "NORMALIZE_SITE_CREATE does not execute",
+              "nodeCode": "NORMALIZE_SITE_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-site-create-result-state",
+              "name": "SAVE_SITE_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_SITE_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-site-verify-router",
+              "name": "SITE_VERIFY_ROUTER does not execute",
+              "nodeCode": "SITE_VERIFY_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-site-create-guard-state",
+              "name": "SAVE_SITE_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_SITE_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-verify-created-site",
+              "name": "VERIFY_CREATED_SITE does not execute",
+              "nodeCode": "VERIFY_CREATED_SITE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-unknown-site-state",
+              "name": "SAVE_UNKNOWN_SITE_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_SITE_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-compare-site-verification",
+              "name": "COMPARE_SITE_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_SITE_VERIFICATION"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-verified-site-state",
+              "name": "SAVE_VERIFIED_SITE_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_SITE_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-check-contact-duplicate",
+              "name": "CHECK_CONTACT_DUPLICATE does not execute",
+              "nodeCode": "CHECK_CONTACT_DUPLICATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-prepare-contact-create",
+              "name": "PREPARE_CONTACT_CREATE does not execute",
+              "nodeCode": "PREPARE_CONTACT_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-contact-create-router",
+              "name": "CONTACT_CREATE_ROUTER does not execute",
+              "nodeCode": "CONTACT_CREATE_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-contact-executing-state",
+              "name": "SAVE_CONTACT_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_CONTACT_EXECUTING_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-create-supplier-contact",
+              "name": "CREATE_SUPPLIER_CONTACT does not execute",
+              "nodeCode": "CREATE_SUPPLIER_CONTACT"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-normalize-contact-create",
+              "name": "NORMALIZE_CONTACT_CREATE does not execute",
+              "nodeCode": "NORMALIZE_CONTACT_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-contact-create-result-state",
+              "name": "SAVE_CONTACT_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_CONTACT_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-contact-verify-router",
+              "name": "CONTACT_VERIFY_ROUTER does not execute",
+              "nodeCode": "CONTACT_VERIFY_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-contact-create-guard-state",
+              "name": "SAVE_CONTACT_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_CONTACT_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-verify-created-contact",
+              "name": "VERIFY_CREATED_CONTACT does not execute",
+              "nodeCode": "VERIFY_CREATED_CONTACT"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-unknown-contact-state",
+              "name": "SAVE_UNKNOWN_CONTACT_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_CONTACT_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-compare-contact-verification",
+              "name": "COMPARE_CONTACT_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_CONTACT_VERIFICATION"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-verified-contact-state",
+              "name": "SAVE_VERIFIED_CONTACT_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_CONTACT_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-supplier-business-classifications",
+              "name": "LIST_SUPPLIER_BUSINESS_CLASSIFICATIONS does not execute",
+              "nodeCode": "LIST_SUPPLIER_BUSINESS_CLASSIFICATIONS"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-supplier-contact-addresses",
+              "name": "LIST_SUPPLIER_CONTACT_ADDRESSES does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACT_ADDRESSES"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-supplier-contact-data-access",
+              "name": "LIST_SUPPLIER_CONTACT_DATA_ACCESS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACT_DATA_ACCESS"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-supplier-contact-roles",
+              "name": "LIST_SUPPLIER_CONTACT_ROLES does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACT_ROLES"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-supplier-merge-history",
+              "name": "LIST_SUPPLIER_MERGE_HISTORY does not execute",
+              "nodeCode": "LIST_SUPPLIER_MERGE_HISTORY"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-supplier-products-services",
+              "name": "LIST_SUPPLIER_PRODUCTS_SERVICES does not execute",
+              "nodeCode": "LIST_SUPPLIER_PRODUCTS_SERVICES"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-supplier-products-services-view",
+              "name": "LIST_SUPPLIER_PRODUCTS_SERVICES_VIEW does not execute",
+              "nodeCode": "LIST_SUPPLIER_PRODUCTS_SERVICES_VIEW"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-supplier-site-assignments",
+              "name": "LIST_SUPPLIER_SITE_ASSIGNMENTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITE_ASSIGNMENTS"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-supplier-spend-authorization",
+              "name": "LIST_SUPPLIER_SPEND_AUTHORIZATION does not execute",
+              "nodeCode": "LIST_SUPPLIER_SPEND_AUTHORIZATION"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-list-product-service-categories",
+              "name": "LIST_PRODUCT_SERVICE_CATEGORIES does not execute",
+              "nodeCode": "LIST_PRODUCT_SERVICE_CATEGORIES"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-check-classification-duplicate",
+              "name": "CHECK_CLASSIFICATION_DUPLICATE does not execute",
+              "nodeCode": "CHECK_CLASSIFICATION_DUPLICATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-prepare-classification-create",
+              "name": "PREPARE_CLASSIFICATION_CREATE does not execute",
+              "nodeCode": "PREPARE_CLASSIFICATION_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-classification-create-router",
+              "name": "CLASSIFICATION_CREATE_ROUTER does not execute",
+              "nodeCode": "CLASSIFICATION_CREATE_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-classification-executing-state",
+              "name": "SAVE_CLASSIFICATION_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_CLASSIFICATION_EXECUTING_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-create-supplier-classification",
+              "name": "CREATE_SUPPLIER_CLASSIFICATION does not execute",
+              "nodeCode": "CREATE_SUPPLIER_CLASSIFICATION"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-normalize-classification-create",
+              "name": "NORMALIZE_CLASSIFICATION_CREATE does not execute",
+              "nodeCode": "NORMALIZE_CLASSIFICATION_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-classification-create-result-state",
+              "name": "SAVE_CLASSIFICATION_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_CLASSIFICATION_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-classification-verify-router",
+              "name": "CLASSIFICATION_VERIFY_ROUTER does not execute",
+              "nodeCode": "CLASSIFICATION_VERIFY_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-classification-create-guard-state",
+              "name": "SAVE_CLASSIFICATION_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_CLASSIFICATION_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-verify-created-classification",
+              "name": "VERIFY_CREATED_CLASSIFICATION does not execute",
+              "nodeCode": "VERIFY_CREATED_CLASSIFICATION"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-unknown-classification-state",
+              "name": "SAVE_UNKNOWN_CLASSIFICATION_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_CLASSIFICATION_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-compare-classification-verification",
+              "name": "COMPARE_CLASSIFICATION_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_CLASSIFICATION_VERIFICATION"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-verified-classification-state",
+              "name": "SAVE_VERIFIED_CLASSIFICATION_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_CLASSIFICATION_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-check-contact-address-duplicate",
+              "name": "CHECK_CONTACT_ADDRESS_DUPLICATE does not execute",
+              "nodeCode": "CHECK_CONTACT_ADDRESS_DUPLICATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-prepare-contact-address-create",
+              "name": "PREPARE_CONTACT_ADDRESS_CREATE does not execute",
+              "nodeCode": "PREPARE_CONTACT_ADDRESS_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-contact-address-create-router",
+              "name": "CONTACT_ADDRESS_CREATE_ROUTER does not execute",
+              "nodeCode": "CONTACT_ADDRESS_CREATE_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-contact-address-executing-state",
+              "name": "SAVE_CONTACT_ADDRESS_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_CONTACT_ADDRESS_EXECUTING_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-create-supplier-contact-address",
+              "name": "CREATE_SUPPLIER_CONTACT_ADDRESS does not execute",
+              "nodeCode": "CREATE_SUPPLIER_CONTACT_ADDRESS"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-normalize-contact-address-create",
+              "name": "NORMALIZE_CONTACT_ADDRESS_CREATE does not execute",
+              "nodeCode": "NORMALIZE_CONTACT_ADDRESS_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-contact-address-create-result-state",
+              "name": "SAVE_CONTACT_ADDRESS_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_CONTACT_ADDRESS_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-contact-address-verify-router",
+              "name": "CONTACT_ADDRESS_VERIFY_ROUTER does not execute",
+              "nodeCode": "CONTACT_ADDRESS_VERIFY_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-contact-address-create-guard-state",
+              "name": "SAVE_CONTACT_ADDRESS_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_CONTACT_ADDRESS_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-verify-created-contact-address",
+              "name": "VERIFY_CREATED_CONTACT_ADDRESS does not execute",
+              "nodeCode": "VERIFY_CREATED_CONTACT_ADDRESS"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-unknown-contact-address-state",
+              "name": "SAVE_UNKNOWN_CONTACT_ADDRESS_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_CONTACT_ADDRESS_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-compare-contact-address-verification",
+              "name": "COMPARE_CONTACT_ADDRESS_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_CONTACT_ADDRESS_VERIFICATION"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-verified-contact-address-state",
+              "name": "SAVE_VERIFIED_CONTACT_ADDRESS_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_CONTACT_ADDRESS_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-check-product-service-duplicate",
+              "name": "CHECK_PRODUCT_SERVICE_DUPLICATE does not execute",
+              "nodeCode": "CHECK_PRODUCT_SERVICE_DUPLICATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-prepare-product-service-create",
+              "name": "PREPARE_PRODUCT_SERVICE_CREATE does not execute",
+              "nodeCode": "PREPARE_PRODUCT_SERVICE_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-product-service-create-router",
+              "name": "PRODUCT_SERVICE_CREATE_ROUTER does not execute",
+              "nodeCode": "PRODUCT_SERVICE_CREATE_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-product-service-executing-state",
+              "name": "SAVE_PRODUCT_SERVICE_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_PRODUCT_SERVICE_EXECUTING_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-create-supplier-product-service",
+              "name": "CREATE_SUPPLIER_PRODUCT_SERVICE does not execute",
+              "nodeCode": "CREATE_SUPPLIER_PRODUCT_SERVICE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-normalize-product-service-create",
+              "name": "NORMALIZE_PRODUCT_SERVICE_CREATE does not execute",
+              "nodeCode": "NORMALIZE_PRODUCT_SERVICE_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-product-service-create-result-state",
+              "name": "SAVE_PRODUCT_SERVICE_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_PRODUCT_SERVICE_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-product-service-verify-router",
+              "name": "PRODUCT_SERVICE_VERIFY_ROUTER does not execute",
+              "nodeCode": "PRODUCT_SERVICE_VERIFY_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-product-service-create-guard-state",
+              "name": "SAVE_PRODUCT_SERVICE_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_PRODUCT_SERVICE_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-verify-created-product-service",
+              "name": "VERIFY_CREATED_PRODUCT_SERVICE does not execute",
+              "nodeCode": "VERIFY_CREATED_PRODUCT_SERVICE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-unknown-product-service-state",
+              "name": "SAVE_UNKNOWN_PRODUCT_SERVICE_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_PRODUCT_SERVICE_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-compare-product-service-verification",
+              "name": "COMPARE_PRODUCT_SERVICE_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_PRODUCT_SERVICE_VERIFICATION"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-verified-product-service-state",
+              "name": "SAVE_VERIFIED_PRODUCT_SERVICE_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_PRODUCT_SERVICE_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-check-site-assignment-duplicate",
+              "name": "CHECK_SITE_ASSIGNMENT_DUPLICATE does not execute",
+              "nodeCode": "CHECK_SITE_ASSIGNMENT_DUPLICATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-prepare-site-assignment-create",
+              "name": "PREPARE_SITE_ASSIGNMENT_CREATE does not execute",
+              "nodeCode": "PREPARE_SITE_ASSIGNMENT_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-site-assignment-create-router",
+              "name": "SITE_ASSIGNMENT_CREATE_ROUTER does not execute",
+              "nodeCode": "SITE_ASSIGNMENT_CREATE_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-site-assignment-executing-state",
+              "name": "SAVE_SITE_ASSIGNMENT_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_SITE_ASSIGNMENT_EXECUTING_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-create-supplier-site-assignment",
+              "name": "CREATE_SUPPLIER_SITE_ASSIGNMENT does not execute",
+              "nodeCode": "CREATE_SUPPLIER_SITE_ASSIGNMENT"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-normalize-site-assignment-create",
+              "name": "NORMALIZE_SITE_ASSIGNMENT_CREATE does not execute",
+              "nodeCode": "NORMALIZE_SITE_ASSIGNMENT_CREATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-site-assignment-create-result-state",
+              "name": "SAVE_SITE_ASSIGNMENT_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_SITE_ASSIGNMENT_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-site-assignment-verify-router",
+              "name": "SITE_ASSIGNMENT_VERIFY_ROUTER does not execute",
+              "nodeCode": "SITE_ASSIGNMENT_VERIFY_ROUTER"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-site-assignment-create-guard-state",
+              "name": "SAVE_SITE_ASSIGNMENT_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_SITE_ASSIGNMENT_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-verify-created-site-assignment",
+              "name": "VERIFY_CREATED_SITE_ASSIGNMENT does not execute",
+              "nodeCode": "VERIFY_CREATED_SITE_ASSIGNMENT"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-unknown-site-assignment-state",
+              "name": "SAVE_UNKNOWN_SITE_ASSIGNMENT_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_SITE_ASSIGNMENT_STATE"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-compare-site-assignment-verification",
+              "name": "COMPARE_SITE_ASSIGNMENT_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_SITE_ASSIGNMENT_VERIFICATION"
+            },
+            {
+              "id": "resolve-parent-and-list-addresses-skips-save-verified-site-assignment-state",
+              "name": "SAVE_VERIFIED_SITE_ASSIGNMENT_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_SITE_ASSIGNMENT_STATE"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "resolve-parent-and-list-addresses-node-order",
+            "name": "Resolve supplier 1504 and list its existing addresses without writing. follows the expected node order",
+            "nodeCodes": [
+              "APP_STAGE_ROUTER",
+              "REDUCE_LIFECYCLE",
+              "SAVE_LIFECYCLE",
+              "READ_ACTION_ROUTER",
+              "FIND_SUPPLIERS_BY_NUMBER",
+              "PREPARE_SUPPLIER_RESULT",
+              "POST_SUPPLIER_LOOKUP_ROUTER",
+              "LIST_SUPPLIER_ADDRESSES",
+              "NORMALIZE_READ_RESULT",
+              "SAVE_READ_STATE",
+              "PROJECT_RESPONSE_TEXT",
+              "QUERY_RESPONSE"
+            ]
+          },
+          "nodeCounts": {
+            "REDUCE_LIFECYCLE": {
+              "id": "resolve-parent-and-list-addresses-single-reducer",
+              "name": "Reducer executes once",
+              "exact": 1
+            },
+            "QUERY_RESPONSE": {
+              "id": "resolve-parent-and-list-addresses-single-response",
+              "name": "Query response renders once",
+              "exact": 1
+            }
+          }
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "record-now",
+          "recordedAt": "2026-09-23T02:31:42.478Z",
+          "nodes": {
+            "FIND_SUPPLIERS_BY_NUMBER": {
+              "nodeType": "BO_FUNCTION",
+              "capture": {
+                "mode": "raw",
+                "responseTruncated": false,
+                "finishReason": "stop"
+              },
+              "metadata": {
+                "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+                "functionName": "FindSuppliersByValidatedFilter"
+              },
+              "input": {
+                "filter": "SupplierNumber='1504'",
+                "limit": 10,
+                "offset": 0
+              },
+              "response": {
+                "count": 1,
+                "hasMore": false,
+                "items": [
+                  {
+                    "@context": {
+                      "headers": {
+                        "ETag": "ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A65787000000007770400000007737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B02000078700000000171007E00047372001B6F7261636C652E6A626F2E646F6D61696E2E4E756C6C56616C75655899C1C58DAABEEB02000149000A6D53514C54797065496478700000000C71007E000471007E000671007E000471007E000678"
+                      },
+                      "key": "300000333814250"
+                    },
+                    "BusinessRelationship": "Spend Authorized",
+                    "InactiveDate": null,
+                    "Supplier": "XDX SL 20260923-011716",
+                    "SupplierId": "300000333814250",
+                    "SupplierNumber": "1504",
+                    "SupplierType": null,
+                    "TaxOrganizationType": "Corporation"
+                  }
+                ],
+                "limit": 10,
+                "links": [
+                  {
+                    "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
+                    "kind": "collection",
+                    "name": "suppliers",
+                    "rel": "self"
+                  }
+                ],
+                "offset": 0
+              }
+            },
+            "LIST_SUPPLIER_ADDRESSES": {
+              "nodeType": "BO_FUNCTION",
+              "capture": {
+                "mode": "raw",
+                "responseTruncated": false,
+                "finishReason": "stop"
+              },
+              "metadata": {
+                "businessObjectCode": "XDX_SUPPLIER_INFORMATION",
+                "functionName": "ListSupplierAddresses"
+              },
+              "input": {
+                "filter": "",
+                "limit": 10,
+                "offset": 0,
+                "suppliers_Id": "300000333814250"
+              },
+              "response": {
+                "count": 0,
+                "hasMore": false,
+                "items": [],
+                "limit": 10,
+                "links": [
+                  {
+                    "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333814250/child/addresses",
+                    "kind": "collection",
+                    "name": "addresses",
+                    "rel": "self"
+                  }
+                ],
+                "offset": 0
+              }
+            }
+          }
+        },
+        "type": "chat",
+        "input": {
+          "message": "show addresses for supplier number 1504",
+          "triggerType": "app",
+          "parameters": {
+            "appHint": "Query",
+            "OraUserContext": "",
+            "OraAppContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "0da4b928f8facdda",
+          "workflowDefinitionHash": "9c72b51533ee292f",
+          "observedAt": "2026-09-23T07:10:15.355Z",
+          "observedTerminalNodeCode": "QUERY_RESPONSE",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86078581,
+          "conversationPrefixHash": "dc1c29a71b566b2b"
+        }
+      },
+      {
+        "stepId": "prepare-required-address",
+        "intent": "Prepare only the four required transaction fields for the address.",
+        "assertions": {
+          "contains": [
+            {
+              "id": "prepare-required-address-contains-1",
+              "name": "Response includes Prepared all required transaction fields",
+              "value": "Prepared all required transaction fields"
+            },
+            {
+              "id": "prepare-required-address-contains-2",
+              "name": "Response includes Type review",
+              "value": "Type review"
+            }
+          ],
+          "notContains": [
+            {
+              "id": "prepare-required-address-excludes-1",
+              "name": "Response excludes City",
+              "value": "City"
+            },
+            {
+              "id": "prepare-required-address-excludes-2",
+              "name": "Response excludes State",
+              "value": "State"
+            },
+            {
+              "id": "prepare-required-address-excludes-3",
+              "name": "Response excludes PostalCode",
+              "value": "PostalCode"
+            },
+            {
+              "id": "prepare-required-address-excludes-4",
+              "name": "Response excludes payment",
+              "value": "payment"
+            },
+            {
+              "id": "prepare-required-address-excludes-5",
+              "name": "Response excludes attachment",
+              "value": "attachment"
+            },
+            {
+              "id": "prepare-required-address-excludes-6",
+              "name": "Response excludes DFF",
+              "value": "DFF"
+            }
+          ]
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "prepare-required-address-executes-app-stage-router",
+              "name": "APP_STAGE_ROUTER executes",
+              "nodeCode": "APP_STAGE_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-executes-reduce-lifecycle",
+              "name": "REDUCE_LIFECYCLE executes",
+              "nodeCode": "REDUCE_LIFECYCLE"
+            },
+            {
+              "id": "prepare-required-address-executes-save-lifecycle",
+              "name": "SAVE_LIFECYCLE executes",
+              "nodeCode": "SAVE_LIFECYCLE"
+            },
+            {
+              "id": "prepare-required-address-executes-query-response",
+              "name": "QUERY_RESPONSE executes",
+              "nodeCode": "QUERY_RESPONSE"
+            },
+            {
+              "id": "prepare-required-address-executes-project-response-text",
+              "name": "PROJECT_RESPONSE_TEXT executes",
+              "nodeCode": "PROJECT_RESPONSE_TEXT"
+            },
+            {
+              "id": "prepare-required-address-executes-read-action-router",
+              "name": "READ_ACTION_ROUTER executes",
+              "nodeCode": "READ_ACTION_ROUTER"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "prepare-required-address-skips-init-display-response",
+              "name": "INIT_DISPLAY_RESPONSE does not execute",
+              "nodeCode": "INIT_DISPLAY_RESPONSE"
+            },
+            {
+              "id": "prepare-required-address-skips-init-actions-response",
+              "name": "INIT_ACTIONS_RESPONSE does not execute",
+              "nodeCode": "INIT_ACTIONS_RESPONSE"
+            },
+            {
+              "id": "prepare-required-address-skips-summary-response",
+              "name": "SUMMARY_RESPONSE does not execute",
+              "nodeCode": "SUMMARY_RESPONSE"
+            },
+            {
+              "id": "prepare-required-address-skips-find-suppliers-by-name",
+              "name": "FIND_SUPPLIERS_BY_NAME does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NAME"
+            },
+            {
+              "id": "prepare-required-address-skips-find-suppliers-by-number",
+              "name": "FIND_SUPPLIERS_BY_NUMBER does not execute",
+              "nodeCode": "FIND_SUPPLIERS_BY_NUMBER"
+            },
+            {
+              "id": "prepare-required-address-skips-list-supplier-addresses",
+              "name": "LIST_SUPPLIER_ADDRESSES does not execute",
+              "nodeCode": "LIST_SUPPLIER_ADDRESSES"
+            },
+            {
+              "id": "prepare-required-address-skips-list-supplier-sites",
+              "name": "LIST_SUPPLIER_SITES does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITES"
+            },
+            {
+              "id": "prepare-required-address-skips-list-supplier-contacts",
+              "name": "LIST_SUPPLIER_CONTACTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACTS"
+            },
+            {
+              "id": "prepare-required-address-skips-normalize-read-result",
+              "name": "NORMALIZE_READ_RESULT does not execute",
+              "nodeCode": "NORMALIZE_READ_RESULT"
+            },
+            {
+              "id": "prepare-required-address-skips-save-read-state",
+              "name": "SAVE_READ_STATE does not execute",
+              "nodeCode": "SAVE_READ_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-prepare-supplier-result",
+              "name": "PREPARE_SUPPLIER_RESULT does not execute",
+              "nodeCode": "PREPARE_SUPPLIER_RESULT"
+            },
+            {
+              "id": "prepare-required-address-skips-post-supplier-lookup-router",
+              "name": "POST_SUPPLIER_LOOKUP_ROUTER does not execute",
+              "nodeCode": "POST_SUPPLIER_LOOKUP_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-prepared-read-state",
+              "name": "SAVE_PREPARED_READ_STATE does not execute",
+              "nodeCode": "SAVE_PREPARED_READ_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-check-supplier-duplicate",
+              "name": "CHECK_SUPPLIER_DUPLICATE does not execute",
+              "nodeCode": "CHECK_SUPPLIER_DUPLICATE"
+            },
+            {
+              "id": "prepare-required-address-skips-prepare-supplier-create",
+              "name": "PREPARE_SUPPLIER_CREATE does not execute",
+              "nodeCode": "PREPARE_SUPPLIER_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-supplier-create-router",
+              "name": "SUPPLIER_CREATE_ROUTER does not execute",
+              "nodeCode": "SUPPLIER_CREATE_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-executing-state",
+              "name": "SAVE_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_EXECUTING_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-create-supplier",
+              "name": "CREATE_SUPPLIER does not execute",
+              "nodeCode": "CREATE_SUPPLIER"
+            },
+            {
+              "id": "prepare-required-address-skips-normalize-supplier-create",
+              "name": "NORMALIZE_SUPPLIER_CREATE does not execute",
+              "nodeCode": "NORMALIZE_SUPPLIER_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-save-create-result-state",
+              "name": "SAVE_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-supplier-verify-router",
+              "name": "SUPPLIER_VERIFY_ROUTER does not execute",
+              "nodeCode": "SUPPLIER_VERIFY_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-create-guard-state",
+              "name": "SAVE_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-verify-created-supplier",
+              "name": "VERIFY_CREATED_SUPPLIER does not execute",
+              "nodeCode": "VERIFY_CREATED_SUPPLIER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-unknown-create-state",
+              "name": "SAVE_UNKNOWN_CREATE_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_CREATE_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-compare-supplier-verification",
+              "name": "COMPARE_SUPPLIER_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_SUPPLIER_VERIFICATION"
+            },
+            {
+              "id": "prepare-required-address-skips-save-verified-supplier-state",
+              "name": "SAVE_VERIFIED_SUPPLIER_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_SUPPLIER_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-check-address-duplicate",
+              "name": "CHECK_ADDRESS_DUPLICATE does not execute",
+              "nodeCode": "CHECK_ADDRESS_DUPLICATE"
+            },
+            {
+              "id": "prepare-required-address-skips-prepare-address-create",
+              "name": "PREPARE_ADDRESS_CREATE does not execute",
+              "nodeCode": "PREPARE_ADDRESS_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-address-create-router",
+              "name": "ADDRESS_CREATE_ROUTER does not execute",
+              "nodeCode": "ADDRESS_CREATE_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-address-executing-state",
+              "name": "SAVE_ADDRESS_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_ADDRESS_EXECUTING_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-create-supplier-address",
+              "name": "CREATE_SUPPLIER_ADDRESS does not execute",
+              "nodeCode": "CREATE_SUPPLIER_ADDRESS"
+            },
+            {
+              "id": "prepare-required-address-skips-normalize-address-create",
+              "name": "NORMALIZE_ADDRESS_CREATE does not execute",
+              "nodeCode": "NORMALIZE_ADDRESS_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-save-address-create-result-state",
+              "name": "SAVE_ADDRESS_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_ADDRESS_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-address-verify-router",
+              "name": "ADDRESS_VERIFY_ROUTER does not execute",
+              "nodeCode": "ADDRESS_VERIFY_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-address-create-guard-state",
+              "name": "SAVE_ADDRESS_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_ADDRESS_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-verify-created-address",
+              "name": "VERIFY_CREATED_ADDRESS does not execute",
+              "nodeCode": "VERIFY_CREATED_ADDRESS"
+            },
+            {
+              "id": "prepare-required-address-skips-save-unknown-address-state",
+              "name": "SAVE_UNKNOWN_ADDRESS_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_ADDRESS_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-compare-address-verification",
+              "name": "COMPARE_ADDRESS_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_ADDRESS_VERIFICATION"
+            },
+            {
+              "id": "prepare-required-address-skips-save-verified-address-state",
+              "name": "SAVE_VERIFIED_ADDRESS_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_ADDRESS_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-list-procurement-bus",
+              "name": "LIST_PROCUREMENT_BUS does not execute",
+              "nodeCode": "LIST_PROCUREMENT_BUS"
+            },
+            {
+              "id": "prepare-required-address-skips-check-site-duplicate",
+              "name": "CHECK_SITE_DUPLICATE does not execute",
+              "nodeCode": "CHECK_SITE_DUPLICATE"
+            },
+            {
+              "id": "prepare-required-address-skips-prepare-site-create",
+              "name": "PREPARE_SITE_CREATE does not execute",
+              "nodeCode": "PREPARE_SITE_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-site-create-router",
+              "name": "SITE_CREATE_ROUTER does not execute",
+              "nodeCode": "SITE_CREATE_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-site-executing-state",
+              "name": "SAVE_SITE_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_SITE_EXECUTING_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-create-supplier-site",
+              "name": "CREATE_SUPPLIER_SITE does not execute",
+              "nodeCode": "CREATE_SUPPLIER_SITE"
+            },
+            {
+              "id": "prepare-required-address-skips-normalize-site-create",
+              "name": "NORMALIZE_SITE_CREATE does not execute",
+              "nodeCode": "NORMALIZE_SITE_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-save-site-create-result-state",
+              "name": "SAVE_SITE_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_SITE_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-site-verify-router",
+              "name": "SITE_VERIFY_ROUTER does not execute",
+              "nodeCode": "SITE_VERIFY_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-site-create-guard-state",
+              "name": "SAVE_SITE_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_SITE_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-verify-created-site",
+              "name": "VERIFY_CREATED_SITE does not execute",
+              "nodeCode": "VERIFY_CREATED_SITE"
+            },
+            {
+              "id": "prepare-required-address-skips-save-unknown-site-state",
+              "name": "SAVE_UNKNOWN_SITE_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_SITE_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-compare-site-verification",
+              "name": "COMPARE_SITE_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_SITE_VERIFICATION"
+            },
+            {
+              "id": "prepare-required-address-skips-save-verified-site-state",
+              "name": "SAVE_VERIFIED_SITE_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_SITE_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-check-contact-duplicate",
+              "name": "CHECK_CONTACT_DUPLICATE does not execute",
+              "nodeCode": "CHECK_CONTACT_DUPLICATE"
+            },
+            {
+              "id": "prepare-required-address-skips-prepare-contact-create",
+              "name": "PREPARE_CONTACT_CREATE does not execute",
+              "nodeCode": "PREPARE_CONTACT_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-contact-create-router",
+              "name": "CONTACT_CREATE_ROUTER does not execute",
+              "nodeCode": "CONTACT_CREATE_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-contact-executing-state",
+              "name": "SAVE_CONTACT_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_CONTACT_EXECUTING_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-create-supplier-contact",
+              "name": "CREATE_SUPPLIER_CONTACT does not execute",
+              "nodeCode": "CREATE_SUPPLIER_CONTACT"
+            },
+            {
+              "id": "prepare-required-address-skips-normalize-contact-create",
+              "name": "NORMALIZE_CONTACT_CREATE does not execute",
+              "nodeCode": "NORMALIZE_CONTACT_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-save-contact-create-result-state",
+              "name": "SAVE_CONTACT_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_CONTACT_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-contact-verify-router",
+              "name": "CONTACT_VERIFY_ROUTER does not execute",
+              "nodeCode": "CONTACT_VERIFY_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-contact-create-guard-state",
+              "name": "SAVE_CONTACT_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_CONTACT_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-verify-created-contact",
+              "name": "VERIFY_CREATED_CONTACT does not execute",
+              "nodeCode": "VERIFY_CREATED_CONTACT"
+            },
+            {
+              "id": "prepare-required-address-skips-save-unknown-contact-state",
+              "name": "SAVE_UNKNOWN_CONTACT_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_CONTACT_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-compare-contact-verification",
+              "name": "COMPARE_CONTACT_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_CONTACT_VERIFICATION"
+            },
+            {
+              "id": "prepare-required-address-skips-save-verified-contact-state",
+              "name": "SAVE_VERIFIED_CONTACT_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_CONTACT_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-list-supplier-business-classifications",
+              "name": "LIST_SUPPLIER_BUSINESS_CLASSIFICATIONS does not execute",
+              "nodeCode": "LIST_SUPPLIER_BUSINESS_CLASSIFICATIONS"
+            },
+            {
+              "id": "prepare-required-address-skips-list-supplier-contact-addresses",
+              "name": "LIST_SUPPLIER_CONTACT_ADDRESSES does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACT_ADDRESSES"
+            },
+            {
+              "id": "prepare-required-address-skips-list-supplier-contact-data-access",
+              "name": "LIST_SUPPLIER_CONTACT_DATA_ACCESS does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACT_DATA_ACCESS"
+            },
+            {
+              "id": "prepare-required-address-skips-list-supplier-contact-roles",
+              "name": "LIST_SUPPLIER_CONTACT_ROLES does not execute",
+              "nodeCode": "LIST_SUPPLIER_CONTACT_ROLES"
+            },
+            {
+              "id": "prepare-required-address-skips-list-supplier-merge-history",
+              "name": "LIST_SUPPLIER_MERGE_HISTORY does not execute",
+              "nodeCode": "LIST_SUPPLIER_MERGE_HISTORY"
+            },
+            {
+              "id": "prepare-required-address-skips-list-supplier-products-services",
+              "name": "LIST_SUPPLIER_PRODUCTS_SERVICES does not execute",
+              "nodeCode": "LIST_SUPPLIER_PRODUCTS_SERVICES"
+            },
+            {
+              "id": "prepare-required-address-skips-list-supplier-products-services-view",
+              "name": "LIST_SUPPLIER_PRODUCTS_SERVICES_VIEW does not execute",
+              "nodeCode": "LIST_SUPPLIER_PRODUCTS_SERVICES_VIEW"
+            },
+            {
+              "id": "prepare-required-address-skips-list-supplier-site-assignments",
+              "name": "LIST_SUPPLIER_SITE_ASSIGNMENTS does not execute",
+              "nodeCode": "LIST_SUPPLIER_SITE_ASSIGNMENTS"
+            },
+            {
+              "id": "prepare-required-address-skips-list-supplier-spend-authorization",
+              "name": "LIST_SUPPLIER_SPEND_AUTHORIZATION does not execute",
+              "nodeCode": "LIST_SUPPLIER_SPEND_AUTHORIZATION"
+            },
+            {
+              "id": "prepare-required-address-skips-list-product-service-categories",
+              "name": "LIST_PRODUCT_SERVICE_CATEGORIES does not execute",
+              "nodeCode": "LIST_PRODUCT_SERVICE_CATEGORIES"
+            },
+            {
+              "id": "prepare-required-address-skips-check-classification-duplicate",
+              "name": "CHECK_CLASSIFICATION_DUPLICATE does not execute",
+              "nodeCode": "CHECK_CLASSIFICATION_DUPLICATE"
+            },
+            {
+              "id": "prepare-required-address-skips-prepare-classification-create",
+              "name": "PREPARE_CLASSIFICATION_CREATE does not execute",
+              "nodeCode": "PREPARE_CLASSIFICATION_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-classification-create-router",
+              "name": "CLASSIFICATION_CREATE_ROUTER does not execute",
+              "nodeCode": "CLASSIFICATION_CREATE_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-classification-executing-state",
+              "name": "SAVE_CLASSIFICATION_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_CLASSIFICATION_EXECUTING_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-create-supplier-classification",
+              "name": "CREATE_SUPPLIER_CLASSIFICATION does not execute",
+              "nodeCode": "CREATE_SUPPLIER_CLASSIFICATION"
+            },
+            {
+              "id": "prepare-required-address-skips-normalize-classification-create",
+              "name": "NORMALIZE_CLASSIFICATION_CREATE does not execute",
+              "nodeCode": "NORMALIZE_CLASSIFICATION_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-save-classification-create-result-state",
+              "name": "SAVE_CLASSIFICATION_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_CLASSIFICATION_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-classification-verify-router",
+              "name": "CLASSIFICATION_VERIFY_ROUTER does not execute",
+              "nodeCode": "CLASSIFICATION_VERIFY_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-classification-create-guard-state",
+              "name": "SAVE_CLASSIFICATION_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_CLASSIFICATION_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-verify-created-classification",
+              "name": "VERIFY_CREATED_CLASSIFICATION does not execute",
+              "nodeCode": "VERIFY_CREATED_CLASSIFICATION"
+            },
+            {
+              "id": "prepare-required-address-skips-save-unknown-classification-state",
+              "name": "SAVE_UNKNOWN_CLASSIFICATION_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_CLASSIFICATION_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-compare-classification-verification",
+              "name": "COMPARE_CLASSIFICATION_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_CLASSIFICATION_VERIFICATION"
+            },
+            {
+              "id": "prepare-required-address-skips-save-verified-classification-state",
+              "name": "SAVE_VERIFIED_CLASSIFICATION_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_CLASSIFICATION_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-check-contact-address-duplicate",
+              "name": "CHECK_CONTACT_ADDRESS_DUPLICATE does not execute",
+              "nodeCode": "CHECK_CONTACT_ADDRESS_DUPLICATE"
+            },
+            {
+              "id": "prepare-required-address-skips-prepare-contact-address-create",
+              "name": "PREPARE_CONTACT_ADDRESS_CREATE does not execute",
+              "nodeCode": "PREPARE_CONTACT_ADDRESS_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-contact-address-create-router",
+              "name": "CONTACT_ADDRESS_CREATE_ROUTER does not execute",
+              "nodeCode": "CONTACT_ADDRESS_CREATE_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-contact-address-executing-state",
+              "name": "SAVE_CONTACT_ADDRESS_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_CONTACT_ADDRESS_EXECUTING_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-create-supplier-contact-address",
+              "name": "CREATE_SUPPLIER_CONTACT_ADDRESS does not execute",
+              "nodeCode": "CREATE_SUPPLIER_CONTACT_ADDRESS"
+            },
+            {
+              "id": "prepare-required-address-skips-normalize-contact-address-create",
+              "name": "NORMALIZE_CONTACT_ADDRESS_CREATE does not execute",
+              "nodeCode": "NORMALIZE_CONTACT_ADDRESS_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-save-contact-address-create-result-state",
+              "name": "SAVE_CONTACT_ADDRESS_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_CONTACT_ADDRESS_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-contact-address-verify-router",
+              "name": "CONTACT_ADDRESS_VERIFY_ROUTER does not execute",
+              "nodeCode": "CONTACT_ADDRESS_VERIFY_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-contact-address-create-guard-state",
+              "name": "SAVE_CONTACT_ADDRESS_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_CONTACT_ADDRESS_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-verify-created-contact-address",
+              "name": "VERIFY_CREATED_CONTACT_ADDRESS does not execute",
+              "nodeCode": "VERIFY_CREATED_CONTACT_ADDRESS"
+            },
+            {
+              "id": "prepare-required-address-skips-save-unknown-contact-address-state",
+              "name": "SAVE_UNKNOWN_CONTACT_ADDRESS_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_CONTACT_ADDRESS_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-compare-contact-address-verification",
+              "name": "COMPARE_CONTACT_ADDRESS_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_CONTACT_ADDRESS_VERIFICATION"
+            },
+            {
+              "id": "prepare-required-address-skips-save-verified-contact-address-state",
+              "name": "SAVE_VERIFIED_CONTACT_ADDRESS_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_CONTACT_ADDRESS_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-check-product-service-duplicate",
+              "name": "CHECK_PRODUCT_SERVICE_DUPLICATE does not execute",
+              "nodeCode": "CHECK_PRODUCT_SERVICE_DUPLICATE"
+            },
+            {
+              "id": "prepare-required-address-skips-prepare-product-service-create",
+              "name": "PREPARE_PRODUCT_SERVICE_CREATE does not execute",
+              "nodeCode": "PREPARE_PRODUCT_SERVICE_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-product-service-create-router",
+              "name": "PRODUCT_SERVICE_CREATE_ROUTER does not execute",
+              "nodeCode": "PRODUCT_SERVICE_CREATE_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-product-service-executing-state",
+              "name": "SAVE_PRODUCT_SERVICE_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_PRODUCT_SERVICE_EXECUTING_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-create-supplier-product-service",
+              "name": "CREATE_SUPPLIER_PRODUCT_SERVICE does not execute",
+              "nodeCode": "CREATE_SUPPLIER_PRODUCT_SERVICE"
+            },
+            {
+              "id": "prepare-required-address-skips-normalize-product-service-create",
+              "name": "NORMALIZE_PRODUCT_SERVICE_CREATE does not execute",
+              "nodeCode": "NORMALIZE_PRODUCT_SERVICE_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-save-product-service-create-result-state",
+              "name": "SAVE_PRODUCT_SERVICE_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_PRODUCT_SERVICE_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-product-service-verify-router",
+              "name": "PRODUCT_SERVICE_VERIFY_ROUTER does not execute",
+              "nodeCode": "PRODUCT_SERVICE_VERIFY_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-product-service-create-guard-state",
+              "name": "SAVE_PRODUCT_SERVICE_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_PRODUCT_SERVICE_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-verify-created-product-service",
+              "name": "VERIFY_CREATED_PRODUCT_SERVICE does not execute",
+              "nodeCode": "VERIFY_CREATED_PRODUCT_SERVICE"
+            },
+            {
+              "id": "prepare-required-address-skips-save-unknown-product-service-state",
+              "name": "SAVE_UNKNOWN_PRODUCT_SERVICE_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_PRODUCT_SERVICE_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-compare-product-service-verification",
+              "name": "COMPARE_PRODUCT_SERVICE_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_PRODUCT_SERVICE_VERIFICATION"
+            },
+            {
+              "id": "prepare-required-address-skips-save-verified-product-service-state",
+              "name": "SAVE_VERIFIED_PRODUCT_SERVICE_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_PRODUCT_SERVICE_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-check-site-assignment-duplicate",
+              "name": "CHECK_SITE_ASSIGNMENT_DUPLICATE does not execute",
+              "nodeCode": "CHECK_SITE_ASSIGNMENT_DUPLICATE"
+            },
+            {
+              "id": "prepare-required-address-skips-prepare-site-assignment-create",
+              "name": "PREPARE_SITE_ASSIGNMENT_CREATE does not execute",
+              "nodeCode": "PREPARE_SITE_ASSIGNMENT_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-site-assignment-create-router",
+              "name": "SITE_ASSIGNMENT_CREATE_ROUTER does not execute",
+              "nodeCode": "SITE_ASSIGNMENT_CREATE_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-site-assignment-executing-state",
+              "name": "SAVE_SITE_ASSIGNMENT_EXECUTING_STATE does not execute",
+              "nodeCode": "SAVE_SITE_ASSIGNMENT_EXECUTING_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-create-supplier-site-assignment",
+              "name": "CREATE_SUPPLIER_SITE_ASSIGNMENT does not execute",
+              "nodeCode": "CREATE_SUPPLIER_SITE_ASSIGNMENT"
+            },
+            {
+              "id": "prepare-required-address-skips-normalize-site-assignment-create",
+              "name": "NORMALIZE_SITE_ASSIGNMENT_CREATE does not execute",
+              "nodeCode": "NORMALIZE_SITE_ASSIGNMENT_CREATE"
+            },
+            {
+              "id": "prepare-required-address-skips-save-site-assignment-create-result-state",
+              "name": "SAVE_SITE_ASSIGNMENT_CREATE_RESULT_STATE does not execute",
+              "nodeCode": "SAVE_SITE_ASSIGNMENT_CREATE_RESULT_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-site-assignment-verify-router",
+              "name": "SITE_ASSIGNMENT_VERIFY_ROUTER does not execute",
+              "nodeCode": "SITE_ASSIGNMENT_VERIFY_ROUTER"
+            },
+            {
+              "id": "prepare-required-address-skips-save-site-assignment-create-guard-state",
+              "name": "SAVE_SITE_ASSIGNMENT_CREATE_GUARD_STATE does not execute",
+              "nodeCode": "SAVE_SITE_ASSIGNMENT_CREATE_GUARD_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-verify-created-site-assignment",
+              "name": "VERIFY_CREATED_SITE_ASSIGNMENT does not execute",
+              "nodeCode": "VERIFY_CREATED_SITE_ASSIGNMENT"
+            },
+            {
+              "id": "prepare-required-address-skips-save-unknown-site-assignment-state",
+              "name": "SAVE_UNKNOWN_SITE_ASSIGNMENT_STATE does not execute",
+              "nodeCode": "SAVE_UNKNOWN_SITE_ASSIGNMENT_STATE"
+            },
+            {
+              "id": "prepare-required-address-skips-compare-site-assignment-verification",
+              "name": "COMPARE_SITE_ASSIGNMENT_VERIFICATION does not execute",
+              "nodeCode": "COMPARE_SITE_ASSIGNMENT_VERIFICATION"
+            },
+            {
+              "id": "prepare-required-address-skips-save-verified-site-assignment-state",
+              "name": "SAVE_VERIFIED_SITE_ASSIGNMENT_STATE does not execute",
+              "nodeCode": "SAVE_VERIFIED_SITE_ASSIGNMENT_STATE"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "prepare-required-address-node-order",
+            "name": "Prepare only the four required transaction fields for the address. follows the expected node order",
+            "nodeCodes": [
+              "APP_STAGE_ROUTER",
+              "REDUCE_LIFECYCLE",
+              "SAVE_LIFECYCLE",
+              "READ_ACTION_ROUTER",
+              "PROJECT_RESPONSE_TEXT",
+              "QUERY_RESPONSE"
+            ]
+          },
+          "nodeCounts": {
+            "REDUCE_LIFECYCLE": {
+              "id": "prepare-required-address-single-reducer",
+              "name": "Reducer executes once",
+              "exact": 1
+            },
+            "QUERY_RESPONSE": {
+              "id": "prepare-required-address-single-response",
+              "name": "Query response renders once",
+              "exact": 1
+            }
+          }
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "record-now",
+          "recordedAt": "2026-09-23T02:31:44.320Z",
+          "nodes": {}
+        },
+        "type": "chat",
+        "input": {
+          "message": "prepare address with AddressName=XDX HQ 20260923-022800; AddressLine1=100 Main St; CountryCode=US; Email=xdx-address-20260923-022800@example.invalid",
+          "triggerType": "app",
+          "parameters": {
+            "appHint": "Query",
+            "OraUserContext": "",
+            "OraAppContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "65cf9956bd782d60",
+          "workflowDefinitionHash": "9c72b51533ee292f",
+          "observedAt": "2026-09-23T07:10:15.355Z",
+          "observedTerminalNodeCode": "QUERY_RESPONSE",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86078581,
+          "conversationPrefixHash": "2bb8a4b65a7e2fb2"
+        }
+      }
+    ]
+  }
+}

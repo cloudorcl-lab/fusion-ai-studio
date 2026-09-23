@@ -1,0 +1,15 @@
+{
+  "phase": "P8",
+  "resource": "site assignment",
+  "supplierId": "300000333814250",
+  "supplierSiteId": "300000333814273",
+  "assignmentId": "300000333814296",
+  "approvedRequiredFields": {
+    "ClientBUId": "300000046987012",
+    "BillToBUId": "300000046987012"
+  },
+  "postSource": "test/workflows/xdx_supplier_lifecycle_agent/p8-live-site-assignment-create-20260923-010840.json",
+  "independentGetSource": "test/workflows/xdx_supplier_lifecycle_agent/p8-site-assignment-persisted-get-20260923-010840.json",
+  "persistedMatch": true,
+  "repeatedPost": false
+}

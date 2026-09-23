@@ -1,0 +1,47 @@
+{
+  "capturedUtc": "2026-09-23T08:09:13.6875617Z",
+  "workflow": {
+    "code": "XDX_SUPPLIER_LIFECYCLE_AGENT",
+    "status": "passed",
+    "total": 35,
+    "passed": 35,
+    "failed": 0,
+    "needsJudge": 0,
+    "inputTokens": 34148,
+    "outputTokens": 9381,
+    "totalTokens": 43529,
+    "modelName": "oci-agent/openai.gpt-4.1-mini-2025-04-14",
+    "aiUnits": 685,
+    "tokenUnits": 137,
+    "workflowSeconds": 111.9,
+    "reportSha256": "8f706e127ac107a340f49174dfc0156936b1d510852cc59333a1495f394e2b42"
+  },
+  "app": {
+    "code": "XDX_SUPPLIER_LIFECYCLE",
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "needsJudge": 0,
+    "reportSha256": "905c6f38f26d898695e7f80ea81ed7add27983f5bcb7645bbaefd3c0adfc7608"
+  },
+  "focusedPlan": {
+    "totalActions": 0,
+    "deferred": 59,
+    "syncLoopState": "deferred-only",
+    "finalSummaryAllowed": true
+  },
+  "runtime": {
+    "surface": "AI Agent Studio Run app preview",
+    "lifecycleState": "DRAFT",
+    "integratedReadJourney": "passed",
+    "supplierNumber": "1504",
+    "retainedP8Reads": "passed",
+    "emptyResources": [
+      "contact data access",
+      "contact roles",
+      "merge history",
+      "spend authorization history"
+    ]
+  },
+  "reportRetention": "Full generated reports remain ignored runtime output. This committed summary retains exact final counts, metrics and source report hashes; canonical test definitions retain the per-case inputs and assertions."
+}

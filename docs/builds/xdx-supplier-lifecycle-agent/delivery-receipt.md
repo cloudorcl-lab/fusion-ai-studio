@@ -17,3 +17,15 @@ Evidence: plan, execution prompt, BO inventory and immutable server baselines. V
 GitHub push: not requested and not performed. Remote BO modifications and live data writes: none. Planning Closeout must not be presented as application completion.
 
 Verified planning commit: 0303cbbd7cbb0275eb44d337744dec431f430ff9. New branch/worktree exists and baseline gates pass. See verification.md. Runtime acceptance remains pending.
+
+## Execution delivery — 2026-09-23
+
+The XDX Supplier Lifecycle Agent is complete as a DRAFT customer-deployment package in branch `codex/xdx-supplier-lifecycle-agent`. It implements required-field-only query, exact review, explicit confirmation, guarded create and independent persisted confirmation for supplier, address, site, contact, business classification, contact-address association, product/service association and site assignment. Retained read-only supplier children are queryable with explicit empty-result handling. DFFs, attachments, payment behavior, third-party-payment relationships and optional create fields remain excluded by user direction.
+
+Live business chain: supplier 1504 / `300000333814250`; address `300000333814261`; site `300000333814273`; contact `300000333814275`; classification `300000333814290`; contact-address association `300000333814291`; product/service association `300000333814294`; site assignment `300000333814296`. Every accepted POST was executed once and independently read back.
+
+Validation: current DRAFT workflow version `86078581`; 35/35 workflow tests and 1/1 app test passed with no pending judge. The signed-in AI Agent Studio **Run app preview** passed the integrated supplier → address → site → contact journey and all retained P8 reads. The focused ATLAS plan reports zero executable actions and `finalSummaryAllowed: true`; 59 redundant atomic planner scenarios are explicitly deferred in favor of the accepted multi-turn business-flow tests.
+
+Final local artifact verification passes the Query guard, validator mutation suite, P1-P8 contracts, workflow, all three BOs and app. The initial Closeout batch failure and corrected all-pass batch are both retained under the build evidence directory.
+
+Publication and GitHub push were not requested and were not performed. Session compliance and the living-build contract pass after the handoff's required time-tracker link was added. The branch receipt is the scoped commit containing this document; its SHA is reported after creation rather than embedded through a self-referential amend.

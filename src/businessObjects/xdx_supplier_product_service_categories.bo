@@ -1,0 +1,137 @@
+{
+  "supportedObjectId": "300000333968268",
+  "name": "XDX Supplier Product Service Categories",
+  "description": "Read-only lookup of tenant supplier products and services categories used to resolve required category identifiers before supplier association creation.",
+  "objectCode": "XDX_SUPPLIER_PRODUCT_SERVICE_CATEGORIES",
+  "family": "PRC",
+  "product": "SUPPLIER",
+  "objectSource": "ADF_BC",
+  "restResourcePath": "/fscmRestApi/resources/11.13.18.05/browsingCategories",
+  "seededFlag": false,
+  "mandatoryFlag": false,
+  "objectProperties": {
+    "jsonSchemaName": "supportedObjectProperties",
+    "jsonSchemaVersion": 1,
+    "tools": [
+      {
+        "name": "ListSupplierProductServiceCategories",
+        "description": "List tenant supplier products-and-services categories. The caller must restrict CategoryType to SUPPLIER, preserve paging, and show no more than CategoryName, CategoryType and Description; CategoryId remains an internal selection key.",
+        "operationId": "getall_browsingCategories",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/browsingCategories?onlyData=true&fields=CategoryId,CategoryName,CategoryType,Description&q={filter}&orderBy=CategoryName:asc&limit={limit}&offset={offset}",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "filter",
+            "dataType": "string",
+            "description": "Validated lookup filter that includes CategoryType='SUPPLIER'.",
+            "id": 2,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "limit",
+            "dataType": "integer",
+            "description": "Positive page size from 1 to 100; default 10.",
+            "id": 3,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": "10"
+          },
+          {
+            "name": "offset",
+            "dataType": "integer",
+            "description": "Nonnegative page offset; default 0.",
+            "id": 4,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": "0"
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "First successful AI Agent Studio GET for target-tenant supplier browsing categories with CategoryType='SUPPLIER'; captured once for P8 lookup evidence.",
+            "query": {
+              "items": [
+                {
+                  "CategoryId": 300000283780100,
+                  "CategoryName": "Automobile",
+                  "CategoryType": "SUPPLIER",
+                  "Description": "Automobile"
+                },
+                {
+                  "CategoryId": 300000047322441,
+                  "CategoryName": "Computer Supplies",
+                  "CategoryType": "SUPPLIER",
+                  "Description": "Computer Supplies"
+                },
+                {
+                  "CategoryId": 300000283780099,
+                  "CategoryName": "Construction",
+                  "CategoryType": "SUPPLIER",
+                  "Description": "Construction"
+                },
+                {
+                  "CategoryId": 300000283780098,
+                  "CategoryName": "Consulting",
+                  "CategoryType": "SUPPLIER",
+                  "Description": "Consulting"
+                },
+                {
+                  "CategoryId": 300000283780097,
+                  "CategoryName": "Engineering Services",
+                  "CategoryType": "SUPPLIER",
+                  "Description": "Engineering Services"
+                },
+                {
+                  "CategoryId": 300000180660859,
+                  "CategoryName": "Fitness Accessories",
+                  "CategoryType": "SUPPLIER",
+                  "Description": "Fitness Accessories"
+                },
+                {
+                  "CategoryId": 300000180660858,
+                  "CategoryName": "Fitness Components",
+                  "CategoryType": "SUPPLIER",
+                  "Description": "Fitness Components"
+                },
+                {
+                  "CategoryId": 300000116498106,
+                  "CategoryName": "Healthcare",
+                  "CategoryType": "SUPPLIER",
+                  "Description": "Healthcare"
+                },
+                {
+                  "CategoryId": 300000047322445,
+                  "CategoryName": "Office Furniture",
+                  "CategoryType": "SUPPLIER",
+                  "Description": "Office Furniture"
+                },
+                {
+                  "CategoryId": 300000047322442,
+                  "CategoryName": "Office Supplies",
+                  "CategoryType": "SUPPLIER",
+                  "Description": "Office Supplies"
+                }
+              ],
+              "count": 10,
+              "hasMore": true,
+              "limit": 10,
+              "offset": 0
+            },
+            "sampleType": "response"
+          }
+        ]
+      }
+    ]
+  }
+}

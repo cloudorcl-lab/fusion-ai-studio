@@ -2,6 +2,14 @@
 
 Task: xdx-supplier-lifecycle-plan-20260920.
 
+## Closeout validation — 2026-09-23
+
+The first 15-command local Closeout batch recorded exact UTC starts and per-command Node wall time. It found one P1 failure: the state schema and its exact-key assertion had not been extended for five later-phase selection fields; after that correction, a second stale assertion rejected the word `DFF` in the workflow's exclusion description. The assertion was narrowed to executable identifiers. No tenant call or POST occurred. The initial failure receipt is `evidence/xdx_closeout_local_validation_initial_20260923.jsonl`.
+
+The complete 15-command batch then passed. It covers the Agentic App Query preflight, its negative validator suite, P1-P8 contracts, workflow validation, three BO validations and app validation. Exact per-command starts and Node wall durations are in `evidence/xdx_closeout_local_validation_20260923.jsonl`; JSON generation, workflow runtime and response parsing are `null` where the local commands do not expose those phases.
+
+The first session Closeout invocation failed only because the active handoff did not link this tracker. No runtime artifact or external state changed. The handoff link and its receipt hash were corrected, then session compliance and the living-build contract passed. Exact UTC starts, command wall durations and both results are in `evidence/xdx_closeout_timing_20260923.jsonl`.
+
 2026-09-20T13:19:09.7421614Z - first observed checkpoint: governance review. Start tracking is late; preceding read-only preparation duration unavailable (no retained start timestamp). No active-labor estimate. Final response/commit tail will remain outside delivery cutoff. Tokens and AI Units unavailable until command receipts provide them.
 
 2026-09-20T13:25:42.2184223Z - plan/prompt and template-derived registers authored; server metadata found and definitions fetched. No live data writes. CLI timing/token/AIUnit totals unavailable; tool durations not added to enclosing elapsed time.
@@ -63,6 +71,16 @@ The earlier P2 commands were not wrapped with separate authoring and response-re
 The three selected-supplier child branches (addresses, sites and contacts) were each attempted twice under ATLAS with materially different direct prompts and then recorded as unable to generate. They require prior selected-supplier conversation state and cannot be reached by a standalone one-turn branch recording without state injection. These attempts are retained in `.debug/workflow-test-recordings/` and `.debug/atlas-sync-blockers.json`; their earlier exact JSON-authoring, Node-wall and response-review timings were not instrumented and remain unavailable. They are deferred to signed-in multi-turn acceptance rather than rerun for timing.
 
 Next smallest action after this checkpoint: time the generation of six local judge result JSON files, time the one attachment command, separately time report parsing, then confirm the rebuilt canonical P1+P2 summary. Do not rerun the workflow suite solely to recover timing.
+
+## P8-P9 final acceptance — 2026-09-23
+
+Per-step machine-readable timing is retained in `evidence/xdx_p8_timing.jsonl`, `evidence/xdx_p8_conversation_refresh_timing.jsonl` and `evidence/xdx_p9_timing.jsonl`. Each row records the command, JSON-generation time, Node wall time, workflow time and response parse/review time when the runner exposed them. Unavailable values remain `null` with a timing note; no duration was reconstructed from ambiguous yielded calls.
+
+- All 35 current workflow tests were rebound to DRAFT version `86078581` and passed individually. The final cumulative command took 311.009980 seconds; after one local-judge continuation, the canonical suite is 35/35 passed with 34,148 input tokens, 9,381 output tokens, 685 AI Units and 111.9 seconds of model-backed workflow time.
+- Workflow judge JSON generation took 0.015960 seconds internally and 0.107212 seconds wall time. One attachment command took 1.344804 seconds and rebuilt the canonical report without a suite rerun.
+- The app test definition update took 0.262444 seconds, recording 4.503489 seconds, suite execution 8.387981 seconds, judge JSON generation 0.083762 seconds and attachment 1.517280 seconds. The final app suite is 1/1 passed.
+- The target AI Agent Studio DRAFT app preview completed the supplier 1504 integrated read journey across supplier, address, site, contact and every retained P8 resource. Browser tooling did not expose stable end-to-end generation and parse timers, so those timing fields are `null` rather than estimated.
+- One synthetic site-assignment replay encountered an upstream HTTP 500 before a current report existed. The unchanged file-backed replay was attempted once and passed 1004/1004. No POST was repeated.
 
 ### P2 post-checkpoint detailed record
 
@@ -157,3 +175,51 @@ The prior 10-case suite did not execute the new multi-turn preparation branches.
 | P1-P3 cumulative workflow suite | `node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --workflow-code XDX_SUPPLIER_LIFECYCLE_AGENT --data-source file --evaluation-mode deterministic --fail-fast false --run-label p3-cumulative-after-conversation` | n/a | 35.715s report duration | 15.4s | 0.001487s | 11/11 passed; 11,006 input, 1,367 output, 80 AI Units |
 
 The retained target-app tab was polled again after cumulative acceptance and still showed Oracle Cloud Sign In. It was marked for handoff as required by keep-alive procedure. No target-app prompt and no BO POST was submitted. P3 remains runtime-pending.
+
+### P4 keep-alive correction — 2026-09-22
+
+At 2026-09-22T23:59:22Z the user reported that the retained page had logged out while the P4 ATLAS synchronization loop was running. The prior interval contained repeated CLI generate/update/run/plan actions without the required same-tab browser poll, so it is recorded as a failed keep-alive interval; its exact logout time and duration are unavailable and are not inferred. The retained tab `676646351` was reacquired, found visibly authenticated in **AI Agent Studio** as Casey Brown, explicitly reloaded, verified on the AI Agent Studio home page, and marked for handoff. No test prompt, form submission, BO POST or business-data write occurred during recovery.
+
+Effective immediately for the remaining build, the same retained target tab is polled or refreshed between ATLAS action groups and at least once every five minutes during active CLI testing. Every poll records UTC timestamp, tab identity/title, visible authentication state, action and result in the P4 timing JSONL. A logged-out or wrong-context page stops target-app testing until the same tab is visibly restored to AI Agent Studio.
+
+### P4 repeated-rejection prevention checkpoint — 2026-09-23
+
+The user challenged repeated build and runtime rejections. The review separated three causes: authenticated CLI commands launched without host credential-store access; an earlier app Query topology that reached an unsupported Human/wait boundary; and child BO path inputs that bypassed the resolved parent producer. No supplier POST was repeated: the accepted supplier operation used one write, then read-only reconciliation and duplicate blocking.
+
+The canonical playbook now requires host credential access from the first authenticated AI Studio CLI attempt, graph traversal of the Agentic App Query route before remote operations, actual producer-to-consumer REST path binding tests, and read-only reconciliation after an uncertain POST boundary. A reusable Query validator plus five fixtures passed. P1 8/8, P2 12/12, P3 14/14 and P4 12/12 passed locally; the P2 contract now proves address, site and contact parent IDs and rejects blank/missing parents before child BO execution. The policy verifier also passed. The seven-command verification batch took 7.9 seconds total; per-command Node wall values were unavailable and are not inferred. No remote save, test, GET or POST occurred during this checkpoint.
+
+### P5 address build, rejection control and live acceptance — 2026-09-23
+
+The first live address POST was definitively rejected with HTTP 400 / `POZ:::POZ_SRV_AT_LEAST_ONE_Y_ERROR` because the minimum address-purpose requirement was omitted. No record was created. Execution stopped, the BO contract and object reference were corrected to send only `AddressPurposeOrderingFlag: true`, and a fresh parent-scoped GET proved zero addresses before one materially changed retry. The retry created exactly one address and the workflow independently read it back by generated ID.
+
+| Step | Exact command | JSON generation | Node wall | Workflow runtime | Parse/review | Result |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| P5 discrete BO/workflow contract | `node scripts/tests/xdx-supplier-lifecycle/p5-address-create-contract.cjs` | n/a | 0.340s | n/a | included | 12/12 passed after the required-purpose correction |
+| P5 cumulative file suite | `node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --workflow-code XDX_SUPPLIER_LIFECYCLE_AGENT --data-source file --evaluation-mode deterministic --fail-fast false --run-label p5-cumulative-after-address` | n/a | 2,494.673s from suite timestamps | included in suite | included | 14/14 passed; 0 failed; 0 pending judges |
+| Initial live address attempt | `node .agents/skills/aistudio/scripts/aistudio.js do-record-workflow-test --test-file test/workflows/xdx_supplier_lifecycle_agent/p5-live-address-create-20260923-022800.json --workflow-status DRAFT` | n/a | 14.359s | included | included | HTTP 400 purpose rejection; stopped after `CREATE_SUPPLIER_ADDRESS`; no retry before reconciliation |
+| Required-purpose BO save | `node .agents/skills/aistudio/scripts/aistudio.js do-save-bo --file src/businessObjects/xdx_supplier_information.bo` | n/a | 3.535s | n/a | included | DRAFT BO patched with fixed `AddressPurposeOrderingFlag: true` |
+| Read-only reconciliation | `node .agents/skills/aistudio/scripts/aistudio.js do-record-workflow-test --test-file test/workflows/xdx_supplier_lifecycle_agent/p5-address-reconcile-20260923-022800.json --workflow-status DRAFT` | n/a | 8.140s | included | included | Supplier 1504 address GET returned `count: 0`; no write nodes executed |
+| Materially changed live retry | `node .agents/skills/aistudio/scripts/aistudio.js do-record-workflow-test --test-file test/workflows/xdx_supplier_lifecycle_agent/p5-live-address-create-20260923-022800.json --workflow-status DRAFT` | n/a | 15.993s | included | included | One address created; generated `SupplierAddressId 300000333814261`, `AddressPartyNumber 1486636`; persisted GET captured |
+| File-backed live replay | `node .agents/skills/aistudio/scripts/aistudio.js run-workflow-test --test-file test/workflows/xdx_supplier_lifecycle_agent/p5-live-address-create-20260923-022800.json --data-source file --evaluation-mode deterministic` | n/a | 12.269s | 11.358s | included | 4/4 steps and 240/240 assertions passed |
+
+Two local authoring checks were rejected before remote execution because the reconciliation fixture initially used an invalid custom scenario source and then contained only one conversation step. One restricted-shell replay reproduced the known local `CredWrite 1312` execution-context rejection; it made no tenant call and passed on the one permitted unchanged host-context retry. These are retained as process failures. All subsequent AI Studio CLI invocations use host credential access from the first attempt.
+
+### P6 site build and live acceptance — 2026-09-23
+
+P6 added the supplier-site path with exact procurement-BU and address reference resolution. The enabled POST contains only `SupplierSite`, `ProcurementBUId`, `SupplierAddressName` and `SitePurposePurchasingFlag`; the parent supplier is a REST path input. It excludes payment purposes, payment configuration, DFFs, attachments and every other optional field. Local contract acceptance passed 12/12. The current discrete AI Agent Studio conversation passed 10/10 steps and 692/692 assertions. The P1–P6 cumulative suite then passed 17/17 cases with 19,411 total tokens, 210 AI Units and 34.9 seconds of workflow time.
+
+The live transaction executed one POST for `XDX SITE 20260923-031500`. Its duplicate preflight returned zero rows, Oracle generated `SupplierSiteId 300000333814273`, and the independent parent-scoped GET returned one exact match with BU `300000046987012`, address `XDX HQ 20260923-022800` and purchasing purpose `true`. The captured POST and GET responses exceeded the 3,072-byte per-artifact replay limit, so only downstream-relevant real fields were retained under `model-compacted`; the raw duplicate preflight remained unchanged.
+
+The fixture application exposed a local CLI normalization defect: the generated per-step request retained `capture.jobId` for an immutable raw node, but the CLI removed that volatile field before comparing the applied node. Three local apply attempts were rejected without a tenant call or POST while the payload shape and immutable-node handling were narrowed. After the same signature recurred, execution stopped and the scratch request was repaired by removing only that volatile job ID. The next apply passed. This diagnosis and every rejected command are retained in `evidence/xdx_p6_timing.jsonl`; they are not hidden as successful testing.
+
+The final file-backed live replay passed 10/10 steps and 691/691 assertions. Report duration was 25.019 seconds, model workflow time 8.055 seconds, response parse/evidence review 0.0088444 seconds, token use 1,975 input / 727 output and 50 AI Units. JSON generation and the live recorder's enclosing Node wall were not separately instrumented, so they remain unavailable rather than estimated. Evidence: `evidence/xdx_p6_live_site_create.json`, `evidence/xdx_p6_timing.jsonl` and `test-reports/workflows/xdx_supplier_lifecycle_agent/p6-live-site-create-20260923-031500/result.json`.
+
+### P7 contact build and live acceptance — 2026-09-23
+
+P7 added contact create and independent confirmation under the selected supplier. The first email-only POST received a definitive HTTP 400 because `FirstName` is required. Execution stopped; a parent-scoped read-only GET proved that no record had been created, and the contract was changed to the required transaction identity: `FirstName`, `LastName` and `Email`. The materially changed request then created exactly one contact, and an independent GET matched all three submitted values while confirming that no user account was provisioned.
+
+The corrected local contract passed 12/12. The final discrete conversation passed 4/4 steps and 338/338 assertions. The final P1–P7 cumulative suite passed 20/20 cases with 45.7 seconds of workflow time, 19,267 input tokens, 4,382 output tokens and 290 AI Units. The live deterministic replay passed 4/4 steps and 338/338 assertions; Node wall was 12.493 seconds, report duration 11.521 seconds, workflow time 3.682 seconds, with 826 input tokens, 326 output tokens and 20 AI Units.
+
+One early discrete assertion used stale prepared-state wording, and four existing app-stage fixtures initially lacked the new contact-node exclusions. Both were fixture-maintenance failures with no tenant write. A one-step reconciliation fixture was locally rejected before execution and was changed to the required two-turn conversation. The final live-fixture apply proactively removed only volatile recorder `capture.jobId` metadata, avoiding the known immutable-raw comparison defect; no rejected apply was repeated against the tenant. JSON-generation and response-review durations that were not separately instrumented remain unavailable. Full command-level evidence, including the rejected attempts and rerun reasons, is in `evidence/xdx_p7_timing.jsonl`; transaction evidence is in `evidence/xdx_p7_live_contact_create.json`.
+
+2026-09-23T08:10:09.4132489Z - closeout browser keep-alive acknowledgement: the retained XDX Supplier Lifecycle tab was reloaded after runtime acceptance and had expired to Oracle Cloud Sign In. The exact logout time is unavailable and is not inferred. No runtime test or POST was repeated; the login page remains marked for handoff.

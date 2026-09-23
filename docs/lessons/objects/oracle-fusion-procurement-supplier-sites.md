@@ -10,7 +10,7 @@
 | Documentation release | 26C |
 | Required parent key | Live-resolved `SupplierId` |
 | Stable item key | `SupplierSiteId` |
-| Last evidence review | 2026-09-17 |
+| Last evidence review | 2026-09-23 |
 
 Sources: [GET supplier sites](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-get.html), [POST supplier site](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-post.html), and [Oracle 26C OpenAPI](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/openapi.json).
 
@@ -120,11 +120,15 @@ Start from the smallest schema-aligned review shape and add only approved requir
 ```json
 {
   "SupplierSite": "<unique approved site code>",
-  "ProcurementBUId": 0
+  "ProcurementBUId": 0,
+  "SupplierAddressName": "<resolved address name>",
+  "SitePurposePurchasingFlag": true
 }
 ```
 
 Replace `0` with a current, authorized business-unit ID resolved in the target environment. Confirm whether an existing supplier address, site purpose or pay/procurement configuration is conditionally required. Do not mix code and display-name variants without current metadata. Do not copy vendor-example carrier, payment terms, tolerance, currency, hold or communication values.
+
+The 2026-09-23 XDX Supplier Lifecycle acceptance created site `300000333814273` under supplier `300000333814250` with exactly the four fields shown above. The business unit and address were selected from live references, `SupplierSiteId` was omitted and generated, the purchasing-purpose flag persisted as `true`, and an independent parent-scoped GET by generated ID matched all four intended fields and both relationships. Payment purposes, payment configuration, DFFs, attachments and every other optional field were omitted. This is evidence for the tested tenant and release; it does not broaden the unresolved uniqueness scope.
 
 Verify a successful write by returned `SupplierSiteId` and parent-scoped GET. Compare server defaults separately from submitted values. The authorized 2026-09-17 create and read-back passed, including the new address relationship and submitted procurement BU and purpose flags; see the [POST review](../../builds/xdx-supplier-information/xdx_supplier_post_review.md).
 
@@ -140,6 +144,7 @@ Verify a successful write by returned `SupplierSiteId` and parent-scoped GET. Co
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-23 | XDX Supplier Lifecycle one-POST site acceptance and independent GET | Confirmed the required-field-only four-field request, generated `SupplierSiteId 300000333814273`, resolved BU/address relationships and omitted payment/optional fields; retained first-success GET sample unchanged. |
 | 2026-09-17 | Supplier 1497 child POST/GET | Added generated site ID and new-address relationship confirmation; six intended fields matched. |
 | 2026-09-17 | Retained 26C schema reviewed during compliance audit | Explicitly recorded requiredness, name length and unresolved duplicate-key scope; no new POST. |
 | 2026-09-17 | Authorized POST request/response and parent-scoped GET under live-post | Confirmed omitted generated IDs for the tested tenant and recorded POST/schema limits; immutable first-success GET sample preserved. |

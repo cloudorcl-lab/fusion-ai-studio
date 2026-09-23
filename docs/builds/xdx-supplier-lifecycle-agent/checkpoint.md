@@ -1,26 +1,36 @@
 # Build Checkpoint
 
-Execution task: `xdx-supplier-lifecycle-execution-20260922`. Worktree: `C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-lifecycle-agent`; branch: `codex/xdx-supplier-lifecycle-agent`. The original goal remains active with no token budget.
+Execution task: `xdx-supplier-lifecycle-execution-20260922`. Worktree: `C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-lifecycle-agent`; branch: `codex/xdx-supplier-lifecycle-agent`. P0-P9, required DRAFT runtime acceptance and the session Closeout verifier pass. The branch handoff is the scoped commit containing this checkpoint.
 
-P0-P2 are accepted. P3 implementation, local discrete tests and configured cumulative tests pass; P3 signed-in target-app runtime acceptance remains open because the retained browser session expired to the Oracle sign-in page. Scope is required transaction fields only. DFFs, attachments, payment behavior, third-party-payment relationships and optional create fields are excluded. No BO POST or business-data write has occurred.
+P0-P9 implementation and required DRAFT runtime acceptance pass. Scope is required transaction fields only. DFFs, attachments, payment behavior, third-party-payment relationships and optional create fields are excluded. Workflow and application publication, GitHub push and destructive cleanup remain outside scope.
 
-The P1/P2 recurrence repairs are closed for the current graph. Workflow DRAFT `XDX_SUPPLIER_LIFECYCLE_AGENT` is id `300000333950759`, version `86049652`, ETag 16. App DRAFT `XDX_SUPPLIER_LIFECYCLE` is id `300000333951268`, version 1, ETag 1. The workflow contains no `HUMAN` or `WAIT` node. Address, site and contact BO inputs bind their parent and query values to `PREPARE_SUPPLIER_RESULT`.
+Current artifacts:
 
-Accepted evidence:
+- Workflow `XDX_SUPPLIER_LIFECYCLE_AGENT`: DRAFT version `86078581`; 136 pipeline nodes including START/END; no reachable `HUMAN` or `WAIT`.
+- App `XDX_SUPPLIER_LIFECYCLE`: DRAFT; query agent is the workflow above; Supplier Lifecycle Advisor panel accepted.
+- Business objects: `XDX_SUPPLIER_INFORMATION`, `XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS` and `XDX_SUPPLIER_PRODUCT_SERVICE_CATEGORIES`.
 
-- Local P1 state contract: 8/8 passed.
-- Local P2 query and prepared-binding contract: 12/12 passed.
-- Structural workflow validation: zero errors.
-- Target AI Agent Studio DRAFT app preview: supplier search plus direct address, site and contact requests passed. Each child request executed the relevant BO and rendered ten grounded rows with exactly four business columns. The affected site presentation rerun passed after the v86044912 boundary repair.
-- Focused ATLAS plan: zero create/update actions and `finalSummaryAllowed: true`. Eight impossible predicted branch combinations are accounted as deferred after two valid-route observations; none is described as executed.
-- Configured child execution cases: address, site and contact each pass 21/21 and execute both `FIND_SUPPLIERS_BY_NUMBER` and their selected child BO.
-- Targeted P3 AI Agent Studio conversation: 6/6 turns and 196/196 assertions passed. It proves parent-scoped address BO execution, cross-turn supplier/reference continuity, required-only inheritance and exact no-write review without Human/wait nodes or a child 404.
-- Canonical cumulative workflow suite: 11/11 passed in deterministic file replay; 11,006 input tokens, 1,367 output tokens, 80 AI Units and 15.4 seconds total workflow time.
-- App sync plan: zero actions, one panel up to date and no backing-workflow actions.
-- Canonical app suite: 1/1 passed, 0 failed, 0 pending judges. App final summary reports the backing workflow 10/10 passed.
+Accepted live chain:
 
-P3 adds deterministic required-field-only draft preparation for supplier, address, site and contact. It preserves explicit user fields, inherits only eligible required reference values, records field provenance, excludes generated IDs, validates selected parent and foreign references, keeps apply-all separate from create approval and renders the exact field/value/source review. The local P3 contract passes 14/14; workflow validation reports zero errors; the targeted six-turn conversation passes 196/196 assertions; the cumulative workflow suite passes 11/11 and the previously accepted app suite remains 1/1.
+- Supplier 1504 / `SupplierId=300000333814250`
+- Address `SupplierAddressId=300000333814261`
+- Site `SupplierSiteId=300000333814273`
+- Contact `SupplierContactId=300000333814275`
+- Business classification `ClassificationId=300000333814290`
+- Contact-address association `SupplierContactAddressId=300000333814291`
+- Product/service association `SupplierProductsServicesId=300000333814294`
+- Site assignment `AssignmentId=300000333814296`
 
-The reviewable child-slice document is `docs/builds/xdx-supplier-lifecycle-agent/child-resource-slice-review.md`. It contains 12 independently removable or modifiable sections with descriptions, dependencies, acceptance gates and estimated effort. No undecided child slice authorizes a POST.
+Every accepted create has an independent persisted GET. Failed or uncertain attempts were reconciled by read-only GET before a materially corrected request. No accepted POST was repeated.
 
-Next action: after the user signs back into the retained Oracle tab, run the affected P3 preparation journey only in the target AI Agent Studio DRAFT app preview, poll that same run to completion and record the response. If it passes, accept P3 and begin P4 supplier-create research and exact payload preparation without executing a POST. Child POST work also waits for the Keep / Remove / Modify decisions in `child-resource-slice-review.md`. Before the first live create, present the exact environment, record count, controlled identity and required-field-only payload for explicit approval. P3-P9, model placement, authorized live create/readback evidence and Closeout remain open.
+Final test evidence:
+
+- All 35 workflow tests passed individually against the current DRAFT binding.
+- Canonical workflow suite: 35/35 passed, 0 failed, 0 pending judges; 34,148 input tokens, 9,381 output tokens, 685 AI Units and 111.9 seconds total model-backed workflow time.
+- App suite: 1/1 passed, 0 failed, 0 pending judges.
+- Focused ATLAS plan: zero executable actions, 59 deferred redundant atomic scenarios, `finalSummaryAllowed: true`.
+- Signed-in AI Agent Studio **Run app preview**: supplier → address → site → contact and every retained P8 read path passed. Empty read-only resources were reported as successful empty results.
+- Local preflight and regression: Query path has no reachable HUMAN/WAIT; binding delimiters are balanced; producers are reachable; local BO path tokens have nonblank inputs.
+- Final local Closeout batch: Query preflight, validator regressions, P1-P8 contracts, workflow validation, three BO validations and app validation all pass. An initial stale P1 state-schema/exclusion assertion failure was corrected and retained as evidence.
+
+Final hand-forward action: rerun the documentation-sensitive Closeout gate, create one scoped commit containing the build, governance and lesson changes, and verify the worktree is clean. Publication and push remain outside scope.

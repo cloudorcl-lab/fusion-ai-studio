@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "kind": "xdx-supplier-lifecycle-live-site-acceptance",
+  "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT",
+  "appContext": "AI Agent Studio",
+  "parent": {
+    "SupplierId": "300000333814250",
+    "SupplierNumber": "1504",
+    "Supplier": "XDX SL 20260923-011716"
+  },
+  "resolvedDependencies": {
+    "ProcurementBUId": 300000046987012,
+    "ProcurementBU": "US1 Business Unit",
+    "SupplierAddressId": 300000333814261,
+    "SupplierAddressName": "XDX HQ 20260923-022800"
+  },
+  "request": {
+    "SupplierSite": "XDX SITE 20260923-031500",
+    "ProcurementBUId": 300000046987012,
+    "SupplierAddressName": "XDX HQ 20260923-022800",
+    "SitePurposePurchasingFlag": true
+  },
+  "excludedFields": [
+    "SupplierSiteId",
+    "SitePurposePayFlag",
+    "SitePurposeSourcingOnlyFlag",
+    "payment fields",
+    "DFFs",
+    "attachments"
+  ],
+  "duplicatePreflight": {
+    "filter": "SupplierSite='XDX SITE 20260923-031500'",
+    "count": 0,
+    "items": []
+  },
+  "createResponse": {
+    "SupplierSiteId": 300000333814273,
+    "SupplierSite": "XDX SITE 20260923-031500",
+    "ProcurementBUId": 300000046987012,
+    "ProcurementBU": "US1 Business Unit",
+    "SupplierAddressId": 300000333814261,
+    "SupplierAddressName": "XDX HQ 20260923-022800",
+    "SitePurposePurchasingFlag": true
+  },
+  "persistedGet": {
+    "filter": "SupplierSiteId=300000333814273",
+    "count": 1,
+    "item": {
+      "SupplierSiteId": 300000333814273,
+      "SupplierSite": "XDX SITE 20260923-031500",
+      "ProcurementBUId": 300000046987012,
+      "ProcurementBU": "US1 Business Unit",
+      "SupplierAddressId": 300000333814261,
+      "SupplierAddressName": "XDX HQ 20260923-022800",
+      "SitePurposePurchasingFlag": true
+    }
+  },
+  "writeCount": 1,
+  "deterministicReplay": {
+    "status": "passed",
+    "conversationSteps": 10,
+    "assertions": {
+      "passed": 691,
+      "total": 691
+    },
+    "workflowDurationMs": 25019,
+    "modelRuntimeMs": 8055,
+    "inputTokens": 1975,
+    "outputTokens": 727,
+    "aiUnits": 50,
+    "model": "oci-agent/openai.gpt-4.1-mini-2025-04-14",
+    "report": "test-reports/workflows/xdx_supplier_lifecycle_agent/p6-live-site-create-20260923-031500/result.json"
+  }
+}

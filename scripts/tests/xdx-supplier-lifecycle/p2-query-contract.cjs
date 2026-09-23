@@ -137,6 +137,30 @@ const directAddressPage = normalize(directChild, {
 assert.match(directAddressPage.prompt, /Address \| City \| State \| Country/);
 assert.equal(directAddressPage.prompt.includes('SupplierId'), false);
 
+for (const [plural, action] of [
+  ['addresses', 'LIST_ADDRESSES'],
+  ['sites', 'LIST_SITES'],
+  ['contacts', 'LIST_CONTACTS']
+]) {
+  const direct = reduce(`show ${plural} for supplier number 1264`, sampleState());
+  const resolved = prepare(direct, {
+    items: [{ SupplierId: 101, SupplierNumber: '1264', Supplier: 'Office Depot' }],
+    count: 1,
+    hasMore: false,
+    limit: 10,
+    offset: 0
+  });
+  assert.equal(resolved.action, action, `${plural} must route to its child BO action`);
+  assert.equal(resolved.state.query.parentId, '101', `${plural} must bind the resolved parent ID`);
+}
+
+for (const invalidItems of [[], [{ SupplierNumber: '1264' }]]) {
+  const direct = reduce('show addresses for supplier number 1264', sampleState());
+  const rejected = prepare(direct, { items: invalidItems, count: invalidItems.length, hasMore: false });
+  assert.equal(rejected.action, 'RETURN');
+  assert.notEqual(rejected.state.query.status, 'PENDING', 'blank or missing parent IDs must stop before the child BO');
+}
+
 const nextPage = reduce('next', supplierPage.state);
 assert.equal(nextPage.action, 'SEARCH_NAME');
 assert.equal(nextPage.query.offset, 10);
@@ -188,6 +212,8 @@ console.log(JSON.stringify({
     'read-only BO topology',
     'self-contained child lookup by supplier number',
     'Agentic App Query isolation from Human/wait nodes',
-    'prepared parent binding for every child BO input'
+    'prepared parent binding for every child BO input',
+    'all child routes resolve the authoritative parent ID',
+    'blank or missing parent IDs stop before child execution'
   ]
 }, null, 2));

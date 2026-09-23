@@ -1,6 +1,6 @@
 # XDX Supplier Lifecycle Agent — phased build plan
 
-Status: implementation plan prepared; runtime acceptance has not begun. Planning task: `xdx-supplier-lifecycle-plan-20260920`.
+Status: P0-P9 implementation and required DRAFT runtime acceptance passed on 2026-09-23. Final living-build Closeout and scoped branch commit remain. Planning task: `xdx-supplier-lifecycle-plan-20260920`; execution task: `xdx-supplier-lifecycle-execution-20260922`.
 
 ## Goal and authority
 
@@ -95,7 +95,7 @@ Cumulative means coverage of every previously accepted requirement and its inter
 
 On failure: stop phase advancement; classify requirement, workflow, contract, replay, environment, lifecycle or display defect; preserve evidence; repair the smallest owner; rerun only affected discrete tests; after passing, run the phase's cumulative regression once. Never weaken the expected business fields, stale-review protection or confirmation guard. Two unchanged reproductions with no new evidence trigger a checkpoint and isolated diagnosis, not full rebuild/replay loops.
 
-Live POST authority is not created by this planning request. Before the first live-create test, present exact test payloads, target environment, count and controlled identities for user approval; retain approvals in the manifest. Recommended bounded baseline is one supplier, address, site and contact, reused through subsequent phases, plus one per specifically approved P8 child. No old attempt's consumed write allowance transfers. Continue all authorized fixture/local work while awaiting a required live decision. Normal end-user operation always requires its own exact-payload confirmation.
+Live POST authority was expanded by the user on 2026-09-22: after the applicable discrete and cumulative tests pass, continue with the controlled POST without waiting for another approval. Use one distinctive supplier, address, site and contact golden-path chain, reuse its generated keys through subsequent phases, and use one controlled record for each retained create-capable P8 slice. Keep only the two highest-value negative controls: duplicate prevention and uncertain-result retry blocking. Every live write still requires the workflow's exact-payload review and explicit in-flow approval, followed by an independent scoped GET. This build authorization does not change normal end-user confirmation behavior.
 
 Measure elapsed time, actual model, tokens and AI Units from receipts; mark unavailable values honestly. Targets: zero required failures, zero unresolved required judges, 100% intended-field verification, 0 unapproved POSTs, at most four displayed columns and no duplicate operation in the proven execution scope. Set latency/token budgets from P1 observations before live expansion; no ungrounded performance claims.
 

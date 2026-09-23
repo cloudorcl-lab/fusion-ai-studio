@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "phase": "P4",
+  "environment": "eqih-dev21",
+  "context": "AI Agent Studio DRAFT workflow Query",
+  "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT",
+  "workflowVersion": 86058713,
+  "recordedUtc": "2026-09-23T01:25:08.995Z",
+  "createAttempt": {
+    "startedUtc": "2026-09-23T01:17:50.159Z",
+    "finishedUtc": "2026-09-23T01:17:50.168Z",
+    "exactApprovedPayload": {
+      "BusinessRelationship": "Spend Authorized",
+      "Supplier": "XDX SL 20260923-011716",
+      "TaxOrganizationType": "Corporation"
+    },
+    "duplicatePreflightCount": 0,
+    "createNodeExecuted": true,
+    "createResponseCapturedBytes": 10868,
+    "initialVerificationCount": 1,
+    "initialVerificationProjectionGap": "TaxOrganizationType was absent from the first verification GET projection, so the workflow returned PARTIAL and blocked retries.",
+    "runtimeOutcome": "The create returned identifiers, but the independent supplier GET did not match every intended field and generated key. Reconcile before continuing."
+  },
+  "reconciliation": {
+    "method": "A later exact-name duplicate preflight used the corrected read-only FindSuppliersByValidatedFilter projection.",
+    "filter": "Supplier='XDX SL 20260923-011716'",
+    "count": 1,
+    "persistedRequiredFields": {
+      "SupplierId": "300000333814250",
+      "SupplierNumber": "1504",
+      "Supplier": "XDX SL 20260923-011716",
+      "BusinessRelationship": "Spend Authorized",
+      "TaxOrganizationType": "Corporation"
+    },
+    "createNodeMustNotExecute": true,
+    "observedTerminalNodeCode": "QUERY_RESPONSE"
+  },
+  "negativeControls": {
+    "duplicatePrevention": "PASS - one existing supplier was returned and CREATE_SUPPLIER did not execute.",
+    "uncertainResultRetryBlocking": "PASS - the first incomplete verification returned PARTIAL and no POST retry occurred."
+  },
+  "result": "PASS_AFTER_READ_ONLY_RECONCILIATION",
+  "businessDataWrites": 1
+}

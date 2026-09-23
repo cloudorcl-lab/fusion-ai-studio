@@ -18,3 +18,18 @@ Observed delivery checkpoint: 2026-09-20T13:29:29.4207865Z
 - Planning requirements covered: phases and cyclic prompt, Ask Oracle entry, four-column query presentation, user-approved source defaults, separate final approval, per-object ID research gate, all-child inventory, reuse of both observed BOs and new isolated checkout.
 - No new reusable operation/lifecycle lesson established: current canonical policies already cover the observed credential retry and catalog fallback. Object references unchanged. Snapshots retained solely as evidence; no duplicate deployable BO owner.
 - Runtime acceptance remains entirely pending. This receipt and planning Closeout are not build completion.
+
+## Execution verification — 2026-09-23
+
+- Target checkout: `C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-lifecycle-agent`; branch `codex/xdx-supplier-lifecycle-agent`.
+- Workflow: `XDX_SUPPLIER_LIFECYCLE_AGENT`, DRAFT version `86078581`; app: `XDX_SUPPLIER_LIFECYCLE`, DRAFT.
+- Canonical workflow suite: 35/35 passed, 0 failed, 0 pending judge. Metrics: 34,148 input tokens, 9,381 output tokens, 685 AI Units, 111.9 seconds total model-backed workflow time.
+- Canonical app suite: 1/1 passed, 0 failed, 0 pending judge.
+- Current focused ATLAS plan: zero executable actions, 59 deferred redundant atomic scenarios, `finalSummaryAllowed: true`.
+- Signed-in target AI Agent Studio **Run app preview** passed supplier 1504 → address → site → contact and every retained P8 query. Empty contact-data-access, contact-role, merge-history and spend-authorization collections were returned as successful empty results.
+- Live write evidence: one accepted POST plus independent persisted GET for supplier, address, site, contact, classification, contact-address association, product/service association and site assignment. No accepted POST was repeated.
+- Local Agentic App preflight passes: no reachable `HUMAN`/`WAIT`, balanced interpolation bindings, reachable referenced producers and nonblank local BO path-token inputs. Validator regression mutations pass.
+- Final local Closeout validation passes all 15 commands: Query preflight, validator regressions, P1-P8 contract scripts, workflow validation, all three BO validations and app validation. The initial batch exposed a stale final-state schema and an overbroad P1 text scan; both were corrected and the full batch passed. Receipts: `evidence/xdx_closeout_local_validation_initial_20260923.jsonl` and `evidence/xdx_closeout_local_validation_20260923.jsonl`.
+- Session Closeout result: the first attempt correctly failed because the active handoff omitted its required time-tracker link. After adding the link and refreshing the handoff hash, session compliance and the living-build contract both passed. Command timing and both outcomes are retained in `evidence/xdx_closeout_timing_20260923.jsonl`.
+- Durable final test summary: `evidence/xdx_p9_final_test_summary.json` records the exact workflow/app counts, tokens, AI Units, latency, model, focused-plan disposition, runtime scope and hashes of the ignored generated suite reports.
+- The branch handoff is the scoped commit containing this verification record. Publication and push were not authorized and are not completion requirements for this DRAFT delivery.

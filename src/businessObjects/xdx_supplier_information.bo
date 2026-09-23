@@ -53,7 +53,7 @@
         },
         "sampleQueries": [
           {
-            "description": "Live first-page supplier response; page size 1. Paging metadata is retained.",
+            "description": "This example shows a paginated response from the ListSuppliers function, returning a collection of supplier records with key details such as SupplierId, SupplierNumber, Supplier, SupplierType, BusinessRelationship, and InactiveDate. It illustrates how active and inactive suppliers visible to the user are listed along with paging metadata to support continued retrieval.",
             "query": {
               "items": [
                 {
@@ -63,11 +63,803 @@
                   "SupplierType": "Supplier",
                   "BusinessRelationship": "Spend Authorized",
                   "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047414571,
+                  "SupplierNumber": "1253",
+                  "Supplier": "Staffing Services",
+                  "SupplierType": "Services",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047414635,
+                  "SupplierNumber": "1254",
+                  "Supplier": "JGA",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047414679,
+                  "SupplierNumber": "1255",
+                  "Supplier": "Dell Inc.",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507113,
+                  "SupplierNumber": "1256",
+                  "Supplier": "US Gas and Electric",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507170,
+                  "SupplierNumber": "1257",
+                  "Supplier": "Howell Engineering Inc.",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507225,
+                  "SupplierNumber": "1258",
+                  "Supplier": "United Parcel Service",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507272,
+                  "SupplierNumber": "1259",
+                  "Supplier": "American Telephone and Telegraph",
+                  "SupplierType": "Utility",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507340,
+                  "SupplierNumber": "1260",
+                  "Supplier": "Staples",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507387,
+                  "SupplierNumber": "1261",
+                  "Supplier": "GE",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507499,
+                  "SupplierNumber": "1262",
+                  "Supplier": "EIP Inc",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507546,
+                  "SupplierNumber": "1263",
+                  "Supplier": "Advanced Corp",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507596,
+                  "SupplierNumber": "1264",
+                  "Supplier": "Office Depot",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047572113,
+                  "SupplierNumber": "1265",
+                  "Supplier": "Allied Manufacturing",
+                  "SupplierType": "Manufacturing",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047572163,
+                  "SupplierNumber": "1266",
+                  "Supplier": "Midtown Supplies",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047572210,
+                  "SupplierNumber": "1267",
+                  "Supplier": "Metal Works",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047572257,
+                  "SupplierNumber": "1268",
+                  "Supplier": "Northwest Electronic Supply",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047572304,
+                  "SupplierNumber": "1269",
+                  "Supplier": "Prouty Supply House",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047572371,
+                  "SupplierNumber": "1270",
+                  "Supplier": "Building Management",
+                  "SupplierType": "Services",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047837151,
+                  "SupplierNumber": "1271",
+                  "Supplier": "EDF",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047837244,
+                  "SupplierNumber": "1272",
+                  "Supplier": "Consolidated Supplies",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000049521119,
+                  "SupplierNumber": "1273",
+                  "Supplier": "British Telecom",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000049521222,
+                  "SupplierNumber": "1274",
+                  "Supplier": "Progressive Corp",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000049521294,
+                  "SupplierNumber": "1275",
+                  "Supplier": "Windsor Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000049521443,
+                  "SupplierNumber": "1276",
+                  "Supplier": "Edison Co",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000051065858,
+                  "SupplierNumber": "1277",
+                  "Supplier": "Masson Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000051066029,
+                  "SupplierNumber": "1278",
+                  "Supplier": "RSM",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000051066172,
+                  "SupplierNumber": "1279",
+                  "Supplier": "Eiffage",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000051066233,
+                  "SupplierNumber": "1280",
+                  "Supplier": "SFR",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000051066302,
+                  "SupplierNumber": "1281",
+                  "Supplier": "Utilitaire Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000055053815,
+                  "SupplierNumber": "1282",
+                  "Supplier": "InterFrance",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000055053846,
+                  "SupplierNumber": "1283",
+                  "Supplier": "InterUK",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000055053882,
+                  "SupplierNumber": "1284",
+                  "Supplier": "InterUS1",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000066744397,
+                  "SupplierNumber": "1286",
+                  "Supplier": "CLP",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000069320926,
+                  "SupplierNumber": "1287",
+                  "Supplier": "Internal Revenue Service",
+                  "SupplierType": "Tax Authority",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075039541,
+                  "SupplierNumber": "1288",
+                  "Supplier": "ABC Consulting",
+                  "SupplierType": "Services",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075469541,
+                  "SupplierNumber": "1289",
+                  "Supplier": "Shangduo Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075469611,
+                  "SupplierNumber": "1290",
+                  "Supplier": "MK Supplies",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075469670,
+                  "SupplierNumber": "1291",
+                  "Supplier": "Qingyue Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075469729,
+                  "SupplierNumber": "1292",
+                  "Supplier": "Wenxian Limited",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075469788,
+                  "SupplierNumber": "1293",
+                  "Supplier": "Sinoma Company",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075469847,
+                  "SupplierNumber": "1294",
+                  "Supplier": "Yuyao Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075895541,
+                  "SupplierNumber": "1295",
+                  "Supplier": "CDW",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000085423179,
+                  "SupplierNumber": "1296",
+                  "Supplier": "Northside Parts Depot",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000085423230,
+                  "SupplierNumber": "1297",
+                  "Supplier": "US Financial Svcs",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000087887113,
+                  "SupplierNumber": "1298",
+                  "Supplier": "InterChina",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000096312107,
+                  "SupplierNumber": "1299",
+                  "Supplier": "David Draper",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000101110528,
+                  "SupplierNumber": "1300",
+                  "Supplier": "Nihon Real Estate",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000101110596,
+                  "SupplierNumber": "1301",
+                  "Supplier": "Nihon Communications",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000101110664,
+                  "SupplierNumber": "1302",
+                  "Supplier": "Nihon Electonic Power",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000103023107,
+                  "SupplierNumber": "1303",
+                  "Supplier": "顺锐电子",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000107985107,
+                  "SupplierNumber": "1304",
+                  "Supplier": "Japan Tax Authority",
+                  "SupplierType": "Tax Authority",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115609124,
+                  "SupplierNumber": "1306",
+                  "Supplier": "Ente Idrocarburi",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115609204,
+                  "SupplierNumber": "1307",
+                  "Supplier": "Distributori Automatici Roma Miglior Caffe",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699140,
+                  "SupplierNumber": "1308",
+                  "Supplier": "Inde Elettrodomestici Spa",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699270,
+                  "SupplierNumber": "1309",
+                  "Supplier": "Buffanti Cancelleria",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699341,
+                  "SupplierNumber": "1310",
+                  "Supplier": "Sarti Servizi Manutenzione",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699408,
+                  "SupplierNumber": "1311",
+                  "Supplier": "Soram Efficienza Energetica e Facility Management",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699476,
+                  "SupplierNumber": "1312",
+                  "Supplier": "Arec Computer",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699550,
+                  "SupplierNumber": "1313",
+                  "Supplier": "Comtele Italia S.P.A.",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699616,
+                  "SupplierNumber": "1314",
+                  "Supplier": "Mela Spa",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699681,
+                  "SupplierNumber": "1315",
+                  "Supplier": "Energy and Buliding Soluzioni per L'italia",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699766,
+                  "SupplierNumber": "1316",
+                  "Supplier": "Ente Radiofonico",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699844,
+                  "SupplierNumber": "1317",
+                  "Supplier": "Dogana",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699909,
+                  "SupplierNumber": "1318",
+                  "Supplier": "French Networking System",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699975,
+                  "SupplierNumber": "1319",
+                  "Supplier": "Swiss Trains Company",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498125,
+                  "SupplierNumber": "1320",
+                  "Supplier": "McKesson Corp",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498193,
+                  "SupplierNumber": "1321",
+                  "Supplier": "Fisher Scientific",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498267,
+                  "SupplierNumber": "1322",
+                  "Supplier": "Medtronic",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498330,
+                  "SupplierNumber": "1323",
+                  "Supplier": "Baxter Healthcare",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498411,
+                  "SupplierNumber": "1324",
+                  "Supplier": "Siemens Medical Solutions",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498478,
+                  "SupplierNumber": "1325",
+                  "Supplier": "Cardinal Health",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498572,
+                  "SupplierNumber": "1326",
+                  "Supplier": "Aesculup Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116707121,
+                  "SupplierNumber": "1327",
+                  "Supplier": "Lagring Systems",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116893107,
+                  "SupplierNumber": "1328",
+                  "Supplier": "北京京东世纪贸易有限公司",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116897228,
+                  "SupplierNumber": "1329",
+                  "Supplier": "大连万达集团股份有限公司",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000118870116,
+                  "SupplierNumber": "1330",
+                  "Supplier": "High Tech Contract Mfg",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000128710441,
+                  "SupplierNumber": "1332",
+                  "Supplier": "GFS Services",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000130063178,
+                  "SupplierNumber": "1333",
+                  "Supplier": "BBR",
+                  "SupplierType": "Services",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000131904621,
+                  "SupplierNumber": "1334",
+                  "Supplier": "La Comercial de Materiales, SA",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000131904727,
+                  "SupplierNumber": "1335",
+                  "Supplier": "Gran Hotel",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000131904822,
+                  "SupplierNumber": "1336",
+                  "Supplier": "Servicios Reunidos, SL",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000131904926,
+                  "SupplierNumber": "1337",
+                  "Supplier": "Office Supplies",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000131905017,
+                  "SupplierNumber": "1338",
+                  "Supplier": "Juan Asesor",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000131933370,
+                  "SupplierNumber": "1339",
+                  "Supplier": "Misson Corp",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000133368850,
+                  "SupplierNumber": "1340",
+                  "Supplier": "JL Company",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Prospective",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000133943912,
+                  "SupplierNumber": "1341",
+                  "Supplier": "Hospira",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000133943993,
+                  "SupplierNumber": "1342",
+                  "Supplier": "BD Medical",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000151433093,
+                  "SupplierNumber": "1343",
+                  "Supplier": "Amazon",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000152275572,
+                  "SupplierNumber": "1344",
+                  "Supplier": "RJK Inc",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000158242377,
+                  "SupplierNumber": "1345",
+                  "Supplier": "Altamonte Corporation",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000158459131,
+                  "SupplierNumber": "1346",
+                  "Supplier": "Oracle Bilgisayar Sistemleri Ltd. Şti",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167712982,
+                  "SupplierNumber": "1347",
+                  "Supplier": "Mustermann AG",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167722079,
+                  "SupplierNumber": "1348",
+                  "Supplier": "ZED Systeme GmbH",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167722181,
+                  "SupplierNumber": "1349",
+                  "Supplier": "DE Consulting",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167760277,
+                  "SupplierNumber": "1350",
+                  "Supplier": "AKÇAY KIRTASİYE YAYIN DAĞ.SAN.VE TİC. LTD. ŞTİ.",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167760353,
+                  "SupplierNumber": "1351",
+                  "Supplier": "DHL LOJİSTİK HİZMETLERİ A.Ş. ",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167760427,
+                  "SupplierNumber": "1352",
+                  "Supplier": "DANONE HAYAT İÇECEK VE GIDA SANAYİ VE TİCARET A.Ş ",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167760502,
+                  "SupplierNumber": "1353",
+                  "Supplier": "DOĞUŞ ÇAY VE GIDA MADDELERİ ÜRETİM PAZARLAMA İTHALAT İHRACAT A.Ş.",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167760586,
+                  "SupplierNumber": "1354",
+                  "Supplier": "GÜVEN İNŞAAT VE MALZEMELERİ SAN. TİC. LTD. ŞTİ.",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
                 }
               ],
-              "count": 1,
+              "count": 100,
               "hasMore": true,
-              "limit": 1,
+              "limit": 100,
               "offset": 0,
               "links": [
                 {
@@ -5146,30 +5938,20 @@
       },
       {
         "name": "CreateSupplier",
-        "description": "Create one Supplier with explicit schema-mapped fields. String values must be JSON-safe; callers validate names, lengths, lookup values and parent references. No generated IDs or audit fields are accepted. Reconcile uncertain results before retries.",
+        "description": "Create one supplier from the exact approved tenant-required payload: Supplier, BusinessRelationship and TaxOrganizationType. Generated IDs, DFFs, attachments, payment data and optional fields are omitted. Reconcile uncertain results before any retry.",
         "operationId": "create_suppliers",
         "operationType": "POST",
         "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers",
         "resourceType": "ADF_BC_FIXED_QUERY",
-        "bodyTemplate": "{\"Supplier\":\"{Supplier}\",\"TaxOrganizationType\":\"{TaxOrganizationType}\",\"BusinessRelationship\":\"{BusinessRelationship}\",\"SupplierType\":\"{SupplierType}\"}",
+        "bodyTemplate": "{\"Supplier\":\"{Supplier}\",\"BusinessRelationship\":\"{BusinessRelationship}\",\"TaxOrganizationType\":\"{TaxOrganizationType}\"}",
         "useNativeAuthentication": true,
         "type": "BUS_OBJECT",
         "parameterDefinitions": [
           {
             "name": "Supplier",
             "dataType": "string",
-            "description": "Name of the supplier. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "description": "Required supplier name from the exact approved snapshot. No sample default; caller validates JSON safety, length and collection-wide collision risk.",
             "id": 44,
-            "isToken": true,
-            "location": "body",
-            "source": "placeholder",
-            "defaultValue": ""
-          },
-          {
-            "name": "TaxOrganizationType",
-            "dataType": "string",
-            "description": "Type of tax organization for the supplier. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 45,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5178,18 +5960,18 @@
           {
             "name": "BusinessRelationship",
             "dataType": "string",
-            "description": "Business relationship between the enterprise and the supplier. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 46,
+            "description": "Tenant-required supplier business relationship from the exact approved snapshot. Use a validated tenant value; this is not a third-party payment relationship.",
+            "id": 45,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
             "defaultValue": ""
           },
           {
-            "name": "SupplierType",
+            "name": "TaxOrganizationType",
             "dataType": "string",
-            "description": "Source-backed supplier type display value, for example Supplier. Required business input; do not silently omit when a tool rejects it.",
-            "id": 47,
+            "description": "Tenant-required tax organization type from the exact approved snapshot. Use a validated tenant lookup value; no tax identifier is submitted.",
+            "id": 46,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5203,12 +5985,11 @@
         },
         "sampleQueries": [
           {
-            "description": "Lee-based XDX create request with required business type restored. Prior test identity is evidence only; use a new authorized unique name.",
+            "description": "Tenant-required-field-only review shape. Replace the supplier name and validate both tenant lookup values before a live POST.",
             "query": {
-              "Supplier": "XDX Lee Supplies 0917133857",
-              "TaxOrganizationType": "Corporation",
+              "Supplier": "<unique approved supplier name>",
               "BusinessRelationship": "Spend Authorized",
-              "SupplierType": "Supplier"
+              "TaxOrganizationType": "Corporation"
             },
             "sampleType": "request"
           }
@@ -5216,12 +5997,12 @@
       },
       {
         "name": "CreateSupplierAddress",
-        "description": "Create one SupplierAddress with explicit schema-mapped fields. String values must be JSON-safe; callers validate names, lengths, lookup values and parent references. No generated IDs or audit fields are accepted. Reconcile uncertain results before retries.",
+        "description": "Create one supplier address with the four approved user-supplied transaction fields and the tenant-required ordering purpose. Generated IDs, optional address attributes, other purposes, DFFs, attachments and payment fields are excluded. Reconcile uncertain results before retries.",
         "operationId": "create_suppliers-addresses",
         "operationType": "POST",
         "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses",
         "resourceType": "ADF_BC_FIXED_QUERY",
-        "bodyTemplate": "{\"AddressName\":\"{AddressName}\",\"CountryCode\":\"{CountryCode}\",\"AddressLine1\":\"{AddressLine1}\",\"City\":\"{City}\",\"State\":\"{State}\",\"PostalCode\":\"{PostalCode}\",\"AddressPurposeOrderingFlag\":{AddressPurposeOrderingFlag},\"AddressPurposeRemitToFlag\":{AddressPurposeRemitToFlag},\"AddressPurposeRFQOrBiddingFlag\":{AddressPurposeRFQOrBiddingFlag},\"Email\":\"{Email}\"}",
+        "bodyTemplate": "{\"AddressName\":\"{AddressName}\",\"AddressLine1\":\"{AddressLine1}\",\"CountryCode\":\"{CountryCode}\",\"Email\":\"{Email}\",\"AddressPurposeOrderingFlag\":true}",
         "useNativeAuthentication": true,
         "type": "BUS_OBJECT",
         "parameterDefinitions": [
@@ -5229,7 +6010,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 53,
+            "id": 52,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -5239,6 +6020,16 @@
             "name": "AddressName",
             "dataType": "string",
             "description": "Name of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 53,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "AddressLine1",
+            "dataType": "string",
+            "description": "First line of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
             "id": 54,
             "isToken": true,
             "location": "body",
@@ -5256,80 +6047,10 @@
             "defaultValue": ""
           },
           {
-            "name": "AddressLine1",
-            "dataType": "string",
-            "description": "First line of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 56,
-            "isToken": true,
-            "location": "body",
-            "source": "placeholder",
-            "defaultValue": ""
-          },
-          {
-            "name": "City",
-            "dataType": "string",
-            "description": "City of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 57,
-            "isToken": true,
-            "location": "body",
-            "source": "placeholder",
-            "defaultValue": ""
-          },
-          {
-            "name": "State",
-            "dataType": "string",
-            "description": "State of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 58,
-            "isToken": true,
-            "location": "body",
-            "source": "placeholder",
-            "defaultValue": ""
-          },
-          {
-            "name": "PostalCode",
-            "dataType": "string",
-            "description": "Postal code of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 59,
-            "isToken": true,
-            "location": "body",
-            "source": "placeholder",
-            "defaultValue": ""
-          },
-          {
-            "name": "AddressPurposeOrderingFlag",
-            "dataType": "boolean",
-            "description": "Contains one of the following values: true or false. If true, then you can use the supplier address for ordering. If false, then you can't use this address. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 60,
-            "isToken": true,
-            "location": "body",
-            "source": "placeholder",
-            "defaultValue": ""
-          },
-          {
-            "name": "AddressPurposeRemitToFlag",
-            "dataType": "boolean",
-            "description": "Contains one of the following values: true or false. If true, then you can use the supplier address for requesting for a proposal or for bidding. If false, then you can't use this address. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 61,
-            "isToken": true,
-            "location": "body",
-            "source": "placeholder",
-            "defaultValue": ""
-          },
-          {
-            "name": "AddressPurposeRFQOrBiddingFlag",
-            "dataType": "boolean",
-            "description": "Contains one of the following values: true or false. If true, then you can use the supplier address to send payment. If false, then you can't use this address. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 62,
-            "isToken": true,
-            "location": "body",
-            "source": "placeholder",
-            "defaultValue": ""
-          },
-          {
             "name": "Email",
             "dataType": "string",
             "description": "Email for the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 63,
+            "id": 56,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5343,18 +6064,13 @@
         },
         "sampleQueries": [
           {
-            "description": "Prepared authorized XDX Lee test request; names and references are evidence only, never reusable runtime defaults.",
+            "description": "Required-transaction-field shape only; the ordering purpose is the fixed minimum purpose accepted by the tenant. Values are illustrative and never runtime defaults.",
             "query": {
-              "AddressName": "XDX Lee US1 0917133857",
-              "CountryCode": "US",
-              "AddressLine1": "5000 CARTER DR.",
-              "City": "LOS ANGELES",
-              "State": "CA",
-              "PostalCode": "90032",
-              "AddressPurposeOrderingFlag": true,
-              "AddressPurposeRemitToFlag": true,
-              "AddressPurposeRFQOrBiddingFlag": false,
-              "Email": "xdx-address-0917133857@example.invalid"
+              "AddressName": "<unique approved address name>",
+              "AddressLine1": "<approved address line>",
+              "CountryCode": "<validated country code>",
+              "Email": "<controlled non-deliverable test destination>",
+              "AddressPurposeOrderingFlag": true
             },
             "sampleType": "request"
           }
@@ -5362,12 +6078,12 @@
       },
       {
         "name": "CreateSupplierSite",
-        "description": "Create one SupplierSite with explicit schema-mapped fields. String values must be JSON-safe; callers validate names, lengths, lookup values and parent references. No generated IDs or audit fields are accepted. Reconcile uncertain results before retries.",
+        "description": "Create one purchasing supplier site with only the approved site code, validated procurement BU, validated supplier address and purchasing-purpose flag. Payment, sourcing, DFF, attachment and generated fields are excluded.",
         "operationId": "create_suppliers-sites",
         "operationType": "POST",
         "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites",
         "resourceType": "ADF_BC_FIXED_QUERY",
-        "bodyTemplate": "{\"SupplierSite\":\"{SupplierSite}\",\"ProcurementBUId\":{ProcurementBUId},\"SupplierAddressName\":\"{SupplierAddressName}\",\"SitePurposePurchasingFlag\":{SitePurposePurchasingFlag},\"SitePurposePayFlag\":{SitePurposePayFlag},\"SitePurposeSourcingOnlyFlag\":{SitePurposeSourcingOnlyFlag}}",
+        "bodyTemplate": "{\"SupplierSite\":\"{SupplierSite}\",\"ProcurementBUId\":{ProcurementBUId},\"SupplierAddressName\":\"{SupplierAddressName}\",\"SitePurposePurchasingFlag\":{SitePurposePurchasingFlag}}",
         "useNativeAuthentication": true,
         "type": "BUS_OBJECT",
         "parameterDefinitions": [
@@ -5375,7 +6091,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 69,
+            "id": 62,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -5385,7 +6101,7 @@
             "name": "SupplierSite",
             "dataType": "string",
             "description": "Name of the supplier site. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 70,
+            "id": 63,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5395,7 +6111,7 @@
             "name": "ProcurementBUId",
             "dataType": "integer",
             "description": "Value that uniquely identifies the procurement business unit where the supplier site resides. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 71,
+            "id": 64,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5405,7 +6121,7 @@
             "name": "SupplierAddressName",
             "dataType": "string",
             "description": "Name of the supplier address. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 72,
+            "id": 65,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5415,6 +6131,56 @@
             "name": "SitePurposePurchasingFlag",
             "dataType": "boolean",
             "description": "Contains one of the following values: true or false. If true, then a purchasing purpose exists for the supplier site. If false, then purpose doesn't exist. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "id": 66,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Streamlined purchasing-site shape. Resolve the BU and address in the target supplier context; values are illustrative and never runtime defaults.",
+            "query": {
+              "SupplierSite": "<unique approved site code>",
+              "ProcurementBUId": "<validated procurement BU id>",
+              "SupplierAddressName": "<validated address under the selected supplier>",
+              "SitePurposePurchasingFlag": true
+            },
+            "sampleType": "request"
+          }
+        ]
+      },
+      {
+        "name": "CreateSupplierContact",
+        "description": "Create one supplier contact with only the approved transaction identity: first name, last name and email. Generated person/contact IDs, account/security fields, phones, roles, administrative flag, inactive date, DFFs, attachments and every other optional field are excluded. Reconcile uncertain results before retries.",
+        "operationId": "create_suppliers-contacts",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"FirstName\":\"{FirstName}\",\"LastName\":\"{LastName}\",\"Email\":\"{Email}\"}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
+            "id": 72,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "description": "First name of the supplier contact. Required template input; no sample default. Strings must be JSON-escaped by caller.",
             "id": 73,
             "isToken": true,
             "location": "body",
@@ -5422,9 +6188,9 @@
             "defaultValue": ""
           },
           {
-            "name": "SitePurposePayFlag",
-            "dataType": "boolean",
-            "description": "Contains one of the following values: true or false. If true, then a pay purpose exists for the supplier site. If false, then pay purpose doesn't exist. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "name": "LastName",
+            "dataType": "string",
+            "description": "Last name of the supplier contact. Required template input; no sample default. Strings must be JSON-escaped by caller.",
             "id": 74,
             "isToken": true,
             "location": "body",
@@ -5432,9 +6198,9 @@
             "defaultValue": ""
           },
           {
-            "name": "SitePurposeSourcingOnlyFlag",
-            "dataType": "boolean",
-            "description": "Contains one of the following values: true or false. If true, then the supplier has sourcing only purpose. If false, then the supplier site doesn't have sourcing only purpose. The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
+            "name": "Email",
+            "dataType": "string",
+            "description": "Email of the supplier contact. Required template input; no sample default. Strings must be JSON-escaped by caller.",
             "id": 75,
             "isToken": true,
             "location": "body",
@@ -5449,94 +6215,11 @@
         },
         "sampleQueries": [
           {
-            "description": "Prepared authorized XDX Lee test request; names and references are evidence only, never reusable runtime defaults.",
+            "description": "Required transaction identity for a supplier contact after live validation. Use a unique controlled test identity and non-operational email; values are illustrative and never runtime defaults.",
             "query": {
-              "SupplierSite": "XDX Lee US1 0917133857",
-              "ProcurementBUId": 300000046987012,
-              "SupplierAddressName": "XDX Lee US1 0917133857",
-              "SitePurposePurchasingFlag": true,
-              "SitePurposePayFlag": true,
-              "SitePurposeSourcingOnlyFlag": false
-            },
-            "sampleType": "request"
-          }
-        ]
-      },
-      {
-        "name": "CreateSupplierContact",
-        "description": "Create one SupplierContact with explicit schema-mapped fields. String values must be JSON-safe; callers validate names, lengths, lookup values and parent references. No generated IDs or audit fields are accepted. Reconcile uncertain results before retries.",
-        "operationId": "create_suppliers-contacts",
-        "operationType": "POST",
-        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts",
-        "resourceType": "ADF_BC_FIXED_QUERY",
-        "bodyTemplate": "{\"FirstName\":\"{FirstName}\",\"LastName\":\"{LastName}\",\"Email\":\"{Email}\",\"AdministrativeContactFlag\":{AdministrativeContactFlag}}",
-        "useNativeAuthentication": true,
-        "type": "BUS_OBJECT",
-        "parameterDefinitions": [
-          {
-            "name": "suppliers_Id",
-            "dataType": "string",
-            "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 81,
-            "isToken": true,
-            "location": "path",
-            "source": "openapi",
-            "defaultValue": ""
-          },
-          {
-            "name": "FirstName",
-            "dataType": "string",
-            "description": "First name of the supplier contact. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 82,
-            "isToken": true,
-            "location": "body",
-            "source": "placeholder",
-            "defaultValue": ""
-          },
-          {
-            "name": "LastName",
-            "dataType": "string",
-            "description": "Last name of the supplier contact. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 83,
-            "isToken": true,
-            "location": "body",
-            "source": "placeholder",
-            "defaultValue": ""
-          },
-          {
-            "name": "Email",
-            "dataType": "string",
-            "description": "Email of the supplier contact. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 84,
-            "isToken": true,
-            "location": "body",
-            "source": "placeholder",
-            "defaultValue": ""
-          },
-          {
-            "name": "AdministrativeContactFlag",
-            "dataType": "boolean",
-            "description": "Contains one of the following values: true or false. If true, then the supplier is an administrative contact. If false, then the supplier isn't an administrative contact.The default value is false. Required template input; no sample default. Strings must be JSON-escaped by caller.",
-            "id": 85,
-            "isToken": true,
-            "location": "body",
-            "source": "placeholder",
-            "defaultValue": ""
-          }
-        ],
-        "headers": {
-          "REST-Framework-Version": "4",
-          "Content-Type": "application/json",
-          "Upsert-Mode": "false"
-        },
-        "sampleQueries": [
-          {
-            "description": "Prepared authorized XDX Lee test request; names and references are evidence only, never reusable runtime defaults.",
-            "query": {
-              "FirstName": "XDX Ryan",
-              "LastName": "XDX Lee 0917133857",
-              "Email": "xdx-contact-0917133857@example.invalid",
-              "AdministrativeContactFlag": false
+              "FirstName": "<approved test first name>",
+              "LastName": "<unique approved test last name>",
+              "Email": "<unique approved non-operational email>"
             },
             "sampleType": "request"
           }
@@ -5544,10 +6227,10 @@
       },
       {
         "name": "FindSuppliersByValidatedFilter",
-        "description": "Search suppliers by an application-validated ID, number, exact name or literal partial name filter; preserve paging and require explicit selection.",
+        "description": "Search suppliers by an application-validated ID, number, exact name or literal partial name filter; preserve paging, include TaxOrganizationType for required-field verification, and require explicit selection.",
         "operationId": "getall_suppliers",
         "operationType": "GET",
-        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers?fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,InactiveDate&onlyData=true&q={filter}&orderBy=SupplierId:asc&limit={limit}&offset={offset}",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers?fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,TaxOrganizationType,InactiveDate&onlyData=true&q={filter}&orderBy=SupplierId:asc&limit={limit}&offset={offset}",
         "resourceType": "ADF_BC_FIXED_QUERY",
         "useNativeAuthentication": true,
         "type": "BUS_OBJECT",
@@ -5556,7 +6239,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Filter built by the app from allowlisted fields; never raw user prose.",
-            "id": 91,
+            "id": 81,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -5566,7 +6249,7 @@
             "name": "limit",
             "dataType": "string",
             "description": "Decimal page size from 1 to 100.",
-            "id": 92,
+            "id": 82,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -5576,7 +6259,7 @@
             "name": "offset",
             "dataType": "string",
             "description": "Nonnegative decimal offset.",
-            "id": 93,
+            "id": 83,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -5628,7 +6311,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "Resolved SupplierId for the selected supplier parent. No sample or default ID is permitted.",
-            "id": 96,
+            "id": 86,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -5638,7 +6321,7 @@
             "name": "suppliers_addresses_Id",
             "dataType": "string",
             "description": "Resolved SupplierAddressId for an address belonging to the selected supplier. No sample or cross-supplier ID is permitted.",
-            "id": 97,
+            "id": 87,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -5648,7 +6331,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Page size from 1 to 100; default 10.",
-            "id": 98,
+            "id": 88,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -5658,7 +6341,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Nonnegative page offset; default 0. Advance by returned count only when hasMore is true.",
-            "id": 99,
+            "id": 89,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -5710,7 +6393,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "SupplierId obtained from an exact resolved supplier lookup in this environment. Required; do not guess or reuse a sample ID. No default.",
-            "id": 103,
+            "id": 93,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -5720,7 +6403,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated attachment metadata filter. Use AttachedDocumentId is not null for browsing or an exact generated AttachedDocumentId predicate for post-create verification. No default.",
-            "id": 104,
+            "id": 94,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -5730,7 +6413,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Positive integer page size, default 25; caller-enforced recommended maximum 100.",
-            "id": 105,
+            "id": 95,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -5740,7 +6423,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Nonnegative integer offset, default 0. Advance by response count while hasMore is true.",
-            "id": 106,
+            "id": 96,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -5787,7 +6470,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "Resolved parent SupplierId. Required; do not guess or reuse a sample ID.",
-            "id": 110,
+            "id": 100,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -5797,7 +6480,7 @@
             "name": "DatatypeCode",
             "dataType": "string",
             "description": "Controlled mode must be FILE.",
-            "id": 111,
+            "id": 101,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5807,7 +6490,7 @@
             "name": "FileName",
             "dataType": "string",
             "description": "Unique synthetic .txt filename approved for this request.",
-            "id": 112,
+            "id": 102,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5817,7 +6500,7 @@
             "name": "CategoryName",
             "dataType": "string",
             "description": "Controlled category must be FROM_SUPPLIER.",
-            "id": 113,
+            "id": 103,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5827,7 +6510,7 @@
             "name": "UploadedFileContentType",
             "dataType": "string",
             "description": "Controlled content type must be text/plain.",
-            "id": 114,
+            "id": 104,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5837,7 +6520,7 @@
             "name": "ContentRepositoryFileShared",
             "dataType": "boolean",
             "description": "Controlled sharing value must be false.",
-            "id": 115,
+            "id": 105,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5847,7 +6530,7 @@
             "name": "Title",
             "dataType": "string",
             "description": "Unique synthetic attachment title approved for this request.",
-            "id": 116,
+            "id": 106,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5857,7 +6540,7 @@
             "name": "Description",
             "dataType": "string",
             "description": "Bounded synthetic description approved for this request.",
-            "id": 117,
+            "id": 107,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5867,7 +6550,7 @@
             "name": "FileContents",
             "dataType": "string",
             "description": "Base64-encoded bounded synthetic text content. Never copy an operational document.",
-            "id": 118,
+            "id": 108,
             "isToken": true,
             "location": "body",
             "source": "placeholder",
@@ -5910,7 +6593,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "SupplierId from an exact resolved supplier. Required; no sample default.",
-            "id": 124,
+            "id": 114,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -5920,7 +6603,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated business-classification filter. Use ClassificationId is not null for browsing. No default.",
-            "id": 125,
+            "id": 115,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -5930,7 +6613,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Positive page size, default 10; caller maximum 100.",
-            "id": 126,
+            "id": 116,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -5940,7 +6623,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Nonnegative page offset, default 0.",
-            "id": 127,
+            "id": 117,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -5962,7 +6645,7 @@
               "links": [
                 {
                   "rel": "self",
-                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333814140/child/businessClassifications",
+                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333814250/child/businessClassifications",
                   "name": "businessClassifications",
                   "kind": "collection"
                 }
@@ -5986,7 +6669,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 131,
+            "id": 121,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -5996,7 +6679,7 @@
             "name": "suppliers_businessClassifications_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 132,
+            "id": 122,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6006,7 +6689,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 133,
+            "id": 123,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6016,7 +6699,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 134,
+            "id": 124,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6026,7 +6709,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 135,
+            "id": 125,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6069,7 +6752,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 138,
+            "id": 128,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6079,7 +6762,7 @@
             "name": "suppliers_contacts_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 139,
+            "id": 129,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6089,7 +6772,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 140,
+            "id": 130,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6099,7 +6782,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 141,
+            "id": 131,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6109,7 +6792,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 142,
+            "id": 132,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6118,7 +6801,7 @@
         ],
         "sampleQueries": [
           {
-            "description": "First successful parent-scoped Oracle 26C BO GET for ListSupplierContactAddresses; captured once for P8 runtime evidence.",
+            "description": "This example shows a sample response for the ListSupplierContactAddresses function, representing a paginated collection of address associations linked to a specific supplier contact. It includes key entities such as SupplierContactAddressId, SupplierAddressId, AddressName, and CreationDate, with metadata for paging like count, limit, offset, and navigation links. The sample response here indicates no address records found for the given supplier contact.",
             "query": {
               "items": [],
               "count": 0,
@@ -6128,7 +6811,7 @@
               "links": [
                 {
                   "rel": "self",
-                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333814140/child/contacts/300000333814169/child/addresses",
+                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333814250/child/contacts/300000333814275/child/addresses",
                   "name": "addresses",
                   "kind": "collection"
                 }
@@ -6152,7 +6835,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 145,
+            "id": 135,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6162,7 +6845,7 @@
             "name": "suppliers_contacts_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 146,
+            "id": 136,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6172,7 +6855,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 147,
+            "id": 137,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6182,7 +6865,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 148,
+            "id": 138,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6192,7 +6875,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 149,
+            "id": 139,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6235,7 +6918,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 152,
+            "id": 142,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6245,7 +6928,7 @@
             "name": "suppliers_contacts_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 153,
+            "id": 143,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6255,7 +6938,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 154,
+            "id": 144,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6265,7 +6948,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 155,
+            "id": 145,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6275,7 +6958,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 156,
+            "id": 146,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6324,7 +7007,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 159,
+            "id": 149,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6334,7 +7017,7 @@
             "name": "suppliers_contacts_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 160,
+            "id": 150,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6344,7 +7027,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 161,
+            "id": 151,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6354,7 +7037,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 162,
+            "id": 152,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6364,7 +7047,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 163,
+            "id": 153,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6373,7 +7056,7 @@
         ],
         "sampleQueries": [
           {
-            "description": "First successful parent-scoped Oracle 26C BO GET for ListSupplierContactRoles; captured once for P8 runtime evidence.",
+            "description": "This example response from the ListSupplierContactRoles function shows an empty collection of read-only roles associated with a specific supplier contact, including pagination details such as count, limit, offset, and navigation links. It highlights the RoleId, RoleName, and Description fields available when roles exist for the selected contact.",
             "query": {
               "items": [],
               "count": 0,
@@ -6383,7 +7066,7 @@
               "links": [
                 {
                   "rel": "self",
-                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333814140/child/contacts/300000333814169/child/roles",
+                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333814250/child/contacts/300000333814275/child/roles",
                   "name": "roles",
                   "kind": "collection"
                 }
@@ -6407,7 +7090,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 166,
+            "id": 156,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6417,7 +7100,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 167,
+            "id": 157,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6427,7 +7110,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 168,
+            "id": 158,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6437,7 +7120,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 169,
+            "id": 159,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6486,7 +7169,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 172,
+            "id": 162,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6496,7 +7179,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 173,
+            "id": 163,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6506,7 +7189,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 174,
+            "id": 164,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6555,7 +7238,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 177,
+            "id": 167,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6565,7 +7248,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 178,
+            "id": 168,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6575,7 +7258,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 179,
+            "id": 169,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6585,7 +7268,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 180,
+            "id": 170,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6628,7 +7311,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 183,
+            "id": 173,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6638,7 +7321,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 184,
+            "id": 174,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6648,7 +7331,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 185,
+            "id": 175,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6658,7 +7341,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 186,
+            "id": 176,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6667,17 +7350,17 @@
         ],
         "sampleQueries": [
           {
-            "description": "First successful parent-scoped Oracle 26C BO GET for ListSupplierProductsAndServices; captured once for P8 runtime evidence.",
+            "description": "This example response illustrates a paginated collection of product and service category associations for a specific supplier, showing key fields such as SupplierProductsServicesId, ProductsServicesCategoryId, CategoryName, CategoryType, and CategoryDescription. It demonstrates how the ListSupplierProductsAndServices function retrieves relevant categories linked to the supplier to support efficient browsing and filtering.",
             "query": {
               "items": [],
               "count": 0,
               "hasMore": false,
-              "limit": 10,
+              "limit": 25,
               "offset": 0,
               "links": [
                 {
                   "rel": "self",
-                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333814140/child/productsAndServices",
+                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000047507340/child/productsAndServices",
                   "name": "productsAndServices",
                   "kind": "collection"
                 }
@@ -6701,7 +7384,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 189,
+            "id": 179,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6711,7 +7394,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 190,
+            "id": 180,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6721,7 +7404,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 191,
+            "id": 181,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6731,7 +7414,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 192,
+            "id": 182,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6740,7 +7423,7 @@
         ],
         "sampleQueries": [
           {
-            "description": "First successful parent-scoped Oracle 26C BO GET for ListSupplierProductsAndServicesView; captured once for P8 runtime evidence.",
+            "description": "This example shows a paginated response for the ListSupplierProductsAndServicesView function, representing a collection of product and service category records associated with a specific supplier. Key data includes SupplierProductsServicesId, ProductsServicesCategoryId, CategoryName, CategoryPath, CategoryType, and CategoryDescription, with pagination details such as count, limit, offset, and hasMore. The sample response illustrates an empty result set for the requested supplier.",
             "query": {
               "items": [],
               "count": 0,
@@ -6750,7 +7433,7 @@
               "links": [
                 {
                   "rel": "self",
-                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333814140/child/productsAndServicesView",
+                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333814250/child/productsAndServicesView",
                   "name": "productsAndServicesView",
                   "kind": "collection"
                 }
@@ -6762,10 +7445,10 @@
       },
       {
         "name": "ListSupplierSiteAssignments",
-        "description": "Lists procurement assignments for one selected supplier site with native paging.",
+        "description": "Lists procurement assignments for one selected supplier site with native paging, including both required client and bill-to BU identifiers.",
         "operationId": "getall_suppliers-sites-assignments",
         "operationType": "GET",
-        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites/{suppliers_sites_Id}/child/assignments?onlyData=true&fields=AssignmentId,ClientBU,ClientBUId,BillToBU,ShipToLocationCode,InactiveDate&q={filter}&orderBy=AssignmentId:asc&limit={limit}&offset={offset}",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites/{suppliers_sites_Id}/child/assignments?onlyData=true&fields=AssignmentId,ClientBU,ClientBUId,BillToBU,BillToBUId,ShipToLocationCode,InactiveDate&q={filter}&orderBy=AssignmentId:asc&limit={limit}&offset={offset}",
         "resourceType": "ADF_BC_FIXED_QUERY",
         "useNativeAuthentication": true,
         "type": "BUS_OBJECT",
@@ -6774,7 +7457,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 195,
+            "id": 185,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6784,7 +7467,7 @@
             "name": "suppliers_sites_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 196,
+            "id": 186,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6794,7 +7477,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 197,
+            "id": 187,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6804,7 +7487,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 198,
+            "id": 188,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6814,7 +7497,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 199,
+            "id": 189,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6823,17 +7506,26 @@
         ],
         "sampleQueries": [
           {
-            "description": "First successful parent-scoped Oracle 26C BO GET for ListSupplierSiteAssignments; captured once for P8 runtime evidence.",
+            "description": "This example response shows a paginated list of procurement assignments for a specific supplier site, including key details such as AssignmentId, ClientBU, ClientBUId, BillToBU, ShipToLocationCode, and InactiveDate. It represents a collection of assignment records linked to the selected supplier site, supporting navigation through paging parameters.",
             "query": {
-              "items": [],
-              "count": 0,
+              "items": [
+                {
+                  "AssignmentId": 300000047507686,
+                  "ClientBU": "US1 Business Unit",
+                  "ClientBUId": 300000046987012,
+                  "BillToBU": "US1 Business Unit",
+                  "ShipToLocationCode": "USLoc004",
+                  "InactiveDate": null
+                }
+              ],
+              "count": 1,
               "hasMore": false,
-              "limit": 10,
+              "limit": 25,
               "offset": 0,
               "links": [
                 {
                   "rel": "self",
-                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000333814140/child/sites/300000333814167/child/assignments",
+                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers/300000047507596/child/sites/300000047507684/child/assignments",
                   "name": "assignments",
                   "kind": "collection"
                 }
@@ -6857,7 +7549,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 202,
+            "id": 192,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6867,7 +7559,7 @@
             "name": "suppliers_sites_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 203,
+            "id": 193,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6877,7 +7569,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 204,
+            "id": 194,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6887,7 +7579,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 205,
+            "id": 195,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6897,7 +7589,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 206,
+            "id": 196,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6940,7 +7632,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 209,
+            "id": 199,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6950,7 +7642,7 @@
             "name": "suppliers_sites_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 210,
+            "id": 200,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -6960,7 +7652,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 211,
+            "id": 201,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6970,7 +7662,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 212,
+            "id": 202,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -6980,7 +7672,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 213,
+            "id": 203,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -7029,7 +7721,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 216,
+            "id": 206,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -7039,7 +7731,7 @@
             "name": "suppliers_sites_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 217,
+            "id": 207,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -7049,7 +7741,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 218,
+            "id": 208,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -7059,7 +7751,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 219,
+            "id": 209,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -7108,7 +7800,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 222,
+            "id": 212,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -7118,7 +7810,7 @@
             "name": "suppliers_sites_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 223,
+            "id": 213,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -7128,7 +7820,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 224,
+            "id": 214,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -7138,7 +7830,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 225,
+            "id": 215,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -7148,7 +7840,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 226,
+            "id": 216,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -7191,7 +7883,7 @@
             "name": "suppliers_Id",
             "dataType": "string",
             "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
-            "id": 229,
+            "id": 219,
             "isToken": true,
             "location": "path",
             "source": "openapi",
@@ -7201,7 +7893,7 @@
             "name": "filter",
             "dataType": "string",
             "description": "Validated Oracle q expression for this exact child resource.",
-            "id": 230,
+            "id": 220,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -7211,7 +7903,7 @@
             "name": "limit",
             "dataType": "integer",
             "description": "Maximum rows for one page.",
-            "id": 231,
+            "id": 221,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -7221,7 +7913,7 @@
             "name": "offset",
             "dataType": "integer",
             "description": "Zero-based page offset.",
-            "id": 232,
+            "id": 222,
             "isToken": true,
             "location": "query",
             "source": "placeholder",
@@ -7247,6 +7939,236 @@
               ]
             },
             "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "CreateSupplierBusinessClassification",
+        "description": "Associate one proven tenant business-classification code with the selected supplier. ClassificationCode is the only documented required body field. Generated IDs, certificate metadata, contacts, audit fields, DFFs and attachments are excluded.",
+        "operationId": "create_suppliers-businessClassifications",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/businessClassifications",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"ClassificationCode\":\"{ClassificationCode}\"}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "SupplierId from the exact selected supplier. Required; no sample default.",
+            "id": 225,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "ClassificationCode",
+            "dataType": "string",
+            "description": "Required tenant-valid code from POZ_BUSINESS_CLASSIFICATIONS; no sample default.",
+            "id": 226,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Required transaction fields only. Values are illustrative and never runtime defaults.",
+            "query": {
+              "ClassificationCode": "<validated classification code>"
+            },
+            "sampleType": "request"
+          }
+        ]
+      },
+      {
+        "name": "CreateSupplierContactAddress",
+        "description": "Associate one exact existing supplier address with one exact existing contact under the same supplier. SupplierAddressId is the transaction reference; address text, generated association ID, DFFs and attachments are excluded.",
+        "operationId": "create_suppliers-contacts-addresses",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts/{suppliers_contacts_Id}/child/addresses",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"SupplierAddressId\":{SupplierAddressId}}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "SupplierId from the exact selected supplier. Required; no sample default.",
+            "id": 232,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "suppliers_contacts_Id",
+            "dataType": "string",
+            "description": "SupplierContactId from an exact contact under the selected supplier. Required; no sample default.",
+            "id": 233,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "SupplierAddressId",
+            "dataType": "integer",
+            "description": "SupplierAddressId resolved under the same selected supplier. Required by this association transaction; no sample default.",
+            "id": 234,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Required transaction fields only. Values are illustrative and never runtime defaults.",
+            "query": {
+              "SupplierAddressId": "<validated address id under the selected supplier>"
+            },
+            "sampleType": "request"
+          }
+        ]
+      },
+      {
+        "name": "CreateSupplierProductsAndServices",
+        "description": "Associate one proven tenant products-and-services category with the selected supplier. ProductsServicesCategoryId and CategoryType are the only non-null request fields. Generated association IDs, names, descriptions and audit fields are excluded.",
+        "operationId": "create_suppliers-productsAndServices",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/productsAndServices",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"ProductsServicesCategoryId\":{ProductsServicesCategoryId},\"CategoryType\":\"{CategoryType}\"}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "SupplierId from the exact selected supplier. Required; no sample default.",
+            "id": 240,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "ProductsServicesCategoryId",
+            "dataType": "integer",
+            "description": "Tenant-valid supplier products-and-services category ID resolved from retained target-tenant evidence. Required; no sample default.",
+            "id": 241,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "CategoryType",
+            "dataType": "string",
+            "description": "Association category type derived as BROWSING for a category selected from the Supplier Products and Services browsing hierarchy. Required by this target tenant; no sample default.",
+            "id": 242,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Required transaction fields only. Values are illustrative and never runtime defaults.",
+            "query": {
+              "ProductsServicesCategoryId": "<validated category id>",
+              "CategoryType": "BROWSING"
+            },
+            "sampleType": "request"
+          }
+        ]
+      },
+      {
+        "name": "CreateSupplierSiteAssignment",
+        "description": "Assign one exact client business unit to one exact supplier site. ClientBUId and BillToBUId are the only body fields and are resolved from the same selected business-unit row for this golden path. Optional shipping, account, distribution, tax, inactive-date, DFF, attachment and payment fields are excluded.",
+        "operationId": "create_suppliers-sites-assignments",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites/{suppliers_sites_Id}/child/assignments",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"ClientBUId\":{ClientBUId},\"BillToBUId\":{BillToBUId}}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "SupplierId from the exact selected supplier. Required; no sample default.",
+            "id": 248,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "suppliers_sites_Id",
+            "dataType": "string",
+            "description": "SupplierSiteId from an exact site under the selected supplier. Required; no sample default.",
+            "id": 249,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "ClientBUId",
+            "dataType": "integer",
+            "description": "Tenant-valid client business unit ID authorized for the selected supplier site. Required by this assignment transaction; no sample default.",
+            "id": 250,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "BillToBUId",
+            "dataType": "integer",
+            "description": "Bill-to business unit ID. Required by this target tenant and derived from the same selected BU for the approved golden path.",
+            "id": 251,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Required transaction fields only. Values are illustrative and never runtime defaults.",
+            "query": {
+              "ClientBUId": "<validated client business unit id>",
+              "BillToBUId": "<validated bill-to business unit id>"
+            },
+            "sampleType": "request"
           }
         ]
       }

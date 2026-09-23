@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "kind": "xdx-supplier-lifecycle-live-address-acceptance",
+  "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT",
+  "appContext": "AI Agent Studio",
+  "parent": {
+    "SupplierId": "300000333814250",
+    "SupplierNumber": "1504",
+    "Supplier": "XDX SL 20260923-011716"
+  },
+  "rejectedAttempt": {
+    "status": 400,
+    "errorCode": "POZ:::POZ_SRV_AT_LEAST_ONE_Y_ERROR",
+    "disposition": "No retry until read-only reconciliation and required-field correction."
+  },
+  "reconciliationBeforeRetry": {
+    "resourcePath": "/suppliers/300000333814250/child/addresses",
+    "count": 0,
+    "items": []
+  },
+  "request": {
+    "AddressName": "XDX HQ 20260923-022800",
+    "AddressLine1": "100 Main St",
+    "CountryCode": "US",
+    "Email": "xdx-address-20260923-022800@example.invalid",
+    "AddressPurposeOrderingFlag": true
+  },
+  "duplicatePreflight": {
+    "count": 0,
+    "items": []
+  },
+  "createResponse": {
+    "SupplierAddressId": 300000333814261,
+    "AddressPartyNumber": "1486636",
+    "AddressName": "XDX HQ 20260923-022800",
+    "AddressLine1": "100 Main St",
+    "CountryCode": "US",
+    "Email": "xdx-address-20260923-022800@example.invalid",
+    "AddressPurposeOrderingFlag": true
+  },
+  "persistedGet": {
+    "count": 1,
+    "item": {
+      "SupplierAddressId": 300000333814261,
+      "AddressPartyNumber": "1486636",
+      "AddressName": "XDX HQ 20260923-022800",
+      "AddressLine1": "100 Main St",
+      "CountryCode": "US",
+      "Email": "xdx-address-20260923-022800@example.invalid",
+      "AddressPurposeOrderingFlag": true
+    }
+  },
+  "deterministicReplay": {
+    "status": "passed",
+    "conversationSteps": 4,
+    "assertions": {
+      "passed": 240,
+      "total": 240
+    },
+    "workflowDurationMs": 11358,
+    "report": "test-reports/workflows/xdx_supplier_lifecycle_agent/p5-live-address-create-20260923-022800/result.json"
+  }
+}

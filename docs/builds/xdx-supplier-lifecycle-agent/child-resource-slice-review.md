@@ -4,7 +4,7 @@ Date: 2026-09-22
 Build: `XDX_SUPPLIER_LIFECYCLE_AGENT`
 Source inventory: [resource-inventory.md](resource-inventory.md)
 
-Use this document to keep, remove or modify child-resource slices before their write implementation begins. Mark the decision in each section. A removed slice must also be removed from the plan, manifest, workflow routes and completion criteria before Closeout.
+This document records the reviewed child-resource slices and their final disposition. The user retained the required-field lifecycle and directed the build to complete the golden path for all enabled objects while excluding DFFs, attachments, payment behavior, third-party-payment relationships and optional fields.
 
 The estimates reflect observed progress in this build. They include contract review, required-field-only design, Business Object work, local contract tests, configured AI Agent Studio discrete and cumulative tests, target AI Agent Studio app-preview acceptance, evidence reconciliation and documentation. They exclude time waiting for live-POST approval, tenant outages and product defects. Shared framework work can reduce later slices, so the ranges should not be added as a rigid schedule.
 
@@ -12,24 +12,24 @@ The estimates reflect observed progress in this build. They include contract rev
 
 | Slice | Mode | Dependency chain | Estimated effort | Decision |
 | --- | --- | --- | ---: | --- |
-| Supplier addresses | Query + create + confirm | Supplier | 45–75 min | Keep / Remove / Modify |
-| Supplier sites | Query + create + confirm | Supplier → address → procurement BU | 60–90 min | Keep / Remove / Modify |
-| Supplier contacts | Query + create + confirm | Supplier | 45–75 min | Keep / Remove / Modify |
-| Business classifications | Query + create + confirm | Supplier → classification lookup | 60–120 min | Keep / Remove / Modify |
-| Contact-address associations | Query + create + confirm | Supplier → contact + address | 45–90 min | Keep / Remove / Modify |
-| Contact data access | Query only | Supplier → contact | 25–45 min | Keep / Remove / Modify |
-| Contact roles | Query only | Supplier → contact | 25–45 min | Keep / Remove / Modify |
-| Merge history | Query only | Supplier | 25–45 min | Keep / Remove / Modify |
-| Products and services | Query + create + confirm | Supplier → category lookup | 60–120 min | Keep / Remove / Modify |
-| Products and services view | Query only | Supplier; complements products/services | 25–45 min | Keep / Remove / Modify |
-| Site assignments | Query + create + confirm | Supplier → site → client BU | 75–120 min | Keep / Remove / Modify |
-| Spend authorization history | Query only | Supplier | 25–45 min | Keep / Remove / Modify |
+| Supplier addresses | Query + create + confirm | Supplier | 45–75 min | Keep — accepted |
+| Supplier sites | Query + create + confirm | Supplier → address → procurement BU | 60–90 min | Keep — accepted |
+| Supplier contacts | Query + create + confirm | Supplier | 45–75 min | Keep — accepted |
+| Business classifications | Query + create + confirm | Supplier → classification lookup | 60–120 min | Keep — accepted |
+| Contact-address associations | Query + create + confirm | Supplier → contact + address | 45–90 min | Keep — accepted |
+| Contact data access | Query only | Supplier → contact | 25–45 min | Keep — accepted |
+| Contact roles | Query only | Supplier → contact | 25–45 min | Keep — accepted |
+| Merge history | Query only | Supplier | 25–45 min | Keep — accepted |
+| Products and services | Query + create + confirm | Supplier → category lookup | 60–120 min | Keep — accepted |
+| Products and services view | Query only | Supplier; complements products/services | 25–45 min | Keep — accepted |
+| Site assignments | Query + create + confirm | Supplier → site → client BU | 75–120 min | Keep — accepted |
+| Spend authorization history | Query only | Supplier | 25–45 min | Keep — accepted |
 
-Expected child-slice implementation effort after the current P2 test closure is approximately **9–15 focused hours**. Integrated P9 acceptance and Closeout remain separate shared gates. Live POST work cannot begin until the exact environment, record count, controlled identity and required-field-only payload are presented and approved.
+The original estimate was **9–15 focused hours** after P2. Implementation and integrated P9 acceptance are complete; actual command/test timing is retained in `time-tracker.md` and `evidence/*.jsonl`.
 
 ## Slice 1 — Supplier addresses
 
-**Decision:** Keep / Remove / Modify
+**Decision:** Keep — accepted
 
 **Description:** Query, prepare, explicitly approve, create and independently confirm an address under the selected supplier. The create payload contains only fields required by the current operation contract and the user's transaction. Generated address identifiers are omitted and captured from the response. Query output is limited to four business columns.
 
@@ -41,7 +41,7 @@ Expected child-slice implementation effort after the current P2 test closure is 
 
 ## Slice 2 — Supplier sites
 
-**Decision:** Keep / Remove / Modify
+**Decision:** Keep — accepted
 
 **Description:** Query, prepare, explicitly approve, create and independently confirm a supplier site. The write is limited to required business fields; payment, invoice, transportation, communication and other optional defaults stay out of the payload.
 
@@ -53,7 +53,7 @@ Expected child-slice implementation effort after the current P2 test closure is 
 
 ## Slice 3 — Supplier contacts
 
-**Decision:** Keep / Remove / Modify
+**Decision:** Keep — accepted
 
 **Description:** Query, prepare, explicitly approve, create and independently confirm a supplier contact without provisioning a user account. The payload contains only required identity/contact fields. It does not copy source-person identifiers, operational destinations, roles, data access or other optional values.
 
@@ -65,7 +65,7 @@ Expected child-slice implementation effort after the current P2 test closure is 
 
 ## Slice 4 — Business classifications
 
-**Decision:** Keep / Remove / Modify
+**Decision:** Keep — accepted
 
 **Description:** Query and create a classification record under the selected supplier. Only transaction-required classification fields are collected and submitted. Attachments, optional certification metadata and audit fields remain excluded unless the transaction makes a documented field mandatory.
 
@@ -77,7 +77,7 @@ Expected child-slice implementation effort after the current P2 test closure is 
 
 ## Slice 5 — Contact-address associations
 
-**Decision:** Keep / Remove / Modify
+**Decision:** Keep — accepted
 
 **Description:** Query and create an association between an existing supplier contact and an existing address under the same supplier. This slice does not create a postal address.
 
@@ -89,7 +89,7 @@ Expected child-slice implementation effort after the current P2 test closure is 
 
 ## Slice 6 — Contact data access
 
-**Decision:** Keep / Remove / Modify
+**Decision:** Keep — accepted
 
 **Description:** Query the data-access records exposed for a selected supplier contact. Oracle exposes GET only for this child resource, so the slice discloses that it cannot create or change access.
 
@@ -101,7 +101,7 @@ Expected child-slice implementation effort after the current P2 test closure is 
 
 ## Slice 7 — Contact roles
 
-**Decision:** Keep / Remove / Modify
+**Decision:** Keep — accepted
 
 **Description:** Query the roles currently exposed for a selected supplier contact. The supplier REST child exposes GET only; the agent does not provision roles or accounts.
 
@@ -113,7 +113,7 @@ Expected child-slice implementation effort after the current P2 test closure is 
 
 ## Slice 8 — Merge history
 
-**Decision:** Keep / Remove / Modify
+**Decision:** Keep — accepted
 
 **Description:** Query supplier merge-history records for the selected supplier. This is read-only audit history and has no create or update path.
 
@@ -125,7 +125,7 @@ Expected child-slice implementation effort after the current P2 test closure is 
 
 ## Slice 9 — Products and services
 
-**Decision:** Keep / Remove / Modify
+**Decision:** Keep — accepted
 
 **Description:** Query and create a products-and-services category association for the selected supplier. The agent associates an existing valid category; it does not invent or create a category.
 
@@ -137,7 +137,7 @@ Expected child-slice implementation effort after the current P2 test closure is 
 
 ## Slice 10 — Products and services view
 
-**Decision:** Keep / Remove / Modify
+**Decision:** Keep — accepted
 
 **Description:** Query the read-only view of supplier products and services. This slice can provide richer display confirmation for the writable association in Slice 9, but it has no POST operation.
 
@@ -149,7 +149,7 @@ Expected child-slice implementation effort after the current P2 test closure is 
 
 ## Slice 11 — Site assignments
 
-**Decision:** Keep / Remove / Modify
+**Decision:** Keep — accepted
 
 **Description:** Query and create an assignment for an existing supplier site. The payload is limited to required assignment fields; optional bill-to, ship-to and account references are included only when current Oracle rules make them conditionally required for the approved transaction.
 
@@ -161,7 +161,7 @@ Expected child-slice implementation effort after the current P2 test closure is 
 
 ## Slice 12 — Spend authorization history
 
-**Decision:** Keep / Remove / Modify
+**Decision:** Keep — accepted
 
 **Description:** Query spend-authorization request history for the selected supplier. The child resource exposes GET only. Submit and resubmit actions on the supplier parent remain outside this build.
 

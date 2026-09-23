@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "kind": "xdx-supplier-lifecycle-live-contact-acceptance",
+  "workflowCode": "XDX_SUPPLIER_LIFECYCLE_AGENT",
+  "appContext": "AI Agent Studio",
+  "parent": {
+    "SupplierId": "300000333814250",
+    "SupplierNumber": "1504",
+    "Supplier": "XDX SL 20260923-011716"
+  },
+  "rejectedAttempt": {
+    "request": {
+      "Email": "xdx-contact-20260923-035613@example.invalid"
+    },
+    "status": 400,
+    "errorCode": "FND:::FND_CMN_REQ_ATTRIB_API_SERV",
+    "detail": "You must provide a value for the FirstName attribute.",
+    "disposition": "Definitive rejection; no retry until read-only reconciliation and required transaction identity correction."
+  },
+  "reconciliationBeforeRetry": {
+    "resourcePath": "/suppliers/300000333814250/child/contacts",
+    "count": 0,
+    "items": []
+  },
+  "request": {
+    "FirstName": "XDX",
+    "LastName": "Contact20260923035613",
+    "Email": "xdx-contact-20260923-035613@example.invalid"
+  },
+  "excludedFields": [
+    "AdministrativeContactFlag",
+    "InactiveDate",
+    "SupplierContactId",
+    "PersonProfileId",
+    "UserName",
+    "UserAccountStatus",
+    "phone and fax fields",
+    "roles",
+    "DFFs",
+    "attachments"
+  ],
+  "duplicatePreflight": {
+    "filter": "Email='xdx-contact-20260923-035613@example.invalid'",
+    "count": 0,
+    "items": []
+  },
+  "createResponse": {
+    "SupplierContactId": 300000333814275,
+    "PersonProfileId": 300000333814275,
+    "FirstName": "XDX",
+    "LastName": "Contact20260923035613",
+    "Email": "xdx-contact-20260923-035613@example.invalid"
+  },
+  "persistedGet": {
+    "filter": "SupplierContactId=300000333814275",
+    "count": 1,
+    "item": {
+      "SupplierContactId": 300000333814275,
+      "PersonProfileId": 300000333814275,
+      "FirstName": "XDX",
+      "LastName": "Contact20260923035613",
+      "Email": "xdx-contact-20260923-035613@example.invalid",
+      "Status": "ACTIVE",
+      "UserName": null,
+      "UserAccountStatus": null
+    }
+  },
+  "successfulWriteCount": 1,
+  "deterministicReplay": {
+    "status": "passed",
+    "conversationSteps": 4,
+    "assertions": {
+      "passed": 338,
+      "total": 338
+    },
+    "durationMs": 11521,
+    "workflowTimeMs": 3682,
+    "inputTokens": 826,
+    "outputTokens": 326,
+    "aiUnits": 20,
+    "model": "oci-agent/openai.gpt-4.1-mini-2025-04-14",
+    "report": "test-reports/workflows/xdx_supplier_lifecycle_agent/p7-live-contact-create-20260923-035613/result.json"
+  }
+}

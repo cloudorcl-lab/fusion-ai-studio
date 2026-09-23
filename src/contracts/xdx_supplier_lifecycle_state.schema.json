@@ -9,6 +9,11 @@
     "revision",
     "requestId",
     "selectedSupplier",
+    "selectedAddress",
+    "selectedSite",
+    "selectedContact",
+    "selectedBusinessUnit",
+    "selectedProductCategory",
     "query",
     "queryResults",
     "selectionKeys",
@@ -63,6 +68,36 @@
         "null"
       ]
     },
+    "selectedAddress": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "selectedSite": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "selectedContact": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "selectedBusinessUnit": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "selectedProductCategory": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
     "query": {
       "type": "object",
       "additionalProperties": false,
@@ -92,6 +127,10 @@
           "maxLength": 240
         },
         "parentId": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "secondaryParentId": {
           "type": "string",
           "maxLength": 80
         },
@@ -127,7 +166,16 @@
             "",
             "ADDRESSES",
             "SITES",
-            "CONTACTS"
+            "CONTACTS",
+            "BUSINESS_CLASSIFICATIONS",
+            "CONTACT_ADDRESSES",
+            "CONTACT_DATA_ACCESS",
+            "CONTACT_ROLES",
+            "MERGE_HISTORY",
+            "PRODUCTS_SERVICES",
+            "PRODUCTS_SERVICES_VIEW",
+            "SITE_ASSIGNMENTS",
+            "SPEND_AUTHORIZATION"
           ]
         }
       }
