@@ -1,5 +1,9 @@
 # Build Time Tracker
 
+2026-09-23T13:55:00Z — follow-up task `xdx-supplier-lifecycle-rework-hardening-20260923` started. Audit found the Query validator and regression mutations were implemented but not mandatory in the root/skill startup contracts. Added mandatory pre-remote execution and post-change invocation, then added living-build checks and negative fixtures so missing policy, missing skill instruction or missing validator fails locally.
+
+2026-09-23T14:04:12Z — current-task Startup passed after reviewed-document hash refresh. Final focused checks passed: validator regression 0.285s; current workflow Query preflight 0.313s; session/living-build Startup 2.335s; living-build positive and negative fixture suite 18.844s. No tenant command, remote save, runtime test or POST was executed.
+
 Task: xdx-supplier-lifecycle-plan-20260920.
 
 ## Closeout validation — 2026-09-23

@@ -18,6 +18,10 @@ $playbookPath = Join-Path $repoRootPath $canonicalRelativePath
 $activeHandoffPath = Join-Path $repoRootPath $activeHandoffRelativePath
 $objectRegistryPath = Join-Path $repoRootPath $objectRegistryRelativePath
 $skillPath = Join-Path $repoRootPath '.agents/skills/aistudio/SKILL.md'
+$queryContractRelativePath = 'scripts/verify-agentic-app-query-contract.cjs'
+$queryContractTestRelativePath = 'scripts/tests/verify-agentic-app-query-contract.cjs'
+$queryContractPath = Join-Path $repoRootPath $queryContractRelativePath
+$queryContractTestPath = Join-Path $repoRootPath $queryContractTestRelativePath
 $lessonsPath = Join-Path $repoRootPath 'docs/lessons'
 $retiredPlaybookPath = Join-Path $lessonsPath $retiredPlaybookName
 $failures = [System.Collections.Generic.List[string]]::new()
@@ -60,6 +64,8 @@ $agentsContent = Read-RequiredFile -Path $agentsPath -Label 'Root AGENTS.md'
 $playbookContent = Read-RequiredFile -Path $playbookPath -Label 'Canonical living build playbook'
 $objectRegistryContent = Read-RequiredFile -Path $objectRegistryPath -Label 'Object learning registry'
 $skillContent = Read-RequiredFile -Path $skillPath -Label 'AI Studio skill entrypoint'
+$queryContractContent = Read-RequiredFile -Path $queryContractPath -Label 'Agentic App Query contract validator'
+$queryContractTestContent = Read-RequiredFile -Path $queryContractTestPath -Label 'Agentic App Query contract regression test'
 
 if ($agentsContent) {
   foreach ($marker in @('-SessionRecord', '-SessionId', '-Phase Closeout')) {
@@ -82,6 +88,9 @@ if ($agentsContent) {
   }
   if (-not $agentsContent.Contains('scripts/verify-living-build-contract.ps1')) {
     Add-ContractFailure 'Root AGENTS.md must invoke the living build verifier.'
+  }
+  if (-not $agentsContent.Contains('node scripts/verify-agentic-app-query-contract.cjs <workflow.wf>')) {
+    Add-ContractFailure 'Root AGENTS.md must require the Agentic App Query preflight before remote execution.'
   }
   foreach ($marker in @('Reread the active handoff and applicable governance', 'A new session is optional')) {
     if (-not $agentsContent.Contains($marker)) {
@@ -114,6 +123,12 @@ if ($playbookContent) {
   }
   if ($playbookContent -notmatch '(?m)^### MUST: continuous timing and reconciliation\s*$') {
     Add-ContractFailure 'The canonical playbook must retain the mandatory timing reconciliation policy.'
+  }
+  if ($playbookContent -notmatch '(?m)^### Mandatory first-slice fast-fail gate\s*$') {
+    Add-ContractFailure 'The canonical playbook must retain the first-slice fast-fail gate.'
+  }
+  if ($playbookContent -notmatch '(?m)^### Mandatory signed-in browser keep-alive\s*$') {
+    Add-ContractFailure 'The canonical playbook must retain the signed-in browser keep-alive rule.'
   }
   if ((Get-FirstLevelTwoHeading -Content $playbookContent) -notmatch '^## Instruction 1\s+[—-]\s+Learn') {
     Add-ContractFailure 'Learning must remain the first actionable section in the canonical playbook.'
@@ -196,6 +211,37 @@ if ($skillContent) {
   }
   if ($startHereThirdItem.Groups[1].Value -notmatch '(?i)first successful BO GET') {
     Add-ContractFailure 'The AI Studio skill must enforce capture-once documentation for the first successful BO GET.'
+  }
+  if (-not $skillContent.Contains('node scripts/verify-agentic-app-query-contract.cjs <workflow.wf>')) {
+    Add-ContractFailure 'The AI Studio skill must require the Agentic App Query preflight before remote execution.'
+  }
+}
+
+if ($queryContractContent) {
+  foreach ($marker in @(
+    'APP_QUERY_SUSPENSION_UNSUPPORTED',
+    'WORKFLOW_BINDING_EXPRESSION_MALFORMED',
+    'WORKFLOW_BINDING_PRODUCER_MISSING',
+    'BO_PATH_TOKEN_INPUT_MISSING',
+    'BO_PATH_TOKEN_INPUT_BLANK'
+  )) {
+    if (-not $queryContractContent.Contains($marker)) {
+      Add-ContractFailure "Agentic App Query validator is missing required rejection: $marker"
+    }
+  }
+}
+
+if ($queryContractTestContent) {
+  foreach ($marker in @(
+    'APP_QUERY_SUSPENSION_UNSUPPORTED',
+    'WORKFLOW_BINDING_EXPRESSION_MALFORMED',
+    'WORKFLOW_BINDING_PRODUCER_MISSING',
+    'BO_PATH_TOKEN_INPUT_MISSING',
+    'BO_PATH_TOKEN_INPUT_BLANK'
+  )) {
+    if (-not $queryContractTestContent.Contains($marker)) {
+      Add-ContractFailure "Agentic App Query regression test is missing required case: $marker"
+    }
   }
 }
 

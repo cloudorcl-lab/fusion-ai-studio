@@ -1,5 +1,7 @@
 # Active Handoff
 
+Post-closeout hardening task `xdx-supplier-lifecycle-rework-hardening-20260923` made repeated-failure prevention mandatory for the next Agentic App implementation. Before any remote save, sync, record-now action or runtime test, run `node scripts/verify-agentic-app-query-contract.cjs <workflow.wf>` and rerun it after each graph, producer, BO function or binding change. The root contract, AI Studio skill and living-build verifier enforce this command. The canonical playbook also blocks suite expansion until one real target-app Query plus configured BO route passes and requires a five-minute same-tab AI Agent Studio keep-alive while signed-in acceptance is pending. See [time-tracker.md](../builds/xdx-supplier-lifecycle-agent/time-tracker.md) and [verification.md](../builds/xdx-supplier-lifecycle-agent/verification.md).
+
 Active work: XDX Supplier Lifecycle Agent, execution task `xdx-supplier-lifecycle-execution-20260922`. Worktree: `C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-lifecycle-agent`; branch: `codex/xdx-supplier-lifecycle-agent`. Use this worktree and its root `env.properties`; never expose configuration values. Do not create another worktree.
 
 P0-P9 implementation, required DRAFT runtime acceptance and the session Closeout verifier pass. The branch handoff is the scoped commit containing this record. Publication, push and destructive external cleanup are outside the authorized scope.

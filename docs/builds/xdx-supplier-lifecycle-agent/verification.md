@@ -1,5 +1,11 @@
 # Planning and Bootstrap Verification
 
+## Rework-prevention hardening — 2026-09-23
+
+The reusable Agentic App Query validator is now a mandatory pre-remote gate in root `AGENTS.md`, the AI Studio skill and the build-startup contract. The living-build verifier requires the validator, its five rejection classes and matching regression cases. Its negative fixture also proves that removing the root rule, skill rule or validator fails policy verification. The canonical playbook now blocks suite expansion until one real target-app Query and configured BO route pass, and requires five-minute signed-in Studio tab keep-alive while runtime acceptance is pending.
+
+Focused verification passed: validator regressions; current `XDX_SUPPLIER_LIFECYCLE_AGENT` workflow preflight; current-task Startup receipt; and the living-build positive/negative fixture suite.
+
 Current 2026-09-22 bootstrap evidence is in [xdx_bootstrap_20260922.json](evidence/xdx_bootstrap_20260922.json), [package check](evidence/xdx_startup_package_20260922.txt) and [session Startup check](evidence/xdx_session_startup_20260922.txt). The worktree was absent at current inspection and recreated from `44c0d23` under explicit user authority. These local checks do not establish runtime acceptance. The following 2026-09-20 receipt is historical, including its former checkout state and live discovery identity.
 
 Observed delivery checkpoint: 2026-09-20T13:29:29.4207865Z

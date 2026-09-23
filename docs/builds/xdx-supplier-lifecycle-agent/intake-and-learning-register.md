@@ -1,5 +1,7 @@
 # Build Intake and Learning Register
 
+Follow-up enforcement task `xdx-supplier-lifecycle-rework-hardening-20260923`: audit where repeated-failure lessons are documented and make the existing Agentic App Query preflight mandatory in the root contract, AI Studio skill and living-build policy verifier.
+
 Task: xdx-supplier-lifecycle-plan-20260920. Scope: phased plan, executable build/test prompt, server BO reuse discovery, isolated new worktree bootstrap. No application implementation or live supplier creation in this task.
 
 Authority: current user request. Ask Oracle, agent lifecycle, four-column displays, source-based approved inheritance, exact draft approval, generated ID classification before each write slice. Detailed field research is deferred to execution as requested.

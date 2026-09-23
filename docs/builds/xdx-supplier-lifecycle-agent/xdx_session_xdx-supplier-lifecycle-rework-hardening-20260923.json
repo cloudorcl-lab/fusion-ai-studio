@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-lifecycle-rework-hardening-20260923",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-lifecycle-agent",
+  "branch": "codex/xdx-supplier-lifecycle-agent",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-23T13:55:00.0000000Z",
+  "checkpointUtc": "2026-09-23T14:06:43.3724621Z",
+  "reads": [
+    { "path": "AGENTS.md", "sha256": "736668746146a004b546c61af402f92cf6ea1a7a0c6fedca9ccb4c0d2d42ab1e" },
+    { "path": "docs/handoffs/ACTIVE_HANDOFF.md", "sha256": "b7ce76f0a99d35639daf2591a33b498dd567072896e2886a812653f01f1df191" },
+    { "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md", "sha256": "bced190a1ecda1213924c68f8e8f084796c627449602ef7d07f311cd210d7751" },
+    { "path": "docs/lessons/objects/README.md", "sha256": "d8da5172f6143ecf5af7327c9b068328314867f693c3aad1489fc6bbdeeb16f4" }
+  ],
+  "reviewNotes": "Follow-up audit found that the reusable Agentic App Query validator and regression cases existed, but the root contract, AI Studio skill and living-build policy verifier did not require the command. This task makes that preflight mandatory and verifies that its removal is rejected.",
+  "objectReferences": [],
+  "noObjectsReason": "This follow-up changes reusable Agentic App workflow governance and validation only; it performs no BO or resource-object design, mutation or test.",
+  "learningRegister": "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md",
+  "checks": [
+    { "id": "learning", "rule": "Instruction 1", "status": "pass", "reason": "The existing learning register and canonical playbook rejection rules were reviewed before hardening enforcement.", "evidence": ["docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md", "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md"] },
+    { "id": "intake", "rule": "Follow-up scope", "status": "pass", "reason": "Scope is limited to making the existing Query preflight non-optional for future Agentic App work.", "evidence": ["docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md"] },
+    { "id": "authority", "rule": "Local governance only", "status": "pass", "reason": "Only local repository files and tests are changed; no tenant mutation, publication or push is involved.", "evidence": ["docs/builds/xdx-supplier-lifecycle-agent/delivery-receipt.md"] },
+    { "id": "objects", "rule": "Object registry", "status": "not-applicable", "reason": "No object contract changes or live object operations are in scope.", "evidence": [] },
+    { "id": "verification", "rule": "Preflight enforcement", "status": "pass", "reason": "Validator unit tests, current workflow preflight, living-build policy verification and negative-fixture tests all pass.", "evidence": ["docs/builds/xdx-supplier-lifecycle-agent/verification.md", "scripts/tests/verify-agentic-app-query-contract.cjs", "tests/test-living-build-contract.ps1"] },
+    { "id": "timing", "rule": "Time tracking", "status": "pass", "reason": "The follow-up task identity and verification activity are recorded in the active time tracker.", "evidence": ["docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"] },
+    { "id": "cleanup", "rule": "Scoped changes", "status": "pass", "reason": "The final diff contains only reusable prevention rules, verifier enforcement, tests and their build records.", "evidence": ["docs/builds/xdx-supplier-lifecycle-agent/verification.md"] },
+    { "id": "delivery", "rule": "Durable next-build prevention", "status": "pass", "reason": "The root contract, AI Studio skill, build-startup contract and living-build verifier now require the preflight before remote Agentic App work.", "evidence": ["AGENTS.md", ".agents/skills/aistudio/SKILL.md", "agent-app-build-startup/AGENTS.md", "docs/handoffs/ACTIVE_HANDOFF.md"] }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "No AI Studio workflow or app test was run; token usage is not applicable to this local governance hardening task.",
+    "aiUnits": "No AI Studio workflow or app test was run; AI Unit usage is zero for this local governance hardening task.",
+    "timingGaps": "Focused command wall times are recorded in the time tracker. File-edit and review substeps were not separately instrumented."
+  }
+}

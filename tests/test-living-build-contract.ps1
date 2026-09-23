@@ -61,6 +61,9 @@ Copy-Item -LiteralPath (Join-Path $repoRoot 'docs/lessons/objects') -Destination
 New-Item -ItemType Directory -Path (Join-Path $handoffFixtureRoot 'docs/handoffs') -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $repoRoot 'docs/handoffs/ACTIVE_HANDOFF.md') -Destination (Join-Path $handoffFixtureRoot 'docs/handoffs/ACTIVE_HANDOFF.md')
 Copy-Item -LiteralPath (Join-Path $repoRoot '.agents/skills/aistudio/SKILL.md') -Destination (Join-Path $handoffFixtureRoot '.agents/skills/aistudio/SKILL.md')
+New-Item -ItemType Directory -Path (Join-Path $handoffFixtureRoot 'scripts/tests') -Force | Out-Null
+Copy-Item -LiteralPath (Join-Path $repoRoot 'scripts/verify-agentic-app-query-contract.cjs') -Destination (Join-Path $handoffFixtureRoot 'scripts/verify-agentic-app-query-contract.cjs')
+Copy-Item -LiteralPath (Join-Path $repoRoot 'scripts/tests/verify-agentic-app-query-contract.cjs') -Destination (Join-Path $handoffFixtureRoot 'scripts/tests/verify-agentic-app-query-contract.cjs')
 
 try {
   $sessionAgentsPath = Join-Path $handoffFixtureRoot 'AGENTS.md'
@@ -73,6 +76,29 @@ try {
     }
   }
   Set-Content -LiteralPath $sessionAgentsPath -Value $sessionAgentsOriginal -NoNewline
+  Set-Content -LiteralPath $sessionAgentsPath -Value $sessionAgentsOriginal.Replace('node scripts/verify-agentic-app-query-contract.cjs <workflow.wf>', 'REMOVED QUERY PREFLIGHT') -NoNewline
+  $queryPolicyNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
+  if ($queryPolicyNegative.ExitCode -eq 0 -or -not $queryPolicyNegative.Output.Contains('Query preflight before remote execution')) {
+    throw 'Missing root Agentic App Query preflight policy was not rejected.'
+  }
+  Set-Content -LiteralPath $sessionAgentsPath -Value $sessionAgentsOriginal -NoNewline
+
+  $fixtureSkillPath = Join-Path $handoffFixtureRoot '.agents/skills/aistudio/SKILL.md'
+  $fixtureSkillOriginal = Get-Content -LiteralPath $fixtureSkillPath -Raw
+  Set-Content -LiteralPath $fixtureSkillPath -Value $fixtureSkillOriginal.Replace('node scripts/verify-agentic-app-query-contract.cjs <workflow.wf>', 'REMOVED QUERY PREFLIGHT') -NoNewline
+  $querySkillNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
+  if ($querySkillNegative.ExitCode -eq 0 -or -not $querySkillNegative.Output.Contains('AI Studio skill must require the Agentic App Query preflight')) {
+    throw 'Missing AI Studio skill Query preflight policy was not rejected.'
+  }
+  Set-Content -LiteralPath $fixtureSkillPath -Value $fixtureSkillOriginal -NoNewline
+
+  Remove-Item -LiteralPath (Join-Path $handoffFixtureRoot 'scripts/verify-agentic-app-query-contract.cjs') -Force
+  $queryValidatorNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
+  if ($queryValidatorNegative.ExitCode -eq 0 -or -not $queryValidatorNegative.Output.Contains('Agentic App Query contract validator is missing')) {
+    throw 'Missing Agentic App Query validator was not rejected.'
+  }
+  Copy-Item -LiteralPath (Join-Path $repoRoot 'scripts/verify-agentic-app-query-contract.cjs') -Destination (Join-Path $handoffFixtureRoot 'scripts/verify-agentic-app-query-contract.cjs')
+
   Set-Content -LiteralPath $sessionAgentsPath -Value $sessionAgentsOriginal.Replace('-SessionRecord', '-OldRecord') -NoNewline
   $sessionNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
   if ($sessionNegative.ExitCode -eq 0 -or -not $sessionNegative.Output.Contains('must invoke session conformance')) { throw 'Missing startup session gate was not rejected.' }
@@ -83,6 +109,14 @@ try {
   $timingNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
   if ($timingNegative.ExitCode -eq 0 -or -not $timingNegative.Output.Contains('mandatory timing reconciliation policy')) {
     throw 'Expected missing mandatory timing reconciliation policy to fail verification.'
+  }
+  Set-Content -LiteralPath $timingPolicyPath -Value $timingPolicyOriginal -NoNewline
+  foreach ($policyMarker in @('### Mandatory first-slice fast-fail gate', '### Mandatory signed-in browser keep-alive')) {
+    Set-Content -LiteralPath $timingPolicyPath -Value $timingPolicyOriginal.Replace($policyMarker, '### REMOVED') -NoNewline
+    $fastFailNegative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
+    if ($fastFailNegative.ExitCode -eq 0) {
+      throw "Expected missing mandatory playbook rule to fail verification: $policyMarker"
+    }
   }
   Set-Content -LiteralPath $timingPolicyPath -Value $timingPolicyOriginal -NoNewline
   $handoffAgentsPath = Join-Path $handoffFixtureRoot 'AGENTS.md'

@@ -23,6 +23,7 @@ Use this skill to create or modify AI Studio app and workflow project resources,
 9. Run the bundled CLI by path, for example `node .agents/skills/aistudio/scripts/aistudio.js <command> ...` from the project root. If the skill is installed elsewhere, use that skill directory's `scripts/aistudio.js` path while keeping cwd at the project root.
 10. Treat prompt examples that start with `aistudio` as shorthand for the bundled script path. Do not search `PATH`, install a global CLI, or run `which aistudio` / `command -v aistudio` unless the user explicitly asks for global CLI setup.
 11. Run `init` only when the user explicitly asks to initialize or scaffold a blank project. Do not run `init` as a prerequisite for creating apps, workflows, or other artifacts in an existing workspace.
+12. For an Agentic App workflow, run `node scripts/verify-agentic-app-query-contract.cjs <workflow.wf>` before the first remote save, sync, record-now action or runtime test. Rerun it after every graph, producer, BO function or binding change. Stop on any failure and record the command plus PASS receipt in the active time tracker before continuing remotely.
 
 ## Artifact Routing
 

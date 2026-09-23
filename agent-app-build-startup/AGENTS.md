@@ -22,6 +22,11 @@ authoritative.
    match the requested artifact.
 6. Complete the requirement-slice register and architecture self-review before
    creating an artifact, saving a DRAFT, recording a test, or running a suite.
+7. For every Agentic App workflow, run
+   `node scripts/verify-agentic-app-query-contract.cjs <workflow.wf>` before the
+   first remote save, sync, record-now action or runtime test and after every
+   graph, producer, BO function or binding change. Stop on failure and record
+   the exact command plus PASS receipt in the active time tracker.
 
 ## Context reset
 
