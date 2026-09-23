@@ -1,6 +1,6 @@
 # Active Handoff
 
-Active task: `xdx-supplier-lifecycle-server-purge-plan-20260923` on base branch
+Active task: `xdx-supplier-lifecycle-local-purge-20260923` on base branch
 `TestingWFBuildTools` in
 `C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1`.
 
@@ -8,6 +8,13 @@ The completed XDX Supplier Lifecycle Agent and prevention controls are preserved
 Git. This task reviewed the current AI Studio server artifacts without mutating
 them, evaluated the related BO surface, and extended the retry inputs with a
 dependency-safe server purge gate.
+
+Local cleanup is complete. The registered worktree
+`C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-lifecycle-agent`,
+its residual Git administrative directory and the fully integrated local branch
+`codex/xdx-supplier-lifecycle-agent` were removed. Feature tip `1d86351` remains in
+base history. The unrelated skill-audit directory and safety stash were preserved.
+Evidence: [xdx_local_purge_20260923.json](../builds/xdx-supplier-lifecycle-agent/evidence/xdx_local_purge_20260923.json).
 
 Read-only server evidence confirmed:
 
@@ -44,7 +51,7 @@ whole-app/workflow/BO delete command, so deletion uses the AI Studio management 
 and CLI read-back.
 
 Preserve the unrelated untracked skill-audit directory and safety stash
-`pre-fast-forward-preserve-base-edits-20260923`. Server-side artifact cleanup and
-old-worktree removal remain future destructive actions; this planning task only
-prepares reviewable instructions and evidence. Command and review timing is retained
-in the active [time tracker](../builds/xdx-supplier-lifecycle-agent/time-tracker.md).
+`pre-fast-forward-preserve-base-edits-20260923`. Server-side artifact cleanup remains
+a future destructive action requiring refreshed dependency proof and exact-target
+authorization. Command and review timing is retained in the active
+[time tracker](../builds/xdx-supplier-lifecycle-agent/time-tracker.md).

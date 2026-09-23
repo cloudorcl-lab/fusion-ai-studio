@@ -1,5 +1,11 @@
 # Build Time Tracker
 
+2026-09-23T17:00:08.1035924Z — local purge complete. `git worktree remove` unregistered the clean target but returned permission errors for the worktree and Git administrative directories. Read-back proved registration was gone and both residual paths were exact task-owned children of the repository. Native PowerShell removed only those verified paths; both now return absent. `git branch -d` then deleted the fully integrated local branch at `1d86351` without force. No remote ref, server artifact or business record changed. Closeout passed in 2.2256854s; final absence/preservation read-back passed in 0.4968039s.
+
+2026-09-23T17:00:08.1035924Z — AI Unit reconciliation: the final canonical 35-case suite consumed 685 AI Units. Distinct executions with explicit retained AI Unit metrics total at least 1,465 units after excluding judge attachment and summary rows that repeat suite totals. Exact build-wide consumption is unavailable because several P4/P5/P8, failure, recorder and replay executions did not retain AI Unit metrics; no estimate is substituted.
+
+2026-09-23T16:54:08.8223082Z — local purge task `xdx-supplier-lifecycle-local-purge-20260923` started on base `TestingWFBuildTools`. Scope is the exact registered worktree `.worktrees/xdx-supplier-lifecycle-agent` and its integrated local branch `codex/xdx-supplier-lifecycle-agent`. Preserve base history, server-review evidence, prompt/plan, unrelated skill-audit files, safety stash and all remote/server state.
+
 2026-09-23T16:25:00Z — final focused verification passed: purge-plan structural validation generated in 0.154654s; Agentic App Query validator regression 0.288s; current workflow Query preflight 0.278s; PolicyOnly 2.125s; living-build positive/negative fixture suite 8.382s; corrected current-task Closeout 2.355s; `git diff --check` 0.288s. No model-backed test, AI Unit use, server mutation or business-data operation occurred.
 
 2026-09-23T16:23:00Z — initial Closeout verifier failed on receipt completeness only: missing `metrics.tokens`, `metrics.aiUnits`, `metrics.timingGaps` and missing active-handoff link to this tracker. PolicyOnly, Query-validator regression and current-workflow Query contract passed in the same batch. The receipt and handoff were corrected; no server or business-data operation occurred.

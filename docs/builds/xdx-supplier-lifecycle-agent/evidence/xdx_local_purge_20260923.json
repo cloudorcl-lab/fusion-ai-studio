@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-lifecycle-local-purge-20260923",
+  "completedUtc": "2026-09-23T17:00:08.1035924Z",
+  "base": {
+    "branch": "TestingWFBuildTools",
+    "headBeforeReceiptCommit": "de51b083a43fb277db62cd947041071de4aefb4d",
+    "featureTipContained": true,
+    "featureAheadOfBase": 0,
+    "baseAheadOfFeature": 2
+  },
+  "removed": {
+    "worktreePath": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-lifecycle-agent",
+    "gitAdminPath": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.git\\worktrees\\xdx-supplier-lifecycle-agent",
+    "branch": "codex/xdx-supplier-lifecycle-agent",
+    "branchTip": "1d863511445a02757753e50d7b999c41762a07fb"
+  },
+  "execution": [
+    {
+      "step": "git-worktree-remove",
+      "result": "partial",
+      "detail": "Git unregistered the worktree but Windows permission errors left the task-owned worktree and administrative directories."
+    },
+    {
+      "step": "verified-residual-removal",
+      "result": "pass",
+      "detail": "Resolved both absolute paths, proved both were inside the repository, and removed only those residual directories with native PowerShell."
+    },
+    {
+      "step": "integrated-local-branch-delete",
+      "result": "pass",
+      "detail": "git branch -d deleted codex/xdx-supplier-lifecycle-agent at 1d86351 without force."
+    }
+  ],
+  "readback": {
+    "worktreeRegistered": false,
+    "worktreePathExists": false,
+    "gitAdminPathExists": false,
+    "localFeatureBranchExists": false
+  },
+  "preserved": [
+    "TestingWFBuildTools history and working checkout",
+    "origin refs and all remote branches",
+    "docs/builds/xdx-aistudio-skill-audit-20260921",
+    "stash pre-fast-forward-preserve-base-edits-20260923",
+    "server purge review, prompt, plan and build evidence",
+    "all AI Studio server artifacts and Fusion business records"
+  ],
+  "remoteOrServerMutation": false
+}
