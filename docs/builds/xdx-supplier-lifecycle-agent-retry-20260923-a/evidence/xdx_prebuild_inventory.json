@@ -1,0 +1,66 @@
+{
+  "timestampUtc": "2026-09-23T18:45:27.0997263Z",
+  "identity": "CASEY.BROWN",
+  "host": "fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com",
+  "artifacts": [
+    {
+      "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\docs\\builds\\xdx-supplier-lifecycle-agent-retry-20260923-a\\evidence\\prepurge\\bo\\xdx_supplier_information.bo",
+      "sha256": "d6c97571a2ff0f5001bc7abb2cd2e09b1eae160c85b22c12047076ec7983fe26",
+      "code": "XDX_SUPPLIER_INFORMATION",
+      "id": "300000333852429",
+      "status": null,
+      "version": null,
+      "etag": "23",
+      "functionCount": 36
+    },
+    {
+      "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\docs\\builds\\xdx-supplier-lifecycle-agent-retry-20260923-a\\evidence\\prepurge\\bo\\xdx_supplier_procurement_business_units.bo",
+      "sha256": "7b0a7eaa1e7f59850b86ac8955e629e55949fcae757d6d05dd695eab9fe76665",
+      "code": "XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS",
+      "id": "300000333870232",
+      "status": null,
+      "version": null,
+      "etag": "1",
+      "functionCount": 1
+    },
+    {
+      "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\docs\\builds\\xdx-supplier-lifecycle-agent-retry-20260923-a\\evidence\\prepurge\\bo\\xdx_supplier_product_service_categories.bo",
+      "sha256": "033050ed012a6ee26e169859338614e3898325963e12b478e041e3fe2f2e8c9e",
+      "code": "XDX_SUPPLIER_PRODUCT_SERVICE_CATEGORIES",
+      "id": "300000333968268",
+      "status": null,
+      "version": null,
+      "etag": "2",
+      "functionCount": 1
+    },
+    {
+      "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\docs\\builds\\xdx-supplier-lifecycle-agent-retry-20260923-a\\evidence\\prepurge\\draft\\xdx_supplier_lifecycle_agent.wf",
+      "sha256": "a8eaad80a2d79eb254e935a063a005addf2e29a0cd5566625c130ead11b14aa3",
+      "code": "XDX_SUPPLIER_LIFECYCLE_AGENT",
+      "id": "300000333950759",
+      "status": "DRAFT",
+      "version": 86078581,
+      "etag": null,
+      "functionCount": 0
+    },
+    {
+      "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\docs\\builds\\xdx-supplier-lifecycle-agent-retry-20260923-a\\evidence\\prepurge\\draft\\xdx_supplier_lifecycle.app",
+      "sha256": "7eb80c82dc854c80bc25a291d6f2e884799295f217490bef6fc9a2aba258f7cd",
+      "code": "XDX_SUPPLIER_LIFECYCLE",
+      "id": "300000333951268",
+      "status": "DRAFT",
+      "version": 1,
+      "etag": null,
+      "functionCount": 0
+    }
+  ],
+  "publishedApp": "Exact-code fetch returned not found",
+  "publishedWorkflow": "Exact-code fetch returned Workflow not found: 200 OK",
+  "oldLocalWorktreeAbsent": true,
+  "oldLocalBranchAbsent": true,
+  "catalogCount": 25,
+  "catalogIncludesKnownWorkflow": false,
+  "dependencyProof": "BLOCKED: list-remote-workflows omits known workflow; BO list/editor expose no consumer view",
+  "remoteMutations": [],
+  "businessDataMutations": []
+}

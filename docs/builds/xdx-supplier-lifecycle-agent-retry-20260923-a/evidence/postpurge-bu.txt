@@ -1,0 +1,16 @@
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-fetch-bo",
+  "result": {
+    "artifactType": "bo",
+    "code": "XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS",
+    "filePath": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\docs\\builds\\xdx-supplier-lifecycle-agent-retry-20260923-a\\evidence\\postpurge\\bo\\xdx_supplier_procurement_business_units.bo",
+    "action": "created",
+    "forced": false
+  }
+}

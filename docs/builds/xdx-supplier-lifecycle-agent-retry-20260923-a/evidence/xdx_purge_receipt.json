@@ -1,0 +1,54 @@
+{
+  "status": "PASS with user-approved BO retention",
+  "deleted": [
+    {
+      "toolReceipt": "f69c22",
+      "code": "XDX_SUPPLIER_LIFECYCLE",
+      "readback": "Application XDX_SUPPLIER_LIFECYCLE not found",
+      "status": "DRAFT",
+      "version": 1,
+      "id": "300000333951268"
+    },
+    {
+      "toolReceipt": "42c0c3",
+      "code": "XDX_SUPPLIER_LIFECYCLE_AGENT",
+      "readback": "Workflow not found: 200 OK",
+      "status": "DRAFT",
+      "version": 86078581,
+      "id": "300000333950759"
+    }
+  ],
+  "stash": "pre-fast-forward-preserve-base-edits-20260923 preserved",
+  "rollback": "Git retains source as rebuild material; server deletion has no Git rollback",
+  "oldWorktree": "Absent",
+  "phase": "Prebuild A",
+  "publishedCopies": "Both exact-code reads returned not found before and after cleanup",
+  "checkpointUtc": "2026-09-23T18:57:00Z",
+  "baseHead": "b5034c666b886af834b1d834db4e8f00848efd6e",
+  "businessRecords": "Untouched",
+  "next": "Create unique retry worktree from committed base governance; full build incomplete",
+  "retainedBOs": [
+    {
+      "code": "XDX_SUPPLIER_INFORMATION",
+      "disposition": "Retained unchanged by explicit user decision; consumers unknown; no reuse or mutation in retry",
+      "id": "300000333852429",
+      "etag": "23",
+      "sha256": "d6c97571a2ff0f5001bc7abb2cd2e09b1eae160c85b22c12047076ec7983fe26"
+    },
+    {
+      "code": "XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS",
+      "disposition": "Retained unchanged by explicit user decision; consumers unknown; no reuse or mutation in retry",
+      "id": "300000333870232",
+      "etag": "1",
+      "sha256": "7b0a7eaa1e7f59850b86ac8955e629e55949fcae757d6d05dd695eab9fe76665"
+    },
+    {
+      "code": "XDX_SUPPLIER_PRODUCT_SERVICE_CATEGORIES",
+      "disposition": "Retained unchanged by explicit user decision; consumers unknown; no reuse or mutation in retry",
+      "id": "300000333968268",
+      "etag": "2",
+      "sha256": "033050ed012a6ee26e169859338614e3898325963e12b478e041e3fe2f2e8c9e"
+    }
+  ],
+  "oldBranch": "Absent"
+}

@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-lifecycle-agent-retry-20260923-a-prebuild",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-23T18:38:10Z",
+  "checkpointUtc": "2026-09-23T18:57:00Z",
+  "reads": [
+    {
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745",
+      "path": "AGENTS.md"
+    },
+    {
+      "sha256": "306ab269cc6e76386c7033ccdcb0dbb802c538d7779b93302b13f8224752d566",
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md"
+    },
+    {
+      "sha256": "d97a7be3a3019d7231945385aa91b9e460f24fe9c71035e92532e684bcdaf554",
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md"
+    },
+    {
+      "sha256": "d75f5ba3e4a39cebdc372aa3186d1cbfc427367f525aecc12c7b8dea8decf6e5",
+      "path": "docs/lessons/objects/README.md"
+    },
+    {
+      "sha256": "719f11fe2321a07dc1f54318815b7eddb3177e213718318cbb625ea69d8f0f5e",
+      "path": ".agents/skills/aistudio/SKILL.md"
+    },
+    {
+      "sha256": "9c38999d9b84914153ef525583eb9fe553533673fb235fe68fff4593dc071890",
+      "path": "temp/xdx_supplier_lifecycle_build_prompt.md"
+    },
+    {
+      "sha256": "71cca78bda21f4b2ca596ea26e811247fb958591282265d4dd042f3bc0b2143f",
+      "path": "temp/xdx_supplier_lifecycle_plan.md"
+    },
+    {
+      "sha256": "cba1690b9dc14fc5adbf9d18417cd570402fe1d3fd7914d8d47d98f2638de5eb",
+      "path": "temp/xdx_supplier_lifecycle_purge_prompt.md"
+    },
+    {
+      "sha256": "b21399dfc3ff95366956c1df8abdd7cac7d844a857662838eb87308ddfd236bc",
+      "path": "docs/builds/xdx-supplier-lifecycle-agent/server-purge-and-bo-streamlining-plan.md"
+    }
+  ],
+  "reviewNotes": "Current prebuild is artifact inventory and scoped purge only; full playbook, registry, prompt, plan and current handoff reviewed. Later build requires expanded object review and new Startup.",
+  "objectReferences": [],
+  "noObjectsReason": "Prebuild A changes only AI Studio artifact definitions; no Fusion resource calls, payload design or transaction tests. Resource-specific review deferred to P0 before substantive app work.",
+  "learningRegister": "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/time-tracker.md",
+  "checks": [
+    {
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/evidence/xdx_purge_receipt.json",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/checkpoint.md",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/time-tracker.md"
+      ],
+      "id": "learning",
+      "status": "pass",
+      "rule": "Instruction 1",
+      "reason": "Prebuild A scoped obligations satisfied by revised authority, exact absence and preserved BO hashes; P0-P9 are downstream and not claimed complete."
+    },
+    {
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/evidence/xdx_purge_receipt.json",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/checkpoint.md",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/time-tracker.md"
+      ],
+      "id": "intake",
+      "status": "pass",
+      "rule": "Gate 0",
+      "reason": "Prebuild A scoped obligations satisfied by revised authority, exact absence and preserved BO hashes; P0-P9 are downstream and not claimed complete."
+    },
+    {
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/evidence/xdx_purge_receipt.json",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/checkpoint.md",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/time-tracker.md"
+      ],
+      "id": "authority",
+      "status": "pass",
+      "rule": "Gate 1",
+      "reason": "Prebuild A scoped obligations satisfied by revised authority, exact absence and preserved BO hashes; P0-P9 are downstream and not claimed complete."
+    },
+    {
+      "evidence": [],
+      "id": "objects",
+      "status": "not-applicable",
+      "rule": "Gate 2 and object registry",
+      "reason": "Current phase is artifact-only purge; no Fusion operation contract is exercised"
+    },
+    {
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/evidence/xdx_purge_receipt.json",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/checkpoint.md",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/time-tracker.md"
+      ],
+      "id": "verification",
+      "status": "pass",
+      "rule": "Applicable Gates 3-9",
+      "reason": "Prebuild A scoped obligations satisfied by revised authority, exact absence and preserved BO hashes; P0-P9 are downstream and not claimed complete."
+    },
+    {
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/evidence/xdx_purge_receipt.json",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/checkpoint.md",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/time-tracker.md"
+      ],
+      "id": "timing",
+      "status": "pass",
+      "rule": "Continuous timing",
+      "reason": "Prebuild A scoped obligations satisfied by revised authority, exact absence and preserved BO hashes; P0-P9 are downstream and not claimed complete."
+    },
+    {
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/evidence/xdx_purge_receipt.json",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/checkpoint.md",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/time-tracker.md"
+      ],
+      "id": "cleanup",
+      "status": "pass",
+      "rule": "Dependency hygiene",
+      "reason": "Prebuild A scoped obligations satisfied by revised authority, exact absence and preserved BO hashes; P0-P9 are downstream and not claimed complete."
+    },
+    {
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/evidence/xdx_purge_receipt.json",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/checkpoint.md",
+        "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/time-tracker.md"
+      ],
+      "id": "delivery",
+      "status": "pass",
+      "rule": "Gate 10",
+      "reason": "Prebuild A scoped obligations satisfied by revised authority, exact absence and preserved BO hashes; P0-P9 are downstream and not claimed complete."
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Not exposed by host",
+    "timingGaps": "Inter-turn interval 18:46:53Z to 18:52:08Z separated; no active-labor estimate. Tail after current checkpoint awaits next task reconciliation.",
+    "aiUnits": "No remote build operation yet"
+  }
+}

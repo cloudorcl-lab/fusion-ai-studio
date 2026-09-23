@@ -1,70 +1,43 @@
 # Active Handoff
 
-Active task: `xdx-supplier-lifecycle-retry-purge-prompts-20260923` on base branch
-`TestingWFBuildTools` in
-`C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1`.
+Active build: xdx-supplier-lifecycle-agent-retry-20260923-a. Full build INCOMPLETE.
+Base checkout: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1, TestingWFBuildTools.
 
-The completed XDX Supplier Lifecycle Agent and prevention controls are preserved in
-Git. This task reviewed the current AI Studio server artifacts without mutating
-them, evaluated the related BO surface, and extended the retry inputs with a
-dependency-safe server purge gate.
+## Current-state receipt
 
-Local cleanup is complete. The registered worktree
-`C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-lifecycle-agent`,
-its residual Git administrative directory and the fully integrated local branch
-`codex/xdx-supplier-lifecycle-agent` were removed. Feature tip `1d86351` remains in
-base history. The unrelated skill-audit directory and safety stash were preserved.
-Evidence: [xdx_local_purge_20260923.json](../builds/xdx-supplier-lifecycle-agent/evidence/xdx_local_purge_20260923.json).
+Prebuild A purge completed with explicitly approved retention of all three old BOs.
+DRAFT app XDX_SUPPLIER_LIFECYCLE (id 300000333951268, version 1) and DRAFT workflow
+XDX_SUPPLIER_LIFECYCLE_AGENT (id 300000333950759, version 86078581) were deleted in
+that order using Studio UI. Exact-code CLI readbacks confirm absence. Published
+reads also returned not found. Fusion business records were untouched.
 
-Read-only server evidence confirmed:
+Retain XDX_SUPPLIER_INFORMATION, XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS and
+XDX_SUPPLIER_PRODUCT_SERVICE_CATEGORIES unchanged. Fresh before/after hashes match.
+Consumer completeness is unknown; the user approved retention and unique retry BOs.
+The CLI catalog returned 25 entries and omitted the known target workflow, so it
+cannot establish complete consumer proof. No BO deletion or reuse is authorized.
 
-- DRAFT app `XDX_SUPPLIER_LIFECYCLE`, version 1; no published copy found.
-- DRAFT workflow `XDX_SUPPLIER_LIFECYCLE_AGENT`, version `86078581`, ETag `30`;
-  no published copy found.
-- BOs `XDX_SUPPLIER_INFORMATION` (36 functions),
-  `XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS` (one function) and
-  `XDX_SUPPLIER_PRODUCT_SERVICE_CATEGORIES` (one function).
+## Evidence snapshot
 
-The exact review and conditional deletion order are in
-[server-purge-and-bo-streamlining-plan.md](../builds/xdx-supplier-lifecycle-agent/server-purge-and-bo-streamlining-plan.md),
-with compact evidence in
-[xdx_server_purge_review_20260923.json](../builds/xdx-supplier-lifecycle-agent/evidence/xdx_server_purge_review_20260923.json).
-No server artifact or Fusion business record was deleted.
+- [Purge receipt](../builds/xdx-supplier-lifecycle-agent-retry-20260923-a/evidence/xdx_purge_receipt.json)
+- [Intake and learning register](../builds/xdx-supplier-lifecycle-agent-retry-20260923-a/intake-and-learning-register.md)
+- [Time tracker](../builds/xdx-supplier-lifecycle-agent-retry-20260923-a/time-tracker.md)
+- [Prebuild session receipt](../builds/xdx-supplier-lifecycle-agent-retry-20260923-a/xdx_session_prebuild.json)
+- [Checkpoint](../builds/xdx-supplier-lifecycle-agent-retry-20260923-a/checkpoint.md)
 
-The optimized retry uses a dedicated 19-function BO surface: 17 supplier
-transaction functions plus two reference lookups. It removes 11 excluded
-DFF/attachment/third-party-payment functions, three unused generic supplier
-functions and five transaction-irrelevant query-only functions. The current main
-supplier BO may be shared, so whole-BO deletion remains blocked until the AI Studio
-dependency view proves zero external consumers.
+## Next milestone startup
 
-Reusable inputs:
+Create codex/xdx-supplier-lifecycle-agent-retry-20260923-a at
+.worktrees/xdx-supplier-lifecycle-agent-retry-20260923-a from TestingWFBuildTools
+once this prebuild receipt is committed. Do not use the diverged clean-base ref.
+User explicitly requires the new worktree. No app implementation has begun in base.
+Copy only env.properties directly without printing it. Read the target handoff and
+full governance, expand the receipt for object scope, pass Startup and package
+verification, then remove only exact prior implementation files listed in
+ temp/xdx_supplier_lifecycle_build_prompt.md. Commit and verify the clean seed.
+Execute temp/xdx_supplier_lifecycle_plan.md P0-P9 in that worktree. All runtime
+acceptance remains pending; historical success is not retry evidence.
 
-- [optimized execution prompt](../../temp/xdx_supplier_lifecycle_build_prompt.md)
-- [optimized phased plan](../../temp/xdx_supplier_lifecycle_plan.md)
-- [rerunnable purge prompt](../../temp/xdx_supplier_lifecycle_purge_prompt.md)
-
-The execution prompt now owns retry bootstrap. It first invokes the purge prompt,
-then creates a unique branch/worktree from `TestingWFBuildTools`, copies only the
-unprinted environment file when needed, removes the exact prior implementation
-files in the new branch, commits a clean-seed boundary and reruns Startup before
-P0. Do not use `codex/xdx-agent-app-clean-base`; it has diverged and lacks current
-improvements.
-
-Prompt validation passes all 22 structural and safety checks. Evidence:
-[xdx_retry_purge_prompt_validation_20260923.json](../builds/xdx-supplier-lifecycle-agent/evidence/xdx_retry_purge_prompt_validation_20260923.json).
-This prompt-authoring task performed no worktree creation, server deletion or Fusion
-business-data operation.
-
-Before the retry build, obtain exact-target destructive authorization, refresh all
-ids and versions, and purge in dependency order: DRAFT app, DRAFT workflow,
-dedicated lookup BOs, then the supplier BO only after consumer proof. Require
-exact-code not-found read-back after every deletion. The installed CLI has no
-whole-app/workflow/BO delete command, so deletion uses the AI Studio management UI
-and CLI read-back.
-
-Preserve the unrelated untracked skill-audit directory and safety stash
-`pre-fast-forward-preserve-base-edits-20260923`. Server-side artifact cleanup remains
-a future destructive action requiring refreshed dependency proof and exact-target
-authorization. Command and review timing is retained in the active
-[time tracker](../builds/xdx-supplier-lifecycle-agent/time-tracker.md).
+Time recording began 2026-09-23T18:38:10Z. Record inter-turn gaps separately from
+active work. Existing Chrome Studio tab 676646697 can be reused after fresh state
+verification. Preserve safety stash and unrelated skill-audit directory.

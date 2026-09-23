@@ -1,0 +1,402 @@
+[
+  {
+    "workflowCode": "PAY_ANALYST_DSHRZ",
+    "name": "Pay Analyst DSHRZ",
+    "status": "PUBLISHED",
+    "family": "HCM",
+    "product": "GLOBAL_PAYROLL",
+    "$id": "300000311326493",
+    "$context": {
+      "etag": "1",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000311326493"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "RETENTION_ANALYST_DSCUST",
+    "name": "Retention Analyst DSCUST",
+    "status": "DRAFT",
+    "family": "HCM",
+    "product": "COMP",
+    "$id": "300000311304346",
+    "$context": {
+      "etag": "2",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000311304346"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "SERVICE_REQUEST_RESOL_AGENT_TEAM_DSHRZ",
+    "name": "Service Request Resolution Agent Team DSHRZ",
+    "status": "PUBLISHED",
+    "family": "CX",
+    "product": "SERVICE_CENTER",
+    "$id": "300000311390141",
+    "$context": {
+      "etag": "1",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000311390141"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "GET_GUIDANCE_ON_REGULATIONS_AND_STANDARDS_WITH_PRODUCT_REGULATIONS_AND_COMPLIANCE_STANDARDS_ADVISOR_HRZDS",
+    "name": "Product Regulatory and Compliance Advisor DSHRZ",
+    "status": "PUBLISHED",
+    "family": "SCM",
+    "product": "PRODUCT_MANAGEMENT",
+    "$id": "300000314817796",
+    "$context": {
+      "etag": "3",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000314817796"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "PAY_ANALYST_DSCUST",
+    "name": "Pay Analyst DSCUST",
+    "status": "DRAFT",
+    "family": "HCM",
+    "product": "GLOBAL_PAYROLL",
+    "$id": "300000311325829",
+    "$context": {
+      "etag": "9",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000311325829"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "ITEM_CREATION_AGENT_DSPREP",
+    "name": "Item Creation Agent DSPREP",
+    "status": "DRAFT",
+    "family": "SCM",
+    "product": "PRODUCT_MANAGEMENT",
+    "$id": "300000317801894",
+    "$context": {
+      "etag": "3",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000317801894"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "BENEFITS_SPEND_ANALYZER_AGENT_DSHRZ",
+    "name": "Benefits Spend Analyzer Agent DSHRZ",
+    "status": "PUBLISHED",
+    "family": "HCM",
+    "product": "BENEFITS",
+    "$id": "300000311237643",
+    "$context": {
+      "etag": "26",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000311237643"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "SERVICE_REQUEST_ADVISOR_TEAM_DSCUST",
+    "name": "Service Request Advisor DSCUST",
+    "status": "PUBLISHED",
+    "family": "CX",
+    "product": "SALES_FORCE_AUTOMATION",
+    "$id": "300000317491770",
+    "$context": {
+      "etag": "11",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000317491770"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "SUPPLIER_PORTAL_AI_AGENT_ADVISOR_DSHRZ",
+    "name": "Supplier Portal Agent Advisor DSHRZ",
+    "status": "PUBLISHED",
+    "family": "PRC",
+    "product": "SUPPLIER",
+    "$id": "300000314817935",
+    "$context": {
+      "etag": "1",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000314817935"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "SALES_AGENT_DSHRZ",
+    "name": "Sales Agent DSHRZ",
+    "status": "DRAFT",
+    "family": "CX",
+    "product": "SALES_FORCE_AUTOMATION",
+    "$id": "300000311389088",
+    "$context": {
+      "etag": "4",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000311389088"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "AR_RECEIVABLE_ASSISTANT_DSCUST",
+    "name": "AR Receivable Assistant DSCUST",
+    "status": "PUBLISHED",
+    "family": "FIN",
+    "product": "OTHER",
+    "$id": "300000314822046",
+    "$context": {
+      "etag": "1",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000314822046"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "EMPLOYMENT_DETAILS_ASSISTANT_MY_TEAM_DSHRZ",
+    "name": "Employment Details Assistant\t(My Team) DSHRZ",
+    "status": "PUBLISHED",
+    "family": "HCM",
+    "product": "GLOBAL_HUMAN_RESOURCES",
+    "$id": "300000311374416",
+    "$context": {
+      "etag": "1",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000311374416"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "OPERATIONS_ASSIGNMENT_ASSISTANT_DSHRZ26CD01",
+    "name": "Operations Assignment Assistant DSHRZ26CD01",
+    "status": "PUBLISHED",
+    "family": "SCM",
+    "product": "MANUFACTURING",
+    "$id": "300000326521853",
+    "$context": {
+      "etag": "1",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000326521853"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "COE_COMPENSATION_ADVISOR",
+    "name": "COE Compensation Advisor",
+    "status": "DRAFT",
+    "family": "HCM",
+    "product": "COMP",
+    "$id": "300000319819441",
+    "$context": {
+      "etag": "1",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000319819441"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "EMPLOYMENT_CONTRACT_ANALYST_DSHRZ",
+    "name": "Employment Contract Analyst DSHRZ",
+    "status": "PUBLISHED",
+    "family": "HCM",
+    "product": "GLOBAL_HUMAN_RESOURCES",
+    "$id": "300000308718863",
+    "$context": {
+      "etag": "2",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000308718863"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "TALENT_ADVISOR_MY_TEAM_DSHRZ",
+    "name": "Talent Advisor (My Team) DSHRZ",
+    "status": "PUBLISHED",
+    "family": "HCM",
+    "product": "TALENT",
+    "$id": "300000308714488",
+    "$context": {
+      "etag": "2",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000308714488"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "LEAVE_AND_ABSENCE_POLICY_ADVISOR_DSHRZ",
+    "name": "Leave and Absence Policy Advisor DSHRZ",
+    "status": "PUBLISHED",
+    "family": "HCM",
+    "product": "ABSENCES",
+    "$id": "300000308714490",
+    "$context": {
+      "etag": "2",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000308714490"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "LEAVE_AND_ABSENCE_ANALYST_MY_TEAM_DSHRZ",
+    "name": "Leave and Absence Analyst (My Team) DSHRZ",
+    "status": "PUBLISHED",
+    "family": "HCM",
+    "product": "ABSENCES",
+    "$id": "300000308719766",
+    "$context": {
+      "etag": "2",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000308719766"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "MFG_ONBOARDING_AND_RISK_ASSESSMENT_ADVISOR_DSHRZ",
+    "name": "Manufacturer Onboarding And Risk Assessment Advisor DSHRZ",
+    "status": "PUBLISHED",
+    "family": "SCM",
+    "product": "PRODUCT_MANAGEMENT",
+    "$id": "300000308630335",
+    "$context": {
+      "etag": "4",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000308630335"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "REQUISITION_STATUS_ADVISOR_DSHRZ",
+    "name": "Requisition Status Advisor DSHRZ",
+    "status": "PUBLISHED",
+    "family": "PRC",
+    "product": "SSP",
+    "$id": "300000308719628",
+    "$context": {
+      "etag": "1",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000308719628"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "COMPENSATION_ADVISOR_MY_TEAM_DSHRZ",
+    "name": "Compensation Advisor (My Team) DSHRZ",
+    "status": "PUBLISHED",
+    "family": "HCM",
+    "product": "COMP",
+    "$id": "300000308719744",
+    "$context": {
+      "etag": "2",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000308719744"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "BENEFITS_ANALYST_HRZ",
+    "name": "Benefits Analyst DSHRZ",
+    "status": "PUBLISHED",
+    "family": "HCM",
+    "product": "BENEFITS",
+    "$id": "300000311389066",
+    "$context": {
+      "etag": "1",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000311389066"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "AI_STUDIO_FAQ",
+    "name": "COE AI Agent Studio FAQ",
+    "status": "DRAFT",
+    "family": "SCM",
+    "product": "OTHER",
+    "$id": "300000308796607",
+    "$context": {
+      "etag": "5",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000308796607"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "COE_EMPLOYEE_FEEDBACK_ASSISTANT",
+    "name": "COE Employee Feedback Assistant",
+    "status": "DRAFT",
+    "family": "HCM",
+    "product": "TALENT",
+    "$id": "300000319858290",
+    "$context": {
+      "etag": "1",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000319858290"
+        }
+      }
+    }
+  },
+  {
+    "workflowCode": "COMPENSATION_ADVISOR_DHHRZ",
+    "name": "Compensation Advisor DSHRZ",
+    "status": "PUBLISHED",
+    "family": "HCM",
+    "product": "COMP",
+    "$id": "300000308782242",
+    "$context": {
+      "etag": "1",
+      "links": {
+        "$self": {
+          "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/workflows/300000308782242"
+        }
+      }
+    }
+  }
+]
