@@ -1,74 +1,179 @@
-# Execution prompt — XDX Supplier Lifecycle Agent
+# Optimized execution prompt — XDX Supplier Lifecycle Agent
 
-Execute the block below in the prepared worktree after current-task Startup, in the current session or an optional new session. The plan is the requirement authority; the canonical playbook remains the lifecycle authority.
+Use this prompt for a clean implementation or rebuild. The phased plan at
+`temp/xdx_supplier_lifecycle_plan.md` owns scope and acceptance. The canonical
+living-build playbook and object references remain authoritative.
 
 ```text
-Read docs/handoffs/ACTIVE_HANDOFF.md FIRST.
+Read docs/handoffs/ACTIVE_HANDOFF.md first.
 
-Execute docs/builds/xdx-supplier-lifecycle-agent/xdx_supplier_lifecycle_plan.md in this already-created worktree:
-C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-lifecycle-agent
-Branch: codex/xdx-supplier-lifecycle-agent.
-Do not create another worktree, build in the base, import the abandoned implementation, or push to GitHub.
+Execute temp/xdx_supplier_lifecycle_plan.md in the authorized XDX worktree and
+branch. Verify the checkout before editing. Use only that checkout's
+env.properties and never print credentials. Preserve unrelated work.
 
 OUTCOME
-Implement Ask Oracle -> query -> gather -> validate -> final user approval -> create -> independent persisted confirmation for suppliers and child objects through AI Agents. No Visual Builder. Always show query results to the user with relevant fields only, at most four columns. Keep technical IDs internal. Cover addresses, sites and contacts first, then every additional child reconciled by the Phase 0 inventory. Do not silently redefine “child objects” as those three alone.
+Deliver an AI Agent Studio Agentic App for the required-field supplier lifecycle:
+supplier -> address -> site -> contact, followed by the retained in-scope child
+resources in the plan. Query results use at most four useful business columns.
+Every accepted create is followed by an independent scoped GET. Keep technical
+IDs internal unless needed for evidence.
 
-2026-09-22 scope correction: ignore all DFFs, attachments, payment behavior, third-party payment relationships and any other non-required create fields. Retain excluded resources in the inventory as considered/out of scope; do not add workflow or test routes for them. Build enabled payloads from required business fields only.
+SCOPE FENCE
+- Implement only fields required by the transaction and confirmed object contract.
+- Exclude all DFFs, attachments, payment behavior, third-party-payment
+  relationships and other optional fields.
+- Retain only two negative controls: duplicate prevention and uncertain-result
+  retry blocking.
+- Do not add speculative routes, alternate prompts, model sweeps or planner-generated
+  scenarios outside the approved golden-path manifest.
+- Do not use Fusion Ask, Digital Assistant or another chatbot for acceptance.
+  Runtime and UI evidence must come from the target AI Agent Studio workflow or
+  the target application's Run app preview.
 
-STARTUP
-1. Read the entire canonical living playbook, object registry, matching supplier/child references and .agents/skills/aistudio/SKILL.md. Read startup contract and only relevant skill references for workflow, variables, CODE, AGENT/LLM, HUMAN CHAT, BO_FUNCTION, BO reuse and conversation tests. Resolve the actual layout before authoring.
-2. Review plan, requirement slices, golden-path manifest, architecture self-review, server inventory/baselines, learning register, checkpoint and time tracker. Reconcile the preceding delivery tail.
-3. Verify cwd, branch, HEAD, dirty paths and active Git operations. Preserve unrelated work. Use only this worktree's active env.properties; confirm configuration and identity without printing credentials. Do not choose the environment from historical samples.
-4. Start continuous UTC timing and a NEW session conformance receipt for this task/worktree. Run both startup-package and living-build policy verifiers, then living-build Startup with the new receipt/session ID. Never reuse the base planning receipt as execution conformance.
-5. Finish P0 contracts before artifacts: record exact source/owner/route/terminal/acceptance and authority per requirement; enumerate all supplier child resources, including nested children and supported create operations. Fill additional child slices before implementing them. Record unresolved scope/sensitivity decisions; continue independent authorized work.
+STARTUP GATE
+1. Read the canonical playbook, objects/README.md, every matching object reference,
+   the AI Studio skill and the build records named by the active handoff.
+2. Establish a current session-conformance receipt and continuous UTC timing.
+   Run PolicyOnly, Startup and the startup-package verifier before substantive work.
+3. Reconcile current server BO versions and consumers before reuse or modification.
+   Never overwrite an unreviewed newer remote version.
+4. Complete the requirement slices, architecture review and golden-path manifest.
+   ATLAS plans may schedule only manifest-mapped tests.
+5. Record the exact AI Agent Studio surface, app/workflow code and DRAFT or
+   published state before any runtime prompt.
 
-REUSE FIRST
-The server catalog already found XDX_SUPPLIER_INFORMATION (12 functions) and XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS (1 GET). Review docs/builds/xdx-supplier-lifecycle-agent/xdx_bo_inventory.json and server-baseline/. Reconcile current versions against those baselines and existing src/businessObjects files. Preserve the exact BO codes. Reuse suitable functions; modify/add only what the new contract needs. Inspect downstream consumers before changing shared contracts. Do not force fetch/save over unreviewed changes, create redundant BOs, or treat sample IDs as defaults.
-The recommendation search endpoint returned 404 during planning; supported list-supported-business-objects worked. Use documented CLI help and that catalog path; do not reverse-engineer a hidden endpoint. After BO changes validate, perform a version-safe authorized save, retain normalized readback and run affected consumer contract checks.
+MANDATORY FAST-FAIL GATE
+Before expanding beyond one representative supplier-query slice:
+1. Build the minimum app shell and Query route.
+2. Ensure every app Query invocation terminates. No reachable HUMAN or WAIT node
+   is allowed anywhere on the Query graph, including nested, convergence and
+   loopback edges.
+3. Run:
+   node scripts/verify-agentic-app-query-contract.cjs <workflow.wf>
+4. Save the minimal DRAFT only after that command passes.
+5. In the target AI Agent Studio Run app preview, execute one real Query through
+   the bound workflow and confirm the correct app identity and terminal response.
+6. Execute one configured BO case through the actual BO node with the resolved
+   parent path input. Injecting a child response into a downstream normalizer is
+   not acceptance.
 
-ARCHITECTURE AND CONVERSATION
-Use one root conversational state owner with typed CONVERSATION JSON, deterministic patch validation/merge, revision tracking, root Human Chat collection/approval and guarded BO writes. Prove actual Ask Oracle entry, multi-turn continuity and Human Chat suspension/resume before any POST enablement. A debug-chat success is not Ask Oracle acceptance. Add only the Agent Studio wrapper demanded by the supported entry contract, including every required app stage/test if app-backed.
-Agents interpret intent, select read tools and propose structured patches; deterministic code owns allowed fields, transitions, payload construction and the write gate. Do not attach unrestricted create tools to an agent. Keep HUMAN pauses at root, not inside nested loops/child workflows.
-Persist user input, selected parent, reference source, draft, field provenance, missing fields, approved snapshot, operation responses/IDs and verification. Do not reset on follow-up messages. Any change invalidates approval. Do not claim durable cross-session recovery or exactly-once writes from CONVERSATION variables alone.
+Do not build more child routes, conversations or cumulative suites until all six
+steps pass. Rerun the Query-contract command after every graph, producer, BO
+function or binding change and before every remote save, sync, record-now action
+or runtime test.
 
-INHERITANCE
-For a create with partial input, retrieve similar records first. Display relevant reference choices, preserve explicit user fields, derive only eligible business defaults and show field/value/source. Ask whether to apply all eligible values or change them. That acceptance prepares the draft; it does NOT authorize creation. If no suitable source exists, ask only for missing data. Do not guess or clone GET JSON.
-Apply this interaction to every supplier child. Re-resolve foreign references against the target parent/BU. Unique fields, personal identity, operational contact destinations, security/account data and generated/read-only fields are not blanket-copy defaults.
+ARCHITECTURE
+- Use one app-bound root workflow with an OraMessageHint router and distinct
+  terminal owners for InitDisplay and Query.
+- Every Query is self-contained and ends in the same invocation. Preserve
+  multi-turn business context only through supported app/conversation input;
+  never rely on suspended workflow state.
+- Agents may interpret intent and propose structured values. Deterministic nodes
+  own allowed-field validation, parent resolution, payload construction,
+  approval revision and write gating. Agents do not receive unrestricted POST tools.
+- A changed value invalidates the prior approval snapshot.
+- Each BO REST path token must be bound to the current authoritative producer on
+  every incoming route. A resolver/preparer change invalidates downstream proof.
 
-DEFERRED FIELD RESEARCH — REQUIRED BEFORE EACH WRITE SLICE
-Research the exact current Oracle operation schema, field descriptions and Example Request Body only when preparing that slice, as planned. Start with retained evidence. Classify every candidate field as writable business value, generated own ID, parent/foreign reference, unique/non-copyable, read-only/audit or unresolved. Record requiredness, conditional rules, uniqueness scope, provenance and evidence. Omit generated IDs, capture response IDs, validate foreign references. Never remove all IDs indiscriminately. Resolve conflicts before writes; record every newly confirmed autogenerated field in its canonical object reference. Do not refresh frozen first-success samples.
+KNOWN REQUIRED-FIELD BASELINE
+Read the current object references before using these values; they are a starting
+baseline, not a substitute for current verification.
+- Address: one purpose flag is required for the purchasing path; use only
+  AddressPurposeOrderingFlag=true unless the transaction requires another purpose.
+- Contact: use the minimum identity FirstName, LastName and Email; never provision
+  an account as a side effect.
+- Products/services association: submit ProductsServicesCategoryId and
+  CategoryType=BROWSING. Do not reuse the SUPPLIER lookup taxonomy value.
+- Site assignment: submit both ClientBUId and BillToBUId; use the same explicitly
+  selected BU when that is the approved transaction.
+- Omit generated IDs from POST payloads and capture them from the response.
 
-PHASE LOOP — DO NOT SKIP
-for each phase P0 through P9, including each P8 child subphase:
-  A. Read the last checkpoint. Confirm this phase's inputs/authority and exact manifest scenarios.
-  B. BUILD the smallest complete slice. Keep one owner per behavior. No future-phase scaffolding without a requirement.
-  C. DISCRETE TEST: run meaningful local state/payload/source checks and matching artifact validation. Prettify/validate changed workflows. Obtain the focused ATLAS sync plan, execute ONE manifest-mapped action, finish its model-data/judge continuation, refresh and repeat until synchronization is current. Use supported conversation-test context for root HUMAN/WAIT scenarios.
-  D. If discrete acceptance fails: classify the failure, preserve evidence, fix the smallest responsible owner, rerun the affected test only. Do not advance, weaken acceptance or rerun an unchanged broad suite.
-  E. CUMULATIVE TEST: once discrete and synchronization gates pass, run ONE configured-mode regression covering all enabled requirements through this phase and the new interaction boundaries. Use recorded BO responses/approved fixtures for write paths. Never repeat live POSTs to run regression. Omit evaluation-mode overrides and judge-provider unless explicitly authorized; file mode may still use models. Resolve required judges and use final-summary commands without rerunning solely to refresh reports.
-  F. If cumulative acceptance fails, return to D. After correction repeat the required cumulative gate once. Stop repetitive unchanged reproductions and isolate the responsible boundary after two observations without new evidence.
-  G. Check real Ask Oracle evidence appropriate to this phase, expected versus submitted versus persisted fields (including omissions), four-column displays, state continuity, approval and no duplicate writes. Backend success alone does not pass UI acceptance.
-  H. Record commands, artifact versions, local/replay/live status, test counts, pending judges, reports, time/tokens/AI Units, failures and next action. Mark phase accepted only with the required evidence; checkpoint then proceed automatically to the next authorized phase without asking “continue?”.
+WRITE GATE FOR EACH OBJECT
+Before the first POST for a resource:
+1. Read its object reference and retained GET/POST evidence. Do not rerun a GET
+   merely to refresh documentation.
+2. Resolve the parent and all foreign references in the target scope.
+3. Define the exact required-field-only payload, generated omissions, uniqueness
+   scope, duplicate query and independent persisted-GET projection.
+4. Add or update the focused contract test and make it pass locally.
+5. Run the Query-contract preflight and artifact validation.
+6. Run one configured discrete AI Agent Studio case and the lean cumulative suite.
+7. Show the exact normalized payload and parent in the agent flow for final user
+   approval. Inherited/default acceptance does not authorize creation.
+8. After applicable tests pass, continue with the already-authorized POST without
+   a separate operator approval pause. Execute one POST, capture the generated ID,
+   then perform an independent scoped GET.
+
+If a failure may have crossed a POST boundary, freeze the payload and perform a
+read-only reconciliation. Never repeat the write until absence is proven and the
+payload is materially corrected. Two unchanged failures at one boundary stop the
+remote cycle and require root-cause correction plus a newly passing focused test.
+
+BUILD -> DISCRETE TEST -> CUMULATIVE TEST
+For every phase and child slice:
+A. BUILD the smallest complete route. Do not scaffold later phases.
+B. DISCRETE TEST the real producer-to-consumer path, required payload, terminal
+   response and MUST/MUST-NOT-execute behavior. Run only the affected configured
+   case. Complete model-data or judge continuation in the same action.
+C. CUMULATIVE TEST once using one golden case per enabled route plus the two
+   approved negative controls. Do not run planner-generated atomic variants.
+D. On failure, classify it, fix the smallest owner and rerun only the affected
+   discrete case. Run the cumulative gate once after correction. Never rerun an
+   unchanged broad suite to gather more evidence.
+E. Record exact command, JSON-generation time, Node wall time, workflow time,
+   parse/review time, tests, assertions, tokens, AI Units and result. Record null
+   with a reason when a measurement is unavailable.
+
+FIXTURE AND CLI HYGIENE
+- Use the CLI-generated replayDataPayloadTemplate and consistencyGroups exactly.
+  Do not handcraft wrappers, add nodes or omit required conversation turns.
+- Keep immutable raw artifacts out of the editable payload. Do not place volatile
+  jobId or finishReason in model-generated overrides. Remove only volatile capture
+  metadata when the generated apply request would otherwise compare it as content.
+- Validate one fixture end-to-end before applying the pattern in bulk.
+- Treat needs-model-test-data and needs-judge as continuations, not failures.
+- On Windows, run every authenticated AI Studio CLI command with host credential-
+  store access from the first attempt. Keep local deterministic checks restricted.
+
+BROWSER KEEP-ALIVE
+While signed-in target-app acceptance is pending, retain one identified AI Agent
+Studio tab. Poll or refresh that same tab between remote action groups and at least
+every five minutes. Log UTC time, tab identity, artifact context, authentication
+state, action and result. CLI authentication does not prove the browser is alive.
+Stop target-app testing on logout, wrong app or wrong chatbot until the target
+Studio context is restored.
 
 PHASE ORDER
-P0: contracts, exhaustive resource inventory and BO reuse reconciliation.
-P1: actual Ask Oracle + no-write typed-state/Human Chat/revision/cancel proof.
-P2: supplier and child query, visible <=4-column results and stable selection.
-P3: source-based inheritance, missing-input collection, complete exact draft review.
-P4: supplier create, generated response IDs and independent GET confirmation.
-P5: address create, approved defaults and parent-scoped confirmation.
-P6: site create, validated BU/address dependencies and confirmation.
-P7: contact create, approved identity/defaults and confirmation.
-P8: one query/create/confirm child slice at a time for remaining inventoried resources.
-P9: cumulative end-to-end Ask Oracle acceptance, recovery evidence and closeout.
+P0 — scope, object contracts, BO reuse, manifest and session gates.
+P1 — minimum app shell plus first real Run app Query/BO fast-fail proof.
+P2 — supplier, address, site and contact reads with real parent bindings.
+P3 — deterministic preparation, required-field validation, revision and exact
+     no-write approval review.
+P4 — supplier create and persisted GET.
+P5 — address create and persisted GET.
+P6 — site create and persisted GET.
+P7 — contact create and persisted GET.
+P8 — one retained child slice at a time in dependency order: classifications,
+     contact-address association, products/services, site assignment, then the
+     retained query-only resources.
+P9 — one integrated target-app golden journey, final configured suites and Closeout.
 
-WRITE BOUNDARIES
-Require final user approval of the exact normalized payload/revision/parent for every create. Approval of inherited defaults is separate. Serially create parent then dependent children; save each returned operation result/ID before the next write. Verify every intended field by independent GET. For timeout, partial result, lost state or repeated approval, reconcile first; never blindly retry or delete records as rollback. Do not expose a write path with unproven concurrent-submit protection.
-The planning request did not authorize new live test records. Complete local/fixture work, prepare concrete exact payloads and present the environment/count/controlled test identities for the first required live-write approval. Reuse accepted records across later phases; no allowance transfers from the failed attempt. Do not repeatedly seek approval for unchanged authorized actions. Obtain additional scoped authority only for new sensitive side effects, changed scope, publication, destructive cleanup or newer-remote overwrite. BO modification is authorized as necessary to this build, subject to compatibility and version checks.
+PACE AND STOP RULES
+- Target no more than eight focused execution hours for the full retained scope,
+  excluding user login, tenant outage and product-service outage.
+- At each two-hour checkpoint, compare accepted slices with elapsed time. If no
+  new slice passed, stop broad execution and diagnose the blocking boundary.
+- Stop after the same failure signature appears twice without new evidence.
+- Keep the approved goal active through checkpoints. At 70-75% context, update
+  the handoff, checkpoint and time tracker, revalidate, and continue; a new session
+  is optional.
+- Continue automatically after passed gates. Ask only for a real authority,
+  privacy, publication, destructive-cleanup or external-state blocker.
 
-STOP/HANDOFF
-Continue until all phases are accepted or a concrete external/authority blocker prevents the next required action. Report partial work honestly. At the required context threshold, checkpoint and update the single ACTIVE_HANDOFF.md and timing, then revalidate before continuing. Starting a new session is optional; when one is chosen, provide a complete codex -C command carrying forward this same plan. Do not create a competing handoff.
-Never publish workflows via CLI. Never push this branch without user instruction. Do not call the build complete while an included child, UI journey, field, required test/judge or closeout gate is unresolved.
-
-FINAL DELIVERY
-Reconcile scope against evidence; distinguish replay, live, DRAFT and published results. Integrate evidence-backed lessons into the existing playbook/object owners, reconcile dependencies, retain needed reports, remove only task-owned obsolete scratch, update attempts status, complete time/delivery records, pass current-session Closeout, and commit only this task's changes to the new branch. Present the CLI-generated scoped Validation and Insights with test counts, metrics and limitations. Report actual Ask Oracle acceptance and any remaining publication boundary separately.
+CLOSEOUT
+Run final local validation, configured workflow/app suites, the integrated target
+AI Agent Studio journey and the living-build Closeout receipt. Reconcile the
+learning register, object references, dependencies and task-owned scratch. Commit
+only scoped changes. Push or publish only when authorized. Report DRAFT versus
+published state, exact test counts, timing, tokens/AI Units and remaining limits.
 ```

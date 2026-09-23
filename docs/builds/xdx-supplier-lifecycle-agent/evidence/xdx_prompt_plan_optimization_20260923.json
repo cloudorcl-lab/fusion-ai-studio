@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "checkedUtc": "2026-09-23T15:29:57.5683226Z",
+  "promptPath": "temp/xdx_supplier_lifecycle_build_prompt.md",
+  "planPath": "temp/xdx_supplier_lifecycle_plan.md",
+  "promptLines": 179,
+  "planLines": 267,
+  "promptFenceCount": 2,
+  "planPhaseCount": 10,
+  "plannedMaximumMinutes": 455,
+  "missingRequiredMarkers": [],
+  "foundStaleMarkers": [],
+  "missingPromptPhases": [],
+  "handoffPromptLink": true,
+  "handoffPlanLink": true,
+  "status": "PASS"
+}

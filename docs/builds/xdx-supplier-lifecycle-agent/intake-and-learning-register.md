@@ -1,5 +1,7 @@
 # Build Intake and Learning Register
 
+Prompt/plan optimization task `xdx-supplier-lifecycle-prompt-plan-optimization-20260923`: revise the reusable `/temp` execution prompt and phased plan from completed-build evidence. Preserve the required-field supplier lifecycle and replace late-discovery patterns with mandatory first-slice Query/BO proof, pre-remote validation, fixture normalization, five-minute browser keep-alive and streamlined discrete/cumulative testing.
+
 Follow-up enforcement task `xdx-supplier-lifecycle-rework-hardening-20260923`: audit where repeated-failure lessons are documented and make the existing Agentic App Query preflight mandatory in the root contract, AI Studio skill and living-build policy verifier.
 
 Task: xdx-supplier-lifecycle-plan-20260920. Scope: phased plan, executable build/test prompt, server BO reuse discovery, isolated new worktree bootstrap. No application implementation or live supplier creation in this task.

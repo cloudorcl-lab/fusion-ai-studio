@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-lifecycle-prompt-plan-optimization-20260923",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-23T15:19:42.8621127Z",
+  "checkpointUtc": "2026-09-23T15:32:16.4208319Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "e4174d5ecb5abf46779573fcf9060030600509640696f32dfb21e757dfce3ce9"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "d97a7be3a3019d7231945385aa91b9e460f24fe9c71035e92532e684bcdaf554"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "d75f5ba3e4a39cebdc372aa3186d1cbfc427367f525aecc12c7b8dea8decf6e5"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "c29d131687fb29eba7ea5cbd3872d8e0f6ca7f381be89f4db6f724ed7d9374cb"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "293850aec4a47f53b33f815aacd74cadca759a7857a2a37be1b00928f8968272"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "3ef6cd2c2b9fc018358ec9dd53a52cda97d418a6fbb4dbe818060c1a08cc8dc4"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "f75a97d74fea6a9b0bbf45b3b4057d5eb517b9ab5349c4b401a0c6e11335e0a7"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-business-classifications.md",
+      "sha256": "636c72d1b34da7e0561192c2837873c18ddef7fb0792fa51013f125b937a5006"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contact-addresses.md",
+      "sha256": "1dda9af5f50e04156955721d28a66bec3de976b9e24a5c21d1746554374ccdde"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contact-data-access.md",
+      "sha256": "ed329c06ab0ff47fe1437fee2b1e085bdd70f9c1fd232a3b645c289de652e3cc"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contact-roles.md",
+      "sha256": "3f26e054f13215be535fcf988dea806c36c2d2d87634ec40f6c9396e30a9cb76"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-merge-history.md",
+      "sha256": "a90e914d234ec85eae0184f9b9259f840cc11a6aaf89e03fd6b13f1a197d2288"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-products-and-services.md",
+      "sha256": "c23ee63bd732a7a82493d18936984ec309251d6387cfa8fb4490e937a6854bf2"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-products-and-services-view.md",
+      "sha256": "b5552562c5b5c70007130e70bd6e9d0e8e0a1b548cf901de30581513d092d26b"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+      "sha256": "6732a07effd0d424e92e99abd1e119b8ee1e0b08f943cbfac54aebec57116de6"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-spend-authorization-requests.md",
+      "sha256": "a248cca93f3c4345f7d33b01397d039cd2811af4a1513cfae774bec037d7811a"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "sha256": "946cb59d6209b4b0a6543e81c10932a96dc503e17766793c9cf9230b667da19e"
+    }
+  ],
+  "reviewNotes": "Optimize the reusable temp prompt and plan using the completed build lessons. Enforce early Agentic App Query and configured BO proof, required-field object contracts, lean testing, controlled fixture normalization and browser keep-alive.",
+  "objectReferences": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-business-classifications.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contact-addresses.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contact-data-access.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contact-roles.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-merge-history.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-products-and-services.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-products-and-services-view.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-spend-authorization-requests.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "release": "Oracle Procurement 26C / API 11.13.18.05"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Instruction 1",
+      "status": "pass",
+      "reason": "Completed-build learning register, canonical playbook, object registry and matching supplier references were reviewed.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+        "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Bounded documentation optimization",
+      "status": "pass",
+      "reason": "Scope is limited to optimizing the two reusable temp documents from retained evidence.",
+      "evidence": [
+        "temp/xdx_supplier_lifecycle_build_prompt.md",
+        "temp/xdx_supplier_lifecycle_plan.md"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Local documentation only",
+      "status": "pass",
+      "reason": "No tenant mutation, publication or new live test is required.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/delivery-receipt.md"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Object registry",
+      "status": "pass",
+      "reason": "All retained supplier object references and known tenant-required fields are inputs to the revision.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/resource-inventory.md",
+        "docs/lessons/objects/README.md"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Document validation",
+      "status": "pass",
+      "reason": "Prompt/plan structural validation passed all required markers, ten phases, stale-guidance exclusions, link checks and the eight-hour phase budget.",
+      "evidence": [
+        "temp/xdx_supplier_lifecycle_build_prompt.md",
+        "temp/xdx_supplier_lifecycle_plan.md",
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_prompt_plan_optimization_20260923.json"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Time tracking",
+      "status": "pass",
+      "reason": "The task identity and scope are recorded in the active time tracker.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Preserve unrelated work",
+      "status": "pass",
+      "reason": "Only the two temp documents and their task governance/evidence records changed; unrelated skill-audit files and the safety stash remain preserved.",
+      "evidence": [
+        "docs/handoffs/ACTIVE_HANDOFF.md"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Optimized reusable prompt and plan",
+      "status": "pass",
+      "reason": "The optimized prompt and plan encode all accepted lessons and are ready for a scoped base-branch commit.",
+      "evidence": [
+        "temp/xdx_supplier_lifecycle_build_prompt.md",
+        "temp/xdx_supplier_lifecycle_plan.md"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "No model-backed workflow or app test ran; token usage is not applicable.",
+    "aiUnits": "No AI Studio workflow or app test ran; AI Unit usage is zero.",
+    "timingGaps": "Document edit/review time was tracked at task level; no tenant, workflow or response-parse timing exists for this documentation-only task."
+  }
+}
