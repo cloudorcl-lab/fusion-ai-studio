@@ -1,5 +1,9 @@
 # Build Intake and Learning Register
 
+Server-purge planning task `xdx-supplier-lifecycle-server-purge-plan-20260923`: perform read-only server inventory for the completed app, workflow and related BOs; evaluate the shared supplier BO for simplification and consumer-safe retirement; then extend the optimized retry prompt/plan with an exact server purge and clean-rebuild boundary. No deletion is authorized in this planning task.
+
+Server review result: only DRAFT copies of `XDX_SUPPLIER_LIFECYCLE` and `XDX_SUPPLIER_LIFECYCLE_AGENT` were found. The workflow references three present BOs. The main supplier BO has 36 functions and no complete reverse-consumer index is available through the installed CLI, so a whole-object purge requires AI Studio dependency proof. The retry should use a dedicated 17-function supplier BO and two one-function lookup BOs, remove transaction-irrelevant query-only routes, and narrow retained GET projections. The dependency-safe procedure and exact observed identifiers are recorded in `server-purge-and-bo-streamlining-plan.md` and `evidence/xdx_server_purge_review_20260923.json`. No operation-level object reference changed because this review produced no new API behavior evidence.
+
 Prompt/plan optimization task `xdx-supplier-lifecycle-prompt-plan-optimization-20260923`: revise the reusable `/temp` execution prompt and phased plan from completed-build evidence. Preserve the required-field supplier lifecycle and replace late-discovery patterns with mandatory first-slice Query/BO proof, pre-remote validation, fixture normalization, five-minute browser keep-alive and streamlined discrete/cumulative testing.
 
 Follow-up enforcement task `xdx-supplier-lifecycle-rework-hardening-20260923`: audit where repeated-failure lessons are documented and make the existing Agentic App Query preflight mandatory in the root contract, AI Studio skill and living-build policy verifier.

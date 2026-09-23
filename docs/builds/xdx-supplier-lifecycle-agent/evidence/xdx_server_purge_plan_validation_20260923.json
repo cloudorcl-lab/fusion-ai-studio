@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-lifecycle-server-purge-plan-20260923",
+  "generatedUtc": "2026-09-23T16:22:10.4083673Z",
+  "jsonGenerationSeconds": 0.154654,
+  "nodeWallSeconds": null,
+  "workflowExecutionSeconds": null,
+  "responseParseReviewSeconds": null,
+  "result": "PASS",
+  "checks": {
+    "evidenceJsonParsed": true,
+    "serverArtifactCount": true,
+    "currentFunctionMath": true,
+    "proposedFunctionMath": true,
+    "promptHasPurgeGate": true,
+    "promptHasConsumerStop": true,
+    "promptHasBusinessDataBoundary": true,
+    "planHasPrebuild": true,
+    "planHasMinimalBo": true,
+    "planExcludesQueryOnly": true,
+    "allP0ThroughP9": true,
+    "reviewHasExactCodes": true,
+    "reviewHasConditionalSharedBo": true,
+    "reviewHasAbsenceProof": true,
+    "scratchRemoved": true
+  }
+}

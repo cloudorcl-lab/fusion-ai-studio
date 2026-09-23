@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-lifecycle-server-purge-plan-20260923",
+  "observedUtc": "2026-09-23T16:17:52.5596834Z",
+  "authority": "read-only server review and local planning; no remote deletion, save, publication or business-data mutation",
+  "environment": {
+    "authenticatedUser": "CASEY.BROWN",
+    "credentialsRecorded": false
+  },
+  "serverArtifacts": [
+    {
+      "type": "agenticApp",
+      "code": "XDX_SUPPLIER_LIFECYCLE",
+      "id": "300000333951268",
+      "draft": { "present": true, "version": 1 },
+      "published": { "present": false, "readResult": "Application not found" },
+      "dependency": "queryAgent XDX_SUPPLIER_LIFECYCLE_AGENT"
+    },
+    {
+      "type": "workflow",
+      "code": "XDX_SUPPLIER_LIFECYCLE_AGENT",
+      "id": "300000333950759",
+      "draft": { "present": true, "version": 86078581, "etag": "30" },
+      "published": { "present": false, "readResult": "Workflow not found" },
+      "boNodeReferences": 40
+    },
+    {
+      "type": "businessObject",
+      "code": "XDX_SUPPLIER_INFORMATION",
+      "id": "300000333852429",
+      "present": true,
+      "functionCount": 36,
+      "workflowNodeReferences": 38,
+      "workflowUniqueFunctions": 22,
+      "externalConsumerStatus": "not proven; whole-object deletion blocked pending AI Studio dependency review"
+    },
+    {
+      "type": "businessObject",
+      "code": "XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS",
+      "id": "300000333870232",
+      "present": true,
+      "functionCount": 1,
+      "workflowNodeReferences": 1,
+      "externalConsumerStatus": "not proven; confirm in AI Studio dependency review"
+    },
+    {
+      "type": "businessObject",
+      "code": "XDX_SUPPLIER_PRODUCT_SERVICE_CATEGORIES",
+      "id": "300000333968268",
+      "present": true,
+      "functionCount": 1,
+      "workflowNodeReferences": 1,
+      "externalConsumerStatus": "not proven; confirm in AI Studio dependency review"
+    }
+  ],
+  "boAssessment": {
+    "currentTotalFunctions": 38,
+    "currentSupplierFunctions": 36,
+    "currentLookupFunctions": 2,
+    "currentWorkflowUniqueFunctions": 24,
+    "excludedDffAttachmentPaymentFunctions": 11,
+    "unusedGenericSupplierFunctions": 3,
+    "transactionIrrelevantQueryOnlyFunctions": 5,
+    "proposedSupplierFunctions": 17,
+    "proposedLookupFunctions": 2,
+    "proposedTotalFunctions": 19,
+    "overallReductionCount": 19,
+    "overallReductionPercent": 50,
+    "supplierReductionCount": 19,
+    "supplierReductionPercent": 52.8,
+    "postTemplatesAlreadyRequiredFieldOnly": true,
+    "additionalOptimization": "Add explicit fields projections to retained address, site and contact GETs and restrict verification projections to submitted fields plus generated identifiers."
+  },
+  "purgeOrder": [
+    "XDX_SUPPLIER_LIFECYCLE DRAFT app",
+    "XDX_SUPPLIER_LIFECYCLE_AGENT DRAFT workflow",
+    "XDX_SUPPLIER_PRODUCT_SERVICE_CATEGORIES BO after consumer proof",
+    "XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS BO after consumer proof",
+    "XDX_SUPPLIER_INFORMATION BO only after zero external consumers are proven"
+  ],
+  "commandTimingSeconds": [
+    { "command": "aistudio whoami", "nodeWall": 4.167081, "result": "pass" },
+    { "command": "aistudio do-fetch-app --code XDX_SUPPLIER_LIFECYCLE --status DRAFT", "nodeWall": 2.4173963, "result": "present" },
+    { "command": "aistudio do-fetch-workflow --code XDX_SUPPLIER_LIFECYCLE_AGENT --status DRAFT", "nodeWall": 2.4638341, "result": "present" },
+    { "command": "aistudio do-fetch-bo --code XDX_SUPPLIER_INFORMATION", "nodeWall": 2.7309228, "result": "present" },
+    { "command": "aistudio do-fetch-bo --code XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS", "nodeWall": 2.440126, "result": "present" },
+    { "command": "aistudio do-fetch-bo --code XDX_SUPPLIER_PRODUCT_SERVICE_CATEGORIES", "nodeWall": 2.3999943, "result": "present" },
+    { "command": "aistudio do-fetch-app --code XDX_SUPPLIER_LIFECYCLE --status PUBLISHED", "nodeWall": 2.7390126, "result": "expected-not-found" },
+    { "command": "aistudio do-fetch-workflow --code XDX_SUPPLIER_LIFECYCLE_AGENT --status PUBLISHED", "nodeWall": 2.7465109, "result": "expected-not-found" }
+  ],
+  "measurementNotes": {
+    "jsonGenerationSeconds": null,
+    "workflowExecutionSeconds": null,
+    "responseParseReviewSeconds": null,
+    "reason": "This was artifact retrieval and local structural review, not a workflow-test phase; the CLI exposed command wall time but no separate generation or parse timers."
+  },
+  "destructiveActionsExecuted": false,
+  "businessDataDisposition": "out of scope; artifact purge does not delete Fusion supplier records"
+}

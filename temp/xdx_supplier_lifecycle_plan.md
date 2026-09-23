@@ -9,7 +9,7 @@ writes, publication or destructive cleanup by itself.
 Deliver a customer-ready AI Agent Studio Agentic App that queries, prepares,
 approves, creates and independently confirms the required-field supplier lifecycle:
 
-`supplier -> address -> site -> contact -> retained child resources`
+`supplier -> address -> site -> contact -> four retained transaction children`
 
 The app must use the target AI Agent Studio surface, keep results to at most four
 business columns, keep technical IDs internal, execute each accepted POST once and
@@ -22,15 +22,16 @@ Included:
 - Supplier, address, site and contact query/create/confirm golden paths.
 - Business classification, contact-address association, products/services
   association and site-assignment query/create/confirm paths.
-- Contact data access, contact roles, merge history, products/services view and
-  spend-authorization history as query-only paths.
-- Reuse or compatible extension of approved XDX supplier BOs.
+- A dedicated minimal supplier BO plus the two required reference lookup BOs.
 
 Excluded:
 
 - Every DFF and attachment resource.
 - Payment behavior and third-party payment relationships.
 - Optional create fields that the transaction does not require.
+- Query-only children that do not supply, guard or verify an included transaction,
+  including contact data access, contact roles, merge history, products/services
+  view and spend-authorization history.
 - Account provisioning, workflow publication, destructive cleanup and speculative
   test routes.
 
@@ -145,10 +146,27 @@ Fixture rules:
 
 ## Phased delivery
 
+### Prebuild — server review and purge — target 25–40 minutes
+
+- Execute
+  `docs/builds/xdx-supplier-lifecycle-agent/server-purge-and-bo-streamlining-plan.md`.
+- Refresh exact ids, versions/ETags, DRAFT/published state and reverse consumers.
+- After explicit exact-target authorization, delete in dependency order: DRAFT app,
+  DRAFT workflow, dedicated lookup BOs, then the supplier BO only if it has no
+  external consumer.
+- Require exact-code absence proof after every deletion. Do not treat Git source as
+  rollback for server deletion and do not delete Fusion business records.
+- Start the retry from a clean implementation seed containing governance, object
+  lessons and this prompt/plan, without the completed app/workflow/BO/test artifacts.
+
+Exit: every authorized old server artifact is absent, every retained shared artifact
+has a recorded owner, and the new worktree cannot inherit the completed build.
+
 ### P0 — Startup and contracts — target 20–30 minutes
 
 - Pass policy, session Startup and startup-package verification.
-- Reconcile current BO versions and consumers.
+- Create a dedicated minimal BO contract. Retain 17 supplier transaction functions
+  plus the two required lookup functions; do not copy the 36-function BO.
 - Confirm resource inventory, exclusions, object references, requirements,
   architecture and golden-path manifest.
 - Start time tracking and same-tab keep-alive logging.
@@ -210,7 +228,7 @@ Exit: site, BU, address and purchasing purpose match.
 
 Exit: identity and generated key match with no unintended side effect.
 
-### P8 — Remaining retained children — target 90–120 minutes total
+### P8 — Remaining retained children — target 70–90 minutes total
 
 Implement one complete slice at a time in dependency order:
 
@@ -218,8 +236,6 @@ Implement one complete slice at a time in dependency order:
 2. Contact-address association after address and contact.
 3. Products/services association with `CategoryType=BROWSING`.
 4. Site assignment after site, with both BU IDs.
-5. Query-only contact data access, contact roles, merge history,
-   products/services view and spend-authorization history in one shared read pass.
 
 Each write slice passes its object contract, discrete case, lean cumulative suite,
 single POST and independent GET before the next slice begins.
@@ -260,6 +276,7 @@ Completion requires:
 - One accepted POST per create transaction followed by independent GET.
 - Required-field object references updated only for new evidence.
 - Timing, tokens, AI Units, failures and unavailable metrics recorded.
+- Server-purge before/after inventory and exact absence receipts recorded.
 - Scoped commit on the authorized branch; push/publication only under current
   authorization.
 

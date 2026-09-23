@@ -29,6 +29,22 @@ SCOPE FENCE
 - Do not use Fusion Ask, Digital Assistant or another chatbot for acceptance.
   Runtime and UI evidence must come from the target AI Agent Studio workflow or
   the target application's Run app preview.
+- Do not implement query-only children that do not supply, guard or verify an
+  included transaction.
+
+PREBUILD SERVER CLEANUP GATE
+Before creating the retry artifacts, execute the reviewed purge procedure in
+docs/builds/xdx-supplier-lifecycle-agent/server-purge-and-bo-streamlining-plan.md.
+Refresh exact server versions and consumers first. Delete in dependency order:
+DRAFT app, DRAFT workflow, dedicated lookup BOs, then the supplier BO only after
+zero external consumers are proven and the exact destructive action is authorized.
+Require exact-code not-found read-back after every deletion. Stop on version drift,
+an unknown consumer, a published copy or an unexpected dependency. Server artifact
+deletion never implies deletion of Fusion supplier business data.
+
+For the retry, create a dedicated minimal BO surface. Retain only transaction
+query/create/verification functions plus required reference lookups. Do not copy the
+completed 36-function supplier BO into the new build.
 
 STARTUP GATE
 1. Read the canonical playbook, objects/README.md, every matching object reference,
@@ -154,8 +170,7 @@ P5 — address create and persisted GET.
 P6 — site create and persisted GET.
 P7 — contact create and persisted GET.
 P8 — one retained child slice at a time in dependency order: classifications,
-     contact-address association, products/services, site assignment, then the
-     retained query-only resources.
+     contact-address association, products/services and site assignment.
 P9 — one integrated target-app golden journey, final configured suites and Closeout.
 
 PACE AND STOP RULES
