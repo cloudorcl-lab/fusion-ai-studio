@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-lifecycle-retry-purge-prompts-20260923",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-23T17:18:05.5066406Z",
+  "checkpointUtc": "2026-09-23T17:24:47.5266535Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "11b106cd60cb688df1b7f45ba1aff0a9317bfa3e0b31d56576cc14c1d7aa4049"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "d97a7be3a3019d7231945385aa91b9e460f24fe9c71035e92532e684bcdaf554"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "d75f5ba3e4a39cebdc372aa3186d1cbfc427367f525aecc12c7b8dea8decf6e5"
+    },
+    {
+      "path": "temp/xdx_supplier_lifecycle_build_prompt.md",
+      "sha256": "9c38999d9b84914153ef525583eb9fe553533673fb235fe68fff4593dc071890"
+    },
+    {
+      "path": "temp/xdx_supplier_lifecycle_plan.md",
+      "sha256": "71cca78bda21f4b2ca596ea26e811247fb958591282265d4dd042f3bc0b2143f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-lifecycle-agent/server-purge-and-bo-streamlining-plan.md",
+      "sha256": "b21399dfc3ff95366956c1df8abdd7cac7d844a857662838eb87308ddfd236bc"
+    },
+    {
+      "path": "temp/xdx_supplier_lifecycle_purge_prompt.md",
+      "sha256": "cba1690b9dc14fc5adbf9d18417cd570402fe1d3fd7914d8d47d98f2638de5eb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_retry_purge_prompt_validation_20260923.json",
+      "sha256": "8fca5f054ae1139e0f042b7808b46d32ecf36f49d0a159ba8a09598e47b8513f"
+    }
+  ],
+  "reviewNotes": "Documentation-only creation of a self-bootstrapping retry prompt and a rerunnable guarded server-plus-local purge prompt. Current cleanup state is preserved.",
+  "objectReferences": [],
+  "noObjectsReason": "No REST or BO operation is executed while authoring reusable prompts.",
+  "learningRegister": "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Instruction 1",
+      "status": "pass",
+      "reason": "Handoff, canonical playbook, registry and prior purge evidence reviewed.",
+      "evidence": [
+        "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Reusable retry prompt scope",
+      "status": "pass",
+      "reason": "Worktree bootstrap, clean-seed boundary, server purge and local purge outcomes are recorded.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/intake-and-learning-register.md"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Documentation-only authoring",
+      "status": "pass",
+      "reason": "User authorized prompt creation; this task does not execute any purge or create a worktree.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "No object operation",
+      "status": "not-applicable",
+      "reason": "The prompt documents future guarded BO cleanup but performs no current BO operation.",
+      "evidence": [
+        "docs/lessons/objects/README.md"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Prompt validation",
+      "status": "pass",
+      "reason": "All 22 structural, path, worktree, server-order and preservation checks pass.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/evidence/xdx_retry_purge_prompt_validation_20260923.json"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Continuous timing",
+      "status": "pass",
+      "reason": "First observed checkpoint and prior read-only timing gap are recorded.",
+      "evidence": [
+        "docs/builds/xdx-supplier-lifecycle-agent/time-tracker.md"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "No hidden mutation",
+      "status": "pass",
+      "reason": "Prompts prohibit force/reset/clean/prune, protect shared BOs and preserve unrelated files, stashes, remote refs and Fusion records.",
+      "evidence": [
+        "temp/xdx_supplier_lifecycle_purge_prompt.md"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Reusable prompts",
+      "status": "pass",
+      "reason": "Updated execution prompt, aligned plan, rerunnable purge prompt and current handoff are complete.",
+      "evidence": [
+        "temp/xdx_supplier_lifecycle_build_prompt.md",
+        "temp/xdx_supplier_lifecycle_plan.md",
+        "temp/xdx_supplier_lifecycle_purge_prompt.md",
+        "docs/handoffs/ACTIVE_HANDOFF.md"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "No model-backed workflow or app test is in scope; token usage is not applicable.",
+    "aiUnits": "No AI Studio workflow or app test is in scope; AI Unit usage is zero.",
+    "timingGaps": "Earlier read-only inspection preceded the first observed checkpoint; validation JSON generation is measured. Document editing and final response time are not separately instrumented."
+  }
+}

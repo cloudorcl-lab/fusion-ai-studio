@@ -1,6 +1,6 @@
 # Active Handoff
 
-Active task: `xdx-supplier-lifecycle-local-purge-20260923` on base branch
+Active task: `xdx-supplier-lifecycle-retry-purge-prompts-20260923` on base branch
 `TestingWFBuildTools` in
 `C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1`.
 
@@ -42,6 +42,19 @@ Reusable inputs:
 
 - [optimized execution prompt](../../temp/xdx_supplier_lifecycle_build_prompt.md)
 - [optimized phased plan](../../temp/xdx_supplier_lifecycle_plan.md)
+- [rerunnable purge prompt](../../temp/xdx_supplier_lifecycle_purge_prompt.md)
+
+The execution prompt now owns retry bootstrap. It first invokes the purge prompt,
+then creates a unique branch/worktree from `TestingWFBuildTools`, copies only the
+unprinted environment file when needed, removes the exact prior implementation
+files in the new branch, commits a clean-seed boundary and reruns Startup before
+P0. Do not use `codex/xdx-agent-app-clean-base`; it has diverged and lacks current
+improvements.
+
+Prompt validation passes all 22 structural and safety checks. Evidence:
+[xdx_retry_purge_prompt_validation_20260923.json](../builds/xdx-supplier-lifecycle-agent/evidence/xdx_retry_purge_prompt_validation_20260923.json).
+This prompt-authoring task performed no worktree creation, server deletion or Fusion
+business-data operation.
 
 Before the retry build, obtain exact-target destructive authorization, refresh all
 ids and versions, and purge in dependency order: DRAFT app, DRAFT workflow,

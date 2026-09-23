@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-lifecycle-retry-purge-prompts-20260923",
+  "generatedUtc": "2026-09-23T17:23:24.0891394Z",
+  "jsonGenerationSeconds": 0.225262,
+  "result": "PASS",
+  "checks": {
+    "executionFenceBalanced": true,
+    "purgeFenceBalanced": true,
+    "attemptPlaceholder": true,
+    "uniqueWorktree": true,
+    "worktreeCreate": true,
+    "cleanManifestComplete": true,
+    "historicalEvidencePreserved": true,
+    "startupBeforeCleanup": true,
+    "cleanSeedCommit": true,
+    "purgeExactServerCodes": true,
+    "purgeDependencyOrder": true,
+    "sharedBoGuard": true,
+    "businessDataExcluded": true,
+    "worktreePathGuard": true,
+    "normalWorktreeRemove": true,
+    "noForcedWorktreeCommand": true,
+    "integratedBranchDelete": true,
+    "remoteDefaultFalse": true,
+    "planHasPrebuildA": true,
+    "planHasPrebuildB": true,
+    "handoffLinksAll": true,
+    "onlyBaseWorktree": true
+  },
+  "failedChecks": []
+}

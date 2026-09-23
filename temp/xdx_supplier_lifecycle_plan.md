@@ -146,9 +146,9 @@ Fixture rules:
 
 ## Phased delivery
 
-### Prebuild — server review and purge — target 25–40 minutes
+### Prebuild A — prior-attempt purge — target 25–40 minutes
 
-- Execute
+- Execute `temp/xdx_supplier_lifecycle_purge_prompt.md` and
   `docs/builds/xdx-supplier-lifecycle-agent/server-purge-and-bo-streamlining-plan.md`.
 - Refresh exact ids, versions/ETags, DRAFT/published state and reverse consumers.
 - After explicit exact-target authorization, delete in dependency order: DRAFT app,
@@ -160,7 +160,24 @@ Fixture rules:
   lessons and this prompt/plan, without the completed app/workflow/BO/test artifacts.
 
 Exit: every authorized old server artifact is absent, every retained shared artifact
-has a recorded owner, and the new worktree cannot inherit the completed build.
+has a recorded owner, and the exact previous local worktree/branch is absent or has
+an explicit safe-retention disposition.
+
+### Prebuild B — retry worktree and clean seed — target 15–25 minutes
+
+- From `TestingWFBuildTools`, create the unique branch and worktree named by the
+  execution prompt. Do not use the diverged `codex/xdx-agent-app-clean-base` ref.
+- Copy only the unprinted root `env.properties` when the new worktree needs it.
+- Pass the current-task Startup receipt before tracked cleanup.
+- Remove the exact prior app, workflow, three BOs, state schema, supplier contract
+  scripts and supplier app/workflow tests listed in the execution prompt.
+- Preserve historical build evidence, reusable governance, object references,
+  optimized prompts/plans and unrelated files.
+- Verify and commit the clean-seed boundary, then rerun Startup.
+
+Exit: the retry has a unique registered worktree, a clean branch whose first task
+commit removes the prior implementation, a fresh build directory and no inherited
+runtime/test evidence that can satisfy current acceptance.
 
 ### P0 — Startup and contracts — target 20–30 minutes
 
@@ -253,8 +270,9 @@ and clear DRAFT/published status.
 
 ## Pace controls
 
-Target: no more than eight focused execution hours for the complete retained scope,
-excluding login wait, tenant outage and product-service outage.
+Target: no more than eight focused execution hours for P0-P9, excluding the
+prior-attempt purge, retry-worktree bootstrap, login wait, tenant outage and
+product-service outage.
 
 At every two-hour checkpoint record accepted slices, rework count and the next
 blocking boundary. If no new slice passed, stop suite expansion and diagnose. If

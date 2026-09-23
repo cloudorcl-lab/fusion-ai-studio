@@ -4,12 +4,67 @@ Use this prompt for a clean implementation or rebuild. The phased plan at
 `temp/xdx_supplier_lifecycle_plan.md` owns scope and acceptance. The canonical
 living-build playbook and object references remain authoritative.
 
+Before running it, replace `<attempt-id>` with a unique lower-kebab identifier,
+for example `retry-20260924-a`. Run the prompt from the governed base checkout,
+not from an old supplier lifecycle worktree.
+
 ```text
 Read docs/handoffs/ACTIVE_HANDOFF.md first.
 
-Execute temp/xdx_supplier_lifecycle_plan.md in the authorized XDX worktree and
-branch. Verify the checkout before editing. Use only that checkout's
-env.properties and never print credentials. Preserve unrelated work.
+ATTEMPT_ID=<attempt-id>
+BASE_REF=TestingWFBuildTools
+RETRY_BRANCH=codex/xdx-supplier-lifecycle-agent-<attempt-id>
+RETRY_WORKTREE=C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-lifecycle-agent-<attempt-id>
+BUILD_ID=xdx-supplier-lifecycle-agent-<attempt-id>
+
+Execute the bootstrap below, then execute temp/xdx_supplier_lifecycle_plan.md in
+the new XDX worktree and branch. Use only that worktree's env.properties and never
+print credentials. Preserve unrelated work.
+
+PREVIOUS-ATTEMPT PURGE
+1. From the governed base checkout, execute
+   temp/xdx_supplier_lifecycle_purge_prompt.md for the exact previous attempt.
+2. Treat already-absent local targets as a verified no-op. Refresh server versions,
+   consumers and DRAFT/published state before deletion.
+3. Do not create the retry worktree until the purge prompt has a passing receipt or
+   an explicit shared-BO retention disposition. Fusion business records are never
+   part of this purge.
+
+WORKTREE CREATION AND CLEAN-SEED GATE
+1. Validate ATTEMPT_ID against `^[a-z0-9]+(?:-[a-z0-9]+)*$`. Resolve the repository
+   root, BASE_REF, RETRY_BRANCH and RETRY_WORKTREE. Stop if the branch is registered,
+   the path exists, the base has unresolved Git operations, or scoped base changes
+   would be overwritten. Never reset, clean, stash, prune or reuse an old worktree.
+2. Confirm BASE_REF contains the current handoff, canonical playbook, object registry,
+   this prompt, the phased plan and the purge prompt. Record its exact commit.
+3. Create the retry with:
+   `git worktree add -b <RETRY_BRANCH> <RETRY_WORKTREE> <BASE_REF>`.
+   Read back `git worktree list --porcelain`, branch and HEAD from the new path.
+4. If the governed base has `env.properties` and the new worktree does not, copy it
+   directly to the new root without displaying its contents. Do not copy `.debug`,
+   `test-reports`, credentials caches or any other generated state.
+5. In the new worktree, reread the handoff, playbook and object registry. Create a
+   task-specific Startup receipt under `docs/builds/<BUILD_ID>/` and pass PolicyOnly,
+   Startup and the startup-package verifier before modifying tracked artifacts.
+6. Establish a clean implementation seed in the retry branch by removing only these
+   tracked prior-build artifacts when present:
+   - `src/apps/xdx_supplier_lifecycle.app`
+   - `src/workflows/xdx_supplier_lifecycle_agent.wf`
+   - `src/businessObjects/xdx_supplier_information.bo`
+   - `src/businessObjects/xdx_supplier_procurement_business_units.bo`
+   - `src/businessObjects/xdx_supplier_product_service_categories.bo`
+   - `src/contracts/xdx_supplier_lifecycle_state.schema.json`
+   - `scripts/tests/xdx-supplier-lifecycle/`
+   - `test/apps/xdx_supplier_lifecycle/`
+   - `test/workflows/xdx_supplier_lifecycle_agent/`
+7. Preserve `docs/builds/xdx-supplier-lifecycle-agent/` as historical evidence and
+   preserve the optimized prompt, plan, canonical lessons, object references and
+   unrelated repository files. Create fresh current records only under
+   `docs/builds/<BUILD_ID>/`; historical success never satisfies retry acceptance.
+8. Verify the exact removal manifest, absence of generated `.debug`/`test-reports`,
+   current receipt, clean scope and preservation list. Commit this boundary on the
+   retry branch as `chore: initialize clean supplier lifecycle retry <attempt-id>`.
+   Rerun Startup after the commit and do no app/BO/workflow authoring until it passes.
 
 OUTCOME
 Deliver an AI Agent Studio Agentic App for the required-field supplier lifecycle:
@@ -33,7 +88,8 @@ SCOPE FENCE
   included transaction.
 
 PREBUILD SERVER CLEANUP GATE
-Before creating the retry artifacts, execute the reviewed purge procedure in
+Before creating the retry artifacts, require the passing receipt from
+temp/xdx_supplier_lifecycle_purge_prompt.md and the reviewed procedure in
 docs/builds/xdx-supplier-lifecycle-agent/server-purge-and-bo-streamlining-plan.md.
 Refresh exact server versions and consumers first. Delete in dependency order:
 DRAFT app, DRAFT workflow, dedicated lookup BOs, then the supplier BO only after
@@ -174,8 +230,9 @@ P8 — one retained child slice at a time in dependency order: classifications,
 P9 — one integrated target-app golden journey, final configured suites and Closeout.
 
 PACE AND STOP RULES
-- Target no more than eight focused execution hours for the full retained scope,
-  excluding user login, tenant outage and product-service outage.
+- Target no more than eight focused execution hours for P0-P9, excluding the
+  prior-attempt purge, retry-worktree bootstrap, user login, tenant outage and
+  product-service outage.
 - At each two-hour checkpoint, compare accepted slices with elapsed time. If no
   new slice passed, stop broad execution and diagnose the blocking boundary.
 - Stop after the same failure signature appears twice without new evidence.
