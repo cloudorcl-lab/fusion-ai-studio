@@ -7,7 +7,7 @@ Machine bootstrap package for a new AI Studio agent-app build.
 Use it to turn an agent-app build from a series of rediscovered decisions into
 a controlled, auditable delivery flow. Isolated worktrees protect customer work
 from unrelated state, while explicit MVP requirements, golden paths, ATLAS next
-actions, and cost evidence reduce tangential testing, rework, and late surprises.
+actions, and accuracy, completeness and timing evidence reduce tangential testing, rework, and late surprises.
 
 ## Structure
 
@@ -42,20 +42,9 @@ flowchart TD
 
 ## Install contract
 
-1. Follow the ZIP's `INSTALL.md` to install this package and activate its generated
-   `repository-seed/`. A source-template checkout has no generated seed: build the
-   install ZIP with the repository's packaging script first.
-2. Merge root governance, fill the handoff and intake records, and verify the
-   living-build contract before an app build. The seed root `AGENTS.md` supplies
-   the lifecycle entrypoint; this package's `AGENTS.md` supplies startup mechanics.
-3. Commit the activated files and this package so new worktrees inherit them.
-4. Create a new worktree using `scripts/New-AgentAppBuildWorktree.ps1` from that
-   committed base. Verify the target checkout, read its active handoff and applicable
-   governance, reconcile the current task receipt, and run the living-build and
-   startup verifiers there. Continue in the current session or optionally start
-   a new one.
-5. Materialize `templates/` in `docs/builds/<build-id>/`, except
-   `active-handoff.md`, which belongs at `docs/handoffs/ACTIVE_HANDOFF.md`.
+For installation into an unconfigured repository, follow the ZIP's INSTALL.md to activate its generated repository-seed, merge governance and commit it. Generate distributions with the repository packaging script; do not treat an old generated seed or ZIP as newer than the canonical source.
+
+For an already configured repository, follow [the startup contract](AGENTS.md): read the handoff first, select new/retry versus resume, initialize records before the current-task Startup gate, and verify in the target checkout. Do not reinstall the seed or copy historical acceptance into a new receipt. The source model indexes in docs/build-models/ select the current prompt and plan; published ZIPs require a separate rebuild and verification before distribution.
 
 ## Rollback and uninstall
 

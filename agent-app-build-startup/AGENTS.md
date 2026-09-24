@@ -6,18 +6,10 @@ authoritative.
 
 ## Non-negotiable startup order
 
-1. Read `docs/handoffs/ACTIVE_HANDOFF.md` at the target repository first, then
-   the canonical playbook. Activate and commit the ZIP's repository seed before
-   beginning a build, following `INSTALL.md`; reread the activated governance and
-   reconcile the current session/task receipt before the Startup gate. A new
-   session is optional.
-2. Create a **new Git worktree** for this app build. Do not build in the base
-   checkout or reuse an existing worktree.
-3. Run `scripts/Verify-AgentAppBuildStartup.ps1` from this package and
-   `scripts/verify-living-build-contract.ps1` from the target repository root.
-4. Initialize the build records from `templates/` under the new worktree's
-   active build directory.
-   Use `templates/active-handoff.md` for the one canonical handoff path.
+1. Read the target repository's active handoff, canonical playbook and applicable object references. When installing a ZIP into an unconfigured repository, activate and commit its seed following INSTALL.md. In this already configured repository, use committed current governance; do not reinstall an older seed. A new session is optional.
+2. For new/retry builds, create a **new Git worktree** from the reviewed committed ref. For resume, verify the existing build worktree, branch, HEAD and checkpoint; do not create another attempt. Never silently reuse a conflicting path or branch.
+3. Initialize build records from templates/ in the target build directory, including the learning register, time tracker and current-task session receipt. Read the existing handoff before replacing it with the current transition record.
+4. Run this package's scripts/Verify-AgentAppBuildStartup.ps1. From the target repository root run scripts/verify-living-build-contract.ps1 -PolicyOnly, then follow the canonical session procedure with -SessionRecord, -SessionId and -Phase Startup. A policy-only PASS is not session readiness.
 5. Read `.agents/skills/aistudio/SKILL.md` and only the prompt references that
    match the requested artifact.
 6. Complete the requirement-slice register and architecture self-review before

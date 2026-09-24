@@ -1,5 +1,16 @@
 # Active Handoff
 
+Current task: next-run governance audit. Corrected source models are version 1.0.1; no next build started. New/retry builds create a new worktree from the committed base; resume only a verified existing active build.
+
+- [Audit and corrections](../builds/xdx-next-run-governance-audit-20260924/audit.md)
+- [Audit time tracker](../builds/xdx-next-run-governance-audit-20260924/time-tracker.md)
+- [Current build prompt and plan](../build-models/object-lifecycle/README.md)
+- [Current purge prompt and plan](../build-models/artifact-purge/README.md)
+
+The existing install ZIP is historical, not refreshed by these source corrections. Rebuild and validate a portable package before distribution.
+
+## Preserved prior disposition
+
 Updated 2026-09-24T18:05:37.152Z. Supplier retry purge COMPLETE TO USER-APPROVED DISPOSITIONS.
 Base TestingWFBuildTools. No purge action remains.
 
@@ -11,8 +22,8 @@ Original shared BOs, Fusion business records and remote refs untouched.
 
 Retry worktree and exact Git administrative directory are absent; only base remains
 registered. Archive branch codex/xdx-supplier-lifecycle-agent-retry-20260923-a remains
-at6c851177ca6c652c56348af12f828d6a625d480c. User approved this alternative to integration.
-Verified history bundle plus78hash-verified ignored test reports are preserved in
+at 6c851177ca6c652c56348af12f828d6a625d480c. User approved this alternative to integration.
+Verified history bundle plus 78 hash-verified ignored test reports are preserved in
 the purge evidence directory. Git unregistered the worktree but hit Windows residual
 permissions; one verified exact-path native cleanup completed removal.
 

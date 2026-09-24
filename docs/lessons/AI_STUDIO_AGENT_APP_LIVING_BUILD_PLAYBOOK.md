@@ -521,7 +521,9 @@ node .agents\skills\aistudio\scripts\aistudio.js do-save-app --file src\apps\<ap
 
 ### Gate 6 — Complete workflow test synchronization
 
-Process one workflow at a time and one mutating action at a time.
+Process one workflow at a time and one mutating action at a time. Gate numbers identify responsibilities, not a requirement to finish broad regression before live proof: complete the first slice's local/focused checks, prove its Gate 7 live golden path, then expand routes and run required cumulative/final suites. Reuse that current golden-path receipt; do not replay an accepted write.
+
+The approved requirement register and test manifest bound ATLAS actions. Account for every suggested action as required, outside scope, or blocked, with a reason and evidence. An outside-scope suggestion does not authorize execution or block independent approved work. If `finalSummaryAllowed` remains false solely because of documented outside-scope suggestions, retain that result and a scoped completion receipt proving all approved scenarios current, passed and judged. Never rewrite the planner result or use this exception for a required failure, missing recording, judge or coverage gap. If tooling cannot run the approved suite without expanding scope, record a tooling blocker.
 
 ```powershell
 node .agents\skills\aistudio\scripts\aistudio.js get-workflow-test-sync-plan --file src\workflows\<workflow>.wf --recommended-batch-only true --format focused-json
@@ -532,7 +534,7 @@ After each focused action:
 1. Complete required recording, replay, compaction, model-data, or judge authoring.
 2. Validate only the affected test deterministically.
 3. Refresh the focused plan.
-4. Continue until `finalSummaryAllowed: true` and no create/update action remains.
+4. Continue until `finalSummaryAllowed: true` and no required create/update action remains, or satisfy the documented scoped completion rule above.
 
 When a topology edit removes nodes and the current CLI rejects an in-place test update because the existing path assertions reference those removed node codes:
 
@@ -541,7 +543,7 @@ When a topology edit removes nodes and the current CLI rejects an in-place test 
 3. Refresh the focused sync plan and recreate the scenario from the current topology through the normal single-action loop.
 4. Never bypass the stale-path check by hand-editing final test JSON or weakening the current expected path.
 
-Do not run a full suite while authoring actions or required data continuations remain.
+Do not run a full suite while in-scope authoring actions or required data continuations remain.
 
 If a required false or safety branch depends only on non-recordable Agent or LLM outputs and the current CLI exposes no supported replay injection point:
 
@@ -559,7 +561,7 @@ with the same valid route input, then register a scoped `recording-failed`
 deferral if the null response repeats. Retain focused child and authenticated
 browser evidence separately; the deferred parent replay was not executed.
 
-An accounted deferred scenario may advance to app synchronization only when the latest sync plan reports `finalSummaryAllowed: true`, the canonical suite is current, deterministic checks pass, and no required judge remains. Do not describe the deferred runtime branch as executed.
+An accounted deferred scenario may advance to app synchronization only when the latest sync plan reports `finalSummaryAllowed: true` (or meets the scoped completion rule above), the canonical suite is current, deterministic checks pass, and no required judge remains. Do not describe the deferred runtime branch as executed.
 
 Then run one canonical configured-mode workflow suite. Omit
 `--evaluation-mode` so tests retain their configured modes. Omit
@@ -893,7 +895,7 @@ contract.
 
 - [ ] One live golden path passed before broad regression.
 - [ ] Each resource object with a successful BO GET has one immutable first-success sample; later GETs did not append, replace or refresh it.
-- [ ] Every required workflow sync plan permits final summary.
+- [ ] Every required workflow sync plan permits final summary or meets the documented Gate 6 scoped completion rule; raw planner results and scope reconciliation are retained.
 - [ ] Zero required tests failed.
 - [ ] Zero required judges remain.
 - [ ] App synchronization has no required backing action.
@@ -912,83 +914,8 @@ contract.
 
 ## Copy/paste kickoff prompt for every new build
 
-```text
-Instruction 1: Read docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md and docs/lessons/objects/README.md in full before planning or changing anything. Inventory every parent and child resource object, read each matching object reference, and record the selected references and releases in the active learning register. Apply prior lessons to the intake and architecture. During the build, capture evidence-backed lessons, corrections, delays, token/time costs, and dependency changes. Before completion, route lifecycle and architecture lessons to the canonical playbook, route GET/POST/JSON/schema/filter/paging lessons to the matching object references, refine or retire stale guidance, clean dependency drift, validate the documentation, and update the relevant change records.
+Use the versioned [object lifecycle build model](../build-models/object-lifecycle/README.md) for the execution prompt and plan. Fill and pin the selected version in the tracked build directory. The completed plan owns scope; this playbook owns lifecycle. For cleanup, use the [artifact purge model](../build-models/artifact-purge/README.md). Do not maintain a second kickoff prompt here.
 
-Build this Oracle Fusion AI Studio agent app using a contract-first, golden-path-first lifecycle.
-
-ARTIFACT
-- App name/code: <APP_NAME> / <APP_CODE>
-- Required workflows and codes: <LIST>
-- Required tools/data artifacts and codes: <LIST>
-- Target project or explicitly named app package: <PATH_OR_PACKAGE>
-
-BUSINESS OUTCOME
-- User and authenticated test identity: <ROLE_AND_IDENTITY>
-- Business goal: <GOAL>
-- Exact golden-path prompt/trigger: <PROMPT_OR_TRIGGER>
-- Required output fields, widgets, and cardinality: <CONTRACT>
-- Calculations, rankings, and tie-breaks: <RULES>
-
-DATA AND DEPENDENCIES
-- Approved sources: <LIST>
-- Required object-learning references and releases: <LIST>
-- Source-to-tool-to-specialist mapping: <TABLE>
-- Required keys, fields, units, relationships, and row counts: <LIST>
-- Expected runtime response shapes: <CONTRACT>
-- Runnable local source tests: <PATHS>
-- Masking policy: <PROFILE_OR_NONE>
-- Dependency owner and retirement trigger for every temporary dependency: <TABLE>
-
-APP AND WORKFLOW CONTRACT
-- Required app stages: <LIST>
-- Route taxonomy: <LIST>
-- Specialist dependencies by route: <TABLE>
-- Sequential/parallel/convergence boundaries: <TABLE>
-- Child input/output envelopes and normalization: <CONTRACT>
-- Terminal output owner per route: <TABLE>
-- Widget/structured-output contract: <CONTRACT>
-- Provisional model per node: <TABLE>
-
-SAFETY AND AUTHORITY
-- Approved audience vocabulary: <LIST>
-- Prohibited claims/actions: <LIST>
-- Human-review and approval boundaries: <TEXT>
-- Remote DRAFT writes: <AUTHORIZED_OR_NOT>
-- Live reads/writes: <AUTHORIZED_OR_NOT>
-- Prepared branch data: <AUTHORIZED_OR_NOT>
-- Publication and external side effects: <AUTHORIZED_SCOPE_OR_NOT>
-
-TEST AND EFFICIENCY CONTRACT
-- Focused tests and durable scenario IDs: <TABLE>
-- Representative live baseline and replay plan: <TABLE>
-- Deterministic checks and semantic rubrics: <TABLE>
-- Boundary budgets and compaction groups: <TABLE>
-- Accuracy, completeness and elapsed-time targets; optional explicit cost constraints: <TABLE>
-
-EXECUTION RULES
-1. Read the active handoff first, learn and open the learning register/time tracker, then pass the current Session conformance receipt Startup gate.
-2. Validate source contracts before AI Studio authoring.
-3. Reconcile environment identity and exact artifact codes before mutation.
-4. Build data dependencies before specialists.
-5. Complete each specialist before the orchestrator.
-6. Complete every app stage, route, boundary, normalizer, and terminal before live QA.
-7. Process one workflow sync action at a time until finalSummaryAllowed is true.
-8. Run one exact live golden path before broad regression.
-9. Repair only the classified responsible owner and rerun only the affected test.
-10. Run one canonical configured-mode suite per completed workflow, resolve judges without rerunning, then complete app sync and final summary.
-11. Optimize models only after correctness.
-12. Learn and clean before completion: merge lifecycle lessons into the canonical playbook, merge operation-level lessons into the matching object references, retire duplicate or stale guidance, reconcile dependencies and current-status records, update the relevant change records, and pass the current Session conformance receipt Closeout gate.
-
-STOP CONDITIONS
-- User stop.
-- Authentication cannot be recovered through the supported flow.
-- Required source, input, permission, or live data is unavailable.
-- A newer remote DRAFT would be overwritten without approval.
-- Prepared data, publication, external side effects, destructive cleanup, or a material business decision requires new authority.
-
-Do not stop because the task is long, a process is quiet, one test passed or failed, or sync actions remain. Inspect progress evidence before declaring a stall. Do not run broad regression before the golden path.
-```
 
 ## Verified AI Studio references
 
@@ -1018,7 +945,7 @@ After every update:
 4. Resolve every local Markdown link.
 5. Check code fences and tables.
 6. Scan for placeholders outside the copy/paste template.
-7. Verify all CLI commands against current local help.
+7. Verify added or changed CLI commands against current local help. Reuse recorded command verification when the command and CLI version are unchanged; revalidate on version drift or contradictory behavior.
 8. Scan for duplicate or contradictory rules.
 9. Confirm dependency cleanup guidance did not authorize persistent-state deletion.
 10. Confirm the learning and hand-forward gate appears in the build sequence and Definition of Done.
@@ -1030,6 +957,7 @@ After every update:
 
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
+| 2026-09-24 | [Next-run governance audit](../builds/xdx-next-run-governance-audit-20260924/audit.md) | Reconcile live-first test order and scoped ATLAS completion; consolidate kickoff into versioned models; reuse unchanged command evidence | Policy/session regressions and scoped document review; future run speed unmeasured |
 | 2026-09-24 | [Timestamped retry introspection](../builds/xdx-build-introspection-20260924/xdx_introspection_20260924.md) | Prioritize accuracy/completeness/elapsed time; require independent requirement coverage, complete representative transaction proof, activity-level timing and explicit keep-alive continuity limits. Promote retained retry amendments into base without merging runtime artifacts. | Local governance regression and document checks recorded in the introspection verification receipt; future-build speed and scheduler automation are unproven. |
 | 2026-09-24 | XDX Supplier Lifecycle retry P3-P7 corrections and final read acceptance | Refine existing source, state, native-widget and test owners with exact rendered-body JSON validation, separate read/transaction patch state, canonical widget envelope checks, observed-terminal ordering after test updates and deterministic ownership of exact transaction control commands. | Retained P3-P7 acceptance, eleven local contracts, retained 19-case slice suite, focused command-repair replay and native review/approval/edit/read regression; final cumulative acceptance tracked in the build receipt. No accepted POST repeated. |
 | 2026-09-23 | XDX Supplier Lifecycle rework-concentration audit | Make the first real app Query plus configured BO route a prerequisite for suite expansion; require five-minute same-tab Studio keep-alive while browser acceptance is pending. | Root and skill require the reusable Query preflight; living-build negative fixtures reject missing policy, missing skill instruction and missing validator; current workflow and validator regression suite pass. |

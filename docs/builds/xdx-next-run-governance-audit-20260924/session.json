@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-next-run-governance-audit-20260924",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-24T19:47:36.260Z",
+  "checkpointUtc": "2026-09-24T19:52:40.258Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "a0cfebddd0f0bb0bd394933ffc82fd06e259549e5ce08b7b202b21360ca0b3fb"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "40d5992df9147e236f3d70ab1ac9e094dde40866086de85c6c5b114cb35b8444"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "d75f5ba3e4a39cebdc372aa3186d1cbfc427367f525aecc12c7b8dea8decf6e5"
+    }
+  ],
+  "reviewNotes": "Reviewed active handoff, canonical playbook and object registry; governance-only correction task. Existing historical evidence is not a new runtime acceptance claim. Reviewed corrected playbook, active handoff and model/startup diff; scoped completion never waives required acceptance. Frozen models unchanged.",
+  "objectReferences": [],
+  "noObjectsReason": "Governance documentation and local timing helper only; no resource operation.",
+  "learningRegister": "docs/builds/xdx-next-run-governance-audit-20260924/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-next-run-governance-audit-20260924/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Scoped governance corrections reviewed; local verification passed; preserved historical and unrelated state. Portable ZIP release explicitly excluded.",
+      "evidence": [
+        "docs/builds/xdx-next-run-governance-audit-20260924/audit.md",
+        "docs/builds/xdx-next-run-governance-audit-20260924/evidence/local-verification.md"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Scoped governance corrections reviewed; local verification passed; preserved historical and unrelated state. Portable ZIP release explicitly excluded.",
+      "evidence": [
+        "docs/builds/xdx-next-run-governance-audit-20260924/audit.md",
+        "docs/builds/xdx-next-run-governance-audit-20260924/evidence/local-verification.md"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Scoped governance corrections reviewed; local verification passed; preserved historical and unrelated state. Portable ZIP release explicitly excluded.",
+      "evidence": [
+        "docs/builds/xdx-next-run-governance-audit-20260924/audit.md",
+        "docs/builds/xdx-next-run-governance-audit-20260924/evidence/local-verification.md"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Current governance audit scope",
+      "status": "not-applicable",
+      "reason": "Governance documentation and local timing helper only; no resource operation.",
+      "evidence": []
+    },
+    {
+      "id": "verification",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Scoped governance corrections reviewed; local verification passed; preserved historical and unrelated state. Portable ZIP release explicitly excluded.",
+      "evidence": [
+        "docs/builds/xdx-next-run-governance-audit-20260924/audit.md",
+        "docs/builds/xdx-next-run-governance-audit-20260924/evidence/local-verification.md"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Scoped governance corrections reviewed; local verification passed; preserved historical and unrelated state. Portable ZIP release explicitly excluded.",
+      "evidence": [
+        "docs/builds/xdx-next-run-governance-audit-20260924/audit.md",
+        "docs/builds/xdx-next-run-governance-audit-20260924/evidence/local-verification.md"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Scoped governance corrections reviewed; local verification passed; preserved historical and unrelated state. Portable ZIP release explicitly excluded.",
+      "evidence": [
+        "docs/builds/xdx-next-run-governance-audit-20260924/audit.md",
+        "docs/builds/xdx-next-run-governance-audit-20260924/evidence/local-verification.md"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Scoped governance corrections reviewed; local verification passed; preserved historical and unrelated state. Portable ZIP release explicitly excluded.",
+      "evidence": [
+        "docs/builds/xdx-next-run-governance-audit-20260924/audit.md",
+        "docs/builds/xdx-next-run-governance-audit-20260924/evidence/local-verification.md"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Unavailable",
+    "aiUnits": "No tenant runtime",
+    "timingGaps": "Initial review start and activity split unavailable; checkpoint onward recorded."
+  }
+}

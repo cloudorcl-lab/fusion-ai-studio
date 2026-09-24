@@ -9,7 +9,7 @@ The approved golden-path manifest is the allowed test inventory for the MVP. Eve
 1. Local deterministic source, schema, key, calculation, and output-contract checks for the approved MVP slice.
 2. One golden-path test for each required user journey.
 3. One focused workflow or app test for each completed slice.
-4. One canonical configured-mode suite only after the current ATLAS sync plan reports `finalSummaryAllowed: true` with no required action or judge.
+4. One canonical configured-mode suite after live golden-path proof and all required authoring actions. Apply the canonical playbook Gate 6 scoped completion rule; required judges must be resolved before acceptance.
 
 ## Explicit-approval list
 
@@ -21,6 +21,6 @@ Do not create, record, run, or attach exploratory scenarios, prompt variations, 
 2. Execute one approved action that maps to the golden-path manifest.
 3. Validate only the affected test deterministically when required.
 4. Refresh the same plan.
-5. Stop and request direction when the next action is outside the manifest.
+5. Record outside-manifest suggestions and continue independent approved actions. Request direction only when a scope decision blocks required acceptance; apply the canonical Gate 6 completion rule.
 
 Never use a full suite to discover the next test action. A recorder failure or non-recordable branch is a scoped deferral with honest evidence, not permission to invent synthetic coverage.
