@@ -1,0 +1,18 @@
+{
+  "checkedUtc": "2026-09-24T20:16:20.705Z",
+  "files": 6,
+  "links": 25,
+  "requirementIds": [
+    "SUP-READ",
+    "SUP-CREATE",
+    "ADR-READ",
+    "ADR-CREATE",
+    "SITE-READ",
+    "SITE-CREATE",
+    "CON-READ",
+    "CON-CREATE"
+  ],
+  "oldPlanDeleted": true,
+  "buildStarted": false,
+  "errors": []
+}

@@ -1,6 +1,12 @@
 # Active Handoff
 
-Current task: install ZIP rebuilt and locally verified. Corrected source models are version 1.0.1; no next build started. New/retry builds create a new worktree from the committed base; resume only a verified existing active build.
+Current task: supplier rebuild planning complete; execution has not started. Scope is exactly suppliers, addresses, sites and contacts, query and create only. All other sub-objects are excluded. The old supplier plan is deleted and its runnable prompt retired.
+
+- [Current supplier build plan](../builds/xdx-supplier-core-20260924/plan.md)
+- [Current supplier execution prompt](../builds/xdx-supplier-core-20260924/execution-prompt.md)
+- [Planning time tracker](../builds/xdx-supplier-core-20260924/time-tracker.md)
+
+Next action after user launch: create the plan's new worktree from the committed base, record the resolved SHA and establish a fresh execution receipt. Do not reuse the planning receipt as build readiness.
 
 - [Audit and corrections](../builds/xdx-next-run-governance-audit-20260924/audit.md)
 - [Audit time tracker](../builds/xdx-next-run-governance-audit-20260924/time-tracker.md)

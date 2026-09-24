@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-core-planning-20260924",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-24T20:12:48.836Z",
+  "checkpointUtc": "2026-09-24T20:16:48.263Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "9f2b1248e5e3793b3a70ddeb74bc296fb49eb6eacd9f5ffd071175403b9fc3ab"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "40d5992df9147e236f3d70ab1ac9e094dde40866086de85c6c5b114cb35b8444"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "d75f5ba3e4a39cebdc372aa3186d1cbfc427367f525aecc12c7b8dea8decf6e5"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "c29d131687fb29eba7ea5cbd3872d8e0f6ca7f381be89f4db6f724ed7d9374cb"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "293850aec4a47f53b33f815aacd74cadca759a7857a2a37be1b00928f8968272"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "3ef6cd2c2b9fc018358ec9dd53a52cda97d418a6fbb4dbe818060c1a08cc8dc4"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "f75a97d74fea6a9b0bbf45b3b4057d5eb517b9ab5349c4b401a0c6e11335e0a7"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "sha256": "946cb59d6209b4b0a6543e81c10932a96dc503e17766793c9cf9230b667da19e"
+    }
+  ],
+  "reviewNotes": "Planning only: replace prior supplier plan with four-resource scope. Existing canonical/model guidance read; selected 26C object references reviewed. BU GET is only a site field dependency, not another child lifecycle. No live claim or changed object semantics. Reviewed updated single handoff and exact eight-row scope; old runnable prompt retired. Plan/manifest/link checks recorded.",
+  "objectReferences": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "release": "26C; API 11.13.18.05; current target revalidation before execution"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "release": "26C; API 11.13.18.05; current target revalidation before execution"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "release": "26C; API 11.13.18.05; current target revalidation before execution"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "release": "26C; API 11.13.18.05; current target revalidation before execution"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "release": "26C; API 11.13.18.05; current target revalidation before execution"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-core-20260924/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-core-20260924/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Planning-only delivery validated; four resources/eight operations, selected reference contracts and retained authorization recorded. No runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/plan.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/plan-validation.json"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Planning-only delivery validated; four resources/eight operations, selected reference contracts and retained authorization recorded. No runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/plan.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/plan-validation.json"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Planning-only delivery validated; four resources/eight operations, selected reference contracts and retained authorization recorded. No runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/plan.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/plan-validation.json"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Planning-only delivery validated; four resources/eight operations, selected reference contracts and retained authorization recorded. No runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/plan.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/plan-validation.json"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Planning-only delivery validated; four resources/eight operations, selected reference contracts and retained authorization recorded. No runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/plan.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/plan-validation.json"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Planning-only delivery validated; four resources/eight operations, selected reference contracts and retained authorization recorded. No runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/plan.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/plan-validation.json"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Planning-only delivery validated; four resources/eight operations, selected reference contracts and retained authorization recorded. No runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/plan.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/plan-validation.json"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Planning-only delivery validated; four resources/eight operations, selected reference contracts and retained authorization recorded. No runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/plan.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/plan-validation.json"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Unavailable",
+    "aiUnits": "No runtime",
+    "timingGaps": "Initial review before recording checkpoint unallocated; no measured build duration."
+  }
+}
