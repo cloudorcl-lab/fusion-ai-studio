@@ -1,14 +1,22 @@
 # Active Handoff
 
-Updated 2026-09-24T16:08:18.418Z. Active task: xdx-build-introspection-20260924, base TestingWFBuildTools. Governance review and local verification PASS; Closeout receipt is retained with the scoped base commit.
+Updated 2026-09-24T16:35:44.744Z. Task xdx-object-build-model-20260924: versioned prompt/plan delivery in base TestingWFBuildTools.
 
-The retry build completed on codex/xdx-supplier-lifecycle-agent-retry-20260923-a at commit 6c85117; P9/Closeout PASS is historical retained evidence. The previous base handoff's prebuild/incomplete status was stale. Runtime artifacts remain owned by that preserved worktree and are not merged into base. Never repeat accepted creates.
+User approved the analyzed reusable structure and requested tracked output outside temp.
+Current model: [Object lifecycle v1.0.0](../build-models/object-lifecycle/README.md).
+Includes execution prompt, plan template and non-executable supplier example.
+Existing requirement/test/time templates were refined in their canonical startup owners.
+Historical temp files remain unchanged; the new model has no operational temp dependency.
 
-User requested timestamped introspection in base, tested improvements and incorporation into the existing canonical playbook. Priorities: accuracy, completeness, elapsed time. Scope: lifecycle documentation, retained receipts and local governance tests. No tenant calls, publication, push, runtime mutation or object-reference migration.
+- [Intake and delivery plan](../builds/xdx-object-build-model-20260924/intake-and-learning-register.md)
+- [Time tracker](../builds/xdx-object-build-model-20260924/time-tracker.md)
+- [Verification](../builds/xdx-object-build-model-20260924/evidence/xdx_verification.txt)
+- [Session](../builds/xdx-object-build-model-20260924/xdx_session_model.json)
 
-- [Analysis and lesson dispositions](../builds/xdx-build-introspection-20260924/xdx_introspection_20260924.md)
-- [Intake](../builds/xdx-build-introspection-20260924/intake-and-learning-register.md)
-- [Time tracker](../builds/xdx-build-introspection-20260924/time-tracker.md)
-- [Session receipt](../builds/xdx-build-introspection-20260924/xdx_session_introspection.json)
-
-Next: preserve this scoped governance commit as the base for future worktrees. Local policy/session regression, links and source hashes passed. Browser scheduler and automatic activity collection remain proposals, not implemented features. Future-build speed improvement is unproven.
+Local documentation, startup and governance checks pass. Closeout receipt is retained with delivery.
+No runtime artifacts, object operations, business records, publication or remote refs changed.
+No install ZIP regenerated; no automated activity capture or browser scheduler implemented.
+Next build: copy and populate version 1.0.0 plan/prompt, pin commit and reviewed governance,
+resolve authority and requirements, then use the applicable new/resume/retry mode.
+The completed supplier retry remains at 6c85117 on its preserved branch/worktree;
+never repeat accepted creates. Prior introspection is committed in base at 6d350d3.
