@@ -23,3 +23,6 @@ CLI published app not found; workflow reports not found with200OK; verify UI.
 Catalog25 omits known workflow: never infer zero consumers.
 Receipt and timing remain in surviving base. Git does not restore deleted server state.
 Partial purge must explicitly report held targets; no complete claim while required scope unresolved.
+
+## Final approved disposition
+User approved retaining all three retry BOs and the existing retry branch as archive, with verified bundle as additional preservation. Only clean worktree removal authorized despite unintegrated status. Executed and verified: worktree registration, path and captured administrative directory absent. BO and archive branch deletion are no longer required.

@@ -1,0 +1,8 @@
+Verified 2026-09-24T18:05:37.152Z
+Only base worktree registered.
+Target worktree absent; exact captured .git/worktrees administrative directory absent.
+Archive branch tip6c851177ca6c652c56348af12f828d6a625d480c unchanged.
+Git bundle verification PASS; required ancestor7497e16938228590ad5b0350f069c75629e7df11 exists.
+78 report archive entries SHA-256 matched source before removal.
+Base HEADf0d1ef1 unchanged during cleanup; later receipt commit intentional.
+Unrelated three temp deletions preserved; no branch/BO/business-data mutation.
