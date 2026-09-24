@@ -1,0 +1,35 @@
+{
+  "capturedUtc": "2026-09-24T16:06:55.330Z",
+  "entries": [
+    {
+      "sourceCommit": "6c85117",
+      "sourcePath": "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/time-tracker.md",
+      "retainedPath": "docs/builds/xdx-build-introspection-20260924/evidence/retry_time-tracker.md",
+      "sha256": "b060aa419361cec58cd1d16656d36d7683b895ff5dce845a97048148f84955fd"
+    },
+    {
+      "sourceCommit": "6c85117",
+      "sourcePath": "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/evidence/xdx_p6_acceptance.md",
+      "retainedPath": "docs/builds/xdx-build-introspection-20260924/evidence/retry_xdx_p6_acceptance.md",
+      "sha256": "a6080f57b6aaca73387b64db269e92800f2a19c7273aa736236c5081a71f90c1"
+    },
+    {
+      "sourceCommit": "6c85117",
+      "sourcePath": "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/evidence/xdx_p7_acceptance.md",
+      "retainedPath": "docs/builds/xdx-build-introspection-20260924/evidence/retry_xdx_p7_acceptance.md",
+      "sha256": "de0e10b29c3d5ba369967bdcfca07749d6ab00008eed7f25cef60e48830bb248"
+    },
+    {
+      "sourceCommit": "6c85117",
+      "sourcePath": "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/evidence/xdx_p9_final_summary.md",
+      "retainedPath": "docs/builds/xdx-build-introspection-20260924/evidence/retry_xdx_p9_final_summary.md",
+      "sha256": "f816940b90a1063a38054562ee8c6ba76f64933ac651c21c021cbd3417c02535"
+    },
+    {
+      "sourceCommit": "6c85117",
+      "sourcePath": "docs/builds/xdx-supplier-lifecycle-agent-retry-20260923-a/evidence/xdx_p9_timing_usage.json",
+      "retainedPath": "docs/builds/xdx-build-introspection-20260924/evidence/retry_xdx_p9_timing_usage.json",
+      "sha256": "a4b30d588bd0f7ee6e3d7cbce4239f953313011fc590f90d9b7a9cd5fa9821b6"
+    }
+  ]
+}

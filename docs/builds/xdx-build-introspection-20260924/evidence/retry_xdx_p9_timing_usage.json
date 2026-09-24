@@ -1,0 +1,54 @@
+{
+  "observedAt": "2026-09-24T04:03:08.039Z",
+  "startUtc": "2026-09-23T18:38:10Z",
+  "deliveryCheckpointUtc": "2026-09-24T04:06:23.593Z",
+  "wallElapsedSeconds": 34093.593,
+  "focusedExecutionSeconds": null,
+  "interTurnWaitSeconds": null,
+  "tenantWaitSeconds": null,
+  "jsonGenerationSeconds": null,
+  "parseReviewSeconds": null,
+  "totalBuildTokens": null,
+  "totalBuildAiUnits": null,
+  "wholeBuildReworkFraction": null,
+  "unavailableReason": "The retained tracker contains timestamps and selected run metrics, but no exhaustive nonoverlapping active/idle/tenant intervals or full usage ledger. Do not derive focused labor, whole-build totals or rework percentage from wall time or overlapping cumulative suites.",
+  "workflowFinal": {
+    "tests": 19,
+    "passed": 19,
+    "requiredJudgesResolved": 9,
+    "inputTokens": 870927,
+    "outputTokens": 69679,
+    "totalTokens": 940606,
+    "aiUnits": 755,
+    "workflowTimeSeconds": 413.6,
+    "report": "evidence/xdx_p9_final_workflow_suite.json",
+    "freshness": "evidence/xdx_p9_final_workflow_freshness.json"
+  },
+  "appFinal": {
+    "tests": 1,
+    "passed": 1,
+    "requiredJudgesResolved": 1,
+    "nodeCommandDurationMs": 4143,
+    "tokens": null,
+    "aiUnits": null,
+    "reason": "App result exposes duration and node results but no token/AI-unit aggregate; final-summary metrics are explicitly the backing workflow suite."
+  },
+  "repair": {
+    "priorFinalSuiteFailures": 1,
+    "unchangedDiagnosticReplays": 1,
+    "implementedRepairs": 1,
+    "focusedRepairSteps": 4,
+    "focusedRepairCommandDurationMs": 108790,
+    "focusedRepairWorkflowSeconds": 15.7,
+    "focusedRepairTokens": 38030,
+    "focusedRepairAiUnits": 35,
+    "scope": "P9 command-intent defect only; historical P1-P8 corrections remain in phase receipts."
+  },
+  "modelPlacement": {
+    "defaultModelConfiguration": "ORA_MODEL_CONFIG_PREMIUM_OPEN_AI_GPT_4_1_MINI",
+    "llmNodes": 7,
+    "overrides": 0,
+    "optimization": "Available per CLI; not run because excluded by approved plan."
+  },
+  "timingLimits": "Eight-hour focused execution target cannot be assessed from available wall time. Eight-hour wall checkpoint observed02:38:10Z; earlier late checkpoints and approval intervals remain in tracker. No ten-hour checkpoint is due before04:38:10Z."
+}

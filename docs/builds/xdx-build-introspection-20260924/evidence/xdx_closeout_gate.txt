@@ -1,0 +1,9 @@
+Session compliance: PASS
+Living build contract: PASS
+- Canonical owner: docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md
+- Object learning registry: docs/lessons/objects/README.md
+- Startup entrypoint: AGENTS.md
+- Session-start handoff: docs/handoffs/ACTIVE_HANDOFF.md
+- AI Studio fallback: .agents/skills/aistudio/SKILL.md
+- Worktree rule: integrate governance, reread it and pass applicable Startup checks; a new session is optional
+- Naming rule: XDX codes, display names, files, branches, and worktrees

@@ -1,0 +1,11 @@
+Verified UTC: 2026-09-24T16:09:49.480Z
+Scope: documentation/governance only, base TestingWFBuildTools.
+PASS pwsh -NoProfile -File tests/test-living-build-contract.ps1
+  Optional-session positive; revalidation, session, timing, handoff, naming, sample-policy, object-registry and incomplete negative fixtures.
+PASS node tests/test-session-compliance.cjs
+  Startup/Closeout positives and 11 negative cases.
+PASS edited/new documentation: 5 owners, 30 local links, balanced fences.
+PASS retained source manifest: 5 SHA-256 matches.
+PASS git diff --check.
+Review: refinements are in existing canonical owners; no changed CLI commands, runtime artifacts, external authority or object operation contracts.
+Limits: these tests prove governance compatibility and document/evidence integrity. They do not prove future elapsed-time improvement, automatic activity capture, scheduler implementation or new runtime behavior.

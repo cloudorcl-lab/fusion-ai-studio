@@ -126,7 +126,7 @@ Verify policy and session tests, including stale identity/content, missing timin
 - **Canonical owner:** This file
 - **Temporary steward:** The owner of each active agent-app build
 - **Applies to:** Every AI Studio agent app and its backing tools, workflows, tests, data, runtime dependencies, and release evidence
-- **Last reviewed:** 2026-09-17
+- **Last reviewed:** 2026-09-24
 
 ## Purpose
 
@@ -136,9 +136,11 @@ This playbook turns lessons from completed builds into preventive controls for a
 - No architecture or configuration discovery during expensive QA.
 - Faster golden-path validation and regression.
 - More complete solutions in less elapsed time.
-- Fewer repeated tests, live calls, model tokens, and AI Units.
+- Less redundant testing and live work without reducing required proof.
 - Cleaner dependencies and one authoritative operating standard.
 - Continuous improvement from build to build.
+
+Decision priority is accuracy first, completeness second, and elapsed time third. Preserve every required acceptance condition while reducing time. Tokens and AI Units remain diagnostic measures, not success targets, unless the user explicitly sets a cost or capacity constraint. More testing is justified when it resolves a material correctness or coverage risk.
 
 The governing principle is:
 
@@ -223,7 +225,7 @@ When new evidence conflicts with existing guidance:
 
 Use terse, direct, professional responses by default. State outcomes, blockers and the next required action briefly. Include only material evidence, limitations and artifact links; expand when the user requests detail or a decision requires it. This communication default does not reduce implementation, verification or hand-forward requirements.
 
-The build checkpoint must define and track these measures:
+The build checkpoint must define and track these measures. Report defects escaping each phase, reopened phases, required scenarios accepted versus required, and elapsed time before consumption metrics. A smaller test count or lower token total is not evidence of equivalent coverage or a better build:
 
 | Objective | Required measure |
 | --- | --- |
@@ -232,7 +234,7 @@ The build checkpoint must define and track these measures:
 | No QA-discovered architecture | No new node class, source link, app stage, route, or boundary envelope is introduced after the live golden path begins, except a classified defect repair |
 | Faster QA | Static and file-backed gates run first; one live golden path precedes broad regression; one canonical suite runs after synchronization is clean |
 | Fewer live calls | One representative live data path is captured and compatible paths reuse prepared evidence |
-| Fewer tokens | Focused evidence is loaded; oversized boundaries are compacted coherently; broad reruns and premature model sweeps are avoided |
+| Diagnostic consumption | Record available tokens and AI Units to investigate bottlenecks; preserve complete evidence and required coverage |
 | Complete solution | Workflow and app sync plans are complete, required judges are resolved, and final scoped evidence has no required action |
 | Clean dependencies | Every retained dependency has an owner and purpose; obsolete internal dependencies are removed or have an explicit retirement decision |
 | Hand forward | Reusable lessons are integrated into the correct lifecycle or object-reference owner and the change logs are current |
@@ -253,7 +255,7 @@ Do not authorize remote mutation until all applicable fields are complete.
 - Advisory, write, approval, and human-review boundaries:
 - Approved audience vocabulary:
 - Prohibited claims and actions:
-- Measurable correctness, latency, token, and AI Unit targets:
+- Measurable correctness, completeness and elapsed-time targets; optional explicitly requested cost constraints:
 
 ### Data and source contract
 
@@ -315,7 +317,7 @@ For every source:
 - Deterministic assertions:
 - Semantic expected outcome and atomic rubric:
 - Boundary size budget and consistency groups:
-- Target time, tokens, and AI Units:
+- Target elapsed time with unchanged accuracy and coverage; tokens/AI Units as diagnostics:
 - Required HTML report and final-summary evidence:
 
 ### Learning contract
@@ -373,7 +375,8 @@ Preserve source-backed business intent throughout repair and QA. A tool validati
 4. Complete business, data, architecture, runtime, test, and learning contracts.
 5. Identify product-version-sensitive assumptions that require current CLI or runtime verification.
 6. Create executable local tests for source keys, calculations, schemas, cardinality, safety vocabulary, and expected examples.
-7. Separate required stage-freeze work from optional research, model sweeps, and later-stage features. Name the later gate for deferred work instead of expanding the current build.
+7. Before implementation, map every approved requirement to its resource, operation, entry route, required fields/output, implementation owner and acceptance evidence. Distinguish ordinary read/list flows from create-confirmation GETs; one does not prove the other. Include field-only follow-ups and failure/duplicate/uncertain outcomes when required. Keep unimplemented rows visibly open, reconcile the matrix at every phase exit and Closeout, and never derive the requirement inventory solely from existing tests.
+8. Separate required stage-freeze work from optional research, model sweeps, and later-stage features. Name the later gate for deferred work instead of expanding the current build.
 
 **Exit evidence:** prior lessons acknowledged, learning register active, contract approved, and source-level tests passing.
 
@@ -397,7 +400,7 @@ node .agents\skills\aistudio\scripts\aistudio.js whoami
 
 ### Gate 2 — Build and verify data dependencies
 
-1. Validate source files or object schemas locally.
+1. Validate source files or object schemas locally. For a templated BO request body, instantiate its exact template with typed local values and parse the resulting JSON before remote execution; generic artifact validation alone may miss an unclosed body. This check complements interpolation and path-token validation.
 2. Create tools, connectors, BOs, document sources, or APIs from the approved source manifest.
 3. Apply remote mutations serially per artifact.
 4. Confirm document indexing, connector access, BO functions, permissions, and expected response shapes as applicable.
@@ -459,6 +462,8 @@ When a DRAFT parent can execute a PUBLISHED child, treat the observed published 
 Do not assume that a DRAFT workflow can execute another DRAFT workflow as a child. Before introducing a thin adapter or pass-through parent, prove that exact lifecycle boundary with a live request. If the platform rejects the child execution, keep the app bound directly to the canonical DRAFT workflow or call an already executable PUBLISHED dependency; do not retain an extra model hop that adds latency without owning a distinct contract.
 
 Normalize machine-readable fields at that boundary before presentation. In particular, strip sentence punctuation accidentally captured after ISO timestamps, validate required keys and row counts, sort in deterministic code, and align dependent records by stable identifiers instead of trusting model-emitted order.
+
+For conversational transactions, keep read selection separate from each transaction draft patch. Route a named parent into the active child draft explicitly, bind the declared conversation variable at its observed runtime path, and prove field-only follow-ups preserve that owner. Deterministic merge, revision, approval and attempt state must authorize writes; model reconstruction from chat history cannot replace missing state. When the UI advertises exact review, approval or create commands, normalize those full-message commands in one deterministic request owner before routing; incidental model intent or reconstructed fields must not reset the draft. Preserve the existing raw-command, exact-payload and revision gates.
 
 When an LLM derives numeric results, do not rely on prompt-only verification:
 
@@ -581,6 +586,8 @@ The golden path must prove:
 - No prohibited claim or side effect.
 - Total time, workflow time, tokens, AI Units, and observed model.
 
+Validate the supported widget envelope before native acceptance, including the oraInfoDisplay key, patternId, title, description and pattern-specific properties. Finding expected words in a response string does not prove a widget rendered; retain the target app result after loading completes.
+
 For a live app with streamed or progressively rendered widgets, do not treat the first visible rows as completion. Wait until the loading state clears, then assert the final heading, exact row count, replacement behavior, and required visual priorities. Capture both semantic DOM evidence and a rendered screenshot when layout, order, color, or table design is part of the contract.
 
 If it fails, classify the issue before changing anything:
@@ -617,7 +624,7 @@ Do not repeatedly call app sync to clear unfinished workflow actions. Resume the
 2. A passing incremental stage may reuse a current, evidence-backed model placement for the same node purpose and risk. Record the actual runtime model and metrics, then defer a sweep unless the inherited baseline fails, the environment changed, or optimization was explicitly requested.
 3. When optimization is in scope, establish a passing semantic baseline first.
 4. Measure one model-backed node at a time.
-5. Compare quality, evidence preservation, AI Units, workflow latency, node latency, and tokens.
+5. Compare accuracy and evidence preservation first, complete requirement coverage second, and elapsed/workflow/node latency third. Use tokens and AI Units to diagnose bottlenecks or satisfy an explicit constraint, never to justify weaker acceptance.
 6. Reject any candidate that loses required fields, records, grounding, safety, widgets, or user-visible semantics.
 7. Apply approved model changes separately.
 8. Rerun the affected test and one final scoped regression.
@@ -682,11 +689,11 @@ After any remote failure that may have crossed a POST boundary, freeze the paylo
 
 Do not expand a new Agentic App into multiple child routes, conversations or cumulative suites until one representative business slice passes this sequence: local Query-contract preflight; target AI Agent Studio **Run app preview** identity check; one live Query through the real app-bound workflow; configured execution of the actual BO node with its resolved path inputs; and the expected terminal response. `InitDisplay`, workflow debug, mocked downstream output and tests that only assert a BO node did not execute cannot satisfy this gate.
 
-For a write slice, finish the matching object-reference review and an exact required-field-only payload contract before the first POST. The contract must identify tenant-confirmed conditional fields, autogenerated omissions, uniqueness scope, duplicate preflight and independent persisted GET. If the tenant rejects a supposedly minimal payload, record the requirement in the object reference and its executable slice test before continuing to another object. This prevents late discovery after cumulative-suite expansion.
+For a write slice, finish the matching object-reference review and an exact required-field-only payload contract before the first POST. The contract must identify tenant-confirmed conditional fields, autogenerated omissions, uniqueness scope, duplicate preflight and independent persisted GET. If the tenant rejects a supposedly minimal payload, record the requirement in the object reference and its executable slice test before continuing to another object. This prevents late discovery after cumulative-suite expansion. Before replicating a transaction design across resources, prove one complete representative journey: prepare, field-only edit, review, exact approval/create, one authorized POST, independent persisted GET and native display. Reuse that proven structure, but retain resource-specific contract and acceptance checks. Never repeat an accepted create merely to complete this sequence; use retained write evidence and safe read-only continuation.
 
 ### Mandatory signed-in browser keep-alive
 
-When signed-in target-app acceptance is pending and CLI work continues, retain one identified AI Agent Studio tab and poll or refresh that same tab between remote action groups and at least once every five minutes. Record UTC timestamp, tab identity, visible Studio artifact context, authentication state, action and result in the active timing log. CLI token health does not prove the browser session is alive. A logout, wrong application or unrelated chatbot stops target-app testing until the same target context is visibly restored.
+When signed-in target-app acceptance is pending and CLI work continues, retain one identified AI Agent Studio tab and poll or refresh that same tab between remote action groups and at least once every five minutes. Record UTC timestamp, tab identity, visible Studio artifact context, authentication state, action and result in the active timing log. Track the next due UTC time and check it before and after long tool waits, context recovery and approval-pending intervals while the agent remains active. Schedule a supported reminder when available; a written deadline is not proof of automated keep-alive. During a blocked or inactive turn, record that continuity is unverified and recheck authentication before resuming. Do not reload a dirty draft when a non-destructive observation suffices. CLI token health does not prove the browser session is alive. A logout, wrong application or unrelated chatbot stops target-app testing until the same target context is visibly restored.
 
 | Stage | Scope | Data/evaluation | Run condition | Exit |
 | --- | --- | --- | --- | --- |
@@ -717,6 +724,7 @@ When signed-in target-app acceptance is pending and CLI work continues, retain o
 - Do not run model sweeps while architecture, sync, or semantics are unstable.
 - Do not run a model sweep for every incremental stage when a current evidence-backed placement already satisfies the same accuracy contract; defer it to the named performance or release gate.
 - After a classified failure, run only the affected test until it passes.
+- After a CLI test update, verify that ordered path assertions still end at the observed terminal owner. Appending inactive-node checks must not change the terminal inferred from the execution order.
 - Before judge attachment, compare each expected outcome with the current
   terminal route semantics. A sync-current path may still carry a stale
   milestone rubric; refresh only that judge contract and rerun only its
@@ -732,6 +740,8 @@ When signed-in target-app acceptance is pending and CLI work continues, retain o
 Every build, test cycle, repair and governance task MUST maintain the active build's `time-tracker.md` from its first action. Record UTC start, phase checkpoints, pause/resume or approval-pending intervals, and a delivery checkpoint before reporting completion or handing off. Include authoring, documentation, debugging, rework, verification and closeout, not only successful API calls.
 
 The tracker MUST distinguish observed task/turn elapsed time, tool or BO invocation elapsed time, inter-turn gaps and overlapping work. Never add nested tool durations, API receipts or parallel-agent durations to enclosing elapsed time. Approval-pending time can overlap active work; do not automatically classify it as idle or human effort.
+
+For each activity, record a stable activity ID, phase, category (build, test, repair, coordination, wait or closeout), observed UTC start/end, outcome, evidence and parent/overlap IDs. Prefer tool-emitted timing when available; otherwise record explicit boundaries as work proceeds. Keep an unallocated category for intervals without evidence. Phase windows are elapsed time, not a build-versus-test labor split. Compare prior runs only with declared scope, start/end cutoffs and acceptance boundaries; group phases with missing timestamps instead of allocating invented durations.
 
 Missing tracking MUST be reconstructed from available session timestamps and retained receipts during the current task. Label retrospective values, cite evidence and its cutoff, retain earlier history, and state the reason for every unrecoverable interval. Never invent start times, active labor, token usage or AI Units; do not rerun live operations solely to recover timing.
 
@@ -863,7 +873,7 @@ contract.
 
 ### Contract and architecture
 
-- [ ] Business, data, architecture, runtime, test, and learning contracts are complete.
+- [ ] Business, data, architecture, runtime, test, and learning contracts are complete. The requirement-to-evidence matrix contains no unresolved required row, including required reads not exercised by create confirmation.
 - [ ] Every source has one owner and permitted use.
 - [ ] Every required app stage and intent is real and routable.
 - [ ] Every route has one terminal output owner.
@@ -954,7 +964,7 @@ TEST AND EFFICIENCY CONTRACT
 - Representative live baseline and replay plan: <TABLE>
 - Deterministic checks and semantic rubrics: <TABLE>
 - Boundary budgets and compaction groups: <TABLE>
-- Time, token, and AI Unit targets: <TABLE>
+- Accuracy, completeness and elapsed-time targets; optional explicit cost constraints: <TABLE>
 
 EXECUTION RULES
 1. Read the active handoff first, learn and open the learning register/time tracker, then pass the current Session conformance receipt Startup gate.
@@ -1020,6 +1030,8 @@ After every update:
 
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
+| 2026-09-24 | [Timestamped retry introspection](../builds/xdx-build-introspection-20260924/xdx_introspection_20260924.md) | Prioritize accuracy/completeness/elapsed time; require independent requirement coverage, complete representative transaction proof, activity-level timing and explicit keep-alive continuity limits. Promote retained retry amendments into base without merging runtime artifacts. | Local governance regression and document checks recorded in the introspection verification receipt; future-build speed and scheduler automation are unproven. |
+| 2026-09-24 | XDX Supplier Lifecycle retry P3-P7 corrections and final read acceptance | Refine existing source, state, native-widget and test owners with exact rendered-body JSON validation, separate read/transaction patch state, canonical widget envelope checks, observed-terminal ordering after test updates and deterministic ownership of exact transaction control commands. | Retained P3-P7 acceptance, eleven local contracts, retained 19-case slice suite, focused command-repair replay and native review/approval/edit/read regression; final cumulative acceptance tracked in the build receipt. No accepted POST repeated. |
 | 2026-09-23 | XDX Supplier Lifecycle rework-concentration audit | Make the first real app Query plus configured BO route a prerequisite for suite expansion; require five-minute same-tab Studio keep-alive while browser acceptance is pending. | Root and skill require the reusable Query preflight; living-build negative fixtures reject missing policy, missing skill instruction and missing validator; current workflow and validator regression suite pass. |
 | 2026-09-23 | XDX Supplier Lifecycle malformed child binding and controlled POST recovery | Require balanced interpolation validation before remote execution, because fixture replay can bypass malformed BO inputs; preserve the read-only reconciliation rule before any retry after an uncertain POST boundary. | Query validator rejects malformed delimiters, missing producers, blank path tokens and reachable waits; corrected current workflow passes; accepted live creates were not repeated. |
 | 2026-09-22 | XDX Supplier Lifecycle repeated-rejection review | Require reusable local Query graph and REST-binding preflight, host credential-store execution for authenticated AI Studio CLI commands, and read-only reconciliation after any uncertain POST boundary. | Query guard negative fixtures for reachable Human, Wait, loopback and nested suspension; XDX child producer/consumer tests for address, site and contact; current workflow preflight and focused contract suite. |

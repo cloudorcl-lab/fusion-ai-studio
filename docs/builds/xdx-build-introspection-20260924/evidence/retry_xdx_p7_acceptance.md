@@ -1,0 +1,11 @@
+# P7 acceptance
+
+Accepted one contact POST at2026-09-23T23:34:09Z and independent persisted GET under supplier1505. SupplierContactId and PersonProfileId both300000333814350. Exact request FirstName XDX, LastName Contact Retry 20260923 A, Email xdx-contact-retry-20260923-a@example.invalid. GET matched all three and both generated keys; UserName/UserAccountStatus present and null. No account/security payload or provisioning. See xdx_p7_live_contact_create.json. NEVER repeat record-now or contact POST.
+
+Dedicated retry BO300000333987486 now9functions; CreateSupplierContact sends only three fields and Upsert-Mode false. GET projection includes generated IDs/account fields. Workflow Draft86138752/ETag16,111nodes. Contact uses dedicated draft/ledger, exact revision approval, freshly resolved parent snapshot, complete duplicate check and pending-attempt reconciliation with no second POST. Email collision guard is conservative application policy; Fusion uniqueness remains unresolved.
+
+First discrete replay correctly stopped because extraction omitted the explicit supplier. Prompt now maps for-supplier text into contactPatch.Supplier with matching-patch precedence; strengthened prepare assertion verifies parent retention. Repaired four-turn synthetic replay passed46.376s, then configured12/12 cumulative scenarios passed with9judgments attached and0pending. Suite-only379472tokens440AIunits165.9s, not task totals. After one live recording, POST3091-byte complete preview compacted to seven actual downstream fields; original preview retained. All four GETs raw complete. Actual-data replay passed15.948s. No extra cumulative rerun was needed after data capture; workflow unchanged.
+
+Native target app preparation displayed all four parent/contact values, review resolved current supplier and requested exact revision approval without writing. After live create, native read-only Query displayed one ACTIVE Contact Retry 20260923 A, XDX row with exact email and null job-title em dash. No native second create. Chrome676646834 retained for next slice; keep-alive target every4minutes, maximum5.
+
+Contact object reference updated with generated-key, omitted InactiveDate, null-account and scoped Email-filter evidence. First-success GET remains unchanged. Full objective incomplete: P8 four retained child paths, P9, and governed Closeout remain.
