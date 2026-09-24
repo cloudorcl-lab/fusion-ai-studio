@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-retry-purge-20260924",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Startup",
+  "startedUtc": "2026-09-24T17:35:25.130Z",
+  "checkpointUtc": "2026-09-24T17:46:41.087Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "8b496445487fecd23c4b24c71509099687329b78885c8e5f05aadfa3ec1958f9"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "5d27ef166a3b4e61dfddae910b90224f3f22dc242f2193fc66e5b961cafe9134"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "d75f5ba3e4a39cebdc372aa3186d1cbfc427367f525aecc12c7b8dea8decf6e5"
+    }
+  ],
+  "reviewNotes": "Current purge model and handoff reviewed; completed retry target. Initial scope is inventory then authorized exact Draft cleanup. Preserve shared BOs and unintegrated history. Partial purge recorded honestly; no Closeout claim. Exact Draft app/workflow absent; retained blockers preserved.",
+  "objectReferences": [],
+  "noObjectsReason": "Artifact metadata cleanup only; no Fusion business resource operations or object contract edits.",
+  "learningRegister": "docs/builds/xdx-supplier-retry-purge-20260924/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-retry-purge-20260924/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Purge model and canonical session/cleanup gates",
+      "status": "planned",
+      "reason": "Inventory, exact-target proof and preservation required before deletion.",
+      "evidence": []
+    },
+    {
+      "id": "intake",
+      "rule": "Purge model and canonical session/cleanup gates",
+      "status": "planned",
+      "reason": "Inventory, exact-target proof and preservation required before deletion.",
+      "evidence": []
+    },
+    {
+      "id": "authority",
+      "rule": "Purge model and canonical session/cleanup gates",
+      "status": "planned",
+      "reason": "Inventory, exact-target proof and preservation required before deletion.",
+      "evidence": []
+    },
+    {
+      "id": "objects",
+      "rule": "Purge model and canonical session/cleanup gates",
+      "status": "planned",
+      "reason": "Inventory, exact-target proof and preservation required before deletion.",
+      "evidence": []
+    },
+    {
+      "id": "verification",
+      "rule": "Purge model and canonical session/cleanup gates",
+      "status": "planned",
+      "reason": "Inventory, exact-target proof and preservation required before deletion.",
+      "evidence": []
+    },
+    {
+      "id": "timing",
+      "rule": "Purge model and canonical session/cleanup gates",
+      "status": "planned",
+      "reason": "Inventory, exact-target proof and preservation required before deletion.",
+      "evidence": []
+    },
+    {
+      "id": "cleanup",
+      "rule": "Purge model and canonical session/cleanup gates",
+      "status": "planned",
+      "reason": "Inventory, exact-target proof and preservation required before deletion.",
+      "evidence": []
+    },
+    {
+      "id": "delivery",
+      "rule": "Purge model and canonical session/cleanup gates",
+      "status": "planned",
+      "reason": "Inventory, exact-target proof and preservation required before deletion.",
+      "evidence": []
+    }
+  ],
+  "unresolved": [
+    "BO consumer completeness or approved retention disposition",
+    "Unintegrated local branch/worktree disposition"
+  ],
+  "metrics": {
+    "tokens": "Unavailable.",
+    "aiUnits": "No business runtime tests planned.",
+    "timingGaps": "Initial inventory precedes first timing checkpoint."
+  }
+}

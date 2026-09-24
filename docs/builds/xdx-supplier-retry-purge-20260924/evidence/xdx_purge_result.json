@@ -1,0 +1,32 @@
+{
+  "timestampUtc": "2026-09-24T17:46:41.087Z",
+  "status": "partial",
+  "environment": "eqih-dev21",
+  "deleted": [
+    {
+      "type": "app",
+      "code": "XDX_SUPPLIER_LIFECYCLE",
+      "id": "300000333988549",
+      "status": "DRAFT",
+      "proof": "UI exact Draft deletion then independent CLI Application not found"
+    },
+    {
+      "type": "workflow",
+      "code": "XDX_SUPPLIER_LIFECYCLE_AGENT",
+      "id": "300000333987487",
+      "version": 86153667,
+      "status": "DRAFT",
+      "proof": "UI exact Draft deletion; disappeared from list; independent CLI Workflow not found: 200 OK"
+    }
+  ],
+  "held": [
+    "XDX_SUPPLIER_RETRY_20260923_A",
+    "XDX_PROCUREMENT_BU_RETRY_20260923_A",
+    "XDX_SUPPLIER_CATEGORY_RETRY_20260923_A"
+  ],
+  "holdReason": "Catalog25 omitted confirmed target before deletion; BO list/detail has no observed consumer view. Complete reverse consumers unknown.",
+  "local": "Clean retry worktree and unintegrated branch retained; verified bundle outside target preserves unique commits with existing base prerequisite.",
+  "businessData": "No Fusion business record mutation",
+  "remoteRefs": "No mutation",
+  "browser": "Chrome4 tab676647304, signed-in BO detail, no edits made"
+}

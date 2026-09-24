@@ -1,23 +1,26 @@
 # Active Handoff
+Updated 2026-09-24T17:46:41.087Z. Active task xdx-supplier-retry-purge-20260924. PURGE PARTIAL, NOT COMPLETE.
 
-Updated 2026-09-24T17:24:19.974Z. Task xdx-purge-model-20260924: versioned purge documentation in base TestingWFBuildTools.
+Base TestingWFBuildTools. User authorized running the purge for completed supplier retry.
+Deleted exact DRAFT app XDX_SUPPLIER_LIFECYCLE id300000333988549 and workflow
+XDX_SUPPLIER_LIFECYCLE_AGENT id300000333987487/v86153667 in Studio UI, in that order.
+Independent CLI exact-code readbacks report not found. Do not repeat deletion.
 
-Delivered [Artifact purge model v1.0.0](../build-models/artifact-purge/README.md):
-execution prompt, plan template and non-executable supplier example.
-Companion [Object build model v1.0.0](../build-models/object-lifecycle/README.md) remains current.
+Three retry BOs held unchanged: XDX_SUPPLIER_RETRY_20260923_A,
+XDX_PROCUREMENT_BU_RETRY_20260923_A, XDX_SUPPLIER_CATEGORY_RETRY_20260923_A.
+Consumer completeness unknown: catalog25 omits known workflow; no BO usage view observed.
+Original shared BOs and Fusion records untouched. No remote-ref changes.
 
-User requested reusable documents, not actual purge. No artifacts, worktrees,
-branches or business records were deleted. No tenant calls or remote-ref changes.
-Original purge source retained. Unrelated existing deletions of the temp supplier
-build prompt and plan are preserved and excluded from this commit.
+Retry branch/worktree remain clean at6c85117, unintegrated into base. Verified
+evidence/xdx_retry_history.bundle outside target preserves all unique commits,
+requiring retained base ancestor7497e16. Do not force removal or silently merge.
+Need approved local preservation/removal disposition and BO retention/completeness decision.
+Existing three temp source deletions are user state; exclude from scoped commit.
 
-- [Intake](../builds/xdx-purge-model-20260924/intake-and-learning-register.md)
-- [Time tracker](../builds/xdx-purge-model-20260924/time-tracker.md)
-- [Verification](../builds/xdx-purge-model-20260924/evidence/xdx_verification.txt)
-- [Session](../builds/xdx-purge-model-20260924/xdx_session_purge_model.json)
+- [Plan](../builds/xdx-supplier-retry-purge-20260924/purge-plan.md)
+- [Intake](../builds/xdx-supplier-retry-purge-20260924/intake-and-learning-register.md)
+- [Time tracker](../builds/xdx-supplier-retry-purge-20260924/time-tracker.md)
+- [Result](../builds/xdx-supplier-retry-purge-20260924/evidence/xdx_purge_result.json)
 
-Local document and governance checks passed; Closeout receipt retained with commit.
-Future use: populate exact dispositions and trusted authority in a surviving checkout;
-run inventory-only when identity/authority is unresolved. No template grants authority.
-Completed supplier retry remains on its preserved branch at 6c85117; never replay
-accepted creates. No automatic purge runner or install ZIP was created.
+Chrome4 tab676647304 signed in eqih-dev21, BO detail inspected read-only. Marked handoff.
+No current process handles. Closeout cannot pass while required dispositions unresolved.

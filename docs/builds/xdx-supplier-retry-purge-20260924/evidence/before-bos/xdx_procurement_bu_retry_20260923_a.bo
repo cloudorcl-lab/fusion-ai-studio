@@ -1,0 +1,95 @@
+{
+  "supportedObjectId": "300000333996545",
+  "$context": {
+    "etag": "1"
+  },
+  "name": "XDX Procurement BU Retry 20260923 A",
+  "description": "Read-only procurement business unit choices for reviewed supplier site creation; preserves identity, action rows and pagination.",
+  "objectCode": "XDX_PROCUREMENT_BU_RETRY_20260923_A",
+  "family": "PRC",
+  "product": "SUPPLIER",
+  "objectSource": "ADF_BC",
+  "restResourcePath": "/fscmRestApi/resources/11.13.18.05/procurementBusinessUnitsLOV",
+  "restResourceIdentifier": "-1",
+  "seededFlag": false,
+  "mandatoryFlag": false,
+  "objectProperties": {
+    "jsonSchemaName": "supportedObjectProperties",
+    "jsonSchemaVersion": 1,
+    "tools": [
+      {
+        "name": "getall_procurementBusinessUnitsLOV",
+        "description": "Resolve procurement BU choices from a validated filter; retain action rows and complete pagination envelope.",
+        "operationId": "getall_procurementBusinessUnitsLOV",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/procurementBusinessUnitsLOV?q={filter}&fields=ProcurementBUId,ProcurementBU,AgentAction&onlyData=true&orderBy=ProcurementBUId:asc,AgentAction:asc&limit={limit}&offset={offset}",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "filter",
+            "dataType": "string",
+            "description": "Validated exact procurement business unit rowmatch filter; no arbitrary user query.",
+            "id": 2,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "limit",
+            "dataType": "integer",
+            "description": "Bounded result page size; require hasMore false before accepting references.",
+            "id": 3,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "offset",
+            "dataType": "integer",
+            "description": "Nonnegative page offset, explicitly supplied.",
+            "id": 4,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "Content-Type": "application/json",
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "P6 live reference discovery for US1 Business Unit; one scoped GET, retained for lookup validation.",
+            "query": {
+              "items": [
+                {
+                  "ProcurementBUId": 300000046987012,
+                  "ProcurementBU": "US1 Business Unit",
+                  "AgentAction": "MANAGE_PURCHASE_ORDERS"
+                }
+              ],
+              "count": 1,
+              "hasMore": false,
+              "limit": 100,
+              "offset": 0,
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/procurementBusinessUnitsLOV",
+                  "name": "procurementBusinessUnitsLOV",
+                  "kind": "collection"
+                }
+              ]
+            },
+            "sampleType": "response"
+          }
+        ]
+      }
+    ]
+  }
+}
