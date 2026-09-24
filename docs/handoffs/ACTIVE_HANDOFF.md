@@ -1,13 +1,17 @@
 # Active Handoff
 
-Current task: next-run governance audit. Corrected source models are version 1.0.1; no next build started. New/retry builds create a new worktree from the committed base; resume only a verified existing active build.
+Current task: install ZIP rebuilt and locally verified. Corrected source models are version 1.0.1; no next build started. New/retry builds create a new worktree from the committed base; resume only a verified existing active build.
 
 - [Audit and corrections](../builds/xdx-next-run-governance-audit-20260924/audit.md)
 - [Audit time tracker](../builds/xdx-next-run-governance-audit-20260924/time-tracker.md)
 - [Current build prompt and plan](../build-models/object-lifecycle/README.md)
 - [Current purge prompt and plan](../build-models/artifact-purge/README.md)
 
-The existing install ZIP is historical, not refreshed by these source corrections. Rebuild and validate a portable package before distribution.
+The install ZIP now contains the corrected source, model versions 1.0.1 and current validators. Local package/installation checks passed; no tenant readiness or deployment is implied.
+
+- [Package verification](../builds/xdx-install-packet-20260924/evidence/verification.md)
+- [Package time tracker](../builds/xdx-install-packet-20260924/time-tracker.md)
+- [Install ZIP](../agent-app-build-install-packet.zip)
 
 ## Preserved prior disposition
 

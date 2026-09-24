@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-install-packet-20260924",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-24T19:59:28.166Z",
+  "checkpointUtc": "2026-09-24T20:04:26.214Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "36daebe6407afb6fc23847c089ea780a9d88eb7a45a4905e36d00806fb75f762"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "40d5992df9147e236f3d70ab1ac9e094dde40866086de85c6c5b114cb35b8444"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "d75f5ba3e4a39cebdc372aa3186d1cbfc427367f525aecc12c7b8dea8decf6e5"
+    }
+  ],
+  "reviewNotes": "Current canonical guidance reviewed in this session; package rebuild preserves canonical ownership, blank target handoff, explicit snapshot provenance and local-only validation. No tenant operations. Reviewed updated delivery handoff; current package evidence supersedes historical ZIP warning.",
+  "objectReferences": [],
+  "noObjectsReason": "Governance documentation and local timing helper only; no resource operation.",
+  "learningRegister": "docs/builds/xdx-install-packet-20260924/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-install-packet-20260924/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Rebuilt package and local installation regressions passed; scratch removed, reusable tools and delivery preserved.",
+      "evidence": [
+        "docs/builds/xdx-install-packet-20260924/evidence/verification.md"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Rebuilt package and local installation regressions passed; scratch removed, reusable tools and delivery preserved.",
+      "evidence": [
+        "docs/builds/xdx-install-packet-20260924/evidence/verification.md"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Rebuilt package and local installation regressions passed; scratch removed, reusable tools and delivery preserved.",
+      "evidence": [
+        "docs/builds/xdx-install-packet-20260924/evidence/verification.md"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Current governance audit scope",
+      "status": "not-applicable",
+      "reason": "Governance documentation and local timing helper only; no resource operation.",
+      "evidence": []
+    },
+    {
+      "id": "verification",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Rebuilt package and local installation regressions passed; scratch removed, reusable tools and delivery preserved.",
+      "evidence": [
+        "docs/builds/xdx-install-packet-20260924/evidence/verification.md"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Rebuilt package and local installation regressions passed; scratch removed, reusable tools and delivery preserved.",
+      "evidence": [
+        "docs/builds/xdx-install-packet-20260924/evidence/verification.md"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Rebuilt package and local installation regressions passed; scratch removed, reusable tools and delivery preserved.",
+      "evidence": [
+        "docs/builds/xdx-install-packet-20260924/evidence/verification.md"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Current governance audit scope",
+      "status": "pass",
+      "reason": "Rebuilt package and local installation regressions passed; scratch removed, reusable tools and delivery preserved.",
+      "evidence": [
+        "docs/builds/xdx-install-packet-20260924/evidence/verification.md"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Unavailable",
+    "aiUnits": "No tenant runtime",
+    "timingGaps": "Initial review start and activity split unavailable; checkpoint onward recorded."
+  }
+}
