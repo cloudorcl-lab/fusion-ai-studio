@@ -1,0 +1,17 @@
+Verified 2026-09-24T17:24:19.974Z
+PASS four documents, eight local links, seven consistent tables, balanced fences, version markers, no temp dependency.
+PASS session compliance positives and eleven negative fixtures.
+PASS living-build contract regression positives/negative fixtures.
+PASS git diff --check.
+Manual document scenario walkthroughs (not executable purge tests):
+1. Authorized unused DRAFT dependency chain: consumer-first serial deletion with exact absence receipts.
+2. Incomplete catalog missing known consumer: provider retained; never zero-consumer inference.
+3. Already absent app with remaining workflow: skip app mutation, verify workflow independently.
+4. Timed-out deletion: reconcile current state before any retry.
+5. Published copy or version drift: affected action pauses for scope/authority reconciliation.
+6. Dirty/unintegrated worktree or junction escape: no deletion; preserve and block affected action.
+7. Unregistered Windows residual: captured actual metadata path and confinement required, no guessed directory.
+8. Unapproved remote-ref deletion: remains excluded despite local cleanup or flag value.
+9. Receipt commit after cleanup: new HEAD recorded intentionally, not falsely reported unchanged.
+These checks validate document consistency, not platform deletion behavior.
+No tenant call, filesystem purge, branch removal, push or install ZIP generation occurred.

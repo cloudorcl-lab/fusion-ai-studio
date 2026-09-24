@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-purge-model-20260924",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-24T17:20:40.186Z",
+  "checkpointUtc": "2026-09-24T17:24:39.166Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "d9e8110ae046da279c3d101361a39c7dd191148eab99a2f8a58bdea62197e983"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "5d27ef166a3b4e61dfddae910b90224f3f22dc242f2193fc66e5b961cafe9134"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "d75f5ba3e4a39cebdc372aa3186d1cbfc427367f525aecc12c7b8dea8decf6e5"
+    }
+  ],
+  "reviewNotes": "Governance-only template delivery; canonical rules reviewed earlier this session, active handoff and purge source reviewed now. Preserve unrelated temp deletions. Reviewed final prompt/plan, blocked-case walkthroughs and reconciled handoff.",
+  "objectReferences": [],
+  "noObjectsReason": "No object operation or contract changes.",
+  "learningRegister": "docs/builds/xdx-purge-model-20260924/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-purge-model-20260924/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Canonical session and cleanup/disposition rules",
+      "status": "pass",
+      "reason": "Versioned documentation complete with local checks and manual safety-case review; no actual purge in scope.",
+      "evidence": [
+        "docs/builds/xdx-purge-model-20260924/intake-and-learning-register.md",
+        "docs/builds/xdx-purge-model-20260924/evidence/xdx_verification.txt"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Canonical session and cleanup/disposition rules",
+      "status": "pass",
+      "reason": "Versioned documentation complete with local checks and manual safety-case review; no actual purge in scope.",
+      "evidence": [
+        "docs/builds/xdx-purge-model-20260924/intake-and-learning-register.md",
+        "docs/builds/xdx-purge-model-20260924/evidence/xdx_verification.txt"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Canonical session and cleanup/disposition rules",
+      "status": "pass",
+      "reason": "Versioned documentation complete with local checks and manual safety-case review; no actual purge in scope.",
+      "evidence": [
+        "docs/builds/xdx-purge-model-20260924/intake-and-learning-register.md",
+        "docs/builds/xdx-purge-model-20260924/evidence/xdx_verification.txt"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Canonical session and cleanup/disposition rules",
+      "status": "not-applicable",
+      "reason": "No object operations or contracts changed.",
+      "evidence": []
+    },
+    {
+      "id": "verification",
+      "rule": "Canonical session and cleanup/disposition rules",
+      "status": "pass",
+      "reason": "Versioned documentation complete with local checks and manual safety-case review; no actual purge in scope.",
+      "evidence": [
+        "docs/builds/xdx-purge-model-20260924/intake-and-learning-register.md",
+        "docs/builds/xdx-purge-model-20260924/evidence/xdx_verification.txt"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Canonical session and cleanup/disposition rules",
+      "status": "pass",
+      "reason": "Versioned documentation complete with local checks and manual safety-case review; no actual purge in scope.",
+      "evidence": [
+        "docs/builds/xdx-purge-model-20260924/intake-and-learning-register.md",
+        "docs/builds/xdx-purge-model-20260924/evidence/xdx_verification.txt"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Canonical session and cleanup/disposition rules",
+      "status": "pass",
+      "reason": "Versioned documentation complete with local checks and manual safety-case review; no actual purge in scope.",
+      "evidence": [
+        "docs/builds/xdx-purge-model-20260924/intake-and-learning-register.md",
+        "docs/builds/xdx-purge-model-20260924/evidence/xdx_verification.txt"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Canonical session and cleanup/disposition rules",
+      "status": "pass",
+      "reason": "Versioned documentation complete with local checks and manual safety-case review; no actual purge in scope.",
+      "evidence": [
+        "docs/builds/xdx-purge-model-20260924/intake-and-learning-register.md",
+        "docs/builds/xdx-purge-model-20260924/evidence/xdx_verification.txt"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Unavailable; not an optimization target.",
+    "aiUnits": "No tenant calls.",
+    "timingGaps": "Pre-checkpoint review unavailable; no labor estimate."
+  }
+}

@@ -1,22 +1,23 @@
 # Active Handoff
 
-Updated 2026-09-24T16:35:44.744Z. Task xdx-object-build-model-20260924: versioned prompt/plan delivery in base TestingWFBuildTools.
+Updated 2026-09-24T17:24:19.974Z. Task xdx-purge-model-20260924: versioned purge documentation in base TestingWFBuildTools.
 
-User approved the analyzed reusable structure and requested tracked output outside temp.
-Current model: [Object lifecycle v1.0.0](../build-models/object-lifecycle/README.md).
-Includes execution prompt, plan template and non-executable supplier example.
-Existing requirement/test/time templates were refined in their canonical startup owners.
-Historical temp files remain unchanged; the new model has no operational temp dependency.
+Delivered [Artifact purge model v1.0.0](../build-models/artifact-purge/README.md):
+execution prompt, plan template and non-executable supplier example.
+Companion [Object build model v1.0.0](../build-models/object-lifecycle/README.md) remains current.
 
-- [Intake and delivery plan](../builds/xdx-object-build-model-20260924/intake-and-learning-register.md)
-- [Time tracker](../builds/xdx-object-build-model-20260924/time-tracker.md)
-- [Verification](../builds/xdx-object-build-model-20260924/evidence/xdx_verification.txt)
-- [Session](../builds/xdx-object-build-model-20260924/xdx_session_model.json)
+User requested reusable documents, not actual purge. No artifacts, worktrees,
+branches or business records were deleted. No tenant calls or remote-ref changes.
+Original purge source retained. Unrelated existing deletions of the temp supplier
+build prompt and plan are preserved and excluded from this commit.
 
-Local documentation, startup and governance checks pass. Closeout receipt is retained with delivery.
-No runtime artifacts, object operations, business records, publication or remote refs changed.
-No install ZIP regenerated; no automated activity capture or browser scheduler implemented.
-Next build: copy and populate version 1.0.0 plan/prompt, pin commit and reviewed governance,
-resolve authority and requirements, then use the applicable new/resume/retry mode.
-The completed supplier retry remains at 6c85117 on its preserved branch/worktree;
-never repeat accepted creates. Prior introspection is committed in base at 6d350d3.
+- [Intake](../builds/xdx-purge-model-20260924/intake-and-learning-register.md)
+- [Time tracker](../builds/xdx-purge-model-20260924/time-tracker.md)
+- [Verification](../builds/xdx-purge-model-20260924/evidence/xdx_verification.txt)
+- [Session](../builds/xdx-purge-model-20260924/xdx_session_purge_model.json)
+
+Local document and governance checks passed; Closeout receipt retained with commit.
+Future use: populate exact dispositions and trusted authority in a surviving checkout;
+run inventory-only when identity/authority is unresolved. No template grants authority.
+Completed supplier retry remains on its preserved branch at 6c85117; never replay
+accepted creates. No automatic purge runner or install ZIP was created.
