@@ -574,9 +574,9 @@
 <body>
 
   <h1>AI Studio Test Suite Result</h1>
-  <section class="report-overview report-overview--passed"><div class="report-overview__status"><span class="pill passed">passed</span><span class="report-overview__status-copy">All 15 tests passed across the included suites.</span></div><div class="report-overview__groups"><section class="report-overview__group"><h2>Results</h2><div class="report-overview__facts"><div class="report-overview__fact"><span class="label">Passed</span><span class="value">15 / 15</span></div></div></section><section class="report-overview__group"><h2>Included suites</h2><div class="report-overview__facts"><div class="report-overview__fact"><span class="label">Workflow suites</span><span class="value">1</span></div><div class="report-overview__fact"><span class="label">App suites</span><span class="value">1</span></div></div></section></div></section>
-  <div class="section"><h2>Summary</h2><pre>Total: 15
-Passed: 15
+  <section class="report-overview report-overview--passed"><div class="report-overview__status"><span class="pill passed">passed</span><span class="report-overview__status-copy">All 16 tests passed across the included suites.</span></div><div class="report-overview__groups"><section class="report-overview__group"><h2>Results</h2><div class="report-overview__facts"><div class="report-overview__fact"><span class="label">Passed</span><span class="value">16 / 16</span></div></div></section><section class="report-overview__group"><h2>Included suites</h2><div class="report-overview__facts"><div class="report-overview__fact"><span class="label">Workflow suites</span><span class="value">1</span></div><div class="report-overview__fact"><span class="label">App suites</span><span class="value">1</span></div></div></section></div></section>
+  <div class="section"><h2>Summary</h2><pre>Total: 16
+Passed: 16
 Failed: 0
 Needs Judge: 0
 
@@ -587,20 +587,24 @@ App suite: test-reports/apps/xdx_supplier_core_app_20260924/suite-result.html
 
 App tests: 1/1 passed, 0 failed, 0 need judge.
 
+Reports:
+- Consolidated report: <a href="consolidated-suite-result.html">consolidated-suite-result.html</a>
+- App suite: passed 1/1, report: <a href="suite-result.html">suite-result.html</a>
+
 ## Backing Workflow Suite Summaries
 
-1. XDX Supplier Core 20260924
+1. Workflow 1
    Status: passed
    Report: <a href="../../workflows/xdx_supplier_core_20260924/suite-result.html">suite-result.html</a>
-   Tests: 14/14 passed, 0 failed, 0 need judge
+   Tests: 15/15 passed, 0 failed, 0 need judge
 
    Metrics:
-   - Token data: observed for 14/14 cases; input 222134; output 11821; total 233955.
-   - AI units: 270 total (54 token units, 14/14 cases computed).
-   - Latency: total workflow time 492.1s across 14/14 model-backed cases.
+   - Token data: observed for 15/15 cases; input 246770; output 13018; total 259788.
+   - AI units: 300 total (60 token units, 15/15 cases computed).
+   - Latency: total workflow time 553.3s across 15/15 model-backed cases.
 
    Optimization:
-   - Model optimization is available for this workflow. 14 passing tests exercise model-backed nodes.
+   - Model optimization is available for this workflow. 15 passing tests exercise model-backed nodes.
    - Next action: Run node-level model optimization sweep. To run it, reply: Run the model optimization sweep for this workflow and summarize the best model placement per LLM node.
    - Creates a fresh node-level sweep, runs every candidate profile, judges results, and generates the sweep report.
    - The sweep reports recommendations only. Applying model changes requires a separate approval.
@@ -614,11 +618,11 @@ None.</pre></div>
     <div class="case-list">
       <article class="case-card">
     <div class="case-card__header">
-      <div class="case-card__title"><span class="pill passed">passed</span> <span class="case-card__name">XDX Supplier Core 20260924</span></div>
+      <div class="case-card__title"><span class="pill passed">passed</span> <span class="case-card__name">XDX_SUPPLIER_CORE_20260924</span></div>
       <a href="../../workflows/xdx_supplier_core_20260924/suite-result.html">Workflow suite report</a>
     </div>
     <div class="case-card__meta">
-      <div class="case-fact"><span class="label">Passed</span><span class="value">14/14</span></div>
+      <div class="case-fact"><span class="label">Passed</span><span class="value">15/15</span></div>
       <div class="case-fact"><span class="label">Failed</span><span class="value">0</span></div>
       <div class="case-fact"><span class="label">Needs Judge</span><span class="value">0</span></div>
       <div class="case-fact"><span class="label">Action</span><span class="value">none</span></div>
@@ -800,6 +804,16 @@ None.</pre></div>
         <td><a href="../../workflows/xdx_supplier_core_20260924/site-query-list/result.html">Workflow test report</a></td>
       </tr>
       <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>supplier-number-manual-regression</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/supplier-number-manual-regression/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
         <td>app</td>
         <td><span class="pill passed">passed</span></td>
         <td class="consolidated-case-table__wrap"><code>init_display_supplier_core</code></td>
@@ -817,7 +831,7 @@ None.</pre></div>
     <ul>
       <li><a href="consolidated-suite-result.json">Consolidated JSON</a></li>
       <li><a href="consolidated-suite-result.md">Consolidated Markdown</a></li>
-      <li><a href="../../workflows/xdx_supplier_core_20260924/suite-result.html">XDX Supplier Core 20260924 suite report</a></li>
+      <li><a href="../../workflows/xdx_supplier_core_20260924/suite-result.html">XDX_SUPPLIER_CORE_20260924 suite report</a></li>
       <li><a href="suite-result.html">App suite report</a></li>
     </ul>
   </div>

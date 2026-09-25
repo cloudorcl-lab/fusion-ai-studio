@@ -1,0 +1,46 @@
+{
+  "utc": "2026-09-25T02:44:18.623Z",
+  "scope": "Actual serialized CODE before fix; reported404 independently visible in native workflow",
+  "detail": {
+    "q": "SupplierId>0",
+    "limit": 1,
+    "offset": 0,
+    "supplierId": "1506",
+    "error": "",
+    "intent": "detail",
+    "previous": {
+      "selectedSupplierId": "300000333814409",
+      "view": {
+        "columns": [
+          "SupplierId",
+          "SupplierNumber",
+          "Supplier"
+        ],
+        "rows": [
+          [
+            300000333814409,
+            "1506",
+            "XDX Core Supplier 20260924 2130"
+          ]
+        ]
+      }
+    },
+    "guidanceWidget": "<oraInfoDisplay key=\"supplierGuidance\">{\"patternId\":\"cardWidget\",\"title\":\"Supplier request guidance\",\"properties\":{\"subject\":\"Request not executed\",\"summary\":\"\"}}</oraInfoDisplay>"
+  },
+  "address": {
+    "route": "parent",
+    "operation": "list",
+    "parentId": "1506",
+    "state": {
+      "read": {
+        "parentId": "1506",
+        "limit": 5,
+        "offset": 0,
+        "q": "SupplierAddressId>0",
+        "selectedId": "",
+        "operation": "list"
+      },
+      "tx": {}
+    }
+  }
+}

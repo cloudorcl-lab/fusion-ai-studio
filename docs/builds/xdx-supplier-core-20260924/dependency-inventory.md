@@ -22,3 +22,7 @@ Existing XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS.getall_procurementBusinessUnits
 
 
 P6 cleanup: consumed build-root authoring/repair/test-runner scripts retired after all workflow runs completed. See evidence/xdx_cleanup_manifest.json for exact paths and hashes. Their historical names in logs are provenance, not active dependencies. Canonical runtime .wf/.bo/.app, five actual-CODE tests, workflow/app test definitions and all accepted/failure receipts remain. Active app suite31148 invokes CLI directly and consumes no retired script.
+
+## Supplier-number404 repair
+
+Retain existing BO functions, graph, models and app unchanged. Four read-preparer CODE owners gain verified number mapping; new local contract and exact3step conversation regression retained as failure protection. Native receipts and before-code evidence retained. Temporary CLI argument files retire after final regression/judging. Prior accepted records unchanged.

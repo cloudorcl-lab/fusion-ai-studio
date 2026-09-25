@@ -4,18 +4,18 @@
 **Data Source:** file
 **Evaluation:** hybrid
 **Started:** 2026-09-25T01:41:09.053Z
-**Finished:** 2026-09-25T01:52:31.659Z
-**Total:** 14
-**Passed:** 14
+**Finished:** 2026-09-25T03:00:30.072Z
+**Total:** 15
+**Passed:** 15
 **Failed:** 0
 **Needs Judge:** 0
-**Total Workflow Time:** 492138 ms
-**Token Data:** observed for 14/14 cases
-**Input Tokens:** 222134
-**Output Tokens:** 11821
-**Total Tokens:** 233955
-**AI Units:** 270 total (54 token units, 14/14 cases computed).
-**Total AI Units:** 270
+**Total Workflow Time:** 553293 ms
+**Token Data:** observed for 15/15 cases
+**Input Tokens:** 246770
+**Output Tokens:** 13018
+**Total Tokens:** 259788
+**AI Units:** 300 total (60 token units, 15/15 cases computed).
+**Total AI Units:** 300
 **JSON Report:** `C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\suite-result.json`
 **Markdown Report:** `C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\suite-result.md`
 **HTML Report:** `C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\suite-result.html`
@@ -24,19 +24,19 @@
 
 ## Summary
 
-Workflow test suite passed: 14/14 passed, 0 failed, 0 needs judge.
+Workflow test suite passed: 15/15 passed, 0 failed, 0 needs judge.
 Filters: workflowCode=XDX_SUPPLIER_CORE_20260924, workflowCodes=XDX_SUPPLIER_CORE_20260924.
 
 Reports:
 - Workflow suite report: [suite-result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\suite-result.html)
 
 Metrics:
-- Token data: observed for 14/14 cases; input 222134; output 11821; total 233955.
-- AI units: 270 total (54 token units, 14/14 cases computed).
-- Latency: total workflow time 492.1s across 14/14 model-backed cases.
+- Token data: observed for 15/15 cases; input 246770; output 13018; total 259788.
+- AI units: 300 total (60 token units, 15/15 cases computed).
+- Latency: total workflow time 553.3s across 15/15 model-backed cases.
 
 Optimization:
-- Model optimization is available for this workflow. 14 passing tests exercise model-backed nodes.
+- Model optimization is available for this workflow. 15 passing tests exercise model-backed nodes.
 - Next action: Run node-level model optimization sweep. To run it, reply: Run the model optimization sweep for this workflow and summarize the best model placement per LLM node.
 - Creates a fresh node-level sweep, runs every candidate profile, judges results, and generates the sweep report.
 - The sweep reports recommendations only. Applying model changes requires a separate approval.
@@ -57,6 +57,7 @@ Tests:
 12. site-draft-conversation | passed | Verify site draft editing, reference revalidation, complete review and cancellat...
 13. site-query-detail | passed | Verify ordinary parent-scoped site detail independently of create confirmation.
 14. site-query-list | passed | Verify ordinary parent-scoped site exact-name query independently of create conf...
+15. supplier-number-manual-regression | passed | Reproduce and protect manual query followed by supplier-number detail and addres...
 
 ## Detailed Cases
 
@@ -79,5 +80,6 @@ Tests:
 | PASSED | XDX_SUPPLIER_CORE_20260924 | site-draft-conversation | Verify site draft state, field-only editing, current reference review and cancellation with no POST. | file | hybrid | passed: 474/474 checks | passed: score 5/5 |  |  | 85016 ms | 78688 ms | 33072 | 1980 | 35052 | oci-agent/openai.gpt-5-mini | 40 |  |  | C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\site-draft-conversation\result.html |
 | PASSED | XDX_SUPPLIER_CORE_20260924 | site-query-detail | Verify ordinary scalar site detail with correct parent and all fields, independently of create confirmation. | file | hybrid | passed: 115/115 checks | passed: score 5/5 | record-now: raw, raw | executes EXTRACT_READ, PREPARE_TRANSACTION, TRANSACTION_ROUTE, PREPARE_SITE, STORE_SITE_PREPARED, SITE_ENTRY, FETCH_SITE_PARENT, CHECK_SITE_PARENT, STORE_SITE_PARENT, SITE_OPERATION, FETCH_SITE_DETAIL, SHAPE_SITE_DETAIL, STORE_SITE_DETAIL, SITE_DISPLAY; skips PREPARE_READ, READ_ALLOWED, READ_GUIDANCE, IS_LIST, FETCH_SUPPLIERS, SHAPE_SUPPLIERS, STORE_LIST_STATE, DISPLAY_STAGE, INIT_DISPLAY, SUPPLIER_READ_DISPLAY, FETCH_SUPPLIER_DETAIL, SHAPE_DETAIL, STORE_DETAIL_STATE, STORE_PREPARED_TRANSACTION, SUPPLIER_TRANSACTION_DISPLAY, CHECK_SUPPLIER_DUPLICATE, AUTHORIZE_SUPPLIER_WRITE, STORE_PREFLIGHT_TRANSACTION, SUPPLIER_WRITE_ROUTE, CREATE_SUPPLIER, CAPTURE_SUPPLIER_CREATE, STORE_CREATE_RECEIPT, CREATE_HAS_ID, GET_CREATED_SUPPLIER, VERIFY_SUPPLIER_CREATE, STORE_VERIFIED_TRANSACTION, PREPARE_ADDRESS, STORE_ADDRESS_PREPARED, ADDRESS_ENTRY, ADDRESS_DISPLAY, FETCH_ADDRESS_PARENT, CHECK_ADDRESS_PARENT, STORE_ADDRESS_PARENT, ADDRESS_OPERATION, FETCH_ADDRESSES, SHAPE_ADDRESSES, STORE_ADDRESS_LIST, FETCH_ADDRESS_DETAIL, SHAPE_ADDRESS_DETAIL, STORE_ADDRESS_DETAIL, ADDRESS_DUPLICATE_INPUT, CHECK_ADDRESS_DUPLICATE, AUTHORIZE_ADDRESS_WRITE, STORE_ADDRESS_ATTEMPT, ADDRESS_WRITE_ROUTE, CREATE_ADDRESS, CAPTURE_ADDRESS_CREATE, STORE_ADDRESS_RECEIPT, ADDRESS_HAS_ID, GET_CREATED_ADDRESS, VERIFY_ADDRESS_CREATE, STORE_ADDRESS_VERIFIED, FETCH_SITES, SHAPE_SITES, STORE_SITE_LIST, SITE_REFERENCE_INPUT, FETCH_SITE_ADDRESS_REFERENCE, FETCH_SITE_BU_REFERENCE, CHECK_SITE_REFERENCES, STORE_SITE_REFERENCES, SITE_REFERENCES_ROUTE, SITE_DUPLICATE_INPUT, CHECK_SITE_DUPLICATE, AUTHORIZE_SITE_WRITE, STORE_SITE_ATTEMPT, SITE_WRITE_ROUTE, CREATE_SITE, CAPTURE_SITE_CREATE, STORE_SITE_RECEIPT, SITE_HAS_ID, GET_CREATED_SITE, VERIFY_SITE_CREATE, STORE_SITE_VERIFIED, PREPARE_CONTACT, STORE_CONTACT_PREPARED, CONTACT_ENTRY, FETCH_CONTACT_PARENT, CHECK_CONTACT_PARENT, STORE_CONTACT_PARENT, CONTACT_OPERATION, FETCH_CONTACTS, SHAPE_CONTACTS, STORE_CONTACT_LIST, FETCH_CONTACT_DETAIL, SHAPE_CONTACT_DETAIL, STORE_CONTACT_DETAIL, CONTACT_DUPLICATE_INPUT, CHECK_CONTACT_DUPLICATE, AUTHORIZE_CONTACT_WRITE, STORE_CONTACT_ATTEMPT, CONTACT_WRITE_ROUTE, CREATE_CONTACT, CAPTURE_CONTACT_CREATE, STORE_CONTACT_RECEIPT, CONTACT_HAS_ID, GET_CREATED_CONTACT, VERIFY_CONTACT_CREATE, STORE_CONTACT_VERIFIED, CONTACT_DISPLAY | 18035 ms | 16526 ms | 8200 | 410 | 8610 | oci-agent/openai.gpt-5-mini | 10 |  |  | C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\site-query-detail\result.html |
 | PASSED | XDX_SUPPLIER_CORE_20260924 | site-query-list | Verify ordinary site exact-name query with supplier parent and all nine projected fields. | file | hybrid | passed: 115/115 checks | passed: score 5/5 | record-now: raw, raw | executes EXTRACT_READ, PREPARE_TRANSACTION, TRANSACTION_ROUTE, PREPARE_SITE, STORE_SITE_PREPARED, SITE_ENTRY, FETCH_SITE_PARENT, CHECK_SITE_PARENT, STORE_SITE_PARENT, SITE_OPERATION, FETCH_SITES, SHAPE_SITES, STORE_SITE_LIST, SITE_DISPLAY; skips PREPARE_READ, READ_ALLOWED, READ_GUIDANCE, IS_LIST, FETCH_SUPPLIERS, SHAPE_SUPPLIERS, STORE_LIST_STATE, DISPLAY_STAGE, INIT_DISPLAY, SUPPLIER_READ_DISPLAY, FETCH_SUPPLIER_DETAIL, SHAPE_DETAIL, STORE_DETAIL_STATE, STORE_PREPARED_TRANSACTION, SUPPLIER_TRANSACTION_DISPLAY, CHECK_SUPPLIER_DUPLICATE, AUTHORIZE_SUPPLIER_WRITE, STORE_PREFLIGHT_TRANSACTION, SUPPLIER_WRITE_ROUTE, CREATE_SUPPLIER, CAPTURE_SUPPLIER_CREATE, STORE_CREATE_RECEIPT, CREATE_HAS_ID, GET_CREATED_SUPPLIER, VERIFY_SUPPLIER_CREATE, STORE_VERIFIED_TRANSACTION, PREPARE_ADDRESS, STORE_ADDRESS_PREPARED, ADDRESS_ENTRY, ADDRESS_DISPLAY, FETCH_ADDRESS_PARENT, CHECK_ADDRESS_PARENT, STORE_ADDRESS_PARENT, ADDRESS_OPERATION, FETCH_ADDRESSES, SHAPE_ADDRESSES, STORE_ADDRESS_LIST, FETCH_ADDRESS_DETAIL, SHAPE_ADDRESS_DETAIL, STORE_ADDRESS_DETAIL, ADDRESS_DUPLICATE_INPUT, CHECK_ADDRESS_DUPLICATE, AUTHORIZE_ADDRESS_WRITE, STORE_ADDRESS_ATTEMPT, ADDRESS_WRITE_ROUTE, CREATE_ADDRESS, CAPTURE_ADDRESS_CREATE, STORE_ADDRESS_RECEIPT, ADDRESS_HAS_ID, GET_CREATED_ADDRESS, VERIFY_ADDRESS_CREATE, STORE_ADDRESS_VERIFIED, FETCH_SITE_DETAIL, SHAPE_SITE_DETAIL, STORE_SITE_DETAIL, SITE_REFERENCE_INPUT, FETCH_SITE_ADDRESS_REFERENCE, FETCH_SITE_BU_REFERENCE, CHECK_SITE_REFERENCES, STORE_SITE_REFERENCES, SITE_REFERENCES_ROUTE, SITE_DUPLICATE_INPUT, CHECK_SITE_DUPLICATE, AUTHORIZE_SITE_WRITE, STORE_SITE_ATTEMPT, SITE_WRITE_ROUTE, CREATE_SITE, CAPTURE_SITE_CREATE, STORE_SITE_RECEIPT, SITE_HAS_ID, GET_CREATED_SITE, VERIFY_SITE_CREATE, STORE_SITE_VERIFIED, PREPARE_CONTACT, STORE_CONTACT_PREPARED, CONTACT_ENTRY, FETCH_CONTACT_PARENT, CHECK_CONTACT_PARENT, STORE_CONTACT_PARENT, CONTACT_OPERATION, FETCH_CONTACTS, SHAPE_CONTACTS, STORE_CONTACT_LIST, FETCH_CONTACT_DETAIL, SHAPE_CONTACT_DETAIL, STORE_CONTACT_DETAIL, CONTACT_DUPLICATE_INPUT, CHECK_CONTACT_DUPLICATE, AUTHORIZE_CONTACT_WRITE, STORE_CONTACT_ATTEMPT, CONTACT_WRITE_ROUTE, CREATE_CONTACT, CAPTURE_CONTACT_CREATE, STORE_CONTACT_RECEIPT, CONTACT_HAS_ID, GET_CREATED_CONTACT, VERIFY_CONTACT_CREATE, STORE_CONTACT_VERIFIED, CONTACT_DISPLAY | 18314 ms | 16708 ms | 8221 | 428 | 8649 | oci-agent/openai.gpt-5-mini | 10 |  |  | C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\site-query-list\result.html |
+| PASSED | XDX_SUPPLIER_CORE_20260924 | supplier-number-manual-regression | Protect exact user manual query, supplier-number detail and address-list404 reproduction. | file | hybrid | passed: 358/358 checks | passed: score 5/5 |  |  | 68194 ms | 61155 ms | 24636 | 1197 | 25833 | oci-agent/openai.gpt-5-mini | 30 |  |  | C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-number-manual-regression\result.html |
 
 </details>

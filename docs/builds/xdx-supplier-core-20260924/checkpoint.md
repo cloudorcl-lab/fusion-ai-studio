@@ -42,3 +42,9 @@ Checkpoint 2026-09-24T23:32:35.778Z: P4 configured11/11 PASS with all judges att
 
 Checkpoint 2026-09-25T01:16:52.323Z: Handoff replaced for current P5. Native contact434 accepted once; selected detail pending, thenrealpaging. Only70923 affectedtests running. P4 complete. No more business writes needed. Scope/authority unchanged.
 2026-09-25T01:35:36.4244697Z: P1-P4 accepted, P5 native complete, current DRAFT86232573 ETag17 includes deterministic child-name edit repair. Address replay4/4 and474/474 PASS. Process54636 executes remaining tests sequentially; do not start concurrent workflow/test mutations or replay accepted POSTs. KEEP054 nextdeadline01:38:51.992Z. P6 remains current configured suite/judges, app panel, timing/dependency cleanup, Closeout/local commit. ExistingBOs and docs/TODO.md preserved.
+
+## Supplier-number404 repair 2026-09-25T02:56:18.077Z
+
+DRAFT86237214 applied. Native exact steps1-3 PASS; six local CODE suites PASS. New ATLAS3step regression running process81702; finish judging, scope reconciliation, lesson, Closeout and scoped local commit. No POST/publish/push.
+
+Final repair: native steps1-3 and configured3/3 with358assertions/alljudges PASS. Scoped ATLAS exception remains47 unchanged suggestions. Local scoped commit follows Closeout; preserve unrelated TODO.

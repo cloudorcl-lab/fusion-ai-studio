@@ -24,3 +24,7 @@ Limits: raw ATLAS still suggests47 unsupported startup combinations or duplicate
 Timing: execution-time-tracker.md owns elapsed phases and gaps. Final workflow runs observed222134 input/11821 output/233955 total tokens,270AIUnits and492.1s nested workflow time. App elapsed57602ms; its result does not expose aggregate token/AIUnit metrics. Cached-token and orchestration allocation are unavailable. Prior attempts are retained and are not included in final-suite totals. Recorded keep-alive gaps and an inactive/auth-blocked interval prevent a claim of continuous five-minute compliance; see evidence/xdx_timing_continuity_audit.md. No causal claim links a particular gap to logout.
 
 Delivery: current-task Startup and Closeout PASS. Retain the verified snapshot on the local codex branch with the scoped delivery commit; no remote publication/push is authorized.
+
+## Post-delivery repair acceptance — supplier-number404
+
+DRAFT86237214/ETag18 replaces the historical workflow version above. Reported manual steps2and3 were fixed and independently passed in the native app after exact step1. New exact3step configured conversation PASS,358assertions,all judges complete; six actual-CODE contract suites PASS. BOs, topology, models, write logic and app remain unchanged. Prior suite totals above are historical, not fresh reruns. See xdx_manual_testing_results.md and evidence/xdx_number404_scoped_verification.md. User may continue at step4 in the retained app preview. No publish/push or business write.

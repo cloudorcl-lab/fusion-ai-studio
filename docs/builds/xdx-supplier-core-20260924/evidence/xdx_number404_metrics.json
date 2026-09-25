@@ -1,0 +1,19 @@
+{
+  "startedAt": "2026-09-25T02:59:21.878Z",
+  "finishedAt": "2026-09-25T03:00:30.072Z",
+  "durationMs": 68194,
+  "workflowTimeMs": 61155,
+  "tokens": {
+    "inputTokens": 24636,
+    "outputTokens": 1197,
+    "totalTokens": 25833,
+    "modelName": "oci-agent/openai.gpt-5-mini",
+    "sourceFields": [
+      "computed:inputTokens+outputTokens",
+      "nodeProgressMessage.nodeStepInfo.details[0].inputTokens",
+      "nodeProgressMessage.nodeStepInfo.details[0].modelName",
+      "nodeProgressMessage.nodeStepInfo.details[0].outputTokens"
+    ]
+  },
+  "totalAiUnits": 30
+}

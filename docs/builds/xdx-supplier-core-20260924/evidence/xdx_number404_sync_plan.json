@@ -1,0 +1,291 @@
+{
+  "kind": "workflow-test-focused-sync-plan",
+  "workflowFile": "src/workflows/xdx_supplier_core_20260924.wf",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924",
+    "status": "DRAFT",
+    "version": 86237214,
+    "name": "XDX Supplier Core 20260924",
+    "description": "Native terminating supplier core query and exact-approved create flows.",
+    "family": "PRC",
+    "product": "SUPPLIER"
+  },
+  "view": {
+    "mode": "recommended-batch",
+    "totalActionsBeforeFilter": 47
+  },
+  "summary": {
+    "totalActions": 1,
+    "deferred": 0
+  },
+  "syncLoopState": "actions-remaining",
+  "finalSummaryAllowed": false,
+  "coverageExecution": {
+    "primaryComplete": true,
+    "remainingActions": 47,
+    "nextActionId": "create:transaction-route-display-path",
+    "nextAction": {
+      "actionId": "create:transaction-route-display-path",
+      "action": "create",
+      "status": "missing",
+      "testName": "transaction-route-display-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/transaction-route-display-path.json",
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3101,
+      "title": "transaction route Display Path",
+      "purpose": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "model-generated",
+      "coverageClass": "deep-path",
+      "costClass": "complex",
+      "lowRisk": true,
+      "reason": "No existing test covers this current workflow scenario.",
+      "authoringHints": {
+        "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "outcome": "display"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "display",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL",
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER",
+            "FETCH_ADDRESS_PARENT",
+            "FETCH_ADDRESSES",
+            "FETCH_ADDRESS_DETAIL",
+            "CHECK_ADDRESS_DUPLICATE",
+            "CREATE_ADDRESS",
+            "GET_CREATED_ADDRESS",
+            "FETCH_SITE_PARENT",
+            "FETCH_SITES",
+            "FETCH_SITE_DETAIL",
+            "FETCH_SITE_ADDRESS_REFERENCE",
+            "FETCH_SITE_BU_REFERENCE",
+            "CHECK_SITE_DUPLICATE",
+            "CREATE_SITE",
+            "GET_CREATED_SITE",
+            "FETCH_CONTACT_PARENT",
+            "FETCH_CONTACTS",
+            "FETCH_CONTACT_DETAIL",
+            "CHECK_CONTACT_DUPLICATE",
+            "CREATE_CONTACT",
+            "GET_CREATED_CONTACT"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (TRANSACTION_ROUTE / display) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is TRANSACTION_ROUTE expression \"{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}\". Synthesize or select upstream values that make this expression choose display; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test transaction-route-display-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-TRANSACTION_ROUTE-display-path",
+            "kind": "branch-path",
+            "intent": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "STORE_PREPARED_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY",
+              "ADDRESS_DISPLAY",
+              "SITE_DISPLAY",
+              "CONTACT_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 4,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 2297,
+                "hash": "d99bc3969ce1d2b5",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 1299,
+                "hash": "327073670ace9b40",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 4,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": []
+          },
+          "contractHash": "57781e6a305b1c5b"
+        }
+      }
+    },
+    "costClass": "complex"
+  },
+  "guidance": {
+    "mode": "automatic",
+    "nextStep": "Execute the single secondary create or update action in coverageExecution.nextActionIds without asking for confirmation. Apply required testData and validate that affected test with deterministic file data. Before generation, author definition.judge whenever the focused action has semantic judge context. If the first attempt misses the intended branch, retry once with materially different input before deferring only that scenario. For record-now secondary branch tests, use the observed-path model: derive path assertions from result.run.nodeResults on success; retry with different input via do-update-workflow-test up to 2 total attempts on wrong-branch failure; call mark-workflow-test-unable-to-generate and skip only that scenario after 2 failures. Immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json after the action is validated or deferred. If nextActionIds contains another action, execute it next without asking. Do not stop while create or update actions remain. Do not run a full workflow suite or perform local semantic judging while create or update actions remain. Do NOT call get-workflow-test-final-summary until no create or update actions remain."
+  }
+}

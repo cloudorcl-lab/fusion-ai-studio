@@ -1,0 +1,42 @@
+[
+  {
+    "sha256": "5bd049e196ed2c392ecb52d15abe75339fb7a5ea927631835f20c9d637234440",
+    "path": ".debug\\xdx-number404\\address-judge-context.json"
+  },
+  {
+    "sha256": "51a9e28dd0c4f0648971d4a394fb4f19f00ebdd7387999330c7ed45437325f92",
+    "path": ".debug\\xdx-number404\\conversation-context.json"
+  },
+  {
+    "sha256": "a844c4b35eb2b804350a1575ea7c4127e6cd0d6ba6d82f35969b35140035ef4b",
+    "path": ".debug\\xdx-number404\\conversation-definition.json"
+  },
+  {
+    "sha256": "8bfcf500dddd3b8ebf393fd4246a2a658d2dd334e2a548af3689c7571810ad16",
+    "path": ".debug\\xdx-number404\\helper.txt"
+  },
+  {
+    "sha256": "c01853ebd153ebd5e78f1150fe2e3156ba6c7018b22f4b28a171d0d2fbb9b8fa",
+    "path": ".debug\\xdx-number404\\PREPARE_ADDRESS.json"
+  },
+  {
+    "sha256": "81bb08cf8fb28f072e336af391acbd88135a84fa8a47526797fa439a293ed4a7",
+    "path": ".debug\\xdx-number404\\PREPARE_CONTACT.json"
+  },
+  {
+    "sha256": "6164f12991accb21da6c98a934702f8cba609642e2a4c031414b00f9b97b57dc",
+    "path": ".debug\\xdx-number404\\PREPARE_READ.json"
+  },
+  {
+    "sha256": "460e0868e60d6aa5e801b218465bdecf8373b96688161f86090698771a34e10d",
+    "path": ".debug\\xdx-number404\\PREPARE_SITE.json"
+  },
+  {
+    "sha256": "27120076fdf64a9d9dc6c6c06509616a637f06b47cabf9a17045d8c4ba3dc288",
+    "path": ".debug\\xdx-number404\\supplier-judge-context.json"
+  },
+  {
+    "sha256": "332542610250e68f6e2dc21acf09df39f9be0ab14126c029e4713c31774846d3",
+    "path": ".debug\\xdx-number404\\sync-plan.json"
+  }
+]

@@ -14,3 +14,7 @@ Version 1.0.0. Approved scope is the eight requirements below. Instantiate durab
 | GP-CON-CREATE | CON-CREATE | contact.create / one dedicated route terminal in core workflow | Native draft/edit/review/approval/result; persisted intended values and parent relationships | Native accepted, contact300000333814434, evidence/xdx_p5_native_contact.md; final configured14/14 with all judges |
 
 Focused negative checks: bind stale-approval/cancel/duplicate/unknown-write cases to the corresponding CREATE requirement; missing or wrong parent to child requirements; malformed binding/types and widget structure to the affected route. Use local contracts for deterministic guards and scoped native proof for actual conversation state. Do not perform unsafe live negative mutations or execute every resource × prompt permutation. Exact cases and evidence IDs are recorded before running; no fixed count substitutes for required behavior.
+
+## Manual-test404 repair regression
+
+New custom `supplier-number-manual-regression`: exact prompts1-3 in order, same conversation, query-only. Derived retained GET fixtures; runtime assertions require actual PREPARE_READ/PREPARE_ADDRESS outputs to equal the selected SupplierId and local contract asserts exact corresponding BO bindings. Native app steps1-3 independently verify live paths and rendered complete outputs. Prior14 configured tests/app1 remain historical baseline; this targeted repair does not alter BOs, topology, write logic, terminal prompts or app configuration.

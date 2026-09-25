@@ -18,6 +18,8 @@ Sources: [GET suppliers](https://docs.oracle.com/en/cloud/saas/procurement/26c/f
 
 The collection operation ID is `getall_suppliers`; the item operation ID is `get_suppliers`. The verified local functions cover collection listing, exact-name filtering, contained-name filtering and scalar item detail.
 
+`SupplierNumber` is a displayed business identifier, not the REST `SupplierId`. Resolve a number to exactly one verified supplier row before constructing item or child-resource paths; numeric syntax alone cannot establish identifier identity. In a selection-based conversation, preserve the returned number-to-ID mapping and withhold unresolved or ambiguous references with query-first guidance. Keep explicit ID input distinct. The [Supplier Core manual regression](../../builds/xdx-supplier-core-20260924/evidence/xdx_number404_native.md) reproduced number-as-ID preparation and verified the corrected query, detail and address sequence in the native DRAFT app on 2026-09-25. This does not establish standalone number-filter support or change the immutable first GET sample.
+
 | Behavior | Contract |
 | --- | --- |
 | Collection projection | `SupplierId`, `SupplierNumber`, `Supplier`, `SupplierType`, `BusinessRelationship`, `InactiveDate` |
@@ -158,6 +160,7 @@ The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierId and 
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-25 | Supplier Core manual steps 2 and 3 returned404; actual-CODE reproduction and native repaired sequence | Distinguish displayed SupplierNumber from REST SupplierId; require verified mapping before supplier/child path construction. |
 | 2026-09-24 | XDX Supplier Core exact-approved native POST and independent GET | Corroborated existing generated-field treatment and required payload in the tested tenant; retained first GET sample and unresolved uniqueness limits. |
 | 2026-09-23 | XDX Supplier Lifecycle live runtime attempt plus retained successful eqih-dev21 create receipt | Corrected the build-specific required-field contract: add `BusinessRelationship` and `TaxOrganizationType`; preserve omission of optional, generated, payment, DFF, attachment and third-party-payment fields. |
 | 2026-09-22 | Current XDX Supplier Lifecycle Agent user scope and P4 contract | Recorded the build-specific required-field-only supplier payload: submit only `Supplier`; omit generated IDs and all optional fields. No POST executed. |

@@ -574,22 +574,22 @@
 <body>
 
   <h1>Workflow Test Suite Result</h1>
-  <section class="report-overview report-overview--passed"><div class="report-overview__status"><span class="pill passed">passed</span><span class="report-overview__status-copy">All 14 workflow tests passed.</span></div><div class="report-overview__groups"><section class="report-overview__group"><h2>Results</h2><div class="report-overview__facts"><div class="report-overview__fact"><span class="label">Passed</span><span class="value">14 / 14</span></div><div class="report-overview__fact report-overview__fact--wide"><span class="label">Judging</span><span class="value">14 judged locally, 0 pending</span></div></div></section><section class="report-overview__group"><h2>Run Configuration</h2><div class="report-overview__facts"><div class="report-overview__fact report-overview__fact--wide"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div><div class="report-overview__fact"><span class="label">Workflow Target</span><span class="value">DRAFT v86232573</span></div><div class="report-overview__fact"><span class="label">Data Source</span><span class="value">file</span></div><div class="report-overview__fact"><span class="label">Evaluation Mode</span><span class="value">hybrid</span></div><div class="report-overview__fact"><span class="label">Judge Provider</span><span class="value">Local</span></div></div></section><section class="report-overview__group"><h2>Runtime Metrics</h2><div class="report-overview__facts"><div class="report-overview__fact"><span class="label">Test Run Time</span><span class="value">532675 ms</span></div><div class="report-overview__fact"><span class="label">Workflow Execution Time</span><span class="value">492138 ms</span></div><div class="report-overview__fact report-overview__fact--wide"><span class="label">Token Usage</span><span class="value">observed for 14/14 cases; 233955 total (222134 input, 11821 output)</span></div><div class="report-overview__fact report-overview__fact--wide"><span class="label">AI Units</span><span class="value">270 total (14/14 cases computed)</span></div></div></section></div></section>
+  <section class="report-overview report-overview--passed"><div class="report-overview__status"><span class="pill passed">passed</span><span class="report-overview__status-copy">All 15 workflow tests passed.</span></div><div class="report-overview__groups"><section class="report-overview__group"><h2>Results</h2><div class="report-overview__facts"><div class="report-overview__fact"><span class="label">Passed</span><span class="value">15 / 15</span></div><div class="report-overview__fact report-overview__fact--wide"><span class="label">Judging</span><span class="value">15 judged locally, 0 pending</span></div></div></section><section class="report-overview__group"><h2>Run Configuration</h2><div class="report-overview__facts"><div class="report-overview__fact report-overview__fact--wide"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div><div class="report-overview__fact"><span class="label">Workflow Target</span><span class="value">XDX_SUPPLIER_CORE_20260924: DRAFT v86232573; XDX_SUPPLIER_CORE_20260924: DRAFT v86237214</span></div><div class="report-overview__fact"><span class="label">Data Source</span><span class="value">file</span></div><div class="report-overview__fact"><span class="label">Evaluation Mode</span><span class="value">hybrid</span></div><div class="report-overview__fact"><span class="label">Judge Provider</span><span class="value">Local</span></div></div></section><section class="report-overview__group"><h2>Runtime Metrics</h2><div class="report-overview__facts"><div class="report-overview__fact"><span class="label">Test Run Time</span><span class="value">600869 ms</span></div><div class="report-overview__fact"><span class="label">Workflow Execution Time</span><span class="value">553293 ms</span></div><div class="report-overview__fact report-overview__fact--wide"><span class="label">Token Usage</span><span class="value">observed for 15/15 cases; 259788 total (246770 input, 13018 output)</span></div><div class="report-overview__fact report-overview__fact--wide"><span class="label">AI Units</span><span class="value">300 total (15/15 cases computed)</span></div></div></section></div></section>
   <div class="section">
     <h2>Summary</h2>
-    <pre>Workflow test suite passed: 14/14 passed, 0 failed, 0 needs judge.
+    <pre>Workflow test suite passed: 15/15 passed, 0 failed, 0 needs judge.
 Filters: workflowCode=XDX_SUPPLIER_CORE_20260924, workflowCodes=XDX_SUPPLIER_CORE_20260924.
 
 Reports:
 - Workflow suite report: [suite-result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\suite-result.html)
 
 Metrics:
-- Token data: observed for 14/14 cases; input 222134; output 11821; total 233955.
-- AI units: 270 total (54 token units, 14/14 cases computed).
-- Latency: total workflow time 492.1s across 14/14 model-backed cases.
+- Token data: observed for 15/15 cases; input 246770; output 13018; total 259788.
+- AI units: 300 total (60 token units, 15/15 cases computed).
+- Latency: total workflow time 553.3s across 15/15 model-backed cases.
 
 Optimization:
-- Model optimization is available for this workflow. 14 passing tests exercise model-backed nodes.
+- Model optimization is available for this workflow. 15 passing tests exercise model-backed nodes.
 - Next action: Run node-level model optimization sweep. To run it, reply: Run the model optimization sweep for this workflow and summarize the best model placement per LLM node.
 - Creates a fresh node-level sweep, runs every candidate profile, judges results, and generates the sweep report.
 - The sweep reports recommendations only. Applying model changes requires a separate approval.
@@ -609,7 +609,8 @@ Tests:
 11. supplier-query-guidance | passed | Verify unsupported Query is withheld with scope guidance and no BO execution.
 12. site-draft-conversation | passed | Verify site draft editing, reference revalidation, complete review and cancellat...
 13. site-query-detail | passed | Verify ordinary parent-scoped site detail independently of create confirmation.
-14. site-query-list | passed | Verify ordinary parent-scoped site exact-name query independently of create conf...</pre>
+14. site-query-list | passed | Verify ordinary parent-scoped site exact-name query independently of create conf...
+15. supplier-number-manual-regression | passed | Reproduce and protect manual query followed by supplier-number detail and addres...</pre>
     <ul>
       <li><a href="suite-result.json">JSON suite report</a></li>
       <li><a href="suite-result.md">Markdown suite report</a></li>
@@ -1309,6 +1310,47 @@ Tests:
 </div>
       <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;siteCore&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Supplier sites&quot;,&quot;description&quot;:&quot;Supplier XDX Core Supplier 20260924 2130 (300000333814409). count: 1, offset: 0, hasMore: false. No next page.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;SupplierSiteId&quot;,&quot;SupplierSite&quot;,&quot;ProcurementBUId&quot;,&quot;SupplierAddressName&quot;,&quot;SitePurposePurchasingFlag&quot;,&quot;ProcurementBU&quot;,&quot;SupplierAddressId&quot;,&quot;Status&quot;,&quot;InactiveDate&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;300000333814424&quot;,&quot;XDX Core Site 20260924&quot;,&quot;300000046987012&quot;,&quot;XDX Core Address 20260924&quot;,&quot;true&quot;,&quot;US1 Business Unit&quot;,&quot;300000333814416&quot;,&quot;ACTIVE&quot;,&quot;Not specified&quot;]}]}}&lt;/oraInfoDisplay&gt;</pre>
     </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">supplier-number-manual-regression</span>
+
+      </div>
+      <a href="supplier-number-manual-regression/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+      <div class="case-fact"><span class="label">Conversation execution</span><span class="value">39 node executions; 0 suspensions; 0 resumptions</span></div>
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 358/358 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">68194 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">61155 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">25833 total (24636 input, 1197 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">30</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Protect exact user manual query, supplier-number detail and address-list404 reproduction.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Reproduce and protect manual query followed by supplier-number detail and address list.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span></div>
+        <div class="case-fact"><span class="label">Capture modes</span></div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p>No invocation recorded.</p>
+      <h3>Path Assertions</h3>
+      <p>No path assertions configured.</p>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;addressCore&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Supplier addresses&quot;,&quot;description&quot;:&quot;Supplier XDX Core Supplier 20260924 2130 (300000333814409). count: 1, offset: 0, hasMore: false. No next page.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;SupplierAddressId&quot;,&quot;AddressName&quot;,&quot;CountryCode&quot;,&quot;AddressLine1&quot;,&quot;City&quot;,&quot;State&quot;,&quot;PostalCode&quot;,&quot;Email&quot;,&quot;AddressPurposeOrderingFlag&quot;,&quot;AddressPartyNumber&quot;,&quot;Status&quot;,&quot;InactiveDate&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;300000333814416&quot;,&quot;XDX Core Address 20260924&quot;,&quot;US&quot;,&quot;5000 CARTER DR.&quot;,&quot;LOS ANGELES&quot;,&quot;CA&quot;,&quot;90032&quot;,&quot;xdx-core-address-20260924@example.invalid&quot;,&quot;true&quot;,&quot;1486638&quot;,&quot;ACTIV...</pre>
+    </details>
   </article></div>
     <details>
     <summary>Show raw diagnostic table</summary>
@@ -1700,6 +1742,32 @@ Tests:
         <td class="suite-diagnostic-table__wrap"></td>
         <td class="suite-diagnostic-table__wrap"></td>
         <td><a href="site-query-list/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">supplier-number-manual-regression</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Protect exact user manual query, supplier-number detail and address-list404 reproduction.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap"></td>
+        <td class="suite-diagnostic-table__wrap">passed: 358/358 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td>68194 ms</td>
+        <td>61155 ms</td>
+        <td>24636</td>
+        <td>1197</td>
+        <td>25833</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>30</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="supplier-number-manual-regression/result.html">Test report</a></td>
       </tr></tbody>
       </table>
     </div>

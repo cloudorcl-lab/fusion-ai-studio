@@ -16,3 +16,7 @@ Version 1.0.0. Exactly four resources and eight operation requirements. All eigh
 
 
 Final acceptance: evidence/xdx_p5_accepted_configured_suite.json (14/14) and evidence/xdx_final_app_summary.txt (app1/1), DRAFT86232573. Scoped ATLAS disposition: xdx_p6_scoped_completion.md. Closeout/delivery tracked separately.
+
+## Post-delivery manual-test404 repair
+
+SUP-READ and ADDR-READ reopened after user404 reports for displayed supplier number1506. Native exact query/detail/address sequence passes on DRAFT86237214. Shared read-reference correction also covered for SITE-READ and CONTACT-READ by actual-CODE tests. No accepted create repeated. Final repair receipt: xdx_manual_testing_results.md and evidence/xdx_number404_native.md; configured regression tracked separately from historical delivery suite.

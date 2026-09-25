@@ -1,13 +1,13 @@
 {
-  "createdAt": "2026-09-25T01:57:43.377Z",
+  "createdAt": "2026-09-25T03:01:28.090Z",
   "scope": {
     "type": "app",
     "appCode": "XDX_SUPPLIER_CORE_APP_20260924"
   },
   "summary": {
     "workflow": {
-      "total": 14,
-      "passed": 14,
+      "total": 15,
+      "passed": 15,
       "failed": 0,
       "needsJudge": 0
     },
@@ -17,12 +17,12 @@
       "failed": 0,
       "needsJudge": 0
     },
-    "total": 15,
-    "passed": 15,
+    "total": 16,
+    "passed": 16,
     "failed": 0,
     "needsJudge": 0
   },
-  "summaryText": "Total: 15\nPassed: 15\nFailed: 0\nNeeds Judge: 0\n\nWorkflow suites: 1 backing workflow report(s)\nApp suite: test-reports/apps/xdx_supplier_core_app_20260924/suite-result.html\n\n## App Suite Summary\n\nApp tests: 1/1 passed, 0 failed, 0 need judge.\n\n## Backing Workflow Suite Summaries\n\n1. XDX Supplier Core 20260924\n   Status: passed\n   Report: [suite-result.html](test-reports/workflows/xdx_supplier_core_20260924/suite-result.html)\n   Tests: 14/14 passed, 0 failed, 0 need judge\n\n   Metrics:\n   - Token data: observed for 14/14 cases; input 222134; output 11821; total 233955.\n   - AI units: 270 total (54 token units, 14/14 cases computed).\n   - Latency: total workflow time 492.1s across 14/14 model-backed cases.\n\n   Optimization:\n   - Model optimization is available for this workflow. 14 passing tests exercise model-backed nodes.\n   - Next action: Run node-level model optimization sweep. To run it, reply: Run the model optimization sweep for this workflow and summarize the best model placement per LLM node.\n   - Creates a fresh node-level sweep, runs every candidate profile, judges results, and generates the sweep report.\n   - The sweep reports recommendations only. Applying model changes requires a separate approval.\n   - For a workflow-wide model comparison instead, reply: Run a workflow-level model optimization sweep.\n\n## Action Required\n\nNone.",
+  "summaryText": "Total: 16\nPassed: 16\nFailed: 0\nNeeds Judge: 0\n\nWorkflow suites: 1 backing workflow report(s)\nApp suite: test-reports/apps/xdx_supplier_core_app_20260924/suite-result.html\n\n## App Suite Summary\n\nApp tests: 1/1 passed, 0 failed, 0 need judge.\n\nReports:\n- Consolidated report: [consolidated-suite-result.html](test-reports/apps/xdx_supplier_core_app_20260924/consolidated-suite-result.html)\n- App suite: passed 1/1, report: [suite-result.html](test-reports/apps/xdx_supplier_core_app_20260924/suite-result.html)\n\n## Backing Workflow Suite Summaries\n\n1. Workflow 1\n   Status: passed\n   Report: [suite-result.html](test-reports/workflows/xdx_supplier_core_20260924/suite-result.html)\n   Tests: 15/15 passed, 0 failed, 0 need judge\n\n   Metrics:\n   - Token data: observed for 15/15 cases; input 246770; output 13018; total 259788.\n   - AI units: 300 total (60 token units, 15/15 cases computed).\n   - Latency: total workflow time 553.3s across 15/15 model-backed cases.\n\n   Optimization:\n   - Model optimization is available for this workflow. 15 passing tests exercise model-backed nodes.\n   - Next action: Run node-level model optimization sweep. To run it, reply: Run the model optimization sweep for this workflow and summarize the best model placement per LLM node.\n   - Creates a fresh node-level sweep, runs every candidate profile, judges results, and generates the sweep report.\n   - The sweep reports recommendations only. Applying model changes requires a separate approval.\n   - For a workflow-wide model comparison instead, reply: Run a workflow-level model optimization sweep.\n\n## Action Required\n\nNone.",
   "appSuite": {
     "reportPath": "test-reports/apps/xdx_supplier_core_app_20260924/suite-result.json"
   },

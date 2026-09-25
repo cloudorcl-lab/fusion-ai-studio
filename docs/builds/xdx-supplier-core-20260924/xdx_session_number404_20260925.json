@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-number-404-20260925",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-20260924",
+  "branch": "codex/xdx-supplier-core-20260924",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-25T02:41:09.925Z",
+  "checkpointUtc": "2026-09-25T03:02:58.078Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "6e8c3e77daaa34e7aef01d12b5292b76ab361a24e71115e4047f5205a04818e2"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "38c349e363823da74a0ec8d1114a71e97ba8f6c6d7d5e732fb6ee26f24c2c605"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "d75f5ba3e4a39cebdc372aa3186d1cbfc427367f525aecc12c7b8dea8decf6e5"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "7aea4b196925fda6e68994acfd73cfbe46b236a968c6fa8858b505265d0861af"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "ba6106a6ed9c2ccf555a0ff188125de35c0e9e98cbb8c9c6c22e5c81902cb989"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "59aecca2482f1248529e4c1c599ff07a60a9d32a96befd79e58c74761812fcdd"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "052e94a96f889198465cdba8b7099969fd2294116548a6f40ccd64aa19c44cd0"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "sha256": "a6c39c7b879b25aea971c47aa4d3f93fe6439fb6e35adfa774872b40969d0689"
+    }
+  ],
+  "reviewNotes": "Repair review: canonical playbook, registry and five 26C references; number and REST key distinction under investigation. Prior suite is historical. Read-only regression, no business writes.",
+  "objectReferences": [
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md"
+    },
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md"
+    },
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md"
+    },
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md"
+    },
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-core-20260924/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-core-20260924/execution-time-tracker.md",
+  "checks": [
+    {
+      "status": "pass",
+      "id": "learning",
+      "rule": "Instruction 1",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_native.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_scoped_verification.md",
+        "docs/builds/xdx-supplier-core-20260924/xdx_manual_testing_results.md"
+      ],
+      "reason": "Scoped repair completed with actual-CODE contracts, exact native sequence, configured3step regression and documented inherited scope/authority boundaries."
+    },
+    {
+      "status": "pass",
+      "id": "intake",
+      "rule": "Gate 0",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_native.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_scoped_verification.md",
+        "docs/builds/xdx-supplier-core-20260924/xdx_manual_testing_results.md"
+      ],
+      "reason": "Scoped repair completed with actual-CODE contracts, exact native sequence, configured3step regression and documented inherited scope/authority boundaries."
+    },
+    {
+      "status": "pass",
+      "id": "authority",
+      "rule": "Gate 1",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_native.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_scoped_verification.md",
+        "docs/builds/xdx-supplier-core-20260924/xdx_manual_testing_results.md"
+      ],
+      "reason": "Scoped repair completed with actual-CODE contracts, exact native sequence, configured3step regression and documented inherited scope/authority boundaries."
+    },
+    {
+      "status": "pass",
+      "id": "objects",
+      "rule": "Gate 2 and registry",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_native.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_scoped_verification.md",
+        "docs/builds/xdx-supplier-core-20260924/xdx_manual_testing_results.md"
+      ],
+      "reason": "Scoped repair completed with actual-CODE contracts, exact native sequence, configured3step regression and documented inherited scope/authority boundaries."
+    },
+    {
+      "status": "pass",
+      "id": "verification",
+      "rule": "Gates 3–9 and QA",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_native.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_scoped_verification.md",
+        "docs/builds/xdx-supplier-core-20260924/xdx_manual_testing_results.md"
+      ],
+      "reason": "Scoped repair completed with actual-CODE contracts, exact native sequence, configured3step regression and documented inherited scope/authority boundaries."
+    },
+    {
+      "status": "pass",
+      "id": "timing",
+      "rule": "Time token controls",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_native.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_scoped_verification.md",
+        "docs/builds/xdx-supplier-core-20260924/xdx_manual_testing_results.md"
+      ],
+      "reason": "Scoped repair completed with actual-CODE contracts, exact native sequence, configured3step regression and documented inherited scope/authority boundaries."
+    },
+    {
+      "status": "pass",
+      "id": "cleanup",
+      "rule": "Dependency hygiene",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_native.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_scoped_verification.md",
+        "docs/builds/xdx-supplier-core-20260924/xdx_manual_testing_results.md"
+      ],
+      "reason": "Scoped repair completed with actual-CODE contracts, exact native sequence, configured3step regression and documented inherited scope/authority boundaries."
+    },
+    {
+      "status": "pass",
+      "id": "delivery",
+      "rule": "Gate 10 and Definition of Done",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_native.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_number404_scoped_verification.md",
+        "docs/builds/xdx-supplier-core-20260924/xdx_manual_testing_results.md"
+      ],
+      "reason": "Scoped repair completed with actual-CODE contracts, exact native sequence, configured3step regression and documented inherited scope/authority boundaries."
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Final regression input24636 output1197 total25833; prior and failed runs excluded. Orchestration/cached metrics unavailable.",
+    "aiUnits": "30 final regression; no optimization.",
+    "timingGaps": "First tool calls before first clock explicitly unallocated; per-activity subphase labor unavailable. Tracker distinguishes nested timings and final commit/response tail."
+  }
+}

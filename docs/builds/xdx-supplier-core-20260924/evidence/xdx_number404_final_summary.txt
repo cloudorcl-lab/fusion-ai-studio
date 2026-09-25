@@ -1,0 +1,22 @@
+Workflow test summary
+Workflow: XDX Supplier Core 20260924
+Status: coverage incomplete
+Report: [suite-result.html](test-reports/workflows/xdx_supplier_core_20260924/suite-result.html)
+Tests: 15/15 passed, 0 failed, 0 need judge
+
+Metrics:
+- Token data: observed for 15/15 cases; input 246770; output 13018; total 259788.
+- AI units: 300 total (60 token units, 15/15 cases computed).
+- Latency: total workflow time 553.3s across 15/15 model-backed cases.
+
+Optimization:
+- Model optimization is available for this workflow. 15 passing tests exercise model-backed nodes.
+- Next action: Run node-level model optimization sweep. To run it, reply: Run the model optimization sweep for this workflow and summarize the best model placement per LLM node.
+- Creates a fresh node-level sweep, runs every candidate profile, judges results, and generates the sweep report.
+- The sweep reports recommendations only. Applying model changes requires a separate approval.
+- For a workflow-wide model comparison instead, reply: Run a workflow-level model optimization sweep.
+
+Coverage remaining:
+- Current sync-plan coverage: 2/49 scenarios up to date, 47 missing.
+- Next action: 1 action (1 deep semantic path).
+- Next prompt: Continue this workflow test sync and complete the next action.
