@@ -1,0 +1,5 @@
+* TestingWFBuildTools                                 bda27ea [origin/TestingWFBuildTools] Prepare optimized Supplier Core restart and retire prior draft build
+  codex/xdx-agent-app-clean-base                      99e969d chore: preserve clean AI Studio build base
+  codex/xdx-supplier-lifecycle-agent-retry-20260923-a 6c85117 fix: stabilize supplier commands and close P9 acceptance
+  codex/xdx-supplier-workspace                        48bcd7b feat: add xdx-supplier-workspace module with business objects, test workflows, and validation scripts
+  release-26C                                         3b3b8c2 [origin/release-26C] feat: initialize AI studio agent scripts and configuration files

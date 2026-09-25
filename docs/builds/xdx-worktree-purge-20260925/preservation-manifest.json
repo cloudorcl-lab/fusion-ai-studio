@@ -1,0 +1,27 @@
+[
+  {
+    "sha256": "a38e71a0cd301328720f3bb06eae6d0e2d1cf692bb3875acaba52b77d2163cba",
+    "preserved": "docs\\builds\\xdx-worktree-purge-20260925\\preserved-bootstrap\\checkpoint.md",
+    "source": "docs/builds/xdx-supplier-core-20260925/checkpoint.md"
+  },
+  {
+    "sha256": "0cad22d36845ab2683a58aa9a1869773fb634052b04007f34f6b9086429f3cc5",
+    "preserved": "docs\\builds\\xdx-worktree-purge-20260925\\preserved-bootstrap\\dependency-inventory.md",
+    "source": "docs/builds/xdx-supplier-core-20260925/dependency-inventory.md"
+  },
+  {
+    "sha256": "1d209d9d0fc2e587e6daa62183d217e87a55608f242a3656ae2be75bcca668e6",
+    "preserved": "docs\\builds\\xdx-worktree-purge-20260925\\preserved-bootstrap\\intake-and-learning-register.md",
+    "source": "docs/builds/xdx-supplier-core-20260925/intake-and-learning-register.md"
+  },
+  {
+    "sha256": "573c727147c2b03854545d25282403b28de59a66fcf88272cd704fa09ead7706",
+    "preserved": "docs\\builds\\xdx-worktree-purge-20260925\\preserved-bootstrap\\time-tracker.md",
+    "source": "docs/builds/xdx-supplier-core-20260925/time-tracker.md"
+  },
+  {
+    "sha256": "65134bd36bcf976f91a9242a6eab7dbd93089262571c12cfe10d36f2f6c197f5",
+    "preserved": "docs\\builds\\xdx-worktree-purge-20260925\\preserved-bootstrap\\xdx_session_xdx-supplier-core-execution-20260925.json",
+    "source": "docs/builds/xdx-supplier-core-20260925/xdx_session_xdx-supplier-core-execution-20260925.json"
+  }
+]

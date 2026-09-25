@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-core-execution-20260925",
+  "repoRoot": "/mnt/c/Users/dasu/Documents/GitHub/fusion-ai-studio-1/.worktrees/xdx-supplier-core-20260925",
+  "branch": "codex/xdx-supplier-core-20260925",
+  "phase": "Startup",
+  "startedUtc": "2026-09-25T17:14:17Z",
+  "checkpointUtc": "2026-09-25T17:14:17Z",
+  "reads": [
+    {"path":"AGENTS.md","sha256":"736668746146a004b546c61af402f92cf6ea1a7a0c6fedca9ccb4c0d2d42ab1e"},
+    {"path":"docs/handoffs/ACTIVE_HANDOFF.md","sha256":"bae3cbfb04a0c1839b6fe4aee75f73997152ffab76d35f924bdc9a1703717e3a"},
+    {"path":"docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md","sha256":"641a9bb7ed75462a74480827fbb42168648128fc0e844034977c5cc44d70f1ce"},
+    {"path":"docs/lessons/objects/README.md","sha256":"39446e109dd5b8311f2fc88189211043fefee8f96d3ce333b99fb8434d0335b2"},
+    {"path":"docs/lessons/objects/oracle-fusion-procurement-suppliers.md","sha256":"d4b0b0c2818298c8f40345f86a71783f9a07da328904a31f8622c3b0c8c374cc"},
+    {"path":"docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md","sha256":"007943a2da9891196f4335fca4a03d7e6e1776ddab77db9afe4f08b04af71478"},
+    {"path":"docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md","sha256":"aab96a8f39973718fc1ee5c12ae7ec4c92fea147f985e13c9bcc0f8de374f07b"},
+    {"path":"docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md","sha256":"518ea667f2b77b4b82ae8ab365750a6e803956bd93b603c20a0fa247cbaaeeb6"},
+    {"path":"docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md","sha256":"df1e51860eac333399a59a5abe6fac8ede3b3518845c921b37a2a5c38cd6decf"}
+  ],
+  "reviewNotes": "New dated worktree from bda27ea. Scope is suppliers, addresses, sites and contacts only, with read-only BU lookup for sites. User explicitly authorized direct-BO and native-app fixture chains with no more than two accepted creates per resource and no replay. Exact native payload/revision approval remains a runtime gate.",
+  "objectReferences": [
+    {"path":"docs/lessons/objects/oracle-fusion-procurement-suppliers.md","release":"26C/API 11.13.18.05"},
+    {"path":"docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md","release":"26C/API 11.13.18.05"},
+    {"path":"docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md","release":"26C/API 11.13.18.05"},
+    {"path":"docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md","release":"26C/API 11.13.18.05"},
+    {"path":"docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md","release":"26C/API 11.13.18.05"}
+  ],
+  "noObjectsReason": "",
+  "learningRegister": "docs/builds/xdx-supplier-core-20260925/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-core-20260925/time-tracker.md",
+  "checks": [
+    {"id":"learning","rule":"Instruction 1 and Gate 0","status":"planned","reason":"Learning register initialized; execution evidence pending.","evidence":[]},
+    {"id":"intake","rule":"Gate 0 intake contract","status":"planned","reason":"Fresh build intake and architecture review pending.","evidence":[]},
+    {"id":"authority","rule":"Gate 1 and two-chain ledger","status":"planned","reason":"User launch authorizes both chains; operation reservations and exact native approval are pending.","evidence":[]},
+    {"id":"objects","rule":"Gate 2 and object registry","status":"planned","reason":"Five selected references reviewed; new dated BO evidence pending.","evidence":[]},
+    {"id":"verification","rule":"Gates 3-9","status":"planned","reason":"Local and DRAFT verification pending.","evidence":[]},
+    {"id":"timing","rule":"Timing controls","status":"planned","reason":"Tracker initialized; host has no reminder/context meter.","evidence":[]},
+    {"id":"cleanup","rule":"Dependency hygiene","status":"planned","reason":"Closeout inventory pending.","evidence":[]},
+    {"id":"delivery","rule":"Gate 10 and Definition of Done","status":"planned","reason":"Local commit only; no publish or push.","evidence":[]}
+  ],
+  "unresolved": ["Complete startup gates using Windows PowerShell host", "Complete architecture self-review before artifact creation", "Freeze approved fixture payload values before direct POST"],
+  "metrics": {"tokens":"Unavailable","aiUnits":"Unavailable","timingGaps":"Session began before retained tracker initialization; recorded retrospectively at 2026-09-25T17:14:17Z."}
+}

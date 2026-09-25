@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-worktree-purge-20260925",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-25T17:32:43.07606Z",
+  "checkpointUtc": "2026-09-25T17:35:26.6432918Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "4f44be245970ec903d32c8f8c00094691cefda5bcda741bb151645e60b97c59a"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "dde7c60983865650419b6bba5d773265e707fda4bd0390ae64f3405e5b42d4f8"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "fe5825024095e083e722fe49c12ec708e823283f27eb9c82f18e78701f8a30c1"
+    }
+  ],
+  "reviewNotes": "Preserve unique local evidence before exact cleanup; retain unrelated base changes and unmerged history. Local-only task.",
+  "objectReferences": [],
+  "noObjectsReason": "Local Git checkout cleanup only; no resource operations.",
+  "learningRegister": "docs/builds/xdx-worktree-purge-20260925/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-worktree-purge-20260925/time-tracker.md",
+  "checks": [
+    {
+      "rule": "Session conformance and exact-scope cleanup",
+      "id": "learning",
+      "reason": "Local disposition verified; runtime gates excluded as documented in intake. Unique evidence preserved; historical unmerged refs retained.",
+      "status": "pass",
+      "evidence": [
+        "docs/builds/xdx-worktree-purge-20260925/purge-receipt.md",
+        "docs/builds/xdx-worktree-purge-20260925/preservation-manifest.json"
+      ]
+    },
+    {
+      "rule": "Session conformance and exact-scope cleanup",
+      "id": "intake",
+      "reason": "Local disposition verified; runtime gates excluded as documented in intake. Unique evidence preserved; historical unmerged refs retained.",
+      "status": "pass",
+      "evidence": [
+        "docs/builds/xdx-worktree-purge-20260925/purge-receipt.md",
+        "docs/builds/xdx-worktree-purge-20260925/preservation-manifest.json"
+      ]
+    },
+    {
+      "rule": "Session conformance and exact-scope cleanup",
+      "id": "authority",
+      "reason": "Local disposition verified; runtime gates excluded as documented in intake. Unique evidence preserved; historical unmerged refs retained.",
+      "status": "pass",
+      "evidence": [
+        "docs/builds/xdx-worktree-purge-20260925/purge-receipt.md",
+        "docs/builds/xdx-worktree-purge-20260925/preservation-manifest.json"
+      ]
+    },
+    {
+      "rule": "Session conformance and exact-scope cleanup",
+      "id": "objects",
+      "reason": "Local disposition verified; runtime gates excluded as documented in intake. Unique evidence preserved; historical unmerged refs retained.",
+      "status": "pass",
+      "evidence": [
+        "docs/builds/xdx-worktree-purge-20260925/purge-receipt.md",
+        "docs/builds/xdx-worktree-purge-20260925/preservation-manifest.json"
+      ]
+    },
+    {
+      "rule": "Session conformance and exact-scope cleanup",
+      "id": "verification",
+      "reason": "Local disposition verified; runtime gates excluded as documented in intake. Unique evidence preserved; historical unmerged refs retained.",
+      "status": "pass",
+      "evidence": [
+        "docs/builds/xdx-worktree-purge-20260925/purge-receipt.md",
+        "docs/builds/xdx-worktree-purge-20260925/preservation-manifest.json"
+      ]
+    },
+    {
+      "rule": "Session conformance and exact-scope cleanup",
+      "id": "timing",
+      "reason": "Local disposition verified; runtime gates excluded as documented in intake. Unique evidence preserved; historical unmerged refs retained.",
+      "status": "pass",
+      "evidence": [
+        "docs/builds/xdx-worktree-purge-20260925/purge-receipt.md",
+        "docs/builds/xdx-worktree-purge-20260925/preservation-manifest.json"
+      ]
+    },
+    {
+      "rule": "Session conformance and exact-scope cleanup",
+      "id": "cleanup",
+      "reason": "Local disposition verified; runtime gates excluded as documented in intake. Unique evidence preserved; historical unmerged refs retained.",
+      "status": "pass",
+      "evidence": [
+        "docs/builds/xdx-worktree-purge-20260925/purge-receipt.md",
+        "docs/builds/xdx-worktree-purge-20260925/preservation-manifest.json"
+      ]
+    },
+    {
+      "rule": "Session conformance and exact-scope cleanup",
+      "id": "delivery",
+      "reason": "Local disposition verified; runtime gates excluded as documented in intake. Unique evidence preserved; historical unmerged refs retained.",
+      "status": "pass",
+      "evidence": [
+        "docs/builds/xdx-worktree-purge-20260925/purge-receipt.md",
+        "docs/builds/xdx-worktree-purge-20260925/preservation-manifest.json"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Unavailable",
+    "timingGaps": "Initial read-only discovery unallocated",
+    "aiUnits": "No tenant calls"
+  }
+}
