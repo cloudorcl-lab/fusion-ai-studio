@@ -16,7 +16,12 @@ try {
     $source = Join-Path $repo $relative
     New-Item -ItemType Directory -Path (Split-Path -Parent $target) -Force | Out-Null
     Copy-Item -LiteralPath $source -Destination $target
-    $provenance.Add([ordered]@{path=[IO.Path]::GetRelativePath($packet,$target).Replace('\','/'); source=$relative; sourceSha256=(Get-FileHash -LiteralPath $source -Algorithm SHA256).Hash.ToLowerInvariant()})
+    $sourceTextSha256 = $null
+    if ([IO.Path]::GetExtension($source) -in @('.md','.ps1','.cjs','.js','.json','.txt','.yaml','.yml')) {
+      $normalized = [IO.File]::ReadAllText($source).Replace("`r`n", "`n")
+      $sourceTextSha256 = [Convert]::ToHexString([Security.Cryptography.SHA256]::HashData([Text.Encoding]::UTF8.GetBytes($normalized))).ToLowerInvariant()
+    }
+    $provenance.Add([ordered]@{sourceTextSha256=$sourceTextSha256; path=[IO.Path]::GetRelativePath($packet,$target).Replace('\','/'); source=$relative; sourceSha256=(Get-FileHash -LiteralPath $source -Algorithm SHA256).Hash.ToLowerInvariant()})
   }
   $startupFiles = @(& git -C $repo ls-files -- agent-app-build-startup)
   if ($LASTEXITCODE -ne 0) { throw 'Startup inventory failed' }

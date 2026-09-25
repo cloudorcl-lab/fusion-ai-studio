@@ -5,14 +5,34 @@ $repo = Split-Path -Parent $PSScriptRoot
 $fixture = Join-Path ([IO.Path]::GetTempPath()) ('xdx-packet-test-' + [guid]::NewGuid())
 $prefix = [IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd([IO.Path]::DirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar
 if (-not [IO.Path]::GetFullPath($fixture).StartsWith($prefix,[StringComparison]::OrdinalIgnoreCase)) { throw 'Unsafe fixture' }
+function Assert-SourceParity([string]$sourcePath, $entry) {
+    if ((Get-FileHash -LiteralPath $sourcePath -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sourceSha256) {
+      # Git may change text line endings at checkout. Payload bytes remain strictly
+      # hash-checked; only source comparison permits equivalent LF/CRLF text.
+      $normalized = [IO.File]::ReadAllText($sourcePath).Replace("`r`n", "`n")
+      $textHash = [Convert]::ToHexString([Security.Cryptography.SHA256]::HashData([Text.Encoding]::UTF8.GetBytes($normalized))).ToLowerInvariant()
+      if (-not $entry.sourceTextSha256 -or $textHash -ne $entry.sourceTextSha256) { throw "Source drift: $($entry.source)" }
+    }
+}
 try {
   Expand-Archive -LiteralPath $ZipPath -DestinationPath $fixture
+  $sourceFixture = Join-Path $fixture 'source-line-endings.txt'
+  [IO.File]::WriteAllText($sourceFixture, "first`nsecond`n")
+  $hash = (Get-FileHash $sourceFixture -Algorithm SHA256).Hash.ToLowerInvariant()
+  $sourceEntry = [pscustomobject]@{source='fixture';sourceSha256=$hash;sourceTextSha256=$hash}
+  Assert-SourceParity $sourceFixture $sourceEntry
+  [IO.File]::WriteAllText($sourceFixture, "first`r`nsecond`r`n")
+  Assert-SourceParity $sourceFixture $sourceEntry
+  [IO.File]::WriteAllText($sourceFixture, "first`r`nchanged`r`n")
+  $driftRejected = $false
+  try { Assert-SourceParity $sourceFixture $sourceEntry } catch { if ($_.Exception.Message -match 'Source drift') { $driftRejected = $true } else { throw } }
+  if (-not $driftRejected) { throw 'Substantive source change accepted' }
   $packet = Join-Path $fixture 'agent-app-build-install-packet'
   $verify = Join-Path $packet 'Verify-AgentAppBuildInstallPacket.ps1'
   & $verify -PacketRoot $packet
   $manifest = Get-Content -Raw (Join-Path $packet 'PACKET-MANIFEST.json') | ConvertFrom-Json
   foreach ($entry in $manifest.sources) {
-    if ((Get-FileHash -LiteralPath (Join-Path $repo $entry.source) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sourceSha256) { throw "Source drift: $($entry.source)" }
+    Assert-SourceParity (Join-Path $repo $entry.source) $entry
     $transformed = @($manifest.portableReferenceTransforms | Where-Object path -eq $entry.path).Count -gt 0
     if (-not $transformed -and (Get-FileHash -LiteralPath (Join-Path $packet $entry.path) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sourceSha256) { throw "Source parity failed: $($entry.path)" }
   }

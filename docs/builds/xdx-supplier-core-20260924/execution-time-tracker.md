@@ -215,3 +215,7 @@ LHF-01 first observed clock2026-09-25T03:12:20.7458018Z; intake persisted 2026-0
 LHF-02 2026-09-25T03:18:56.3956280Z: context recovered; checked both checkouts and current authority. Expanded governance/TODO implementation and base/Git sync authorized. No browser acceptance pending; no supported agent reminder, context-percentage telemetry or reset tool exposed. Use conservative manual checkpoints; no automation claimed.
 
 LHF-03 2026-09-25T03:27:25.4578653Z: governance/POST-purpose/package/source-link checks PASS. Package tests completed; no running process remains. Local learning task prepared for commit and authorized base integration. ZIP SHA256 adc519e42856d9b03e58b9714f723415d2cee1b7228ff0a0aa8e70853478e7b6. Activity elapsed includes tool waits and context recovery; no invented active-labor split or model usage.
+
+LHF-04 2026-09-25T03:30:02.079Z: base package check rejected source drift at startup AGENTS after fast-forward; content review confirmed Git LF/CRLF conversion. Reopened local packaging verification, preserving byte-level payload integrity. No tenant activity.
+
+LHF-05 2026-09-25T03:32:00.9494680Z: packaging repair verified; source-change negative and full install regression PASS. Process8470 completed. No active process remains.
