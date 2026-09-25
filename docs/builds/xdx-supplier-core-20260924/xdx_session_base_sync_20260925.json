@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-core-base-sync-20260925",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-25T03:28:15.7341612Z",
+  "checkpointUtc": "2026-09-25T03:34:06.9147479Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "8cb6217e3ba9699874e2dfe4e852a86ef3ba347578211404aa951fa35b0f008d"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "9955b127ad79935014565671cd26f9d9a29b044ad5abc31714b9d08f7e201ae1"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "fe5825024095e083e722fe49c12ec708e823283f27eb9c82f18e78701f8a30c1"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "2d0d89cdf121423071ae38473008303783a9071d0604b4182f333d96534c40a7"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "1ecc29c4573184c1e6355d4b988b2ae1e547998a1ae8cce435130e3747848705"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "7dfbb4f0cb328d7d25d9c1f5d0ebed4416fb6e493e8e3d0595fde1a8e7c8b934"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "a5de68fd38d6388c684102eb508be91afefea58bd12b04ac8de09e857b89462c"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "sha256": "c127fde0bfd8d236eb7a16b053646a701f0946e5bb677898a84dae71c2ae9ec9"
+    }
+  ],
+  "reviewNotes": "Base handoff reviewed first; canonical source/governance and changes reviewed in build checkout. Integrate verified descendant 87120f5 into recorded base fedb09a. User explicitly authorizes base propagation and Git sync. Reconcile preserved TODO text; preserve three unrelated temp deletions. No tenant activity.",
+  "objectReferences": [
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md"
+    },
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md"
+    },
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md"
+    },
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md"
+    },
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-core-20260924/xdx_base_sync_20260925.md",
+  "timeTracker": "docs/builds/xdx-supplier-core-20260924/xdx_base_sync_20260925.md",
+  "checks": [
+    {
+      "status": "pass",
+      "id": "learning",
+      "rule": "Instruction 1",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_base_sync_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Authorized fast-forward integration verified in base; runtime preserved, no tenant operations. Final delivery commit and push follow this gate."
+    },
+    {
+      "status": "pass",
+      "id": "intake",
+      "rule": "Gate 0",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_base_sync_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Authorized fast-forward integration verified in base; runtime preserved, no tenant operations. Final delivery commit and push follow this gate."
+    },
+    {
+      "status": "pass",
+      "id": "authority",
+      "rule": "Gate 1",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_base_sync_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Authorized fast-forward integration verified in base; runtime preserved, no tenant operations. Final delivery commit and push follow this gate."
+    },
+    {
+      "status": "pass",
+      "id": "objects",
+      "rule": "Gate 2 and registry",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_base_sync_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Authorized fast-forward integration verified in base; runtime preserved, no tenant operations. Final delivery commit and push follow this gate."
+    },
+    {
+      "status": "pass",
+      "id": "verification",
+      "rule": "Gates 3–9 and QA",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_base_sync_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Authorized fast-forward integration verified in base; runtime preserved, no tenant operations. Final delivery commit and push follow this gate."
+    },
+    {
+      "status": "pass",
+      "id": "timing",
+      "rule": "Time token controls",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_base_sync_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Authorized fast-forward integration verified in base; runtime preserved, no tenant operations. Final delivery commit and push follow this gate."
+    },
+    {
+      "status": "pass",
+      "id": "cleanup",
+      "rule": "Dependency hygiene",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_base_sync_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Authorized fast-forward integration verified in base; runtime preserved, no tenant operations. Final delivery commit and push follow this gate."
+    },
+    {
+      "status": "pass",
+      "id": "delivery",
+      "rule": "Gate 10 and Definition of Done",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_base_sync_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Authorized fast-forward integration verified in base; runtime preserved, no tenant operations. Final delivery commit and push follow this gate."
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "No model-backed runtime execution; orchestration tokens unavailable",
+    "aiUnits": "No new AI Studio runtime calls",
+    "timingGaps": "First observed clock and final checkpoint bound this documentation task; prior interturn testing not active labor."
+  }
+}
