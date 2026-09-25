@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync, spawn } = require('node:child_process');
-const { parseArgs, scopedOutput } = require('../scripts/measure-build-command.cjs');
+const { parseArgs, scopedOutput, appendEvent } = require('../scripts/measure-build-command.cjs');
 
 const wrapper = path.resolve(__dirname, '../scripts/measure-build-command.cjs');
 const scratch = fs.mkdtempSync(path.join(__dirname, '.timing-test-'));
@@ -13,6 +13,18 @@ const base = file => ['--output', file, '--task', 'test-task', '--activity', 'te
 const events = file => fs.readFileSync(path.join(scratch, file), 'utf8').trim().split('\n').map(JSON.parse);
 const run = (file, executable, args = [], extra = []) => spawnSync(process.execPath, [wrapper, ...base(file), ...extra, '--', executable, ...args], { cwd: scratch, encoding: 'utf8', timeout: 10000 });
 function check(name, fn) { fn(); passed++; console.log(`PASS ${name}`); }
+async function settleChildren(argumentSets) {
+  return Promise.allSettled(argumentSets.map((args, i) => new Promise((resolve, reject) => {
+    let stderr = '';
+    let spawnError;
+    const child = spawn(process.execPath, args, { cwd: scratch, stdio: ['ignore', 'ignore', 'pipe'], windowsHide: true, timeout: 10000 });
+    child.stderr.on('data', data => { stderr = (stderr + data.toString()).slice(-4096); });
+    child.once('error', error => { spawnError = error; });
+    // close follows error/exit after stdio closes; every sibling must settle
+    // before assertion or cleanup, including when one child fails early.
+    child.once('close', (code, signal) => code === 0 && !spawnError ? resolve() : reject(new Error(`Parallel child ${i} failed: code=${code}, signal=${signal}, spawn=${spawnError?.code || 'none'}, stderr=${stderr}`)));
+  })));
+}
 function validatePair(file, expectedStatus) {
   const rows = events(file);
   assert.deepEqual(rows.map(row => row.event), ['start', 'end']);
@@ -27,6 +39,7 @@ function validatePair(file, expectedStatus) {
 }
 
 async function main() {
+  let primaryError;
   try {
     check('success, passthrough, metadata and unavailable metrics', () => {
       const result = run('success.jsonl', process.execPath, ['-e', 'console.log("visible stdout"); console.error("visible stderr")'], ['--dependency', 'bo-proof', '--overlap', 'other-task', '--parent', 'phase-parent', '--rerun-reason', 'changed-parser']);
@@ -122,11 +135,33 @@ async function main() {
       assert.equal(rows[1].status, 'unknown');
       assert.ok(!Object.hasOwn(rows[1], 'childExitCode'));
     });
-    await Promise.all(Array.from({ length: 8 }, (_, i) => new Promise((resolve, reject) => {
-      const child = spawn(process.execPath, [wrapper, ...base('parallel.jsonl'), '--', process.execPath, '-e', `setTimeout(()=>{},${i * 5})`], { cwd: scratch, stdio: 'ignore', windowsHide: true, timeout: 10000 });
-      child.once('error', reject);
-      child.once('close', code => code === 0 ? resolve() : reject(new Error(`Parallel child failed ${code}`)));
-    })));
+    if (process.platform === 'win32') check('transient Windows lock-acquisition EPERM retries without lock takeover', () => {
+      const target = path.join(scratch, 'transient.jsonl');
+      const original = fs.openSync;
+      let attempts = 0;
+      fs.openSync = (...args) => {
+        if (args[0] === `${target}.lock` && attempts++ === 0) throw Object.assign(new Error('simulated delete-pending'), { code: 'EPERM' });
+        return original(...args);
+      };
+      try { appendEvent(target, { event: 'verified' }); }
+      finally { fs.openSync = original; }
+      assert.equal(attempts, 2);
+      assert.deepEqual(events('transient.jsonl'), [{ event: 'verified' }]);
+      assert.ok(!fs.existsSync(`${target}.lock`));
+    });
+    const failedSibling = await settleChildren([
+      ['-e', 'console.error("forced-test-failure");process.exit(37)'],
+      ['-e', 'setTimeout(()=>require("fs").writeFileSync("sibling-completed", "yes"),250)'],
+    ]);
+    check('failed concurrent child is retained only after delayed sibling completes', () => {
+      assert.equal(failedSibling[0].status, 'rejected');
+      assert.match(failedSibling[0].reason.message, /code=37.*forced-test-failure/s);
+      assert.equal(failedSibling[1].status, 'fulfilled');
+      assert.equal(fs.readFileSync(path.join(scratch, 'sibling-completed'), 'utf8'), 'yes');
+    });
+    const concurrent = await settleChildren(Array.from({ length: 8 }, (_, i) => [wrapper, ...base('parallel.jsonl'), '--', process.execPath, '-e', `setTimeout(()=>{},${i * 5})`]));
+    const failures = concurrent.filter(result => result.status === 'rejected').map(result => result.reason);
+    if (failures.length) throw new AggregateError(failures, 'Concurrent timing writers failed after all child handles closed');
     check('concurrent writers append complete lines and distinct correlated pairs', () => {
       const rows = events('parallel.jsonl');
       assert.equal(rows.length, 16);
@@ -136,12 +171,20 @@ async function main() {
       assert.ok(!fs.existsSync(path.join(scratch, 'parallel.jsonl.lock')));
     });
     console.log(`Timing wrapper: ${passed} checks PASS`);
-  } finally {
+  } catch (error) { primaryError = error; }
+  finally {
     // Only this exact mkdtemp directory under tests belongs to this invocation.
-    const resolved = fs.realpathSync(scratch);
-    assert.equal(path.dirname(resolved).toLowerCase(), fs.realpathSync(__dirname).toLowerCase());
-    assert.ok(path.basename(resolved).startsWith('.timing-test-'));
-    fs.rmSync(resolved, { recursive: true, force: true });
+    try {
+      const resolved = fs.realpathSync(scratch);
+      assert.equal(path.dirname(resolved).toLowerCase(), fs.realpathSync(__dirname).toLowerCase());
+      assert.ok(path.basename(resolved).startsWith('.timing-test-'));
+      fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
+    }
+    catch (cleanupError) {
+      if (primaryError) primaryError = new AggregateError([primaryError, cleanupError], 'Timing test failed; scoped cleanup also failed');
+      else primaryError = cleanupError;
+    }
   }
+  if (primaryError) throw primaryError;
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });

@@ -11,3 +11,11 @@ Task: xdx-build-process-optimization-20260925. Observed checkpoint 2026-09-25T16
 - Git diff whitespace PASS. Runtime artifacts/test definitions/BOs unchanged; no tenant/network business operation. Existing accepted creates never replayed.
 
 Command timings are in commands.jsonl. Installed verification is required packaging proof, not a repeat tenant regression. End-to-end speedup is unmeasured. No pending implementation TODO remains; base integration and exact remote SHA checks are the delivery steps.
+
+## Target-checkout failure and repair boundary
+
+The first base-installed regression failed (2026-09-25T16:12:23.944Z–16:13:20.124Z,56179.2542ms). Timing tests reached11checks, then Windows EPERM during cleanup masked the original parallel-child error. The first source-install PASS remains historical, not final base acceptance. Repair waits for every child before scoped cleanup and preserves original diagnostics; do not infer an underlying production lock cause without evidence. Base receipt retains the failure. Shared terminal compatibility expanded to16PASS with nested-loop and referenceable-block cases. Final package/base revalidation remains required after repair.
+
+Repair evidence: the original masked concurrent exception is unrecoverable. Separate30-by-eight probes reproduced EPERM and isolated it to exclusive lock acquisition. The helper now retries only Windows acquisition EPERM within the unchanged bound; it never removes another owner's lock. Harness failures wait for all siblings and retain stderr. Timing14checks and matched240writers/zero failures PASS; see timing-helper-evidence.md and timing-concurrency-repair.json. Terminal suite now18PASS, including actual conversation semantic judge gate; no judge removal or hash rewrite.
+
+2026-09-25T16:21:11.794Z: corrected137-file packet installed regression PASS, activating terminal18, planner26 and timing14checks plus policy/session/Query/helper gates and all package negatives. Canonical ZIP replaced after PASS. Target-checkout acceptance of the corrected packet remains in the separately tracked base integration task.

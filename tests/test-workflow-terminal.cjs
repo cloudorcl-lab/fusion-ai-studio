@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
 const source = fs.readFileSync(path.join(__dirname, '../.agents/skills/aistudio/scripts/aistudio.js'), 'utf8');
-const names = ['OC','db','wt','Ct','li','ew','Q_','nL','jo','Wo','Ip','tL','Wse','Hl','Lse','xC','_se','Se'];
+const names = ['OC','db','wt','Ct','li','ew','Q_','nL','jo','Wo','Ip','tL','Bse','Wse','Hl','Lse','xC','_se','Se','G_','DC','$C','QE','VC','JC'];
 const code = names.map(name => {
  const start = source.indexOf('function '+name+'(');
  assert(start >= 0, 'Missing actual CLI function '+name);
@@ -13,7 +13,9 @@ const code = names.map(name => {
  return source.slice(start, end+2);
 }).join('\n');
 const ctx = vm.createContext({O: new Proxy({}, {get:(_,key)=>key})});
-vm.runInContext(code, ctx);
+const semanticTypesStart = source.indexOf('fse = /*');
+assert(semanticTypesStart >= 0);
+vm.runInContext('const '+source.slice(semanticTypesStart, source.indexOf(']);', semanticTypesStart)+3)+'\n'+code, ctx);
 const node=(id,type='CODE',next)=>({id,code:id,type,outcomes:next ? {next}: {}});
 const workflow = nodes => ({specification:{dataPipeline:{pipelineNodes:nodes}}});
 const graph=()=>workflow([node('START','START','ROUTE'),node('DISPLAY','LLM','END'),node('ROUTE','SWITCH','DISPLAY'),node('END','END')]);
@@ -39,3 +41,26 @@ test('selected convergent branches have one terminal',()=>assert.equal(resolve(w
 
 test('partial path cannot promote an upstream LLM to terminal',()=>assert.throws(()=>resolve(workflow([node('A','LLM','B'),node('B','CODE')]),['A']),/terminal|continuation/i));
 test('disconnected cycle beside terminal fails closed',()=>assert.throws(()=>resolve(workflow([node('A','CODE','B'),node('B','CODE','A'),node('C','LLM')]),['A','B','C']),/disconnected/i));
+
+test('nested loop boundary resolves to outer terminal',()=>{
+ const loop=node('LOOP','LOOP','DISPLAY');
+ loop.metadata={dataPipeline:{rootNode:'INNER_START',pipelineNodes:[node('INNER_START','START','BODY'),node('BODY','CODE','INNER_END'),node('INNER_END','END')]}};
+ assert.equal(resolve(workflow([loop,node('DISPLAY','LLM')]),['DISPLAY','BODY','LOOP']),'DISPLAY');
+});
+test('referenceable block returns to caller terminal',()=>{
+ const block=node('BLOCK','REFERENCEABLEBLOCK');
+ block.metadata={dataPipeline:{rootNode:'INNER_START',pipelineNodes:[node('INNER_START','START','BODY'),node('BODY','CODE','INNER_END'),node('INNER_END','END')]}};
+ const ref=node('REF','REFERENCE','DISPLAY');ref.metadata={referenceableBlockId:'BLOCK'};
+ assert.equal(resolve(workflow([ref,block,node('DISPLAY','LLM')]),['DISPLAY','BODY','REF']),'DISPLAY');
+});
+
+test('actual conversation semantic gate accepts graph terminal with unordered coverage',()=>{
+ const step={stepId:'query',pathAssertions:{mustExecute:['DISPLAY','ROUTE'],mustNotExecute:[]},judge:{expectedOutcome:'Display result',rubric:[]}};
+ assert.doesNotThrow(()=>ctx.JC({workflow:graph(),conversation:{steps:[step]}}));
+ assert.equal(step.judge.expectedOutcome,'Display result');
+});
+test('actual semantic gate still rejects unsupported terminal and expected wait',()=>{
+ const judge={expectedOutcome:'Display result',rubric:[]};
+ assert.throws(()=>ctx.JC({workflow:workflow([node('A')]),conversation:{steps:[{stepId:'code',pathAssertions:{mustExecute:['A']},judge}]}}),/not a supported semantic judge target/);
+ assert.throws(()=>ctx.JC({workflow:graph(),conversation:{steps:[{stepId:'wait',expectedWait:{nodeCode:'WAIT',nodeType:'WAIT'},judge}]}}),/not a supported semantic judge target/);
+});

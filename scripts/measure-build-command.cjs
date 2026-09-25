@@ -78,7 +78,11 @@ function appendEvent(output, event) {
   for (let attempt = 0; attempt < 50; attempt++) {
     try { lockFd = fs.openSync(lock, 'wx', 0o600); break; }
     catch (error) {
-      if (error.code !== 'EEXIST' || attempt === 49) throw error;
+      // Windows can return EPERM while another owner's deleted lock is still
+      // pending filesystem handle release. Retry acquisition only, retaining
+      // the same bound and never removing or taking over another owner's lock.
+      const contended = error.code === 'EEXIST' || (process.platform === 'win32' && error.code === 'EPERM');
+      if (!contended || attempt === 49) { error.timingStage = 'lock-acquisition'; throw error; }
       Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 10);
     }
   }
@@ -90,6 +94,10 @@ function appendEvent(output, event) {
 }
 
 function signalCode(signal) { return 128 + (os.constants.signals[signal] || 1); }
+function safeErrorCode(error) {
+  const code = /^[A-Z0-9_]+$/.test(error?.code || '') ? error.code : 'UNAVAILABLE';
+  return error?.timingStage === 'lock-acquisition' ? `${code}, lock-acquisition` : code;
+}
 
 async function measure(options) {
   const output = scopedOutput(options.output);
@@ -112,7 +120,7 @@ async function measure(options) {
   const stamp = () => ({ observedUtc: new Date().toISOString(), elapsedMs: Number(process.hrtime.bigint() - start) / 1e6 });
   const emit = event => {
     try { appendEvent(output, { ...base, ...stamp(), ...event, metrics }); return true; }
-    catch { process.stderr.write('Timing receipt append failed; execution outcome may be incomplete.\n'); return false; }
+    catch (error) { process.stderr.write(`Timing receipt append failed (${safeErrorCode(error)}); execution outcome may be incomplete.\n`); return false; }
   };
   const onExit = () => {
     if (!finished) emit({ event: 'unfinished', status: 'unknown', reason: 'Wrapper exited without observing child completion' });
@@ -157,7 +165,7 @@ async function main(argv) {
   catch (error) { process.stderr.write(`Timing arguments rejected: ${error.message}. See --help.\n`); return 64; }
   if (options.help) { process.stdout.write(HELP); return 0; }
   try { return await measure(options); }
-  catch { process.stderr.write('Timing setup failed; child execution was not confirmed. Check receipt path and lock.\n'); return 74; }
+  catch (error) { process.stderr.write(`Timing setup failed (${safeErrorCode(error)}); child execution was not confirmed. Check receipt path and lock.\n`); return 74; }
 }
 
 if (require.main === module) main(process.argv.slice(2)).then(code => { process.exitCode = code; });
