@@ -90,23 +90,30 @@
   "sources": [
     {
       "path": "docs/builds/xdx-build-introspection-20260924/xdx_introspection_20260924.md",
-      "sha256": "e7b635e8552f120b17ae2cb9d5d766550e5467a8f4e82f0ba0607ac3a602d6da"
+      "sha256": "e7b635e8552f120b17ae2cb9d5d766550e5467a8f4e82f0ba0607ac3a602d6da",
+      "gitBlobSha256": "abe904ff4dcfe0c4852cc2cfe6ebcecd515f7fd4d24c080afd9d3e6dbd59a7d6"
     },
     {
       "path": "docs/builds/xdx-supplier-core-20260924/execution-time-tracker.md",
-      "sha256": "6f4bd4e5d09ce2c4b22356388e5391245adcc929c077798c0766bd67c05d94e2"
+      "sha256": "6f4bd4e5d09ce2c4b22356388e5391245adcc929c077798c0766bd67c05d94e2",
+      "gitBlobSha256": "927ae33f0e23f5521727645f8ba2b80dfce665f8dbe8ff0e65d86fabff7f1379"
     },
     {
       "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_timing_continuity_audit.md",
-      "sha256": "c58e3cbbe4f76026939ecdcaa6fed8eb1718946410ac8db029949f1a7257413e"
+      "sha256": "c58e3cbbe4f76026939ecdcaa6fed8eb1718946410ac8db029949f1a7257413e",
+      "gitBlobSha256": "c58e3cbbe4f76026939ecdcaa6fed8eb1718946410ac8db029949f1a7257413e"
     },
     {
       "path": "docs/builds/xdx-supplier-core-20260924/xdx_manual_testing_results.md",
-      "sha256": "9f9e9443eb3226251c21d256355572b59d33e3594941999f4da0b2265652196f"
+      "sha256": "9f9e9443eb3226251c21d256355572b59d33e3594941999f4da0b2265652196f",
+      "gitBlobSha256": "9f9e9443eb3226251c21d256355572b59d33e3594941999f4da0b2265652196f"
     },
     {
       "path": "docs/builds/xdx-supplier-core-20260924/xdx_base_sync_20260925.md",
-      "sha256": "bbd198e33fac89f18ec3013328d52d2f1ae534233bceaedd3eb834c1b5b9ccf6"
+      "sha256": "bbd198e33fac89f18ec3013328d52d2f1ae534233bceaedd3eb834c1b5b9ccf6",
+      "gitBlobSha256": "9a42807968390edf41c83603b42eb1911c452c584f6b0673a6882cc022c4fdcb"
     }
-  ]
+  ],
+  "reviewedCommit": "345de6daf37903e3c6114a0c730eac28ab29b0e8",
+  "hashNote": "sha256 records observed checkout bytes at review; gitBlobSha256 pins the immutable reviewed source, independent of later tracker appends or checkout line endings."
 }
