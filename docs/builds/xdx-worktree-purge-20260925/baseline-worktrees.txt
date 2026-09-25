@@ -6,4 +6,3 @@ worktree /mnt/c/Users/dasu/Documents/GitHub/fusion-ai-studio-1/.worktrees/xdx-su
 HEAD bda27eaf124a64fad8e8dedf0135bff4b56cf46a
 branch refs/heads/codex/xdx-supplier-core-20260925
 prunable gitdir file points to non-existent location
-
