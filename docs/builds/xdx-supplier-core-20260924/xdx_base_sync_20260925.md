@@ -14,3 +14,7 @@ Timing: local coordination/verification; workflow tokens/AI Units not applicable
 Review integration task: xdx-supplier-core-introspection-base-20260925. Observed start 2026-09-25T14:20:26.2554897Z. Read base handoff; integrate f3ce5ce by fast-forward, verify current-task receipt and push both previously authorized branches. No runtime change or repeated tests; preserve three unrelated deletions. Existing task receipt above remains historical.
 
 2026-09-25T14:21:18.2451572Z: introspection integrated. Arithmetic/link/source review and documentation-only Closeout satisfied; source manifest now pins reviewed commit345de6d and Git-blob hashes so subsequent tracker appends cannot obscure historical provenance. No runtime/test definition changed. Delivery tail after this checkpoint remains outside measured review duration.
+
+Task xdx-bo-first-base-20260925, observed start 2026-09-25T15:23:48.9775950Z: read base handoff and integrate verified5aac836; changed governance requires target Startup and package verification. No new runtime or accepted-write replay. Preserve three unrelated temp deletions.
+
+2026-09-25T15:25:02.7335022Z: xdx-bo-first-base-20260925 verification PASS. Fresh target-checkout package regression132files passed all activation, source/parity and rejection fixtures, including new BO-first/delegation policy negatives. No runtime or business call. No process remains. Task-owned files scoped; three unrelated deletions retained. Final commit/push tail outside this observed checkpoint.
