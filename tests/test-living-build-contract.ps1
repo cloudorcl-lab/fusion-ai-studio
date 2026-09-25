@@ -119,10 +119,10 @@ try {
     }
   }
   Set-Content -LiteralPath $timingPolicyPath -Value $timingPolicyOriginal -NoNewline
-  foreach ($marker in @('### Context continuity and recovery', 'At 70% context', 'Before 75%', 'four-minute reminder', 'reminder handle or its unavailability', 'accepted record IDs', 'poll retained processes and revalidate Startup')) {
+  foreach ($marker in @('#### BO readiness before workflow integration', '### Delegated build ownership', 'Direct BO POST proof and native approval-to-POST proof are distinct', 'Assign one writer per file and remote artifact', 'BO readiness receipt and independent review', '### Context continuity and recovery', 'At 70% context', 'Before 75%', 'four-minute reminder', 'reminder handle or its unavailability', 'accepted record IDs', 'poll retained processes and revalidate Startup')) {
     Set-Content -LiteralPath $timingPolicyPath -Value $timingPolicyOriginal.Replace($marker, 'REMOVED') -NoNewline
     $negative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
-    if ($negative.ExitCode -eq 0 -or -not $negative.Output.Contains('Missing continuity prevention policy')) { throw "Continuity regression accepted missing rule: $marker" }
+    if ($negative.ExitCode -eq 0 -or -not $negative.Output.Contains('Missing build-process prevention policy')) { throw "Build-process regression accepted missing rule: $marker" }
   }
   Set-Content -LiteralPath $timingPolicyPath -Value $timingPolicyOriginal -NoNewline
   $purposePath = Join-Path $handoffFixtureRoot 'docs/lessons/objects/README.md'

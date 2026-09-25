@@ -93,6 +93,18 @@ No new business input is needed from the user. Scope, permissions and reference 
 
 ## Disposition and limits
 
-Existing canonical owners already cover these lessons; **no new playbook or object rule is added by this retrospective**. The prior governance/package improvements remain in345de6d. This review adds the comparison, evidence arithmetic and two status corrections. Policy and regression presence are implementation evidence; a later comparable build must demonstrate effectiveness. No runtime, browser, model optimization or business operation was executed for this review.
+Existing canonical owners already cover these lessons; **the initial retrospective added no new playbook or object rule; the later user-approved BO-first amendment below refines lifecycle governance**. The prior governance/package improvements remain in345de6d. This review adds the comparison, evidence arithmetic and two status corrections. Policy and regression presence are implementation evidence; a later comparable build must demonstrate effectiveness. No runtime, browser, model optimization or business operation was executed for this review.
 
 Verification and timing: [current review tracker](xdx_introspection_tracker_20260925.md). Source timestamps and hash manifest are in the computed metrics file. The previous review and original receipts remain immutable; this report identifies later corrections without rewriting history.
+
+## BO-first and delegation amendment
+
+User-approved follow-up: BOs are the core dependency. This run built and locally validated their functions per resource, but direct live BO proof was not completed as a distinct gate before workflow integration; live GET/POST evidence was obtained through workflow/native journeys. That is a build-process gap, separate from the later workflow supplier-number defect.
+
+Implemented in the canonical Gate2 extension: per-resource BO contract → local serialized validation → actual BO GET / authorized POST / independent GET → independently reviewed readiness receipt → workflow bindings/state/approval → native app. Independent design/local logic may proceed in parallel, but dependent remote integration waits. Direct and native write proofs have separate budgets and authorization; historical accepted creates are never replayed to retrofit this new gate.
+
+BO build and test can be handed to one scoped specialist. A coordinator or independent reviewer checks its receipt before integration. For this app's single12-function BO, one writer owns the BO file and remote artifact; parallel resource agents can supply contract research and patch proposals. Supplier proof precedes dependent address/site/contact operations; site depends on the verified address and BU. Existing artifacts are not split or rebuilt for delegation.
+
+Other bounded packages: source-contract research; independent workflow logic proposals; exact-prompt/negative test design; semantic/evidence review; local widget validation; documentation and packaging. Shared workflow edits, browser use, tenant mutations, fixture ownership and final acceptance remain coordinated. Separate worktrees do not isolate tenant state.
+
+Shared architecture/dependency templates now capture assignment ownership, frozen interfaces, acceptance evidence, direct/native write budgets, process handles and returned IDs. Policy regressions reject missing BO-first/delegation controls; regenerated package carries the same guidance. This is governance implementation, not proof of faster parallel execution or newly tested BOs. Future builds must measure the effect.

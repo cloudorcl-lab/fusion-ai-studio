@@ -430,6 +430,38 @@ After a resource object's first successful GET through a BO, add the result once
 
 This playbook owns the lifecycle: complete object discovery before architecture, validate artifacts before mutation, serialize writes, distinguish local/live/DRAFT/PUBLISHED evidence, capture authorized proof and route reusable operation findings back to the correct object reference. Do not copy detailed object contracts back into this file.
 
+#### BO readiness before workflow integration
+
+For each resource slice, build and prove its BO functions before wiring dependent workflow BO nodes. This is a per-dependency gate, not a requirement to finish every BO in the project before any workflow work. Independent workflow design and local state/approval logic may proceed against the frozen interface while the BO gate is open; dependent remote save/runtime acceptance may not.
+
+1. Freeze the BO contract: exact resource/operation, internal keys versus displayed identifiers, parent references, required and conditional writable fields, generated omissions, request types, response shape, filtering/paging, and error/empty behavior. Use the object registry for operation detail.
+2. Validate the serialized BO locally, render and parse exact request templates, and check parameter/schema contracts. Artifact validation alone is not live BO proof.
+3. Invoke the actual saved BO functions independently of the business workflow using supported tooling: required ordinary collection/search/detail GETs and scoped parent keys; then, where authorized, one POST followed by an independent persisted GET using the returned key. A raw REST call bypassing the BO does not prove its configuration. For local negative/edge coverage, reuse retained responses rather than causing extra business writes.
+4. Allocate the write-evidence budget before execution. Direct BO POST proof and native approval-to-POST proof are distinct. If both are required, the plan must provide separately authorized transactions; do not silently spend a one-create budget twice. Reuse existing matching evidence only within its demonstrated artifact, environment and payload boundary. If direct execution conflicts with required app-mediated approval, withhold that POST, mark the gate blocked and resolve the authorized test route before dependent integration. Never replay an accepted POST to obtain another receipt.
+5. Hand forward a BO readiness receipt naming function/artifact versions or hashes, target identity without secrets, exact inputs, observed outputs/errors, returned IDs, persisted comparisons, timing and limitations. The integrating owner verifies the evidence against the actual BO. Missing, fixture-only or mismatched live evidence leaves the relevant gate open.
+6. After readiness, test the actual workflow producer-to-BO consumer bindings, identifier resolution and native user journey. BO success does not prove workflow state, approval or presentation. Changes to BO contract, function/template, target or producer invalidate the affected proof; repeat only the applicable read/local checks and reconcile write evidence without duplicate creation.
+
+### Delegated build ownership
+
+Delegate bounded work only when useful independent work exists and authority permits delegation. A BO specialist may own both BO build and its local/direct testing; a different reviewer or the coordinating agent must check its receipt before integration. Delegation does not expand business-write authority or replace configured semantic judges.
+
+| Work package | Parallel work allowed | Integration condition |
+| --- | --- | --- |
+| Resource contract research | Independent references and retained-sample analysis | Reviewed field/key/provenance contract; no speculative live calls |
+| BO build and test | Separate BO files/artifacts with independent inputs; local tests may run concurrently | BO readiness receipt and independent review before dependent workflow wiring |
+| Workflow logic | Independent modules or proposed patches against frozen BO interfaces | One workflow writer integrates; actual bindings/state/approval gates pass |
+| Test design and evidence review | Exact prompts, negative cases, rubric review and retained trace analysis | Approved manifest and current source versions; no unapproved suite expansion |
+| App presentation | Local widget/schema work against agreed output contracts | Backing workflow acceptance before native app acceptance |
+| Documentation and packaging | Separate owned files or staged proposals | Final source frozen; target-checkout package verification before release |
+
+Assign one writer per file and remote artifact. If several resources share one BO file, one BO owner assembles it; resource specialists return contracts or patch proposals instead of editing or saving it concurrently. Do not split production artifacts solely to increase agent count. Separate Git worktrees do not isolate tenant state, credentials, browser sessions or business records.
+
+Every assignment records task/requirement IDs, exact checkout/branch and allowed paths/artifacts, input dependencies and frozen interface, permitted operations/target, write budget and approval conditions, acceptance commands, output receipt, stop conditions and handoff owner. Give references to approved environment configuration, never copy credentials into messages. Workers follow the same handoff, object-learning and session-receipt gates within their scope.
+
+The coordinator owns dependency order, the mutation queue, one shared-browser owner, fixture/accepted-ID ledger and final integration/Closeout. Serialize writes to the same artifact and all operations sharing a parent/fixture chain; parallelize only genuinely independent authorized actions. Reserve each live operation before dispatch and retain its process/operation handle. On timeout or uncertain outcome, freeze the operation and reconcile by read before any reassignment or retry. Do not let two agents independently create the same fixture or replay another agent's accepted write. Cancel/pause dependent work when its source contract changes.
+
+Measure the critical-path elapsed time and coordination/rework separately where observed. Parallelism is an implementation choice, not evidence of speedup. Inline work remains appropriate for a small change or one shared mutable artifact.
+
 ### Gate 3 — Build complete specialists
 
 Each specialist must contain:
@@ -969,6 +1001,7 @@ After every update:
 
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
+| 2026-09-25 | [Supplier Core BO-first introspection amendment](../builds/xdx-supplier-core-20260924/xdx_introspection_20260925.md#bo-first-and-delegation-amendment) | Gate independent BO contract/direct-function proof before dependent workflow integration; define scoped delegation, single writers, mutation ownership, write-budget separation and independent receipt review. | Policy negative fixtures, startup/package checks and documentation review; no new tenant execution or claimed delegation speedup. |
 | 2026-09-25 | [Supplier Core manual failure and learning review](../builds/xdx-supplier-core-20260924/xdx_learning_closeout_20260925.md) | Close repository TODOs with shared continuity/capability controls, checkpoint templates and POST-purpose prevention regression. Refine existing test-surface, REST-binding and exact-prompt owners: preserve user identifier semantics and conversation prerequisites; retain manual failure/retest provenance; distinguish replay input visibility from live request proof. | Actual-CODE RED/GREEN, native repaired steps1-3, configured358/358 assertions with all judges, and user-confirmed6/6 manual tests; documentation governance checks retained in the learning receipt. |
 | 2026-09-24 | [Next-run governance audit](../builds/xdx-next-run-governance-audit-20260924/audit.md) | Reconcile live-first test order and scoped ATLAS completion; consolidate kickoff into versioned models; reuse unchanged command evidence | Policy/session regressions and scoped document review; future run speed unmeasured |
 | 2026-09-25 | Supplier Core P5 replay repairs | Refine existing conversation and terminal-order owners: preserve explicit field edits against conflicting extraction; recheck semantic terminal inference after declaration reordering. | Retained address edit routing failure, actual-CODE child edit contract, and repaired four-step address replay474/474 on DRAFT86232573. No accepted POST replayed. |
