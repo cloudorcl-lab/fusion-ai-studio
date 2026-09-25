@@ -1,0 +1,542 @@
+[
+  {
+    "entry": "scripts/xdx-address-core-contract.test.cjs",
+    "kind": "tracked",
+    "sha256": "b7a01373c44cebc1a6b56b9a7f7e97b03726f4fda9c1ccd29a9febf9b03379f1"
+  },
+  {
+    "entry": "scripts/xdx-child-name-edit-contract.test.cjs",
+    "kind": "tracked",
+    "sha256": "1fbc9bf0e1c848c0e6f98ed9b127e623d65bb5df25ff5b65944d45506006dd73"
+  },
+  {
+    "entry": "scripts/xdx-contact-core-contract.test.cjs",
+    "kind": "tracked",
+    "sha256": "927f2a3cab1eb64a7444da92c6e05e0781d314f993eb31ae4b5f6ed1dc32917a"
+  },
+  {
+    "entry": "scripts/xdx-site-core-contract.test.cjs",
+    "kind": "tracked",
+    "sha256": "671d62af7c283a4f6e0ae6bca7c5cbcb91db40b4152ad61b99a2a17fb5bfae47"
+  },
+  {
+    "entry": "scripts/xdx-supplier-core-contract.test.cjs",
+    "kind": "tracked",
+    "sha256": "59ee1a9596a921a0ac176f87e92ff45d63c817362a5b774ec889adff9597526c"
+  },
+  {
+    "entry": "scripts/xdx-supplier-number-contract.test.cjs",
+    "kind": "tracked",
+    "sha256": "baac053a0bd66e647c17594d5912a21960ff04c0256de063ec24e4b11632f532"
+  },
+  {
+    "entry": "src/apps/xdx_supplier_core_app_20260924.app",
+    "kind": "tracked",
+    "sha256": "efed376a0d644bb62c8db824f8cb75d1f31714539f246957a9cb434c33952c90"
+  },
+  {
+    "entry": "src/workflows/xdx_supplier_core_20260924.wf",
+    "kind": "tracked",
+    "sha256": "6c08b87040f51fd555b3bab860121ffb355d6cc54d1889f00660cf6888d4f8bd"
+  },
+  {
+    "entry": "test-reports/apps/xdx_supplier_core_app_20260924/consolidated-suite-result.html",
+    "kind": "tracked",
+    "sha256": "9a326b26cffce1633dc03f3ff7e1a486802fdb36a5d14ed658ee409084f232e8"
+  },
+  {
+    "entry": "test-reports/apps/xdx_supplier_core_app_20260924/consolidated-suite-result.json",
+    "kind": "tracked",
+    "sha256": "80aacd12cba9c28748cc47cce4ac5823d198b710e8985b66dae9ce02fc43959a"
+  },
+  {
+    "entry": "test-reports/apps/xdx_supplier_core_app_20260924/consolidated-suite-result.md",
+    "kind": "tracked",
+    "sha256": "5d44f6cf421ee53bf966327c9ae67f6402ef02b8d7218a0d59bf94608730534b"
+  },
+  {
+    "entry": "test-reports/apps/xdx_supplier_core_app_20260924/init_display_supplier_core/result.html",
+    "kind": "tracked",
+    "sha256": "6370b3221f5c59b766776b52ab8668164b3892cf9250f00caaba43fcceb02a53"
+  },
+  {
+    "entry": "test-reports/apps/xdx_supplier_core_app_20260924/init_display_supplier_core/result.json",
+    "kind": "tracked",
+    "sha256": "6af1b091559764ee6014562aac2bdf9d54ad4bcc97d032bd7c354f6c8d648871"
+  },
+  {
+    "entry": "test-reports/apps/xdx_supplier_core_app_20260924/init_display_supplier_core/result.md",
+    "kind": "tracked",
+    "sha256": "0028c97e2be812151bfb16cb26fb1c23c579f9653f19fc3d91abdffae743c49c"
+  },
+  {
+    "entry": "test-reports/apps/xdx_supplier_core_app_20260924/suite-result.html",
+    "kind": "tracked",
+    "sha256": "ba68ffdce22b5b810d59db48cd438aaf29b2f9890cee78643e27af33318fba93"
+  },
+  {
+    "entry": "test-reports/apps/xdx_supplier_core_app_20260924/suite-result.json",
+    "kind": "tracked",
+    "sha256": "898601153030a8de308870091def3abe46213ecd2f7064f6c3ccc4d8e19f38c5"
+  },
+  {
+    "entry": "test-reports/apps/xdx_supplier_core_app_20260924/suite-result.md",
+    "kind": "tracked",
+    "sha256": "ac35f74b09b82bf8dc4b0535a1f9a0b1873833ce2ba72b70b6862ca49511233a"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/address-draft-conversation/result.html",
+    "kind": "tracked",
+    "sha256": "6ef4a44253818cb2008d1968a5aaacbbf101acee2b7fdaafc1850b571b40b981"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/address-draft-conversation/result.json",
+    "kind": "tracked",
+    "sha256": "37e7ef73fb7d74e7d1dd6632fff8dc82e940ecd82b3c388c2246a74e95fa73fc"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/address-draft-conversation/result.md",
+    "kind": "tracked",
+    "sha256": "520a7224c796053ade044ccd0b682bd24e343b1232bf394832f86969b4cd864d"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/address-query-detail/result.html",
+    "kind": "tracked",
+    "sha256": "b49d14ddbc7018435839b47cd0dc907e986f9fc6bafcf520d5271cdaf8a25dc1"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/address-query-detail/result.json",
+    "kind": "tracked",
+    "sha256": "038620e580c50e8cd11728d5a2919c178aa5be954f2f7da2244f326bc6211468"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/address-query-detail/result.md",
+    "kind": "tracked",
+    "sha256": "c5709e962bdc747afd05146042c511ce0c2a4d5fc1c3b0d0694caf635043c8d6"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/address-query-list/result.html",
+    "kind": "tracked",
+    "sha256": "4cbdcff0a8c146b72bd2634e82d823d8bb80dc939953a1839c48189462e4ea4e"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/address-query-list/result.json",
+    "kind": "tracked",
+    "sha256": "ebc688357f5fa6021fd3b57075af83f7e7b19eef15069cfeba0914f8bcba9686"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/address-query-list/result.md",
+    "kind": "tracked",
+    "sha256": "43dcbb0eb7ab70af4ecad5ff8cdac7fe6f0a8c2ce2b1bc4357649dbcede67f82"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/contact-draft-conversation/result.html",
+    "kind": "tracked",
+    "sha256": "68973bc787161bad6739ec6ab060eda117d45860273a16fa85850c31b7106b92"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/contact-draft-conversation/result.json",
+    "kind": "tracked",
+    "sha256": "cfe95bbbbc4b98b42bb48aa9fae5413365894f2e6f37d82b1868120065e69286"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/contact-draft-conversation/result.md",
+    "kind": "tracked",
+    "sha256": "25a1726ddf5b938e9b15b613f0ce5003a819f4c29ee98bfb7411f25cb4423985"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/contact-query-detail/result.html",
+    "kind": "tracked",
+    "sha256": "689ba0ee65bfaa1aa9872d38a3ebdc77f58ede82df97ce0e495a1c32db705617"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/contact-query-detail/result.json",
+    "kind": "tracked",
+    "sha256": "49bf5727c842cee66f141dd7f2611be9196f3589c16ad75a5ae158af87611a7f"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/contact-query-detail/result.md",
+    "kind": "tracked",
+    "sha256": "ee22fb6d4f10113b45fbffb6cea2fe010f44c8a14f0f2b5c1c08bdb24fb9b737"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/contact-query-list/result.html",
+    "kind": "tracked",
+    "sha256": "db7563011a00d405c95731842371f62ce69068fcdb688a2552648128dc850e2c"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/contact-query-list/result.json",
+    "kind": "tracked",
+    "sha256": "4968b4c02c1b9acd9f2e7b69d705c5e853a1565a5654027565302be13b49da91"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/contact-query-list/result.md",
+    "kind": "tracked",
+    "sha256": "a495d38052c3a675181a02d23b376f9d9caf610824aa5c138dc08e60d124d90f"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/init-display/result.html",
+    "kind": "tracked",
+    "sha256": "35b89a522b6726a2d5d465f2ef780b81ca7b0f6f4634debfba4abcb75317607a"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/init-display/result.json",
+    "kind": "tracked",
+    "sha256": "9d1a8099bc9d8ed6060bb0893e347a8e3aeeff42f69f63b41b83fad104960a9f"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/init-display/result.md",
+    "kind": "tracked",
+    "sha256": "87315c9a5c16a5d33e8ebf8f90e3ae26379be5d516e3d33dbd9caa0c523cc48e"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/query/result.html",
+    "kind": "tracked",
+    "sha256": "995eadb751db4a52a47dd368c3b81690ddcdd83872e18a3b705838604fc907d6"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/query/result.json",
+    "kind": "tracked",
+    "sha256": "2a355213f8dba98533bcbaac65bcaa1c1d37de2fbb75236e9436115c8d9782fc"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/query/result.md",
+    "kind": "tracked",
+    "sha256": "1c2525dc85166db984f8ff4e51443c01a503ed9274436ff9b96f6fc51597e62d"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/site-draft-conversation/result.html",
+    "kind": "tracked",
+    "sha256": "327ad92dbd9e6dea56592b6252c25611c48af7d35d56b516162f231029ffce46"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/site-draft-conversation/result.json",
+    "kind": "tracked",
+    "sha256": "58bfaaf6e50f9306b404a2a15dc5b0db227ea096478c1bb81d4d206467be170a"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/site-draft-conversation/result.md",
+    "kind": "tracked",
+    "sha256": "bed73d40a982193b8a70f01109ef3a94d284493ba9519144cd2abead61e2a5da"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/site-query-detail/result.html",
+    "kind": "tracked",
+    "sha256": "733a9d07a080c0cd01a0950706414ac609c9f1a005a7622143977b4ed0667d22"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/site-query-detail/result.json",
+    "kind": "tracked",
+    "sha256": "c169723b39d871eb403788c616b8cbf51d0f688546bd209ea44543b4e53dd8fc"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/site-query-detail/result.md",
+    "kind": "tracked",
+    "sha256": "8d01da3241599c01865ee1258ddaaddc4459697a30219a9c80ae2bad6a02631e"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/site-query-list/result.html",
+    "kind": "tracked",
+    "sha256": "225329c8bf0ee994738aa2126572afd52918a721b90b93459f5c96b4cb1d1350"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/site-query-list/result.json",
+    "kind": "tracked",
+    "sha256": "c7d07df67bbb8ccdc79ae1dd8f5b03adc2f816b65cb685167856c799b32162c3"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/site-query-list/result.md",
+    "kind": "tracked",
+    "sha256": "0de56fd48d338ad8da8a348a21f12f2e7d93f628679125a3bcc5fb72f208a058"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/suite-result.html",
+    "kind": "tracked",
+    "sha256": "1a7d65f9c8b4478e340fd7d55de49cdfaf2604d2d576fdbe3dc428dd3791d7c5"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/suite-result.json",
+    "kind": "tracked",
+    "sha256": "4ae6dd4a30b9a3754c000332f1dfef38925fc7d4aae05af9af34c7c9d5bc5417"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/suite-result.md",
+    "kind": "tracked",
+    "sha256": "43e56d34355648d211456b8cb6e71bac98cd73a85ee36cc360462f1bae37465f"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/supplier-draft-conversation/result.html",
+    "kind": "tracked",
+    "sha256": "b29a1a54032337cbb0aa11b0df5ced9feb7c1ee11e4f698ff764e153b47bb0be"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/supplier-draft-conversation/result.json",
+    "kind": "tracked",
+    "sha256": "1851dccb0d0788437c9b23ee9c7aca2e0c3429338547f1918099d14d707e5eb9"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/supplier-draft-conversation/result.md",
+    "kind": "tracked",
+    "sha256": "ebfa77b97a9a5e20da16571fbfa9f92b29483819af9e563c129c1e1b0e8a0f63"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/supplier-number-manual-regression/result.html",
+    "kind": "tracked",
+    "sha256": "651f8e304f52e7b4a719b1b305e6cb1da242771fd0c52f1bc756864993d6e8c0"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/supplier-number-manual-regression/result.json",
+    "kind": "tracked",
+    "sha256": "3981eb3fa4cf1d6bb74739270dc5958c4574505102e79966f20316271421d26e"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/supplier-number-manual-regression/result.md",
+    "kind": "tracked",
+    "sha256": "b612d034bc989b32f753b1897a49ca2d916ff2f5588e4c0d70907344b81b3f6b"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/supplier-query-detail/result.html",
+    "kind": "tracked",
+    "sha256": "ba14b406d89b2bdd1675c343f3ad4f9f6bba9f5e035fa36df381493c2a43a5e2"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/supplier-query-detail/result.json",
+    "kind": "tracked",
+    "sha256": "bf106527a8cec786d011b6a6c39808e5632efcee6d34dfe4119daf1e9f4062aa"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/supplier-query-detail/result.md",
+    "kind": "tracked",
+    "sha256": "57a943e17e5f4d63bffda4b85e0de90fca5266923bef3a2337555e4a3c375f13"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/supplier-query-guidance/result.html",
+    "kind": "tracked",
+    "sha256": "2efb032e13cce0c811743f8cb575742af649e6cace453bca7d85d75ed7b08caa"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/supplier-query-guidance/result.json",
+    "kind": "tracked",
+    "sha256": "c4a863686946550253e9a0996d8e14902d57e377b86854bbc7e1b1c918b080a7"
+  },
+  {
+    "entry": "test-reports/workflows/xdx_supplier_core_20260924/supplier-query-guidance/result.md",
+    "kind": "tracked",
+    "sha256": "43572db8ef5d0203fed7289acb01f4059adf7cc91712d63902489449347232d9"
+  },
+  {
+    "entry": "test/apps/xdx_supplier_core_app_20260924/init_display_supplier_core.json",
+    "kind": "tracked",
+    "sha256": "7fde650e2768e660c19b00aded6da1e60e1071f6b37274230ddae1ffde59ee0e"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/address-draft-conversation.json",
+    "kind": "tracked",
+    "sha256": "088c96961eab465346911acec66593bb62e80e2c65c4c536b9be354a9a41454a"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/address-query-detail.json",
+    "kind": "tracked",
+    "sha256": "a0f34ef83968375325a404e1a8ab87a2ecabdf4ce26064d42a983a91d5bda5c6"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/address-query-list.json",
+    "kind": "tracked",
+    "sha256": "4a25ca2b7ee00e853349fdef61102219940ca9a258b4ba271156036abc5461f6"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/contact-draft-conversation.json",
+    "kind": "tracked",
+    "sha256": "daf76fcdfce528615415dd71bde68d99afca3e338ae8c047767a600d6d201eb9"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/contact-query-detail.json",
+    "kind": "tracked",
+    "sha256": "e9f71115c35b582817e9525b98606306d482c6e61c07c68395ec207a5b687b9f"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/contact-query-list.json",
+    "kind": "tracked",
+    "sha256": "2c43d4507455ef4dc169a43d11c77cb06075e2091b2386d395795490e3004ed0"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/init-display.json",
+    "kind": "tracked",
+    "sha256": "d365f925a96105b086d48c653f8e64d65d87994392b104d15be1cfae15f2695a"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/query.json",
+    "kind": "tracked",
+    "sha256": "be3c8b5bdd35714dda3fd3714e402ca54b093f891cecb08918b60e5665c4ab7c"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/site-draft-conversation.json",
+    "kind": "tracked",
+    "sha256": "3bbc13c0a6ba27440e100840397ec9d4c20ca93a38eea83756852a8928982f33"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/site-query-detail.json",
+    "kind": "tracked",
+    "sha256": "4ef0a931389051fbe3fb58735f9d8c81661eae009cd8670defb558977bd494cd"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/site-query-list.json",
+    "kind": "tracked",
+    "sha256": "c4d0536511e7671c60c9dd6c03b40ef8888ee4539b490e5d4f9c8d64368c41dc"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/supplier-draft-conversation.json",
+    "kind": "tracked",
+    "sha256": "588e51b3fa39340a23dd5e933a9a88fb85b1730454a92ec6df5a125d04111f61"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/supplier-number-manual-regression.json",
+    "kind": "tracked",
+    "sha256": "a9d6a36386a56add7a8df6d2e5a22479e5a43d2f38f2274deb8abb9602a7fe2e"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/supplier-query-detail.json",
+    "kind": "tracked",
+    "sha256": "1e3af3e81dd16dc8854d1453880525028deff447c0fccae2d567eb3c648e750b"
+  },
+  {
+    "entry": "test/workflows/xdx_supplier_core_20260924/supplier-query-guidance.json",
+    "kind": "tracked",
+    "sha256": "67a9e213f2456be2414951f0904283346f7a67fb9580fa27a30411f8f4a299c0"
+  },
+  {
+    "entry": "worktree-ignored/.debug/atlas-command-trace.jsonl",
+    "kind": "ignored",
+    "sha256": "49d6aed5b92b45f0f81649667717da2d12abfe80b047d7de7cbb6e63b3909616"
+  },
+  {
+    "entry": "worktree-ignored/.debug/supplier-number-manual-regression-conversation-test-instrumentation.json",
+    "kind": "ignored",
+    "sha256": "827069851383cf93bd1d828f4f8e1488066ad7e2e86ce1cbe86df2d249f62429"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/address-query-detail-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "8e0f3f39214385660944af693c89017ba5e120d97ef6aa2f8219403100190e85"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/address-query-list-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "da4793eeaa03697398646999dd17af35b512fb921b71e527d89ed780d07f506a"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/contact-draft-conversation-cancel-contact-draft-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "532c93008ef6455efec2c3103d49fabfa814e78332dc96332699743be96b2b53"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/contact-draft-conversation-edit-contact-name-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "b5eddf6eab98b7087b601b16ecd778192052234156522f247805dd2b3368851b"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/contact-draft-conversation-prepare-contact-draft-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "2b580b4e1b34eea95541751d83bd2dcc438c23cf2fa5445dc7746478afca967f"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/contact-draft-conversation-review-contact-payload-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "e365980a0d1ff364af548a2e8a7ecf66efd63f1a167585b88150273fcf96a965"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/contact-query-detail-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "83de7f042385d7269e7c7edfc28f0e40a5eace357a8ec6997853d2a2b539d851"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/contact-query-list-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "632e0fe32ebe873ad7cadc3abc7791bc8831c7e07c92e77080af591bf932639c"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/init-display-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "e2d49f605a66d6e15f2c4943ba4d0f009e9a71dda2a757707c61f8e12337d5e6"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/site-draft-conversation-cancel-site-draft-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "f0870882253b61e87870c12cec15d92c8415c2650add6389e682b84869467f41"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/site-draft-conversation-edit-site-name-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "8b2a7412e887bb25668944e80c08ed9f526afcbb51d1d52cd281b2b44ce338d0"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/site-draft-conversation-prepare-site-draft-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "3c7e10efdb55a9ea8da3b6c077e95c86f14fdd6f48154541a4766405733a21fb"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/site-draft-conversation-review-site-payload-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "d49eb25acf5fdb29713b37729d9a0e2c37afe1834c12499fb8c9191236114523"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/site-query-detail-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "ea9254c8dff1ff999bcf24a7ff18ec3f46329629f387702f41e8e3a2e79f2d46"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/site-query-list-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "684e9340e9f37889d29dd4b20da86c6a6100fc5b986bf9bfb9ad2d655cb99be0"
+  },
+  {
+    "entry": "worktree-ignored/.debug/workflow-test-recordings/supplier-query-detail-recording-attempt.json",
+    "kind": "ignored",
+    "sha256": "9e5a9e548b9018563b361ac40cc6432545db428f3846b8b089626c8cfcd01dc2"
+  },
+  {
+    "entry": "worktree-ignored/test-reports/apps/suite-result.html",
+    "kind": "ignored",
+    "sha256": "a18befd13ad6986e317aca6db13af108b0b4f5fb9980bdf33d1a3b8b6ec057d2"
+  },
+  {
+    "entry": "worktree-ignored/test-reports/apps/suite-result.json",
+    "kind": "ignored",
+    "sha256": "953ca5f40b2b578c6e9b44189a5dfc563913d5d172f1bfa2b00552fbec4f7913"
+  },
+  {
+    "entry": "worktree-ignored/test-reports/apps/suite-result.md",
+    "kind": "ignored",
+    "sha256": "5e8bc6d588959eea16d22daa5b4ea36e78e6cf8fb4eb8a98b9a8e45fcdd835a9"
+  },
+  {
+    "entry": "worktree-ignored/test-reports/suite-result.html",
+    "kind": "ignored",
+    "sha256": "ae4de20b20d907c85b8ac39445055a00ee81223bb304dcfb93e1096a861ad8d3"
+  },
+  {
+    "entry": "worktree-ignored/test-reports/suite-result.json",
+    "kind": "ignored",
+    "sha256": "c9a1110f6e7a6db1e4bfd2f5b564f7b8feb2f15959b1cb933dc4579a7d2630bf"
+  },
+  {
+    "entry": "worktree-ignored/test-reports/suite-result.md",
+    "kind": "ignored",
+    "sha256": "396d88aadd3a229e9ab84f0d7f39d7478447908af58c7f0c15ff396df3428d82"
+  },
+  {
+    "entry": "worktree-ignored/test-reports/workflows/suite-result.html",
+    "kind": "ignored",
+    "sha256": "65c7330d9fcda08f47bb932be1d51c0ae4f31a99c7f6fa0ab7423ca8be5af2c9"
+  },
+  {
+    "entry": "worktree-ignored/test-reports/workflows/suite-result.json",
+    "kind": "ignored",
+    "sha256": "093d98d262143fd25669fd5414f2fc1016cfcb4d2773cd1b0ddb675afff23b76"
+  },
+  {
+    "entry": "worktree-ignored/test-reports/workflows/suite-result.md",
+    "kind": "ignored",
+    "sha256": "ae71c1832701a96a6196a6f1edf5f1f538892902244b053dadaa2c8d454150c7"
+  }
+]

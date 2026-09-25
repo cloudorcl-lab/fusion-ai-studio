@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-core-restart-preparation-20260925",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-25T16:44:07.4573588Z",
+  "checkpointUtc": "2026-09-25T17:03:04.2009954Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "2f71effdf57bd38f5f801560865a8f623a23a44e7ee58dfb247036c2136dcaf2"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "dde7c60983865650419b6bba5d773265e707fda4bd0390ae64f3405e5b42d4f8"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "fe5825024095e083e722fe49c12ec708e823283f27eb9c82f18e78701f8a30c1"
+    }
+  ],
+  "reviewNotes": "Canonical lifecycle and purge model reviewed; preserve shared providers, accepted business data and historical evidence; updates instantiate approved process changes without new resource behavior.",
+  "objectReferences": [],
+  "noObjectsReason": "Preparation and Agent Studio artifact purge only; no business-resource operation, payload or schema change.",
+  "learningRegister": "docs/builds/xdx-supplier-core-restart-preparation-20260925/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-core-restart-preparation-20260925/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Canonical lifecycle and exact artifact-purge model",
+      "status": "pass",
+      "reason": "Completed scoped preparation and purge; evidence reviewed. Git delivery follows this precommit Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/purge-receipt.md",
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/time-tracker.md"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Canonical lifecycle and exact artifact-purge model",
+      "status": "pass",
+      "reason": "Completed scoped preparation and purge; evidence reviewed. Git delivery follows this precommit Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/purge-receipt.md",
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/time-tracker.md"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Canonical lifecycle and exact artifact-purge model",
+      "status": "pass",
+      "reason": "Completed scoped preparation and purge; evidence reviewed. Git delivery follows this precommit Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/purge-receipt.md",
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/time-tracker.md"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Canonical lifecycle and exact artifact-purge model",
+      "status": "pass",
+      "reason": "Completed scoped preparation and purge; evidence reviewed. Git delivery follows this precommit Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/purge-receipt.md",
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/time-tracker.md"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Canonical lifecycle and exact artifact-purge model",
+      "status": "pass",
+      "reason": "Completed scoped preparation and purge; evidence reviewed. Git delivery follows this precommit Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/purge-receipt.md",
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/time-tracker.md"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Canonical lifecycle and exact artifact-purge model",
+      "status": "pass",
+      "reason": "Completed scoped preparation and purge; evidence reviewed. Git delivery follows this precommit Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/purge-receipt.md",
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/time-tracker.md"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Canonical lifecycle and exact artifact-purge model",
+      "status": "pass",
+      "reason": "Completed scoped preparation and purge; evidence reviewed. Git delivery follows this precommit Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/purge-receipt.md",
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/time-tracker.md"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Canonical lifecycle and exact artifact-purge model",
+      "status": "pass",
+      "reason": "Completed scoped preparation and purge; evidence reviewed. Git delivery follows this precommit Closeout.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/purge-receipt.md",
+        "docs/builds/xdx-supplier-core-restart-preparation-20260925/time-tracker.md"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Unavailable",
+    "aiUnits": "No business runtime calls",
+    "timingGaps": "Earlier read-only discovery unallocated"
+  }
+}

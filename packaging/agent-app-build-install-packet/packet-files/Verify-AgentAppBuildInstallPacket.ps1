@@ -22,7 +22,7 @@ foreach ($relative in @(
   'scripts/verify-agentic-app-query-contract.cjs','scripts/tests/verify-agentic-app-query-contract.cjs',
   'scripts/plan-affected-workflow-tests.cjs','scripts/measure-build-command.cjs',
     'tests/test-affected-workflow-tests.cjs','tests/test-measure-build-command.cjs','tests/test-workflow-terminal.cjs',
-    'docs/lessons/objects/README.md','docs/build-models/object-lifecycle/v1.0.1/execution-prompt.md',
+    'docs/lessons/objects/README.md','docs/build-models/object-lifecycle/v1.1.0/execution-prompt.md','docs/build-models/object-lifecycle/v1.1.0/plan-template.md',
   'docs/build-models/artifact-purge/v1.0.1/purge-prompt.md', '.agents/skills/aistudio/SKILL.md',
   '.agents/skills/aistudio/scripts/aistudio.js',
   '.agents/skills/aistudio/references/prompts/index.md',

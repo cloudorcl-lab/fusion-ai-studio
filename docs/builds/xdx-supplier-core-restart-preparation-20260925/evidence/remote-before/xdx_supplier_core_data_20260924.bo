@@ -1,0 +1,1681 @@
+{
+  "supportedObjectId": "300000334039938",
+  "$context": {
+    "etag": "6"
+  },
+  "name": "XDX Supplier Core Data 20260924",
+  "description": "Query and approved create of suppliers, addresses, sites and contacts; procurement BU read-only lookup.",
+  "objectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+  "family": "PRC",
+  "product": "SUPPLIER",
+  "objectSource": "ADF_BC",
+  "restResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers",
+  "restResourceIdentifier": "-1",
+  "seededFlag": false,
+  "mandatoryFlag": false,
+  "objectProperties": {
+    "jsonSchemaName": "supportedObjectProperties",
+    "jsonSchemaVersion": 1,
+    "tools": [
+      {
+        "name": "getall_suppliers",
+        "description": "Query one supplier page using an allowlisted escaped filter. Preserve count, limit, offset and hasMore; never claim a page is the full catalog.",
+        "operationId": "getall_suppliers",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers?fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,InactiveDate&onlyData=true&orderBy=SupplierId:asc&limit={limit}&offset={offset}&q={q}",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "limit",
+            "dataType": "integer",
+            "description": "Requested page size, integer 1 to 25.",
+            "id": 2,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "offset",
+            "dataType": "integer",
+            "description": "Zero-based page offset, nonnegative integer.",
+            "id": 3,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "q",
+            "dataType": "string",
+            "description": "Deterministic allowlisted supplier filter; escape literals before binding. Never accept raw query code from user.",
+            "id": 4,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "sampleQueries": [
+          {
+            "description": "Retained eqih-dev21 supplier collection response from existing XDX_SUPPLIER_INFORMATION. Historical schema evidence only; not current acceptance.",
+            "query": {
+              "items": [
+                {
+                  "SupplierId": 300000047414503,
+                  "SupplierNumber": "1252",
+                  "Supplier": "Lee Supplies",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047414571,
+                  "SupplierNumber": "1253",
+                  "Supplier": "Staffing Services",
+                  "SupplierType": "Services",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047414635,
+                  "SupplierNumber": "1254",
+                  "Supplier": "JGA",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047414679,
+                  "SupplierNumber": "1255",
+                  "Supplier": "Dell Inc.",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507113,
+                  "SupplierNumber": "1256",
+                  "Supplier": "US Gas and Electric",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507170,
+                  "SupplierNumber": "1257",
+                  "Supplier": "Howell Engineering Inc.",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507225,
+                  "SupplierNumber": "1258",
+                  "Supplier": "United Parcel Service",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507272,
+                  "SupplierNumber": "1259",
+                  "Supplier": "American Telephone and Telegraph",
+                  "SupplierType": "Utility",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507340,
+                  "SupplierNumber": "1260",
+                  "Supplier": "Staples",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507387,
+                  "SupplierNumber": "1261",
+                  "Supplier": "GE",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507499,
+                  "SupplierNumber": "1262",
+                  "Supplier": "EIP Inc",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507546,
+                  "SupplierNumber": "1263",
+                  "Supplier": "Advanced Corp",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047507596,
+                  "SupplierNumber": "1264",
+                  "Supplier": "Office Depot",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047572113,
+                  "SupplierNumber": "1265",
+                  "Supplier": "Allied Manufacturing",
+                  "SupplierType": "Manufacturing",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047572163,
+                  "SupplierNumber": "1266",
+                  "Supplier": "Midtown Supplies",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047572210,
+                  "SupplierNumber": "1267",
+                  "Supplier": "Metal Works",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047572257,
+                  "SupplierNumber": "1268",
+                  "Supplier": "Northwest Electronic Supply",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047572304,
+                  "SupplierNumber": "1269",
+                  "Supplier": "Prouty Supply House",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047572371,
+                  "SupplierNumber": "1270",
+                  "Supplier": "Building Management",
+                  "SupplierType": "Services",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047837151,
+                  "SupplierNumber": "1271",
+                  "Supplier": "EDF",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000047837244,
+                  "SupplierNumber": "1272",
+                  "Supplier": "Consolidated Supplies",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000049521119,
+                  "SupplierNumber": "1273",
+                  "Supplier": "British Telecom",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000049521222,
+                  "SupplierNumber": "1274",
+                  "Supplier": "Progressive Corp",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000049521294,
+                  "SupplierNumber": "1275",
+                  "Supplier": "Windsor Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000049521443,
+                  "SupplierNumber": "1276",
+                  "Supplier": "Edison Co",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000051065858,
+                  "SupplierNumber": "1277",
+                  "Supplier": "Masson Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000051066029,
+                  "SupplierNumber": "1278",
+                  "Supplier": "RSM",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000051066172,
+                  "SupplierNumber": "1279",
+                  "Supplier": "Eiffage",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000051066233,
+                  "SupplierNumber": "1280",
+                  "Supplier": "SFR",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000051066302,
+                  "SupplierNumber": "1281",
+                  "Supplier": "Utilitaire Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000055053815,
+                  "SupplierNumber": "1282",
+                  "Supplier": "InterFrance",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000055053846,
+                  "SupplierNumber": "1283",
+                  "Supplier": "InterUK",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000055053882,
+                  "SupplierNumber": "1284",
+                  "Supplier": "InterUS1",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000066744397,
+                  "SupplierNumber": "1286",
+                  "Supplier": "CLP",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000069320926,
+                  "SupplierNumber": "1287",
+                  "Supplier": "Internal Revenue Service",
+                  "SupplierType": "Tax Authority",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075039541,
+                  "SupplierNumber": "1288",
+                  "Supplier": "ABC Consulting",
+                  "SupplierType": "Services",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075469541,
+                  "SupplierNumber": "1289",
+                  "Supplier": "Shangduo Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075469611,
+                  "SupplierNumber": "1290",
+                  "Supplier": "MK Supplies",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075469670,
+                  "SupplierNumber": "1291",
+                  "Supplier": "Qingyue Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075469729,
+                  "SupplierNumber": "1292",
+                  "Supplier": "Wenxian Limited",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075469788,
+                  "SupplierNumber": "1293",
+                  "Supplier": "Sinoma Company",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075469847,
+                  "SupplierNumber": "1294",
+                  "Supplier": "Yuyao Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000075895541,
+                  "SupplierNumber": "1295",
+                  "Supplier": "CDW",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000085423179,
+                  "SupplierNumber": "1296",
+                  "Supplier": "Northside Parts Depot",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000085423230,
+                  "SupplierNumber": "1297",
+                  "Supplier": "US Financial Svcs",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000087887113,
+                  "SupplierNumber": "1298",
+                  "Supplier": "InterChina",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000096312107,
+                  "SupplierNumber": "1299",
+                  "Supplier": "David Draper",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000101110528,
+                  "SupplierNumber": "1300",
+                  "Supplier": "Nihon Real Estate",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000101110596,
+                  "SupplierNumber": "1301",
+                  "Supplier": "Nihon Communications",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000101110664,
+                  "SupplierNumber": "1302",
+                  "Supplier": "Nihon Electonic Power",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000103023107,
+                  "SupplierNumber": "1303",
+                  "Supplier": "顺锐电子",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000107985107,
+                  "SupplierNumber": "1304",
+                  "Supplier": "Japan Tax Authority",
+                  "SupplierType": "Tax Authority",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115609124,
+                  "SupplierNumber": "1306",
+                  "Supplier": "Ente Idrocarburi",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115609204,
+                  "SupplierNumber": "1307",
+                  "Supplier": "Distributori Automatici Roma Miglior Caffe",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699140,
+                  "SupplierNumber": "1308",
+                  "Supplier": "Inde Elettrodomestici Spa",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699270,
+                  "SupplierNumber": "1309",
+                  "Supplier": "Buffanti Cancelleria",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699341,
+                  "SupplierNumber": "1310",
+                  "Supplier": "Sarti Servizi Manutenzione",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699408,
+                  "SupplierNumber": "1311",
+                  "Supplier": "Soram Efficienza Energetica e Facility Management",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699476,
+                  "SupplierNumber": "1312",
+                  "Supplier": "Arec Computer",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699550,
+                  "SupplierNumber": "1313",
+                  "Supplier": "Comtele Italia S.P.A.",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699616,
+                  "SupplierNumber": "1314",
+                  "Supplier": "Mela Spa",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699681,
+                  "SupplierNumber": "1315",
+                  "Supplier": "Energy and Buliding Soluzioni per L'italia",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699766,
+                  "SupplierNumber": "1316",
+                  "Supplier": "Ente Radiofonico",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699844,
+                  "SupplierNumber": "1317",
+                  "Supplier": "Dogana",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699909,
+                  "SupplierNumber": "1318",
+                  "Supplier": "French Networking System",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000115699975,
+                  "SupplierNumber": "1319",
+                  "Supplier": "Swiss Trains Company",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498125,
+                  "SupplierNumber": "1320",
+                  "Supplier": "McKesson Corp",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498193,
+                  "SupplierNumber": "1321",
+                  "Supplier": "Fisher Scientific",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498267,
+                  "SupplierNumber": "1322",
+                  "Supplier": "Medtronic",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498330,
+                  "SupplierNumber": "1323",
+                  "Supplier": "Baxter Healthcare",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498411,
+                  "SupplierNumber": "1324",
+                  "Supplier": "Siemens Medical Solutions",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498478,
+                  "SupplierNumber": "1325",
+                  "Supplier": "Cardinal Health",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116498572,
+                  "SupplierNumber": "1326",
+                  "Supplier": "Aesculup Inc",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116707121,
+                  "SupplierNumber": "1327",
+                  "Supplier": "Lagring Systems",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116893107,
+                  "SupplierNumber": "1328",
+                  "Supplier": "北京京东世纪贸易有限公司",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000116897228,
+                  "SupplierNumber": "1329",
+                  "Supplier": "大连万达集团股份有限公司",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000118870116,
+                  "SupplierNumber": "1330",
+                  "Supplier": "High Tech Contract Mfg",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000128710441,
+                  "SupplierNumber": "1332",
+                  "Supplier": "GFS Services",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000130063178,
+                  "SupplierNumber": "1333",
+                  "Supplier": "BBR",
+                  "SupplierType": "Services",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000131904621,
+                  "SupplierNumber": "1334",
+                  "Supplier": "La Comercial de Materiales, SA",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000131904727,
+                  "SupplierNumber": "1335",
+                  "Supplier": "Gran Hotel",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000131904822,
+                  "SupplierNumber": "1336",
+                  "Supplier": "Servicios Reunidos, SL",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000131904926,
+                  "SupplierNumber": "1337",
+                  "Supplier": "Office Supplies",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000131905017,
+                  "SupplierNumber": "1338",
+                  "Supplier": "Juan Asesor",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000131933370,
+                  "SupplierNumber": "1339",
+                  "Supplier": "Misson Corp",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000133368850,
+                  "SupplierNumber": "1340",
+                  "Supplier": "JL Company",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Prospective",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000133943912,
+                  "SupplierNumber": "1341",
+                  "Supplier": "Hospira",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000133943993,
+                  "SupplierNumber": "1342",
+                  "Supplier": "BD Medical",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000151433093,
+                  "SupplierNumber": "1343",
+                  "Supplier": "Amazon",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000152275572,
+                  "SupplierNumber": "1344",
+                  "Supplier": "RJK Inc",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000158242377,
+                  "SupplierNumber": "1345",
+                  "Supplier": "Altamonte Corporation",
+                  "SupplierType": "Supplier",
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000158459131,
+                  "SupplierNumber": "1346",
+                  "Supplier": "Oracle Bilgisayar Sistemleri Ltd. Şti",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167712982,
+                  "SupplierNumber": "1347",
+                  "Supplier": "Mustermann AG",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167722079,
+                  "SupplierNumber": "1348",
+                  "Supplier": "ZED Systeme GmbH",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167722181,
+                  "SupplierNumber": "1349",
+                  "Supplier": "DE Consulting",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167760277,
+                  "SupplierNumber": "1350",
+                  "Supplier": "AKÇAY KIRTASİYE YAYIN DAĞ.SAN.VE TİC. LTD. ŞTİ.",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167760353,
+                  "SupplierNumber": "1351",
+                  "Supplier": "DHL LOJİSTİK HİZMETLERİ A.Ş. ",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167760427,
+                  "SupplierNumber": "1352",
+                  "Supplier": "DANONE HAYAT İÇECEK VE GIDA SANAYİ VE TİCARET A.Ş ",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167760502,
+                  "SupplierNumber": "1353",
+                  "Supplier": "DOĞUŞ ÇAY VE GIDA MADDELERİ ÜRETİM PAZARLAMA İTHALAT İHRACAT A.Ş.",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                },
+                {
+                  "SupplierId": 300000167760586,
+                  "SupplierNumber": "1354",
+                  "Supplier": "GÜVEN İNŞAAT VE MALZEMELERİ SAN. TİC. LTD. ŞTİ.",
+                  "SupplierType": null,
+                  "BusinessRelationship": "Spend Authorized",
+                  "InactiveDate": null
+                }
+              ],
+              "count": 100,
+              "hasMore": true,
+              "limit": 100,
+              "offset": 0,
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/suppliers",
+                  "name": "suppliers",
+                  "kind": "collection"
+                }
+              ]
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "get_suppliers",
+        "description": "Get one supplier",
+        "operationId": "get_suppliers",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}?onlyData=true&fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,InactiveDate,Status,AlternateName,TaxOrganizationType,CorporateWebsite",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
+            "id": 7,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          }
+        ],
+        "sampleQueries": [
+          {
+            "description": "Retained historical scalar detail projected to this function; schema guidance only, not current acceptance.",
+            "query": {
+              "SupplierId": 300000047507596,
+              "SupplierNumber": "1264",
+              "Supplier": "Office Depot",
+              "SupplierType": "Supplier",
+              "BusinessRelationship": "Spend Authorized",
+              "InactiveDate": null,
+              "Status": "ACTIVE",
+              "AlternateName": "Office Depot, LLC",
+              "TaxOrganizationType": "Corporation",
+              "CorporateWebsite": "www.officedepot.com"
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "create_suppliers",
+        "description": "Create only a required-field supplier from an exact approved snapshot. Values are JSON-string escaped by deterministic caller; generated keys and all optional fields omitted.",
+        "operationId": "create_suppliers",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"Supplier\":\"{Supplier}\",\"BusinessRelationship\":\"{BusinessRelationship}\",\"TaxOrganizationType\":\"{TaxOrganizationType}\"}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "Supplier",
+            "dataType": "string",
+            "description": "Required approved Supplier value, JSON-string escaped without outer quotes. No default; deterministic exact-payload guard owns the value.",
+            "id": 10,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "BusinessRelationship",
+            "dataType": "string",
+            "description": "Required approved BusinessRelationship value, JSON-string escaped without outer quotes. No default; deterministic exact-payload guard owns the value.",
+            "id": 11,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "TaxOrganizationType",
+            "dataType": "string",
+            "description": "Required approved TaxOrganizationType value, JSON-string escaped without outer quotes. No default; deterministic exact-payload guard owns the value.",
+            "id": 12,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "Content-Type": "application/json",
+          "REST-Framework-Version": "4",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Retained successful 2026-09-17 supplier POST response projection. Schema guidance only; not current build acceptance.",
+            "query": {
+              "SupplierId": 300000333813790,
+              "SupplierNumber": "1496",
+              "SupplierPartyId": 300000333813791,
+              "Supplier": "XDX Lee Supplies 0917133857",
+              "BusinessRelationship": "Spend Authorized",
+              "TaxOrganizationType": "Corporation"
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "getall_suppliers_addresses",
+        "description": "Get all addresses",
+        "operationId": "getall_suppliers-addresses",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses?onlyData=true&fields=SupplierAddressId,AddressName,CountryCode,AddressLine1,City,State,PostalCode,Email,AddressPurposeOrderingFlag,AddressPartyNumber,Status,InactiveDate&orderBy=SupplierAddressId:asc&limit={limit}&offset={offset}&q={q}",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
+            "id": 18,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "limit",
+            "dataType": "integer",
+            "description": "Bounded address pagination limit.",
+            "id": 19,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "offset",
+            "dataType": "integer",
+            "description": "Bounded address pagination offset.",
+            "id": 20,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "q",
+            "dataType": "string",
+            "description": "Validated parent-scoped exact-name or numeric-key filter.",
+            "id": 21,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "Retained same-tenant address response projected for schema only; not this build acceptance.",
+            "query": {
+              "items": [
+                {
+                  "SupplierAddressId": 300000333813797,
+                  "AddressName": "XDX Lee US1 0917133857",
+                  "CountryCode": "US",
+                  "AddressLine1": "5000 CARTER DR.",
+                  "City": "LOS ANGELES",
+                  "State": "CA",
+                  "PostalCode": "90032",
+                  "Email": "xdx-address-0917133857@example.invalid",
+                  "AddressPurposeOrderingFlag": true,
+                  "AddressPartyNumber": "1486630",
+                  "Status": "ACTIVE",
+                  "InactiveDate": "4712-12-31"
+                }
+              ],
+              "count": 1,
+              "hasMore": false,
+              "limit": 5,
+              "offset": 0
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "get_suppliers_addresses",
+        "description": "Get one address",
+        "operationId": "get_suppliers-addresses",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses/{suppliers_addresses_Id}?onlyData=true&fields=SupplierAddressId,AddressName,CountryCode,AddressLine1,City,State,PostalCode,Email,AddressPurposeOrderingFlag,AddressPartyNumber,Status,InactiveDate",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
+            "id": 25,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "suppliers_addresses_Id",
+            "dataType": "string",
+            "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
+            "id": 26,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "Retained same-tenant address response projected for schema only; not this build acceptance.",
+            "query": {
+              "SupplierAddressId": 300000333813797,
+              "AddressName": "XDX Lee US1 0917133857",
+              "CountryCode": "US",
+              "AddressLine1": "5000 CARTER DR.",
+              "City": "LOS ANGELES",
+              "State": "CA",
+              "PostalCode": "90032",
+              "Email": "xdx-address-0917133857@example.invalid",
+              "AddressPurposeOrderingFlag": true,
+              "AddressPartyNumber": "1486630",
+              "Status": "ACTIVE",
+              "InactiveDate": "4712-12-31"
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "create_suppliers_addresses",
+        "description": "Create one parent-scoped address from an exact approved payload; strings are JSON-escaped and ordering flag is boolean. No generated keys or excluded collections.",
+        "operationId": "create_suppliers-addresses",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"AddressName\":\"{AddressName}\",\"CountryCode\":\"{CountryCode}\",\"AddressLine1\":\"{AddressLine1}\",\"City\":\"{City}\",\"State\":\"{State}\",\"PostalCode\":\"{PostalCode}\",\"Email\":\"{Email}\",\"AddressPurposeOrderingFlag\":{AddressPurposeOrderingFlag}}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "The value of this parameter could be a hash of the key that is used to uniquely identify the resource item. The client should not generate the hash key value.  Instead, the client should query on the collection resource with a filter to navigate to a specific resource item. For example: products?q=InventoryItemId=<value1>",
+            "id": 30,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "AddressName",
+            "dataType": "string",
+            "description": "Explicit approved AddressName; JSON-escaped string or native boolean, no hidden default.",
+            "id": 31,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "CountryCode",
+            "dataType": "string",
+            "description": "Explicit approved CountryCode; JSON-escaped string or native boolean, no hidden default.",
+            "id": 32,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "AddressLine1",
+            "dataType": "string",
+            "description": "Explicit approved AddressLine1; JSON-escaped string or native boolean, no hidden default.",
+            "id": 33,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "description": "Explicit approved City; JSON-escaped string or native boolean, no hidden default.",
+            "id": 34,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "description": "Explicit approved State; JSON-escaped string or native boolean, no hidden default.",
+            "id": 35,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "description": "Explicit approved PostalCode; JSON-escaped string or native boolean, no hidden default.",
+            "id": 36,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "description": "Explicit approved Email; JSON-escaped string or native boolean, no hidden default.",
+            "id": 37,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "AddressPurposeOrderingFlag",
+            "dataType": "boolean",
+            "description": "Explicit approved AddressPurposeOrderingFlag; JSON-escaped string or native boolean, no hidden default.",
+            "id": 38,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Retained same-tenant address response projected for schema only; not this build acceptance.",
+            "query": {
+              "SupplierAddressId": 300000333813797,
+              "AddressName": "XDX Lee US1 0917133857",
+              "CountryCode": "US",
+              "AddressLine1": "5000 CARTER DR.",
+              "City": "LOS ANGELES",
+              "State": "CA",
+              "PostalCode": "90032",
+              "Email": "xdx-address-0917133857@example.invalid",
+              "AddressPurposeOrderingFlag": true,
+              "AddressPartyNumber": "1486630",
+              "Status": "ACTIVE",
+              "InactiveDate": "4712-12-31"
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "getall_suppliers_sites",
+        "description": "Get all sites",
+        "operationId": "getall_suppliers-sites",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites?onlyData=true&fields=SupplierSiteId,SupplierSite,ProcurementBUId,SupplierAddressName,SitePurposePurchasingFlag,ProcurementBU,SupplierAddressId,Status,InactiveDate&orderBy=SupplierSiteId:asc&limit={limit}&offset={offset}&q={q}",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "Explicit validated suppliers_Id for the approved site operation.",
+            "id": 44,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "limit",
+            "dataType": "integer",
+            "description": "Explicit validated limit for the approved site operation.",
+            "id": 45,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "offset",
+            "dataType": "integer",
+            "description": "Explicit validated offset for the approved site operation.",
+            "id": 46,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "q",
+            "dataType": "string",
+            "description": "Validated exact-name or key filter under the selected supplier.",
+            "id": 47,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "Retained site response projected for schema, not current build acceptance.",
+            "query": {
+              "items": [
+                {
+                  "SupplierSiteId": 300000333813806,
+                  "SupplierSite": "XDX Lee US1 0917133857",
+                  "ProcurementBUId": 300000046987012,
+                  "SupplierAddressName": "XDX Lee US1 0917133857",
+                  "SitePurposePurchasingFlag": true,
+                  "ProcurementBU": "US1 Business Unit",
+                  "SupplierAddressId": 300000333813797,
+                  "Status": "ACTIVE",
+                  "InactiveDate": null
+                }
+              ],
+              "count": 1,
+              "hasMore": false,
+              "limit": 5,
+              "offset": 0
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "get_suppliers_sites",
+        "description": "Get one site",
+        "operationId": "get_suppliers-sites",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites/{suppliers_sites_Id}?onlyData=true&fields=SupplierSiteId,SupplierSite,ProcurementBUId,SupplierAddressName,SitePurposePurchasingFlag,ProcurementBU,SupplierAddressId,Status,InactiveDate",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "Explicit validated suppliers_Id for the approved site operation.",
+            "id": 51,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "suppliers_sites_Id",
+            "dataType": "string",
+            "description": "Explicit validated suppliers_sites_Id for the approved site operation.",
+            "id": 52,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "Retained site response projected for schema, not current build acceptance.",
+            "query": {
+              "SupplierSiteId": 300000333813806,
+              "SupplierSite": "XDX Lee US1 0917133857",
+              "ProcurementBUId": 300000046987012,
+              "SupplierAddressName": "XDX Lee US1 0917133857",
+              "SitePurposePurchasingFlag": true,
+              "ProcurementBU": "US1 Business Unit",
+              "SupplierAddressId": 300000333813797,
+              "Status": "ACTIVE",
+              "InactiveDate": null
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "create_suppliers_sites",
+        "description": "Create one exactly approved purchasing site under its verified supplier, address and procurement BU; only four intended fields, no generated IDs or excluded collections.",
+        "operationId": "create_suppliers-sites",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"SupplierSite\":\"{SupplierSite}\",\"ProcurementBUId\":{ProcurementBUId},\"SupplierAddressName\":\"{SupplierAddressName}\",\"SitePurposePurchasingFlag\":{SitePurposePurchasingFlag}}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "Explicit validated suppliers_Id for the approved site operation.",
+            "id": 56,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "SupplierSite",
+            "dataType": "string",
+            "description": "Explicit validated SupplierSite for the approved site operation.",
+            "id": 57,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "ProcurementBUId",
+            "dataType": "integer",
+            "description": "Explicit validated ProcurementBUId for the approved site operation.",
+            "id": 58,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "SupplierAddressName",
+            "dataType": "string",
+            "description": "Explicit validated SupplierAddressName for the approved site operation.",
+            "id": 59,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "SitePurposePurchasingFlag",
+            "dataType": "boolean",
+            "description": "Explicit validated SitePurposePurchasingFlag for the approved site operation.",
+            "id": 60,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Retained site response projected for schema, not current build acceptance.",
+            "query": {
+              "SupplierSiteId": 300000333813806,
+              "SupplierSite": "XDX Lee US1 0917133857",
+              "ProcurementBUId": 300000046987012,
+              "SupplierAddressName": "XDX Lee US1 0917133857",
+              "SitePurposePurchasingFlag": true,
+              "ProcurementBU": "US1 Business Unit",
+              "SupplierAddressId": 300000333813797,
+              "Status": "ACTIVE",
+              "InactiveDate": null
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "getall_suppliers_contacts",
+        "description": "Get all contacts",
+        "operationId": "getall_suppliers-contacts",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts?onlyData=true&fields=SupplierContactId,ContactName,FirstName,LastName,Email,PersonProfileId,Status,InactiveDate,UserName,UserAccountStatus&orderBy=SupplierContactId:asc&limit={limit}&offset={offset}&q={q}",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "Explicit validated suppliers_Id for the approved contact operation.",
+            "id": 66,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "limit",
+            "dataType": "integer",
+            "description": "Explicit validated limit for the approved contact operation.",
+            "id": 67,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "offset",
+            "dataType": "integer",
+            "description": "Explicit validated offset for the approved contact operation.",
+            "id": 68,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "q",
+            "dataType": "string",
+            "description": "Validated exact-name or key filter under the selected supplier.",
+            "id": 69,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "Retained contact response projected for schema, not current build acceptance.",
+            "query": {
+              "items": [
+                {
+                  "SupplierContactId": 300000333813808,
+                  "ContactName": null,
+                  "FirstName": "XDX Ryan",
+                  "LastName": "XDX Lee 0917133857",
+                  "Email": "xdx-contact-0917133857@example.invalid",
+                  "PersonProfileId": 300000333813808,
+                  "Status": "ACTIVE",
+                  "InactiveDate": null,
+                  "UserName": null,
+                  "UserAccountStatus": null
+                }
+              ],
+              "count": 1,
+              "hasMore": false,
+              "limit": 5,
+              "offset": 0
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "get_suppliers_contacts",
+        "description": "Get one contact",
+        "operationId": "get_suppliers-contacts",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts/{suppliers_contacts_Id}?onlyData=true&fields=SupplierContactId,ContactName,FirstName,LastName,Email,PersonProfileId,Status,InactiveDate,UserName,UserAccountStatus",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "Explicit validated suppliers_Id for the approved contact operation.",
+            "id": 73,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "suppliers_contacts_Id",
+            "dataType": "string",
+            "description": "Explicit validated suppliers_contacts_Id for the approved contact operation.",
+            "id": 74,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "Retained contact response projected for schema, not current build acceptance.",
+            "query": {
+              "SupplierContactId": 300000333813808,
+              "ContactName": null,
+              "FirstName": "XDX Ryan",
+              "LastName": "XDX Lee 0917133857",
+              "Email": "xdx-contact-0917133857@example.invalid",
+              "PersonProfileId": 300000333813808,
+              "Status": "ACTIVE",
+              "InactiveDate": null,
+              "UserName": null,
+              "UserAccountStatus": null
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "create_suppliers_contacts",
+        "description": "Create one exact-approved contact under its verified supplier; only FirstName, LastName and Email, no account provisioning or excluded collections.",
+        "operationId": "create_suppliers-contacts",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"FirstName\":\"{FirstName}\",\"LastName\":\"{LastName}\",\"Email\":\"{Email}\"}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "Explicit validated suppliers_Id for the approved contact operation.",
+            "id": 78,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "description": "Explicit validated FirstName for the approved contact operation.",
+            "id": 79,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "description": "Explicit validated LastName for the approved contact operation.",
+            "id": 80,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "description": "Explicit validated Email for the approved contact operation.",
+            "id": 81,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Retained contact response projected for schema, not current build acceptance.",
+            "query": {
+              "SupplierContactId": 300000333813808,
+              "ContactName": null,
+              "FirstName": "XDX Ryan",
+              "LastName": "XDX Lee 0917133857",
+              "Email": "xdx-contact-0917133857@example.invalid",
+              "PersonProfileId": 300000333813808,
+              "Status": "ACTIVE",
+              "InactiveDate": null,
+              "UserName": null,
+              "UserAccountStatus": null
+            },
+            "sampleType": "response"
+          }
+        ]
+      }
+    ]
+  }
+}

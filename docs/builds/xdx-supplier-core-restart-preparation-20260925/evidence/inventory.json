@@ -1,0 +1,90 @@
+{
+  "observedUtc": "2026-09-25T16:50:38.717Z",
+  "identity": "CASEY.BROWN",
+  "environment": "eqih-dev21",
+  "catalogCount": 25,
+  "catalogContainsKnownWorkflow": false,
+  "consumerCompleteness": "unknown; catalog completeness must not be inferred",
+  "artifacts": [
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-preparation-20260925/evidence/remote-before/xdx_supplier_core_20260924.wf",
+      "sha256": "867b348b5cd8101cf5b675492ce4596452cd8ef5251c63c4dd1bdd6aa3557414",
+      "code": "XDX_SUPPLIER_CORE_20260924",
+      "status": "DRAFT",
+      "version": 86237214,
+      "keys": [
+        "workflowId",
+        "workflowCode",
+        "name",
+        "description",
+        "specification",
+        "status",
+        "version",
+        "family",
+        "product",
+        "ownerName",
+        "customFlag",
+        "seededFlag",
+        "isTemplate",
+        "hiddenFlag",
+        "useCaseId",
+        "accessModifier",
+        "architecture",
+        "aiAppsCompatibleFlag",
+        "followupEnabledFlag",
+        "header"
+      ],
+      "id": "300000334039939"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-preparation-20260925/evidence/remote-before/xdx_supplier_core_app_20260924.app",
+      "sha256": "2e1dc1c2f75ff67c7095026a28fca3e65c5f6692a98b94b7e5a39917bca2d329",
+      "code": "XDX_SUPPLIER_CORE_APP_20260924",
+      "id": "300000334039940",
+      "status": "DRAFT",
+      "version": 1,
+      "keys": [
+        "id",
+        "name",
+        "internalName",
+        "code",
+        "internalDescription",
+        "status",
+        "version",
+        "specification"
+      ]
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-preparation-20260925/evidence/remote-before/xdx_supplier_core_data_20260924.bo",
+      "sha256": "8497a41fdac6ed1ee1a1962a1d2b64d41e89f754eef6eec3d8109861ed45117e",
+      "code": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "keys": [
+        "supportedObjectId",
+        "$context",
+        "name",
+        "description",
+        "objectCode",
+        "family",
+        "product",
+        "objectSource",
+        "restResourcePath",
+        "restResourceIdentifier",
+        "seededFlag",
+        "mandatoryFlag",
+        "objectProperties"
+      ],
+      "id": "300000334039938",
+      "etag": "6"
+    }
+  ],
+  "worktree": {
+    "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-20260924",
+    "tip": "59fd032c39e5f129cacae36c7d5fbe94db874269",
+    "gitAdmin": "C:/Users/dasu/Documents/GitHub/fusion-ai-studio-1/.git/worktrees/xdx-supplier-core-20260924",
+    "ignoredCounts": {
+      ".debug": 18,
+      "test-reports": 9
+    },
+    "untrackedCount": 0
+  }
+}

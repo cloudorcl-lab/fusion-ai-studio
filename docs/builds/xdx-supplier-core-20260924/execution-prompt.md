@@ -1,5 +1,7 @@
 # XDX Supplier Core — execution prompt
 
+**Historical execution prompt — superseded for new launches.** Preserve this run's evidence; do not execute this old identity again. The next prepared launch is [Supplier Core20260925](../xdx-supplier-core-20260925/execution-prompt.md). Inspect the [restart-preparation record](../xdx-supplier-core-restart-preparation-20260925/intake-and-learning-register.md) for actual old-artifact retirement disposition; this pointer does not claim purge completion. Original content below remains historical.
+
 Version 1.0.0, 2026-09-24. Based on object-lifecycle model 1.0.1.
 Prepared for the next user-launched build; authoring this prompt does not execute it.
 
