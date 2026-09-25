@@ -32,6 +32,8 @@ try {
   $canonical = @('AGENTS.md','docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md',
     'scripts/verify-living-build-contract.ps1','scripts/verify-session-compliance.cjs',
     'scripts/verify-agentic-app-query-contract.cjs','scripts/tests/verify-agentic-app-query-contract.cjs',
+    'scripts/plan-affected-workflow-tests.cjs','scripts/measure-build-command.cjs',
+    'tests/test-affected-workflow-tests.cjs','tests/test-measure-build-command.cjs','tests/test-workflow-terminal.cjs',
     'tests/test-living-build-contract.ps1','tests/test-session-compliance.cjs','tests/test-build-time-record.ps1')
   $dependencies = @(& git -C $repo ls-files -- .agents/skills/aistudio docs/lessons/objects docs/build-models)
   if ($LASTEXITCODE -ne 0) { throw 'Dependency inventory failed' }

@@ -38869,10 +38869,45 @@ function db(e) {
   return t === void 0 ? void 0 : wt(t).value;
 }
 function OC(e) {
-  const t = db(e.pathAssertions);
-  if (t) return t;
-  const n = RC(e.workflow.specification?.dataPipeline?.pipelineNodes ?? []);
-  return db(n);
+  if (!e.pathAssertions) {
+    return db(RC(e.workflow.specification?.dataPipeline?.pipelineNodes ?? []));
+  }
+  // Coverage partitions are sets, not execution sequences. Resolve the unique
+  // downstream terminal from the current graph; never trust stale path bindings.
+  const graph = ew(e.workflow.specification?.dataPipeline?.pipelineNodes ?? []);
+  const byCode = new Map(Array.from(graph.nodesById.values(), (node) => [node.code, node]));
+  const selected = new Set(e.pathAssertions.mustExecute.map((entry) => wt(entry).value));
+  if (selected.size === 0) return;
+  const edges = new Map(), incomplete = new Set();
+  for (const code of selected) {
+    const node = byCode.get(code);
+    if (!node || Hl(node)) throw new Error('Cannot resolve terminal: unknown or non-executable asserted node ' + code + '.');
+    const downstream = new Set(), visited = new Set();
+    const visit = (id) => {
+      if (visited.has(id)) return;
+      visited.add(id);
+      const next = graph.nodesById.get(id);
+      if (!next) throw new Error('Cannot resolve terminal: unknown graph target ' + id + '.');
+      if (selected.has(next.code)) downstream.add(next.code);
+      else if (Hl(next)) (graph.adjacencyById.get(id) ?? []).forEach(visit);
+      else incomplete.add(code);
+    };
+    (graph.adjacencyById.get(node.id) ?? []).forEach(visit);
+    edges.set(code, downstream);
+  }
+  const terminals = Array.from(selected).filter((code) => edges.get(code).size === 0);
+  if (terminals.length !== 1) throw new Error('Cannot resolve an unambiguous terminal from pathAssertions and the current workflow graph.');
+  const terminal = terminals[0];
+  if (incomplete.has(terminal)) throw new Error('Cannot resolve terminal: asserted endpoint has an unasserted executable continuation.');
+  // Also reject a disconnected cycle alongside an otherwise plausible terminal.
+  const reachesTerminal = (code, visited = new Set()) => {
+    if (code === terminal) return true;
+    if (visited.has(code)) return false;
+    visited.add(code);
+    return Array.from(edges.get(code)).some((next) => reachesTerminal(next, visited));
+  };
+  if (Array.from(selected).some((code) => !reachesTerminal(code))) throw new Error('Cannot resolve terminal: asserted path contains a disconnected component.');
+  return terminal;
 }
 function $C(e, t) {
   if (t)

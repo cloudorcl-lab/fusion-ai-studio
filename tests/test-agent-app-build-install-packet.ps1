@@ -52,7 +52,7 @@ try {
     & pwsh -NoProfile -File (Join-Path $install $command)
     if ($LASTEXITCODE -ne 0) { throw "Activated test failed: $command" }
   }
-  foreach ($command in @('tests/test-session-compliance.cjs','scripts/tests/verify-agentic-app-query-contract.cjs')) {
+  foreach ($command in @('tests/test-session-compliance.cjs','scripts/tests/verify-agentic-app-query-contract.cjs','tests/test-affected-workflow-tests.cjs','tests/test-measure-build-command.cjs','tests/test-workflow-terminal.cjs')) {
     & node (Join-Path $install $command)
     if ($LASTEXITCODE -ne 0) { throw "Activated test failed: $command" }
   }

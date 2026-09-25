@@ -8,7 +8,11 @@ Record observed values only. `unavailable` is valid; do not substitute zero or a
 ## Activity intervals
 
 The existing append helper populates the summary table above only. It does not
-capture these intervals automatically. Record observed boundaries here or link
+capture these intervals automatically. Use `node scripts/measure-build-command.cjs --help`
+for shell-free command intervals in a linked JSONL receipt. Group by runId; an
+unmatched start is unknown completion. Never sum parallel or nested durations.
+The wrapper does not collect token/AI Unit metrics or renew browser sessions.
+Record observed boundaries here or link
 tool-emitted evidence; keep missing intervals unallocated. Do not add overlapping
 or nested durations to task elapsed time.
 
