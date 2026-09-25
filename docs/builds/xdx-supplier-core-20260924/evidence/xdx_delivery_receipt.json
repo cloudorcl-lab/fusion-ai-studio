@@ -1,0 +1,101 @@
+{
+  "recordedUtc": "2026-09-25T02:06:33.224Z",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-20260924",
+  "branch": "codex/xdx-supplier-core-20260924",
+  "preCommitHead": "fedb09a956c522b1eb9a57edc9158dde13d38773",
+  "upstream": "none",
+  "target": "eqih-dev21 / CASEY.BROWN",
+  "configuration": "Active worktree env.properties only, unchanged during build; contents excluded",
+  "environmentSha256": "f2250144b3da1118be7f45d8b038b339845a01c02e20fe0de3af495c5c416d2e",
+  "authority": "Scoped local commit only; no publish/push, business update/delete or excluded resources",
+  "preserved": "Existing BOs, accepted records, base temp deletions and unrelated docs/TODO.md",
+  "workflowAcceptance": {
+    "total": 14,
+    "passed": 14,
+    "failed": 0,
+    "needsJudge": 0
+  },
+  "appAcceptance": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "needsJudge": 0
+  },
+  "scopeException": "docs/builds/xdx-supplier-core-20260924/xdx_p6_scoped_completion.md",
+  "sourceAndTests": [
+    {
+      "path": "src/workflows/xdx_supplier_core_20260924.wf",
+      "sha256": "7cc040284566a4c709706f47b37d6fa962818e817f47c9dff4b091f703d46595"
+    },
+    {
+      "path": "src/apps/xdx_supplier_core_app_20260924.app",
+      "sha256": "dd09278de40ec6f6d710f4efe1522d8efec16e4bc06d2471369cf25c3eb13ef1"
+    },
+    {
+      "path": "src/businessObjects/xdx_supplier_core_data_20260924.bo",
+      "sha256": "c37cfc39fff9636c6a2f6be7ccde5d91be1a04ffe3289e0d305e328bc9dac842"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/address-draft-conversation.json",
+      "sha256": "611eab68f71eddf758347651a9da9eb3ec00b744dae32f82e489ff36fbcfcbac"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/address-query-detail.json",
+      "sha256": "54cb884de96ffd4fd5e3d7990b0bac6844daa25a9aabd9e157930d29594e7225"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/address-query-list.json",
+      "sha256": "9cd1bb4bd3da4cf3bc6edfa293dde46f7e9bb86cf27e0b63d024ce723be584d7"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/contact-draft-conversation.json",
+      "sha256": "30e564ac3a8b7e17a63b9caa432277ff1704fce8affb26c6ad390231e1863d23"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/contact-query-detail.json",
+      "sha256": "a528627deb42f1e6472ff48fe59d8692266be67638c8605963ca6eccd538774b"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/contact-query-list.json",
+      "sha256": "5d0ab46704f012e28d6d04945600722adebbdd761e3e251db5944a3380b6d165"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/init-display.json",
+      "sha256": "80a4a5a18811475709c9c4e044d650d5cfbbec75117245827e961fe9517f1707"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/query.json",
+      "sha256": "4fcffdd30e3ed7e2344d2e27cc4da907b749919a07f9a15f81203d9b70ae5f19"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/site-draft-conversation.json",
+      "sha256": "8a0f371382d26773f3132355af8d95bab6c0c363a843fe1cf9e80210b04a4a46"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/site-query-detail.json",
+      "sha256": "3a35a28272159225d705aaef37942690056291cbd4d11092eee2b0a1fde76bc2"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/site-query-list.json",
+      "sha256": "ddaf6db0adba7d7f2e44a3338cef8f9b880f3b7a3b831c098e57bbb9bd64f40c"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/supplier-draft-conversation.json",
+      "sha256": "0148625d9c01fdc11c12e050f29b10b5f053e6c76e952c0061931cc255d78ab5"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/supplier-query-detail.json",
+      "sha256": "854ea7bfd5ff2dbe55af1e70764be19b0d1116f90abc6c34635b84bf3f97b4d5"
+    },
+    {
+      "path": "test/workflows/xdx_supplier_core_20260924/supplier-query-guidance.json",
+      "sha256": "03b26f71ac89e6c06824103b9ee01f22ac6a45ca34640a90a023338c3c105235"
+    },
+    {
+      "path": "test/apps/xdx_supplier_core_app_20260924/init_display_supplier_core.json",
+      "sha256": "69c28a3573aa88bb9ea84d00692e2db5857a1290313487bded9a25f0b9ae79aa"
+    }
+  ],
+  "retiredScratch": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_cleanup_manifest.json",
+  "delivery": "Commit follows successful Closeout; verify exact committed scope before declaring complete"
+}

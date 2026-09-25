@@ -2,7 +2,7 @@
 
 Plan version: **1.0.0**, 2026-09-24. Model: **object-lifecycle 1.0.1** from `96ea23dec003a7061cfe1c110bd4ac56cf3b7a10`.
 Build ID: `xdx-supplier-core-20260924`. Mode: new scoped rebuild.
-Status: **Planning complete; build not started.** Execution begins only when the user launches this plan/prompt. This replaces the deleted broader supplier lifecycle plan.
+Status: **Execution active: P0-P4 complete; P5 contacts next, P6 final acceptance and Closeout remain.** Native site empty/search/selected-detail/paging and exact create independently verified; configured11/11 PASS with all judges.
 
 ## 1. Outcome and exact scope
 
@@ -98,3 +98,7 @@ After required acceptance, route reusable lessons to existing owners, preserve a
 ## 9. Remaining runtime inputs
 
 No scope decision is open. At P0 verify current environment/authentication, exact-code availability, supported state binding, required field metadata and authorized test values. At P4 resolve a valid procurement BU and same-supplier address. Historical IDs and names are not defaults. Missing inputs block only dependent work; no excluded sub-object may be added as a workaround.
+
+
+
+Execution acceptance2026-09-25: P0–P5 accepted; all eight native/persisted requirements complete, current configured workflow14/14 and app1/1 PASS. P6 functional acceptance verified; Closeout and scoped local delivery are tracked in the session receipt and handoff. No publication/push.

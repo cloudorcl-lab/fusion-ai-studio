@@ -112,6 +112,8 @@ The create operation ID is `create_suppliers-contacts`. The 26C OpenAPI request 
 
 In this test, omitting `InactiveDate` succeeded despite the 26C schema required/non-null annotations. The documented example also omits it. This is tenant-scoped observed behavior, not a universal schema correction. Email was supplied as a non-deliverable test destination; its omission was not tested. No user-account creation was requested.
 
+Current same-tenant corroboration: on2026-09-25, XDX Supplier Core omitted both generated IDs and InactiveDate in its exact-approved three-field POST. Native independent parent-scoped GET confirmed SupplierContactId and PersonProfileId300000333814434, all three submitted fields, and null UserName/UserAccountStatus. No account operation was requested. [Native evidence](../../builds/xdx-supplier-core-20260924/evidence/xdx_p5_native_contact.md). ID equality is an observation for this record, not a universal rule. Immutable GET samples remain unchanged.
+
 ### Requiredness and uniqueness review
 
 Additional confirmation: the [1497 contact POST](../../builds/xdx-supplier-information/live-post/children-1497-create/contact-post.json) omitted SupplierContactId and PersonProfileId and returned both; [GET](../../builds/xdx-supplier-information/live-post/children-1497-create/contact-get.json) confirmed them with null UserName/UserAccountStatus, on 2026-09-17 in the same tenant/release. InactiveDate omission again succeeded. Immutable first-success samples remain unchanged.
@@ -144,6 +146,7 @@ Use an explicitly approved test identity derived from the requested basis and a 
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-25 | XDX Supplier Core exact-approved POST and independent parent-scoped GET, contact300000333814434 | Corroborated three-field payload, omitted generated contact/profile IDs and InactiveDate, and null account fields; immutable first GET sample preserved. |
 | 2026-09-23 | XDX Supplier Lifecycle rejected email-only POST, zero-contact reconciliation, materially changed POST and independent GET | Confirmed tenant-required `FirstName`; retained first name, last name and email as the minimum transaction identity; omitted administrative/account/phone/role/optional fields; captured generated contact/profile ID `300000333814275` and null account fields. |
 | 2026-09-17 | Supplier 1497 child POST/GET | Added generated contact/profile ID and InactiveDate-omission confirmation; four intended fields matched with no user account. |
 | 2026-09-17 | Retained 26C schema reviewed during compliance audit | Recorded name/email limits and unresolved uniqueness scope separately from omission evidence; no new POST. |

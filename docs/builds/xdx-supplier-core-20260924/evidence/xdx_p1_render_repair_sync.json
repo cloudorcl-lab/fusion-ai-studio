@@ -1,0 +1,1112 @@
+{
+  "workflowFile": "src/workflows/xdx_supplier_core_20260924.wf",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924",
+    "status": "DRAFT",
+    "version": 86217469,
+    "name": "XDX Supplier Core 20260924",
+    "description": "Native terminating supplier core query and exact-approved create flows.",
+    "family": "PRC",
+    "product": "SUPPLIER"
+  },
+  "view": {
+    "mode": "full"
+  },
+  "summary": {
+    "totalActions": 2,
+    "missing": 2,
+    "outOfSync": 0,
+    "needsReview": 0,
+    "upToDate": 2,
+    "pendingNoAttempt": 0,
+    "deferred": 0
+  },
+  "actions": [
+    {
+      "action": "create",
+      "status": "missing",
+      "testName": "read-allowed-false-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/read-allowed-false-path.json",
+      "scenarioId": "app-init-display-READ_ALLOWED-false-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3100,
+      "title": "read allowed False Path",
+      "purpose": "Exercise the false branch of READ_ALLOWED and verify the workflow does not run the true-branch data/LLM path.",
+      "dataCapturePolicy": "model-generated",
+      "reason": "No existing test covers this current workflow scenario.",
+      "appStage": "InitDisplay",
+      "recordablePath": [],
+      "dataPathSignature": "",
+      "suggestedInput": {
+        "message": "",
+        "triggerType": "app",
+        "parameters": {
+          "appHint": "InitDisplay",
+          "OraUserContext": "",
+          "OraAppContext": ""
+        }
+      },
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE"
+        ],
+        "mustNotExecute": [
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "READ_ALLOWED",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "false",
+          "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "READ_ALLOWED",
+        "outcome": "false"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "READ_GUIDANCE"
+      ],
+      "authoringHints": {
+        "scenarioId": "app-init-display-READ_ALLOWED-false-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "READ_ALLOWED",
+          "outcome": "false"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "READ_ALLOWED",
+            "nodeType": "CONDITION",
+            "expectedOutcome": "false",
+            "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (READ_ALLOWED / false) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is READ_ALLOWED expression \"{{!$context.$nodes.PREPARE_READ.$output.result.error}}\". Synthesize or select upstream values that make this expression choose false; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test read-allowed-false-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-READ_ALLOWED-false-path",
+            "kind": "branch-path",
+            "intent": "Exercise the false branch of READ_ALLOWED and verify the workflow does not run the true-branch data/LLM path.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_READ",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "READ_ALLOWED",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "READ_GUIDANCE",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "READ_GUIDANCE",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 112,
+                  "hash": "b20c2fc384b22a7f",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "READ_GUIDANCE",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 103,
+                  "hash": "d05eb920d5db44fb",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "READ_GUIDANCE",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 3,
+              "terminalContribution": "supporting",
+              "dependencyPath": [
+                "EXTRACT_READ",
+                "PREPARE_READ",
+                "READ_GUIDANCE"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 488,
+                "hash": "8081394eeb73917b",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 366,
+                "hash": "8acc1e3a4f7d81e6",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "READ_GUIDANCE",
+              "nodeType": "LLM",
+              "name": "read guidance",
+              "role": "terminal-output-owner",
+              "pathOrder": 3,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "READ_GUIDANCE"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 103,
+                "hash": "d05eb920d5db44fb",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "READ_GUIDANCE",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 112,
+                "hash": "b20c2fc384b22a7f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "READ_GUIDANCE",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": []
+          },
+          "contractHash": "e92a5f533d280cf7"
+        }
+      }
+    },
+    {
+      "action": "create",
+      "status": "missing",
+      "testName": "is-list-false-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/is-list-false-path.json",
+      "scenarioId": "app-init-display-IS_LIST-false-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 5101,
+      "title": "is detail False Path",
+      "purpose": "Exercise the false branch of IS_LIST and verify the workflow does not run the true-branch data/LLM path.",
+      "dataCapturePolicy": "record-now",
+      "reason": "No existing test covers this current workflow scenario.",
+      "appStage": "InitDisplay",
+      "recordablePath": [
+        "FETCH_SUPPLIER_DETAIL"
+      ],
+      "dataPathSignature": "FETCH_SUPPLIER_DETAIL",
+      "suggestedInput": {
+        "message": "",
+        "triggerType": "app",
+        "parameters": {
+          "appHint": "InitDisplay",
+          "OraUserContext": "",
+          "OraAppContext": ""
+        }
+      },
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "SUPPLIER_READ_DISPLAY"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "READ_ALLOWED",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "true",
+          "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+        },
+        {
+          "nodeCode": "DISPLAY_STAGE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "InitDisplay",
+          "expression": "{{$context.$app.$OraMessageHint}}"
+        },
+        {
+          "nodeCode": "IS_LIST",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "false",
+          "expression": "{{$context.$nodes.PREPARE_READ.$output.result.intent !== \"detail\"}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "IS_LIST",
+        "outcome": "false"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "INIT_DISPLAY"
+      ],
+      "authoringHints": {
+        "scenarioId": "app-init-display-IS_LIST-false-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "live-recording",
+        "targetBranch": {
+          "nodeCode": "IS_LIST",
+          "outcome": "false"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "READ_ALLOWED",
+            "nodeType": "CONDITION",
+            "expectedOutcome": "true",
+            "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+          },
+          {
+            "nodeCode": "DISPLAY_STAGE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "InitDisplay",
+            "expression": "{{$context.$app.$OraMessageHint}}"
+          },
+          {
+            "nodeCode": "IS_LIST",
+            "nodeType": "CONDITION",
+            "expectedOutcome": "false",
+            "expression": "{{$context.$nodes.PREPARE_READ.$output.result.intent !== \"detail\"}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [
+            "FETCH_SUPPLIER_DETAIL"
+          ],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (IS_LIST / false) by constructing input or context that drives live execution toward this outcome. Do not rely on synthetic testData to control LLM routing decisions.",
+            "The routing decision is IS_LIST expression \"{{$context.$nodes.PREPARE_READ.$output.result.intent !== \\\"detail\\\"}}\". Synthesize or select upstream values that make this expression choose false; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Record live: use the branchForcingHints above to construct the input that triggers this specific branch. Do not add accumulated conversation context from other branches (e.g., active-request workflow stage, prior decision state) unless the hints explicitly require it. After recording, verify the captured path includes the target branch before accepting the test."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test is-list-false-path. If the semantic expectation is wrong, update the expected outcome or rubric. If the path expectation is wrong, compare the observed path with the sync-plan path and fix the input, test data, or sync-plan path refinement. Do not weaken scenario-backed path assertions just to make the test pass."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-IS_LIST-false-path",
+            "kind": "branch-path",
+            "intent": "Exercise the false branch of IS_LIST and verify the workflow does not run the true-branch data/LLM path.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_READ",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "READ_ALLOWED",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "IS_LIST",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "FETCH_SUPPLIER_DETAIL",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "SHAPE_DETAIL",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_DETAIL_STATE",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "DISPLAY_STAGE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "INIT_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "INIT_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 374,
+                  "hash": "9c806190865dea95",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "INIT_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 80,
+                  "hash": "3ec3fd44e4d702b2",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "INIT_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 8,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 488,
+                "hash": "8081394eeb73917b",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 366,
+                "hash": "8acc1e3a4f7d81e6",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "INIT_DISPLAY",
+              "nodeType": "LLM",
+              "name": "init display",
+              "role": "terminal-output-owner",
+              "pathOrder": 8,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "INIT_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 80,
+                "hash": "582ae61670e7d9dc",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "INIT_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 374,
+                "hash": "9c806190865dea95",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "INIT_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 290,
+                "hash": "c26d700580aade5e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "INIT_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "record-now",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": [
+              "FETCH_SUPPLIER_DETAIL"
+            ]
+          },
+          "contractHash": "ecc46e7f6853fb40"
+        }
+      }
+    }
+  ],
+  "scenarioInventory": [
+    {
+      "status": "up_to_date",
+      "testName": "init-display",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/init-display.json",
+      "scenarioId": "app-init-display",
+      "scenarioKind": "app-stage",
+      "displayOrder": 100,
+      "title": "Agentic App Init Display Path",
+      "purpose": "Verify the workflow routes the Agentic App InitDisplay trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+      "dataCapturePolicy": "record-now",
+      "appStage": "InitDisplay",
+      "recordablePath": [
+        "FETCH_SUPPLIERS"
+      ],
+      "dataPathSignature": "FETCH_SUPPLIERS",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "SUPPLIER_READ_DISPLAY"
+        ]
+      },
+      "pathSource": "predicted",
+      "requiresRuntimePathValidation": false,
+      "primaryClass": true,
+      "judgeContractState": "changed",
+      "judgeContractReviewReason": "The workflow semantic output contract changed since this judge was explicitly authored. The existing judge remains unchanged until the user requests a review."
+    },
+    {
+      "status": "up_to_date",
+      "testName": "query",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/query.json",
+      "scenarioId": "app-query",
+      "scenarioKind": "app-stage",
+      "displayOrder": 101,
+      "title": "Agentic App Query Path",
+      "purpose": "Verify the workflow routes the Agentic App Query trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+      "dataCapturePolicy": "baseline-replay",
+      "appStage": "Query",
+      "recordablePath": [
+        "FETCH_SUPPLIERS"
+      ],
+      "dataPathSignature": "FETCH_SUPPLIERS",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "SUPPLIER_READ_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "INIT_DISPLAY"
+        ]
+      },
+      "predictedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "SUPPLIER_READ_DISPLAY"
+        ]
+      },
+      "pathSource": "predicted",
+      "requiresRuntimePathValidation": false,
+      "primaryClass": true,
+      "judgeContractState": "changed",
+      "judgeContractReviewReason": "The workflow semantic output contract changed since this judge was explicitly authored. The existing judge remains unchanged until the user requests a review."
+    },
+    {
+      "status": "missing",
+      "testName": "read-allowed-false-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/read-allowed-false-path.json",
+      "scenarioId": "app-init-display-READ_ALLOWED-false-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3100,
+      "title": "read allowed False Path",
+      "purpose": "Exercise the false branch of READ_ALLOWED and verify the workflow does not run the true-branch data/LLM path.",
+      "dataCapturePolicy": "model-generated",
+      "appStage": "InitDisplay",
+      "recordablePath": [],
+      "dataPathSignature": "",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE"
+        ],
+        "mustNotExecute": [
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "READ_ALLOWED",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "false",
+          "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "READ_ALLOWED",
+        "outcome": "false"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "reason": "No existing test covers this current workflow scenario."
+    },
+    {
+      "status": "missing",
+      "testName": "is-list-false-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/is-list-false-path.json",
+      "scenarioId": "app-init-display-IS_LIST-false-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 5101,
+      "title": "is detail False Path",
+      "purpose": "Exercise the false branch of IS_LIST and verify the workflow does not run the true-branch data/LLM path.",
+      "dataCapturePolicy": "record-now",
+      "appStage": "InitDisplay",
+      "recordablePath": [
+        "FETCH_SUPPLIER_DETAIL"
+      ],
+      "dataPathSignature": "FETCH_SUPPLIER_DETAIL",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "SUPPLIER_READ_DISPLAY"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "READ_ALLOWED",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "true",
+          "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+        },
+        {
+          "nodeCode": "DISPLAY_STAGE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "InitDisplay",
+          "expression": "{{$context.$app.$OraMessageHint}}"
+        },
+        {
+          "nodeCode": "IS_LIST",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "false",
+          "expression": "{{$context.$nodes.PREPARE_READ.$output.result.intent !== \"detail\"}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "IS_LIST",
+        "outcome": "false"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "reason": "No existing test covers this current workflow scenario."
+    }
+  ],
+  "coverageExecution": {
+    "primaryComplete": true,
+    "remainingActions": 2,
+    "nextActionIds": [
+      "create:read-allowed-false-path"
+    ],
+    "nextActions": [
+      {
+        "actionId": "create:read-allowed-false-path",
+        "action": "create",
+        "status": "missing",
+        "testName": "read-allowed-false-path",
+        "testFile": "test/workflows/xdx_supplier_core_20260924/read-allowed-false-path.json",
+        "scenarioId": "app-init-display-READ_ALLOWED-false-path",
+        "scenarioKind": "branch-path",
+        "displayOrder": 3100,
+        "title": "read allowed False Path",
+        "purpose": "Exercise the false branch of READ_ALLOWED and verify the workflow does not run the true-branch data/LLM path.",
+        "dataCapturePolicy": "model-generated",
+        "coverageClass": "major-branch-path",
+        "costClass": "standard",
+        "lowRisk": true,
+        "reason": "No existing test covers this current workflow scenario.",
+        "authoringHints": {
+          "scenarioId": "app-init-display-READ_ALLOWED-false-path",
+          "scenarioKind": "branch-path",
+          "pathComplexity": "deep-semantic",
+          "targetBranch": {
+            "nodeCode": "READ_ALLOWED",
+            "outcome": "false"
+          },
+          "routingDecisionContext": [
+            {
+              "nodeCode": "READ_ALLOWED",
+              "nodeType": "CONDITION",
+              "expectedOutcome": "false",
+              "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+            }
+          ],
+          "inputGuidance": {
+            "useSuggestedInput": true,
+            "suggestedInput": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            },
+            "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+          },
+          "dataGuidance": {
+            "baselineCompatible": false,
+            "requiredRecordableNodes": [],
+            "skippedRecordableNodes": [
+              "FETCH_SUPPLIERS",
+              "FETCH_SUPPLIER_DETAIL"
+            ],
+            "requiredGeneratedNodeCodes": [],
+            "overrideRequiredNodeCodes": [],
+            "branchForcingHints": [
+              "Force the target branch (READ_ALLOWED / false) with the minimum model-generated data needed for this scenario.",
+              "The routing decision is READ_ALLOWED expression \"{{!$context.$nodes.PREPARE_READ.$output.result.error}}\". Synthesize or select upstream values that make this expression choose false; do not assume a generic empty collection or other business state that the expression does not test."
+            ],
+            "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+          },
+          "validationGuidance": {
+            "runAfterGenerate": true,
+            "pathFailureBlocksOnlyThisScenario": true,
+            "maxRepairAttempts": 2,
+            "repairPrompt": "Review the failed workflow test read-allowed-false-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+          },
+          "judgeAuthoringContext": {
+            "scenario": {
+              "id": "app-init-display-READ_ALLOWED-false-path",
+              "kind": "branch-path",
+              "intent": "Exercise the false branch of READ_ALLOWED and verify the workflow does not run the true-branch data/LLM path.",
+              "appStage": "InitDisplay"
+            },
+            "invocation": {
+              "input": {
+                "message": "",
+                "triggerType": "app",
+                "parameters": {
+                  "appHint": "InitDisplay",
+                  "OraUserContext": "",
+                  "OraAppContext": ""
+                }
+              }
+            },
+            "path": {
+              "orderedNodes": [
+                {
+                  "nodeCode": "EXTRACT_READ",
+                  "nodeType": "LLM"
+                },
+                {
+                  "nodeCode": "PREPARE_READ",
+                  "nodeType": "CODE"
+                },
+                {
+                  "nodeCode": "READ_ALLOWED",
+                  "nodeType": "CONDITION"
+                },
+                {
+                  "nodeCode": "READ_GUIDANCE",
+                  "nodeType": "LLM"
+                }
+              ],
+              "excludedSemanticNodeCodes": [
+                "INIT_DISPLAY",
+                "SUPPLIER_READ_DISPLAY"
+              ],
+              "terminalNode": {
+                "nodeCode": "READ_GUIDANCE",
+                "nodeType": "LLM",
+                "outputExpressions": [
+                  {
+                    "included": false,
+                    "length": 112,
+                    "hash": "b20c2fc384b22a7f",
+                    "retrieval": {
+                      "command": "get-workflow-test-judge-context",
+                      "nodeCode": "READ_GUIDANCE",
+                      "detail": "full"
+                    }
+                  },
+                  {
+                    "included": false,
+                    "length": 103,
+                    "hash": "d05eb920d5db44fb",
+                    "retrieval": {
+                      "command": "get-workflow-test-judge-context",
+                      "nodeCode": "READ_GUIDANCE",
+                      "detail": "full"
+                    }
+                  }
+                ]
+              }
+            },
+            "semanticNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM",
+                "name": "extract read",
+                "role": "upstream-semantic",
+                "pathOrder": 0,
+                "distanceToTerminal": 3,
+                "terminalContribution": "supporting",
+                "dependencyPath": [
+                  "EXTRACT_READ",
+                  "PREPARE_READ",
+                  "READ_GUIDANCE"
+                ],
+                "prompt": {
+                  "included": false,
+                  "length": 128,
+                  "hash": "2b290a262b3648ac",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "EXTRACT_READ",
+                    "detail": "full"
+                  }
+                },
+                "systemPrompt": {
+                  "included": false,
+                  "length": 488,
+                  "hash": "8081394eeb73917b",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "EXTRACT_READ",
+                    "detail": "full"
+                  }
+                },
+                "outputSpecification": {
+                  "included": false,
+                  "length": 366,
+                  "hash": "8acc1e3a4f7d81e6",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "EXTRACT_READ",
+                    "detail": "full"
+                  }
+                }
+              },
+              {
+                "nodeCode": "READ_GUIDANCE",
+                "nodeType": "LLM",
+                "name": "read guidance",
+                "role": "terminal-output-owner",
+                "pathOrder": 3,
+                "distanceToTerminal": 0,
+                "terminalContribution": "direct",
+                "dependencyPath": [
+                  "READ_GUIDANCE"
+                ],
+                "prompt": {
+                  "included": false,
+                  "length": 103,
+                  "hash": "d05eb920d5db44fb",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "READ_GUIDANCE",
+                    "detail": "full"
+                  }
+                },
+                "systemPrompt": {
+                  "included": false,
+                  "length": 112,
+                  "hash": "b20c2fc384b22a7f",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "READ_GUIDANCE",
+                    "detail": "full"
+                  }
+                }
+              }
+            ],
+            "downstreamTransformations": [],
+            "grounding": {
+              "capturePolicy": "model-generated",
+              "availableNodeCodes": [],
+              "requiredRecordableNodeCodes": []
+            },
+            "contractHash": "e92a5f533d280cf7"
+          }
+        }
+      }
+    ],
+    "costClass": "standard",
+    "coverageSummary": {
+      "triggerVariations": 0,
+      "majorBranchPaths": 1,
+      "fallbackPaths": 0,
+      "baselineReplay": 0,
+      "modelGenerated": 0,
+      "liveRecording": 0,
+      "deepPaths": 0
+    }
+  },
+  "finalSummaryAllowed": false,
+  "syncLoopState": "actions-remaining",
+  "appContract": {
+    "appBacked": true,
+    "aiAppsCompatibleFlag": true,
+    "implementedStages": [
+      "Query",
+      "InitDisplay"
+    ],
+    "requiredStages": [
+      "Query",
+      "InitDisplay"
+    ],
+    "warnings": [],
+    "topologyDiagnostics": []
+  },
+  "guidance": {
+    "mode": "automatic",
+    "nextStep": "Execute the single secondary create or update action in coverageExecution.nextActionIds without asking for confirmation. Apply required testData and validate that affected test with deterministic file data. Before generation, author definition.judge whenever the focused action has semantic judge context. If the first attempt misses the intended branch, retry once with materially different input before deferring only that scenario. For record-now secondary branch tests, use the observed-path model: derive path assertions from result.run.nodeResults on success; retry with different input via do-update-workflow-test up to 2 total attempts on wrong-branch failure; call mark-workflow-test-unable-to-generate and skip only that scenario after 2 failures. Immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json after the action is validated or deferred. If nextActionIds contains another action, execute it next without asking. Do not stop while create or update actions remain. Do not run a full workflow suite or perform local semantic judging while create or update actions remain. Do NOT call get-workflow-test-final-summary until no create or update actions remain.",
+    "notes": [
+      "Do not delete review tests automatically; they may be intentionally custom.",
+      "Use record-now for representative create actions that can observe real environment data.",
+      "For app-stage baseline-replay actions whose baseTestFile points to another planned action, create/record that representative record-now test before invoking the replay action.",
+      "Use --base-test-file with testDataOverrides for model-generated alternate-path actions when a ready recorded baseline exists.",
+      "Coverage execution: nextActionIds contains the single next action. Execute it before concluding.",
+      "Coverage execution: validate the affected test deterministically, then immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json. If another action is returned, execute it without asking. Do not stop while create or update actions remain.",
+      "Coverage execution: get-workflow-test-final-summary is only valid when get-workflow-test-sync-plan reports zero remaining create/update actions. Calling it prematurely skips uncreated tests.",
+      "Secondary path repair: for every secondary path scenario, if the first attempt misses the intended branch, retry once with materially different input before deferring only that scenario. A semantic judge failure is a generated failing test, not a sync-loop blocker for unrelated actions.",
+      "Secondary record-now branch test - observed-path model: after recording, run with --data-source file --evaluation-mode deterministic. If path assertions pass, derive mustExecute from result.run.nodeResults keys and preserve the sync-plan mustNotExecute minus any observed nodes. Update the test via do-update-workflow-test if the observed path differs from the prediction. If path assertions fail (wrong branch taken), retry with different input using do-update-workflow-test (up to 2 total attempts). After 2 failures, write the blocker scratch file and call mark-workflow-test-unable-to-generate, then continue to the next action. A deferred secondary scenario does not stop unrelated secondary tests.",
+      "Judge contract review is available for: init-display, query. Do not update those existing judge contracts unless the user explicitly asks for judge review or repair.",
+      "Ask the user only for external blockers such as remote overwrite conflicts, missing required environment data, or secrets."
+    ]
+  }
+}

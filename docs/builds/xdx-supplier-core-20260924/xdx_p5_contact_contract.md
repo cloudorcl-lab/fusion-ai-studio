@@ -1,0 +1,13 @@
+# P5 contact contract and preparation
+
+P4 exit satisfied; P5 implementation and native acceptance completed. Configured final14/14 and app1/1 acceptance complete. Scope is parent-scoped contact list/detail and one exact-approved create with FirstName, LastName and Email only. No user-account provisioning, contact-address association, role, phone/fax, administrative flag, DFF or other subobject.
+
+Use the established deterministic child transaction design with contactState: separate read selection and draft; exact request/revision approval, material-edit invalidation, current supplier GET before access/create, pending state before POST, and independent same-parent GET comparing all three fields. Capture generated SupplierContactId and PersonProfileId; confirm UserName and UserAccountStatus are null without writing either field. Do not assert that IDs are universally equal.
+
+Requiredness comes from canonical 26C reference: FirstName tenant-required after retained definitive400; LastName included in the tested minimal identity but omission untested; Email schema-required. InactiveDate omission has retained same-tenant success despite schema-required annotation. Names max150, email320. Use explicit character email validation after CLI serialization, not the previously escape-stripped regex.
+
+Accepted authorized controlled fixture: FirstName XDX, distinctive LastName CoreContact20260924 and Email xdx-core-contact-20260924@example.invalid under supplier300000333814409. Show all fields in native draft/review; never copy an operational contact identity or notification destination. Exact approval and one accepted create produced contact300000333814434/profile300000333814434; evidence/xdx_p5_native_contact.md records independent GET and completed native display. Never replay.
+
+Uniqueness remains unresolved; conservatively withhold any same-parent exact Email match, no duplicate POST probe or uniqueness claim. Official [26C contact GET](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-contacts-get.html) checked2026-09-24 lists Email and ContactName as queryable. Ordinary search uses returned ContactName; duplicates use exact email as a conservative safety check, not an assertion of the database key. Unknown outcomes reconcile one same-email candidate then compare all intended fields by returned ID; empty/ambiguous matches never authorize retry.
+
+Acceptance: ordinary native empty/list/search/detail/paging separately from create verification, actual-CODE contracts, configured read/draft tests with judges, one native prepare/edit/review/approve/create/independentGET. Preserve accepted supplier/address/site POSTs without replay.

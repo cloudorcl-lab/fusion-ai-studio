@@ -1,0 +1,540 @@
+2026-09-24T21:25:28.434Z do-modify-bo-function
+{
+  "ok": true,
+  "command": "do-modify-bo-function",
+  "result": {
+    "functionName": "create_suppliers",
+    "updatedFields": [
+      "bodyTemplate",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T21:25:28.639Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers",
+    "parameterName": "Supplier",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T21:25:28.844Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers",
+    "parameterName": "BusinessRelationship",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T21:25:29.049Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers",
+    "parameterName": "TaxOrganizationType",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T21:25:29.264Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "create_suppliers",
+    "headerName": "Content-Type"
+  }
+}
+
+2026-09-24T21:25:29.481Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "create_suppliers",
+    "headerName": "REST-Framework-Version"
+  }
+}
+
+2026-09-24T21:25:29.691Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "create_suppliers",
+    "headerName": "Upsert-Mode"
+  }
+}
+
+2026-09-24T21:25:29.899Z do-apply-bo-function-example-payload
+{
+  "ok": true,
+  "command": "do-apply-bo-function-example-payload",
+  "result": {
+    "functionName": "create_suppliers",
+    "description": "Retained successful 2026-09-17 supplier POST response projection. Schema guidance only; not current build acceptance.",
+    "payload": "{\n  \"SupplierId\": 300000333813790,\n  \"SupplierNumber\": \"1496\",\n  \"SupplierPartyId\": 300000333813791,\n  \"Supplier\": \"XDX Lee Supplies 0917133857\",\n  \"BusinessRelationship\": \"Spend Authorized\",\n  \"TaxOrganizationType\": \"Corporation\"\n}"
+  }
+}
+
+2026-09-24T21:25:30.117Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "EXTRACT_READ",
+    "updated": true
+  }
+}
+
+2026-09-24T21:25:30.325Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "17",
+    "nodeCode": "PREPARE_TRANSACTION"
+  }
+}
+
+2026-09-24T21:25:30.580Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "18",
+    "nodeCode": "TRANSACTION_ROUTE"
+  }
+}
+
+2026-09-24T21:25:30.783Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "19",
+    "nodeCode": "STORE_PREPARED_TRANSACTION"
+  }
+}
+
+2026-09-24T21:25:33.031Z do-create-node
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "20",
+    "nodeCode": "CHECK_SUPPLIER_DUPLICATE",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "applied",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "getall_suppliers",
+      "resolved": true,
+      "source": "example",
+      "operationType": "GET",
+      "eligibleExampleStatus": "resolved",
+      "openApiFallbackEligible": true,
+      "resourceType": "ADF_BC_FIXED_QUERY",
+      "functionResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers?fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,InactiveDate&onlyData=true&orderBy=SupplierId:asc&limit={limit}&offset={offset}&q={q}"
+    },
+    "boOutputSpecificationResolved": true,
+    "boOutputSpecificationNeedsAttention": false,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationSource": "example",
+    "boOutputSpecificationOpenApiFallbackEligible": true
+  }
+}
+
+2026-09-24T21:25:33.233Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "21",
+    "nodeCode": "AUTHORIZE_SUPPLIER_WRITE"
+  }
+}
+
+2026-09-24T21:25:33.444Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "22",
+    "nodeCode": "STORE_PREFLIGHT_TRANSACTION"
+  }
+}
+
+2026-09-24T21:25:33.656Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "23",
+    "nodeCode": "SUPPLIER_WRITE_ROUTE"
+  }
+}
+
+2026-09-24T21:25:35.877Z do-create-node
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "24",
+    "nodeCode": "CREATE_SUPPLIER",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "create_suppliers",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Business Object function not found: create_suppliers"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Business Object function not found: create_suppliers",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T21:25:36.076Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "25",
+    "nodeCode": "CAPTURE_SUPPLIER_CREATE"
+  }
+}
+
+2026-09-24T21:25:36.277Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "26",
+    "nodeCode": "STORE_CREATE_RECEIPT"
+  }
+}
+
+2026-09-24T21:25:36.480Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "27",
+    "nodeCode": "CREATE_HAS_ID",
+    "warnings": [
+      {
+        "kind": "condition_expression_not_explicit_boolean",
+        "nodeCode": "CREATE_HAS_ID",
+        "field": "inputs.condition",
+        "message": "CONDITION inputs.condition should be an explicit boolean expression. Use a comparison, a non-empty check, or a boolean coercion such as {{!!$context.$nodes.NODE.$output.items?.[0]?.Field}} instead of a bare data path."
+      }
+    ]
+  }
+}
+
+2026-09-24T21:25:38.354Z do-create-node
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "28",
+    "nodeCode": "GET_CREATED_SUPPLIER",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "applied",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers",
+      "resolved": true,
+      "source": "example",
+      "operationType": "GET",
+      "eligibleExampleStatus": "resolved",
+      "openApiFallbackEligible": true,
+      "resourceType": "ADF_BC_FIXED_QUERY",
+      "functionResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}?onlyData=true&fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,InactiveDate,Status,AlternateName,TaxOrganizationType,CorporateWebsite"
+    },
+    "boOutputSpecificationResolved": true,
+    "boOutputSpecificationNeedsAttention": false,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationSource": "example",
+    "boOutputSpecificationOpenApiFallbackEligible": true
+  }
+}
+
+2026-09-24T21:25:38.561Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "29",
+    "nodeCode": "VERIFY_SUPPLIER_CREATE"
+  }
+}
+
+2026-09-24T21:25:38.770Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "30",
+    "nodeCode": "STORE_VERIFIED_TRANSACTION"
+  }
+}
+
+2026-09-24T21:25:38.986Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "31",
+    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY"
+  }
+}
+
+2026-09-24T21:25:39.202Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+    "updated": true
+  }
+}
+
+2026-09-24T21:25:39.427Z do-modify-node-edges
+{
+  "ok": true,
+  "command": "do-modify-node-edges",
+  "result": {
+    "ok": true,
+    "applied": 21,
+    "skipped": 0,
+    "details": [
+      {
+        "action": "remove",
+        "from": "EXTRACT_READ",
+        "to": "PREPARE_READ",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "EXTRACT_READ",
+        "to": "PREPARE_TRANSACTION",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "PREPARE_TRANSACTION",
+        "to": "TRANSACTION_ROUTE",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "TRANSACTION_ROUTE",
+        "to": "PREPARE_READ",
+        "label": "read",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "TRANSACTION_ROUTE",
+        "to": "STORE_PREPARED_TRANSACTION",
+        "label": "display",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "TRANSACTION_ROUTE",
+        "to": "CHECK_SUPPLIER_DUPLICATE",
+        "label": "preflight",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_PREPARED_TRANSACTION",
+        "to": "SUPPLIER_TRANSACTION_DISPLAY",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CHECK_SUPPLIER_DUPLICATE",
+        "to": "AUTHORIZE_SUPPLIER_WRITE",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "AUTHORIZE_SUPPLIER_WRITE",
+        "to": "STORE_PREFLIGHT_TRANSACTION",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_PREFLIGHT_TRANSACTION",
+        "to": "SUPPLIER_WRITE_ROUTE",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SUPPLIER_WRITE_ROUTE",
+        "to": "CREATE_SUPPLIER",
+        "label": "write",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SUPPLIER_WRITE_ROUTE",
+        "to": "GET_CREATED_SUPPLIER",
+        "label": "verify",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SUPPLIER_WRITE_ROUTE",
+        "to": "SUPPLIER_TRANSACTION_DISPLAY",
+        "label": "display",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CREATE_SUPPLIER",
+        "to": "CAPTURE_SUPPLIER_CREATE",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CAPTURE_SUPPLIER_CREATE",
+        "to": "STORE_CREATE_RECEIPT",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_CREATE_RECEIPT",
+        "to": "CREATE_HAS_ID",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CREATE_HAS_ID",
+        "to": "GET_CREATED_SUPPLIER",
+        "label": "true",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CREATE_HAS_ID",
+        "to": "SUPPLIER_TRANSACTION_DISPLAY",
+        "label": "false",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "GET_CREATED_SUPPLIER",
+        "to": "VERIFY_SUPPLIER_CREATE",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "VERIFY_SUPPLIER_CREATE",
+        "to": "STORE_VERIFIED_TRANSACTION",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_VERIFIED_TRANSACTION",
+        "to": "SUPPLIER_TRANSACTION_DISPLAY",
+        "status": "applied"
+      }
+    ],
+    "message": "Edges updated."
+  }
+}
+
+2026-09-24T21:25:39.646Z do-prettify-workflow
+{
+  "ok": true,
+  "command": "do-prettify-workflow",
+  "result": {
+    "ok": true,
+    "orientation": "vertical",
+    "nodeCount": 30,
+    "noteCount": 0,
+    "message": "Workflow layout prettified."
+  }
+}
+
+2026-09-24T21:25:39.884Z validate-workflow
+{
+  "ok": true,
+  "command": "validate-workflow",
+  "result": {
+    "ok": false,
+    "errorCount": 1,
+    "errors": [
+      {
+        "nodeCode": "CREATE_HAS_ID",
+        "kind": "condition_expression_not_explicit_boolean",
+        "field": "inputs.condition",
+        "referencedPath": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid}}",
+        "message": "CONDITION inputs.condition must be an explicit boolean expression. Use a comparison, a non-empty check, or boolean coercion such as {{!!$context.$nodes.NODE.$output.items?.[0]?.Field}} instead of a bare data path."
+      }
+    ],
+    "message": "Workflow validation found 1 error."
+  }
+}

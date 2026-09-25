@@ -1,0 +1,3248 @@
+{
+  "testName": "supplier-draft-conversation",
+  "scenario": {
+    "custom": true,
+    "source": "user",
+    "intent": "Verify requested supplier draft editing, review, stale rejection and cancellation across native Query turns."
+  },
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924"
+  },
+  "authoring": {
+    "source": "model-authored",
+    "createdAt": "2026-09-24T21:40:47.383Z",
+    "userPrompt": "Verify supplier draft continuity and safe stale rejection and cancellation."
+  },
+  "defaults": {
+    "dataSource": "file",
+    "evaluationMode": "hybrid"
+  },
+  "conversation": {
+    "mode": "scripted",
+    "goal": "Prove field-only draft continuity and no-write guards before creating a supplier.",
+    "steps": [
+      {
+        "stepId": "prepare-supplier-draft",
+        "intent": "Prepare a supplier named XDX Replay Supplier Initial with BusinessRelationship Spend Authorized and TaxOrganizationType Corporation.",
+        "assertions": {
+          "contains": [
+            {
+              "id": "prepare-supplier-draft-expected",
+              "name": "Expected business result",
+              "value": "XDX Replay Supplier Initial"
+            }
+          ],
+          "notContains": []
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "prepare-supplier-draft-yes-extract_read",
+              "name": "EXTRACT_READ executes",
+              "nodeCode": "EXTRACT_READ"
+            },
+            {
+              "id": "prepare-supplier-draft-yes-prepare_transaction",
+              "name": "PREPARE_TRANSACTION executes",
+              "nodeCode": "PREPARE_TRANSACTION"
+            },
+            {
+              "id": "prepare-supplier-draft-yes-transaction_route",
+              "name": "TRANSACTION_ROUTE executes",
+              "nodeCode": "TRANSACTION_ROUTE"
+            },
+            {
+              "id": "prepare-supplier-draft-yes-store_prepared_transaction",
+              "name": "STORE_PREPARED_TRANSACTION executes",
+              "nodeCode": "STORE_PREPARED_TRANSACTION"
+            },
+            {
+              "id": "prepare-supplier-draft-yes-supplier_transaction_display",
+              "name": "SUPPLIER_TRANSACTION_DISPLAY executes",
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "prepare-supplier-draft-no-prepare_read",
+              "name": "PREPARE_READ stays inactive",
+              "nodeCode": "PREPARE_READ"
+            },
+            {
+              "id": "prepare-supplier-draft-no-read_allowed",
+              "name": "READ_ALLOWED stays inactive",
+              "nodeCode": "READ_ALLOWED"
+            },
+            {
+              "id": "prepare-supplier-draft-no-is_list",
+              "name": "IS_LIST stays inactive",
+              "nodeCode": "IS_LIST"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_suppliers",
+              "name": "FETCH_SUPPLIERS stays inactive",
+              "nodeCode": "FETCH_SUPPLIERS"
+            },
+            {
+              "id": "prepare-supplier-draft-no-shape_suppliers",
+              "name": "SHAPE_SUPPLIERS stays inactive",
+              "nodeCode": "SHAPE_SUPPLIERS"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_list_state",
+              "name": "STORE_LIST_STATE stays inactive",
+              "nodeCode": "STORE_LIST_STATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-display_stage",
+              "name": "DISPLAY_STAGE stays inactive",
+              "nodeCode": "DISPLAY_STAGE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_supplier_detail",
+              "name": "FETCH_SUPPLIER_DETAIL stays inactive",
+              "nodeCode": "FETCH_SUPPLIER_DETAIL"
+            },
+            {
+              "id": "prepare-supplier-draft-no-shape_detail",
+              "name": "SHAPE_DETAIL stays inactive",
+              "nodeCode": "SHAPE_DETAIL"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_detail_state",
+              "name": "STORE_DETAIL_STATE stays inactive",
+              "nodeCode": "STORE_DETAIL_STATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-check_supplier_duplicate",
+              "name": "CHECK_SUPPLIER_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_SUPPLIER_DUPLICATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-authorize_supplier_write",
+              "name": "AUTHORIZE_SUPPLIER_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_SUPPLIER_WRITE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_preflight_transaction",
+              "name": "STORE_PREFLIGHT_TRANSACTION stays inactive",
+              "nodeCode": "STORE_PREFLIGHT_TRANSACTION"
+            },
+            {
+              "id": "prepare-supplier-draft-no-supplier_write_route",
+              "name": "SUPPLIER_WRITE_ROUTE stays inactive",
+              "nodeCode": "SUPPLIER_WRITE_ROUTE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-create_supplier",
+              "name": "CREATE_SUPPLIER stays inactive",
+              "nodeCode": "CREATE_SUPPLIER"
+            },
+            {
+              "id": "prepare-supplier-draft-no-capture_supplier_create",
+              "name": "CAPTURE_SUPPLIER_CREATE stays inactive",
+              "nodeCode": "CAPTURE_SUPPLIER_CREATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_create_receipt",
+              "name": "STORE_CREATE_RECEIPT stays inactive",
+              "nodeCode": "STORE_CREATE_RECEIPT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-create_has_id",
+              "name": "CREATE_HAS_ID stays inactive",
+              "nodeCode": "CREATE_HAS_ID"
+            },
+            {
+              "id": "prepare-supplier-draft-no-get_created_supplier",
+              "name": "GET_CREATED_SUPPLIER stays inactive",
+              "nodeCode": "GET_CREATED_SUPPLIER"
+            },
+            {
+              "id": "prepare-supplier-draft-no-verify_supplier_create",
+              "name": "VERIFY_SUPPLIER_CREATE stays inactive",
+              "nodeCode": "VERIFY_SUPPLIER_CREATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_verified_transaction",
+              "name": "STORE_VERIFIED_TRANSACTION stays inactive",
+              "nodeCode": "STORE_VERIFIED_TRANSACTION"
+            },
+            {
+              "id": "prepare-supplier-draft-no-prepare_address",
+              "name": "PREPARE_ADDRESS stays inactive",
+              "nodeCode": "PREPARE_ADDRESS"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_address_prepared",
+              "name": "STORE_ADDRESS_PREPARED stays inactive",
+              "nodeCode": "STORE_ADDRESS_PREPARED"
+            },
+            {
+              "id": "prepare-supplier-draft-no-address_entry",
+              "name": "ADDRESS_ENTRY stays inactive",
+              "nodeCode": "ADDRESS_ENTRY"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_address_parent",
+              "name": "FETCH_ADDRESS_PARENT stays inactive",
+              "nodeCode": "FETCH_ADDRESS_PARENT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-check_address_parent",
+              "name": "CHECK_ADDRESS_PARENT stays inactive",
+              "nodeCode": "CHECK_ADDRESS_PARENT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_address_parent",
+              "name": "STORE_ADDRESS_PARENT stays inactive",
+              "nodeCode": "STORE_ADDRESS_PARENT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-address_operation",
+              "name": "ADDRESS_OPERATION stays inactive",
+              "nodeCode": "ADDRESS_OPERATION"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_addresses",
+              "name": "FETCH_ADDRESSES stays inactive",
+              "nodeCode": "FETCH_ADDRESSES"
+            },
+            {
+              "id": "prepare-supplier-draft-no-shape_addresses",
+              "name": "SHAPE_ADDRESSES stays inactive",
+              "nodeCode": "SHAPE_ADDRESSES"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_address_list",
+              "name": "STORE_ADDRESS_LIST stays inactive",
+              "nodeCode": "STORE_ADDRESS_LIST"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_address_detail",
+              "name": "FETCH_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "FETCH_ADDRESS_DETAIL"
+            },
+            {
+              "id": "prepare-supplier-draft-no-shape_address_detail",
+              "name": "SHAPE_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "SHAPE_ADDRESS_DETAIL"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_address_detail",
+              "name": "STORE_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "STORE_ADDRESS_DETAIL"
+            },
+            {
+              "id": "prepare-supplier-draft-no-address_duplicate_input",
+              "name": "ADDRESS_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "ADDRESS_DUPLICATE_INPUT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-check_address_duplicate",
+              "name": "CHECK_ADDRESS_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_ADDRESS_DUPLICATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-authorize_address_write",
+              "name": "AUTHORIZE_ADDRESS_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_ADDRESS_WRITE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_address_attempt",
+              "name": "STORE_ADDRESS_ATTEMPT stays inactive",
+              "nodeCode": "STORE_ADDRESS_ATTEMPT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-address_write_route",
+              "name": "ADDRESS_WRITE_ROUTE stays inactive",
+              "nodeCode": "ADDRESS_WRITE_ROUTE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-create_address",
+              "name": "CREATE_ADDRESS stays inactive",
+              "nodeCode": "CREATE_ADDRESS"
+            },
+            {
+              "id": "prepare-supplier-draft-no-capture_address_create",
+              "name": "CAPTURE_ADDRESS_CREATE stays inactive",
+              "nodeCode": "CAPTURE_ADDRESS_CREATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_address_receipt",
+              "name": "STORE_ADDRESS_RECEIPT stays inactive",
+              "nodeCode": "STORE_ADDRESS_RECEIPT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-address_has_id",
+              "name": "ADDRESS_HAS_ID stays inactive",
+              "nodeCode": "ADDRESS_HAS_ID"
+            },
+            {
+              "id": "prepare-supplier-draft-no-get_created_address",
+              "name": "GET_CREATED_ADDRESS stays inactive",
+              "nodeCode": "GET_CREATED_ADDRESS"
+            },
+            {
+              "id": "prepare-supplier-draft-no-verify_address_create",
+              "name": "VERIFY_ADDRESS_CREATE stays inactive",
+              "nodeCode": "VERIFY_ADDRESS_CREATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_address_verified",
+              "name": "STORE_ADDRESS_VERIFIED stays inactive",
+              "nodeCode": "STORE_ADDRESS_VERIFIED"
+            },
+            {
+              "id": "prepare-supplier-draft-no-prepare_site",
+              "name": "PREPARE_SITE stays inactive",
+              "nodeCode": "PREPARE_SITE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_site_prepared",
+              "name": "STORE_SITE_PREPARED stays inactive",
+              "nodeCode": "STORE_SITE_PREPARED"
+            },
+            {
+              "id": "prepare-supplier-draft-no-site_entry",
+              "name": "SITE_ENTRY stays inactive",
+              "nodeCode": "SITE_ENTRY"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_site_parent",
+              "name": "FETCH_SITE_PARENT stays inactive",
+              "nodeCode": "FETCH_SITE_PARENT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-check_site_parent",
+              "name": "CHECK_SITE_PARENT stays inactive",
+              "nodeCode": "CHECK_SITE_PARENT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_site_parent",
+              "name": "STORE_SITE_PARENT stays inactive",
+              "nodeCode": "STORE_SITE_PARENT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-site_operation",
+              "name": "SITE_OPERATION stays inactive",
+              "nodeCode": "SITE_OPERATION"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_sites",
+              "name": "FETCH_SITES stays inactive",
+              "nodeCode": "FETCH_SITES"
+            },
+            {
+              "id": "prepare-supplier-draft-no-shape_sites",
+              "name": "SHAPE_SITES stays inactive",
+              "nodeCode": "SHAPE_SITES"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_site_list",
+              "name": "STORE_SITE_LIST stays inactive",
+              "nodeCode": "STORE_SITE_LIST"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_site_detail",
+              "name": "FETCH_SITE_DETAIL stays inactive",
+              "nodeCode": "FETCH_SITE_DETAIL"
+            },
+            {
+              "id": "prepare-supplier-draft-no-shape_site_detail",
+              "name": "SHAPE_SITE_DETAIL stays inactive",
+              "nodeCode": "SHAPE_SITE_DETAIL"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_site_detail",
+              "name": "STORE_SITE_DETAIL stays inactive",
+              "nodeCode": "STORE_SITE_DETAIL"
+            },
+            {
+              "id": "prepare-supplier-draft-no-site_reference_input",
+              "name": "SITE_REFERENCE_INPUT stays inactive",
+              "nodeCode": "SITE_REFERENCE_INPUT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_site_address_reference",
+              "name": "FETCH_SITE_ADDRESS_REFERENCE stays inactive",
+              "nodeCode": "FETCH_SITE_ADDRESS_REFERENCE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_site_bu_reference",
+              "name": "FETCH_SITE_BU_REFERENCE stays inactive",
+              "nodeCode": "FETCH_SITE_BU_REFERENCE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-check_site_references",
+              "name": "CHECK_SITE_REFERENCES stays inactive",
+              "nodeCode": "CHECK_SITE_REFERENCES"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_site_references",
+              "name": "STORE_SITE_REFERENCES stays inactive",
+              "nodeCode": "STORE_SITE_REFERENCES"
+            },
+            {
+              "id": "prepare-supplier-draft-no-site_references_route",
+              "name": "SITE_REFERENCES_ROUTE stays inactive",
+              "nodeCode": "SITE_REFERENCES_ROUTE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-site_duplicate_input",
+              "name": "SITE_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "SITE_DUPLICATE_INPUT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-check_site_duplicate",
+              "name": "CHECK_SITE_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_SITE_DUPLICATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-authorize_site_write",
+              "name": "AUTHORIZE_SITE_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_SITE_WRITE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_site_attempt",
+              "name": "STORE_SITE_ATTEMPT stays inactive",
+              "nodeCode": "STORE_SITE_ATTEMPT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-site_write_route",
+              "name": "SITE_WRITE_ROUTE stays inactive",
+              "nodeCode": "SITE_WRITE_ROUTE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-create_site",
+              "name": "CREATE_SITE stays inactive",
+              "nodeCode": "CREATE_SITE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-capture_site_create",
+              "name": "CAPTURE_SITE_CREATE stays inactive",
+              "nodeCode": "CAPTURE_SITE_CREATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_site_receipt",
+              "name": "STORE_SITE_RECEIPT stays inactive",
+              "nodeCode": "STORE_SITE_RECEIPT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-site_has_id",
+              "name": "SITE_HAS_ID stays inactive",
+              "nodeCode": "SITE_HAS_ID"
+            },
+            {
+              "id": "prepare-supplier-draft-no-get_created_site",
+              "name": "GET_CREATED_SITE stays inactive",
+              "nodeCode": "GET_CREATED_SITE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-verify_site_create",
+              "name": "VERIFY_SITE_CREATE stays inactive",
+              "nodeCode": "VERIFY_SITE_CREATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_site_verified",
+              "name": "STORE_SITE_VERIFIED stays inactive",
+              "nodeCode": "STORE_SITE_VERIFIED"
+            },
+            {
+              "id": "prepare-supplier-draft-no-prepare_contact",
+              "name": "PREPARE_CONTACT stays inactive",
+              "nodeCode": "PREPARE_CONTACT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_contact_prepared",
+              "name": "STORE_CONTACT_PREPARED stays inactive",
+              "nodeCode": "STORE_CONTACT_PREPARED"
+            },
+            {
+              "id": "prepare-supplier-draft-no-contact_entry",
+              "name": "CONTACT_ENTRY stays inactive",
+              "nodeCode": "CONTACT_ENTRY"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_contact_parent",
+              "name": "FETCH_CONTACT_PARENT stays inactive",
+              "nodeCode": "FETCH_CONTACT_PARENT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-check_contact_parent",
+              "name": "CHECK_CONTACT_PARENT stays inactive",
+              "nodeCode": "CHECK_CONTACT_PARENT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_contact_parent",
+              "name": "STORE_CONTACT_PARENT stays inactive",
+              "nodeCode": "STORE_CONTACT_PARENT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-contact_operation",
+              "name": "CONTACT_OPERATION stays inactive",
+              "nodeCode": "CONTACT_OPERATION"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_contacts",
+              "name": "FETCH_CONTACTS stays inactive",
+              "nodeCode": "FETCH_CONTACTS"
+            },
+            {
+              "id": "prepare-supplier-draft-no-shape_contacts",
+              "name": "SHAPE_CONTACTS stays inactive",
+              "nodeCode": "SHAPE_CONTACTS"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_contact_list",
+              "name": "STORE_CONTACT_LIST stays inactive",
+              "nodeCode": "STORE_CONTACT_LIST"
+            },
+            {
+              "id": "prepare-supplier-draft-no-fetch_contact_detail",
+              "name": "FETCH_CONTACT_DETAIL stays inactive",
+              "nodeCode": "FETCH_CONTACT_DETAIL"
+            },
+            {
+              "id": "prepare-supplier-draft-no-shape_contact_detail",
+              "name": "SHAPE_CONTACT_DETAIL stays inactive",
+              "nodeCode": "SHAPE_CONTACT_DETAIL"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_contact_detail",
+              "name": "STORE_CONTACT_DETAIL stays inactive",
+              "nodeCode": "STORE_CONTACT_DETAIL"
+            },
+            {
+              "id": "prepare-supplier-draft-no-contact_duplicate_input",
+              "name": "CONTACT_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "CONTACT_DUPLICATE_INPUT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-check_contact_duplicate",
+              "name": "CHECK_CONTACT_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_CONTACT_DUPLICATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-authorize_contact_write",
+              "name": "AUTHORIZE_CONTACT_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_CONTACT_WRITE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_contact_attempt",
+              "name": "STORE_CONTACT_ATTEMPT stays inactive",
+              "nodeCode": "STORE_CONTACT_ATTEMPT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-contact_write_route",
+              "name": "CONTACT_WRITE_ROUTE stays inactive",
+              "nodeCode": "CONTACT_WRITE_ROUTE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-create_contact",
+              "name": "CREATE_CONTACT stays inactive",
+              "nodeCode": "CREATE_CONTACT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-capture_contact_create",
+              "name": "CAPTURE_CONTACT_CREATE stays inactive",
+              "nodeCode": "CAPTURE_CONTACT_CREATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_contact_receipt",
+              "name": "STORE_CONTACT_RECEIPT stays inactive",
+              "nodeCode": "STORE_CONTACT_RECEIPT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-contact_has_id",
+              "name": "CONTACT_HAS_ID stays inactive",
+              "nodeCode": "CONTACT_HAS_ID"
+            },
+            {
+              "id": "prepare-supplier-draft-no-get_created_contact",
+              "name": "GET_CREATED_CONTACT stays inactive",
+              "nodeCode": "GET_CREATED_CONTACT"
+            },
+            {
+              "id": "prepare-supplier-draft-no-verify_contact_create",
+              "name": "VERIFY_CONTACT_CREATE stays inactive",
+              "nodeCode": "VERIFY_CONTACT_CREATE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-store_contact_verified",
+              "name": "STORE_CONTACT_VERIFIED stays inactive",
+              "nodeCode": "STORE_CONTACT_VERIFIED"
+            },
+            {
+              "id": "prepare-supplier-draft-no-read_guidance",
+              "name": "READ_GUIDANCE stays inactive",
+              "nodeCode": "READ_GUIDANCE"
+            },
+            {
+              "id": "prepare-supplier-draft-no-init_display",
+              "name": "INIT_DISPLAY stays inactive",
+              "nodeCode": "INIT_DISPLAY"
+            },
+            {
+              "id": "prepare-supplier-draft-no-supplier_read_display",
+              "name": "SUPPLIER_READ_DISPLAY stays inactive",
+              "nodeCode": "SUPPLIER_READ_DISPLAY"
+            },
+            {
+              "id": "prepare-supplier-draft-no-address_display",
+              "name": "ADDRESS_DISPLAY stays inactive",
+              "nodeCode": "ADDRESS_DISPLAY"
+            },
+            {
+              "id": "prepare-supplier-draft-no-site_display",
+              "name": "SITE_DISPLAY stays inactive",
+              "nodeCode": "SITE_DISPLAY"
+            },
+            {
+              "id": "prepare-supplier-draft-no-contact_display",
+              "name": "CONTACT_DISPLAY stays inactive",
+              "nodeCode": "CONTACT_DISPLAY"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "prepare-supplier-draft-order",
+            "name": "Draft passes deterministic guard before display",
+            "nodeCodes": [
+              "PREPARE_TRANSACTION",
+              "STORE_PREPARED_TRANSACTION",
+              "SUPPLIER_TRANSACTION_DISPLAY"
+            ]
+          },
+          "nodeCounts": {
+            "CREATE_SUPPLIER": {
+              "id": "prepare-supplier-draft-no-post",
+              "name": "No supplier POST",
+              "exact": 0
+            }
+          }
+        },
+        "judge": {
+          "minimumScore": 4,
+          "expectedOutcome": "Grounded complete draft result with no business write.",
+          "rubric": [
+            {
+              "id": "prepare-supplier-draft-grounding",
+              "name": "Grounded native draft",
+              "criterion": "The output is grounded in the input and conversation state, presents a supported oraInfoDisplay widget, and does not claim a business record was created."
+            }
+          ]
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "model-generated",
+          "nodes": {}
+        },
+        "type": "chat",
+        "input": {
+          "message": "Prepare a supplier named XDX Replay Supplier Initial with BusinessRelationship Spend Authorized and TaxOrganizationType Corporation.",
+          "triggerType": "app",
+          "parameters": {
+            "OraAppContext": "",
+            "appHint": "Query",
+            "OraUserContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "3430df488ca97c3b",
+          "workflowDefinitionHash": "c64f738c28cc85a4",
+          "observedAt": "2026-09-25T01:34:10.083Z",
+          "observedTerminalNodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86232573,
+          "conversationPrefixHash": "866418f34b5dd20f"
+        }
+      },
+      {
+        "stepId": "edit-supplier-name",
+        "intent": "Change Supplier to XDX Replay Supplier Revised.",
+        "contextStepIds": [
+          "prepare-supplier-draft"
+        ],
+        "assertions": {
+          "contains": [
+            {
+              "id": "edit-supplier-name-expected",
+              "name": "Expected business result",
+              "value": "XDX Replay Supplier Revised"
+            }
+          ],
+          "notContains": []
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "edit-supplier-name-yes-extract_read",
+              "name": "EXTRACT_READ executes",
+              "nodeCode": "EXTRACT_READ"
+            },
+            {
+              "id": "edit-supplier-name-yes-prepare_transaction",
+              "name": "PREPARE_TRANSACTION executes",
+              "nodeCode": "PREPARE_TRANSACTION"
+            },
+            {
+              "id": "edit-supplier-name-yes-transaction_route",
+              "name": "TRANSACTION_ROUTE executes",
+              "nodeCode": "TRANSACTION_ROUTE"
+            },
+            {
+              "id": "edit-supplier-name-yes-store_prepared_transaction",
+              "name": "STORE_PREPARED_TRANSACTION executes",
+              "nodeCode": "STORE_PREPARED_TRANSACTION"
+            },
+            {
+              "id": "edit-supplier-name-yes-supplier_transaction_display",
+              "name": "SUPPLIER_TRANSACTION_DISPLAY executes",
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "edit-supplier-name-no-prepare_read",
+              "name": "PREPARE_READ stays inactive",
+              "nodeCode": "PREPARE_READ"
+            },
+            {
+              "id": "edit-supplier-name-no-read_allowed",
+              "name": "READ_ALLOWED stays inactive",
+              "nodeCode": "READ_ALLOWED"
+            },
+            {
+              "id": "edit-supplier-name-no-is_list",
+              "name": "IS_LIST stays inactive",
+              "nodeCode": "IS_LIST"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_suppliers",
+              "name": "FETCH_SUPPLIERS stays inactive",
+              "nodeCode": "FETCH_SUPPLIERS"
+            },
+            {
+              "id": "edit-supplier-name-no-shape_suppliers",
+              "name": "SHAPE_SUPPLIERS stays inactive",
+              "nodeCode": "SHAPE_SUPPLIERS"
+            },
+            {
+              "id": "edit-supplier-name-no-store_list_state",
+              "name": "STORE_LIST_STATE stays inactive",
+              "nodeCode": "STORE_LIST_STATE"
+            },
+            {
+              "id": "edit-supplier-name-no-display_stage",
+              "name": "DISPLAY_STAGE stays inactive",
+              "nodeCode": "DISPLAY_STAGE"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_supplier_detail",
+              "name": "FETCH_SUPPLIER_DETAIL stays inactive",
+              "nodeCode": "FETCH_SUPPLIER_DETAIL"
+            },
+            {
+              "id": "edit-supplier-name-no-shape_detail",
+              "name": "SHAPE_DETAIL stays inactive",
+              "nodeCode": "SHAPE_DETAIL"
+            },
+            {
+              "id": "edit-supplier-name-no-store_detail_state",
+              "name": "STORE_DETAIL_STATE stays inactive",
+              "nodeCode": "STORE_DETAIL_STATE"
+            },
+            {
+              "id": "edit-supplier-name-no-check_supplier_duplicate",
+              "name": "CHECK_SUPPLIER_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_SUPPLIER_DUPLICATE"
+            },
+            {
+              "id": "edit-supplier-name-no-authorize_supplier_write",
+              "name": "AUTHORIZE_SUPPLIER_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_SUPPLIER_WRITE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_preflight_transaction",
+              "name": "STORE_PREFLIGHT_TRANSACTION stays inactive",
+              "nodeCode": "STORE_PREFLIGHT_TRANSACTION"
+            },
+            {
+              "id": "edit-supplier-name-no-supplier_write_route",
+              "name": "SUPPLIER_WRITE_ROUTE stays inactive",
+              "nodeCode": "SUPPLIER_WRITE_ROUTE"
+            },
+            {
+              "id": "edit-supplier-name-no-create_supplier",
+              "name": "CREATE_SUPPLIER stays inactive",
+              "nodeCode": "CREATE_SUPPLIER"
+            },
+            {
+              "id": "edit-supplier-name-no-capture_supplier_create",
+              "name": "CAPTURE_SUPPLIER_CREATE stays inactive",
+              "nodeCode": "CAPTURE_SUPPLIER_CREATE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_create_receipt",
+              "name": "STORE_CREATE_RECEIPT stays inactive",
+              "nodeCode": "STORE_CREATE_RECEIPT"
+            },
+            {
+              "id": "edit-supplier-name-no-create_has_id",
+              "name": "CREATE_HAS_ID stays inactive",
+              "nodeCode": "CREATE_HAS_ID"
+            },
+            {
+              "id": "edit-supplier-name-no-get_created_supplier",
+              "name": "GET_CREATED_SUPPLIER stays inactive",
+              "nodeCode": "GET_CREATED_SUPPLIER"
+            },
+            {
+              "id": "edit-supplier-name-no-verify_supplier_create",
+              "name": "VERIFY_SUPPLIER_CREATE stays inactive",
+              "nodeCode": "VERIFY_SUPPLIER_CREATE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_verified_transaction",
+              "name": "STORE_VERIFIED_TRANSACTION stays inactive",
+              "nodeCode": "STORE_VERIFIED_TRANSACTION"
+            },
+            {
+              "id": "edit-supplier-name-no-prepare_address",
+              "name": "PREPARE_ADDRESS stays inactive",
+              "nodeCode": "PREPARE_ADDRESS"
+            },
+            {
+              "id": "edit-supplier-name-no-store_address_prepared",
+              "name": "STORE_ADDRESS_PREPARED stays inactive",
+              "nodeCode": "STORE_ADDRESS_PREPARED"
+            },
+            {
+              "id": "edit-supplier-name-no-address_entry",
+              "name": "ADDRESS_ENTRY stays inactive",
+              "nodeCode": "ADDRESS_ENTRY"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_address_parent",
+              "name": "FETCH_ADDRESS_PARENT stays inactive",
+              "nodeCode": "FETCH_ADDRESS_PARENT"
+            },
+            {
+              "id": "edit-supplier-name-no-check_address_parent",
+              "name": "CHECK_ADDRESS_PARENT stays inactive",
+              "nodeCode": "CHECK_ADDRESS_PARENT"
+            },
+            {
+              "id": "edit-supplier-name-no-store_address_parent",
+              "name": "STORE_ADDRESS_PARENT stays inactive",
+              "nodeCode": "STORE_ADDRESS_PARENT"
+            },
+            {
+              "id": "edit-supplier-name-no-address_operation",
+              "name": "ADDRESS_OPERATION stays inactive",
+              "nodeCode": "ADDRESS_OPERATION"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_addresses",
+              "name": "FETCH_ADDRESSES stays inactive",
+              "nodeCode": "FETCH_ADDRESSES"
+            },
+            {
+              "id": "edit-supplier-name-no-shape_addresses",
+              "name": "SHAPE_ADDRESSES stays inactive",
+              "nodeCode": "SHAPE_ADDRESSES"
+            },
+            {
+              "id": "edit-supplier-name-no-store_address_list",
+              "name": "STORE_ADDRESS_LIST stays inactive",
+              "nodeCode": "STORE_ADDRESS_LIST"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_address_detail",
+              "name": "FETCH_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "FETCH_ADDRESS_DETAIL"
+            },
+            {
+              "id": "edit-supplier-name-no-shape_address_detail",
+              "name": "SHAPE_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "SHAPE_ADDRESS_DETAIL"
+            },
+            {
+              "id": "edit-supplier-name-no-store_address_detail",
+              "name": "STORE_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "STORE_ADDRESS_DETAIL"
+            },
+            {
+              "id": "edit-supplier-name-no-address_duplicate_input",
+              "name": "ADDRESS_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "ADDRESS_DUPLICATE_INPUT"
+            },
+            {
+              "id": "edit-supplier-name-no-check_address_duplicate",
+              "name": "CHECK_ADDRESS_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_ADDRESS_DUPLICATE"
+            },
+            {
+              "id": "edit-supplier-name-no-authorize_address_write",
+              "name": "AUTHORIZE_ADDRESS_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_ADDRESS_WRITE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_address_attempt",
+              "name": "STORE_ADDRESS_ATTEMPT stays inactive",
+              "nodeCode": "STORE_ADDRESS_ATTEMPT"
+            },
+            {
+              "id": "edit-supplier-name-no-address_write_route",
+              "name": "ADDRESS_WRITE_ROUTE stays inactive",
+              "nodeCode": "ADDRESS_WRITE_ROUTE"
+            },
+            {
+              "id": "edit-supplier-name-no-create_address",
+              "name": "CREATE_ADDRESS stays inactive",
+              "nodeCode": "CREATE_ADDRESS"
+            },
+            {
+              "id": "edit-supplier-name-no-capture_address_create",
+              "name": "CAPTURE_ADDRESS_CREATE stays inactive",
+              "nodeCode": "CAPTURE_ADDRESS_CREATE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_address_receipt",
+              "name": "STORE_ADDRESS_RECEIPT stays inactive",
+              "nodeCode": "STORE_ADDRESS_RECEIPT"
+            },
+            {
+              "id": "edit-supplier-name-no-address_has_id",
+              "name": "ADDRESS_HAS_ID stays inactive",
+              "nodeCode": "ADDRESS_HAS_ID"
+            },
+            {
+              "id": "edit-supplier-name-no-get_created_address",
+              "name": "GET_CREATED_ADDRESS stays inactive",
+              "nodeCode": "GET_CREATED_ADDRESS"
+            },
+            {
+              "id": "edit-supplier-name-no-verify_address_create",
+              "name": "VERIFY_ADDRESS_CREATE stays inactive",
+              "nodeCode": "VERIFY_ADDRESS_CREATE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_address_verified",
+              "name": "STORE_ADDRESS_VERIFIED stays inactive",
+              "nodeCode": "STORE_ADDRESS_VERIFIED"
+            },
+            {
+              "id": "edit-supplier-name-no-prepare_site",
+              "name": "PREPARE_SITE stays inactive",
+              "nodeCode": "PREPARE_SITE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_site_prepared",
+              "name": "STORE_SITE_PREPARED stays inactive",
+              "nodeCode": "STORE_SITE_PREPARED"
+            },
+            {
+              "id": "edit-supplier-name-no-site_entry",
+              "name": "SITE_ENTRY stays inactive",
+              "nodeCode": "SITE_ENTRY"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_site_parent",
+              "name": "FETCH_SITE_PARENT stays inactive",
+              "nodeCode": "FETCH_SITE_PARENT"
+            },
+            {
+              "id": "edit-supplier-name-no-check_site_parent",
+              "name": "CHECK_SITE_PARENT stays inactive",
+              "nodeCode": "CHECK_SITE_PARENT"
+            },
+            {
+              "id": "edit-supplier-name-no-store_site_parent",
+              "name": "STORE_SITE_PARENT stays inactive",
+              "nodeCode": "STORE_SITE_PARENT"
+            },
+            {
+              "id": "edit-supplier-name-no-site_operation",
+              "name": "SITE_OPERATION stays inactive",
+              "nodeCode": "SITE_OPERATION"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_sites",
+              "name": "FETCH_SITES stays inactive",
+              "nodeCode": "FETCH_SITES"
+            },
+            {
+              "id": "edit-supplier-name-no-shape_sites",
+              "name": "SHAPE_SITES stays inactive",
+              "nodeCode": "SHAPE_SITES"
+            },
+            {
+              "id": "edit-supplier-name-no-store_site_list",
+              "name": "STORE_SITE_LIST stays inactive",
+              "nodeCode": "STORE_SITE_LIST"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_site_detail",
+              "name": "FETCH_SITE_DETAIL stays inactive",
+              "nodeCode": "FETCH_SITE_DETAIL"
+            },
+            {
+              "id": "edit-supplier-name-no-shape_site_detail",
+              "name": "SHAPE_SITE_DETAIL stays inactive",
+              "nodeCode": "SHAPE_SITE_DETAIL"
+            },
+            {
+              "id": "edit-supplier-name-no-store_site_detail",
+              "name": "STORE_SITE_DETAIL stays inactive",
+              "nodeCode": "STORE_SITE_DETAIL"
+            },
+            {
+              "id": "edit-supplier-name-no-site_reference_input",
+              "name": "SITE_REFERENCE_INPUT stays inactive",
+              "nodeCode": "SITE_REFERENCE_INPUT"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_site_address_reference",
+              "name": "FETCH_SITE_ADDRESS_REFERENCE stays inactive",
+              "nodeCode": "FETCH_SITE_ADDRESS_REFERENCE"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_site_bu_reference",
+              "name": "FETCH_SITE_BU_REFERENCE stays inactive",
+              "nodeCode": "FETCH_SITE_BU_REFERENCE"
+            },
+            {
+              "id": "edit-supplier-name-no-check_site_references",
+              "name": "CHECK_SITE_REFERENCES stays inactive",
+              "nodeCode": "CHECK_SITE_REFERENCES"
+            },
+            {
+              "id": "edit-supplier-name-no-store_site_references",
+              "name": "STORE_SITE_REFERENCES stays inactive",
+              "nodeCode": "STORE_SITE_REFERENCES"
+            },
+            {
+              "id": "edit-supplier-name-no-site_references_route",
+              "name": "SITE_REFERENCES_ROUTE stays inactive",
+              "nodeCode": "SITE_REFERENCES_ROUTE"
+            },
+            {
+              "id": "edit-supplier-name-no-site_duplicate_input",
+              "name": "SITE_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "SITE_DUPLICATE_INPUT"
+            },
+            {
+              "id": "edit-supplier-name-no-check_site_duplicate",
+              "name": "CHECK_SITE_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_SITE_DUPLICATE"
+            },
+            {
+              "id": "edit-supplier-name-no-authorize_site_write",
+              "name": "AUTHORIZE_SITE_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_SITE_WRITE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_site_attempt",
+              "name": "STORE_SITE_ATTEMPT stays inactive",
+              "nodeCode": "STORE_SITE_ATTEMPT"
+            },
+            {
+              "id": "edit-supplier-name-no-site_write_route",
+              "name": "SITE_WRITE_ROUTE stays inactive",
+              "nodeCode": "SITE_WRITE_ROUTE"
+            },
+            {
+              "id": "edit-supplier-name-no-create_site",
+              "name": "CREATE_SITE stays inactive",
+              "nodeCode": "CREATE_SITE"
+            },
+            {
+              "id": "edit-supplier-name-no-capture_site_create",
+              "name": "CAPTURE_SITE_CREATE stays inactive",
+              "nodeCode": "CAPTURE_SITE_CREATE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_site_receipt",
+              "name": "STORE_SITE_RECEIPT stays inactive",
+              "nodeCode": "STORE_SITE_RECEIPT"
+            },
+            {
+              "id": "edit-supplier-name-no-site_has_id",
+              "name": "SITE_HAS_ID stays inactive",
+              "nodeCode": "SITE_HAS_ID"
+            },
+            {
+              "id": "edit-supplier-name-no-get_created_site",
+              "name": "GET_CREATED_SITE stays inactive",
+              "nodeCode": "GET_CREATED_SITE"
+            },
+            {
+              "id": "edit-supplier-name-no-verify_site_create",
+              "name": "VERIFY_SITE_CREATE stays inactive",
+              "nodeCode": "VERIFY_SITE_CREATE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_site_verified",
+              "name": "STORE_SITE_VERIFIED stays inactive",
+              "nodeCode": "STORE_SITE_VERIFIED"
+            },
+            {
+              "id": "edit-supplier-name-no-prepare_contact",
+              "name": "PREPARE_CONTACT stays inactive",
+              "nodeCode": "PREPARE_CONTACT"
+            },
+            {
+              "id": "edit-supplier-name-no-store_contact_prepared",
+              "name": "STORE_CONTACT_PREPARED stays inactive",
+              "nodeCode": "STORE_CONTACT_PREPARED"
+            },
+            {
+              "id": "edit-supplier-name-no-contact_entry",
+              "name": "CONTACT_ENTRY stays inactive",
+              "nodeCode": "CONTACT_ENTRY"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_contact_parent",
+              "name": "FETCH_CONTACT_PARENT stays inactive",
+              "nodeCode": "FETCH_CONTACT_PARENT"
+            },
+            {
+              "id": "edit-supplier-name-no-check_contact_parent",
+              "name": "CHECK_CONTACT_PARENT stays inactive",
+              "nodeCode": "CHECK_CONTACT_PARENT"
+            },
+            {
+              "id": "edit-supplier-name-no-store_contact_parent",
+              "name": "STORE_CONTACT_PARENT stays inactive",
+              "nodeCode": "STORE_CONTACT_PARENT"
+            },
+            {
+              "id": "edit-supplier-name-no-contact_operation",
+              "name": "CONTACT_OPERATION stays inactive",
+              "nodeCode": "CONTACT_OPERATION"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_contacts",
+              "name": "FETCH_CONTACTS stays inactive",
+              "nodeCode": "FETCH_CONTACTS"
+            },
+            {
+              "id": "edit-supplier-name-no-shape_contacts",
+              "name": "SHAPE_CONTACTS stays inactive",
+              "nodeCode": "SHAPE_CONTACTS"
+            },
+            {
+              "id": "edit-supplier-name-no-store_contact_list",
+              "name": "STORE_CONTACT_LIST stays inactive",
+              "nodeCode": "STORE_CONTACT_LIST"
+            },
+            {
+              "id": "edit-supplier-name-no-fetch_contact_detail",
+              "name": "FETCH_CONTACT_DETAIL stays inactive",
+              "nodeCode": "FETCH_CONTACT_DETAIL"
+            },
+            {
+              "id": "edit-supplier-name-no-shape_contact_detail",
+              "name": "SHAPE_CONTACT_DETAIL stays inactive",
+              "nodeCode": "SHAPE_CONTACT_DETAIL"
+            },
+            {
+              "id": "edit-supplier-name-no-store_contact_detail",
+              "name": "STORE_CONTACT_DETAIL stays inactive",
+              "nodeCode": "STORE_CONTACT_DETAIL"
+            },
+            {
+              "id": "edit-supplier-name-no-contact_duplicate_input",
+              "name": "CONTACT_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "CONTACT_DUPLICATE_INPUT"
+            },
+            {
+              "id": "edit-supplier-name-no-check_contact_duplicate",
+              "name": "CHECK_CONTACT_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_CONTACT_DUPLICATE"
+            },
+            {
+              "id": "edit-supplier-name-no-authorize_contact_write",
+              "name": "AUTHORIZE_CONTACT_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_CONTACT_WRITE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_contact_attempt",
+              "name": "STORE_CONTACT_ATTEMPT stays inactive",
+              "nodeCode": "STORE_CONTACT_ATTEMPT"
+            },
+            {
+              "id": "edit-supplier-name-no-contact_write_route",
+              "name": "CONTACT_WRITE_ROUTE stays inactive",
+              "nodeCode": "CONTACT_WRITE_ROUTE"
+            },
+            {
+              "id": "edit-supplier-name-no-create_contact",
+              "name": "CREATE_CONTACT stays inactive",
+              "nodeCode": "CREATE_CONTACT"
+            },
+            {
+              "id": "edit-supplier-name-no-capture_contact_create",
+              "name": "CAPTURE_CONTACT_CREATE stays inactive",
+              "nodeCode": "CAPTURE_CONTACT_CREATE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_contact_receipt",
+              "name": "STORE_CONTACT_RECEIPT stays inactive",
+              "nodeCode": "STORE_CONTACT_RECEIPT"
+            },
+            {
+              "id": "edit-supplier-name-no-contact_has_id",
+              "name": "CONTACT_HAS_ID stays inactive",
+              "nodeCode": "CONTACT_HAS_ID"
+            },
+            {
+              "id": "edit-supplier-name-no-get_created_contact",
+              "name": "GET_CREATED_CONTACT stays inactive",
+              "nodeCode": "GET_CREATED_CONTACT"
+            },
+            {
+              "id": "edit-supplier-name-no-verify_contact_create",
+              "name": "VERIFY_CONTACT_CREATE stays inactive",
+              "nodeCode": "VERIFY_CONTACT_CREATE"
+            },
+            {
+              "id": "edit-supplier-name-no-store_contact_verified",
+              "name": "STORE_CONTACT_VERIFIED stays inactive",
+              "nodeCode": "STORE_CONTACT_VERIFIED"
+            },
+            {
+              "id": "edit-supplier-name-no-read_guidance",
+              "name": "READ_GUIDANCE stays inactive",
+              "nodeCode": "READ_GUIDANCE"
+            },
+            {
+              "id": "edit-supplier-name-no-init_display",
+              "name": "INIT_DISPLAY stays inactive",
+              "nodeCode": "INIT_DISPLAY"
+            },
+            {
+              "id": "edit-supplier-name-no-supplier_read_display",
+              "name": "SUPPLIER_READ_DISPLAY stays inactive",
+              "nodeCode": "SUPPLIER_READ_DISPLAY"
+            },
+            {
+              "id": "edit-supplier-name-no-address_display",
+              "name": "ADDRESS_DISPLAY stays inactive",
+              "nodeCode": "ADDRESS_DISPLAY"
+            },
+            {
+              "id": "edit-supplier-name-no-site_display",
+              "name": "SITE_DISPLAY stays inactive",
+              "nodeCode": "SITE_DISPLAY"
+            },
+            {
+              "id": "edit-supplier-name-no-contact_display",
+              "name": "CONTACT_DISPLAY stays inactive",
+              "nodeCode": "CONTACT_DISPLAY"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "edit-supplier-name-order",
+            "name": "Draft passes deterministic guard before display",
+            "nodeCodes": [
+              "PREPARE_TRANSACTION",
+              "STORE_PREPARED_TRANSACTION",
+              "SUPPLIER_TRANSACTION_DISPLAY"
+            ]
+          },
+          "nodeCounts": {
+            "CREATE_SUPPLIER": {
+              "id": "edit-supplier-name-no-post",
+              "name": "No supplier POST",
+              "exact": 0
+            }
+          }
+        },
+        "judge": {
+          "minimumScore": 4,
+          "expectedOutcome": "Grounded complete draft result with no business write.",
+          "rubric": [
+            {
+              "id": "edit-supplier-name-grounding",
+              "name": "Grounded native draft",
+              "criterion": "The output is grounded in the input and conversation state, presents a supported oraInfoDisplay widget, and does not claim a business record was created."
+            },
+            {
+              "id": "edit-supplier-name-continuity",
+              "name": "Preserved unedited fields",
+              "criterion": "BusinessRelationship remains Spend Authorized and TaxOrganizationType remains Corporation from the initial step; Supplier is XDX Replay Supplier Revised."
+            }
+          ]
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "model-generated",
+          "nodes": {}
+        },
+        "type": "chat",
+        "input": {
+          "message": "Change Supplier to XDX Replay Supplier Revised.",
+          "triggerType": "app",
+          "parameters": {
+            "OraAppContext": "",
+            "appHint": "Query",
+            "OraUserContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "7ce909cd02f5bd08",
+          "workflowDefinitionHash": "c64f738c28cc85a4",
+          "observedAt": "2026-09-25T01:34:10.083Z",
+          "observedTerminalNodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86232573,
+          "conversationPrefixHash": "324715666dec2f49"
+        }
+      },
+      {
+        "stepId": "review-supplier-payload",
+        "intent": "review supplier",
+        "contextStepIds": [
+          "edit-supplier-name"
+        ],
+        "assertions": {
+          "contains": [
+            {
+              "id": "review-supplier-payload-expected",
+              "name": "Expected business result",
+              "value": "Review all submitted fields."
+            }
+          ],
+          "notContains": []
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "review-supplier-payload-yes-extract_read",
+              "name": "EXTRACT_READ executes",
+              "nodeCode": "EXTRACT_READ"
+            },
+            {
+              "id": "review-supplier-payload-yes-prepare_transaction",
+              "name": "PREPARE_TRANSACTION executes",
+              "nodeCode": "PREPARE_TRANSACTION"
+            },
+            {
+              "id": "review-supplier-payload-yes-transaction_route",
+              "name": "TRANSACTION_ROUTE executes",
+              "nodeCode": "TRANSACTION_ROUTE"
+            },
+            {
+              "id": "review-supplier-payload-yes-store_prepared_transaction",
+              "name": "STORE_PREPARED_TRANSACTION executes",
+              "nodeCode": "STORE_PREPARED_TRANSACTION"
+            },
+            {
+              "id": "review-supplier-payload-yes-supplier_transaction_display",
+              "name": "SUPPLIER_TRANSACTION_DISPLAY executes",
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "review-supplier-payload-no-prepare_read",
+              "name": "PREPARE_READ stays inactive",
+              "nodeCode": "PREPARE_READ"
+            },
+            {
+              "id": "review-supplier-payload-no-read_allowed",
+              "name": "READ_ALLOWED stays inactive",
+              "nodeCode": "READ_ALLOWED"
+            },
+            {
+              "id": "review-supplier-payload-no-is_list",
+              "name": "IS_LIST stays inactive",
+              "nodeCode": "IS_LIST"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_suppliers",
+              "name": "FETCH_SUPPLIERS stays inactive",
+              "nodeCode": "FETCH_SUPPLIERS"
+            },
+            {
+              "id": "review-supplier-payload-no-shape_suppliers",
+              "name": "SHAPE_SUPPLIERS stays inactive",
+              "nodeCode": "SHAPE_SUPPLIERS"
+            },
+            {
+              "id": "review-supplier-payload-no-store_list_state",
+              "name": "STORE_LIST_STATE stays inactive",
+              "nodeCode": "STORE_LIST_STATE"
+            },
+            {
+              "id": "review-supplier-payload-no-display_stage",
+              "name": "DISPLAY_STAGE stays inactive",
+              "nodeCode": "DISPLAY_STAGE"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_supplier_detail",
+              "name": "FETCH_SUPPLIER_DETAIL stays inactive",
+              "nodeCode": "FETCH_SUPPLIER_DETAIL"
+            },
+            {
+              "id": "review-supplier-payload-no-shape_detail",
+              "name": "SHAPE_DETAIL stays inactive",
+              "nodeCode": "SHAPE_DETAIL"
+            },
+            {
+              "id": "review-supplier-payload-no-store_detail_state",
+              "name": "STORE_DETAIL_STATE stays inactive",
+              "nodeCode": "STORE_DETAIL_STATE"
+            },
+            {
+              "id": "review-supplier-payload-no-check_supplier_duplicate",
+              "name": "CHECK_SUPPLIER_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_SUPPLIER_DUPLICATE"
+            },
+            {
+              "id": "review-supplier-payload-no-authorize_supplier_write",
+              "name": "AUTHORIZE_SUPPLIER_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_SUPPLIER_WRITE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_preflight_transaction",
+              "name": "STORE_PREFLIGHT_TRANSACTION stays inactive",
+              "nodeCode": "STORE_PREFLIGHT_TRANSACTION"
+            },
+            {
+              "id": "review-supplier-payload-no-supplier_write_route",
+              "name": "SUPPLIER_WRITE_ROUTE stays inactive",
+              "nodeCode": "SUPPLIER_WRITE_ROUTE"
+            },
+            {
+              "id": "review-supplier-payload-no-create_supplier",
+              "name": "CREATE_SUPPLIER stays inactive",
+              "nodeCode": "CREATE_SUPPLIER"
+            },
+            {
+              "id": "review-supplier-payload-no-capture_supplier_create",
+              "name": "CAPTURE_SUPPLIER_CREATE stays inactive",
+              "nodeCode": "CAPTURE_SUPPLIER_CREATE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_create_receipt",
+              "name": "STORE_CREATE_RECEIPT stays inactive",
+              "nodeCode": "STORE_CREATE_RECEIPT"
+            },
+            {
+              "id": "review-supplier-payload-no-create_has_id",
+              "name": "CREATE_HAS_ID stays inactive",
+              "nodeCode": "CREATE_HAS_ID"
+            },
+            {
+              "id": "review-supplier-payload-no-get_created_supplier",
+              "name": "GET_CREATED_SUPPLIER stays inactive",
+              "nodeCode": "GET_CREATED_SUPPLIER"
+            },
+            {
+              "id": "review-supplier-payload-no-verify_supplier_create",
+              "name": "VERIFY_SUPPLIER_CREATE stays inactive",
+              "nodeCode": "VERIFY_SUPPLIER_CREATE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_verified_transaction",
+              "name": "STORE_VERIFIED_TRANSACTION stays inactive",
+              "nodeCode": "STORE_VERIFIED_TRANSACTION"
+            },
+            {
+              "id": "review-supplier-payload-no-prepare_address",
+              "name": "PREPARE_ADDRESS stays inactive",
+              "nodeCode": "PREPARE_ADDRESS"
+            },
+            {
+              "id": "review-supplier-payload-no-store_address_prepared",
+              "name": "STORE_ADDRESS_PREPARED stays inactive",
+              "nodeCode": "STORE_ADDRESS_PREPARED"
+            },
+            {
+              "id": "review-supplier-payload-no-address_entry",
+              "name": "ADDRESS_ENTRY stays inactive",
+              "nodeCode": "ADDRESS_ENTRY"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_address_parent",
+              "name": "FETCH_ADDRESS_PARENT stays inactive",
+              "nodeCode": "FETCH_ADDRESS_PARENT"
+            },
+            {
+              "id": "review-supplier-payload-no-check_address_parent",
+              "name": "CHECK_ADDRESS_PARENT stays inactive",
+              "nodeCode": "CHECK_ADDRESS_PARENT"
+            },
+            {
+              "id": "review-supplier-payload-no-store_address_parent",
+              "name": "STORE_ADDRESS_PARENT stays inactive",
+              "nodeCode": "STORE_ADDRESS_PARENT"
+            },
+            {
+              "id": "review-supplier-payload-no-address_operation",
+              "name": "ADDRESS_OPERATION stays inactive",
+              "nodeCode": "ADDRESS_OPERATION"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_addresses",
+              "name": "FETCH_ADDRESSES stays inactive",
+              "nodeCode": "FETCH_ADDRESSES"
+            },
+            {
+              "id": "review-supplier-payload-no-shape_addresses",
+              "name": "SHAPE_ADDRESSES stays inactive",
+              "nodeCode": "SHAPE_ADDRESSES"
+            },
+            {
+              "id": "review-supplier-payload-no-store_address_list",
+              "name": "STORE_ADDRESS_LIST stays inactive",
+              "nodeCode": "STORE_ADDRESS_LIST"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_address_detail",
+              "name": "FETCH_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "FETCH_ADDRESS_DETAIL"
+            },
+            {
+              "id": "review-supplier-payload-no-shape_address_detail",
+              "name": "SHAPE_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "SHAPE_ADDRESS_DETAIL"
+            },
+            {
+              "id": "review-supplier-payload-no-store_address_detail",
+              "name": "STORE_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "STORE_ADDRESS_DETAIL"
+            },
+            {
+              "id": "review-supplier-payload-no-address_duplicate_input",
+              "name": "ADDRESS_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "ADDRESS_DUPLICATE_INPUT"
+            },
+            {
+              "id": "review-supplier-payload-no-check_address_duplicate",
+              "name": "CHECK_ADDRESS_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_ADDRESS_DUPLICATE"
+            },
+            {
+              "id": "review-supplier-payload-no-authorize_address_write",
+              "name": "AUTHORIZE_ADDRESS_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_ADDRESS_WRITE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_address_attempt",
+              "name": "STORE_ADDRESS_ATTEMPT stays inactive",
+              "nodeCode": "STORE_ADDRESS_ATTEMPT"
+            },
+            {
+              "id": "review-supplier-payload-no-address_write_route",
+              "name": "ADDRESS_WRITE_ROUTE stays inactive",
+              "nodeCode": "ADDRESS_WRITE_ROUTE"
+            },
+            {
+              "id": "review-supplier-payload-no-create_address",
+              "name": "CREATE_ADDRESS stays inactive",
+              "nodeCode": "CREATE_ADDRESS"
+            },
+            {
+              "id": "review-supplier-payload-no-capture_address_create",
+              "name": "CAPTURE_ADDRESS_CREATE stays inactive",
+              "nodeCode": "CAPTURE_ADDRESS_CREATE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_address_receipt",
+              "name": "STORE_ADDRESS_RECEIPT stays inactive",
+              "nodeCode": "STORE_ADDRESS_RECEIPT"
+            },
+            {
+              "id": "review-supplier-payload-no-address_has_id",
+              "name": "ADDRESS_HAS_ID stays inactive",
+              "nodeCode": "ADDRESS_HAS_ID"
+            },
+            {
+              "id": "review-supplier-payload-no-get_created_address",
+              "name": "GET_CREATED_ADDRESS stays inactive",
+              "nodeCode": "GET_CREATED_ADDRESS"
+            },
+            {
+              "id": "review-supplier-payload-no-verify_address_create",
+              "name": "VERIFY_ADDRESS_CREATE stays inactive",
+              "nodeCode": "VERIFY_ADDRESS_CREATE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_address_verified",
+              "name": "STORE_ADDRESS_VERIFIED stays inactive",
+              "nodeCode": "STORE_ADDRESS_VERIFIED"
+            },
+            {
+              "id": "review-supplier-payload-no-prepare_site",
+              "name": "PREPARE_SITE stays inactive",
+              "nodeCode": "PREPARE_SITE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_site_prepared",
+              "name": "STORE_SITE_PREPARED stays inactive",
+              "nodeCode": "STORE_SITE_PREPARED"
+            },
+            {
+              "id": "review-supplier-payload-no-site_entry",
+              "name": "SITE_ENTRY stays inactive",
+              "nodeCode": "SITE_ENTRY"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_site_parent",
+              "name": "FETCH_SITE_PARENT stays inactive",
+              "nodeCode": "FETCH_SITE_PARENT"
+            },
+            {
+              "id": "review-supplier-payload-no-check_site_parent",
+              "name": "CHECK_SITE_PARENT stays inactive",
+              "nodeCode": "CHECK_SITE_PARENT"
+            },
+            {
+              "id": "review-supplier-payload-no-store_site_parent",
+              "name": "STORE_SITE_PARENT stays inactive",
+              "nodeCode": "STORE_SITE_PARENT"
+            },
+            {
+              "id": "review-supplier-payload-no-site_operation",
+              "name": "SITE_OPERATION stays inactive",
+              "nodeCode": "SITE_OPERATION"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_sites",
+              "name": "FETCH_SITES stays inactive",
+              "nodeCode": "FETCH_SITES"
+            },
+            {
+              "id": "review-supplier-payload-no-shape_sites",
+              "name": "SHAPE_SITES stays inactive",
+              "nodeCode": "SHAPE_SITES"
+            },
+            {
+              "id": "review-supplier-payload-no-store_site_list",
+              "name": "STORE_SITE_LIST stays inactive",
+              "nodeCode": "STORE_SITE_LIST"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_site_detail",
+              "name": "FETCH_SITE_DETAIL stays inactive",
+              "nodeCode": "FETCH_SITE_DETAIL"
+            },
+            {
+              "id": "review-supplier-payload-no-shape_site_detail",
+              "name": "SHAPE_SITE_DETAIL stays inactive",
+              "nodeCode": "SHAPE_SITE_DETAIL"
+            },
+            {
+              "id": "review-supplier-payload-no-store_site_detail",
+              "name": "STORE_SITE_DETAIL stays inactive",
+              "nodeCode": "STORE_SITE_DETAIL"
+            },
+            {
+              "id": "review-supplier-payload-no-site_reference_input",
+              "name": "SITE_REFERENCE_INPUT stays inactive",
+              "nodeCode": "SITE_REFERENCE_INPUT"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_site_address_reference",
+              "name": "FETCH_SITE_ADDRESS_REFERENCE stays inactive",
+              "nodeCode": "FETCH_SITE_ADDRESS_REFERENCE"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_site_bu_reference",
+              "name": "FETCH_SITE_BU_REFERENCE stays inactive",
+              "nodeCode": "FETCH_SITE_BU_REFERENCE"
+            },
+            {
+              "id": "review-supplier-payload-no-check_site_references",
+              "name": "CHECK_SITE_REFERENCES stays inactive",
+              "nodeCode": "CHECK_SITE_REFERENCES"
+            },
+            {
+              "id": "review-supplier-payload-no-store_site_references",
+              "name": "STORE_SITE_REFERENCES stays inactive",
+              "nodeCode": "STORE_SITE_REFERENCES"
+            },
+            {
+              "id": "review-supplier-payload-no-site_references_route",
+              "name": "SITE_REFERENCES_ROUTE stays inactive",
+              "nodeCode": "SITE_REFERENCES_ROUTE"
+            },
+            {
+              "id": "review-supplier-payload-no-site_duplicate_input",
+              "name": "SITE_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "SITE_DUPLICATE_INPUT"
+            },
+            {
+              "id": "review-supplier-payload-no-check_site_duplicate",
+              "name": "CHECK_SITE_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_SITE_DUPLICATE"
+            },
+            {
+              "id": "review-supplier-payload-no-authorize_site_write",
+              "name": "AUTHORIZE_SITE_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_SITE_WRITE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_site_attempt",
+              "name": "STORE_SITE_ATTEMPT stays inactive",
+              "nodeCode": "STORE_SITE_ATTEMPT"
+            },
+            {
+              "id": "review-supplier-payload-no-site_write_route",
+              "name": "SITE_WRITE_ROUTE stays inactive",
+              "nodeCode": "SITE_WRITE_ROUTE"
+            },
+            {
+              "id": "review-supplier-payload-no-create_site",
+              "name": "CREATE_SITE stays inactive",
+              "nodeCode": "CREATE_SITE"
+            },
+            {
+              "id": "review-supplier-payload-no-capture_site_create",
+              "name": "CAPTURE_SITE_CREATE stays inactive",
+              "nodeCode": "CAPTURE_SITE_CREATE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_site_receipt",
+              "name": "STORE_SITE_RECEIPT stays inactive",
+              "nodeCode": "STORE_SITE_RECEIPT"
+            },
+            {
+              "id": "review-supplier-payload-no-site_has_id",
+              "name": "SITE_HAS_ID stays inactive",
+              "nodeCode": "SITE_HAS_ID"
+            },
+            {
+              "id": "review-supplier-payload-no-get_created_site",
+              "name": "GET_CREATED_SITE stays inactive",
+              "nodeCode": "GET_CREATED_SITE"
+            },
+            {
+              "id": "review-supplier-payload-no-verify_site_create",
+              "name": "VERIFY_SITE_CREATE stays inactive",
+              "nodeCode": "VERIFY_SITE_CREATE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_site_verified",
+              "name": "STORE_SITE_VERIFIED stays inactive",
+              "nodeCode": "STORE_SITE_VERIFIED"
+            },
+            {
+              "id": "review-supplier-payload-no-prepare_contact",
+              "name": "PREPARE_CONTACT stays inactive",
+              "nodeCode": "PREPARE_CONTACT"
+            },
+            {
+              "id": "review-supplier-payload-no-store_contact_prepared",
+              "name": "STORE_CONTACT_PREPARED stays inactive",
+              "nodeCode": "STORE_CONTACT_PREPARED"
+            },
+            {
+              "id": "review-supplier-payload-no-contact_entry",
+              "name": "CONTACT_ENTRY stays inactive",
+              "nodeCode": "CONTACT_ENTRY"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_contact_parent",
+              "name": "FETCH_CONTACT_PARENT stays inactive",
+              "nodeCode": "FETCH_CONTACT_PARENT"
+            },
+            {
+              "id": "review-supplier-payload-no-check_contact_parent",
+              "name": "CHECK_CONTACT_PARENT stays inactive",
+              "nodeCode": "CHECK_CONTACT_PARENT"
+            },
+            {
+              "id": "review-supplier-payload-no-store_contact_parent",
+              "name": "STORE_CONTACT_PARENT stays inactive",
+              "nodeCode": "STORE_CONTACT_PARENT"
+            },
+            {
+              "id": "review-supplier-payload-no-contact_operation",
+              "name": "CONTACT_OPERATION stays inactive",
+              "nodeCode": "CONTACT_OPERATION"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_contacts",
+              "name": "FETCH_CONTACTS stays inactive",
+              "nodeCode": "FETCH_CONTACTS"
+            },
+            {
+              "id": "review-supplier-payload-no-shape_contacts",
+              "name": "SHAPE_CONTACTS stays inactive",
+              "nodeCode": "SHAPE_CONTACTS"
+            },
+            {
+              "id": "review-supplier-payload-no-store_contact_list",
+              "name": "STORE_CONTACT_LIST stays inactive",
+              "nodeCode": "STORE_CONTACT_LIST"
+            },
+            {
+              "id": "review-supplier-payload-no-fetch_contact_detail",
+              "name": "FETCH_CONTACT_DETAIL stays inactive",
+              "nodeCode": "FETCH_CONTACT_DETAIL"
+            },
+            {
+              "id": "review-supplier-payload-no-shape_contact_detail",
+              "name": "SHAPE_CONTACT_DETAIL stays inactive",
+              "nodeCode": "SHAPE_CONTACT_DETAIL"
+            },
+            {
+              "id": "review-supplier-payload-no-store_contact_detail",
+              "name": "STORE_CONTACT_DETAIL stays inactive",
+              "nodeCode": "STORE_CONTACT_DETAIL"
+            },
+            {
+              "id": "review-supplier-payload-no-contact_duplicate_input",
+              "name": "CONTACT_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "CONTACT_DUPLICATE_INPUT"
+            },
+            {
+              "id": "review-supplier-payload-no-check_contact_duplicate",
+              "name": "CHECK_CONTACT_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_CONTACT_DUPLICATE"
+            },
+            {
+              "id": "review-supplier-payload-no-authorize_contact_write",
+              "name": "AUTHORIZE_CONTACT_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_CONTACT_WRITE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_contact_attempt",
+              "name": "STORE_CONTACT_ATTEMPT stays inactive",
+              "nodeCode": "STORE_CONTACT_ATTEMPT"
+            },
+            {
+              "id": "review-supplier-payload-no-contact_write_route",
+              "name": "CONTACT_WRITE_ROUTE stays inactive",
+              "nodeCode": "CONTACT_WRITE_ROUTE"
+            },
+            {
+              "id": "review-supplier-payload-no-create_contact",
+              "name": "CREATE_CONTACT stays inactive",
+              "nodeCode": "CREATE_CONTACT"
+            },
+            {
+              "id": "review-supplier-payload-no-capture_contact_create",
+              "name": "CAPTURE_CONTACT_CREATE stays inactive",
+              "nodeCode": "CAPTURE_CONTACT_CREATE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_contact_receipt",
+              "name": "STORE_CONTACT_RECEIPT stays inactive",
+              "nodeCode": "STORE_CONTACT_RECEIPT"
+            },
+            {
+              "id": "review-supplier-payload-no-contact_has_id",
+              "name": "CONTACT_HAS_ID stays inactive",
+              "nodeCode": "CONTACT_HAS_ID"
+            },
+            {
+              "id": "review-supplier-payload-no-get_created_contact",
+              "name": "GET_CREATED_CONTACT stays inactive",
+              "nodeCode": "GET_CREATED_CONTACT"
+            },
+            {
+              "id": "review-supplier-payload-no-verify_contact_create",
+              "name": "VERIFY_CONTACT_CREATE stays inactive",
+              "nodeCode": "VERIFY_CONTACT_CREATE"
+            },
+            {
+              "id": "review-supplier-payload-no-store_contact_verified",
+              "name": "STORE_CONTACT_VERIFIED stays inactive",
+              "nodeCode": "STORE_CONTACT_VERIFIED"
+            },
+            {
+              "id": "review-supplier-payload-no-read_guidance",
+              "name": "READ_GUIDANCE stays inactive",
+              "nodeCode": "READ_GUIDANCE"
+            },
+            {
+              "id": "review-supplier-payload-no-init_display",
+              "name": "INIT_DISPLAY stays inactive",
+              "nodeCode": "INIT_DISPLAY"
+            },
+            {
+              "id": "review-supplier-payload-no-supplier_read_display",
+              "name": "SUPPLIER_READ_DISPLAY stays inactive",
+              "nodeCode": "SUPPLIER_READ_DISPLAY"
+            },
+            {
+              "id": "review-supplier-payload-no-address_display",
+              "name": "ADDRESS_DISPLAY stays inactive",
+              "nodeCode": "ADDRESS_DISPLAY"
+            },
+            {
+              "id": "review-supplier-payload-no-site_display",
+              "name": "SITE_DISPLAY stays inactive",
+              "nodeCode": "SITE_DISPLAY"
+            },
+            {
+              "id": "review-supplier-payload-no-contact_display",
+              "name": "CONTACT_DISPLAY stays inactive",
+              "nodeCode": "CONTACT_DISPLAY"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "review-supplier-payload-order",
+            "name": "Draft passes deterministic guard before display",
+            "nodeCodes": [
+              "PREPARE_TRANSACTION",
+              "STORE_PREPARED_TRANSACTION",
+              "SUPPLIER_TRANSACTION_DISPLAY"
+            ]
+          },
+          "nodeCounts": {
+            "CREATE_SUPPLIER": {
+              "id": "review-supplier-payload-no-post",
+              "name": "No supplier POST",
+              "exact": 0
+            }
+          }
+        },
+        "judge": {
+          "minimumScore": 4,
+          "expectedOutcome": "Grounded complete draft result with no business write.",
+          "rubric": [
+            {
+              "id": "review-supplier-payload-grounding",
+              "name": "Grounded native draft",
+              "criterion": "The output is grounded in the input and conversation state, presents a supported oraInfoDisplay widget, and does not claim a business record was created."
+            },
+            {
+              "id": "review-supplier-payload-continuity",
+              "name": "Preserved unedited fields",
+              "criterion": "BusinessRelationship remains Spend Authorized and TaxOrganizationType remains Corporation from the initial step; Supplier is XDX Replay Supplier Revised."
+            }
+          ]
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "model-generated",
+          "nodes": {}
+        },
+        "type": "chat",
+        "input": {
+          "message": "review supplier",
+          "triggerType": "app",
+          "parameters": {
+            "OraAppContext": "",
+            "appHint": "Query",
+            "OraUserContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "42d326b55360eb88",
+          "workflowDefinitionHash": "c64f738c28cc85a4",
+          "observedAt": "2026-09-25T01:34:10.083Z",
+          "observedTerminalNodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86232573,
+          "conversationPrefixHash": "b02e3628564a9f06"
+        }
+      },
+      {
+        "stepId": "reject-stale-request",
+        "intent": "create supplier stale-request revision 1",
+        "contextStepIds": [
+          "review-supplier-payload"
+        ],
+        "assertions": {
+          "contains": [
+            {
+              "id": "reject-stale-request-expected",
+              "name": "Expected business result",
+              "value": "Stale request or revision."
+            }
+          ],
+          "notContains": []
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "reject-stale-request-yes-extract_read",
+              "name": "EXTRACT_READ executes",
+              "nodeCode": "EXTRACT_READ"
+            },
+            {
+              "id": "reject-stale-request-yes-prepare_transaction",
+              "name": "PREPARE_TRANSACTION executes",
+              "nodeCode": "PREPARE_TRANSACTION"
+            },
+            {
+              "id": "reject-stale-request-yes-transaction_route",
+              "name": "TRANSACTION_ROUTE executes",
+              "nodeCode": "TRANSACTION_ROUTE"
+            },
+            {
+              "id": "reject-stale-request-yes-store_prepared_transaction",
+              "name": "STORE_PREPARED_TRANSACTION executes",
+              "nodeCode": "STORE_PREPARED_TRANSACTION"
+            },
+            {
+              "id": "reject-stale-request-yes-supplier_transaction_display",
+              "name": "SUPPLIER_TRANSACTION_DISPLAY executes",
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "reject-stale-request-no-prepare_read",
+              "name": "PREPARE_READ stays inactive",
+              "nodeCode": "PREPARE_READ"
+            },
+            {
+              "id": "reject-stale-request-no-read_allowed",
+              "name": "READ_ALLOWED stays inactive",
+              "nodeCode": "READ_ALLOWED"
+            },
+            {
+              "id": "reject-stale-request-no-is_list",
+              "name": "IS_LIST stays inactive",
+              "nodeCode": "IS_LIST"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_suppliers",
+              "name": "FETCH_SUPPLIERS stays inactive",
+              "nodeCode": "FETCH_SUPPLIERS"
+            },
+            {
+              "id": "reject-stale-request-no-shape_suppliers",
+              "name": "SHAPE_SUPPLIERS stays inactive",
+              "nodeCode": "SHAPE_SUPPLIERS"
+            },
+            {
+              "id": "reject-stale-request-no-store_list_state",
+              "name": "STORE_LIST_STATE stays inactive",
+              "nodeCode": "STORE_LIST_STATE"
+            },
+            {
+              "id": "reject-stale-request-no-display_stage",
+              "name": "DISPLAY_STAGE stays inactive",
+              "nodeCode": "DISPLAY_STAGE"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_supplier_detail",
+              "name": "FETCH_SUPPLIER_DETAIL stays inactive",
+              "nodeCode": "FETCH_SUPPLIER_DETAIL"
+            },
+            {
+              "id": "reject-stale-request-no-shape_detail",
+              "name": "SHAPE_DETAIL stays inactive",
+              "nodeCode": "SHAPE_DETAIL"
+            },
+            {
+              "id": "reject-stale-request-no-store_detail_state",
+              "name": "STORE_DETAIL_STATE stays inactive",
+              "nodeCode": "STORE_DETAIL_STATE"
+            },
+            {
+              "id": "reject-stale-request-no-check_supplier_duplicate",
+              "name": "CHECK_SUPPLIER_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_SUPPLIER_DUPLICATE"
+            },
+            {
+              "id": "reject-stale-request-no-authorize_supplier_write",
+              "name": "AUTHORIZE_SUPPLIER_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_SUPPLIER_WRITE"
+            },
+            {
+              "id": "reject-stale-request-no-store_preflight_transaction",
+              "name": "STORE_PREFLIGHT_TRANSACTION stays inactive",
+              "nodeCode": "STORE_PREFLIGHT_TRANSACTION"
+            },
+            {
+              "id": "reject-stale-request-no-supplier_write_route",
+              "name": "SUPPLIER_WRITE_ROUTE stays inactive",
+              "nodeCode": "SUPPLIER_WRITE_ROUTE"
+            },
+            {
+              "id": "reject-stale-request-no-create_supplier",
+              "name": "CREATE_SUPPLIER stays inactive",
+              "nodeCode": "CREATE_SUPPLIER"
+            },
+            {
+              "id": "reject-stale-request-no-capture_supplier_create",
+              "name": "CAPTURE_SUPPLIER_CREATE stays inactive",
+              "nodeCode": "CAPTURE_SUPPLIER_CREATE"
+            },
+            {
+              "id": "reject-stale-request-no-store_create_receipt",
+              "name": "STORE_CREATE_RECEIPT stays inactive",
+              "nodeCode": "STORE_CREATE_RECEIPT"
+            },
+            {
+              "id": "reject-stale-request-no-create_has_id",
+              "name": "CREATE_HAS_ID stays inactive",
+              "nodeCode": "CREATE_HAS_ID"
+            },
+            {
+              "id": "reject-stale-request-no-get_created_supplier",
+              "name": "GET_CREATED_SUPPLIER stays inactive",
+              "nodeCode": "GET_CREATED_SUPPLIER"
+            },
+            {
+              "id": "reject-stale-request-no-verify_supplier_create",
+              "name": "VERIFY_SUPPLIER_CREATE stays inactive",
+              "nodeCode": "VERIFY_SUPPLIER_CREATE"
+            },
+            {
+              "id": "reject-stale-request-no-store_verified_transaction",
+              "name": "STORE_VERIFIED_TRANSACTION stays inactive",
+              "nodeCode": "STORE_VERIFIED_TRANSACTION"
+            },
+            {
+              "id": "reject-stale-request-no-prepare_address",
+              "name": "PREPARE_ADDRESS stays inactive",
+              "nodeCode": "PREPARE_ADDRESS"
+            },
+            {
+              "id": "reject-stale-request-no-store_address_prepared",
+              "name": "STORE_ADDRESS_PREPARED stays inactive",
+              "nodeCode": "STORE_ADDRESS_PREPARED"
+            },
+            {
+              "id": "reject-stale-request-no-address_entry",
+              "name": "ADDRESS_ENTRY stays inactive",
+              "nodeCode": "ADDRESS_ENTRY"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_address_parent",
+              "name": "FETCH_ADDRESS_PARENT stays inactive",
+              "nodeCode": "FETCH_ADDRESS_PARENT"
+            },
+            {
+              "id": "reject-stale-request-no-check_address_parent",
+              "name": "CHECK_ADDRESS_PARENT stays inactive",
+              "nodeCode": "CHECK_ADDRESS_PARENT"
+            },
+            {
+              "id": "reject-stale-request-no-store_address_parent",
+              "name": "STORE_ADDRESS_PARENT stays inactive",
+              "nodeCode": "STORE_ADDRESS_PARENT"
+            },
+            {
+              "id": "reject-stale-request-no-address_operation",
+              "name": "ADDRESS_OPERATION stays inactive",
+              "nodeCode": "ADDRESS_OPERATION"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_addresses",
+              "name": "FETCH_ADDRESSES stays inactive",
+              "nodeCode": "FETCH_ADDRESSES"
+            },
+            {
+              "id": "reject-stale-request-no-shape_addresses",
+              "name": "SHAPE_ADDRESSES stays inactive",
+              "nodeCode": "SHAPE_ADDRESSES"
+            },
+            {
+              "id": "reject-stale-request-no-store_address_list",
+              "name": "STORE_ADDRESS_LIST stays inactive",
+              "nodeCode": "STORE_ADDRESS_LIST"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_address_detail",
+              "name": "FETCH_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "FETCH_ADDRESS_DETAIL"
+            },
+            {
+              "id": "reject-stale-request-no-shape_address_detail",
+              "name": "SHAPE_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "SHAPE_ADDRESS_DETAIL"
+            },
+            {
+              "id": "reject-stale-request-no-store_address_detail",
+              "name": "STORE_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "STORE_ADDRESS_DETAIL"
+            },
+            {
+              "id": "reject-stale-request-no-address_duplicate_input",
+              "name": "ADDRESS_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "ADDRESS_DUPLICATE_INPUT"
+            },
+            {
+              "id": "reject-stale-request-no-check_address_duplicate",
+              "name": "CHECK_ADDRESS_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_ADDRESS_DUPLICATE"
+            },
+            {
+              "id": "reject-stale-request-no-authorize_address_write",
+              "name": "AUTHORIZE_ADDRESS_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_ADDRESS_WRITE"
+            },
+            {
+              "id": "reject-stale-request-no-store_address_attempt",
+              "name": "STORE_ADDRESS_ATTEMPT stays inactive",
+              "nodeCode": "STORE_ADDRESS_ATTEMPT"
+            },
+            {
+              "id": "reject-stale-request-no-address_write_route",
+              "name": "ADDRESS_WRITE_ROUTE stays inactive",
+              "nodeCode": "ADDRESS_WRITE_ROUTE"
+            },
+            {
+              "id": "reject-stale-request-no-create_address",
+              "name": "CREATE_ADDRESS stays inactive",
+              "nodeCode": "CREATE_ADDRESS"
+            },
+            {
+              "id": "reject-stale-request-no-capture_address_create",
+              "name": "CAPTURE_ADDRESS_CREATE stays inactive",
+              "nodeCode": "CAPTURE_ADDRESS_CREATE"
+            },
+            {
+              "id": "reject-stale-request-no-store_address_receipt",
+              "name": "STORE_ADDRESS_RECEIPT stays inactive",
+              "nodeCode": "STORE_ADDRESS_RECEIPT"
+            },
+            {
+              "id": "reject-stale-request-no-address_has_id",
+              "name": "ADDRESS_HAS_ID stays inactive",
+              "nodeCode": "ADDRESS_HAS_ID"
+            },
+            {
+              "id": "reject-stale-request-no-get_created_address",
+              "name": "GET_CREATED_ADDRESS stays inactive",
+              "nodeCode": "GET_CREATED_ADDRESS"
+            },
+            {
+              "id": "reject-stale-request-no-verify_address_create",
+              "name": "VERIFY_ADDRESS_CREATE stays inactive",
+              "nodeCode": "VERIFY_ADDRESS_CREATE"
+            },
+            {
+              "id": "reject-stale-request-no-store_address_verified",
+              "name": "STORE_ADDRESS_VERIFIED stays inactive",
+              "nodeCode": "STORE_ADDRESS_VERIFIED"
+            },
+            {
+              "id": "reject-stale-request-no-prepare_site",
+              "name": "PREPARE_SITE stays inactive",
+              "nodeCode": "PREPARE_SITE"
+            },
+            {
+              "id": "reject-stale-request-no-store_site_prepared",
+              "name": "STORE_SITE_PREPARED stays inactive",
+              "nodeCode": "STORE_SITE_PREPARED"
+            },
+            {
+              "id": "reject-stale-request-no-site_entry",
+              "name": "SITE_ENTRY stays inactive",
+              "nodeCode": "SITE_ENTRY"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_site_parent",
+              "name": "FETCH_SITE_PARENT stays inactive",
+              "nodeCode": "FETCH_SITE_PARENT"
+            },
+            {
+              "id": "reject-stale-request-no-check_site_parent",
+              "name": "CHECK_SITE_PARENT stays inactive",
+              "nodeCode": "CHECK_SITE_PARENT"
+            },
+            {
+              "id": "reject-stale-request-no-store_site_parent",
+              "name": "STORE_SITE_PARENT stays inactive",
+              "nodeCode": "STORE_SITE_PARENT"
+            },
+            {
+              "id": "reject-stale-request-no-site_operation",
+              "name": "SITE_OPERATION stays inactive",
+              "nodeCode": "SITE_OPERATION"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_sites",
+              "name": "FETCH_SITES stays inactive",
+              "nodeCode": "FETCH_SITES"
+            },
+            {
+              "id": "reject-stale-request-no-shape_sites",
+              "name": "SHAPE_SITES stays inactive",
+              "nodeCode": "SHAPE_SITES"
+            },
+            {
+              "id": "reject-stale-request-no-store_site_list",
+              "name": "STORE_SITE_LIST stays inactive",
+              "nodeCode": "STORE_SITE_LIST"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_site_detail",
+              "name": "FETCH_SITE_DETAIL stays inactive",
+              "nodeCode": "FETCH_SITE_DETAIL"
+            },
+            {
+              "id": "reject-stale-request-no-shape_site_detail",
+              "name": "SHAPE_SITE_DETAIL stays inactive",
+              "nodeCode": "SHAPE_SITE_DETAIL"
+            },
+            {
+              "id": "reject-stale-request-no-store_site_detail",
+              "name": "STORE_SITE_DETAIL stays inactive",
+              "nodeCode": "STORE_SITE_DETAIL"
+            },
+            {
+              "id": "reject-stale-request-no-site_reference_input",
+              "name": "SITE_REFERENCE_INPUT stays inactive",
+              "nodeCode": "SITE_REFERENCE_INPUT"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_site_address_reference",
+              "name": "FETCH_SITE_ADDRESS_REFERENCE stays inactive",
+              "nodeCode": "FETCH_SITE_ADDRESS_REFERENCE"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_site_bu_reference",
+              "name": "FETCH_SITE_BU_REFERENCE stays inactive",
+              "nodeCode": "FETCH_SITE_BU_REFERENCE"
+            },
+            {
+              "id": "reject-stale-request-no-check_site_references",
+              "name": "CHECK_SITE_REFERENCES stays inactive",
+              "nodeCode": "CHECK_SITE_REFERENCES"
+            },
+            {
+              "id": "reject-stale-request-no-store_site_references",
+              "name": "STORE_SITE_REFERENCES stays inactive",
+              "nodeCode": "STORE_SITE_REFERENCES"
+            },
+            {
+              "id": "reject-stale-request-no-site_references_route",
+              "name": "SITE_REFERENCES_ROUTE stays inactive",
+              "nodeCode": "SITE_REFERENCES_ROUTE"
+            },
+            {
+              "id": "reject-stale-request-no-site_duplicate_input",
+              "name": "SITE_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "SITE_DUPLICATE_INPUT"
+            },
+            {
+              "id": "reject-stale-request-no-check_site_duplicate",
+              "name": "CHECK_SITE_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_SITE_DUPLICATE"
+            },
+            {
+              "id": "reject-stale-request-no-authorize_site_write",
+              "name": "AUTHORIZE_SITE_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_SITE_WRITE"
+            },
+            {
+              "id": "reject-stale-request-no-store_site_attempt",
+              "name": "STORE_SITE_ATTEMPT stays inactive",
+              "nodeCode": "STORE_SITE_ATTEMPT"
+            },
+            {
+              "id": "reject-stale-request-no-site_write_route",
+              "name": "SITE_WRITE_ROUTE stays inactive",
+              "nodeCode": "SITE_WRITE_ROUTE"
+            },
+            {
+              "id": "reject-stale-request-no-create_site",
+              "name": "CREATE_SITE stays inactive",
+              "nodeCode": "CREATE_SITE"
+            },
+            {
+              "id": "reject-stale-request-no-capture_site_create",
+              "name": "CAPTURE_SITE_CREATE stays inactive",
+              "nodeCode": "CAPTURE_SITE_CREATE"
+            },
+            {
+              "id": "reject-stale-request-no-store_site_receipt",
+              "name": "STORE_SITE_RECEIPT stays inactive",
+              "nodeCode": "STORE_SITE_RECEIPT"
+            },
+            {
+              "id": "reject-stale-request-no-site_has_id",
+              "name": "SITE_HAS_ID stays inactive",
+              "nodeCode": "SITE_HAS_ID"
+            },
+            {
+              "id": "reject-stale-request-no-get_created_site",
+              "name": "GET_CREATED_SITE stays inactive",
+              "nodeCode": "GET_CREATED_SITE"
+            },
+            {
+              "id": "reject-stale-request-no-verify_site_create",
+              "name": "VERIFY_SITE_CREATE stays inactive",
+              "nodeCode": "VERIFY_SITE_CREATE"
+            },
+            {
+              "id": "reject-stale-request-no-store_site_verified",
+              "name": "STORE_SITE_VERIFIED stays inactive",
+              "nodeCode": "STORE_SITE_VERIFIED"
+            },
+            {
+              "id": "reject-stale-request-no-prepare_contact",
+              "name": "PREPARE_CONTACT stays inactive",
+              "nodeCode": "PREPARE_CONTACT"
+            },
+            {
+              "id": "reject-stale-request-no-store_contact_prepared",
+              "name": "STORE_CONTACT_PREPARED stays inactive",
+              "nodeCode": "STORE_CONTACT_PREPARED"
+            },
+            {
+              "id": "reject-stale-request-no-contact_entry",
+              "name": "CONTACT_ENTRY stays inactive",
+              "nodeCode": "CONTACT_ENTRY"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_contact_parent",
+              "name": "FETCH_CONTACT_PARENT stays inactive",
+              "nodeCode": "FETCH_CONTACT_PARENT"
+            },
+            {
+              "id": "reject-stale-request-no-check_contact_parent",
+              "name": "CHECK_CONTACT_PARENT stays inactive",
+              "nodeCode": "CHECK_CONTACT_PARENT"
+            },
+            {
+              "id": "reject-stale-request-no-store_contact_parent",
+              "name": "STORE_CONTACT_PARENT stays inactive",
+              "nodeCode": "STORE_CONTACT_PARENT"
+            },
+            {
+              "id": "reject-stale-request-no-contact_operation",
+              "name": "CONTACT_OPERATION stays inactive",
+              "nodeCode": "CONTACT_OPERATION"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_contacts",
+              "name": "FETCH_CONTACTS stays inactive",
+              "nodeCode": "FETCH_CONTACTS"
+            },
+            {
+              "id": "reject-stale-request-no-shape_contacts",
+              "name": "SHAPE_CONTACTS stays inactive",
+              "nodeCode": "SHAPE_CONTACTS"
+            },
+            {
+              "id": "reject-stale-request-no-store_contact_list",
+              "name": "STORE_CONTACT_LIST stays inactive",
+              "nodeCode": "STORE_CONTACT_LIST"
+            },
+            {
+              "id": "reject-stale-request-no-fetch_contact_detail",
+              "name": "FETCH_CONTACT_DETAIL stays inactive",
+              "nodeCode": "FETCH_CONTACT_DETAIL"
+            },
+            {
+              "id": "reject-stale-request-no-shape_contact_detail",
+              "name": "SHAPE_CONTACT_DETAIL stays inactive",
+              "nodeCode": "SHAPE_CONTACT_DETAIL"
+            },
+            {
+              "id": "reject-stale-request-no-store_contact_detail",
+              "name": "STORE_CONTACT_DETAIL stays inactive",
+              "nodeCode": "STORE_CONTACT_DETAIL"
+            },
+            {
+              "id": "reject-stale-request-no-contact_duplicate_input",
+              "name": "CONTACT_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "CONTACT_DUPLICATE_INPUT"
+            },
+            {
+              "id": "reject-stale-request-no-check_contact_duplicate",
+              "name": "CHECK_CONTACT_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_CONTACT_DUPLICATE"
+            },
+            {
+              "id": "reject-stale-request-no-authorize_contact_write",
+              "name": "AUTHORIZE_CONTACT_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_CONTACT_WRITE"
+            },
+            {
+              "id": "reject-stale-request-no-store_contact_attempt",
+              "name": "STORE_CONTACT_ATTEMPT stays inactive",
+              "nodeCode": "STORE_CONTACT_ATTEMPT"
+            },
+            {
+              "id": "reject-stale-request-no-contact_write_route",
+              "name": "CONTACT_WRITE_ROUTE stays inactive",
+              "nodeCode": "CONTACT_WRITE_ROUTE"
+            },
+            {
+              "id": "reject-stale-request-no-create_contact",
+              "name": "CREATE_CONTACT stays inactive",
+              "nodeCode": "CREATE_CONTACT"
+            },
+            {
+              "id": "reject-stale-request-no-capture_contact_create",
+              "name": "CAPTURE_CONTACT_CREATE stays inactive",
+              "nodeCode": "CAPTURE_CONTACT_CREATE"
+            },
+            {
+              "id": "reject-stale-request-no-store_contact_receipt",
+              "name": "STORE_CONTACT_RECEIPT stays inactive",
+              "nodeCode": "STORE_CONTACT_RECEIPT"
+            },
+            {
+              "id": "reject-stale-request-no-contact_has_id",
+              "name": "CONTACT_HAS_ID stays inactive",
+              "nodeCode": "CONTACT_HAS_ID"
+            },
+            {
+              "id": "reject-stale-request-no-get_created_contact",
+              "name": "GET_CREATED_CONTACT stays inactive",
+              "nodeCode": "GET_CREATED_CONTACT"
+            },
+            {
+              "id": "reject-stale-request-no-verify_contact_create",
+              "name": "VERIFY_CONTACT_CREATE stays inactive",
+              "nodeCode": "VERIFY_CONTACT_CREATE"
+            },
+            {
+              "id": "reject-stale-request-no-store_contact_verified",
+              "name": "STORE_CONTACT_VERIFIED stays inactive",
+              "nodeCode": "STORE_CONTACT_VERIFIED"
+            },
+            {
+              "id": "reject-stale-request-no-read_guidance",
+              "name": "READ_GUIDANCE stays inactive",
+              "nodeCode": "READ_GUIDANCE"
+            },
+            {
+              "id": "reject-stale-request-no-init_display",
+              "name": "INIT_DISPLAY stays inactive",
+              "nodeCode": "INIT_DISPLAY"
+            },
+            {
+              "id": "reject-stale-request-no-supplier_read_display",
+              "name": "SUPPLIER_READ_DISPLAY stays inactive",
+              "nodeCode": "SUPPLIER_READ_DISPLAY"
+            },
+            {
+              "id": "reject-stale-request-no-address_display",
+              "name": "ADDRESS_DISPLAY stays inactive",
+              "nodeCode": "ADDRESS_DISPLAY"
+            },
+            {
+              "id": "reject-stale-request-no-site_display",
+              "name": "SITE_DISPLAY stays inactive",
+              "nodeCode": "SITE_DISPLAY"
+            },
+            {
+              "id": "reject-stale-request-no-contact_display",
+              "name": "CONTACT_DISPLAY stays inactive",
+              "nodeCode": "CONTACT_DISPLAY"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "reject-stale-request-order",
+            "name": "Draft passes deterministic guard before display",
+            "nodeCodes": [
+              "PREPARE_TRANSACTION",
+              "STORE_PREPARED_TRANSACTION",
+              "SUPPLIER_TRANSACTION_DISPLAY"
+            ]
+          },
+          "nodeCounts": {
+            "CREATE_SUPPLIER": {
+              "id": "reject-stale-request-no-post",
+              "name": "No supplier POST",
+              "exact": 0
+            }
+          }
+        },
+        "judge": {
+          "minimumScore": 4,
+          "expectedOutcome": "Grounded complete draft result with no business write.",
+          "rubric": [
+            {
+              "id": "reject-stale-request-grounding",
+              "name": "Grounded native draft",
+              "criterion": "The output is grounded in the input and conversation state, presents a supported oraInfoDisplay widget, and does not claim a business record was created."
+            }
+          ]
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "model-generated",
+          "nodes": {}
+        },
+        "type": "chat",
+        "input": {
+          "message": "create supplier stale-request revision 1",
+          "triggerType": "app",
+          "parameters": {
+            "OraAppContext": "",
+            "appHint": "Query",
+            "OraUserContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "074aa7862874ac55",
+          "workflowDefinitionHash": "c64f738c28cc85a4",
+          "observedAt": "2026-09-25T01:34:10.084Z",
+          "observedTerminalNodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86232573,
+          "conversationPrefixHash": "7368f605c51d69f7"
+        }
+      },
+      {
+        "stepId": "cancel-supplier-draft",
+        "intent": "cancel supplier",
+        "contextStepIds": [
+          "reject-stale-request"
+        ],
+        "assertions": {
+          "contains": [
+            {
+              "id": "cancel-supplier-draft-expected",
+              "name": "Expected business result",
+              "value": "Draft cancelled."
+            }
+          ],
+          "notContains": []
+        },
+        "pathAssertions": {
+          "mustExecute": [
+            {
+              "id": "cancel-supplier-draft-yes-extract_read",
+              "name": "EXTRACT_READ executes",
+              "nodeCode": "EXTRACT_READ"
+            },
+            {
+              "id": "cancel-supplier-draft-yes-prepare_transaction",
+              "name": "PREPARE_TRANSACTION executes",
+              "nodeCode": "PREPARE_TRANSACTION"
+            },
+            {
+              "id": "cancel-supplier-draft-yes-transaction_route",
+              "name": "TRANSACTION_ROUTE executes",
+              "nodeCode": "TRANSACTION_ROUTE"
+            },
+            {
+              "id": "cancel-supplier-draft-yes-store_prepared_transaction",
+              "name": "STORE_PREPARED_TRANSACTION executes",
+              "nodeCode": "STORE_PREPARED_TRANSACTION"
+            },
+            {
+              "id": "cancel-supplier-draft-yes-supplier_transaction_display",
+              "name": "SUPPLIER_TRANSACTION_DISPLAY executes",
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY"
+            }
+          ],
+          "mustNotExecute": [
+            {
+              "id": "cancel-supplier-draft-no-prepare_read",
+              "name": "PREPARE_READ stays inactive",
+              "nodeCode": "PREPARE_READ"
+            },
+            {
+              "id": "cancel-supplier-draft-no-read_allowed",
+              "name": "READ_ALLOWED stays inactive",
+              "nodeCode": "READ_ALLOWED"
+            },
+            {
+              "id": "cancel-supplier-draft-no-is_list",
+              "name": "IS_LIST stays inactive",
+              "nodeCode": "IS_LIST"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_suppliers",
+              "name": "FETCH_SUPPLIERS stays inactive",
+              "nodeCode": "FETCH_SUPPLIERS"
+            },
+            {
+              "id": "cancel-supplier-draft-no-shape_suppliers",
+              "name": "SHAPE_SUPPLIERS stays inactive",
+              "nodeCode": "SHAPE_SUPPLIERS"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_list_state",
+              "name": "STORE_LIST_STATE stays inactive",
+              "nodeCode": "STORE_LIST_STATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-display_stage",
+              "name": "DISPLAY_STAGE stays inactive",
+              "nodeCode": "DISPLAY_STAGE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_supplier_detail",
+              "name": "FETCH_SUPPLIER_DETAIL stays inactive",
+              "nodeCode": "FETCH_SUPPLIER_DETAIL"
+            },
+            {
+              "id": "cancel-supplier-draft-no-shape_detail",
+              "name": "SHAPE_DETAIL stays inactive",
+              "nodeCode": "SHAPE_DETAIL"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_detail_state",
+              "name": "STORE_DETAIL_STATE stays inactive",
+              "nodeCode": "STORE_DETAIL_STATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-check_supplier_duplicate",
+              "name": "CHECK_SUPPLIER_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_SUPPLIER_DUPLICATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-authorize_supplier_write",
+              "name": "AUTHORIZE_SUPPLIER_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_SUPPLIER_WRITE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_preflight_transaction",
+              "name": "STORE_PREFLIGHT_TRANSACTION stays inactive",
+              "nodeCode": "STORE_PREFLIGHT_TRANSACTION"
+            },
+            {
+              "id": "cancel-supplier-draft-no-supplier_write_route",
+              "name": "SUPPLIER_WRITE_ROUTE stays inactive",
+              "nodeCode": "SUPPLIER_WRITE_ROUTE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-create_supplier",
+              "name": "CREATE_SUPPLIER stays inactive",
+              "nodeCode": "CREATE_SUPPLIER"
+            },
+            {
+              "id": "cancel-supplier-draft-no-capture_supplier_create",
+              "name": "CAPTURE_SUPPLIER_CREATE stays inactive",
+              "nodeCode": "CAPTURE_SUPPLIER_CREATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_create_receipt",
+              "name": "STORE_CREATE_RECEIPT stays inactive",
+              "nodeCode": "STORE_CREATE_RECEIPT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-create_has_id",
+              "name": "CREATE_HAS_ID stays inactive",
+              "nodeCode": "CREATE_HAS_ID"
+            },
+            {
+              "id": "cancel-supplier-draft-no-get_created_supplier",
+              "name": "GET_CREATED_SUPPLIER stays inactive",
+              "nodeCode": "GET_CREATED_SUPPLIER"
+            },
+            {
+              "id": "cancel-supplier-draft-no-verify_supplier_create",
+              "name": "VERIFY_SUPPLIER_CREATE stays inactive",
+              "nodeCode": "VERIFY_SUPPLIER_CREATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_verified_transaction",
+              "name": "STORE_VERIFIED_TRANSACTION stays inactive",
+              "nodeCode": "STORE_VERIFIED_TRANSACTION"
+            },
+            {
+              "id": "cancel-supplier-draft-no-prepare_address",
+              "name": "PREPARE_ADDRESS stays inactive",
+              "nodeCode": "PREPARE_ADDRESS"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_address_prepared",
+              "name": "STORE_ADDRESS_PREPARED stays inactive",
+              "nodeCode": "STORE_ADDRESS_PREPARED"
+            },
+            {
+              "id": "cancel-supplier-draft-no-address_entry",
+              "name": "ADDRESS_ENTRY stays inactive",
+              "nodeCode": "ADDRESS_ENTRY"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_address_parent",
+              "name": "FETCH_ADDRESS_PARENT stays inactive",
+              "nodeCode": "FETCH_ADDRESS_PARENT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-check_address_parent",
+              "name": "CHECK_ADDRESS_PARENT stays inactive",
+              "nodeCode": "CHECK_ADDRESS_PARENT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_address_parent",
+              "name": "STORE_ADDRESS_PARENT stays inactive",
+              "nodeCode": "STORE_ADDRESS_PARENT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-address_operation",
+              "name": "ADDRESS_OPERATION stays inactive",
+              "nodeCode": "ADDRESS_OPERATION"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_addresses",
+              "name": "FETCH_ADDRESSES stays inactive",
+              "nodeCode": "FETCH_ADDRESSES"
+            },
+            {
+              "id": "cancel-supplier-draft-no-shape_addresses",
+              "name": "SHAPE_ADDRESSES stays inactive",
+              "nodeCode": "SHAPE_ADDRESSES"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_address_list",
+              "name": "STORE_ADDRESS_LIST stays inactive",
+              "nodeCode": "STORE_ADDRESS_LIST"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_address_detail",
+              "name": "FETCH_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "FETCH_ADDRESS_DETAIL"
+            },
+            {
+              "id": "cancel-supplier-draft-no-shape_address_detail",
+              "name": "SHAPE_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "SHAPE_ADDRESS_DETAIL"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_address_detail",
+              "name": "STORE_ADDRESS_DETAIL stays inactive",
+              "nodeCode": "STORE_ADDRESS_DETAIL"
+            },
+            {
+              "id": "cancel-supplier-draft-no-address_duplicate_input",
+              "name": "ADDRESS_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "ADDRESS_DUPLICATE_INPUT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-check_address_duplicate",
+              "name": "CHECK_ADDRESS_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_ADDRESS_DUPLICATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-authorize_address_write",
+              "name": "AUTHORIZE_ADDRESS_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_ADDRESS_WRITE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_address_attempt",
+              "name": "STORE_ADDRESS_ATTEMPT stays inactive",
+              "nodeCode": "STORE_ADDRESS_ATTEMPT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-address_write_route",
+              "name": "ADDRESS_WRITE_ROUTE stays inactive",
+              "nodeCode": "ADDRESS_WRITE_ROUTE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-create_address",
+              "name": "CREATE_ADDRESS stays inactive",
+              "nodeCode": "CREATE_ADDRESS"
+            },
+            {
+              "id": "cancel-supplier-draft-no-capture_address_create",
+              "name": "CAPTURE_ADDRESS_CREATE stays inactive",
+              "nodeCode": "CAPTURE_ADDRESS_CREATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_address_receipt",
+              "name": "STORE_ADDRESS_RECEIPT stays inactive",
+              "nodeCode": "STORE_ADDRESS_RECEIPT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-address_has_id",
+              "name": "ADDRESS_HAS_ID stays inactive",
+              "nodeCode": "ADDRESS_HAS_ID"
+            },
+            {
+              "id": "cancel-supplier-draft-no-get_created_address",
+              "name": "GET_CREATED_ADDRESS stays inactive",
+              "nodeCode": "GET_CREATED_ADDRESS"
+            },
+            {
+              "id": "cancel-supplier-draft-no-verify_address_create",
+              "name": "VERIFY_ADDRESS_CREATE stays inactive",
+              "nodeCode": "VERIFY_ADDRESS_CREATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_address_verified",
+              "name": "STORE_ADDRESS_VERIFIED stays inactive",
+              "nodeCode": "STORE_ADDRESS_VERIFIED"
+            },
+            {
+              "id": "cancel-supplier-draft-no-prepare_site",
+              "name": "PREPARE_SITE stays inactive",
+              "nodeCode": "PREPARE_SITE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_site_prepared",
+              "name": "STORE_SITE_PREPARED stays inactive",
+              "nodeCode": "STORE_SITE_PREPARED"
+            },
+            {
+              "id": "cancel-supplier-draft-no-site_entry",
+              "name": "SITE_ENTRY stays inactive",
+              "nodeCode": "SITE_ENTRY"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_site_parent",
+              "name": "FETCH_SITE_PARENT stays inactive",
+              "nodeCode": "FETCH_SITE_PARENT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-check_site_parent",
+              "name": "CHECK_SITE_PARENT stays inactive",
+              "nodeCode": "CHECK_SITE_PARENT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_site_parent",
+              "name": "STORE_SITE_PARENT stays inactive",
+              "nodeCode": "STORE_SITE_PARENT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-site_operation",
+              "name": "SITE_OPERATION stays inactive",
+              "nodeCode": "SITE_OPERATION"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_sites",
+              "name": "FETCH_SITES stays inactive",
+              "nodeCode": "FETCH_SITES"
+            },
+            {
+              "id": "cancel-supplier-draft-no-shape_sites",
+              "name": "SHAPE_SITES stays inactive",
+              "nodeCode": "SHAPE_SITES"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_site_list",
+              "name": "STORE_SITE_LIST stays inactive",
+              "nodeCode": "STORE_SITE_LIST"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_site_detail",
+              "name": "FETCH_SITE_DETAIL stays inactive",
+              "nodeCode": "FETCH_SITE_DETAIL"
+            },
+            {
+              "id": "cancel-supplier-draft-no-shape_site_detail",
+              "name": "SHAPE_SITE_DETAIL stays inactive",
+              "nodeCode": "SHAPE_SITE_DETAIL"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_site_detail",
+              "name": "STORE_SITE_DETAIL stays inactive",
+              "nodeCode": "STORE_SITE_DETAIL"
+            },
+            {
+              "id": "cancel-supplier-draft-no-site_reference_input",
+              "name": "SITE_REFERENCE_INPUT stays inactive",
+              "nodeCode": "SITE_REFERENCE_INPUT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_site_address_reference",
+              "name": "FETCH_SITE_ADDRESS_REFERENCE stays inactive",
+              "nodeCode": "FETCH_SITE_ADDRESS_REFERENCE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_site_bu_reference",
+              "name": "FETCH_SITE_BU_REFERENCE stays inactive",
+              "nodeCode": "FETCH_SITE_BU_REFERENCE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-check_site_references",
+              "name": "CHECK_SITE_REFERENCES stays inactive",
+              "nodeCode": "CHECK_SITE_REFERENCES"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_site_references",
+              "name": "STORE_SITE_REFERENCES stays inactive",
+              "nodeCode": "STORE_SITE_REFERENCES"
+            },
+            {
+              "id": "cancel-supplier-draft-no-site_references_route",
+              "name": "SITE_REFERENCES_ROUTE stays inactive",
+              "nodeCode": "SITE_REFERENCES_ROUTE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-site_duplicate_input",
+              "name": "SITE_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "SITE_DUPLICATE_INPUT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-check_site_duplicate",
+              "name": "CHECK_SITE_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_SITE_DUPLICATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-authorize_site_write",
+              "name": "AUTHORIZE_SITE_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_SITE_WRITE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_site_attempt",
+              "name": "STORE_SITE_ATTEMPT stays inactive",
+              "nodeCode": "STORE_SITE_ATTEMPT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-site_write_route",
+              "name": "SITE_WRITE_ROUTE stays inactive",
+              "nodeCode": "SITE_WRITE_ROUTE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-create_site",
+              "name": "CREATE_SITE stays inactive",
+              "nodeCode": "CREATE_SITE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-capture_site_create",
+              "name": "CAPTURE_SITE_CREATE stays inactive",
+              "nodeCode": "CAPTURE_SITE_CREATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_site_receipt",
+              "name": "STORE_SITE_RECEIPT stays inactive",
+              "nodeCode": "STORE_SITE_RECEIPT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-site_has_id",
+              "name": "SITE_HAS_ID stays inactive",
+              "nodeCode": "SITE_HAS_ID"
+            },
+            {
+              "id": "cancel-supplier-draft-no-get_created_site",
+              "name": "GET_CREATED_SITE stays inactive",
+              "nodeCode": "GET_CREATED_SITE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-verify_site_create",
+              "name": "VERIFY_SITE_CREATE stays inactive",
+              "nodeCode": "VERIFY_SITE_CREATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_site_verified",
+              "name": "STORE_SITE_VERIFIED stays inactive",
+              "nodeCode": "STORE_SITE_VERIFIED"
+            },
+            {
+              "id": "cancel-supplier-draft-no-prepare_contact",
+              "name": "PREPARE_CONTACT stays inactive",
+              "nodeCode": "PREPARE_CONTACT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_contact_prepared",
+              "name": "STORE_CONTACT_PREPARED stays inactive",
+              "nodeCode": "STORE_CONTACT_PREPARED"
+            },
+            {
+              "id": "cancel-supplier-draft-no-contact_entry",
+              "name": "CONTACT_ENTRY stays inactive",
+              "nodeCode": "CONTACT_ENTRY"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_contact_parent",
+              "name": "FETCH_CONTACT_PARENT stays inactive",
+              "nodeCode": "FETCH_CONTACT_PARENT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-check_contact_parent",
+              "name": "CHECK_CONTACT_PARENT stays inactive",
+              "nodeCode": "CHECK_CONTACT_PARENT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_contact_parent",
+              "name": "STORE_CONTACT_PARENT stays inactive",
+              "nodeCode": "STORE_CONTACT_PARENT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-contact_operation",
+              "name": "CONTACT_OPERATION stays inactive",
+              "nodeCode": "CONTACT_OPERATION"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_contacts",
+              "name": "FETCH_CONTACTS stays inactive",
+              "nodeCode": "FETCH_CONTACTS"
+            },
+            {
+              "id": "cancel-supplier-draft-no-shape_contacts",
+              "name": "SHAPE_CONTACTS stays inactive",
+              "nodeCode": "SHAPE_CONTACTS"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_contact_list",
+              "name": "STORE_CONTACT_LIST stays inactive",
+              "nodeCode": "STORE_CONTACT_LIST"
+            },
+            {
+              "id": "cancel-supplier-draft-no-fetch_contact_detail",
+              "name": "FETCH_CONTACT_DETAIL stays inactive",
+              "nodeCode": "FETCH_CONTACT_DETAIL"
+            },
+            {
+              "id": "cancel-supplier-draft-no-shape_contact_detail",
+              "name": "SHAPE_CONTACT_DETAIL stays inactive",
+              "nodeCode": "SHAPE_CONTACT_DETAIL"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_contact_detail",
+              "name": "STORE_CONTACT_DETAIL stays inactive",
+              "nodeCode": "STORE_CONTACT_DETAIL"
+            },
+            {
+              "id": "cancel-supplier-draft-no-contact_duplicate_input",
+              "name": "CONTACT_DUPLICATE_INPUT stays inactive",
+              "nodeCode": "CONTACT_DUPLICATE_INPUT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-check_contact_duplicate",
+              "name": "CHECK_CONTACT_DUPLICATE stays inactive",
+              "nodeCode": "CHECK_CONTACT_DUPLICATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-authorize_contact_write",
+              "name": "AUTHORIZE_CONTACT_WRITE stays inactive",
+              "nodeCode": "AUTHORIZE_CONTACT_WRITE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_contact_attempt",
+              "name": "STORE_CONTACT_ATTEMPT stays inactive",
+              "nodeCode": "STORE_CONTACT_ATTEMPT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-contact_write_route",
+              "name": "CONTACT_WRITE_ROUTE stays inactive",
+              "nodeCode": "CONTACT_WRITE_ROUTE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-create_contact",
+              "name": "CREATE_CONTACT stays inactive",
+              "nodeCode": "CREATE_CONTACT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-capture_contact_create",
+              "name": "CAPTURE_CONTACT_CREATE stays inactive",
+              "nodeCode": "CAPTURE_CONTACT_CREATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_contact_receipt",
+              "name": "STORE_CONTACT_RECEIPT stays inactive",
+              "nodeCode": "STORE_CONTACT_RECEIPT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-contact_has_id",
+              "name": "CONTACT_HAS_ID stays inactive",
+              "nodeCode": "CONTACT_HAS_ID"
+            },
+            {
+              "id": "cancel-supplier-draft-no-get_created_contact",
+              "name": "GET_CREATED_CONTACT stays inactive",
+              "nodeCode": "GET_CREATED_CONTACT"
+            },
+            {
+              "id": "cancel-supplier-draft-no-verify_contact_create",
+              "name": "VERIFY_CONTACT_CREATE stays inactive",
+              "nodeCode": "VERIFY_CONTACT_CREATE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-store_contact_verified",
+              "name": "STORE_CONTACT_VERIFIED stays inactive",
+              "nodeCode": "STORE_CONTACT_VERIFIED"
+            },
+            {
+              "id": "cancel-supplier-draft-no-read_guidance",
+              "name": "READ_GUIDANCE stays inactive",
+              "nodeCode": "READ_GUIDANCE"
+            },
+            {
+              "id": "cancel-supplier-draft-no-init_display",
+              "name": "INIT_DISPLAY stays inactive",
+              "nodeCode": "INIT_DISPLAY"
+            },
+            {
+              "id": "cancel-supplier-draft-no-supplier_read_display",
+              "name": "SUPPLIER_READ_DISPLAY stays inactive",
+              "nodeCode": "SUPPLIER_READ_DISPLAY"
+            },
+            {
+              "id": "cancel-supplier-draft-no-address_display",
+              "name": "ADDRESS_DISPLAY stays inactive",
+              "nodeCode": "ADDRESS_DISPLAY"
+            },
+            {
+              "id": "cancel-supplier-draft-no-site_display",
+              "name": "SITE_DISPLAY stays inactive",
+              "nodeCode": "SITE_DISPLAY"
+            },
+            {
+              "id": "cancel-supplier-draft-no-contact_display",
+              "name": "CONTACT_DISPLAY stays inactive",
+              "nodeCode": "CONTACT_DISPLAY"
+            }
+          ]
+        },
+        "executionAssertions": {
+          "orderedNodeCodes": {
+            "id": "cancel-supplier-draft-order",
+            "name": "Draft passes deterministic guard before display",
+            "nodeCodes": [
+              "PREPARE_TRANSACTION",
+              "STORE_PREPARED_TRANSACTION",
+              "SUPPLIER_TRANSACTION_DISPLAY"
+            ]
+          },
+          "nodeCounts": {
+            "CREATE_SUPPLIER": {
+              "id": "cancel-supplier-draft-no-post",
+              "name": "No supplier POST",
+              "exact": 0
+            }
+          }
+        },
+        "judge": {
+          "minimumScore": 4,
+          "expectedOutcome": "Grounded complete draft result with no business write.",
+          "rubric": [
+            {
+              "id": "cancel-supplier-draft-grounding",
+              "name": "Grounded native draft",
+              "criterion": "The output is grounded in the input and conversation state, presents a supported oraInfoDisplay widget, and does not claim a business record was created."
+            }
+          ]
+        },
+        "testData": {
+          "status": "ready",
+          "capturePolicy": "model-generated",
+          "nodes": {}
+        },
+        "type": "chat",
+        "input": {
+          "message": "cancel supplier",
+          "triggerType": "app",
+          "parameters": {
+            "OraAppContext": "",
+            "appHint": "Query",
+            "OraUserContext": ""
+          }
+        },
+        "pathBinding": {
+          "derivedFrom": "file_replay",
+          "pathSource": "observed",
+          "inputHash": "5aa230e6bba268a1",
+          "workflowDefinitionHash": "c64f738c28cc85a4",
+          "observedAt": "2026-09-25T01:34:10.084Z",
+          "observedTerminalNodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+          "workflowStatus": "DRAFT",
+          "workflowVersion": 86232573,
+          "conversationPrefixHash": "610fac7dd87e535b"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,266 @@
+2026-09-24T20:57:14.629Z do-modify-bo-function
+{
+  "ok": true,
+  "command": "do-modify-bo-function",
+  "result": {
+    "functionName": "get_suppliers",
+    "updatedFields": [
+      "resourcePath"
+    ]
+  }
+}
+
+2026-09-24T20:57:14.843Z do-apply-bo-function-example-payload
+{
+  "ok": true,
+  "command": "do-apply-bo-function-example-payload",
+  "result": {
+    "functionName": "get_suppliers",
+    "description": "Retained historical scalar detail projected to this function; schema guidance only, not current acceptance.",
+    "payload": "{\n  \"SupplierId\": 300000047507596,\n  \"SupplierNumber\": \"1264\",\n  \"Supplier\": \"Office Depot\",\n  \"SupplierType\": \"Supplier\",\n  \"BusinessRelationship\": \"Spend Authorized\",\n  \"InactiveDate\": null,\n  \"Status\": \"ACTIVE\",\n  \"AlternateName\": \"Office Depot, LLC\",\n  \"TaxOrganizationType\": \"Corporation\",\n  \"CorporateWebsite\": \"www.officedepot.com\"\n}"
+  }
+}
+
+2026-09-24T20:57:15.061Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "EXTRACT_READ",
+    "updated": true
+  }
+}
+
+2026-09-24T20:57:15.267Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "PREPARE_READ",
+    "updated": true
+  }
+}
+
+2026-09-24T20:57:15.585Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "12",
+    "nodeCode": "IS_DETAIL"
+  }
+}
+
+2026-09-24T20:57:18.023Z do-create-node
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "13",
+    "nodeCode": "FETCH_SUPPLIER_DETAIL",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Business Object function not found: get_suppliers"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Business Object function not found: get_suppliers",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T20:57:18.223Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "14",
+    "nodeCode": "SHAPE_DETAIL"
+  }
+}
+
+2026-09-24T20:57:18.428Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "SHAPE_SUPPLIERS",
+    "updated": true
+  }
+}
+
+2026-09-24T20:57:18.635Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "15",
+    "nodeCode": "STORE_LIST_STATE"
+  }
+}
+
+2026-09-24T20:57:18.837Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "16",
+    "nodeCode": "STORE_DETAIL_STATE"
+  }
+}
+
+2026-09-24T20:57:19.071Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "INIT_DISPLAY",
+    "updated": true
+  }
+}
+
+2026-09-24T20:57:19.275Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "SUPPLIER_READ_DISPLAY",
+    "updated": true
+  }
+}
+
+2026-09-24T20:57:19.477Z do-modify-node-edges
+{
+  "ok": true,
+  "command": "do-modify-node-edges",
+  "result": {
+    "ok": true,
+    "applied": 10,
+    "skipped": 0,
+    "details": [
+      {
+        "action": "remove",
+        "from": "READ_ALLOWED",
+        "to": "FETCH_SUPPLIERS",
+        "label": "true",
+        "status": "applied"
+      },
+      {
+        "action": "remove",
+        "from": "SHAPE_SUPPLIERS",
+        "to": "DISPLAY_STAGE",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "READ_ALLOWED",
+        "to": "IS_DETAIL",
+        "label": "true",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "IS_DETAIL",
+        "to": "FETCH_SUPPLIER_DETAIL",
+        "label": "true",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "IS_DETAIL",
+        "to": "FETCH_SUPPLIERS",
+        "label": "false",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "FETCH_SUPPLIER_DETAIL",
+        "to": "SHAPE_DETAIL",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SHAPE_DETAIL",
+        "to": "STORE_DETAIL_STATE",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_DETAIL_STATE",
+        "to": "DISPLAY_STAGE",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SHAPE_SUPPLIERS",
+        "to": "STORE_LIST_STATE",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_LIST_STATE",
+        "to": "DISPLAY_STAGE",
+        "status": "applied"
+      }
+    ],
+    "message": "Edges updated."
+  }
+}
+
+2026-09-24T20:57:19.688Z do-prettify-workflow
+{
+  "ok": true,
+  "command": "do-prettify-workflow",
+  "result": {
+    "ok": true,
+    "orientation": "vertical",
+    "nodeCount": 15,
+    "noteCount": 0,
+    "message": "Workflow layout prettified."
+  }
+}
+
+2026-09-24T20:57:19.906Z validate-workflow
+{
+  "ok": true,
+  "command": "validate-workflow",
+  "result": {
+    "ok": true,
+    "errorCount": 0,
+    "errors": [],
+    "message": "Workflow validation passed."
+  }
+}
+
+2026-09-24T20:57:20.117Z validate-bo
+{
+  "ok": true,
+  "command": "validate-bo",
+  "result": {
+    "ok": true,
+    "errorCount": 0,
+    "issues": []
+  }
+}

@@ -1,0 +1,971 @@
+2026-09-24T22:06:44.091Z do-modify-bo-function
+{
+  "ok": true,
+  "command": "do-modify-bo-function",
+  "result": {
+    "functionName": "getall_suppliers_addresses",
+    "updatedFields": [
+      "resourcePath"
+    ]
+  }
+}
+
+2026-09-24T22:06:44.302Z do-modify-bo-function
+{
+  "ok": true,
+  "command": "do-modify-bo-function",
+  "result": {
+    "functionName": "get_suppliers_addresses",
+    "updatedFields": [
+      "resourcePath"
+    ]
+  }
+}
+
+2026-09-24T22:06:44.513Z do-modify-bo-function
+{
+  "ok": true,
+  "command": "do-modify-bo-function",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "updatedFields": [
+      "bodyTemplate",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:06:44.765Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "getall_suppliers_addresses",
+    "headerName": "REST-Framework-Version"
+  }
+}
+
+2026-09-24T22:06:44.980Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "get_suppliers_addresses",
+    "headerName": "REST-Framework-Version"
+  }
+}
+
+2026-09-24T22:06:45.193Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "headerName": "REST-Framework-Version"
+  }
+}
+
+2026-09-24T22:06:45.418Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "headerName": "Content-Type"
+  }
+}
+
+2026-09-24T22:06:45.650Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "headerName": "Upsert-Mode"
+  }
+}
+
+2026-09-24T22:06:45.865Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "getall_suppliers_addresses",
+    "parameterName": "limit",
+    "kind": "token",
+    "updatedFields": [
+      "dataType"
+    ]
+  }
+}
+
+2026-09-24T22:06:46.085Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "getall_suppliers_addresses",
+    "parameterName": "offset",
+    "kind": "token",
+    "updatedFields": [
+      "dataType"
+    ]
+  }
+}
+
+2026-09-24T22:06:46.300Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "getall_suppliers_addresses",
+    "parameterName": "q",
+    "kind": "token",
+    "updatedFields": [
+      "dataType"
+    ]
+  }
+}
+
+2026-09-24T22:06:46.510Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "parameterName": "AddressName",
+    "kind": "token",
+    "updatedFields": [
+      "dataType"
+    ]
+  }
+}
+
+2026-09-24T22:06:46.716Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "parameterName": "CountryCode",
+    "kind": "token",
+    "updatedFields": [
+      "dataType"
+    ]
+  }
+}
+
+2026-09-24T22:06:46.934Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "parameterName": "AddressLine1",
+    "kind": "token",
+    "updatedFields": [
+      "dataType"
+    ]
+  }
+}
+
+2026-09-24T22:06:47.145Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "parameterName": "City",
+    "kind": "token",
+    "updatedFields": [
+      "dataType"
+    ]
+  }
+}
+
+2026-09-24T22:06:47.353Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "parameterName": "State",
+    "kind": "token",
+    "updatedFields": [
+      "dataType"
+    ]
+  }
+}
+
+2026-09-24T22:06:47.561Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "parameterName": "PostalCode",
+    "kind": "token",
+    "updatedFields": [
+      "dataType"
+    ]
+  }
+}
+
+2026-09-24T22:06:47.772Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "parameterName": "Email",
+    "kind": "token",
+    "updatedFields": [
+      "dataType"
+    ]
+  }
+}
+
+2026-09-24T22:06:48.015Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "parameterName": "AddressPurposeOrderingFlag",
+    "kind": "token",
+    "updatedFields": [
+      "dataType"
+    ]
+  }
+}
+
+2026-09-24T22:06:48.227Z do-apply-bo-function-example-payload
+{
+  "ok": true,
+  "command": "do-apply-bo-function-example-payload",
+  "result": {
+    "functionName": "getall_suppliers_addresses",
+    "description": "Retained same-tenant address response projected for schema only; not this build acceptance.",
+    "payload": "{\n  \"items\": [\n    {\n      \"SupplierAddressId\": 300000333813797,\n      \"AddressName\": \"XDX Lee US1 0917133857\",\n      \"CountryCode\": \"US\",\n      \"AddressLine1\": \"5000 CARTER DR.\",\n      \"City\": \"LOS ANGELES\",\n      \"State\": \"CA\",\n      \"PostalCode\": \"90032\",\n      \"Email\": \"xdx-address-0917133857@example.invalid\",\n      \"AddressPurposeOrderingFlag\": true,\n      \"AddressPartyNumber\": \"1486630\",\n      \"Status\": \"ACTIVE\",\n      \"InactiveDate\": \"4712-12-31\"\n    }\n  ],\n  \"count\": 1,\n  \"hasMore\": false,\n  \"limit\": 5,\n  \"offset\": 0\n}"
+  }
+}
+
+2026-09-24T22:06:48.435Z do-apply-bo-function-example-payload
+{
+  "ok": true,
+  "command": "do-apply-bo-function-example-payload",
+  "result": {
+    "functionName": "get_suppliers_addresses",
+    "description": "Retained same-tenant address response projected for schema only; not this build acceptance.",
+    "payload": "{\n  \"SupplierAddressId\": 300000333813797,\n  \"AddressName\": \"XDX Lee US1 0917133857\",\n  \"CountryCode\": \"US\",\n  \"AddressLine1\": \"5000 CARTER DR.\",\n  \"City\": \"LOS ANGELES\",\n  \"State\": \"CA\",\n  \"PostalCode\": \"90032\",\n  \"Email\": \"xdx-address-0917133857@example.invalid\",\n  \"AddressPurposeOrderingFlag\": true,\n  \"AddressPartyNumber\": \"1486630\",\n  \"Status\": \"ACTIVE\",\n  \"InactiveDate\": \"4712-12-31\"\n}"
+  }
+}
+
+2026-09-24T22:06:48.647Z do-apply-bo-function-example-payload
+{
+  "ok": true,
+  "command": "do-apply-bo-function-example-payload",
+  "result": {
+    "functionName": "create_suppliers_addresses",
+    "description": "Retained same-tenant address response projected for schema only; not this build acceptance.",
+    "payload": "{\n  \"SupplierAddressId\": 300000333813797,\n  \"AddressName\": \"XDX Lee US1 0917133857\",\n  \"CountryCode\": \"US\",\n  \"AddressLine1\": \"5000 CARTER DR.\",\n  \"City\": \"LOS ANGELES\",\n  \"State\": \"CA\",\n  \"PostalCode\": \"90032\",\n  \"Email\": \"xdx-address-0917133857@example.invalid\",\n  \"AddressPurposeOrderingFlag\": true,\n  \"AddressPartyNumber\": \"1486630\",\n  \"Status\": \"ACTIVE\",\n  \"InactiveDate\": \"4712-12-31\"\n}"
+  }
+}
+
+2026-09-24T22:06:48.873Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "EXTRACT_READ",
+    "updated": true
+  }
+}
+
+2026-09-24T22:06:49.093Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "EXTRACT_READ",
+    "updated": true
+  }
+}
+
+2026-09-24T22:06:49.302Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "PREPARE_TRANSACTION",
+    "updated": true
+  }
+}
+
+2026-09-24T22:06:49.518Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "32",
+    "nodeCode": "PREPARE_ADDRESS"
+  }
+}
+
+2026-09-24T22:06:49.726Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "33",
+    "nodeCode": "STORE_ADDRESS_PREPARED"
+  }
+}
+
+2026-09-24T22:06:49.954Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "34",
+    "nodeCode": "ADDRESS_ENTRY"
+  }
+}
+
+2026-09-24T22:06:53.013Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "35",
+    "nodeCode": "FETCH_ADDRESS_PARENT",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:06:53.245Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "36",
+    "nodeCode": "CHECK_ADDRESS_PARENT"
+  }
+}
+
+2026-09-24T22:06:53.472Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "37",
+    "nodeCode": "STORE_ADDRESS_PARENT"
+  }
+}
+
+2026-09-24T22:06:53.698Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "38",
+    "nodeCode": "ADDRESS_OPERATION"
+  }
+}
+
+2026-09-24T22:06:56.655Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "39",
+    "nodeCode": "FETCH_ADDRESSES",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "getall_suppliers_addresses",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:06:59.548Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "40",
+    "nodeCode": "FETCH_ADDRESS_DETAIL",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers_addresses",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:06:59.753Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "41",
+    "nodeCode": "SHAPE_ADDRESSES"
+  }
+}
+
+2026-09-24T22:06:59.965Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "42",
+    "nodeCode": "SHAPE_ADDRESS_DETAIL"
+  }
+}
+
+2026-09-24T22:07:00.181Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "43",
+    "nodeCode": "STORE_ADDRESS_LIST"
+  }
+}
+
+2026-09-24T22:07:00.393Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "44",
+    "nodeCode": "STORE_ADDRESS_DETAIL"
+  }
+}
+
+2026-09-24T22:07:00.653Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "45",
+    "nodeCode": "ADDRESS_DUPLICATE_INPUT"
+  }
+}
+
+2026-09-24T22:07:03.346Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "46",
+    "nodeCode": "CHECK_ADDRESS_DUPLICATE",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "getall_suppliers_addresses",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:07:03.562Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "47",
+    "nodeCode": "AUTHORIZE_ADDRESS_WRITE"
+  }
+}
+
+2026-09-24T22:07:03.766Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "48",
+    "nodeCode": "STORE_ADDRESS_ATTEMPT"
+  }
+}
+
+2026-09-24T22:07:03.969Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "49",
+    "nodeCode": "ADDRESS_WRITE_ROUTE"
+  }
+}
+
+2026-09-24T22:07:06.789Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "50",
+    "nodeCode": "CREATE_ADDRESS",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "create_suppliers_addresses",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:07:07.025Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "51",
+    "nodeCode": "CAPTURE_ADDRESS_CREATE"
+  }
+}
+
+2026-09-24T22:07:07.258Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "52",
+    "nodeCode": "STORE_ADDRESS_RECEIPT"
+  }
+}
+
+2026-09-24T22:07:07.468Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "53",
+    "nodeCode": "ADDRESS_HAS_ID"
+  }
+}
+
+2026-09-24T22:07:10.231Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "54",
+    "nodeCode": "GET_CREATED_ADDRESS",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers_addresses",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:07:10.445Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "55",
+    "nodeCode": "VERIFY_ADDRESS_CREATE"
+  }
+}
+
+2026-09-24T22:07:10.662Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "56",
+    "nodeCode": "STORE_ADDRESS_VERIFIED"
+  }
+}
+
+2026-09-24T22:07:10.877Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "57",
+    "nodeCode": "ADDRESS_DISPLAY"
+  }
+}
+
+2026-09-24T22:07:11.100Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "ADDRESS_DISPLAY",
+    "updated": true
+  }
+}
+
+2026-09-24T22:07:11.308Z do-modify-node-edges
+{
+  "ok": true,
+  "command": "do-modify-node-edges",
+  "result": {
+    "ok": true,
+    "applied": 33,
+    "skipped": 1,
+    "details": [
+      {
+        "action": "add",
+        "from": "TRANSACTION_ROUTE",
+        "to": "PREPARE_ADDRESS",
+        "label": "address",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "PREPARE_ADDRESS",
+        "to": "STORE_ADDRESS_PREPARED",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_ADDRESS_PREPARED",
+        "to": "ADDRESS_ENTRY",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_ENTRY",
+        "to": "ADDRESS_DISPLAY",
+        "label": "display",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_ENTRY",
+        "to": "FETCH_ADDRESS_PARENT",
+        "label": "parent",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "FETCH_ADDRESS_PARENT",
+        "to": "CHECK_ADDRESS_PARENT",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CHECK_ADDRESS_PARENT",
+        "to": "STORE_ADDRESS_PARENT",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_ADDRESS_PARENT",
+        "to": "ADDRESS_OPERATION",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_OPERATION",
+        "to": "ADDRESS_DISPLAY",
+        "label": "display",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_OPERATION",
+        "to": "FETCH_ADDRESSES",
+        "label": "list",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_OPERATION",
+        "to": "FETCH_ADDRESS_DETAIL",
+        "label": "detail",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_OPERATION",
+        "to": "ADDRESS_DUPLICATE_INPUT",
+        "label": "preflight",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "FETCH_ADDRESSES",
+        "to": "SHAPE_ADDRESSES",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SHAPE_ADDRESSES",
+        "to": "STORE_ADDRESS_LIST",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_ADDRESS_LIST",
+        "to": "ADDRESS_DISPLAY",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "FETCH_ADDRESS_DETAIL",
+        "to": "SHAPE_ADDRESS_DETAIL",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SHAPE_ADDRESS_DETAIL",
+        "to": "STORE_ADDRESS_DETAIL",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_ADDRESS_DETAIL",
+        "to": "ADDRESS_DISPLAY",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_DUPLICATE_INPUT",
+        "to": "CHECK_ADDRESS_DUPLICATE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CHECK_ADDRESS_DUPLICATE",
+        "to": "AUTHORIZE_ADDRESS_WRITE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "AUTHORIZE_ADDRESS_WRITE",
+        "to": "STORE_ADDRESS_ATTEMPT",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_ADDRESS_ATTEMPT",
+        "to": "ADDRESS_WRITE_ROUTE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_WRITE_ROUTE",
+        "to": "CREATE_ADDRESS",
+        "label": "write",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_WRITE_ROUTE",
+        "to": "GET_CREATED_ADDRESS",
+        "label": "verify",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_WRITE_ROUTE",
+        "to": "ADDRESS_DISPLAY",
+        "label": "display",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CREATE_ADDRESS",
+        "to": "CAPTURE_ADDRESS_CREATE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CAPTURE_ADDRESS_CREATE",
+        "to": "STORE_ADDRESS_RECEIPT",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_ADDRESS_RECEIPT",
+        "to": "ADDRESS_HAS_ID",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_HAS_ID",
+        "to": "GET_CREATED_ADDRESS",
+        "label": "true",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_HAS_ID",
+        "to": "ADDRESS_DISPLAY",
+        "label": "false",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "GET_CREATED_ADDRESS",
+        "to": "VERIFY_ADDRESS_CREATE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "VERIFY_ADDRESS_CREATE",
+        "to": "STORE_ADDRESS_VERIFIED",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_ADDRESS_VERIFIED",
+        "to": "ADDRESS_DISPLAY",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "ADDRESS_DISPLAY",
+        "to": "END",
+        "label": "success",
+        "status": "skipped",
+        "reason": "Edge already exists."
+      }
+    ],
+    "message": "Edges updated."
+  }
+}
+
+2026-09-24T22:07:11.527Z do-prettify-workflow
+{
+  "ok": true,
+  "command": "do-prettify-workflow",
+  "result": {
+    "ok": true,
+    "orientation": "vertical",
+    "nodeCount": 56,
+    "noteCount": 0,
+    "message": "Workflow layout prettified."
+  }
+}

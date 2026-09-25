@@ -1,0 +1,1132 @@
+[
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_build_p1.cjs",
+    "sha256": "a72ffb0b8b7ae0d2a8373a137580d52a03b25eb0e36873165ffe5ef17bf59cfe",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_build_p2.cjs",
+    "sha256": "2b688fc95aa76b8b191664c4670e0054300c5dcc44ee95b4fc41cdb126c9f27d",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_build_p3.cjs",
+    "sha256": "06588c9d221b237466a59720bb64d62c4e9aa0571ce9f91a59c20bb038616299",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_build_p4_bo.cjs",
+    "sha256": "389d91594beb0d744953d5d29553bd47662eeb1e9851c9bdacbfb10e274610bb",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_build_p4_workflow.cjs",
+    "sha256": "24e25cdcfc790fae780656af121a979253e30e3c829f9e28c1d769a4e6f4d660",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_build_p5_bo.cjs",
+    "sha256": "082ef30308c49700b9367cea2523dd6634294b67538f8722023f4267935bace6",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_build_p5_workflow.cjs",
+    "sha256": "87c6b237263ccc49b9316936998b8a2f9a00896ebe69492dc2b1ba08f7a07f1a",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_complete_p5_tests.cjs",
+    "sha256": "1b6b17725c9d8ff930b36351c1b24f855a8fec64cb304d351f1ddc119a55690f",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_finish_p1.cjs",
+    "sha256": "55051d4c866f3781c1dc5a0e826f113ea803d23e44c34f4da12144177fc59d72",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_finish_p3.cjs",
+    "sha256": "480833f2cc77d3ee52e0abde39c60fd6bbe9043b1d401731ff5e5d1e9092950e",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_finish_p4_tests.cjs",
+    "sha256": "7afc30d0423b96de76d80c362ba4f6f3fc2f2eee213bd92a4c798b5f7ce60fc2",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_finish_p5_tests.cjs",
+    "sha256": "dec32aaece4897d7e7ddaff0caca7aa69d662ce5002717f7754db74cb231108c",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_fix_address_email.cjs",
+    "sha256": "eca87ec771428f9d93498079f411eb400c6ff0c4ebd9bf684dea57a594a544d3",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_fix_child_edit.cjs",
+    "sha256": "dd36edb5d9ce25db66a6e39e4751e977794d2345e18b20536ce91ee9e01becbc",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_fix_guidance.cjs",
+    "sha256": "7e89a7d763b6bb2fea2d3a4bd6dba8914866569898346883a1e2a48966f148bd",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_fix_read_render.cjs",
+    "sha256": "c04d9cc0c9638d2039c26dd012f25c25f2c3afa58ce914e3d8d537f3188f3070",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_normalize_intent.cjs",
+    "sha256": "95e40a854e8e31e8c65b09b00861182d7b4956841c1f827c7fc1f2b59e77d01f",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_p2_read_judges.cjs",
+    "sha256": "1ddb1873f0de9857d501f5e8a54c0708fe1026aec5504b38766cfb86c0f696bc",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_prepare_address_conversation.cjs",
+    "sha256": "2273ec51b7cbb0c58ac27ed187b3172b7e6a261b225b77186e18f4c6855f7fd5",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_prepare_contact_conversation.cjs",
+    "sha256": "9c6e5e76a2b12fdbfdbc662d09349f646998fba6ba6dc9b9703c1ad98c04af0c",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_prepare_p2_tests.cjs",
+    "sha256": "1638c75923ad4d6aa19589d92a82b066ad9181eddc72b67dfd09b6f9b3766f33",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_prepare_p3_tests.cjs",
+    "sha256": "e5303c5b1f8bbfc40c2ddd49fefdd87158dca523e638807258d0fc70ab0a9b27",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_prepare_p4_read_tests.cjs",
+    "sha256": "587b17d130ff0fb8d85c5556cdf902558821472fcd42532d714495f2c02c6fdd",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_prepare_p4_updates.cjs",
+    "sha256": "4ab6329702064ece6a85ac953601f60c8544dbb8455d8ba382d6ef9069904f44",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_prepare_p5_read_tests.cjs",
+    "sha256": "d5439bf1adafc662d6b19783131c223a57dfa591e7bd9c0e4029fbe6da388ae9",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_prepare_p5_updates.cjs",
+    "sha256": "ed3b1b7f68e131dda5e7326eedf93c155acae794a73ed0dabc9b58384273d712",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_prepare_site_conversation.cjs",
+    "sha256": "c2c3d0350dbf6d56ad1f9f7ffcbadf2eef51ea7fb9ff60af01408ba07f23e684",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_resume_p5_tests.cjs",
+    "sha256": "7499dd2bd6bafca152facb551ffd031a2a8dad9ff14e3edcd4c357875aebf118",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_validate_p3_tests.cjs",
+    "sha256": "9b697c6e11315cc557d96d7879f3a11e9545e863210c35e750c52137fac14dbe",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_validate_p4_tests.cjs",
+    "sha256": "26dfb7f1b86ea3241ef6485b915088cae0bd1cd0ed155f0ad5a45adf8a6e743e",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/xdx_validate_p5_tests.cjs",
+    "sha256": "f9ec3572ba6e5fb3e21cfdb8d184d33ab22e3909e77f67327bff9e55c6b463ba",
+    "reason": "Consumed non-idempotent authoring or test-orchestration scratch; no active consumer; authoritative artifacts, tests and evidence retained"
+  },
+  {
+    "path": ".debug/address-draft-conversation-conversation-test-instrumentation.json",
+    "sha256": "510b2f0087e19007d0549bcd24e320b6fd72d29c649e3bccc08f71ed4be3dc24",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/address-email-fix.json",
+    "sha256": "95d79d94e3cd271b3f3e0efb52463ad5e42e08acc4e57117769cc94ce616cde2",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/contact-bo-meta.json",
+    "sha256": "bd50b72571990258b0ec3456c2da6634609ab8a112077daed3e6ac9f125e3e1a",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/contact-draft-conversation-conversation-test-instrumentation.json",
+    "sha256": "0ad613d5b83bb4b073636646ccebd580ba16a38c6b188a2eb72d117906c4588a",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/contact-native-accepted.cjs",
+    "sha256": "e1ac9d7d6210bf9dbf2abd60673df079c650e7881c97156ac71f0c61eabca856",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p2-current-conversation-context.json",
+    "sha256": "a5940c33ba2f42a345b9262b5f44953209a8a93d8c48b625d17fd1fffe03f12d",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p2-draft-conversation.json",
+    "sha256": "5df1813203b64673f84c44532d36148c0b9a39020ba21dda0f5bc5f200222636",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p2-judge-init-display.json",
+    "sha256": "f7b700397c5a95e3ce61a20ddead2159e099b5f6696109facdc6a4f4f5da2254",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p2-judge-query.json",
+    "sha256": "550c8d8baf493cb44f4d61a11be8da34cc0da0bcae27204fe644445f5f381f0c",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p2-judge-supplier-query-detail.json",
+    "sha256": "d5ee343020c1a626da81198207c46c2cd4209001f09c1f31d117a80036152396",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p2-judge-supplier-query-guidance.json",
+    "sha256": "4031577e0535534b1525fdfa7bb159a69c8df52901b8c0c1becfc00e953babbf",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p2-normalize-intent.json",
+    "sha256": "cbe9639cfe385be542687f865a3077f463050382504c0f5148a1a91c99521862",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p2-update-init-display.json",
+    "sha256": "c21fcf987cd1a429835b2465409961bc880457f74d8a823418b07ac1c6fd6492",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p2-update-query.json",
+    "sha256": "5ea4817d33e95a5cca0c801dc880a932cb146aa1abf8b0343c75c8129da5f3d3",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p2-update-supplier-query-detail.json",
+    "sha256": "987602872f6c914eb356b0ed4aad5956e80f85872a998aa1a7063dcdde39d97f",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p2-update-supplier-query-guidance.json",
+    "sha256": "c22fdaa72d670021cd386be128ee55a9e8d1a2edb27c9bf23007adc7ccae73af",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-address-conversation.json",
+    "sha256": "52c059e224f1a6d1295dadf25281fc85cb58eb4c40e77157526c7706b55d6214",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-address-create-operation.json",
+    "sha256": "ad80c6ddb3b8ff3ecd164b5b6d7b4e3512076dad1ec9245416b2b7137a4fcc83",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-address-detail-operation.json",
+    "sha256": "6733344813840fadb53d3ae594d7a0bf920d4aa350930676e7f6a88753c8d256",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-address-list-operation.json",
+    "sha256": "0743edf17bfc0eb4014271ab1afe618948b9be5d633dcdbdc476081802ba66ca",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-address-query-detail.json",
+    "sha256": "39faf567041e5ea2582a2fd246db6a212ff31be406efe6f4a62bd143d77c88b1",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-address-query-list.json",
+    "sha256": "5573ffa12aac2ac1dfc878e61cf38d74dbc9384068b7207fececc17da2fe095f",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-args.json",
+    "sha256": "e8674045d52fa9c7dc0fc43aa992dd8348983641dc9365639f93ab81a779b8eb",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-conversation-context.json",
+    "sha256": "f38d0b5cb5047b4d83b1e90ca056185ff5f39906f7950f53277e2d92d94a2492",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-display-context.json",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-finish.json",
+    "sha256": "bb0db7f1bae51758e1c13650cf931928a30d833c13651e6a4b0d84d6b0da9695",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-focused-plan.json",
+    "sha256": "9d7ca4e203136a42d6a11ce7148add1aa56c184e5778dba203a292000d883ab1",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-guidance-repair.cjs",
+    "sha256": "df18b9ede2019030ed2d2fa3815d3e6c0a77d8963fe7d083e390445d6a676cbc",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-guidance-repair.json",
+    "sha256": "e4b45d18496cccd4039b53784339cd3166feddc6512dc290a39cfc20a64ffe0d",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-meta.json",
+    "sha256": "c5c6d7168a098d5aa5fe0d50eb699410da8224d4fa2a5d27abebc126f5ac1745",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-reviewed-address-judges.cjs",
+    "sha256": "2599ed41f57b12e4fb5ee17974fca55c88bd409cc2f8d9c4ae68a39b14f226d5",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-reviewed-supplier-judges.cjs",
+    "sha256": "65177cf42d6ef36b7121844e941cb82e28a761628c17a69c9275d28a59e44e57",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-update-init-display.json",
+    "sha256": "5be531455baf29a8b040f838584d1f0cf40aeaa32099b7ce65ec8000507eef48",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-update-query.json",
+    "sha256": "ebc1f01f9651f38dd74ab0a1d36adc4d4fae08d1462baea8d0d828ae760b1f13",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-update-supplier-draft-conversation.json",
+    "sha256": "47a28670fd301a701f1ee3f34238a6f5d0a29018c1ef4b9f526c77462fa12b20",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-update-supplier-query-detail.json",
+    "sha256": "2089ee85544594a2cf69fa2c8f26ef9bbae433ace06a30c3f02bbaaa62d6a05a",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p3-update-supplier-query-guidance.json",
+    "sha256": "c2089c442829584d7efa6d1b7a35b7b1b368ee633f1c2dd9c60c392ff499749c",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-acceptance.cjs",
+    "sha256": "0af42256121f24de97889c3d768bd50ca6fe30e9366d811bf5f091aa0447abaf",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-arg.json",
+    "sha256": "368dfe1ca4f9688b1f131b10e184ece3e5db4c98c5378af7773437ad0780cd47",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-blocked-checkpoint.cjs",
+    "sha256": "581401174be523c99a728f012cccc09729eea12373f7bd5565c61163cf67f089",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-bu-operation.json",
+    "sha256": "d716ab4c244420a5146841b05220785ad3ab07f5c35cf7a131839c57917601b4",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-checkpoint.cjs",
+    "sha256": "1ebb60af63d8ac8d167c43a509b5445cfe86069992bd9e27d5702b291a7b8b65",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-conversation-context.json",
+    "sha256": "638ee0cf887d13af42facaec60effa084bd40021ec4bbc69fb8ac2f1ab54cf0a",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-current-conversation-context.json",
+    "sha256": "f78e7cd59bbebe4fdde46b689790239ed95281ecd0fd4c4cddc9ffc6c9947f9d",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-field-edit-repair.cjs",
+    "sha256": "453c0af3107d16c946eba98d1835ff0f049f2c28c5c922dff8aa566d167b4fa7",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-field-edit-repair.json",
+    "sha256": "1ec676071e3ac3b0936a5d74872b753c8c8b78ab0cfcc82e1225421e9c6f26e9",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-final-address-draft-conversation.json",
+    "sha256": "173a42b569c383fc96cff6ef67173cb7cf2c6344f19387f8ed78e40c53ba6368",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-final-supplier-draft-conversation.json",
+    "sha256": "e477927d7e5eb0fa932e373ba1a7fff22df6c257fe6fa868667305d2c7a826ed",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-initial-read-judges.cjs",
+    "sha256": "7c8e0fa616719a2efbac7f093d17e2ed392eb5a8fea56a62ab863e8a29e4f187",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-meta.json",
+    "sha256": "b1ac2bcfeff57323e2db768ea6f483e66f10a79ae99a053644f74f4d899c918c",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-reviewed-judges.cjs",
+    "sha256": "3b92448dd414914b7074c1087c5b68c772ce603209163fc63ebba893bdd39450",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-site-conversation-current.json",
+    "sha256": "149fa56ab4ab2b9280089996b39e5833ce0736e840d983226cc454ca9adc7434",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-site-conversation.json",
+    "sha256": "5d969b17c7d54fa6596d06beae0fbf761b633ef70a5cdbe8de801e33f3930b7c",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-site-query-detail.json",
+    "sha256": "6a0c4bb55c944bc2a3b5fa0b718014e898cc1d9b9eea2d175b229919a6d4cb3d",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-site-query-list.json",
+    "sha256": "4d70b5396408b2adf947a4900c7952ded4d808486ba8077f67dd4eb256fb1748",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-update-address-draft-conversation.json",
+    "sha256": "173a42b569c383fc96cff6ef67173cb7cf2c6344f19387f8ed78e40c53ba6368",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-update-address-query-detail.json",
+    "sha256": "bc09546e886bddc57f262deba49242a2a7d951e631664815d1a847cdb2229201",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-update-address-query-list.json",
+    "sha256": "71147ab52e0fd912e693f0f3d4b1ea40af9cc157028b925867305f40bf43eec0",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-update-init-display.json",
+    "sha256": "f8faea97d1e24bad9501d9de153f98787a011b5267007930789197ea9d22675d",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-update-query.json",
+    "sha256": "73541250485a1aa835829459f3a00c2b89e7b159f06dd29fdbdadbf26d6e7719",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-update-supplier-draft-conversation.json",
+    "sha256": "e477927d7e5eb0fa932e373ba1a7fff22df6c257fe6fa868667305d2c7a826ed",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-update-supplier-query-detail.json",
+    "sha256": "41e1964eedef7173c04feeb6b16b49ca230d3dbd1553e597e28afec280b8bd70",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-update-supplier-query-guidance.json",
+    "sha256": "e8d582b9c5dfd1339139b880510f8075cebe738a341835066db7f8241297c91f",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p4-wf-arg.json",
+    "sha256": "974cad6f8b795341ba5372f83a5dc038d3bd4a6811287b029ce16a0e174d2d30",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-arg.json",
+    "sha256": "1dffa3bfd83b9c6de461816df3bea81675e05e88025b15ebeced956304ad5ac6",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-checkpoint.cjs",
+    "sha256": "8e55392fd82255f2d2e2cca5bc1353a97a081d4fd3f423dd7513cb108b88b790",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-contact-conversation.json",
+    "sha256": "73db13742f940df0394e4c33bb8907a54f967999133a35ecdaa607450e6189b9",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-contact-display-context.json",
+    "sha256": "b154e6adc23554ba656f5408b6445e792bd1d9ed10377d876798d8393d1c3d99",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-contact-extract-context.json",
+    "sha256": "fbb2a8c9b48ae40f8ef1c2be586e26db51efb6267d830c9f5daf0e6544a2667e",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-contact-query-detail.json",
+    "sha256": "b5c72a99feb596aea7a0027d2eb69ad5fcf396aa1b4d662c3ea119bcf00e63dd",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-contact-query-list.json",
+    "sha256": "241748fb4f26509bbe32426ee3835ae2d4adc146943462f1163d129945e6bab4",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-conversation-context.json",
+    "sha256": "095d59d20f13e10c681edf3f481e79ba674cfe91fae3aa27673922dceb3720b0",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-edit-PREPARE_ADDRESS.json",
+    "sha256": "8c0e98db2ebf1726369d2b4f1dccbe16a7c1c5e2b54b74199d9552791f0a2b56",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-edit-PREPARE_CONTACT.json",
+    "sha256": "5a07a6c39cd13daede85aba9894ca9abbd8ef9622a10a55d87d547c6cb9fb56c",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-edit-PREPARE_SITE.json",
+    "sha256": "6ac877c2c95bbc6371382fcb1028194d6f6655d192e1cb7cea04550c309e2382",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-edit-PREPARE_TRANSACTION.json",
+    "sha256": "4b65d5faee709fff486610b1fa91018f9526ed82e729f4599ff7975384756281",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-final-address-draft-conversation.json",
+    "sha256": "790099b0d1138787017687cb98ec3f3f2c8d83552a7998ca627af0dc427cb6a1",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-final-site-draft-conversation.json",
+    "sha256": "48d9890a7c5ac0b1fb46c1a765229595c42627702bc6d846c0e6850547d19fc7",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-final-supplier-draft-conversation.json",
+    "sha256": "fa2fcaa68c7d16cf53f4d8b11ce3e340e1c0a9ba5fe8b962470bfaa72274fc08",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-meta.json",
+    "sha256": "c5c6d7168a098d5aa5fe0d50eb699410da8224d4fa2a5d27abebc126f5ac1745",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-order.cjs",
+    "sha256": "0f71cad25f2c7fcbefa821b96f6ff7475770d8aa4fd7496323f0a95499dad518",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-preparation.cjs",
+    "sha256": "d2fdaa8459df693f4a9837437d5b85f9966dfa5fbef03d0b5285ecbb6880333d",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-terminal-order.cjs",
+    "sha256": "de65a3a8b769ce02eb85c6c582e2a92d5334cbedc1b4f2c27f58f278801322f4",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-update-address-draft-conversation.json",
+    "sha256": "b93abf0dad35e9cc96a9f12032226d219e151fb280dc99bf4b735ebfb81221c6",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-update-address-query-detail.json",
+    "sha256": "d4ed18fe2b163abab8971b89b1b49d107d6d352aa416faa22a4edca56ead192a",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-update-address-query-list.json",
+    "sha256": "b610be7e924c055bcc9635409ef1527972be71e250b55eb0d33002a9fdfe8bde",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-update-init-display.json",
+    "sha256": "674c675f66cd9131963518df9b91faade34c7cd10dc8ed6ec1afccad3d08c31f",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-update-query.json",
+    "sha256": "da013e21e42f9e87663afa0886ff2f537f6a629501649e12986e51f667ada2c0",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-update-site-draft-conversation.json",
+    "sha256": "39ecb2c90b6e09821d6044045532fa62980cfd824e3d296353648ea10560e749",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-update-site-query-detail.json",
+    "sha256": "a5b019605e5a4bb24e50aaf411a206350c450325cd1cf3ade1d47b75708a09ab",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-update-site-query-list.json",
+    "sha256": "56cf67ae6f1e458cbfdd9afcec40f50b518df590d2df263aa5634f25467c18c3",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-update-supplier-draft-conversation.json",
+    "sha256": "18f570f9813e853a93bda618acdfa642488a3016629187691d91efc929c18452",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-update-supplier-query-detail.json",
+    "sha256": "c07b3509da75537f50df7023a99ab743cfaa8e4740fff810df5f85f8bd21657b",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-update-supplier-query-guidance.json",
+    "sha256": "f0b4f3876993d1c117f2349fd4d8a5881458990e51ab8cbd37adf833e7c9e445",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p5-wf-arg.json",
+    "sha256": "d8c1a09d795c13cd7c4e8760eca905a44c990dffd1b4187c99aabc21cd5d5e3a",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p6-app-definition.json",
+    "sha256": "b11509b6ec3228fe09ade88b58822accc098c07ac2ea48688abd1a8599d7b0c8",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p6-app-plan-current.json",
+    "sha256": "72271e6132debeb3786008af9d21479cc91b9f17a50fb1b580daabbfc20a9923",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p6-app-plan.json",
+    "sha256": "622a472b783045863208a00b8e111249662340535d55f0e0c46fc09d72755599",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/p6-supplier-detail-terminal.json",
+    "sha256": "5f1bfddd7b0e0b8b74103662b77992cda9e569a1f3f93d5411d005f0656a0b2d",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/prepare-contact-conversation.cjs",
+    "sha256": "2299cd86a16747602fbdf9e77ba0fc93d41cc7bee8068c22147181d5c0f760d7",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/prepare-p5-bo.cjs",
+    "sha256": "91a6f2ff2edda982c7b8e6ed5376b29f7eac3f9c51dbb776b5966c5fa4b8bf0b",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/prepare-p5-checks.cjs",
+    "sha256": "48cc7acf41917fcb1f399e9adf1c01ac3b38ab8bf1c2836e9c32bb246bf95148",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/repair-p5-guidance-assertion.cjs",
+    "sha256": "705387dfe99d3122bf48e9ec08b30ebb7cbfa35ce1a30307def4bbfb09acdd9a",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/resolve-contact-schemas.cjs",
+    "sha256": "085193c5a1a53de1d498ac9178f11015410e702a10cba0ad9f9205ae6b85cdf4",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/resume-p4.cjs",
+    "sha256": "e751c5d59340ca483e956e958e5c96956c111df52b53cb6ab144645ac9ffb2cd",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/site-draft-conversation-conversation-test-instrumentation.json",
+    "sha256": "6d9bbefc2977c816dca7b9c296f67b0b4513b9bc0ce33aef6cccc42f01ca2123",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/supplier-draft-conversation-conversation-test-instrumentation.json",
+    "sha256": "52e9bfe3b8add99048b430960df98a91fb50f54f158430ccef12f443098d5c3d",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_create_has_id_boolean.json",
+    "sha256": "39b9c5c751b3c9b06c5aa6d6b228a9a0c87d7b53fde8066e842ff72533746d6f",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_create_supplier_operation.json",
+    "sha256": "d5ce09c3c7902ffccf5d21ae3cc3cd7dc557c631524a5bba39e478e29b6bd356",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_current_init_judge_context.json",
+    "sha256": "126011a04504c6cccd5e0daca7ca25712b11b6a41e0c49f4fa7f22d30af7939b",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_detail_definition.json",
+    "sha256": "58a215075863531f8cee73e8a277fbdd16deb675de9c163b243331558cf7651e",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_empty_post_example.json",
+    "sha256": "134c369539ee808df4d7d7e47cfb3eacf44c3475728435a8026de41db44c5e22",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_get_supplier_operation.json",
+    "sha256": "64d8fb5d5547dc38a72f05f7d3f537cc1183ddfa458f579a6b5f012a82ead3b9",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_guidance_definition.json",
+    "sha256": "2b20156a5b9a31139ecd209623bb5092a4d28b5f5e66121339f8e1b1f23fb228",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_guidance_output.json",
+    "sha256": "4802237d2ee05903afe38d10c5ce436bc5649f5ea96f4f2a508d9b643542e7e5",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_guidance_PREPARE_READ_metadata-patch.json",
+    "sha256": "4d3346a21604b9f35952979e28d0f30213b8681225aa6845daec6554efbc1da2",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_guidance_READ_GUIDANCE_inputs-patch.json",
+    "sha256": "54ff35157e02413053a44dba78fe1e4d42267daf936ed3c4c2f670762ab61016",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_list_condition.json",
+    "sha256": "2dfa045b6c86842670d10c7ad6f943f0f55b36d9b5a00c821588c0a8f58e8ce3",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_observed_init_update.json",
+    "sha256": "43f2adaea804fa3e4d84952557a7180c938abc6baf3e9ce2cb751acb32e9ae5a",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p1_sync_next.json",
+    "sha256": "12de582ecb57090b96fd2e164aa58eb8a13ed61c114add37c8dbdeaca0ccc8c7",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p1_sync_primary.json",
+    "sha256": "81f8f8364723c92378da2f04a386c02e2ef710113c6e6a334bd39613dc31d646",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_AUTHORIZE_SUPPLIER_WRITE_meta.json",
+    "sha256": "7de4a6f6f347567f92aa06b7deeeaf1fccf6453cb3c5a20f5cc54b23db62242b",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_CAPTURE_SUPPLIER_CREATE_meta.json",
+    "sha256": "c5bd394676ed4e2d179c5b6232d0bed0fbc330f0435236edaed7b3c46554bcd4",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_CHECK_SUPPLIER_DUPLICATE_meta.json",
+    "sha256": "345d5dd8a81eef6f26447c8763d773ca07653b63ae30a4758d3f4e401d166ac5",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_CREATE_SUPPLIER_meta.json",
+    "sha256": "87920844bb0d40be8f9f6d5b678c17fc597bba834066481cac7f1d83ea7f7d27",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_extract_schema.json",
+    "sha256": "61a85aecd5c1d1722c0cf6dae72e9e1719f74f1df72b9319a794b4870f129d39",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_GET_CREATED_SUPPLIER_meta.json",
+    "sha256": "0b730b56a469b2825006a8c2b594f92358811f88e93b80701eb766bc6a89d1a1",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_header_Content-Type.json",
+    "sha256": "77580b1642ce3fee13ed2f3d5ba91ccaa600e042fe56cc9fb8c08f0cbe86f3f3",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_header_REST-Framework-Version.json",
+    "sha256": "b5ea279b5a7cb22b6e980ec5ef49b2a83d0f2dc074017e6c658178b64595706b",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_header_Upsert-Mode.json",
+    "sha256": "bc49cec5ff19c3fc8148bc2070df88b6a19366773a264f985a3960f809bb81d8",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_name_extract_fix.json",
+    "sha256": "482f29260e1d26174daccec4fb4f0116bf24808ee41a0aa3c522cfbb3b4acccc",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_param_BusinessRelationship.json",
+    "sha256": "8d3ab34195a75be0659c35e88409fc5b73c027a94fa05a32415d080b333a38f6",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_param_Supplier.json",
+    "sha256": "d7fc2ef33002000bfc83cae70b02faea39b9917e5ff42169b054537bbf8e1cad",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_param_TaxOrganizationType.json",
+    "sha256": "f3ab357142fbd96411541c7de0fe9912e134faa2e7f92ff0db4696c7b79db57b",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_post_body.json",
+    "sha256": "44018a5e2a9fd24df2ac9dc6d42039855b314afad4a5feb18cf283d819a97553",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_post_response.json",
+    "sha256": "f19b197dcaf896631882397053fc4168d6085fe62e8d07d3ef0bd9cd8abe06e6",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_PREPARE_TRANSACTION_meta.json",
+    "sha256": "4428cf5442ad7d3b9d2462c5ce7b29b7901e93cc390465baa95f09bf3a5b629e",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_SUPPLIER_TRANSACTION_DISPLAY_meta.json",
+    "sha256": "1589d224ab2021a33a3ba2aa4321549053a0f02fc59736288e589ed16ddc5bbd",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_tx_widget.json",
+    "sha256": "5fa851f998b1b4e24c692e9cb4b70c861415f7cccf5d7811f07c1e0495f8d478",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_p2_VERIFY_SUPPLIER_CREATE_meta.json",
+    "sha256": "a4673b06209d30a894fb65b080cadfd57775d5ec9621507d24dc80cdaabbee5d",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_query_definition.json",
+    "sha256": "d21a1b09098c57e3fc58b928b7c42645ee4a32f7b8c7363678200f7d6551f81f",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_query_judge_context.json",
+    "sha256": "00305070d7171b6a4382425a257ae4aea6aea0c7ca15c3d16d10650adbd23bcc",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_render_INIT_DISPLAY_inputs-patch.json",
+    "sha256": "0774696036d60acf3a13dec5841835f32f57c43197b56dddccfbb91a8076df19",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_render_SHAPE_DETAIL_metadata-patch.json",
+    "sha256": "b59114023bdae3fe2f37aee3ec3b8de58b8950120fa4ccee7c2f4c104011004f",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_render_SHAPE_SUPPLIERS_metadata-patch.json",
+    "sha256": "f507a3be90101352cd0a05f3ff0b07e3ef1a79dc45dced3f6bfc14761decd801",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_render_SUPPLIER_READ_DISPLAY_inputs-patch.json",
+    "sha256": "0774696036d60acf3a13dec5841835f32f57c43197b56dddccfbb91a8076df19",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": ".debug/xdx_update_init_definition.json",
+    "sha256": "92661730687aa6a0204bbef45f1be00abb865f2faae6d38f3ba41441b205577a",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_DISPLAY_STAGE_inputs.json",
+    "sha256": "29d7286e9835d1686fae87163de47e685ea4a6b79423c6c2cc66b01c8e4d0255",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_EXTRACT_READ_inputs.json",
+    "sha256": "373b27a465f26ba8fb1d213748891b9c381d3fd8b55b64b17e87c34cd4726d63",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_EXTRACT_READ_meta.json",
+    "sha256": "1589d224ab2021a33a3ba2aa4321549053a0f02fc59736288e589ed16ddc5bbd",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_EXTRACT_READ_output-specification.json",
+    "sha256": "aa13ea6276c454c4d27804e2acb3a9b47dc24a44f75fcbe1acb7be525992fbaf",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_FETCH_SUPPLIERS_inputs.json",
+    "sha256": "88468d3447db82d685b4329698af01e6445e43d99d37d0db09ae65c9a49e38a1",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_FETCH_SUPPLIERS_meta.json",
+    "sha256": "345d5dd8a81eef6f26447c8763d773ca07653b63ae30a4758d3f4e401d166ac5",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_INIT_DISPLAY_ai-app-output-specification.json",
+    "sha256": "18adc06d7fc457e39b25dcb9be8109dac433b9af712a58514c42158303b61276",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_INIT_DISPLAY_inputs.json",
+    "sha256": "9e581b658e59920b3774150383057ffa51030652f79b065a6bb810410ec843ff",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_INIT_DISPLAY_meta.json",
+    "sha256": "1589d224ab2021a33a3ba2aa4321549053a0f02fc59736288e589ed16ddc5bbd",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_INIT_REQUEST_meta.json",
+    "sha256": "cdaedfd936b3d9ff4ed58e5043770191192a06e2ce47b514df0fb70bed4940e4",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_param_limit.json",
+    "sha256": "72d0e6bd4785aa47912da8344ff67449bc67185aabd0ca9d6c1c507c3da107a0",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_param_offset.json",
+    "sha256": "4bd535088a87ddd661c3d570ac4cc882e6488d1d7853b8c6687213a3b55dce4d",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_param_q.json",
+    "sha256": "da6d75e75f2770f89eb71ae23cbd0306d70d8097e38e9ff3475431ac77f2724e",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_PREPARE_READ_meta.json",
+    "sha256": "892a6c35a695ef98ce33cc62c6a10ced890f3dd1ae3a55ed0614aa92348c913b",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_prepare_shared.json",
+    "sha256": "234a477635bfb1d51643df3b6cb5cf4b08405d081bb5e1c2da172d070ac587af",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_READ_ALLOWED_inputs.json",
+    "sha256": "cd09aa15ab89d1683c13c93937e2a1e8f6fa9a2c90146e6c86062f886e03b5db",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_READ_GUIDANCE_inputs.json",
+    "sha256": "85e8dd462f1355635c91c5f10d1dac29c0842f2e0943ccd05509ef11b3cdc719",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_READ_GUIDANCE_meta.json",
+    "sha256": "1589d224ab2021a33a3ba2aa4321549053a0f02fc59736288e589ed16ddc5bbd",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_SHAPE_SUPPLIERS_meta.json",
+    "sha256": "223397401c1c91985dfd5fa76c093d976cb82151997fe2e168730c503b323e34",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_shared_entry.json",
+    "sha256": "306610cdd2218c52799c138f9b71629862fda6957f8bb01e1fb1bf39a2ce3242",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_STAGE_ENTRY_inputs.json",
+    "sha256": "29d7286e9835d1686fae87163de47e685ea4a6b79423c6c2cc66b01c8e4d0255",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_SUPPLIER_READ_DISPLAY_ai-app-output-specification.json",
+    "sha256": "18adc06d7fc457e39b25dcb9be8109dac433b9af712a58514c42158303b61276",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_SUPPLIER_READ_DISPLAY_inputs.json",
+    "sha256": "c88bfc7e89a65a61888467d9a4261842c26fce1db741d20f93a05bf3936ea2ce",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_SUPPLIER_READ_DISPLAY_meta.json",
+    "sha256": "1589d224ab2021a33a3ba2aa4321549053a0f02fc59736288e589ed16ddc5bbd",
+    "reason": "Consumed task-owned CLI argument/context/instrumentation scratch; canonical source, tests and final/failure receipts retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_app_agent.json",
+    "sha256": "7d735e0707a6a51aa4a907175d574d5bd1376ee2ee6e43a16fb339a14cf461b2",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_app_config.json",
+    "sha256": "153d8bcf3d24b875b00f7e60e20d2f61e9bf8654dbfc8108026d41ff0484d0ab",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_app_layout.json",
+    "sha256": "2b889de5d87018a84fd411cb1137cfd2173c26bc2fa325097ac0bcb994967d6e",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_display_stage_direct.json",
+    "sha256": "1d3375fd9808afc44cb258211dabdb8643226e829ac5dce76057ca7707814015",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_entry_condition.json",
+    "sha256": "6f4b32ac62093c72cb93ee1c73a1d4ac99584009363c33cbbc1f1fca1e04e1e3",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_entry_edges.json",
+    "sha256": "095cf5541f0da080cddae7d06525a3f18308baa126c5af8262964ff5ece68649",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_init_test_definition.json",
+    "sha256": "653a6470a4cad6502ec645fca7fd416495dc9736203fd38ee23be525ad5ed118",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_list_guidance.json",
+    "sha256": "745d224fd5bb1ed7e04fa8bb3ca240ccd8a5bda3315aef49e93f205d69eecf75",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_detail_edges.json",
+    "sha256": "5c1dbf3dd4e37dc26e3b8782ca83a913be4ada9c9dbbcfb99392b60e5323d6a1",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_detail_path.json",
+    "sha256": "75486cbbae26f463ef79682d85f027dedef961dd2da69039a46bb534a12b3fa5",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_edges.json",
+    "sha256": "ba8d0bb76d7b16dd2a778174c443ce3ceb415c83b07cdb44f522792f09b11034",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_EXTRACT_READ_inputs.json",
+    "sha256": "45c424f01860de4831e463cce3b85b225ab9eb1467b9b438f21c6b13b1facdbf",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_FETCH_SUPPLIER_DETAIL_inputs.json",
+    "sha256": "3cf1c8cfb6704276067c828a2e3818890104fc46474ad7fd8000dd1d7bab3667",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_FETCH_SUPPLIER_DETAIL_meta.json",
+    "sha256": "0b730b56a469b2825006a8c2b594f92358811f88e93b80701eb766bc6a89d1a1",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_INIT_DISPLAY_inputs.json",
+    "sha256": "32b5889a8a647dd251051266fcf3be41f6ad0d5c3ee7719bb7171d5fc5bf9469",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_IS_DETAIL_inputs.json",
+    "sha256": "c75c61866c3555dfed1eea6db8cb1c629c964a9f092b4e40611c79b463a50742",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_PREPARE_READ_meta.json",
+    "sha256": "4cf2e64bccd81ef0176ff0e991b0ee60e60ebfc5bfdd74f1ef2c2380b5c93f4a",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_SHAPE_DETAIL_meta.json",
+    "sha256": "5a923899be842e9f2f99f51c39a7e17c195ae4a0466cf158ac75f5ee18bf586c",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_SHAPE_SUPPLIERS_meta.json",
+    "sha256": "c460223a29a871b866b3682c4ba2184b2fb7b1d20ba8a9851d84d2b66ff1977a",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_STORE_DETAIL_STATE_inputs.json",
+    "sha256": "207f926d7e584eccedb7d73209371350a87770e69927868ff6b185402303fdd4",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_STORE_LIST_STATE_inputs.json",
+    "sha256": "e069bdca464b91d73efad7f590212ccb51f6d747ae79a1ce23aa692847351283",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_p1_SUPPLIER_READ_DISPLAY_inputs.json",
+    "sha256": "32b5889a8a647dd251051266fcf3be41f6ad0d5c3ee7719bb7171d5fc5bf9469",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_retained_supplier_response_args.json",
+    "sha256": "322abd5e24bf1878c37ef469d51fe77813d4697ec1e9a4d1d38aa6df0c41a89f",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260924/evidence/xdx_supplier_list_patch.json",
+    "sha256": "8d43182d7560ca07bdce20cb5d8eab1d4711a2e58067ab0be9fe01b921ce00f3",
+    "reason": "Consumed initial authoring arguments; normalized source and runtime acceptance retained"
+  }
+]

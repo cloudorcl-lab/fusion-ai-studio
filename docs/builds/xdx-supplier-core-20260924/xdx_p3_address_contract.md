@@ -1,0 +1,11 @@
+# P3 address contract preparation
+
+Parent fixture: current accepted SupplierId300000333814409, SupplierNumber1506. Never copy a historical parent ID. Every address read/create/verification binds the selected supplier and validates its parent GET first. Supplier selection and address selection must remain distinct.
+
+Reviewed current [Oracle 26C address POST](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html) on 2026-09-24: CountryCode and Email remain schema-required. Include both; no omission experiment is needed. CountryCode length2; AddressName and AddressLine1 length240; City, State, PostalCode length60; Email length320. Ordering flag is boolean. Existing tenant evidence requires at least one purpose, so use ordering=true only; omit remitto and bidding flags.
+
+Intended minimal payload: AddressName, CountryCode, AddressLine1, City, State, PostalCode, Email, AddressPurposeOrderingFlag. Name distinctive within this supplier. Email uses example.invalid, never an operational destination. Physical reference may reuse the previously authorized Lee test basis, explicitly shown in native preparation: 5000 CARTER DR., LOS ANGELES, CA90032, US, retained in docs/builds/xdx-supplier-information/live-post/create-address.json. User's instruction preserves prior authorization. New supplier/address parent is always the current fixture, not Lee. No hidden defaults.
+
+Omit generated SupplierAddressId and AddressPartyNumber, plus all optional fields and excluded collections. Record generated values from the accepted response. Query list/detail and create-confirmation GET are separate acceptance actions. Include every submitted field plus parent identity in native review and verification. Validate exact-name duplicate under this parent; API errors do not mean empty data.
+
+Architecture: extend the proven native terminating workflow with parent-scoped address reads and deterministic draft/revision/approval/attempt guards. Preserve supplier routes. Real parent GET precedes dependent access; independent same-parent address item GET confirms all submitted values. One accepted POST only. No child artifact mutation until supplier slice acceptance is reconciled.

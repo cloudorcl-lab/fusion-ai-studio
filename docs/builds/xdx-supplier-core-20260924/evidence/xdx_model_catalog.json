@@ -1,0 +1,308 @@
+{
+  "ok": true,
+  "command": "list-workflow-model-configurations",
+  "result": {
+    "items": [
+      {
+        "id": "100002240134854",
+        "model": "OPEN_AI_GPT_4_1_MINI",
+        "provider": "CERT_PREMIUM",
+        "modelTierCode": "PREMIUM",
+        "modelTierName": "Premium LLM",
+        "isDefault": true,
+        "name": "GPT-4.1 Mini (Premium)",
+        "description": "Smaller, faster version of GPT-4.1",
+        "modelConfigurationCode": "ORA_LLM_PREMIUM",
+        "parameterDefinitions": [
+          {
+            "key": "k",
+            "name": "K",
+            "type": "Integer",
+            "range": [
+              0,
+              1
+            ],
+            "default": 0
+          },
+          {
+            "key": "max_tokens",
+            "name": "Max Tokens",
+            "type": "Integer",
+            "range": [
+              0,
+              32000
+            ],
+            "default": 32000
+          },
+          {
+            "key": "p",
+            "name": "Top P",
+            "type": "Float",
+            "range": [
+              0,
+              1
+            ],
+            "default": 0.75
+          }
+        ]
+      },
+      {
+        "id": "100002143427761",
+        "model": "OCI_GPT_5_MINI",
+        "provider": "CERT_PREMIUM",
+        "modelTierCode": "PREMIUM",
+        "modelTierName": "Premium LLM",
+        "isDefault": false,
+        "name": "GPT-5 Mini (Premium)",
+        "description": "Near-frontier intelligence for cost sensitive, low latency, high volume workloads",
+        "modelConfigurationCode": "ORA_MODEL_CONFIG_PREMIUM_OPEN_AI_GPT_4_1_MINI",
+        "parameterDefinitions": [
+          {
+            "key": "k",
+            "name": "K",
+            "type": "Integer",
+            "range": [
+              0,
+              1
+            ],
+            "default": 0
+          },
+          {
+            "key": "max_completion_tokens",
+            "name": "Max Tokens",
+            "type": "Integer",
+            "range": [
+              0,
+              32000
+            ],
+            "default": 32000
+          },
+          {
+            "key": "reasoning_effort",
+            "name": "Reasoning Effort",
+            "type": "String",
+            "default": "low",
+            "lov": [
+              {
+                "name": "Minimal",
+                "value": "minimal"
+              },
+              {
+                "name": "Low",
+                "value": "low"
+              },
+              {
+                "name": "Medium",
+                "value": "medium"
+              },
+              {
+                "name": "High",
+                "value": "high"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": null,
+        "model": "OCI_GPT_5_6_LUNA",
+        "provider": "CERT_PREMIUM",
+        "modelTierCode": "PREMIUM",
+        "modelTierName": "",
+        "isDefault": false,
+        "name": "GPT-5.6 Luna (Premium)",
+        "description": "OpenAI's small, fast, and cost-efficient 'nano-tier' model, optimized for high-volume, low-latency tasks like classification, text extraction, and lightweight agentic automation.",
+        "modelConfigurationCode": "ORA_MODEL_GPT_5_6_LUNA",
+        "parameterDefinitions": [
+          {
+            "key": "max_completion_tokens",
+            "name": "Max Completion Tokens",
+            "type": "Integer",
+            "range": [
+              0,
+              32000
+            ],
+            "default": 32000
+          },
+          {
+            "key": "reasoning_effort",
+            "name": "Reasoning Effort",
+            "type": "String",
+            "default": "medium",
+            "lov": [
+              {
+                "name": "None",
+                "value": "none"
+              },
+              {
+                "name": "Minimal",
+                "value": "minimal"
+              },
+              {
+                "name": "Low",
+                "value": "low"
+              },
+              {
+                "name": "Medium",
+                "value": "medium"
+              },
+              {
+                "name": "High",
+                "value": "high"
+              },
+              {
+                "name": "Extra High",
+                "value": "xhigh"
+              }
+            ]
+          },
+          {
+            "key": "verbosity",
+            "name": "Verbosity",
+            "type": "String",
+            "default": "medium",
+            "lov": [
+              {
+                "name": "Low",
+                "value": "low"
+              },
+              {
+                "name": "Medium",
+                "value": "medium"
+              },
+              {
+                "name": "High",
+                "value": "high"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "100002143427760",
+        "model": "ORA_LLM_MODEL_GPT_OSS_120B",
+        "provider": "CERT_BASIC",
+        "modelTierCode": "BASIC",
+        "modelTierName": "Basic LLM",
+        "isDefault": false,
+        "name": "GPT OSS 120B (Basic)",
+        "description": "Most powerful open-weight model, fits into an H100 GPU",
+        "modelConfigurationCode": "ORA_LLM_MODEL_PROVIDER_CERT_BASIC_LLAMA_3_3_70B",
+        "parameterDefinitions": [
+          {
+            "key": "k",
+            "name": "K",
+            "type": "Integer",
+            "range": [
+              0,
+              100
+            ],
+            "default": 0
+          },
+          {
+            "key": "max_tokens",
+            "name": "Max Tokens",
+            "type": "Integer",
+            "range": [
+              0,
+              32000
+            ],
+            "default": 32000
+          },
+          {
+            "key": "p",
+            "name": "Top P",
+            "type": "Float",
+            "range": [
+              0,
+              1
+            ],
+            "default": 0.75
+          },
+          {
+            "key": "temperature",
+            "name": "Temperature",
+            "type": "Float",
+            "range": [
+              0,
+              1
+            ],
+            "default": 0.01
+          },
+          {
+            "key": "reasoning_effort",
+            "name": "Reasoning Effort",
+            "type": "String",
+            "default": "low",
+            "lov": [
+              {
+                "name": "Low",
+                "value": "low"
+              },
+              {
+                "name": "Medium",
+                "value": "medium"
+              },
+              {
+                "name": "High",
+                "value": "high"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": null,
+        "model": "OCI_GPT_4O_MINI_TRANSCRIBE",
+        "provider": "CERT_PREMIUM",
+        "modelTierCode": "PREMIUM",
+        "modelTierName": "Premium LLM",
+        "isDefault": false,
+        "name": "GPT-4o Mini Transcribe (Premium)",
+        "description": "Speech-to-text model powered by GPT-4o mini",
+        "modelConfigurationCode": "ORA_LLM_MODEL_GPT_4O_MINI_TRANSCRIBE",
+        "parameterDefinitions": []
+      },
+      {
+        "id": null,
+        "model": "OCI_GPT_4O_MINI_TTS",
+        "provider": "CERT_PREMIUM",
+        "modelTierCode": "PREMIUM",
+        "modelTierName": "Premium LLM",
+        "isDefault": false,
+        "name": "GPT-4o Mini TTS (Premium)",
+        "description": "Text-to-speech model powered by GPT-4o mini",
+        "modelConfigurationCode": "ORA_LLM_MODEL_GPT_4O_MINI_TTS",
+        "parameterDefinitions": []
+      },
+      {
+        "id": null,
+        "model": "OCI_GPT_4O_TRANSCRIBE",
+        "provider": "CERT_PREMIUM",
+        "modelTierCode": "PREMIUM",
+        "modelTierName": "Premium LLM",
+        "isDefault": false,
+        "name": "GPT-4o Transcribe (Premium)",
+        "description": "Speech-to-text model powered by GPT-4o",
+        "modelConfigurationCode": "ORA_LLM_MODEL_GPT_4O_TRANSCRIBE",
+        "parameterDefinitions": []
+      },
+      {
+        "id": null,
+        "model": "OCI_GPT_4O_TRANSCRIBE_DIARIZE",
+        "provider": "CERT_PREMIUM",
+        "modelTierCode": "PREMIUM",
+        "modelTierName": "Premium LLM",
+        "isDefault": false,
+        "name": "GPT-4o Transcribe Diarize (Premium)",
+        "description": "Transcription model that identifies who's speaking when",
+        "modelConfigurationCode": "ORA_LLM_MODEL_GPT_4O_TRANSCRIBE_DIARIZE",
+        "parameterDefinitions": []
+      }
+    ],
+    "count": 8,
+    "hasMore": false,
+    "limit": 30,
+    "offset": 0
+  }
+}

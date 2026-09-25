@@ -144,6 +144,8 @@ Omit `SupplierNumber` and `SupplierPartyId` for this test, following the confirm
 
 Use `Upsert-Mode: false` for the first create test. Check for the unique supplier name before the write. After a response or timeout, reconcile by returned ID or unique name before retrying. Verify persisted values by GET and record any server normalization or defaults. Do not assume deletion or rollback is supported.
 
+The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierId and SupplierNumber, returned SupplierId300000333814409 and SupplierNumber1506, and independently verified the exact three submitted fields under eqih-dev21 / 11.13.18.05. See [native receipt](../../builds/xdx-supplier-core-20260924/evidence/xdx_p2_native_supplier.md). This corroborates existing generated-field treatment without broadening requiredness or uniqueness scope; the immutable first GET sample is unchanged.
+
 ## Evidence and limits
 
 - [Build verification](../../builds/xdx-supplier-information/verification.md) records live GET evidence for list, exact name, contained name and item detail.
@@ -156,6 +158,7 @@ Use `Upsert-Mode: false` for the first create test. Check for the unique supplie
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-24 | XDX Supplier Core exact-approved native POST and independent GET | Corroborated existing generated-field treatment and required payload in the tested tenant; retained first GET sample and unresolved uniqueness limits. |
 | 2026-09-23 | XDX Supplier Lifecycle live runtime attempt plus retained successful eqih-dev21 create receipt | Corrected the build-specific required-field contract: add `BusinessRelationship` and `TaxOrganizationType`; preserve omission of optional, generated, payment, DFF, attachment and third-party-payment fields. |
 | 2026-09-22 | Current XDX Supplier Lifecycle Agent user scope and P4 contract | Recorded the build-specific required-field-only supplier payload: submit only `Supplier`; omit generated IDs and all optional fields. No POST executed. |
 | 2026-09-17 | CLI regression, SupplierType PATCH/GET correction and fresh POST/GET | Recorded cross-parameter placeholder false positive and mandatory preservation of source-backed SupplierType; both repaired record and new-create type/code are live verified. |

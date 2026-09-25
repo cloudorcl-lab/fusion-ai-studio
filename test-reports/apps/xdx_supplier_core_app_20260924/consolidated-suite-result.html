@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Studio Test Suite Result</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 24px;
+      color: #263238;
+      background: #fff;
+    }
+    h1 {
+      color: #1f3545;
+      border-bottom: 2px solid #2f78b7;
+      padding-bottom: 10px;
+      margin-top: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    h2 {
+      color: #34495e;
+      margin-top: 28px;
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 18px 0 24px;
+    }
+    .metric, .section {
+      background: #f8f9fa;
+      border: 1px solid #e0e5ea;
+      border-radius: 5px;
+      padding: 14px 16px;
+    }
+    .summary-card {
+      background: #f8f9fa;
+      border: 1px solid #e0e5ea;
+      border-radius: 5px;
+      padding: 14px 16px;
+      min-width: 0;
+    }
+    .summary-card h2 { color: #1f3545; font-size: 15px; margin: 0 0 10px; }
+    .summary-card__items { display: grid; gap: 8px; }
+    .summary-card__item { min-width: 0; }
+    .summary-card__item .label { margin-bottom: 1px; }
+    .summary-card__item .value { display: block; }
+    .report-overview {
+      margin: 18px 0 24px;
+      border: 1px solid #d7dee5;
+      border-radius: 5px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .report-overview__status {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 16px;
+      background: #f8f9fa;
+      border-bottom: 1px solid #d7dee5;
+    }
+    .report-overview--passed .report-overview__status {
+      background: #f4faf7;
+      box-shadow: inset 4px 0 0 #2d7a52;
+    }
+    .report-overview--failed .report-overview__status {
+      background: #fff6f5;
+      box-shadow: inset 4px 0 0 #b63b31;
+    }
+    .report-overview--neutral .report-overview__status {
+      background: #fff9ef;
+      box-shadow: inset 4px 0 0 #b26a00;
+    }
+    .report-overview__status-copy {
+      color: #34495e;
+      font-weight: 600;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .report-overview__groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .report-overview__group {
+      min-width: 0;
+      padding: 16px;
+    }
+    .report-overview__group + .report-overview__group {
+      border-left: 1px solid #e0e5ea;
+    }
+    .report-overview__group h2 {
+      margin: 0 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #d7dee5;
+      color: #1f3545;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .report-overview__facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 18px;
+    }
+    .report-overview__fact { min-width: 0; }
+    .report-overview__fact--wide { grid-column: 1 / -1; }
+    .report-overview__fact .label {
+      margin-bottom: 3px;
+      color: #607080;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+    .report-overview__fact .value {
+      display: block;
+      color: #1f3545;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .report-identity { color: #607080; margin: -8px 0 18px; overflow-wrap: anywhere; }
+    .report-section { scroll-margin-top: 16px; }
+    .verification-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+    .verification-item {
+      display: block;
+      min-width: 0;
+      padding: 10px 12px;
+      color: inherit;
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid #d7dee5;
+      border-left: 4px solid #607080;
+      border-radius: 5px;
+    }
+    .verification-item:hover,
+    .verification-item:focus-visible {
+      background: #f3f8fc;
+      border-color: #8fb8d8;
+      outline: 2px solid transparent;
+    }
+    .verification-item--passed { border-left-color: #2d7a52; }
+    .verification-item--failed { border-left-color: #b63b31; }
+    .verification-item--neutral { border-left-color: #b26a00; }
+    .verification-item .value {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+    .conversation-journey { display: grid; gap: 8px; }
+    .conversation-journey__step { display: grid; grid-template-columns: minmax(150px, .7fr) minmax(220px, 1.6fr) minmax(130px, .7fr); gap: 12px; align-items: start; border-bottom: 1px solid #e0e5ea; padding: 8px 0; }
+    .conversation-journey__cell {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .conversation-journey__cell code {
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .conversation-journey__step:last-child { border-bottom: 0; }
+    .report-disclosure > summary { padding: 4px 0; }
+    .report-disclosure[open] > summary { margin-bottom: 10px; }
+    .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: #607080;
+      margin-bottom: 4px;
+    }
+    .value {
+      font-weight: 600;
+      color: #1f3545;
+      word-break: break-word;
+    }
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow-wrap: normal;
+    }
+    .pill.passed { background: #e7f5ee; color: #176b43; }
+    .pill.failed { background: #fdeceb; color: #a1271d; }
+    .pill.neutral { background: #eef3f7; color: #435466; }
+    .tag-pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      margin: 2px 4px 2px 0;
+      font-size: 12px;
+      font-weight: 600;
+      background: #eef3f7;
+      color: #435466;
+      overflow-wrap: anywhere;
+    }
+    .case-list, .action-list {
+      display: grid;
+      gap: 12px;
+    }
+    .case-card, .action-item {
+      border: 1px solid #d7dee5;
+      border-radius: 6px;
+      background: #fff;
+      padding: 14px;
+    }
+    .case-card__header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .case-card__title {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      min-width: 0;
+    }
+    .case-card__name {
+      font-weight: 700;
+      color: #1f3545;
+      overflow-wrap: anywhere;
+    }
+    .case-card__meta, .case-card__detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 8px 12px;
+      margin-top: 10px;
+    }
+    .case-fact {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .node-pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .node-pill-list code {
+      display: inline-block;
+      border-radius: 4px;
+      padding: 2px 6px;
+      background: #f1f2f6;
+      overflow-wrap: anywhere;
+    }
+    .scroll-table {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+    .scroll-table table {
+      min-width: 1500px;
+      table-layout: fixed;
+    }
+    .scroll-table table.report-compact-table {
+      min-width: 900px;
+      table-layout: auto;
+    }
+    .scroll-table table.report-wide-table {
+      min-width: 1200px;
+      table-layout: auto;
+    }
+    .scroll-table th {
+      overflow-wrap: normal;
+      white-space: nowrap;
+      word-break: normal;
+    }
+    .scroll-table table.verification-detail-table {
+      min-width: 1020px;
+    }
+    .verification-detail-table th:last-child,
+    .verification-detail-table td:last-child {
+      min-width: 220px;
+    }
+    .scroll-table table.path-assertions-table {
+      min-width: 1100px;
+      table-layout: auto;
+    }
+    .path-assertions-table th:nth-last-child(2),
+    .path-assertions-table td:nth-last-child(2) {
+      min-width: 240px;
+    }
+    .path-assertions-table th:last-child,
+    .path-assertions-table td:last-child {
+      min-width: 220px;
+    }
+    .path-assertions-table code {
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .scroll-table table.node-assertions-table {
+      width: 1530px;
+      min-width: 1530px;
+      max-width: none;
+      table-layout: fixed;
+    }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(1),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(1) { width: 110px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(2),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(2) { width: 240px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(3),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(3) { width: 240px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(4),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(4) { width: 110px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(5),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(5) { width: 300px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(6),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(6) { width: 130px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(7),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(7) { width: 180px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(8),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(8) { width: 220px; }
+    .scroll-table table.node-assertions-table--conversation {
+      width: 1710px;
+      min-width: 1710px;
+    }
+    .node-assertions-table--conversation th:nth-child(1),
+    .node-assertions-table--conversation td:nth-child(1) { width: 180px; }
+    .node-assertions-table--conversation th:nth-child(2),
+    .node-assertions-table--conversation td:nth-child(2) { width: 110px; }
+    .node-assertions-table--conversation th:nth-child(3),
+    .node-assertions-table--conversation td:nth-child(3) { width: 240px; }
+    .node-assertions-table--conversation th:nth-child(4),
+    .node-assertions-table--conversation td:nth-child(4) { width: 240px; }
+    .node-assertions-table--conversation th:nth-child(5),
+    .node-assertions-table--conversation td:nth-child(5) { width: 110px; }
+    .node-assertions-table--conversation th:nth-child(6),
+    .node-assertions-table--conversation td:nth-child(6) { width: 300px; }
+    .node-assertions-table--conversation th:nth-child(7),
+    .node-assertions-table--conversation td:nth-child(7) { width: 130px; }
+    .node-assertions-table--conversation th:nth-child(8),
+    .node-assertions-table--conversation td:nth-child(8) { width: 180px; }
+    .node-assertions-table--conversation th:nth-child(9),
+    .node-assertions-table--conversation td:nth-child(9) { width: 220px; }
+    .node-assertions-table td {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .node-assertions-table code {
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(1),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(4),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(6),
+    .node-assertions-table--conversation td:nth-child(2),
+    .node-assertions-table--conversation td:nth-child(5),
+    .node-assertions-table--conversation td:nth-child(7) {
+      white-space: nowrap;
+    }
+    .scroll-table table.runtime-metrics-table {
+      min-width: 900px;
+      table-layout: fixed;
+    }
+    .scroll-table table.runtime-metrics-table--token {
+      min-width: 1680px;
+    }
+    .scroll-table table.runtime-metrics-table--duration {
+      min-width: 1040px;
+    }
+    .scroll-table table.runtime-metrics-table--ai-units {
+      min-width: 1280px;
+    }
+    .runtime-metrics-table th,
+    .runtime-metrics-table td {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .runtime-metrics-table code {
+      white-space: nowrap;
+    }
+    .runtime-metrics-table__step code,
+    .runtime-metrics-table__node code {
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .runtime-metrics-table__wrap,
+    .runtime-metrics-table__wrap code {
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .runtime-details {
+      margin: 0;
+    }
+    .runtime-details pre {
+      max-height: 360px;
+      margin: 8px 0 0;
+    }
+    .judge-criteria-table {
+      min-width: 840px;
+      table-layout: fixed;
+    }
+    .judge-criteria-table th,
+    .judge-criteria-table td {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .judge-criteria-table__text {
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+    .scroll-table table.model-overrides-table {
+      width: 1780px;
+      min-width: 1780px;
+      max-width: none;
+      table-layout: fixed;
+    }
+    .model-overrides-table th,
+    .model-overrides-table td {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .model-overrides-table__wrap,
+    .model-overrides-table__wrap code {
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .model-overrides-table__nowrap {
+      white-space: nowrap;
+    }
+    .monospace-wrap {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .scroll-table table.suite-diagnostic-table {
+      width: 6200px;
+      min-width: 6200px;
+      max-width: none;
+      table-layout: fixed;
+    }
+    .scroll-table table.app-diagnostic-table {
+      width: 3530px;
+      min-width: 3530px;
+      max-width: none;
+      table-layout: fixed;
+    }
+    .scroll-table table.widget-diagnostic-table {
+      width: 1940px;
+      min-width: 1940px;
+      max-width: none;
+      table-layout: fixed;
+    }
+    .scroll-table table.consolidated-case-table {
+      width: 1950px;
+      min-width: 1950px;
+      max-width: none;
+      table-layout: fixed;
+    }
+    .suite-diagnostic-table th,
+    .app-diagnostic-table th,
+    .widget-diagnostic-table th,
+    .consolidated-case-table th {
+      white-space: nowrap;
+    }
+    .suite-diagnostic-table td,
+    .app-diagnostic-table td,
+    .widget-diagnostic-table td,
+    .consolidated-case-table td {
+      overflow: hidden;
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .suite-diagnostic-table__wrap,
+    .suite-diagnostic-table__wrap code,
+    .app-diagnostic-table__wrap,
+    .app-diagnostic-table__wrap code,
+    .widget-diagnostic-table__wrap,
+    .widget-diagnostic-table__wrap code,
+    .consolidated-case-table__wrap,
+    .consolidated-case-table__wrap code {
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .diagnostic-path-line {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .diagnostic-path-spacer {
+      height: 10px;
+    }
+    .action-item.failed {
+      border-left: 4px solid #a1271d;
+    }
+    .action-item.needs-judge {
+      border-left: 4px solid #b26a00;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid #d7dee5;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+    th {
+      background: #eaf4fb;
+      color: #1f3545;
+    }
+    code, pre {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 13px;
+    }
+    .report-file-path {
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #f1f2f6;
+      border-left: 4px solid #2f78b7;
+      padding: 12px;
+      overflow-x: auto;
+    }
+    iframe.rendered-output {
+      width: 100%;
+      min-height: 260px;
+      border: 1px solid #d7dee5;
+      border-radius: 5px;
+      background: #fff;
+    }
+    details {
+      margin-top: 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #1f3545;
+    }
+    .warning {
+      border-left: 4px solid #b26a00;
+      background: #fff8ec;
+    }
+    a { color: #236da8; }
+    ul { padding-left: 22px; }
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      .summary { grid-template-columns: 1fr; }
+      .conversation-journey__step { grid-template-columns: 1fr; gap: 4px; }
+      .metric, .section, .summary-card { padding: 12px; }
+      .report-overview__groups { grid-template-columns: 1fr; }
+      .report-overview__group + .report-overview__group {
+        border-left: 0;
+        border-top: 1px solid #e0e5ea;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>AI Studio Test Suite Result</h1>
+  <section class="report-overview report-overview--passed"><div class="report-overview__status"><span class="pill passed">passed</span><span class="report-overview__status-copy">All 15 tests passed across the included suites.</span></div><div class="report-overview__groups"><section class="report-overview__group"><h2>Results</h2><div class="report-overview__facts"><div class="report-overview__fact"><span class="label">Passed</span><span class="value">15 / 15</span></div></div></section><section class="report-overview__group"><h2>Included suites</h2><div class="report-overview__facts"><div class="report-overview__fact"><span class="label">Workflow suites</span><span class="value">1</span></div><div class="report-overview__fact"><span class="label">App suites</span><span class="value">1</span></div></div></section></div></section>
+  <div class="section"><h2>Summary</h2><pre>Total: 15
+Passed: 15
+Failed: 0
+Needs Judge: 0
+
+Workflow suites: 1 backing workflow report(s)
+App suite: test-reports/apps/xdx_supplier_core_app_20260924/suite-result.html
+
+## App Suite Summary
+
+App tests: 1/1 passed, 0 failed, 0 need judge.
+
+## Backing Workflow Suite Summaries
+
+1. XDX Supplier Core 20260924
+   Status: passed
+   Report: <a href="../../workflows/xdx_supplier_core_20260924/suite-result.html">suite-result.html</a>
+   Tests: 14/14 passed, 0 failed, 0 need judge
+
+   Metrics:
+   - Token data: observed for 14/14 cases; input 222134; output 11821; total 233955.
+   - AI units: 270 total (54 token units, 14/14 cases computed).
+   - Latency: total workflow time 492.1s across 14/14 model-backed cases.
+
+   Optimization:
+   - Model optimization is available for this workflow. 14 passing tests exercise model-backed nodes.
+   - Next action: Run node-level model optimization sweep. To run it, reply: Run the model optimization sweep for this workflow and summarize the best model placement per LLM node.
+   - Creates a fresh node-level sweep, runs every candidate profile, judges results, and generates the sweep report.
+   - The sweep reports recommendations only. Applying model changes requires a separate approval.
+   - For a workflow-wide model comparison instead, reply: Run a workflow-level model optimization sweep.
+
+## Action Required
+
+None.</pre></div>
+  <div class="section">
+    <h2>Suites</h2>
+    <div class="case-list">
+      <article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title"><span class="pill passed">passed</span> <span class="case-card__name">XDX Supplier Core 20260924</span></div>
+      <a href="../../workflows/xdx_supplier_core_20260924/suite-result.html">Workflow suite report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Passed</span><span class="value">14/14</span></div>
+      <div class="case-fact"><span class="label">Failed</span><span class="value">0</span></div>
+      <div class="case-fact"><span class="label">Needs Judge</span><span class="value">0</span></div>
+      <div class="case-fact"><span class="label">Action</span><span class="value">none</span></div>
+    </div>
+  </article>
+      <article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title"><span class="pill passed">passed</span> <span class="case-card__name">App Suite</span></div>
+      <a href="suite-result.html">App suite report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Passed</span><span class="value">1/1</span></div>
+      <div class="case-fact"><span class="label">Failed</span><span class="value">0</span></div>
+      <div class="case-fact"><span class="label">Needs Judge</span><span class="value">0</span></div>
+      <div class="case-fact"><span class="label">Action</span><span class="value">none</span></div>
+    </div>
+  </article>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <h2>App Quality</h2>
+    <p><strong>Widget assertion failures:</strong> 0</p>
+    <p>No widget contract failures.</p>
+    <p><strong>Malformed widget JSON failures:</strong> 0</p>
+  </div>
+  <div class="section">
+    <h2>Workflow Quality</h2>
+    <p><strong>Path assertion failures:</strong> 0</p>
+    <p>No path assertion failures.</p>
+    <p><strong>Judge failures or pending judge cases:</strong> 0</p>
+  </div>
+  <div class="section">
+    <h2>Cases</h2>
+    <div class="scroll-table">
+      <table class="consolidated-case-table">
+        <colgroup><col style="width: 110px"><col style="width: 120px"><col style="width: 360px"><col style="width: 360px"><col style="width: 240px"><col style="width: 180px"><col style="width: 460px"><col style="width: 120px"></colgroup>
+        <thead><tr><th>Suite</th><th>Status</th><th>Test</th><th>App or Workflow</th><th>Panel</th><th>Judge</th><th>Failure Details</th><th>Report</th></tr></thead>
+        <tbody>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>init-display</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/init-display/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>query</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/query/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>address-draft-conversation</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/address-draft-conversation/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>address-query-list</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/address-query-list/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>address-query-detail</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/address-query-detail/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>supplier-draft-conversation</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/supplier-draft-conversation/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>supplier-query-detail</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/supplier-query-detail/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>contact-draft-conversation</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/contact-draft-conversation/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>contact-query-detail</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/contact-query-detail/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>contact-query-list</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/contact-query-list/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>supplier-query-guidance</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/supplier-query-guidance/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>site-draft-conversation</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/site-draft-conversation/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>site-query-detail</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/site-query-detail/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>workflow</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>site-query-list</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="../../workflows/xdx_supplier_core_20260924/site-query-list/result.html">Workflow test report</a></td>
+      </tr>
+      <tr>
+        <td>app</td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="consolidated-case-table__wrap"><code>init_display_supplier_core</code></td>
+        <td class="consolidated-case-table__wrap">XDX_SUPPLIER_CORE_APP_20260924</td>
+        <td class="consolidated-case-table__wrap">Supplier Core</td>
+        <td class="consolidated-case-table__wrap">passed (5/5)</td>
+        <td class="consolidated-case-table__wrap"></td>
+        <td><a href="init_display_supplier_core/result.html">App test report</a></td>
+      </tr></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Report Files</h2>
+    <ul>
+      <li><a href="consolidated-suite-result.json">Consolidated JSON</a></li>
+      <li><a href="consolidated-suite-result.md">Consolidated Markdown</a></li>
+      <li><a href="../../workflows/xdx_supplier_core_20260924/suite-result.html">XDX Supplier Core 20260924 suite report</a></li>
+      <li><a href="suite-result.html">App suite report</a></li>
+    </ul>
+  </div>
+</body>
+</html>

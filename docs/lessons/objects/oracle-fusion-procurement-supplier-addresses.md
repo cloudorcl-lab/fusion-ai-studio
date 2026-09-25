@@ -156,6 +156,8 @@ Do not impose collection-wide address-name uniqueness across different suppliers
 
 Resolve country and subdivision codes from authorized evidence. Reuse a source physical address only when the user explicitly approves that basis; never copy an operational email destination. Preview the parent supplier and purposes before execution. The authorized 2026-09-17 Lee-based test supplied CountryCode and a non-deliverable Email, succeeded and passed parent-scoped GET verification. This does not resolve whether Email may be omitted. Request fields and evidence are in the [POST review](../../builds/xdx-supplier-information/xdx_supplier_post_review.md).
 
+The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierAddressId and AddressPartyNumber, returned300000333814416 and1486638 under supplier300000333814409, and independently verified all eight approved business fields including ordering=true. See [native receipt](../../builds/xdx-supplier-core-20260924/evidence/xdx_p3_native_address.md). This corroborates existing generated-field treatment in eqih-dev21 / 11.13.18.05; it does not broaden requiredness or uniqueness, and the immutable first GET sample is unchanged.
+
 ## Evidence and limits
 
 - [Core live summary](../../builds/xdx-supplier-information/live-details/summary.json) records baseline, ID filter, offset paging and empty-result checks.
@@ -168,6 +170,7 @@ Resolve country and subdivision codes from authorized evidence. Reuse a source p
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-24 | XDX Supplier Core exact-approved native POST and independent GET | Corroborated existing generated-field treatment and required payload in the tested tenant; retained first GET sample and unresolved uniqueness limits. |
 | 2026-09-23 | Live create rejection `POZ-2130428` under supplier 1504 | Established the tenant's conditional purpose requirement. The streamlined golden path now sends only `AddressPurposeOrderingFlag: true`; the rejected POST created no address. |
 | 2026-09-17 | Supplier 1497 child POST/GET | Added same-tenant confirmation of generated address ID/party number and all ten submitted fields. |
 | 2026-09-17 | Authorized POST request/response and parent-scoped GET under live-post | Confirmed omitted generated IDs for the tested tenant and recorded POST/schema limits; immutable first-success GET sample preserved. |

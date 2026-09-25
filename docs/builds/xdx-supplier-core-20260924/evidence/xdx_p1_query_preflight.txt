@@ -1,0 +1,5 @@
+Agentic App Query contract: PASS
+- Workflow: XDX_SUPPLIER_CORE_20260924
+- Query route has no reachable HUMAN or WAIT node.
+- Workflow binding expressions are balanced and reference reachable producers.
+- Local BO path tokens have nonblank workflow inputs.

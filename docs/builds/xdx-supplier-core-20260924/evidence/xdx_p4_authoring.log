@@ -1,0 +1,1216 @@
+2026-09-24T22:45:14.697Z do-create-bo-function-from-operation
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-bo-function-from-operation",
+  "result": {
+    "functionName": "getall_suppliers_sites",
+    "operationId": "getall_suppliers-sites",
+    "operationType": "GET",
+    "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites"
+  }
+}
+
+2026-09-24T22:45:16.900Z do-create-bo-function-from-operation
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-bo-function-from-operation",
+  "result": {
+    "functionName": "get_suppliers_sites",
+    "operationId": "get_suppliers-sites",
+    "operationType": "GET",
+    "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites/{suppliers_sites_Id}"
+  }
+}
+
+2026-09-24T22:45:19.079Z do-create-bo-function-from-operation
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-bo-function-from-operation",
+  "result": {
+    "functionName": "create_suppliers_sites",
+    "operationId": "create_suppliers-sites",
+    "operationType": "POST",
+    "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites"
+  }
+}
+
+2026-09-24T22:45:19.291Z do-modify-bo-function
+{
+  "ok": true,
+  "command": "do-modify-bo-function",
+  "result": {
+    "functionName": "getall_suppliers_sites",
+    "updatedFields": [
+      "resourcePath"
+    ]
+  }
+}
+
+2026-09-24T22:45:19.493Z do-modify-bo-function
+{
+  "ok": true,
+  "command": "do-modify-bo-function",
+  "result": {
+    "functionName": "get_suppliers_sites",
+    "updatedFields": [
+      "resourcePath"
+    ]
+  }
+}
+
+2026-09-24T22:45:19.702Z do-modify-bo-function
+{
+  "ok": true,
+  "command": "do-modify-bo-function",
+  "result": {
+    "functionName": "create_suppliers_sites",
+    "updatedFields": [
+      "bodyTemplate",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:45:19.923Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "getall_suppliers_sites",
+    "headerName": "REST-Framework-Version"
+  }
+}
+
+2026-09-24T22:45:20.144Z do-apply-bo-function-example-payload
+{
+  "ok": true,
+  "command": "do-apply-bo-function-example-payload",
+  "result": {
+    "functionName": "getall_suppliers_sites",
+    "description": "Retained site response projected for schema, not current build acceptance.",
+    "payload": "{\n  \"items\": [\n    {\n      \"SupplierSiteId\": 300000333813806,\n      \"SupplierSite\": \"XDX Lee US1 0917133857\",\n      \"ProcurementBUId\": 300000046987012,\n      \"SupplierAddressName\": \"XDX Lee US1 0917133857\",\n      \"SitePurposePurchasingFlag\": true,\n      \"ProcurementBU\": \"US1 Business Unit\",\n      \"SupplierAddressId\": 300000333813797,\n      \"Status\": \"ACTIVE\",\n      \"InactiveDate\": null\n    }\n  ],\n  \"count\": 1,\n  \"hasMore\": false,\n  \"limit\": 5,\n  \"offset\": 0\n}"
+  }
+}
+
+2026-09-24T22:45:20.350Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "get_suppliers_sites",
+    "headerName": "REST-Framework-Version"
+  }
+}
+
+2026-09-24T22:45:20.682Z do-apply-bo-function-example-payload
+{
+  "ok": true,
+  "command": "do-apply-bo-function-example-payload",
+  "result": {
+    "functionName": "get_suppliers_sites",
+    "description": "Retained site response projected for schema, not current build acceptance.",
+    "payload": "{\n  \"SupplierSiteId\": 300000333813806,\n  \"SupplierSite\": \"XDX Lee US1 0917133857\",\n  \"ProcurementBUId\": 300000046987012,\n  \"SupplierAddressName\": \"XDX Lee US1 0917133857\",\n  \"SitePurposePurchasingFlag\": true,\n  \"ProcurementBU\": \"US1 Business Unit\",\n  \"SupplierAddressId\": 300000333813797,\n  \"Status\": \"ACTIVE\",\n  \"InactiveDate\": null\n}"
+  }
+}
+
+2026-09-24T22:45:20.909Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "create_suppliers_sites",
+    "headerName": "REST-Framework-Version"
+  }
+}
+
+2026-09-24T22:45:21.127Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "create_suppliers_sites",
+    "headerName": "Content-Type"
+  }
+}
+
+2026-09-24T22:45:21.344Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "create_suppliers_sites",
+    "headerName": "Upsert-Mode"
+  }
+}
+
+2026-09-24T22:45:21.565Z do-apply-bo-function-example-payload
+{
+  "ok": true,
+  "command": "do-apply-bo-function-example-payload",
+  "result": {
+    "functionName": "create_suppliers_sites",
+    "description": "Retained site response projected for schema, not current build acceptance.",
+    "payload": "{\n  \"SupplierSiteId\": 300000333813806,\n  \"SupplierSite\": \"XDX Lee US1 0917133857\",\n  \"ProcurementBUId\": 300000046987012,\n  \"SupplierAddressName\": \"XDX Lee US1 0917133857\",\n  \"SitePurposePurchasingFlag\": true,\n  \"ProcurementBU\": \"US1 Business Unit\",\n  \"SupplierAddressId\": 300000333813797,\n  \"Status\": \"ACTIVE\",\n  \"InactiveDate\": null\n}"
+  }
+}
+
+2026-09-24T22:45:21.787Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "getall_suppliers_sites",
+    "parameterName": "suppliers_Id",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:45:22.006Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "getall_suppliers_sites",
+    "parameterName": "limit",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:45:22.219Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "getall_suppliers_sites",
+    "parameterName": "offset",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:45:22.514Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "getall_suppliers_sites",
+    "parameterName": "q",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:45:22.838Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "get_suppliers_sites",
+    "parameterName": "suppliers_Id",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:45:23.065Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "get_suppliers_sites",
+    "parameterName": "suppliers_sites_Id",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:45:23.279Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_sites",
+    "parameterName": "suppliers_Id",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:45:23.482Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_sites",
+    "parameterName": "SupplierSite",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:45:23.694Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_sites",
+    "parameterName": "ProcurementBUId",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:45:23.906Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_sites",
+    "parameterName": "SupplierAddressName",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:45:24.120Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_sites",
+    "parameterName": "SitePurposePurchasingFlag",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-24T22:45:24.338Z do-delete-bo-function-example
+{
+  "ok": true,
+  "command": "do-delete-bo-function-example",
+  "result": {
+    "functionName": "create_suppliers_sites",
+    "exampleDescription": ""
+  }
+}
+
+2026-09-24T22:48:03.002Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "58",
+    "nodeCode": "PREPARE_SITE"
+  }
+}
+
+2026-09-24T22:48:03.218Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "59",
+    "nodeCode": "STORE_SITE_PREPARED"
+  }
+}
+
+2026-09-24T22:48:03.431Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "60",
+    "nodeCode": "SITE_ENTRY"
+  }
+}
+
+2026-09-24T22:48:06.254Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "61",
+    "nodeCode": "FETCH_SITE_PARENT",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:48:06.478Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "62",
+    "nodeCode": "CHECK_SITE_PARENT"
+  }
+}
+
+2026-09-24T22:48:06.686Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "63",
+    "nodeCode": "STORE_SITE_PARENT"
+  }
+}
+
+2026-09-24T22:48:06.897Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "64",
+    "nodeCode": "SITE_OPERATION"
+  }
+}
+
+2026-09-24T22:48:09.668Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "65",
+    "nodeCode": "FETCH_SITES",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "getall_suppliers_sites",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:48:12.525Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "66",
+    "nodeCode": "FETCH_SITE_DETAIL",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers_sites",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:48:12.972Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "67",
+    "nodeCode": "SHAPE_SITES"
+  }
+}
+
+2026-09-24T22:48:13.199Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "68",
+    "nodeCode": "SHAPE_SITE_DETAIL"
+  }
+}
+
+2026-09-24T22:48:13.412Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "69",
+    "nodeCode": "STORE_SITE_LIST"
+  }
+}
+
+2026-09-24T22:48:13.636Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "70",
+    "nodeCode": "STORE_SITE_DETAIL"
+  }
+}
+
+2026-09-24T22:48:13.862Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "71",
+    "nodeCode": "SITE_DUPLICATE_INPUT"
+  }
+}
+
+2026-09-24T22:48:16.975Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "72",
+    "nodeCode": "CHECK_SITE_DUPLICATE",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "getall_suppliers_sites",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:48:17.256Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "73",
+    "nodeCode": "AUTHORIZE_SITE_WRITE"
+  }
+}
+
+2026-09-24T22:48:17.524Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "74",
+    "nodeCode": "STORE_SITE_ATTEMPT"
+  }
+}
+
+2026-09-24T22:48:17.736Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "75",
+    "nodeCode": "SITE_WRITE_ROUTE"
+  }
+}
+
+2026-09-24T22:48:20.593Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "76",
+    "nodeCode": "CREATE_SITE",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "create_suppliers_sites",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:48:20.965Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "77",
+    "nodeCode": "CAPTURE_SITE_CREATE"
+  }
+}
+
+2026-09-24T22:48:21.196Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "78",
+    "nodeCode": "STORE_SITE_RECEIPT"
+  }
+}
+
+2026-09-24T22:48:21.431Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "79",
+    "nodeCode": "SITE_HAS_ID"
+  }
+}
+
+2026-09-24T22:48:24.218Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "80",
+    "nodeCode": "GET_CREATED_SITE",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers_sites",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:48:24.430Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "81",
+    "nodeCode": "VERIFY_SITE_CREATE"
+  }
+}
+
+2026-09-24T22:48:24.649Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "82",
+    "nodeCode": "STORE_SITE_VERIFIED"
+  }
+}
+
+2026-09-24T22:48:24.886Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "83",
+    "nodeCode": "SITE_DISPLAY"
+  }
+}
+
+2026-09-24T22:48:25.114Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "SITE_DISPLAY",
+    "updated": true
+  }
+}
+
+2026-09-24T22:48:25.385Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "84",
+    "nodeCode": "SITE_REFERENCE_INPUT"
+  }
+}
+
+2026-09-24T22:48:28.069Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "85",
+    "nodeCode": "FETCH_SITE_ADDRESS_REFERENCE",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "getall_suppliers_addresses",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:48:30.672Z do-create-node
+[aistudio] No cached CLI credentials. Launching authentication flow automatically…
+[aistudio-auth] Starting authentication flow.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "86",
+    "nodeCode": "FETCH_SITE_BU_REFERENCE",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS",
+      "functionName": "getall_procurementBusinessUnitsLOV",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Failed to store encryption passphrase in Windows Credential Manager: Windows Credential Manager write failed: CredWrite failed with Win32 error 1312\r\nAt line:15 char:7\r\n+       throw \"CredWrite failed with Win32 error $code\"\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (CredWrite failed with Win32 error 1312:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : CredWrite failed with Win32 error 1312\r\n \r\nUnsupported credential action set\r\nAt line:1 char:1\r\n+ throw \"Unsupported credential action $Action\"\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Unsupported credential action set:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Unsupported credential action set",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-24T22:48:30.925Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "87",
+    "nodeCode": "CHECK_SITE_REFERENCES"
+  }
+}
+
+2026-09-24T22:48:31.202Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "88",
+    "nodeCode": "STORE_SITE_REFERENCES"
+  }
+}
+
+2026-09-24T22:48:31.420Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "89",
+    "nodeCode": "SITE_REFERENCES_ROUTE"
+  }
+}
+
+2026-09-24T22:48:31.639Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "EXTRACT_READ",
+    "updated": true
+  }
+}
+
+2026-09-24T22:48:31.865Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "EXTRACT_READ",
+    "updated": true
+  }
+}
+
+2026-09-24T22:48:32.083Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "PREPARE_TRANSACTION",
+    "updated": true
+  }
+}
+
+2026-09-24T22:48:32.304Z do-modify-node-edges
+{
+  "ok": true,
+  "command": "do-modify-node-edges",
+  "result": {
+    "ok": true,
+    "applied": 40,
+    "skipped": 4,
+    "details": [
+      {
+        "action": "add",
+        "from": "TRANSACTION_ROUTE",
+        "to": "PREPARE_SITE",
+        "label": "site",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "PREPARE_SITE",
+        "to": "STORE_SITE_PREPARED",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_SITE_PREPARED",
+        "to": "SITE_ENTRY",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_ENTRY",
+        "to": "SITE_DISPLAY",
+        "label": "display",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_ENTRY",
+        "to": "FETCH_SITE_PARENT",
+        "label": "parent",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_ENTRY",
+        "to": "",
+        "label": "success",
+        "status": "skipped",
+        "reason": "Unknown node code (not present in diagram)."
+      },
+      {
+        "action": "add",
+        "from": "FETCH_SITE_PARENT",
+        "to": "CHECK_SITE_PARENT",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CHECK_SITE_PARENT",
+        "to": "STORE_SITE_PARENT",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_SITE_PARENT",
+        "to": "SITE_OPERATION",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_OPERATION",
+        "to": "SITE_DISPLAY",
+        "label": "display",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_OPERATION",
+        "to": "FETCH_SITES",
+        "label": "list",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_OPERATION",
+        "to": "FETCH_SITE_DETAIL",
+        "label": "detail",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_OPERATION",
+        "to": "",
+        "label": "success",
+        "status": "skipped",
+        "reason": "Unknown node code (not present in diagram)."
+      },
+      {
+        "action": "add",
+        "from": "FETCH_SITES",
+        "to": "SHAPE_SITES",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "FETCH_SITE_DETAIL",
+        "to": "SHAPE_SITE_DETAIL",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SHAPE_SITES",
+        "to": "STORE_SITE_LIST",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SHAPE_SITE_DETAIL",
+        "to": "STORE_SITE_DETAIL",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_SITE_LIST",
+        "to": "SITE_DISPLAY",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_SITE_DETAIL",
+        "to": "SITE_DISPLAY",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_DUPLICATE_INPUT",
+        "to": "CHECK_SITE_DUPLICATE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CHECK_SITE_DUPLICATE",
+        "to": "AUTHORIZE_SITE_WRITE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "AUTHORIZE_SITE_WRITE",
+        "to": "STORE_SITE_ATTEMPT",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_SITE_ATTEMPT",
+        "to": "SITE_WRITE_ROUTE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_WRITE_ROUTE",
+        "to": "CREATE_SITE",
+        "label": "write",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_WRITE_ROUTE",
+        "to": "GET_CREATED_SITE",
+        "label": "verify",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_WRITE_ROUTE",
+        "to": "SITE_DISPLAY",
+        "label": "display",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_WRITE_ROUTE",
+        "to": "",
+        "label": "success",
+        "status": "skipped",
+        "reason": "Unknown node code (not present in diagram)."
+      },
+      {
+        "action": "add",
+        "from": "CREATE_SITE",
+        "to": "CAPTURE_SITE_CREATE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CAPTURE_SITE_CREATE",
+        "to": "STORE_SITE_RECEIPT",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_SITE_RECEIPT",
+        "to": "SITE_HAS_ID",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_HAS_ID",
+        "to": "GET_CREATED_SITE",
+        "label": "true",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_HAS_ID",
+        "to": "SITE_DISPLAY",
+        "label": "false",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "GET_CREATED_SITE",
+        "to": "VERIFY_SITE_CREATE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "VERIFY_SITE_CREATE",
+        "to": "STORE_SITE_VERIFIED",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_SITE_VERIFIED",
+        "to": "SITE_DISPLAY",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_DISPLAY",
+        "to": "END",
+        "label": "success",
+        "status": "skipped",
+        "reason": "Edge already exists."
+      },
+      {
+        "action": "add",
+        "from": "SITE_OPERATION",
+        "to": "SITE_REFERENCE_INPUT",
+        "label": "references",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_REFERENCE_INPUT",
+        "to": "FETCH_SITE_ADDRESS_REFERENCE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "FETCH_SITE_ADDRESS_REFERENCE",
+        "to": "FETCH_SITE_BU_REFERENCE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "FETCH_SITE_BU_REFERENCE",
+        "to": "CHECK_SITE_REFERENCES",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CHECK_SITE_REFERENCES",
+        "to": "STORE_SITE_REFERENCES",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_SITE_REFERENCES",
+        "to": "SITE_REFERENCES_ROUTE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_REFERENCES_ROUTE",
+        "to": "SITE_DISPLAY",
+        "label": "display",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SITE_REFERENCES_ROUTE",
+        "to": "SITE_DUPLICATE_INPUT",
+        "label": "preflight",
+        "status": "applied"
+      }
+    ],
+    "message": "Edges updated."
+  }
+}
+
+2026-09-24T22:48:32.536Z do-prettify-workflow
+{
+  "ok": true,
+  "command": "do-prettify-workflow",
+  "result": {
+    "ok": true,
+    "orientation": "vertical",
+    "nodeCount": 88,
+    "noteCount": 0,
+    "message": "Workflow layout prettified."
+  }
+}

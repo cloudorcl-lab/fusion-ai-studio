@@ -1,0 +1,2436 @@
+2026-09-25T01:12:45.932Z do-update-workflow-test --file src/workflows/xdx_supplier_core_20260924.wf --test-file test/workflows/xdx_supplier_core_20260924/init-display.json --definition @.debug/p5-update-init-display.json
+Workflow test updated.
+Workflow: XDX_SUPPLIER_CORE_20260924 (unknown)
+Test: init-display
+Previous workflow identity: undefined vundefined
+Updated fields: pathAssertions, judge
+Test file: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test\workflows\xdx_supplier_core_20260924\init-display.json
+
+2026-09-25T01:13:11.321Z run-workflow-test --test-file test/workflows/xdx_supplier_core_20260924/init-display.json --data-source file --evaluation-mode deterministic
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+Workflow Test: PASSED
+Workflow: XDX_SUPPLIER_CORE_20260924 (DRAFT v86231263)
+Test: init-display
+Data source: file
+Evaluation: deterministic
+Assertions: 115/115 passed
+Judge: skipped (evaluation-mode deterministic skips judge evaluation.)
+Duration: 24136 ms
+Report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\init-display\result.json
+Markdown report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\init-display\result.md
+HTML report: [result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\init-display\result.html)
+Sync continuation: If this test was run during an active sync request, this individual result does not complete the sync. Immediately refresh the focused plan and execute its next action. An explicit request to run only this test is complete.
+
+Failures: none
+Warnings: none
+Final output preview:
+<oraInfoDisplay key="supplierRead">{"patternId":"multiRecordWidget","title":"Supplier query results","description":"Page of supplier results. count: 5, offset: 0, hasMore: false, nextOffset: Not specified. No next page. Use a returned Supplier ID for detail.","properties":{"cols":["Supplier ID","Supplier number","Supplier","Supplier type","Business relationship","Inactive date"],"rows":[{"cells":["300000047414503","1252","Lee Supplies","Supplier","Spend Authorized","Not specified"]},{"cells":["300000047414571","1253","Staffing Services","Services","Spend Authorized","Not specified"]},{"cells":["300000047414635","1254","JGA","Supplier","Spend Authorized","Not specified"]},{"cells":["300000047414679","1255","Dell Inc.","Not specified","Spend Authorized","Not specified"]},{"cells":["300000047... [truncated]
+
+Node                 Events                Input  Output
+-------------------  --------------------  -----  ------
+START                NODE_EXECUTED         yes    yes
+EXTRACT_READ         NODE_START, NODE_END  yes    yes
+PREPARE_TRANSACTION  NODE_EXECUTED         yes    yes
+TRANSACTION_ROUTE    NODE_START, NODE_END  yes    yes
+PREPARE_READ         NODE_EXECUTED         yes    yes
+READ_ALLOWED         NODE_EXECUTED         yes    yes
+IS_LIST              NODE_EXECUTED         yes    yes
+FETCH_SUPPLIERS      NODE_START, NODE_END  yes    yes
+SHAPE_SUPPLIERS      NODE_EXECUTED         yes    yes
+STORE_LIST_STATE     NODE_EXECUTED         yes    yes
+DISPLAY_STAGE        NODE_START, NODE_END  yes    yes
+INIT_DISPLAY         NODE_START, NODE_END  yes    yes
+
+2026-09-25T01:13:11.913Z get-workflow-test-sync-plan --file src/workflows/xdx_supplier_core_20260924.wf --format focused-json
+{
+  "kind": "workflow-test-focused-sync-plan",
+  "workflowFile": "src/workflows/xdx_supplier_core_20260924.wf",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924",
+    "status": "DRAFT",
+    "version": 86231263,
+    "name": "XDX Supplier Core 20260924",
+    "description": "Native terminating supplier core query and exact-approved create flows.",
+    "family": "PRC",
+    "product": "SUPPLIER"
+  },
+  "view": {
+    "mode": "recommended-batch",
+    "totalActionsBeforeFilter": 48
+  },
+  "summary": {
+    "totalActions": 1,
+    "deferred": 0
+  },
+  "syncLoopState": "actions-remaining",
+  "finalSummaryAllowed": false,
+  "coverageExecution": {
+    "primaryComplete": false,
+    "remainingActions": 48,
+    "nextActionId": "update:query",
+    "nextAction": {
+      "actionId": "update:query",
+      "action": "update",
+      "status": "out_of_sync",
+      "testName": "query",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/query.json",
+      "scenarioId": "app-query",
+      "scenarioKind": "app-stage",
+      "displayOrder": 101,
+      "title": "Agentic App Query Path",
+      "purpose": "Verify the workflow routes the Agentic App Query trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+      "dataCapturePolicy": "baseline-replay",
+      "coverageClass": "primary",
+      "costClass": "complex",
+      "lowRisk": true,
+      "reason": "Existing test pathAssertions no longer match the current sync-plan expectedPath.",
+      "baseTestFile": "test/workflows/xdx_supplier_core_20260924/init-display.json",
+      "primaryClass": true,
+      "authoringHints": {
+        "scenarioId": "app-query",
+        "scenarioKind": "app-stage",
+        "pathComplexity": "primary",
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "Query",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Query app-stage: preserve the trigger envelope from suggestedInput exactly, including triggerType, appHint or OraMessageHint, REST parameters, OraUserContext, and OraAppContext when present. Synthesize a concrete user-facing question as input.message; the CLI default empty message is not meaningful Query coverage. Choose the message from: explicit user instruction; user-provided Query intent; a realistic question derived from the app and workflow purpose."
+        },
+        "dataGuidance": {
+          "baselineCompatible": true,
+          "requiredRecordableNodes": [
+            "FETCH_SUPPLIERS"
+          ],
+          "skippedRecordableNodes": [
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER",
+            "FETCH_ADDRESS_PARENT",
+            "FETCH_ADDRESSES",
+            "FETCH_ADDRESS_DETAIL",
+            "CHECK_ADDRESS_DUPLICATE",
+            "CREATE_ADDRESS",
+            "GET_CREATED_ADDRESS",
+            "FETCH_SITE_PARENT",
+            "FETCH_SITES",
+            "FETCH_SITE_DETAIL",
+            "FETCH_SITE_ADDRESS_REFERENCE",
+            "FETCH_SITE_BU_REFERENCE",
+            "CHECK_SITE_DUPLICATE",
+            "CREATE_SITE",
+            "GET_CREATED_SITE",
+            "FETCH_CONTACT_PARENT",
+            "FETCH_CONTACTS",
+            "FETCH_CONTACT_DETAIL",
+            "CHECK_CONTACT_DUPLICATE",
+            "CREATE_CONTACT",
+            "GET_CREATED_CONTACT",
+            "FETCH_SUPPLIER_DETAIL"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "reason": "Reuse the ready baseline testData exactly; change only runtime input and expectations."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": false,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test query. If the semantic expectation is wrong, update the expected outcome or rubric. If the path expectation is wrong, compare the observed path with the sync-plan path and fix the input, test data, or sync-plan path refinement. Do not weaken scenario-backed path assertions just to make the test pass."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-query",
+            "kind": "app-stage",
+            "intent": "Verify the workflow routes the Agentic App Query trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+            "appStage": "Query",
+            "primaryClass": true
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "Query",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "PREPARE_READ",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "READ_ALLOWED",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "IS_LIST",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "FETCH_SUPPLIERS",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "SHAPE_SUPPLIERS",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_LIST_STATE",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "DISPLAY_STAGE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "SUPPLIER_READ_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "SUPPLIER_TRANSACTION_DISPLAY",
+              "ADDRESS_DISPLAY",
+              "SITE_DISPLAY",
+              "CONTACT_DISPLAY",
+              "READ_GUIDANCE",
+              "INIT_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_READ_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 374,
+                  "hash": "9c806190865dea95",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_READ_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 80,
+                  "hash": "3ec3fd44e4d702b2",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_READ_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 10,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 2297,
+                "hash": "d99bc3969ce1d2b5",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 1299,
+                "hash": "327073670ace9b40",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_READ_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier read display",
+              "role": "terminal-output-owner",
+              "pathOrder": 10,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_READ_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 80,
+                "hash": "582ae61670e7d9dc",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_READ_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 374,
+                "hash": "9c806190865dea95",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_READ_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 290,
+                "hash": "c26d700580aade5e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_READ_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "baseline-replay",
+            "baseTestFile": "test/workflows/xdx_supplier_core_20260924/init-display.json",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": [
+              "FETCH_SUPPLIERS"
+            ]
+          },
+          "contractHash": "4d90b6f1dd0410a0"
+        }
+      }
+    },
+    "costClass": "complex"
+  },
+  "guidance": {
+    "mode": "automatic",
+    "nextStep": "Execute only the single primary-class action in coverageExecution.nextActionIds without asking for confirmation. Use the compact sync-plan action rows; no focused JSON lookup is required when the action already carries an exact input source. Before generation, author definition.judge whenever the focused action has semantic judge context. Complete the required recording or test-data preparation and validate that affected test with deterministic file data. Immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json. If nextActionIds contains another action, execute it next without asking. Do not stop while create or update actions remain, and do not start secondary scenarios until primary coverage is current."
+  }
+}
+
+2026-09-25T01:13:12.639Z do-update-workflow-test --file src/workflows/xdx_supplier_core_20260924.wf --test-file test/workflows/xdx_supplier_core_20260924/query.json --definition @.debug/p5-update-query.json
+Workflow test updated.
+Workflow: XDX_SUPPLIER_CORE_20260924 (unknown)
+Test: query
+Previous workflow identity: undefined vundefined
+Updated fields: pathAssertions, judge
+Test file: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test\workflows\xdx_supplier_core_20260924\query.json
+
+2026-09-25T01:13:30.947Z run-workflow-test --test-file test/workflows/xdx_supplier_core_20260924/query.json --data-source file --evaluation-mode deterministic
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+Workflow Test: PASSED
+Workflow: XDX_SUPPLIER_CORE_20260924 (DRAFT v86231263)
+Test: query
+Data source: file
+Evaluation: deterministic
+Assertions: 115/115 passed
+Judge: skipped (evaluation-mode deterministic skips judge evaluation.)
+Duration: 17068 ms
+Report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\query\result.json
+Markdown report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\query\result.md
+HTML report: [result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\query\result.html)
+Sync continuation: If this test was run during an active sync request, this individual result does not complete the sync. Immediately refresh the focused plan and execute its next action. An explicit request to run only this test is complete.
+
+Failures: none
+Warnings: none
+Final output preview:
+<oraInfoDisplay key="supplierRead">{"patternId":"multiRecordWidget","title":"Supplier query results","description":"Page of supplier results. count: 5, offset: 0, hasMore: false, nextOffset: Not specified. No next page. Use a returned Supplier ID for detail.","properties":{"cols":["Supplier ID","Supplier number","Supplier","Supplier type","Business relationship","Inactive date"],"rows":[{"cells":["300000047414503","1252","Lee Supplies","Supplier","Spend Authorized","Not specified"]},{"cells":["300000047414571","1253","Staffing Services","Services","Spend Authorized","Not specified"]},{"cells":["300000047414635","1254","JGA","Supplier","Spend Authorized","Not specified"]},{"cells":["300000047414679","1255","Dell Inc.","Not specified","Spend Authorized","Not specified"]},{"cells":["300000047... [truncated]
+
+Node                   Events                Input  Output
+---------------------  --------------------  -----  ------
+START                  NODE_EXECUTED         yes    yes
+EXTRACT_READ           NODE_START, NODE_END  yes    yes
+PREPARE_TRANSACTION    NODE_EXECUTED         yes    yes
+TRANSACTION_ROUTE      NODE_START, NODE_END  yes    yes
+PREPARE_READ           NODE_EXECUTED         yes    yes
+READ_ALLOWED           NODE_EXECUTED         yes    yes
+IS_LIST                NODE_EXECUTED         yes    yes
+FETCH_SUPPLIERS        NODE_START, NODE_END  yes    yes
+SHAPE_SUPPLIERS        NODE_EXECUTED         yes    yes
+STORE_LIST_STATE       NODE_EXECUTED         yes    yes
+DISPLAY_STAGE          NODE_START, NODE_END  yes    yes
+SUPPLIER_READ_DISPLAY  NODE_START, NODE_END  yes    yes
+
+2026-09-25T01:13:31.554Z get-workflow-test-sync-plan --file src/workflows/xdx_supplier_core_20260924.wf --format focused-json
+{
+  "kind": "workflow-test-focused-sync-plan",
+  "workflowFile": "src/workflows/xdx_supplier_core_20260924.wf",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924",
+    "status": "DRAFT",
+    "version": 86231263,
+    "name": "XDX Supplier Core 20260924",
+    "description": "Native terminating supplier core query and exact-approved create flows.",
+    "family": "PRC",
+    "product": "SUPPLIER"
+  },
+  "view": {
+    "mode": "recommended-batch",
+    "totalActionsBeforeFilter": 47
+  },
+  "summary": {
+    "totalActions": 1,
+    "deferred": 0
+  },
+  "syncLoopState": "actions-remaining",
+  "finalSummaryAllowed": false,
+  "coverageExecution": {
+    "primaryComplete": true,
+    "remainingActions": 47,
+    "nextActionId": "create:transaction-route-display-path",
+    "nextAction": {
+      "actionId": "create:transaction-route-display-path",
+      "action": "create",
+      "status": "missing",
+      "testName": "transaction-route-display-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/transaction-route-display-path.json",
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3101,
+      "title": "transaction route Display Path",
+      "purpose": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "model-generated",
+      "coverageClass": "deep-path",
+      "costClass": "complex",
+      "lowRisk": true,
+      "reason": "No existing test covers this current workflow scenario.",
+      "authoringHints": {
+        "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "outcome": "display"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "display",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL",
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER",
+            "FETCH_ADDRESS_PARENT",
+            "FETCH_ADDRESSES",
+            "FETCH_ADDRESS_DETAIL",
+            "CHECK_ADDRESS_DUPLICATE",
+            "CREATE_ADDRESS",
+            "GET_CREATED_ADDRESS",
+            "FETCH_SITE_PARENT",
+            "FETCH_SITES",
+            "FETCH_SITE_DETAIL",
+            "FETCH_SITE_ADDRESS_REFERENCE",
+            "FETCH_SITE_BU_REFERENCE",
+            "CHECK_SITE_DUPLICATE",
+            "CREATE_SITE",
+            "GET_CREATED_SITE",
+            "FETCH_CONTACT_PARENT",
+            "FETCH_CONTACTS",
+            "FETCH_CONTACT_DETAIL",
+            "CHECK_CONTACT_DUPLICATE",
+            "CREATE_CONTACT",
+            "GET_CREATED_CONTACT"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (TRANSACTION_ROUTE / display) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is TRANSACTION_ROUTE expression \"{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}\". Synthesize or select upstream values that make this expression choose display; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test transaction-route-display-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-TRANSACTION_ROUTE-display-path",
+            "kind": "branch-path",
+            "intent": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "STORE_PREPARED_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY",
+              "ADDRESS_DISPLAY",
+              "SITE_DISPLAY",
+              "CONTACT_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 4,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 2297,
+                "hash": "d99bc3969ce1d2b5",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 1299,
+                "hash": "327073670ace9b40",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 4,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": []
+          },
+          "contractHash": "57781e6a305b1c5b"
+        }
+      }
+    },
+    "costClass": "complex"
+  },
+  "guidance": {
+    "mode": "automatic",
+    "nextStep": "Execute the single secondary create or update action in coverageExecution.nextActionIds without asking for confirmation. Apply required testData and validate that affected test with deterministic file data. Before generation, author definition.judge whenever the focused action has semantic judge context. If the first attempt misses the intended branch, retry once with materially different input before deferring only that scenario. For record-now secondary branch tests, use the observed-path model: derive path assertions from result.run.nodeResults on success; retry with different input via do-update-workflow-test up to 2 total attempts on wrong-branch failure; call mark-workflow-test-unable-to-generate and skip only that scenario after 2 failures. Immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json after the action is validated or deferred. If nextActionIds contains another action, execute it next without asking. Do not stop while create or update actions remain. Do not run a full workflow suite or perform local semantic judging while create or update actions remain. Do NOT call get-workflow-test-final-summary until no create or update actions remain."
+  }
+}
+
+2026-09-25T01:13:31.870Z do-update-workflow-test --file src/workflows/xdx_supplier_core_20260924.wf --test-file test/workflows/xdx_supplier_core_20260924/supplier-query-detail.json --definition @.debug/p5-update-supplier-query-detail.json
+Workflow test updated.
+Workflow: XDX_SUPPLIER_CORE_20260924 (unknown)
+Test: supplier-query-detail
+Previous workflow identity: undefined vundefined
+Updated fields: pathAssertions, judge
+Test file: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test\workflows\xdx_supplier_core_20260924\supplier-query-detail.json
+
+2026-09-25T01:13:52.971Z run-workflow-test --test-file test/workflows/xdx_supplier_core_20260924/supplier-query-detail.json --data-source file --evaluation-mode deterministic
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+Workflow Test: PASSED
+Workflow: XDX_SUPPLIER_CORE_20260924 (DRAFT v86231263)
+Test: supplier-query-detail
+Data source: file
+Evaluation: deterministic
+Assertions: 115/115 passed
+Judge: skipped (evaluation-mode deterministic skips judge evaluation.)
+Duration: 19991 ms
+Report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-query-detail\result.json
+Markdown report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-query-detail\result.md
+HTML report: [result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-query-detail\result.html)
+
+Failures: none
+Warnings: none
+Final output preview:
+<oraInfoDisplay key="supplierRead">{"patternId":"multiRecordWidget","title":"Supplier detail","description":"Verified scalar supplier profile for 300000047414679.","properties":{"cols":["Supplier ID","Supplier number","Supplier","Supplier type","Business relationship","Inactive date","Status","Alternate name","Tax organization type","Corporate website"],"rows":[{"cells":["300000047414679","1255","Dell Inc.","Not specified","Spend Authorized","Not specified","ACTIVE","Dell Inc","Corporation","www.dell.com"]}]}}</oraInfoDisplay>
+Assertion suggestion: "Spend Authorized"  (source: FETCH_SUPPLIER_DETAIL)
+Assertion suggestion: "Corporation"  (source: FETCH_SUPPLIER_DETAIL)
+
+Node                   Events                Input  Output
+---------------------  --------------------  -----  ------
+START                  NODE_EXECUTED         yes    yes
+EXTRACT_READ           NODE_START, NODE_END  yes    yes
+PREPARE_TRANSACTION    NODE_EXECUTED         yes    yes
+TRANSACTION_ROUTE      NODE_START, NODE_END  yes    yes
+PREPARE_READ           NODE_EXECUTED         yes    yes
+READ_ALLOWED           NODE_EXECUTED         yes    yes
+IS_LIST                NODE_EXECUTED         yes    yes
+FETCH_SUPPLIER_DETAIL  NODE_START, NODE_END  yes    yes
+SHAPE_DETAIL           NODE_EXECUTED         yes    yes
+STORE_DETAIL_STATE     NODE_EXECUTED         yes    yes
+DISPLAY_STAGE          NODE_START, NODE_END  yes    yes
+SUPPLIER_READ_DISPLAY  NODE_START, NODE_END  yes    yes
+
+2026-09-25T01:13:53.609Z get-workflow-test-sync-plan --file src/workflows/xdx_supplier_core_20260924.wf --format focused-json
+{
+  "kind": "workflow-test-focused-sync-plan",
+  "workflowFile": "src/workflows/xdx_supplier_core_20260924.wf",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924",
+    "status": "DRAFT",
+    "version": 86231263,
+    "name": "XDX Supplier Core 20260924",
+    "description": "Native terminating supplier core query and exact-approved create flows.",
+    "family": "PRC",
+    "product": "SUPPLIER"
+  },
+  "view": {
+    "mode": "recommended-batch",
+    "totalActionsBeforeFilter": 47
+  },
+  "summary": {
+    "totalActions": 1,
+    "deferred": 0
+  },
+  "syncLoopState": "actions-remaining",
+  "finalSummaryAllowed": false,
+  "coverageExecution": {
+    "primaryComplete": true,
+    "remainingActions": 47,
+    "nextActionId": "create:transaction-route-display-path",
+    "nextAction": {
+      "actionId": "create:transaction-route-display-path",
+      "action": "create",
+      "status": "missing",
+      "testName": "transaction-route-display-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/transaction-route-display-path.json",
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3101,
+      "title": "transaction route Display Path",
+      "purpose": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "model-generated",
+      "coverageClass": "deep-path",
+      "costClass": "complex",
+      "lowRisk": true,
+      "reason": "No existing test covers this current workflow scenario.",
+      "authoringHints": {
+        "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "outcome": "display"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "display",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL",
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER",
+            "FETCH_ADDRESS_PARENT",
+            "FETCH_ADDRESSES",
+            "FETCH_ADDRESS_DETAIL",
+            "CHECK_ADDRESS_DUPLICATE",
+            "CREATE_ADDRESS",
+            "GET_CREATED_ADDRESS",
+            "FETCH_SITE_PARENT",
+            "FETCH_SITES",
+            "FETCH_SITE_DETAIL",
+            "FETCH_SITE_ADDRESS_REFERENCE",
+            "FETCH_SITE_BU_REFERENCE",
+            "CHECK_SITE_DUPLICATE",
+            "CREATE_SITE",
+            "GET_CREATED_SITE",
+            "FETCH_CONTACT_PARENT",
+            "FETCH_CONTACTS",
+            "FETCH_CONTACT_DETAIL",
+            "CHECK_CONTACT_DUPLICATE",
+            "CREATE_CONTACT",
+            "GET_CREATED_CONTACT"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (TRANSACTION_ROUTE / display) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is TRANSACTION_ROUTE expression \"{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}\". Synthesize or select upstream values that make this expression choose display; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test transaction-route-display-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-TRANSACTION_ROUTE-display-path",
+            "kind": "branch-path",
+            "intent": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "STORE_PREPARED_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY",
+              "ADDRESS_DISPLAY",
+              "SITE_DISPLAY",
+              "CONTACT_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 4,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 2297,
+                "hash": "d99bc3969ce1d2b5",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 1299,
+                "hash": "327073670ace9b40",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 4,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": []
+          },
+          "contractHash": "57781e6a305b1c5b"
+        }
+      }
+    },
+    "costClass": "complex"
+  },
+  "guidance": {
+    "mode": "automatic",
+    "nextStep": "Execute the single secondary create or update action in coverageExecution.nextActionIds without asking for confirmation. Apply required testData and validate that affected test with deterministic file data. Before generation, author definition.judge whenever the focused action has semantic judge context. If the first attempt misses the intended branch, retry once with materially different input before deferring only that scenario. For record-now secondary branch tests, use the observed-path model: derive path assertions from result.run.nodeResults on success; retry with different input via do-update-workflow-test up to 2 total attempts on wrong-branch failure; call mark-workflow-test-unable-to-generate and skip only that scenario after 2 failures. Immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json after the action is validated or deferred. If nextActionIds contains another action, execute it next without asking. Do not stop while create or update actions remain. Do not run a full workflow suite or perform local semantic judging while create or update actions remain. Do NOT call get-workflow-test-final-summary until no create or update actions remain."
+  }
+}
+
+2026-09-25T01:13:53.919Z do-update-workflow-test --file src/workflows/xdx_supplier_core_20260924.wf --test-file test/workflows/xdx_supplier_core_20260924/supplier-query-guidance.json --definition @.debug/p5-update-supplier-query-guidance.json
+Workflow test updated.
+Workflow: XDX_SUPPLIER_CORE_20260924 (unknown)
+Test: supplier-query-guidance
+Previous workflow identity: undefined vundefined
+Updated fields: pathAssertions, judge
+Test file: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test\workflows\xdx_supplier_core_20260924\supplier-query-guidance.json
+
+2026-09-25T01:14:17.252Z FAILED run-workflow-test --test-file test/workflows/xdx_supplier_core_20260924/supplier-query-guidance.json --data-source file --evaluation-mode deterministic
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+Workflow Test: FAILED
+Workflow: XDX_SUPPLIER_CORE_20260924 (DRAFT v86231263)
+Test: supplier-query-guidance
+Data source: file
+Evaluation: deterministic
+Assertions: 115/116 passed
+Judge: skipped (evaluation-mode deterministic skips judge evaluation.)
+Duration: 22159 ms
+Report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-query-guidance\result.json
+Markdown report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-query-guidance\result.md
+HTML report: [result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-query-guidance\result.html)
+
+Failures:
+- Final answer did not contain expected text: Supported reads are supplier list, exact-name search, next page and selected supplier detail.
+Failed output assertions:
+- supplier-query-guidance | contains: "Supported reads are supplier list, exact-name search, next page and selected supplier detail." | FAILED
+No changes were made to the test or workflow. Update the test assertion or the workflow and re-run.
+Warnings: none
+Final output preview:
+<oraInfoDisplay key="supplierGuidance">{"patternId":"cardWidget","title":"Supplier request guidance","properties":{"subject":"Request not executed","summary":"Supported reads are supplier, address, site and contact list, exact-name search, next page and selected detail. Child reads require a selected supplier."}}</oraInfoDisplay>
+
+Node                 Events                Input  Output
+-------------------  --------------------  -----  ------
+START                NODE_EXECUTED         yes    yes
+EXTRACT_READ         NODE_START, NODE_END  yes    yes
+PREPARE_TRANSACTION  NODE_EXECUTED         yes    yes
+TRANSACTION_ROUTE    NODE_START, NODE_END  yes    yes
+PREPARE_READ         NODE_EXECUTED         yes    yes
+READ_ALLOWED         NODE_EXECUTED         yes    yes
+READ_GUIDANCE        NODE_START, NODE_END  yes    yes
+
+
+2026-09-25T01:15:09.235Z do-update-workflow-test --file src/workflows/xdx_supplier_core_20260924.wf --test-file test/workflows/xdx_supplier_core_20260924/supplier-query-guidance.json --definition @.debug/p5-update-supplier-query-guidance.json
+Workflow test updated.
+Workflow: XDX_SUPPLIER_CORE_20260924 (unknown)
+Test: supplier-query-guidance
+Previous workflow identity: undefined vundefined
+Updated fields: assertions
+Test file: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test\workflows\xdx_supplier_core_20260924\supplier-query-guidance.json
+
+2026-09-25T01:15:36.939Z run-workflow-test --test-file test/workflows/xdx_supplier_core_20260924/supplier-query-guidance.json --data-source file --evaluation-mode deterministic
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+Workflow Test: PASSED
+Workflow: XDX_SUPPLIER_CORE_20260924 (DRAFT v86231263)
+Test: supplier-query-guidance
+Data source: file
+Evaluation: deterministic
+Assertions: 116/116 passed
+Judge: skipped (evaluation-mode deterministic skips judge evaluation.)
+Duration: 26567 ms
+Report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-query-guidance\result.json
+Markdown report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-query-guidance\result.md
+HTML report: [result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-query-guidance\result.html)
+
+Failures: none
+Warnings: none
+Final output preview:
+<oraInfoDisplay key="supplierGuidance">{"patternId":"cardWidget","title":"Supplier request guidance","properties":{"subject":"Request not executed","summary":"Supported reads are supplier, address, site and contact list, exact-name search, next page and selected detail. Child reads require a selected supplier."}}</oraInfoDisplay>
+
+Node                 Events                Input  Output
+-------------------  --------------------  -----  ------
+START                NODE_EXECUTED         yes    yes
+EXTRACT_READ         NODE_START, NODE_END  yes    yes
+PREPARE_TRANSACTION  NODE_EXECUTED         yes    yes
+TRANSACTION_ROUTE    NODE_START, NODE_END  yes    yes
+PREPARE_READ         NODE_EXECUTED         yes    yes
+READ_ALLOWED         NODE_EXECUTED         yes    yes
+READ_GUIDANCE        NODE_START, NODE_END  yes    yes
+
+2026-09-25T01:15:37.548Z get-workflow-test-sync-plan --file src/workflows/xdx_supplier_core_20260924.wf --format focused-json
+{
+  "kind": "workflow-test-focused-sync-plan",
+  "workflowFile": "src/workflows/xdx_supplier_core_20260924.wf",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924",
+    "status": "DRAFT",
+    "version": 86231263,
+    "name": "XDX Supplier Core 20260924",
+    "description": "Native terminating supplier core query and exact-approved create flows.",
+    "family": "PRC",
+    "product": "SUPPLIER"
+  },
+  "view": {
+    "mode": "recommended-batch",
+    "totalActionsBeforeFilter": 47
+  },
+  "summary": {
+    "totalActions": 1,
+    "deferred": 0
+  },
+  "syncLoopState": "actions-remaining",
+  "finalSummaryAllowed": false,
+  "coverageExecution": {
+    "primaryComplete": true,
+    "remainingActions": 47,
+    "nextActionId": "create:transaction-route-display-path",
+    "nextAction": {
+      "actionId": "create:transaction-route-display-path",
+      "action": "create",
+      "status": "missing",
+      "testName": "transaction-route-display-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/transaction-route-display-path.json",
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3101,
+      "title": "transaction route Display Path",
+      "purpose": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "model-generated",
+      "coverageClass": "deep-path",
+      "costClass": "complex",
+      "lowRisk": true,
+      "reason": "No existing test covers this current workflow scenario.",
+      "authoringHints": {
+        "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "outcome": "display"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "display",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL",
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER",
+            "FETCH_ADDRESS_PARENT",
+            "FETCH_ADDRESSES",
+            "FETCH_ADDRESS_DETAIL",
+            "CHECK_ADDRESS_DUPLICATE",
+            "CREATE_ADDRESS",
+            "GET_CREATED_ADDRESS",
+            "FETCH_SITE_PARENT",
+            "FETCH_SITES",
+            "FETCH_SITE_DETAIL",
+            "FETCH_SITE_ADDRESS_REFERENCE",
+            "FETCH_SITE_BU_REFERENCE",
+            "CHECK_SITE_DUPLICATE",
+            "CREATE_SITE",
+            "GET_CREATED_SITE",
+            "FETCH_CONTACT_PARENT",
+            "FETCH_CONTACTS",
+            "FETCH_CONTACT_DETAIL",
+            "CHECK_CONTACT_DUPLICATE",
+            "CREATE_CONTACT",
+            "GET_CREATED_CONTACT"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (TRANSACTION_ROUTE / display) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is TRANSACTION_ROUTE expression \"{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}\". Synthesize or select upstream values that make this expression choose display; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test transaction-route-display-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-TRANSACTION_ROUTE-display-path",
+            "kind": "branch-path",
+            "intent": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "STORE_PREPARED_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY",
+              "ADDRESS_DISPLAY",
+              "SITE_DISPLAY",
+              "CONTACT_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 4,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 2297,
+                "hash": "d99bc3969ce1d2b5",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 1299,
+                "hash": "327073670ace9b40",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 4,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": []
+          },
+          "contractHash": "57781e6a305b1c5b"
+        }
+      }
+    },
+    "costClass": "complex"
+  },
+  "guidance": {
+    "mode": "automatic",
+    "nextStep": "Execute the single secondary create or update action in coverageExecution.nextActionIds without asking for confirmation. Apply required testData and validate that affected test with deterministic file data. Before generation, author definition.judge whenever the focused action has semantic judge context. If the first attempt misses the intended branch, retry once with materially different input before deferring only that scenario. For record-now secondary branch tests, use the observed-path model: derive path assertions from result.run.nodeResults on success; retry with different input via do-update-workflow-test up to 2 total attempts on wrong-branch failure; call mark-workflow-test-unable-to-generate and skip only that scenario after 2 failures. Immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json after the action is validated or deferred. If nextActionIds contains another action, execute it next without asking. Do not stop while create or update actions remain. Do not run a full workflow suite or perform local semantic judging while create or update actions remain. Do NOT call get-workflow-test-final-summary until no create or update actions remain."
+  }
+}
+
+2026-09-25T01:15:37.907Z do-update-workflow-test --file src/workflows/xdx_supplier_core_20260924.wf --test-file test/workflows/xdx_supplier_core_20260924/address-query-list.json --definition @.debug/p5-update-address-query-list.json
+Workflow test updated.
+Workflow: XDX_SUPPLIER_CORE_20260924 (unknown)
+Test: address-query-list
+Previous workflow identity: undefined vundefined
+Updated fields: pathAssertions, judge
+Test file: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test\workflows\xdx_supplier_core_20260924\address-query-list.json
+
+2026-09-25T01:15:56.380Z run-workflow-test --test-file test/workflows/xdx_supplier_core_20260924/address-query-list.json --data-source file --evaluation-mode deterministic
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+Workflow Test: PASSED
+Workflow: XDX_SUPPLIER_CORE_20260924 (DRAFT v86231263)
+Test: address-query-list
+Data source: file
+Evaluation: deterministic
+Assertions: 115/115 passed
+Judge: skipped (evaluation-mode deterministic skips judge evaluation.)
+Duration: 17295 ms
+Report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\address-query-list\result.json
+Markdown report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\address-query-list\result.md
+HTML report: [result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\address-query-list\result.html)
+
+Failures: none
+Warnings: none
+Final output preview:
+<oraInfoDisplay key="addressCore">{"patternId":"multiRecordWidget","title":"Supplier addresses","description":"Supplier XDX Core Supplier 20260924 2130 (300000333814409). count: 1, offset: 0, hasMore: false. No next page.","properties":{"cols":["SupplierAddressId","AddressName","CountryCode","AddressLine1","City","State","PostalCode","Email","AddressPurposeOrderingFlag","AddressPartyNumber","Status","InactiveDate"],"rows":[{"cells":["300000333814416","XDX Core Address 20260924","US","5000 CARTER DR.","LOS ANGELES","CA","90032","xdx-core-address-20260924@example.invalid","true","1486638","ACTIVE","4712-12-31"]}]}}</oraInfoDisplay>
+Assertion suggestion: "XDX Core Address 20260924"  (source: FETCH_ADDRESSES)
+Assertion suggestion: "LOS ANGELES"  (source: FETCH_ADDRESSES)
+Assertion suggestion: "XDX Core Supplier 20260924 2130"  (source: FETCH_ADDRESS_PARENT)
+Assertion suggestion: "5000 CARTER DR."  (source: FETCH_ADDRESSES)
+Assertion suggestion: "xdx-core-address-20260924@example.invalid"  (source: FETCH_ADDRESSES)
+
+Node                    Events                Input  Output
+----------------------  --------------------  -----  ------
+START                   NODE_EXECUTED         yes    yes
+EXTRACT_READ            NODE_START, NODE_END  yes    yes
+PREPARE_TRANSACTION     NODE_EXECUTED         yes    yes
+TRANSACTION_ROUTE       NODE_START, NODE_END  yes    yes
+PREPARE_ADDRESS         NODE_EXECUTED         yes    yes
+STORE_ADDRESS_PREPARED  NODE_EXECUTED         yes    yes
+ADDRESS_ENTRY           NODE_START, NODE_END  yes    yes
+FETCH_ADDRESS_PARENT    NODE_START, NODE_END  yes    yes
+CHECK_ADDRESS_PARENT    NODE_EXECUTED         yes    yes
+STORE_ADDRESS_PARENT    NODE_EXECUTED         yes    yes
+ADDRESS_OPERATION       NODE_START, NODE_END  yes    yes
+FETCH_ADDRESSES         NODE_START, NODE_END  yes    yes
+SHAPE_ADDRESSES         NODE_EXECUTED         yes    yes
+STORE_ADDRESS_LIST      NODE_EXECUTED         yes    yes
+ADDRESS_DISPLAY         NODE_START, NODE_END  yes    yes
+
+2026-09-25T01:15:56.955Z get-workflow-test-sync-plan --file src/workflows/xdx_supplier_core_20260924.wf --format focused-json
+{
+  "kind": "workflow-test-focused-sync-plan",
+  "workflowFile": "src/workflows/xdx_supplier_core_20260924.wf",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924",
+    "status": "DRAFT",
+    "version": 86231263,
+    "name": "XDX Supplier Core 20260924",
+    "description": "Native terminating supplier core query and exact-approved create flows.",
+    "family": "PRC",
+    "product": "SUPPLIER"
+  },
+  "view": {
+    "mode": "recommended-batch",
+    "totalActionsBeforeFilter": 47
+  },
+  "summary": {
+    "totalActions": 1,
+    "deferred": 0
+  },
+  "syncLoopState": "actions-remaining",
+  "finalSummaryAllowed": false,
+  "coverageExecution": {
+    "primaryComplete": true,
+    "remainingActions": 47,
+    "nextActionId": "create:transaction-route-display-path",
+    "nextAction": {
+      "actionId": "create:transaction-route-display-path",
+      "action": "create",
+      "status": "missing",
+      "testName": "transaction-route-display-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/transaction-route-display-path.json",
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3101,
+      "title": "transaction route Display Path",
+      "purpose": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "model-generated",
+      "coverageClass": "deep-path",
+      "costClass": "complex",
+      "lowRisk": true,
+      "reason": "No existing test covers this current workflow scenario.",
+      "authoringHints": {
+        "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "outcome": "display"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "display",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL",
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER",
+            "FETCH_ADDRESS_PARENT",
+            "FETCH_ADDRESSES",
+            "FETCH_ADDRESS_DETAIL",
+            "CHECK_ADDRESS_DUPLICATE",
+            "CREATE_ADDRESS",
+            "GET_CREATED_ADDRESS",
+            "FETCH_SITE_PARENT",
+            "FETCH_SITES",
+            "FETCH_SITE_DETAIL",
+            "FETCH_SITE_ADDRESS_REFERENCE",
+            "FETCH_SITE_BU_REFERENCE",
+            "CHECK_SITE_DUPLICATE",
+            "CREATE_SITE",
+            "GET_CREATED_SITE",
+            "FETCH_CONTACT_PARENT",
+            "FETCH_CONTACTS",
+            "FETCH_CONTACT_DETAIL",
+            "CHECK_CONTACT_DUPLICATE",
+            "CREATE_CONTACT",
+            "GET_CREATED_CONTACT"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (TRANSACTION_ROUTE / display) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is TRANSACTION_ROUTE expression \"{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}\". Synthesize or select upstream values that make this expression choose display; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test transaction-route-display-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-TRANSACTION_ROUTE-display-path",
+            "kind": "branch-path",
+            "intent": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "STORE_PREPARED_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY",
+              "ADDRESS_DISPLAY",
+              "SITE_DISPLAY",
+              "CONTACT_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 4,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 2297,
+                "hash": "d99bc3969ce1d2b5",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 1299,
+                "hash": "327073670ace9b40",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 4,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": []
+          },
+          "contractHash": "57781e6a305b1c5b"
+        }
+      }
+    },
+    "costClass": "complex"
+  },
+  "guidance": {
+    "mode": "automatic",
+    "nextStep": "Execute the single secondary create or update action in coverageExecution.nextActionIds without asking for confirmation. Apply required testData and validate that affected test with deterministic file data. Before generation, author definition.judge whenever the focused action has semantic judge context. If the first attempt misses the intended branch, retry once with materially different input before deferring only that scenario. For record-now secondary branch tests, use the observed-path model: derive path assertions from result.run.nodeResults on success; retry with different input via do-update-workflow-test up to 2 total attempts on wrong-branch failure; call mark-workflow-test-unable-to-generate and skip only that scenario after 2 failures. Immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json after the action is validated or deferred. If nextActionIds contains another action, execute it next without asking. Do not stop while create or update actions remain. Do not run a full workflow suite or perform local semantic judging while create or update actions remain. Do NOT call get-workflow-test-final-summary until no create or update actions remain."
+  }
+}
+
+2026-09-25T01:15:57.291Z do-update-workflow-test --file src/workflows/xdx_supplier_core_20260924.wf --test-file test/workflows/xdx_supplier_core_20260924/address-query-detail.json --definition @.debug/p5-update-address-query-detail.json
+Workflow test updated.
+Workflow: XDX_SUPPLIER_CORE_20260924 (unknown)
+Test: address-query-detail
+Previous workflow identity: undefined vundefined
+Updated fields: pathAssertions, judge
+Test file: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test\workflows\xdx_supplier_core_20260924\address-query-detail.json
+
+2026-09-25T01:16:18.501Z run-workflow-test --test-file test/workflows/xdx_supplier_core_20260924/address-query-detail.json --data-source file --evaluation-mode deterministic
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+Workflow Test: PASSED
+Workflow: XDX_SUPPLIER_CORE_20260924 (DRAFT v86231263)
+Test: address-query-detail
+Data source: file
+Evaluation: deterministic
+Assertions: 115/115 passed
+Judge: skipped (evaluation-mode deterministic skips judge evaluation.)
+Duration: 20086 ms
+Report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\address-query-detail\result.json
+Markdown report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\address-query-detail\result.md
+HTML report: [result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\address-query-detail\result.html)
+
+Failures: none
+Warnings: none
+Final output preview:
+<oraInfoDisplay key="addressCore">{"patternId":"multiRecordWidget","title":"Address detail","description":"Supplier XDX Core Supplier 20260924 2130 (300000333814409). Verified selected address.","properties":{"cols":["SupplierAddressId","AddressName","CountryCode","AddressLine1","City","State","PostalCode","Email","AddressPurposeOrderingFlag","AddressPartyNumber","Status","InactiveDate"],"rows":[{"cells":["300000333814416","XDX Core Address 20260924","US","5000 CARTER DR.","LOS ANGELES","CA","90032","xdx-core-address-20260924@example.invalid","true","1486638","ACTIVE","4712-12-31"]}]}}</oraInfoDisplay>
+Assertion suggestion: "XDX Core Address 20260924"  (source: FETCH_ADDRESS_DETAIL)
+Assertion suggestion: "LOS ANGELES"  (source: FETCH_ADDRESS_DETAIL)
+Assertion suggestion: "XDX Core Supplier 20260924 2130"  (source: FETCH_ADDRESS_PARENT)
+Assertion suggestion: "5000 CARTER DR."  (source: FETCH_ADDRESS_DETAIL)
+Assertion suggestion: "xdx-core-address-20260924@example.invalid"  (source: FETCH_ADDRESS_DETAIL)
+
+Node                    Events                Input  Output
+----------------------  --------------------  -----  ------
+START                   NODE_EXECUTED         yes    yes
+EXTRACT_READ            NODE_START, NODE_END  yes    yes
+PREPARE_TRANSACTION     NODE_EXECUTED         yes    yes
+TRANSACTION_ROUTE       NODE_START, NODE_END  yes    yes
+PREPARE_ADDRESS         NODE_EXECUTED         yes    yes
+STORE_ADDRESS_PREPARED  NODE_EXECUTED         yes    yes
+ADDRESS_ENTRY           NODE_START, NODE_END  yes    yes
+FETCH_ADDRESS_PARENT    NODE_START, NODE_END  yes    yes
+CHECK_ADDRESS_PARENT    NODE_EXECUTED         yes    yes
+STORE_ADDRESS_PARENT    NODE_EXECUTED         yes    yes
+ADDRESS_OPERATION       NODE_START, NODE_END  yes    yes
+FETCH_ADDRESS_DETAIL    NODE_START, NODE_END  yes    yes
+SHAPE_ADDRESS_DETAIL    NODE_EXECUTED         yes    yes
+STORE_ADDRESS_DETAIL    NODE_EXECUTED         yes    yes
+ADDRESS_DISPLAY         NODE_START, NODE_END  yes    yes
+
+2026-09-25T01:16:19.126Z get-workflow-test-sync-plan --file src/workflows/xdx_supplier_core_20260924.wf --format focused-json
+{
+  "kind": "workflow-test-focused-sync-plan",
+  "workflowFile": "src/workflows/xdx_supplier_core_20260924.wf",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924",
+    "status": "DRAFT",
+    "version": 86231263,
+    "name": "XDX Supplier Core 20260924",
+    "description": "Native terminating supplier core query and exact-approved create flows.",
+    "family": "PRC",
+    "product": "SUPPLIER"
+  },
+  "view": {
+    "mode": "recommended-batch",
+    "totalActionsBeforeFilter": 47
+  },
+  "summary": {
+    "totalActions": 1,
+    "deferred": 0
+  },
+  "syncLoopState": "actions-remaining",
+  "finalSummaryAllowed": false,
+  "coverageExecution": {
+    "primaryComplete": true,
+    "remainingActions": 47,
+    "nextActionId": "create:transaction-route-display-path",
+    "nextAction": {
+      "actionId": "create:transaction-route-display-path",
+      "action": "create",
+      "status": "missing",
+      "testName": "transaction-route-display-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/transaction-route-display-path.json",
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3101,
+      "title": "transaction route Display Path",
+      "purpose": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "model-generated",
+      "coverageClass": "deep-path",
+      "costClass": "complex",
+      "lowRisk": true,
+      "reason": "No existing test covers this current workflow scenario.",
+      "authoringHints": {
+        "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "outcome": "display"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "display",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL",
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER",
+            "FETCH_ADDRESS_PARENT",
+            "FETCH_ADDRESSES",
+            "FETCH_ADDRESS_DETAIL",
+            "CHECK_ADDRESS_DUPLICATE",
+            "CREATE_ADDRESS",
+            "GET_CREATED_ADDRESS",
+            "FETCH_SITE_PARENT",
+            "FETCH_SITES",
+            "FETCH_SITE_DETAIL",
+            "FETCH_SITE_ADDRESS_REFERENCE",
+            "FETCH_SITE_BU_REFERENCE",
+            "CHECK_SITE_DUPLICATE",
+            "CREATE_SITE",
+            "GET_CREATED_SITE",
+            "FETCH_CONTACT_PARENT",
+            "FETCH_CONTACTS",
+            "FETCH_CONTACT_DETAIL",
+            "CHECK_CONTACT_DUPLICATE",
+            "CREATE_CONTACT",
+            "GET_CREATED_CONTACT"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (TRANSACTION_ROUTE / display) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is TRANSACTION_ROUTE expression \"{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}\". Synthesize or select upstream values that make this expression choose display; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test transaction-route-display-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-TRANSACTION_ROUTE-display-path",
+            "kind": "branch-path",
+            "intent": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "STORE_PREPARED_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY",
+              "ADDRESS_DISPLAY",
+              "SITE_DISPLAY",
+              "CONTACT_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 4,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 2297,
+                "hash": "d99bc3969ce1d2b5",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 1299,
+                "hash": "327073670ace9b40",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 4,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": []
+          },
+          "contractHash": "57781e6a305b1c5b"
+        }
+      }
+    },
+    "costClass": "complex"
+  },
+  "guidance": {
+    "mode": "automatic",
+    "nextStep": "Execute the single secondary create or update action in coverageExecution.nextActionIds without asking for confirmation. Apply required testData and validate that affected test with deterministic file data. Before generation, author definition.judge whenever the focused action has semantic judge context. If the first attempt misses the intended branch, retry once with materially different input before deferring only that scenario. For record-now secondary branch tests, use the observed-path model: derive path assertions from result.run.nodeResults on success; retry with different input via do-update-workflow-test up to 2 total attempts on wrong-branch failure; call mark-workflow-test-unable-to-generate and skip only that scenario after 2 failures. Immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json after the action is validated or deferred. If nextActionIds contains another action, execute it next without asking. Do not stop while create or update actions remain. Do not run a full workflow suite or perform local semantic judging while create or update actions remain. Do NOT call get-workflow-test-final-summary until no create or update actions remain."
+  }
+}
+
+2026-09-25T01:16:19.369Z do-update-workflow-test --file src/workflows/xdx_supplier_core_20260924.wf --test-file test/workflows/xdx_supplier_core_20260924/supplier-draft-conversation.json --definition @.debug/p5-update-supplier-draft-conversation.json
+Workflow test updated.
+Workflow: XDX_SUPPLIER_CORE_20260924 (unknown)
+Test: supplier-draft-conversation
+Previous workflow identity: undefined vundefined
+Updated fields: conversation
+Test file: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test\workflows\xdx_supplier_core_20260924\supplier-draft-conversation.json
+
+2026-09-25T01:18:00.512Z run-workflow-test --test-file test/workflows/xdx_supplier_core_20260924/supplier-draft-conversation.json --data-source file --evaluation-mode deterministic --refresh-conversation-path-bindings true
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+Workflow Conversation Test: PASSED
+Workflow: XDX_SUPPLIER_CORE_20260924 (DRAFT v86231263)
+Test: supplier-draft-conversation
+Data source: file
+Evaluation: deterministic
+Conversation steps: 5 passed, 0 failed, 0 need judge, 0 skipped
+Assertions: 592/592 passed
+Judge: skipped (No semantic judge contract was required for this conversation run.)
+Duration: 100321 ms
+Report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-draft-conversation\result.json
+Markdown report: C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-draft-conversation\result.md
+HTML report: [result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\supplier-draft-conversation\result.html)
+
+2026-09-25T01:18:01.091Z get-workflow-test-sync-plan --file src/workflows/xdx_supplier_core_20260924.wf --format focused-json
+{
+  "kind": "workflow-test-focused-sync-plan",
+  "workflowFile": "src/workflows/xdx_supplier_core_20260924.wf",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924",
+    "status": "DRAFT",
+    "version": 86231263,
+    "name": "XDX Supplier Core 20260924",
+    "description": "Native terminating supplier core query and exact-approved create flows.",
+    "family": "PRC",
+    "product": "SUPPLIER"
+  },
+  "view": {
+    "mode": "recommended-batch",
+    "totalActionsBeforeFilter": 47
+  },
+  "summary": {
+    "totalActions": 1,
+    "deferred": 0
+  },
+  "syncLoopState": "actions-remaining",
+  "finalSummaryAllowed": false,
+  "coverageExecution": {
+    "primaryComplete": true,
+    "remainingActions": 47,
+    "nextActionId": "create:transaction-route-display-path",
+    "nextAction": {
+      "actionId": "create:transaction-route-display-path",
+      "action": "create",
+      "status": "missing",
+      "testName": "transaction-route-display-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/transaction-route-display-path.json",
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3101,
+      "title": "transaction route Display Path",
+      "purpose": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "model-generated",
+      "coverageClass": "deep-path",
+      "costClass": "complex",
+      "lowRisk": true,
+      "reason": "No existing test covers this current workflow scenario.",
+      "authoringHints": {
+        "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "outcome": "display"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "display",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL",
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER",
+            "FETCH_ADDRESS_PARENT",
+            "FETCH_ADDRESSES",
+            "FETCH_ADDRESS_DETAIL",
+            "CHECK_ADDRESS_DUPLICATE",
+            "CREATE_ADDRESS",
+            "GET_CREATED_ADDRESS",
+            "FETCH_SITE_PARENT",
+            "FETCH_SITES",
+            "FETCH_SITE_DETAIL",
+            "FETCH_SITE_ADDRESS_REFERENCE",
+            "FETCH_SITE_BU_REFERENCE",
+            "CHECK_SITE_DUPLICATE",
+            "CREATE_SITE",
+            "GET_CREATED_SITE",
+            "FETCH_CONTACT_PARENT",
+            "FETCH_CONTACTS",
+            "FETCH_CONTACT_DETAIL",
+            "CHECK_CONTACT_DUPLICATE",
+            "CREATE_CONTACT",
+            "GET_CREATED_CONTACT"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (TRANSACTION_ROUTE / display) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is TRANSACTION_ROUTE expression \"{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}\". Synthesize or select upstream values that make this expression choose display; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test transaction-route-display-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-TRANSACTION_ROUTE-display-path",
+            "kind": "branch-path",
+            "intent": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "STORE_PREPARED_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY",
+              "ADDRESS_DISPLAY",
+              "SITE_DISPLAY",
+              "CONTACT_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 4,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 2297,
+                "hash": "d99bc3969ce1d2b5",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 1299,
+                "hash": "327073670ace9b40",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 4,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": []
+          },
+          "contractHash": "57781e6a305b1c5b"
+        }
+      }
+    },
+    "costClass": "complex"
+  },
+  "guidance": {
+    "mode": "automatic",
+    "nextStep": "Execute the single secondary create or update action in coverageExecution.nextActionIds without asking for confirmation. Apply required testData and validate that affected test with deterministic file data. Before generation, author definition.judge whenever the focused action has semantic judge context. If the first attempt misses the intended branch, retry once with materially different input before deferring only that scenario. For record-now secondary branch tests, use the observed-path model: derive path assertions from result.run.nodeResults on success; retry with different input via do-update-workflow-test up to 2 total attempts on wrong-branch failure; call mark-workflow-test-unable-to-generate and skip only that scenario after 2 failures. Immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json after the action is validated or deferred. If nextActionIds contains another action, execute it next without asking. Do not stop while create or update actions remain. Do not run a full workflow suite or perform local semantic judging while create or update actions remain. Do NOT call get-workflow-test-final-summary until no create or update actions remain."
+  }
+}
+
+2026-09-25T01:18:01.327Z FAILED do-update-workflow-test --file src/workflows/xdx_supplier_core_20260924.wf --test-file test/workflows/xdx_supplier_core_20260924/address-draft-conversation.json --definition @.debug/p5-update-address-draft-conversation.json
+
+{
+  "ok": false,
+  "error": "Conversation step prepare-address-draft terminates at ADDRESS_OPERATION (SWITCH), which is not a supported semantic judge target. Remove the judge and use deterministic path, output, suspension, order, and count assertions."
+}

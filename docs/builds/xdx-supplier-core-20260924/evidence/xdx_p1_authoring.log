@@ -1,0 +1,281 @@
+2026-09-24T20:41:43.917Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "1",
+    "nodeCode": "STAGE_ENTRY"
+  }
+}
+
+2026-09-24T20:41:44.132Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "2",
+    "nodeCode": "INIT_REQUEST"
+  }
+}
+
+2026-09-24T20:41:44.344Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "3",
+    "nodeCode": "EXTRACT_READ"
+  }
+}
+
+2026-09-24T20:41:44.543Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "4",
+    "nodeCode": "PREPARE_READ"
+  }
+}
+
+2026-09-24T20:41:44.750Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "5",
+    "nodeCode": "READ_ALLOWED"
+  }
+}
+
+2026-09-24T20:41:47.090Z do-create-node
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "6",
+    "nodeCode": "FETCH_SUPPLIERS",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "applied",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "getall_suppliers",
+      "resolved": true,
+      "source": "example",
+      "operationType": "GET",
+      "eligibleExampleStatus": "resolved",
+      "openApiFallbackEligible": true,
+      "resourceType": "ADF_BC_FIXED_QUERY",
+      "functionResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers?fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,InactiveDate&onlyData=true&orderBy=SupplierId:asc&limit={limit}&offset={offset}&q={q}"
+    },
+    "boOutputSpecificationResolved": true,
+    "boOutputSpecificationNeedsAttention": false,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationSource": "example",
+    "boOutputSpecificationOpenApiFallbackEligible": true
+  }
+}
+
+2026-09-24T20:41:47.382Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "7",
+    "nodeCode": "SHAPE_SUPPLIERS"
+  }
+}
+
+2026-09-24T20:41:47.626Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "8",
+    "nodeCode": "DISPLAY_STAGE"
+  }
+}
+
+2026-09-24T20:41:47.859Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "9",
+    "nodeCode": "INIT_DISPLAY"
+  }
+}
+
+2026-09-24T20:41:48.092Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "10",
+    "nodeCode": "SUPPLIER_READ_DISPLAY"
+  }
+}
+
+2026-09-24T20:41:48.302Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "11",
+    "nodeCode": "READ_GUIDANCE"
+  }
+}
+
+2026-09-24T20:41:48.512Z do-modify-node-edges
+{
+  "ok": true,
+  "command": "do-modify-node-edges",
+  "result": {
+    "ok": true,
+    "applied": 12,
+    "skipped": 0,
+    "details": [
+      {
+        "action": "add",
+        "from": "START",
+        "to": "STAGE_ENTRY",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STAGE_ENTRY",
+        "to": "INIT_REQUEST",
+        "label": "InitDisplay",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STAGE_ENTRY",
+        "to": "EXTRACT_READ",
+        "label": "Query",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "INIT_REQUEST",
+        "to": "PREPARE_READ",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "EXTRACT_READ",
+        "to": "PREPARE_READ",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "PREPARE_READ",
+        "to": "READ_ALLOWED",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "READ_ALLOWED",
+        "to": "FETCH_SUPPLIERS",
+        "label": "true",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "READ_ALLOWED",
+        "to": "READ_GUIDANCE",
+        "label": "false",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "FETCH_SUPPLIERS",
+        "to": "SHAPE_SUPPLIERS",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SHAPE_SUPPLIERS",
+        "to": "DISPLAY_STAGE",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "DISPLAY_STAGE",
+        "to": "INIT_DISPLAY",
+        "label": "InitDisplay",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "DISPLAY_STAGE",
+        "to": "SUPPLIER_READ_DISPLAY",
+        "label": "Query",
+        "status": "applied"
+      }
+    ],
+    "message": "Edges updated."
+  }
+}
+
+2026-09-24T20:41:48.730Z do-prettify-workflow
+{
+  "ok": true,
+  "command": "do-prettify-workflow",
+  "result": {
+    "ok": true,
+    "orientation": "vertical",
+    "nodeCount": 12,
+    "noteCount": 0,
+    "message": "Workflow layout prettified."
+  }
+}
+
+2026-09-24T20:41:48.955Z validate-workflow
+{
+  "ok": true,
+  "command": "validate-workflow",
+  "result": {
+    "ok": false,
+    "errorCount": 2,
+    "errors": [
+      {
+        "nodeCode": "INIT_DISPLAY",
+        "kind": "app_workflow_contract",
+        "field": "appStage.InitDisplay",
+        "message": "INIT_DISPLAY (LLM) is shared by multiple app-stage routes; app-stage output nodes should be dedicated.",
+        "details": {
+          "code": "APP_STAGE_TERMINAL_SHARED",
+          "appStage": "InitDisplay"
+        }
+      },
+      {
+        "nodeCode": "INIT_DISPLAY",
+        "kind": "app_workflow_contract",
+        "field": "appStage.Query",
+        "message": "INIT_DISPLAY (LLM) is shared by multiple app-stage routes; app-stage output nodes should be dedicated.",
+        "details": {
+          "code": "APP_STAGE_TERMINAL_SHARED",
+          "appStage": "Query"
+        }
+      }
+    ],
+    "message": "Workflow validation found 2 errors."
+  }
+}

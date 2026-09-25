@@ -1,0 +1,30 @@
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "get-business-object-functions",
+  "result": {
+    "businessObjectCode": "XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS",
+    "found": true,
+    "businessObjectName": "XDX Supplier Procurement Business Units",
+    "family": "PRC",
+    "product": "PURCHASING",
+    "functionCount": 1,
+    "functions": [
+      {
+        "functionName": "getall_procurementBusinessUnitsLOV",
+        "description": "Retrieve a page of authenticated procurement BU and action rows. Follow hasMore; collapse choices by exact BU ID only after checking name consistency. This is not supplier-write authorization.",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/procurementBusinessUnitsLOV?onlyData=true&limit={limit}&offset={offset}&orderBy=ProcurementBUId,AgentAction",
+        "requiredTokenParameters": [
+          "limit",
+          "offset"
+        ],
+        "hasSavedExample": true
+      }
+    ]
+  }
+}

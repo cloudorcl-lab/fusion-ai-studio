@@ -1,0 +1,1362 @@
+2026-09-25T01:00:37.666Z do-create-bo-function-from-operation
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] At least one audience token is nearing expiry; refreshing all audience tokens.
+[aistudio-auth] Fusion AI token already expired; recovering with PKCE refresh token.
+Refreshing base scope urn:opc:resource:fusion:eqih-dev21:fusion-ai/ using refresh token.
+Refresh token rotated by identity provider.
+Refreshed OAuth token for scope urn:opc:resource:fusion:eqih-dev21:fusion-ai/.
+[aistudio-auth] Updating audience tokens using orchestrator for base scope urn:opc:resource:fusion:eqih-dev21:fusion-ai/...
+[aistudio-auth] Fetching orchestrator audience tokens from https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/fusion-ai/orchestrator/authz/v1/tokens...
+[aistudio-auth] Orchestrator provided tokens for scopes: urn:opc:resource:fusion:eqih-dev21:boss/, urn:opc:resource:fusion:eqih-dev21:knowledge-management/, urn:opc:resource:fusion:eqih-dev21:fusion-ai/, urn:opc:resource:fusion:eqih-dev21:sales-common/, fa, urn:opc:resource:fusion:eqih-dev21:saas-batch/
+[aistudio-auth] Audience cache now contains scopes: urn:opc:resource:fusion:eqih-dev21:fusion-ai/, urn:opc:resource:fusion:eqih-dev21:boss/, urn:opc:resource:fusion:eqih-dev21:knowledge-management/, urn:opc:resource:fusion:eqih-dev21:sales-common/, fa, urn:opc:resource:fusion:eqih-dev21:saas-batch/
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-bo-function-from-operation",
+  "result": {
+    "functionName": "getall_suppliers_contacts",
+    "operationId": "getall_suppliers-contacts",
+    "operationType": "GET",
+    "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts"
+  }
+}
+
+2026-09-25T01:00:40.296Z do-create-bo-function-from-operation
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-bo-function-from-operation",
+  "result": {
+    "functionName": "get_suppliers_contacts",
+    "operationId": "get_suppliers-contacts",
+    "operationType": "GET",
+    "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts/{suppliers_contacts_Id}"
+  }
+}
+
+2026-09-25T01:00:43.283Z do-create-bo-function-from-operation
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-bo-function-from-operation",
+  "result": {
+    "functionName": "create_suppliers_contacts",
+    "operationId": "create_suppliers-contacts",
+    "operationType": "POST",
+    "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts"
+  }
+}
+
+2026-09-25T01:00:43.515Z do-modify-bo-function
+{
+  "ok": true,
+  "command": "do-modify-bo-function",
+  "result": {
+    "functionName": "getall_suppliers_contacts",
+    "updatedFields": [
+      "resourcePath"
+    ]
+  }
+}
+
+2026-09-25T01:00:43.762Z do-modify-bo-function
+{
+  "ok": true,
+  "command": "do-modify-bo-function",
+  "result": {
+    "functionName": "get_suppliers_contacts",
+    "updatedFields": [
+      "resourcePath"
+    ]
+  }
+}
+
+2026-09-25T01:00:43.993Z do-modify-bo-function
+{
+  "ok": true,
+  "command": "do-modify-bo-function",
+  "result": {
+    "functionName": "create_suppliers_contacts",
+    "updatedFields": [
+      "bodyTemplate",
+      "description"
+    ]
+  }
+}
+
+2026-09-25T01:00:44.410Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "getall_suppliers_contacts",
+    "headerName": "REST-Framework-Version"
+  }
+}
+
+2026-09-25T01:00:44.794Z do-apply-bo-function-example-payload
+{
+  "ok": true,
+  "command": "do-apply-bo-function-example-payload",
+  "result": {
+    "functionName": "getall_suppliers_contacts",
+    "description": "Retained contact response projected for schema, not current build acceptance.",
+    "payload": "{\n  \"items\": [\n    {\n      \"SupplierContactId\": 300000333813808,\n      \"ContactName\": null,\n      \"FirstName\": \"XDX Ryan\",\n      \"LastName\": \"XDX Lee 0917133857\",\n      \"Email\": \"xdx-contact-0917133857@example.invalid\",\n      \"PersonProfileId\": 300000333813808,\n      \"Status\": \"ACTIVE\",\n      \"InactiveDate\": null,\n      \"UserName\": null,\n      \"UserAccountStatus\": null\n    }\n  ],\n  \"count\": 1,\n  \"hasMore\": false,\n  \"limit\": 5,\n  \"offset\": 0\n}"
+  }
+}
+
+2026-09-25T01:00:45.075Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "get_suppliers_contacts",
+    "headerName": "REST-Framework-Version"
+  }
+}
+
+2026-09-25T01:00:45.338Z do-apply-bo-function-example-payload
+{
+  "ok": true,
+  "command": "do-apply-bo-function-example-payload",
+  "result": {
+    "functionName": "get_suppliers_contacts",
+    "description": "Retained contact response projected for schema, not current build acceptance.",
+    "payload": "{\n  \"SupplierContactId\": 300000333813808,\n  \"ContactName\": null,\n  \"FirstName\": \"XDX Ryan\",\n  \"LastName\": \"XDX Lee 0917133857\",\n  \"Email\": \"xdx-contact-0917133857@example.invalid\",\n  \"PersonProfileId\": 300000333813808,\n  \"Status\": \"ACTIVE\",\n  \"InactiveDate\": null,\n  \"UserName\": null,\n  \"UserAccountStatus\": null\n}"
+  }
+}
+
+2026-09-25T01:00:45.643Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "create_suppliers_contacts",
+    "headerName": "REST-Framework-Version"
+  }
+}
+
+2026-09-25T01:00:45.902Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "create_suppliers_contacts",
+    "headerName": "Content-Type"
+  }
+}
+
+2026-09-25T01:00:46.143Z do-add-bo-function-header
+{
+  "ok": true,
+  "command": "do-add-bo-function-header",
+  "result": {
+    "functionName": "create_suppliers_contacts",
+    "headerName": "Upsert-Mode"
+  }
+}
+
+2026-09-25T01:00:46.474Z do-apply-bo-function-example-payload
+{
+  "ok": true,
+  "command": "do-apply-bo-function-example-payload",
+  "result": {
+    "functionName": "create_suppliers_contacts",
+    "description": "Retained contact response projected for schema, not current build acceptance.",
+    "payload": "{\n  \"SupplierContactId\": 300000333813808,\n  \"ContactName\": null,\n  \"FirstName\": \"XDX Ryan\",\n  \"LastName\": \"XDX Lee 0917133857\",\n  \"Email\": \"xdx-contact-0917133857@example.invalid\",\n  \"PersonProfileId\": 300000333813808,\n  \"Status\": \"ACTIVE\",\n  \"InactiveDate\": null,\n  \"UserName\": null,\n  \"UserAccountStatus\": null\n}"
+  }
+}
+
+2026-09-25T01:00:46.721Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "getall_suppliers_contacts",
+    "parameterName": "suppliers_Id",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-25T01:00:46.956Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "getall_suppliers_contacts",
+    "parameterName": "limit",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-25T01:00:47.266Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "getall_suppliers_contacts",
+    "parameterName": "offset",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-25T01:00:47.500Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "getall_suppliers_contacts",
+    "parameterName": "q",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-25T01:00:47.725Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "get_suppliers_contacts",
+    "parameterName": "suppliers_Id",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-25T01:00:47.947Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "get_suppliers_contacts",
+    "parameterName": "suppliers_contacts_Id",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-25T01:00:48.195Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_contacts",
+    "parameterName": "suppliers_Id",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-25T01:00:48.447Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_contacts",
+    "parameterName": "FirstName",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-25T01:00:48.777Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_contacts",
+    "parameterName": "LastName",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-25T01:00:49.114Z do-modify-bo-function-parameter
+{
+  "ok": true,
+  "command": "do-modify-bo-function-parameter",
+  "result": {
+    "functionName": "create_suppliers_contacts",
+    "parameterName": "Email",
+    "kind": "token",
+    "updatedFields": [
+      "dataType",
+      "description"
+    ]
+  }
+}
+
+2026-09-25T01:00:49.387Z do-delete-bo-function-example
+{
+  "ok": true,
+  "command": "do-delete-bo-function-example",
+  "result": {
+    "functionName": "create_suppliers_contacts",
+    "exampleDescription": ""
+  }
+}
+
+2026-09-25T01:02:55.314Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "90",
+    "nodeCode": "PREPARE_CONTACT"
+  }
+}
+
+2026-09-25T01:02:55.526Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "91",
+    "nodeCode": "STORE_CONTACT_PREPARED"
+  }
+}
+
+2026-09-25T01:02:55.731Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "92",
+    "nodeCode": "CONTACT_ENTRY"
+  }
+}
+
+2026-09-25T01:02:58.540Z do-create-node
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "93",
+    "nodeCode": "FETCH_CONTACT_PARENT",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "applied",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers",
+      "resolved": true,
+      "source": "example",
+      "operationType": "GET",
+      "eligibleExampleStatus": "resolved",
+      "openApiFallbackEligible": true,
+      "resourceType": "ADF_BC_FIXED_QUERY",
+      "functionResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}?onlyData=true&fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,InactiveDate,Status,AlternateName,TaxOrganizationType,CorporateWebsite"
+    },
+    "boOutputSpecificationResolved": true,
+    "boOutputSpecificationNeedsAttention": false,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationSource": "example",
+    "boOutputSpecificationOpenApiFallbackEligible": true
+  }
+}
+
+2026-09-25T01:02:58.746Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "94",
+    "nodeCode": "CHECK_CONTACT_PARENT"
+  }
+}
+
+2026-09-25T01:02:58.947Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "95",
+    "nodeCode": "STORE_CONTACT_PARENT"
+  }
+}
+
+2026-09-25T01:02:59.160Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "96",
+    "nodeCode": "CONTACT_OPERATION"
+  }
+}
+
+2026-09-25T01:03:01.017Z do-create-node
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "97",
+    "nodeCode": "FETCH_CONTACTS",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "getall_suppliers_contacts",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Business Object function not found: getall_suppliers_contacts"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Business Object function not found: getall_suppliers_contacts",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-25T01:03:02.983Z do-create-node
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "98",
+    "nodeCode": "FETCH_CONTACT_DETAIL",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers_contacts",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Business Object function not found: get_suppliers_contacts"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Business Object function not found: get_suppliers_contacts",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-25T01:03:03.190Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "99",
+    "nodeCode": "SHAPE_CONTACTS"
+  }
+}
+
+2026-09-25T01:03:03.397Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "100",
+    "nodeCode": "SHAPE_CONTACT_DETAIL"
+  }
+}
+
+2026-09-25T01:03:03.610Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "101",
+    "nodeCode": "STORE_CONTACT_LIST"
+  }
+}
+
+2026-09-25T01:03:03.811Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "102",
+    "nodeCode": "STORE_CONTACT_DETAIL"
+  }
+}
+
+2026-09-25T01:03:04.018Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "103",
+    "nodeCode": "CONTACT_DUPLICATE_INPUT"
+  }
+}
+
+2026-09-25T01:03:05.851Z do-create-node
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "104",
+    "nodeCode": "CHECK_CONTACT_DUPLICATE",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "getall_suppliers_contacts",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Business Object function not found: getall_suppliers_contacts"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Business Object function not found: getall_suppliers_contacts",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-25T01:03:06.058Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "105",
+    "nodeCode": "AUTHORIZE_CONTACT_WRITE"
+  }
+}
+
+2026-09-25T01:03:06.258Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "106",
+    "nodeCode": "STORE_CONTACT_ATTEMPT"
+  }
+}
+
+2026-09-25T01:03:06.491Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "107",
+    "nodeCode": "CONTACT_WRITE_ROUTE"
+  }
+}
+
+2026-09-25T01:03:08.418Z do-create-node
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "108",
+    "nodeCode": "CREATE_CONTACT",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "create_suppliers_contacts",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Business Object function not found: create_suppliers_contacts"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Business Object function not found: create_suppliers_contacts",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-25T01:03:08.625Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "109",
+    "nodeCode": "CAPTURE_CONTACT_CREATE"
+  }
+}
+
+2026-09-25T01:03:08.839Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "110",
+    "nodeCode": "STORE_CONTACT_RECEIPT"
+  }
+}
+
+2026-09-25T01:03:09.063Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "111",
+    "nodeCode": "CONTACT_HAS_ID"
+  }
+}
+
+2026-09-25T01:03:10.934Z do-create-node
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "112",
+    "nodeCode": "GET_CREATED_CONTACT",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers_contacts",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Business Object function not found: get_suppliers_contacts"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Business Object function not found: get_suppliers_contacts",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-25T01:03:11.141Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "113",
+    "nodeCode": "VERIFY_CONTACT_CREATE"
+  }
+}
+
+2026-09-25T01:03:11.364Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "114",
+    "nodeCode": "STORE_CONTACT_VERIFIED"
+  }
+}
+
+2026-09-25T01:03:13.365Z do-create-node
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "115",
+    "nodeCode": "FETCH_SITE_CONTACT_REFERENCE",
+    "boOutputSpecificationEnrichment": {
+      "outcome": "skipped",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "getall_suppliers_contacts",
+      "resolved": false,
+      "eligibleExampleStatus": "absent",
+      "openApiFallbackEligible": false,
+      "reason": "Business Object function not found: getall_suppliers_contacts"
+    },
+    "boOutputSpecificationResolved": false,
+    "boOutputSpecificationNeedsAttention": true,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationReason": "Business Object function not found: getall_suppliers_contacts",
+    "boOutputSpecificationOpenApiFallbackEligible": false
+  }
+}
+
+2026-09-25T01:03:13.571Z do-create-node
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "116",
+    "nodeCode": "CONTACT_DISPLAY"
+  }
+}
+
+2026-09-25T01:03:13.785Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "CONTACT_DISPLAY",
+    "updated": true
+  }
+}
+
+2026-09-25T01:03:14.008Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "EXTRACT_READ",
+    "updated": true
+  }
+}
+
+2026-09-25T01:03:14.252Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "EXTRACT_READ",
+    "updated": true
+  }
+}
+
+2026-09-25T01:03:14.587Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "PREPARE_TRANSACTION",
+    "updated": true
+  }
+}
+
+2026-09-25T01:03:14.799Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "PREPARE_SITE",
+    "updated": true
+  }
+}
+
+2026-09-25T01:03:15.010Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "SHAPE_SITES",
+    "updated": true
+  }
+}
+
+2026-09-25T01:03:15.226Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "SHAPE_SITE_DETAIL",
+    "updated": true
+  }
+}
+
+2026-09-25T01:03:15.449Z do-modify-node
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "PREPARE_READ",
+    "updated": true
+  }
+}
+
+2026-09-25T01:03:15.662Z do-modify-node-edges
+{
+  "ok": true,
+  "command": "do-modify-node-edges",
+  "result": {
+    "ok": true,
+    "applied": 34,
+    "skipped": 4,
+    "details": [
+      {
+        "action": "add",
+        "from": "TRANSACTION_ROUTE",
+        "to": "PREPARE_CONTACT",
+        "label": "contact",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "PREPARE_CONTACT",
+        "to": "STORE_CONTACT_PREPARED",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_CONTACT_PREPARED",
+        "to": "CONTACT_ENTRY",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_ENTRY",
+        "to": "CONTACT_DISPLAY",
+        "label": "display",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_ENTRY",
+        "to": "FETCH_CONTACT_PARENT",
+        "label": "parent",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_ENTRY",
+        "to": "",
+        "label": "success",
+        "status": "skipped",
+        "reason": "Unknown node code (not present in diagram)."
+      },
+      {
+        "action": "add",
+        "from": "FETCH_CONTACT_PARENT",
+        "to": "CHECK_CONTACT_PARENT",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CHECK_CONTACT_PARENT",
+        "to": "STORE_CONTACT_PARENT",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_CONTACT_PARENT",
+        "to": "CONTACT_OPERATION",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_OPERATION",
+        "to": "CONTACT_DISPLAY",
+        "label": "display",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_OPERATION",
+        "to": "FETCH_CONTACTS",
+        "label": "list",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_OPERATION",
+        "to": "FETCH_CONTACT_DETAIL",
+        "label": "detail",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_OPERATION",
+        "to": "CONTACT_DUPLICATE_INPUT",
+        "label": "preflight",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_OPERATION",
+        "to": "",
+        "label": "success",
+        "status": "skipped",
+        "reason": "Unknown node code (not present in diagram)."
+      },
+      {
+        "action": "add",
+        "from": "FETCH_CONTACTS",
+        "to": "SHAPE_CONTACTS",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "FETCH_CONTACT_DETAIL",
+        "to": "SHAPE_CONTACT_DETAIL",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SHAPE_CONTACTS",
+        "to": "STORE_CONTACT_LIST",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "SHAPE_CONTACT_DETAIL",
+        "to": "STORE_CONTACT_DETAIL",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_CONTACT_LIST",
+        "to": "CONTACT_DISPLAY",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_CONTACT_DETAIL",
+        "to": "CONTACT_DISPLAY",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_DUPLICATE_INPUT",
+        "to": "CHECK_CONTACT_DUPLICATE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CHECK_CONTACT_DUPLICATE",
+        "to": "AUTHORIZE_CONTACT_WRITE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "AUTHORIZE_CONTACT_WRITE",
+        "to": "STORE_CONTACT_ATTEMPT",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_CONTACT_ATTEMPT",
+        "to": "CONTACT_WRITE_ROUTE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_WRITE_ROUTE",
+        "to": "CREATE_CONTACT",
+        "label": "write",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_WRITE_ROUTE",
+        "to": "GET_CREATED_CONTACT",
+        "label": "verify",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_WRITE_ROUTE",
+        "to": "CONTACT_DISPLAY",
+        "label": "display",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_WRITE_ROUTE",
+        "to": "",
+        "label": "success",
+        "status": "skipped",
+        "reason": "Unknown node code (not present in diagram)."
+      },
+      {
+        "action": "add",
+        "from": "CREATE_CONTACT",
+        "to": "CAPTURE_CONTACT_CREATE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CAPTURE_CONTACT_CREATE",
+        "to": "STORE_CONTACT_RECEIPT",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_CONTACT_RECEIPT",
+        "to": "CONTACT_HAS_ID",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_HAS_ID",
+        "to": "GET_CREATED_CONTACT",
+        "label": "true",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_HAS_ID",
+        "to": "CONTACT_DISPLAY",
+        "label": "false",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "GET_CREATED_CONTACT",
+        "to": "VERIFY_CONTACT_CREATE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "VERIFY_CONTACT_CREATE",
+        "to": "STORE_CONTACT_VERIFIED",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "STORE_CONTACT_VERIFIED",
+        "to": "CONTACT_DISPLAY",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "FETCH_SITE_CONTACT_REFERENCE",
+        "to": "FETCH_SITE_BU_REFERENCE",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "CONTACT_DISPLAY",
+        "to": "END",
+        "label": "success",
+        "status": "skipped",
+        "reason": "Edge already exists."
+      }
+    ],
+    "message": "Edges updated."
+  }
+}
+
+2026-09-25T01:03:15.879Z do-prettify-workflow
+{
+  "ok": true,
+  "command": "do-prettify-workflow",
+  "result": {
+    "ok": true,
+    "orientation": "vertical",
+    "nodeCount": 115,
+    "noteCount": 0,
+    "message": "Workflow layout prettified."
+  }
+}
+
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "FETCH_CONTACT_PARENT",
+    "updated": true,
+    "boOutputSpecificationEnrichment": {
+      "outcome": "replaced-placeholder",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers",
+      "resolved": true,
+      "source": "example",
+      "operationType": "GET",
+      "eligibleExampleStatus": "resolved",
+      "openApiFallbackEligible": true,
+      "resourceType": "ADF_BC_FIXED_QUERY",
+      "functionResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}?onlyData=true&fields=SupplierId,SupplierNumber,Supplier,SupplierType,BusinessRelationship,InactiveDate,Status,AlternateName,TaxOrganizationType,CorporateWebsite"
+    },
+    "boOutputSpecificationResolved": true,
+    "boOutputSpecificationNeedsAttention": false,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationSource": "example",
+    "boOutputSpecificationOpenApiFallbackEligible": true
+  }
+}
+
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "FETCH_CONTACTS",
+    "updated": true,
+    "boOutputSpecificationEnrichment": {
+      "outcome": "applied",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "getall_suppliers_contacts",
+      "resolved": true,
+      "source": "example",
+      "operationType": "GET",
+      "eligibleExampleStatus": "resolved",
+      "openApiFallbackEligible": true,
+      "resourceType": "ADF_BC_FIXED_QUERY",
+      "functionResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts?onlyData=true&fields=SupplierContactId,ContactName,FirstName,LastName,Email,PersonProfileId,Status,InactiveDate,UserName,UserAccountStatus&orderBy=SupplierContactId:asc&limit={limit}&offset={offset}&q={q}"
+    },
+    "boOutputSpecificationResolved": true,
+    "boOutputSpecificationNeedsAttention": false,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationSource": "example",
+    "boOutputSpecificationOpenApiFallbackEligible": true
+  }
+}
+
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "FETCH_CONTACT_DETAIL",
+    "updated": true,
+    "boOutputSpecificationEnrichment": {
+      "outcome": "applied",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers_contacts",
+      "resolved": true,
+      "source": "example",
+      "operationType": "GET",
+      "eligibleExampleStatus": "resolved",
+      "openApiFallbackEligible": true,
+      "resourceType": "ADF_BC_FIXED_QUERY",
+      "functionResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts/{suppliers_contacts_Id}?onlyData=true&fields=SupplierContactId,ContactName,FirstName,LastName,Email,PersonProfileId,Status,InactiveDate,UserName,UserAccountStatus"
+    },
+    "boOutputSpecificationResolved": true,
+    "boOutputSpecificationNeedsAttention": false,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationSource": "example",
+    "boOutputSpecificationOpenApiFallbackEligible": true
+  }
+}
+
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "CHECK_CONTACT_DUPLICATE",
+    "updated": true,
+    "boOutputSpecificationEnrichment": {
+      "outcome": "applied",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "getall_suppliers_contacts",
+      "resolved": true,
+      "source": "example",
+      "operationType": "GET",
+      "eligibleExampleStatus": "resolved",
+      "openApiFallbackEligible": true,
+      "resourceType": "ADF_BC_FIXED_QUERY",
+      "functionResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts?onlyData=true&fields=SupplierContactId,ContactName,FirstName,LastName,Email,PersonProfileId,Status,InactiveDate,UserName,UserAccountStatus&orderBy=SupplierContactId:asc&limit={limit}&offset={offset}&q={q}"
+    },
+    "boOutputSpecificationResolved": true,
+    "boOutputSpecificationNeedsAttention": false,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationSource": "example",
+    "boOutputSpecificationOpenApiFallbackEligible": true
+  }
+}
+
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "CREATE_CONTACT",
+    "updated": true,
+    "boOutputSpecificationEnrichment": {
+      "outcome": "applied",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "create_suppliers_contacts",
+      "resolved": true,
+      "source": "example",
+      "operationType": "POST",
+      "eligibleExampleStatus": "resolved",
+      "openApiFallbackEligible": true,
+      "resourceType": "ADF_BC_FIXED_QUERY",
+      "functionResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts"
+    },
+    "boOutputSpecificationResolved": true,
+    "boOutputSpecificationNeedsAttention": false,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationSource": "example",
+    "boOutputSpecificationOpenApiFallbackEligible": true
+  }
+}
+
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "GET_CREATED_CONTACT",
+    "updated": true,
+    "boOutputSpecificationEnrichment": {
+      "outcome": "applied",
+      "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "functionName": "get_suppliers_contacts",
+      "resolved": true,
+      "source": "example",
+      "operationType": "GET",
+      "eligibleExampleStatus": "resolved",
+      "openApiFallbackEligible": true,
+      "resourceType": "ADF_BC_FIXED_QUERY",
+      "functionResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts/{suppliers_contacts_Id}?onlyData=true&fields=SupplierContactId,ContactName,FirstName,LastName,Email,PersonProfileId,Status,InactiveDate,UserName,UserAccountStatus"
+    },
+    "boOutputSpecificationResolved": true,
+    "boOutputSpecificationNeedsAttention": false,
+    "boOutputSpecificationRetryRecommended": false,
+    "boOutputSpecificationApprovalRetryRecommended": false,
+    "boOutputSpecificationSource": "example",
+    "boOutputSpecificationOpenApiFallbackEligible": true
+  }
+}

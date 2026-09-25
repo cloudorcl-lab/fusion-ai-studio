@@ -1,0 +1,67 @@
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+--- Workflow test command result (not the final user-facing Validation and Insights section) ---
+Workflow test suite needs-judge: 0/14 passed, 0 failed, 14 needs judge.
+Filters: workflowCode=XDX_SUPPLIER_CORE_20260924.
+
+Reports:
+- Workflow suite report: [suite-result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\suite-result.html)
+
+Metrics:
+- Token data: observed for 14/14 cases; input 222134; output 11823; total 233957.
+- AI units: 270 total (54 token units, 14/14 cases computed).
+- Latency: total workflow time 494.0s across 14/14 model-backed cases.
+
+Optimization:
+- Model optimization is not ready because model-backed tests exist, but none have passed yet. Attach pending judge results for model-backed tests before using them as optimization evidence.
+- Next action: Complete pending judge results. Attach judge results for model-backed tests, rerun the suite if needed, then offer model optimization.
+
+Tests:
+1. init-display | needs judge | InitDisplay app path | Failure: Local judge result required. | Deterministic: passed: 115/115 checks | Judge: pending | Suggested prompt: Review init-display, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+2. query | needs judge | Verify the supplier list Query stage with grounded native output. | Failure: Local judge result required. | Deterministic: passed: 115/115 checks | Judge: pending | Suggested prompt: Review query, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+3. address-draft-conversation | needs judge | Verify address draft state continuity and safe cancellation through native Query... | Failure: Local judge result required. | Deterministic: passed: 474/474 checks | Judge: pending | Suggested prompt: Review address-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+4. address-query-detail | needs judge | Verify ordinary scalar address detail under the correct supplier independently o... | Failure: Local judge result required. | Deterministic: passed: 115/115 checks | Judge: pending | Suggested prompt: Review address-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+5. address-query-list | needs judge | Verify ordinary address exact-name query with verified supplier parent and all p... | Failure: Local judge result required. | Deterministic: passed: 115/115 checks | Judge: pending | Suggested prompt: Review address-query-list, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+6. contact-draft-conversation | needs judge | Verify parent-scoped contact read or draft-only continuity, no POST. | Failure: Local judge result required. | Deterministic: passed: 474/474 checks | Judge: pending | Suggested prompt: Review contact-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+7. contact-query-detail | needs judge | Verify parent-scoped contact read or draft-only continuity, no POST. | Failure: Local judge result required. | Deterministic: passed: 115/115 checks | Judge: pending | Suggested prompt: Review contact-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+8. contact-query-list | needs judge | Verify parent-scoped contact read or draft-only continuity, no POST. | Failure: Local judge result required. | Deterministic: passed: 115/115 checks | Judge: pending | Suggested prompt: Review contact-query-list, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+9. site-draft-conversation | needs judge | Verify site draft state, field-only editing, current reference review and cancel... | Failure: Local judge result required. | Deterministic: passed: 474/474 checks | Judge: pending | Suggested prompt: Review site-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+10. site-query-detail | needs judge | Verify ordinary scalar site detail with correct parent and all fields, independe... | Failure: Local judge result required. | Deterministic: passed: 115/115 checks | Judge: pending | Suggested prompt: Review site-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+11. site-query-list | needs judge | Verify ordinary site exact-name query with supplier parent and all nine projecte... | Failure: Local judge result required. | Deterministic: passed: 115/115 checks | Judge: pending | Suggested prompt: Review site-query-list, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+12. supplier-draft-conversation | needs judge | Verify supplier draft continuity and safe stale rejection and cancellation. | Failure: Local judge result required. | Deterministic: passed: 592/592 checks | Judge: pending | Suggested prompt: Review supplier-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+13. supplier-query-detail | needs judge | Verify SUP-READ supplier scalar detail through Query with selected current suppl... | Failure: Local judge result required. | Deterministic: passed: 115/115 checks | Judge: pending | Suggested prompt: Review supplier-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+14. supplier-query-guidance | needs judge | Verify SUP-READ unsupported request withholding through actual Query, not unreac... | Failure: Local judge result required. | Deterministic: passed: 116/116 checks | Judge: pending | Suggested prompt: Review supplier-query-guidance, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+Needs judge:
+- XDX_SUPPLIER_CORE_20260924/init-display: attach a local judge result.
+  Suggested prompt: Review init-display, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/query: attach a local judge result.
+  Suggested prompt: Review query, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/address-draft-conversation: attach a local judge result.
+  Suggested prompt: Review address-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/address-query-detail: attach a local judge result.
+  Suggested prompt: Review address-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/address-query-list: attach a local judge result.
+  Suggested prompt: Review address-query-list, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/contact-draft-conversation: attach a local judge result.
+  Suggested prompt: Review contact-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/contact-query-detail: attach a local judge result.
+  Suggested prompt: Review contact-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/contact-query-list: attach a local judge result.
+  Suggested prompt: Review contact-query-list, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/site-draft-conversation: attach a local judge result.
+  Suggested prompt: Review site-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/site-query-detail: attach a local judge result.
+  Suggested prompt: Review site-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/site-query-list: attach a local judge result.
+  Suggested prompt: Review site-query-list, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/supplier-draft-conversation: attach a local judge result.
+  Suggested prompt: Review supplier-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/supplier-query-detail: attach a local judge result.
+  Suggested prompt: Review supplier-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/supplier-query-guidance: attach a local judge result.
+  Suggested prompt: Review supplier-query-guidance, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+For the final user-facing Validation and Insights section, run get-workflow-test-final-summary --file <workflow-file>.
+--- End workflow test command result ---

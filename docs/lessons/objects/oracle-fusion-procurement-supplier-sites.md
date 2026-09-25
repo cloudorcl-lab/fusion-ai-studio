@@ -132,6 +132,8 @@ The 2026-09-23 XDX Supplier Lifecycle acceptance created site `300000333814273` 
 
 Verify a successful write by returned `SupplierSiteId` and parent-scoped GET. Compare server defaults separately from submitted values. The authorized 2026-09-17 create and read-back passed, including the new address relationship and submitted procurement BU and purpose flags; see the [POST review](../../builds/xdx-supplier-information/xdx_supplier_post_review.md).
 
+The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierSiteId and returned300000333814424 under supplier300000333814409. Independent GET matched all four approved fields, resolved SupplierAddressId300000333814416 and current US1 Business Unit300000046987012. See [native receipt](../../builds/xdx-supplier-core-20260924/evidence/xdx_p4_native_site.md). No assignment/payment fields were submitted. This corroborates existing generated-ID treatment in eqih-dev21 / 11.13.18.05 without resolving duplicate-name uniqueness; immutable first GET sample unchanged.
+
 ## Evidence and limits
 
 - [Core live summary](../../builds/xdx-supplier-information/live-details/summary.json) records baseline, ID filter, offset paging and empty-result checks.
@@ -144,6 +146,7 @@ Verify a successful write by returned `SupplierSiteId` and parent-scoped GET. Co
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-24 | XDX Supplier Core exact-approved native POST and independent GET | Corroborated existing generated-field treatment and required payload in the tested tenant; retained first GET sample and unresolved uniqueness limits. |
 | 2026-09-23 | XDX Supplier Lifecycle one-POST site acceptance and independent GET | Confirmed the required-field-only four-field request, generated `SupplierSiteId 300000333814273`, resolved BU/address relationships and omitted payment/optional fields; retained first-success GET sample unchanged. |
 | 2026-09-17 | Supplier 1497 child POST/GET | Added generated site ID and new-address relationship confirmation; six intended fields matched. |
 | 2026-09-17 | Retained 26C schema reviewed during compliance audit | Explicitly recorded requiredness, name length and unresolved duplicate-key scope; no new POST. |

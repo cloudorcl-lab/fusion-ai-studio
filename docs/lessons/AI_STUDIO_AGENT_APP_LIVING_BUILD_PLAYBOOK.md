@@ -126,7 +126,7 @@ Verify policy and session tests, including stale identity/content, missing timin
 - **Canonical owner:** This file
 - **Temporary steward:** The owner of each active agent-app build
 - **Applies to:** Every AI Studio agent app and its backing tools, workflows, tests, data, runtime dependencies, and release evidence
-- **Last reviewed:** 2026-09-24
+- **Last reviewed:** 2026-09-25
 
 ## Purpose
 
@@ -463,7 +463,7 @@ Do not assume that a DRAFT workflow can execute another DRAFT workflow as a chil
 
 Normalize machine-readable fields at that boundary before presentation. In particular, strip sentence punctuation accidentally captured after ISO timestamps, validate required keys and row counts, sort in deterministic code, and align dependent records by stable identifiers instead of trusting model-emitted order.
 
-For conversational transactions, keep read selection separate from each transaction draft patch. Route a named parent into the active child draft explicitly, bind the declared conversation variable at its observed runtime path, and prove field-only follow-ups preserve that owner. Deterministic merge, revision, approval and attempt state must authorize writes; model reconstruction from chat history cannot replace missing state. When the UI advertises exact review, approval or create commands, normalize those full-message commands in one deterministic request owner before routing; incidental model intent or reconstructed fields must not reset the draft. Preserve the existing raw-command, exact-payload and revision gates.
+For conversational transactions, keep read selection separate from each transaction draft patch. Route a named parent into the active child draft explicitly, bind the declared conversation variable at its observed runtime path, and prove field-only follow-ups preserve that owner. Deterministic merge, revision, approval and attempt state must authorize writes; model reconstruction from chat history cannot replace missing state. When the UI advertises exact review, approval or create commands, normalize those full-message commands in one deterministic request owner before routing; incidental model intent or reconstructed fields must not reset the draft. Apply the same rule to supported unambiguous field-only edit commands: route by the named field, merge only its supplied value, and preserve the existing parent even when model extraction supplies a conflicting intent or parent. Test that conflict against actual serialized CODE and the conversation replay. Preserve the existing raw-command, exact-payload and revision gates.
 
 When an LLM derives numeric results, do not rely on prompt-only verification:
 
@@ -726,7 +726,7 @@ When signed-in target-app acceptance is pending and CLI work continues, retain o
 - Do not run model sweeps while architecture, sync, or semantics are unstable.
 - Do not run a model sweep for every incremental stage when a current evidence-backed placement already satisfies the same accuracy contract; defer it to the named performance or release gate.
 - After a classified failure, run only the affected test until it passes.
-- After a CLI test update, verify that ordered path assertions still end at the observed terminal owner. Appending inactive-node checks must not change the terminal inferred from the execution order.
+- After a CLI test update, verify that ordered path assertions still end at the observed terminal owner. Appending inactive-node checks must not change the terminal inferred from the execution order. Recheck after workflow formatting or normalization: declaration order can affect test terminal inference even when graph edges are unchanged. Preserve the observed terminal contract and semantic judge; repair declaration/assertion ordering instead of dropping the judge.
 - Before judge attachment, compare each expected outcome with the current
   terminal route semantics. A sync-current path may still carry a stale
   milestone rubric; refresh only that judge contract and rerun only its
@@ -958,6 +958,7 @@ After every update:
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
 | 2026-09-24 | [Next-run governance audit](../builds/xdx-next-run-governance-audit-20260924/audit.md) | Reconcile live-first test order and scoped ATLAS completion; consolidate kickoff into versioned models; reuse unchanged command evidence | Policy/session regressions and scoped document review; future run speed unmeasured |
+| 2026-09-25 | Supplier Core P5 replay repairs | Refine existing conversation and terminal-order owners: preserve explicit field edits against conflicting extraction; recheck semantic terminal inference after declaration reordering. | Retained address edit routing failure, actual-CODE child edit contract, and repaired four-step address replay474/474 on DRAFT86232573. No accepted POST replayed. |
 | 2026-09-24 | [Timestamped retry introspection](../builds/xdx-build-introspection-20260924/xdx_introspection_20260924.md) | Prioritize accuracy/completeness/elapsed time; require independent requirement coverage, complete representative transaction proof, activity-level timing and explicit keep-alive continuity limits. Promote retained retry amendments into base without merging runtime artifacts. | Local governance regression and document checks recorded in the introspection verification receipt; future-build speed and scheduler automation are unproven. |
 | 2026-09-24 | XDX Supplier Lifecycle retry P3-P7 corrections and final read acceptance | Refine existing source, state, native-widget and test owners with exact rendered-body JSON validation, separate read/transaction patch state, canonical widget envelope checks, observed-terminal ordering after test updates and deterministic ownership of exact transaction control commands. | Retained P3-P7 acceptance, eleven local contracts, retained 19-case slice suite, focused command-repair replay and native review/approval/edit/read regression; final cumulative acceptance tracked in the build receipt. No accepted POST repeated. |
 | 2026-09-23 | XDX Supplier Lifecycle rework-concentration audit | Make the first real app Query plus configured BO route a prerequisite for suite expansion; require five-minute same-tab Studio keep-alive while browser acceptance is pending. | Root and skill require the reusable Query preflight; living-build negative fixtures reject missing policy, missing skill instruction and missing validator; current workflow and validator regression suite pass. |

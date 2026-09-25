@@ -1,0 +1,255 @@
+{
+  "kind": "workflow-test-focused-sync-plan",
+  "workflowFile": "src/workflows/xdx_supplier_core_20260924.wf",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924",
+    "status": "DRAFT",
+    "version": 86216690,
+    "name": "XDX Supplier Core 20260924",
+    "description": "Native terminating supplier core query and exact-approved create flows.",
+    "family": "PRC",
+    "product": "SUPPLIER"
+  },
+  "view": {
+    "mode": "recommended-batch",
+    "totalActionsBeforeFilter": 2
+  },
+  "summary": {
+    "totalActions": 1,
+    "deferred": 0
+  },
+  "syncLoopState": "actions-remaining",
+  "finalSummaryAllowed": false,
+  "coverageExecution": {
+    "primaryComplete": true,
+    "remainingActions": 2,
+    "nextActionId": "create:read-allowed-false-path",
+    "nextAction": {
+      "actionId": "create:read-allowed-false-path",
+      "action": "create",
+      "status": "missing",
+      "testName": "read-allowed-false-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/read-allowed-false-path.json",
+      "scenarioId": "app-init-display-READ_ALLOWED-false-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3100,
+      "title": "read allowed False Path",
+      "purpose": "Exercise the false branch of READ_ALLOWED and verify the workflow does not run the true-branch data/LLM path.",
+      "dataCapturePolicy": "model-generated",
+      "coverageClass": "major-branch-path",
+      "costClass": "standard",
+      "lowRisk": true,
+      "reason": "No existing test covers this current workflow scenario.",
+      "authoringHints": {
+        "scenarioId": "app-init-display-READ_ALLOWED-false-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "READ_ALLOWED",
+          "outcome": "false"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "READ_ALLOWED",
+            "nodeType": "CONDITION",
+            "expectedOutcome": "false",
+            "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (READ_ALLOWED / false) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is READ_ALLOWED expression \"{{!$context.$nodes.PREPARE_READ.$output.result.error}}\". Synthesize or select upstream values that make this expression choose false; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test read-allowed-false-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-READ_ALLOWED-false-path",
+            "kind": "branch-path",
+            "intent": "Exercise the false branch of READ_ALLOWED and verify the workflow does not run the true-branch data/LLM path.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_READ",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "READ_ALLOWED",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "READ_GUIDANCE",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "READ_GUIDANCE",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 112,
+                  "hash": "b20c2fc384b22a7f",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "READ_GUIDANCE",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 103,
+                  "hash": "d05eb920d5db44fb",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "READ_GUIDANCE",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 3,
+              "terminalContribution": "supporting",
+              "dependencyPath": [
+                "EXTRACT_READ",
+                "PREPARE_READ",
+                "READ_GUIDANCE"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 488,
+                "hash": "8081394eeb73917b",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 366,
+                "hash": "8acc1e3a4f7d81e6",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "READ_GUIDANCE",
+              "nodeType": "LLM",
+              "name": "read guidance",
+              "role": "terminal-output-owner",
+              "pathOrder": 3,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "READ_GUIDANCE"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 103,
+                "hash": "d05eb920d5db44fb",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "READ_GUIDANCE",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 112,
+                "hash": "b20c2fc384b22a7f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "READ_GUIDANCE",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": []
+          },
+          "contractHash": "e92a5f533d280cf7"
+        }
+      }
+    },
+    "costClass": "standard"
+  },
+  "guidance": {
+    "mode": "automatic",
+    "nextStep": "Execute the single secondary create or update action in coverageExecution.nextActionIds without asking for confirmation. Apply required testData and validate that affected test with deterministic file data. Before generation, author definition.judge whenever the focused action has semantic judge context. If the first attempt misses the intended branch, retry once with materially different input before deferring only that scenario. For record-now secondary branch tests, use the observed-path model: derive path assertions from result.run.nodeResults on success; retry with different input via do-update-workflow-test up to 2 total attempts on wrong-branch failure; call mark-workflow-test-unable-to-generate and skip only that scenario after 2 failures. Immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json after the action is validated or deferred. If nextActionIds contains another action, execute it next without asking. Do not stop while create or update actions remain. Do not run a full workflow suite or perform local semantic judging while create or update actions remain. Do NOT call get-workflow-test-final-summary until no create or update actions remain."
+  }
+}

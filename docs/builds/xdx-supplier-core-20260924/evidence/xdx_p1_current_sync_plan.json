@@ -1,0 +1,269 @@
+{
+  "kind": "workflow-test-focused-sync-plan",
+  "workflowFile": "src/workflows/xdx_supplier_core_20260924.wf",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924",
+    "status": "DRAFT",
+    "version": 86216315,
+    "name": "XDX Supplier Core 20260924",
+    "description": "Native terminating supplier core query and exact-approved create flows.",
+    "family": "PRC",
+    "product": "SUPPLIER"
+  },
+  "view": {
+    "mode": "recommended-batch",
+    "totalActionsBeforeFilter": 4
+  },
+  "summary": {
+    "totalActions": 1,
+    "deferred": 0
+  },
+  "syncLoopState": "actions-remaining",
+  "finalSummaryAllowed": false,
+  "coverageExecution": {
+    "primaryComplete": false,
+    "remainingActions": 4,
+    "nextActionId": "update:init-display",
+    "nextAction": {
+      "actionId": "update:init-display",
+      "action": "update",
+      "status": "out_of_sync",
+      "testName": "init-display",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/init-display.json",
+      "scenarioId": "app-init-display",
+      "scenarioKind": "app-stage",
+      "displayOrder": 100,
+      "title": "Agentic App Init Display Path",
+      "purpose": "Verify the workflow routes the Agentic App InitDisplay trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+      "dataCapturePolicy": "record-now",
+      "coverageClass": "primary",
+      "costClass": "live-recording",
+      "lowRisk": false,
+      "reason": "Existing test has a live execution path binding, but the workflow routing definition changed. Re-record or refresh the test so the observed path is proven for the current workflow definition. Existing test pathAssertions no longer match the current sync-plan expectedPath.",
+      "primaryClass": true,
+      "authoringHints": {
+        "scenarioId": "app-init-display",
+        "scenarioKind": "app-stage",
+        "pathComplexity": "primary",
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [
+            "FETCH_SUPPLIER_DETAIL"
+          ],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "reason": "Record live data for the required recordable nodes. Do not replace representative live-recording coverage with synthetic data unless the user explicitly requests it."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": false,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test init-display. If the semantic expectation is wrong, update the expected outcome or rubric. If the path expectation is wrong, compare the observed path with the sync-plan path and fix the input, test data, or sync-plan path refinement. Do not weaken scenario-backed path assertions just to make the test pass."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display",
+            "kind": "app-stage",
+            "intent": "Verify the workflow routes the Agentic App InitDisplay trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+            "appStage": "InitDisplay",
+            "primaryClass": true
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_READ",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "READ_ALLOWED",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "IS_DETAIL",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "FETCH_SUPPLIER_DETAIL",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "SHAPE_DETAIL",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_DETAIL_STATE",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "DISPLAY_STAGE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "INIT_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "INIT_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 745,
+                  "hash": "3cf3063c904d955c",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "INIT_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 61,
+                  "hash": "473d51acd930e345",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "INIT_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 8,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 488,
+                "hash": "8081394eeb73917b",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 366,
+                "hash": "8acc1e3a4f7d81e6",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "INIT_DISPLAY",
+              "nodeType": "LLM",
+              "name": "init display",
+              "role": "terminal-output-owner",
+              "pathOrder": 8,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "INIT_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 61,
+                "hash": "a1570d45673aae22",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "INIT_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 745,
+                "hash": "3cf3063c904d955c",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "INIT_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 290,
+                "hash": "c26d700580aade5e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "INIT_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "record-now",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": [
+              "FETCH_SUPPLIER_DETAIL"
+            ]
+          },
+          "contractHash": "db3ecadf52d46ce1"
+        }
+      }
+    },
+    "costClass": "complex"
+  },
+  "guidance": {
+    "mode": "automatic",
+    "nextStep": "Execute only the single primary-class action in coverageExecution.nextActionIds without asking for confirmation. Use the compact sync-plan action rows; no focused JSON lookup is required when the action already carries an exact input source. Before generation, author definition.judge whenever the focused action has semantic judge context. Complete the required recording or test-data preparation and validate that affected test with deterministic file data. Immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json. If nextActionIds contains another action, execute it next without asking. Do not stop while create or update actions remain, and do not start secondary scenarios until primary coverage is current."
+  }
+}

@@ -1,0 +1,4744 @@
+{
+  "workflowFile": "src/workflows/xdx_supplier_core_20260924.wf",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE_20260924",
+    "status": "DRAFT",
+    "version": 86218211,
+    "name": "XDX Supplier Core 20260924",
+    "description": "Native terminating supplier core query and exact-approved create flows.",
+    "family": "PRC",
+    "product": "SUPPLIER"
+  },
+  "view": {
+    "mode": "full"
+  },
+  "summary": {
+    "totalActions": 11,
+    "missing": 9,
+    "outOfSync": 2,
+    "needsReview": 0,
+    "upToDate": 0,
+    "pendingNoAttempt": 0,
+    "deferred": 0
+  },
+  "actions": [
+    {
+      "action": "update",
+      "status": "out_of_sync",
+      "testName": "init-display",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/init-display.json",
+      "scenarioId": "app-init-display",
+      "scenarioKind": "app-stage",
+      "displayOrder": 100,
+      "title": "Agentic App Init Display Path",
+      "purpose": "Verify the workflow routes the Agentic App InitDisplay trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+      "dataCapturePolicy": "record-now",
+      "reason": "Existing test pathAssertions no longer match the current sync-plan expectedPath.",
+      "appStage": "InitDisplay",
+      "recordablePath": [
+        "FETCH_SUPPLIERS"
+      ],
+      "dataPathSignature": "FETCH_SUPPLIERS",
+      "suggestedInput": {
+        "message": "",
+        "triggerType": "app",
+        "parameters": {
+          "appHint": "InitDisplay",
+          "OraUserContext": "",
+          "OraAppContext": ""
+        }
+      },
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "SUPPLIER_READ_DISPLAY"
+        ]
+      },
+      "predictedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "SUPPLIER_READ_DISPLAY"
+        ]
+      },
+      "pathSource": "predicted",
+      "requiresRuntimePathValidation": false,
+      "primaryClass": true,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "INIT_DISPLAY"
+      ],
+      "authoringHints": {
+        "scenarioId": "app-init-display",
+        "scenarioKind": "app-stage",
+        "pathComplexity": "primary",
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [
+            "FETCH_SUPPLIERS"
+          ],
+          "skippedRecordableNodes": [
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER",
+            "FETCH_SUPPLIER_DETAIL"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "reason": "Record live data for the required recordable nodes. Do not replace representative live-recording coverage with synthetic data unless the user explicitly requests it."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": false,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test init-display. If the semantic expectation is wrong, update the expected outcome or rubric. If the path expectation is wrong, compare the observed path with the sync-plan path and fix the input, test data, or sync-plan path refinement. Do not weaken scenario-backed path assertions just to make the test pass."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display",
+            "kind": "app-stage",
+            "intent": "Verify the workflow routes the Agentic App InitDisplay trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+            "appStage": "InitDisplay",
+            "primaryClass": true
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "PREPARE_READ",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "READ_ALLOWED",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "IS_LIST",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "FETCH_SUPPLIERS",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "SHAPE_SUPPLIERS",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_LIST_STATE",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "DISPLAY_STAGE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "INIT_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "SUPPLIER_TRANSACTION_DISPLAY",
+              "READ_GUIDANCE",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "INIT_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 374,
+                  "hash": "9c806190865dea95",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "INIT_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 80,
+                  "hash": "3ec3fd44e4d702b2",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "INIT_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 10,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 1061,
+                "hash": "1bf12844cb43545c",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 694,
+                "hash": "617a80910c41df3f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "INIT_DISPLAY",
+              "nodeType": "LLM",
+              "name": "init display",
+              "role": "terminal-output-owner",
+              "pathOrder": 10,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "INIT_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 80,
+                "hash": "582ae61670e7d9dc",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "INIT_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 374,
+                "hash": "9c806190865dea95",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "INIT_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 290,
+                "hash": "c26d700580aade5e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "INIT_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "record-now",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": [
+              "FETCH_SUPPLIERS"
+            ]
+          },
+          "contractHash": "c3a39f73415c7624"
+        }
+      }
+    },
+    {
+      "action": "update",
+      "status": "out_of_sync",
+      "testName": "query",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/query.json",
+      "scenarioId": "app-query",
+      "scenarioKind": "app-stage",
+      "displayOrder": 101,
+      "title": "Agentic App Query Path",
+      "purpose": "Verify the workflow routes the Agentic App Query trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+      "dataCapturePolicy": "baseline-replay",
+      "reason": "Existing test pathAssertions no longer match the current sync-plan expectedPath.",
+      "baseTestFile": "test/workflows/xdx_supplier_core_20260924/init-display.json",
+      "appStage": "Query",
+      "recordablePath": [
+        "FETCH_SUPPLIERS"
+      ],
+      "dataPathSignature": "FETCH_SUPPLIERS",
+      "suggestedInput": {
+        "message": "",
+        "triggerType": "app",
+        "parameters": {
+          "appHint": "Query",
+          "OraUserContext": "",
+          "OraAppContext": ""
+        }
+      },
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "SUPPLIER_READ_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "INIT_DISPLAY"
+        ]
+      },
+      "predictedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "SUPPLIER_READ_DISPLAY"
+        ]
+      },
+      "pathSource": "predicted",
+      "requiresRuntimePathValidation": false,
+      "primaryClass": true,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "SUPPLIER_READ_DISPLAY"
+      ],
+      "authoringHints": {
+        "scenarioId": "app-query",
+        "scenarioKind": "app-stage",
+        "pathComplexity": "primary",
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "Query",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Query app-stage: preserve the trigger envelope from suggestedInput exactly, including triggerType, appHint or OraMessageHint, REST parameters, OraUserContext, and OraAppContext when present. Synthesize a concrete user-facing question as input.message; the CLI default empty message is not meaningful Query coverage. Choose the message from: explicit user instruction; user-provided Query intent; a realistic question derived from the app and workflow purpose."
+        },
+        "dataGuidance": {
+          "baselineCompatible": true,
+          "requiredRecordableNodes": [
+            "FETCH_SUPPLIERS"
+          ],
+          "skippedRecordableNodes": [
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER",
+            "FETCH_SUPPLIER_DETAIL"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "reason": "Reuse the ready baseline testData exactly; change only runtime input and expectations."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": false,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test query. If the semantic expectation is wrong, update the expected outcome or rubric. If the path expectation is wrong, compare the observed path with the sync-plan path and fix the input, test data, or sync-plan path refinement. Do not weaken scenario-backed path assertions just to make the test pass."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-query",
+            "kind": "app-stage",
+            "intent": "Verify the workflow routes the Agentic App Query trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+            "appStage": "Query",
+            "primaryClass": true
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "Query",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "PREPARE_READ",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "READ_ALLOWED",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "IS_LIST",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "FETCH_SUPPLIERS",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "SHAPE_SUPPLIERS",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_LIST_STATE",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "DISPLAY_STAGE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "SUPPLIER_READ_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "SUPPLIER_TRANSACTION_DISPLAY",
+              "READ_GUIDANCE",
+              "INIT_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_READ_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 374,
+                  "hash": "9c806190865dea95",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_READ_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 80,
+                  "hash": "3ec3fd44e4d702b2",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_READ_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 10,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 1061,
+                "hash": "1bf12844cb43545c",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 694,
+                "hash": "617a80910c41df3f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_READ_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier read display",
+              "role": "terminal-output-owner",
+              "pathOrder": 10,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_READ_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 80,
+                "hash": "582ae61670e7d9dc",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_READ_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 374,
+                "hash": "9c806190865dea95",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_READ_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 290,
+                "hash": "c26d700580aade5e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_READ_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "baseline-replay",
+            "baseTestFile": "test/workflows/xdx_supplier_core_20260924/init-display.json",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": [
+              "FETCH_SUPPLIERS"
+            ]
+          },
+          "contractHash": "acc3f28615054be0"
+        }
+      }
+    },
+    {
+      "action": "create",
+      "status": "missing",
+      "testName": "transaction-route-display-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/transaction-route-display-path.json",
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3101,
+      "title": "transaction route Display Path",
+      "purpose": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "model-generated",
+      "reason": "No existing test covers this current workflow scenario.",
+      "appStage": "InitDisplay",
+      "recordablePath": [],
+      "dataPathSignature": "",
+      "suggestedInput": {
+        "message": "",
+        "triggerType": "app",
+        "parameters": {
+          "appHint": "InitDisplay",
+          "OraUserContext": "",
+          "OraAppContext": ""
+        }
+      },
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "display",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "TRANSACTION_ROUTE",
+        "outcome": "display"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "SUPPLIER_TRANSACTION_DISPLAY"
+      ],
+      "authoringHints": {
+        "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "outcome": "display"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "display",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL",
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (TRANSACTION_ROUTE / display) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is TRANSACTION_ROUTE expression \"{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}\". Synthesize or select upstream values that make this expression choose display; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test transaction-route-display-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-TRANSACTION_ROUTE-display-path",
+            "kind": "branch-path",
+            "intent": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "STORE_PREPARED_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 4,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 1061,
+                "hash": "1bf12844cb43545c",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 694,
+                "hash": "617a80910c41df3f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 4,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": []
+          },
+          "contractHash": "1b5a8fe1b5ff32b5"
+        }
+      }
+    },
+    {
+      "action": "create",
+      "status": "missing",
+      "testName": "transaction-route-preflight-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/transaction-route-preflight-path.json",
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-preflight-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3102,
+      "title": "transaction route Preflight Path",
+      "purpose": "Exercise the Preflight path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "record-now",
+      "reason": "No existing test covers this current workflow scenario.",
+      "appStage": "InitDisplay",
+      "recordablePath": [
+        "CHECK_SUPPLIER_DUPLICATE",
+        "CREATE_SUPPLIER",
+        "GET_CREATED_SUPPLIER"
+      ],
+      "dataPathSignature": "CHECK_SUPPLIER_DUPLICATE,CREATE_SUPPLIER,GET_CREATED_SUPPLIER",
+      "suggestedInput": {
+        "message": "",
+        "triggerType": "app",
+        "parameters": {
+          "appHint": "InitDisplay",
+          "OraUserContext": "",
+          "OraAppContext": ""
+        }
+      },
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "STORE_PREPARED_TRANSACTION"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "preflight",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        },
+        {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "write",
+          "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+        },
+        {
+          "nodeCode": "CREATE_HAS_ID",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "true",
+          "expression": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "TRANSACTION_ROUTE",
+        "outcome": "preflight"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "SUPPLIER_TRANSACTION_DISPLAY"
+      ],
+      "authoringHints": {
+        "scenarioId": "app-init-display-TRANSACTION_ROUTE-preflight-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "live-recording",
+        "targetBranch": {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "outcome": "preflight"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "preflight",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          },
+          {
+            "nodeCode": "SUPPLIER_WRITE_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "write",
+            "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+          },
+          {
+            "nodeCode": "CREATE_HAS_ID",
+            "nodeType": "CONDITION",
+            "expectedOutcome": "true",
+            "expression": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER"
+          ],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (TRANSACTION_ROUTE / preflight) by constructing input or context that drives live execution toward this outcome. Do not rely on synthetic testData to control LLM routing decisions.",
+            "The routing decision is TRANSACTION_ROUTE expression \"{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}\". Synthesize or select upstream values that make this expression choose preflight; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Record live: use the branchForcingHints above to construct the input that triggers this specific branch. Do not add accumulated conversation context from other branches (e.g., active-request workflow stage, prior decision state) unless the hints explicitly require it. After recording, verify the captured path includes the target branch before accepting the test."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test transaction-route-preflight-path. If the semantic expectation is wrong, update the expected outcome or rubric. If the path expectation is wrong, compare the observed path with the sync-plan path and fix the input, test data, or sync-plan path refinement. Do not weaken scenario-backed path assertions just to make the test pass."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-TRANSACTION_ROUTE-preflight-path",
+            "kind": "branch-path",
+            "intent": "Exercise the Preflight path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "CHECK_SUPPLIER_DUPLICATE",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "AUTHORIZE_SUPPLIER_WRITE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_PREFLIGHT_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_WRITE_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "CREATE_SUPPLIER",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "CAPTURE_SUPPLIER_CREATE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_CREATE_RECEIPT",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "CREATE_HAS_ID",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "GET_CREATED_SUPPLIER",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "VERIFY_SUPPLIER_CREATE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_VERIFIED_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 14,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 1061,
+                "hash": "1bf12844cb43545c",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 694,
+                "hash": "617a80910c41df3f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 14,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "record-now",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": [
+              "CHECK_SUPPLIER_DUPLICATE",
+              "CREATE_SUPPLIER",
+              "GET_CREATED_SUPPLIER"
+            ]
+          },
+          "contractHash": "0717a6796da935d1"
+        }
+      }
+    },
+    {
+      "action": "create",
+      "status": "missing",
+      "testName": "read-allowed-false-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/read-allowed-false-path.json",
+      "scenarioId": "app-init-display-READ_ALLOWED-false-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 5100,
+      "title": "read allowed False Path",
+      "purpose": "Exercise the false branch of READ_ALLOWED and verify the workflow does not run the true-branch data/LLM path.",
+      "dataCapturePolicy": "model-generated",
+      "reason": "No existing test covers this current workflow scenario.",
+      "appStage": "InitDisplay",
+      "recordablePath": [],
+      "dataPathSignature": "",
+      "suggestedInput": {
+        "message": "",
+        "triggerType": "app",
+        "parameters": {
+          "appHint": "InitDisplay",
+          "OraUserContext": "",
+          "OraAppContext": ""
+        }
+      },
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE"
+        ],
+        "mustNotExecute": [
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "READ_ALLOWED",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "false",
+          "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+        },
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "read",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "READ_ALLOWED",
+        "outcome": "false"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "READ_GUIDANCE"
+      ],
+      "authoringHints": {
+        "scenarioId": "app-init-display-READ_ALLOWED-false-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "READ_ALLOWED",
+          "outcome": "false"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "READ_ALLOWED",
+            "nodeType": "CONDITION",
+            "expectedOutcome": "false",
+            "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+          },
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "read",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [],
+          "skippedRecordableNodes": [
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER",
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (READ_ALLOWED / false) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is READ_ALLOWED expression \"{{!$context.$nodes.PREPARE_READ.$output.result.error}}\". Synthesize or select upstream values that make this expression choose false; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test read-allowed-false-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-READ_ALLOWED-false-path",
+            "kind": "branch-path",
+            "intent": "Exercise the false branch of READ_ALLOWED and verify the workflow does not run the true-branch data/LLM path.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "PREPARE_READ",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "READ_ALLOWED",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "READ_GUIDANCE",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "SUPPLIER_TRANSACTION_DISPLAY",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "READ_GUIDANCE",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 112,
+                  "hash": "b20c2fc384b22a7f",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "READ_GUIDANCE",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 103,
+                  "hash": "d05eb920d5db44fb",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "READ_GUIDANCE",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 5,
+              "terminalContribution": "supporting",
+              "dependencyPath": [
+                "EXTRACT_READ",
+                "PREPARE_READ",
+                "READ_GUIDANCE"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 1061,
+                "hash": "1bf12844cb43545c",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 694,
+                "hash": "617a80910c41df3f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "READ_GUIDANCE",
+              "nodeType": "LLM",
+              "name": "read guidance",
+              "role": "terminal-output-owner",
+              "pathOrder": 5,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "READ_GUIDANCE"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 103,
+                "hash": "d05eb920d5db44fb",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "READ_GUIDANCE",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 112,
+                "hash": "b20c2fc384b22a7f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "READ_GUIDANCE",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": []
+          },
+          "contractHash": "447b59a2f2a47475"
+        }
+      }
+    },
+    {
+      "action": "create",
+      "status": "missing",
+      "testName": "is-list-false-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/is-list-false-path.json",
+      "scenarioId": "app-init-display-IS_LIST-false-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 7101,
+      "title": "is detail False Path",
+      "purpose": "Exercise the false branch of IS_LIST and verify the workflow does not run the true-branch data/LLM path.",
+      "dataCapturePolicy": "record-now",
+      "reason": "No existing test covers this current workflow scenario.",
+      "appStage": "InitDisplay",
+      "recordablePath": [
+        "FETCH_SUPPLIER_DETAIL"
+      ],
+      "dataPathSignature": "FETCH_SUPPLIER_DETAIL",
+      "suggestedInput": {
+        "message": "",
+        "triggerType": "app",
+        "parameters": {
+          "appHint": "InitDisplay",
+          "OraUserContext": "",
+          "OraAppContext": ""
+        }
+      },
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "SUPPLIER_READ_DISPLAY"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "READ_ALLOWED",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "true",
+          "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+        },
+        {
+          "nodeCode": "DISPLAY_STAGE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "InitDisplay",
+          "expression": "{{$context.$app.$OraMessageHint}}"
+        },
+        {
+          "nodeCode": "IS_LIST",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "false",
+          "expression": "{{$context.$nodes.PREPARE_READ.$output.result.intent !== \"detail\"}}"
+        },
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "read",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "IS_LIST",
+        "outcome": "false"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "INIT_DISPLAY"
+      ],
+      "authoringHints": {
+        "scenarioId": "app-init-display-IS_LIST-false-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "live-recording",
+        "targetBranch": {
+          "nodeCode": "IS_LIST",
+          "outcome": "false"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "READ_ALLOWED",
+            "nodeType": "CONDITION",
+            "expectedOutcome": "true",
+            "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+          },
+          {
+            "nodeCode": "DISPLAY_STAGE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "InitDisplay",
+            "expression": "{{$context.$app.$OraMessageHint}}"
+          },
+          {
+            "nodeCode": "IS_LIST",
+            "nodeType": "CONDITION",
+            "expectedOutcome": "false",
+            "expression": "{{$context.$nodes.PREPARE_READ.$output.result.intent !== \"detail\"}}"
+          },
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "read",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": true,
+          "suggestedInput": {
+            "message": "",
+            "triggerType": "app",
+            "parameters": {
+              "appHint": "InitDisplay",
+              "OraUserContext": "",
+              "OraAppContext": ""
+            }
+          },
+          "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [
+            "FETCH_SUPPLIER_DETAIL"
+          ],
+          "skippedRecordableNodes": [
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER",
+            "FETCH_SUPPLIERS"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (IS_LIST / false) by constructing input or context that drives live execution toward this outcome. Do not rely on synthetic testData to control LLM routing decisions.",
+            "The routing decision is IS_LIST expression \"{{$context.$nodes.PREPARE_READ.$output.result.intent !== \\\"detail\\\"}}\". Synthesize or select upstream values that make this expression choose false; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Record live: use the branchForcingHints above to construct the input that triggers this specific branch. Do not add accumulated conversation context from other branches (e.g., active-request workflow stage, prior decision state) unless the hints explicitly require it. After recording, verify the captured path includes the target branch before accepting the test."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test is-list-false-path. If the semantic expectation is wrong, update the expected outcome or rubric. If the path expectation is wrong, compare the observed path with the sync-plan path and fix the input, test data, or sync-plan path refinement. Do not weaken scenario-backed path assertions just to make the test pass."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "app-init-display-IS_LIST-false-path",
+            "kind": "branch-path",
+            "intent": "Exercise the false branch of IS_LIST and verify the workflow does not run the true-branch data/LLM path.",
+            "appStage": "InitDisplay"
+          },
+          "invocation": {
+            "input": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            }
+          },
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "PREPARE_READ",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "READ_ALLOWED",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "IS_LIST",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "FETCH_SUPPLIER_DETAIL",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "SHAPE_DETAIL",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_DETAIL_STATE",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "DISPLAY_STAGE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "INIT_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "SUPPLIER_TRANSACTION_DISPLAY",
+              "READ_GUIDANCE",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "INIT_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 374,
+                  "hash": "9c806190865dea95",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "INIT_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 80,
+                  "hash": "3ec3fd44e4d702b2",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "INIT_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 10,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 1061,
+                "hash": "1bf12844cb43545c",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 694,
+                "hash": "617a80910c41df3f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "INIT_DISPLAY",
+              "nodeType": "LLM",
+              "name": "init display",
+              "role": "terminal-output-owner",
+              "pathOrder": 10,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "INIT_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 80,
+                "hash": "582ae61670e7d9dc",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "INIT_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 374,
+                "hash": "9c806190865dea95",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "INIT_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 290,
+                "hash": "c26d700580aade5e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "INIT_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "record-now",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": [
+              "FETCH_SUPPLIER_DETAIL"
+            ]
+          },
+          "contractHash": "a8ed40bd05a3516d"
+        }
+      }
+    },
+    {
+      "action": "create",
+      "status": "missing",
+      "testName": "supplier-write-route-write-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/supplier-write-route-write-path.json",
+      "scenarioId": "SUPPLIER_WRITE_ROUTE-write-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 22100,
+      "title": "supplier write route Write Path",
+      "purpose": "Exercise the Write path of SUPPLIER_WRITE_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "record-now",
+      "reason": "No existing test covers this current workflow scenario.",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "STORE_PREPARED_TRANSACTION"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "preflight",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        },
+        {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "write",
+          "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+        },
+        {
+          "nodeCode": "CREATE_HAS_ID",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "true",
+          "expression": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "SUPPLIER_WRITE_ROUTE",
+        "outcome": "write"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "SUPPLIER_TRANSACTION_DISPLAY"
+      ],
+      "authoringHints": {
+        "scenarioId": "SUPPLIER_WRITE_ROUTE-write-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "live-recording",
+        "targetBranch": {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "outcome": "write"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "preflight",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          },
+          {
+            "nodeCode": "SUPPLIER_WRITE_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "write",
+            "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+          },
+          {
+            "nodeCode": "CREATE_HAS_ID",
+            "nodeType": "CONDITION",
+            "expectedOutcome": "true",
+            "expression": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": false,
+          "reason": "Choose an input that drives only this specific branch outcome. Do NOT carry forward accumulated workflow context from a baseline or other scenario (such as active-request stage, pending-decision state, or prior LLM classification context from another switch arm). Use neutral or empty values for any accumulated state fields unless the sync-plan suggestedInput or branchForcingHints explicitly require them."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER"
+          ],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (SUPPLIER_WRITE_ROUTE / write) by constructing input or context that drives live execution toward this outcome. Do not rely on synthetic testData to control LLM routing decisions.",
+            "The routing decision is SUPPLIER_WRITE_ROUTE expression \"{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}\". Synthesize or select upstream values that make this expression choose write; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Record live: use the branchForcingHints above to construct the input that triggers this specific branch. Do not add accumulated conversation context from other branches (e.g., active-request workflow stage, prior decision state) unless the hints explicitly require it. After recording, verify the captured path includes the target branch before accepting the test."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test supplier-write-route-write-path. If the semantic expectation is wrong, update the expected outcome or rubric. If the path expectation is wrong, compare the observed path with the sync-plan path and fix the input, test data, or sync-plan path refinement. Do not weaken scenario-backed path assertions just to make the test pass."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "SUPPLIER_WRITE_ROUTE-write-path",
+            "kind": "branch-path",
+            "intent": "Exercise the Write path of SUPPLIER_WRITE_ROUTE and verify branch-specific downstream behavior."
+          },
+          "invocation": {},
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "CHECK_SUPPLIER_DUPLICATE",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "AUTHORIZE_SUPPLIER_WRITE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_PREFLIGHT_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_WRITE_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "CREATE_SUPPLIER",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "CAPTURE_SUPPLIER_CREATE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_CREATE_RECEIPT",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "CREATE_HAS_ID",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "GET_CREATED_SUPPLIER",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "VERIFY_SUPPLIER_CREATE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_VERIFIED_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 14,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 1061,
+                "hash": "1bf12844cb43545c",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 694,
+                "hash": "617a80910c41df3f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 14,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "record-now",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": [
+              "CHECK_SUPPLIER_DUPLICATE",
+              "CREATE_SUPPLIER",
+              "GET_CREATED_SUPPLIER"
+            ]
+          },
+          "contractHash": "6ffebc19500f1ba1"
+        }
+      }
+    },
+    {
+      "action": "create",
+      "status": "missing",
+      "testName": "supplier-write-route-verify-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/supplier-write-route-verify-path.json",
+      "scenarioId": "SUPPLIER_WRITE_ROUTE-verify-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 22101,
+      "title": "supplier write route Verify Path",
+      "purpose": "Exercise the Verify path of SUPPLIER_WRITE_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "record-now",
+      "reason": "No existing test covers this current workflow scenario.",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "STORE_PREPARED_TRANSACTION",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "preflight",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        },
+        {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "verify",
+          "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "SUPPLIER_WRITE_ROUTE",
+        "outcome": "verify"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "SUPPLIER_TRANSACTION_DISPLAY"
+      ],
+      "authoringHints": {
+        "scenarioId": "SUPPLIER_WRITE_ROUTE-verify-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "live-recording",
+        "targetBranch": {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "outcome": "verify"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "preflight",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          },
+          {
+            "nodeCode": "SUPPLIER_WRITE_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "verify",
+            "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": false,
+          "reason": "Choose an input that drives only this specific branch outcome. Do NOT carry forward accumulated workflow context from a baseline or other scenario (such as active-request stage, pending-decision state, or prior LLM classification context from another switch arm). Use neutral or empty values for any accumulated state fields unless the sync-plan suggestedInput or branchForcingHints explicitly require them."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [
+            "CHECK_SUPPLIER_DUPLICATE",
+            "GET_CREATED_SUPPLIER"
+          ],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL",
+            "CREATE_SUPPLIER"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (SUPPLIER_WRITE_ROUTE / verify) by constructing input or context that drives live execution toward this outcome. Do not rely on synthetic testData to control LLM routing decisions.",
+            "The routing decision is SUPPLIER_WRITE_ROUTE expression \"{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}\". Synthesize or select upstream values that make this expression choose verify; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Record live: use the branchForcingHints above to construct the input that triggers this specific branch. Do not add accumulated conversation context from other branches (e.g., active-request workflow stage, prior decision state) unless the hints explicitly require it. After recording, verify the captured path includes the target branch before accepting the test."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test supplier-write-route-verify-path. If the semantic expectation is wrong, update the expected outcome or rubric. If the path expectation is wrong, compare the observed path with the sync-plan path and fix the input, test data, or sync-plan path refinement. Do not weaken scenario-backed path assertions just to make the test pass."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "SUPPLIER_WRITE_ROUTE-verify-path",
+            "kind": "branch-path",
+            "intent": "Exercise the Verify path of SUPPLIER_WRITE_ROUTE and verify branch-specific downstream behavior."
+          },
+          "invocation": {},
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "CHECK_SUPPLIER_DUPLICATE",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "AUTHORIZE_SUPPLIER_WRITE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_PREFLIGHT_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_WRITE_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "GET_CREATED_SUPPLIER",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "VERIFY_SUPPLIER_CREATE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_VERIFIED_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 10,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 1061,
+                "hash": "1bf12844cb43545c",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 694,
+                "hash": "617a80910c41df3f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 10,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "record-now",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": [
+              "CHECK_SUPPLIER_DUPLICATE",
+              "GET_CREATED_SUPPLIER"
+            ]
+          },
+          "contractHash": "6c3331331f54e42b"
+        }
+      }
+    },
+    {
+      "action": "create",
+      "status": "missing",
+      "testName": "supplier-write-route-display-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/supplier-write-route-display-path.json",
+      "scenarioId": "SUPPLIER_WRITE_ROUTE-display-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 22102,
+      "title": "supplier write route Display Path",
+      "purpose": "Exercise the Display path of SUPPLIER_WRITE_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "model-generated",
+      "reason": "No existing test covers this current workflow scenario.",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "STORE_PREPARED_TRANSACTION",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "preflight",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        },
+        {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "display",
+          "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "SUPPLIER_WRITE_ROUTE",
+        "outcome": "display"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "SUPPLIER_TRANSACTION_DISPLAY"
+      ],
+      "authoringHints": {
+        "scenarioId": "SUPPLIER_WRITE_ROUTE-display-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "outcome": "display"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "preflight",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          },
+          {
+            "nodeCode": "SUPPLIER_WRITE_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "display",
+            "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": false,
+          "reason": "Choose an input that drives only this specific branch outcome. Do NOT carry forward accumulated workflow context from a baseline or other scenario (such as active-request stage, pending-decision state, or prior LLM classification context from another switch arm). Use neutral or empty values for any accumulated state fields unless the sync-plan suggestedInput or branchForcingHints explicitly require them."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [
+            "CHECK_SUPPLIER_DUPLICATE"
+          ],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER"
+          ],
+          "requiredGeneratedNodeCodes": [
+            "CHECK_SUPPLIER_DUPLICATE"
+          ],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (SUPPLIER_WRITE_ROUTE / display) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is SUPPLIER_WRITE_ROUTE expression \"{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}\". Synthesize or select upstream values that make this expression choose display; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test supplier-write-route-display-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "SUPPLIER_WRITE_ROUTE-display-path",
+            "kind": "branch-path",
+            "intent": "Exercise the Display path of SUPPLIER_WRITE_ROUTE and verify branch-specific downstream behavior."
+          },
+          "invocation": {},
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "CHECK_SUPPLIER_DUPLICATE",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "AUTHORIZE_SUPPLIER_WRITE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_PREFLIGHT_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_WRITE_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 7,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 1061,
+                "hash": "1bf12844cb43545c",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 694,
+                "hash": "617a80910c41df3f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 7,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": [
+              "CHECK_SUPPLIER_DUPLICATE"
+            ]
+          },
+          "contractHash": "e2663357a10ac80a"
+        }
+      }
+    },
+    {
+      "action": "create",
+      "status": "missing",
+      "testName": "create-has-id-true-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/create-has-id-true-path.json",
+      "scenarioId": "CREATE_HAS_ID-true-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 26100,
+      "title": "create has id True Path",
+      "purpose": "Exercise the True path of CREATE_HAS_ID and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "record-now",
+      "reason": "No existing test covers this current workflow scenario.",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "STORE_PREPARED_TRANSACTION"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "preflight",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        },
+        {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "write",
+          "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+        },
+        {
+          "nodeCode": "CREATE_HAS_ID",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "true",
+          "expression": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "CREATE_HAS_ID",
+        "outcome": "true"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "SUPPLIER_TRANSACTION_DISPLAY"
+      ],
+      "authoringHints": {
+        "scenarioId": "CREATE_HAS_ID-true-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "live-recording",
+        "targetBranch": {
+          "nodeCode": "CREATE_HAS_ID",
+          "outcome": "true"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "preflight",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          },
+          {
+            "nodeCode": "SUPPLIER_WRITE_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "write",
+            "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+          },
+          {
+            "nodeCode": "CREATE_HAS_ID",
+            "nodeType": "CONDITION",
+            "expectedOutcome": "true",
+            "expression": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": false,
+          "reason": "Choose an input that drives only this specific branch outcome. Do NOT carry forward accumulated workflow context from a baseline or other scenario (such as active-request stage, pending-decision state, or prior LLM classification context from another switch arm). Use neutral or empty values for any accumulated state fields unless the sync-plan suggestedInput or branchForcingHints explicitly require them."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER",
+            "GET_CREATED_SUPPLIER"
+          ],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL"
+          ],
+          "requiredGeneratedNodeCodes": [],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (CREATE_HAS_ID / true) by constructing input or context that drives live execution toward this outcome. Do not rely on synthetic testData to control LLM routing decisions.",
+            "The routing decision is CREATE_HAS_ID expression \"{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}\". Synthesize or select upstream values that make this expression choose true; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Record live: use the branchForcingHints above to construct the input that triggers this specific branch. Do not add accumulated conversation context from other branches (e.g., active-request workflow stage, prior decision state) unless the hints explicitly require it. After recording, verify the captured path includes the target branch before accepting the test."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test create-has-id-true-path. If the semantic expectation is wrong, update the expected outcome or rubric. If the path expectation is wrong, compare the observed path with the sync-plan path and fix the input, test data, or sync-plan path refinement. Do not weaken scenario-backed path assertions just to make the test pass."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "CREATE_HAS_ID-true-path",
+            "kind": "branch-path",
+            "intent": "Exercise the True path of CREATE_HAS_ID and verify branch-specific downstream behavior."
+          },
+          "invocation": {},
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "CHECK_SUPPLIER_DUPLICATE",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "AUTHORIZE_SUPPLIER_WRITE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_PREFLIGHT_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_WRITE_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "CREATE_SUPPLIER",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "CAPTURE_SUPPLIER_CREATE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_CREATE_RECEIPT",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "CREATE_HAS_ID",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "GET_CREATED_SUPPLIER",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "VERIFY_SUPPLIER_CREATE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_VERIFIED_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 14,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 1061,
+                "hash": "1bf12844cb43545c",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 694,
+                "hash": "617a80910c41df3f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 14,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "record-now",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": [
+              "CHECK_SUPPLIER_DUPLICATE",
+              "CREATE_SUPPLIER",
+              "GET_CREATED_SUPPLIER"
+            ]
+          },
+          "contractHash": "031c8310cb14513a"
+        }
+      }
+    },
+    {
+      "action": "create",
+      "status": "missing",
+      "testName": "create-has-id-false-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/create-has-id-false-path.json",
+      "scenarioId": "CREATE_HAS_ID-false-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 26101,
+      "title": "create has id False Path",
+      "purpose": "Exercise the false branch of CREATE_HAS_ID and verify the workflow does not run the true-branch data/LLM path.",
+      "dataCapturePolicy": "model-generated",
+      "reason": "No existing test covers this current workflow scenario.",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "STORE_PREPARED_TRANSACTION",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "preflight",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        },
+        {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "write",
+          "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+        },
+        {
+          "nodeCode": "CREATE_HAS_ID",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "false",
+          "expression": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "CREATE_HAS_ID",
+        "outcome": "false"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "hasSemanticOutputNode": true,
+      "semanticOutputNodeCodes": [
+        "EXTRACT_READ",
+        "SUPPLIER_TRANSACTION_DISPLAY"
+      ],
+      "authoringHints": {
+        "scenarioId": "CREATE_HAS_ID-false-path",
+        "scenarioKind": "branch-path",
+        "pathComplexity": "deep-semantic",
+        "targetBranch": {
+          "nodeCode": "CREATE_HAS_ID",
+          "outcome": "false"
+        },
+        "routingDecisionContext": [
+          {
+            "nodeCode": "TRANSACTION_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "preflight",
+            "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+          },
+          {
+            "nodeCode": "SUPPLIER_WRITE_ROUTE",
+            "nodeType": "SWITCH",
+            "expectedOutcome": "write",
+            "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+          },
+          {
+            "nodeCode": "CREATE_HAS_ID",
+            "nodeType": "CONDITION",
+            "expectedOutcome": "false",
+            "expression": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}"
+          }
+        ],
+        "inputGuidance": {
+          "useSuggestedInput": false,
+          "reason": "Choose an input that drives only this specific branch outcome. Do NOT carry forward accumulated workflow context from a baseline or other scenario (such as active-request stage, pending-decision state, or prior LLM classification context from another switch arm). Use neutral or empty values for any accumulated state fields unless the sync-plan suggestedInput or branchForcingHints explicitly require them."
+        },
+        "dataGuidance": {
+          "baselineCompatible": false,
+          "requiredRecordableNodes": [
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER"
+          ],
+          "skippedRecordableNodes": [
+            "FETCH_SUPPLIERS",
+            "FETCH_SUPPLIER_DETAIL",
+            "GET_CREATED_SUPPLIER"
+          ],
+          "requiredGeneratedNodeCodes": [
+            "CHECK_SUPPLIER_DUPLICATE",
+            "CREATE_SUPPLIER"
+          ],
+          "overrideRequiredNodeCodes": [],
+          "branchForcingHints": [
+            "Force the target branch (CREATE_HAS_ID / false) with the minimum model-generated data needed for this scenario.",
+            "The routing decision is CREATE_HAS_ID expression \"{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}\". Synthesize or select upstream values that make this expression choose false; do not assume a generic empty collection or other business state that the expression does not test."
+          ],
+          "reason": "Provide complete generated data for every required recordable node that can execute in this asserted path."
+        },
+        "validationGuidance": {
+          "runAfterGenerate": true,
+          "pathFailureBlocksOnlyThisScenario": true,
+          "maxRepairAttempts": 2,
+          "repairPrompt": "Review the failed workflow test create-has-id-false-path. Preserve the sync-plan expected path and omit pathAssertions from the repair definition so the CLI rehydrates it. Repair the scenario input or model-generated test data first. Change a scenario-backed path only after live observed execution proves the prediction diverges. If the semantic expectation is wrong, update the expected outcome or rubric."
+        },
+        "judgeAuthoringContext": {
+          "scenario": {
+            "id": "CREATE_HAS_ID-false-path",
+            "kind": "branch-path",
+            "intent": "Exercise the false branch of CREATE_HAS_ID and verify the workflow does not run the true-branch data/LLM path."
+          },
+          "invocation": {},
+          "path": {
+            "orderedNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM"
+              },
+              {
+                "nodeCode": "PREPARE_TRANSACTION",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "TRANSACTION_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "CHECK_SUPPLIER_DUPLICATE",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "AUTHORIZE_SUPPLIER_WRITE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_PREFLIGHT_TRANSACTION",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "SUPPLIER_WRITE_ROUTE",
+                "nodeType": "SWITCH"
+              },
+              {
+                "nodeCode": "CREATE_SUPPLIER",
+                "nodeType": "BO_FUNCTION"
+              },
+              {
+                "nodeCode": "CAPTURE_SUPPLIER_CREATE",
+                "nodeType": "CODE"
+              },
+              {
+                "nodeCode": "STORE_CREATE_RECEIPT",
+                "nodeType": "SET_FIELDS"
+              },
+              {
+                "nodeCode": "CREATE_HAS_ID",
+                "nodeType": "CONDITION"
+              },
+              {
+                "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                "nodeType": "LLM"
+              }
+            ],
+            "excludedSemanticNodeCodes": [
+              "READ_GUIDANCE",
+              "INIT_DISPLAY",
+              "SUPPLIER_READ_DISPLAY"
+            ],
+            "terminalNode": {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "outputExpressions": [
+                {
+                  "included": false,
+                  "length": 241,
+                  "hash": "99dd8f3a8dc2018e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                {
+                  "included": false,
+                  "length": 71,
+                  "hash": "749c1c135aab4993",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              ]
+            }
+          },
+          "semanticNodes": [
+            {
+              "nodeCode": "EXTRACT_READ",
+              "nodeType": "LLM",
+              "name": "extract read",
+              "role": "upstream-semantic",
+              "pathOrder": 0,
+              "distanceToTerminal": 11,
+              "terminalContribution": "none",
+              "prompt": {
+                "included": false,
+                "length": 128,
+                "hash": "2b290a262b3648ac",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 1061,
+                "hash": "1bf12844cb43545c",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              },
+              "outputSpecification": {
+                "included": false,
+                "length": 694,
+                "hash": "617a80910c41df3f",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "EXTRACT_READ",
+                  "detail": "full"
+                }
+              }
+            },
+            {
+              "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+              "nodeType": "LLM",
+              "name": "supplier transaction display",
+              "role": "terminal-output-owner",
+              "pathOrder": 11,
+              "distanceToTerminal": 0,
+              "terminalContribution": "direct",
+              "dependencyPath": [
+                "SUPPLIER_TRANSACTION_DISPLAY"
+              ],
+              "prompt": {
+                "included": false,
+                "length": 71,
+                "hash": "de23139b51534243",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "systemPrompt": {
+                "included": false,
+                "length": 241,
+                "hash": "99dd8f3a8dc2018e",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              },
+              "appOutputSpecification": {
+                "included": false,
+                "length": 237,
+                "hash": "562a5d0eab394342",
+                "retrieval": {
+                  "command": "get-workflow-test-judge-context",
+                  "nodeCode": "SUPPLIER_TRANSACTION_DISPLAY",
+                  "detail": "full"
+                }
+              }
+            }
+          ],
+          "downstreamTransformations": [],
+          "grounding": {
+            "capturePolicy": "model-generated",
+            "availableNodeCodes": [],
+            "requiredRecordableNodeCodes": [
+              "CHECK_SUPPLIER_DUPLICATE",
+              "CREATE_SUPPLIER"
+            ]
+          },
+          "contractHash": "04e8425032d56e71"
+        }
+      }
+    }
+  ],
+  "scenarioInventory": [
+    {
+      "status": "out_of_sync",
+      "testName": "init-display",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/init-display.json",
+      "scenarioId": "app-init-display",
+      "scenarioKind": "app-stage",
+      "displayOrder": 100,
+      "title": "Agentic App Init Display Path",
+      "purpose": "Verify the workflow routes the Agentic App InitDisplay trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+      "dataCapturePolicy": "record-now",
+      "appStage": "InitDisplay",
+      "recordablePath": [
+        "FETCH_SUPPLIERS"
+      ],
+      "dataPathSignature": "FETCH_SUPPLIERS",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "SUPPLIER_READ_DISPLAY"
+        ]
+      },
+      "pathSource": "predicted",
+      "requiresRuntimePathValidation": false,
+      "primaryClass": true,
+      "judgeContractState": "changed",
+      "judgeContractReviewReason": "The workflow semantic output contract changed since this judge was explicitly authored. The existing judge remains unchanged until the user requests a review.",
+      "reason": "Existing test pathAssertions no longer match the current sync-plan expectedPath."
+    },
+    {
+      "status": "out_of_sync",
+      "testName": "query",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/query.json",
+      "scenarioId": "app-query",
+      "scenarioKind": "app-stage",
+      "displayOrder": 101,
+      "title": "Agentic App Query Path",
+      "purpose": "Verify the workflow routes the Agentic App Query trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+      "dataCapturePolicy": "baseline-replay",
+      "appStage": "Query",
+      "recordablePath": [
+        "FETCH_SUPPLIERS"
+      ],
+      "dataPathSignature": "FETCH_SUPPLIERS",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "SUPPLIER_READ_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "INIT_DISPLAY"
+        ]
+      },
+      "predictedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "SUPPLIER_READ_DISPLAY"
+        ]
+      },
+      "pathSource": "predicted",
+      "requiresRuntimePathValidation": false,
+      "primaryClass": true,
+      "judgeContractState": "changed",
+      "judgeContractReviewReason": "The workflow semantic output contract changed since this judge was explicitly authored. The existing judge remains unchanged until the user requests a review.",
+      "reason": "Existing test pathAssertions no longer match the current sync-plan expectedPath."
+    },
+    {
+      "status": "missing",
+      "testName": "transaction-route-display-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/transaction-route-display-path.json",
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3101,
+      "title": "transaction route Display Path",
+      "purpose": "Exercise the Display path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "model-generated",
+      "appStage": "InitDisplay",
+      "recordablePath": [],
+      "dataPathSignature": "",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "display",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "TRANSACTION_ROUTE",
+        "outcome": "display"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "reason": "No existing test covers this current workflow scenario."
+    },
+    {
+      "status": "missing",
+      "testName": "transaction-route-preflight-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/transaction-route-preflight-path.json",
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-preflight-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 3102,
+      "title": "transaction route Preflight Path",
+      "purpose": "Exercise the Preflight path of TRANSACTION_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "record-now",
+      "appStage": "InitDisplay",
+      "recordablePath": [
+        "CHECK_SUPPLIER_DUPLICATE",
+        "CREATE_SUPPLIER",
+        "GET_CREATED_SUPPLIER"
+      ],
+      "dataPathSignature": "CHECK_SUPPLIER_DUPLICATE,CREATE_SUPPLIER,GET_CREATED_SUPPLIER",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "STORE_PREPARED_TRANSACTION"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "preflight",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        },
+        {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "write",
+          "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+        },
+        {
+          "nodeCode": "CREATE_HAS_ID",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "true",
+          "expression": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "TRANSACTION_ROUTE",
+        "outcome": "preflight"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "reason": "No existing test covers this current workflow scenario."
+    },
+    {
+      "status": "missing",
+      "testName": "read-allowed-false-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/read-allowed-false-path.json",
+      "scenarioId": "app-init-display-READ_ALLOWED-false-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 5100,
+      "title": "read allowed False Path",
+      "purpose": "Exercise the false branch of READ_ALLOWED and verify the workflow does not run the true-branch data/LLM path.",
+      "dataCapturePolicy": "model-generated",
+      "appStage": "InitDisplay",
+      "recordablePath": [],
+      "dataPathSignature": "",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE"
+        ],
+        "mustNotExecute": [
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "READ_ALLOWED",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "false",
+          "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+        },
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "read",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "READ_ALLOWED",
+        "outcome": "false"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "reason": "No existing test covers this current workflow scenario."
+    },
+    {
+      "status": "missing",
+      "testName": "is-list-false-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/is-list-false-path.json",
+      "scenarioId": "app-init-display-IS_LIST-false-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 7101,
+      "title": "is detail False Path",
+      "purpose": "Exercise the false branch of IS_LIST and verify the workflow does not run the true-branch data/LLM path.",
+      "dataCapturePolicy": "record-now",
+      "appStage": "InitDisplay",
+      "recordablePath": [
+        "FETCH_SUPPLIER_DETAIL"
+      ],
+      "dataPathSignature": "FETCH_SUPPLIER_DETAIL",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "IS_LIST",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "STORE_PREPARED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "READ_GUIDANCE",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "SUPPLIER_READ_DISPLAY"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "READ_ALLOWED",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "true",
+          "expression": "{{!$context.$nodes.PREPARE_READ.$output.result.error}}"
+        },
+        {
+          "nodeCode": "DISPLAY_STAGE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "InitDisplay",
+          "expression": "{{$context.$app.$OraMessageHint}}"
+        },
+        {
+          "nodeCode": "IS_LIST",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "false",
+          "expression": "{{$context.$nodes.PREPARE_READ.$output.result.intent !== \"detail\"}}"
+        },
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "read",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "IS_LIST",
+        "outcome": "false"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "reason": "No existing test covers this current workflow scenario."
+    },
+    {
+      "status": "missing",
+      "testName": "supplier-write-route-write-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/supplier-write-route-write-path.json",
+      "scenarioId": "SUPPLIER_WRITE_ROUTE-write-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 22100,
+      "title": "supplier write route Write Path",
+      "purpose": "Exercise the Write path of SUPPLIER_WRITE_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "record-now",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "STORE_PREPARED_TRANSACTION"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "preflight",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        },
+        {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "write",
+          "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+        },
+        {
+          "nodeCode": "CREATE_HAS_ID",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "true",
+          "expression": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "SUPPLIER_WRITE_ROUTE",
+        "outcome": "write"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "reason": "No existing test covers this current workflow scenario."
+    },
+    {
+      "status": "missing",
+      "testName": "supplier-write-route-verify-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/supplier-write-route-verify-path.json",
+      "scenarioId": "SUPPLIER_WRITE_ROUTE-verify-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 22101,
+      "title": "supplier write route Verify Path",
+      "purpose": "Exercise the Verify path of SUPPLIER_WRITE_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "record-now",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "STORE_PREPARED_TRANSACTION",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "preflight",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        },
+        {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "verify",
+          "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "SUPPLIER_WRITE_ROUTE",
+        "outcome": "verify"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "reason": "No existing test covers this current workflow scenario."
+    },
+    {
+      "status": "missing",
+      "testName": "supplier-write-route-display-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/supplier-write-route-display-path.json",
+      "scenarioId": "SUPPLIER_WRITE_ROUTE-display-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 22102,
+      "title": "supplier write route Display Path",
+      "purpose": "Exercise the Display path of SUPPLIER_WRITE_ROUTE and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "model-generated",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "STORE_PREPARED_TRANSACTION",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "preflight",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        },
+        {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "display",
+          "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "SUPPLIER_WRITE_ROUTE",
+        "outcome": "display"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "reason": "No existing test covers this current workflow scenario."
+    },
+    {
+      "status": "missing",
+      "testName": "create-has-id-true-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/create-has-id-true-path.json",
+      "scenarioId": "CREATE_HAS_ID-true-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 26100,
+      "title": "create has id True Path",
+      "purpose": "Exercise the True path of CREATE_HAS_ID and verify branch-specific downstream behavior.",
+      "dataCapturePolicy": "record-now",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "STORE_PREPARED_TRANSACTION"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "preflight",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        },
+        {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "write",
+          "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+        },
+        {
+          "nodeCode": "CREATE_HAS_ID",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "true",
+          "expression": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "CREATE_HAS_ID",
+        "outcome": "true"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "reason": "No existing test covers this current workflow scenario."
+    },
+    {
+      "status": "missing",
+      "testName": "create-has-id-false-path",
+      "testFile": "test/workflows/xdx_supplier_core_20260924/create-has-id-false-path.json",
+      "scenarioId": "CREATE_HAS_ID-false-path",
+      "scenarioKind": "branch-path",
+      "displayOrder": 26101,
+      "title": "create has id False Path",
+      "purpose": "Exercise the false branch of CREATE_HAS_ID and verify the workflow does not run the true-branch data/LLM path.",
+      "dataCapturePolicy": "model-generated",
+      "expectedPath": {
+        "mustExecute": [
+          "EXTRACT_READ",
+          "PREPARE_TRANSACTION",
+          "TRANSACTION_ROUTE",
+          "CHECK_SUPPLIER_DUPLICATE",
+          "AUTHORIZE_SUPPLIER_WRITE",
+          "STORE_PREFLIGHT_TRANSACTION",
+          "SUPPLIER_WRITE_ROUTE",
+          "CREATE_SUPPLIER",
+          "CAPTURE_SUPPLIER_CREATE",
+          "STORE_CREATE_RECEIPT",
+          "CREATE_HAS_ID",
+          "SUPPLIER_TRANSACTION_DISPLAY"
+        ],
+        "mustNotExecute": [
+          "PREPARE_READ",
+          "READ_ALLOWED",
+          "READ_GUIDANCE",
+          "IS_LIST",
+          "FETCH_SUPPLIERS",
+          "SHAPE_SUPPLIERS",
+          "STORE_LIST_STATE",
+          "DISPLAY_STAGE",
+          "INIT_DISPLAY",
+          "SUPPLIER_READ_DISPLAY",
+          "FETCH_SUPPLIER_DETAIL",
+          "SHAPE_DETAIL",
+          "STORE_DETAIL_STATE",
+          "STORE_PREPARED_TRANSACTION",
+          "GET_CREATED_SUPPLIER",
+          "VERIFY_SUPPLIER_CREATE",
+          "STORE_VERIFIED_TRANSACTION"
+        ]
+      },
+      "pathSource": "predicted",
+      "routingDecisionContext": [
+        {
+          "nodeCode": "TRANSACTION_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "preflight",
+          "expression": "{{$context.$nodes.PREPARE_TRANSACTION.$output.result.route}}"
+        },
+        {
+          "nodeCode": "SUPPLIER_WRITE_ROUTE",
+          "nodeType": "SWITCH",
+          "expectedOutcome": "write",
+          "expression": "{{$context.$nodes.AUTHORIZE_SUPPLIER_WRITE.$output.result.next}}"
+        },
+        {
+          "nodeCode": "CREATE_HAS_ID",
+          "nodeType": "CONDITION",
+          "expectedOutcome": "false",
+          "expression": "{{$context.$nodes.CAPTURE_SUPPLIER_CREATE.$output.result.valid === true}}"
+        }
+      ],
+      "targetBranch": {
+        "nodeCode": "CREATE_HAS_ID",
+        "outcome": "false"
+      },
+      "requiresRuntimePathValidation": false,
+      "primaryClass": false,
+      "reason": "No existing test covers this current workflow scenario."
+    }
+  ],
+  "coverageExecution": {
+    "primaryComplete": false,
+    "remainingActions": 11,
+    "nextActionIds": [
+      "update:init-display"
+    ],
+    "nextActions": [
+      {
+        "actionId": "update:init-display",
+        "action": "update",
+        "status": "out_of_sync",
+        "testName": "init-display",
+        "testFile": "test/workflows/xdx_supplier_core_20260924/init-display.json",
+        "scenarioId": "app-init-display",
+        "scenarioKind": "app-stage",
+        "displayOrder": 100,
+        "title": "Agentic App Init Display Path",
+        "purpose": "Verify the workflow routes the Agentic App InitDisplay trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+        "dataCapturePolicy": "record-now",
+        "coverageClass": "primary",
+        "costClass": "live-recording",
+        "lowRisk": false,
+        "reason": "Existing test pathAssertions no longer match the current sync-plan expectedPath.",
+        "primaryClass": true,
+        "authoringHints": {
+          "scenarioId": "app-init-display",
+          "scenarioKind": "app-stage",
+          "pathComplexity": "primary",
+          "inputGuidance": {
+            "useSuggestedInput": true,
+            "suggestedInput": {
+              "message": "",
+              "triggerType": "app",
+              "parameters": {
+                "appHint": "InitDisplay",
+                "OraUserContext": "",
+                "OraAppContext": ""
+              }
+            },
+            "reason": "Use this exact runtime input. Do not substitute a chat message for a REST or app trigger input unless the user explicitly requested a different runtime input."
+          },
+          "dataGuidance": {
+            "baselineCompatible": false,
+            "requiredRecordableNodes": [
+              "FETCH_SUPPLIERS"
+            ],
+            "skippedRecordableNodes": [
+              "CHECK_SUPPLIER_DUPLICATE",
+              "CREATE_SUPPLIER",
+              "GET_CREATED_SUPPLIER",
+              "FETCH_SUPPLIER_DETAIL"
+            ],
+            "requiredGeneratedNodeCodes": [],
+            "overrideRequiredNodeCodes": [],
+            "reason": "Record live data for the required recordable nodes. Do not replace representative live-recording coverage with synthetic data unless the user explicitly requests it."
+          },
+          "validationGuidance": {
+            "runAfterGenerate": true,
+            "pathFailureBlocksOnlyThisScenario": false,
+            "maxRepairAttempts": 2,
+            "repairPrompt": "Review the failed workflow test init-display. If the semantic expectation is wrong, update the expected outcome or rubric. If the path expectation is wrong, compare the observed path with the sync-plan path and fix the input, test data, or sync-plan path refinement. Do not weaken scenario-backed path assertions just to make the test pass."
+          },
+          "judgeAuthoringContext": {
+            "scenario": {
+              "id": "app-init-display",
+              "kind": "app-stage",
+              "intent": "Verify the workflow routes the Agentic App InitDisplay trigger context through its dedicated app-stage path and returns the expected app-stage output.",
+              "appStage": "InitDisplay",
+              "primaryClass": true
+            },
+            "invocation": {
+              "input": {
+                "message": "",
+                "triggerType": "app",
+                "parameters": {
+                  "appHint": "InitDisplay",
+                  "OraUserContext": "",
+                  "OraAppContext": ""
+                }
+              }
+            },
+            "path": {
+              "orderedNodes": [
+                {
+                  "nodeCode": "EXTRACT_READ",
+                  "nodeType": "LLM"
+                },
+                {
+                  "nodeCode": "PREPARE_TRANSACTION",
+                  "nodeType": "CODE"
+                },
+                {
+                  "nodeCode": "TRANSACTION_ROUTE",
+                  "nodeType": "SWITCH"
+                },
+                {
+                  "nodeCode": "PREPARE_READ",
+                  "nodeType": "CODE"
+                },
+                {
+                  "nodeCode": "READ_ALLOWED",
+                  "nodeType": "CONDITION"
+                },
+                {
+                  "nodeCode": "IS_LIST",
+                  "nodeType": "CONDITION"
+                },
+                {
+                  "nodeCode": "FETCH_SUPPLIERS",
+                  "nodeType": "BO_FUNCTION"
+                },
+                {
+                  "nodeCode": "SHAPE_SUPPLIERS",
+                  "nodeType": "CODE"
+                },
+                {
+                  "nodeCode": "STORE_LIST_STATE",
+                  "nodeType": "SET_FIELDS"
+                },
+                {
+                  "nodeCode": "DISPLAY_STAGE",
+                  "nodeType": "SWITCH"
+                },
+                {
+                  "nodeCode": "INIT_DISPLAY",
+                  "nodeType": "LLM"
+                }
+              ],
+              "excludedSemanticNodeCodes": [
+                "SUPPLIER_TRANSACTION_DISPLAY",
+                "READ_GUIDANCE",
+                "SUPPLIER_READ_DISPLAY"
+              ],
+              "terminalNode": {
+                "nodeCode": "INIT_DISPLAY",
+                "nodeType": "LLM",
+                "outputExpressions": [
+                  {
+                    "included": false,
+                    "length": 374,
+                    "hash": "9c806190865dea95",
+                    "retrieval": {
+                      "command": "get-workflow-test-judge-context",
+                      "nodeCode": "INIT_DISPLAY",
+                      "detail": "full"
+                    }
+                  },
+                  {
+                    "included": false,
+                    "length": 80,
+                    "hash": "3ec3fd44e4d702b2",
+                    "retrieval": {
+                      "command": "get-workflow-test-judge-context",
+                      "nodeCode": "INIT_DISPLAY",
+                      "detail": "full"
+                    }
+                  }
+                ]
+              }
+            },
+            "semanticNodes": [
+              {
+                "nodeCode": "EXTRACT_READ",
+                "nodeType": "LLM",
+                "name": "extract read",
+                "role": "upstream-semantic",
+                "pathOrder": 0,
+                "distanceToTerminal": 10,
+                "terminalContribution": "none",
+                "prompt": {
+                  "included": false,
+                  "length": 128,
+                  "hash": "2b290a262b3648ac",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "EXTRACT_READ",
+                    "detail": "full"
+                  }
+                },
+                "systemPrompt": {
+                  "included": false,
+                  "length": 1061,
+                  "hash": "1bf12844cb43545c",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "EXTRACT_READ",
+                    "detail": "full"
+                  }
+                },
+                "outputSpecification": {
+                  "included": false,
+                  "length": 694,
+                  "hash": "617a80910c41df3f",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "EXTRACT_READ",
+                    "detail": "full"
+                  }
+                }
+              },
+              {
+                "nodeCode": "INIT_DISPLAY",
+                "nodeType": "LLM",
+                "name": "init display",
+                "role": "terminal-output-owner",
+                "pathOrder": 10,
+                "distanceToTerminal": 0,
+                "terminalContribution": "direct",
+                "dependencyPath": [
+                  "INIT_DISPLAY"
+                ],
+                "prompt": {
+                  "included": false,
+                  "length": 80,
+                  "hash": "582ae61670e7d9dc",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "INIT_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                "systemPrompt": {
+                  "included": false,
+                  "length": 374,
+                  "hash": "9c806190865dea95",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "INIT_DISPLAY",
+                    "detail": "full"
+                  }
+                },
+                "appOutputSpecification": {
+                  "included": false,
+                  "length": 290,
+                  "hash": "c26d700580aade5e",
+                  "retrieval": {
+                    "command": "get-workflow-test-judge-context",
+                    "nodeCode": "INIT_DISPLAY",
+                    "detail": "full"
+                  }
+                }
+              }
+            ],
+            "downstreamTransformations": [],
+            "grounding": {
+              "capturePolicy": "record-now",
+              "availableNodeCodes": [],
+              "requiredRecordableNodeCodes": [
+                "FETCH_SUPPLIERS"
+              ]
+            },
+            "contractHash": "c3a39f73415c7624"
+          }
+        }
+      }
+    ],
+    "costClass": "complex",
+    "coverageSummary": {
+      "triggerVariations": 0,
+      "majorBranchPaths": 0,
+      "fallbackPaths": 0,
+      "baselineReplay": 0,
+      "modelGenerated": 0,
+      "liveRecording": 0,
+      "deepPaths": 0
+    }
+  },
+  "finalSummaryAllowed": false,
+  "syncLoopState": "actions-remaining",
+  "appContract": {
+    "appBacked": true,
+    "aiAppsCompatibleFlag": true,
+    "implementedStages": [
+      "Query",
+      "InitDisplay"
+    ],
+    "requiredStages": [
+      "Query",
+      "InitDisplay"
+    ],
+    "warnings": [],
+    "topologyDiagnostics": []
+  },
+  "guidance": {
+    "mode": "automatic",
+    "nextStep": "Execute only the single primary-class action in coverageExecution.nextActionIds without asking for confirmation. Use the compact sync-plan action rows; no focused JSON lookup is required when the action already carries an exact input source. Before generation, author definition.judge whenever the focused action has semantic judge context. Complete the required recording or test-data preparation and validate that affected test with deterministic file data. Immediately rerun get-workflow-test-sync-plan --recommended-batch-only true --format focused-json. If nextActionIds contains another action, execute it next without asking. Do not stop while create or update actions remain, and do not start secondary scenarios until primary coverage is current.",
+    "notes": [
+      "Do not delete review tests automatically; they may be intentionally custom.",
+      "Use record-now for representative create actions that can observe real environment data.",
+      "For app-stage baseline-replay actions whose baseTestFile points to another planned action, create/record that representative record-now test before invoking the replay action.",
+      "Use --base-test-file with testDataOverrides for model-generated alternate-path actions when a ready recorded baseline exists.",
+      "Coverage execution: nextActionIds contains the single next primary-class action. Execute it before concluding.",
+      "Coverage execution: this primary action has an exact input source and can use the compact sync-plan text/table action rows directly.",
+      "Coverage execution: execute the listed primary action, complete required recording or test-data preparation, and validate that affected test deterministically. Immediately refresh the focused plan with --recommended-batch-only true --format focused-json. If another action is returned, execute it without asking. Run the full suite only after no create or update actions remain.",
+      "Judge contract review is available for: init-display, query. Do not update those existing judge contracts unless the user explicitly asks for judge review or repair.",
+      "Ask the user only for external blockers such as remote overwrite conflicts, missing required environment data, or secrets."
+    ]
+  }
+}

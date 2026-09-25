@@ -1,0 +1,85 @@
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+[aistudio-auth] Resolving credentials (interactive=false, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] At least one audience token is nearing expiry; refreshing all audience tokens.
+[aistudio-auth] Updating audience tokens using orchestrator for base scope urn:opc:resource:fusion:eqih-dev21:fusion-ai/...
+[aistudio-auth] Fetching orchestrator audience tokens from https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/fusion-ai/orchestrator/authz/v1/tokens...
+[aistudio-auth] Orchestrator provided tokens for scopes: urn:opc:resource:fusion:eqih-dev21:boss/, urn:opc:resource:fusion:eqih-dev21:knowledge-management/, urn:opc:resource:fusion:eqih-dev21:fusion-ai/, urn:opc:resource:fusion:eqih-dev21:sales-common/, fa, urn:opc:resource:fusion:eqih-dev21:saas-batch/
+[aistudio-auth] Audience cache now contains scopes: urn:opc:resource:fusion:eqih-dev21:fusion-ai/, urn:opc:resource:fusion:eqih-dev21:boss/, urn:opc:resource:fusion:eqih-dev21:knowledge-management/, urn:opc:resource:fusion:eqih-dev21:sales-common/, fa, urn:opc:resource:fusion:eqih-dev21:saas-batch/
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+[aistudio-auth] Resolving credentials (interactive=false, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] At least one audience token is nearing expiry; refreshing all audience tokens.
+[aistudio-auth] Updating audience tokens using orchestrator for base scope urn:opc:resource:fusion:eqih-dev21:fusion-ai/...
+[aistudio-auth] Fetching orchestrator audience tokens from https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/fusion-ai/orchestrator/authz/v1/tokens...
+[aistudio-auth] Orchestrator provided tokens for scopes: urn:opc:resource:fusion:eqih-dev21:boss/, urn:opc:resource:fusion:eqih-dev21:knowledge-management/, urn:opc:resource:fusion:eqih-dev21:fusion-ai/, urn:opc:resource:fusion:eqih-dev21:sales-common/, fa, urn:opc:resource:fusion:eqih-dev21:saas-batch/
+[aistudio-auth] Audience cache now contains scopes: urn:opc:resource:fusion:eqih-dev21:fusion-ai/, urn:opc:resource:fusion:eqih-dev21:boss/, urn:opc:resource:fusion:eqih-dev21:knowledge-management/, urn:opc:resource:fusion:eqih-dev21:sales-common/, fa, urn:opc:resource:fusion:eqih-dev21:saas-batch/
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+[aistudio-auth] Resolving credentials (interactive=false, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] At least one audience token is nearing expiry; refreshing all audience tokens.
+[aistudio-auth] Updating audience tokens using orchestrator for base scope urn:opc:resource:fusion:eqih-dev21:fusion-ai/...
+[aistudio-auth] Fetching orchestrator audience tokens from https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/fusion-ai/orchestrator/authz/v1/tokens...
+[aistudio-auth] Orchestrator provided tokens for scopes: urn:opc:resource:fusion:eqih-dev21:boss/, urn:opc:resource:fusion:eqih-dev21:knowledge-management/, urn:opc:resource:fusion:eqih-dev21:fusion-ai/, urn:opc:resource:fusion:eqih-dev21:sales-common/, fa, urn:opc:resource:fusion:eqih-dev21:saas-batch/
+[aistudio-auth] Audience cache now contains scopes: urn:opc:resource:fusion:eqih-dev21:fusion-ai/, urn:opc:resource:fusion:eqih-dev21:boss/, urn:opc:resource:fusion:eqih-dev21:knowledge-management/, urn:opc:resource:fusion:eqih-dev21:sales-common/, fa, urn:opc:resource:fusion:eqih-dev21:saas-batch/
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+--- Workflow test command result (not the final user-facing Validation and Insights section) ---
+Workflow test suite needs-judge: 0/11 passed, 0 failed, 11 needs judge.
+Filters: workflowCode=XDX_SUPPLIER_CORE_20260924.
+
+Reports:
+- Workflow suite report: [suite-result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\suite-result.html)
+
+Metrics:
+- Token data: observed for 11/11 cases; input 172886; output 8942; total 181828.
+- AI units: 210 total (42 token units, 11/11 cases computed).
+- Latency: total workflow time 396.7s across 11/11 model-backed cases.
+
+Optimization:
+- Model optimization is not ready because model-backed tests exist, but none have passed yet. Attach pending judge results for model-backed tests before using them as optimization evidence.
+- Next action: Complete pending judge results. Attach judge results for model-backed tests, rerun the suite if needed, then offer model optimization.
+
+Tests:
+1. init-display | needs judge | InitDisplay app path | Failure: Local judge result required. | Deterministic: passed: 89/89 checks | Judge: pending | Suggested prompt: Review init-display, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+2. query | needs judge | Verify the supplier list Query stage with grounded native output. | Failure: Local judge result required. | Deterministic: passed: 89/89 checks | Judge: pending | Suggested prompt: Review query, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+3. address-draft-conversation | needs judge | Verify address draft state continuity and safe cancellation through native Query... | Failure: Local judge result required. | Deterministic: passed: 370/370 checks | Judge: pending | Suggested prompt: Review address-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+4. address-query-detail | needs judge | Verify ordinary scalar address detail under the correct supplier independently o... | Failure: Local judge result required. | Deterministic: passed: 89/89 checks | Judge: pending | Suggested prompt: Review address-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+5. address-query-list | needs judge | Verify ordinary address exact-name query with verified supplier parent and all p... | Failure: Local judge result required. | Deterministic: passed: 89/89 checks | Judge: pending | Suggested prompt: Review address-query-list, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+6. site-draft-conversation | needs judge | Verify site draft state, field-only editing, current reference review and cancel... | Failure: Local judge result required. | Deterministic: passed: 370/370 checks | Judge: pending | Suggested prompt: Review site-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+7. site-query-detail | needs judge | Verify ordinary scalar site detail with correct parent and all fields, independe... | Failure: Local judge result required. | Deterministic: passed: 89/89 checks | Judge: pending | Suggested prompt: Review site-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+8. site-query-list | needs judge | Verify ordinary site exact-name query with supplier parent and all nine projecte... | Failure: Local judge result required. | Deterministic: passed: 89/89 checks | Judge: pending | Suggested prompt: Review site-query-list, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+9. supplier-draft-conversation | needs judge | Verify supplier draft continuity and safe stale rejection and cancellation. | Failure: Local judge result required. | Deterministic: passed: 462/462 checks | Judge: pending | Suggested prompt: Review supplier-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+10. supplier-query-detail | needs judge | Verify SUP-READ supplier scalar detail through Query with selected current suppl... | Failure: Local judge result required. | Deterministic: passed: 89/89 checks | Judge: pending | Suggested prompt: Review supplier-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+11. supplier-query-guidance | needs judge | Verify SUP-READ unsupported request withholding through actual Query, not unreac... | Failure: Local judge result required. | Deterministic: passed: 90/90 checks | Judge: pending | Suggested prompt: Review supplier-query-guidance, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+Needs judge:
+- XDX_SUPPLIER_CORE_20260924/init-display: attach a local judge result.
+  Suggested prompt: Review init-display, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/query: attach a local judge result.
+  Suggested prompt: Review query, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/address-draft-conversation: attach a local judge result.
+  Suggested prompt: Review address-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/address-query-detail: attach a local judge result.
+  Suggested prompt: Review address-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/address-query-list: attach a local judge result.
+  Suggested prompt: Review address-query-list, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/site-draft-conversation: attach a local judge result.
+  Suggested prompt: Review site-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/site-query-detail: attach a local judge result.
+  Suggested prompt: Review site-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/site-query-list: attach a local judge result.
+  Suggested prompt: Review site-query-list, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/supplier-draft-conversation: attach a local judge result.
+  Suggested prompt: Review supplier-draft-conversation, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/supplier-query-detail: attach a local judge result.
+  Suggested prompt: Review supplier-query-detail, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+- XDX_SUPPLIER_CORE_20260924/supplier-query-guidance: attach a local judge result.
+  Suggested prompt: Review supplier-query-guidance, complete the local judge result for its pending semantic evaluation, and rerun the summary after the judge result is attached.
+For the final user-facing Validation and Insights section, run get-workflow-test-final-summary --file <workflow-file>.
+--- End workflow test command result ---

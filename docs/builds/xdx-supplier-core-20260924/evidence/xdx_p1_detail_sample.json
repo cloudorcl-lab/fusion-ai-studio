@@ -1,0 +1,6 @@
+{
+  "functionName": "get_suppliers",
+  "examplePurpose": "response",
+  "payload": "{\"SupplierId\":300000047507596,\"SupplierNumber\":\"1264\",\"Supplier\":\"Office Depot\",\"SupplierType\":\"Supplier\",\"BusinessRelationship\":\"Spend Authorized\",\"InactiveDate\":null,\"Status\":\"ACTIVE\",\"AlternateName\":\"Office Depot, LLC\",\"TaxOrganizationType\":\"Corporation\",\"CorporateWebsite\":\"www.officedepot.com\"}",
+  "description": "Retained historical scalar detail projected to this function; schema guidance only, not current acceptance."
+}

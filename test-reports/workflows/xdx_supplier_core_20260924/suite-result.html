@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow Test Suite Result</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 24px;
+      color: #263238;
+      background: #fff;
+    }
+    h1 {
+      color: #1f3545;
+      border-bottom: 2px solid #2f78b7;
+      padding-bottom: 10px;
+      margin-top: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    h2 {
+      color: #34495e;
+      margin-top: 28px;
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 18px 0 24px;
+    }
+    .metric, .section {
+      background: #f8f9fa;
+      border: 1px solid #e0e5ea;
+      border-radius: 5px;
+      padding: 14px 16px;
+    }
+    .summary-card {
+      background: #f8f9fa;
+      border: 1px solid #e0e5ea;
+      border-radius: 5px;
+      padding: 14px 16px;
+      min-width: 0;
+    }
+    .summary-card h2 { color: #1f3545; font-size: 15px; margin: 0 0 10px; }
+    .summary-card__items { display: grid; gap: 8px; }
+    .summary-card__item { min-width: 0; }
+    .summary-card__item .label { margin-bottom: 1px; }
+    .summary-card__item .value { display: block; }
+    .report-overview {
+      margin: 18px 0 24px;
+      border: 1px solid #d7dee5;
+      border-radius: 5px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .report-overview__status {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 16px;
+      background: #f8f9fa;
+      border-bottom: 1px solid #d7dee5;
+    }
+    .report-overview--passed .report-overview__status {
+      background: #f4faf7;
+      box-shadow: inset 4px 0 0 #2d7a52;
+    }
+    .report-overview--failed .report-overview__status {
+      background: #fff6f5;
+      box-shadow: inset 4px 0 0 #b63b31;
+    }
+    .report-overview--neutral .report-overview__status {
+      background: #fff9ef;
+      box-shadow: inset 4px 0 0 #b26a00;
+    }
+    .report-overview__status-copy {
+      color: #34495e;
+      font-weight: 600;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .report-overview__groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .report-overview__group {
+      min-width: 0;
+      padding: 16px;
+    }
+    .report-overview__group + .report-overview__group {
+      border-left: 1px solid #e0e5ea;
+    }
+    .report-overview__group h2 {
+      margin: 0 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #d7dee5;
+      color: #1f3545;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .report-overview__facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 18px;
+    }
+    .report-overview__fact { min-width: 0; }
+    .report-overview__fact--wide { grid-column: 1 / -1; }
+    .report-overview__fact .label {
+      margin-bottom: 3px;
+      color: #607080;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+    .report-overview__fact .value {
+      display: block;
+      color: #1f3545;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .report-identity { color: #607080; margin: -8px 0 18px; overflow-wrap: anywhere; }
+    .report-section { scroll-margin-top: 16px; }
+    .verification-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+    .verification-item {
+      display: block;
+      min-width: 0;
+      padding: 10px 12px;
+      color: inherit;
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid #d7dee5;
+      border-left: 4px solid #607080;
+      border-radius: 5px;
+    }
+    .verification-item:hover,
+    .verification-item:focus-visible {
+      background: #f3f8fc;
+      border-color: #8fb8d8;
+      outline: 2px solid transparent;
+    }
+    .verification-item--passed { border-left-color: #2d7a52; }
+    .verification-item--failed { border-left-color: #b63b31; }
+    .verification-item--neutral { border-left-color: #b26a00; }
+    .verification-item .value {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+    .conversation-journey { display: grid; gap: 8px; }
+    .conversation-journey__step { display: grid; grid-template-columns: minmax(150px, .7fr) minmax(220px, 1.6fr) minmax(130px, .7fr); gap: 12px; align-items: start; border-bottom: 1px solid #e0e5ea; padding: 8px 0; }
+    .conversation-journey__cell {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .conversation-journey__cell code {
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .conversation-journey__step:last-child { border-bottom: 0; }
+    .report-disclosure > summary { padding: 4px 0; }
+    .report-disclosure[open] > summary { margin-bottom: 10px; }
+    .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: #607080;
+      margin-bottom: 4px;
+    }
+    .value {
+      font-weight: 600;
+      color: #1f3545;
+      word-break: break-word;
+    }
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow-wrap: normal;
+    }
+    .pill.passed { background: #e7f5ee; color: #176b43; }
+    .pill.failed { background: #fdeceb; color: #a1271d; }
+    .pill.neutral { background: #eef3f7; color: #435466; }
+    .tag-pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      margin: 2px 4px 2px 0;
+      font-size: 12px;
+      font-weight: 600;
+      background: #eef3f7;
+      color: #435466;
+      overflow-wrap: anywhere;
+    }
+    .case-list, .action-list {
+      display: grid;
+      gap: 12px;
+    }
+    .case-card, .action-item {
+      border: 1px solid #d7dee5;
+      border-radius: 6px;
+      background: #fff;
+      padding: 14px;
+    }
+    .case-card__header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .case-card__title {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      min-width: 0;
+    }
+    .case-card__name {
+      font-weight: 700;
+      color: #1f3545;
+      overflow-wrap: anywhere;
+    }
+    .case-card__meta, .case-card__detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 8px 12px;
+      margin-top: 10px;
+    }
+    .case-fact {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .node-pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .node-pill-list code {
+      display: inline-block;
+      border-radius: 4px;
+      padding: 2px 6px;
+      background: #f1f2f6;
+      overflow-wrap: anywhere;
+    }
+    .scroll-table {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+    .scroll-table table {
+      min-width: 1500px;
+      table-layout: fixed;
+    }
+    .scroll-table table.report-compact-table {
+      min-width: 900px;
+      table-layout: auto;
+    }
+    .scroll-table table.report-wide-table {
+      min-width: 1200px;
+      table-layout: auto;
+    }
+    .scroll-table th {
+      overflow-wrap: normal;
+      white-space: nowrap;
+      word-break: normal;
+    }
+    .scroll-table table.verification-detail-table {
+      min-width: 1020px;
+    }
+    .verification-detail-table th:last-child,
+    .verification-detail-table td:last-child {
+      min-width: 220px;
+    }
+    .scroll-table table.path-assertions-table {
+      min-width: 1100px;
+      table-layout: auto;
+    }
+    .path-assertions-table th:nth-last-child(2),
+    .path-assertions-table td:nth-last-child(2) {
+      min-width: 240px;
+    }
+    .path-assertions-table th:last-child,
+    .path-assertions-table td:last-child {
+      min-width: 220px;
+    }
+    .path-assertions-table code {
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .scroll-table table.node-assertions-table {
+      width: 1530px;
+      min-width: 1530px;
+      max-width: none;
+      table-layout: fixed;
+    }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(1),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(1) { width: 110px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(2),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(2) { width: 240px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(3),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(3) { width: 240px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(4),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(4) { width: 110px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(5),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(5) { width: 300px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(6),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(6) { width: 130px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(7),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(7) { width: 180px; }
+    .node-assertions-table:not(.node-assertions-table--conversation) th:nth-child(8),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(8) { width: 220px; }
+    .scroll-table table.node-assertions-table--conversation {
+      width: 1710px;
+      min-width: 1710px;
+    }
+    .node-assertions-table--conversation th:nth-child(1),
+    .node-assertions-table--conversation td:nth-child(1) { width: 180px; }
+    .node-assertions-table--conversation th:nth-child(2),
+    .node-assertions-table--conversation td:nth-child(2) { width: 110px; }
+    .node-assertions-table--conversation th:nth-child(3),
+    .node-assertions-table--conversation td:nth-child(3) { width: 240px; }
+    .node-assertions-table--conversation th:nth-child(4),
+    .node-assertions-table--conversation td:nth-child(4) { width: 240px; }
+    .node-assertions-table--conversation th:nth-child(5),
+    .node-assertions-table--conversation td:nth-child(5) { width: 110px; }
+    .node-assertions-table--conversation th:nth-child(6),
+    .node-assertions-table--conversation td:nth-child(6) { width: 300px; }
+    .node-assertions-table--conversation th:nth-child(7),
+    .node-assertions-table--conversation td:nth-child(7) { width: 130px; }
+    .node-assertions-table--conversation th:nth-child(8),
+    .node-assertions-table--conversation td:nth-child(8) { width: 180px; }
+    .node-assertions-table--conversation th:nth-child(9),
+    .node-assertions-table--conversation td:nth-child(9) { width: 220px; }
+    .node-assertions-table td {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .node-assertions-table code {
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(1),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(4),
+    .node-assertions-table:not(.node-assertions-table--conversation) td:nth-child(6),
+    .node-assertions-table--conversation td:nth-child(2),
+    .node-assertions-table--conversation td:nth-child(5),
+    .node-assertions-table--conversation td:nth-child(7) {
+      white-space: nowrap;
+    }
+    .scroll-table table.runtime-metrics-table {
+      min-width: 900px;
+      table-layout: fixed;
+    }
+    .scroll-table table.runtime-metrics-table--token {
+      min-width: 1680px;
+    }
+    .scroll-table table.runtime-metrics-table--duration {
+      min-width: 1040px;
+    }
+    .scroll-table table.runtime-metrics-table--ai-units {
+      min-width: 1280px;
+    }
+    .runtime-metrics-table th,
+    .runtime-metrics-table td {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .runtime-metrics-table code {
+      white-space: nowrap;
+    }
+    .runtime-metrics-table__step code,
+    .runtime-metrics-table__node code {
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .runtime-metrics-table__wrap,
+    .runtime-metrics-table__wrap code {
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .runtime-details {
+      margin: 0;
+    }
+    .runtime-details pre {
+      max-height: 360px;
+      margin: 8px 0 0;
+    }
+    .judge-criteria-table {
+      min-width: 840px;
+      table-layout: fixed;
+    }
+    .judge-criteria-table th,
+    .judge-criteria-table td {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .judge-criteria-table__text {
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+    .scroll-table table.model-overrides-table {
+      width: 1780px;
+      min-width: 1780px;
+      max-width: none;
+      table-layout: fixed;
+    }
+    .model-overrides-table th,
+    .model-overrides-table td {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .model-overrides-table__wrap,
+    .model-overrides-table__wrap code {
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .model-overrides-table__nowrap {
+      white-space: nowrap;
+    }
+    .monospace-wrap {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .scroll-table table.suite-diagnostic-table {
+      width: 6200px;
+      min-width: 6200px;
+      max-width: none;
+      table-layout: fixed;
+    }
+    .scroll-table table.app-diagnostic-table {
+      width: 3530px;
+      min-width: 3530px;
+      max-width: none;
+      table-layout: fixed;
+    }
+    .scroll-table table.widget-diagnostic-table {
+      width: 1940px;
+      min-width: 1940px;
+      max-width: none;
+      table-layout: fixed;
+    }
+    .scroll-table table.consolidated-case-table {
+      width: 1950px;
+      min-width: 1950px;
+      max-width: none;
+      table-layout: fixed;
+    }
+    .suite-diagnostic-table th,
+    .app-diagnostic-table th,
+    .widget-diagnostic-table th,
+    .consolidated-case-table th {
+      white-space: nowrap;
+    }
+    .suite-diagnostic-table td,
+    .app-diagnostic-table td,
+    .widget-diagnostic-table td,
+    .consolidated-case-table td {
+      overflow: hidden;
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .suite-diagnostic-table__wrap,
+    .suite-diagnostic-table__wrap code,
+    .app-diagnostic-table__wrap,
+    .app-diagnostic-table__wrap code,
+    .widget-diagnostic-table__wrap,
+    .widget-diagnostic-table__wrap code,
+    .consolidated-case-table__wrap,
+    .consolidated-case-table__wrap code {
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .diagnostic-path-line {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .diagnostic-path-spacer {
+      height: 10px;
+    }
+    .action-item.failed {
+      border-left: 4px solid #a1271d;
+    }
+    .action-item.needs-judge {
+      border-left: 4px solid #b26a00;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid #d7dee5;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+    th {
+      background: #eaf4fb;
+      color: #1f3545;
+    }
+    code, pre {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 13px;
+    }
+    .report-file-path {
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #f1f2f6;
+      border-left: 4px solid #2f78b7;
+      padding: 12px;
+      overflow-x: auto;
+    }
+    iframe.rendered-output {
+      width: 100%;
+      min-height: 260px;
+      border: 1px solid #d7dee5;
+      border-radius: 5px;
+      background: #fff;
+    }
+    details {
+      margin-top: 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #1f3545;
+    }
+    .warning {
+      border-left: 4px solid #b26a00;
+      background: #fff8ec;
+    }
+    a { color: #236da8; }
+    ul { padding-left: 22px; }
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      .summary { grid-template-columns: 1fr; }
+      .conversation-journey__step { grid-template-columns: 1fr; gap: 4px; }
+      .metric, .section, .summary-card { padding: 12px; }
+      .report-overview__groups { grid-template-columns: 1fr; }
+      .report-overview__group + .report-overview__group {
+        border-left: 0;
+        border-top: 1px solid #e0e5ea;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Workflow Test Suite Result</h1>
+  <section class="report-overview report-overview--passed"><div class="report-overview__status"><span class="pill passed">passed</span><span class="report-overview__status-copy">All 14 workflow tests passed.</span></div><div class="report-overview__groups"><section class="report-overview__group"><h2>Results</h2><div class="report-overview__facts"><div class="report-overview__fact"><span class="label">Passed</span><span class="value">14 / 14</span></div><div class="report-overview__fact report-overview__fact--wide"><span class="label">Judging</span><span class="value">14 judged locally, 0 pending</span></div></div></section><section class="report-overview__group"><h2>Run Configuration</h2><div class="report-overview__facts"><div class="report-overview__fact report-overview__fact--wide"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div><div class="report-overview__fact"><span class="label">Workflow Target</span><span class="value">DRAFT v86232573</span></div><div class="report-overview__fact"><span class="label">Data Source</span><span class="value">file</span></div><div class="report-overview__fact"><span class="label">Evaluation Mode</span><span class="value">hybrid</span></div><div class="report-overview__fact"><span class="label">Judge Provider</span><span class="value">Local</span></div></div></section><section class="report-overview__group"><h2>Runtime Metrics</h2><div class="report-overview__facts"><div class="report-overview__fact"><span class="label">Test Run Time</span><span class="value">532675 ms</span></div><div class="report-overview__fact"><span class="label">Workflow Execution Time</span><span class="value">492138 ms</span></div><div class="report-overview__fact report-overview__fact--wide"><span class="label">Token Usage</span><span class="value">observed for 14/14 cases; 233955 total (222134 input, 11821 output)</span></div><div class="report-overview__fact report-overview__fact--wide"><span class="label">AI Units</span><span class="value">270 total (14/14 cases computed)</span></div></div></section></div></section>
+  <div class="section">
+    <h2>Summary</h2>
+    <pre>Workflow test suite passed: 14/14 passed, 0 failed, 0 needs judge.
+Filters: workflowCode=XDX_SUPPLIER_CORE_20260924, workflowCodes=XDX_SUPPLIER_CORE_20260924.
+
+Reports:
+- Workflow suite report: [suite-result.html](C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\.worktrees\xdx-supplier-core-20260924\test-reports\workflows\xdx_supplier_core_20260924\suite-result.html)
+
+Metrics:
+- Token data: observed for 14/14 cases; input 222134; output 11821; total 233955.
+- AI units: 270 total (54 token units, 14/14 cases computed).
+- Latency: total workflow time 492.1s across 14/14 model-backed cases.
+
+Optimization:
+- Model optimization is available for this workflow. 14 passing tests exercise model-backed nodes.
+- Next action: Run node-level model optimization sweep. To run it, reply: Run the model optimization sweep for this workflow and summarize the best model placement per LLM node.
+- Creates a fresh node-level sweep, runs every candidate profile, judges results, and generates the sweep report.
+- The sweep reports recommendations only. Applying model changes requires a separate approval.
+- For a workflow-wide model comparison instead, reply: Run a workflow-level model optimization sweep.
+
+Tests:
+1. init-display | passed | InitDisplay app path
+2. query | passed | Verify the workflow routes the Agentic App Query trigger context through its ded...
+3. address-draft-conversation | passed | Verify required address draft field-only editing, parent continuity, complete re...
+4. address-query-list | passed | Verify ordinary parent-scoped address exact-name query independently of create c...
+5. address-query-detail | passed | Verify ordinary parent-scoped address detail independently of create confirmatio...
+6. supplier-draft-conversation | passed | Verify requested supplier draft editing, review, stale rejection and cancellatio...
+7. supplier-query-detail | passed | Verify supplier scalar detail through the supported native Query route.
+8. contact-draft-conversation | passed | Verify required contact draft field-only editing, parent continuity, complete re...
+9. contact-query-detail | passed | Verify ordinary parent-scoped contact detail independently of create confirmatio...
+10. contact-query-list | passed | Verify ordinary parent-scoped contact exact-name query independently of create c...
+11. supplier-query-guidance | passed | Verify unsupported Query is withheld with scope guidance and no BO execution.
+12. site-draft-conversation | passed | Verify site draft editing, reference revalidation, complete review and cancellat...
+13. site-query-detail | passed | Verify ordinary parent-scoped site detail independently of create confirmation.
+14. site-query-list | passed | Verify ordinary parent-scoped site exact-name query independently of create conf...</pre>
+    <ul>
+      <li><a href="suite-result.json">JSON suite report</a></li>
+      <li><a href="suite-result.md">Markdown suite report</a></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Active Filters</h2>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Cases</h2>
+    <div class="case-list"><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">init-display</span>
+
+      </div>
+      <a href="init-display/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 115/115 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">29024 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">27707 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">8853 total (8374 input, 479 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">10</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>SUP-READ startup dependency: verify the first supplier page from the real BO, complete fields and paging.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify the workflow routes the Agentic App InitDisplay trigger context through its dedicated app-stage path and returns the expected app-stage output.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span>record-now</div>
+        <div class="case-fact"><span class="label">Capture modes</span>model-compacted: 1</div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p><strong>Trigger:</strong> app</p>
+<p><strong>App Hint:</strong> <code>InitDisplay</code></p>
+<p><strong>Message:</strong> (empty)</p>
+
+<pre>{
+  &quot;appHint&quot;: &quot;InitDisplay&quot;,
+  &quot;OraUserContext&quot;: &quot;&quot;,
+  &quot;OraAppContext&quot;: &quot;&quot;
+}</pre>
+      <h3>Path Assertions</h3>
+      <div class="case-card__detail-grid">
+<div class="case-fact"><span class="label">Must execute</span><span class="node-pill-list"><code>EXTRACT_READ</code><code>PREPARE_TRANSACTION</code><code>TRANSACTION_ROUTE</code><code>PREPARE_READ</code><code>READ_ALLOWED</code><code>IS_LIST</code><code>FETCH_SUPPLIERS</code><code>SHAPE_SUPPLIERS</code><code>STORE_LIST_STATE</code><code>DISPLAY_STAGE</code><code>INIT_DISPLAY</code></span></div>
+<div class="case-fact"><span class="label">Must not execute</span><span class="node-pill-list"><code>STORE_PREPARED_TRANSACTION</code><code>SUPPLIER_TRANSACTION_DISPLAY</code><code>CHECK_SUPPLIER_DUPLICATE</code><code>AUTHORIZE_SUPPLIER_WRITE</code><code>STORE_PREFLIGHT_TRANSACTION</code><code>SUPPLIER_WRITE_ROUTE</code><code>CREATE_SUPPLIER</code><code>CAPTURE_SUPPLIER_CREATE</code><code>STORE_CREATE_RECEIPT</code><code>CREATE_HAS_ID</code><code>GET_CREATED_SUPPLIER</code><code>VERIFY_SUPPLIER_CREATE</code><code>STORE_VERIFIED_TRANSACTION</code><code>PREPARE_ADDRESS</code><code>STORE_ADDRESS_PREPARED</code><code>ADDRESS_ENTRY</code><code>ADDRESS_DISPLAY</code><code>FETCH_ADDRESS_PARENT</code><code>CHECK_ADDRESS_PARENT</code><code>STORE_ADDRESS_PARENT</code><code>ADDRESS_OPERATION</code><code>FETCH_ADDRESSES</code><code>SHAPE_ADDRESSES</code><code>STORE_ADDRESS_LIST</code><code>FETCH_ADDRESS_DETAIL</code><code>SHAPE_ADDRESS_DETAIL</code><code>STORE_ADDRESS_DETAIL</code><code>ADDRESS_DUPLICATE_INPUT</code><code>CHECK_ADDRESS_DUPLICATE</code><code>AUTHORIZE_ADDRESS_WRITE</code><code>STORE_ADDRESS_ATTEMPT</code><code>ADDRESS_WRITE_ROUTE</code><code>CREATE_ADDRESS</code><code>CAPTURE_ADDRESS_CREATE</code><code>STORE_ADDRESS_RECEIPT</code><code>ADDRESS_HAS_ID</code><code>GET_CREATED_ADDRESS</code><code>VERIFY_ADDRESS_CREATE</code><code>STORE_ADDRESS_VERIFIED</code><code>PREPARE_SITE</code><code>STORE_SITE_PREPARED</code><code>SITE_ENTRY</code><code>SITE_DISPLAY</code><code>FETCH_SITE_PARENT</code><code>CHECK_SITE_PARENT</code><code>STORE_SITE_PARENT</code><code>SITE_OPERATION</code><code>FETCH_SITES</code><code>SHAPE_SITES</code><code>STORE_SITE_LIST</code><code>FETCH_SITE_DETAIL</code><code>SHAPE_SITE_DETAIL</code><code>STORE_SITE_DETAIL</code><code>SITE_REFERENCE_INPUT</code><code>FETCH_SITE_ADDRESS_REFERENCE</code><code>FETCH_SITE_BU_REFERENCE</code><code>CHECK_SITE_REFERENCES</code><code>STORE_SITE_REFERENCES</code><code>SITE_REFERENCES_ROUTE</code><code>SITE_DUPLICATE_INPUT</code><code>CHECK_SITE_DUPLICATE</code><code>AUTHORIZE_SITE_WRITE</code><code>STORE_SITE_ATTEMPT</code><code>SITE_WRITE_ROUTE</code><code>CREATE_SITE</code><code>CAPTURE_SITE_CREATE</code><code>STORE_SITE_RECEIPT</code><code>SITE_HAS_ID</code><code>GET_CREATED_SITE</code><code>VERIFY_SITE_CREATE</code><code>STORE_SITE_VERIFIED</code><code>PREPARE_CONTACT</code><code>STORE_CONTACT_PREPARED</code><code>CONTACT_ENTRY</code><code>CONTACT_DISPLAY</code><code>FETCH_CONTACT_PARENT</code><code>CHECK_CONTACT_PARENT</code><code>STORE_CONTACT_PARENT</code><code>CONTACT_OPERATION</code><code>FETCH_CONTACTS</code><code>SHAPE_CONTACTS</code><code>STORE_CONTACT_LIST</code><code>FETCH_CONTACT_DETAIL</code><code>SHAPE_CONTACT_DETAIL</code><code>STORE_CONTACT_DETAIL</code><code>CONTACT_DUPLICATE_INPUT</code><code>CHECK_CONTACT_DUPLICATE</code><code>AUTHORIZE_CONTACT_WRITE</code><code>STORE_CONTACT_ATTEMPT</code><code>CONTACT_WRITE_ROUTE</code><code>CREATE_CONTACT</code><code>CAPTURE_CONTACT_CREATE</code><code>STORE_CONTACT_RECEIPT</code><code>CONTACT_HAS_ID</code><code>GET_CREATED_CONTACT</code><code>VERIFY_CONTACT_CREATE</code><code>STORE_CONTACT_VERIFIED</code><code>READ_GUIDANCE</code><code>FETCH_SUPPLIER_DETAIL</code><code>SHAPE_DETAIL</code><code>STORE_DETAIL_STATE</code><code>SUPPLIER_READ_DISPLAY</code></span></div>
+</div>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;supplierRead&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Supplier query results&quot;,&quot;description&quot;:&quot;Page of supplier results. count: 5, offset: 0, hasMore: false, nextOffset: Not specified. No next page. Use a returned Supplier ID for detail.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;Supplier ID&quot;,&quot;Supplier number&quot;,&quot;Supplier&quot;,&quot;Supplier type&quot;,&quot;Business relationship&quot;,&quot;Inactive date&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;300000047414503&quot;,&quot;1252&quot;,&quot;Lee Supplies&quot;,&quot;Supplier&quot;,&quot;Spend Authorized&quot;,&quot;Not specified&quot;]},{&quot;cells&quot;:[&quot;300000047414571&quot;,&quot;1253&quot;,&quot;Staffing Services&quot;,&quot;Services&quot;,&quot;Spend Authorized&quot;,&quot;Not specified&quot;]},{&quot;cells&quot;:...</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">query</span>
+
+      </div>
+      <a href="query/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 115/115 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">16698 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">14821 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">8793 total (8313 input, 480 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">10</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify the supplier list Query stage with grounded native output.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify the workflow routes the Agentic App Query trigger context through its dedicated app-stage path and returns the expected app-stage output.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span>baseline-replay</div>
+        <div class="case-fact"><span class="label">Capture modes</span>model-compacted: 1</div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p><strong>Trigger:</strong> app</p>
+<p><strong>App Hint:</strong> <code>Query</code></p>
+<p><strong>Message:</strong> <code>List suppliers, page size 5.</code></p>
+
+<pre>{
+  &quot;appHint&quot;: &quot;Query&quot;,
+  &quot;OraUserContext&quot;: &quot;&quot;,
+  &quot;OraAppContext&quot;: &quot;&quot;
+}</pre>
+      <h3>Path Assertions</h3>
+      <div class="case-card__detail-grid">
+<div class="case-fact"><span class="label">Must execute</span><span class="node-pill-list"><code>EXTRACT_READ</code><code>PREPARE_TRANSACTION</code><code>TRANSACTION_ROUTE</code><code>PREPARE_READ</code><code>READ_ALLOWED</code><code>IS_LIST</code><code>FETCH_SUPPLIERS</code><code>SHAPE_SUPPLIERS</code><code>STORE_LIST_STATE</code><code>DISPLAY_STAGE</code><code>SUPPLIER_READ_DISPLAY</code></span></div>
+<div class="case-fact"><span class="label">Must not execute</span><span class="node-pill-list"><code>STORE_PREPARED_TRANSACTION</code><code>SUPPLIER_TRANSACTION_DISPLAY</code><code>CHECK_SUPPLIER_DUPLICATE</code><code>AUTHORIZE_SUPPLIER_WRITE</code><code>STORE_PREFLIGHT_TRANSACTION</code><code>SUPPLIER_WRITE_ROUTE</code><code>CREATE_SUPPLIER</code><code>CAPTURE_SUPPLIER_CREATE</code><code>STORE_CREATE_RECEIPT</code><code>CREATE_HAS_ID</code><code>GET_CREATED_SUPPLIER</code><code>VERIFY_SUPPLIER_CREATE</code><code>STORE_VERIFIED_TRANSACTION</code><code>PREPARE_ADDRESS</code><code>STORE_ADDRESS_PREPARED</code><code>ADDRESS_ENTRY</code><code>ADDRESS_DISPLAY</code><code>FETCH_ADDRESS_PARENT</code><code>CHECK_ADDRESS_PARENT</code><code>STORE_ADDRESS_PARENT</code><code>ADDRESS_OPERATION</code><code>FETCH_ADDRESSES</code><code>SHAPE_ADDRESSES</code><code>STORE_ADDRESS_LIST</code><code>FETCH_ADDRESS_DETAIL</code><code>SHAPE_ADDRESS_DETAIL</code><code>STORE_ADDRESS_DETAIL</code><code>ADDRESS_DUPLICATE_INPUT</code><code>CHECK_ADDRESS_DUPLICATE</code><code>AUTHORIZE_ADDRESS_WRITE</code><code>STORE_ADDRESS_ATTEMPT</code><code>ADDRESS_WRITE_ROUTE</code><code>CREATE_ADDRESS</code><code>CAPTURE_ADDRESS_CREATE</code><code>STORE_ADDRESS_RECEIPT</code><code>ADDRESS_HAS_ID</code><code>GET_CREATED_ADDRESS</code><code>VERIFY_ADDRESS_CREATE</code><code>STORE_ADDRESS_VERIFIED</code><code>PREPARE_SITE</code><code>STORE_SITE_PREPARED</code><code>SITE_ENTRY</code><code>SITE_DISPLAY</code><code>FETCH_SITE_PARENT</code><code>CHECK_SITE_PARENT</code><code>STORE_SITE_PARENT</code><code>SITE_OPERATION</code><code>FETCH_SITES</code><code>SHAPE_SITES</code><code>STORE_SITE_LIST</code><code>FETCH_SITE_DETAIL</code><code>SHAPE_SITE_DETAIL</code><code>STORE_SITE_DETAIL</code><code>SITE_REFERENCE_INPUT</code><code>FETCH_SITE_ADDRESS_REFERENCE</code><code>FETCH_SITE_BU_REFERENCE</code><code>CHECK_SITE_REFERENCES</code><code>STORE_SITE_REFERENCES</code><code>SITE_REFERENCES_ROUTE</code><code>SITE_DUPLICATE_INPUT</code><code>CHECK_SITE_DUPLICATE</code><code>AUTHORIZE_SITE_WRITE</code><code>STORE_SITE_ATTEMPT</code><code>SITE_WRITE_ROUTE</code><code>CREATE_SITE</code><code>CAPTURE_SITE_CREATE</code><code>STORE_SITE_RECEIPT</code><code>SITE_HAS_ID</code><code>GET_CREATED_SITE</code><code>VERIFY_SITE_CREATE</code><code>STORE_SITE_VERIFIED</code><code>PREPARE_CONTACT</code><code>STORE_CONTACT_PREPARED</code><code>CONTACT_ENTRY</code><code>CONTACT_DISPLAY</code><code>FETCH_CONTACT_PARENT</code><code>CHECK_CONTACT_PARENT</code><code>STORE_CONTACT_PARENT</code><code>CONTACT_OPERATION</code><code>FETCH_CONTACTS</code><code>SHAPE_CONTACTS</code><code>STORE_CONTACT_LIST</code><code>FETCH_CONTACT_DETAIL</code><code>SHAPE_CONTACT_DETAIL</code><code>STORE_CONTACT_DETAIL</code><code>CONTACT_DUPLICATE_INPUT</code><code>CHECK_CONTACT_DUPLICATE</code><code>AUTHORIZE_CONTACT_WRITE</code><code>STORE_CONTACT_ATTEMPT</code><code>CONTACT_WRITE_ROUTE</code><code>CREATE_CONTACT</code><code>CAPTURE_CONTACT_CREATE</code><code>STORE_CONTACT_RECEIPT</code><code>CONTACT_HAS_ID</code><code>GET_CREATED_CONTACT</code><code>VERIFY_CONTACT_CREATE</code><code>STORE_CONTACT_VERIFIED</code><code>READ_GUIDANCE</code><code>FETCH_SUPPLIER_DETAIL</code><code>SHAPE_DETAIL</code><code>STORE_DETAIL_STATE</code><code>INIT_DISPLAY</code></span></div>
+</div>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;supplierRead&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Supplier query results&quot;,&quot;description&quot;:&quot;Page of supplier results. count: 5, offset: 0, hasMore: false, nextOffset: Not specified. No next page. Use a returned Supplier ID for detail.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;Supplier ID&quot;,&quot;Supplier number&quot;,&quot;Supplier&quot;,&quot;Supplier type&quot;,&quot;Business relationship&quot;,&quot;Inactive date&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;300000047414503&quot;,&quot;1252&quot;,&quot;Lee Supplies&quot;,&quot;Supplier&quot;,&quot;Spend Authorized&quot;,&quot;Not specified&quot;]},{&quot;cells&quot;:[&quot;300000047414571&quot;,&quot;1253&quot;,&quot;Staffing Services&quot;,&quot;Services&quot;,&quot;Spend Authorized&quot;,&quot;Not specified&quot;]},{&quot;cells&quot;:...</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">address-draft-conversation</span>
+
+      </div>
+      <a href="address-draft-conversation/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+      <div class="case-fact"><span class="label">Conversation execution</span><span class="value">36 node executions; 0 suspensions; 0 resumptions</span></div>
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 474/474 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">85346 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">79648 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">35069 total (33110 input, 1959 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">40</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify address draft state continuity and safe cancellation through native Query turns.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify required address draft field-only editing, parent continuity, complete review and safe cancellation.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span></div>
+        <div class="case-fact"><span class="label">Capture modes</span></div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p>No invocation recorded.</p>
+      <h3>Path Assertions</h3>
+      <p>No path assertions configured.</p>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;addressCore&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Address draft&quot;,&quot;description&quot;:&quot;Draft cancelled. No create authorized. Request 011553aa-49f8-41d0-94c2-b22c8d4ce3a0, revision 2.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;Field&quot;,&quot;Value&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;Supplier ID&quot;,&quot;300000333814409&quot;]},{&quot;cells&quot;:[&quot;Supplier&quot;,&quot;XDX Core Supplier 20260924 2130&quot;]},{&quot;cells&quot;:[&quot;AddressName&quot;,&quot;XDX Replay Address Revised&quot;]},{&quot;cells&quot;:[&quot;CountryCode&quot;,&quot;US&quot;]},{&quot;cells&quot;:[&quot;AddressLine1&quot;,&quot;5000 CARTER DR.&quot;]},{&quot;cells&quot;:[&quot;City&quot;,&quot;LOS ANGELES&quot;]},{&quot;cells&quot;:[&quot;State&quot;,&quot;CA&quot;]},{&quot;cells&quot;:[&quot;PostalCode&quot;,&quot;90032&quot;]},{&quot;cells&quot;:[&quot;Email&quot;,&quot;xdx-add...</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">address-query-list</span>
+
+      </div>
+      <a href="address-query-list/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 115/115 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">18174 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">16590 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">8678 total (8235 input, 443 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">10</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify ordinary address exact-name query with verified supplier parent and all projected fields.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify ordinary parent-scoped address exact-name query independently of create confirmation.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span>record-now</div>
+        <div class="case-fact"><span class="label">Capture modes</span>raw: 2</div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p><strong>Trigger:</strong> app</p>
+<p><strong>App Hint:</strong> <code>Query</code></p>
+<p><strong>Message:</strong> <code>Find the address with exact AddressName XDX Core Address 20260924 for Supplier ID 300000333814409, page size 1.</code></p>
+
+<pre>{
+  &quot;appHint&quot;: &quot;Query&quot;,
+  &quot;OraAppContext&quot;: &quot;&quot;,
+  &quot;OraUserContext&quot;: &quot;&quot;
+}</pre>
+      <h3>Path Assertions</h3>
+      <div class="case-card__detail-grid">
+<div class="case-fact"><span class="label">Must execute</span><span class="node-pill-list"><code>EXTRACT_READ</code><code>PREPARE_TRANSACTION</code><code>TRANSACTION_ROUTE</code><code>PREPARE_ADDRESS</code><code>STORE_ADDRESS_PREPARED</code><code>ADDRESS_ENTRY</code><code>ADDRESS_DISPLAY</code><code>FETCH_ADDRESS_PARENT</code><code>CHECK_ADDRESS_PARENT</code><code>STORE_ADDRESS_PARENT</code><code>ADDRESS_OPERATION</code><code>FETCH_ADDRESSES</code><code>SHAPE_ADDRESSES</code><code>STORE_ADDRESS_LIST</code></span></div>
+<div class="case-fact"><span class="label">Must not execute</span><span class="node-pill-list"><code>PREPARE_READ</code><code>READ_ALLOWED</code><code>READ_GUIDANCE</code><code>IS_LIST</code><code>FETCH_SUPPLIERS</code><code>SHAPE_SUPPLIERS</code><code>STORE_LIST_STATE</code><code>DISPLAY_STAGE</code><code>INIT_DISPLAY</code><code>SUPPLIER_READ_DISPLAY</code><code>FETCH_SUPPLIER_DETAIL</code><code>SHAPE_DETAIL</code><code>STORE_DETAIL_STATE</code><code>STORE_PREPARED_TRANSACTION</code><code>SUPPLIER_TRANSACTION_DISPLAY</code><code>CHECK_SUPPLIER_DUPLICATE</code><code>AUTHORIZE_SUPPLIER_WRITE</code><code>STORE_PREFLIGHT_TRANSACTION</code><code>SUPPLIER_WRITE_ROUTE</code><code>CREATE_SUPPLIER</code><code>CAPTURE_SUPPLIER_CREATE</code><code>STORE_CREATE_RECEIPT</code><code>CREATE_HAS_ID</code><code>GET_CREATED_SUPPLIER</code><code>VERIFY_SUPPLIER_CREATE</code><code>STORE_VERIFIED_TRANSACTION</code><code>FETCH_ADDRESS_DETAIL</code><code>SHAPE_ADDRESS_DETAIL</code><code>STORE_ADDRESS_DETAIL</code><code>ADDRESS_DUPLICATE_INPUT</code><code>CHECK_ADDRESS_DUPLICATE</code><code>AUTHORIZE_ADDRESS_WRITE</code><code>STORE_ADDRESS_ATTEMPT</code><code>ADDRESS_WRITE_ROUTE</code><code>CREATE_ADDRESS</code><code>CAPTURE_ADDRESS_CREATE</code><code>STORE_ADDRESS_RECEIPT</code><code>ADDRESS_HAS_ID</code><code>GET_CREATED_ADDRESS</code><code>VERIFY_ADDRESS_CREATE</code><code>STORE_ADDRESS_VERIFIED</code><code>PREPARE_SITE</code><code>STORE_SITE_PREPARED</code><code>SITE_ENTRY</code><code>FETCH_SITE_PARENT</code><code>CHECK_SITE_PARENT</code><code>STORE_SITE_PARENT</code><code>SITE_OPERATION</code><code>FETCH_SITES</code><code>SHAPE_SITES</code><code>STORE_SITE_LIST</code><code>FETCH_SITE_DETAIL</code><code>SHAPE_SITE_DETAIL</code><code>STORE_SITE_DETAIL</code><code>SITE_REFERENCE_INPUT</code><code>FETCH_SITE_ADDRESS_REFERENCE</code><code>FETCH_SITE_BU_REFERENCE</code><code>CHECK_SITE_REFERENCES</code><code>STORE_SITE_REFERENCES</code><code>SITE_REFERENCES_ROUTE</code><code>SITE_DUPLICATE_INPUT</code><code>CHECK_SITE_DUPLICATE</code><code>AUTHORIZE_SITE_WRITE</code><code>STORE_SITE_ATTEMPT</code><code>SITE_WRITE_ROUTE</code><code>CREATE_SITE</code><code>CAPTURE_SITE_CREATE</code><code>STORE_SITE_RECEIPT</code><code>SITE_HAS_ID</code><code>GET_CREATED_SITE</code><code>VERIFY_SITE_CREATE</code><code>STORE_SITE_VERIFIED</code><code>PREPARE_CONTACT</code><code>STORE_CONTACT_PREPARED</code><code>CONTACT_ENTRY</code><code>FETCH_CONTACT_PARENT</code><code>CHECK_CONTACT_PARENT</code><code>STORE_CONTACT_PARENT</code><code>CONTACT_OPERATION</code><code>FETCH_CONTACTS</code><code>SHAPE_CONTACTS</code><code>STORE_CONTACT_LIST</code><code>FETCH_CONTACT_DETAIL</code><code>SHAPE_CONTACT_DETAIL</code><code>STORE_CONTACT_DETAIL</code><code>CONTACT_DUPLICATE_INPUT</code><code>CHECK_CONTACT_DUPLICATE</code><code>AUTHORIZE_CONTACT_WRITE</code><code>STORE_CONTACT_ATTEMPT</code><code>CONTACT_WRITE_ROUTE</code><code>CREATE_CONTACT</code><code>CAPTURE_CONTACT_CREATE</code><code>STORE_CONTACT_RECEIPT</code><code>CONTACT_HAS_ID</code><code>GET_CREATED_CONTACT</code><code>VERIFY_CONTACT_CREATE</code><code>STORE_CONTACT_VERIFIED</code><code>SITE_DISPLAY</code><code>CONTACT_DISPLAY</code></span></div>
+</div>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;addressCore&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Supplier addresses&quot;,&quot;description&quot;:&quot;Supplier XDX Core Supplier 20260924 2130 (300000333814409). count: 1, offset: 0, hasMore: false. No next page.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;SupplierAddressId&quot;,&quot;AddressName&quot;,&quot;CountryCode&quot;,&quot;AddressLine1&quot;,&quot;City&quot;,&quot;State&quot;,&quot;PostalCode&quot;,&quot;Email&quot;,&quot;AddressPurposeOrderingFlag&quot;,&quot;AddressPartyNumber&quot;,&quot;Status&quot;,&quot;InactiveDate&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;300000333814416&quot;,&quot;XDX Core Address 20260924&quot;,&quot;US&quot;,&quot;5000 CARTER DR.&quot;,&quot;LOS ANGELES&quot;,&quot;CA&quot;,&quot;90032&quot;,&quot;xdx-core-address-20260924@example.invalid&quot;,&quot;true&quot;,&quot;1486638&quot;,&quot;ACTIV...</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">address-query-detail</span>
+
+      </div>
+      <a href="address-query-detail/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 115/115 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">17468 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">16029 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">8636 total (8213 input, 423 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">10</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify ordinary scalar address detail under the correct supplier independently of create confirmation.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify ordinary parent-scoped address detail independently of create confirmation.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span>record-now</div>
+        <div class="case-fact"><span class="label">Capture modes</span>raw: 2</div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p><strong>Trigger:</strong> app</p>
+<p><strong>App Hint:</strong> <code>Query</code></p>
+<p><strong>Message:</strong> <code>Show address detail for SupplierAddressId 300000333814416 under Supplier ID 300000333814409.</code></p>
+
+<pre>{
+  &quot;appHint&quot;: &quot;Query&quot;,
+  &quot;OraAppContext&quot;: &quot;&quot;,
+  &quot;OraUserContext&quot;: &quot;&quot;
+}</pre>
+      <h3>Path Assertions</h3>
+      <div class="case-card__detail-grid">
+<div class="case-fact"><span class="label">Must execute</span><span class="node-pill-list"><code>EXTRACT_READ</code><code>PREPARE_TRANSACTION</code><code>TRANSACTION_ROUTE</code><code>PREPARE_ADDRESS</code><code>STORE_ADDRESS_PREPARED</code><code>ADDRESS_ENTRY</code><code>ADDRESS_DISPLAY</code><code>FETCH_ADDRESS_PARENT</code><code>CHECK_ADDRESS_PARENT</code><code>STORE_ADDRESS_PARENT</code><code>ADDRESS_OPERATION</code><code>FETCH_ADDRESS_DETAIL</code><code>SHAPE_ADDRESS_DETAIL</code><code>STORE_ADDRESS_DETAIL</code></span></div>
+<div class="case-fact"><span class="label">Must not execute</span><span class="node-pill-list"><code>PREPARE_READ</code><code>READ_ALLOWED</code><code>READ_GUIDANCE</code><code>IS_LIST</code><code>FETCH_SUPPLIERS</code><code>SHAPE_SUPPLIERS</code><code>STORE_LIST_STATE</code><code>DISPLAY_STAGE</code><code>INIT_DISPLAY</code><code>SUPPLIER_READ_DISPLAY</code><code>FETCH_SUPPLIER_DETAIL</code><code>SHAPE_DETAIL</code><code>STORE_DETAIL_STATE</code><code>STORE_PREPARED_TRANSACTION</code><code>SUPPLIER_TRANSACTION_DISPLAY</code><code>CHECK_SUPPLIER_DUPLICATE</code><code>AUTHORIZE_SUPPLIER_WRITE</code><code>STORE_PREFLIGHT_TRANSACTION</code><code>SUPPLIER_WRITE_ROUTE</code><code>CREATE_SUPPLIER</code><code>CAPTURE_SUPPLIER_CREATE</code><code>STORE_CREATE_RECEIPT</code><code>CREATE_HAS_ID</code><code>GET_CREATED_SUPPLIER</code><code>VERIFY_SUPPLIER_CREATE</code><code>STORE_VERIFIED_TRANSACTION</code><code>FETCH_ADDRESSES</code><code>SHAPE_ADDRESSES</code><code>STORE_ADDRESS_LIST</code><code>ADDRESS_DUPLICATE_INPUT</code><code>CHECK_ADDRESS_DUPLICATE</code><code>AUTHORIZE_ADDRESS_WRITE</code><code>STORE_ADDRESS_ATTEMPT</code><code>ADDRESS_WRITE_ROUTE</code><code>CREATE_ADDRESS</code><code>CAPTURE_ADDRESS_CREATE</code><code>STORE_ADDRESS_RECEIPT</code><code>ADDRESS_HAS_ID</code><code>GET_CREATED_ADDRESS</code><code>VERIFY_ADDRESS_CREATE</code><code>STORE_ADDRESS_VERIFIED</code><code>PREPARE_SITE</code><code>STORE_SITE_PREPARED</code><code>SITE_ENTRY</code><code>FETCH_SITE_PARENT</code><code>CHECK_SITE_PARENT</code><code>STORE_SITE_PARENT</code><code>SITE_OPERATION</code><code>FETCH_SITES</code><code>SHAPE_SITES</code><code>STORE_SITE_LIST</code><code>FETCH_SITE_DETAIL</code><code>SHAPE_SITE_DETAIL</code><code>STORE_SITE_DETAIL</code><code>SITE_REFERENCE_INPUT</code><code>FETCH_SITE_ADDRESS_REFERENCE</code><code>FETCH_SITE_BU_REFERENCE</code><code>CHECK_SITE_REFERENCES</code><code>STORE_SITE_REFERENCES</code><code>SITE_REFERENCES_ROUTE</code><code>SITE_DUPLICATE_INPUT</code><code>CHECK_SITE_DUPLICATE</code><code>AUTHORIZE_SITE_WRITE</code><code>STORE_SITE_ATTEMPT</code><code>SITE_WRITE_ROUTE</code><code>CREATE_SITE</code><code>CAPTURE_SITE_CREATE</code><code>STORE_SITE_RECEIPT</code><code>SITE_HAS_ID</code><code>GET_CREATED_SITE</code><code>VERIFY_SITE_CREATE</code><code>STORE_SITE_VERIFIED</code><code>PREPARE_CONTACT</code><code>STORE_CONTACT_PREPARED</code><code>CONTACT_ENTRY</code><code>FETCH_CONTACT_PARENT</code><code>CHECK_CONTACT_PARENT</code><code>STORE_CONTACT_PARENT</code><code>CONTACT_OPERATION</code><code>FETCH_CONTACTS</code><code>SHAPE_CONTACTS</code><code>STORE_CONTACT_LIST</code><code>FETCH_CONTACT_DETAIL</code><code>SHAPE_CONTACT_DETAIL</code><code>STORE_CONTACT_DETAIL</code><code>CONTACT_DUPLICATE_INPUT</code><code>CHECK_CONTACT_DUPLICATE</code><code>AUTHORIZE_CONTACT_WRITE</code><code>STORE_CONTACT_ATTEMPT</code><code>CONTACT_WRITE_ROUTE</code><code>CREATE_CONTACT</code><code>CAPTURE_CONTACT_CREATE</code><code>STORE_CONTACT_RECEIPT</code><code>CONTACT_HAS_ID</code><code>GET_CREATED_CONTACT</code><code>VERIFY_CONTACT_CREATE</code><code>STORE_CONTACT_VERIFIED</code><code>SITE_DISPLAY</code><code>CONTACT_DISPLAY</code></span></div>
+</div>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;addressCore&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Address detail&quot;,&quot;description&quot;:&quot;Supplier XDX Core Supplier 20260924 2130 (300000333814409). Verified selected address.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;SupplierAddressId&quot;,&quot;AddressName&quot;,&quot;CountryCode&quot;,&quot;AddressLine1&quot;,&quot;City&quot;,&quot;State&quot;,&quot;PostalCode&quot;,&quot;Email&quot;,&quot;AddressPurposeOrderingFlag&quot;,&quot;AddressPartyNumber&quot;,&quot;Status&quot;,&quot;InactiveDate&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;300000333814416&quot;,&quot;XDX Core Address 20260924&quot;,&quot;US&quot;,&quot;5000 CARTER DR.&quot;,&quot;LOS ANGELES&quot;,&quot;CA&quot;,&quot;90032&quot;,&quot;xdx-core-address-20260924@example.invalid&quot;,&quot;true&quot;,&quot;1486638&quot;,&quot;ACTIVE&quot;,&quot;4712-12-31&quot;]}]}}&lt;/oraInf...</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">supplier-draft-conversation</span>
+
+      </div>
+      <a href="supplier-draft-conversation/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+      <div class="case-fact"><span class="label">Conversation execution</span><span class="value">30 node executions; 0 suspensions; 0 resumptions</span></div>
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 592/592 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">104568 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">98646 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">42779 total (40817 input, 1962 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">50</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify supplier draft continuity and safe stale rejection and cancellation.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify requested supplier draft editing, review, stale rejection and cancellation across native Query turns.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span></div>
+        <div class="case-fact"><span class="label">Capture modes</span></div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p>No invocation recorded.</p>
+      <h3>Path Assertions</h3>
+      <p>No path assertions configured.</p>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;supplierTransaction&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Supplier draft&quot;,&quot;description&quot;:&quot;Draft cancelled. No create is authorized. Request 2fd42cd7-05ed-4573-be98-ad30d8130f0b, revision 2.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;Field&quot;,&quot;Value&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;Supplier&quot;,&quot;XDX Replay Supplier Revised&quot;]},{&quot;cells&quot;:[&quot;BusinessRelationship&quot;,&quot;Spend Authorized&quot;]},{&quot;cells&quot;:[&quot;TaxOrganizationType&quot;,&quot;Corporation&quot;]}]}}&lt;/oraInfoDisplay&gt;</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">supplier-query-detail</span>
+
+      </div>
+      <a href="supplier-query-detail/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 115/115 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">15433 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">11647 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">8581 total (8208 input, 373 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">10</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify SUP-READ supplier scalar detail through Query with selected current supplier ID.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify supplier scalar detail through the supported native Query route.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span>record-now</div>
+        <div class="case-fact"><span class="label">Capture modes</span>raw: 1</div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p><strong>Trigger:</strong> app</p>
+<p><strong>App Hint:</strong> <code>Query</code></p>
+<p><strong>Message:</strong> <code>Show supplier detail for Supplier ID 300000047414679.</code></p>
+
+<pre>{
+  &quot;OraAppContext&quot;: &quot;&quot;,
+  &quot;appHint&quot;: &quot;Query&quot;,
+  &quot;OraUserContext&quot;: &quot;&quot;
+}</pre>
+      <h3>Path Assertions</h3>
+      <div class="case-card__detail-grid">
+<div class="case-fact"><span class="label">Must execute</span><span class="node-pill-list"><code>EXTRACT_READ</code><code>PREPARE_TRANSACTION</code><code>TRANSACTION_ROUTE</code><code>PREPARE_READ</code><code>READ_ALLOWED</code><code>IS_LIST</code><code>DISPLAY_STAGE</code><code>FETCH_SUPPLIER_DETAIL</code><code>SHAPE_DETAIL</code><code>STORE_DETAIL_STATE</code><code>SUPPLIER_READ_DISPLAY</code></span></div>
+<div class="case-fact"><span class="label">Must not execute</span><span class="node-pill-list"><code>FETCH_SUPPLIERS</code><code>SHAPE_SUPPLIERS</code><code>STORE_LIST_STATE</code><code>STORE_PREPARED_TRANSACTION</code><code>CHECK_SUPPLIER_DUPLICATE</code><code>AUTHORIZE_SUPPLIER_WRITE</code><code>STORE_PREFLIGHT_TRANSACTION</code><code>SUPPLIER_WRITE_ROUTE</code><code>CREATE_SUPPLIER</code><code>CAPTURE_SUPPLIER_CREATE</code><code>STORE_CREATE_RECEIPT</code><code>CREATE_HAS_ID</code><code>GET_CREATED_SUPPLIER</code><code>VERIFY_SUPPLIER_CREATE</code><code>STORE_VERIFIED_TRANSACTION</code><code>PREPARE_ADDRESS</code><code>STORE_ADDRESS_PREPARED</code><code>ADDRESS_ENTRY</code><code>FETCH_ADDRESS_PARENT</code><code>CHECK_ADDRESS_PARENT</code><code>STORE_ADDRESS_PARENT</code><code>ADDRESS_OPERATION</code><code>FETCH_ADDRESSES</code><code>SHAPE_ADDRESSES</code><code>STORE_ADDRESS_LIST</code><code>FETCH_ADDRESS_DETAIL</code><code>SHAPE_ADDRESS_DETAIL</code><code>STORE_ADDRESS_DETAIL</code><code>ADDRESS_DUPLICATE_INPUT</code><code>CHECK_ADDRESS_DUPLICATE</code><code>AUTHORIZE_ADDRESS_WRITE</code><code>STORE_ADDRESS_ATTEMPT</code><code>ADDRESS_WRITE_ROUTE</code><code>CREATE_ADDRESS</code><code>CAPTURE_ADDRESS_CREATE</code><code>STORE_ADDRESS_RECEIPT</code><code>ADDRESS_HAS_ID</code><code>GET_CREATED_ADDRESS</code><code>VERIFY_ADDRESS_CREATE</code><code>STORE_ADDRESS_VERIFIED</code><code>PREPARE_SITE</code><code>STORE_SITE_PREPARED</code><code>SITE_ENTRY</code><code>FETCH_SITE_PARENT</code><code>CHECK_SITE_PARENT</code><code>STORE_SITE_PARENT</code><code>SITE_OPERATION</code><code>FETCH_SITES</code><code>SHAPE_SITES</code><code>STORE_SITE_LIST</code><code>FETCH_SITE_DETAIL</code><code>SHAPE_SITE_DETAIL</code><code>STORE_SITE_DETAIL</code><code>SITE_REFERENCE_INPUT</code><code>FETCH_SITE_ADDRESS_REFERENCE</code><code>FETCH_SITE_BU_REFERENCE</code><code>CHECK_SITE_REFERENCES</code><code>STORE_SITE_REFERENCES</code><code>SITE_REFERENCES_ROUTE</code><code>SITE_DUPLICATE_INPUT</code><code>CHECK_SITE_DUPLICATE</code><code>AUTHORIZE_SITE_WRITE</code><code>STORE_SITE_ATTEMPT</code><code>SITE_WRITE_ROUTE</code><code>CREATE_SITE</code><code>CAPTURE_SITE_CREATE</code><code>STORE_SITE_RECEIPT</code><code>SITE_HAS_ID</code><code>GET_CREATED_SITE</code><code>VERIFY_SITE_CREATE</code><code>STORE_SITE_VERIFIED</code><code>PREPARE_CONTACT</code><code>STORE_CONTACT_PREPARED</code><code>CONTACT_ENTRY</code><code>FETCH_CONTACT_PARENT</code><code>CHECK_CONTACT_PARENT</code><code>STORE_CONTACT_PARENT</code><code>CONTACT_OPERATION</code><code>FETCH_CONTACTS</code><code>SHAPE_CONTACTS</code><code>STORE_CONTACT_LIST</code><code>FETCH_CONTACT_DETAIL</code><code>SHAPE_CONTACT_DETAIL</code><code>STORE_CONTACT_DETAIL</code><code>CONTACT_DUPLICATE_INPUT</code><code>CHECK_CONTACT_DUPLICATE</code><code>AUTHORIZE_CONTACT_WRITE</code><code>STORE_CONTACT_ATTEMPT</code><code>CONTACT_WRITE_ROUTE</code><code>CREATE_CONTACT</code><code>CAPTURE_CONTACT_CREATE</code><code>STORE_CONTACT_RECEIPT</code><code>CONTACT_HAS_ID</code><code>GET_CREATED_CONTACT</code><code>VERIFY_CONTACT_CREATE</code><code>STORE_CONTACT_VERIFIED</code><code>READ_GUIDANCE</code><code>INIT_DISPLAY</code><code>SUPPLIER_TRANSACTION_DISPLAY</code><code>ADDRESS_DISPLAY</code><code>SITE_DISPLAY</code><code>CONTACT_DISPLAY</code></span></div>
+</div>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;supplierRead&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Supplier detail&quot;,&quot;description&quot;:&quot;Verified scalar supplier profile for 300000047414679.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;Supplier ID&quot;,&quot;Supplier number&quot;,&quot;Supplier&quot;,&quot;Supplier type&quot;,&quot;Business relationship&quot;,&quot;Inactive date&quot;,&quot;Status&quot;,&quot;Alternate name&quot;,&quot;Tax organization type&quot;,&quot;Corporate website&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;300000047414679&quot;,&quot;1255&quot;,&quot;Dell Inc.&quot;,&quot;Not specified&quot;,&quot;Spend Authorized&quot;,&quot;Not specified&quot;,&quot;ACTIVE&quot;,&quot;Dell Inc&quot;,&quot;Corporation&quot;,&quot;www.dell.com&quot;]}]}}&lt;/oraInfoDisplay&gt;</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">contact-draft-conversation</span>
+
+      </div>
+      <a href="contact-draft-conversation/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+      <div class="case-fact"><span class="label">Conversation execution</span><span class="value">36 node executions; 0 suspensions; 0 resumptions</span></div>
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 474/474 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">68561 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">63160 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">34569 total (32833 input, 1736 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">40</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify parent-scoped contact read or draft-only continuity, no POST.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify required contact draft field-only editing, parent continuity, complete review and safe cancellation.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span></div>
+        <div class="case-fact"><span class="label">Capture modes</span></div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p>No invocation recorded.</p>
+      <h3>Path Assertions</h3>
+      <p>No path assertions configured.</p>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;contactCore&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Contact draft&quot;,&quot;description&quot;:&quot;Draft cancelled. No create authorized. Request 12c7c434-e4c0-4cb9-94f3-288efd4b74fc, revision 2.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;Field&quot;,&quot;Value&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;Supplier ID&quot;,&quot;300000333814409&quot;]},{&quot;cells&quot;:[&quot;Supplier&quot;,&quot;XDX Core Supplier 20260924 2130&quot;]},{&quot;cells&quot;:[&quot;FirstName&quot;,&quot;XDX&quot;]},{&quot;cells&quot;:[&quot;LastName&quot;,&quot;ReplayContactRevised&quot;]},{&quot;cells&quot;:[&quot;Email&quot;,&quot;xdx-replay-contact@example.invalid&quot;]}]}}&lt;/oraInfoDisplay&gt;</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">contact-query-detail</span>
+
+      </div>
+      <a href="contact-query-detail/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 115/115 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">20572 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">19042 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">8609 total (8200 input, 409 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">10</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify parent-scoped contact read or draft-only continuity, no POST.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify ordinary parent-scoped contact detail independently of create confirmation.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span>record-now</div>
+        <div class="case-fact"><span class="label">Capture modes</span>raw: 2</div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p><strong>Trigger:</strong> app</p>
+<p><strong>App Hint:</strong> <code>Query</code></p>
+<p><strong>Message:</strong> <code>Show contact detail for SupplierContactId 300000333814434 under Supplier ID 300000333814409.</code></p>
+
+<pre>{
+  &quot;appHint&quot;: &quot;Query&quot;,
+  &quot;OraAppContext&quot;: &quot;&quot;,
+  &quot;OraUserContext&quot;: &quot;&quot;
+}</pre>
+      <h3>Path Assertions</h3>
+      <div class="case-card__detail-grid">
+<div class="case-fact"><span class="label">Must execute</span><span class="node-pill-list"><code>EXTRACT_READ</code><code>PREPARE_TRANSACTION</code><code>TRANSACTION_ROUTE</code><code>PREPARE_CONTACT</code><code>STORE_CONTACT_PREPARED</code><code>CONTACT_ENTRY</code><code>FETCH_CONTACT_PARENT</code><code>CHECK_CONTACT_PARENT</code><code>STORE_CONTACT_PARENT</code><code>CONTACT_OPERATION</code><code>FETCH_CONTACT_DETAIL</code><code>SHAPE_CONTACT_DETAIL</code><code>STORE_CONTACT_DETAIL</code><code>CONTACT_DISPLAY</code></span></div>
+<div class="case-fact"><span class="label">Must not execute</span><span class="node-pill-list"><code>PREPARE_READ</code><code>READ_ALLOWED</code><code>READ_GUIDANCE</code><code>IS_LIST</code><code>FETCH_SUPPLIERS</code><code>SHAPE_SUPPLIERS</code><code>STORE_LIST_STATE</code><code>DISPLAY_STAGE</code><code>INIT_DISPLAY</code><code>SUPPLIER_READ_DISPLAY</code><code>FETCH_SUPPLIER_DETAIL</code><code>SHAPE_DETAIL</code><code>STORE_DETAIL_STATE</code><code>STORE_PREPARED_TRANSACTION</code><code>SUPPLIER_TRANSACTION_DISPLAY</code><code>CHECK_SUPPLIER_DUPLICATE</code><code>AUTHORIZE_SUPPLIER_WRITE</code><code>STORE_PREFLIGHT_TRANSACTION</code><code>SUPPLIER_WRITE_ROUTE</code><code>CREATE_SUPPLIER</code><code>CAPTURE_SUPPLIER_CREATE</code><code>STORE_CREATE_RECEIPT</code><code>CREATE_HAS_ID</code><code>GET_CREATED_SUPPLIER</code><code>VERIFY_SUPPLIER_CREATE</code><code>STORE_VERIFIED_TRANSACTION</code><code>PREPARE_ADDRESS</code><code>STORE_ADDRESS_PREPARED</code><code>ADDRESS_ENTRY</code><code>ADDRESS_DISPLAY</code><code>FETCH_ADDRESS_PARENT</code><code>CHECK_ADDRESS_PARENT</code><code>STORE_ADDRESS_PARENT</code><code>ADDRESS_OPERATION</code><code>FETCH_ADDRESSES</code><code>SHAPE_ADDRESSES</code><code>STORE_ADDRESS_LIST</code><code>FETCH_ADDRESS_DETAIL</code><code>SHAPE_ADDRESS_DETAIL</code><code>STORE_ADDRESS_DETAIL</code><code>ADDRESS_DUPLICATE_INPUT</code><code>CHECK_ADDRESS_DUPLICATE</code><code>AUTHORIZE_ADDRESS_WRITE</code><code>STORE_ADDRESS_ATTEMPT</code><code>ADDRESS_WRITE_ROUTE</code><code>CREATE_ADDRESS</code><code>CAPTURE_ADDRESS_CREATE</code><code>STORE_ADDRESS_RECEIPT</code><code>ADDRESS_HAS_ID</code><code>GET_CREATED_ADDRESS</code><code>VERIFY_ADDRESS_CREATE</code><code>STORE_ADDRESS_VERIFIED</code><code>PREPARE_SITE</code><code>STORE_SITE_PREPARED</code><code>SITE_ENTRY</code><code>FETCH_SITE_PARENT</code><code>CHECK_SITE_PARENT</code><code>STORE_SITE_PARENT</code><code>SITE_OPERATION</code><code>FETCH_SITES</code><code>SHAPE_SITES</code><code>STORE_SITE_LIST</code><code>FETCH_SITE_DETAIL</code><code>SHAPE_SITE_DETAIL</code><code>STORE_SITE_DETAIL</code><code>SITE_REFERENCE_INPUT</code><code>FETCH_SITE_ADDRESS_REFERENCE</code><code>FETCH_SITE_BU_REFERENCE</code><code>CHECK_SITE_REFERENCES</code><code>STORE_SITE_REFERENCES</code><code>SITE_REFERENCES_ROUTE</code><code>SITE_DUPLICATE_INPUT</code><code>CHECK_SITE_DUPLICATE</code><code>AUTHORIZE_SITE_WRITE</code><code>STORE_SITE_ATTEMPT</code><code>SITE_WRITE_ROUTE</code><code>CREATE_SITE</code><code>CAPTURE_SITE_CREATE</code><code>STORE_SITE_RECEIPT</code><code>SITE_HAS_ID</code><code>GET_CREATED_SITE</code><code>VERIFY_SITE_CREATE</code><code>STORE_SITE_VERIFIED</code><code>FETCH_CONTACTS</code><code>SHAPE_CONTACTS</code><code>STORE_CONTACT_LIST</code><code>CONTACT_DUPLICATE_INPUT</code><code>CHECK_CONTACT_DUPLICATE</code><code>AUTHORIZE_CONTACT_WRITE</code><code>STORE_CONTACT_ATTEMPT</code><code>CONTACT_WRITE_ROUTE</code><code>CREATE_CONTACT</code><code>CAPTURE_CONTACT_CREATE</code><code>STORE_CONTACT_RECEIPT</code><code>CONTACT_HAS_ID</code><code>GET_CREATED_CONTACT</code><code>VERIFY_CONTACT_CREATE</code><code>STORE_CONTACT_VERIFIED</code><code>SITE_DISPLAY</code></span></div>
+</div>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;contactCore&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Contact detail&quot;,&quot;description&quot;:&quot;Supplier XDX Core Supplier 20260924 2130 (300000333814409). Verified selected contact.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;SupplierContactId&quot;,&quot;ContactName&quot;,&quot;FirstName&quot;,&quot;LastName&quot;,&quot;Email&quot;,&quot;PersonProfileId&quot;,&quot;Status&quot;,&quot;InactiveDate&quot;,&quot;UserName&quot;,&quot;UserAccountStatus&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;300000333814434&quot;,&quot;CoreContact20260924, XDX&quot;,&quot;XDX&quot;,&quot;CoreContact20260924&quot;,&quot;xdx-core-contact-20260924@example.invalid&quot;,&quot;300000333814434&quot;,&quot;ACTIVE&quot;,&quot;Not specified&quot;,&quot;Not specified&quot;,&quot;Not specified&quot;]}]}}&lt;/oraInfoDisplay&gt;</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">contact-query-list</span>
+
+      </div>
+      <a href="contact-query-list/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 115/115 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">16223 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">14625 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">8648 total (8220 input, 428 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">10</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify parent-scoped contact read or draft-only continuity, no POST.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify ordinary parent-scoped contact exact-name query independently of create confirmation.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span>record-now</div>
+        <div class="case-fact"><span class="label">Capture modes</span>raw: 2</div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p><strong>Trigger:</strong> app</p>
+<p><strong>App Hint:</strong> <code>Query</code></p>
+<p><strong>Message:</strong> <code>Find contact with exact ContactName CoreContact20260924, XDX under Supplier ID 300000333814409, limit 1.</code></p>
+
+<pre>{
+  &quot;appHint&quot;: &quot;Query&quot;,
+  &quot;OraAppContext&quot;: &quot;&quot;,
+  &quot;OraUserContext&quot;: &quot;&quot;
+}</pre>
+      <h3>Path Assertions</h3>
+      <div class="case-card__detail-grid">
+<div class="case-fact"><span class="label">Must execute</span><span class="node-pill-list"><code>EXTRACT_READ</code><code>PREPARE_TRANSACTION</code><code>TRANSACTION_ROUTE</code><code>PREPARE_CONTACT</code><code>STORE_CONTACT_PREPARED</code><code>CONTACT_ENTRY</code><code>FETCH_CONTACT_PARENT</code><code>CHECK_CONTACT_PARENT</code><code>STORE_CONTACT_PARENT</code><code>CONTACT_OPERATION</code><code>FETCH_CONTACTS</code><code>SHAPE_CONTACTS</code><code>STORE_CONTACT_LIST</code><code>CONTACT_DISPLAY</code></span></div>
+<div class="case-fact"><span class="label">Must not execute</span><span class="node-pill-list"><code>PREPARE_READ</code><code>READ_ALLOWED</code><code>READ_GUIDANCE</code><code>IS_LIST</code><code>FETCH_SUPPLIERS</code><code>SHAPE_SUPPLIERS</code><code>STORE_LIST_STATE</code><code>DISPLAY_STAGE</code><code>INIT_DISPLAY</code><code>SUPPLIER_READ_DISPLAY</code><code>FETCH_SUPPLIER_DETAIL</code><code>SHAPE_DETAIL</code><code>STORE_DETAIL_STATE</code><code>STORE_PREPARED_TRANSACTION</code><code>SUPPLIER_TRANSACTION_DISPLAY</code><code>CHECK_SUPPLIER_DUPLICATE</code><code>AUTHORIZE_SUPPLIER_WRITE</code><code>STORE_PREFLIGHT_TRANSACTION</code><code>SUPPLIER_WRITE_ROUTE</code><code>CREATE_SUPPLIER</code><code>CAPTURE_SUPPLIER_CREATE</code><code>STORE_CREATE_RECEIPT</code><code>CREATE_HAS_ID</code><code>GET_CREATED_SUPPLIER</code><code>VERIFY_SUPPLIER_CREATE</code><code>STORE_VERIFIED_TRANSACTION</code><code>PREPARE_ADDRESS</code><code>STORE_ADDRESS_PREPARED</code><code>ADDRESS_ENTRY</code><code>ADDRESS_DISPLAY</code><code>FETCH_ADDRESS_PARENT</code><code>CHECK_ADDRESS_PARENT</code><code>STORE_ADDRESS_PARENT</code><code>ADDRESS_OPERATION</code><code>FETCH_ADDRESSES</code><code>SHAPE_ADDRESSES</code><code>STORE_ADDRESS_LIST</code><code>FETCH_ADDRESS_DETAIL</code><code>SHAPE_ADDRESS_DETAIL</code><code>STORE_ADDRESS_DETAIL</code><code>ADDRESS_DUPLICATE_INPUT</code><code>CHECK_ADDRESS_DUPLICATE</code><code>AUTHORIZE_ADDRESS_WRITE</code><code>STORE_ADDRESS_ATTEMPT</code><code>ADDRESS_WRITE_ROUTE</code><code>CREATE_ADDRESS</code><code>CAPTURE_ADDRESS_CREATE</code><code>STORE_ADDRESS_RECEIPT</code><code>ADDRESS_HAS_ID</code><code>GET_CREATED_ADDRESS</code><code>VERIFY_ADDRESS_CREATE</code><code>STORE_ADDRESS_VERIFIED</code><code>PREPARE_SITE</code><code>STORE_SITE_PREPARED</code><code>SITE_ENTRY</code><code>FETCH_SITE_PARENT</code><code>CHECK_SITE_PARENT</code><code>STORE_SITE_PARENT</code><code>SITE_OPERATION</code><code>FETCH_SITES</code><code>SHAPE_SITES</code><code>STORE_SITE_LIST</code><code>FETCH_SITE_DETAIL</code><code>SHAPE_SITE_DETAIL</code><code>STORE_SITE_DETAIL</code><code>SITE_REFERENCE_INPUT</code><code>FETCH_SITE_ADDRESS_REFERENCE</code><code>FETCH_SITE_BU_REFERENCE</code><code>CHECK_SITE_REFERENCES</code><code>STORE_SITE_REFERENCES</code><code>SITE_REFERENCES_ROUTE</code><code>SITE_DUPLICATE_INPUT</code><code>CHECK_SITE_DUPLICATE</code><code>AUTHORIZE_SITE_WRITE</code><code>STORE_SITE_ATTEMPT</code><code>SITE_WRITE_ROUTE</code><code>CREATE_SITE</code><code>CAPTURE_SITE_CREATE</code><code>STORE_SITE_RECEIPT</code><code>SITE_HAS_ID</code><code>GET_CREATED_SITE</code><code>VERIFY_SITE_CREATE</code><code>STORE_SITE_VERIFIED</code><code>FETCH_CONTACT_DETAIL</code><code>SHAPE_CONTACT_DETAIL</code><code>STORE_CONTACT_DETAIL</code><code>CONTACT_DUPLICATE_INPUT</code><code>CHECK_CONTACT_DUPLICATE</code><code>AUTHORIZE_CONTACT_WRITE</code><code>STORE_CONTACT_ATTEMPT</code><code>CONTACT_WRITE_ROUTE</code><code>CREATE_CONTACT</code><code>CAPTURE_CONTACT_CREATE</code><code>STORE_CONTACT_RECEIPT</code><code>CONTACT_HAS_ID</code><code>GET_CREATED_CONTACT</code><code>VERIFY_CONTACT_CREATE</code><code>STORE_CONTACT_VERIFIED</code><code>SITE_DISPLAY</code></span></div>
+</div>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;contactCore&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Supplier contacts&quot;,&quot;description&quot;:&quot;Supplier XDX Core Supplier 20260924 2130 (300000333814409). count: 1, offset: 0, hasMore: false. No next page.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;SupplierContactId&quot;,&quot;ContactName&quot;,&quot;FirstName&quot;,&quot;LastName&quot;,&quot;Email&quot;,&quot;PersonProfileId&quot;,&quot;Status&quot;,&quot;InactiveDate&quot;,&quot;UserName&quot;,&quot;UserAccountStatus&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;300000333814434&quot;,&quot;CoreContact20260924, XDX&quot;,&quot;XDX&quot;,&quot;CoreContact20260924&quot;,&quot;xdx-core-contact-20260924@example.invalid&quot;,&quot;300000333814434&quot;,&quot;ACTIVE&quot;,&quot;Not specified&quot;,&quot;Not specified&quot;,&quot;Not specified&quot;]}]}}&lt;/o...</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">supplier-query-guidance</span>
+
+      </div>
+      <a href="supplier-query-guidance/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 116/116 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">19243 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">18301 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">8429 total (8118 input, 311 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">10</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify SUP-READ unsupported request withholding through actual Query, not unreachable startup guard.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify unsupported Query is withheld with scope guidance and no BO execution.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span>model-generated</div>
+        <div class="case-fact"><span class="label">Capture modes</span></div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p><strong>Trigger:</strong> app</p>
+<p><strong>App Hint:</strong> <code>Query</code></p>
+<p><strong>Message:</strong> <code>Delete the selected supplier.</code></p>
+
+<pre>{
+  &quot;OraAppContext&quot;: &quot;&quot;,
+  &quot;appHint&quot;: &quot;Query&quot;,
+  &quot;OraUserContext&quot;: &quot;&quot;
+}</pre>
+      <h3>Path Assertions</h3>
+      <div class="case-card__detail-grid">
+<div class="case-fact"><span class="label">Must execute</span><span class="node-pill-list"><code>EXTRACT_READ</code><code>PREPARE_TRANSACTION</code><code>TRANSACTION_ROUTE</code><code>PREPARE_READ</code><code>READ_ALLOWED</code><code>READ_GUIDANCE</code></span></div>
+<div class="case-fact"><span class="label">Must not execute</span><span class="node-pill-list"><code>IS_LIST</code><code>FETCH_SUPPLIERS</code><code>SHAPE_SUPPLIERS</code><code>STORE_LIST_STATE</code><code>DISPLAY_STAGE</code><code>INIT_DISPLAY</code><code>SUPPLIER_READ_DISPLAY</code><code>FETCH_SUPPLIER_DETAIL</code><code>SHAPE_DETAIL</code><code>STORE_DETAIL_STATE</code><code>STORE_PREPARED_TRANSACTION</code><code>SUPPLIER_TRANSACTION_DISPLAY</code><code>CHECK_SUPPLIER_DUPLICATE</code><code>AUTHORIZE_SUPPLIER_WRITE</code><code>STORE_PREFLIGHT_TRANSACTION</code><code>SUPPLIER_WRITE_ROUTE</code><code>CREATE_SUPPLIER</code><code>CAPTURE_SUPPLIER_CREATE</code><code>STORE_CREATE_RECEIPT</code><code>CREATE_HAS_ID</code><code>GET_CREATED_SUPPLIER</code><code>VERIFY_SUPPLIER_CREATE</code><code>STORE_VERIFIED_TRANSACTION</code><code>PREPARE_ADDRESS</code><code>STORE_ADDRESS_PREPARED</code><code>ADDRESS_ENTRY</code><code>ADDRESS_DISPLAY</code><code>FETCH_ADDRESS_PARENT</code><code>CHECK_ADDRESS_PARENT</code><code>STORE_ADDRESS_PARENT</code><code>ADDRESS_OPERATION</code><code>FETCH_ADDRESSES</code><code>SHAPE_ADDRESSES</code><code>STORE_ADDRESS_LIST</code><code>FETCH_ADDRESS_DETAIL</code><code>SHAPE_ADDRESS_DETAIL</code><code>STORE_ADDRESS_DETAIL</code><code>ADDRESS_DUPLICATE_INPUT</code><code>CHECK_ADDRESS_DUPLICATE</code><code>AUTHORIZE_ADDRESS_WRITE</code><code>STORE_ADDRESS_ATTEMPT</code><code>ADDRESS_WRITE_ROUTE</code><code>CREATE_ADDRESS</code><code>CAPTURE_ADDRESS_CREATE</code><code>STORE_ADDRESS_RECEIPT</code><code>ADDRESS_HAS_ID</code><code>GET_CREATED_ADDRESS</code><code>VERIFY_ADDRESS_CREATE</code><code>STORE_ADDRESS_VERIFIED</code><code>PREPARE_SITE</code><code>STORE_SITE_PREPARED</code><code>SITE_ENTRY</code><code>FETCH_SITE_PARENT</code><code>CHECK_SITE_PARENT</code><code>STORE_SITE_PARENT</code><code>SITE_OPERATION</code><code>FETCH_SITES</code><code>SHAPE_SITES</code><code>STORE_SITE_LIST</code><code>FETCH_SITE_DETAIL</code><code>SHAPE_SITE_DETAIL</code><code>STORE_SITE_DETAIL</code><code>SITE_REFERENCE_INPUT</code><code>FETCH_SITE_ADDRESS_REFERENCE</code><code>FETCH_SITE_BU_REFERENCE</code><code>CHECK_SITE_REFERENCES</code><code>STORE_SITE_REFERENCES</code><code>SITE_REFERENCES_ROUTE</code><code>SITE_DUPLICATE_INPUT</code><code>CHECK_SITE_DUPLICATE</code><code>AUTHORIZE_SITE_WRITE</code><code>STORE_SITE_ATTEMPT</code><code>SITE_WRITE_ROUTE</code><code>CREATE_SITE</code><code>CAPTURE_SITE_CREATE</code><code>STORE_SITE_RECEIPT</code><code>SITE_HAS_ID</code><code>GET_CREATED_SITE</code><code>VERIFY_SITE_CREATE</code><code>STORE_SITE_VERIFIED</code><code>PREPARE_CONTACT</code><code>STORE_CONTACT_PREPARED</code><code>CONTACT_ENTRY</code><code>FETCH_CONTACT_PARENT</code><code>CHECK_CONTACT_PARENT</code><code>STORE_CONTACT_PARENT</code><code>CONTACT_OPERATION</code><code>FETCH_CONTACTS</code><code>SHAPE_CONTACTS</code><code>STORE_CONTACT_LIST</code><code>FETCH_CONTACT_DETAIL</code><code>SHAPE_CONTACT_DETAIL</code><code>STORE_CONTACT_DETAIL</code><code>CONTACT_DUPLICATE_INPUT</code><code>CHECK_CONTACT_DUPLICATE</code><code>AUTHORIZE_CONTACT_WRITE</code><code>STORE_CONTACT_ATTEMPT</code><code>CONTACT_WRITE_ROUTE</code><code>CREATE_CONTACT</code><code>CAPTURE_CONTACT_CREATE</code><code>STORE_CONTACT_RECEIPT</code><code>CONTACT_HAS_ID</code><code>GET_CREATED_CONTACT</code><code>VERIFY_CONTACT_CREATE</code><code>STORE_CONTACT_VERIFIED</code><code>SITE_DISPLAY</code><code>CONTACT_DISPLAY</code></span></div>
+</div>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;supplierGuidance&quot;&gt;{&quot;patternId&quot;:&quot;cardWidget&quot;,&quot;title&quot;:&quot;Supplier request guidance&quot;,&quot;properties&quot;:{&quot;subject&quot;:&quot;Request not executed&quot;,&quot;summary&quot;:&quot;Supported reads are supplier, address, site and contact list, exact-name search, next page and selected detail. Child reads require a selected supplier.&quot;}}&lt;/oraInfoDisplay&gt;</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">site-draft-conversation</span>
+
+      </div>
+      <a href="site-draft-conversation/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+      <div class="case-fact"><span class="label">Conversation execution</span><span class="value">52 node executions; 0 suspensions; 0 resumptions</span></div>
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 474/474 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">85016 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">78688 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">35052 total (33072 input, 1980 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">40</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify site draft state, field-only editing, current reference review and cancellation with no POST.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify site draft editing, reference revalidation, complete review and cancellation without POST.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span></div>
+        <div class="case-fact"><span class="label">Capture modes</span></div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p>No invocation recorded.</p>
+      <h3>Path Assertions</h3>
+      <p>No path assertions configured.</p>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;siteCore&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Site draft&quot;,&quot;description&quot;:&quot;Draft cancelled. No create authorized. Request 8a4fe53e-77cc-402e-b9f3-ad3cb3fc2a17, revision 2.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;Field&quot;,&quot;Value&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;Supplier ID&quot;,&quot;300000333814409&quot;]},{&quot;cells&quot;:[&quot;Supplier&quot;,&quot;XDX Core Supplier 20260924 2130&quot;]},{&quot;cells&quot;:[&quot;SupplierSite&quot;,&quot;XDX Replay Site Revised&quot;]},{&quot;cells&quot;:[&quot;ProcurementBUId&quot;,&quot;300000046987012&quot;]},{&quot;cells&quot;:[&quot;SupplierAddressName&quot;,&quot;XDX Core Address 20260924&quot;]},{&quot;cells&quot;:[&quot;SitePurposePurchasingFlag&quot;,&quot;true&quot;]},{&quot;cells&quot;:[&quot;Resolved SupplierAddressId&quot;,&quot;3000...</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">site-query-detail</span>
+
+      </div>
+      <a href="site-query-detail/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 115/115 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">18035 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">16526 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">8610 total (8200 input, 410 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">10</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify ordinary scalar site detail with correct parent and all fields, independently of create confirmation.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify ordinary parent-scoped site detail independently of create confirmation.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span>record-now</div>
+        <div class="case-fact"><span class="label">Capture modes</span>raw: 2</div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p><strong>Trigger:</strong> app</p>
+<p><strong>App Hint:</strong> <code>Query</code></p>
+<p><strong>Message:</strong> <code>Show site detail for SupplierSiteId 300000333814424 under Supplier ID 300000333814409.</code></p>
+
+<pre>{
+  &quot;appHint&quot;: &quot;Query&quot;,
+  &quot;OraAppContext&quot;: &quot;&quot;,
+  &quot;OraUserContext&quot;: &quot;&quot;
+}</pre>
+      <h3>Path Assertions</h3>
+      <div class="case-card__detail-grid">
+<div class="case-fact"><span class="label">Must execute</span><span class="node-pill-list"><code>EXTRACT_READ</code><code>PREPARE_TRANSACTION</code><code>TRANSACTION_ROUTE</code><code>PREPARE_SITE</code><code>STORE_SITE_PREPARED</code><code>SITE_ENTRY</code><code>FETCH_SITE_PARENT</code><code>CHECK_SITE_PARENT</code><code>STORE_SITE_PARENT</code><code>SITE_OPERATION</code><code>FETCH_SITE_DETAIL</code><code>SHAPE_SITE_DETAIL</code><code>STORE_SITE_DETAIL</code><code>SITE_DISPLAY</code></span></div>
+<div class="case-fact"><span class="label">Must not execute</span><span class="node-pill-list"><code>PREPARE_READ</code><code>READ_ALLOWED</code><code>READ_GUIDANCE</code><code>IS_LIST</code><code>FETCH_SUPPLIERS</code><code>SHAPE_SUPPLIERS</code><code>STORE_LIST_STATE</code><code>DISPLAY_STAGE</code><code>INIT_DISPLAY</code><code>SUPPLIER_READ_DISPLAY</code><code>FETCH_SUPPLIER_DETAIL</code><code>SHAPE_DETAIL</code><code>STORE_DETAIL_STATE</code><code>STORE_PREPARED_TRANSACTION</code><code>SUPPLIER_TRANSACTION_DISPLAY</code><code>CHECK_SUPPLIER_DUPLICATE</code><code>AUTHORIZE_SUPPLIER_WRITE</code><code>STORE_PREFLIGHT_TRANSACTION</code><code>SUPPLIER_WRITE_ROUTE</code><code>CREATE_SUPPLIER</code><code>CAPTURE_SUPPLIER_CREATE</code><code>STORE_CREATE_RECEIPT</code><code>CREATE_HAS_ID</code><code>GET_CREATED_SUPPLIER</code><code>VERIFY_SUPPLIER_CREATE</code><code>STORE_VERIFIED_TRANSACTION</code><code>PREPARE_ADDRESS</code><code>STORE_ADDRESS_PREPARED</code><code>ADDRESS_ENTRY</code><code>ADDRESS_DISPLAY</code><code>FETCH_ADDRESS_PARENT</code><code>CHECK_ADDRESS_PARENT</code><code>STORE_ADDRESS_PARENT</code><code>ADDRESS_OPERATION</code><code>FETCH_ADDRESSES</code><code>SHAPE_ADDRESSES</code><code>STORE_ADDRESS_LIST</code><code>FETCH_ADDRESS_DETAIL</code><code>SHAPE_ADDRESS_DETAIL</code><code>STORE_ADDRESS_DETAIL</code><code>ADDRESS_DUPLICATE_INPUT</code><code>CHECK_ADDRESS_DUPLICATE</code><code>AUTHORIZE_ADDRESS_WRITE</code><code>STORE_ADDRESS_ATTEMPT</code><code>ADDRESS_WRITE_ROUTE</code><code>CREATE_ADDRESS</code><code>CAPTURE_ADDRESS_CREATE</code><code>STORE_ADDRESS_RECEIPT</code><code>ADDRESS_HAS_ID</code><code>GET_CREATED_ADDRESS</code><code>VERIFY_ADDRESS_CREATE</code><code>STORE_ADDRESS_VERIFIED</code><code>FETCH_SITES</code><code>SHAPE_SITES</code><code>STORE_SITE_LIST</code><code>SITE_REFERENCE_INPUT</code><code>FETCH_SITE_ADDRESS_REFERENCE</code><code>FETCH_SITE_BU_REFERENCE</code><code>CHECK_SITE_REFERENCES</code><code>STORE_SITE_REFERENCES</code><code>SITE_REFERENCES_ROUTE</code><code>SITE_DUPLICATE_INPUT</code><code>CHECK_SITE_DUPLICATE</code><code>AUTHORIZE_SITE_WRITE</code><code>STORE_SITE_ATTEMPT</code><code>SITE_WRITE_ROUTE</code><code>CREATE_SITE</code><code>CAPTURE_SITE_CREATE</code><code>STORE_SITE_RECEIPT</code><code>SITE_HAS_ID</code><code>GET_CREATED_SITE</code><code>VERIFY_SITE_CREATE</code><code>STORE_SITE_VERIFIED</code><code>PREPARE_CONTACT</code><code>STORE_CONTACT_PREPARED</code><code>CONTACT_ENTRY</code><code>FETCH_CONTACT_PARENT</code><code>CHECK_CONTACT_PARENT</code><code>STORE_CONTACT_PARENT</code><code>CONTACT_OPERATION</code><code>FETCH_CONTACTS</code><code>SHAPE_CONTACTS</code><code>STORE_CONTACT_LIST</code><code>FETCH_CONTACT_DETAIL</code><code>SHAPE_CONTACT_DETAIL</code><code>STORE_CONTACT_DETAIL</code><code>CONTACT_DUPLICATE_INPUT</code><code>CHECK_CONTACT_DUPLICATE</code><code>AUTHORIZE_CONTACT_WRITE</code><code>STORE_CONTACT_ATTEMPT</code><code>CONTACT_WRITE_ROUTE</code><code>CREATE_CONTACT</code><code>CAPTURE_CONTACT_CREATE</code><code>STORE_CONTACT_RECEIPT</code><code>CONTACT_HAS_ID</code><code>GET_CREATED_CONTACT</code><code>VERIFY_CONTACT_CREATE</code><code>STORE_CONTACT_VERIFIED</code><code>CONTACT_DISPLAY</code></span></div>
+</div>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;siteCore&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Site detail&quot;,&quot;description&quot;:&quot;Supplier XDX Core Supplier 20260924 2130 (300000333814409). Verified selected site.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;SupplierSiteId&quot;,&quot;SupplierSite&quot;,&quot;ProcurementBUId&quot;,&quot;SupplierAddressName&quot;,&quot;SitePurposePurchasingFlag&quot;,&quot;ProcurementBU&quot;,&quot;SupplierAddressId&quot;,&quot;Status&quot;,&quot;InactiveDate&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;300000333814424&quot;,&quot;XDX Core Site 20260924&quot;,&quot;300000046987012&quot;,&quot;XDX Core Address 20260924&quot;,&quot;true&quot;,&quot;US1 Business Unit&quot;,&quot;300000333814416&quot;,&quot;ACTIVE&quot;,&quot;Not specified&quot;]}]}}&lt;/oraInfoDisplay&gt;</pre>
+    </details>
+  </article><article class="case-card">
+    <div class="case-card__header">
+      <div class="case-card__title">
+        <span class="pill passed">passed</span>
+        <span class="case-card__name">site-query-list</span>
+
+      </div>
+      <a href="site-query-list/result.html">Test report</a>
+    </div>
+    <div class="case-card__meta">
+      <div class="case-fact"><span class="label">Workflow</span><span class="value">XDX_SUPPLIER_CORE_20260924</span></div>
+
+      <div class="case-fact"><span class="label">Data source</span><span class="value">file</span></div>
+      <div class="case-fact"><span class="label">Evaluation</span><span class="value">hybrid</span></div>
+
+      <div class="case-fact"><span class="label">Deterministic</span><span class="value">passed: 115/115 checks</span></div>
+      <div class="case-fact"><span class="label">Judge</span><span class="value">passed: score 5/5</span></div>
+      <div class="case-fact"><span class="label">Test run time</span><span class="value">18314 ms</span></div>
+      <div class="case-fact"><span class="label">Workflow time</span><span class="value">16708 ms</span></div>
+      <div class="case-fact"><span class="label">Tokens</span><span class="value">8649 total (8221 input, 428 output)</span></div>
+      <div class="case-fact"><span class="label">AI Units</span><span class="value">10</span></div>
+      <div class="case-fact"><span class="label">Model</span><span class="value">oci-agent/openai.gpt-5-mini</span></div>
+    </div>
+    <details>
+      <summary>Details</summary>
+      <div class="case-card__detail-grid">
+        <div class="case-fact"><span class="label">Purpose</span>Verify ordinary site exact-name query with supplier parent and all nine projected fields.</div>
+        <div class="case-fact"><span class="label">Test Intent</span>Verify ordinary parent-scoped site exact-name query independently of create confirmation.</div>
+
+
+        <div class="case-fact"><span class="label">Capture policy</span>record-now</div>
+        <div class="case-fact"><span class="label">Capture modes</span>raw: 2</div>
+        <div class="case-fact"><span class="label">Warnings</span>none</div>
+        <div class="case-fact"><span class="label">Failure</span>none</div>
+      </div>
+      <h3>Invocation</h3>
+      <p><strong>Trigger:</strong> app</p>
+<p><strong>App Hint:</strong> <code>Query</code></p>
+<p><strong>Message:</strong> <code>Find site with exact SupplierSite XDX Core Site 20260924 for Supplier ID 300000333814409, page size 1.</code></p>
+
+<pre>{
+  &quot;appHint&quot;: &quot;Query&quot;,
+  &quot;OraAppContext&quot;: &quot;&quot;,
+  &quot;OraUserContext&quot;: &quot;&quot;
+}</pre>
+      <h3>Path Assertions</h3>
+      <div class="case-card__detail-grid">
+<div class="case-fact"><span class="label">Must execute</span><span class="node-pill-list"><code>EXTRACT_READ</code><code>PREPARE_TRANSACTION</code><code>TRANSACTION_ROUTE</code><code>PREPARE_SITE</code><code>STORE_SITE_PREPARED</code><code>SITE_ENTRY</code><code>FETCH_SITE_PARENT</code><code>CHECK_SITE_PARENT</code><code>STORE_SITE_PARENT</code><code>SITE_OPERATION</code><code>FETCH_SITES</code><code>SHAPE_SITES</code><code>STORE_SITE_LIST</code><code>SITE_DISPLAY</code></span></div>
+<div class="case-fact"><span class="label">Must not execute</span><span class="node-pill-list"><code>PREPARE_READ</code><code>READ_ALLOWED</code><code>READ_GUIDANCE</code><code>IS_LIST</code><code>FETCH_SUPPLIERS</code><code>SHAPE_SUPPLIERS</code><code>STORE_LIST_STATE</code><code>DISPLAY_STAGE</code><code>INIT_DISPLAY</code><code>SUPPLIER_READ_DISPLAY</code><code>FETCH_SUPPLIER_DETAIL</code><code>SHAPE_DETAIL</code><code>STORE_DETAIL_STATE</code><code>STORE_PREPARED_TRANSACTION</code><code>SUPPLIER_TRANSACTION_DISPLAY</code><code>CHECK_SUPPLIER_DUPLICATE</code><code>AUTHORIZE_SUPPLIER_WRITE</code><code>STORE_PREFLIGHT_TRANSACTION</code><code>SUPPLIER_WRITE_ROUTE</code><code>CREATE_SUPPLIER</code><code>CAPTURE_SUPPLIER_CREATE</code><code>STORE_CREATE_RECEIPT</code><code>CREATE_HAS_ID</code><code>GET_CREATED_SUPPLIER</code><code>VERIFY_SUPPLIER_CREATE</code><code>STORE_VERIFIED_TRANSACTION</code><code>PREPARE_ADDRESS</code><code>STORE_ADDRESS_PREPARED</code><code>ADDRESS_ENTRY</code><code>ADDRESS_DISPLAY</code><code>FETCH_ADDRESS_PARENT</code><code>CHECK_ADDRESS_PARENT</code><code>STORE_ADDRESS_PARENT</code><code>ADDRESS_OPERATION</code><code>FETCH_ADDRESSES</code><code>SHAPE_ADDRESSES</code><code>STORE_ADDRESS_LIST</code><code>FETCH_ADDRESS_DETAIL</code><code>SHAPE_ADDRESS_DETAIL</code><code>STORE_ADDRESS_DETAIL</code><code>ADDRESS_DUPLICATE_INPUT</code><code>CHECK_ADDRESS_DUPLICATE</code><code>AUTHORIZE_ADDRESS_WRITE</code><code>STORE_ADDRESS_ATTEMPT</code><code>ADDRESS_WRITE_ROUTE</code><code>CREATE_ADDRESS</code><code>CAPTURE_ADDRESS_CREATE</code><code>STORE_ADDRESS_RECEIPT</code><code>ADDRESS_HAS_ID</code><code>GET_CREATED_ADDRESS</code><code>VERIFY_ADDRESS_CREATE</code><code>STORE_ADDRESS_VERIFIED</code><code>FETCH_SITE_DETAIL</code><code>SHAPE_SITE_DETAIL</code><code>STORE_SITE_DETAIL</code><code>SITE_REFERENCE_INPUT</code><code>FETCH_SITE_ADDRESS_REFERENCE</code><code>FETCH_SITE_BU_REFERENCE</code><code>CHECK_SITE_REFERENCES</code><code>STORE_SITE_REFERENCES</code><code>SITE_REFERENCES_ROUTE</code><code>SITE_DUPLICATE_INPUT</code><code>CHECK_SITE_DUPLICATE</code><code>AUTHORIZE_SITE_WRITE</code><code>STORE_SITE_ATTEMPT</code><code>SITE_WRITE_ROUTE</code><code>CREATE_SITE</code><code>CAPTURE_SITE_CREATE</code><code>STORE_SITE_RECEIPT</code><code>SITE_HAS_ID</code><code>GET_CREATED_SITE</code><code>VERIFY_SITE_CREATE</code><code>STORE_SITE_VERIFIED</code><code>PREPARE_CONTACT</code><code>STORE_CONTACT_PREPARED</code><code>CONTACT_ENTRY</code><code>FETCH_CONTACT_PARENT</code><code>CHECK_CONTACT_PARENT</code><code>STORE_CONTACT_PARENT</code><code>CONTACT_OPERATION</code><code>FETCH_CONTACTS</code><code>SHAPE_CONTACTS</code><code>STORE_CONTACT_LIST</code><code>FETCH_CONTACT_DETAIL</code><code>SHAPE_CONTACT_DETAIL</code><code>STORE_CONTACT_DETAIL</code><code>CONTACT_DUPLICATE_INPUT</code><code>CHECK_CONTACT_DUPLICATE</code><code>AUTHORIZE_CONTACT_WRITE</code><code>STORE_CONTACT_ATTEMPT</code><code>CONTACT_WRITE_ROUTE</code><code>CREATE_CONTACT</code><code>CAPTURE_CONTACT_CREATE</code><code>STORE_CONTACT_RECEIPT</code><code>CONTACT_HAS_ID</code><code>GET_CREATED_CONTACT</code><code>VERIFY_CONTACT_CREATE</code><code>STORE_CONTACT_VERIFIED</code><code>CONTACT_DISPLAY</code></span></div>
+</div>
+      <h3>Final Output Preview</h3><pre>&lt;oraInfoDisplay key=&quot;siteCore&quot;&gt;{&quot;patternId&quot;:&quot;multiRecordWidget&quot;,&quot;title&quot;:&quot;Supplier sites&quot;,&quot;description&quot;:&quot;Supplier XDX Core Supplier 20260924 2130 (300000333814409). count: 1, offset: 0, hasMore: false. No next page.&quot;,&quot;properties&quot;:{&quot;cols&quot;:[&quot;SupplierSiteId&quot;,&quot;SupplierSite&quot;,&quot;ProcurementBUId&quot;,&quot;SupplierAddressName&quot;,&quot;SitePurposePurchasingFlag&quot;,&quot;ProcurementBU&quot;,&quot;SupplierAddressId&quot;,&quot;Status&quot;,&quot;InactiveDate&quot;],&quot;rows&quot;:[{&quot;cells&quot;:[&quot;300000333814424&quot;,&quot;XDX Core Site 20260924&quot;,&quot;300000046987012&quot;,&quot;XDX Core Address 20260924&quot;,&quot;true&quot;,&quot;US1 Business Unit&quot;,&quot;300000333814416&quot;,&quot;ACTIVE&quot;,&quot;Not specified&quot;]}]}}&lt;/oraInfoDisplay&gt;</pre>
+    </details>
+  </article></div>
+    <details>
+    <summary>Show raw diagnostic table</summary>
+    <div class="scroll-table">
+      <table class="suite-diagnostic-table">
+        <colgroup><col style="width: 130px"><col style="width: 360px"><col style="width: 340px"><col style="width: 180px"><col style="width: 240px"><col style="width: 420px"><col style="width: 140px"><col style="width: 140px"><col style="width: 520px"><col style="width: 210px"><col style="width: 220px"><col style="width: 160px"><col style="width: 200px"><col style="width: 520px"><col style="width: 140px"><col style="width: 150px"><col style="width: 130px"><col style="width: 140px"><col style="width: 130px"><col style="width: 340px"><col style="width: 150px"><col style="width: 340px"><col style="width: 340px"><col style="width: 120px"></colgroup>
+        <thead><tr><th>Status</th><th>Workflow</th><th>Test</th><th>Tags</th><th>Run label</th><th>Purpose</th><th>Data source</th><th>Evaluation</th><th>Invocation</th><th>Deterministic</th><th>Judge</th><th>Capture policy</th><th>Capture modes</th><th>Path</th><th>Test Run Time</th><th>Workflow Time</th><th>Input Tokens</th><th>Output Tokens</th><th>Total Tokens</th><th>Observed Model(s)</th><th>AI Units</th><th>Warnings</th><th>Failure</th><th>Report</th></tr></thead>
+        <tbody>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">init-display</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">SUP-READ startup dependency: verify the first supplier page from the real BO, complete fields and paging.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap">trigger: app; message: (empty); parameters: {&quot;appHint&quot;:&quot;InitDisplay&quot;,&quot;OraUserContext&quot;:&quot;&quot;,&quot;OraAppContext&quot;:&quot;&quot;}</td>
+        <td class="suite-diagnostic-table__wrap">passed: 115/115 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td>record-now</td>
+        <td class="suite-diagnostic-table__wrap">model-compacted: 1</td>
+        <td class="suite-diagnostic-table__wrap"><div class="diagnostic-path-line">executes EXTRACT_READ, PREPARE_TRANSACTION, TRANSACTION_ROUTE, PREPARE_READ, READ_ALLOWED, IS_LIST, FETCH_SUPPLIERS, SHAPE_SUPPLIERS, STORE_LIST_STATE, DISPLAY_STAGE, INIT_DISPLAY</div>
+<div class="diagnostic-path-spacer"></div>
+<div class="diagnostic-path-line">skips STORE_PREPARED_TRANSACTION, SUPPLIER_TRANSACTION_DISPLAY, CHECK_SUPPLIER_DUPLICATE, AUTHORIZE_SUPPLIER_WRITE, STORE_PREFLIGHT_TRANSACTION, SUPPLIER_WRITE_ROUTE, CREATE_SUPPLIER, CAPTURE_SUPPLIER_CREATE, STORE_CREATE_RECEIPT, CREATE_HAS_ID, GET_CREATED_SUPPLIER, VERIFY_SUPPLIER_CREATE, STORE_VERIFIED_TRANSACTION, PREPARE_ADDRESS, STORE_ADDRESS_PREPARED, ADDRESS_ENTRY, ADDRESS_DISPLAY, FETCH_ADDRESS_PARENT, CHECK_ADDRESS_PARENT, STORE_ADDRESS_PARENT, ADDRESS_OPERATION, FETCH_ADDRESSES, SHAPE_ADDRESSES, STORE_ADDRESS_LIST, FETCH_ADDRESS_DETAIL, SHAPE_ADDRESS_DETAIL, STORE_ADDRESS_DETAIL, ADDRESS_DUPLICATE_INPUT, CHECK_ADDRESS_DUPLICATE, AUTHORIZE_ADDRESS_WRITE, STORE_ADDRESS_ATTEMPT, ADDRESS_WRITE_ROUTE, CREATE_ADDRESS, CAPTURE_ADDRESS_CREATE, STORE_ADDRESS_RECEIPT, ADDRESS_HAS_ID, GET_CREATED_ADDRESS, VERIFY_ADDRESS_CREATE, STORE_ADDRESS_VERIFIED, PREPARE_SITE, STORE_SITE_PREPARED, SITE_ENTRY, SITE_DISPLAY, FETCH_SITE_PARENT, CHECK_SITE_PARENT, STORE_SITE_PARENT, SITE_OPERATION, FETCH_SITES, SHAPE_SITES, STORE_SITE_LIST, FETCH_SITE_DETAIL, SHAPE_SITE_DETAIL, STORE_SITE_DETAIL, SITE_REFERENCE_INPUT, FETCH_SITE_ADDRESS_REFERENCE, FETCH_SITE_BU_REFERENCE, CHECK_SITE_REFERENCES, STORE_SITE_REFERENCES, SITE_REFERENCES_ROUTE, SITE_DUPLICATE_INPUT, CHECK_SITE_DUPLICATE, AUTHORIZE_SITE_WRITE, STORE_SITE_ATTEMPT, SITE_WRITE_ROUTE, CREATE_SITE, CAPTURE_SITE_CREATE, STORE_SITE_RECEIPT, SITE_HAS_ID, GET_CREATED_SITE, VERIFY_SITE_CREATE, STORE_SITE_VERIFIED, PREPARE_CONTACT, STORE_CONTACT_PREPARED, CONTACT_ENTRY, CONTACT_DISPLAY, FETCH_CONTACT_PARENT, CHECK_CONTACT_PARENT, STORE_CONTACT_PARENT, CONTACT_OPERATION, FETCH_CONTACTS, SHAPE_CONTACTS, STORE_CONTACT_LIST, FETCH_CONTACT_DETAIL, SHAPE_CONTACT_DETAIL, STORE_CONTACT_DETAIL, CONTACT_DUPLICATE_INPUT, CHECK_CONTACT_DUPLICATE, AUTHORIZE_CONTACT_WRITE, STORE_CONTACT_ATTEMPT, CONTACT_WRITE_ROUTE, CREATE_CONTACT, CAPTURE_CONTACT_CREATE, STORE_CONTACT_RECEIPT, CONTACT_HAS_ID, GET_CREATED_CONTACT, VERIFY_CONTACT_CREATE, STORE_CONTACT_VERIFIED, READ_GUIDANCE, FETCH_SUPPLIER_DETAIL, SHAPE_DETAIL, STORE_DETAIL_STATE, SUPPLIER_READ_DISPLAY</div></td>
+        <td>29024 ms</td>
+        <td>27707 ms</td>
+        <td>8374</td>
+        <td>479</td>
+        <td>8853</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>10</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="init-display/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">query</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify the supplier list Query stage with grounded native output.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap">trigger: app; message: List suppliers, page size 5.; parameters: {&quot;appHint&quot;:&quot;Query&quot;,&quot;OraUserContext&quot;:&quot;&quot;,&quot;OraAppContext&quot;:&quot;&quot;}</td>
+        <td class="suite-diagnostic-table__wrap">passed: 115/115 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td>baseline-replay</td>
+        <td class="suite-diagnostic-table__wrap">model-compacted: 1</td>
+        <td class="suite-diagnostic-table__wrap"><div class="diagnostic-path-line">executes EXTRACT_READ, PREPARE_TRANSACTION, TRANSACTION_ROUTE, PREPARE_READ, READ_ALLOWED, IS_LIST, FETCH_SUPPLIERS, SHAPE_SUPPLIERS, STORE_LIST_STATE, DISPLAY_STAGE, SUPPLIER_READ_DISPLAY</div>
+<div class="diagnostic-path-spacer"></div>
+<div class="diagnostic-path-line">skips STORE_PREPARED_TRANSACTION, SUPPLIER_TRANSACTION_DISPLAY, CHECK_SUPPLIER_DUPLICATE, AUTHORIZE_SUPPLIER_WRITE, STORE_PREFLIGHT_TRANSACTION, SUPPLIER_WRITE_ROUTE, CREATE_SUPPLIER, CAPTURE_SUPPLIER_CREATE, STORE_CREATE_RECEIPT, CREATE_HAS_ID, GET_CREATED_SUPPLIER, VERIFY_SUPPLIER_CREATE, STORE_VERIFIED_TRANSACTION, PREPARE_ADDRESS, STORE_ADDRESS_PREPARED, ADDRESS_ENTRY, ADDRESS_DISPLAY, FETCH_ADDRESS_PARENT, CHECK_ADDRESS_PARENT, STORE_ADDRESS_PARENT, ADDRESS_OPERATION, FETCH_ADDRESSES, SHAPE_ADDRESSES, STORE_ADDRESS_LIST, FETCH_ADDRESS_DETAIL, SHAPE_ADDRESS_DETAIL, STORE_ADDRESS_DETAIL, ADDRESS_DUPLICATE_INPUT, CHECK_ADDRESS_DUPLICATE, AUTHORIZE_ADDRESS_WRITE, STORE_ADDRESS_ATTEMPT, ADDRESS_WRITE_ROUTE, CREATE_ADDRESS, CAPTURE_ADDRESS_CREATE, STORE_ADDRESS_RECEIPT, ADDRESS_HAS_ID, GET_CREATED_ADDRESS, VERIFY_ADDRESS_CREATE, STORE_ADDRESS_VERIFIED, PREPARE_SITE, STORE_SITE_PREPARED, SITE_ENTRY, SITE_DISPLAY, FETCH_SITE_PARENT, CHECK_SITE_PARENT, STORE_SITE_PARENT, SITE_OPERATION, FETCH_SITES, SHAPE_SITES, STORE_SITE_LIST, FETCH_SITE_DETAIL, SHAPE_SITE_DETAIL, STORE_SITE_DETAIL, SITE_REFERENCE_INPUT, FETCH_SITE_ADDRESS_REFERENCE, FETCH_SITE_BU_REFERENCE, CHECK_SITE_REFERENCES, STORE_SITE_REFERENCES, SITE_REFERENCES_ROUTE, SITE_DUPLICATE_INPUT, CHECK_SITE_DUPLICATE, AUTHORIZE_SITE_WRITE, STORE_SITE_ATTEMPT, SITE_WRITE_ROUTE, CREATE_SITE, CAPTURE_SITE_CREATE, STORE_SITE_RECEIPT, SITE_HAS_ID, GET_CREATED_SITE, VERIFY_SITE_CREATE, STORE_SITE_VERIFIED, PREPARE_CONTACT, STORE_CONTACT_PREPARED, CONTACT_ENTRY, CONTACT_DISPLAY, FETCH_CONTACT_PARENT, CHECK_CONTACT_PARENT, STORE_CONTACT_PARENT, CONTACT_OPERATION, FETCH_CONTACTS, SHAPE_CONTACTS, STORE_CONTACT_LIST, FETCH_CONTACT_DETAIL, SHAPE_CONTACT_DETAIL, STORE_CONTACT_DETAIL, CONTACT_DUPLICATE_INPUT, CHECK_CONTACT_DUPLICATE, AUTHORIZE_CONTACT_WRITE, STORE_CONTACT_ATTEMPT, CONTACT_WRITE_ROUTE, CREATE_CONTACT, CAPTURE_CONTACT_CREATE, STORE_CONTACT_RECEIPT, CONTACT_HAS_ID, GET_CREATED_CONTACT, VERIFY_CONTACT_CREATE, STORE_CONTACT_VERIFIED, READ_GUIDANCE, FETCH_SUPPLIER_DETAIL, SHAPE_DETAIL, STORE_DETAIL_STATE, INIT_DISPLAY</div></td>
+        <td>16698 ms</td>
+        <td>14821 ms</td>
+        <td>8313</td>
+        <td>480</td>
+        <td>8793</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>10</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="query/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">address-draft-conversation</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify address draft state continuity and safe cancellation through native Query turns.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap"></td>
+        <td class="suite-diagnostic-table__wrap">passed: 474/474 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td>85346 ms</td>
+        <td>79648 ms</td>
+        <td>33110</td>
+        <td>1959</td>
+        <td>35069</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>40</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="address-draft-conversation/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">address-query-list</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify ordinary address exact-name query with verified supplier parent and all projected fields.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap">trigger: app; message: Find the address with exact AddressName XDX Core Address 20260924 for Supplier ID 300000333814409, page size 1.; parameters: {&quot;appHint&quot;:&quot;Query&quot;,&quot;OraAppContext&quot;:&quot;&quot;,&quot;OraUserContext&quot;:&quot;&quot;}</td>
+        <td class="suite-diagnostic-table__wrap">passed: 115/115 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td>record-now</td>
+        <td class="suite-diagnostic-table__wrap">raw: 2</td>
+        <td class="suite-diagnostic-table__wrap"><div class="diagnostic-path-line">executes EXTRACT_READ, PREPARE_TRANSACTION, TRANSACTION_ROUTE, PREPARE_ADDRESS, STORE_ADDRESS_PREPARED, ADDRESS_ENTRY, ADDRESS_DISPLAY, FETCH_ADDRESS_PARENT, CHECK_ADDRESS_PARENT, STORE_ADDRESS_PARENT, ADDRESS_OPERATION, FETCH_ADDRESSES, SHAPE_ADDRESSES, STORE_ADDRESS_LIST</div>
+<div class="diagnostic-path-spacer"></div>
+<div class="diagnostic-path-line">skips PREPARE_READ, READ_ALLOWED, READ_GUIDANCE, IS_LIST, FETCH_SUPPLIERS, SHAPE_SUPPLIERS, STORE_LIST_STATE, DISPLAY_STAGE, INIT_DISPLAY, SUPPLIER_READ_DISPLAY, FETCH_SUPPLIER_DETAIL, SHAPE_DETAIL, STORE_DETAIL_STATE, STORE_PREPARED_TRANSACTION, SUPPLIER_TRANSACTION_DISPLAY, CHECK_SUPPLIER_DUPLICATE, AUTHORIZE_SUPPLIER_WRITE, STORE_PREFLIGHT_TRANSACTION, SUPPLIER_WRITE_ROUTE, CREATE_SUPPLIER, CAPTURE_SUPPLIER_CREATE, STORE_CREATE_RECEIPT, CREATE_HAS_ID, GET_CREATED_SUPPLIER, VERIFY_SUPPLIER_CREATE, STORE_VERIFIED_TRANSACTION, FETCH_ADDRESS_DETAIL, SHAPE_ADDRESS_DETAIL, STORE_ADDRESS_DETAIL, ADDRESS_DUPLICATE_INPUT, CHECK_ADDRESS_DUPLICATE, AUTHORIZE_ADDRESS_WRITE, STORE_ADDRESS_ATTEMPT, ADDRESS_WRITE_ROUTE, CREATE_ADDRESS, CAPTURE_ADDRESS_CREATE, STORE_ADDRESS_RECEIPT, ADDRESS_HAS_ID, GET_CREATED_ADDRESS, VERIFY_ADDRESS_CREATE, STORE_ADDRESS_VERIFIED, PREPARE_SITE, STORE_SITE_PREPARED, SITE_ENTRY, FETCH_SITE_PARENT, CHECK_SITE_PARENT, STORE_SITE_PARENT, SITE_OPERATION, FETCH_SITES, SHAPE_SITES, STORE_SITE_LIST, FETCH_SITE_DETAIL, SHAPE_SITE_DETAIL, STORE_SITE_DETAIL, SITE_REFERENCE_INPUT, FETCH_SITE_ADDRESS_REFERENCE, FETCH_SITE_BU_REFERENCE, CHECK_SITE_REFERENCES, STORE_SITE_REFERENCES, SITE_REFERENCES_ROUTE, SITE_DUPLICATE_INPUT, CHECK_SITE_DUPLICATE, AUTHORIZE_SITE_WRITE, STORE_SITE_ATTEMPT, SITE_WRITE_ROUTE, CREATE_SITE, CAPTURE_SITE_CREATE, STORE_SITE_RECEIPT, SITE_HAS_ID, GET_CREATED_SITE, VERIFY_SITE_CREATE, STORE_SITE_VERIFIED, PREPARE_CONTACT, STORE_CONTACT_PREPARED, CONTACT_ENTRY, FETCH_CONTACT_PARENT, CHECK_CONTACT_PARENT, STORE_CONTACT_PARENT, CONTACT_OPERATION, FETCH_CONTACTS, SHAPE_CONTACTS, STORE_CONTACT_LIST, FETCH_CONTACT_DETAIL, SHAPE_CONTACT_DETAIL, STORE_CONTACT_DETAIL, CONTACT_DUPLICATE_INPUT, CHECK_CONTACT_DUPLICATE, AUTHORIZE_CONTACT_WRITE, STORE_CONTACT_ATTEMPT, CONTACT_WRITE_ROUTE, CREATE_CONTACT, CAPTURE_CONTACT_CREATE, STORE_CONTACT_RECEIPT, CONTACT_HAS_ID, GET_CREATED_CONTACT, VERIFY_CONTACT_CREATE, STORE_CONTACT_VERIFIED, SITE_DISPLAY, CONTACT_DISPLAY</div></td>
+        <td>18174 ms</td>
+        <td>16590 ms</td>
+        <td>8235</td>
+        <td>443</td>
+        <td>8678</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>10</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="address-query-list/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">address-query-detail</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify ordinary scalar address detail under the correct supplier independently of create confirmation.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap">trigger: app; message: Show address detail for SupplierAddressId 300000333814416 under Supplier ID 300000333814409.; parameters: {&quot;appHint&quot;:&quot;Query&quot;,&quot;OraAppContext&quot;:&quot;&quot;,&quot;OraUserContext&quot;:&quot;&quot;}</td>
+        <td class="suite-diagnostic-table__wrap">passed: 115/115 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td>record-now</td>
+        <td class="suite-diagnostic-table__wrap">raw: 2</td>
+        <td class="suite-diagnostic-table__wrap"><div class="diagnostic-path-line">executes EXTRACT_READ, PREPARE_TRANSACTION, TRANSACTION_ROUTE, PREPARE_ADDRESS, STORE_ADDRESS_PREPARED, ADDRESS_ENTRY, ADDRESS_DISPLAY, FETCH_ADDRESS_PARENT, CHECK_ADDRESS_PARENT, STORE_ADDRESS_PARENT, ADDRESS_OPERATION, FETCH_ADDRESS_DETAIL, SHAPE_ADDRESS_DETAIL, STORE_ADDRESS_DETAIL</div>
+<div class="diagnostic-path-spacer"></div>
+<div class="diagnostic-path-line">skips PREPARE_READ, READ_ALLOWED, READ_GUIDANCE, IS_LIST, FETCH_SUPPLIERS, SHAPE_SUPPLIERS, STORE_LIST_STATE, DISPLAY_STAGE, INIT_DISPLAY, SUPPLIER_READ_DISPLAY, FETCH_SUPPLIER_DETAIL, SHAPE_DETAIL, STORE_DETAIL_STATE, STORE_PREPARED_TRANSACTION, SUPPLIER_TRANSACTION_DISPLAY, CHECK_SUPPLIER_DUPLICATE, AUTHORIZE_SUPPLIER_WRITE, STORE_PREFLIGHT_TRANSACTION, SUPPLIER_WRITE_ROUTE, CREATE_SUPPLIER, CAPTURE_SUPPLIER_CREATE, STORE_CREATE_RECEIPT, CREATE_HAS_ID, GET_CREATED_SUPPLIER, VERIFY_SUPPLIER_CREATE, STORE_VERIFIED_TRANSACTION, FETCH_ADDRESSES, SHAPE_ADDRESSES, STORE_ADDRESS_LIST, ADDRESS_DUPLICATE_INPUT, CHECK_ADDRESS_DUPLICATE, AUTHORIZE_ADDRESS_WRITE, STORE_ADDRESS_ATTEMPT, ADDRESS_WRITE_ROUTE, CREATE_ADDRESS, CAPTURE_ADDRESS_CREATE, STORE_ADDRESS_RECEIPT, ADDRESS_HAS_ID, GET_CREATED_ADDRESS, VERIFY_ADDRESS_CREATE, STORE_ADDRESS_VERIFIED, PREPARE_SITE, STORE_SITE_PREPARED, SITE_ENTRY, FETCH_SITE_PARENT, CHECK_SITE_PARENT, STORE_SITE_PARENT, SITE_OPERATION, FETCH_SITES, SHAPE_SITES, STORE_SITE_LIST, FETCH_SITE_DETAIL, SHAPE_SITE_DETAIL, STORE_SITE_DETAIL, SITE_REFERENCE_INPUT, FETCH_SITE_ADDRESS_REFERENCE, FETCH_SITE_BU_REFERENCE, CHECK_SITE_REFERENCES, STORE_SITE_REFERENCES, SITE_REFERENCES_ROUTE, SITE_DUPLICATE_INPUT, CHECK_SITE_DUPLICATE, AUTHORIZE_SITE_WRITE, STORE_SITE_ATTEMPT, SITE_WRITE_ROUTE, CREATE_SITE, CAPTURE_SITE_CREATE, STORE_SITE_RECEIPT, SITE_HAS_ID, GET_CREATED_SITE, VERIFY_SITE_CREATE, STORE_SITE_VERIFIED, PREPARE_CONTACT, STORE_CONTACT_PREPARED, CONTACT_ENTRY, FETCH_CONTACT_PARENT, CHECK_CONTACT_PARENT, STORE_CONTACT_PARENT, CONTACT_OPERATION, FETCH_CONTACTS, SHAPE_CONTACTS, STORE_CONTACT_LIST, FETCH_CONTACT_DETAIL, SHAPE_CONTACT_DETAIL, STORE_CONTACT_DETAIL, CONTACT_DUPLICATE_INPUT, CHECK_CONTACT_DUPLICATE, AUTHORIZE_CONTACT_WRITE, STORE_CONTACT_ATTEMPT, CONTACT_WRITE_ROUTE, CREATE_CONTACT, CAPTURE_CONTACT_CREATE, STORE_CONTACT_RECEIPT, CONTACT_HAS_ID, GET_CREATED_CONTACT, VERIFY_CONTACT_CREATE, STORE_CONTACT_VERIFIED, SITE_DISPLAY, CONTACT_DISPLAY</div></td>
+        <td>17468 ms</td>
+        <td>16029 ms</td>
+        <td>8213</td>
+        <td>423</td>
+        <td>8636</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>10</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="address-query-detail/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">supplier-draft-conversation</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify supplier draft continuity and safe stale rejection and cancellation.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap"></td>
+        <td class="suite-diagnostic-table__wrap">passed: 592/592 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td>104568 ms</td>
+        <td>98646 ms</td>
+        <td>40817</td>
+        <td>1962</td>
+        <td>42779</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>50</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="supplier-draft-conversation/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">supplier-query-detail</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify SUP-READ supplier scalar detail through Query with selected current supplier ID.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap">trigger: app; message: Show supplier detail for Supplier ID 300000047414679.; parameters: {&quot;OraAppContext&quot;:&quot;&quot;,&quot;appHint&quot;:&quot;Query&quot;,&quot;OraUserContext&quot;:&quot;&quot;}</td>
+        <td class="suite-diagnostic-table__wrap">passed: 115/115 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td>record-now</td>
+        <td class="suite-diagnostic-table__wrap">raw: 1</td>
+        <td class="suite-diagnostic-table__wrap"><div class="diagnostic-path-line">executes EXTRACT_READ, PREPARE_TRANSACTION, TRANSACTION_ROUTE, PREPARE_READ, READ_ALLOWED, IS_LIST, DISPLAY_STAGE, FETCH_SUPPLIER_DETAIL, SHAPE_DETAIL, STORE_DETAIL_STATE, SUPPLIER_READ_DISPLAY</div>
+<div class="diagnostic-path-spacer"></div>
+<div class="diagnostic-path-line">skips FETCH_SUPPLIERS, SHAPE_SUPPLIERS, STORE_LIST_STATE, STORE_PREPARED_TRANSACTION, CHECK_SUPPLIER_DUPLICATE, AUTHORIZE_SUPPLIER_WRITE, STORE_PREFLIGHT_TRANSACTION, SUPPLIER_WRITE_ROUTE, CREATE_SUPPLIER, CAPTURE_SUPPLIER_CREATE, STORE_CREATE_RECEIPT, CREATE_HAS_ID, GET_CREATED_SUPPLIER, VERIFY_SUPPLIER_CREATE, STORE_VERIFIED_TRANSACTION, PREPARE_ADDRESS, STORE_ADDRESS_PREPARED, ADDRESS_ENTRY, FETCH_ADDRESS_PARENT, CHECK_ADDRESS_PARENT, STORE_ADDRESS_PARENT, ADDRESS_OPERATION, FETCH_ADDRESSES, SHAPE_ADDRESSES, STORE_ADDRESS_LIST, FETCH_ADDRESS_DETAIL, SHAPE_ADDRESS_DETAIL, STORE_ADDRESS_DETAIL, ADDRESS_DUPLICATE_INPUT, CHECK_ADDRESS_DUPLICATE, AUTHORIZE_ADDRESS_WRITE, STORE_ADDRESS_ATTEMPT, ADDRESS_WRITE_ROUTE, CREATE_ADDRESS, CAPTURE_ADDRESS_CREATE, STORE_ADDRESS_RECEIPT, ADDRESS_HAS_ID, GET_CREATED_ADDRESS, VERIFY_ADDRESS_CREATE, STORE_ADDRESS_VERIFIED, PREPARE_SITE, STORE_SITE_PREPARED, SITE_ENTRY, FETCH_SITE_PARENT, CHECK_SITE_PARENT, STORE_SITE_PARENT, SITE_OPERATION, FETCH_SITES, SHAPE_SITES, STORE_SITE_LIST, FETCH_SITE_DETAIL, SHAPE_SITE_DETAIL, STORE_SITE_DETAIL, SITE_REFERENCE_INPUT, FETCH_SITE_ADDRESS_REFERENCE, FETCH_SITE_BU_REFERENCE, CHECK_SITE_REFERENCES, STORE_SITE_REFERENCES, SITE_REFERENCES_ROUTE, SITE_DUPLICATE_INPUT, CHECK_SITE_DUPLICATE, AUTHORIZE_SITE_WRITE, STORE_SITE_ATTEMPT, SITE_WRITE_ROUTE, CREATE_SITE, CAPTURE_SITE_CREATE, STORE_SITE_RECEIPT, SITE_HAS_ID, GET_CREATED_SITE, VERIFY_SITE_CREATE, STORE_SITE_VERIFIED, PREPARE_CONTACT, STORE_CONTACT_PREPARED, CONTACT_ENTRY, FETCH_CONTACT_PARENT, CHECK_CONTACT_PARENT, STORE_CONTACT_PARENT, CONTACT_OPERATION, FETCH_CONTACTS, SHAPE_CONTACTS, STORE_CONTACT_LIST, FETCH_CONTACT_DETAIL, SHAPE_CONTACT_DETAIL, STORE_CONTACT_DETAIL, CONTACT_DUPLICATE_INPUT, CHECK_CONTACT_DUPLICATE, AUTHORIZE_CONTACT_WRITE, STORE_CONTACT_ATTEMPT, CONTACT_WRITE_ROUTE, CREATE_CONTACT, CAPTURE_CONTACT_CREATE, STORE_CONTACT_RECEIPT, CONTACT_HAS_ID, GET_CREATED_CONTACT, VERIFY_CONTACT_CREATE, STORE_CONTACT_VERIFIED, READ_GUIDANCE, INIT_DISPLAY, SUPPLIER_TRANSACTION_DISPLAY, ADDRESS_DISPLAY, SITE_DISPLAY, CONTACT_DISPLAY</div></td>
+        <td>15433 ms</td>
+        <td>11647 ms</td>
+        <td>8208</td>
+        <td>373</td>
+        <td>8581</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>10</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="supplier-query-detail/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">contact-draft-conversation</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify parent-scoped contact read or draft-only continuity, no POST.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap"></td>
+        <td class="suite-diagnostic-table__wrap">passed: 474/474 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td>68561 ms</td>
+        <td>63160 ms</td>
+        <td>32833</td>
+        <td>1736</td>
+        <td>34569</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>40</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="contact-draft-conversation/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">contact-query-detail</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify parent-scoped contact read or draft-only continuity, no POST.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap">trigger: app; message: Show contact detail for SupplierContactId 300000333814434 under Supplier ID 300000333814409.; parameters: {&quot;appHint&quot;:&quot;Query&quot;,&quot;OraAppContext&quot;:&quot;&quot;,&quot;OraUserContext&quot;:&quot;&quot;}</td>
+        <td class="suite-diagnostic-table__wrap">passed: 115/115 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td>record-now</td>
+        <td class="suite-diagnostic-table__wrap">raw: 2</td>
+        <td class="suite-diagnostic-table__wrap"><div class="diagnostic-path-line">executes EXTRACT_READ, PREPARE_TRANSACTION, TRANSACTION_ROUTE, PREPARE_CONTACT, STORE_CONTACT_PREPARED, CONTACT_ENTRY, FETCH_CONTACT_PARENT, CHECK_CONTACT_PARENT, STORE_CONTACT_PARENT, CONTACT_OPERATION, FETCH_CONTACT_DETAIL, SHAPE_CONTACT_DETAIL, STORE_CONTACT_DETAIL, CONTACT_DISPLAY</div>
+<div class="diagnostic-path-spacer"></div>
+<div class="diagnostic-path-line">skips PREPARE_READ, READ_ALLOWED, READ_GUIDANCE, IS_LIST, FETCH_SUPPLIERS, SHAPE_SUPPLIERS, STORE_LIST_STATE, DISPLAY_STAGE, INIT_DISPLAY, SUPPLIER_READ_DISPLAY, FETCH_SUPPLIER_DETAIL, SHAPE_DETAIL, STORE_DETAIL_STATE, STORE_PREPARED_TRANSACTION, SUPPLIER_TRANSACTION_DISPLAY, CHECK_SUPPLIER_DUPLICATE, AUTHORIZE_SUPPLIER_WRITE, STORE_PREFLIGHT_TRANSACTION, SUPPLIER_WRITE_ROUTE, CREATE_SUPPLIER, CAPTURE_SUPPLIER_CREATE, STORE_CREATE_RECEIPT, CREATE_HAS_ID, GET_CREATED_SUPPLIER, VERIFY_SUPPLIER_CREATE, STORE_VERIFIED_TRANSACTION, PREPARE_ADDRESS, STORE_ADDRESS_PREPARED, ADDRESS_ENTRY, ADDRESS_DISPLAY, FETCH_ADDRESS_PARENT, CHECK_ADDRESS_PARENT, STORE_ADDRESS_PARENT, ADDRESS_OPERATION, FETCH_ADDRESSES, SHAPE_ADDRESSES, STORE_ADDRESS_LIST, FETCH_ADDRESS_DETAIL, SHAPE_ADDRESS_DETAIL, STORE_ADDRESS_DETAIL, ADDRESS_DUPLICATE_INPUT, CHECK_ADDRESS_DUPLICATE, AUTHORIZE_ADDRESS_WRITE, STORE_ADDRESS_ATTEMPT, ADDRESS_WRITE_ROUTE, CREATE_ADDRESS, CAPTURE_ADDRESS_CREATE, STORE_ADDRESS_RECEIPT, ADDRESS_HAS_ID, GET_CREATED_ADDRESS, VERIFY_ADDRESS_CREATE, STORE_ADDRESS_VERIFIED, PREPARE_SITE, STORE_SITE_PREPARED, SITE_ENTRY, FETCH_SITE_PARENT, CHECK_SITE_PARENT, STORE_SITE_PARENT, SITE_OPERATION, FETCH_SITES, SHAPE_SITES, STORE_SITE_LIST, FETCH_SITE_DETAIL, SHAPE_SITE_DETAIL, STORE_SITE_DETAIL, SITE_REFERENCE_INPUT, FETCH_SITE_ADDRESS_REFERENCE, FETCH_SITE_BU_REFERENCE, CHECK_SITE_REFERENCES, STORE_SITE_REFERENCES, SITE_REFERENCES_ROUTE, SITE_DUPLICATE_INPUT, CHECK_SITE_DUPLICATE, AUTHORIZE_SITE_WRITE, STORE_SITE_ATTEMPT, SITE_WRITE_ROUTE, CREATE_SITE, CAPTURE_SITE_CREATE, STORE_SITE_RECEIPT, SITE_HAS_ID, GET_CREATED_SITE, VERIFY_SITE_CREATE, STORE_SITE_VERIFIED, FETCH_CONTACTS, SHAPE_CONTACTS, STORE_CONTACT_LIST, CONTACT_DUPLICATE_INPUT, CHECK_CONTACT_DUPLICATE, AUTHORIZE_CONTACT_WRITE, STORE_CONTACT_ATTEMPT, CONTACT_WRITE_ROUTE, CREATE_CONTACT, CAPTURE_CONTACT_CREATE, STORE_CONTACT_RECEIPT, CONTACT_HAS_ID, GET_CREATED_CONTACT, VERIFY_CONTACT_CREATE, STORE_CONTACT_VERIFIED, SITE_DISPLAY</div></td>
+        <td>20572 ms</td>
+        <td>19042 ms</td>
+        <td>8200</td>
+        <td>409</td>
+        <td>8609</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>10</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="contact-query-detail/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">contact-query-list</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify parent-scoped contact read or draft-only continuity, no POST.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap">trigger: app; message: Find contact with exact ContactName CoreContact20260924, XDX under Supplier ID 300000333814409, limit 1.; parameters: {&quot;appHint&quot;:&quot;Query&quot;,&quot;OraAppContext&quot;:&quot;&quot;,&quot;OraUserContext&quot;:&quot;&quot;}</td>
+        <td class="suite-diagnostic-table__wrap">passed: 115/115 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td>record-now</td>
+        <td class="suite-diagnostic-table__wrap">raw: 2</td>
+        <td class="suite-diagnostic-table__wrap"><div class="diagnostic-path-line">executes EXTRACT_READ, PREPARE_TRANSACTION, TRANSACTION_ROUTE, PREPARE_CONTACT, STORE_CONTACT_PREPARED, CONTACT_ENTRY, FETCH_CONTACT_PARENT, CHECK_CONTACT_PARENT, STORE_CONTACT_PARENT, CONTACT_OPERATION, FETCH_CONTACTS, SHAPE_CONTACTS, STORE_CONTACT_LIST, CONTACT_DISPLAY</div>
+<div class="diagnostic-path-spacer"></div>
+<div class="diagnostic-path-line">skips PREPARE_READ, READ_ALLOWED, READ_GUIDANCE, IS_LIST, FETCH_SUPPLIERS, SHAPE_SUPPLIERS, STORE_LIST_STATE, DISPLAY_STAGE, INIT_DISPLAY, SUPPLIER_READ_DISPLAY, FETCH_SUPPLIER_DETAIL, SHAPE_DETAIL, STORE_DETAIL_STATE, STORE_PREPARED_TRANSACTION, SUPPLIER_TRANSACTION_DISPLAY, CHECK_SUPPLIER_DUPLICATE, AUTHORIZE_SUPPLIER_WRITE, STORE_PREFLIGHT_TRANSACTION, SUPPLIER_WRITE_ROUTE, CREATE_SUPPLIER, CAPTURE_SUPPLIER_CREATE, STORE_CREATE_RECEIPT, CREATE_HAS_ID, GET_CREATED_SUPPLIER, VERIFY_SUPPLIER_CREATE, STORE_VERIFIED_TRANSACTION, PREPARE_ADDRESS, STORE_ADDRESS_PREPARED, ADDRESS_ENTRY, ADDRESS_DISPLAY, FETCH_ADDRESS_PARENT, CHECK_ADDRESS_PARENT, STORE_ADDRESS_PARENT, ADDRESS_OPERATION, FETCH_ADDRESSES, SHAPE_ADDRESSES, STORE_ADDRESS_LIST, FETCH_ADDRESS_DETAIL, SHAPE_ADDRESS_DETAIL, STORE_ADDRESS_DETAIL, ADDRESS_DUPLICATE_INPUT, CHECK_ADDRESS_DUPLICATE, AUTHORIZE_ADDRESS_WRITE, STORE_ADDRESS_ATTEMPT, ADDRESS_WRITE_ROUTE, CREATE_ADDRESS, CAPTURE_ADDRESS_CREATE, STORE_ADDRESS_RECEIPT, ADDRESS_HAS_ID, GET_CREATED_ADDRESS, VERIFY_ADDRESS_CREATE, STORE_ADDRESS_VERIFIED, PREPARE_SITE, STORE_SITE_PREPARED, SITE_ENTRY, FETCH_SITE_PARENT, CHECK_SITE_PARENT, STORE_SITE_PARENT, SITE_OPERATION, FETCH_SITES, SHAPE_SITES, STORE_SITE_LIST, FETCH_SITE_DETAIL, SHAPE_SITE_DETAIL, STORE_SITE_DETAIL, SITE_REFERENCE_INPUT, FETCH_SITE_ADDRESS_REFERENCE, FETCH_SITE_BU_REFERENCE, CHECK_SITE_REFERENCES, STORE_SITE_REFERENCES, SITE_REFERENCES_ROUTE, SITE_DUPLICATE_INPUT, CHECK_SITE_DUPLICATE, AUTHORIZE_SITE_WRITE, STORE_SITE_ATTEMPT, SITE_WRITE_ROUTE, CREATE_SITE, CAPTURE_SITE_CREATE, STORE_SITE_RECEIPT, SITE_HAS_ID, GET_CREATED_SITE, VERIFY_SITE_CREATE, STORE_SITE_VERIFIED, FETCH_CONTACT_DETAIL, SHAPE_CONTACT_DETAIL, STORE_CONTACT_DETAIL, CONTACT_DUPLICATE_INPUT, CHECK_CONTACT_DUPLICATE, AUTHORIZE_CONTACT_WRITE, STORE_CONTACT_ATTEMPT, CONTACT_WRITE_ROUTE, CREATE_CONTACT, CAPTURE_CONTACT_CREATE, STORE_CONTACT_RECEIPT, CONTACT_HAS_ID, GET_CREATED_CONTACT, VERIFY_CONTACT_CREATE, STORE_CONTACT_VERIFIED, SITE_DISPLAY</div></td>
+        <td>16223 ms</td>
+        <td>14625 ms</td>
+        <td>8220</td>
+        <td>428</td>
+        <td>8648</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>10</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="contact-query-list/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">supplier-query-guidance</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify SUP-READ unsupported request withholding through actual Query, not unreachable startup guard.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap">trigger: app; message: Delete the selected supplier.; parameters: {&quot;OraAppContext&quot;:&quot;&quot;,&quot;appHint&quot;:&quot;Query&quot;,&quot;OraUserContext&quot;:&quot;&quot;}</td>
+        <td class="suite-diagnostic-table__wrap">passed: 116/116 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td>model-generated</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"><div class="diagnostic-path-line">executes EXTRACT_READ, PREPARE_TRANSACTION, TRANSACTION_ROUTE, PREPARE_READ, READ_ALLOWED, READ_GUIDANCE</div>
+<div class="diagnostic-path-spacer"></div>
+<div class="diagnostic-path-line">skips IS_LIST, FETCH_SUPPLIERS, SHAPE_SUPPLIERS, STORE_LIST_STATE, DISPLAY_STAGE, INIT_DISPLAY, SUPPLIER_READ_DISPLAY, FETCH_SUPPLIER_DETAIL, SHAPE_DETAIL, STORE_DETAIL_STATE, STORE_PREPARED_TRANSACTION, SUPPLIER_TRANSACTION_DISPLAY, CHECK_SUPPLIER_DUPLICATE, AUTHORIZE_SUPPLIER_WRITE, STORE_PREFLIGHT_TRANSACTION, SUPPLIER_WRITE_ROUTE, CREATE_SUPPLIER, CAPTURE_SUPPLIER_CREATE, STORE_CREATE_RECEIPT, CREATE_HAS_ID, GET_CREATED_SUPPLIER, VERIFY_SUPPLIER_CREATE, STORE_VERIFIED_TRANSACTION, PREPARE_ADDRESS, STORE_ADDRESS_PREPARED, ADDRESS_ENTRY, ADDRESS_DISPLAY, FETCH_ADDRESS_PARENT, CHECK_ADDRESS_PARENT, STORE_ADDRESS_PARENT, ADDRESS_OPERATION, FETCH_ADDRESSES, SHAPE_ADDRESSES, STORE_ADDRESS_LIST, FETCH_ADDRESS_DETAIL, SHAPE_ADDRESS_DETAIL, STORE_ADDRESS_DETAIL, ADDRESS_DUPLICATE_INPUT, CHECK_ADDRESS_DUPLICATE, AUTHORIZE_ADDRESS_WRITE, STORE_ADDRESS_ATTEMPT, ADDRESS_WRITE_ROUTE, CREATE_ADDRESS, CAPTURE_ADDRESS_CREATE, STORE_ADDRESS_RECEIPT, ADDRESS_HAS_ID, GET_CREATED_ADDRESS, VERIFY_ADDRESS_CREATE, STORE_ADDRESS_VERIFIED, PREPARE_SITE, STORE_SITE_PREPARED, SITE_ENTRY, FETCH_SITE_PARENT, CHECK_SITE_PARENT, STORE_SITE_PARENT, SITE_OPERATION, FETCH_SITES, SHAPE_SITES, STORE_SITE_LIST, FETCH_SITE_DETAIL, SHAPE_SITE_DETAIL, STORE_SITE_DETAIL, SITE_REFERENCE_INPUT, FETCH_SITE_ADDRESS_REFERENCE, FETCH_SITE_BU_REFERENCE, CHECK_SITE_REFERENCES, STORE_SITE_REFERENCES, SITE_REFERENCES_ROUTE, SITE_DUPLICATE_INPUT, CHECK_SITE_DUPLICATE, AUTHORIZE_SITE_WRITE, STORE_SITE_ATTEMPT, SITE_WRITE_ROUTE, CREATE_SITE, CAPTURE_SITE_CREATE, STORE_SITE_RECEIPT, SITE_HAS_ID, GET_CREATED_SITE, VERIFY_SITE_CREATE, STORE_SITE_VERIFIED, PREPARE_CONTACT, STORE_CONTACT_PREPARED, CONTACT_ENTRY, FETCH_CONTACT_PARENT, CHECK_CONTACT_PARENT, STORE_CONTACT_PARENT, CONTACT_OPERATION, FETCH_CONTACTS, SHAPE_CONTACTS, STORE_CONTACT_LIST, FETCH_CONTACT_DETAIL, SHAPE_CONTACT_DETAIL, STORE_CONTACT_DETAIL, CONTACT_DUPLICATE_INPUT, CHECK_CONTACT_DUPLICATE, AUTHORIZE_CONTACT_WRITE, STORE_CONTACT_ATTEMPT, CONTACT_WRITE_ROUTE, CREATE_CONTACT, CAPTURE_CONTACT_CREATE, STORE_CONTACT_RECEIPT, CONTACT_HAS_ID, GET_CREATED_CONTACT, VERIFY_CONTACT_CREATE, STORE_CONTACT_VERIFIED, SITE_DISPLAY, CONTACT_DISPLAY</div></td>
+        <td>19243 ms</td>
+        <td>18301 ms</td>
+        <td>8118</td>
+        <td>311</td>
+        <td>8429</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>10</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="supplier-query-guidance/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">site-draft-conversation</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify site draft state, field-only editing, current reference review and cancellation with no POST.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap"></td>
+        <td class="suite-diagnostic-table__wrap">passed: 474/474 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td>85016 ms</td>
+        <td>78688 ms</td>
+        <td>33072</td>
+        <td>1980</td>
+        <td>35052</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>40</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="site-draft-conversation/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">site-query-detail</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify ordinary scalar site detail with correct parent and all fields, independently of create confirmation.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap">trigger: app; message: Show site detail for SupplierSiteId 300000333814424 under Supplier ID 300000333814409.; parameters: {&quot;appHint&quot;:&quot;Query&quot;,&quot;OraAppContext&quot;:&quot;&quot;,&quot;OraUserContext&quot;:&quot;&quot;}</td>
+        <td class="suite-diagnostic-table__wrap">passed: 115/115 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td>record-now</td>
+        <td class="suite-diagnostic-table__wrap">raw: 2</td>
+        <td class="suite-diagnostic-table__wrap"><div class="diagnostic-path-line">executes EXTRACT_READ, PREPARE_TRANSACTION, TRANSACTION_ROUTE, PREPARE_SITE, STORE_SITE_PREPARED, SITE_ENTRY, FETCH_SITE_PARENT, CHECK_SITE_PARENT, STORE_SITE_PARENT, SITE_OPERATION, FETCH_SITE_DETAIL, SHAPE_SITE_DETAIL, STORE_SITE_DETAIL, SITE_DISPLAY</div>
+<div class="diagnostic-path-spacer"></div>
+<div class="diagnostic-path-line">skips PREPARE_READ, READ_ALLOWED, READ_GUIDANCE, IS_LIST, FETCH_SUPPLIERS, SHAPE_SUPPLIERS, STORE_LIST_STATE, DISPLAY_STAGE, INIT_DISPLAY, SUPPLIER_READ_DISPLAY, FETCH_SUPPLIER_DETAIL, SHAPE_DETAIL, STORE_DETAIL_STATE, STORE_PREPARED_TRANSACTION, SUPPLIER_TRANSACTION_DISPLAY, CHECK_SUPPLIER_DUPLICATE, AUTHORIZE_SUPPLIER_WRITE, STORE_PREFLIGHT_TRANSACTION, SUPPLIER_WRITE_ROUTE, CREATE_SUPPLIER, CAPTURE_SUPPLIER_CREATE, STORE_CREATE_RECEIPT, CREATE_HAS_ID, GET_CREATED_SUPPLIER, VERIFY_SUPPLIER_CREATE, STORE_VERIFIED_TRANSACTION, PREPARE_ADDRESS, STORE_ADDRESS_PREPARED, ADDRESS_ENTRY, ADDRESS_DISPLAY, FETCH_ADDRESS_PARENT, CHECK_ADDRESS_PARENT, STORE_ADDRESS_PARENT, ADDRESS_OPERATION, FETCH_ADDRESSES, SHAPE_ADDRESSES, STORE_ADDRESS_LIST, FETCH_ADDRESS_DETAIL, SHAPE_ADDRESS_DETAIL, STORE_ADDRESS_DETAIL, ADDRESS_DUPLICATE_INPUT, CHECK_ADDRESS_DUPLICATE, AUTHORIZE_ADDRESS_WRITE, STORE_ADDRESS_ATTEMPT, ADDRESS_WRITE_ROUTE, CREATE_ADDRESS, CAPTURE_ADDRESS_CREATE, STORE_ADDRESS_RECEIPT, ADDRESS_HAS_ID, GET_CREATED_ADDRESS, VERIFY_ADDRESS_CREATE, STORE_ADDRESS_VERIFIED, FETCH_SITES, SHAPE_SITES, STORE_SITE_LIST, SITE_REFERENCE_INPUT, FETCH_SITE_ADDRESS_REFERENCE, FETCH_SITE_BU_REFERENCE, CHECK_SITE_REFERENCES, STORE_SITE_REFERENCES, SITE_REFERENCES_ROUTE, SITE_DUPLICATE_INPUT, CHECK_SITE_DUPLICATE, AUTHORIZE_SITE_WRITE, STORE_SITE_ATTEMPT, SITE_WRITE_ROUTE, CREATE_SITE, CAPTURE_SITE_CREATE, STORE_SITE_RECEIPT, SITE_HAS_ID, GET_CREATED_SITE, VERIFY_SITE_CREATE, STORE_SITE_VERIFIED, PREPARE_CONTACT, STORE_CONTACT_PREPARED, CONTACT_ENTRY, FETCH_CONTACT_PARENT, CHECK_CONTACT_PARENT, STORE_CONTACT_PARENT, CONTACT_OPERATION, FETCH_CONTACTS, SHAPE_CONTACTS, STORE_CONTACT_LIST, FETCH_CONTACT_DETAIL, SHAPE_CONTACT_DETAIL, STORE_CONTACT_DETAIL, CONTACT_DUPLICATE_INPUT, CHECK_CONTACT_DUPLICATE, AUTHORIZE_CONTACT_WRITE, STORE_CONTACT_ATTEMPT, CONTACT_WRITE_ROUTE, CREATE_CONTACT, CAPTURE_CONTACT_CREATE, STORE_CONTACT_RECEIPT, CONTACT_HAS_ID, GET_CREATED_CONTACT, VERIFY_CONTACT_CREATE, STORE_CONTACT_VERIFIED, CONTACT_DISPLAY</div></td>
+        <td>18035 ms</td>
+        <td>16526 ms</td>
+        <td>8200</td>
+        <td>410</td>
+        <td>8610</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>10</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="site-query-detail/result.html">Test report</a></td>
+      </tr>
+      <tr>
+        <td><span class="pill passed">passed</span></td>
+        <td class="suite-diagnostic-table__wrap">XDX_SUPPLIER_CORE_20260924</td>
+        <td class="suite-diagnostic-table__wrap">site-query-list</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap">Verify ordinary site exact-name query with supplier parent and all nine projected fields.</td>
+        <td>file</td>
+        <td>hybrid</td>
+        <td class="suite-diagnostic-table__wrap monospace-wrap">trigger: app; message: Find site with exact SupplierSite XDX Core Site 20260924 for Supplier ID 300000333814409, page size 1.; parameters: {&quot;appHint&quot;:&quot;Query&quot;,&quot;OraAppContext&quot;:&quot;&quot;,&quot;OraUserContext&quot;:&quot;&quot;}</td>
+        <td class="suite-diagnostic-table__wrap">passed: 115/115 checks</td>
+        <td class="suite-diagnostic-table__wrap">passed: score 5/5</td>
+        <td>record-now</td>
+        <td class="suite-diagnostic-table__wrap">raw: 2</td>
+        <td class="suite-diagnostic-table__wrap"><div class="diagnostic-path-line">executes EXTRACT_READ, PREPARE_TRANSACTION, TRANSACTION_ROUTE, PREPARE_SITE, STORE_SITE_PREPARED, SITE_ENTRY, FETCH_SITE_PARENT, CHECK_SITE_PARENT, STORE_SITE_PARENT, SITE_OPERATION, FETCH_SITES, SHAPE_SITES, STORE_SITE_LIST, SITE_DISPLAY</div>
+<div class="diagnostic-path-spacer"></div>
+<div class="diagnostic-path-line">skips PREPARE_READ, READ_ALLOWED, READ_GUIDANCE, IS_LIST, FETCH_SUPPLIERS, SHAPE_SUPPLIERS, STORE_LIST_STATE, DISPLAY_STAGE, INIT_DISPLAY, SUPPLIER_READ_DISPLAY, FETCH_SUPPLIER_DETAIL, SHAPE_DETAIL, STORE_DETAIL_STATE, STORE_PREPARED_TRANSACTION, SUPPLIER_TRANSACTION_DISPLAY, CHECK_SUPPLIER_DUPLICATE, AUTHORIZE_SUPPLIER_WRITE, STORE_PREFLIGHT_TRANSACTION, SUPPLIER_WRITE_ROUTE, CREATE_SUPPLIER, CAPTURE_SUPPLIER_CREATE, STORE_CREATE_RECEIPT, CREATE_HAS_ID, GET_CREATED_SUPPLIER, VERIFY_SUPPLIER_CREATE, STORE_VERIFIED_TRANSACTION, PREPARE_ADDRESS, STORE_ADDRESS_PREPARED, ADDRESS_ENTRY, ADDRESS_DISPLAY, FETCH_ADDRESS_PARENT, CHECK_ADDRESS_PARENT, STORE_ADDRESS_PARENT, ADDRESS_OPERATION, FETCH_ADDRESSES, SHAPE_ADDRESSES, STORE_ADDRESS_LIST, FETCH_ADDRESS_DETAIL, SHAPE_ADDRESS_DETAIL, STORE_ADDRESS_DETAIL, ADDRESS_DUPLICATE_INPUT, CHECK_ADDRESS_DUPLICATE, AUTHORIZE_ADDRESS_WRITE, STORE_ADDRESS_ATTEMPT, ADDRESS_WRITE_ROUTE, CREATE_ADDRESS, CAPTURE_ADDRESS_CREATE, STORE_ADDRESS_RECEIPT, ADDRESS_HAS_ID, GET_CREATED_ADDRESS, VERIFY_ADDRESS_CREATE, STORE_ADDRESS_VERIFIED, FETCH_SITE_DETAIL, SHAPE_SITE_DETAIL, STORE_SITE_DETAIL, SITE_REFERENCE_INPUT, FETCH_SITE_ADDRESS_REFERENCE, FETCH_SITE_BU_REFERENCE, CHECK_SITE_REFERENCES, STORE_SITE_REFERENCES, SITE_REFERENCES_ROUTE, SITE_DUPLICATE_INPUT, CHECK_SITE_DUPLICATE, AUTHORIZE_SITE_WRITE, STORE_SITE_ATTEMPT, SITE_WRITE_ROUTE, CREATE_SITE, CAPTURE_SITE_CREATE, STORE_SITE_RECEIPT, SITE_HAS_ID, GET_CREATED_SITE, VERIFY_SITE_CREATE, STORE_SITE_VERIFIED, PREPARE_CONTACT, STORE_CONTACT_PREPARED, CONTACT_ENTRY, FETCH_CONTACT_PARENT, CHECK_CONTACT_PARENT, STORE_CONTACT_PARENT, CONTACT_OPERATION, FETCH_CONTACTS, SHAPE_CONTACTS, STORE_CONTACT_LIST, FETCH_CONTACT_DETAIL, SHAPE_CONTACT_DETAIL, STORE_CONTACT_DETAIL, CONTACT_DUPLICATE_INPUT, CHECK_CONTACT_DUPLICATE, AUTHORIZE_CONTACT_WRITE, STORE_CONTACT_ATTEMPT, CONTACT_WRITE_ROUTE, CREATE_CONTACT, CAPTURE_CONTACT_CREATE, STORE_CONTACT_RECEIPT, CONTACT_HAS_ID, GET_CREATED_CONTACT, VERIFY_CONTACT_CREATE, STORE_CONTACT_VERIFIED, CONTACT_DISPLAY</div></td>
+        <td>18314 ms</td>
+        <td>16708 ms</td>
+        <td>8221</td>
+        <td>428</td>
+        <td>8649</td>
+        <td class="suite-diagnostic-table__wrap">oci-agent/openai.gpt-5-mini</td>
+        <td>10</td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td class="suite-diagnostic-table__wrap"></td>
+        <td><a href="site-query-list/result.html">Test report</a></td>
+      </tr></tbody>
+      </table>
+    </div>
+  </details>
+  </div>
+</body>
+</html>
