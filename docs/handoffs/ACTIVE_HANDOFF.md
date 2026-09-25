@@ -1,5 +1,7 @@
 # Active Handoff
 
+Current review: Supplier Core run introspection, xdx-supplier-core-introspection-20260925. [Report](../builds/xdx-supplier-core-20260924/xdx_introspection_20260925.md) and [review time tracker](../builds/xdx-supplier-core-20260924/xdx_introspection_tracker_20260925.md). Retrospective only; runtime unchanged. Prior integration facts below remain the source baseline.
+
 Supplier Core build, 404 repair and governance hand-forward are complete locally. User confirmed all six manual query tests PASS (recorded 2026-09-25T03:11:24Z). No Oracle publication or business mutation is authorized by Git synchronization.
 
 Base: C:/Users/dasu/Documents/GitHub/fusion-ai-studio-1, branch TestingWFBuildTools. Retained build checkout: .worktrees/xdx-supplier-core-20260924, branch codex/xdx-supplier-core-20260924. Original governance fedb09a; build746478e; repair2cbdecb; governance87120f5; packaging portability71a1107. Final delivery metadata is the subsequent commit; inspect git log and exact remote refs. User authorized integration into base and pushing both branches. Preserve the three unrelated temp deletions in base. No subagents. Keep responses terse.
@@ -22,4 +24,4 @@ Original14workflow/app1 results remain historical; repair added3steps/358asserti
 
 No browser acceptance is pending. Last observed browser surface was the bound app preview; authentication is not claimed current. All future openings use https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI and navigate to the exact artifact. At a new runtime task, reobserve authentication and establish the canonical keep-alive deadline.
 
-Current integration task: xdx-supplier-core-base-sync-20260925, receipt xdx_session_base_sync_20260925.json. Earlier receipts are historical checkout-bound snapshots. No running tool process or pending user approval remains at Closeout. Build worktree retained for user follow-up testing and source continuity. No new build task is authorized; read this handoff first before the next task.
+Completed integration task: xdx-supplier-core-base-sync-20260925, receipt xdx_session_base_sync_20260925.json. Earlier receipts are historical checkout-bound snapshots. No running tool process or pending user approval remains at Closeout. Build worktree retained for user follow-up testing and source continuity. No new build task is authorized; read this handoff first before the next task.

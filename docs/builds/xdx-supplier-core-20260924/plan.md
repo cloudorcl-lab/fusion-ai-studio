@@ -2,7 +2,7 @@
 
 Plan version: **1.0.0**, 2026-09-24. Model: **object-lifecycle 1.0.1** from `96ea23dec003a7061cfe1c110bd4ac56cf3b7a10`.
 Build ID: `xdx-supplier-core-20260924`. Mode: new scoped rebuild.
-Status: **Execution active: P0-P4 complete; P5 contacts next, P6 final acceptance and Closeout remain.** Native site empty/search/selected-detail/paging and exact create independently verified; configured11/11 PASS with all judges.
+Status: **P0–P6 complete; DRAFT accepted, supplier-number repair verified, user six-query retest PASS, and governance integrated/pushed at 345de6d.** See [run introspection](xdx_introspection_20260925.md) and [manual results](xdx_manual_testing_results.md). Later user authority allowed Git/base synchronization; publication remains excluded. Original plan scope and historical checkpoints below are preserved.
 
 ## 1. Outcome and exact scope
 
