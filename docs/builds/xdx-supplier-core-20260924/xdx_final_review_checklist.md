@@ -1,5 +1,7 @@
 # Final scoped review checklist
 
+Current documentation reconciliation: repair commit `2cbdecb`, DRAFT86237214, user-confirmed **6/6 manual query tests PASS**. Original build milestones and fourteen-test suite below are historical. See [learning reconciliation](xdx_learning_closeout_20260925.md) and [manual results](xdx_manual_testing_results.md). No additional runtime execution in this documentation task.
+
 All listed acceptance and Closeout checks passed. This checklist accompanies the scoped local delivery commit.
 
 - [x] All eight native requirements accepted, including ordinary child empty/search/selected-detail/paging and one exact-approved create with independent persisted GET each. See retained native P1-P5 evidence.

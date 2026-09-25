@@ -1,8 +1,8 @@
 # Active Handoff
 
-Supplier Core manual-test404 repair verified; user can continue step4 in the retained DRAFT app preview. No publish or push. User wants terse responses.
+Supplier Core manual-test404 repair verified. User confirmed all six manual query tests PASS; recorded2026-09-25T03:11:24Z in xdx_manual_testing_results.md. No publication. User now authorizes Git sync and integration into base TestingWFBuildTools. User wants terse responses.
 
-Work ONLY in C:/Users/dasu/Documents/GitHub/fusion-ai-studio-1/.worktrees/xdx-supplier-core-20260924, branch codex/xdx-supplier-core-20260924. Base governance fedb09a; original build delivery746478e. Obtain latest repair commit from git log. Preserve unrelated docs/TODO.md and base temp deletions. No subagents.
+Build source: C:/Users/dasu/Documents/GitHub/fusion-ai-studio-1/.worktrees/xdx-supplier-core-20260924, branch codex/xdx-supplier-core-20260924. Authorized integration target: base checkout, branch TestingWFBuildTools. Base governance fedb09a; original build delivery746478e. Obtain latest repair commit from git log. Both docs/TODO.md items are now reconciled under later user authority; preserve the three unrelated base temp deletions. No subagents.
 
 Current workflow XDX_SUPPLIER_CORE_20260924 ID300000334039939 DRAFT86237214 ETag18; app XDX_SUPPLIER_CORE_APP_20260924 ID300000334039940 DRAFTv1, supplierCorePanel uses DRAFT workflow. BO XDX_SUPPLIER_CORE_DATA_20260924 unchanged,12functions. Scope suppliers/addresses/sites/contacts query/create only; existing BU GET dependency unchanged.
 
@@ -14,4 +14,8 @@ Evidence in docs/builds/xdx-supplier-core-20260924: xdx_manual_testing_results.m
 
 Task xdx-supplier-number-404-20260925; receipt xdx_session_number404_20260925.json; execution-time-tracker.md has observed repair clocks, limits and delivery checkpoint. Final regression25833tokens/30AIUnits/61155ms workflow/68194ms elapsed. Startup passed; final Closeout evidence retained alongside this task. No optimization requested.
 
-NEVER replay accepted POSTs. Supplier1506 ID300000333814409; address300000333814416; site300000333814424; contact300000333814434. Original accepted records and approval receipts in xdx_acceptance.md and native P1-P5 evidence. User steps4-6 remain unreported. Record subsequent failures with exact prompt, prior sequence and observed response before scoped repair.
+NEVER replay accepted POSTs. Supplier1506 ID300000333814409; address300000333814416; site300000333814424; contact300000333814434. Original accepted records and approval receipts in xdx_acceptance.md and native P1-P5 evidence. User subsequently confirmed steps1-6 all pass. Record subsequent failures with exact prompt, prior sequence and observed response before scoped repair.
+
+Documentation hand-forward: user requested all improvements recorded. See docs/builds/xdx-supplier-core-20260924/xdx_learning_closeout_20260925.md for the complete evidence-to-owner matrix. Current governance task xdx-supplier-core-lessons-20260925 uses xdx_session_lessons_20260925.json; earlier receipts are historical snapshots. Playbook/registry refinements, shared checkpoint templates, continuity policy checks, POST-purpose regression and refreshed installation packet are local governance changes; runtime unchanged. No memory-folder edits or publication. Git push is authorized.
+
+Current checkpoint: xdx-supplier-core-lessons-20260925. Governance and local prevention tests PASS; package installation regression PASS (132 files). No running processes, pending approvals or browser acceptance remain. Next action: finish current-task Closeout, commit scoped improvements, fast-forward base preserving unrelated temp deletions, verify base receipt, and push/read back both authorized branches. Source runtime acceptance remains historical/current as distinguished above; never replay accepted creates.

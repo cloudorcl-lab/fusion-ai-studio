@@ -18,3 +18,5 @@ Focused negative checks: bind stale-approval/cancel/duplicate/unknown-write case
 ## Manual-test404 repair regression
 
 New custom `supplier-number-manual-regression`: exact prompts1-3 in order, same conversation, query-only. Derived retained GET fixtures; runtime assertions require actual PREPARE_READ/PREPARE_ADDRESS outputs to equal the selected SupplierId and local contract asserts exact corresponding BO bindings. Native app steps1-3 independently verify live paths and rendered complete outputs. Prior14 configured tests/app1 remain historical baseline; this targeted repair does not alter BOs, topology, write logic, terminal prompts or app configuration.
+
+User subsequently confirmed all six manual prompts PASS, including site, contact and no-match queries. See xdx_manual_testing_results.md for exact prompts and provenance. This adds user acceptance, not additional automated executions.

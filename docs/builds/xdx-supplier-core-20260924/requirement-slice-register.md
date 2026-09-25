@@ -20,3 +20,5 @@ Final acceptance: evidence/xdx_p5_accepted_configured_suite.json (14/14) and evi
 ## Post-delivery manual-test404 repair
 
 SUP-READ and ADDR-READ reopened after user404 reports for displayed supplier number1506. Native exact query/detail/address sequence passes on DRAFT86237214. Shared read-reference correction also covered for SITE-READ and CONTACT-READ by actual-CODE tests. No accepted create repeated. Final repair receipt: xdx_manual_testing_results.md and evidence/xdx_number404_native.md; configured regression tracked separately from historical delivery suite.
+
+Final manual confirmation: user reports6/6query scenarios PASS after repair2cbdecb; SUP/ADR/SITE/CON read journeys and supplier no-match included. Preserve earlier failure and agent-retest evidence separately.

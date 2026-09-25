@@ -16,6 +16,8 @@ Sources: [GET supplier addresses](https://docs.oracle.com/en/cloud/saas/procurem
 
 ## GET operation
 
+Parent identity follows the [Suppliers GET key contract](oracle-fusion-procurement-suppliers.md#get-operations): a displayed SupplierNumber must resolve to SupplierId before this child path is constructed. Preserve the selected supplier and reject unresolved or ambiguous number references.
+
 The collection operation ID is `getall_suppliers-addresses`. Resolve the parent supplier first and pass its business `SupplierId`; the generated local BO parameter is named `suppliers_Id`. Do not embed a sample parent ID as a default.
 
 | Behavior | Contract |
@@ -170,6 +172,7 @@ The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierAddress
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-25 | Supplier Core number404 repair and user-confirmed six-step manual query acceptance | Link parent-number resolution to the Suppliers GET owner; no new child API or write behavior claimed. |
 | 2026-09-24 | XDX Supplier Core exact-approved native POST and independent GET | Corroborated existing generated-field treatment and required payload in the tested tenant; retained first GET sample and unresolved uniqueness limits. |
 | 2026-09-23 | Live create rejection `POZ-2130428` under supplier 1504 | Established the tenant's conditional purpose requirement. The streamlined golden path now sends only `AddressPurposeOrderingFlag: true`; the rejected POST created no address. |
 | 2026-09-17 | Supplier 1497 child POST/GET | Added same-tenant confirmation of generated address ID/party number and all ten submitted fields. |

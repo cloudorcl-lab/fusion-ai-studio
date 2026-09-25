@@ -16,6 +16,8 @@ Sources: [GET supplier sites](https://docs.oracle.com/en/cloud/saas/procurement/
 
 ## GET operation
 
+Parent identity follows the [Suppliers GET key contract](oracle-fusion-procurement-suppliers.md#get-operations): a displayed SupplierNumber must resolve to SupplierId before this child path is constructed. Preserve the selected supplier and reject unresolved or ambiguous number references.
+
 The collection operation ID is `getall_suppliers-sites`. Resolve the parent supplier first. The local BO exposes that parent as `suppliers_Id`; no sample ID is a valid default.
 
 | Behavior | Contract |
@@ -146,6 +148,7 @@ The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierSiteId 
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-25 | Supplier Core number404 repair and user-confirmed six-step manual query acceptance | Link parent-number resolution to the Suppliers GET owner; no new child API or write behavior claimed. |
 | 2026-09-24 | XDX Supplier Core exact-approved native POST and independent GET | Corroborated existing generated-field treatment and required payload in the tested tenant; retained first GET sample and unresolved uniqueness limits. |
 | 2026-09-23 | XDX Supplier Lifecycle one-POST site acceptance and independent GET | Confirmed the required-field-only four-field request, generated `SupplierSiteId 300000333814273`, resolved BU/address relationships and omitted payment/optional fields; retained first-success GET sample unchanged. |
 | 2026-09-17 | Supplier 1497 child POST/GET | Added generated site ID and new-address relationship confirmation; six intended fields matched. |

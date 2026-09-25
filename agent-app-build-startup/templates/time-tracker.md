@@ -16,3 +16,10 @@ or nested durations to task elapsed time.
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 Categories: build, test, repair, coordination, wait, closeout, unallocated.
+
+## Browser continuity when acceptance is pending
+
+Record observed state, not inferred renewal. Use the canonical keep-alive deadline and capability fallback.
+
+| Observed UTC | Tab / artifact | Authentication | Action / result | Next due UTC | Reminder handle or unavailable reason |
+| --- | --- | --- | --- | --- | --- |

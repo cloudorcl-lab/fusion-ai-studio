@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-core-lessons-20260925",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-20260924",
+  "branch": "codex/xdx-supplier-core-20260924",
+  "phase": "Closeout",
+  "startedUtc": "2026-09-25T03:12:20.745Z",
+  "checkpointUtc": "2026-09-25T03:27:25.4578653Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ac08d1d5889e02f9e8d65cf5b11ac702b400cc0c0380d3f6440e6fd8b9e87745"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "0abc1a64fcd0f084f5ec8aee7317beaa4af0786438d35e9f7b3777ad38fcaf4f"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "a9c7773034b87e2eeb6501d0678f8b73a9aef522089779033e323ccd8479e40d"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "fe5825024095e083e722fe49c12ec708e823283f27eb9c82f18e78701f8a30c1"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "7aea4b196925fda6e68994acfd73cfbe46b236a968c6fa8858b505265d0861af"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "a788b09c93df81609934509c76120e3745b4fb1d6ca5e43a046daf1cb33d0a32"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "33e928eaf0facb5d1853f42d977c9cb885bf54a5b6f8e443bc8250418099a64d"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "e9f1308e40804dab91c64686c84a97433e2c0316373789542c39a7edbc815483"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "sha256": "a6c39c7b879b25aea971c47aa4d3f93fe6439fb6e35adfa774872b40969d0689"
+    }
+  ],
+  "reviewNotes": "Scope expanded by user: audit unapplied introspection, implement actionable TODO controls, rationalize current build guidance, propagate improvements to base and sync Git. Preserve unrelated temp deletions, accepted records and DRAFT-only tenant boundary. Same-session full governance review retained; changed sections reviewed after context recovery.",
+  "objectReferences": [
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md"
+    },
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md"
+    },
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md"
+    },
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md"
+    },
+    {
+      "release": "26C",
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-core-20260924/intake-and-learning-register.md",
+  "timeTracker": "docs/builds/xdx-supplier-core-20260924/execution-time-tracker.md",
+  "checks": [
+    {
+      "status": "pass",
+      "id": "learning",
+      "rule": "Instruction 1",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_learning_closeout_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Scoped local governance work verified; no runtime or publication action. Base integration uses its own checkout-bound receipt."
+    },
+    {
+      "status": "pass",
+      "id": "intake",
+      "rule": "Gate 0",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_learning_closeout_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Scoped local governance work verified; no runtime or publication action. Base integration uses its own checkout-bound receipt."
+    },
+    {
+      "status": "pass",
+      "id": "authority",
+      "rule": "Gate 1",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_learning_closeout_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Scoped local governance work verified; no runtime or publication action. Base integration uses its own checkout-bound receipt."
+    },
+    {
+      "status": "pass",
+      "id": "objects",
+      "rule": "Gate 2 and registry",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_learning_closeout_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Scoped local governance work verified; no runtime or publication action. Base integration uses its own checkout-bound receipt."
+    },
+    {
+      "status": "pass",
+      "id": "verification",
+      "rule": "Gates 3–9 and QA",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_learning_closeout_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Scoped local governance work verified; no runtime or publication action. Base integration uses its own checkout-bound receipt."
+    },
+    {
+      "status": "pass",
+      "id": "timing",
+      "rule": "Time token controls",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_learning_closeout_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Scoped local governance work verified; no runtime or publication action. Base integration uses its own checkout-bound receipt."
+    },
+    {
+      "status": "pass",
+      "id": "cleanup",
+      "rule": "Dependency hygiene",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_learning_closeout_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Scoped local governance work verified; no runtime or publication action. Base integration uses its own checkout-bound receipt."
+    },
+    {
+      "status": "pass",
+      "id": "delivery",
+      "rule": "Gate 10 and Definition of Done",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-20260924/xdx_learning_closeout_20260925.md",
+        "docs/builds/xdx-supplier-core-20260924/evidence/xdx_lessons_verification.md"
+      ],
+      "reason": "Scoped local governance work verified; no runtime or publication action. Base integration uses its own checkout-bound receipt."
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "No model-backed runtime execution; orchestration tokens unavailable",
+    "aiUnits": "No new AI Studio runtime calls",
+    "timingGaps": "First observed clock and final checkpoint bound this documentation task; prior interturn testing not active labor."
+  }
+}

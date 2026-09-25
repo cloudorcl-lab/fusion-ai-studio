@@ -119,6 +119,20 @@ try {
     }
   }
   Set-Content -LiteralPath $timingPolicyPath -Value $timingPolicyOriginal -NoNewline
+  foreach ($marker in @('### Context continuity and recovery', 'At 70% context', 'Before 75%', 'four-minute reminder', 'reminder handle or its unavailability', 'accepted record IDs', 'poll retained processes and revalidate Startup')) {
+    Set-Content -LiteralPath $timingPolicyPath -Value $timingPolicyOriginal.Replace($marker, 'REMOVED') -NoNewline
+    $negative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
+    if ($negative.ExitCode -eq 0 -or -not $negative.Output.Contains('Missing continuity prevention policy')) { throw "Continuity regression accepted missing rule: $marker" }
+  }
+  Set-Content -LiteralPath $timingPolicyPath -Value $timingPolicyOriginal -NoNewline
+  $purposePath = Join-Path $handoffFixtureRoot 'docs/lessons/objects/README.md'
+  $purposeOriginal = Get-Content -LiteralPath $purposePath -Raw
+  foreach ($marker in @('examplePurpose: "response"', 'exampleMode: "fetchResponse"', 'readyToFetch: true', 'neither flag supplies write authorization')) {
+    Set-Content -LiteralPath $purposePath -Value $purposeOriginal.Replace($marker, 'REMOVED') -NoNewline
+    $negative = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
+    if ($negative.ExitCode -eq 0 -or -not $negative.Output.Contains('Missing POST example-purpose prevention policy')) { throw "Purpose regression accepted missing rule: $marker" }
+  }
+  Set-Content -LiteralPath $purposePath -Value $purposeOriginal -NoNewline
   $handoffAgentsPath = Join-Path $handoffFixtureRoot 'AGENTS.md'
   $handoffAgentsContent = Get-Content -LiteralPath $handoffAgentsPath -Raw
   $originalAgentsContent = $handoffAgentsContent

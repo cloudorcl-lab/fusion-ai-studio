@@ -157,6 +157,17 @@ if ($playbookContent) {
   }
 }
 
+if ($playbookContent) {
+  foreach ($marker in @('### Context continuity and recovery', 'At 70% context', 'Before 75%', 'four-minute reminder', 'reminder handle or its unavailability', 'accepted record IDs', 'poll retained processes and revalidate Startup')) {
+    if (-not $playbookContent.Contains($marker)) { Add-ContractFailure "Missing continuity prevention policy: $marker" }
+  }
+}
+if ($objectRegistryContent) {
+  foreach ($marker in @('examplePurpose: "response"', 'exampleMode: "fetchResponse"', 'readyToFetch: true', 'neither flag supplies write authorization')) {
+    if (-not $objectRegistryContent.Contains($marker)) { Add-ContractFailure "Missing POST example-purpose prevention policy: $marker" }
+  }
+}
+
 if ($objectRegistryContent) {
   if ($objectRegistryContent -notmatch '(?m)^# Object learning registry\s*$') {
     Add-ContractFailure 'The object registry must retain its reference-document identity.'

@@ -1,5 +1,7 @@
 # Supplier Core DRAFT acceptance
 
+Current documentation reconciliation: repair commit `2cbdecb`, DRAFT86237214, user-confirmed **6/6 manual query tests PASS**. Original build milestones and fourteen-test suite below are historical. See [learning reconciliation](xdx_learning_closeout_20260925.md) and [manual results](xdx_manual_testing_results.md). No additional runtime execution in this documentation task.
+
 All eight approved requirements are verified in eqih-dev21 as CASEY.BROWN. Scope remains supplier/address/site/contact query and create only. No publish/push, excluded subobjects, account provisioning, business updates/deletes or existing BO changes.
 
 | Requirement | Native/persisted evidence | Current regression |

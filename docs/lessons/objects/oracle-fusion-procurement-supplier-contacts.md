@@ -16,6 +16,8 @@ Sources: [GET supplier contacts](https://docs.oracle.com/en/cloud/saas/procureme
 
 ## GET operation
 
+Parent identity follows the [Suppliers GET key contract](oracle-fusion-procurement-suppliers.md#get-operations): a displayed SupplierNumber must resolve to SupplierId before this child path is constructed. Preserve the selected supplier and reject unresolved or ambiguous number references.
+
 The collection operation ID is `getall_suppliers-contacts`. Resolve the parent supplier first. The generated local parameter `suppliers_Id` carries its business `SupplierId` and has no default.
 
 | Behavior | Contract |
@@ -146,6 +148,7 @@ Use an explicitly approved test identity derived from the requested basis and a 
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-25 | Supplier Core number404 repair and user-confirmed six-step manual query acceptance | Link parent-number resolution to the Suppliers GET owner; no new child API or write behavior claimed. |
 | 2026-09-25 | XDX Supplier Core exact-approved POST and independent parent-scoped GET, contact300000333814434 | Corroborated three-field payload, omitted generated contact/profile IDs and InactiveDate, and null account fields; immutable first GET sample preserved. |
 | 2026-09-23 | XDX Supplier Lifecycle rejected email-only POST, zero-contact reconciliation, materially changed POST and independent GET | Confirmed tenant-required `FirstName`; retained first name, last name and email as the minimum transaction identity; omitted administrative/account/phone/role/optional fields; captured generated contact/profile ID `300000333814275` and null account fields. |
 | 2026-09-17 | Supplier 1497 child POST/GET | Added generated contact/profile ID and InactiveDate-omission confirmation; four intended fields matched with no user account. |

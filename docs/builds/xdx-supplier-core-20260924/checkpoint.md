@@ -1,4 +1,8 @@
+Current governance checkpoint: xdx-supplier-core-lessons-20260925. Local prevention/governance/package tests passed. No active process or pending approval. Browser acceptance complete; no keep-alive deadline applies. Controls unavailable: agent reminders, context meter, explicit reset. Next: Closeout, commit, base integration and Git sync. Accepted IDs remain listed in active handoff; never recreate.
+
 # Current execution checkpoint
+
+Current documentation reconciliation: repair commit `2cbdecb`, DRAFT86237214, user-confirmed **6/6 manual query tests PASS**. Original build milestones and fourteen-test suite below are historical. See [learning reconciliation](xdx_learning_closeout_20260925.md) and [manual results](xdx_manual_testing_results.md). No additional runtime execution in this documentation task.
 
 2026-09-25T02:07:35.688Z: All eight native/persisted requirements, workflow14/14 and app1/1 accepted on DRAFT86232573; no judges/processes pending. Source and tests hashed in evidence/xdx_delivery_receipt.json. Consumed task scratch retired with exact manifest. Current-task Closeout PASS; verified snapshot prepared for the authorized local delivery commit, no publish/push. Keep accepted records and existing BOs. Browser tab676647338 retained, current deadline in execution-time-tracker.md.
 

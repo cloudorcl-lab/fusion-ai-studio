@@ -22,10 +22,9 @@ authoritative.
 
 ## Context reset
 
-At 70–75% context usage, stop at a safe checkpoint. Update the active handoff,
-checkpoint, and time tracker; record the next smallest action; then revalidate
-the checkpoint and current task evidence before continuing into a new material
-edit, record-now operation, suite, deployment, or push. A new session is optional.
+Follow the canonical playbook's **Context continuity and recovery** section (70–75%) and
+`docs/operations/CONTEXT_RESET.md`. Record supported controls at Startup and use
+the checkpoint template. A new session is optional when continuity is verified.
 
 ## MVP and test boundary
 
