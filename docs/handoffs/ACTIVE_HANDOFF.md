@@ -1,15 +1,9 @@
 # Active Handoff
 
-Current task: xdx-worktree-purge-20260925. Local linked-worktree cleanup completed in base `C:/Users/dasu/Documents/GitHub/fusion-ai-studio-1`, branch `TestingWFBuildTools`. See [purge receipt](../builds/xdx-worktree-purge-20260925/purge-receipt.md) and [time tracker](../builds/xdx-worktree-purge-20260925/time-tracker.md).
+Active task: Supplier Core rebuild20260926, running as an active goal. Continue in `C:/Users/dasu/Documents/GitHub/fusion-ai-studio-1/.worktrees/xdx-supplier-core-rebuild-20260926`, branch `codex/xdx-supplier-core-rebuild-20260926`. Read that checkout's `docs/handoffs/ACTIVE_HANDOFF.md` first; it is the current execution record. This base checkout is only the entry pointer, not a second build owner.
 
-No linked worktrees remain. Removed `xdx-supplier-core-20260925` checkout, its Git administration and its fully integrated local branch. Five unique bootstrap records were hash-verified and retained under the purge record as historical evidence. Do not resume those records as an active build.
+User authorization while away is recorded in the active build's authorization.md. Maximum eight NEW accepted test records; current ledger is sole authority. A supplier1509/id300000334073550 is accepted and verified: never replay its POST or historical writes. Preserve existing records/shared BOs. Query/create only suppliers, addresses, sites and contacts; BU GET solely site lookup. No publish or push.
 
-Three older local branches with unique unmerged history remain, without worktrees: `codex/xdx-agent-app-clean-base`, `codex/xdx-supplier-lifecycle-agent-retry-20260923-a`, `codex/xdx-supplier-workspace`. Remote branches and server artifacts were untouched. No push or publication performed.
+Build is incomplete. Native verification awaits renewed login in retained Cloud Sign In tab; CLI validation continues. The active worktree contains the exact current phase, saved DRAFT identities, test failures/results, timing, purge holds and next steps. Local checkpoint commits currently ad0e6f5 and6188b57; later checkpoints must be read from that branch.
 
-The Supplier Core 20260925 build is not active. Its committed execution prompt and plan remain preparation material; any future launch must follow current governance, create a new worktree and establish current Startup and explicit business-write authority. No runtime acceptance was established by this cleanup.
-
-Prior preparation evidence remains in `docs/builds/xdx-supplier-core-restart-preparation-20260925/`. It records deletion of old app/workflow XDX_SUPPLIER_CORE_APP_20260924 / XDX_SUPPLIER_CORE_20260924, retention of shared BO XDX_SUPPLIER_CORE_DATA_20260924, and preserved historical evidence. Those server outcomes were not rechecked in this local task.
-
-Never replay accepted historical POSTs: supplier1506/300000333814409, address300000333814416, site300000333814424, contact300000333814434. Preserve business data, shared BOs and remote history.
-
-Preserve unrelated base deletions: `temp/xdx_supplier_lifecycle_build_prompt.md`, `temp/xdx_supplier_lifecycle_plan.md`, `temp/xdx_supplier_lifecycle_purge_prompt.md`. Cleanup records are committed separately; these deletions remain unstaged.
+Base branch TestingWFBuildTools retains unrelated unstaged deletions under temp; do not include or restore them in rebuild work. Historical local purge records remain evidence only.
