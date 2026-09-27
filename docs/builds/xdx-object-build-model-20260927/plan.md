@@ -1,0 +1,5 @@
+# Model prompt refresh
+
+Task: xdx-object-build-model-20260927. User requested coordinated template prompt, plan template and supplier example updates plus a future-run supplier prompt. Prepare model1.2.0; preserve older version directories and completed supplier records byte-for-byte. Future supplier budget is ZERO remaining creates; no authorization renewed. No runtime, remote save, browser login, publish or push. Base TestingWFBuildTools; env.properties untouched. This is documentation preparation, not a new app build/worktree launch.
+
+Apply existing tooling contracts for candidate screening/full acceptance, explicit report provenance, fine activity and human-wait timing, manifest status, native adapter limits and existing login authority. Update current-model index. Verify coherent versions, links, controls and historical hashes, run governance Startup/Closeout, commit locally. Prior complete playbook and registry review reused from this continuous session; source hashes checked again. No resource operation contracts changed; no business resources invoked. No package rebuild requested: committed source changes are picked up by the next package assembly.

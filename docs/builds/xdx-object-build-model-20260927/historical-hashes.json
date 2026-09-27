@@ -1,0 +1,54 @@
+[
+  {
+    "path": "docs/build-models/object-lifecycle/v1.0.0/execution-prompt.md",
+    "sha256": "dd5162afe85db5c7776cfcf71c9ecf43d1c30629e4c87314b54a2ca3a910cec7"
+  },
+  {
+    "path": "docs/build-models/object-lifecycle/v1.0.0/plan-template.md",
+    "sha256": "7e9c23d5abfc5534b9bf8017aac86cecdc392714cd7708990b5e14fb69853dd3"
+  },
+  {
+    "path": "docs/build-models/object-lifecycle/v1.0.0/supplier-worked-example.md",
+    "sha256": "6ad069aa0dfd90aff1ac7a9b78b3af81725d2ecbe0fcd6276b62b89e5092862a"
+  },
+  {
+    "path": "docs/build-models/object-lifecycle/v1.0.1/execution-prompt.md",
+    "sha256": "53e83e01740979fd1823d2c8f3f9a267a6e567c3ab40117049d071d5b9786a5b"
+  },
+  {
+    "path": "docs/build-models/object-lifecycle/v1.0.1/plan-template.md",
+    "sha256": "a2f48785d3dacc52857dbbf7cc37589411bdd075635e5a4787f53527b2f4a8f7"
+  },
+  {
+    "path": "docs/build-models/object-lifecycle/v1.0.1/supplier-worked-example.md",
+    "sha256": "93090e08dad30142513fd331c2bf1bc2728346e323aeac1dd45610533f398be2"
+  },
+  {
+    "path": "docs/build-models/object-lifecycle/v1.1.0/execution-prompt.md",
+    "sha256": "0ffaf393748af2fe40b6e6823c95f623d4b66540947eeb1d5499da485acd3267"
+  },
+  {
+    "path": "docs/build-models/object-lifecycle/v1.1.0/plan-template.md",
+    "sha256": "be8ccce3c25a5e0d9603f5ca7537abf61e7f4cb46e5d20b6b7d9d6c149c69a84"
+  },
+  {
+    "path": "docs/build-models/object-lifecycle/v1.1.0/supplier-worked-example.md",
+    "sha256": "7311d2dff4076533f0b53d3d50ed970b599c121d67bbfdc3ed0e772baa3efc8a"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260925/execution-prompt.md",
+    "sha256": "dd8a78791924ec7e299ca0da482ae06e38e785c107b51b1f683bd7cb699f440a"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260925/golden-path-test-manifest.md",
+    "sha256": "effc32d3383d45686346c1a7be9343e01b8683b449d6248374ab45996cdee1a8"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260925/plan.md",
+    "sha256": "f8c8a68cbffe1efe838840b6b3d3cde4614647592fc6015b21d79b4c15ec975b"
+  },
+  {
+    "path": "docs/builds/xdx-supplier-core-20260925/requirement-slice-register.md",
+    "sha256": "c6007f7f67606d6e19f95e691ea448f8663eb06396a3ee9e9f68dafba0783a96"
+  }
+]

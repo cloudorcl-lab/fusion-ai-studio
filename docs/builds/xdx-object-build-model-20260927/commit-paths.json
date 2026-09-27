@@ -1,0 +1,22 @@
+[
+  "docs/build-models/object-lifecycle/README.md",
+  "docs/build-models/object-lifecycle/v1.2.0/execution-prompt.md",
+  "docs/build-models/object-lifecycle/v1.2.0/plan-template.md",
+  "docs/build-models/object-lifecycle/v1.2.0/supplier-worked-example.md",
+  "docs/builds/xdx-object-build-model-20260927/activities.jsonl",
+  "docs/builds/xdx-object-build-model-20260927/closeout.json",
+  "docs/builds/xdx-object-build-model-20260927/commands.jsonl",
+  "docs/builds/xdx-object-build-model-20260927/commit-paths.json",
+  "docs/builds/xdx-object-build-model-20260927/evidence-manifest.json",
+  "docs/builds/xdx-object-build-model-20260927/historical-hashes.json",
+  "docs/builds/xdx-object-build-model-20260927/learning-register.md",
+  "docs/builds/xdx-object-build-model-20260927/plan.md",
+  "docs/builds/xdx-object-build-model-20260927/session.json",
+  "docs/builds/xdx-object-build-model-20260927/time-tracker.md",
+  "docs/builds/xdx-object-build-model-20260927/timing-report.json",
+  "docs/builds/xdx-object-build-model-20260927/verification.json",
+  "docs/builds/xdx-object-build-model-20260927/verify-documents.cjs",
+  "docs/builds/xdx-supplier-core-future-20260927/execution-prompt.md",
+  "docs/builds/xdx-supplier-core-future-20260927/plan.md",
+  "docs/handoffs/ACTIVE_HANDOFF.md"
+]
