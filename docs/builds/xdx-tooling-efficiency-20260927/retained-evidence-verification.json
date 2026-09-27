@@ -1,0 +1,253 @@
+{
+  "verifiedUtc": "2026-09-27T22:16:30.884Z",
+  "status": "passed",
+  "scope": "Read-only compatibility with retained reports; no current tenant acceptance or new optimization claim",
+  "refresh": {
+    "schemaVersion": 1,
+    "generatedUtc": "2026-09-27T22:16:30.880Z",
+    "executesTests": false,
+    "sourceReportsModified": false,
+    "finalAcceptance": false,
+    "status": "passed",
+    "groups": [
+      {
+        "kind": "workflow",
+        "workflowCode": "XDX_SUPPLIER_CORE_20260926",
+        "version": 86454175,
+        "runLabel": "selected-placement-final-86454175",
+        "summary": {
+          "expected": 30,
+          "total": 30,
+          "passed": 30,
+          "failed": 0,
+          "needsJudge": 0
+        },
+        "missing": [],
+        "status": "passed"
+      },
+      {
+        "kind": "app",
+        "workflowCode": "XDX_SUPPLIER_CORE_20260926",
+        "version": 86454175,
+        "runLabel": "final-app-refreshed-86454175",
+        "appCode": "XDX_SUPPLIER_CORE_APP_20260926",
+        "summary": {
+          "expected": 1,
+          "total": 1,
+          "passed": 1,
+          "failed": 0,
+          "needsJudge": 0
+        },
+        "missing": [],
+        "status": "passed"
+      }
+    ],
+    "sources": [
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\suites\\selected-placement-final-86454175\\suite-result.json",
+        "sha256": "873bf8287060b808f67f64ac4b6fc7ab809e25aa02242208402e8f51d1f97f91"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\query-observed\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "cdcc64e3df7ff238b883adbe6fbb014eb45377ab05f5a405fb3317b35555900c"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\address-draft-continuity\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "7a27c1a45037cf9f9e61f6ab7b522ef28f7bb81947e8ed63ded60293b363bb84"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\address-duplicate\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "3c66bf7c69ee969bd6d5a8a0de17a628418f42e4cda0648d9a0c7d6a9a76e804"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\address-freeform-prepare\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "bc242fc4fc20c995ed21d2c849f71a95551ca562ebd3c936c8dc5faffcf88bb3"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\address-read-continuity\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "8d27d740e50bf486439a47903cae9403c464eac24e9230cfcffee61596940029"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\address-reconcile\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "3a1f359f322dbccc5e3527bd3199fa6b7920c30893d3ba51e6d6b983cb10d0b8"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\address-success\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "5e8ba8bd969fb06e506287ac91a65ee2e4a28c3bd074e12c983c43f5a144b8fc"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\contact-draft-continuity\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "b2e46b2e9c4d885ce37fc10c4b1739b7ec1924aa7aa22ce5fb9aa64fd0fc3c27"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\contact-duplicate\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "414e5c4714926d912b16118102af973765711e12fd33a1aaec18e6493d51a9da"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\contact-freeform-prepare\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "7f144fbb4e28dae18e61f6b9e5f8e134ad13a27c87483acff4ae1fc255468a03"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\contact-read-continuity\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "58f06462d74ceb2f8f88000f39d6cd752184e75c8d0ac9f3945304a21a58a23d"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\contact-reconcile\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "73277c36e63729d7e42806d4ee7a4c2bfbc6d0812016f5112b99a179cb578eed"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\contact-success\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "2521187933d313632212c780d548ed881810188b17a1f40face28d43dc61de56"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\init-display-observed\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "1826d3b1088f22d09d538c029c9ffdbc0f0a4cf1a12dbfd85c1b15da212c6cfe"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\raw-paging-continuity\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "825a78ffbb4ac69f604a1f694ea87b927148c29f7466072db1eacc32de3418c5"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\site-draft-continuity\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "6744fb8261539f8dd8328bd86f920bf00fad5eec4ceaaef06d1eec3393722de5"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\site-duplicate\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "19d9ea8d20ff6f36a12c60dcf64e05c3426b665e05b8cd34f9174f999c3c6817"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\site-freeform-prepare\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "befa45c9b1a0b0c5082f83268ef1454ec729a3f6e38c1da0efbbd6a40dcb6fc1"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\site-read-continuity\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "8aa408817c9a5133719589364ef9523176e2c43b94ea8f1b50758a2a8901c845"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\site-reconcile\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "d618addfe6019d3fe74b56f03484bb4ee97106e0ea09cb47dd8e395d59c931a3"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\site-reference-drift\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "7f6190a04c0b9c02970e979553bc592db16b744b7d377eeb923e713d1fa84756"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\site-reference-guards\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "31db735c98a73fe7234fe39e28e45cd9c1f5e03aedeba3e5bfa1ef7378114498"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\site-success\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "883d3df1922c713f55913d637592eabc262b1bbdac0bdc48a729c223beef856b"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\supplier-draft-continuity\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "995ed2fe0d51b51bd19aa536ae04bbb1631f1cd76398c669dd359783e4f9609d"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\supplier-duplicate\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "307830026e9f376791160a3543579050677f1e0a39abb249bdbf7280e21f1dd5"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\supplier-freeform-prepare\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "b7a22839ca9528d80ec0e395ef477290f25a45809e69b02622e5740d26be87bc"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\supplier-prepare-only\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "e0967bf62c4ca23a6a0b93b1e598484109ccc251db4b3b81c9d0bc98bdc6bf5f"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\supplier-read-guards\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "72749655f130dc6207e5d44b02691803e98b08c64c866daa71c03c45edd964bf"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\supplier-reconcile\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "6e2c6c97753f6d84dcb69854f5c8b294dffdc3b3cae45a36c6b25e63fc0567cf"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\workflows\\xdx_supplier_core_20260926\\supplier-success\\runs\\selected-placement-final-86454175\\result.json",
+        "sha256": "a347bbecd2eafa5fb397e8bc2b60cbcd58c72c5a33e6cb9690929e5abf775ffd"
+      },
+      {
+        "path": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926\\test-reports\\apps\\xdx_supplier_core_app_20260926\\init_display_xdx_supplier_core_advisor\\runs\\final-app-refreshed-86454175\\result.json",
+        "sha256": "8610e2386f75e9f03fdb89502c910e49ccd4443233eb64afa05089131a6d7259"
+      }
+    ]
+  },
+  "screen": {
+    "schemaVersion": 1,
+    "decision": "eligible-for-full-regression",
+    "workflowCode": "XDX_SUPPLIER_CORE_20260926",
+    "version": 86454175,
+    "runLabel": "selected-placement-final-86454175",
+    "failures": [],
+    "pending": [],
+    "missing": [],
+    "passed": [
+      "query-observed",
+      "address-draft-continuity",
+      "address-duplicate",
+      "address-freeform-prepare",
+      "address-read-continuity",
+      "address-reconcile",
+      "address-success",
+      "contact-draft-continuity",
+      "contact-duplicate",
+      "contact-freeform-prepare",
+      "contact-read-continuity",
+      "contact-reconcile",
+      "contact-success",
+      "init-display-observed",
+      "raw-paging-continuity",
+      "site-draft-continuity",
+      "site-duplicate",
+      "site-freeform-prepare",
+      "site-read-continuity",
+      "site-reconcile",
+      "site-reference-drift",
+      "site-reference-guards",
+      "site-success",
+      "supplier-draft-continuity",
+      "supplier-duplicate",
+      "supplier-freeform-prepare",
+      "supplier-prepare-only",
+      "supplier-read-guards",
+      "supplier-reconcile",
+      "supplier-success"
+    ],
+    "finalTests": [
+      "query-observed",
+      "address-draft-continuity",
+      "address-duplicate",
+      "address-freeform-prepare",
+      "address-read-continuity",
+      "address-reconcile",
+      "address-success",
+      "contact-draft-continuity",
+      "contact-duplicate",
+      "contact-freeform-prepare",
+      "contact-read-continuity",
+      "contact-reconcile",
+      "contact-success",
+      "init-display-observed",
+      "raw-paging-continuity",
+      "site-draft-continuity",
+      "site-duplicate",
+      "site-freeform-prepare",
+      "site-read-continuity",
+      "site-reconcile",
+      "site-reference-drift",
+      "site-reference-guards",
+      "site-success",
+      "supplier-draft-continuity",
+      "supplier-duplicate",
+      "supplier-freeform-prepare",
+      "supplier-prepare-only",
+      "supplier-read-guards",
+      "supplier-reconcile",
+      "supplier-success"
+    ],
+    "finalSavedVersionAcceptanceRequired": true,
+    "accepted": false,
+    "executesTests": false
+  }
+}

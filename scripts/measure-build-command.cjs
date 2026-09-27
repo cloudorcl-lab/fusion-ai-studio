@@ -13,6 +13,7 @@ const HELP = `Usage: node scripts/measure-build-command.cjs
   --task <id> --activity <id> --phase <name>
   --category <build|test|repair|coordination|wait|closeout> --label <safe-label>
   [--parent <activity-id>] [--dependency <id>] [--overlap <id>]
+  [--activity-kind <execution|review|evidence-capture|coordination|context-recovery|human-wait>]
   [--rerun-reason <safe-text>] -- <executable> [arguments...]
 
 Output parent must already exist. Metadata is public evidence: never put secrets
@@ -22,12 +23,23 @@ has a unique runId; group events by runId, not adjacent lines. Start without end
 means outcome unknown, not failure or success. Concurrent appends use a bounded
 exclusive lock; a stale .lock must be investigated manually. No process-tree
 management, browser keep-alive, token or AI Unit collection is performed.
+
+Additional modes (same command owner):
+  report --input <contained.jsonl> [--input <contained.jsonl> ...]
+    --from <UTC> --to <UTC> [--stale-ms <milliseconds>]
+  interval --output <contained.jsonl> --id <unique-id> --task <id>
+    --activity <id> --kind <execution|review|evidence-capture|coordination|context-recovery|human-wait|human|approval|wait> --state <start|end>
+  outcome --output <contained.jsonl> --id <run-id>
+    --outcome <passed|failed|needs-judge|unknown> --evidence <relative-path>
+Report emits JSON to stdout. Intervals record observed boundaries now, not
+retrospective guesses. Outcome annotations require separate reviewed evidence;
+neither a zero nor nonzero process exit proves semantic acceptance.
 `;
 
 function parseArgs(argv) {
   if (argv.length === 1 && argv[0] === '--help') return { help: true };
   const values = { dependency: [], overlap: [] };
-  const single = new Set(['output', 'task', 'activity', 'phase', 'category', 'label', 'parent', 'rerun-reason']);
+  const single = new Set(['output', 'task', 'activity', 'phase', 'category', 'label', 'parent', 'rerun-reason', 'activity-kind']);
   let split = -1;
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--') { split = i; break; }
@@ -48,6 +60,7 @@ function parseArgs(argv) {
     if (!values[key]) throw new Error('Missing required option');
   }
   if (!['build', 'test', 'repair', 'coordination', 'wait', 'closeout'].includes(values.category)) throw new Error('Invalid category');
+  if (values['activity-kind'] && !require('./build-timing-report.cjs').activityKinds.includes(values['activity-kind'])) throw new Error('Invalid activity kind');
   if (split < 0 || !argv[split + 1] || argv[split + 1].includes('\0')) throw new Error('Missing executable');
   return { ...values, executable: argv[split + 1], args: argv.slice(split + 2) };
 }
@@ -106,6 +119,7 @@ async function measure(options) {
   const base = {
     schemaVersion: 1, runId: randomUUID(), taskId: options.task,
     activityId: options.activity, phase: options.phase, category: options.category,
+    activityKind: options['activity-kind'] || (options.category === 'coordination' ? 'coordination' : options.category === 'wait' ? 'human-wait' : 'execution'),
     label: options.label, executable: path.win32.basename(path.basename(options.executable)),
     parentActivityId: options.parent || null, dependencyIds: options.dependency,
     overlapIds: options.overlap, rerunReason: options['rerun-reason'] || null,
@@ -149,6 +163,8 @@ async function measure(options) {
       event: 'end', endedUtc: new Date().toISOString(),
       status: spawnError ? 'spawn-failed' : interrupted ? 'interrupted' : result.signal ? 'signaled' : result.code === 0 ? 'succeeded' : 'failed',
       exitCode, childExitCode: result.code, signal: result.signal, interruptSignal: interrupted, spawnError,
+      processStatus: spawnError ? 'spawn-failed' : interrupted ? 'interrupted' : result.signal ? 'signaled' : 'exited',
+      semanticOutcome: 'unknown',
     });
     finished = true;
     return !recorded && exitCode === 0 ? 74 : exitCode ?? 1;
@@ -160,6 +176,9 @@ async function measure(options) {
 }
 
 async function main(argv) {
+  if (['report', 'interval', 'outcome'].includes(argv[0])) {
+    return require('./build-timing-report.cjs').main(argv, { scopedOutput, appendEvent });
+  }
   let options;
   try { options = parseArgs(argv); }
   catch (error) { process.stderr.write(`Timing arguments rejected: ${error.message}. See --help.\n`); return 64; }

@@ -33,7 +33,10 @@ try {
     'scripts/verify-living-build-contract.ps1','scripts/verify-session-compliance.cjs',
     'scripts/verify-agentic-app-query-contract.cjs','scripts/tests/verify-agentic-app-query-contract.cjs',
     'scripts/plan-affected-workflow-tests.cjs','scripts/measure-build-command.cjs',
+    'scripts/build-timing-report.cjs','scripts/screen-model-candidate.cjs','scripts/build-evidence-status.cjs',
+    'scripts/refresh-test-report-provenance.cjs','scripts/capture-native-evidence.cjs',
     'tests/test-affected-workflow-tests.cjs','tests/test-measure-build-command.cjs','tests/test-workflow-terminal.cjs',
+    'tests/test-build-timing-report.cjs','tests/test-build-evidence.cjs','tests/test-report-provenance.cjs','tests/test-native-evidence.cjs',
     'tests/test-living-build-contract.ps1','tests/test-session-compliance.cjs','tests/test-build-time-record.ps1')
   $dependencies = @(& git -C $repo ls-files -- .agents/skills/aistudio docs/lessons/objects docs/build-models)
   if ($LASTEXITCODE -ne 0) { throw 'Dependency inventory failed' }
@@ -45,6 +48,16 @@ try {
   # Historical build receipts are not distributable dependencies. Preserve their
   # labels and original paths as source-only references, never as broken links.
   $transforms = [Collections.Generic.List[object]]::new()
+  # Standing authority granted for this repository/tenant is not transferable
+  # to customer installations. Preserve it in the source checkout, but remove
+  # the complete named section from the portable seed and record the transform.
+  $seedAgents = Join-Path $seed 'AGENTS.md'
+  $agentsText = [IO.File]::ReadAllText($seedAgents)
+  $portableAgents = [regex]::Replace($agentsText, '(?ms)^## Standing user approval — testing sign-in\r?\n.*?(?=^## |\z)', '')
+  if ($portableAgents -ne $agentsText) {
+    [IO.File]::WriteAllText($seedAgents,$portableAgents)
+    $transforms.Add([ordered]@{path=[IO.Path]::GetRelativePath($packet,$seedAgents).Replace('\','/');section='Standing user approval — testing sign-in';reason='Repository-specific user authority and tenant URL are not portable'})
+  }
   foreach ($file in Get-ChildItem -LiteralPath $packet -Recurse -File -Force -Filter '*.md') {
     $original = [IO.File]::ReadAllText($file.FullName)
     $updated = [regex]::Replace($original, '\[([^\]]+)\]\(([^)]+)\)', {

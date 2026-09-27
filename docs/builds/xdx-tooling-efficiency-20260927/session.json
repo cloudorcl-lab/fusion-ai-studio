@@ -1,0 +1,136 @@
+{
+  "objectReferences": [],
+  "startedUtc": "2026-09-27T21:52:48.078Z",
+  "noObjectsReason": "Local tooling only",
+  "timeTracker": "docs/builds/xdx-tooling-efficiency-20260927/time-tracker.md",
+  "sessionId": "xdx-tooling-efficiency-20260927",
+  "branch": "TestingWFBuildTools",
+  "reviewNotes": "Exact provenance, no replay, conservative coverage and overlap timing",
+  "learningRegister": "docs/builds/xdx-tooling-efficiency-20260927/learning-register.md",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "checkpointUtc": "2026-09-27T22:20:40.562Z",
+  "checks": [
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-tooling-efficiency-20260927/plan.md",
+        "docs/builds/xdx-tooling-efficiency-20260927/review.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/local-verification.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/package-verification.json"
+      ],
+      "status": "pass",
+      "id": "learning",
+      "reason": "Verified local tooling scope; evidence/limits in plan and review. Local commit follows successful Closeout."
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-tooling-efficiency-20260927/plan.md",
+        "docs/builds/xdx-tooling-efficiency-20260927/review.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/local-verification.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/package-verification.json"
+      ],
+      "status": "pass",
+      "id": "intake",
+      "reason": "Verified local tooling scope; evidence/limits in plan and review. Local commit follows successful Closeout."
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-tooling-efficiency-20260927/plan.md",
+        "docs/builds/xdx-tooling-efficiency-20260927/review.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/local-verification.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/package-verification.json"
+      ],
+      "status": "pass",
+      "id": "authority",
+      "reason": "Verified local tooling scope; evidence/limits in plan and review. Local commit follows successful Closeout."
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-tooling-efficiency-20260927/plan.md",
+        "docs/builds/xdx-tooling-efficiency-20260927/review.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/local-verification.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/package-verification.json"
+      ],
+      "status": "pass",
+      "id": "objects",
+      "reason": "Verified local tooling scope; evidence/limits in plan and review. Local commit follows successful Closeout."
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-tooling-efficiency-20260927/plan.md",
+        "docs/builds/xdx-tooling-efficiency-20260927/review.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/local-verification.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/package-verification.json"
+      ],
+      "status": "pass",
+      "id": "verification",
+      "reason": "Verified local tooling scope; evidence/limits in plan and review. Local commit follows successful Closeout."
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-tooling-efficiency-20260927/plan.md",
+        "docs/builds/xdx-tooling-efficiency-20260927/review.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/local-verification.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/package-verification.json"
+      ],
+      "status": "pass",
+      "id": "timing",
+      "reason": "Verified local tooling scope; evidence/limits in plan and review. Local commit follows successful Closeout."
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-tooling-efficiency-20260927/plan.md",
+        "docs/builds/xdx-tooling-efficiency-20260927/review.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/local-verification.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/package-verification.json"
+      ],
+      "status": "pass",
+      "id": "cleanup",
+      "reason": "Verified local tooling scope; evidence/limits in plan and review. Local commit follows successful Closeout."
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-tooling-efficiency-20260927/plan.md",
+        "docs/builds/xdx-tooling-efficiency-20260927/review.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/local-verification.json",
+        "docs/builds/xdx-tooling-efficiency-20260927/package-verification.json"
+      ],
+      "status": "pass",
+      "id": "delivery",
+      "reason": "Verified local tooling scope; evidence/limits in plan and review. Local commit follows successful Closeout."
+    }
+  ],
+  "phase": "Closeout",
+  "schemaVersion": 1,
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "44f31b33bb3675e972df8c47cd42ba109149a57fc5ac114e650fd1da66c13584"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "601bb2722b7b15b61df6c25b6f9238cd0f002c1a3fb9fa882b5a0b6cea5a024f"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "b789ddfc7726435f7b98efc7d4d1a87ed89e886041f0930d8309887926022dcd"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "fe5825024095e083e722fe49c12ec708e823283f27eb9c82f18e78701f8a30c1"
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Unavailable: local command tools do not report model usage",
+    "aiUnits": "Unavailable: no tenant execution in this task",
+    "timingGaps": "Before first durable checkpoint and before live activity instrumentation gaps remain unallocated; recovered agent timestamps labeled retrospective. Delivery tail tracked separately."
+  }
+}

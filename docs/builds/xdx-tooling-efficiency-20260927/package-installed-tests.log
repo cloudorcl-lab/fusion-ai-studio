@@ -1,0 +1,217 @@
+Agent-app build startup package: PASS
+Living build contract: PASS
+- Policy structure only; session execution has not been verified.
+- Canonical owner: docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md
+- Object learning registry: docs/lessons/objects/README.md
+- Startup entrypoint: AGENTS.md
+- Session-start handoff: docs/handoffs/ACTIVE_HANDOFF.md
+- AI Studio fallback: .agents/skills/aistudio/SKILL.md
+- Worktree rule: integrate governance, reread it and pass applicable Startup checks; a new session is optional
+- Naming rule: XDX codes, display names, files, branches, and worktrees
+Agent-app build install packet: PASS
+Agent-app build startup package: PASS
+Agent-app build startup package: PASS
+Living build contract: PASS
+- Policy structure only; session execution has not been verified.
+- Canonical owner: docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md
+- Object learning registry: docs/lessons/objects/README.md
+- Startup entrypoint: AGENTS.md
+- Session-start handoff: docs/handoffs/ACTIVE_HANDOFF.md
+- AI Studio fallback: .agents/skills/aistudio/SKILL.md
+- Worktree rule: integrate governance, reread it and pass applicable Startup checks; a new session is optional
+- Naming rule: XDX codes, display names, files, branches, and worktrees
+Agent-app build install packet: PASS
+Agent-app build startup package: PASS
+Agent-app build startup package installed: C:\Users\dasu\AppData\Local\Temp\xdx-packet-test-ce0f0a15-45c0-4041-b7f0-e455c0a147b7\installed\agent-app-build-startup
+Agent-app build startup package: PASS
+Living build contract: PASS
+- Policy structure only; session execution has not been verified.
+- Canonical owner: docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md
+- Object learning registry: docs/lessons/objects/README.md
+- Startup entrypoint: AGENTS.md
+- Session-start handoff: docs/handoffs/ACTIVE_HANDOFF.md
+- AI Studio fallback: .agents/skills/aistudio/SKILL.md
+- Worktree rule: integrate governance, reread it and pass applicable Startup checks; a new session is optional
+- Naming rule: XDX codes, display names, files, branches, and worktrees
+Agent-app build install packet: PASS
+Living build contract test: PASS (optional-session positive; revalidation, session, timing, handoff, naming, sample-policy, object-registry and incomplete negative fixtures)
+Time record appended: C:\Users\dasu\AppData\Local\Temp\vuqjxup4.5fp
+Time record appended: C:\Users\dasu\AppData\Local\Temp\vuqjxup4.5fp
+Build time helper: PASS (placement, repeated append, UTC, escaping, invalid tracker unchanged)
+Session compliance: PASS (startup/closeout positives and 11 negative cases)
+Agentic App Query validator tests: PASS
+✔ unchanged selects none, retains authoritative/final gates and leaves files untouched (712.2781ms)
+✔ actual body edit selects covered test and excludes only explicit negative path (726.2344ms)
+✔ global conservatively selects all (603.6249ms)
+✔ edge conservatively selects all (598.9604ms)
+✔ addition conservatively selects all (740.5182ms)
+✔ removal conservatively selects all (616.9416ms)
+✔ order conservatively selects all (599.679ms)
+✔ binding conservatively selects all (785.0364ms)
+✔ bo conservatively selects all (706.4264ms)
+✔ unknown conservatively selects all (591.8454ms)
+✔ new-test conservatively selects all (567.047ms)
+✔ deleted-test conservatively selects all (698.0722ms)
+✔ CODE body with no positive coverage selects all (856.9811ms)
+✔ conversation exclusion requires every step (770.2349ms)
+✔ missing path assertions are uncertainty (821.3724ms)
+✔ ignored source dependency and ignored new tests still select all (1128.15ms)
+✔ staged BO edits select all (606.0927ms)
+✔ test-directory junction outside repository is blocked (379.9931ms)
+✔ malformed-workflow blocks (550.8267ms)
+✔ malformed-test blocks (437.0197ms)
+✔ missing-baseline blocks (386.0041ms)
+✔ missing-workflow blocks (379.6057ms)
+✔ traversal blocks (469.9653ms)
+✔ absolute blocks (395.5654ms)
+✔ option-ref blocks (419.1851ms)
+✔ contradictory-test blocks (462.2523ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 16018.7794
+PASS explicit fine activity kind is retained and invalid kind never launches
+PASS success, passthrough, metadata and unavailable metrics
+PASS nonzero child exit is preserved
+PASS spawn failure is sanitized and retained
+PASS start is durable before child begins
+PASS args with spaces and shell metacharacters remain literal; receipts redact args, environment and output
+PASS parser rejects missing, duplicate, unknown, oversized and malformed metadata
+PASS output cannot escape cwd or use missing parent; setup failure does not launch child
+PASS stale lock fails without deleting another writer lock or launching child
+PASS completion append failure cannot report successful measured completion
+PASS safe manual interrupt records request and child outcome
+PASS early wrapper exit records unfinished without invented child success
+PASS transient Windows lock-acquisition EPERM retries without lock takeover
+PASS failed concurrent child is retained only after delayed sibling completes
+PASS concurrent writers append complete lines and distinct correlated pairs
+Timing wrapper: 15 checks PASS
+✔ coverage declaration order does not determine terminal (2.5847ms)
+✔ object path entries and reordered declarations retain terminal (0.2697ms)
+✔ recorded coverage partition resolves without treating it as a sequence (0.4227ms)
+✔ literal RETURN after LLM is terminal (0.1783ms)
+✔ nonassertable connector does not create a second terminal (0.1978ms)
+✔ disconnected or conflicting terminals fail closed (0.4983ms)
+✔ cycle without a terminal fails closed (0.2688ms)
+✔ unknown asserted node fails closed (0.2386ms)
+✔ empty explicit path never fabricates terminal (0.2404ms)
+✔ unselected executable path is not silently traversed (0.3926ms)
+✔ stale or conflicting observed metadata cannot override current graph (0.1873ms)
+✔ selected convergent branches have one terminal (0.1524ms)
+✔ partial path cannot promote an upstream LLM to terminal (0.1846ms)
+✔ disconnected cycle beside terminal fails closed (0.2827ms)
+✔ nested loop boundary resolves to outer terminal (0.2602ms)
+✔ referenceable block returns to caller terminal (0.3467ms)
+✔ actual conversation semantic gate accepts graph terminal with unordered coverage (0.6152ms)
+✔ actual semantic gate still rejects unsupported terminal and expected wait (0.3279ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14.5531
+PASS fine activity unions separate simultaneous waits and work without additive labor
+PASS open recovery does not fabricate time; conflicting kinds remain unknown
+PASS CLI records all fine activity kinds and preserves legacy wait aliases
+PASS overlap union, clipping and gaps do not double count nested/concurrent work
+PASS legacy correlation uses task/activity/start, not adjacent events or activity alone
+PASS nanosecond-form UTC historical timestamps normalize without invented duration
+PASS zero/nonzero historical process outcomes never imply semantic pass/fail
+PASS explicit semantic evidence is separate from exit and conflicting annotations are visible
+PASS open, unfinished and orphan events cannot silently close or fill unallocated gaps
+PASS reviewed needs-judge to passed lifecycle resolves latest timestamp, retaining history and same-time ambiguity
+PASS duplicate archive receipts deduplicate, conflicting starts/ends fail visibly
+PASS backwards and conflicting wall clocks are flagged and never silently repaired by elapsedMs
+PASS upper-bound historical manual reconciliation is labeled and raw unknown metadata never echoes
+PASS invalid window and invalid duration are rejected/flagged
+PASS CLI explicit observed human/approval/wait boundaries and report are usable
+PASS CLI outcome annotation retains process code; malformed JSON reports line without leaking content
+PASS new modes preserve contained-file restrictions and reject unsafe metadata/unknown arguments
+Timing report: 17 checks PASS
+✔ screening stops on confirmed contract failure before remaining cases (2.0761ms)
+✔ judge and environment uncertainty never reject as model defect or pass (0.2456ms)
+✔ complete screen remains only eligible and preserves final inventory (0.21ms)
+✔ semantic failure rejects and hidden pending conversation step blocks (0.2088ms)
+✔ conversation cannot hide failed aggregate judge or absent step evidence (0.2357ms)
+✔ wrong workflow version label duplicate or unknown results fail closed (0.4352ms)
+✔ malformed screening contracts cannot omit final obligations (0.2395ms)
+✔ one manifest drives all views and remains read-only (4.6638ms)
+✔ changed source or wrong version blocks instead of accepting stale pass (4.3217ms)
+✔ missing evidence, missing checks and pending requirements block (3.2098ms)
+✔ traversal and missing evidence field block (3.675ms)
+✔ duplicate requirement and empty manifest rejected; not-applicable requires reason (3.9171ms)
+✔ JSON pointers decode escapes and never read inherited values (0.2405ms)
+✔ missing frozen source inventory or changed implementation blocks all views (3.0157ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 33.3419
+✔ actual attachment owner infers run label and rejects mismatched explicit label before mutation (3.8311ms)
+✔ actual summary owner rejects stale labels and missing/wrong saved versions (0.2719ms)
+✔ derive current judgment from individual source while leaving stale suite and source bytes unchanged (7.8367ms)
+✔ reject version (2.5435ms)
+✔ reject label (2.2288ms)
+✔ reject workflow (2.267ms)
+✔ reject app (2.2305ms)
+✔ reject duplicate (2.4941ms)
+✔ reject unexpected (2.3514ms)
+✔ reject pending-pass (2.3417ms)
+✔ reject missing-judge (2.1776ms)
+✔ reject unknown-status (2.9242ms)
+✔ reject suite-source (2.9502ms)
+✔ reject false-judge (2.2046ms)
+✔ reject deterministic-failure (2.168ms)
+✔ reject failed-step (2.3574ms)
+✔ missing expected coverage and pending judges remain incomplete (2.3459ms)
+✔ separate app and workflow labels are explicit and independently version-checked (2.8921ms)
+✔ actual summary selects labeled directories, rejects empty/version drift, and suppresses stale pending-judge counts (3.5957ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 63.2354
+✔ complete callback observations persist exact bytes, hashes and timing; no automatic acceptance (33.1287ms)
+✔ rejects version mismatch without receipt or retry (8.0924ms)
+✔ rejects surface mismatch without receipt or retry (7.8667ms)
+✔ rejects prompt mismatch without receipt or retry (6.7736ms)
+✔ rejects submission mismatch without receipt or retry (6.5798ms)
+✔ rejects loading response without receipt or retry (8.0055ms)
+✔ rejects unknown completeness without receipt or retry (7.3173ms)
+✔ rejects blank response without receipt or retry (5.7784ms)
+✔ rejects missing semantic snapshot without receipt or retry (6.2904ms)
+✔ rejects invalid timestamp date without receipt or retry (7.6703ms)
+✔ rejects reversed timestamp without receipt or retry (6.4098ms)
+✔ rejects future timestamp without receipt or retry (5.9606ms)
+✔ rejects incomplete screenshot without receipt or retry (6.3116ms)
+✔ rejects truncated screenshot without receipt or retry (6.8314ms)
+✔ exclusive id prevents callback replay and protects existing evidence (17.2364ms)
+✔ callback failure is sanitized, durable, and is never retried (7.1ms)
+✔ partial persistence cannot produce a success receipt or overwrite a file (10.1401ms)
+✔ concurrent same-id capture has only one callback owner (16.0528ms)
+✔ rejects unsafe identity and output before callback (1.2892ms)
+✔ PNG corruption and missing terminal fail (0.518ms)
+✔ exact draft=true preview URL is supported without allowing token query parameters (28.59ms)
+✔ CUA adapter invokes documented combined capture once and retains full state (19.6491ms)
+✔ CUA adapter cannot accept missing screenshot from a supported optional result (13.9671ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 246.3991
+Install packet regression: PASS; 149 payload files; source/installed parity, activation checks, overwrite refusal, tamper and extra-file rejection.

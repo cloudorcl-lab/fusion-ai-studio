@@ -21,7 +21,10 @@ foreach ($relative in @(
   'tests/test-living-build-contract.ps1', 'scripts/verify-session-compliance.cjs', 'tests/test-session-compliance.cjs',
   'scripts/verify-agentic-app-query-contract.cjs','scripts/tests/verify-agentic-app-query-contract.cjs',
   'scripts/plan-affected-workflow-tests.cjs','scripts/measure-build-command.cjs',
+  'scripts/build-timing-report.cjs','scripts/screen-model-candidate.cjs','scripts/build-evidence-status.cjs',
+  'scripts/refresh-test-report-provenance.cjs','scripts/capture-native-evidence.cjs',
     'tests/test-affected-workflow-tests.cjs','tests/test-measure-build-command.cjs','tests/test-workflow-terminal.cjs',
+    'tests/test-build-timing-report.cjs','tests/test-build-evidence.cjs','tests/test-report-provenance.cjs','tests/test-native-evidence.cjs',
     'docs/lessons/objects/README.md','docs/build-models/object-lifecycle/v1.1.0/execution-prompt.md','docs/build-models/object-lifecycle/v1.1.0/plan-template.md',
   'docs/build-models/artifact-purge/v1.0.1/purge-prompt.md', '.agents/skills/aistudio/SKILL.md',
   '.agents/skills/aistudio/scripts/aistudio.js',
@@ -47,6 +50,9 @@ foreach ($entry in $manifest.payload) {
 
 & (Join-Path $root 'agent-app-build-startup\scripts\Verify-AgentAppBuildStartup.ps1') -PackageRoot (Join-Path $root 'agent-app-build-startup')
 $seed = Join-Path $root 'agent-app-build-startup/repository-seed'
+if ((Get-Content -Raw -LiteralPath (Join-Path $seed 'AGENTS.md')) -match '(?m)^## Standing user approval — testing sign-in') {
+  throw 'Repository-specific standing sign-in approval must not be distributed.'
+}
 & pwsh -NoProfile -File (Join-Path $seed 'scripts/verify-living-build-contract.ps1') -RepoRoot $seed -PolicyOnly
 if ($LASTEXITCODE -ne 0) { throw 'Packaged living build contract failed.' }
 # Every local link in the canonical playbook must resolve within the delivered seed.

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "sessionId": "xdx-tooling-efficiency-20260927",
+  "command": "pwsh -NoProfile -File scripts/verify-living-build-contract.ps1 -SessionRecord docs/builds/xdx-tooling-efficiency-20260927/session.json -SessionId xdx-tooling-efficiency-20260927 -Phase Closeout",
+  "runId": "c9f86862-41d0-48bd-a408-e33cd6aa7bad",
+  "exitCode": 0,
+  "observedUtc": "2026-09-27T22:20:41.397Z",
+  "scope": "Local tooling and governance; native adapter mocked, no live application acceptance rerun"
+}

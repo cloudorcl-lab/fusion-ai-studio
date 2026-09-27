@@ -41,6 +41,12 @@ function validatePair(file, expectedStatus) {
 async function main() {
   let primaryError;
   try {
+    check('explicit fine activity kind is retained and invalid kind never launches', () => {
+      const result = run('review-kind.jsonl', process.execPath, ['-e', ''], ['--activity-kind', 'review']);
+      assert.equal(result.status, 0, result.stderr);
+      assert(events('review-kind.jsonl').every(row => row.activityKind === 'review'));
+      assert.throws(() => parseArgs([...base('x.jsonl'), '--activity-kind', 'unknown-kind', '--', 'node']));
+    });
     check('success, passthrough, metadata and unavailable metrics', () => {
       const result = run('success.jsonl', process.execPath, ['-e', 'console.log("visible stdout"); console.error("visible stderr")'], ['--dependency', 'bo-proof', '--overlap', 'other-task', '--parent', 'phase-parent', '--rerun-reason', 'changed-parser']);
       assert.equal(result.status, 0, result.stderr);
@@ -52,11 +58,14 @@ async function main() {
       assert.equal(end.parentActivityId, 'phase-parent');
       assert.equal(end.rerunReason, 'changed-parser');
       assert.equal(end.exitCode, 0);
+      assert.equal(end.processStatus, 'exited');
+      assert.equal(end.semanticOutcome, 'unknown');
     });
     check('nonzero child exit is preserved', () => {
       const result = run('failure.jsonl', process.execPath, ['-e', 'process.exit(23)']);
       assert.equal(result.status, 23);
       assert.equal(validatePair('failure.jsonl', 'failed')[1].childExitCode, 23);
+      assert.equal(events('failure.jsonl')[1].semanticOutcome, 'unknown');
     });
     check('spawn failure is sanitized and retained', () => {
       const result = run('spawn.jsonl', path.join(scratch, 'nonexistent-program'), ['SECRET_ARGUMENT']);

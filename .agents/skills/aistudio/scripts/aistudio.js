@@ -55679,6 +55679,15 @@ function Oge(e) {
     t.push("- Consolidated report: not available, app suite did not run.");
   e.appSuite?.htmlReportPath ? t.push(`- App suite report: ${Mg("suite-result.html", e.appSuite.htmlReportPath)}${e.appSuiteStale ? " (stale; current individual app test reports are authoritative)" : ""}`) : t.push("- App suite report: not available, app suite did not run.");
 }
+function xdxValidateReportSelection(report, runLabel, version) {
+  if (runLabel !== undefined && report.runLabel !== runLabel) throw new Error("Selected report run-label mismatch.");
+  if (version !== undefined && String(report.workflow?.version ?? "") !== String(version)) throw new Error("Selected report workflow-version mismatch.");
+}
+function xdxAttachmentRunLabel(report, requested) {
+  if (report.runLabel !== undefined && (typeof report.runLabel !== "string" || !report.runLabel.trim())) throw new Error("Invalid report runLabel.");
+  if (requested !== undefined && requested !== report.runLabel) throw new Error("--run-label does not match the selected report.");
+  return report.runLabel;
+}
 async function $ge(e) {
   const t = v.resolve(e.cwd), n = await Zi({
     cwd: t,
@@ -55692,15 +55701,16 @@ async function $ge(e) {
   }), r = MT(
     o,
     e.packageLayoutOptions
-  ), a = tB(n), i = e.workflowIndex?.packageInfo.applicationReportRootDir ?? xn(o, "application"), s = e.workflowIndex?.packageInfo.workflowReportRootDir ?? xn(o, "workflow"), c = { type: "app", appCode: n.app.appCode }, d = jT(t, c, void 0, i), u = v.join(d, "suite-result.json"), p = await io(u), f = UT(p) && p.scope.type === "app" && p.scope.appCode === n.app.appCode ? p : void 0, m = await xge({
+  ), a = tB(n), i = e.workflowIndex?.packageInfo.applicationReportRootDir ?? xn(o, "application"), s = e.workflowIndex?.packageInfo.workflowReportRootDir ?? xn(o, "workflow"), c = { type: "app", appCode: n.app.appCode }, d = jT(t, c, e.runLabel, i), u = v.join(d, "suite-result.json"), p = await io(u), f = UT(p) && p.scope.type === "app" && p.scope.appCode === n.app.appCode ? p : void 0, m = await xge({
     cwd: t,
     appCode: n.app.appCode,
     plan: n,
     ...r ? { packageLayoutOptions: r } : {}
-  }), w = (await zT(await Ef(i))).filter((W) => W.appCode === n.app.appCode).filter((W) => !W.testFile || pe(v.resolve(t, W.testFile))), y = w.length > 0 ? Pge(w) : void 0, k = f ? await Rge({ cwd: t, appSuite: f, currentReports: w }) : !1, C = a.length > 0 ? "incomplete" : f && !k ? Bx(f.summary) : y ? y.failed > 0 || y.needsJudge > 0 ? Bx(y) : "incomplete" : m.length > 0 ? "incomplete" : (n.actions.length > 0, "not-run"), P = hn(n.backingWorkflowSyncPlans.map((W) => W.workflow.workflowCode)), T = await kB({
+  }), w = (await zT(e.runLabel ? await HT(i, e.runLabel) : await Ef(i))).filter((W) => W.appCode === n.app.appCode).filter((W) => !W.testFile || pe(v.resolve(t, W.testFile))), y = w.length > 0 ? Pge(w) : void 0, k = f ? await Rge({ cwd: t, appSuite: f, currentReports: w }) : !1, C = a.length > 0 ? "incomplete" : f && !k ? Bx(f.summary) : y ? y.failed > 0 || y.needsJudge > 0 ? Bx(y) : "incomplete" : m.length > 0 ? "incomplete" : (n.actions.length > 0, "not-run"), P = hn(n.backingWorkflowSyncPlans.map((W) => W.workflow.workflowCode)), T = await kB({
     cwd: t,
     workflowRoot: s,
-    workflowSuiteDir: s,
+    workflowSuiteDir: e.workflowRunLabel || e.runLabel ? v.join(s, "suites", ut(e.workflowRunLabel ?? e.runLabel)) : s,
+    runLabel: e.workflowRunLabel ?? e.runLabel,
     workflowCodes: P,
     backingWorkflowSyncPlans: n.backingWorkflowSyncPlans
   }), I = v.join(d, "consolidated-suite-result.json"), R = await io(I), $ = de(R) && typeof R.htmlReportPath == "string" ? R.htmlReportPath : void 0, F = f ? k || Nge({
@@ -55712,6 +55722,23 @@ async function $ge(e) {
     "App test summary",
     `Status: ${C}`
   ];
+  if ((e.runLabel !== undefined || e.workflowVersion !== undefined) && w.length === 0) throw new Error("No individual app reports match the requested selection.");
+  if (e.runLabel && f && f.runLabel !== e.runLabel) throw new Error("Selected app suite run-label mismatch.");
+  for (const W of w) xdxValidateReportSelection(W, e.runLabel, e.workflowVersion);
+  if (e.runLabel !== undefined || e.workflowVersion !== undefined) for (const W of f?.results ?? []) {
+    const z = typeof W.reportPath === "string" ? await io(v.resolve(t, W.reportPath)) : void 0;
+    if (!z || z.appCode !== n.app.appCode || z.testName !== W.testName) throw new Error("Selected app suite source report is missing or mismatched.");
+    xdxValidateReportSelection(z, e.runLabel, e.workflowVersion);
+  }
+  for (const W of T) {
+    if (!W.reportPath) {
+      if (e.workflowRunLabel !== undefined || e.runLabel !== undefined || e.workflowVersion !== undefined) throw new Error("Selected backing workflow report is missing.");
+      continue;
+    }
+    const z = await io(v.resolve(t, W.reportPath));
+    if ((e.workflowRunLabel !== undefined || e.runLabel !== undefined || e.workflowVersion !== undefined) && !z?.results?.length) throw new Error("Selected backing workflow report has no results.");
+    for (const re of z?.results ?? []) xdxValidateReportSelection(re, e.workflowRunLabel ?? e.runLabel, e.workflowVersion);
+  }
   n.app.title && j.splice(1, 0, `App: ${n.app.title}`), a.length > 0 && j.push(
     "",
     `App test definitions are out of sync: ${a.length} create or update action${a.length === 1 ? " remains" : "s remain"}. Existing app test reports are stale evidence until app sync applies these actions.`,
@@ -55739,7 +55766,7 @@ async function $ge(e) {
     `Reason: app suite did not run${n.actions.length > 0 ? `; app sync still has ${n.actions.length} pending action(s).` : "."}`,
     `Planned app actions: ${n.summary.missing} missing, ${n.summary.outOfSync} out of sync, ${n.summary.needsReview} need review, ${n.summary.upToDate} up to date`
   );
-  const L = f?.summary ?? y;
+  const L = f && !k ? f.summary : y;
   if (L && a.length === 0) {
     const W = r_({
       counts: L,
@@ -56838,6 +56865,8 @@ function qT(e) {
     panelSegment: e.panel.pathSegment,
     panelTitle: e.panel.title,
     workflowCode: e.workflowCode,
+    ...e.workflow ? { workflow: e.workflow } : {},
+    ...e.runLabel ? { runLabel: e.runLabel } : {},
     status: e.status,
     dataSource: e.dataSource,
     evaluationMode: e.evaluationMode,
@@ -65049,6 +65078,9 @@ function Wve() {
       description: "Reads the app sync plan, app suite report, backing workflow suite reports, individual result files, and deferred sync-plan scenarios to render the final app summary. This command is read-only and never generates, updates, records, runs, saves, or attaches judge results.",
       options: [
         n,
+        { name: "run-label", description: "Read only this labeled app run; never fall back to generic results.", type: "string", valueHint: "<label>" },
+        { name: "workflow-run-label", description: "Read this backing workflow run when its label differs from the app run.", type: "string", valueHint: "<label>" },
+        { name: "workflow-version", description: "Reject selected reports whose saved workflow version differs.", type: "string", valueHint: "<version>" },
         { name: "format", description: "`text` for the summary report, or `json` for the full structured result. Defaults to text.", type: "string", valueHint: "<text|json>" },
         ...ae()
       ],
@@ -65073,6 +65105,9 @@ function Wve() {
           payload: await $ge({
             cwd: g.cwd,
             filePath: String(l.file),
+            ...l.runLabel !== void 0 ? { runLabel: String(l.runLabel) } : {},
+            ...l.workflowRunLabel !== void 0 ? { workflowRunLabel: String(l.workflowRunLabel) } : {},
+            ...l.workflowVersion !== void 0 ? { workflowVersion: String(l.workflowVersion) } : {},
             packageLayoutOptions: {
               ...Ie(l) !== void 0 ? { appPackageRoot: Ie(l) } : {},
               ...Ke(l) !== void 0 ? { appPackage: Ke(l) } : {},
@@ -65486,6 +65521,9 @@ function Wve() {
         if (l.reportPath !== void 0 || l.resultPath !== void 0) {
           if (l.reportPath === void 0 || l.resultPath === void 0)
             throw new Error("--report-path and --result-path must be supplied together.");
+          const selectedReport = await io(v.resolve(g.cwd, String(l.reportPath)));
+          if (!de(selectedReport)) throw new Error("Selected app report is missing or invalid.");
+          const selectedRunLabel = xdxAttachmentRunLabel(selectedReport, l.runLabel !== void 0 ? String(l.runLabel) : void 0);
           const N = await Hr({
             cwd: g.cwd,
             filePath: String(l.reportPath),
@@ -65503,7 +65541,7 @@ function Wve() {
             cwd: g.cwd,
             reportRootDir: N ?? v.join(g.cwd, "test-reports", "apps"),
             ...ge.appCode ? { appCode: ge.appCode } : {},
-            ...l.runLabel !== void 0 ? { runLabel: String(l.runLabel) } : {},
+            ...selectedRunLabel !== void 0 ? { runLabel: selectedRunLabel } : {},
             ...se ? { workflowIndex: se } : {}
           }), ge;
         }

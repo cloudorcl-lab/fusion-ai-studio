@@ -37,6 +37,54 @@ try {
     if (-not $transformed -and (Get-FileHash -LiteralPath (Join-Path $packet $entry.path) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sourceSha256) { throw "Source parity failed: $($entry.path)" }
   }
   if (@($manifest.payload | Where-Object { $_.path -match '(^|/)(env\.properties|docs/builds|\.git|node_modules)(/|$)' }).Count) { throw 'Excluded state packaged' }
+  $portableAgents = Get-Content -Raw -LiteralPath (Join-Path $packet 'agent-app-build-startup/repository-seed/AGENTS.md')
+  if ($portableAgents -match 'Standing user approval — testing sign-in|user authorizes login and reauthentication') { throw 'Repository-specific sign-in authority exported' }
+  $sourceAgents = Get-Content -Raw -LiteralPath (Join-Path $repo 'AGENTS.md')
+  if ($sourceAgents -match '(?m)^## Standing user approval — testing sign-in') {
+    if (@($manifest.portableReferenceTransforms | Where-Object { $_.path -eq 'agent-app-build-startup/repository-seed/AGENTS.md' -and $_.section -eq 'Standing user approval — testing sign-in' }).Count -ne 1) { throw 'Missing local-authority transformation provenance' }
+  }
+  # Independently reject an omitted tool/test even when its manifest entry was
+  # also removed. Hash checks alone cannot discover a missing dependency.
+  $manifestPath = Join-Path $packet 'PACKET-MANIFEST.json'
+  $manifestBytes = [IO.File]::ReadAllBytes($manifestPath)
+  $agentsRelative = 'agent-app-build-startup/repository-seed/AGENTS.md'
+  $agentsPath = Join-Path $packet $agentsRelative
+  $agentsBytes = [IO.File]::ReadAllBytes($agentsPath)
+  try {
+    Add-Content -LiteralPath $agentsPath -Value "`n## Standing user approval — testing sign-in`nLocal-only test approval."
+    $mutated = [Text.Encoding]::UTF8.GetString($manifestBytes) | ConvertFrom-Json
+    ($mutated.payload | Where-Object path -eq $agentsRelative).sha256 = (Get-FileHash -LiteralPath $agentsPath -Algorithm SHA256).Hash.ToLowerInvariant()
+    $mutated | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath $manifestPath -Encoding utf8
+    $rejected = $false
+    try { & $verify -PacketRoot $packet } catch {
+      if ($_.Exception.Message -eq 'Repository-specific standing sign-in approval must not be distributed.') { $rejected = $true } else { throw }
+    }
+    if (-not $rejected) { throw 'Exported local authority accepted with refreshed manifest hash' }
+  } finally {
+    [IO.File]::WriteAllBytes($agentsPath,$agentsBytes)
+    [IO.File]::WriteAllBytes($manifestPath,$manifestBytes)
+  }
+  foreach ($dependency in @('scripts/build-timing-report.cjs','scripts/screen-model-candidate.cjs','scripts/build-evidence-status.cjs',
+    'scripts/refresh-test-report-provenance.cjs','scripts/capture-native-evidence.cjs',
+    'tests/test-build-timing-report.cjs','tests/test-build-evidence.cjs','tests/test-report-provenance.cjs','tests/test-native-evidence.cjs')) {
+    $relative = 'agent-app-build-startup/repository-seed/' + $dependency
+    $dependencyPath = Join-Path $packet $relative
+    $dependencyBytes = [IO.File]::ReadAllBytes($dependencyPath)
+    try {
+      Remove-Item -LiteralPath $dependencyPath
+      $mutated = [Text.Encoding]::UTF8.GetString($manifestBytes) | ConvertFrom-Json
+      $mutated.payload = @($mutated.payload | Where-Object path -ne $relative)
+      $mutated | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath $manifestPath -Encoding utf8
+      $rejected = $false
+      try { & $verify -PacketRoot $packet } catch {
+        if ($_.Exception.Message -eq "Missing required seed payload: $dependency") { $rejected = $true } else { throw }
+      }
+      if (-not $rejected) { throw "Missing dependency accepted: $dependency" }
+    } finally {
+      [IO.File]::WriteAllBytes($dependencyPath,$dependencyBytes)
+      [IO.File]::WriteAllBytes($manifestPath,$manifestBytes)
+    }
+  }
   $install = Join-Path $fixture 'installed'
   $installer = Join-Path $packet 'Install-AgentAppBuildStartup.ps1'
   & $installer -PacketRoot $packet -DestinationRoot $install
@@ -52,7 +100,8 @@ try {
     & pwsh -NoProfile -File (Join-Path $install $command)
     if ($LASTEXITCODE -ne 0) { throw "Activated test failed: $command" }
   }
-  foreach ($command in @('tests/test-session-compliance.cjs','scripts/tests/verify-agentic-app-query-contract.cjs','tests/test-affected-workflow-tests.cjs','tests/test-measure-build-command.cjs','tests/test-workflow-terminal.cjs')) {
+  foreach ($command in @('tests/test-session-compliance.cjs','scripts/tests/verify-agentic-app-query-contract.cjs','tests/test-affected-workflow-tests.cjs','tests/test-measure-build-command.cjs','tests/test-workflow-terminal.cjs',
+    'tests/test-build-timing-report.cjs','tests/test-build-evidence.cjs','tests/test-report-provenance.cjs','tests/test-native-evidence.cjs')) {
     & node (Join-Path $install $command)
     if ($LASTEXITCODE -ne 0) { throw "Activated test failed: $command" }
   }

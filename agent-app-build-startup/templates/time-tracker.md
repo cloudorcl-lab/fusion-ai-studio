@@ -21,6 +21,14 @@ or nested durations to task elapsed time.
 
 Categories: build, test, repair, coordination, wait, closeout, unallocated.
 
+Activity kinds: execution, review, evidence-capture, coordination,
+context-recovery, human-wait. Record live boundaries with the timing CLI's
+`interval` mode; add `--activity-kind` to command measurements. Generate unioned
+coverage with `report`; per-kind totals overlap and are not additive labor.
+Report work during human waits and waits without observed work separately.
+Retrospective intervals must cite observed source timestamps and be labeled;
+do not backdate live interval events. Unknown gaps remain unallocated.
+
 ## Browser continuity when acceptance is pending
 
 Record observed state, not inferred renewal. Use the canonical keep-alive deadline and capability fallback.

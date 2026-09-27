@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "verifiedUtc": "2026-09-27T22:16:30.885Z",
+  "commands": [
+    {
+      "activityId": "consolidated-local-regression",
+      "runId": "199e1706-6490-433b-92d9-d552cf4ffd83",
+      "exitCode": 0,
+      "startedUtc": "2026-09-27T22:14:12.684Z",
+      "endedUtc": "2026-09-27T22:14:30.056Z"
+    },
+    {
+      "activityId": "governance-regression",
+      "runId": "ea5fda35-2dd3-4b2f-a5c2-a930a8241fbb",
+      "exitCode": 0,
+      "startedUtc": "2026-09-27T22:14:57.356Z",
+      "endedUtc": "2026-09-27T22:15:18.498Z"
+    }
+  ],
+  "nodeRunner": {
+    "reportedTests": 103,
+    "passed": 103,
+    "failed": 0,
+    "note": "Includes file-level runners with additional internal checks: timing wrapper15, timing report17, session positives/11 negatives"
+  },
+  "testGroups": {
+    "screenAndManifest": 14,
+    "nativeCapture": 23,
+    "reportProvenance": 19,
+    "affectedSelection": 26,
+    "terminalInference": 18,
+    "timingWrapper": 15,
+    "timingReport": 17
+  },
+  "governance": "PASS; positive and negative fixtures",
+  "syntax": "node --check bundle PASS",
+  "review": "Independent screening defects repaired and included in final regressions",
+  "limitations": [
+    "Native adapter local mocks only; product-specific parser required",
+    "No tenant calls or business writes",
+    "Future speed savings unmeasured"
+  ]
+}

@@ -63,3 +63,13 @@ The build is not complete while this gate or any applicable playbook Definition 
 ## Startup mechanics
 
 For each new app build, follow `agent-app-build-startup/AGENTS.md`: create a new Git worktree from committed governance, run both startup and living-build verifiers, initialize templates in `docs/builds/<build-id>/`, and complete requirement slices, architecture self-review and the approved MVP golden-path manifest before artifact work. ATLAS sync plans determine test actions. At 70–75% context usage, update the handoff, checkpoint and time tracker, then revalidate the checkpoint before continuing; starting a new session is optional. The canonical playbook remains the lifecycle owner; the installed seed is a delivery snapshot.
+
+## Standing user approval — testing sign-in
+
+Recorded 2026-09-27: the user authorizes login and reauthentication whenever required by the testing process, using the configured app URL and credentials in this repository's `env.properties`. This includes the configured Oracle application and its normal identity-provider redirects. For the current environment, the app URL is `https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI`.
+
+- Attempt the normal authorized sign-in flow before asking the user to log in. Routine login does not require renewed approval.
+- Use the active checkout's configuration; keep worktree configuration synchronized with the base as authorized. Do not search unrelated repositories for credentials.
+- Clear both username and password fields before filling them once. Submit once, then inspect the actual result before deciding whether another attempt is justified.
+- Never print credentials, include them in evidence, or stage configuration files as part of recording this approval.
+- If an interactive challenge requires the user, report the exact obstacle and track the wait separately. This approval does not authorize bypassing MFA/CAPTCHA, changing passwords or security settings, or expanding business-write permissions.
