@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "observedUtc": "2026-09-28T14:53:11.528Z",
+  "branch": "codex/xdx-supplier-core-restart-20260928",
+  "baseline": "b91f6f4",
+  "checks": [
+    "Verify-AgentAppBuildStartup.ps1",
+    "verify-living-build-contract.ps1 -PolicyOnly",
+    "verify-living-build-contract.ps1 -SessionRecord docs/builds/xdx-supplier-core-restart-20260928/xdx_session_startup.json -SessionId xdx-supplier-core-restart-20260928 -Phase Startup"
+  ],
+  "source": "Executed tool receipt in current thread, exit0",
+  "acceptedRequirements": 0,
+  "totalRequirements": 8,
+  "acceptedCreates": 1,
+  "remainingCreates": 7,
+  "noNewRuntimeArtifact": true
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-core-restart-20260928",
+  "scopes": [
+    "governance",
+    "supplier",
+    "address",
+    "site",
+    "contact",
+    "optimization"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-supplier-core-restart-20260928/commands.jsonl"
+  ],
+  "failures": [],
+  "noFailuresReason": "Replacement initialized from qualified corrected baseline; inherited historical failures preserved in recovery, no replacement artifact execution yet"
+}

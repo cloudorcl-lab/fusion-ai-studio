@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-core-restart-20260928",
+  "sources": [
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/plan.md",
+      "sha256": "7683849719175a3e360104377f5e65d38292d2cd0380a610717c898fdc335cd4"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/requirement-slice-register.md",
+      "sha256": "8a3aff7ba06d4afc1c0796ccb7dd94e1e993802eb6071ae27bfd7ba677a02171"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "description": "List/search exact and contains, displayed-number resolution, scalar detail and complete paging",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R2",
+      "description": "Prepare/edit/review/exact approval, duplicate preflight, one B POST, independent GET and no replay",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R3",
+      "description": "Parent-scoped list/filter/detail/paging with verified supplier key",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R4",
+      "description": "Same-parent eight-field address, field edit/approval and direct A/native B GET verification",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R5",
+      "description": "Parent-scoped site list/filter/detail/paging and relationship display",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R6",
+      "description": "Current BU lookup, same-parent address, typed four-field exact approval and A/B persistence",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R7",
+      "description": "Parent-scoped contact list/filter/detail/paging; minimal personal data",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R8",
+      "description": "Three-field contact edit/approval and A/B persistence without accounts",
+      "status": "pending",
+      "evidence": []
+    }
+  ]
+}

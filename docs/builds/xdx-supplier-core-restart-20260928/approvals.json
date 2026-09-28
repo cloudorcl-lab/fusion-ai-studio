@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-core-restart-20260928",
+  "source": "Current user thread and original goal-prompt.txt; exact prior approvals preserved in ../xdx-supplier-core-rebuild-20260928/approvals.json",
+  "entries": [
+    {
+      "action": "Restart with fixes after purge",
+      "exactUserText": "let's stop spinning on this effort. stop, analyze, record the issue, find a fix, purge this build and restart with fixes.",
+      "scope": "Fresh replacement with unchanged Supplier Core scope",
+      "expiry": "None stated; current build",
+      "status": "authorized"
+    },
+    {
+      "action": "Purge",
+      "exactUserText": "Yes, purge local and DRAFT artifacts",
+      "status": "completed in recovery",
+      "scope": "Exact abandoned worktree/app/workflow/BO; no business deletes"
+    },
+    {
+      "action": "Build/test/login/native review",
+      "source": "Original goal and current-thread explicit diagnostic/login approvals",
+      "scope": "DRAFT authoring, live reads, exact native payload review and remaining seven creates",
+      "budget": "Eight total; one consumed; restart does not renew",
+      "exclusions": [
+        "publish",
+        "push",
+        "business update/delete",
+        "accounts",
+        "unrelated subobjects",
+        "MFA/CAPTCHA bypass"
+      ]
+    }
+  ]
+}

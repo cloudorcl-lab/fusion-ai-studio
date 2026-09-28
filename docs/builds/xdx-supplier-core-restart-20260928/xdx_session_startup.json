@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-core-restart-20260928",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-restart-20260928",
+  "branch": "codex/xdx-supplier-core-restart-20260928",
+  "phase": "Startup",
+  "startedUtc": "2026-09-28T14:52:22.972Z",
+  "checkpointUtc": "2026-09-28T14:53:11.528Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "5869115b82a8a693c0681e5a4daad51e8bfb23b313b0b37a5e3d9671125b4617"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "302c746732468a087532e007dee7e1791e6535dbdc5a0301208d5aaf1d6d84b8"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "18cdce13dc9624e4b3e36f8c379de42e5cdccfeb0a38d43982c450e0c61b2ee2"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "479f392f30e2eee9201e46ec67780a720c1c4452ca41d304257ac3e9290b6ef0"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "88feb52e92ab9c34159803f02c6847ad167be64e73d3a1e5034ae3396d004870"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "928b38f230a7627ef6024673b835de7d46cf8fa3d428a6a58f1f87a572fd426b"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "7761cb0b0d9382e3c0bcc2072997684f22eed1af06d218888bafd1687a3543ea"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "4da24184ae3854bdc6ae27e78616639a68272a63a1ce5528ee94f0c2aa1f919b"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "sha256": "2c0595385ca0f5ca27bef340188fe082fb25c3f6780a8d27d5774918a55f9d74"
+    }
+  ],
+  "reviewNotes": "Fresh retry from committed fixes; reviewed canonical lifecycle, five object contracts and preserved budget; no runtime acceptance inferred",
+  "objectReferences": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "release": "26C; API11.13.18.05; current saved target revalidation before execution"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "release": "26C; API11.13.18.05; current saved target revalidation before execution"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "release": "26C; API11.13.18.05; current saved target revalidation before execution"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "release": "26C; API11.13.18.05; current saved target revalidation before execution"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "release": "26C; API11.13.18.05; current saved target revalidation before execution"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-core-restart-20260928/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-supplier-core-restart-20260928/failure-ledger.json",
+  "learningTaskId": "xdx-supplier-core-restart-20260928",
+  "timeTracker": "docs/builds/xdx-supplier-core-restart-20260928/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Canonical lifecycle and object lifecycle1.2.0",
+      "status": "planned",
+      "reason": "Defined in plan/intake; execute scoped requirements before claiming completion",
+      "evidence": []
+    },
+    {
+      "id": "intake",
+      "rule": "Canonical lifecycle and object lifecycle1.2.0",
+      "status": "planned",
+      "reason": "Defined in plan/intake; execute scoped requirements before claiming completion",
+      "evidence": []
+    },
+    {
+      "id": "authority",
+      "rule": "Canonical lifecycle and object lifecycle1.2.0",
+      "status": "planned",
+      "reason": "Existing original goal/restart/login/native approval authority; see approvals.json; remaining seven create slots",
+      "evidence": []
+    },
+    {
+      "id": "objects",
+      "rule": "Canonical lifecycle and object lifecycle1.2.0",
+      "status": "planned",
+      "reason": "Defined in plan/intake; execute scoped requirements before claiming completion",
+      "evidence": []
+    },
+    {
+      "id": "verification",
+      "rule": "Canonical lifecycle and object lifecycle1.2.0",
+      "status": "planned",
+      "reason": "Defined in plan/intake; execute scoped requirements before claiming completion",
+      "evidence": []
+    },
+    {
+      "id": "timing",
+      "rule": "Canonical lifecycle and object lifecycle1.2.0",
+      "status": "planned",
+      "reason": "Defined in plan/intake; execute scoped requirements before claiming completion",
+      "evidence": []
+    },
+    {
+      "id": "cleanup",
+      "rule": "Canonical lifecycle and object lifecycle1.2.0",
+      "status": "planned",
+      "reason": "Defined in plan/intake; execute scoped requirements before claiming completion",
+      "evidence": []
+    },
+    {
+      "id": "delivery",
+      "rule": "Canonical lifecycle and object lifecycle1.2.0",
+      "status": "planned",
+      "reason": "Defined in plan/intake; execute scoped requirements before claiming completion",
+      "evidence": []
+    }
+  ],
+  "unresolved": [
+    "All eight requirement acceptances",
+    "Saved BO and native/configured proof",
+    "Optimization and Closeout"
+  ],
+  "metrics": {
+    "tokens": "Per-restart token split unavailable",
+    "aiUnits": "No replacement runtime executed",
+    "timingGaps": "Pre-initialization unwrapped review recorded as unavailable, not zero"
+  }
+}
