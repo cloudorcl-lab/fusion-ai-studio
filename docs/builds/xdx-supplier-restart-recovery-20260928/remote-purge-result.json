@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "observedUtc": "2026-09-28T14:47:28.786Z",
+  "method": "Authorized native UI deletions; independent subsequent catalog navigation/reload and exact-name filters",
+  "targets": [
+    {
+      "kind": "app",
+      "code": "XDX_SUPPLIER_CORE",
+      "id": "300000334161225",
+      "before": "Draft",
+      "after": "No applications found"
+    },
+    {
+      "kind": "workflow",
+      "code": "XDX_SUPPLIER_CORE",
+      "id": "300000334161224",
+      "before": "Draft",
+      "after": "No workflows found"
+    },
+    {
+      "kind": "businessObject",
+      "code": "XDX_SUPPLIER_CORE_SUPPLIERS",
+      "id": "300000334163769",
+      "after": "No business objects match your search criteria."
+    }
+  ],
+  "browserTab": "676648813",
+  "businessRecordsDeleted": 0,
+  "limitations": [
+    "Receipt summarizes observed UI tool outputs; full whole-tenant reverse-consumer inventory not established.",
+    "Private archived source exports support recreation, not restoration of original server identities."
+  ]
+}

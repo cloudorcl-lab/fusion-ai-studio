@@ -210,6 +210,53 @@
         "reviewer": "root",
         "result": "pass"
       }
+    },
+    {
+      "id": "R05",
+      "observedUtc": "2026-09-28T14:45:39.502Z",
+      "scope": "purge",
+      "blocks": [
+        "purge",
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Git configuration, whitespace and Windows cleanup errors during recovery; debounced browser controls became stale",
+      "cause": "Platform-specific exclusions/attributes and nonterminating shell errors; asynchronous UI search",
+      "correction": "Used existing excludes file, corrected whitespace, checked exact residual paths and cleared blocking attributes, enabled terminating errors, verified final absence, and replaced exact search text",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-restart-recovery-20260928/cleanup-failures.json",
+          "sha256": "48996394bf1a3c3b271abca429b60d2d8eb404a59754aa853c9517f1186b58a3"
+        }
+      ],
+      "evidenceGap": "Contemporaneous summary; original native tool outputs retained in thread",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Terminating cleanup errors; verified preservation and exact paths; independent path/ref/registration absence; inspect settled UI state",
+        "reason": "Windows attributes and live UI transitions depend on host state; pure tests cannot establish actual removal"
+      },
+      "verification": {
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-restart-recovery-20260928/local-purge-result.json",
+            "sha256": "adc60dfae77d7f2afd37b556ae235af9321d931181a619906f5e97e8a0c96de6"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-restart-recovery-20260928/cleanup-failures.json",
+            "sha256": "48996394bf1a3c3b271abca429b60d2d8eb404a59754aa853c9517f1186b58a3"
+          }
+        ],
+        "sources": [
+          {
+            "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+            "sha256": "ff943c982159cf9d903aa385d2e728e6dfa3eb82fa0334a5730f76d86f4c79ec"
+          }
+        ],
+        "command": "Root readback: exact worktree path and admin path absent; worktree list only surviving base; branch -d succeeded; browser exact filter replacement observed",
+        "reviewer": "root",
+        "result": "pass"
+      }
     }
   ]
 }

@@ -5,7 +5,7 @@
   "branch": "TestingWFBuildTools",
   "phase": "Startup",
   "startedUtc": "2026-09-28T14:28:12.6175352Z",
-  "checkpointUtc": "2026-09-28T14:28:12.6175352Z",
+  "checkpointUtc": "2026-09-28T14:45:39.507Z",
   "reads": [
     {
       "path": "AGENTS.md",
@@ -17,7 +17,7 @@
     },
     {
       "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
-      "sha256": "83209519470db5970f23202690ce7dc023f3a40563799774c63d20a240bfd6a4"
+      "sha256": "ff943c982159cf9d903aa385d2e728e6dfa3eb82fa0334a5730f76d86f4c79ec"
     },
     {
       "path": "docs/lessons/objects/README.md",

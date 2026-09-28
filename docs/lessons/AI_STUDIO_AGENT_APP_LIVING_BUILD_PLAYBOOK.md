@@ -1022,6 +1022,8 @@ contract.
 
 Use the versioned [object lifecycle build model](../build-models/object-lifecycle/README.md) for the execution prompt and plan. Fill and pin the selected version in the tracked build directory. The completed plan owns scope; this playbook owns lifecycle. For cleanup, use the [artifact purge model](../build-models/artifact-purge/README.md). Do not maintain a second kickoff prompt here.
 
+For approved Windows worktree purges, use terminating PowerShell errors and verify path, registration and branch absence separately before writing PASS. Normal Git removal can unregister a checkout while leaving readonly directories or a hidden `.git` pointer. After preserved-state and exact-path checks, clear only the blocking attributes on those owned residuals and remove them with native PowerShell. Do not infer completion from process exit alone. See [recovery evidence](../builds/xdx-supplier-restart-recovery-20260928/cleanup-failures.json).
+
 
 ## Verified AI Studio references
 

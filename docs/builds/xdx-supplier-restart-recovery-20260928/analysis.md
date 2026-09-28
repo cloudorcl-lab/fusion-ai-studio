@@ -18,3 +18,5 @@ Surviving base: C:/Users/dasu/Documents/GitHub/fusion-ai-studio-1, TestingWFBuil
 
 Promotion boundary: restricted shell denied writing the protected base .agents skill path. Copy stopped at hash verification; no target deletion occurred. The exact source inventory will be retried with authorized host filesystem access, preserving source hashes and excluding credentials/product artifacts.
 Current recovery: user confirmed purge local and Studio artifacts, preserve accepted supplier and carry consumed budget. Exact confirmation: Yes, purge local and DRAFT artifacts. Purge model1.0.1 governs dispositions; no business-record deletion or remote Git mutation authorized.
+
+Recovery qualification passed and fixes committed locally at c61ba7b. Exact native app and workflow deletion confirmed. BO deletion returned no matching object. Whole-tenant reverse-consumer completeness was not independently established; this limitation must not be described as zero-consumer proof. The user explicitly authorized the three named dedicated build artifacts. Local path, admin path and branch absence were separately verified after bounded Windows residual cleanup.

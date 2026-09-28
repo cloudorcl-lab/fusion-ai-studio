@@ -1,0 +1,11 @@
+{
+  "archive": "0e64efee7f05929d869de90684abed1053ac9a4a08ec8250c9c1f9adfbcc67c7",
+  "status": "PASS",
+  "businessRecordsDeleted": 0,
+  "observedUtc": "2026-09-28T14:42:37.5752576Z",
+  "targets": [
+    "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260928",
+    "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.git\\worktrees\\xdx-supplier-core-rebuild-20260928"
+  ],
+  "correction": "Normal Git removal unregistered checkout but left readonly directory residuals; verified confined non-reparse residuals and cleared readonly attributes before native removal; hidden .git pointer also cleared and removed; exact worktree/admin paths and local branch now absent. Earlier shell emitted nonterminating hidden-file error; completion receipt finalized only after final absence check."
+}
