@@ -2,6 +2,7 @@
 param([Parameter(Mandatory)][string]$ZipPath)
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path -Parent $PSScriptRoot
+& (Join-Path $PSScriptRoot 'test-agent-app-build-packet-models.ps1') -ZipPath $ZipPath
 $fixture = Join-Path ([IO.Path]::GetTempPath()) ('xdx-packet-test-' + [guid]::NewGuid())
 $prefix = [IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd([IO.Path]::DirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar
 if (-not [IO.Path]::GetFullPath($fixture).StartsWith($prefix,[StringComparison]::OrdinalIgnoreCase)) { throw 'Unsafe fixture' }
@@ -64,7 +65,9 @@ try {
     [IO.File]::WriteAllBytes($agentsPath,$agentsBytes)
     [IO.File]::WriteAllBytes($manifestPath,$manifestBytes)
   }
-  foreach ($dependency in @('scripts/build-timing-report.cjs','scripts/screen-model-candidate.cjs','scripts/build-evidence-status.cjs',
+  foreach ($dependency in @('tests/test-workflow-runtime-path-candidate.cjs','tests/test-workflow-runtime-path-recording.cjs','tests/test-workflow-runtime-path-metadata.cjs','tests/fixtures/workflow-runtime-path-retained.json',
+    'scripts/workflow-test-continuation.cjs','scripts/tests/workflow-test-continuation.cjs',
+    'scripts/build-timing-report.cjs','scripts/screen-model-candidate.cjs','scripts/build-evidence-status.cjs',
     'scripts/refresh-test-report-provenance.cjs','scripts/capture-native-evidence.cjs',
     'tests/test-build-timing-report.cjs','tests/test-build-evidence.cjs','tests/test-report-provenance.cjs','tests/test-native-evidence.cjs')) {
     $relative = 'agent-app-build-startup/repository-seed/' + $dependency
@@ -100,7 +103,8 @@ try {
     & pwsh -NoProfile -File (Join-Path $install $command)
     if ($LASTEXITCODE -ne 0) { throw "Activated test failed: $command" }
   }
-  foreach ($command in @('tests/test-session-compliance.cjs','scripts/tests/verify-agentic-app-query-contract.cjs','tests/test-affected-workflow-tests.cjs','tests/test-measure-build-command.cjs','tests/test-workflow-terminal.cjs',
+  foreach ($command in @('tests/test-workflow-runtime-path-candidate.cjs','tests/test-workflow-runtime-path-recording.cjs','tests/test-workflow-runtime-path-metadata.cjs',
+    'scripts/tests/workflow-test-continuation.cjs','tests/test-session-compliance.cjs','scripts/tests/verify-agentic-app-query-contract.cjs','tests/test-affected-workflow-tests.cjs','tests/test-measure-build-command.cjs','tests/test-workflow-terminal.cjs',
     'tests/test-build-timing-report.cjs','tests/test-build-evidence.cjs','tests/test-report-provenance.cjs','tests/test-native-evidence.cjs')) {
     & node (Join-Path $install $command)
     if ($LASTEXITCODE -ne 0) { throw "Activated test failed: $command" }

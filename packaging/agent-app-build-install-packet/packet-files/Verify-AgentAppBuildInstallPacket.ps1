@@ -15,23 +15,49 @@ if ($manifest.schemaVersion -ne 1 -or $manifest.packetName -ne 'agent-app-build-
 if (-not $manifest.payload -or $manifest.payload.Count -eq 0) { throw 'Packet manifest has no payload entries.' }
 $listedPaths = @($manifest.payload | ForEach-Object { $_.path })
 $seedPrefix = 'agent-app-build-startup/repository-seed/'
+$modelIndex = 'docs/build-models/object-lifecycle/README.md'
+if (($seedPrefix + $modelIndex) -notin $listedPaths) { throw "Missing required seed payload: $modelIndex" }
+$modelIndexText = [IO.File]::ReadAllText((Join-Path $root ($seedPrefix + $modelIndex)))
+$modelMatches = [regex]::Matches($modelIndexText, '(?m)^Current version: \*\*(\d+\.\d+\.\d+)\*\*')
+if ($modelMatches.Count -ne 1) { throw 'Object lifecycle index must declare exactly one current version.' }
+$objectLifecycleVersion = $modelMatches[0].Groups[1].Value
+if ($manifest.models.objectLifecycle -cne $objectLifecycleVersion) { throw 'Object lifecycle manifest version differs from canonical current version.' }
+$selectedModelFiles = @('plan-template.md','execution-prompt.md','supplier-worked-example.md') | ForEach-Object { "docs/build-models/object-lifecycle/v$objectLifecycleVersion/$_" }
 foreach ($relative in @(
   'AGENTS.md', 'docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md',
   'docs/handoffs/ACTIVE_HANDOFF.md', 'scripts/verify-living-build-contract.ps1',
   'tests/test-living-build-contract.ps1', 'scripts/verify-session-compliance.cjs', 'tests/test-session-compliance.cjs',
   'scripts/verify-agentic-app-query-contract.cjs','scripts/tests/verify-agentic-app-query-contract.cjs',
+  'scripts/verify-bo-search-contract.cjs','scripts/verify-bo-search-contract.test.cjs',
+  'scripts/verify-build-learning.cjs','scripts/tests/verify-build-learning.cjs',
+  'scripts/workflow-test-continuation.cjs','scripts/tests/workflow-test-continuation.cjs',
+  'scripts/parse-aistudio-json.cjs','scripts/tests/parse-aistudio-json.cjs',
+  'scripts/update-build-learning.cjs','scripts/tests/update-build-learning.cjs',
   'scripts/plan-affected-workflow-tests.cjs','scripts/measure-build-command.cjs',
   'scripts/build-timing-report.cjs','scripts/screen-model-candidate.cjs','scripts/build-evidence-status.cjs',
   'scripts/refresh-test-report-provenance.cjs','scripts/capture-native-evidence.cjs',
+    'tests/test-workflow-runtime-path-candidate.cjs','tests/test-workflow-runtime-path-recording.cjs','tests/test-workflow-runtime-path-metadata.cjs','tests/fixtures/workflow-runtime-path-retained.json',
     'tests/test-affected-workflow-tests.cjs','tests/test-measure-build-command.cjs','tests/test-workflow-terminal.cjs',
     'tests/test-build-timing-report.cjs','tests/test-build-evidence.cjs','tests/test-report-provenance.cjs','tests/test-native-evidence.cjs',
-    'docs/lessons/objects/README.md','docs/build-models/object-lifecycle/v1.1.0/execution-prompt.md','docs/build-models/object-lifecycle/v1.1.0/plan-template.md',
+    'docs/lessons/objects/README.md',
   'docs/build-models/artifact-purge/v1.0.1/purge-prompt.md', '.agents/skills/aistudio/SKILL.md',
   '.agents/skills/aistudio/scripts/aistudio.js',
   '.agents/skills/aistudio/references/prompts/index.md',
   '.agents/skills/aistudio/resources/app-samples/index.md'
-)) {
+) + $selectedModelFiles) {
   if (($seedPrefix + $relative) -notin $listedPaths) { throw "Missing required seed payload: $relative" }
+}
+
+foreach ($relative in $selectedModelFiles) {
+  $modelText = [IO.File]::ReadAllText((Join-Path $root ($seedPrefix + $relative)))
+  $versions = [regex]::Matches($modelText, '(?m)^Model version: \*\*(\d+\.\d+\.\d+)\*\*')
+  if ($versions.Count -ne 1 -or $versions[0].Groups[1].Value -cne $objectLifecycleVersion) { throw "Object lifecycle model metadata mismatch: $relative" }
+  $filename = [IO.Path]::GetFileName($relative)
+  if (-not $modelIndexText.Contains("(v$objectLifecycleVersion/$filename)")) { throw "Object lifecycle current index link missing: $relative" }
+  if ($filename -eq 'execution-prompt.md') {
+    $promptVersions = [regex]::Matches($modelText, '(?m)^MODEL_VERSION=(\d+\.\d+\.\d+)\r?$')
+    if ($promptVersions.Count -ne 1 -or $promptVersions[0].Groups[1].Value -cne $objectLifecycleVersion) { throw 'Object lifecycle execution prompt version mismatch.' }
+  }
 }
 if (@($listedPaths | Select-Object -Unique).Count -ne $listedPaths.Count) { throw 'Duplicate packet manifest paths.' }
 $actualPaths = @(Get-ChildItem -LiteralPath $root -Recurse -File -Force | ForEach-Object {

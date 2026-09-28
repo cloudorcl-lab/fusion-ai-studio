@@ -1,0 +1,14 @@
+{
+  "observedUtc": "2026-09-28T14:34:54.671Z",
+  "errors": [
+    {
+      "error": "Read attempted nonexistent scripts/update-build-learning-ledger.cjs",
+      "correction": "rg found actual scripts/update-build-learning.cjs; read succeeded"
+    },
+    {
+      "error": "CUA purgeTab binding absent after context recovery",
+      "correction": "Inventoried browser; existing tab held by stopped worker session; opened dedicated authorized tab 676648813 successfully"
+    }
+  ],
+  "prevention": "Discover filenames and browser ownership before referring to summarized handles; no mutations were dispatched by failed calls."
+}

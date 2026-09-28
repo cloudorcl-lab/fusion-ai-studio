@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-09-28T08:37:16.339Z",
+  "result": "PASS native positional paging",
+  "workflowVersion": 86517154,
+  "appVersion": 1,
+  "appETag": 17,
+  "sourceReview": "authoring/position-save-review.json",
+  "freshPreview": "Browser reload before Run; no earlier Query in new preview",
+  "initial": {
+    "count": 25,
+    "offset": 0,
+    "hasMore": true,
+    "next": "Show suppliers starting at row 26"
+  },
+  "firstQuery": {
+    "command": "Show suppliers starting at row 26",
+    "count": 25,
+    "offset": 25,
+    "hasMore": true,
+    "firstNumber": "1277",
+    "lastNumber": "1302",
+    "excludedNumber": "1285",
+    "firstId": "300000051065858",
+    "lastId": "300000101110664",
+    "next": "Show suppliers starting at row 51"
+  },
+  "secondQuery": {
+    "command": "Show suppliers starting at row 51",
+    "count": 25,
+    "offset": 50,
+    "hasMore": true,
+    "firstNumber": "1303",
+    "lastNumber": "1328",
+    "excludedNumber": "1305",
+    "firstId": "300000103023107",
+    "lastId": "300000116893107",
+    "next": "Show suppliers starting at row 76"
+  },
+  "businessPost": false,
+  "limitations": [
+    "Visible native results, not raw node trace",
+    "Does not claim scenario semantic replay or final app acceptance"
+  ]
+}

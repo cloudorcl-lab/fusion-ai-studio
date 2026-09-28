@@ -12,6 +12,9 @@ const HELP = `Usage: node scripts/measure-build-command.cjs
   --output <cwd-relative-or-contained-absolute.jsonl>
   --task <id> --activity <id> --phase <name>
   --category <build|test|repair|coordination|wait|closeout> --label <safe-label>
+  --learning-ledger <repository-relative.json> --learning-scope <scope>
+  [--learning-task <ledger-task-id>]
+  [--continuation-contract <contained-contract.json>]
   [--parent <activity-id>] [--dependency <id>] [--overlap <id>]
   [--activity-kind <execution|review|evidence-capture|coordination|context-recovery|human-wait>]
   [--rerun-reason <safe-text>] -- <executable> [arguments...]
@@ -23,6 +26,24 @@ has a unique runId; group events by runId, not adjacent lines. Start without end
 means outcome unknown, not failure or success. Concurrent appends use a bounded
 exclusive lock; a stale .lock must be investigated manually. No process-tree
 management, browser keep-alive, token or AI Unit collection is performed.
+Build/test require Execute learning clearance; closeout requires Closeout.
+Repair requires structural Startup clearance and does not authorize business
+creates. Coordination/wait do not require learning flags. Ledger task defaults
+to --task. A blocked learning gate never launches the child.
+Initialize an empty receipt file during intake and register its repository-relative
+path in ledger.commandReceipts. The selected --output must be registered there.
+Actual AI Studio node CLI calls also require readable credential-cache metadata
+and access before launch. Permission denial requires host credential access;
+this wrapper never changes permissions or reads credential contents.
+Optional --continuation-contract recognizes only an explicitly bound single
+run-workflow-test with pending local hybrid judging. It retains exit 1, archives
+validated evidence and records needs-judge, never PASS. Category must be test or repair.
+Contract fields: kind=workflow-test-needs-local-judge-v1, testName, testFile,
+workflowCode, workflowStatus, workflowVersion, dataSource, report, judgeRequest.
+Paths are confined repository-relative files; report/request parents must exist.
+Use outcome with the same run ID and attached report as evidence to resolve it.
+Unresolved continuations block PhaseExit/Closeout. Report locks are exclusive;
+investigate stale .learning-lock files, never automatically remove another owner.
 
 Additional modes (same command owner):
   report --input <contained.jsonl> [--input <contained.jsonl> ...]
@@ -39,7 +60,7 @@ neither a zero nor nonzero process exit proves semantic acceptance.
 function parseArgs(argv) {
   if (argv.length === 1 && argv[0] === '--help') return { help: true };
   const values = { dependency: [], overlap: [] };
-  const single = new Set(['output', 'task', 'activity', 'phase', 'category', 'label', 'parent', 'rerun-reason', 'activity-kind']);
+  const single = new Set(['output', 'task', 'activity', 'phase', 'category', 'label', 'parent', 'rerun-reason', 'activity-kind', 'learning-ledger', 'learning-scope', 'learning-task', 'continuation-contract']);
   let split = -1;
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--') { split = i; break; }
@@ -112,9 +133,60 @@ function safeErrorCode(error) {
   return error?.timingStage === 'lock-acquisition' ? `${code}, lock-acquisition` : code;
 }
 
+function learningClearance(options, output) {
+  if (['coordination', 'wait'].includes(options.category)) return true;
+  const phases = { build: 'Execute', test: 'Execute', closeout: 'Closeout', repair: 'Startup' };
+  let errors;
+  if (!phases[options.category] || !options['learning-ledger'] || !options['learning-scope']) {
+    errors = ['Execution requires a supported category, --learning-ledger and --learning-scope'];
+  } else {
+    try {
+      const result = require('./verify-build-learning.cjs').verify(process.cwd(), options['learning-ledger'], {
+        phase: phases[options.category], scope: options['learning-scope'], taskId: options['learning-task'] || options.task,
+      });
+      if (result?.ok === true && Array.isArray(result.errors) && result.errors.length === 0) {
+        const ledger = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), options['learning-ledger']), 'utf8').replace(/^\uFEFF/, ''));
+        const relative = path.relative(fs.realpathSync(process.cwd()), output).split(path.sep).join('/');
+        if (Array.isArray(ledger.commandReceipts) && ledger.commandReceipts.includes(relative)) return true;
+        errors = ['Selected output must be an existing receipt registered in ledger.commandReceipts'];
+      } else errors = Array.isArray(result?.errors) && result.errors.length ? result.errors : ['Learning verifier returned no valid clearance'];
+    } catch { errors = ['Learning verifier unavailable; execution withheld']; }
+  }
+  // Verifier diagnostics only: never serialize child arguments, environment or output.
+  process.stderr.write('Learning gate blocked child execution:\n');
+  for (const error of errors.slice(0, 10)) process.stderr.write(`- ${String(error).replace(/[\x00-\x1f\x7f]/g, ' ').slice(0, 240)}\n`);
+  if (errors.length > 10) process.stderr.write('- Additional learning errors omitted; inspect the ledger verifier.\n');
+  return false;
+}
+
+function checkCredentialAccess(options, { fsApi = fs, homeDir = os.homedir(), cwd = process.cwd() } = {}) {
+  const executable = path.win32.basename(path.basename(options.executable || '')).toLowerCase();
+  if (!['node', 'node.exe'].includes(executable) || !Array.isArray(options.args)) return { ok: true, checked: false };
+  const expected = path.resolve(cwd, '.agents/skills/aistudio/scripts/aistudio.js');
+  const same = candidate => process.platform === 'win32' ? candidate.toLowerCase() === expected.toLowerCase() : candidate === expected;
+  const index = options.args.findIndex(arg => typeof arg === 'string' && same(path.resolve(cwd, arg)));
+  if (index < 0 || options.args[index + 1] === 'help' || options.args.slice(index + 1).some(arg => ['--help', '-h'].includes(arg))) return { ok: true, checked: false };
+  const cache = path.join(homeDir, '.config', 'aistudio-cli', 'credentials.json');
+  try {
+    fsApi.lstatSync(cache);
+    fsApi.accessSync(cache, fs.constants.R_OK);
+    return { ok: true, checked: true };
+  } catch (error) {
+    if (error.code === 'ENOENT') return { ok: true, checked: true, cacheMissing: true };
+    return { ok: false, checked: true, code: ['EACCES', 'EPERM'].includes(error.code) ? 'HOST_CREDENTIAL_ACCESS_REQUIRED' : 'CREDENTIAL_ACCESS_CHECK_FAILED' };
+  }
+}
+
 async function measure(options) {
   const output = scopedOutput(options.output);
+  if (!learningClearance(options, output)) return 65;
+  const access = checkCredentialAccess(options);
+  if (!access.ok) {
+    process.stderr.write(`${access.code}: AI Studio child execution withheld; use the authorized host credential-access context.\n`);
+    return 77;
+  }
   const startedUtc = new Date().toISOString();
+  const continuationSession = options['continuation-contract'] ? require('./workflow-test-continuation.cjs').begin(process.cwd(), options, startedUtc) : null;
   const start = process.hrtime.bigint();
   const base = {
     schemaVersion: 1, runId: randomUUID(), taskId: options.task,
@@ -126,7 +198,8 @@ async function measure(options) {
     startedUtc,
   };
   const metrics = { tokens: null, aiUnits: null, workflowElapsedMs: null, availability: 'Not collected by command timing wrapper' };
-  appendEvent(output, { ...base, event: 'start', status: 'running', metrics });
+  try { appendEvent(output, { ...base, event: 'start', status: 'running', metrics }); }
+  catch (error) { continuationSession?.release(); throw error; }
   let finished = false;
   let child;
   let interrupted = null;
@@ -159,16 +232,27 @@ async function measure(options) {
       } catch { spawnError = 'SPAWN_ERROR'; resolve({ code: null, signal: null }); }
     });
     const exitCode = interrupted ? signalCode(interrupted) : spawnError ? 127 : result.signal ? signalCode(result.signal) : result.code;
+    const endedUtc = new Date().toISOString();
+    let continuation = null;
+    if (continuationSession) {
+      try {
+        continuation = require('./workflow-test-continuation.cjs').finish(continuationSession,
+          { childExitCode: result.code, signal: result.signal, interruptSignal: interrupted, spawnError }, endedUtc,
+          path.relative(process.cwd(), output).split(path.sep).join('/') + '.' + base.runId + '.continuation.json', base.runId);
+      } catch { /* Unknown evidence never exempts a nonzero process. */ }
+    }
     const recorded = emit({
-      event: 'end', endedUtc: new Date().toISOString(),
+      event: 'end', endedUtc,
       status: spawnError ? 'spawn-failed' : interrupted ? 'interrupted' : result.signal ? 'signaled' : result.code === 0 ? 'succeeded' : 'failed',
       exitCode, childExitCode: result.code, signal: result.signal, interruptSignal: interrupted, spawnError,
       processStatus: spawnError ? 'spawn-failed' : interrupted ? 'interrupted' : result.signal ? 'signaled' : 'exited',
       semanticOutcome: 'unknown',
+      ...(continuation || {}),
     });
     finished = true;
     return !recorded && exitCode === 0 ? 74 : exitCode ?? 1;
   } finally {
+    continuationSession?.release();
     process.removeListener('exit', onExit);
     process.removeListener('SIGINT', onInt);
     process.removeListener('SIGTERM', onTerm);
@@ -188,4 +272,4 @@ async function main(argv) {
 }
 
 if (require.main === module) main(process.argv.slice(2)).then(code => { process.exitCode = code; });
-module.exports = { parseArgs, scopedOutput, appendEvent, measure, main };
+module.exports = { parseArgs, scopedOutput, appendEvent, measure, main, checkCredentialAccess };

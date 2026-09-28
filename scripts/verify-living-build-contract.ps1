@@ -66,6 +66,17 @@ $objectRegistryContent = Read-RequiredFile -Path $objectRegistryPath -Label 'Obj
 $skillContent = Read-RequiredFile -Path $skillPath -Label 'AI Studio skill entrypoint'
 $queryContractContent = Read-RequiredFile -Path $queryContractPath -Label 'Agentic App Query contract validator'
 $queryContractTestContent = Read-RequiredFile -Path $queryContractTestPath -Label 'Agentic App Query contract regression test'
+$searchContractContent = Read-RequiredFile -Path (Join-Path $repoRootPath 'scripts/verify-bo-search-contract.cjs') -Label 'BO search framework validator'
+$searchContractTestContent = Read-RequiredFile -Path (Join-Path $repoRootPath 'scripts/verify-bo-search-contract.test.cjs') -Label 'BO search framework regression tests'
+$learningContractContent = Read-RequiredFile -Path (Join-Path $repoRootPath 'scripts/verify-build-learning.cjs') -Label 'Continuous learning validator'
+$learningContractTestContent = Read-RequiredFile -Path (Join-Path $repoRootPath 'scripts/tests/verify-build-learning.cjs') -Label 'Continuous learning regression tests'
+$learningUpdateContent = Read-RequiredFile -Path (Join-Path $repoRootPath 'scripts/update-build-learning.cjs') -Label 'Transactional learning updater'
+$learningUpdateTestContent = Read-RequiredFile -Path (Join-Path $repoRootPath 'scripts/tests/update-build-learning.cjs') -Label 'Transactional learning updater tests'
+if ($agentsContent -and -not $agentsContent.Contains('Continuous failure prevention gate')) { Add-ContractFailure 'Root instructions must invoke continuous failure prevention.' }
+if ($playbookContent -and -not $playbookContent.Contains('#### Continuous failure prevention gate')) { Add-ContractFailure 'Canonical continuous failure prevention policy is missing.' }
+if ($queryContractContent -and -not $queryContractContent.Contains('...validateBoSearchContracts(workflow, businessObjects)')) {
+  Add-ContractFailure 'Mandatory workflow preflight must invoke BO search framework validation.'
+}
 
 if ($agentsContent) {
   foreach ($marker in @('-SessionRecord', '-SessionId', '-Phase Closeout')) {

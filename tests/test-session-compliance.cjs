@@ -7,9 +7,12 @@ try {
   for(const p of files){fs.mkdirSync(path.dirname(path.join(root,p)),{recursive:true});fs.writeFileSync(path.join(root,p),'current-task time-tracker.md');}
   const record={schemaVersion:1,sessionId:'current-task',repoRoot:fs.realpathSync(root),branch:'audit',phase:'Closeout',startedUtc:new Date(Date.now()-1000).toISOString(),checkpointUtc:new Date().toISOString(),objectReferences:[],noObjectsReason:'Governance fixture',reviewNotes:'Applicable timing and closeout rules reviewed',reads:files.slice(0,4).map(p=>({path:p,sha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex')})),learningRegister:files[5],timeTracker:files[4],checks:['learning','intake','authority','objects','verification','timing','cleanup','delivery'].map(id=>({id,status:'pass',rule:'Fixture rule',reason:'Fixture evidence',evidence:[files[5]]})),unresolved:[],metrics:{tokens:'Not available in fixture',aiUnits:'No workflow',timingGaps:'None'}};
   const run=(r,phase='Closeout',id='current-task')=>{fs.writeFileSync(path.join(root,'record.json'),JSON.stringify(r));return verify(root,'record.json',id,phase);};
+  record.failureLedger='docs/builds/test/failure-ledger.json'; record.learningTaskId='current-task';
+  fs.writeFileSync(path.join(root,record.failureLedger),JSON.stringify({schemaVersion:1,taskId:'current-task',scopes:['governance'],failures:[],noFailuresReason:'Isolated session-validator fixture; no build operations'}));
   assert.deepEqual(run(record),[]);
   const negative=(name,mutate,pattern)=>{const r=structuredClone(record);mutate(r);assert(run(r).some(x=>pattern.test(x)),name);};
   negative('old session',r=>r.sessionId='previous-task',/identity mismatch/);
+  negative('missing failure ledger',r=>delete r.failureLedger,/continuous-learning ledger/);
   negative('stale read',r=>r.reads[0].sha256='old',/stale reviewed/);
   negative('absent tracker',r=>r.timeTracker='missing.md',/timeTracker/);
   negative('missing obligation',r=>r.checks.pop(),/obligation/);
@@ -21,7 +24,17 @@ try {
   negative('path escape',r=>r.timeTracker='../outside.md',/timeTracker/);
   negative('wrong branch',r=>r.branch='elsewhere',/branch mismatch/);
   const planned=structuredClone(record);planned.phase='Startup';planned.checks[4].status='planned';assert.deepEqual(run(planned,'Startup'),[]);
-  console.log('Session compliance: PASS (startup/closeout positives and 11 negative cases)');
+  const ledgerPath=path.join(root,record.failureLedger), ledger=JSON.parse(fs.readFileSync(ledgerPath,'utf8'));
+  ledger.taskId='build-root'; ledger.scopes.push('runtime');
+  ledger.failures=[{id:'F1',observedUtc:new Date().toISOString(),symptom:'Open runtime failure',scope:'runtime',blocks:['runtime'],status:'open',evidenceGap:'Fixture intentionally models an unresolved runtime finding'}];
+  fs.writeFileSync(ledgerPath,JSON.stringify(ledger));
+  const worker=structuredClone(record);worker.learningTaskId='build-root';worker.learningScope='governance';
+  assert.deepEqual(run(worker),[], 'scoped worker closeout excludes unrelated runtime failure');
+  worker.learningScope='runtime';assert(run(worker).some(e=>/unresolved failure blocks/.test(e)));
+  delete worker.learningScope;assert(run(worker).some(e=>/Delegated session requires/.test(e)));
+  ledger.taskId='current-task';fs.writeFileSync(ledgerPath,JSON.stringify(ledger));
+  assert(run(record).some(e=>/Closeout requires/.test(e)), 'root closeout still rejects all unresolved failures');
+  console.log('Session compliance: PASS (startup, root/scoped closeout, identity, evidence, missing-ledger and negative cases)');
 } finally {
   const resolved=fs.realpathSync(root), temp=fs.realpathSync(os.tmpdir());
   assert(path.relative(temp,resolved).startsWith('xdx-session-contract-'));

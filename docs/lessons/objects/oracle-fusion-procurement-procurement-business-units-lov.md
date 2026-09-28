@@ -4,11 +4,13 @@
 - Collection: `/procurementBusinessUnitsLOV`; stable returned key: `ProcurementBUId`.
 - Documented/current use: GET only for authenticated BU/action lookup. The current `XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS.getall_procurementBusinessUnitsLOV` BO preserves paging and orders by BU ID/action.
 - Contract: collapse choices by exact BU ID only after checking name consistency. Lookup visibility is not supplier-site or assignment write authority. Preserve `count`, `limit`, `offset`, `hasMore`.
+- Filtered lookup contract: follow the [shared ADF find/search GET framework contract](README.md#adf-find-and-search-get-framework-contract), including explicit supported framework header for q-based BU lookup and its own known-hit/paging proof. This build selects version `4`; preserve independently justified versions. Supplier-native acceptance does not prove BU lookup.
 - Write contract: none.
 - First successful BO GET: native observed result below, retained once; raw action envelope was not exposed.
 - Evidence limits: native live lookup confirmed for CASEY.BROWN; broader data-security behavior, live duplicate-action cases and multipage behavior remain untested.
 
-Change history: 2026-09-22 — created from current server BO ETag 1; no live function execution.
+Change history: 2026-09-28 — linked the shared explicit query-framework/header policy; BU runtime acceptance remains separately required, and first-success observation is unchanged.
+2026-09-22 — created from current server BO ETag 1; no live function execution.
 2026-09-24 — retained the first already-authorized native site lookup observation below; bounded the visible distinct choice separately from the unexposed raw action envelope.
 
 ## First successful BO GET observation — 2026-09-24

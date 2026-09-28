@@ -43,6 +43,16 @@ function verify(root, recordPath, sessionId, phase) {
     } catch (e) { fail(name + ': ' + e.message); }
   }
   if (!r.reviewNotes?.trim()) fail('Missing applied-learning review notes');
+  if (!r.failureLedger || !r.learningTaskId) fail('Missing continuous-learning ledger or build task identity');
+  else {
+    try {
+      const delegated = r.learningTaskId !== r.sessionId;
+      if (delegated && !r.learningScope?.trim()) fail('Delegated session requires its registered learningScope');
+      const learningPhase = delegated && phase === 'Closeout' ? 'PhaseExit' : phase;
+      const learningResult = require('./verify-build-learning.cjs').verify(root, r.failureLedger, {phase:learningPhase, scope:r.learningScope, taskId:r.learningTaskId});
+      for (const message of learningResult.errors) fail('Learning: ' + message);
+    } catch (e) { fail('Learning gate unavailable: ' + e.message); }
+  }
   for (const name of ['learningRegister','timeTracker']) {
     try {
       const text = fs.readFileSync(local(r[name]), 'utf8');

@@ -110,6 +110,9 @@ Receipt schema: paths are repository-relative except `repoRoot`; timestamps end 
   "objectReferences": [{"path": "<selected reference>", "release": "<release>"}],
   "noObjectsReason": "<needed only when no objects are in scope>",
   "learningRegister": "docs/builds/<build-id>/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/<build-id>/failure-ledger.json",
+  "learningTaskId": "<build task identity shared by scoped workers>",
+  "learningScope": "<registered scope required for a delegated worker>",
   "timeTracker": "docs/builds/<build-id>/time-tracker.md",
   "checks": [{"id": "<obligation group>", "rule": "<canonical section>", "status": "planned", "reason": "<disposition>", "evidence": []}],
   "unresolved": ["<required action>"],
@@ -169,6 +172,37 @@ observe → capture → verify → classify → generalize → integrate → ded
 | Hand forward | Update the change log and identify any remaining risk. | Change-log row and final build handoff |
 
 ### Lesson capture schema
+
+#### Continuous failure prevention gate
+
+Learning is part of each implementation cycle, not deferred to Closeout. Maintain one machine-readable `failure-ledger.json` per active build, linked from the intake/learning register. The ledger owns failure status; narrative reviews link to it instead of maintaining competing status. All workers report failures to the coordinator immediately. Capture implementation defects, rejected assumptions, tool/environment errors, semantic QA failures and review findings, including failures caught before remote execution. Distinguish planned acceptance obligations from observed failures.
+
+Declare the approved `scopes` inventory in the ledger; unknown scope names fail the execution gate. Initialize each measured command receipt as an empty file and register its repository-relative path in `commandReceipts` before its first use. The runner rejects unregistered output paths, so later command failures cannot disappear from reconciliation merely by writing to another file.
+
+For every observed failure, before retrying or continuing affected work:
+
+1. Record a stable failure ID, observed UTC, symptom, affected scope, blocked scopes and original evidence. Preserve missing historical output as an explicit evidence gap; never reconstruct it as a verbatim receipt. Command failures must link their exact timing run IDs. Intentional negative tests require a separate expected-failure disposition with reason and evidence.
+2. Identify the smallest evidenced cause and check whether an existing canonical rule was omitted. Record the correction and audit all affected sibling routes/functions, not only the failing example. Do not promote a hypothesis as a confirmed cause.
+3. Add prevention at the existing owner: operation rules in the object registry/reference, lifecycle rules here, supported CLI usage in its skill. Prefer an automated gate or an actual-artifact regression that reproduces the failure and passes after repair. If automation is unsuitable, record why and require an explicit procedural check with evidence. A generic reminder or a log entry alone does not close the failure.
+4. Execute the focused verification, record its command, result, reviewer and SHA-256-bound source/evidence paths, and independently review material corrections. Preserve the evidence surface: local, saved BO, configured test and native app are distinct. Changing or retiring a covered source makes its current verification stale; it does not reopen the historical failure or require a ledger edit before repair. Rerun the affected focused check and attach reviewed current proof before affected execution. A verified local correction does not claim runtime acceptance.
+5. Run the learning gate before resuming affected work and at every phase exit. `Startup` validates ledger structure, safe paths and immutable evidence but permits recorded open failures and current source drift so repairs remain possible. `Execute` and `PhaseExit` reject unresolved failures or source drift only for blocked scopes matching the next scope or `*`; unrelated authorized work may continue. `Closeout` rejects every unresolved failure and all stale source verification. Invalid paths or corrupted immutable evidence still block every phase. Never waive an in-scope failure by renaming the activity or its scope.
+
+Qualify repaired build tooling with focused regressions before returning to product work. Promote reusable fixes and their dependencies into a committed baseline before starting a replacement worktree. A replacement starts a fresh current failure ledger and inherits the executable prevention checks; preserve the abandoned attempt's ledger as historical evidence rather than importing its mutable source hashes as new-build obligations. Preserve accepted business-write receipts and consumed allocations across every restart. If a corrected process failure recurs, stop the affected phase and diagnose the shared cause before adding more tooling, tests or product scope; do not let repeated gate bookkeeping displace the representative business journey.
+
+A documented workflow-test needs-judge result is a nonterminal continuation only when an explicit command-bound contract verifies fresh report, request and selected-test evidence, exact invocation and workflow identity, passing deterministic checks, and the same semantic rubric and threshold. Preserve the child exit code and archive the original bytes; never label the pending result PASS. Pending judgment permits repair and attachment work but blocks PhaseExit and Closeout. Resolve it only from attached semantic evidence bound to that exact archived run; a failed judgment remains a ledger failure. Unknown, stale or mismatched output receives no continuation exemption.
+
+Ledger updates must be transactional: write a separate candidate and run `node scripts/update-build-learning.cjs . <active-ledger> <candidate> <build-task-id>`. The updater validates Startup integrity before atomic replacement, preserves the original on rejection and checks task identity and concurrent modification. Do not edit the active ledger in place. When an external process holds a hardlink to the ledger, preserve that alias: validate a distinct candidate, write and sync a private exclusive temporary file in the same directory, recheck the original path, device/inode identity and bytes, then atomically replace only the active path. Reject symlink or path escapes, a candidate sharing the active inode, concurrent replacement or content change, and invalid evidence. Never truncate an aliased inode or remove external staging links. This supports the single-writer contract; it is not an atomic compare-and-set guarantee against arbitrary filesystem writers. Reconcile stale evidence through reviewed changes and focused verification; never refresh hashes merely to pass the gate.
+
+Required commands (run from the verified checkout):
+
+```powershell
+node scripts/verify-build-learning.cjs . docs/builds/<build-id>/failure-ledger.json Execute <affected-scope> <build-task-id>
+node scripts/verify-build-learning.cjs . docs/builds/<build-id>/failure-ledger.json PhaseExit <affected-scope> <build-task-id>
+```
+
+The session verifier requires `failureLedger` and `learningTaskId` and invokes the learning gate at Startup/Closeout. A delegated worker whose session identity differs from the build task must declare its registered `learningScope`; its scoped Closeout invokes `PhaseExit`, while the root build's Closeout always checks every failure. Worker closure cannot imply build completion. For build, test, repair and closeout command execution, use the existing timing runner with `--learning-ledger <path> --learning-scope <scope>` (and `--learning-task <build-task-id>` when different from `--task`). It runs the gate before spawning the command. `repair` permits remediation checks against open failures; it does not authorize business creates, release acceptance or resuming the failed route. Browser actions require the same pre-action gate and must be recorded manually because they do not pass through the command runner. Nonzero recorded commands must be reconciled to a failure or an evidenced intentional negative test before further ordinary execution. Semantic failures with exit code zero still require manual capture.
+
+At each slice checkpoint, compare tool/test/review outcomes against the ledger, route reusable lessons immediately, and check the sibling-function inventory. At Closeout, confirm preventive files/tests and updated governance are in the scoped local commit handed forward. This verifier cannot discover unreported semantic failures or force an agent to invoke an entrypoint; independent reconciliation and mandatory invocation remain required. Historical completed ledgers are immutable evidence, not newly failing active tasks.
 
 Use this schema in the active build checkpoint:
 
@@ -295,6 +329,7 @@ For every source:
 
 ### Runtime and authority contract
 
+- Approval inventory and original user authorization source:
 - Configured host alias, without secrets:
 - Expected authenticated identity:
 - Existing artifact codes to reconcile:
@@ -305,6 +340,16 @@ For every source:
 - Publication authority by artifact:
 - External side-effect authority:
 - Stop conditions and approver:
+
+#### Upfront approval inventory and reuse
+
+At build intake, identify all foreseeable permissions needed by the approved plan, including sign-in/reauthentication, local and DRAFT authoring, live reads, each business-write budget, diagnostic actions, publication and destructive cleanup. Read existing explicit user approvals first. Request any missing required permissions together at the start, with concrete actions and limits; do not ask again for unchanged actions already authorized. Continue independent authorized work while a required answer is pending. An unforeseen action, expanded scope or expired authorization still needs new approval before that action.
+
+Link one build-local approval inventory (for example, `approvals.json`) from the intake. Each entry records the exact user wording and its message/source reference, when it was received, permitted actions, target environment/artifact or operation, budget, validity/expiry, exclusions and revocation/supersession. Distinguish explicit user statements from the coordinator's interpretation. If a limit was not stated, record that fact instead of inventing unlimited authority. Never record credentials or rewrite later approval as authorization that existed earlier.
+
+At Startup, resumption and delegation, read this inventory alongside the current goal and scope. The session's existing `authority` obligation cites the inventory and records which entries cover the next actions. Reuse applicable approvals, including authorized login, without routine reconfirmation. Before an action, match its target, payload/operation identity where required, remaining write budget and validity to the recorded authority. New approval updates the inventory immediately and is included in the next scoped receipt.
+
+The inventory is evidence of user intent, not an executable permission grant or a substitute for platform review, authentication challenges, current business-state checks or deterministic transaction approval. A platform rejection must be respected; report the exact rejected action and reason, retain the original evidence and follow the supported review/approval path. Never use this record to bypass a rejection, MFA/CAPTCHA, or an application's required payload/revision approval. Collecting permissions upfront does not consume a write budget or authorize replay of an accepted or uncertain operation.
 
 ### Test contract
 
@@ -497,6 +542,8 @@ Normalize machine-readable fields at that boundary before presentation. In parti
 
 For conversational transactions, keep read selection separate from each transaction draft patch. Route a named parent into the active child draft explicitly, bind the declared conversation variable at its observed runtime path, and prove field-only follow-ups preserve that owner. Deterministic merge, revision, approval and attempt state must authorize writes; model reconstruction from chat history cannot replace missing state. When the UI advertises exact review, approval or create commands, normalize those full-message commands in one deterministic request owner before routing; incidental model intent or reconstructed fields must not reset the draft. Apply the same rule to supported unambiguous field-only edit commands: route by the named field, merge only its supplied value, and preserve the existing parent even when model extraction supplies a conflicting intent or parent. Test that conflict against actual serialized CODE and the conversation replay. Preserve the existing raw-command, exact-payload and revision gates. After an uncertain write attempt, every reconciliation or read-error message must preserve that prior uncertainty and distinguish "no new create submitted" from "no create ever attempted"; a pending title alone does not qualify a contradictory description.
 
+Prove reservation survival across the actual failure path before binding a write. A conversation-scoped assignment does not by itself establish persistence after an unhandled job abort or atomic exclusion between concurrent jobs. Use supported error edges and deterministic frozen-result handling where required, preserve the prior attempt identity, and test a later safe request in the same native conversation. Disabled native submission controls plus observed reserved-state preservation establish only the tested ordinary entry-channel boundary; they do not prove universal server locking, arbitrary parallel callers or unhandled-abort durability. Retain those limits and prevent automatic replay after any accepted or uncertain attempt.
+
 When an LLM derives numeric results, do not rely on prompt-only verification:
 
 1. Treat extracted values as candidates.
@@ -529,6 +576,8 @@ For app-backed workflows, route required stages using
 `$context.$app.$OraMessageHint`. Do not combine multiple app-stage behaviors in
 one generic LLM or agent prompt.
 
+Do not infer that InitDisplay state is available to the first Query from successful Query-to-Query paging. Test the advertised next-page command as the first Query in a fresh preview. When cross-stage read-state availability is unproven or not observed, a supported bounded read command may carry validated list position explicitly; derive it from the verified offset and returned count, use deterministic ordering, and preserve the original filter for filtered results. Generate the full command deterministically and display it unchanged. Native initial-to-first-Query and subsequent-page proof remains separate from file-backed semantic replay.
+
 Validate the platform's permitted app-stage terminal node types before optimizing a first-paint route. If a deterministic CODE or RETURN terminal is rejected, build the complete bounded display in code and use the smallest supported LLM or AGENT terminal as an exact pass-through. Prove the observed node path and final structure; do not reintroduce unrelated startup work to satisfy the terminal constraint.
 
 **Exit evidence:** every declared stage and intent reaches exactly one valid terminal owner, and every dependency boundary has a tested envelope.
@@ -560,6 +609,10 @@ The approved requirement register and test manifest bound ATLAS actions. Account
 ```powershell
 node .agents\skills\aistudio\scripts\aistudio.js get-workflow-test-sync-plan --file src\workflows\<workflow>.wf --recommended-batch-only true --format focused-json
 ```
+
+An unresolved state-dependent branch is a prediction, not an observed route. Keep its runtime-validation requirement explicit. Where the supported tooling permits candidate-path bootstrap, use an explicit bounded candidate tied to the exact scenario, input and workflow definition. Retain off-path breakpoints; validate the observed stage, terminal and any explicit target-branch obligation before storing the normal live binding. Reject partial or unexpected execution, ambiguous branch evidence and stale identity, including graph changes during retry recovery. Never manufacture a binding, relabel custom evidence as canonical coverage or change correct application routing to satisfy a prediction. Adoption must reconcile the observed path and its dependent recordable-data metadata; verify both canonical recognition and required replay/judgment. Tooling repairs must ship their actual-function, lifecycle and negative regressions with the install packet so future builds inherit the correction.
+
+For model-compacted recordings, follow the existing [workflow test-data envelope policy](../../.agents/skills/aistudio/references/prompts/workflow-test-authoring.md), including its compacted-collection rules. Validate compatibility with downstream request assumptions before apply; a compacted fixture is not evidence of complete live population and requires no new GET merely for documentation.
 
 After each focused action:
 
@@ -699,7 +752,7 @@ Every manual test script must name its intended surface and conversation prerequ
 
 ### Agentic App Query routes are non-suspending
 
-Before an application binds a workflow as `applicationMetadata.queryAgent`, resolve the workflow's `Query` stage target and traverse every structurally reachable root and nested edge, including `outcomes`, `convergenceTargetId` and `metadata.loopBackNodeId`. If any reachable node is `HUMAN` or `WAIT`, the application/workflow contract is incompatible. Fail local validation, save or sync preflight, phase acceptance and final-summary eligibility with a diagnostic that records the application code, workflow code, stage, offending node code and type, and the complete path.
+Before an application binds a workflow as `applicationMetadata.queryAgent`, resolve the workflow's `Query` stage target and traverse every structurally reachable root and nested edge, including `outcomes`, `convergenceTargetId`, `metadata.loopBackNodeId` and `metadata.errorNodeId`. If any reachable node is `HUMAN` or `WAIT`, the application/workflow contract is incompatible. Fail local validation, save or sync preflight, phase acceptance and final-summary eligibility with a diagnostic that records the application code, workflow code, stage, offending node code and type, and the complete path.
 
 `aiAppsCompatibleFlag`, an app-shaped trigger sent to a workflow debug runner, and passing workflow `HUMAN` or `WAIT` conversation tests do not waive this rule. Those results establish workflow-debug behavior only. Keep a suspending conversation in a standalone workflow that is not an Agentic App `queryAgent`, or redesign every app `Query` invocation to terminate through supported non-suspending nodes.
 
@@ -1010,6 +1063,10 @@ After every update:
 
 | Date | Build/evidence source | Playbook change | Verification |
 | --- | --- | --- | --- |
+| 2026-09-28 | [Stopped-build analysis and retained repair](../builds/xdx-supplier-restart-recovery-20260928/analysis.md) | Separate historical failure closure from scoped current source verification; qualify and commit reusable tooling before a replacement build. Retain bounded observed-path bootstrap, dependent metadata reconciliation and packaged regressions. | Planner40 tests and canonical InitDisplay34 checks plus7 semantic criteria passed; learning verifier21 tests and runner/continuation regressions passed. The product attempt was abandoned; no full workflow acceptance claim. |
+| 2026-09-28 | [Handled-error native diagnostic](../builds/xdx-supplier-core-rebuild-20260928/native-bo-review/handled-diagnostic-result.json) and [fresh-preview positional paging](../builds/xdx-supplier-core-rebuild-20260928/native-bo-review/position-paging-result.json) | Refine conversational attempt durability limits and first-Query cross-stage paging proof; include supported error edges in Query reachability. | Ordinary native handled-error freezing and fresh-preview pages passed; exact source preservation and local regressions retained. Current-version configured semantic replay remains pending; no universal lock, unhandled-abort or POST acceptance claim. |
+| 2026-09-28 | Supplier Core user directive after exact diagnostic approval interruption; build-local approvals inventory | Add upfront permission inventory, original-wording provenance and reuse through the existing authority obligation. Preserve new-scope and platform-review boundaries; no retroactive authorization. | Focused policy/template review and living-build Startup validation; inventory records authority, not runtime acceptance. |
+| 2026-09-28 | User-approved continuous learning intervention; [preserved attempt and corrective analysis](../builds/xdx-supplier-restart-recovery-20260928/analysis.md) | Make evidence-bound failure capture, canonical prevention, scoped resume gates and phase-exit reconciliation mandatory during implementation. Integrate session/command gates; preserve semantic failure outcomes and require registered command receipts. | Learning gate, runner, session, policy and startup regressions; independent bypass review; packaged dependency verification. The original ledger remains in the hash-verified private archive; business acceptance remains separate. |
 | 2026-09-28 | [Supplier worktree retirement audit](../builds/xdx-supplier-worktree-retirement-20260928/lesson-audit.json) | Promote previously worktree-only uncertainty wording, representation-limit reconciliation, fixture readiness, raw-output, active keep-alive and semantic-outcome refinements while retaining newer base screening/report/timing controls. | Retained commit868e10b and verified private archive; local policy/link/first-sample checks. No new tenant execution or write authority. |
 
 | 2026-09-27 | [Supplier Core pending-outcome adjudication](../builds/xdx-supplier-core-rebuild-20260926/qa-p6-pending-reconcile-wording-adjudication.json) and [reviewed repair](../builds/xdx-supplier-core-rebuild-20260926/qa-p6-pending-wording-repair-review.json) | Refined the existing conversational transaction-state owner: later error messages must preserve an uncertain prior attempt and distinguish no new create from no earlier attempt. | Independent review found contradictory deterministic wording despite safe no-replay state. Eight focused and114 total local checks passed; four-message-only preservation and DRAFT readback verified. Configured acceptance and Closeout remain separate. |

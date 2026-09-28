@@ -16,6 +16,8 @@ Sources: [GET supplier sites](https://docs.oracle.com/en/cloud/saas/procurement/
 
 ## GET operation
 
+Follow the [shared ADF find/search GET framework contract](README.md#adf-find-and-search-get-framework-contract) for every filtered function and its consumers. This build selects explicit header version `4`; retain any independently justified supported version. The supplier native repair does not prove this resource's other query paths.
+
 Parent identity follows the [Suppliers GET key contract](oracle-fusion-procurement-suppliers.md#get-operations): a displayed SupplierNumber must resolve to SupplierId before this child path is constructed. Preserve the selected supplier and reject unresolved or ambiguous number references.
 
 The collection operation ID is `getall_suppliers-sites`. Resolve the parent supplier first. The local BO exposes that parent as `suppliers_Id`; no sample ID is a valid default.
@@ -152,6 +154,7 @@ The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierSiteId 
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-28 | [Shared query-framework policy and supplier-only native repair](README.md#adf-find-and-search-get-framework-contract) | Link all filtered GET uses to the explicit-header and known-hit regression owner; no new supplier-sites runtime proof or first-success sample change is claimed. |
 | 2026-09-27 | Rebuild sites627/630, numeric-BU requests and independent GET | Corroborated generated site IDs and exact parent/address/BU relationships; retained decimal-string response boundary and distinguished derived Address from four intended fields. |
 | 2026-09-25 | Actual saved CreateSite probe and independent persisted GetSite, site 300000333814509 | Corroborated generated SupplierSiteId, four-field numeric-BU request and same-chain relationships; recorded observed decimal-string response keys without request coercion. Immutable first GET preserved. |
 | 2026-09-25 | Supplier Core number404 repair and user-confirmed six-step manual query acceptance | Link parent-number resolution to the Suppliers GET owner; no new child API or write behavior claimed. |

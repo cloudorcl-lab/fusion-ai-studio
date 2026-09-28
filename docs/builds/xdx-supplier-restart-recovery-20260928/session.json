@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-restart-recovery-20260928",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Startup",
+  "startedUtc": "2026-09-28T14:28:12.6175352Z",
+  "checkpointUtc": "2026-09-28T14:28:12.6175352Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "800689af2f754ffe3d0a619231411408d0302d56238d201c7bb202ccd0404ffd"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "f25a8fd0a7d6813e6fdd8589691011ec9f96720a0e592eef2dafb9a2c7e6206a"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "83209519470db5970f23202690ce7dc023f3a40563799774c63d20a240bfd6a4"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "1e2e2310c22421cd90ad896a43669a7b95e5792a077693955eda05c56787a008"
+    }
+  ],
+  "reviewNotes": "Current canonical source drift rule, purge model, authority and preservation reviewed; no business API execution in recovery",
+  "objectReferences": [],
+  "noObjectsReason": "Artifact metadata retirement and tooling recovery only; business records preserved",
+  "learningRegister": "docs/builds/xdx-supplier-restart-recovery-20260928/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-supplier-restart-recovery-20260928/failure-ledger.json",
+  "learningTaskId": "xdx-supplier-restart-recovery-20260928",
+  "timeTracker": "docs/builds/xdx-supplier-restart-recovery-20260928/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Canonical lifecycle and artifact purge model1.0.1",
+      "status": "planned",
+      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
+      "evidence": []
+    },
+    {
+      "id": "intake",
+      "rule": "Canonical lifecycle and artifact purge model1.0.1",
+      "status": "planned",
+      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
+      "evidence": []
+    },
+    {
+      "id": "authority",
+      "rule": "Canonical lifecycle and artifact purge model1.0.1",
+      "status": "planned",
+      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
+      "evidence": []
+    },
+    {
+      "id": "objects",
+      "rule": "Canonical lifecycle and artifact purge model1.0.1",
+      "status": "planned",
+      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
+      "evidence": []
+    },
+    {
+      "id": "verification",
+      "rule": "Canonical lifecycle and artifact purge model1.0.1",
+      "status": "planned",
+      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
+      "evidence": []
+    },
+    {
+      "id": "timing",
+      "rule": "Canonical lifecycle and artifact purge model1.0.1",
+      "status": "planned",
+      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
+      "evidence": []
+    },
+    {
+      "id": "cleanup",
+      "rule": "Canonical lifecycle and artifact purge model1.0.1",
+      "status": "planned",
+      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
+      "evidence": []
+    },
+    {
+      "id": "delivery",
+      "rule": "Canonical lifecycle and artifact purge model1.0.1",
+      "status": "planned",
+      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
+      "evidence": []
+    }
+  ],
+  "unresolved": [
+    "Qualified committed baseline",
+    "Exact artifact/local purge",
+    "Fresh restart from committed fixes"
+  ],
+  "metrics": {
+    "tokens": "Goal aggregate not used as task allocation",
+    "aiUnits": "No recovery model execution",
+    "timingGaps": "Earlier unwrapped intervals retained as unavailable"
+  }
+}

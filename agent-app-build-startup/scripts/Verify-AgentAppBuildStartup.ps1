@@ -9,6 +9,7 @@ $required = @(
   'docs/operations/CONTEXT_RESET.md','docs/operations/TIME_TRACKER.md',
   'docs/operations/AISTUDIO_ATLAS.md','templates/intake-and-learning-register.md',
   'templates/requirement-slice-register.md','templates/golden-path-test-manifest.md',
+  'templates/failure-ledger.json',
   'templates/checkpoint.md','templates/delivery-receipt.md',
   'templates/active-handoff.md','templates/dependency-inventory.md','templates/time-tracker.md',
   'docs/operations/PROJECT_STRUCTURE.md','docs/operations/CARRY_FORWARD_INVENTORY.md',

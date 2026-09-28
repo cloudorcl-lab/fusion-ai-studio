@@ -16,6 +16,8 @@ Sources: [GET supplier contacts](https://docs.oracle.com/en/cloud/saas/procureme
 
 ## GET operation
 
+Follow the [shared ADF find/search GET framework contract](README.md#adf-find-and-search-get-framework-contract) for every filtered function and its consumers. This build selects explicit header version `4`; retain any independently justified supported version. The supplier native repair does not prove this resource's other query paths.
+
 Parent identity follows the [Suppliers GET key contract](oracle-fusion-procurement-suppliers.md#get-operations): a displayed SupplierNumber must resolve to SupplierId before this child path is constructed. Preserve the selected supplier and reject unresolved or ambiguous number references.
 
 The collection operation ID is `getall_suppliers-contacts`. Resolve the parent supplier first. The generated local parameter `suppliers_Id` carries its business `SupplierId` and has no default.
@@ -150,6 +152,7 @@ Use an explicitly approved test identity derived from the requested basis and a 
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-28 | [Shared query-framework policy and supplier-only native repair](README.md#adf-find-and-search-get-framework-contract) | Link all filtered GET uses to the explicit-header and known-hit regression owner; no new supplier-contacts runtime proof or first-success sample change is claimed. |
 | 2026-09-27 | Rebuild A632/B646 contact POST/native observations and independent saved-BO GETs | Corroborated omitted/generated contact/profile IDs, exact three fields and null account values; preserved tenant limits, evidence-surface distinction and immutable first GET. |
 | 2026-09-25 | Current saved CreateContact and independent GetContact probe runs, contact 300000333814514 | Corroborated generated contact/profile IDs, InactiveDate omission, exact three business fields and null accounts; distinguished null POST ContactName from computed persisted GET value. Immutable first GET preserved. |
 | 2026-09-25 | Supplier Core number404 repair and user-confirmed six-step manual query acceptance | Link parent-number resolution to the Suppliers GET owner; no new child API or write behavior claimed. |

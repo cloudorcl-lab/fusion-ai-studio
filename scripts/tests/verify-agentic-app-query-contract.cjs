@@ -5,6 +5,7 @@ const {
   validateBindingExpressions,
   validateBoFunctionBindings,
   validateWorkflow,
+  edgeTargets,
 } = require('../verify-agentic-app-query-contract.cjs');
 
 function workflow(nodes) {
@@ -67,5 +68,34 @@ const waitNodes = baseNodes();
 waitNodes.splice(2, 0, { id: '5', code: 'WAIT_FOR_USER', type: 'WAIT', outcomes: { success: '3' } });
 waitNodes[1].outcomes.success = '5';
 assert.ok(validateWorkflow(workflow(waitNodes)).some((failure) => failure.code === 'APP_QUERY_SUSPENSION_UNSUPPORTED'));
+
+// Error handlers are executable Query paths, including from terminal nodes.
+for (const type of ['HUMAN', 'WAIT']) {
+  const nodes = baseNodes();
+  nodes[3].metadata = { errorNodeId: '5' };
+  nodes.push({ id: '5', code: 'ERROR_HANDLER', type, outcomes: {} });
+  const failures = validateWorkflow(workflow(nodes));
+  assert.ok(failures.some(f => f.code === 'APP_QUERY_SUSPENSION_UNSUPPORTED' && f.message.includes('ERROR_HANDLER')), `${type} error-only path must be rejected`);
+}
+const missingError = baseNodes();
+missingError[2].metadata.errorNodeId = 'MISSING_HANDLER';
+assert.ok(validateWorkflow(workflow(missingError)).some(f => f.code === 'APP_QUERY_EDGE_TARGET_MISSING' && f.message.includes('MISSING_HANDLER')));
+
+const chainedError = baseNodes();
+chainedError[3].metadata = { errorNodeId: '5' };
+chainedError.push({ id: '5', code: 'ERROR_ADAPTER', type: 'CODE', metadata: { errorNodeId: '6' }, outcomes: {} });
+chainedError.push({ id: '6', code: 'ERROR_WAIT', type: 'WAIT', outcomes: {} });
+assert.ok(validateWorkflow(workflow(chainedError)).some(f => f.code === 'APP_QUERY_SUSPENSION_UNSUPPORTED' && f.message.includes('ERROR_ADAPTER -> ERROR_WAIT')));
+
+const safeError = baseNodes();
+safeError[3].metadata = { errorNodeId: '5' };
+safeError.push({ id: '5', code: 'SAFE_ERROR', type: 'CODE', metadata: { errorNodeId: '4' }, outcomes: { success: '4' } });
+assert.deepEqual(validateWorkflow(workflow(safeError)), []);
+assert.deepEqual(edgeTargets(safeError[4]), ['4']);
+
+const unreachableError = baseNodes();
+unreachableError.push({ id: '5', code: 'OTHER_STAGE', type: 'CODE', metadata: { errorNodeId: '6' }, outcomes: {} });
+unreachableError.push({ id: '6', code: 'UNREACHABLE_WAIT', type: 'WAIT', outcomes: {} });
+assert.deepEqual(validateWorkflow(workflow(unreachableError)), []);
 
 console.log('Agentic App Query validator tests: PASS');

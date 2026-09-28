@@ -38587,10 +38587,17 @@ function Zse(e) {
       }), { target: qi(e.node), inputDerived: !0, requiresRuntimePathValidation: !0, pathSource: "model-inferred" };
     }
   }
+  const unresolved = e.node.type === O.CONDITION || e.node.type === O.SWITCH || e.node.type === "ROUTER";
+  if (unresolved) e.dependencies.push({
+    nodeCode: e.node.code, nodeType: e.node.type, source: "model-required",
+    confidence: "unknown", expressionText: t,
+    reason: "This routing expression is not derived from the invocation. Its predicted branch requires bounded live path validation."
+  });
   return {
     target: qi(e.node),
     inputDerived: !1,
-    requiresRuntimePathValidation: !1
+    requiresRuntimePathValidation: unresolved,
+    ...unresolved ? { pathSource: "model-inferred" } : {}
   };
 }
 function WE(e) {
@@ -40037,6 +40044,19 @@ function Wce(e) {
     ])
   };
 }
+function atlasObservedScenarioData(scenario, nodesByCode) {
+  if (scenario.pathSource !== "observed" || scenario.coverage?.role === "loop-boundary") return scenario;
+  const recordablePath = Se(ee(scenario.expectedPath?.mustExecute ?? []).filter(code => {
+    const node = nodesByCode.get(code);
+    return node && Ln(node) !== void 0;
+  }));
+  return { ...scenario, recordablePath, dataPathSignature: _d(recordablePath, nodesByCode) };
+}
+function atlasScenarioCapturePolicy(scenario, ordinaryPolicy) {
+  if (scenario.requiresRuntimePathValidation === true && ["primary-path", "app-stage", "branch-path"].includes(scenario.scenarioKind))
+    return { dataCapturePolicy: "record-now" };
+  return ordinaryPolicy();
+}
 function qce(e) {
   return (!e.existingTestsByName || e.existingTestsByName.size === 0) && !e.runtimeValidatedTestNames?.size ? e.scenarios : e.scenarios.map((t) => Wce({
     scenario: t,
@@ -40097,7 +40117,7 @@ function ma(e, t = {}) {
     title: "Primary Path",
     summary: S ? "Record representative environment data once, replay it from the test file, and verify the primary workflow path and final output." : "Verify the primary workflow path and final output.",
     testName: _C(),
-    dataCapturePolicy: S ? "record-now" : "model-generated",
+    dataCapturePolicy: S || R.requiresRuntimePathValidation ? "record-now" : "model-generated",
     suggestedInput: R.input,
     expectedPath: $,
     predictedPath: y,
@@ -40201,7 +40221,9 @@ function ma(e, t = {}) {
       });
       return;
     }
-    const ce = yy(e, V, f);
+    const ce = yy(e, V, f), stagePrediction = Xf({
+      nodes: n, input: ce, nodesById: r, nodesByCode: a, adjacencyById: o.adjacencyById
+    });
     s.push(Di({
       id: `app-${fb(V.appStage)}`,
       scenarioKind: "app-stage",
@@ -40209,12 +40231,13 @@ function ma(e, t = {}) {
       title: `Agentic App ${Cm(V.appStage)} Path`,
       summary: `Verify the workflow routes the Agentic App ${V.appStage} trigger context through its dedicated app-stage path and returns the expected app-stage output.`,
       testName: hg(V.appStage),
-      dataCapturePolicy: Uce(V) ? "record-now" : "model-generated",
+      dataCapturePolicy: Uce(V) || stagePrediction.requiresRuntimePathValidation ? "record-now" : "model-generated",
       suggestedInput: ce,
       expectedPath: V.expectedPath,
       predictedPath: y,
-      pathSource: "predicted",
-      requiresRuntimePathValidation: !1,
+      pathSource: stagePrediction.pathSource,
+      inputDependencies: stagePrediction.inputDependencies,
+      requiresRuntimePathValidation: stagePrediction.requiresRuntimePathValidation,
       primaryClass: !0,
       appStage: V.appStage,
       recordablePath: V.recordablePath,
@@ -40405,7 +40428,7 @@ function ma(e, t = {}) {
     existingTestsByName: t.existingTestsByName,
     currentWorkflowDefHash: Q,
     runtimeValidatedTestNames: t.runtimeValidatedTestNames
-  }).map((V) => ({
+  }).map((V) => atlasObservedScenarioData(V, a)).map((V) => ({
     ...V,
     expectedPath: ei({
       workflow: e,
@@ -40971,6 +40994,9 @@ function GE(e, t, n) {
     costClass: Qce(e, t),
     lowRisk: Xce(e, t),
     reason: e.reason,
+    ...e.pathSource ? { pathSource: e.pathSource } : {},
+    ...e.requiresRuntimePathValidation !== void 0 ? { requiresRuntimePathValidation: e.requiresRuntimePathValidation } : {},
+    ...e.inputDependencies?.length ? { inputDependencies: e.inputDependencies } : {},
     ...e.maskingAction ? { maskingAction: e.maskingAction } : {},
     ...e.baseTestFile ? { baseTestFile: e.baseTestFile } : {},
     ...e.primaryClass ? { primaryClass: !0 } : {},
@@ -41475,7 +41501,7 @@ async function rw(e) {
     const le = [...E].sort((Te, Y) => Gt(Te) - Gt(Y) || Te.displayOrder - Y.displayOrder || ft(Te) - ft(Y) || Te.suggestedTestName.localeCompare(Y.suggestedTestName))[0];
     le && vn.set(Z, le);
   });
-  const po = (E, Z) => {
+  const po = (E, Z) => atlasScenarioCapturePolicy(E, () => {
     if (E.coverage?.role === "loop-internals")
       return { dataCapturePolicy: "model-generated" };
     if (E.appStage) {
@@ -41505,7 +41531,7 @@ async function rw(e) {
       dataCapturePolicy: E.recommendedDataCapturePolicy,
       ...le ? { baseTestFile: le } : {}
     };
-  }, At = [], Ut = [], Kt = [], Yo = /* @__PURE__ */ new Set();
+  }), At = [], Ut = [], Kt = [], Yo = /* @__PURE__ */ new Set();
   let Dr = 0;
   const hr = (E, Z) => {
     if (Z.scenarioKind !== "app-stage") return [];
@@ -42621,7 +42647,13 @@ function nM(e) {
     throw new Error("workflow test definition must not include schemaVersion.");
   if (Object.prototype.hasOwnProperty.call(e, "kind"))
     throw new Error("workflow test definition must not include kind.");
+  if (Object.prototype.hasOwnProperty.call(e, "pathBinding"))
+    throw new Error("Definition pathBinding cannot be authored; only successful live execution can create it.");
   const t = {};
+  if (e.validateRuntimePath !== void 0) {
+    if (typeof e.validateRuntimePath !== "boolean") throw new Error("validateRuntimePath must be boolean.");
+    t.validateRuntimePath = e.validateRuntimePath;
+  }
   if (e.testName !== void 0) {
     if (typeof e.testName != "string") throw new Error("workflow test definition testName must be a string.");
     t.testName = tn(e.testName);
@@ -43698,12 +43730,117 @@ function hc(e, t) {
   });
   return Ne(n(e), n(t));
 }
+// A candidate is an execution boundary, never evidence. Only Rle's synchronous
+// record-now path can admit it; the ordinary author/update path remains strict.
+function atlasSameCandidatePath(left, right) {
+  const sorted = path => ({ mustExecute: ee(path?.mustExecute ?? []).sort(), mustNotExecute: ee(path?.mustNotExecute ?? []).sort() });
+  return hc(sorted(left), sorted(right));
+}
+function atlasCandidateRoute(e) {
+  const nodes = e.workflow.specification?.dataPipeline?.pipelineNodes ?? [];
+  const byId = new Map(nodes.map(n => [n.id, n]));
+  const selected = new Set(ee(e.pathAssertions.mustExecute));
+  const starts = nodes.filter(n => n.type === O.START);
+  if (starts.length !== 1) throw new Error("Runtime path candidate requires exactly one START.");
+  const routes = new Map();
+  let visits = 0;
+  const visit = (node, seen, route, stageProven, branchProven) => {
+    if (++visits > 10000) throw new Error("Runtime path candidate exceeds bounded route validation.");
+    if (seen.has(node.id)) return;
+    seen = new Set(seen); seen.add(node.id); route = [...route];
+    if (node.metadata?.dataPipeline || ["LOOP", "WHILE", "REFERENCE", "REFERENCEABLEBLOCK", "PARALLEL", "MULTI_AGENT", "HUMAN", "WAIT"].includes(node.type))
+      throw new Error("Runtime path candidate does not support nested, parallel, reference or suspending control flow.");
+    if (!Hl(node)) {
+      if (!selected.has(node.code)) return;
+      route.push(node.code);
+    }
+    let edges = Wo(node);
+    const isStage = ["SWITCH", "ROUTER"].includes(node.type) && Dc(node).includes("$context.$app.$OraMessageHint");
+    if (isStage && e.appStage) {
+      edges = edges.filter(([outcome]) => outcome.toLowerCase() === e.appStage.toLowerCase());
+      if (edges.length !== 1) return;
+      stageProven = true;
+    }
+    if (e.targetBranch?.nodeCode === node.code) {
+      const targetEdges = edges.filter(([outcome]) => outcome === e.targetBranch.outcome);
+      if (targetEdges.length === 1 && edges.some(([outcome, id]) => outcome !== e.targetBranch.outcome && id === targetEdges[0][1]))
+        throw new Error("Runtime path candidate cannot distinguish target branch outcomes sharing a successor.");
+      edges = targetEdges;
+      if (edges.length !== 1) return;
+      branchProven = true;
+    }
+    if (!edges.length) {
+      if ((node.type === O.END || node.type === O.RETURN) && stageProven && branchProven && route.length === selected.size)
+        routes.set(JSON.stringify(route), route);
+      return;
+    }
+    for (const id of new Set(edges.map(([, id]) => id))) {
+      const next = byId.get(id);
+      if (!next) throw new Error("Runtime path candidate has an unknown graph target.");
+      if (Hl(next) || selected.has(next.code)) visit(next, seen, route, stageProven, branchProven);
+    }
+  };
+  visit(starts[0], new Set(), [], !e.appStage, !e.targetBranch);
+  if (routes.size !== 1) throw new Error("Runtime path candidate must prove one complete route, app stage and target branch; disconnected or ambiguous paths are rejected.");
+  if (!OC({ workflow: e.workflow, pathAssertions: e.pathAssertions })) throw new Error("Runtime path candidate has no terminal.");
+  return routes.values().next().value;
+}
+function atlasRuntimePathCandidate(e) {
+  if (Object.prototype.hasOwnProperty.call(e.definition, "pathBinding"))
+    throw new Error("Definition pathBinding cannot be authored.");
+  if (e.definition.validateRuntimePath === void 0 || e.definition.validateRuntimePath === false) return;
+  if (e.definition.validateRuntimePath !== true) throw new Error("validateRuntimePath must be boolean.");
+  const scenario = e.scenario;
+  if (e.dataCapturePolicy !== "record-now" || !scenario?.id || scenario.requiresRuntimePathValidation !== true || scenario.pathSource === "observed" || !["primary-path", "app-stage", "branch-path"].includes(scenario.scenarioKind))
+    throw new Error("Runtime path candidate requires record-now and a current unproven canonical scenario.");
+  if (e.definition.scenario?.custom === true || e.definition.scenario?.id && e.definition.scenario.id !== scenario.id)
+    throw new Error("Runtime path candidate scenario identity does not match the sync plan.");
+  if (scenario.appStage && Go(e.input) !== scenario.appStage)
+    throw new Error("Runtime path candidate input does not match its app stage.");
+  if (scenario.suggestedInput && !["Query", "InvokeAction"].includes(scenario.appStage) && Hn(e.input) !== Hn(scenario.suggestedInput))
+    throw new Error("Runtime path candidate input differs from the authoritative scenario input.");
+  if (!e.definition.pathAssertions) throw new Error("Runtime path candidate requires explicit complete pathAssertions.");
+  const pathAssertions = jd({ pathAssertions: e.definition.pathAssertions, workflowNodes: Ct(e.workflow.specification?.dataPipeline?.pipelineNodes) });
+  uf({ workflow: e.workflow, pathAssertions });
+  const candidate = {
+    scenarioId: scenario.id, inputHash: Hn(e.input), workflowDefinitionHash: Jo(e.workflow),
+    pathAssertions: xr(pathAssertions),
+    ...scenario.appStage ? { appStage: scenario.appStage } : {},
+    ...scenario.targetBranch ? { targetBranch: at(scenario.targetBranch) } : {}
+  };
+  atlasCandidateRoute({ ...candidate, workflow: e.workflow });
+  return candidate;
+}
+function atlasValidateRuntimePathCandidate(e) {
+  const candidate = e.candidate;
+  if (!candidate) return;
+  if (e.testFile.scenario?.custom !== false || e.testFile.scenario.id !== candidate.scenarioId || Hn(e.testFile.input) !== candidate.inputHash || Jo(e.workflow) !== candidate.workflowDefinitionHash || !atlasSameCandidatePath(e.testFile.pathAssertions, candidate.pathAssertions))
+    throw new Error("Runtime path candidate input, scenario, workflow or path identity changed.");
+  if (candidate.appStage && Go(e.testFile.input) !== candidate.appStage)
+    throw new Error("Runtime path candidate app stage changed.");
+  if (e.run.finishReason?.trim().toLowerCase() !== "stop" || e.run.pausedNode || e.run.error)
+    throw new Error("Runtime path candidate execution did not complete successfully.");
+  const nodes = Ct(e.workflow.specification?.dataPipeline?.pipelineNodes), known = new Set(nodes.map(n => n.code));
+  if (Object.keys(e.run.nodeResults ?? {}).some(code => !known.has(code)))
+    throw new Error("Runtime path candidate observed an unknown node.");
+  const observed = Lse({ workflow: e.workflow, run: e.run });
+  if (!atlasSameCandidatePath(observed, candidate.pathAssertions)) throw new Error("Runtime path candidate observed an unexpected or incomplete path.");
+  const route = atlasCandidateRoute({ ...candidate, workflow: e.workflow });
+  const actual = Object.keys(e.run.nodeResults).filter(code => route.includes(code));
+  if (!Ne(actual, route)) throw new Error("Runtime path candidate observed the wrong branch execution order.");
+  return observed;
+}
 function pM(e) {
   const t = jd({
     pathAssertions: e.suppliedPathAssertions,
     workflowNodes: e.workflowNodes,
     fieldName: "definition.pathAssertions"
   });
+  if (e.runtimePathCandidate) {
+    if (e.runtimePathCandidate.scenarioId !== e.scenario?.id || !hc(t, e.runtimePathCandidate.pathAssertions))
+      throw new Error("Runtime path candidate does not match its authoritative scenario or path.");
+    return xr(t);
+  }
   if (e.scenario) {
     const n = jd({
       pathAssertions: e.scenario.expectedPath,
@@ -43747,6 +43884,8 @@ function yle(e) {
     const te = Jl(a, e.workflow.workflowCode), xe = e.definition.scenario && !e.definition.scenario.custom ? e.definition.scenario.id : void 0;
     i = (xe ? te.get(xe) : void 0) ?? te.get(e.testName);
   }
+  const candidateInput = KC({ definitionInput: e.definition.input, suggestedInput: i?.suggestedInput, workflow: e.workflow, userPrompt: e.userPrompt });
+  const runtimePathCandidate = atlasRuntimePathCandidate({ definition: e.definition, scenario: i, workflow: e.workflow, input: candidateInput, dataCapturePolicy: e.dataCapturePolicy });
   const s = J_({
     definition: e.definition.scenario,
     ...i ? { scenario: i } : {}
@@ -43754,6 +43893,7 @@ function yle(e) {
   let d = pM({
     testName: e.testName,
     scenario: i,
+    runtimePathCandidate,
     suppliedPathAssertions: e.definition.pathAssertions,
     fallbackPathAssertions: c ? void 0 : uM(e.workflow),
     workflowNodes: n
@@ -43785,7 +43925,7 @@ function yle(e) {
     input: u,
     limitedSmokeCoverage: f
   });
-  const w = typeof p.createdAt == "string" && p.createdAt.trim() ? p.createdAt : (/* @__PURE__ */ new Date()).toISOString(), y = Ta(p.source, "model-authored"), k = typeof p.userPrompt == "string" && p.userPrompt.trim() ? p.userPrompt : e.userPrompt, C = i ?? (s?.custom === !0 && d ? EC({
+  const w = typeof p.createdAt == "string" && p.createdAt.trim() ? p.createdAt : (/* @__PURE__ */ new Date()).toISOString(), y = Ta(p.source, "model-authored"), k = typeof p.userPrompt == "string" && p.userPrompt.trim() ? p.userPrompt : e.userPrompt, C = (runtimePathCandidate ? { ...i, expectedPath: d } : i) ?? (s?.custom === !0 && d ? EC({
     testName: e.testName,
     intent: s.intent ?? k,
     input: u,
@@ -44502,6 +44642,7 @@ async function Rle(e) {
   }), pe(m))
     throw new Error(`Refusing to overwrite existing workflow test file: ${ne(e.cwd, m)}. Use a new test name or remove the file intentionally.`);
   if (t === "record-now") {
+    const runtimePathCandidate = atlasRuntimePathCandidate({ definition: i, scenario: c, workflow: o, input: w.input, dataCapturePolicy: t });
     await Ile({
       cwd: e.cwd,
       workflow: o,
@@ -44513,6 +44654,7 @@ async function Rle(e) {
       cwd: e.cwd,
       testFilePath: m,
       testFile: w,
+      runtimePathCandidate,
       ...e.workflowStatus ? { workflowStatus: e.workflowStatus } : {},
       restProxy: y,
       ...e.workflowIndex ? { workflowIndex: e.workflowIndex } : {}
@@ -44825,6 +44967,7 @@ async function jle(e) {
   if (a.workflow.workflowCode !== c.workflowCode)
     throw new Error(`Workflow test ${ne(e.cwd, n)} belongs to ${a.workflow.workflowCode}, not ${c.workflowCode}.`);
   const d = nM(e.definition);
+  if (d.validateRuntimePath) throw new Error("validateRuntimePath is supported only for new record-now generation, not updates.");
   iM({
     definition: d,
     testName: a.testName,
@@ -52644,7 +52787,7 @@ async function RT(e) {
     pathAssertions: o.pathAssertions,
     coverage: o.scenario?.coverage,
     dataSource: "live"
-  }), d = xp(c), u = d, p = zi({
+  }), d = xp(e.runtimePathCandidate ? o.pathAssertions : c), u = d, p = zi({
     testFile: o,
     workflowContext: s
   }), f = gc({
@@ -52656,7 +52799,9 @@ async function RT(e) {
   }), m = (/* @__PURE__ */ new Date()).toISOString();
   let w;
   try {
-    if (w = e.precomputedRun ?? await sl({
+    if (e.runtimePathCandidate && (e.precomputedRun || Jo(i) !== e.runtimePathCandidate.workflowDefinitionHash || Hn(o.input) !== e.runtimePathCandidate.inputHash))
+      throw new Error("Runtime path candidate changed before execution or supplied a precomputed run.");
+    w = e.precomputedRun ?? await sl({
       testFile: o,
       workflow: i,
       dataSource: "live",
@@ -52664,14 +52809,19 @@ async function RT(e) {
       breakPoints: u,
       ...e.conversationId ? { conversationId: e.conversationId } : {},
       restProxy: e.restProxy
-    }), !e.precomputedRun && a === "DRAFT" && da(w) && (i = await fs({
+    });
+    if (!e.precomputedRun && a === "DRAFT" && da(w)) {
+      i = await fs({
       cwd: t,
       workflowFilePath: r.workflowFilePath,
       workflow: i,
       restProxy: e.restProxy,
       workflowStatus: a,
       forceSave: !0
-    }), w = await sl({
+      });
+      if (e.runtimePathCandidate && Jo(i) !== e.runtimePathCandidate.workflowDefinitionHash)
+        throw new Error("Runtime path candidate workflow changed during DRAFT recovery; no retry dispatched.");
+      w = await sl({
       testFile: o,
       workflow: i,
       dataSource: "live",
@@ -52679,12 +52829,14 @@ async function RT(e) {
       breakPoints: u,
       ...e.conversationId ? { conversationId: e.conversationId } : {},
       restProxy: e.restProxy
-    }), da(w)))
-      throw new Error(`Workflow debug returned FAI-40300 for ${i.workflowCode} after saving the DRAFT workflow. Verify backend workflow execution permissions and draft availability.`);
+      });
+      if (da(w)) throw new Error(`Workflow debug returned FAI-40300 for ${i.workflowCode} after saving the DRAFT workflow. Verify backend workflow execution permissions and draft availability.`);
+    }
     if (!e.precomputedRun && a === "PUBLISHED" && da(w))
       throw new Error(`Workflow debug returned FAI-40300 for ${i.workflowCode} while targeting PUBLISHED. The CLI did not save or create a DRAFT workflow; verify the PUBLISHED workflow exists and the user can execute it.`);
+    atlasValidateRuntimePathCandidate({ candidate: e.runtimePathCandidate, workflow: i, testFile: o, run: w });
   } catch (z) {
-    const re = await $x({ testFilePath: n, testFile: o }), te = await am({
+    const re = await $x({ testFilePath: n, testFile: o, ...w ? { run: w } : {} }), te = await am({
       cwd: t,
       testFilePath: n,
       testFile: re.testFile,
@@ -52693,6 +52845,7 @@ async function RT(e) {
       status: "failed",
       skippableRecordableNodes: f,
       error: z,
+      ...w ? { run: re.run ?? w } : {},
       blocker: {
         category: "runtime-error",
         message: z instanceof Error ? z.message : String(z)

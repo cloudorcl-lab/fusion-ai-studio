@@ -9,6 +9,7 @@ authoritative.
 1. Read the target repository's active handoff, canonical playbook and applicable object references. When installing a ZIP into an unconfigured repository, activate and commit its seed following INSTALL.md. In this already configured repository, use committed current governance; do not reinstall an older seed. A new session is optional.
 2. For new/retry builds, create a **new Git worktree** from the reviewed committed ref. For resume, verify the existing build worktree, branch, HEAD and checkpoint; do not create another attempt. Never silently reuse a conflicting path or branch.
 3. Initialize build records from templates/ in the target build directory, including the learning register, time tracker and current-task session receipt. Read the existing handoff before replacing it with the current transition record.
+   Complete the canonical **Upfront approval inventory and reuse** at intake: read existing explicit approvals, request foreseeable missing permissions together, and link their exact scope/provenance from the session's authority obligation. Reuse unchanged approvals; new scope and platform rejection still require their supported approval path.
 4. Run this package's scripts/Verify-AgentAppBuildStartup.ps1. From the target repository root run scripts/verify-living-build-contract.ps1 -PolicyOnly, then follow the canonical session procedure with -SessionRecord, -SessionId and -Phase Startup. A policy-only PASS is not session readiness.
 5. Read `.agents/skills/aistudio/SKILL.md` and only the prompt references that
    match the requested artifact.
@@ -21,6 +22,8 @@ authoritative.
    the exact command plus PASS receipt in the active time tracker.
 
 ## Context reset
+
+Initialize `templates/failure-ledger.json` with the actual build task identity and observed baseline. Follow the canonical **Continuous failure prevention gate** before retrying affected work, at every phase exit and Closeout. Link the ledger in each scoped session receipt; use the gated timing runner and record native-action gate receipts. The canonical playbook owns the procedure.
 
 Follow the canonical playbook's **Context continuity and recovery** section (70–75%) and
 `docs/operations/CONTEXT_RESET.md`. Record supported controls at Startup and use

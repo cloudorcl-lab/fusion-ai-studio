@@ -190,7 +190,12 @@ function main(argv, { scopedOutput, appendEvent }) {
       const relative = path.relative(root, evidencePath);
       if (!relative || relative === '..' || relative.startsWith(`..${path.sep}`) || path.isAbsolute(relative) || !fs.statSync(evidencePath).isFile()) throw new Error('Evidence escapes cwd or is not a file');
       const evidenceSha256 = createHash('sha256').update(fs.readFileSync(evidencePath)).digest('hex');
-      appendEvent(output, { schemaVersion: 2, event: 'outcome', runId: o.id, observedUtc: now, semanticOutcome: o.outcome, evidence: o.evidence, evidenceSha256 });
+      const rows = fs.readFileSync(output,'utf8').split(/\r?\n/).filter(x=>x.trim()).map(x=>JSON.parse(x));
+      const pending = rows.filter(x=>x.event==='end'&&x.runId===o.id&&x.continuation);
+      if (pending.length > 1) throw new Error('Ambiguous continuation run');
+      let continuationResolution;
+      if (pending.length) continuationResolution = require('./workflow-test-continuation.cjs').resolveOutcome(root,pending[0],o.outcome,o.evidence,path.relative(root,output).split(path.sep).join('/')+'.'+o.id+'.'+require('node:crypto').randomUUID()+'.judge.json');
+      appendEvent(output, { schemaVersion: 2, event: 'outcome', runId: o.id, observedUtc: now, semanticOutcome: o.outcome, evidence: o.evidence, evidenceSha256, ...(continuationResolution ? {continuationResolution} : {}) });
     } else {
       if (!safeId(o.task) || !safeId(o.activity) || ![...waitKinds, ...activityKinds].includes(o.kind) || !['start', 'end'].includes(o.state)) throw new Error('Invalid boundary');
       appendEvent(output, { schemaVersion: 2, recordType: 'manual', event: o.state, runId: o.id,

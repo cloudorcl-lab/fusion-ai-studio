@@ -3,13 +3,23 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const { createHash } = require('node:crypto');
 const { spawnSync, spawn } = require('node:child_process');
-const { parseArgs, scopedOutput, appendEvent } = require('../scripts/measure-build-command.cjs');
+const { parseArgs, scopedOutput, appendEvent, checkCredentialAccess } = require('../scripts/measure-build-command.cjs');
 
 const wrapper = path.resolve(__dirname, '../scripts/measure-build-command.cjs');
 const scratch = fs.mkdtempSync(path.join(__dirname, '.timing-test-'));
 let passed = 0;
-const base = file => ['--output', file, '--task', 'test-task', '--activity', 'test-activity', '--phase', 'verification', '--category', 'test', '--label', 'safe-label'];
+const emptyLedger = { schemaVersion: 1, taskId: 'test-task', scopes: ['supplier', 'contacts'], failures: [], noFailuresReason: 'No failures observed in synthetic timing fixture', commandReceipts: [] };
+fs.writeFileSync(path.join(scratch, 'learning.json'), JSON.stringify(emptyLedger));
+const base = file => {
+  // Each independent case owns a registered receipt; never clear existing events.
+  const ledger = `${path.basename(file)}.learning.json`;
+  const target = path.resolve(scratch, file);
+  if (path.dirname(target) === scratch && path.extname(target) === '.jsonl' && !fs.existsSync(target)) fs.writeFileSync(target, '');
+  fs.writeFileSync(path.join(scratch, ledger), JSON.stringify({ ...emptyLedger, commandReceipts: [file] }));
+  return ['--output', file, '--task', 'test-task', '--activity', 'test-activity', '--phase', 'verification', '--category', 'test', '--label', 'safe-label', '--learning-ledger', ledger, '--learning-scope', 'supplier'];
+};
 const events = file => fs.readFileSync(path.join(scratch, file), 'utf8').trim().split('\n').map(JSON.parse);
 const run = (file, executable, args = [], extra = []) => spawnSync(process.execPath, [wrapper, ...base(file), ...extra, '--', executable, ...args], { cwd: scratch, encoding: 'utf8', timeout: 10000 });
 function check(name, fn) { fn(); passed++; console.log(`PASS ${name}`); }
@@ -41,6 +51,145 @@ function validatePair(file, expectedStatus) {
 async function main() {
   let primaryError;
   try {
+    const gated = (ledger, category = 'test', scope = 'supplier', extras = []) => {
+      fs.writeFileSync(path.join(scratch, 'case-learning.json'), JSON.stringify({ ...ledger, commandReceipts: ['gated.jsonl'] }));
+      const args = base('gated.jsonl');
+      args[args.indexOf('--category') + 1] = category;
+      args[args.indexOf('--learning-ledger') + 1] = 'case-learning.json';
+      args[args.indexOf('--learning-scope') + 1] = scope;
+      return spawnSync(process.execPath, [wrapper, ...args, ...extras, '--', process.execPath, '-e', 'require("fs").writeFileSync("child-side-effect", "ran")', 'SECRET_ARGUMENT'], { cwd: scratch, encoding: 'utf8', timeout: 10000 });
+    };
+    const resetSideEffect = () => { if (fs.existsSync(path.join(scratch, 'child-side-effect'))) fs.unlinkSync(path.join(scratch, 'child-side-effect')); };
+    const openFailure = { id: 'F1', observedUtc: '2026-09-28T00:00:00Z', symptom: 'Synthetic search failure', scope: 'supplier', blocks: ['supplier'], status: 'open', evidenceGap: 'Synthetic fixture has no original runtime event' };
+    check('open scope blocks child before timing or side effects and keeps arguments private', () => {
+      const result = gated({ ...emptyLedger, failures: [openFailure] });
+      assert.equal(result.status, 65, result.stderr);
+      assert.match(result.stderr, /Learning gate blocked/);
+      assert.ok(!result.stderr.includes('SECRET_ARGUMENT'));
+      assert.ok(!fs.existsSync(path.join(scratch, 'child-side-effect')));
+      assert.equal(fs.readFileSync(path.join(scratch, 'gated.jsonl'), 'utf8'), '');
+    });
+    check('unaffected valid scope passes and repair permits structurally valid open work', () => {
+      for (const [category, scope] of [['build', 'contacts'], ['repair', 'supplier']]) {
+        const result = gated({ ...emptyLedger, failures: [openFailure] }, category, scope);
+        assert.equal(result.status, 0, result.stderr);
+        assert.equal(fs.readFileSync(path.join(scratch, 'child-side-effect'), 'utf8'), 'ran');
+        resetSideEffect();
+      }
+    });
+    check('Closeout rejects unresolved failures outside requested scope', () => {
+      assert.equal(gated({ ...emptyLedger, failures: [openFailure] }, 'closeout', 'contacts').status, 65);
+      assert.ok(!fs.existsSync(path.join(scratch, 'child-side-effect')));
+    });
+    check('unknown scope cannot bypass an open failure with a typo', () => {
+      const result = gated({ ...emptyLedger, failures: [openFailure] }, 'test', 'suplier');
+      assert.equal(result.status, 65, result.stderr);
+      assert.ok(!fs.existsSync(path.join(scratch, 'child-side-effect')));
+    });
+    check('missing flags and mismatched task block; explicit ledger task allows worker identity', () => {
+      for (const key of ['--learning-ledger', '--learning-scope']) {
+        const args = base('missing-learning.jsonl'); args.splice(args.indexOf(key), 2);
+        const result = spawnSync(process.execPath, [wrapper, ...args, '--', process.execPath, '-e', 'require("fs").writeFileSync("child-side-effect", "ran")'], { cwd: scratch, encoding: 'utf8' });
+        assert.equal(result.status, 65, result.stderr);
+        assert.ok(!fs.existsSync(path.join(scratch, 'child-side-effect')));
+      }
+      const otherTask = { ...emptyLedger, taskId: 'root-task' };
+      assert.equal(gated(otherTask).status, 65);
+      assert.ok(!fs.existsSync(path.join(scratch, 'child-side-effect')));
+      assert.equal(gated(otherTask, 'test', 'supplier', ['--learning-task', 'root-task']).status, 0);
+      resetSideEffect();
+    });
+    check('closed current evidence passes and stale source reopens before child launch', () => {
+      fs.mkdirSync(path.join(scratch, 'docs/lessons'), { recursive: true });
+      fs.writeFileSync(path.join(scratch, 'docs/lessons/rule.md'), 'Prevent recurrence');
+      fs.writeFileSync(path.join(scratch, 'source.js'), 'original');
+      fs.writeFileSync(path.join(scratch, 'proof.json'), '{"pass":true}');
+      const ref = file => ({ path: file, sha256: createHash('sha256').update(fs.readFileSync(path.join(scratch, file))).digest('hex') });
+      const closed = { ...openFailure, status: 'closed', cause: 'Missing local contract', correction: 'Added contract', prevention: { kind: 'gate', owner: 'docs/lessons/rule.md', rule: 'Check source before continuation' }, verification: { evidence: [ref('proof.json')], sources: [ref('source.js')], command: 'synthetic fixture', result: 'pass', reviewer: 'test-owner' } };
+      const ledger = { ...emptyLedger, failures: [closed] };
+      assert.equal(gated(ledger).status, 0);
+      resetSideEffect();
+      fs.writeFileSync(path.join(scratch, 'source.js'), 'changed');
+      const result = gated(ledger);
+      assert.equal(result.status, 65, result.stderr);
+      assert.match(result.stderr, /stale hash/);
+      assert.ok(!fs.existsSync(path.join(scratch, 'child-side-effect')));
+    });
+    check('exported measure enforces the gate while coordination and wait remain optional', () => {
+      const options = parseArgs([...base('direct-gate.jsonl'), '--', process.execPath, '-e', 'require("fs").writeFileSync("child-side-effect", "ran")']);
+      delete options['learning-ledger'];
+      const driver = `require(${JSON.stringify(wrapper)}).measure(${JSON.stringify(options)}).then(code=>process.exitCode=code)`;
+      const result = spawnSync(process.execPath, ['-e', driver], { cwd: scratch, encoding: 'utf8' });
+      assert.equal(result.status, 65, result.stderr);
+      assert.ok(!fs.existsSync(path.join(scratch, 'child-side-effect')));
+      for (const category of ['coordination', 'wait']) {
+        const args = base(`${category}.jsonl`);
+        args[args.indexOf('--category') + 1] = category;
+        args.splice(args.indexOf('--learning-ledger'), 2);
+        args.splice(args.indexOf('--learning-scope'), 2);
+        const optional = spawnSync(process.execPath, [wrapper, ...args, '--', process.execPath, '-e', ''], { cwd: scratch, encoding: 'utf8' });
+        assert.equal(optional.status, 0, optional.stderr);
+        validatePair(`${category}.jsonl`, 'succeeded');
+      }
+    });
+    check('unregistered output blocks; failed child blocks the next command until learning is captured', () => {
+      const args = base('registered.jsonl');
+      const ledgerFile = path.join(scratch, args[args.indexOf('--learning-ledger') + 1]);
+      fs.writeFileSync(ledgerFile, JSON.stringify(emptyLedger));
+      const invoke = source => spawnSync(process.execPath, [wrapper, ...args, '--', process.execPath, '-e', source], { cwd: scratch, encoding: 'utf8' });
+      const blocked = invoke('require("fs").writeFileSync("child-side-effect", "ran")');
+      assert.equal(blocked.status, 65, blocked.stderr);
+      assert.match(blocked.stderr, /registered/);
+      assert.ok(!fs.existsSync(path.join(scratch, 'child-side-effect')));
+      fs.writeFileSync(ledgerFile, JSON.stringify({ ...emptyLedger, commandReceipts: ['registered.jsonl'] }));
+      fs.unlinkSync(path.join(scratch, 'registered.jsonl'));
+      assert.equal(invoke('').status, 65);
+      assert.ok(!fs.existsSync(path.join(scratch, 'registered.jsonl')));
+      fs.writeFileSync(path.join(scratch, 'registered.jsonl'), '');
+      args[args.indexOf('--output') + 1] = path.join(scratch, 'registered.jsonl');
+      assert.equal(invoke('process.exit(23)').status, 23);
+      const retry = invoke('require("fs").writeFileSync("child-side-effect", "ran")');
+      assert.equal(retry.status, 65, retry.stderr);
+      assert.match(retry.stderr, /unlogged failed command/);
+      assert.ok(!fs.existsSync(path.join(scratch, 'child-side-effect')));
+      assert.equal(events('registered.jsonl').length, 2);
+      const failedRun = events('registered.jsonl')[1].runId;
+      fs.writeFileSync(ledgerFile, JSON.stringify({ ...emptyLedger, commandReceipts: ['registered.jsonl'], failures: [{ ...openFailure, commandRunIds: [failedRun] }] }));
+      assert.equal(invoke('require("fs").writeFileSync("child-side-effect", "ran")').status, 65);
+      args[args.indexOf('--category') + 1] = 'repair';
+      assert.equal(invoke('').status, 0);
+    });
+    check('AI Studio cache preflight distinguishes denied missing and accessible metadata without reading contents', () => {
+      const options = { executable: process.execPath, args: ['.agents/skills/aistudio/scripts/aistudio.js', 'do-create-workflow'] };
+      const fakeHome = path.join(scratch, 'fake-home');
+      let accesses = 0;
+      const allowed = { lstatSync: () => ({}), accessSync: () => { accesses++; }, readFileSync: () => assert.fail('must never read credential contents') };
+      assert.deepEqual(checkCredentialAccess(options, { fsApi: allowed, homeDir: fakeHome, cwd: scratch }), { ok: true, checked: true });
+      assert.equal(accesses, 1);
+      for (const method of ['lstatSync', 'accessSync']) for (const code of ['EPERM', 'EACCES']) {
+        const denied = { ...allowed, [method]: () => { throw Object.assign(new Error('SECRET_CONTEXT'), { code }); } };
+        assert.deepEqual(checkCredentialAccess(options, { fsApi: denied, homeDir: fakeHome, cwd: scratch }), { ok: false, checked: true, code: 'HOST_CREDENTIAL_ACCESS_REQUIRED' });
+      }
+      const missing = { ...allowed, lstatSync: () => { throw Object.assign(new Error('missing'), { code: 'ENOENT' }); } };
+      assert.deepEqual(checkCredentialAccess(options, { fsApi: missing, homeDir: fakeHome, cwd: scratch }), { ok: true, checked: true, cacheMissing: true });
+      const forbidden = { lstatSync: () => assert.fail('unrelated/help commands must skip') };
+      for (const args of [['other.js'], ['.agents/skills/aistudio/scripts/aistudio.js', '--help']]) {
+        assert.deepEqual(checkCredentialAccess({ ...options, args }, { fsApi: forbidden, homeDir: fakeHome, cwd: scratch }), { ok: true, checked: false });
+      }
+    });
+    check('denied AI Studio cache access blocks before child launch or timing append', () => {
+      const script = path.join(scratch, '.agents/skills/aistudio/scripts/aistudio.js');
+      fs.mkdirSync(path.dirname(script), { recursive: true });
+      fs.writeFileSync(script, 'require("fs").writeFileSync("child-side-effect", "ran")');
+      const options = parseArgs([...base('cache-denied.jsonl'), '--', process.execPath, script, 'do-create-workflow']);
+      const driver = `const f=require('node:fs'),p=require('node:path'),o=require('node:os'); const c=p.join(o.homedir(),'.config','aistudio-cli','credentials.json'); const original=f.lstatSync; f.lstatSync=(file,...args)=>{if(file===c)throw Object.assign(new Error('SECRET_CONTEXT'),{code:'EPERM'});return original(file,...args)}; require(${JSON.stringify(wrapper)}).measure(${JSON.stringify(options)}).then(code=>process.exitCode=code);`;
+      const result = spawnSync(process.execPath, ['-e', driver], { cwd: scratch, encoding: 'utf8' });
+      assert.equal(result.status, 77, result.stderr);
+      assert.match(result.stderr, /HOST_CREDENTIAL_ACCESS_REQUIRED/);
+      assert.ok(!result.stderr.includes('SECRET_CONTEXT'));
+      assert.ok(!fs.existsSync(path.join(scratch, 'child-side-effect')));
+      assert.equal(fs.readFileSync(path.join(scratch, 'cache-denied.jsonl'), 'utf8'), '');
+    });
     check('explicit fine activity kind is retained and invalid kind never launches', () => {
       const result = run('review-kind.jsonl', process.execPath, ['-e', ''], ['--activity-kind', 'review']);
       assert.equal(result.status, 0, result.stderr);

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "taskId": "<actual build task identity>",
+  "scopes": ["governance", "<approved implementation scope>"],
+  "noFailuresReason": "Replace with the observed baseline review; do not use this placeholder as evidence.",
+  "commandReceipts": [],
+  "failures": []
+}

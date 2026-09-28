@@ -4,6 +4,23 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
+const { inspect: inspectSearchContract } = require('./verify-bo-search-contract.cjs');
+
+function validateBoSearchContracts(workflow, businessObjects) {
+  const used = new Map();
+  for (const nodes of pipelineCollections(workflow)) for (const node of nodes) {
+    if (node.type !== 'BO_FUNCTION') continue;
+    const code = node.metadata?.businessObjectCode;
+    if (!used.has(code)) used.set(code, new Set());
+    used.get(code).add(node.metadata?.functionName);
+  }
+  return businessObjects.flatMap(bo => {
+    const names = used.get(bo.objectCode);
+    if (!names) return [];
+    const scoped = { ...bo, objectProperties: { ...bo.objectProperties, tools: (bo.objectProperties?.tools || []).filter(fn => names.has(fn.name)) } };
+    return inspectSearchContract(scoped, bo.objectCode).errors.map(message => ({ code: 'BO_SEARCH_FRAMEWORK_REQUIRED', message }));
+  });
+}
 
 function pipelineCollections(value, found = []) {
   if (!value || typeof value !== 'object') return found;
@@ -17,7 +34,7 @@ function edgeTargets(node) {
   for (const target of Object.values(node.outcomes || {})) {
     if (typeof target === 'string' && target.trim()) targets.push(target.trim());
   }
-  for (const target of [node.convergenceTargetId, node.metadata?.loopBackNodeId]) {
+  for (const target of [node.convergenceTargetId, node.metadata?.loopBackNodeId, node.metadata?.errorNodeId]) {
     if (typeof target === 'string' && target.trim()) targets.push(target.trim());
   }
   return [...new Set(targets)];
@@ -221,6 +238,7 @@ function main(argv) {
   const failures = [
     ...validateWorkflow(workflow),
     ...validateBoFunctionBindings(workflow, businessObjects),
+    ...validateBoSearchContracts(workflow, businessObjects),
   ];
   if (failures.length) {
     console.error('Agentic App Query contract: FAIL');
@@ -232,6 +250,7 @@ function main(argv) {
   console.log('- Query route has no reachable HUMAN or WAIT node.');
   console.log('- Workflow binding expressions are balanced and reference reachable producers.');
   console.log('- Local BO path tokens have nonblank workflow inputs.');
+  console.log('- Referenced ADF search GET functions declare a compatible REST framework header.');
   return 0;
 }
 
@@ -242,6 +261,7 @@ module.exports = {
   findQueryRouter,
   validateBindingExpressions,
   validateBoFunctionBindings,
+  validateBoSearchContracts,
   validateQueryPipeline,
   validateWorkflow,
 };

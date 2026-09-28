@@ -1,0 +1,11 @@
+# Supplier filter repair
+
+The original saved ListSuppliers function returned zero rows for `Supplier like '%Lee%'` while exact `Supplier='Lee Supplies'` returned the known row. Both CLI live sample and independent native saved-BO runner reproduced this difference. No business write occurred.
+
+Oracle documents expanded rowmatch and percent-wildcard semantics for framework2 and later: https://docs.oracle.com/en/cloud/saas/sales/faaps/Set_the_REST_Framework_Version.html and https://docs.oracle.com/en/middleware/developer-tools/adf/12.2.1.4/develop/consuming-adf-restful-web-services.html . This supports explicitly selecting the framework rather than relying on an unspecified server default. It does not prove the original server default.
+
+Repair: ListSuppliers REST-Framework-Version header4; no POST contract change. Local validate-bo passed0 errors; saved object300000334163769 patched successfully in supplier-bo-framework-save.txt. Native repeated contains/exact/paging/detail verification pending. Header effectiveness is not yet claimed.
+
+Verification update: independent native saved-BO re-open confirmed header4. The identical contains input now returns Lee Supplies1252/internal300000047414503 and XDX Lee Supplies1496, count2/hasMoretrue. Exact Lee still returns one row; ordinary pages0/2 return distinct ascending IDs; detail returns Lee; exact A-name collision check returns a complete empty page. See native-bo-review/read-readiness.json, repaired-header.txt and repaired-contains-output.json. This supersedes the pending status above for those read cases; native displayed-number filter and child resources remain separately unverified. No POST occurred.
+
+Prevention: canonical object registry owns the query-header rule; five references link to it. scripts/verify-bo-search-contract.cjs rejects omission/version1 and is invoked for referenced functions by the mandatory workflow query preflight. query-header-gate-tests.txt records6 passing tests, including negative missing-header and integrated rejection. All new collection/find/search GETs in this build must pass before save and their own saved-BO known-hit tests before integration. Historical artifacts are evidence only and are not silently modified.

@@ -1,0 +1,17 @@
+{
+  "recordedUtc": "2026-09-28T14:28:12.6175352Z",
+  "events": [
+    {
+      "id": "R01",
+      "symptom": "Current source hash drift blocked Startup repair and unrelated scope, forcing historical failure reopening",
+      "evidence": "Original F40 gate rejection and13planned source predispositions preserved in private stopped-attempt archive; source logic independently inspected",
+      "correction": "Separate sourceDrift from immutable integrity issues and scope execution gates"
+    },
+    {
+      "id": "R02",
+      "symptom": "Restricted promotion denied protected .agents destination; stopped before hash acceptance",
+      "evidence": "Tool output retained in current thread; successful identical host retry matched42 source files",
+      "correction": "Use authorized host access for protected skill promotion; preserve explicit source manifest"
+    }
+  ]
+}

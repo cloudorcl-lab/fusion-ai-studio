@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 1,
+  "projection": "Immutable structural projection of retained Supplier InitDisplay evidence. Preserves graph control fields, input/path assertions and observed node order/completion. Excludes source code, model prompts, business responses and runtime IDs. Not full workflow source parity or a new runtime proof.",
+  "provenance": [
+    {
+      "role": "workflow",
+      "sha256": "0d414564b83ebe086663f9e305281d4732c467727f84583eae7218d51a24abdf"
+    },
+    {
+      "role": "test",
+      "sha256": "b6c29a9e207039ee5a6d5e2bfb2a0c7fedad7c50c1ac3cad2e116fefe4c25908"
+    },
+    {
+      "role": "report",
+      "sha256": "36d91864e81ffbf66c4f605c18828e0111a5c45e9329fba97f2c6071c3385aff"
+    }
+  ],
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CORE",
+    "status": "DRAFT",
+    "version": 86517154,
+    "specification": {
+      "dataPipeline": {
+        "rootNode": "start",
+        "variables": [
+          {
+            "name": "supplierState",
+            "type": "object",
+            "scope": "CONVERSATION"
+          },
+          {
+            "name": "plan",
+            "type": "object",
+            "scope": "JOB"
+          },
+          {
+            "name": "presentation",
+            "type": "object",
+            "scope": "JOB"
+          },
+          {
+            "name": "boReceipt",
+            "type": "object",
+            "scope": "JOB"
+          }
+        ],
+        "pipelineNodes": [
+          {
+            "id": "start",
+            "code": "START",
+            "type": "START",
+            "outcomes": {
+              "success": "10"
+            }
+          },
+          {
+            "id": "10",
+            "code": "XDX_EXTRACT",
+            "type": "LLM",
+            "outcomes": {
+              "success": "3"
+            }
+          },
+          {
+            "id": "3",
+            "code": "XDX_PLAN",
+            "type": "CODE",
+            "outcomes": {
+              "success": "11"
+            }
+          },
+          {
+            "id": "11",
+            "code": "XDX_SAVE_PLAN",
+            "type": "SET_FIELDS",
+            "outcomes": {
+              "success": "31"
+            }
+          },
+          {
+            "id": "31",
+            "code": "XDX_FROZEN_BEFORE_ROUTE",
+            "type": "CONDITION",
+            "outcomes": {
+              "true": "32",
+              "false": "7"
+            },
+            "inputs": [
+              {
+                "name": "condition",
+                "value": "{{!!($context.$variables.supplierState && $context.$variables.supplierState.draft && $context.$variables.supplierState.draft.attempt && ($context.$variables.supplierState.draft.attempt.status === \"reserved\" || $context.$variables.supplierState.draft.attempt.status === \"uncertain\"))}}"
+              }
+            ]
+          },
+          {
+            "id": "32",
+            "code": "XDX_RETURN_FROZEN",
+            "type": "RETURN",
+            "outcomes": {}
+          },
+          {
+            "id": "7",
+            "code": "XDX_ROUTE",
+            "type": "CODE",
+            "outcomes": {
+              "success": "16"
+            }
+          },
+          {
+            "id": "16",
+            "code": "XDX_OPERATION_ROUTER",
+            "type": "SWITCH",
+            "outcomes": {
+              "collection": "1",
+              "detail": "2",
+              "display": "20",
+              "duplicate": "1",
+              "success": ""
+            },
+            "inputs": [
+              {
+                "name": "caseExpression",
+                "value": "{{$context.$nodes.XDX_ROUTE.$output.result.route}}"
+              }
+            ]
+          },
+          {
+            "id": "1",
+            "code": "FETCH_SUPPLIERS",
+            "type": "BO_FUNCTION",
+            "outcomes": {
+              "success": "8"
+            }
+          },
+          {
+            "id": "8",
+            "code": "XDX_COLLECTION_ADAPTER",
+            "type": "CODE",
+            "outcomes": {
+              "success": "14"
+            }
+          },
+          {
+            "id": "14",
+            "code": "XDX_SAVE_COLLECTION_RECEIPT",
+            "type": "SET_FIELDS",
+            "outcomes": {
+              "success": "21"
+            }
+          },
+          {
+            "id": "21",
+            "code": "XDX_COLLECTION_NEXT",
+            "type": "SWITCH",
+            "outcomes": {
+              "duplicate": "5",
+              "read": "4",
+              "success": ""
+            },
+            "inputs": [
+              {
+                "name": "caseExpression",
+                "value": "{{$context.$variables.boReceipt.kind}}"
+              }
+            ]
+          },
+          {
+            "id": "5",
+            "code": "XDX_RESERVE",
+            "type": "CODE",
+            "outcomes": {
+              "success": "13"
+            }
+          },
+          {
+            "id": "13",
+            "code": "XDX_SAVE_RESERVATION",
+            "type": "SET_FIELDS",
+            "outcomes": {
+              "success": "18"
+            }
+          },
+          {
+            "id": "18",
+            "code": "XDX_RESERVED_CHECK",
+            "type": "CONDITION",
+            "outcomes": {
+              "true": "6",
+              "false": "20"
+            },
+            "inputs": [
+              {
+                "name": "condition",
+                "value": "{{$context.$variables.plan.payload !== null && $context.$variables.supplierState.draft.attempt.status === \"reserved\"}}"
+              }
+            ]
+          },
+          {
+            "id": "6",
+            "code": "XDX_MARKER",
+            "type": "CODE",
+            "outcomes": {
+              "success": "19"
+            }
+          },
+          {
+            "id": "19",
+            "code": "XDX_MARKER_CHECK",
+            "type": "CONDITION",
+            "outcomes": {
+              "true": "24",
+              "false": "20"
+            },
+            "inputs": [
+              {
+                "name": "condition",
+                "value": "{{$context.$nodes.XDX_MARKER.$output.result.allowed === true}}"
+              }
+            ]
+          },
+          {
+            "id": "24",
+            "code": "XDX_FAILURE_READ",
+            "type": "BO_FUNCTION",
+            "outcomes": {
+              "success": "20"
+            },
+            "metadata": {
+              "errorNodeId": "25"
+            }
+          },
+          {
+            "id": "20",
+            "code": "XDX_STAGE_ROUTER",
+            "type": "SWITCH",
+            "outcomes": {
+              "InitDisplay": "22",
+              "Query": "23",
+              "success": ""
+            },
+            "inputs": [
+              {
+                "name": "caseExpression",
+                "value": "{{$context.$app.$OraMessageHint}}"
+              }
+            ]
+          },
+          {
+            "id": "22",
+            "code": "XDX_INIT_DISPLAY",
+            "type": "LLM",
+            "outcomes": {
+              "success": "end"
+            },
+            "metadata": {
+              "errorNodeId": "25"
+            }
+          },
+          {
+            "id": "23",
+            "code": "XDX_QUERY_DISPLAY",
+            "type": "LLM",
+            "outcomes": {
+              "success": "end"
+            },
+            "metadata": {
+              "errorNodeId": "25"
+            }
+          },
+          {
+            "id": "4",
+            "code": "XDX_APPLY_READ",
+            "type": "CODE",
+            "outcomes": {
+              "success": "12"
+            }
+          },
+          {
+            "id": "12",
+            "code": "XDX_SAVE_READ",
+            "type": "SET_FIELDS",
+            "outcomes": {
+              "success": "17"
+            }
+          },
+          {
+            "id": "17",
+            "code": "XDX_READ_NEXT",
+            "type": "SWITCH",
+            "outcomes": {
+              "detail": "2",
+              "display": "20",
+              "success": ""
+            },
+            "inputs": [
+              {
+                "name": "caseExpression",
+                "value": "{{$context.$variables.plan.query && $context.$variables.plan.query.kind === \"detail\" ? \"detail\" : \"display\"}}"
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "code": "FETCH_SUPPLIER_DETAIL",
+            "type": "BO_FUNCTION",
+            "outcomes": {
+              "success": "9"
+            }
+          },
+          {
+            "id": "9",
+            "code": "XDX_DETAIL_ADAPTER",
+            "type": "CODE",
+            "outcomes": {
+              "success": "15"
+            }
+          },
+          {
+            "id": "15",
+            "code": "XDX_SAVE_DETAIL_RECEIPT",
+            "type": "SET_FIELDS",
+            "outcomes": {
+              "success": "4"
+            }
+          },
+          {
+            "id": "25",
+            "code": "XDX_DIAGNOSTIC_ERROR",
+            "type": "CODE",
+            "outcomes": {
+              "success": "28"
+            }
+          },
+          {
+            "id": "28",
+            "code": "XDX_ERROR_HAS_RESERVED",
+            "type": "CONDITION",
+            "outcomes": {
+              "true": "26",
+              "false": "27"
+            },
+            "inputs": [
+              {
+                "name": "condition",
+                "value": "{{$context.$nodes.XDX_DIAGNOSTIC_ERROR.$output.result.hasReserved === true}}"
+              }
+            ]
+          },
+          {
+            "id": "26",
+            "code": "XDX_SAVE_DIAGNOSTIC_ERROR",
+            "type": "SET_FIELDS",
+            "outcomes": {
+              "success": "29"
+            }
+          },
+          {
+            "id": "29",
+            "code": "XDX_RETURN_ERROR_RESERVED",
+            "type": "RETURN",
+            "outcomes": {}
+          },
+          {
+            "id": "27",
+            "code": "XDX_SAVE_ERROR_UNRESERVED",
+            "type": "SET_FIELDS",
+            "outcomes": {
+              "success": "30"
+            }
+          },
+          {
+            "id": "30",
+            "code": "XDX_RETURN_ERROR_UNRESERVED",
+            "type": "RETURN",
+            "outcomes": {}
+          },
+          {
+            "id": "end",
+            "code": "END",
+            "type": "END",
+            "outcomes": {}
+          }
+        ]
+      }
+    }
+  },
+  "retained": {
+    "scenario": {
+      "custom": true
+    },
+    "input": {
+      "message": "",
+      "triggerType": "app",
+      "parameters": {
+        "OraAppContext": "",
+        "appHint": "InitDisplay",
+        "OraUserContext": ""
+      }
+    },
+    "pathAssertions": {
+      "mustExecute": [
+        {
+          "id": "path-must-execute-xdx_extract",
+          "name": "XDX_EXTRACT executes",
+          "nodeCode": "XDX_EXTRACT"
+        },
+        {
+          "id": "path-must-execute-xdx_plan",
+          "name": "XDX_PLAN executes",
+          "nodeCode": "XDX_PLAN"
+        },
+        {
+          "id": "path-must-execute-xdx_save_plan",
+          "name": "XDX_SAVE_PLAN executes",
+          "nodeCode": "XDX_SAVE_PLAN"
+        },
+        {
+          "id": "path-must-execute-xdx_frozen_before_route",
+          "name": "XDX_FROZEN_BEFORE_ROUTE executes",
+          "nodeCode": "XDX_FROZEN_BEFORE_ROUTE"
+        },
+        {
+          "id": "path-must-execute-xdx_route",
+          "name": "XDX_ROUTE executes",
+          "nodeCode": "XDX_ROUTE"
+        },
+        {
+          "id": "path-must-execute-xdx_operation_router",
+          "name": "XDX_OPERATION_ROUTER executes",
+          "nodeCode": "XDX_OPERATION_ROUTER"
+        },
+        {
+          "id": "path-must-execute-fetch_suppliers",
+          "name": "FETCH_SUPPLIERS executes",
+          "nodeCode": "FETCH_SUPPLIERS"
+        },
+        {
+          "id": "path-must-execute-xdx_collection_adapter",
+          "name": "XDX_COLLECTION_ADAPTER executes",
+          "nodeCode": "XDX_COLLECTION_ADAPTER"
+        },
+        {
+          "id": "path-must-execute-xdx_save_collection_receipt",
+          "name": "XDX_SAVE_COLLECTION_RECEIPT executes",
+          "nodeCode": "XDX_SAVE_COLLECTION_RECEIPT"
+        },
+        {
+          "id": "path-must-execute-xdx_collection_next",
+          "name": "XDX_COLLECTION_NEXT executes",
+          "nodeCode": "XDX_COLLECTION_NEXT"
+        },
+        {
+          "id": "path-must-execute-xdx_apply_read",
+          "name": "XDX_APPLY_READ executes",
+          "nodeCode": "XDX_APPLY_READ"
+        },
+        {
+          "id": "path-must-execute-xdx_save_read",
+          "name": "XDX_SAVE_READ executes",
+          "nodeCode": "XDX_SAVE_READ"
+        },
+        {
+          "id": "path-must-execute-xdx_read_next",
+          "name": "XDX_READ_NEXT executes",
+          "nodeCode": "XDX_READ_NEXT"
+        },
+        {
+          "id": "path-must-execute-xdx_stage_router",
+          "name": "XDX_STAGE_ROUTER executes",
+          "nodeCode": "XDX_STAGE_ROUTER"
+        },
+        {
+          "id": "path-must-execute-xdx_init_display",
+          "name": "XDX_INIT_DISPLAY executes",
+          "nodeCode": "XDX_INIT_DISPLAY"
+        }
+      ],
+      "mustNotExecute": [
+        {
+          "id": "path-must-not-execute-fetch_supplier_detail",
+          "name": "FETCH_SUPPLIER_DETAIL does not execute",
+          "nodeCode": "FETCH_SUPPLIER_DETAIL"
+        },
+        {
+          "id": "path-must-not-execute-xdx_detail_adapter",
+          "name": "XDX_DETAIL_ADAPTER does not execute",
+          "nodeCode": "XDX_DETAIL_ADAPTER"
+        },
+        {
+          "id": "path-must-not-execute-xdx_save_detail_receipt",
+          "name": "XDX_SAVE_DETAIL_RECEIPT does not execute",
+          "nodeCode": "XDX_SAVE_DETAIL_RECEIPT"
+        },
+        {
+          "id": "path-must-not-execute-xdx_reserve",
+          "name": "XDX_RESERVE does not execute",
+          "nodeCode": "XDX_RESERVE"
+        },
+        {
+          "id": "path-must-not-execute-xdx_save_reservation",
+          "name": "XDX_SAVE_RESERVATION does not execute",
+          "nodeCode": "XDX_SAVE_RESERVATION"
+        },
+        {
+          "id": "path-must-not-execute-xdx_reserved_check",
+          "name": "XDX_RESERVED_CHECK does not execute",
+          "nodeCode": "XDX_RESERVED_CHECK"
+        },
+        {
+          "id": "path-must-not-execute-xdx_marker",
+          "name": "XDX_MARKER does not execute",
+          "nodeCode": "XDX_MARKER"
+        },
+        {
+          "id": "path-must-not-execute-xdx_marker_check",
+          "name": "XDX_MARKER_CHECK does not execute",
+          "nodeCode": "XDX_MARKER_CHECK"
+        },
+        {
+          "id": "path-must-not-execute-xdx_failure_read",
+          "name": "XDX_FAILURE_READ does not execute",
+          "nodeCode": "XDX_FAILURE_READ"
+        },
+        {
+          "id": "path-must-not-execute-xdx_query_display",
+          "name": "XDX_QUERY_DISPLAY does not execute",
+          "nodeCode": "XDX_QUERY_DISPLAY"
+        },
+        {
+          "id": "path-must-not-execute-xdx_diagnostic_error",
+          "name": "XDX_DIAGNOSTIC_ERROR does not execute",
+          "nodeCode": "XDX_DIAGNOSTIC_ERROR"
+        },
+        {
+          "id": "path-must-not-execute-xdx_save_diagnostic_error",
+          "name": "XDX_SAVE_DIAGNOSTIC_ERROR does not execute",
+          "nodeCode": "XDX_SAVE_DIAGNOSTIC_ERROR"
+        },
+        {
+          "id": "path-must-not-execute-xdx_save_error_unreserved",
+          "name": "XDX_SAVE_ERROR_UNRESERVED does not execute",
+          "nodeCode": "XDX_SAVE_ERROR_UNRESERVED"
+        },
+        {
+          "id": "path-must-not-execute-xdx_error_has_reserved",
+          "name": "XDX_ERROR_HAS_RESERVED does not execute",
+          "nodeCode": "XDX_ERROR_HAS_RESERVED"
+        },
+        {
+          "id": "path-must-not-execute-xdx_return_error_reserved",
+          "name": "XDX_RETURN_ERROR_RESERVED does not execute",
+          "nodeCode": "XDX_RETURN_ERROR_RESERVED"
+        },
+        {
+          "id": "path-must-not-execute-xdx_return_error_unreserved",
+          "name": "XDX_RETURN_ERROR_UNRESERVED does not execute",
+          "nodeCode": "XDX_RETURN_ERROR_UNRESERVED"
+        },
+        {
+          "id": "path-must-not-execute-xdx_return_frozen",
+          "name": "XDX_RETURN_FROZEN does not execute",
+          "nodeCode": "XDX_RETURN_FROZEN"
+        }
+      ]
+    }
+  },
+  "run": {
+    "workflowCode": "XDX_SUPPLIER_CORE",
+    "finishReason": "stop",
+    "nodeResults": {
+      "START": {},
+      "XDX_EXTRACT": {},
+      "XDX_PLAN": {},
+      "XDX_SAVE_PLAN": {},
+      "XDX_FROZEN_BEFORE_ROUTE": {},
+      "XDX_ROUTE": {},
+      "XDX_OPERATION_ROUTER": {},
+      "FETCH_SUPPLIERS": {},
+      "XDX_COLLECTION_ADAPTER": {},
+      "XDX_SAVE_COLLECTION_RECEIPT": {},
+      "XDX_COLLECTION_NEXT": {},
+      "XDX_APPLY_READ": {},
+      "XDX_SAVE_READ": {},
+      "XDX_READ_NEXT": {},
+      "XDX_STAGE_ROUTER": {},
+      "XDX_INIT_DISPLAY": {}
+    },
+    "executionTrace": [
+      {
+        "nodeCode": "START"
+      },
+      {
+        "nodeCode": "XDX_EXTRACT"
+      },
+      {
+        "nodeCode": "XDX_PLAN"
+      },
+      {
+        "nodeCode": "XDX_SAVE_PLAN"
+      },
+      {
+        "nodeCode": "XDX_FROZEN_BEFORE_ROUTE"
+      },
+      {
+        "nodeCode": "XDX_ROUTE"
+      },
+      {
+        "nodeCode": "XDX_OPERATION_ROUTER"
+      },
+      {
+        "nodeCode": "FETCH_SUPPLIERS"
+      },
+      {
+        "nodeCode": "XDX_COLLECTION_ADAPTER"
+      },
+      {
+        "nodeCode": "XDX_SAVE_COLLECTION_RECEIPT"
+      },
+      {
+        "nodeCode": "XDX_COLLECTION_NEXT"
+      },
+      {
+        "nodeCode": "XDX_APPLY_READ"
+      },
+      {
+        "nodeCode": "XDX_SAVE_READ"
+      },
+      {
+        "nodeCode": "XDX_READ_NEXT"
+      },
+      {
+        "nodeCode": "XDX_STAGE_ROUTER"
+      },
+      {
+        "nodeCode": "XDX_INIT_DISPLAY"
+      }
+    ]
+  }
+}

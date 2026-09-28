@@ -64,8 +64,16 @@ Copy-Item -LiteralPath (Join-Path $repoRoot '.agents/skills/aistudio/SKILL.md') 
 New-Item -ItemType Directory -Path (Join-Path $handoffFixtureRoot 'scripts/tests') -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $repoRoot 'scripts/verify-agentic-app-query-contract.cjs') -Destination (Join-Path $handoffFixtureRoot 'scripts/verify-agentic-app-query-contract.cjs')
 Copy-Item -LiteralPath (Join-Path $repoRoot 'scripts/tests/verify-agentic-app-query-contract.cjs') -Destination (Join-Path $handoffFixtureRoot 'scripts/tests/verify-agentic-app-query-contract.cjs')
+foreach ($dependency in @('scripts/verify-bo-search-contract.cjs','scripts/verify-bo-search-contract.test.cjs','scripts/verify-build-learning.cjs','scripts/tests/verify-build-learning.cjs')) {
+  Copy-Item -LiteralPath (Join-Path $repoRoot $dependency) -Destination (Join-Path $handoffFixtureRoot $dependency)
+}
 
 try {
+  $learningGatePath = Join-Path $handoffFixtureRoot 'scripts/verify-build-learning.cjs'
+  Remove-Item -LiteralPath $learningGatePath
+  $missingLearning = Invoke-ContractVerifier -TargetRoot $handoffFixtureRoot
+  if ($missingLearning.ExitCode -eq 0 -or -not $missingLearning.Output.Contains('Continuous learning validator is missing')) { throw 'Missing learning verifier was not rejected.' }
+  Copy-Item -LiteralPath (Join-Path $repoRoot 'scripts/verify-build-learning.cjs') -Destination $learningGatePath
   $sessionAgentsPath = Join-Path $handoffFixtureRoot 'AGENTS.md'
   $sessionAgentsOriginal = Get-Content -LiteralPath $sessionAgentsPath -Raw
   foreach ($marker in @('Reread the active handoff and applicable governance', 'A new session is optional')) {

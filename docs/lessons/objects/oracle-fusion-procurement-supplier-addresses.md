@@ -16,6 +16,8 @@ Sources: [GET supplier addresses](https://docs.oracle.com/en/cloud/saas/procurem
 
 ## GET operation
 
+Follow the [shared ADF find/search GET framework contract](README.md#adf-find-and-search-get-framework-contract) for every filtered function and its consumers. This build selects explicit header version `4`; retain any independently justified supported version. The supplier native repair does not prove this resource's other query paths.
+
 Parent identity follows the [Suppliers GET key contract](oracle-fusion-procurement-suppliers.md#get-operations): a displayed SupplierNumber must resolve to SupplierId before this child path is constructed. Preserve the selected supplier and reject unresolved or ambiguous number references.
 
 The collection operation ID is `getall_suppliers-addresses`. Resolve the parent supplier first and pass its business `SupplierId`; the generated local BO parameter is named `suppliers_Id`. Do not embed a sample parent ID as a default.
@@ -174,6 +176,7 @@ The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierAddress
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-28 | [Shared query-framework policy and supplier-only native repair](README.md#adf-find-and-search-get-framework-contract) | Link all filtered GET uses to the explicit-header and known-hit regression owner; no new supplier-addresses runtime proof or first-success sample change is claimed. |
 | 2026-09-27 | Rebuild addresses608/619 with independent parent-scoped GET | Corroborated generated address/party IDs and eight-field persistence; retained parent scope and immutable first GET. |
 | 2026-09-25 | Direct saved CreateAddress and independent same-parent GetAddress, address 300000333814490 | Corroborated omitted/generated SupplierAddressId and AddressPartyNumber and eight persisted fields; preserved tenant scope and immutable first GET. |
 | 2026-09-25 | Supplier Core number404 repair and user-confirmed six-step manual query acceptance | Link parent-number resolution to the Suppliers GET owner; no new child API or write behavior claimed. |

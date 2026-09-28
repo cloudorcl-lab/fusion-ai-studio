@@ -20,6 +20,8 @@ After a worktree first receives or updates this contract, verify the target chec
 
 ## Quality and architecture
 
+Follow the canonical playbook's **Continuous failure prevention gate** during every implementation cycle. Capture each failure before retry, integrate prevention at its existing owner, and require the scoped learning gate before affected execution and phase exit. Session receipts must reference the active build's `failure-ledger.json`; Closeout rejects unresolved failures. Use the gated timing runner for build/test/repair/closeout commands and the same pre-action gate for browser execution. A failure log without verified prevention is not closure.
+
 - Deliver customer-deployable tools and software. Double-check the repository, worktree, file paths, filenames, variants, logic, configuration, and test evidence.
 - Optimize architecture for accuracy first and speed second.
 - Unless another application form is required, build applications as web apps.

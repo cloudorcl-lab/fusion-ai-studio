@@ -12,6 +12,7 @@
 | Deferred milestones | `<MILESTONES>` |
 | Remote mutation authority | `<AUTHORIZED / NOT AUTHORIZED>` |
 | Test authority | MVP golden paths only unless explicitly expanded |
+| Approval inventory | `<BUILD-DIRECTORY>/approvals.json` or one equivalent linked record; read at Startup/resume/delegation |
 
 ## Learning register
 
@@ -75,6 +76,10 @@ For every source:
 
 ### Runtime and authority contract
 
+- Approval inventory: follow canonical **Upfront approval inventory and reuse**; collect foreseeable missing permissions at intake and reuse existing explicit approvals.
+- For each approval: exact user wording and original message/source, received time, permitted actions, target, budget, validity/expiry, exclusions, revocation/supersession; separate interpretation from quotation.
+- Current session authority obligation: applicable approval entry IDs and next actions; unresolved permissions and independent authorized work.
+- Platform review remains authoritative; the inventory cannot override rejection/challenges or replace transaction-specific approval. Unforeseen scope expansion requires new approval; never backdate later consent.
 - Configured host alias, without secrets:
 - Expected authenticated identity:
 - Existing artifact codes to reconcile:

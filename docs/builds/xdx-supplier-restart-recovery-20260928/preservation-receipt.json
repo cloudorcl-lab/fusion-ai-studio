@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "source": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260928",
+  "archive": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1/.debug/worktree-archives/xdx-supplier-core-rebuild-20260928-stopped/snapshot.zip",
+  "archiveSha256": "0e64efee7f05929d869de90684abed1053ac9a4a08ec8250c9c1f9adfbcc67c7",
+  "files": 2121,
+  "manifestSha256": "c116998ee077bbc6c3f9e62b2fc2d39e8520e2039ed9dd0798e49d35d58d20eb",
+  "configuration": "Preserved separately in private ignored archive; never staged",
+  "configurationSha256": "9f3fa830b7d658eff360773f0d7b4ab7487aeeda9b7a4036d1fad41226f76d32",
+  "gitAdministrativePath": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1/.git/worktrees/xdx-supplier-core-rebuild-20260928",
+  "boundaries": "Every archived file decompressed and SHA256 verified; excludes only Git administrative pointer and separately preserved env.properties. No deletion performed."
+}

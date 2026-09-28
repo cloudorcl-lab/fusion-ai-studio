@@ -2,6 +2,14 @@
 param([Parameter(Mandatory)][string]$OutputPath)
 $ErrorActionPreference = 'Stop'
 $repo = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
+$modelIndex = 'docs/build-models/object-lifecycle/README.md'
+$modelMatches = [regex]::Matches([IO.File]::ReadAllText((Join-Path $repo $modelIndex)), '(?m)^Current version: \*\*(\d+\.\d+\.\d+)\*\*')
+if ($modelMatches.Count -ne 1) { throw 'Object lifecycle index must declare exactly one current version.' }
+$objectLifecycleVersion = $modelMatches[0].Groups[1].Value
+$selectedModelFiles = @('plan-template.md','execution-prompt.md','supplier-worked-example.md') | ForEach-Object { "docs/build-models/object-lifecycle/v$objectLifecycleVersion/$_" }
+foreach ($relative in $selectedModelFiles) {
+  if (-not (Test-Path -LiteralPath (Join-Path $repo $relative) -PathType Leaf)) { throw "Missing current object lifecycle model source: $relative" }
+}
 $output = [IO.Path]::GetFullPath($OutputPath)
 if (Test-Path -LiteralPath $output) { throw "Output already exists: $output" }
 $stage = Join-Path ([IO.Path]::GetTempPath()) ('xdx-packet-' + [guid]::NewGuid())
@@ -25,6 +33,7 @@ try {
   }
   $startupFiles = @(& git -C $repo ls-files -- agent-app-build-startup)
   if ($LASTEXITCODE -ne 0) { throw 'Startup inventory failed' }
+  $startupFiles = @($startupFiles + 'agent-app-build-startup/templates/failure-ledger.json' | Sort-Object -Unique)
   foreach ($relative in $startupFiles) {
     if ($relative -like 'agent-app-build-startup/repository-seed/*') { continue }
     Copy-Source $relative (Join-Path $packet $relative)
@@ -32,14 +41,21 @@ try {
   $canonical = @('AGENTS.md','docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md',
     'scripts/verify-living-build-contract.ps1','scripts/verify-session-compliance.cjs',
     'scripts/verify-agentic-app-query-contract.cjs','scripts/tests/verify-agentic-app-query-contract.cjs',
+    'scripts/verify-bo-search-contract.cjs','scripts/verify-bo-search-contract.test.cjs',
+    'scripts/verify-build-learning.cjs','scripts/tests/verify-build-learning.cjs',
+    'scripts/workflow-test-continuation.cjs','scripts/tests/workflow-test-continuation.cjs',
+    'scripts/parse-aistudio-json.cjs','scripts/tests/parse-aistudio-json.cjs',
+  'scripts/update-build-learning.cjs','scripts/tests/update-build-learning.cjs',
     'scripts/plan-affected-workflow-tests.cjs','scripts/measure-build-command.cjs',
     'scripts/build-timing-report.cjs','scripts/screen-model-candidate.cjs','scripts/build-evidence-status.cjs',
     'scripts/refresh-test-report-provenance.cjs','scripts/capture-native-evidence.cjs',
+    'tests/test-workflow-runtime-path-candidate.cjs','tests/test-workflow-runtime-path-recording.cjs','tests/test-workflow-runtime-path-metadata.cjs','tests/fixtures/workflow-runtime-path-retained.json',
     'tests/test-affected-workflow-tests.cjs','tests/test-measure-build-command.cjs','tests/test-workflow-terminal.cjs',
     'tests/test-build-timing-report.cjs','tests/test-build-evidence.cjs','tests/test-report-provenance.cjs','tests/test-native-evidence.cjs',
     'tests/test-living-build-contract.ps1','tests/test-session-compliance.cjs','tests/test-build-time-record.ps1')
   $dependencies = @(& git -C $repo ls-files -- .agents/skills/aistudio docs/lessons/objects docs/build-models)
   if ($LASTEXITCODE -ne 0) { throw 'Dependency inventory failed' }
+  $dependencies = @($dependencies + $modelIndex + $selectedModelFiles | Sort-Object -Unique)
   foreach ($relative in @($canonical) + @($dependencies)) { Copy-Source $relative (Join-Path $seed $relative) }
   Copy-Source 'agent-app-build-startup/templates/active-handoff.md' (Join-Path $seed 'docs/handoffs/ACTIVE_HANDOFF.md')
   foreach ($name in @('INSTALL.md','Install-AgentAppBuildStartup.ps1','Verify-AgentAppBuildInstallPacket.ps1')) {
@@ -80,7 +96,7 @@ try {
   $payload = @(Get-ChildItem -LiteralPath $packet -Recurse -File -Force | Sort-Object FullName | ForEach-Object {
     [ordered]@{path=[IO.Path]::GetRelativePath($packet,$_.FullName).Replace('\','/');sha256=(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant()}
   })
-  [ordered]@{schemaVersion=1;packetName='agent-app-build-install-packet';generatedAtUtc=[DateTime]::UtcNow.ToString('o');sourceCommit=$commit;sourceState='Working source snapshot; per-file source hashes authoritative';models=@{objectLifecycle='1.0.1';artifactPurge='1.0.1'};sources=@($provenance);portableReferenceTransforms=@($transforms);payload=$payload} | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath (Join-Path $packet 'PACKET-MANIFEST.json') -Encoding utf8
+  [ordered]@{schemaVersion=1;packetName='agent-app-build-install-packet';generatedAtUtc=[DateTime]::UtcNow.ToString('o');sourceCommit=$commit;sourceState='Working source snapshot; per-file source hashes authoritative';models=@{objectLifecycle=$objectLifecycleVersion;artifactPurge='1.0.1'};sources=@($provenance);portableReferenceTransforms=@($transforms);payload=$payload} | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath (Join-Path $packet 'PACKET-MANIFEST.json') -Encoding utf8
   & (Join-Path $packet 'Verify-AgentAppBuildInstallPacket.ps1') -PacketRoot $packet
   New-Item -ItemType Directory -Path (Split-Path -Parent $output) -Force | Out-Null
   [IO.Compression.ZipFile]::CreateFromDirectory($stage,$output)

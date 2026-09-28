@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-restart-recovery-20260928",
+  "scopes": [
+    "governance",
+    "purge",
+    "packaging"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-supplier-restart-recovery-20260928/commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "R01",
+      "observedUtc": "2026-09-28T14:28:12.6175352Z",
+      "scope": "governance",
+      "blocks": [
+        "governance",
+        "purge",
+        "packaging"
+      ],
+      "status": "fixed",
+      "symptom": "Learning gate coupled historical status to current source drift",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-restart-recovery-20260928/recovery-occurrences.json",
+          "sha256": "e81a09a77f2f94624979c5cc44afd094f4f1e13e4df74a464b2bc0891b791e28"
+        }
+      ],
+      "evidenceGap": "Original command output retained in thread and stopped-attempt archive; occurrence file is a disclosed contemporaneous summary."
+    },
+    {
+      "id": "R02",
+      "observedUtc": "2026-09-28T14:28:12.6175352Z",
+      "scope": "governance",
+      "blocks": [
+        "governance",
+        "purge",
+        "packaging"
+      ],
+      "status": "fixed",
+      "symptom": "Protected skill promotion rejected in restricted shell",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-restart-recovery-20260928/recovery-occurrences.json",
+          "sha256": "e81a09a77f2f94624979c5cc44afd094f4f1e13e4df74a464b2bc0891b791e28"
+        }
+      ],
+      "evidenceGap": "Original command output retained in thread and stopped-attempt archive; occurrence file is a disclosed contemporaneous summary."
+    },
+    {
+      "id": "R03",
+      "observedUtc": "2026-09-28T14:28:46.3060565Z",
+      "scope": "governance",
+      "blocks": [
+        "governance",
+        "purge"
+      ],
+      "status": "fixed",
+      "symptom": "Startup rejected recovery register and time tracker lacking explicit task identity",
+      "cause": "Root authored both records without required literal task ID",
+      "correction": "Added exact current task identity to both records before retry",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-restart-recovery-20260928/session-startup.txt",
+          "sha256": "fb5baada1fc63bf4d2f0ec2b95f82a86ff0be203b8e3d153431813daa603f1f3"
+        }
+      ]
+    }
+  ]
+}
