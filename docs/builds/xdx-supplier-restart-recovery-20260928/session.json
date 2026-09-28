@@ -3,9 +3,9 @@
   "sessionId": "xdx-supplier-restart-recovery-20260928",
   "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
   "branch": "TestingWFBuildTools",
-  "phase": "Startup",
+  "phase": "Closeout",
   "startedUtc": "2026-09-28T14:28:12.6175352Z",
-  "checkpointUtc": "2026-09-28T14:45:39.507Z",
+  "checkpointUtc": "2026-09-28T14:53:50.220Z",
   "reads": [
     {
       "path": "AGENTS.md",
@@ -13,7 +13,7 @@
     },
     {
       "path": "docs/handoffs/ACTIVE_HANDOFF.md",
-      "sha256": "f25a8fd0a7d6813e6fdd8589691011ec9f96720a0e592eef2dafb9a2c7e6206a"
+      "sha256": "5348a2e7f4e57c4369e1e859c42bcf23d6622f55593e6238edb38770c0f54d17"
     },
     {
       "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
@@ -35,65 +35,109 @@
     {
       "id": "learning",
       "rule": "Canonical lifecycle and artifact purge model1.0.1",
-      "status": "planned",
-      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped recovery completed: fixes qualified/committed, evidence preserved, approved local/Studio purge verified and fresh restart Startup passed. Product completion remains outside recovery receipt.",
+      "evidence": [
+        "docs/builds/xdx-supplier-restart-recovery-20260928/analysis.md",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/package-verification.txt",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/local-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/remote-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/restart-result.json"
+      ]
     },
     {
       "id": "intake",
       "rule": "Canonical lifecycle and artifact purge model1.0.1",
-      "status": "planned",
-      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped recovery completed: fixes qualified/committed, evidence preserved, approved local/Studio purge verified and fresh restart Startup passed. Product completion remains outside recovery receipt.",
+      "evidence": [
+        "docs/builds/xdx-supplier-restart-recovery-20260928/analysis.md",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/package-verification.txt",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/local-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/remote-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/restart-result.json"
+      ]
     },
     {
       "id": "authority",
       "rule": "Canonical lifecycle and artifact purge model1.0.1",
-      "status": "planned",
-      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped recovery completed: fixes qualified/committed, evidence preserved, approved local/Studio purge verified and fresh restart Startup passed. Product completion remains outside recovery receipt.",
+      "evidence": [
+        "docs/builds/xdx-supplier-restart-recovery-20260928/analysis.md",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/package-verification.txt",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/local-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/remote-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/restart-result.json"
+      ]
     },
     {
       "id": "objects",
       "rule": "Canonical lifecycle and artifact purge model1.0.1",
-      "status": "planned",
-      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped recovery completed: fixes qualified/committed, evidence preserved, approved local/Studio purge verified and fresh restart Startup passed. Product completion remains outside recovery receipt.",
+      "evidence": [
+        "docs/builds/xdx-supplier-restart-recovery-20260928/analysis.md",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/package-verification.txt",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/local-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/remote-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/restart-result.json"
+      ]
     },
     {
       "id": "verification",
       "rule": "Canonical lifecycle and artifact purge model1.0.1",
-      "status": "planned",
-      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped recovery completed: fixes qualified/committed, evidence preserved, approved local/Studio purge verified and fresh restart Startup passed. Product completion remains outside recovery receipt.",
+      "evidence": [
+        "docs/builds/xdx-supplier-restart-recovery-20260928/analysis.md",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/package-verification.txt",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/local-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/remote-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/restart-result.json"
+      ]
     },
     {
       "id": "timing",
       "rule": "Canonical lifecycle and artifact purge model1.0.1",
-      "status": "planned",
-      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped recovery completed: fixes qualified/committed, evidence preserved, approved local/Studio purge verified and fresh restart Startup passed. Product completion remains outside recovery receipt.",
+      "evidence": [
+        "docs/builds/xdx-supplier-restart-recovery-20260928/analysis.md",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/package-verification.txt",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/local-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/remote-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/restart-result.json"
+      ]
     },
     {
       "id": "cleanup",
       "rule": "Canonical lifecycle and artifact purge model1.0.1",
-      "status": "planned",
-      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped recovery completed: fixes qualified/committed, evidence preserved, approved local/Studio purge verified and fresh restart Startup passed. Product completion remains outside recovery receipt.",
+      "evidence": [
+        "docs/builds/xdx-supplier-restart-recovery-20260928/analysis.md",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/package-verification.txt",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/local-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/remote-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/restart-result.json"
+      ]
     },
     {
       "id": "delivery",
       "rule": "Canonical lifecycle and artifact purge model1.0.1",
-      "status": "planned",
-      "reason": "Current user-authorized recovery; preservation verified, qualified baseline and exact purge/restart still pending",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped recovery completed: fixes qualified/committed, evidence preserved, approved local/Studio purge verified and fresh restart Startup passed. Product completion remains outside recovery receipt.",
+      "evidence": [
+        "docs/builds/xdx-supplier-restart-recovery-20260928/analysis.md",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/package-verification.txt",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/local-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/remote-purge-result.json",
+        "docs/builds/xdx-supplier-restart-recovery-20260928/restart-result.json"
+      ]
     }
   ],
-  "unresolved": [
-    "Qualified committed baseline",
-    "Exact artifact/local purge",
-    "Fresh restart from committed fixes"
-  ],
+  "unresolved": [],
   "metrics": {
     "tokens": "Goal aggregate not used as task allocation",
     "aiUnits": "No recovery model execution",

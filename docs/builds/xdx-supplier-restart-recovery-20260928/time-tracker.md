@@ -10,3 +10,5 @@ Precommit diff check found an extra EOF blank line in tests/test-session-complia
 Local purge completed: exact worktree, captured Git administrative path and integrated local branch absent. Windows failures and corrections recorded in cleanup-failures.json. App and workflow deleted; fresh app catalog requery returned no applications. BO delete completed and fresh reloaded exact-name search returned no matches. No business writes during recovery.
 
 Fresh catalog absence confirmed for all three exact targets. Evidence files retain byte-exact line endings through scoped .gitattributes; Git whitespace checks explicitly recognize CRLF to avoid changing hash-bound proof. Initial check treated retained CR bytes as whitespace; attribute correction preserves evidence bytes.
+
+2026-09-28T14:53:50.220Z Recovery delivery checkpoint: local and Studio purge verified, corrected fixes committed, fresh replacement ee7d189 Startup passed. Product goal remains active;0/8 product requirements accepted in replacement. Post-checkpoint commit/final-response tail is outside measured interval. No new business writes.
