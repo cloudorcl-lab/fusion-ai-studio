@@ -1,0 +1,15 @@
+{
+  "serverActions": 0,
+  "retainedBranch": "codex/xdx-supplier-core-rebuild-20260926",
+  "baseConfigurationUnchanged": true,
+  "target": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926",
+  "method": "Normal Git unregister succeeded; exact reparse-free residual paths removed with native PowerShell after Windows permission error",
+  "archiveSha256": "22a26d8872ba4d549c6428f666965cb24de22622644e60dac1c9442b8db28759",
+  "retainedHead": "868e10bab1052b814b3f5a0b05f7fa99901ab229",
+  "registrationAbsent": true,
+  "completedUtc": "2026-09-28T01:20:38.3080603Z",
+  "pathAbsent": true,
+  "status": "passed",
+  "archivedTrackedDeltaRestored": 1,
+  "archivedExtrasRemoved": 285
+}

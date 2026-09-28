@@ -1,0 +1,5 @@
+# Lesson audit
+
+Task: xdx-supplier-worktree-retirement-20260928. Reviewed completed worktree handoff, learning register, canonical diffs and current base. Missing base lessons: uncertain-attempt wording, supported-tool representation limits, hash-bound fixture readiness, raw intermediate-output validation, active versus passive keep-alive, process versus semantic outcome, native template preflight and four-resource corroboration. Promote to existing canonical owners, retaining newer base timing/screening/report rules. Full final worktree review records no further new rule after these. Object references reviewed at26C/API11.13.18.05; no new API behavior tested.
+
+Final review: all six canonical owners reconciled and 20 directly linked evidence files hash-verified. No further uncarried reusable lessons found. All first-GET samples unchanged. Historical prompts were not edited. Git long-path-disabled status falsely reported 12 deletions; core.longpaths=true confirmed only the archived environment modification. Normal Git removal unregistered the target; exact native residual cleanup passed.

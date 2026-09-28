@@ -10,7 +10,7 @@
 | Documentation release | 26C |
 | Required parent key | Live-resolved `SupplierId` |
 | Stable item key | `SupplierAddressId` |
-| Last evidence review | 2026-09-17 |
+| Last evidence review | 2026-09-27 |
 
 Sources: [GET supplier addresses](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-get.html), [POST supplier address](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-addresses-post.html), and [Oracle 26C OpenAPI](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/openapi.json).
 
@@ -128,6 +128,8 @@ The create operation ID is `create_suppliers-addresses`. The 26C OpenAPI request
 | `SupplierAddressId` | Omit the new address ID and capture the returned value | Omitted in successful POST, 2026-09-17, eqih-dev21 / 11.13.18.05; [request and response](../../builds/xdx-supplier-information/live-post/create-address.json). Initial derivation hypothesis confirmed for this scope. |
 | `AddressPartyNumber` | Omit; retain generated response value | Same successful omitted-field request/response; revalidate across changed tenant numbering configuration. |
 
+Current-task corroboration: on 2026-09-27, saved CreateAddress A omitted SupplierAddressId and AddressPartyNumber and generated 300000334073608/1486641 under supplier300000334073550. Native-app B generated 300000334073619/1486642 under 300000334073601. Independent parent-scoped GetAddress calls confirmed both generated values and all eight approved fields, including ordering true. [A runtime comparison](../../builds/xdx-supplier-core-rebuild-20260926/bo-address-a-runtime-verification.json) and [B independent comparison](../../builds/xdx-supplier-core-rebuild-20260926/native-b-address-independent-verification.json), with [frozen native review](../../builds/xdx-supplier-core-rebuild-20260926/qa-p3-native-address-frozen-release-20260927.json), corroborate existing omission treatment in eqih-dev21 / API 11.13.18.05. Native observations are root-recorded; retained evidence was independently reviewed. No accepted POST replay, broadened requiredness or uniqueness claim; first GET remains unchanged.
+
 ### Required and unique field constraints
 
 Additional confirmation: the [1497 address POST](../../builds/xdx-supplier-information/live-post/children-1497-create/address-post.json) again omitted SupplierAddressId and AddressPartyNumber and received both, with [persisted GET](../../builds/xdx-supplier-information/live-post/children-1497-create/address-get.json), on 2026-09-17 in the same tenant/release. This supplements the generated-field evidence without changing the immutable first-success sample.
@@ -172,6 +174,8 @@ The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierAddress
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-27 | Rebuild addresses608/619 with independent parent-scoped GET | Corroborated generated address/party IDs and eight-field persistence; retained parent scope and immutable first GET. |
+| 2026-09-25 | Direct saved CreateAddress and independent same-parent GetAddress, address 300000333814490 | Corroborated omitted/generated SupplierAddressId and AddressPartyNumber and eight persisted fields; preserved tenant scope and immutable first GET. |
 | 2026-09-25 | Supplier Core number404 repair and user-confirmed six-step manual query acceptance | Link parent-number resolution to the Suppliers GET owner; no new child API or write behavior claimed. |
 | 2026-09-24 | XDX Supplier Core exact-approved native POST and independent GET | Corroborated existing generated-field treatment and required payload in the tested tenant; retained first GET sample and unresolved uniqueness limits. |
 | 2026-09-23 | Live create rejection `POZ-2130428` under supplier 1504 | Established the tenant's conditional purpose requirement. The streamlined golden path now sends only `AddressPurposeOrderingFlag: true`; the rejected POST created no address. |

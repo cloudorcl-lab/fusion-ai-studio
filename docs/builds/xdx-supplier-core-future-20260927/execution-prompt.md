@@ -22,7 +22,7 @@ and tooling commit a3cce638dfa570347725c97d006db24d321dac66. Never launch from d
 governance or reuse a colliding branch/path. Create the specified worktree only at
 launch; verify branch/HEAD, read its handoff/playbook/registry and selected resource
 references, initialize fresh session/intake/timing/evidence records and pass Startup
-and startup-package gates. Preserve the completed Supplier worktree at868e10b.
+and startup-package gates. Preserve the completed Supplier branch at868e10b.
 No environment is inferred from a historical URL: use active env.properties privately.
 
 SCOPE AND EXHAUSTED AUTHORITY
@@ -40,9 +40,12 @@ request distinct scoped authority only for that dependent action. Continue safe 
 BASELINE AND TEST SELECTION
 Preserve completed historical prompts/plans and original reports. Reconcile the
 completed build's operation-ledger.json and final DRAFT versions/hashes before reuse.
-The accepted runtime remains in .worktrees/xdx-supplier-core-rebuild-20260926 at
-868e10bab1052b814b3f5a0b05f7fa99901ab229. Do not assume its artifacts are in the base
-checkout; retain that worktree and read its handoff. Import only explicitly inventoried
+The accepted runtime source remains on codex/xdx-supplier-core-rebuild-20260926 at
+868e10bab1052b814b3f5a0b05f7fa99901ab229; its physical worktree is retired. Read its
+handoff and ledger from that commit using Git. Read the verified preservation receipt
+at docs/builds/xdx-supplier-worktree-retirement-20260928/preservation.json for the
+private local archive of uncommitted/ignored reports; verify hashes before recovery.
+Do not assume those artifacts/reports are in the base checkout. Import only inventoried
 source/test dependencies into the future checkout with verified hashes; never copy
 credentials, expired probes or executable historical helpers wholesale.
 Do not restart completed suites. Begin with local retained-evidence validation and

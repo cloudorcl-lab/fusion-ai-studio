@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "target": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-rebuild-20260926",
+  "branch": "codex/xdx-supplier-core-rebuild-20260926",
+  "head": "868e10bab1052b814b3f5a0b05f7fa99901ab229",
+  "archivePath": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.debug\\worktree-archives\\xdx-supplier-core-rebuild-20260926-868e10b\\snapshot.zip",
+  "manifestPath": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.debug\\worktree-archives\\xdx-supplier-core-rebuild-20260926-868e10b\\files.json",
+  "archiveSha256": "22a26d8872ba4d549c6428f666965cb24de22622644e60dac1c9442b8db28759",
+  "manifestSha256": "e3305b7b1cc73daef62117cea1a20826b8a80f046d4a2da9d8d3dae703571b5d",
+  "files": 7244,
+  "bytes": 2287538058.0,
+  "archiveBytes": 527357728,
+  "startedUtc": "2026-09-28T01:08:24.0385841Z",
+  "verifiedUtc": "2026-09-28T01:09:01.7268288Z",
+  "verification": "Every ZIP entry count/size/SHA256 and current source SHA256 matched; no reparse points",
+  "privacy": "Private local ignored archive includes configuration; never stage, publish or execute recovered helpers"
+}

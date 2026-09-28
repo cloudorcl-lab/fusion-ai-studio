@@ -1,0 +1,88 @@
+{
+  "reviewedAt": "2026-09-27T06:34:30.190Z",
+  "status": "PASS_LOCAL_SOURCE_SAVE_CLEARANCE",
+  "sourceSha256": "f85118cc659fac18f5de10255dc5d10409a5171e6d63297962d3f833c99ba2ec",
+  "checks": [
+    {
+      "node": "AUTHORIZE_SUPPLIER_WRITE",
+      "oldExpression": "'Duplicate response invalid. No create submitted.'",
+      "newExpression": "s.status==='pending'?\"The prior supplier attempt remains uncertain because the duplicate check response is invalid. No new create submitted. Never retry; reconcile supplier.\":'Duplicate response invalid. No create submitted.'"
+    },
+    {
+      "node": "AUTHORIZE_ADDRESS_WRITE",
+      "oldExpression": "'Duplicate response invalid. No address create submitted.'",
+      "newExpression": "t.status==='pending'?\"The prior address attempt remains uncertain because the duplicate check response is invalid. No new create submitted. Never retry; reconcile address.\":'Duplicate response invalid. No address create submitted.'"
+    },
+    {
+      "node": "AUTHORIZE_SITE_WRITE",
+      "oldExpression": "'Site collision check invalid. No create submitted.'",
+      "newExpression": "t.status==='pending'?\"The prior site attempt remains uncertain because the duplicate check response is invalid. No new create submitted. Never retry; reconcile site.\":'Site collision check invalid. No create submitted.'"
+    },
+    {
+      "node": "AUTHORIZE_CONTACT_WRITE",
+      "oldExpression": "'Contact collision check invalid. No create submitted.'",
+      "newExpression": "t.status==='pending'?\"The prior contact attempt remains uncertain because the duplicate check response is invalid. No new create submitted. Never retry; reconcile contact.\":'Contact collision check invalid. No create submitted.'"
+    }
+  ],
+  "fullJsonComparison": "Replacing only the four authorized message expressions restores exact full JSON before artifact. No state, approval, BO, binding, control, model, prompt or topology differences.",
+  "independentFocusedTest": {
+    "command": "node --test docs/builds/xdx-supplier-core-rebuild-20260926/workflow-preparation/pending-wording.test.cjs",
+    "passed": 8,
+    "failed": 0,
+    "durationMs": 104.818,
+    "meaning": "Actual serialized CODE returns display; pending/draft status, attempt, payload and approval unchanged. Pending prior-uncertain/no-new/no-retry wording asserted; draft wording unchanged."
+  },
+  "ownerChecks": {
+    "fullTests": 114,
+    "failures": 0,
+    "query": "PASS",
+    "validatorErrors": 0
+  },
+  "limits": [
+    "Test data reapply parity receipt pending independently; source save clearance is separate from configured runtime readiness.",
+    "No remote test, source or canonical test mutation by QA.",
+    "Current original wording failure/assessment remains preserved."
+  ],
+  "evidence": [
+    {
+      "path": "src/workflows/xdx_supplier_core_20260926.wf",
+      "sha256": "f85118cc659fac18f5de10255dc5d10409a5171e6d63297962d3f833c99ba2ec"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/workflow-preparation/pending-wording-repair/before.wf.json",
+      "sha256": "812718bf186643a358b9ad6bf4ddc0d47872e01cee0d56c47e67bf9dc2f109b7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/workflow-preparation/pending-wording-repair/after.wf.json",
+      "sha256": "f85118cc659fac18f5de10255dc5d10409a5171e6d63297962d3f833c99ba2ec"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/workflow-preparation/pending-wording-repair/changes.json",
+      "sha256": "737ad1a150294351248ba3c90beddae0994e2a1b398d9d9fca00e349b90f1484"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/workflow-preparation/pending-wording-repair/red.txt",
+      "sha256": "2288ffed4d5e1ba5299ee620a86ae357700c1a494ea94767410aa27dd8197e3f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/workflow-preparation/pending-wording-repair/green.txt",
+      "sha256": "5e3dc87a89678a5a96cd1edcc2beb016adc37a97485903d1fd4fc0c556527a4c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/workflow-preparation/pending-wording-repair/local-tests.txt",
+      "sha256": "c07ba96c5b4a9350c2a6fa81f0f781272e60ea0f4d1f92f06c2e13fbe0aca917"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/workflow-preparation/pending-wording-repair/query.txt",
+      "sha256": "ba8759acc12896e9e8404b3676999117e844b9cd4fe017dab84e0a31e866daa0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/workflow-preparation/pending-wording-repair/validate.txt",
+      "sha256": "695873573b088cfe2d0658168f4dba1cbec4bb4a21aaa83670b776fdfee3e9b7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/workflow-preparation/pending-wording.test.cjs",
+      "sha256": "9808b5670c52938708981be54284190c6118145068c8fc4fb0ecbd4f45af44cf"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "atUtc": "2026-09-27T02:40:39.550Z",
+  "status": "PASS",
+  "operation": "B-supplier",
+  "traceId": "00000000000000007567dab42703114b",
+  "exactFields": 3,
+  "exactIds": 3,
+  "acceptedIds": {
+    "SupplierId": "300000334073601",
+    "SupplierNumber": "1510",
+    "SupplierPartyId": "300000334073602"
+  },
+  "persistedGet": "bo-supplier-b-persisted-get.json.parsed.json",
+  "noReplay": true
+}

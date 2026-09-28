@@ -1,0 +1,570 @@
+{
+  "status": "INDEPENDENT_REPRESENTATION_EQUIVALENCE_PASS",
+  "workflowVersion": 86301560,
+  "workflowTests": 19,
+  "evaluations": 128,
+  "obligations": 43,
+  "verifiedMappedProofs": 245,
+  "archiveFilesHashVerified": 70,
+  "rawPlannerSha256": "c23b33d83b5990f08037e4bc286d2d97247e3685bb413a179375968cf165bc92",
+  "rawPlannerFinalSummaryAllowed": false,
+  "correctedCurrentMapSha256": "0497e8daf8ee09afdce3cad0b4864921f1f01d3344237eff1fb798e3c72d0a97",
+  "archiveUnmodified": true,
+  "rows": [
+    {
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-display-path",
+      "rawStage": "InitDisplay",
+      "proof": "supplier-duplicate/prepare-supplier-draft",
+      "jobId": "2564f5fb-f4ab-44c6-b812-5208c31ce1e1",
+      "priorSteps": [],
+      "reason": "Explicit preparation Query produces unsent supplier draft; blank InitDisplay cannot express this operation."
+    },
+    {
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-preflight-path",
+      "rawStage": "InitDisplay",
+      "proof": "supplier-duplicate/withhold-duplicate-name",
+      "jobId": "43bcf90b-d2b2-4782-ba21-1aef67ef008b",
+      "priorSteps": [
+        "prepare-supplier-draft",
+        "edit-supplier-name",
+        "review-exact-payload",
+        "approve-exact-payload"
+      ],
+      "reason": "Actual supplier draft/edit/review/approval precede create Query collision preflight."
+    },
+    {
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-address-path",
+      "rawStage": "InitDisplay",
+      "proof": "address-duplicate/prepare-address",
+      "jobId": "8e8e6a78-58f4-4d1b-894e-a29115d1b832",
+      "priorSteps": [
+        "find-parent"
+      ],
+      "reason": "Preceding supplier query establishes parent; explicit child preparation enters correct resource state."
+    },
+    {
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-site-path",
+      "rawStage": "InitDisplay",
+      "proof": "site-duplicate/prepare-site",
+      "jobId": "e232d7ef-c8de-4812-830a-a26b4e048eae",
+      "priorSteps": [
+        "find-parent"
+      ],
+      "reason": "Preceding supplier query establishes parent; explicit child preparation enters correct resource state."
+    },
+    {
+      "scenarioId": "app-init-display-TRANSACTION_ROUTE-contact-path",
+      "rawStage": "InitDisplay",
+      "proof": "contact-duplicate/prepare-contact",
+      "jobId": "a75f8e8b-35c3-47cb-959b-f90e0c84de79",
+      "priorSteps": [
+        "find-parent"
+      ],
+      "reason": "Preceding supplier query establishes parent; explicit child preparation enters correct resource state."
+    },
+    {
+      "scenarioId": "app-init-display-READ_ALLOWED-false-path",
+      "rawStage": "InitDisplay",
+      "proof": "supplier-read-continuity/withhold-missing-number",
+      "jobId": "d9ad8ab7-e636-4f11-a697-67f30a891361",
+      "priorSteps": [
+        "find-known-supplier",
+        "resolve-displayed-number"
+      ],
+      "reason": "Query supplies unverified number999999999 after selection history; guidance blocks BO and does not silently reuse prior supplier."
+    },
+    {
+      "scenarioId": "app-init-display-IS_LIST-false-path",
+      "rawStage": "InitDisplay",
+      "proof": "supplier-read-continuity/resolve-displayed-number",
+      "jobId": "470d77a9-87b7-4cbd-807b-8c63ba7dfc77",
+      "priorSteps": [
+        "find-known-supplier"
+      ],
+      "reason": "Verified prior list maps displayed1507 to internal476; selected-detail Query executes detail rather than InitDisplay list."
+    },
+    {
+      "scenarioId": "SUPPLIER_WRITE_ROUTE-write-path",
+      "rawStage": "unstaged",
+      "proof": "supplier-reconcile/capture-uncertain-outcome",
+      "jobId": "5d84b207-97b1-424d-845d-9d004e057e48",
+      "priorSteps": [
+        "prepare-supplier-draft",
+        "edit-supplier-name",
+        "review-exact-payload",
+        "approve-exact-payload"
+      ],
+      "reason": "Actual preceding edit/review/exact approval authorizes one fixture write after preflight; no fabricated approval state."
+    },
+    {
+      "scenarioId": "SUPPLIER_WRITE_ROUTE-verify-path",
+      "rawStage": "unstaged",
+      "proof": "supplier-reconcile/reconcile-without-write",
+      "jobId": "8183c411-e5c9-422e-aa62-ac2bc1c47789",
+      "priorSteps": [
+        "prepare-supplier-draft",
+        "edit-supplier-name",
+        "review-exact-payload",
+        "approve-exact-payload",
+        "capture-uncertain-outcome"
+      ],
+      "reason": "Prior uncertain approved attempt is preserved; candidate lookup plus independent GET reconciles without another create."
+    },
+    {
+      "scenarioId": "SUPPLIER_WRITE_ROUTE-display-path",
+      "rawStage": "unstaged",
+      "proof": "supplier-duplicate/withhold-duplicate-name",
+      "jobId": "43bcf90b-d2b2-4782-ba21-1aef67ef008b",
+      "priorSteps": [
+        "prepare-supplier-draft",
+        "edit-supplier-name",
+        "review-exact-payload",
+        "approve-exact-payload"
+      ],
+      "reason": "Approved command finds collision; downstream draft guidance withholds POST."
+    },
+    {
+      "scenarioId": "CREATE_HAS_ID-true-path",
+      "rawStage": "unstaged",
+      "proof": "supplier-success/create-and-verify",
+      "jobId": "f5b08025-1e3c-4c89-ba11-e2efa1c63d46",
+      "priorSteps": [
+        "prepare-supplier-draft",
+        "edit-supplier-name",
+        "review-exact-payload",
+        "approve-exact-payload"
+      ],
+      "reason": "Approved attempt returns usable key; independent GET precedes verified result."
+    },
+    {
+      "scenarioId": "CREATE_HAS_ID-false-path",
+      "rawStage": "unstaged",
+      "proof": "supplier-reconcile/capture-uncertain-outcome",
+      "jobId": "5d84b207-97b1-424d-845d-9d004e057e48",
+      "priorSteps": [
+        "prepare-supplier-draft",
+        "edit-supplier-name",
+        "review-exact-payload",
+        "approve-exact-payload"
+      ],
+      "reason": "Prior approved attempt has no returned usable key; pending output withholds independent verification GET and forbids retry."
+    },
+    {
+      "scenarioId": "ADDRESS_ENTRY-list-path",
+      "rawStage": "unstaged",
+      "proof": "address-read-continuity/list-addresses",
+      "jobId": "6fec4ef7-eb0f-4e64-be19-86c509e7aa78",
+      "priorSteps": [
+        "withhold-parent",
+        "find-parent"
+      ],
+      "reason": "Verified parent selection precedes ordinary child list Query; response fields and paging are parent-scoped."
+    },
+    {
+      "scenarioId": "ADDRESS_ENTRY-detail-path",
+      "rawStage": "unstaged",
+      "proof": "address-read-continuity/detail-address",
+      "jobId": "6d112b2c-0423-49eb-83e9-e05b372ba4f4",
+      "priorSteps": [
+        "withhold-parent",
+        "find-parent",
+        "list-addresses"
+      ],
+      "reason": "Prior parent-scoped list supplies selected child key; ordinary detail Query retains parent and executes detail BO."
+    },
+    {
+      "scenarioId": "ADDRESS_ENTRY-preflight-path",
+      "rawStage": "unstaged",
+      "proof": "address-duplicate/withhold-duplicate",
+      "jobId": "87207c92-6bc0-4c32-a442-f7b9f826804e",
+      "priorSteps": [
+        "find-parent",
+        "prepare-address",
+        "edit-address",
+        "supply-email",
+        "review-address",
+        "approve-address"
+      ],
+      "reason": "Child create command follows complete draft/review/approval; collision preflight precedes any write."
+    },
+    {
+      "scenarioId": "ADDRESS_ENTRY-display-path",
+      "rawStage": "unstaged",
+      "proof": "address-duplicate/prepare-address",
+      "jobId": "8e8e6a78-58f4-4d1b-894e-a29115d1b832",
+      "priorSteps": [
+        "find-parent"
+      ],
+      "reason": "Explicit child preparation after verified parent produces unsent draft with missing fields visible; no synthesized approval."
+    },
+    {
+      "scenarioId": "ADDRESS_WRITE_ROUTE-write-path",
+      "rawStage": "unstaged",
+      "proof": "address-reconcile/capture-uncertain",
+      "jobId": "16a6888b-1811-4541-b3ea-22d0e131b4b1",
+      "priorSteps": [
+        "find-parent",
+        "prepare-address",
+        "edit-address",
+        "supply-email",
+        "review-address",
+        "approve-address"
+      ],
+      "reason": "Actual preceding edit/review/exact approval authorizes one fixture write after preflight; no fabricated approval state."
+    },
+    {
+      "scenarioId": "ADDRESS_WRITE_ROUTE-verify-path",
+      "rawStage": "unstaged",
+      "proof": "address-reconcile/reconcile-without-write",
+      "jobId": "6583d3a6-ae72-4a14-9fd7-41cb2c33bdc7",
+      "priorSteps": [
+        "find-parent",
+        "prepare-address",
+        "edit-address",
+        "supply-email",
+        "review-address",
+        "approve-address",
+        "capture-uncertain"
+      ],
+      "reason": "Prior uncertain approved attempt is preserved; candidate lookup plus independent GET reconciles without another create."
+    },
+    {
+      "scenarioId": "ADDRESS_WRITE_ROUTE-display-path",
+      "rawStage": "unstaged",
+      "proof": "address-duplicate/withhold-duplicate",
+      "jobId": "87207c92-6bc0-4c32-a442-f7b9f826804e",
+      "priorSteps": [
+        "find-parent",
+        "prepare-address",
+        "edit-address",
+        "supply-email",
+        "review-address",
+        "approve-address"
+      ],
+      "reason": "Approved command finds collision; downstream draft guidance withholds POST."
+    },
+    {
+      "scenarioId": "ADDRESS_HAS_ID-true-path",
+      "rawStage": "unstaged",
+      "proof": "address-success/create-and-verify",
+      "jobId": "f7cb8e2f-ff2d-41bd-898a-e8f8c4b84e5e",
+      "priorSteps": [
+        "find-parent",
+        "prepare-address",
+        "edit-address",
+        "supply-email",
+        "review-address",
+        "approve-address"
+      ],
+      "reason": "Approved attempt returns usable key; independent GET precedes verified result."
+    },
+    {
+      "scenarioId": "ADDRESS_HAS_ID-false-path",
+      "rawStage": "unstaged",
+      "proof": "address-reconcile/capture-uncertain",
+      "jobId": "16a6888b-1811-4541-b3ea-22d0e131b4b1",
+      "priorSteps": [
+        "find-parent",
+        "prepare-address",
+        "edit-address",
+        "supply-email",
+        "review-address",
+        "approve-address"
+      ],
+      "reason": "Prior approved attempt has no returned usable key; pending output withholds independent verification GET and forbids retry."
+    },
+    {
+      "scenarioId": "SITE_ENTRY-list-path",
+      "rawStage": "unstaged",
+      "proof": "site-read-continuity/list-sites",
+      "jobId": "bc1729a7-181b-40c7-b531-10d894b9224f",
+      "priorSteps": [
+        "missing-parent",
+        "find-parent",
+        "show-bu-choices"
+      ],
+      "reason": "Verified parent selection precedes ordinary child list Query; response fields and paging are parent-scoped."
+    },
+    {
+      "scenarioId": "SITE_ENTRY-detail-path",
+      "rawStage": "unstaged",
+      "proof": "site-read-continuity/site-detail",
+      "jobId": "61d4e9f6-f191-48ea-8e76-1686d536d948",
+      "priorSteps": [
+        "missing-parent",
+        "find-parent",
+        "show-bu-choices",
+        "list-sites"
+      ],
+      "reason": "Prior parent-scoped list supplies selected child key; ordinary detail Query retains parent and executes detail BO."
+    },
+    {
+      "scenarioId": "SITE_ENTRY-preflight-path",
+      "rawStage": "unstaged",
+      "proof": "site-reconcile/reconcile-without-write",
+      "jobId": "02ffd674-e841-41b9-aa31-8a3baa6c48df",
+      "priorSteps": [
+        "find-parent",
+        "prepare-site",
+        "supply-bu",
+        "edit-site",
+        "review-site",
+        "approve-site",
+        "capture-uncertain"
+      ],
+      "reason": "Site reconciliation follows uncertain approved attempt; searches same-parent candidate without another create."
+    },
+    {
+      "scenarioId": "SITE_ENTRY-display-path",
+      "rawStage": "unstaged",
+      "proof": "site-duplicate/prepare-site",
+      "jobId": "e232d7ef-c8de-4812-830a-a26b4e048eae",
+      "priorSteps": [
+        "find-parent"
+      ],
+      "reason": "Explicit child preparation after verified parent produces unsent draft with missing fields visible; no synthesized approval."
+    },
+    {
+      "scenarioId": "SITE_ENTRY-references-path",
+      "rawStage": "unstaged",
+      "proof": "site-duplicate/supply-bu",
+      "jobId": "8270458e-91e2-4b68-8829-73c312a42036",
+      "priorSteps": [
+        "find-parent",
+        "prepare-site"
+      ],
+      "reason": "Explicit numeric BU after verified-parent draft resolves same-parent ordering address and current complete BU before review."
+    },
+    {
+      "scenarioId": "SITE_ENTRY-lookup-path",
+      "rawStage": "unstaged",
+      "proof": "site-read-continuity/show-bu-choices",
+      "jobId": "407201c5-9de6-4589-89fd-e37921c30a26",
+      "priorSteps": [
+        "missing-parent",
+        "find-parent"
+      ],
+      "reason": "Explicit site BU-choice Query uses only GET; presents choices without selecting defaults or creating."
+    },
+    {
+      "scenarioId": "SITE_WRITE_ROUTE-write-path",
+      "rawStage": "unstaged",
+      "proof": "site-reconcile/capture-uncertain",
+      "jobId": "ae3e994a-8b9d-4d46-9185-10b21919a5da",
+      "priorSteps": [
+        "find-parent",
+        "prepare-site",
+        "supply-bu",
+        "edit-site",
+        "review-site",
+        "approve-site"
+      ],
+      "reason": "Actual preceding edit/review/exact approval authorizes one fixture write after preflight; no fabricated approval state."
+    },
+    {
+      "scenarioId": "SITE_WRITE_ROUTE-verify-path",
+      "rawStage": "unstaged",
+      "proof": "site-reconcile/reconcile-without-write",
+      "jobId": "02ffd674-e841-41b9-aa31-8a3baa6c48df",
+      "priorSteps": [
+        "find-parent",
+        "prepare-site",
+        "supply-bu",
+        "edit-site",
+        "review-site",
+        "approve-site",
+        "capture-uncertain"
+      ],
+      "reason": "Prior uncertain approved attempt is preserved; candidate lookup plus independent GET reconciles without another create."
+    },
+    {
+      "scenarioId": "SITE_WRITE_ROUTE-display-path",
+      "rawStage": "unstaged",
+      "proof": "site-duplicate/withhold-duplicate",
+      "jobId": "06882ad7-73dd-48e4-b185-e10b3c5d37dd",
+      "priorSteps": [
+        "find-parent",
+        "prepare-site",
+        "supply-bu",
+        "edit-site",
+        "review-site",
+        "approve-site"
+      ],
+      "reason": "Approved command finds collision; downstream draft guidance withholds POST."
+    },
+    {
+      "scenarioId": "SITE_HAS_ID-true-path",
+      "rawStage": "unstaged",
+      "proof": "site-success/create-and-verify",
+      "jobId": "ccd09363-396b-4589-80ce-4df91283d371",
+      "priorSteps": [
+        "find-parent",
+        "prepare-site",
+        "supply-bu",
+        "edit-site",
+        "review-site",
+        "approve-site"
+      ],
+      "reason": "Approved attempt returns usable key; independent GET precedes verified result."
+    },
+    {
+      "scenarioId": "SITE_HAS_ID-false-path",
+      "rawStage": "unstaged",
+      "proof": "site-reconcile/capture-uncertain",
+      "jobId": "ae3e994a-8b9d-4d46-9185-10b21919a5da",
+      "priorSteps": [
+        "find-parent",
+        "prepare-site",
+        "supply-bu",
+        "edit-site",
+        "review-site",
+        "approve-site"
+      ],
+      "reason": "Prior approved attempt has no returned usable key; pending output withholds independent verification GET and forbids retry."
+    },
+    {
+      "scenarioId": "SITE_REFERENCE_ROUTE-preflight-path",
+      "rawStage": "unstaged",
+      "proof": "site-duplicate/withhold-duplicate",
+      "jobId": "06882ad7-73dd-48e4-b185-e10b3c5d37dd",
+      "priorSteps": [
+        "find-parent",
+        "prepare-site",
+        "supply-bu",
+        "edit-site",
+        "review-site",
+        "approve-site"
+      ],
+      "reason": "Approved site command revalidates same-parent ordering address and explicitly chosen current BU before collision preflight."
+    },
+    {
+      "scenarioId": "SITE_REFERENCE_ROUTE-display-path",
+      "rawStage": "unstaged",
+      "proof": "site-duplicate/supply-bu",
+      "jobId": "8270458e-91e2-4b68-8829-73c312a42036",
+      "priorSteps": [
+        "find-parent",
+        "prepare-site"
+      ],
+      "reason": "User BU edit resolves both references, preserves parent and draft, without inferring approval or write."
+    },
+    {
+      "scenarioId": "CONTACT_ENTRY-list-path",
+      "rawStage": "unstaged",
+      "proof": "contact-read-continuity/list-contacts",
+      "jobId": "5a0a49e8-4ed8-417c-81bd-5ada59711568",
+      "priorSteps": [
+        "withhold-parent",
+        "find-parent"
+      ],
+      "reason": "Verified parent selection precedes ordinary child list Query; response fields and paging are parent-scoped."
+    },
+    {
+      "scenarioId": "CONTACT_ENTRY-detail-path",
+      "rawStage": "unstaged",
+      "proof": "contact-read-continuity/detail-contact",
+      "jobId": "32d7c676-f327-4899-ba1f-2edbd285c738",
+      "priorSteps": [
+        "withhold-parent",
+        "find-parent",
+        "list-contacts"
+      ],
+      "reason": "Prior parent-scoped list supplies selected child key; ordinary detail Query retains parent and executes detail BO."
+    },
+    {
+      "scenarioId": "CONTACT_ENTRY-preflight-path",
+      "rawStage": "unstaged",
+      "proof": "contact-duplicate/withhold-duplicate",
+      "jobId": "4cc90ddc-b351-4e60-9b1e-c1c33fc7f757",
+      "priorSteps": [
+        "find-parent",
+        "prepare-contact",
+        "edit-contact",
+        "review-contact",
+        "approve-contact"
+      ],
+      "reason": "Child create command follows complete draft/review/approval; collision preflight precedes any write."
+    },
+    {
+      "scenarioId": "CONTACT_ENTRY-display-path",
+      "rawStage": "unstaged",
+      "proof": "contact-duplicate/prepare-contact",
+      "jobId": "a75f8e8b-35c3-47cb-959b-f90e0c84de79",
+      "priorSteps": [
+        "find-parent"
+      ],
+      "reason": "Explicit child preparation after verified parent produces unsent draft with missing fields visible; no synthesized approval."
+    },
+    {
+      "scenarioId": "CONTACT_WRITE_ROUTE-write-path",
+      "rawStage": "unstaged",
+      "proof": "contact-reconcile/capture-uncertain",
+      "jobId": "4bd01677-f2e1-4747-b8da-58eeab0ca716",
+      "priorSteps": [
+        "find-parent",
+        "prepare-contact",
+        "edit-contact",
+        "review-contact",
+        "approve-contact"
+      ],
+      "reason": "Actual preceding edit/review/exact approval authorizes one fixture write after preflight; no fabricated approval state."
+    },
+    {
+      "scenarioId": "CONTACT_WRITE_ROUTE-verify-path",
+      "rawStage": "unstaged",
+      "proof": "contact-reconcile/reconcile-without-write",
+      "jobId": "75b11f19-f12c-4924-b0f4-ae93f27d6bc0",
+      "priorSteps": [
+        "find-parent",
+        "prepare-contact",
+        "edit-contact",
+        "review-contact",
+        "approve-contact",
+        "capture-uncertain"
+      ],
+      "reason": "Prior uncertain approved attempt is preserved; candidate lookup plus independent GET reconciles without another create."
+    },
+    {
+      "scenarioId": "CONTACT_WRITE_ROUTE-display-path",
+      "rawStage": "unstaged",
+      "proof": "contact-duplicate/withhold-duplicate",
+      "jobId": "4cc90ddc-b351-4e60-9b1e-c1c33fc7f757",
+      "priorSteps": [
+        "find-parent",
+        "prepare-contact",
+        "edit-contact",
+        "review-contact",
+        "approve-contact"
+      ],
+      "reason": "Approved command finds collision; downstream draft guidance withholds POST."
+    },
+    {
+      "scenarioId": "CONTACT_HAS_ID-true-path",
+      "rawStage": "unstaged",
+      "proof": "contact-success/create-and-verify",
+      "jobId": "be99bf20-ce93-44bd-85e0-c6700c837202",
+      "priorSteps": [
+        "find-parent",
+        "prepare-contact",
+        "edit-contact",
+        "review-contact",
+        "approve-contact"
+      ],
+      "reason": "Approved attempt returns usable key; independent GET precedes verified result."
+    },
+    {
+      "scenarioId": "CONTACT_HAS_ID-false-path",
+      "rawStage": "unstaged",
+      "proof": "contact-reconcile/capture-uncertain",
+      "jobId": "4bd01677-f2e1-4747-b8da-58eeab0ca716",
+      "priorSteps": [
+        "find-parent",
+        "prepare-contact",
+        "edit-contact",
+        "review-contact",
+        "approve-contact"
+      ],
+      "reason": "Prior approved attempt has no returned usable key; pending output withholds independent verification GET and forbids retry."
+    }
+  ]
+}

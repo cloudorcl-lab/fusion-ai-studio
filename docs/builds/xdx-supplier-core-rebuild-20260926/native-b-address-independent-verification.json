@@ -1,0 +1,15 @@
+{
+  "atUtc": "2026-09-27T03:22:41.148Z",
+  "status": "PASS",
+  "operation": "B-address",
+  "traceId": "00000000000000005b1aaab1526bb9d9",
+  "parentId": "300000334073601",
+  "exactFields": 8,
+  "exactIds": 2,
+  "acceptedIds": {
+    "SupplierAddressId": "300000334073619",
+    "AddressPartyNumber": "1486642"
+  },
+  "persistedGet": "bo-address-b-persisted-get.json.parsed.json",
+  "noReplay": true
+}

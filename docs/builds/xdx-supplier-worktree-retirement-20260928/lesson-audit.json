@@ -1,0 +1,129 @@
+{
+  "status": "passed",
+  "reviewedUtc": "2026-09-28T01:11:10.717Z",
+  "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229",
+  "promotedOwners": [
+    "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+    "docs/lessons/objects/README.md",
+    "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+    "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+    "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+    "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md"
+  ],
+  "paragraphs": [
+    "For conversational transactions,",
+    "The approved requirement register and test manifest bound ATLAS actions.",
+    "Do not run a full suite while in-scope authoring actions",
+    "When signed-in target-app acceptance is pending and CLI work continues,",
+    "Use `node scripts/measure-build-command.cjs --output",
+    "3. When optimization is in scope, establish a passing semantic baseline first."
+  ],
+  "changeRows": 4,
+  "retainedEvidence": [
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/qa-p6-pending-reconcile-wording-adjudication.json",
+      "sha256": "e937aa6d48b5491a0f08b51de7ca1a087885bbe8ea93969984596b607cf40f85",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/qa-p6-pending-wording-repair-review.json",
+      "sha256": "a7b7eaa6f25ec817dcfa9bba9166348478fce4b31d5e494fea5241967e86bc12",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-priority-fixes-20260926/plan.md",
+      "sha256": "1885d945b50bc7ee8464585e860f2cba028406543f640efe30e4c3d16a992cc9",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-20260925/native-optimized-final-verification.md",
+      "sha256": "87b89eda836cd201cdf4342a26299d943898d3d2fd0ddcf4a7d3b1e054ccb2a9",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-20260925/time-tracker.md",
+      "sha256": "97d0934032530693b561539b885c3afd10afea017fdec6758199bbf7b2a4ad4b",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-20260925/contracts-final-lesson-review.md",
+      "sha256": "e94a0f3a7ee4f53bc902eefbc3d5f87059162f7ed617dacdb2fd91c83a38bf20",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-20260925/contracts-independent-43-review.json",
+      "sha256": "dc06caba56d1f55a658617b23eb1aca6aa701fb17761e0d2681f9842c7d7b13b",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-20260925/bo-address-fixed-ordering-receipt.md",
+      "sha256": "5e201707bea67cd5d9ad7906b45739bfd812a0aa0f5bd99b258e3eb4de731fb1",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/qa-supplier-runtime-readiness.json",
+      "sha256": "4d7c2626ba868bbdc396402e512a110f9e34672b44bd74a9973898ad9dbde167",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/native-b-supplier-independent-verification.json",
+      "sha256": "7a42fbff0f112b0a2b527e0c45474fe6c20ca97fc6485f31275b1be5a3990944",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/bo-address-a-runtime-verification.json",
+      "sha256": "28b11327b05b4cb9cdfbaf0fac74f8dfeff4d0ec5f97bdf60b5cf467aa54624d",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/native-b-address-independent-verification.json",
+      "sha256": "0c260f2b0b87f1a0e1087717b0d1f5934d4270bc4208d5059cbd1c4c1456db63",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/qa-p3-native-address-frozen-release-20260927.json",
+      "sha256": "c15d2b75645918e507a182b1f44aee1c063f70c7422aaad5b0c2a1b68cb328ef",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/bo-site-a-runtime-verification.json",
+      "sha256": "189166dbcdc12a1cfe38c4baae8e01a3681b8c57c6f04a3724b5d4e845cc844e",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/qa-p4-native-site-frozen-evidence-20260927/native-b-site-independent-verification.json",
+      "sha256": "e9de5bd18a324f837a5709c1b35ccaf4eced442bef4ed154fc6b4b258b685a3a",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/qa-p5-contact-frozen-evidence-20260927/bo-contact-a-post.parsed.json",
+      "sha256": "08e5bb04942d1e5ab61f2a083aaed45a052d4f3a96d4e707aca7c15e4b1d8e9c",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/qa-p5-contact-frozen-evidence-20260927/bo-contact-a-persisted-get.json.parsed.json",
+      "sha256": "37d8cd72ee0b139ba320897ff82f9688397f0bb16cf38a6b854e7e82ec1cc40c",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/qa-p5-native-contact-frozen-evidence-20260927/native-contact-20260927.jsonl",
+      "sha256": "06fcce18adf8601c314c3fda47089a3ec06a65b6680843efe6e56128d17070d0",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/qa-p5-native-contact-frozen-evidence-20260927/bo-contact-b-persisted-get-host.json.parsed.json",
+      "sha256": "1e2e9fc1ff814f80c260c557429cd75123710fef48b46f750bdffe30f7ecef59",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-rebuild-20260926/qa-p5-native-contact-frozen-release-20260927.json",
+      "sha256": "bcdd9743e332c62fc59af68221576d3a77df8afd282b475442e95ec4650f4f20",
+      "sourceCommit": "868e10bab1052b814b3f5a0b05f7fa99901ab229"
+    }
+  ],
+  "immutableFirstSamples": "all4 unchanged",
+  "baseImprovements": "screening/report/manifest/fine timing retained",
+  "disposition": "Reviewed completed learning register and changed canonical owners. Remaining findings already have owners; no additional unsupported API rule inferred.",
+  "promotedLinksVerified": 21,
+  "evidenceVerification": "Direct retained evidence bytes match donor hashes; transitive historical links remain recoverable from retained branch/archive"
+}

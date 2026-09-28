@@ -1,0 +1,32 @@
+{
+  "atUtc": "2026-09-27T03:25:14.945Z",
+  "status": "PASS_P3_NATIVE_ADDRESS_PATTERN_RELEASES_P4_BO_PROOF",
+  "accepted": 4,
+  "maxAccepted": 8,
+  "addressAccepted": 2,
+  "addressMaximum": 2,
+  "sourceVersion": 86411277,
+  "evidenceManifest": {
+    "path": "docs/builds/xdx-supplier-core-rebuild-20260926/qa-p3-frozen-evidence-20260927/manifest.json",
+    "sha256": "208c36e29f0e6372f8f9393116dba10595b9926daa36ea7a2438addc9f23a75e"
+  },
+  "priorImmutableDirectProof": {
+    "path": "docs/builds/xdx-supplier-core-rebuild-20260926/qa-p2-p3-frozen-readiness-20260927.json",
+    "sha256": "373de17b96a35c473f65f140d9964ae25af4a0e6938aca0f054988465226e049"
+  },
+  "findings": [
+    "Native root journal documents verified parent1510/internal601, seven-field partial draft revision1, exactEmail edit revision2, exact eight-field review/approval and one create control.",
+    "Approved canonical JSON body SHA590484196b6b3bd06cc52bacf1be4b9a88f16e120567060b428040d5ac1b618f independently recomputed; all8typed values strictly equal separate savedBO GET value.",
+    "GET input parent601/address619 and output address619/party1486642 match native accepted IDs; trace00000000000000005b1aaab1526bb9d9 independently retained.",
+    "Post-create native ordinary list count1/offset0/hasMorefalse and selected detail all11values/parent verified per root AX and visual-inspection journal; omitted collection PartyNumber is honestly Not specified, detail1486642.",
+    "Ledger frozen at4accepted: supplier2/2 and address2/2 exhausted, all persisted verified; no uncertain operation or replay permission.",
+    "A-address directBO proof and disarmed86410248 zeroBO diagnostic preserved by previous immutable P2/P3 receipt; previous three-record snapshots unchanged."
+  ],
+  "release": "P3 representative address pattern satisfied. P4 may proceed to independently tested direct A-site BO proof under existing remaining budget and parent/reference gates. Site workflow integration still requires its own savedBO readiness; no additional acceptance or create authority granted.",
+  "limits": [
+    "QA independently inspected retained artifacts; native browser AX and inline visual observation are root-reported, not QA direct browser observation.",
+    "Approved payload dispatchStatus NOT_DISPATCHED remains its truthful pre-dispatch snapshot; frozen current ledger/journal provide later accepted status.",
+    "No original native POST node trace export claimed; native complete-widget record plus independent savedBO GET corroborate persisted outcome.",
+    "Configured final coverage, judges, optimization and overall Closeout remain open."
+  ]
+}

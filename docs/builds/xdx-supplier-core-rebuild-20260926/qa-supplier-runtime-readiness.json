@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "atUtc": "2026-09-26T04:56:04.283Z",
+  "savedSha256": "01a06f9c15be9c7ff35f04b628cccfbef212cd78bb340b486b2de1e2f7d024e1",
+  "priorSavedSha256": "cb980dcc167c89e5ac9ea4e98ff10778c7003cb73a4c9961ab88f4f628db48a3",
+  "operationsUnchanged": true,
+  "sourceEqualsSaved": true,
+  "postSampleEqualsExport": true,
+  "postVsIndependentGetFields": 6,
+  "accepted": 1,
+  "maxAccepted": 8,
+  "integrationClearance": "supplier only",
+  "limitations": [
+    "No new calls by reviewer",
+    "Bounded list hasMore true is not full traversal",
+    "Runtime error fixture not exercised by these successful calls"
+  ]
+}

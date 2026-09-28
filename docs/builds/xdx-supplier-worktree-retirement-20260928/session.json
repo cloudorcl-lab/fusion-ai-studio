@@ -1,0 +1,160 @@
+{
+  "objectReferences": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "release": "26C / API11.13.18.05; retained evidence only"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "release": "26C / API11.13.18.05; retained evidence only"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "release": "26C / API11.13.18.05; retained evidence only"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "release": "26C / API11.13.18.05; retained evidence only"
+    }
+  ],
+  "startedUtc": "2026-09-28T01:06:58.133Z",
+  "timeTracker": "docs/builds/xdx-supplier-worktree-retirement-20260928/time-tracker.md",
+  "sessionId": "xdx-supplier-worktree-retirement-20260928",
+  "branch": "TestingWFBuildTools",
+  "reviewNotes": "Continuous-session canonical review; donor lesson diff and retained evidence audit; preserve all local data before exact worktree removal.",
+  "learningRegister": "docs/builds/xdx-supplier-worktree-retirement-20260928/learning-register.md",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "checkpointUtc": "2026-09-28T01:21:39.8646475Z",
+  "checks": [
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/lesson-audit.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/purge-receipt.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/time-tracker.md"
+      ],
+      "status": "pass",
+      "id": "learning",
+      "reason": "Lesson audit, verified preservation and local exact worktree cleanup"
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/lesson-audit.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/purge-receipt.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/time-tracker.md"
+      ],
+      "status": "pass",
+      "id": "intake",
+      "reason": "Lesson audit, verified preservation and local exact worktree cleanup"
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/lesson-audit.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/purge-receipt.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/time-tracker.md"
+      ],
+      "status": "pass",
+      "id": "authority",
+      "reason": "Lesson audit, verified preservation and local exact worktree cleanup"
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/lesson-audit.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/purge-receipt.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/time-tracker.md"
+      ],
+      "status": "pass",
+      "id": "objects",
+      "reason": "Lesson audit, verified preservation and local exact worktree cleanup"
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/lesson-audit.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/purge-receipt.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/time-tracker.md"
+      ],
+      "status": "pass",
+      "id": "verification",
+      "reason": "Lesson audit, verified preservation and local exact worktree cleanup"
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/lesson-audit.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/purge-receipt.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/time-tracker.md"
+      ],
+      "status": "pass",
+      "id": "timing",
+      "reason": "Lesson audit, verified preservation and local exact worktree cleanup"
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/lesson-audit.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/purge-receipt.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/time-tracker.md"
+      ],
+      "status": "pass",
+      "id": "cleanup",
+      "reason": "Lesson audit, verified preservation and local exact worktree cleanup"
+    },
+    {
+      "rule": "Canonical playbook",
+      "evidence": [
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/lesson-audit.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/purge-receipt.json",
+        "docs/builds/xdx-supplier-worktree-retirement-20260928/time-tracker.md"
+      ],
+      "status": "pass",
+      "id": "delivery",
+      "reason": "Lesson audit, verified preservation and local exact worktree cleanup"
+    }
+  ],
+  "phase": "Closeout",
+  "schemaVersion": 1,
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "44f31b33bb3675e972df8c47cd42ba109149a57fc5ac114e650fd1da66c13584"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "75508c76b10770d3def29ada7394ef9e30ff953875978077739efef931c14381"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "351048dd8767da7c24ee39d8851a551f6f78186f80b306dd1880ab9a8c00b66c"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "a35158e4581208a01ed16c2c859e26b5954c3d7c1a1d1a9d0ec3c9c0ae1142a9"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "55fa329e7810b1c47259bbfed756c369cea9f705a1dff1fa82853533a1f78aee"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "f97e760f54f1be02cd9a44c3418982a9926ea139a5b188f122cb54766c83b500"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "1f1cdc651ee2196de1404a0a0e5e0ce3bfba34c47ddcf0a7bf4a05972257dea6"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "ab0587b30597d75c98cafd02a87c6013306a951484870f4413240c2b01206cfc"
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Unavailable for local tools",
+    "timingGaps": "Observed intervals and command timings retained; other gaps unallocated",
+    "aiUnits": "No tenant execution; not collected"
+  }
+}

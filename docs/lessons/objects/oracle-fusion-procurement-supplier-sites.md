@@ -10,7 +10,7 @@
 | Documentation release | 26C |
 | Required parent key | Live-resolved `SupplierId` |
 | Stable item key | `SupplierSiteId` |
-| Last evidence review | 2026-09-23 |
+| Last evidence review | 2026-09-27 |
 
 Sources: [GET supplier sites](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-get.html), [POST supplier site](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-supplierid-child-sites-post.html), and [Oracle 26C OpenAPI](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/openapi.json).
 
@@ -51,6 +51,8 @@ The collection operation ID is `getall_suppliers-sites`. Resolve the parent supp
 ```
 
 The full native site response is much larger. Do not infer that the displayed structural fields are the complete item schema.
+
+The 2026-09-25 saved-BO probe returned `SupplierSiteId`, `SupplierAddressId` and `ProcurementBUId` as decimal strings in both its retained POST and independent GET responses, while the approved request supplied `ProcurementBUId` as a JSON number. Validate returned identifiers and compare a canonical decimal representation without losing integer precision; this response-boundary normalization does not permit quoting/coercing a numeric request field, hardcoding a BU, or substituting a displayed identifier. This is observed probe response behavior, not a claim that every REST/client path returns strings. See the current-task POST evidence below.
 
 ## First successful BO GET sample
 
@@ -107,6 +109,8 @@ The create operation ID is `create_suppliers-sites`. The 26C OpenAPI request sch
 | --- | --- | --- |
 | `SupplierSiteId` | Omit the new site ID; capture the generated response value | Successful omitted-field POST, 2026-09-17, eqih-dev21 / 11.13.18.05; [request and response](../../builds/xdx-supplier-information/live-post/create-site.json). Initial derivation hypothesis confirmed for this scope. |
 
+Current-task corroboration: on 2026-09-27, actual saved CreateSite A accepted the four-field body with a dynamic numeric ProcurementBUId and generated SupplierSiteId 300000334073627 under supplier300000334073550/address300000334073608. Native-app B generated 300000334073630 under supplier300000334073601/address300000334073619. Both used current complete US1 Business Unit lookup ID 300000046987012; independent GetSite comparisons confirmed all four approved fields and same-chain relationships. [A runtime comparison](../../builds/xdx-supplier-core-rebuild-20260926/bo-site-a-runtime-verification.json) and [frozen B independent comparison](../../builds/xdx-supplier-core-rebuild-20260926/qa-p4-native-site-frozen-evidence-20260927/native-b-site-independent-verification.json) corroborate existing generated-ID treatment. Decimal-string response identifiers are compared after exact validation; the request BU remains a JSON number. A POST Address=null followed by GET-computed Address is outside the submitted four-field equality check, not a missing approved field. Same-tenant/API11.13.18.05 evidence does not broaden uniqueness or requiredness; first GET remains unchanged.
+
 `SupplierAddressId` remains a foreign reference, not a new-site generated ID. The successful request identified the newly created address by `SupplierAddressName`; Fusion resolved its ID. `ProcurementBUId` was supplied from the selected Lee site. Do not omit required parent or business-unit references under the generated-ID policy.
 
 ### Requiredness and uniqueness review
@@ -148,6 +152,8 @@ The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierSiteId 
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-09-27 | Rebuild sites627/630, numeric-BU requests and independent GET | Corroborated generated site IDs and exact parent/address/BU relationships; retained decimal-string response boundary and distinguished derived Address from four intended fields. |
+| 2026-09-25 | Actual saved CreateSite probe and independent persisted GetSite, site 300000333814509 | Corroborated generated SupplierSiteId, four-field numeric-BU request and same-chain relationships; recorded observed decimal-string response keys without request coercion. Immutable first GET preserved. |
 | 2026-09-25 | Supplier Core number404 repair and user-confirmed six-step manual query acceptance | Link parent-number resolution to the Suppliers GET owner; no new child API or write behavior claimed. |
 | 2026-09-24 | XDX Supplier Core exact-approved native POST and independent GET | Corroborated existing generated-field treatment and required payload in the tested tenant; retained first GET sample and unresolved uniqueness limits. |
 | 2026-09-23 | XDX Supplier Lifecycle one-POST site acceptance and independent GET | Confirmed the required-field-only four-field request, generated `SupplierSiteId 300000333814273`, resolved BU/address relationships and omitted payment/optional fields; retained first-success GET sample unchanged. |

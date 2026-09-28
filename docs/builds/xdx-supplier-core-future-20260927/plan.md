@@ -16,8 +16,11 @@ runtime repair, model sweep, purge, business update/delete, other sub-object,
 provisioning, publication or push is authorized by this plan.
 
 Runtime baseline: completed local commit `868e10bab1052b814b3f5a0b05f7fa99901ab229`
-in `.worktrees/xdx-supplier-core-rebuild-20260926`; its handoff, operation ledger and
-exact labeled final reports are the evidence authority. Tooling baseline:
+on retained branch `codex/xdx-supplier-core-rebuild-20260926`; its physical worktree
+is retired. Read the handoff/ledger from that commit. The
+[preservation receipt](../xdx-supplier-worktree-retirement-20260928/preservation.json)
+locates the private, verified archive containing uncommitted/ignored reports.
+Together these retain the exact labeled final evidence. Tooling baseline:
 `a3cce638dfa570347725c97d006db24d321dac66`. Resolve the new model's exact committed
 SHA at launch and record it; never infer that base contains the completed artifacts.
 New verification worktree/branch are named in the prompt and created only at launch.
