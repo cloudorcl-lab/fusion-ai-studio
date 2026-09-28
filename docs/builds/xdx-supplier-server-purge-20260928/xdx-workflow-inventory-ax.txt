@@ -1,0 +1,144 @@
+Browser tab: 676648571, Title: "Workflows - AI Agent Studio", URL: "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$workflow".
+0 AXWebArea Workflows - AI Agent Studio, URL: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$workflow
+	1 container
+		2 container 8bmkmIV0e5RyFHEVSu9RuOHG_ao
+			3 container
+				4 container home_nav_bar
+					5 button (expanded) Description: collapse navigation panel, Secondary Actions: Collapse
+					6 container Home navigation panel
+						7 content list
+							8 link Description: AI Agent Studio, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI
+							9 link Description: Applications, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$app
+							10 link Description: Workflows, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$workflow
+							11 link Description: Resources, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$resources?tab=agents
+							12 link Description: Connectors, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$connectors
+							13 link Description: Document Templates, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$template
+							14 link Description: Policy Models, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$policy
+							15 link Description: Approvals, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$approvals
+							16 link Description: Credentials, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$credentials
+							17 link Description: Monitoring and Evaluation, opens in new tab, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/fscmUI/redwood/human-resources/aistudio?selectedInAppTab=metro
+							18 link Description: Marketplace, opens in new tab, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/fscmUI/redwood/human-resources/aistudio
+					19 container Recent items
+						20 container
+							21 heading Recents, Value: 2
+								22 text Recents
+							23 pop up button (collapsed) Description: Recent items actions, Secondary Actions: Expand
+						24 container Recent items
+							25 content list
+								26 container
+									27 link Description: XDX Supplier Core Data 20260926, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_CORE_DATA_20260926?tab=businessObjects
+									28 pop up button (collapsed) Description: More actions for XDX Supplier Core Data 20260926, Secondary Actions: Expand
+								32 container
+									33 link Description: XDX Supplier Core App 20260925, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/xdx_supplier_core_app_20260925?draft=true
+									34 pop up button (collapsed) Description: More actions for XDX Supplier Core App 20260925, Secondary Actions: Expand
+								35 container
+									36 link Description: XDX Supplier Core 20260925, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$workflow/XDX_SUPPLIER_CORE_20260925?draft=true
+									37 pop up button (collapsed) Description: More actions for XDX Supplier Core 20260925, Secondary Actions: Expand
+								38 container
+									39 link Description: XDX Supplier Procurement Business Units, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS?tab=businessObjects
+									40 pop up button (collapsed) Description: More actions for XDX Supplier Procurement Business Units, Secondary Actions: Expand
+								41 container
+									42 link Description: XDX Supplier Core Data 20260925, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_CORE_DATA_20260925?tab=businessObjects
+									43 pop up button (collapsed) Description: More actions for XDX Supplier Core Data 20260925, Secondary Actions: Expand
+								44 container
+									45 link Description: XDX Supplier Retry 20260923 A, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_RETRY_20260923_A?tab=businessObjects
+									46 pop up button (collapsed) Description: More actions for XDX Supplier Retry 20260923 A, Secondary Actions: Expand
+								47 container
+									48 link Description: XDX Supplier Information, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_INFORMATION?tab=businessObjects
+									49 pop up button (collapsed) Description: More actions for XDX Supplier Information, Secondary Actions: Expand
+								50 container
+									51 link Description: Project Budget Detail Workspace, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/ora_prj_pjo_project_budget_detail_workspace
+									52 pop up button (collapsed) Description: More actions for Project Budget Detail Workspace, Secondary Actions: Expand
+				65 container
+					66 heading Workflows, Value: 3
+						67 text Workflows
+					68 container
+						69 text field (settable) XDX
+					70 text start typing with the name to search and the list will be updated
+					71 button add item
+					72 button Import workflow package ZIP
+					73 pop up button (collapsed) Sorted By, Secondary Actions: Expand
+					74 content list list of workflows
+						75 container
+							76 heading XDX Supplier Core BO Write Probe 20260926, Value: 3
+								77 text XDX Supplier Core BO Write Probe 20260926
+							78 text Standalone exact A-contact diagnostic. Root reservation and external single-dispatch/disarm required; no generic create route.
+							79 heading Code, Value: 3
+								80 text Code
+							81 text XDX_SUPPLIER_CORE_BO_WRITE_PROBE_20260926
+							82 heading Edited by, Value: 3
+								83 text Edited by
+							84 text CASEY.BROWN
+							85 heading Edited on, Value: 3
+								86 text Edited on
+							87 text Sep 26, 2026
+							88 heading Status, Value: 3
+								89 text Status
+							90 text Draft
+							91 button Description: edit XDX Supplier Core BO Write Probe 20260926, Help: Edit
+							92 button Description: duplicate XDX Supplier Core BO Write Probe 20260926, Help: Duplicate
+							93 button Description: export XDX Supplier Core BO Write Probe 20260926, Help: Export
+							94 button Description: delete XDX Supplier Core BO Write Probe 20260926, Help: Delete
+						95 container
+							96 heading XDX Supplier Core BO Probe 20260926, Value: 3
+								97 text XDX Supplier Core BO Probe 20260926
+							98 text Standalone saved supplier BO GET-only diagnostic. No business write or customer app binding.
+							99 heading Code, Value: 3
+								100 text Code
+							101 text XDX_SUPPLIER_CORE_BO_PROBE_20260926
+							102 heading Edited by, Value: 3
+								103 text Edited by
+							104 text CASEY.BROWN
+							105 heading Edited on, Value: 3
+								106 text Edited on
+							107 text Sep 26, 2026
+							108 heading Status, Value: 3
+								109 text Status
+							110 text Draft
+							111 button Description: edit XDX Supplier Core BO Probe 20260926, Help: Edit
+							112 button Description: duplicate XDX Supplier Core BO Probe 20260926, Help: Duplicate
+							113 button Description: export XDX Supplier Core BO Probe 20260926, Help: Export
+							114 button Description: delete XDX Supplier Core BO Probe 20260926, Help: Delete
+						115 container
+							116 heading XDX Supplier Core 20260925, Value: 3
+								117 text XDX Supplier Core 20260925
+							118 text Query and create suppliers, addresses, sites and contacts with exact approval and independent verification; procurement business unit lookup for sites.
+							119 heading Code, Value: 3
+								120 text Code
+							121 text XDX_SUPPLIER_CORE_20260925
+							122 heading Edited by, Value: 3
+								123 text Edited by
+							124 text CASEY.BROWN
+							125 heading Edited on, Value: 3
+								126 text Edited on
+							127 text Sep 25, 2026
+							128 heading Status, Value: 3
+								129 text Status
+							130 text Draft
+							131 button Description: edit XDX Supplier Core 20260925, Help: Edit
+							132 button Description: duplicate XDX Supplier Core 20260925, Help: Duplicate
+							133 button Description: export XDX Supplier Core 20260925, Help: Export
+							134 button Description: delete XDX Supplier Core 20260925, Help: Delete
+						135 container
+							136 heading XDX Supplier Core BO Probe 20260925, Value: 3
+								137 text XDX Supplier Core BO Probe 20260925
+							138 text Standalone GET-only saved BO typed-input probe; no app binding, no writes or models.
+							139 heading Code, Value: 3
+								140 text Code
+							141 text XDX_SUPPLIER_CORE_BO_PROBE_20260925
+							142 heading Edited by, Value: 3
+								143 text Edited by
+							144 text CASEY.BROWN
+							145 heading Edited on, Value: 3
+								146 text Edited on
+							147 text Sep 25, 2026
+							148 heading Status, Value: 3
+								149 text Status
+							150 text Draft
+							151 button Description: edit XDX Supplier Core BO Probe 20260925, Help: Edit
+							152 button Description: duplicate XDX Supplier Core BO Probe 20260925, Help: Duplicate
+							153 button Description: export XDX Supplier Core BO Probe 20260925, Help: Export
+							154 button Description: delete XDX Supplier Core BO Probe 20260925, Help: Delete
+			64 link Description: Ask Oracle, Value: static.oracle.com/cdn/fa/oracle_fai_aiappspublicUI/2607.145.262371629/aiappsweb/#, ID: 8bmkmIV0e5RyFHEVSu9RuOHG_ao-brand
+
+The focused UI element is 69 text field (settable) XDX

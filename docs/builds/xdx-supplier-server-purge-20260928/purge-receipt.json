@@ -1,0 +1,160 @@
+{
+  "businessCreates": 0,
+  "publication": 0,
+  "counts": {
+    "businessObjects": 9,
+    "workflows": 5,
+    "apps": 1
+  },
+  "limits": "Native name search XDX under repository XDX naming convention; not a tenant-database scan. Reverse-consumer completeness unknown and explicitly waived by user; no claim that unrelated consumers were tested. Credential settings excluded; Connections catalog empty.",
+  "push": 0,
+  "businessDeletes": 0,
+  "businessApiCalls": 0,
+  "zeroMatchCatalogs": [
+    "applications",
+    "workflows",
+    "agents",
+    "supervisor agents",
+    "tools",
+    "topics",
+    "business objects",
+    "deeplinks",
+    "functions",
+    "document schemas",
+    "connector instances",
+    "connector definitions",
+    "document templates",
+    "policy templates",
+    "policies",
+    "approvals"
+  ],
+  "deleted": [
+    {
+      "code": "XDX_PROCUREMENT_BU_RETRY_20260923_A",
+      "type": ".bo",
+      "sha256": "afd87d902ea6eb46fb52428df824b42609e3096469a3e22fb4aa917f5a29da67",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_procurement_bu_retry_20260923_a.bo",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_PROCUREMENT_BU_RETRY_20260923_A.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_CATEGORY_RETRY_20260923_A",
+      "type": ".bo",
+      "sha256": "c961f0895a78d75b9d700c8598fc299ca708b731b5929f7b1e90e8e35550aa0f",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_category_retry_20260923_a.bo",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_CATEGORY_RETRY_20260923_A.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_CORE_20260925",
+      "type": ".wf",
+      "sha256": "a38c87e6ab76d3d249a9008a019e842e8ac0322f4d268fa50a4b832bcdbb06eb",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_core_20260925.wf",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_CORE_20260925.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_CORE_20260926",
+      "type": ".wf",
+      "sha256": "d8e588f232e4ba42e58db6290441c8c0a27c64e5cba7023ab13650bfd31f56ce",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_core_20260926.wf",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_CORE_20260926.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_CORE_APP_20260926",
+      "type": ".app",
+      "sha256": "63561dade04693ff78f9a5f949d720c1a797baf7c00c6c2af74fd51ad2967e0a",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_core_app_20260926.app",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/apps-xdx-after-ax.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_CORE_BO_PROBE_20260925",
+      "type": ".wf",
+      "sha256": "71b4a00ee0bfef9688e8b19a175bd4a903d8b705016e67b0217d5ed28fed8a2a",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_core_bo_probe_20260925.wf",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_CORE_BO_PROBE_20260925.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_CORE_BO_PROBE_20260926",
+      "type": ".wf",
+      "sha256": "2c4f9d8fa0f213b05a92f0f1cb9f85d452be19dad17b3d76533617c78a008a53",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_core_bo_probe_20260926.wf",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_CORE_BO_PROBE_20260926.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_CORE_BO_WRITE_PROBE_20260926",
+      "type": ".wf",
+      "sha256": "8be259cac19dca8fc15fbbd0d0c9b6ee37047bf9d0b2fd8bc8a7139b2a245776",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_core_bo_write_probe_20260926.wf",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_CORE_BO_WRITE_PROBE_20260926.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_CORE_DATA_20260924",
+      "type": ".bo",
+      "sha256": "8497a41fdac6ed1ee1a1962a1d2b64d41e89f754eef6eec3d8109861ed45117e",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_core_data_20260924.bo",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_CORE_DATA_20260924.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_CORE_DATA_20260925",
+      "type": ".bo",
+      "sha256": "b25e6a22dddfa9ef488c84f16377a95125766b4f411edf24425015854d47c16b",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_core_data_20260925.bo",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_CORE_DATA_20260925.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_CORE_DATA_20260926",
+      "type": ".bo",
+      "sha256": "14e21bad8af3ae91c2bada299d2ed2c321683e563fcdf06ef814c766fa6e09b4",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_core_data_20260926.bo",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_CORE_DATA_20260926.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_INFORMATION",
+      "type": ".bo",
+      "sha256": "d6c97571a2ff0f5001bc7abb2cd2e09b1eae160c85b22c12047076ec7983fe26",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_information.bo",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_INFORMATION.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS",
+      "type": ".bo",
+      "sha256": "7b0a7eaa1e7f59850b86ac8955e629e55949fcae757d6d05dd695eab9fe76665",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_procurement_business_units.bo",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_PRODUCT_SERVICE_CATEGORIES",
+      "type": ".bo",
+      "sha256": "033050ed012a6ee26e169859338614e3898325963e12b478e041e3fe2f2e8c9e",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_product_service_categories.bo",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_PRODUCT_SERVICE_CATEGORIES.txt"
+    },
+    {
+      "code": "XDX_SUPPLIER_RETRY_20260923_A",
+      "type": ".bo",
+      "sha256": "7b25d3238c6372690c73df6de2f3e36e36f4b19feea11f63d62ce4e9153ad15f",
+      "source": "docs/builds/xdx-supplier-server-purge-20260928/before/xdx_supplier_retry_20260923_a.bo",
+      "disposition": "deleted-verified",
+      "absenceEvidence": "docs/builds/xdx-supplier-server-purge-20260928/absence-XDX_SUPPLIER_RETRY_20260923_A.txt"
+    }
+  ],
+  "alreadyAbsent": [
+    "XDX_SUPPLIER_CORE_APP_20260925"
+  ],
+  "completedUtc": "2026-09-28T02:08:25.2371358Z",
+  "writeBudgetRemaining": 0,
+  "status": "passed",
+  "sourceArchive": "Retained branch868e10b and private worktree archive; current definitions in before/; original server IDs cannot be restored by Git"
+}

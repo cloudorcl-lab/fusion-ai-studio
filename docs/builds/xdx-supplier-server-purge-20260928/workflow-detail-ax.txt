@@ -1,0 +1,430 @@
+Browser tab: 676648571, Title: "XDX Supplier Core 20260926", URL: "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$workflow/XDX_SUPPLIER_CORE_20260926?draft=true".
+1 AXWebArea XDX Supplier Core 20260926, URL: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$workflow/XDX_SUPPLIER_CORE_20260926?draft=true
+	2 container
+		3 container Ayeb8Tqdw4dLNfAZMHZJq1bu_ao
+			66 container
+				67 container
+					68 heading XDX Supplier Core 20260926, Value: 1
+						69 text XDX Supplier Core 20260926
+					70 heading Value: 4, Supplier, address, site and contact query and exact-approved creation with independent persisted verification. Procurement BU GET solely supports site lookup. DRAFT.
+						71 text Supplier, address, site and contact query and exact-approved creation with independent persisted verification. Procurement BU GET solely supports site lookup. DRAFT.
+					72 button Description: zoom out, Help: Zoom Out
+					73 button Description: zoom in, Help: Zoom In
+					74 button Reset Zoom
+					75 button Description: zoom to fit, Help: Zoom To Fit
+					76 button Description: auto-arrange nodes, Help: Prettify
+					77 interaction mode
+						78 radio button Description: Drag Mode, Value: 1
+						79 radio button Description: Select Mode, Value: 0
+					80 diagram orientation
+						81 radio button Description: Horizontal Layout, Value: 0
+						82 radio button Description: Vertical Layout, Value: 1
+					83 button Description: help with keyboard shortcuts, Help: Help
+					84 button Description: workflow settings, Help: Settings
+					85 container tree-om4qi7k
+						86 container
+							87 image
+								88 text true
+								89 text false
+								90 text read
+								91 text display
+								92 text preflight
+								93 text address
+								94 text site
+								95 text contact
+								96 text true
+								97 text false
+								98 text true
+								99 text false
+								100 text InitDisplay
+								101 text Query
+								102 text write
+								103 text verify
+								104 text display
+								105 text true
+								106 text false
+								107 text display
+								108 text list
+								109 text detail
+								110 text preflight
+								111 text write
+								112 text verify
+								113 text display
+								114 text true
+								115 text false
+								116 text display
+								117 text list
+								118 text detail
+								119 text references
+								120 text preflight
+								121 text lookup
+								122 text display
+								123 text preflight
+								124 text write
+								125 text verify
+								126 text display
+								127 text true
+								128 text false
+								129 text display
+								130 text list
+								131 text detail
+								132 text preflight
+								133 text write
+								134 text verify
+								135 text display
+								136 text true
+								137 text false
+							138 image
+							139 checkbox Value: 0, ID: tree-om4qi7k-node-start
+							140 checkbox XDX initialize state Code, Value: 0, ID: tree-om4qi7k-node-1
+								141 text XDX initialize state
+								142 text Code
+							143 checkbox XDX store initial state Set Variables, Value: 0, ID: tree-om4qi7k-node-2
+								144 text XDX store initial state
+								145 text Set Variables
+							146 checkbox XDX dispatch request Code, Value: 0, ID: tree-om4qi7k-node-3
+								147 text XDX dispatch request
+								148 text Code
+							149 checkbox XDX needs extraction If Condition, Value: 0, ID: tree-om4qi7k-node-4
+								150 text XDX needs extraction
+								151 text If Condition
+							152 checkbox XDX store direct request Set Variables, Value: 0, ID: tree-om4qi7k-node-5
+								153 text XDX store direct request
+								154 text Set Variables
+							155 checkbox XDX extract read LLM, Value: 0, ID: tree-om4qi7k-node-6
+								156 text XDX extract read
+								157 text LLM
+							158 checkbox XDX validate extraction Code, Value: 0, ID: tree-om4qi7k-node-7
+								159 text XDX validate extraction
+								160 text Code
+							161 checkbox XDX store model request Set Variables, Value: 0, ID: tree-om4qi7k-node-8
+								162 text XDX store model request
+								163 text Set Variables
+							164 checkbox XDX prepare transaction Code, Value: 0, ID: tree-om4qi7k-node-9
+								165 text XDX prepare transaction
+								166 text Code
+							167 checkbox XDX transaction route Switch, Value: 0, ID: tree-om4qi7k-node-10
+								168 text XDX transaction route
+								169 text Switch
+							170 checkbox XDX store prepared transaction Set Variables, Value: 0, ID: tree-om4qi7k-node-11
+								171 text XDX store prepared transaction
+								172 text Set Variables
+							173 checkbox XDX prepare read Code, Value: 0, ID: tree-om4qi7k-node-12
+								174 text XDX prepare read
+								175 text Code
+							176 checkbox XDX read allowed If Condition, Value: 0, ID: tree-om4qi7k-node-13
+								177 text XDX read allowed
+								178 text If Condition
+							179 checkbox XDX is list If Condition, Value: 0, ID: tree-om4qi7k-node-14
+								180 text XDX is list
+								181 text If Condition
+							182 checkbox XDX fetch suppliers Business Object Function, Value: 0, ID: tree-om4qi7k-node-15
+								183 text XDX fetch suppliers
+								184 text Business Object Function
+							185 checkbox XDX shape suppliers Code, Value: 0, ID: tree-om4qi7k-node-16
+								186 text XDX shape suppliers
+								187 text Code
+							188 checkbox XDX store list state Set Variables, Value: 0, ID: tree-om4qi7k-node-17
+								189 text XDX store list state
+								190 text Set Variables
+							191 checkbox XDX fetch supplier detail Business Object Function, Value: 0, ID: tree-om4qi7k-node-18
+								192 text XDX fetch supplier detail
+								193 text Business Object Function
+							194 checkbox XDX shape detail Code, Value: 0, ID: tree-om4qi7k-node-19
+								195 text XDX shape detail
+								196 text Code
+							197 checkbox XDX store detail state Set Variables, Value: 0, ID: tree-om4qi7k-node-20
+								198 text XDX store detail state
+								199 text Set Variables
+							200 checkbox XDX display stage Switch, Value: 0, ID: tree-om4qi7k-node-21
+								201 text XDX display stage
+								202 text Switch
+							203 checkbox XDX check supplier duplicate Business Object Function, Value: 0, ID: tree-om4qi7k-node-22
+								204 text XDX check supplier duplicate
+								205 text Business Object Function
+							206 checkbox XDX authorize supplier write Code, Value: 0, ID: tree-om4qi7k-node-23
+								207 text XDX authorize supplier write
+								208 text Code
+							209 checkbox XDX store preflight transaction Set Variables, Value: 0, ID: tree-om4qi7k-node-24
+								210 text XDX store preflight transaction
+								211 text Set Variables
+							212 checkbox XDX supplier write route Switch, Value: 0, ID: tree-om4qi7k-node-25
+								213 text XDX supplier write route
+								214 text Switch
+							215 checkbox XDX create supplier Business Object Function, Value: 0, ID: tree-om4qi7k-node-26
+								216 text XDX create supplier
+								217 text Business Object Function
+							218 checkbox XDX capture supplier create Code, Value: 0, ID: tree-om4qi7k-node-27
+								219 text XDX capture supplier create
+								220 text Code
+							221 checkbox XDX store create receipt Set Variables, Value: 0, ID: tree-om4qi7k-node-28
+								222 text XDX store create receipt
+								223 text Set Variables
+							224 checkbox XDX create has id If Condition, Value: 0, ID: tree-om4qi7k-node-29
+								225 text XDX create has id
+								226 text If Condition
+							227 checkbox XDX prepare verification Code, Value: 0, ID: tree-om4qi7k-node-30
+								228 text XDX prepare verification
+								229 text Code
+							230 checkbox XDX get created supplier Business Object Function, Value: 0, ID: tree-om4qi7k-node-31
+								231 text XDX get created supplier
+								232 text Business Object Function
+							233 checkbox XDX verify supplier create Code, Value: 0, ID: tree-om4qi7k-node-32
+								234 text XDX verify supplier create
+								235 text Code
+							236 checkbox XDX store verified transaction Set Variables, Value: 0, ID: tree-om4qi7k-node-33
+								237 text XDX store verified transaction
+								238 text Set Variables
+							239 checkbox XDX init display LLM, Value: 0, ID: tree-om4qi7k-node-34
+								240 text XDX init display
+								241 text LLM
+							242 checkbox XDX supplier read display LLM, Value: 0, ID: tree-om4qi7k-node-35
+								243 text XDX supplier read display
+								244 text LLM
+							245 checkbox XDX supplier transaction display LLM, Value: 0, ID: tree-om4qi7k-node-36
+								246 text XDX supplier transaction display
+								247 text LLM
+							248 checkbox XDX supplier guidance display LLM, Value: 0, ID: tree-om4qi7k-node-37
+								249 text XDX supplier guidance display
+								250 text LLM
+							251 checkbox XDX prepare address Code, Value: 0, ID: tree-om4qi7k-node-38
+								252 text XDX prepare address
+								253 text Code
+							254 checkbox XDX store address request Set Variables, Value: 0, ID: tree-om4qi7k-node-39
+								255 text XDX store address request
+								256 text Set Variables
+							257 checkbox XDX address route Switch, Value: 0, ID: tree-om4qi7k-node-40
+								258 text XDX address route
+								259 text Switch
+							260 checkbox XDX fetch addresses Business Object Function, Value: 0, ID: tree-om4qi7k-node-41
+								261 text XDX fetch addresses
+								262 text Business Object Function
+							263 checkbox XDX shape addresses Code, Value: 0, ID: tree-om4qi7k-node-42
+								264 text XDX shape addresses
+								265 text Code
+							266 checkbox XDX store address list Set Variables, Value: 0, ID: tree-om4qi7k-node-43
+								267 text XDX store address list
+								268 text Set Variables
+							269 checkbox XDX fetch address detail Business Object Function, Value: 0, ID: tree-om4qi7k-node-44
+								270 text XDX fetch address detail
+								271 text Business Object Function
+							272 checkbox XDX shape address detail Code, Value: 0, ID: tree-om4qi7k-node-45
+								273 text XDX shape address detail
+								274 text Code
+							275 checkbox XDX store address detail Set Variables, Value: 0, ID: tree-om4qi7k-node-46
+								276 text XDX store address detail
+								277 text Set Variables
+							278 checkbox XDX check address duplicate Business Object Function, Value: 0, ID: tree-om4qi7k-node-47
+								279 text XDX check address duplicate
+								280 text Business Object Function
+							281 checkbox XDX authorize address write Code, Value: 0, ID: tree-om4qi7k-node-48
+								282 text XDX authorize address write
+								283 text Code
+							284 checkbox XDX store address pending Set Variables, Value: 0, ID: tree-om4qi7k-node-49
+								285 text XDX store address pending
+								286 text Set Variables
+							287 checkbox XDX address write route Switch, Value: 0, ID: tree-om4qi7k-node-50
+								288 text XDX address write route
+								289 text Switch
+							290 checkbox XDX create address Business Object Function, Value: 0, ID: tree-om4qi7k-node-51
+								291 text XDX create address
+								292 text Business Object Function
+							293 checkbox XDX capture address create Code, Value: 0, ID: tree-om4qi7k-node-52
+								294 text XDX capture address create
+								295 text Code
+							296 checkbox XDX store address receipt Set Variables, Value: 0, ID: tree-om4qi7k-node-53
+								297 text XDX store address receipt
+								298 text Set Variables
+							299 checkbox XDX address has id If Condition, Value: 0, ID: tree-om4qi7k-node-54
+								300 text XDX address has id
+								301 text If Condition
+							302 checkbox XDX prepare address verification Code, Value: 0, ID: tree-om4qi7k-node-55
+								303 text XDX prepare address verification
+								304 text Code
+							305 checkbox XDX get created address Business Object Function, Value: 0, ID: tree-om4qi7k-node-56
+								306 text XDX get created address
+								307 text Business Object Function
+							308 checkbox XDX verify address create Code, Value: 0, ID: tree-om4qi7k-node-57
+								309 text XDX verify address create
+								310 text Code
+							311 checkbox XDX store address verified Set Variables, Value: 0, ID: tree-om4qi7k-node-58
+								312 text XDX store address verified
+								313 text Set Variables
+							314 checkbox XDX address display LLM, Value: 0, ID: tree-om4qi7k-node-59
+								315 text XDX address display
+								316 text LLM
+							317 checkbox XDX prepare site Code, Value: 0, ID: tree-om4qi7k-node-60
+								318 text XDX prepare site
+								319 text Code
+							320 checkbox XDX store site request Set Variables, Value: 0, ID: tree-om4qi7k-node-61
+								321 text XDX store site request
+								322 text Set Variables
+							323 checkbox XDX site route Switch, Value: 0, ID: tree-om4qi7k-node-62
+								324 text XDX site route
+								325 text Switch
+							326 checkbox XDX fetch sites Business Object Function, Value: 0, ID: tree-om4qi7k-node-63
+								327 text XDX fetch sites
+								328 text Business Object Function
+							329 checkbox XDX shape sites Code, Value: 0, ID: tree-om4qi7k-node-64
+								330 text XDX shape sites
+								331 text Code
+							332 checkbox XDX store site list Set Variables, Value: 0, ID: tree-om4qi7k-node-65
+								333 text XDX store site list
+								334 text Set Variables
+							335 checkbox XDX fetch site detail Business Object Function, Value: 0, ID: tree-om4qi7k-node-66
+								336 text XDX fetch site detail
+								337 text Business Object Function
+							338 checkbox XDX shape site detail Code, Value: 0, ID: tree-om4qi7k-node-67
+								339 text XDX shape site detail
+								340 text Code
+							341 checkbox XDX store site detail Set Variables, Value: 0, ID: tree-om4qi7k-node-68
+								342 text XDX store site detail
+								343 text Set Variables
+							344 checkbox XDX fetch site address reference Business Object Function, Value: 0, ID: tree-om4qi7k-node-69
+								345 text XDX fetch site address reference
+								346 text Business Object Function
+							347 checkbox XDX fetch site bu reference Business Object Function, Value: 0, ID: tree-om4qi7k-node-70
+								348 text XDX fetch site bu reference
+								349 text Business Object Function
+							350 checkbox XDX check site references Code, Value: 0, ID: tree-om4qi7k-node-71
+								351 text XDX check site references
+								352 text Code
+							353 checkbox XDX store site references Set Variables, Value: 0, ID: tree-om4qi7k-node-72
+								354 text XDX store site references
+								355 text Set Variables
+							356 checkbox XDX site reference route Switch, Value: 0, ID: tree-om4qi7k-node-73
+								357 text XDX site reference route
+								358 text Switch
+							359 checkbox XDX prepare site preflight Code, Value: 0, ID: tree-om4qi7k-node-74
+								360 text XDX prepare site preflight
+								361 text Code
+							362 checkbox XDX check site duplicate Business Object Function, Value: 0, ID: tree-om4qi7k-node-75
+								363 text XDX check site duplicate
+								364 text Business Object Function
+							365 checkbox XDX authorize site write Code, Value: 0, ID: tree-om4qi7k-node-76
+								366 text XDX authorize site write
+								367 text Code
+							368 checkbox XDX store site pending Set Variables, Value: 0, ID: tree-om4qi7k-node-77
+								369 text XDX store site pending
+								370 text Set Variables
+							371 checkbox XDX site write route Switch, Value: 0, ID: tree-om4qi7k-node-78
+								372 text XDX site write route
+								373 text Switch
+							374 checkbox XDX create site Business Object Function, Value: 0, ID: tree-om4qi7k-node-79
+								375 text XDX create site
+								376 text Business Object Function
+							377 checkbox XDX capture site create Code, Value: 0, ID: tree-om4qi7k-node-80
+								378 text XDX capture site create
+								379 text Code
+							380 checkbox XDX store site receipt Set Variables, Value: 0, ID: tree-om4qi7k-node-81
+								381 text XDX store site receipt
+								382 text Set Variables
+							383 checkbox XDX site has id If Condition, Value: 0, ID: tree-om4qi7k-node-82
+								384 text XDX site has id
+								385 text If Condition
+							386 checkbox XDX prepare site verification Code, Value: 0, ID: tree-om4qi7k-node-83
+								387 text XDX prepare site verification
+								388 text Code
+							389 checkbox XDX get created site Business Object Function, Value: 0, ID: tree-om4qi7k-node-84
+								390 text XDX get created site
+								391 text Business Object Function
+							392 checkbox XDX verify site create Code, Value: 0, ID: tree-om4qi7k-node-85
+								393 text XDX verify site create
+								394 text Code
+							395 checkbox XDX store site verified Set Variables, Value: 0, ID: tree-om4qi7k-node-86
+								396 text XDX store site verified
+								397 text Set Variables
+							398 checkbox XDX fetch site bu choices Business Object Function, Value: 0, ID: tree-om4qi7k-node-87
+								399 text XDX fetch site bu choices
+								400 text Business Object Function
+							401 checkbox XDX shape site bu lookup Code, Value: 0, ID: tree-om4qi7k-node-88
+								402 text XDX shape site bu lookup
+								403 text Code
+							404 checkbox XDX store site bu choices Set Variables, Value: 0, ID: tree-om4qi7k-node-89
+								405 text XDX store site bu choices
+								406 text Set Variables
+							407 checkbox XDX site display LLM, Value: 0, ID: tree-om4qi7k-node-90
+								408 text XDX site display
+								409 text LLM
+							410 checkbox XDX prepare contact Code, Value: 0, ID: tree-om4qi7k-node-91
+								411 text XDX prepare contact
+								412 text Code
+							413 checkbox XDX store contact request Set Variables, Value: 0, ID: tree-om4qi7k-node-92
+								414 text XDX store contact request
+								415 text Set Variables
+							416 checkbox XDX contact route Switch, Value: 0, ID: tree-om4qi7k-node-93
+								417 text XDX contact route
+								418 text Switch
+							419 checkbox XDX fetch contacts Business Object Function, Value: 0, ID: tree-om4qi7k-node-94
+								420 text XDX fetch contacts
+								421 text Business Object Function
+							422 checkbox XDX shape contacts Code, Value: 0, ID: tree-om4qi7k-node-95
+								423 text XDX shape contacts
+								424 text Code
+							425 checkbox XDX store contact list Set Variables, Value: 0, ID: tree-om4qi7k-node-96
+								426 text XDX store contact list
+								427 text Set Variables
+							428 checkbox XDX fetch contact detail Business Object Function, Value: 0, ID: tree-om4qi7k-node-97
+								429 text XDX fetch contact detail
+								430 text Business Object Function
+							431 checkbox XDX shape contact detail Code, Value: 0, ID: tree-om4qi7k-node-98
+								432 text XDX shape contact detail
+								433 text Code
+							434 checkbox XDX store contact detail Set Variables, Value: 0, ID: tree-om4qi7k-node-99
+								435 text XDX store contact detail
+								436 text Set Variables
+							437 checkbox XDX check contact duplicate Business Object Function, Value: 0, ID: tree-om4qi7k-node-100
+								438 text XDX check contact duplicate
+								439 text Business Object Function
+							440 checkbox XDX authorize contact write Code, Value: 0, ID: tree-om4qi7k-node-101
+								441 text XDX authorize contact write
+								442 text Code
+							443 checkbox XDX store contact pending Set Variables, Value: 0, ID: tree-om4qi7k-node-102
+								444 text XDX store contact pending
+								445 text Set Variables
+							446 checkbox XDX contact write route Switch, Value: 0, ID: tree-om4qi7k-node-103
+								447 text XDX contact write route
+								448 text Switch
+							449 checkbox XDX create contact Business Object Function, Value: 0, ID: tree-om4qi7k-node-104
+								450 text XDX create contact
+								451 text Business Object Function
+							452 checkbox XDX capture contact create Code, Value: 0, ID: tree-om4qi7k-node-105
+								453 text XDX capture contact create
+								454 text Code
+							455 checkbox XDX store contact receipt Set Variables, Value: 0, ID: tree-om4qi7k-node-106
+								456 text XDX store contact receipt
+								457 text Set Variables
+							458 checkbox XDX contact has id If Condition, Value: 0, ID: tree-om4qi7k-node-107
+								459 text XDX contact has id
+								460 text If Condition
+							461 checkbox XDX prepare contact verification Code, Value: 0, ID: tree-om4qi7k-node-108
+								462 text XDX prepare contact verification
+								463 text Code
+							464 checkbox XDX get created contact Business Object Function, Value: 0, ID: tree-om4qi7k-node-109
+								465 text XDX get created contact
+								466 text Business Object Function
+							467 checkbox XDX verify contact create Code, Value: 0, ID: tree-om4qi7k-node-110
+								468 text XDX verify contact create
+								469 text Code
+							470 checkbox XDX store contact verified Set Variables, Value: 0, ID: tree-om4qi7k-node-111
+								471 text XDX store contact verified
+								472 text Set Variables
+							473 checkbox XDX contact display LLM, Value: 0, ID: tree-om4qi7k-node-112
+								474 text XDX contact display
+								475 text LLM
+					476 toolbar Workflow builder toolbar
+						477 button Description: home, Help: Home
+						478 container Layout actions
+							479 pop up button (collapsed) Description: browse recently opened items, Help: Recent, Secondary Actions: Expand
+							480 button Toggle chat popup
+							481 checkbox Description: Show Component Palette, Value: 0
+							482 checkbox Description: locate node, Help: Locate Node, Value: 0
+							483 button (disabled) Description: undo the last change to workflow, Help: Undo
+							484 button (disabled) Description: redo the last change to workflow, Help: Redo
+							485 button (disabled) Description: undo all changes to workflow, Help: Undo All
+							486 button debug workflow
+							487 button publish workflow
+							488 button Hide Toolbar
+			65 link Description: Ask Oracle, Value: static.oracle.com/cdn/fa/oracle_fai_aiappspublicUI/2607.145.262371629/aiappsweb/#, ID: Ayeb8Tqdw4dLNfAZMHZJq1bu_ao-brand
+
+The focused UI element is 1 AXWebArea XDX Supplier Core 20260926, URL: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$workflow/XDX_SUPPLIER_CORE_20260926?draft=true

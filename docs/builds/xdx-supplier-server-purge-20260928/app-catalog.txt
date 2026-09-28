@@ -1,0 +1,493 @@
+(node:37764) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/dasu/Documents/GitHub/fusion-ai-studio-1/.agents/skills/aistudio/scripts/aistudio.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "list-remote-applications",
+  "result": {
+    "items": [
+      {
+        "id": "100002355221368",
+        "name": "Accounts",
+        "internalDescription": "Marketing Accounts Application",
+        "code": "ORA_MARKETING_ACCOUNTS",
+        "timeUpdated": "2026-09-11T19:31:31.078Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "100002355221368",
+        "$context": {
+          "etag": "6",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/100002355221368"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000331473286",
+        "name": "Batch Process Manufacturing Workspace",
+        "internalDescription": "The Batch Process Manufacturing Agentic Application provides a unified, near-real-time view of manufacturing performance and risk across the last two weeks of production. Delivered through a role-based, AI-assisted Batch Process Manufacturing Workspace, it provides process engineers and production supervisors with consolidated insight by synthesizing signals from product and process changes, master and transactional data health checks, shop floor feedback (including operator notes), and actual-versus-expected variances. The workspace analyzes quality exceptions, yield and material usage variances, batch completeness, and batch conformance to identify where execution deviates from expected outcomes, compare poor-, average-, and top-performing batches, and highlight performance gaps. By prioritizing exceptions that materially impact throughput, scrap, and compliance and presenting clear recommendations with supporting evidence (e.g., corrective actions, maintenance requests, and targeted communications) rather than raw transactional data, the application enables faster diagnosis, consistent decision-making, and targeted continuous improvement across manufacturing, quality, and operations teams.",
+        "code": "ORA_BATCH_PROCESS_MANUFACTURING_WORKSPACE",
+        "timeUpdated": "2026-07-30T11:29:22.003Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000331473286",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000331473286"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000328167213",
+        "name": "COE Widgets",
+        "internalDescription": "Display all widget types",
+        "code": "COE_WIDGETS",
+        "timeUpdated": "2026-04-07T18:55:19.291778Z",
+        "updatedBy": "CURTIS.FEITTY",
+        "status": "DRAFT",
+        "seededFlag": false,
+        "$id": "300000328167213",
+        "$context": {
+          "etag": "37",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000328167213"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000328167310",
+        "name": "COE Widgets",
+        "internalDescription": "Display all widget types",
+        "code": "COE_WIDGETS",
+        "timeUpdated": "2026-04-07T18:55:48.619476Z",
+        "updatedBy": "CURTIS.FEITTY",
+        "status": "PUBLISHED",
+        "seededFlag": false,
+        "$id": "300000328167310",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000328167310"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000326919788",
+        "name": "Career Advancement Command Center",
+        "internalDescription": "Accelerates internal mobility by proactively matching skills to open roles and closing the readiness gap—identifying necessary training, recommending gigs, and automating the networking outreach needed to land the next opportunity.",
+        "code": "ORA_HCM_IRC_CAREER_ADVANCEMENT_COMMAND_CENTER",
+        "timeUpdated": "2026-03-25T20:39:30.002Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000326919788",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000326919788"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000326919775",
+        "name": "Change Task Workspace",
+        "internalDescription": "Change Order Task Workspace is a agentic application that allows users to get insight into a Change Orders open tasks that need to be resolved as well as the approver or participants that have not yet approved. ",
+        "code": "ORA_CHANGE_TASK_APPROVER_WORKSPACE",
+        "timeUpdated": "2026-03-25T20:39:27.155Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000326919775",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000326919775"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000331473767",
+        "name": "Code Enforcement Incident Workspace",
+        "internalDescription": "Code Enforcement Technician App to Analyze incoming Incidents , finding Duplicates using spatial near by search, validating the issue subtype relevancy and prescribing next action for the incidents and scheduling inspections. Highlighting the escalated Incidents , problematic area within city. Allows user to communicate within agency or to reporter of incident. prioritize workflow tasks based on criticality and due date. send weekly or daily summary",
+        "code": "ORA_CODE_ENFORCEMENT_INCIDENT_WORKSPACE",
+        "timeUpdated": "2026-07-30T11:29:36.002Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000331473767",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000331473767"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000331473748",
+        "name": "Collections Customer Details",
+        "internalDescription": "An application that provides a consolidated view of customer collections data such as invoices, payment history, disputes, and account status and supports natural language queries to return relevant information for collections related queries.",
+        "code": "ORA_COLLECTIONS_CUSTOMER_DETAILS",
+        "timeUpdated": "2026-07-30T11:29:26.002Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000331473748",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000331473748"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000331473749",
+        "name": "Collector Workspace",
+        "internalDescription": "A workspace that provides collectors with prioritized accounts, AI-driven insights, and next best actions to enable faster resolution and improved productivity.",
+        "code": "ORA_COLLECTOR_WORKSPACE",
+        "timeUpdated": "2026-07-30T11:29:26.016Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000331473749",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000331473749"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000331473291",
+        "name": "Contract Compliance Workspace",
+        "internalDescription": "Tracks clause-language deviations in active contract negotiations and provides agentic insights to help contract teams review risks, recommendations, and next actions.",
+        "code": "ORA_CONTRACTS_COMPLIANCE_WORKSPACE",
+        "timeUpdated": "2026-07-30T11:29:26.002Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000331473291",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000331473291"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000331473292",
+        "name": "Contract Negotiation Feedback Details",
+        "internalDescription": "For a specific contract, this app lists all clauses that have deviations and provides agentic insights to review issues, recommendations, and next actions.",
+        "code": "ORA_OKC_NEGOTIATION_FEEDBACK_DETAILS",
+        "timeUpdated": "2026-07-30T11:29:26.015Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000331473292",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000331473292"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000326919240",
+        "name": "Cost Accounting Close Workspace",
+        "internalDescription": "Cost Accounting Close Workspace for a cost accountant to help him close a period.",
+        "code": "ORA_COST_ACCOUNTING_PERIOD_CLOSE_WORKSPACE",
+        "timeUpdated": "2026-07-30T11:29:46Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000326919240",
+        "$context": {
+          "etag": "4",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000326919240"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000331471450",
+        "name": "DS Intelligence App",
+        "internalDescription": "Customer Intelligence Advisor",
+        "code": "ORA_DS_INTELLIGENCE_APP",
+        "timeUpdated": "2026-09-11T19:31:31Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000331471450",
+        "$context": {
+          "etag": "2",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000331471450"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000326919776",
+        "name": "Design to Source Workspace",
+        "internalDescription": "Design to Source workspace agent application provides a insight driven cross functional agentic workspace that translates product specifications into qualified supplier options, simulates cost/lead‑time trade‑offs, and executes RFQs with compliant documentation and coordinated buyer/supplier communications.automates the sourcing process by extracting requirements from CAD designs, creating item records, and generating RFQs. The app accelerates supplier discovery, bid analysis, and risk management, enabling compliant, traceable procurement from design to award, all in a unified workspace.",
+        "code": "ORA_DESIGN_TO_SOURCE_WORKSPACE",
+        "timeUpdated": "2026-04-10T12:26:51Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000326919776",
+        "$context": {
+          "etag": "2",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000326919776"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000326919238",
+        "name": "Hiring Workspace for Store Managers",
+        "internalDescription": "Proactively ranks top candidates, automates interview scheduling, and flags stalled requisitions to free retail store managers from administrative tasks and accelerate hiring decisions.",
+        "code": "ORA_HCM_IRC_HIRING_MANAGER_WORKSPACE",
+        "timeUpdated": "2026-07-30T11:29:17Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000326919238",
+        "$context": {
+          "etag": "2",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000326919238"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000331473233",
+        "name": "Insight Details Workspace",
+        "internalDescription": "Workspace providing detailed analysis of an insight, enabling users to understand drivers, investigate exceptions, and ask contextual questions for deeper financial visibility.",
+        "code": "ORA_FIN_GL_INSIGHT_DETAILS_WORKSPACE",
+        "timeUpdated": "2026-07-30T11:29:03.002Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000331473233",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000331473233"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000331473301",
+        "name": "Inventory Planning Command Center",
+        "internalDescription": "Use the AI agentic application named Inventory Planning Command Center to efficiently analyze plan results, identify stockouts and their root causes in the supply network, and maximize business performance through corrective actions, such as improving customer-service levels and increasing the total revenue.",
+        "code": "ORA_INVENTORY_PLANNING_COMMAND_CENTER",
+        "timeUpdated": "2026-07-30T11:29:28.002Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000331473301",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000331473301"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000326919236",
+        "name": "Item Availability Workspace",
+        "internalDescription": "Provides inventory planners and supply chain managers with visibility into item supply and demand trends across organizations. Recommends replenishment options and supports movement requests, interorganization transfers, and substitute item transfers based on current availability.",
+        "code": "ORA_INV_ITEM_AVAILABILITY_WORKSPACE",
+        "timeUpdated": "2026-07-30T11:29:09Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000326919236",
+        "$context": {
+          "etag": "2",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000326919236"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000326919239",
+        "name": "Job Requisition Health Assistant",
+        "internalDescription": "Surfaces job requisition health details and suggests candidates and requisition actions. It's designed for the hiring manager workspace.",
+        "code": "ORA_HCM_IRC_JOB_REQUISITION_HEALTH_ASSISTANT",
+        "timeUpdated": "2026-07-30T11:29:17.019Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000326919239",
+        "$context": {
+          "etag": "2",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000326919239"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000331473230",
+        "name": "Kanban Administrator Workspace",
+        "internalDescription": "The Kanban Administrator Workspace is meant to serve as a centralized control center to proactively manage Kanban-based material replenishments, significantly enhanced by AI App Fundamentals",
+        "code": "ORA_WIS_KANBAN_ADMINISTRATION_WORKSPACE",
+        "timeUpdated": "2026-07-30T11:29:01.111Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000331473230",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000331473230"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000331473232",
+        "name": "Kanban Item Drill Down",
+        "internalDescription": "Shows all details of a specific item",
+        "code": "ORA_WIS_KANBAN_WORKSPACE_PULL_SEQUENCE_DETAILS",
+        "timeUpdated": "2026-07-30T11:29:01.151Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000331473232",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000331473232"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000326919780",
+        "name": "Learner with Incomplete Assignments Workspace for Manager",
+        "internalDescription": "Workspace where managers can view learning with overdue or due soon assignments for the learner.",
+        "code": "ORA_HCM_LEARNING_LEARNER_WITH_INCOMPLETE_ASSIGNMENTS_WORKSPACE_FOR_MANAGER",
+        "timeUpdated": "2026-03-25T20:39:29.002Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000326919780",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000326919780"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000326919781",
+        "name": "Learning with Incomplete Assignments Workspace for Manager",
+        "internalDescription": "Workspace where managers can view direct reports with overdue or due soon assignments for the learning.",
+        "code": "ORA_HCM_LEARNING_LEARNING_WITH_INCOMPLETE_ASSIGNMENTS_WORKSPACE_FOR_MANAGER",
+        "timeUpdated": "2026-03-25T20:39:29.016Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000326919781",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000326919781"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000331473234",
+        "name": "Ledger Workspace",
+        "internalDescription": "Monitor AI-driven Ledger insights on balances, journals, and transactions to improve efficiency and proactively deliver timely, actionable insights and explanations, tailored to the specific context of emerging issues.",
+        "code": "ORA_FIN_GL_LEDGER_WORKSPACE",
+        "timeUpdated": "2026-07-30T11:29:03.015Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000331473234",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000331473234"
+            }
+          }
+        }
+      },
+      {
+        "id": "300000326919794",
+        "name": "Logistics Execution Command Center",
+        "internalDescription": "Agentic App monitors end-to-end order execution across OTM and WMS, bringing picking, appointments, and shipment readiness into one command view. It identifies common execution issues and serves as a one-stop hub for priority actions such as scheduling appointments or running waves.",
+        "code": "ORA_LOGISTICS_EXECUTION_COMMAND_CENTER",
+        "timeUpdated": "2026-03-25T20:39:33.002Z",
+        "updatedBy": "SEED_DATA_FROM_APPLICATION",
+        "status": "PUBLISHED",
+        "seededFlag": true,
+        "$id": "300000326919794",
+        "$context": {
+          "etag": "1",
+          "links": {
+            "$self": {
+              "href": "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/api/boss/data/objects/ora/commonFusionAI/agents/v1/$en/applications/300000326919794"
+            }
+          }
+        }
+      }
+    ],
+    "hasMore": true
+  }
+}

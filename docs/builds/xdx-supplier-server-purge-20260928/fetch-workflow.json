@@ -1,0 +1,16 @@
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-fetch-workflow",
+  "result": {
+    "artifactType": "workflow",
+    "code": "XDX_SUPPLIER_CORE_20260926",
+    "filePath": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\docs\\builds\\xdx-supplier-server-purge-20260928\\before\\xdx_supplier_core_20260926.wf",
+    "action": "created",
+    "forced": false
+  }
+}

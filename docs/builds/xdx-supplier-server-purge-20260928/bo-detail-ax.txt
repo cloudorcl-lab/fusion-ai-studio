@@ -1,0 +1,170 @@
+Browser tab: 676648571, Title: "Business Objects - AI Agent Studio", URL: "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_CORE_DATA_20260926?tab=businessObjects".
+1 AXWebArea Business Objects - AI Agent Studio, URL: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_CORE_DATA_20260926?tab=businessObjects
+	2 container
+		3 container y3GQWBsOEmdZRWK4hsyb1e7S_ao
+			5 container
+				6 container
+					7 heading XDX Supplier Core Data 20260926, Value: 2
+						8 text XDX Supplier Core Data 20260926
+					9 container
+						10 text Name
+						11 button (collapsed) Description: Show help for Name, Secondary Actions: Expand
+						12 text field (settable) Name, Value: XDX Supplier Core Data 20260926, ID: bo-field-bo-name
+					13 container
+						14 text Family
+						15 button (disabled, collapsed) Description: Show help for Family, Secondary Actions: Expand
+						16 combo box (disabled, collapsed, settable) Family, Value: PRC, ID: bo-field-bo-family, Secondary Actions: Expand
+						17 button (disabled) Toggle dropdown
+							18 image
+					19 container
+						20 text Product
+						21 button (disabled, collapsed) Description: Show help for Product, Secondary Actions: Expand
+						22 combo box (disabled, collapsed, settable) Product, Value: Supplier, ID: bo-field-bo-product, Secondary Actions: Expand
+						23 button (disabled) Toggle dropdown
+							24 image
+					25 container
+						26 text Code
+						27 button (collapsed) Description: Show help for Code, Secondary Actions: Expand
+						28 text field (disabled) Code, Value: XDX_SUPPLIER_CORE_DATA_20260926, ID: bo-field-bo-code
+					29 container
+						30 text Description
+						31 button (collapsed) Description: Show help for Description, Secondary Actions: Expand
+						32 text entry area (settable) Description, ID: bo-field-bo-description, Value: Supplier, address, site and contact query/create data functions; BU lookup is a separate preserved read-only dependency.
+					33 button Generate
+						34 text Generate
+					35 container
+						36 text Resource Type
+						37 button (collapsed) Description: Show help for Resource Type, Secondary Actions: Expand
+						38 combo box (collapsed, settable) Resource Type, Value: Monolith resource, ID: bo-field-bo-objectSource, Secondary Actions: Expand
+						39 button Toggle dropdown
+							40 image
+					41 container
+						42 text Resource Path
+						43 button (collapsed) Description: Show help for Resource Path, Secondary Actions: Expand
+						44 text field (settable) Resource Path, Value: /fscmRestApi/resources/11.13.18.05/suppliers, ID: bo-field-bo-restResourcePath
+					45 container bo-functions-region
+						46 heading Business Object Functions, Value: 3
+							47 text Business Object Functions
+						48 button Add function
+						49 button Add function from OpenAPI specification
+						50 button Import functions
+						51 container bo-fn-1-shell
+							52 button (collapsed) ID: bo-fn-1-shell-header, Secondary Actions: Expand, QuerySuppliers GET /fscmRestApi/resources/11.13.18.05/suppliers?fields=SupplierId,SupplierNumber,Supplier,BusinessRelationship,TaxOrganizationType,InactiveDate&onlyData=true&orderBy=SupplierId:asc&q={q}&limit={limit}&offset={offset}
+								53 text QuerySuppliers
+								54 text GET
+								55 text /fscmRestApi/resources/11.13.18.05/suppliers?fields=SupplierId,SupplierNumber,Supplier,BusinessRelationship,TaxOrganizationType,InactiveDate&onlyData=true&orderBy=SupplierId:asc&q={q}&limit={limit}&offset={offset}
+							56 button Description: Duplicate function QuerySuppliers, Help: Duplicate Function
+							57 button Description: Delete function QuerySuppliers, Help: Delete Function
+							58 button (collapsed) Description: Expand section, Secondary Actions: Expand
+								59 image
+						60 container bo-fn-6-shell
+							61 button (collapsed) GetSupplier GET /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}?onlyData=true, ID: bo-fn-6-shell-header, Secondary Actions: Expand
+								62 text GetSupplier
+								63 text GET
+								64 text /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}?onlyData=true
+							65 button Description: Duplicate function GetSupplier, Help: Duplicate Function
+							66 button Description: Delete function GetSupplier, Help: Delete Function
+							67 button (collapsed) Description: Expand section, Secondary Actions: Expand
+								68 image
+						69 container bo-fn-9-shell
+							70 button (collapsed) CreateSupplier POST /fscmRestApi/resources/11.13.18.05/suppliers, ID: bo-fn-9-shell-header, Secondary Actions: Expand
+								71 text CreateSupplier
+								72 text POST
+								73 text /fscmRestApi/resources/11.13.18.05/suppliers
+							74 button Description: Duplicate function CreateSupplier, Help: Duplicate Function
+							75 button Description: Delete function CreateSupplier, Help: Delete Function
+							76 button (collapsed) Description: Expand section, Secondary Actions: Expand
+								77 image
+						78 container bo-fn-15-shell
+							79 button (collapsed) ID: bo-fn-15-shell-header, Secondary Actions: Expand, QueryAddresses GET /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/addresses?fields=SupplierAddressId,AddressName,CountryCode,AddressLine1,City,State,PostalCode,Email,AddressPurposeOrderingFlag,InactiveDate&onlyData=true&orderBy=SupplierAddressId:asc&q={q}&limit={limit}&offset={offset}
+								80 text QueryAddresses
+								81 text GET
+								82 text /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/addresses?fields=SupplierAddressId,AddressName,CountryCode,AddressLine1,City,State,PostalCode,Email,AddressPurposeOrderingFlag,InactiveDate&onlyData=true&orderBy=SupplierAddressId:asc&q={q}&limit={limit}&offset={offset}
+							83 button Description: Duplicate function QueryAddresses, Help: Duplicate Function
+							84 button Description: Delete function QueryAddresses, Help: Delete Function
+							85 button (collapsed) Description: Expand section, Secondary Actions: Expand
+								86 image
+						87 container bo-fn-21-shell
+							88 button (collapsed) ID: bo-fn-21-shell-header, Secondary Actions: Expand, GetAddress GET /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/addresses/{SupplierAddressId}?onlyData=true
+								89 text GetAddress
+								90 text GET
+								91 text /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/addresses/{SupplierAddressId}?onlyData=true
+							92 button Description: Duplicate function GetAddress, Help: Duplicate Function
+							93 button Description: Delete function GetAddress, Help: Delete Function
+							94 button (collapsed) Description: Expand section, Secondary Actions: Expand
+								95 image
+						96 container bo-fn-25-shell
+							97 button (collapsed) CreateAddress POST /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/addresses, ID: bo-fn-25-shell-header, Secondary Actions: Expand
+								98 text CreateAddress
+								99 text POST
+								100 text /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/addresses
+							101 button Description: Duplicate function CreateAddress, Help: Duplicate Function
+							102 button Description: Delete function CreateAddress, Help: Delete Function
+							103 button (collapsed) Description: Expand section, Secondary Actions: Expand
+								104 image
+						105 container bo-fn-36-shell
+							106 button (collapsed) ID: bo-fn-36-shell-header, Secondary Actions: Expand, QuerySites GET /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/sites?fields=SupplierSiteId,SupplierSite,ProcurementBUId,ProcurementBU,SupplierAddressId,SupplierAddressName,SitePurposePurchasingFlag,InactiveDate&onlyData=true&orderBy=SupplierSiteId:asc&q={q}&limit={limit}&offset={offset}
+								107 text QuerySites
+								108 text GET
+								109 text /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/sites?fields=SupplierSiteId,SupplierSite,ProcurementBUId,ProcurementBU,SupplierAddressId,SupplierAddressName,SitePurposePurchasingFlag,InactiveDate&onlyData=true&orderBy=SupplierSiteId:asc&q={q}&limit={limit}&offset={offset}
+							110 button Description: Duplicate function QuerySites, Help: Duplicate Function
+							111 button Description: Delete function QuerySites, Help: Delete Function
+							112 button (collapsed) Description: Expand section, Secondary Actions: Expand
+								113 image
+						114 container bo-fn-42-shell
+							115 button (collapsed) ID: bo-fn-42-shell-header, Secondary Actions: Expand, GetSite GET /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/sites/{SupplierSiteId}?onlyData=true
+								116 text GetSite
+								117 text GET
+								118 text /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/sites/{SupplierSiteId}?onlyData=true
+							119 button Description: Duplicate function GetSite, Help: Duplicate Function
+							120 button Description: Delete function GetSite, Help: Delete Function
+							121 button (collapsed) Description: Expand section, Secondary Actions: Expand
+								122 image
+						123 container bo-fn-46-shell
+							124 button (collapsed) CreateSite POST /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/sites, ID: bo-fn-46-shell-header, Secondary Actions: Expand
+								125 text CreateSite
+								126 text POST
+								127 text /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/sites
+							128 button Description: Duplicate function CreateSite, Help: Duplicate Function
+							129 button Description: Delete function CreateSite, Help: Delete Function
+							130 button (collapsed) Description: Expand section, Secondary Actions: Expand
+								131 image
+						132 container bo-fn-53-shell
+							133 button (collapsed) ID: bo-fn-53-shell-header, Secondary Actions: Expand, QueryContacts GET /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/contacts?fields=SupplierContactId,PersonProfileId,ContactName,FirstName,LastName,Email,InactiveDate,UserName,UserAccountStatus&onlyData=true&orderBy=SupplierContactId:asc&q={q}&limit={limit}&offset={offset}
+								134 text QueryContacts
+								135 text GET
+								136 text /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/contacts?fields=SupplierContactId,PersonProfileId,ContactName,FirstName,LastName,Email,InactiveDate,UserName,UserAccountStatus&onlyData=true&orderBy=SupplierContactId:asc&q={q}&limit={limit}&offset={offset}
+							137 button Description: Duplicate function QueryContacts, Help: Duplicate Function
+							138 button Description: Delete function QueryContacts, Help: Delete Function
+							139 button (collapsed) Description: Expand section, Secondary Actions: Expand
+								140 image
+						141 container bo-fn-59-shell
+							142 button (collapsed) ID: bo-fn-59-shell-header, Secondary Actions: Expand, GetContact GET /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/contacts/{SupplierContactId}?onlyData=true
+								143 text GetContact
+								144 text GET
+								145 text /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/contacts/{SupplierContactId}?onlyData=true
+							146 button Description: Duplicate function GetContact, Help: Duplicate Function
+							147 button Description: Delete function GetContact, Help: Delete Function
+							148 button (collapsed) Description: Expand section, Secondary Actions: Expand
+								149 image
+						150 container bo-fn-63-shell
+							151 button (collapsed) CreateContact POST /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/contacts, ID: bo-fn-63-shell-header, Secondary Actions: Expand
+								152 text CreateContact
+								153 text POST
+								154 text /fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}/child/contacts
+							155 button Description: Duplicate function CreateContact, Help: Duplicate Function
+							156 button Description: Delete function CreateContact, Help: Delete Function
+							157 button (collapsed) Description: Expand section, Secondary Actions: Expand
+								158 image
+					159 toolbar Business object builder toolbar
+						160 button Description: Go to homepage, Help: Home
+						161 container Toolbar actions
+							162 pop up button (collapsed) Description: workflowBuilder.recentOpensAriaLabel, Help: workflowBuilder.recentOpensTooltip, Secondary Actions: Expand
+							163 button Build with AI
+							164 button Cancel
+							165 button Save
+							166 button Save and Close
+							167 button Hide toolbar
+			4 link Description: Ask Oracle, Value: static.oracle.com/cdn/fa/oracle_fai_aiappspublicUI/2607.145.262371629/aiappsweb/#, ID: y3GQWBsOEmdZRWK4hsyb1e7S_ao-brand
+
+The focused UI element is 1 AXWebArea Business Objects - AI Agent Studio, URL: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_CORE_DATA_20260926?tab=businessObjects

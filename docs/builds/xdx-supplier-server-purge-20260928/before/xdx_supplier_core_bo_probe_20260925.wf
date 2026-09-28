@@ -1,0 +1,542 @@
+{
+  "workflowId": "300000334055968",
+  "workflowCode": "XDX_SUPPLIER_CORE_BO_PROBE_20260925",
+  "name": "XDX Supplier Core BO Probe 20260925",
+  "description": "Standalone GET-only saved BO typed-input probe; no app binding, no writes or models.",
+  "specification": {
+    "jsonSchemaName": "Workflow.spec",
+    "jsonSchemaVersion": "1",
+    "inputs": [],
+    "outputSpecification": " ",
+    "agentsValueMappings": [],
+    "dataPipeline": {
+      "pipelineNodes": [
+        {
+          "id": "start",
+          "code": "START",
+          "type": "START",
+          "metadata": {
+            "name": "Start",
+            "description": "Start of data pipeline"
+          },
+          "outcomes": {
+            "success": "1"
+          },
+          "inputs": [],
+          "diagram": {
+            "x": 6125,
+            "y": 5000
+          }
+        },
+        {
+          "id": "1",
+          "code": "GUARD",
+          "type": "CODE",
+          "metadata": {
+            "name": "Guard",
+            "sourceCode": "let p;\ntry { p=JSON.parse(String($context.$system.$inputMessage||'')); }\ncatch(e) { return {valid:false,error:'Expected JSON read request'}; }\nif(!p||Array.isArray(p)||typeof p!=='object')return {valid:false,error:'Expected object'};\nconst route=p.route===undefined?'GetAddress':p.route;\nconst allowed={GetAddress:['SupplierId','SupplierAddressId'],GetSite:['route','SupplierId','SupplierSiteId'],QuerySites:['route','SupplierId','limit','offset'],GetContact:['route','SupplierId','SupplierContactId'],QueryContacts:['route','SupplierId','limit','offset']};\nif(!Object.prototype.hasOwnProperty.call(allowed,route))return {valid:false,error:'GET route not allowed'};\nconst keys=allowed[route].slice();if(route==='GetAddress'&&p.route!==undefined)keys.push('route');\nif(Object.keys(p).sort().join(',')!==keys.sort().join(','))return {valid:false,error:'Unexpected or missing input'};\nconst idNames=route==='GetAddress'?['SupplierId','SupplierAddressId']:route==='GetSite'?['SupplierId','SupplierSiteId']:route==='GetContact'?['SupplierId','SupplierContactId']:['SupplierId'];\nfor(const k of idNames)if(typeof p[k]!=='number'||!Number.isSafeInteger(p[k])||p[k]<=0)return {valid:false,error:'Internal keys must be positive safe integers'};\nif((route==='QuerySites'||route==='QueryContacts')&&(!Number.isInteger(p.limit)||p.limit<1||p.limit>100||!Number.isInteger(p.offset)||p.offset<0))return {valid:false,error:'Invalid paging'};\nconst result={valid:true,route:route,SupplierId:p.SupplierId};\nif(route==='GetAddress')result.SupplierAddressId=p.SupplierAddressId;\nif(route==='GetSite')result.SupplierSiteId=p.SupplierSiteId;\nif(route==='QuerySites'){result.q='SupplierSiteId>0';result.limit=p.limit;result.offset=p.offset;}\nif(route==='GetContact')result.SupplierContactId=p.SupplierContactId;\nif(route==='QueryContacts'){result.q='SupplierContactId>0';result.limit=p.limit;result.offset=p.offset;}\nreturn result;\n",
+            "returnType": "object"
+          },
+          "outcomes": {
+            "success": "2"
+          },
+          "inputs": [],
+          "diagram": {
+            "x": 6125,
+            "y": 5206
+          },
+          "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"result\": {\n      \"type\": \"object\"\n    },\n    \"timeout\": {\n      \"type\": \"boolean\"\n    },\n    \"error\": {\n      \"type\": \"string\"\n    }\n  },\n  \"additionalProperties\": false,\n  \"required\": [\n    \"result\",\n    \"timeout\",\n    \"error\"\n  ]\n}"
+        },
+        {
+          "id": "2",
+          "code": "VALID_KEYS",
+          "type": "CONDITION",
+          "metadata": {
+            "name": "Valid keys"
+          },
+          "outcomes": {
+            "true": "14",
+            "false": "4"
+          },
+          "inputs": [
+            {
+              "id": "2_condition",
+              "name": "condition",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.valid === true}}"
+            }
+          ],
+          "diagram": {
+            "x": 6125,
+            "y": 5428
+          },
+          "convergenceTargetId": "end"
+        },
+        {
+          "id": "3",
+          "code": "RESULT",
+          "type": "RETURN",
+          "metadata": {
+            "name": "Return saved BO result"
+          },
+          "outcomes": {},
+          "inputs": [
+            {
+              "id": "3_returnValue",
+              "name": "returnValue",
+              "type": "string",
+              "value": "{{$context.$nodes.READ_ADDRESS.$output}}"
+            }
+          ],
+          "diagram": {
+            "x": 5900,
+            "y": 6538
+          }
+        },
+        {
+          "id": "4",
+          "code": "REJECT",
+          "type": "RETURN",
+          "metadata": {
+            "name": "Reject invalid request"
+          },
+          "outcomes": {},
+          "inputs": [
+            {
+              "id": "4_returnValue",
+              "name": "returnValue",
+              "type": "string",
+              "value": "Invalid GET probe request. No BO call permitted."
+            }
+          ],
+          "diagram": {
+            "x": 7250,
+            "y": 5650
+          }
+        },
+        {
+          "id": "5",
+          "code": "READ_ADDRESS",
+          "type": "BO_FUNCTION",
+          "metadata": {
+            "name": "Read saved address",
+            "functionName": "GetAddress",
+            "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260925"
+          },
+          "outcomes": {
+            "success": "3"
+          },
+          "inputs": [
+            {
+              "id": "5_SupplierId",
+              "name": "SupplierId",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.SupplierId}}"
+            },
+            {
+              "id": "5_SupplierAddressId",
+              "name": "SupplierAddressId",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.SupplierAddressId}}"
+            }
+          ],
+          "diagram": {
+            "x": 5900,
+            "y": 6316
+          },
+          "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"SupplierAddressId\": {\n      \"type\": \"number\"\n    },\n    \"AddressName\": {\n      \"type\": \"string\"\n    },\n    \"CountryCode\": {\n      \"type\": \"string\"\n    },\n    \"Country\": {\n      \"type\": \"string\"\n    },\n    \"AddressLine1\": {\n      \"type\": \"string\"\n    },\n    \"AddressLine2\": {\n      \"type\": \"null\"\n    },\n    \"AddressLine3\": {\n      \"type\": \"null\"\n    },\n    \"AddressLine4\": {\n      \"type\": \"null\"\n    },\n    \"City\": {\n      \"type\": \"string\"\n    },\n    \"State\": {\n      \"type\": \"string\"\n    },\n    \"PostalCode\": {\n      \"type\": \"string\"\n    },\n    \"PostalCodeExtension\": {\n      \"type\": \"null\"\n    },\n    \"Province\": {\n      \"type\": \"null\"\n    },\n    \"County\": {\n      \"type\": \"null\"\n    },\n    \"Building\": {\n      \"type\": \"null\"\n    },\n    \"FloorNumber\": {\n      \"type\": \"null\"\n    },\n    \"PhoneticAddress\": {\n      \"type\": \"null\"\n    },\n    \"LanguageCode\": {\n      \"type\": \"null\"\n    },\n    \"Language\": {\n      \"type\": \"null\"\n    },\n    \"Addressee\": {\n      \"type\": \"null\"\n    },\n    \"GlobalLocationNumber\": {\n      \"type\": \"null\"\n    },\n    \"AdditionalAddressAttribute1\": {\n      \"type\": \"null\"\n    },\n    \"AdditionalAddressAttribute2\": {\n      \"type\": \"null\"\n    },\n    \"AdditionalAddressAttribute3\": {\n      \"type\": \"null\"\n    },\n    \"AdditionalAddressAttribute4\": {\n      \"type\": \"null\"\n    },\n    \"AdditionalAddressAttribute5\": {\n      \"type\": \"null\"\n    },\n    \"FormattedAddress\": {\n      \"type\": \"string\"\n    },\n    \"AddressPurposeOrderingFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"AddressPurposeRemitToFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"AddressPurposeRFQOrBiddingFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"PhoneCountryCode\": {\n      \"type\": \"null\"\n    },\n    \"PhoneAreaCode\": {\n      \"type\": \"null\"\n    },\n    \"PhoneNumber\": {\n      \"type\": \"null\"\n    },\n    \"PhoneExtension\": {\n      \"type\": \"null\"\n    },\n    \"FaxCountryCode\": {\n      \"type\": \"null\"\n    },\n    \"FaxAreaCode\": {\n      \"type\": \"null\"\n    },\n    \"FaxNumber\": {\n      \"type\": \"null\"\n    },\n    \"Email\": {\n      \"type\": \"string\"\n    },\n    \"InactiveDate\": {\n      \"type\": \"string\"\n    },\n    \"Status\": {\n      \"type\": \"string\"\n    },\n    \"CreationDate\": {\n      \"type\": \"string\"\n    },\n    \"CreatedBy\": {\n      \"type\": \"string\"\n    },\n    \"LastUpdateDate\": {\n      \"type\": \"string\"\n    },\n    \"LastUpdatedBy\": {\n      \"type\": \"string\"\n    },\n    \"AddressPartyNumber\": {\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"SupplierAddressId\",\n    \"AddressName\",\n    \"CountryCode\",\n    \"Country\",\n    \"AddressLine1\",\n    \"AddressLine2\",\n    \"AddressLine3\",\n    \"AddressLine4\",\n    \"City\",\n    \"State\",\n    \"PostalCode\",\n    \"PostalCodeExtension\",\n    \"Province\",\n    \"County\",\n    \"Building\",\n    \"FloorNumber\",\n    \"PhoneticAddress\",\n    \"LanguageCode\",\n    \"Language\",\n    \"Addressee\",\n    \"GlobalLocationNumber\",\n    \"AdditionalAddressAttribute1\",\n    \"AdditionalAddressAttribute2\",\n    \"AdditionalAddressAttribute3\",\n    \"AdditionalAddressAttribute4\",\n    \"AdditionalAddressAttribute5\",\n    \"FormattedAddress\",\n    \"AddressPurposeOrderingFlag\",\n    \"AddressPurposeRemitToFlag\",\n    \"AddressPurposeRFQOrBiddingFlag\",\n    \"PhoneCountryCode\",\n    \"PhoneAreaCode\",\n    \"PhoneNumber\",\n    \"PhoneExtension\",\n    \"FaxCountryCode\",\n    \"FaxAreaCode\",\n    \"FaxNumber\",\n    \"Email\",\n    \"InactiveDate\",\n    \"Status\",\n    \"CreationDate\",\n    \"CreatedBy\",\n    \"LastUpdateDate\",\n    \"LastUpdatedBy\",\n    \"AddressPartyNumber\"\n  ],\n  \"additionalProperties\": false\n}"
+        },
+        {
+          "id": "6",
+          "code": "QUERY_SITES",
+          "type": "BO_FUNCTION",
+          "metadata": {
+            "name": "QuerySites",
+            "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260925",
+            "functionName": "QuerySites"
+          },
+          "outcomes": {
+            "success": "10"
+          },
+          "inputs": [
+            {
+              "id": "6_SupplierId",
+              "name": "SupplierId",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.SupplierId}}"
+            },
+            {
+              "id": "6_offset",
+              "name": "offset",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.offset}}"
+            },
+            {
+              "id": "6_limit",
+              "name": "limit",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.limit}}"
+            },
+            {
+              "id": "6_q",
+              "name": "q",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.q}}"
+            }
+          ],
+          "diagram": {
+            "x": 5000,
+            "y": 6538
+          },
+          "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"SupplierSiteId\": {\n            \"type\": \"number\"\n          },\n          \"SupplierSite\": {\n            \"type\": \"string\"\n          },\n          \"ProcurementBUId\": {\n            \"type\": \"number\"\n          },\n          \"ProcurementBU\": {\n            \"type\": \"string\"\n          },\n          \"SupplierAddressId\": {\n            \"type\": \"number\"\n          },\n          \"SupplierAddressName\": {\n            \"type\": \"string\"\n          },\n          \"Address\": {\n            \"type\": \"string\"\n          },\n          \"InactiveDate\": {\n            \"type\": \"null\"\n          },\n          \"Status\": {\n            \"type\": \"string\"\n          },\n          \"SitePurposeSourcingOnlyFlag\": {\n            \"type\": \"boolean\"\n          },\n          \"SitePurposePurchasingFlag\": {\n            \"type\": \"boolean\"\n          },\n          \"SitePurposeProcurementCardFlag\": {\n            \"anyOf\": [\n              {\n                \"type\": \"boolean\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"SitePurposePayFlag\": {\n            \"type\": \"boolean\"\n          },\n          \"SitePurposePrimaryPayFlag\": {\n            \"anyOf\": [\n              {\n                \"type\": \"boolean\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"IncomeTaxReportingSiteFlag\": {\n            \"anyOf\": [\n              {\n                \"type\": \"boolean\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"AlternateSiteName\": {\n            \"type\": \"null\"\n          },\n          \"CustomerNumber\": {\n            \"type\": \"null\"\n          },\n          \"B2BCommunicationMethodCode\": {\n            \"type\": \"string\"\n          },\n          \"B2BCommunicationMethod\": {\n            \"type\": \"string\"\n          },\n          \"B2BSupplierSiteCode\": {\n            \"type\": \"null\"\n          },\n          \"CommunicationMethodCode\": {\n            \"type\": \"null\"\n          },\n          \"CommunicationMethod\": {\n            \"type\": \"null\"\n          },\n          \"Email\": {\n            \"type\": \"null\"\n          },\n          \"FaxCountryCode\": {\n            \"type\": \"null\"\n          },\n          \"FaxAreaCode\": {\n            \"type\": \"null\"\n          },\n          \"FaxNumber\": {\n            \"type\": \"null\"\n          },\n          \"HoldAllNewPurchasingDocumentsFlag\": {\n            \"anyOf\": [\n              {\n                \"type\": \"boolean\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"PurchasingHoldReason\": {\n            \"type\": \"null\"\n          },\n          \"AllNewPurchasingDocumentsHoldDate\": {\n            \"type\": \"null\"\n          },\n          \"AllNewPurchasingDocumentsHoldBy\": {\n            \"type\": \"null\"\n          },\n          \"RequiredAcknowledgmentCode\": {\n            \"type\": \"null\"\n          },\n          \"RequiredAcknowledgment\": {\n            \"type\": \"null\"\n          },\n          \"AcknowledgmentWithinDays\": {\n            \"type\": \"null\"\n          },\n          \"CarrierId\": {\n            \"type\": \"null\"\n          },\n          \"Carrier\": {\n            \"type\": \"null\"\n          },\n          \"ModeOfTransportCode\": {\n            \"type\": \"null\"\n          },\n          \"ModeOfTransport\": {\n            \"type\": \"null\"\n          },\n          \"ServiceLevelCode\": {\n            \"type\": \"null\"\n          },\n          \"ServiceLevel\": {\n            \"type\": \"null\"\n          },\n          \"FreightTermsCode\": {\n            \"type\": \"null\"\n          },\n          \"FreightTerms\": {\n            \"type\": \"null\"\n          },\n          \"PayOnReceiptFlag\": {\n            \"type\": \"boolean\"\n          },\n          \"FOBCode\": {\n            \"type\": \"null\"\n          },\n          \"FOB\": {\n            \"type\": \"null\"\n          },\n          \"CountryOfOriginCode\": {\n            \"type\": \"null\"\n          },\n          \"CountryOfOrigin\": {\n            \"type\": \"null\"\n          },\n          \"BuyerManagedTransportationCode\": {\n            \"type\": \"null\"\n          },\n          \"BuyerManagedTransportation\": {\n            \"type\": \"null\"\n          },\n          \"PayOnUseFlag\": {\n            \"type\": \"null\"\n          },\n          \"AgingOnsetPointCode\": {\n            \"type\": \"null\"\n          },\n          \"AgingOnsetPoint\": {\n            \"type\": \"null\"\n          },\n          \"AgingPeriodDays\": {\n            \"type\": \"null\"\n          },\n          \"ConsumptionAdviceFrequencyCode\": {\n            \"type\": \"null\"\n          },\n          \"ConsumptionAdviceFrequency\": {\n            \"type\": \"null\"\n          },\n          \"ConsumptionAdviceSummaryCode\": {\n            \"type\": \"null\"\n          },\n          \"ConsumptionAdviceSummary\": {\n            \"type\": \"null\"\n          },\n          \"AlternatePaySiteId\": {\n            \"type\": \"null\"\n          },\n          \"AlternatePaySite\": {\n            \"type\": \"null\"\n          },\n          \"InvoiceSummaryLevelCode\": {\n            \"type\": \"string\"\n          },\n          \"InvoiceSummaryLevel\": {\n            \"type\": \"string\"\n          },\n          \"GaplessInvoiceNumberingFlag\": {\n            \"anyOf\": [\n              {\n                \"type\": \"boolean\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"SellingCompanyIdentifier\": {\n            \"anyOf\": [\n              {\n                \"type\": \"null\"\n              },\n              {\n                \"type\": \"string\"\n              }\n            ]\n          },\n          \"CreateDebitMemoFromReturnFlag\": {\n            \"type\": \"boolean\"\n          },\n          \"ShipToExceptionCode\": {\n            \"type\": \"null\"\n          },\n          \"ShipToException\": {\n            \"type\": \"null\"\n          },\n          \"ReceiptRoutingId\": {\n            \"anyOf\": [\n              {\n                \"type\": \"number\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"ReceiptRouting\": {\n            \"anyOf\": [\n              {\n                \"type\": \"string\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"OverReceiptTolerance\": {\n            \"type\": \"null\"\n          },\n          \"OverReceiptActionCode\": {\n            \"type\": \"null\"\n          },\n          \"OverReceiptAction\": {\n            \"type\": \"null\"\n          },\n          \"EarlyReceiptToleranceInDays\": {\n            \"type\": \"null\"\n          },\n          \"LateReceiptToleranceInDays\": {\n            \"type\": \"null\"\n          },\n          \"AllowSubstituteReceiptsCode\": {\n            \"type\": \"null\"\n          },\n          \"AllowSubstituteReceipts\": {\n            \"type\": \"null\"\n          },\n          \"AllowUnorderedReceiptsFlag\": {\n            \"type\": \"null\"\n          },\n          \"ReceiptDateExceptionCode\": {\n            \"type\": \"null\"\n          },\n          \"ReceiptDateException\": {\n            \"type\": \"null\"\n          },\n          \"InvoiceCurrencyCode\": {\n            \"anyOf\": [\n              {\n                \"type\": \"null\"\n              },\n              {\n                \"type\": \"string\"\n              }\n            ]\n          },\n          \"InvoiceCurrency\": {\n            \"anyOf\": [\n              {\n                \"type\": \"null\"\n              },\n              {\n                \"type\": \"string\"\n              }\n            ]\n          },\n          \"InvoiceAmountLimit\": {\n            \"type\": \"null\"\n          },\n          \"InvoiceMatchOptionCode\": {\n            \"anyOf\": [\n              {\n                \"type\": \"string\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"InvoiceMatchOption\": {\n            \"anyOf\": [\n              {\n                \"type\": \"string\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"MatchApprovalLevelCode\": {\n            \"type\": \"null\"\n          },\n          \"MatchApprovalLevel\": {\n            \"type\": \"null\"\n          },\n          \"QuantityTolerancesId\": {\n            \"type\": \"null\"\n          },\n          \"QuantityTolerances\": {\n            \"type\": \"null\"\n          },\n          \"AmountTolerancesId\": {\n            \"type\": \"null\"\n          },\n          \"AmountTolerances\": {\n            \"type\": \"null\"\n          },\n          \"InvoiceChannelCode\": {\n            \"type\": \"null\"\n          },\n          \"InvoiceChannel\": {\n            \"type\": \"null\"\n          },\n          \"PaymentCurrencyCode\": {\n            \"anyOf\": [\n              {\n                \"type\": \"null\"\n              },\n              {\n                \"type\": \"string\"\n              }\n            ]\n          },\n          \"PaymentCurrency\": {\n            \"anyOf\": [\n              {\n                \"type\": \"null\"\n              },\n              {\n                \"type\": \"string\"\n              }\n            ]\n          },\n          \"PaymentPriority\": {\n            \"type\": \"null\"\n          },\n          \"PayGroupCode\": {\n            \"anyOf\": [\n              {\n                \"type\": \"null\"\n              },\n              {\n                \"type\": \"string\"\n              }\n            ]\n          },\n          \"PayGroup\": {\n            \"anyOf\": [\n              {\n                \"type\": \"null\"\n              },\n              {\n                \"type\": \"string\"\n              }\n            ]\n          },\n          \"HoldAllInvoicesFlag\": {\n            \"anyOf\": [\n              {\n                \"type\": \"boolean\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"HoldUnmatchedInvoicesCode\": {\n            \"type\": \"string\"\n          },\n          \"HoldUnmatchedInvoices\": {\n            \"type\": \"string\"\n          },\n          \"HoldUnvalidatedInvoicesFlag\": {\n            \"anyOf\": [\n              {\n                \"type\": \"boolean\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"PaymentHoldDate\": {\n            \"type\": \"null\"\n          },\n          \"PaymentHoldReason\": {\n            \"type\": \"null\"\n          },\n          \"PaymentTermsId\": {\n            \"anyOf\": [\n              {\n                \"type\": \"null\"\n              },\n              {\n                \"type\": \"number\"\n              }\n            ]\n          },\n          \"PaymentTerms\": {\n            \"anyOf\": [\n              {\n                \"type\": \"null\"\n              },\n              {\n                \"type\": \"string\"\n              }\n            ]\n          },\n          \"PaymentTermsDateBasisCode\": {\n            \"anyOf\": [\n              {\n                \"type\": \"null\"\n              },\n              {\n                \"type\": \"string\"\n              }\n            ]\n          },\n          \"PaymentTermsDateBasis\": {\n            \"anyOf\": [\n              {\n                \"type\": \"null\"\n              },\n              {\n                \"type\": \"string\"\n              }\n            ]\n          },\n          \"PayDateBasisCode\": {\n            \"type\": \"null\"\n          },\n          \"PayDateBasis\": {\n            \"type\": \"null\"\n          },\n          \"BankChargeDeductionTypeCode\": {\n            \"type\": \"string\"\n          },\n          \"BankChargeDeductionType\": {\n            \"type\": \"string\"\n          },\n          \"AlwaysTakeDiscountCode\": {\n            \"type\": \"string\"\n          },\n          \"AlwaysTakeDiscount\": {\n            \"type\": \"string\"\n          },\n          \"ExcludeFreightFromDiscountCode\": {\n            \"type\": \"string\"\n          },\n          \"ExcludeFreightFromDiscount\": {\n            \"type\": \"string\"\n          },\n          \"ExcludeTaxFromDiscountCode\": {\n            \"type\": \"string\"\n          },\n          \"ExcludeTaxFromDiscount\": {\n            \"type\": \"string\"\n          },\n          \"CreateInterestInvoicesCode\": {\n            \"type\": \"string\"\n          },\n          \"CreateInterestInvoices\": {\n            \"type\": \"string\"\n          },\n          \"CreationDate\": {\n            \"type\": \"string\"\n          },\n          \"CreatedBy\": {\n            \"type\": \"string\"\n          },\n          \"LastUpdateDate\": {\n            \"type\": \"string\"\n          },\n          \"LastUpdatedBy\": {\n            \"type\": \"string\"\n          },\n          \"OverrideB2BCommunicationforSpecialHandlingOrdersFlag\": {\n            \"type\": \"boolean\"\n          }\n        },\n        \"required\": [\n          \"SupplierSiteId\",\n          \"SupplierSite\",\n          \"ProcurementBUId\",\n          \"ProcurementBU\",\n          \"SupplierAddressId\",\n          \"SupplierAddressName\",\n          \"Address\",\n          \"InactiveDate\",\n          \"Status\",\n          \"SitePurposeSourcingOnlyFlag\",\n          \"SitePurposePurchasingFlag\",\n          \"SitePurposeProcurementCardFlag\",\n          \"SitePurposePayFlag\",\n          \"SitePurposePrimaryPayFlag\",\n          \"IncomeTaxReportingSiteFlag\",\n          \"AlternateSiteName\",\n          \"CustomerNumber\",\n          \"B2BCommunicationMethodCode\",\n          \"B2BCommunicationMethod\",\n          \"B2BSupplierSiteCode\",\n          \"CommunicationMethodCode\",\n          \"CommunicationMethod\",\n          \"Email\",\n          \"FaxCountryCode\",\n          \"FaxAreaCode\",\n          \"FaxNumber\",\n          \"HoldAllNewPurchasingDocumentsFlag\",\n          \"PurchasingHoldReason\",\n          \"AllNewPurchasingDocumentsHoldDate\",\n          \"AllNewPurchasingDocumentsHoldBy\",\n          \"RequiredAcknowledgmentCode\",\n          \"RequiredAcknowledgment\",\n          \"AcknowledgmentWithinDays\",\n          \"CarrierId\",\n          \"Carrier\",\n          \"ModeOfTransportCode\",\n          \"ModeOfTransport\",\n          \"ServiceLevelCode\",\n          \"ServiceLevel\",\n          \"FreightTermsCode\",\n          \"FreightTerms\",\n          \"PayOnReceiptFlag\",\n          \"FOBCode\",\n          \"FOB\",\n          \"CountryOfOriginCode\",\n          \"CountryOfOrigin\",\n          \"BuyerManagedTransportationCode\",\n          \"BuyerManagedTransportation\",\n          \"PayOnUseFlag\",\n          \"AgingOnsetPointCode\",\n          \"AgingOnsetPoint\",\n          \"AgingPeriodDays\",\n          \"ConsumptionAdviceFrequencyCode\",\n          \"ConsumptionAdviceFrequency\",\n          \"ConsumptionAdviceSummaryCode\",\n          \"ConsumptionAdviceSummary\",\n          \"AlternatePaySiteId\",\n          \"AlternatePaySite\",\n          \"InvoiceSummaryLevelCode\",\n          \"InvoiceSummaryLevel\",\n          \"GaplessInvoiceNumberingFlag\",\n          \"SellingCompanyIdentifier\",\n          \"CreateDebitMemoFromReturnFlag\",\n          \"ShipToExceptionCode\",\n          \"ShipToException\",\n          \"ReceiptRoutingId\",\n          \"ReceiptRouting\",\n          \"OverReceiptTolerance\",\n          \"OverReceiptActionCode\",\n          \"OverReceiptAction\",\n          \"EarlyReceiptToleranceInDays\",\n          \"LateReceiptToleranceInDays\",\n          \"AllowSubstituteReceiptsCode\",\n          \"AllowSubstituteReceipts\",\n          \"AllowUnorderedReceiptsFlag\",\n          \"ReceiptDateExceptionCode\",\n          \"ReceiptDateException\",\n          \"InvoiceCurrencyCode\",\n          \"InvoiceCurrency\",\n          \"InvoiceAmountLimit\",\n          \"InvoiceMatchOptionCode\",\n          \"InvoiceMatchOption\",\n          \"MatchApprovalLevelCode\",\n          \"MatchApprovalLevel\",\n          \"QuantityTolerancesId\",\n          \"QuantityTolerances\",\n          \"AmountTolerancesId\",\n          \"AmountTolerances\",\n          \"InvoiceChannelCode\",\n          \"InvoiceChannel\",\n          \"PaymentCurrencyCode\",\n          \"PaymentCurrency\",\n          \"PaymentPriority\",\n          \"PayGroupCode\",\n          \"PayGroup\",\n          \"HoldAllInvoicesFlag\",\n          \"HoldUnmatchedInvoicesCode\",\n          \"HoldUnmatchedInvoices\",\n          \"HoldUnvalidatedInvoicesFlag\",\n          \"PaymentHoldDate\",\n          \"PaymentHoldReason\",\n          \"PaymentTermsId\",\n          \"PaymentTerms\",\n          \"PaymentTermsDateBasisCode\",\n          \"PaymentTermsDateBasis\",\n          \"PayDateBasisCode\",\n          \"PayDateBasis\",\n          \"BankChargeDeductionTypeCode\",\n          \"BankChargeDeductionType\",\n          \"AlwaysTakeDiscountCode\",\n          \"AlwaysTakeDiscount\",\n          \"ExcludeFreightFromDiscountCode\",\n          \"ExcludeFreightFromDiscount\",\n          \"ExcludeTaxFromDiscountCode\",\n          \"ExcludeTaxFromDiscount\",\n          \"CreateInterestInvoicesCode\",\n          \"CreateInterestInvoices\",\n          \"CreationDate\",\n          \"CreatedBy\",\n          \"LastUpdateDate\",\n          \"LastUpdatedBy\",\n          \"OverrideB2BCommunicationforSpecialHandlingOrdersFlag\"\n        ],\n        \"additionalProperties\": true\n      }\n    },\n    \"count\": {\n      \"type\": \"number\"\n    },\n    \"hasMore\": {\n      \"type\": \"boolean\"\n    },\n    \"limit\": {\n      \"type\": \"number\"\n    },\n    \"offset\": {\n      \"type\": \"number\"\n    },\n    \"links\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"rel\": {\n            \"type\": \"string\"\n          },\n          \"href\": {\n            \"type\": \"string\"\n          },\n          \"name\": {\n            \"type\": \"string\"\n          },\n          \"kind\": {\n            \"type\": \"string\"\n          }\n        },\n        \"required\": [\n          \"rel\",\n          \"href\",\n          \"name\",\n          \"kind\"\n        ],\n        \"additionalProperties\": false\n      }\n    }\n  },\n  \"required\": [\n    \"items\",\n    \"count\",\n    \"hasMore\",\n    \"limit\",\n    \"offset\",\n    \"links\"\n  ],\n  \"additionalProperties\": false\n}"
+        },
+        {
+          "id": "7",
+          "code": "GET_SITE",
+          "type": "BO_FUNCTION",
+          "metadata": {
+            "name": "GetSite",
+            "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260925",
+            "functionName": "GetSite"
+          },
+          "outcomes": {
+            "success": "11"
+          },
+          "inputs": [
+            {
+              "id": "7_SupplierId",
+              "name": "SupplierId",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.SupplierId}}"
+            },
+            {
+              "id": "7_SupplierSiteId",
+              "name": "SupplierSiteId",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.SupplierSiteId}}"
+            }
+          ],
+          "diagram": {
+            "x": 5450,
+            "y": 6538
+          },
+          "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"SupplierSiteId\": {\n      \"type\": \"number\"\n    },\n    \"SupplierSite\": {\n      \"type\": \"string\"\n    },\n    \"ProcurementBUId\": {\n      \"type\": \"number\"\n    },\n    \"ProcurementBU\": {\n      \"type\": \"string\"\n    },\n    \"SupplierAddressId\": {\n      \"type\": \"number\"\n    },\n    \"SupplierAddressName\": {\n      \"type\": \"string\"\n    },\n    \"Address\": {\n      \"type\": \"null\"\n    },\n    \"InactiveDate\": {\n      \"type\": \"null\"\n    },\n    \"Status\": {\n      \"type\": \"string\"\n    },\n    \"SitePurposeSourcingOnlyFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"SitePurposePurchasingFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"SitePurposeProcurementCardFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"SitePurposePayFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"SitePurposePrimaryPayFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"IncomeTaxReportingSiteFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"AlternateSiteName\": {\n      \"type\": \"null\"\n    },\n    \"CustomerNumber\": {\n      \"type\": \"null\"\n    },\n    \"B2BCommunicationMethodCode\": {\n      \"type\": \"string\"\n    },\n    \"B2BCommunicationMethod\": {\n      \"type\": \"string\"\n    },\n    \"B2BSupplierSiteCode\": {\n      \"type\": \"null\"\n    },\n    \"CommunicationMethodCode\": {\n      \"type\": \"null\"\n    },\n    \"CommunicationMethod\": {\n      \"type\": \"null\"\n    },\n    \"Email\": {\n      \"type\": \"null\"\n    },\n    \"FaxCountryCode\": {\n      \"type\": \"null\"\n    },\n    \"FaxAreaCode\": {\n      \"type\": \"null\"\n    },\n    \"FaxNumber\": {\n      \"type\": \"null\"\n    },\n    \"HoldAllNewPurchasingDocumentsFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"PurchasingHoldReason\": {\n      \"type\": \"null\"\n    },\n    \"AllNewPurchasingDocumentsHoldDate\": {\n      \"type\": \"null\"\n    },\n    \"AllNewPurchasingDocumentsHoldBy\": {\n      \"type\": \"null\"\n    },\n    \"RequiredAcknowledgmentCode\": {\n      \"type\": \"null\"\n    },\n    \"RequiredAcknowledgment\": {\n      \"type\": \"null\"\n    },\n    \"AcknowledgmentWithinDays\": {\n      \"type\": \"null\"\n    },\n    \"CarrierId\": {\n      \"type\": \"null\"\n    },\n    \"Carrier\": {\n      \"type\": \"null\"\n    },\n    \"ModeOfTransportCode\": {\n      \"type\": \"null\"\n    },\n    \"ModeOfTransport\": {\n      \"type\": \"null\"\n    },\n    \"ServiceLevelCode\": {\n      \"type\": \"null\"\n    },\n    \"ServiceLevel\": {\n      \"type\": \"null\"\n    },\n    \"FreightTermsCode\": {\n      \"type\": \"null\"\n    },\n    \"FreightTerms\": {\n      \"type\": \"null\"\n    },\n    \"PayOnReceiptFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"FOBCode\": {\n      \"type\": \"null\"\n    },\n    \"FOB\": {\n      \"type\": \"null\"\n    },\n    \"CountryOfOriginCode\": {\n      \"type\": \"null\"\n    },\n    \"CountryOfOrigin\": {\n      \"type\": \"null\"\n    },\n    \"BuyerManagedTransportationCode\": {\n      \"type\": \"null\"\n    },\n    \"BuyerManagedTransportation\": {\n      \"type\": \"null\"\n    },\n    \"PayOnUseFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"AgingOnsetPointCode\": {\n      \"type\": \"null\"\n    },\n    \"AgingOnsetPoint\": {\n      \"type\": \"null\"\n    },\n    \"AgingPeriodDays\": {\n      \"type\": \"null\"\n    },\n    \"ConsumptionAdviceFrequencyCode\": {\n      \"type\": \"null\"\n    },\n    \"ConsumptionAdviceFrequency\": {\n      \"type\": \"null\"\n    },\n    \"ConsumptionAdviceSummaryCode\": {\n      \"type\": \"null\"\n    },\n    \"ConsumptionAdviceSummary\": {\n      \"type\": \"null\"\n    },\n    \"AlternatePaySiteId\": {\n      \"type\": \"null\"\n    },\n    \"AlternatePaySite\": {\n      \"type\": \"null\"\n    },\n    \"InvoiceSummaryLevelCode\": {\n      \"type\": \"null\"\n    },\n    \"InvoiceSummaryLevel\": {\n      \"type\": \"null\"\n    },\n    \"GaplessInvoiceNumberingFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"SellingCompanyIdentifier\": {\n      \"type\": \"null\"\n    },\n    \"CreateDebitMemoFromReturnFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"ShipToExceptionCode\": {\n      \"type\": \"null\"\n    },\n    \"ShipToException\": {\n      \"type\": \"null\"\n    },\n    \"ReceiptRoutingId\": {\n      \"type\": \"null\"\n    },\n    \"ReceiptRouting\": {\n      \"type\": \"null\"\n    },\n    \"OverReceiptTolerance\": {\n      \"type\": \"null\"\n    },\n    \"OverReceiptActionCode\": {\n      \"type\": \"null\"\n    },\n    \"OverReceiptAction\": {\n      \"type\": \"null\"\n    },\n    \"EarlyReceiptToleranceInDays\": {\n      \"type\": \"null\"\n    },\n    \"LateReceiptToleranceInDays\": {\n      \"type\": \"null\"\n    },\n    \"AllowSubstituteReceiptsCode\": {\n      \"type\": \"null\"\n    },\n    \"AllowSubstituteReceipts\": {\n      \"type\": \"null\"\n    },\n    \"AllowUnorderedReceiptsFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"ReceiptDateExceptionCode\": {\n      \"type\": \"null\"\n    },\n    \"ReceiptDateException\": {\n      \"type\": \"null\"\n    },\n    \"InvoiceCurrencyCode\": {\n      \"type\": \"null\"\n    },\n    \"InvoiceCurrency\": {\n      \"type\": \"null\"\n    },\n    \"InvoiceAmountLimit\": {\n      \"type\": \"null\"\n    },\n    \"InvoiceMatchOptionCode\": {\n      \"type\": \"null\"\n    },\n    \"InvoiceMatchOption\": {\n      \"type\": \"null\"\n    },\n    \"MatchApprovalLevelCode\": {\n      \"type\": \"null\"\n    },\n    \"MatchApprovalLevel\": {\n      \"type\": \"null\"\n    },\n    \"QuantityTolerancesId\": {\n      \"type\": \"null\"\n    },\n    \"QuantityTolerances\": {\n      \"type\": \"null\"\n    },\n    \"AmountTolerancesId\": {\n      \"type\": \"null\"\n    },\n    \"AmountTolerances\": {\n      \"type\": \"null\"\n    },\n    \"InvoiceChannelCode\": {\n      \"type\": \"null\"\n    },\n    \"InvoiceChannel\": {\n      \"type\": \"null\"\n    },\n    \"PaymentCurrencyCode\": {\n      \"type\": \"null\"\n    },\n    \"PaymentCurrency\": {\n      \"type\": \"null\"\n    },\n    \"PaymentPriority\": {\n      \"type\": \"null\"\n    },\n    \"PayGroupCode\": {\n      \"type\": \"null\"\n    },\n    \"PayGroup\": {\n      \"type\": \"null\"\n    },\n    \"HoldAllInvoicesFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"HoldUnmatchedInvoicesCode\": {\n      \"type\": \"string\"\n    },\n    \"HoldUnmatchedInvoices\": {\n      \"type\": \"string\"\n    },\n    \"HoldUnvalidatedInvoicesFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"PaymentHoldDate\": {\n      \"type\": \"null\"\n    },\n    \"PaymentHoldReason\": {\n      \"type\": \"null\"\n    },\n    \"PaymentTermsId\": {\n      \"type\": \"null\"\n    },\n    \"PaymentTerms\": {\n      \"type\": \"null\"\n    },\n    \"PaymentTermsDateBasisCode\": {\n      \"type\": \"null\"\n    },\n    \"PaymentTermsDateBasis\": {\n      \"type\": \"null\"\n    },\n    \"PayDateBasisCode\": {\n      \"type\": \"null\"\n    },\n    \"PayDateBasis\": {\n      \"type\": \"null\"\n    },\n    \"BankChargeDeductionTypeCode\": {\n      \"type\": \"string\"\n    },\n    \"BankChargeDeductionType\": {\n      \"type\": \"string\"\n    },\n    \"AlwaysTakeDiscountCode\": {\n      \"type\": \"string\"\n    },\n    \"AlwaysTakeDiscount\": {\n      \"type\": \"string\"\n    },\n    \"ExcludeFreightFromDiscountCode\": {\n      \"type\": \"string\"\n    },\n    \"ExcludeFreightFromDiscount\": {\n      \"type\": \"string\"\n    },\n    \"ExcludeTaxFromDiscountCode\": {\n      \"type\": \"string\"\n    },\n    \"ExcludeTaxFromDiscount\": {\n      \"type\": \"string\"\n    },\n    \"CreateInterestInvoicesCode\": {\n      \"type\": \"string\"\n    },\n    \"CreateInterestInvoices\": {\n      \"type\": \"string\"\n    },\n    \"CreationDate\": {\n      \"type\": \"string\"\n    },\n    \"CreatedBy\": {\n      \"type\": \"string\"\n    },\n    \"LastUpdateDate\": {\n      \"type\": \"string\"\n    },\n    \"LastUpdatedBy\": {\n      \"type\": \"string\"\n    },\n    \"OverrideB2BCommunicationforSpecialHandlingOrdersFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"links\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"rel\": {\n            \"type\": \"string\"\n          },\n          \"href\": {\n            \"type\": \"string\"\n          },\n          \"name\": {\n            \"type\": \"string\"\n          },\n          \"kind\": {\n            \"type\": \"string\"\n          },\n          \"properties\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"changeIndicator\": {\n                \"type\": \"string\"\n              }\n            },\n            \"required\": [\n              \"changeIndicator\"\n            ],\n            \"additionalProperties\": false\n          }\n        },\n        \"required\": [\n          \"rel\",\n          \"href\",\n          \"name\",\n          \"kind\"\n        ],\n        \"additionalProperties\": true\n      }\n    }\n  },\n  \"required\": [\n    \"SupplierSiteId\",\n    \"SupplierSite\",\n    \"ProcurementBUId\",\n    \"ProcurementBU\",\n    \"SupplierAddressId\",\n    \"SupplierAddressName\",\n    \"Address\",\n    \"InactiveDate\",\n    \"Status\",\n    \"SitePurposeSourcingOnlyFlag\",\n    \"SitePurposePurchasingFlag\",\n    \"SitePurposeProcurementCardFlag\",\n    \"SitePurposePayFlag\",\n    \"SitePurposePrimaryPayFlag\",\n    \"IncomeTaxReportingSiteFlag\",\n    \"AlternateSiteName\",\n    \"CustomerNumber\",\n    \"B2BCommunicationMethodCode\",\n    \"B2BCommunicationMethod\",\n    \"B2BSupplierSiteCode\",\n    \"CommunicationMethodCode\",\n    \"CommunicationMethod\",\n    \"Email\",\n    \"FaxCountryCode\",\n    \"FaxAreaCode\",\n    \"FaxNumber\",\n    \"HoldAllNewPurchasingDocumentsFlag\",\n    \"PurchasingHoldReason\",\n    \"AllNewPurchasingDocumentsHoldDate\",\n    \"AllNewPurchasingDocumentsHoldBy\",\n    \"RequiredAcknowledgmentCode\",\n    \"RequiredAcknowledgment\",\n    \"AcknowledgmentWithinDays\",\n    \"CarrierId\",\n    \"Carrier\",\n    \"ModeOfTransportCode\",\n    \"ModeOfTransport\",\n    \"ServiceLevelCode\",\n    \"ServiceLevel\",\n    \"FreightTermsCode\",\n    \"FreightTerms\",\n    \"PayOnReceiptFlag\",\n    \"FOBCode\",\n    \"FOB\",\n    \"CountryOfOriginCode\",\n    \"CountryOfOrigin\",\n    \"BuyerManagedTransportationCode\",\n    \"BuyerManagedTransportation\",\n    \"PayOnUseFlag\",\n    \"AgingOnsetPointCode\",\n    \"AgingOnsetPoint\",\n    \"AgingPeriodDays\",\n    \"ConsumptionAdviceFrequencyCode\",\n    \"ConsumptionAdviceFrequency\",\n    \"ConsumptionAdviceSummaryCode\",\n    \"ConsumptionAdviceSummary\",\n    \"AlternatePaySiteId\",\n    \"AlternatePaySite\",\n    \"InvoiceSummaryLevelCode\",\n    \"InvoiceSummaryLevel\",\n    \"GaplessInvoiceNumberingFlag\",\n    \"SellingCompanyIdentifier\",\n    \"CreateDebitMemoFromReturnFlag\",\n    \"ShipToExceptionCode\",\n    \"ShipToException\",\n    \"ReceiptRoutingId\",\n    \"ReceiptRouting\",\n    \"OverReceiptTolerance\",\n    \"OverReceiptActionCode\",\n    \"OverReceiptAction\",\n    \"EarlyReceiptToleranceInDays\",\n    \"LateReceiptToleranceInDays\",\n    \"AllowSubstituteReceiptsCode\",\n    \"AllowSubstituteReceipts\",\n    \"AllowUnorderedReceiptsFlag\",\n    \"ReceiptDateExceptionCode\",\n    \"ReceiptDateException\",\n    \"InvoiceCurrencyCode\",\n    \"InvoiceCurrency\",\n    \"InvoiceAmountLimit\",\n    \"InvoiceMatchOptionCode\",\n    \"InvoiceMatchOption\",\n    \"MatchApprovalLevelCode\",\n    \"MatchApprovalLevel\",\n    \"QuantityTolerancesId\",\n    \"QuantityTolerances\",\n    \"AmountTolerancesId\",\n    \"AmountTolerances\",\n    \"InvoiceChannelCode\",\n    \"InvoiceChannel\",\n    \"PaymentCurrencyCode\",\n    \"PaymentCurrency\",\n    \"PaymentPriority\",\n    \"PayGroupCode\",\n    \"PayGroup\",\n    \"HoldAllInvoicesFlag\",\n    \"HoldUnmatchedInvoicesCode\",\n    \"HoldUnmatchedInvoices\",\n    \"HoldUnvalidatedInvoicesFlag\",\n    \"PaymentHoldDate\",\n    \"PaymentHoldReason\",\n    \"PaymentTermsId\",\n    \"PaymentTerms\",\n    \"PaymentTermsDateBasisCode\",\n    \"PaymentTermsDateBasis\",\n    \"PayDateBasisCode\",\n    \"PayDateBasis\",\n    \"BankChargeDeductionTypeCode\",\n    \"BankChargeDeductionType\",\n    \"AlwaysTakeDiscountCode\",\n    \"AlwaysTakeDiscount\",\n    \"ExcludeFreightFromDiscountCode\",\n    \"ExcludeFreightFromDiscount\",\n    \"ExcludeTaxFromDiscountCode\",\n    \"ExcludeTaxFromDiscount\",\n    \"CreateInterestInvoicesCode\",\n    \"CreateInterestInvoices\",\n    \"CreationDate\",\n    \"CreatedBy\",\n    \"LastUpdateDate\",\n    \"LastUpdatedBy\",\n    \"OverrideB2BCommunicationforSpecialHandlingOrdersFlag\",\n    \"links\"\n  ],\n  \"additionalProperties\": false\n}"
+        },
+        {
+          "id": "8",
+          "code": "IS_ADDRESS",
+          "type": "CONDITION",
+          "metadata": {
+            "name": "IS_ADDRESS"
+          },
+          "outcomes": {
+            "true": "5",
+            "false": "9"
+          },
+          "inputs": [
+            {
+              "id": "8_condition",
+              "name": "condition",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.route === \"GetAddress\"}}"
+            }
+          ],
+          "diagram": {
+            "x": 5450,
+            "y": 6094
+          },
+          "convergenceTargetId": "end"
+        },
+        {
+          "id": "9",
+          "code": "IS_QUERY_SITES",
+          "type": "CONDITION",
+          "metadata": {
+            "name": "IS_QUERY_SITES"
+          },
+          "outcomes": {
+            "true": "6",
+            "false": "7"
+          },
+          "inputs": [
+            {
+              "id": "9_condition",
+              "name": "condition",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.route === \"QuerySites\"}}"
+            }
+          ],
+          "diagram": {
+            "x": 5225,
+            "y": 6316
+          },
+          "convergenceTargetId": "end"
+        },
+        {
+          "id": "10",
+          "code": "RESULT_SITES",
+          "type": "RETURN",
+          "metadata": {
+            "name": "RESULT_SITES"
+          },
+          "outcomes": {},
+          "inputs": [
+            {
+              "id": "10_returnValue",
+              "name": "returnValue",
+              "type": "string",
+              "value": "{{$context.$nodes.QUERY_SITES.$output}}"
+            }
+          ],
+          "diagram": {
+            "x": 5000,
+            "y": 6760
+          }
+        },
+        {
+          "id": "11",
+          "code": "RESULT_SITE",
+          "type": "RETURN",
+          "metadata": {
+            "name": "RESULT_SITE"
+          },
+          "outcomes": {},
+          "inputs": [
+            {
+              "id": "11_returnValue",
+              "name": "returnValue",
+              "type": "string",
+              "value": "{{$context.$nodes.GET_SITE.$output}}"
+            }
+          ],
+          "diagram": {
+            "x": 5450,
+            "y": 6760
+          }
+        },
+        {
+          "id": "12",
+          "code": "QUERY_CONTACTS",
+          "type": "BO_FUNCTION",
+          "metadata": {
+            "name": "QueryContacts",
+            "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260925",
+            "functionName": "QueryContacts"
+          },
+          "outcomes": {
+            "success": "16"
+          },
+          "inputs": [
+            {
+              "id": "12_q",
+              "name": "q",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.q}}"
+            },
+            {
+              "id": "12_limit",
+              "name": "limit",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.limit}}"
+            },
+            {
+              "id": "12_offset",
+              "name": "offset",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.offset}}"
+            },
+            {
+              "id": "12_SupplierId",
+              "name": "SupplierId",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.SupplierId}}"
+            }
+          ],
+          "diagram": {
+            "x": 6800,
+            "y": 5872
+          },
+          "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"SupplierContactId\": {\n            \"type\": \"number\"\n          },\n          \"SalutationCode\": {\n            \"anyOf\": [\n              {\n                \"type\": \"string\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"Salutation\": {\n            \"anyOf\": [\n              {\n                \"type\": \"string\"\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          },\n          \"FirstName\": {\n            \"type\": \"string\"\n          },\n          \"MiddleName\": {\n            \"type\": \"null\"\n          },\n          \"LastName\": {\n            \"type\": \"string\"\n          },\n          \"JobTitle\": {\n            \"type\": \"null\"\n          },\n          \"AdministrativeContactFlag\": {\n            \"type\": \"boolean\"\n          },\n          \"PhoneCountryCode\": {\n            \"type\": \"null\"\n          },\n          \"PhoneAreaCode\": {\n            \"type\": \"null\"\n          },\n          \"PhoneNumber\": {\n            \"type\": \"null\"\n          },\n          \"PhoneExtension\": {\n            \"type\": \"null\"\n          },\n          \"MobileCountryCode\": {\n            \"type\": \"null\"\n          },\n          \"MobileAreaCode\": {\n            \"type\": \"null\"\n          },\n          \"MobileNumber\": {\n            \"type\": \"null\"\n          },\n          \"FaxCountryCode\": {\n            \"type\": \"null\"\n          },\n          \"FaxAreaCode\": {\n            \"type\": \"null\"\n          },\n          \"FaxNumber\": {\n            \"type\": \"null\"\n          },\n          \"Email\": {\n            \"type\": \"string\"\n          },\n          \"Status\": {\n            \"type\": \"string\"\n          },\n          \"InactiveDate\": {\n            \"type\": \"null\"\n          },\n          \"PersonProfileId\": {\n            \"type\": \"number\"\n          },\n          \"CreationDate\": {\n            \"type\": \"string\"\n          },\n          \"CreatedBy\": {\n            \"type\": \"string\"\n          },\n          \"LastUpdateDate\": {\n            \"type\": \"string\"\n          },\n          \"LastUpdatedBy\": {\n            \"type\": \"string\"\n          },\n          \"DataAccessLevel\": {\n            \"type\": \"string\"\n          },\n          \"UserName\": {\n            \"type\": \"string\"\n          },\n          \"UserAccountStatus\": {\n            \"type\": \"string\"\n          },\n          \"ContactName\": {\n            \"type\": \"string\"\n          }\n        },\n        \"required\": [\n          \"SupplierContactId\",\n          \"SalutationCode\",\n          \"Salutation\",\n          \"FirstName\",\n          \"MiddleName\",\n          \"LastName\",\n          \"JobTitle\",\n          \"AdministrativeContactFlag\",\n          \"PhoneCountryCode\",\n          \"PhoneAreaCode\",\n          \"PhoneNumber\",\n          \"PhoneExtension\",\n          \"MobileCountryCode\",\n          \"MobileAreaCode\",\n          \"MobileNumber\",\n          \"FaxCountryCode\",\n          \"FaxAreaCode\",\n          \"FaxNumber\",\n          \"Email\",\n          \"Status\",\n          \"InactiveDate\",\n          \"PersonProfileId\",\n          \"CreationDate\",\n          \"CreatedBy\",\n          \"LastUpdateDate\",\n          \"LastUpdatedBy\",\n          \"DataAccessLevel\",\n          \"UserName\",\n          \"UserAccountStatus\",\n          \"ContactName\"\n        ],\n        \"additionalProperties\": true\n      }\n    },\n    \"count\": {\n      \"type\": \"number\"\n    },\n    \"hasMore\": {\n      \"type\": \"boolean\"\n    },\n    \"limit\": {\n      \"type\": \"number\"\n    },\n    \"offset\": {\n      \"type\": \"number\"\n    },\n    \"links\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"rel\": {\n            \"type\": \"string\"\n          },\n          \"href\": {\n            \"type\": \"string\"\n          },\n          \"name\": {\n            \"type\": \"string\"\n          },\n          \"kind\": {\n            \"type\": \"string\"\n          }\n        },\n        \"required\": [\n          \"rel\",\n          \"href\",\n          \"name\",\n          \"kind\"\n        ],\n        \"additionalProperties\": false\n      }\n    }\n  },\n  \"required\": [\n    \"items\",\n    \"count\",\n    \"hasMore\",\n    \"limit\",\n    \"offset\",\n    \"links\"\n  ],\n  \"additionalProperties\": false\n}"
+        },
+        {
+          "id": "13",
+          "code": "GET_CONTACT",
+          "type": "BO_FUNCTION",
+          "metadata": {
+            "name": "GetContact",
+            "businessObjectCode": "XDX_SUPPLIER_CORE_DATA_20260925",
+            "functionName": "GetContact"
+          },
+          "outcomes": {
+            "success": "17"
+          },
+          "inputs": [
+            {
+              "id": "13_SupplierContactId",
+              "name": "SupplierContactId",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.SupplierContactId}}"
+            },
+            {
+              "id": "13_SupplierId",
+              "name": "SupplierId",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.SupplierId}}"
+            }
+          ],
+          "diagram": {
+            "x": 6350,
+            "y": 6094
+          },
+          "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"SupplierContactId\": {\n      \"type\": \"number\"\n    },\n    \"SalutationCode\": {\n      \"type\": \"null\"\n    },\n    \"Salutation\": {\n      \"type\": \"null\"\n    },\n    \"FirstName\": {\n      \"type\": \"string\"\n    },\n    \"MiddleName\": {\n      \"type\": \"null\"\n    },\n    \"LastName\": {\n      \"type\": \"string\"\n    },\n    \"JobTitle\": {\n      \"type\": \"null\"\n    },\n    \"AdministrativeContactFlag\": {\n      \"type\": \"boolean\"\n    },\n    \"PhoneCountryCode\": {\n      \"type\": \"null\"\n    },\n    \"PhoneAreaCode\": {\n      \"type\": \"null\"\n    },\n    \"PhoneNumber\": {\n      \"type\": \"null\"\n    },\n    \"PhoneExtension\": {\n      \"type\": \"null\"\n    },\n    \"MobileCountryCode\": {\n      \"type\": \"null\"\n    },\n    \"MobileAreaCode\": {\n      \"type\": \"null\"\n    },\n    \"MobileNumber\": {\n      \"type\": \"null\"\n    },\n    \"FaxCountryCode\": {\n      \"type\": \"null\"\n    },\n    \"FaxAreaCode\": {\n      \"type\": \"null\"\n    },\n    \"FaxNumber\": {\n      \"type\": \"null\"\n    },\n    \"Email\": {\n      \"type\": \"string\"\n    },\n    \"Status\": {\n      \"type\": \"string\"\n    },\n    \"InactiveDate\": {\n      \"type\": \"null\"\n    },\n    \"PersonProfileId\": {\n      \"type\": \"number\"\n    },\n    \"CreationDate\": {\n      \"type\": \"string\"\n    },\n    \"CreatedBy\": {\n      \"type\": \"string\"\n    },\n    \"LastUpdateDate\": {\n      \"type\": \"string\"\n    },\n    \"LastUpdatedBy\": {\n      \"type\": \"string\"\n    },\n    \"DataAccessLevel\": {\n      \"type\": \"null\"\n    },\n    \"UserName\": {\n      \"type\": \"null\"\n    },\n    \"UserAccountStatus\": {\n      \"type\": \"null\"\n    },\n    \"ContactName\": {\n      \"type\": \"null\"\n    },\n    \"links\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"rel\": {\n            \"type\": \"string\"\n          },\n          \"href\": {\n            \"type\": \"string\"\n          },\n          \"name\": {\n            \"type\": \"string\"\n          },\n          \"kind\": {\n            \"type\": \"string\"\n          },\n          \"properties\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"changeIndicator\": {\n                \"type\": \"string\"\n              }\n            },\n            \"required\": [\n              \"changeIndicator\"\n            ],\n            \"additionalProperties\": false\n          }\n        },\n        \"required\": [\n          \"rel\",\n          \"href\",\n          \"name\",\n          \"kind\"\n        ],\n        \"additionalProperties\": true\n      }\n    }\n  },\n  \"required\": [\n    \"SupplierContactId\",\n    \"SalutationCode\",\n    \"Salutation\",\n    \"FirstName\",\n    \"MiddleName\",\n    \"LastName\",\n    \"JobTitle\",\n    \"AdministrativeContactFlag\",\n    \"PhoneCountryCode\",\n    \"PhoneAreaCode\",\n    \"PhoneNumber\",\n    \"PhoneExtension\",\n    \"MobileCountryCode\",\n    \"MobileAreaCode\",\n    \"MobileNumber\",\n    \"FaxCountryCode\",\n    \"FaxAreaCode\",\n    \"FaxNumber\",\n    \"Email\",\n    \"Status\",\n    \"InactiveDate\",\n    \"PersonProfileId\",\n    \"CreationDate\",\n    \"CreatedBy\",\n    \"LastUpdateDate\",\n    \"LastUpdatedBy\",\n    \"DataAccessLevel\",\n    \"UserName\",\n    \"UserAccountStatus\",\n    \"ContactName\",\n    \"links\"\n  ],\n  \"additionalProperties\": false\n}"
+        },
+        {
+          "id": "14",
+          "code": "IS_QUERY_CONTACTS",
+          "type": "CONDITION",
+          "metadata": {
+            "name": "IS_QUERY_CONTACTS"
+          },
+          "outcomes": {
+            "true": "12",
+            "false": "15"
+          },
+          "inputs": [
+            {
+              "id": "14_condition",
+              "name": "condition",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.route === \"QueryContacts\"}}"
+            }
+          ],
+          "diagram": {
+            "x": 5900,
+            "y": 5650
+          },
+          "convergenceTargetId": "end"
+        },
+        {
+          "id": "15",
+          "code": "IS_GET_CONTACT",
+          "type": "CONDITION",
+          "metadata": {
+            "name": "IS_GET_CONTACT"
+          },
+          "outcomes": {
+            "true": "13",
+            "false": "8"
+          },
+          "inputs": [
+            {
+              "id": "15_condition",
+              "name": "condition",
+              "type": "string",
+              "value": "{{$context.$nodes.GUARD.$output.result.route === \"GetContact\"}}"
+            }
+          ],
+          "diagram": {
+            "x": 5675,
+            "y": 5872
+          },
+          "convergenceTargetId": "end"
+        },
+        {
+          "id": "16",
+          "code": "RESULT_CONTACTS",
+          "type": "RETURN",
+          "metadata": {
+            "name": "RESULT_CONTACTS"
+          },
+          "outcomes": {},
+          "inputs": [
+            {
+              "id": "16_returnValue",
+              "name": "returnValue",
+              "type": "string",
+              "value": "{{$context.$nodes.QUERY_CONTACTS.$output}}"
+            }
+          ],
+          "diagram": {
+            "x": 6800,
+            "y": 6094
+          }
+        },
+        {
+          "id": "17",
+          "code": "RESULT_CONTACT",
+          "type": "RETURN",
+          "metadata": {
+            "name": "RESULT_CONTACT"
+          },
+          "outcomes": {},
+          "inputs": [
+            {
+              "id": "17_returnValue",
+              "name": "returnValue",
+              "type": "string",
+              "value": "{{$context.$nodes.GET_CONTACT.$output}}"
+            }
+          ],
+          "diagram": {
+            "x": 6350,
+            "y": 6316
+          }
+        },
+        {
+          "id": "end",
+          "code": "END",
+          "type": "END",
+          "metadata": {
+            "name": "End",
+            "description": "End of data pipeline"
+          },
+          "outcomes": {},
+          "inputs": [],
+          "diagram": {
+            "x": 5000,
+            "y": 5220
+          }
+        }
+      ],
+      "rootNode": "start",
+      "variables": [],
+      "errorHandlers": []
+    },
+    "modelConfiguration": null,
+    "humanApprovalFlag": false,
+    "waitFlag": false,
+    "triggers": [
+      {
+        "type": "REST",
+        "inputs": []
+      }
+    ],
+    "deletedTriggerTypes": [],
+    "answerInUserLanguage": false,
+    "userLanguagePrompt": "",
+    "chatExpTPFileUploadEnabledFlag": false,
+    "chatExpThirdPartyDetails": [],
+    "diagram": {
+      "orientation": "vertical",
+      "commentNodes": []
+    },
+    "defaultModelConfiguration": "ORA_MODEL_CONFIG_PREMIUM_OPEN_AI_GPT_4_1_MINI"
+  },
+  "status": "DRAFT",
+  "version": 86299601,
+  "family": "PRC",
+  "product": "SUPPLIER",
+  "ownerName": null,
+  "customFlag": false,
+  "seededFlag": false,
+  "isTemplate": false,
+  "hiddenFlag": false,
+  "useCaseId": "NA",
+  "accessModifier": "public",
+  "architecture": "data_pipeline",
+  "aiAppsCompatibleFlag": false,
+  "followupEnabledFlag": false,
+  "header": {
+    "ETag": "\"7\""
+  }
+}

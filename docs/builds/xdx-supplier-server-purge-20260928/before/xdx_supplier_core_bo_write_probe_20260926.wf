@@ -1,0 +1,109 @@
+{
+  "workflowId": "300000334078743",
+  "workflowCode": "XDX_SUPPLIER_CORE_BO_WRITE_PROBE_20260926",
+  "name": "XDX Supplier Core BO Write Probe 20260926",
+  "description": "Standalone exact A-contact diagnostic. Root reservation and external single-dispatch/disarm required; no generic create route.",
+  "specification": {
+    "jsonSchemaName": "Workflow.spec",
+    "jsonSchemaVersion": "1",
+    "inputs": [],
+    "outputSpecification": " ",
+    "agentsValueMappings": [],
+    "dataPipeline": {
+      "pipelineNodes": [
+        {
+          "id": "start",
+          "code": "START",
+          "type": "START",
+          "metadata": {
+            "name": "Start",
+            "description": "Start of data pipeline"
+          },
+          "outcomes": {
+            "success": "5"
+          },
+          "inputs": [],
+          "diagram": {
+            "x": 5225,
+            "y": 5000
+          }
+        },
+        {
+          "id": "5",
+          "code": "REJECT_RESERVATION",
+          "type": "RETURN",
+          "metadata": {
+            "name": "REJECT RESERVATION"
+          },
+          "outcomes": {},
+          "inputs": [
+            {
+              "id": "5_returnValue",
+              "name": "returnValue",
+              "type": "string",
+              "value": "Rejected. No exact reserved contact operation matched; no BO call."
+            }
+          ],
+          "diagram": {
+            "x": 5450,
+            "y": 5650
+          }
+        },
+        {
+          "id": "end",
+          "code": "END",
+          "type": "END",
+          "metadata": {
+            "name": "End",
+            "description": "End of data pipeline"
+          },
+          "outcomes": {},
+          "inputs": [],
+          "diagram": {
+            "x": 5000,
+            "y": 5220
+          }
+        }
+      ],
+      "rootNode": "start",
+      "variables": [],
+      "errorHandlers": []
+    },
+    "modelConfiguration": null,
+    "humanApprovalFlag": false,
+    "waitFlag": false,
+    "triggers": [
+      {
+        "type": "REST",
+        "inputs": []
+      }
+    ],
+    "deletedTriggerTypes": [],
+    "answerInUserLanguage": false,
+    "userLanguagePrompt": "",
+    "chatExpTPFileUploadEnabledFlag": false,
+    "chatExpThirdPartyDetails": [],
+    "diagram": {
+      "orientation": "vertical",
+      "commentNodes": []
+    },
+    "defaultModelConfiguration": "ORA_MODEL_CONFIG_PREMIUM_OPEN_AI_GPT_4_1_MINI"
+  },
+  "status": "DRAFT",
+  "version": 86415695,
+  "family": "PRC",
+  "product": "SUPPLIER",
+  "ownerName": null,
+  "customFlag": false,
+  "seededFlag": false,
+  "isTemplate": false,
+  "hiddenFlag": false,
+  "useCaseId": "NA",
+  "accessModifier": "public",
+  "architecture": "data_pipeline",
+  "aiAppsCompatibleFlag": false,
+  "followupEnabledFlag": false,
+  "header": {
+    "ETag": "\"6\""
+  }
+}

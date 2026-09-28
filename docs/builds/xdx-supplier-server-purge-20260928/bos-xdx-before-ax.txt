@@ -1,0 +1,105 @@
+Browser tab: 676648571, Title: "Business Objects - AI Agent Studio", URL: "https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$resources?tab=businessObjects".
+0 AXWebArea Business Objects - AI Agent Studio, URL: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$resources?tab=businessObjects
+	1 container
+		2 container 8bmkmIV0e5RyFHEVSu9RuOHG_ao
+			3 container
+				4 container home_nav_bar
+					5 button (expanded) Description: collapse navigation panel, Secondary Actions: Collapse
+					6 container Home navigation panel
+						7 content list
+							8 link Description: AI Agent Studio, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI?tab=businessObjects
+							9 link Description: Applications, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$app?tab=businessObjects
+							10 link Description: Workflows, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$workflow?tab=businessObjects
+							11 link Description: Resources, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$resources?tab=topics
+							12 link Description: Connectors, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$connectors?tab=businessObjects
+							13 link Description: Document Templates, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$template?tab=businessObjects
+							14 link Description: Policy Models, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$policy?tab=businessObjects
+							15 link Description: Approvals, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$approvals?tab=businessObjects
+							16 link Description: Credentials, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$credentials?tab=businessObjects
+							17 link Description: Monitoring and Evaluation, opens in new tab, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/fscmUI/redwood/human-resources/aistudio?selectedInAppTab=metro
+							18 link Description: Marketplace, opens in new tab, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/fscmUI/redwood/human-resources/aistudio
+					19 container Recent items
+						20 container
+							21 heading Recents, Value: 2
+								22 text Recents
+							23 pop up button (collapsed) Description: Recent items actions, Secondary Actions: Expand
+						24 container Recent items
+							25 content list
+								26 container
+									27 link Description: XDX Supplier Core Data 20260926, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_CORE_DATA_20260926?tab=businessObjects
+									28 pop up button (collapsed) Description: More actions for XDX Supplier Core Data 20260926, Secondary Actions: Expand
+								32 container
+									33 link Description: XDX Supplier Core App 20260925, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/xdx_supplier_core_app_20260925?tab=businessObjects&draft=true
+									34 pop up button (collapsed) Description: More actions for XDX Supplier Core App 20260925, Secondary Actions: Expand
+								38 container
+									39 link Description: XDX Supplier Procurement Business Units, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS?tab=businessObjects
+									40 pop up button (collapsed) Description: More actions for XDX Supplier Procurement Business Units, Secondary Actions: Expand
+								41 container
+									42 link Description: XDX Supplier Core Data 20260925, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_CORE_DATA_20260925?tab=businessObjects
+									43 pop up button (collapsed) Description: More actions for XDX Supplier Core Data 20260925, Secondary Actions: Expand
+								44 container
+									45 link Description: XDX Supplier Retry 20260923 A, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_RETRY_20260923_A?tab=businessObjects
+									46 pop up button (collapsed) Description: More actions for XDX Supplier Retry 20260923 A, Secondary Actions: Expand
+								47 container
+									48 link Description: XDX Supplier Information, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/$businessobject/XDX_SUPPLIER_INFORMATION?tab=businessObjects
+									49 pop up button (collapsed) Description: More actions for XDX Supplier Information, Secondary Actions: Expand
+								50 container
+									51 link Description: Project Budget Detail Workspace, Value: fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/ora_prj_pjo_project_budget_detail_workspace?tab=businessObjects
+									52 pop up button (collapsed) Description: More actions for Project Budget Detail Workspace, Secondary Actions: Expand
+				65 container Resources
+					66 heading Resources, Value: 1
+						67 text Resources
+					68 tab group Resources
+						69 tab (selectable, settable, boolean) Description: Agents, Value: 0
+						70 tab (selectable, settable, boolean) Description: Supervisor Agents, Value: 0
+						71 tab (selectable, settable, boolean) Description: Tools, Value: 0
+						72 tab (selectable, settable, boolean) Description: Topics, Value: 0
+						73 tab (selected, settable, boolean) Description: Business Objects, Value: 1
+						74 tab (selectable, settable, boolean) Description: Deeplinks, Value: 0
+						75 tab (selectable, settable, boolean) Description: Functions, Value: 0
+						76 tab (selectable, settable, boolean) Description: Document Schema, Value: 0
+					77 container
+						78 container
+							79 text field (settable) XDX
+						80 text start typing with the name to search and the list will be updated
+						81 button add item
+						82 content list Business object list
+							83 container
+								84 text XDX Supplier Core Data 20260926 Supplier, address, site and contact query/create data functions; BU lookup is a separate preserved read-only dependency. Code XDX_SUPPLIER_CORE_DATA_20260926 Edited By CASEY.BROWN Edited On Sep 26, 2026
+								85 button Description: Edit XDX Supplier Core Data 20260926, Help: Edit
+								86 button Description: Delete XDX Supplier Core Data 20260926, Help: Delete
+							87 container
+								88 text XDX Supplier Core Data 20260925 Query and explicitly approved create for suppliers, addresses, sites and contacts only. Supplier slice first; no existing BO modifications. Code XDX_SUPPLIER_CORE_DATA_20260925 Edited By CASEY.BROWN Edited On Sep 25, 2026
+								89 button Description: Edit XDX Supplier Core Data 20260925, Help: Edit
+								90 button Description: Delete XDX Supplier Core Data 20260925, Help: Delete
+							91 container
+								92 text XDX Supplier Core Data 20260924 Query and approved create of suppliers, addresses, sites and contacts; procurement BU read-only lookup. Code XDX_SUPPLIER_CORE_DATA_20260924 Edited By CASEY.BROWN Edited On Sep 24, 2026
+								93 button Description: Edit XDX Supplier Core Data 20260924, Help: Edit
+								94 button Description: Delete XDX Supplier Core Data 20260924, Help: Delete
+							95 container
+								96 text XDX Supplier Retry 20260923 A Dedicated required-field supplier lifecycle operations for retry 20260923 A. Code XDX_SUPPLIER_RETRY_20260923_A Edited By CASEY.BROWN Edited On Sep 24, 2026
+								97 button Description: Edit XDX Supplier Retry 20260923 A, Help: Edit
+								98 button Description: Delete XDX Supplier Retry 20260923 A, Help: Delete
+							99 container
+								100 text XDX Supplier Category Retry 20260923 A Resolve existing supplier product and service browsing categories for reviewed supplier associations. Code XDX_SUPPLIER_CATEGORY_RETRY_20260923_A Edited By CASEY.BROWN Edited On Sep 23, 2026
+								101 button Description: Edit XDX Supplier Category Retry 20260923 A, Help: Edit
+								102 button Description: Delete XDX Supplier Category Retry 20260923 A, Help: Delete
+							103 container
+								104 text XDX Procurement BU Retry 20260923 A Read-only procurement business unit choices for reviewed supplier site creation; preserves identity, action rows and pagination. Code XDX_PROCUREMENT_BU_RETRY_20260923_A Edited By CASEY.BROWN Edited On Sep 23, 2026
+								105 button Description: Edit XDX Procurement BU Retry 20260923 A, Help: Edit
+								106 button Description: Delete XDX Procurement BU Retry 20260923 A, Help: Delete
+							107 container
+								108 text XDX Supplier Information Supplier lookup and details, paginated addresses/sites/contacts, and explicitly authorized create operations for suppliers and their children. POST callers validate writable JSON fields, parent references and uniqueness, then reconcile outcomes before retries. Code XDX_SUPPLIER_INFORMATION Edited By CASEY.BROWN Edited On Sep 23, 2026
+								109 button Description: Edit XDX Supplier Information, Help: Edit
+								110 button Description: Delete XDX Supplier Information, Help: Delete
+							111 container
+								112 text XDX Supplier Product Service Categories Read-only lookup of tenant supplier products and services categories used to resolve required category identifiers before supplier association creation. Code XDX_SUPPLIER_PRODUCT_SERVICE_CATEGORIES Edited By CASEY.BROWN Edited On Sep 22, 2026
+								113 button Description: Edit XDX Supplier Product Service Categories, Help: Edit
+								114 button Description: Delete XDX Supplier Product Service Categories, Help: Delete
+							115 container
+								116 text XDX Supplier Procurement Business Units Paged reference lookup of procurement business units and agent actions for supplier site forms; no write permission inference. Code XDX_SUPPLIER_PROCUREMENT_BUSINESS_UNITS Edited By CASEY.BROWN Edited On Sep 18, 2026
+								117 button Description: Edit XDX Supplier Procurement Business Units, Help: Edit
+								118 button Description: Delete XDX Supplier Procurement Business Units, Help: Delete
+			64 link Description: Ask Oracle, Value: static.oracle.com/cdn/fa/oracle_fai_aiappspublicUI/2607.145.262371629/aiappsweb/#, ID: 8bmkmIV0e5RyFHEVSu9RuOHG_ao-brand
+
+The focused UI element is 79 text field (settable) XDX
