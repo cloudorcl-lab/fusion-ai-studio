@@ -3,9 +3,9 @@
   "sessionId": "xdx-supplier-core-reset-20260929",
   "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
   "branch": "TestingWFBuildTools",
-  "phase": "Startup",
+  "phase": "Closeout",
   "startedUtc": "2026-09-29T02:33:53.762Z",
-  "checkpointUtc": "2026-09-29T03:02:34.3177805Z",
+  "checkpointUtc": "2026-09-29T03:09:36.9138158Z",
   "reads": [
     {
       "path": "AGENTS.md",
@@ -13,7 +13,7 @@
     },
     {
       "path": "docs/handoffs/ACTIVE_HANDOFF.md",
-      "sha256": "8e9f15d9d168fa308628e32ee1db0194666dabded8a7ad226b0ec57082e60a47"
+      "sha256": "f363d9e3ce693887c31dab4c31599e37d727bc9e1d8d9b98be8cd8381910d553"
     },
     {
       "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
@@ -44,7 +44,7 @@
       "sha256": "e7a05bebaae3e4ef2001b85ab8445cb0325d4027bd1525535f656786e55bffa6"
     }
   ],
-  "reviewNotes": "Handoff reviewed first. Full canonical base playbook/registry and five26C references reviewed. Apply lessons and exact retirement; detailed design follows gate. No build completion claimed. Reviewed promoted paragraphs and object-reference diffs; strengthened existing first-slice/timing/cleanup owners. Evidence promotion complete, no server deletion yet.",
+  "reviewNotes": "Recovery-only closeout: preservation, lessons, seven definitions removed, old worktree removed, corrected committed baseline and fresh verified startup with S0 implementation begun. Replacement application acceptance remains in its distinct current task.",
   "objectReferences": [
     {
       "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
@@ -75,68 +75,80 @@
     {
       "id": "learning",
       "rule": "Instruction 1",
-      "status": "planned",
-      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped retirement/restart obligation fulfilled; new product acceptance tracked separately.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-reset-20260929/intake-and-learning-register.md"
+      ]
     },
     {
       "id": "intake",
       "rule": "Applicable canonical gates",
-      "status": "planned",
-      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped retirement/restart obligation fulfilled; new product acceptance tracked separately.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-reset-20260929/plan.md"
+      ]
     },
     {
       "id": "authority",
       "rule": "Applicable canonical gates",
-      "status": "planned",
-      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped retirement/restart obligation fulfilled; new product acceptance tracked separately.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-reset-20260929/approvals.json"
+      ]
     },
     {
       "id": "objects",
       "rule": "Applicable canonical gates",
-      "status": "planned",
-      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped retirement/restart obligation fulfilled; new product acceptance tracked separately.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-reset-20260929/evidence/server-targets.json"
+      ]
     },
     {
       "id": "verification",
       "rule": "Applicable canonical gates",
-      "status": "planned",
-      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped retirement/restart obligation fulfilled; new product acceptance tracked separately.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-reset-20260929/evidence/tooling-verification.json"
+      ]
     },
     {
       "id": "timing",
       "rule": "Time, token, and AI Unit controls",
-      "status": "planned",
-      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped retirement/restart obligation fulfilled; new product acceptance tracked separately.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-reset-20260929/time-tracker.md"
+      ]
     },
     {
       "id": "cleanup",
       "rule": "Applicable canonical gates",
-      "status": "planned",
-      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped retirement/restart obligation fulfilled; new product acceptance tracked separately.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-reset-20260929/evidence/worktree-removal.json"
+      ]
     },
     {
       "id": "delivery",
       "rule": "Applicable canonical gates",
-      "status": "planned",
-      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
-      "evidence": []
+      "status": "pass",
+      "reason": "Scoped retirement/restart obligation fulfilled; new product acceptance tracked separately.",
+      "evidence": [
+        "docs/builds/xdx-supplier-core-reset-20260929/evidence/restart.json"
+      ]
     }
   ],
-  "unresolved": [
-    "Preservation and purge",
-    "Promote and verify prevention baseline",
-    "Restart first slice"
-  ],
+  "unresolved": [],
   "metrics": {
     "tokens": "No per-turn token telemetry exposed",
-    "aiUnits": "No tenant calls in this task",
+    "aiUnits": "Native/CLI definition removal/readback only; tenant AI Unit telemetry unavailable. No business operations.",
     "timingGaps": "Read-only intake before observed tracker start unallocated; no invented labor."
   }
 }

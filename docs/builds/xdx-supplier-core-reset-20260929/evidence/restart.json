@@ -1,0 +1,14 @@
+{
+  "observedUtc": "2026-09-29T03:08:13.4122174Z",
+  "status": "passed",
+  "taskId": "xdx-supplier-core-slice-20260929",
+  "worktree": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-slice-20260929",
+  "branch": "codex/xdx-supplier-core-slice-20260929",
+  "baseline": "c3a5779",
+  "startupPackage": "PASS",
+  "policyOnly": "PASS",
+  "currentTaskStartup": "PASS",
+  "substantiveRestart": "S0 FILE-only conversation binding implementation assigned within verified task",
+  "businessPosts": 0,
+  "limits": "Restart initiated; replacement app/runtime acceptance not complete"
+}
