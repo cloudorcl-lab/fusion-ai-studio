@@ -43,3 +43,63 @@ test('observed scenarios and unsupported candidate kinds retain ordinary capture
   assert.equal(ctx.atlasScenarioCapturePolicy({...scenario(),requiresRuntimePathValidation:false},()=>baseline),baseline);
   assert.equal(ctx.atlasScenarioCapturePolicy({...scenario(),scenarioKind:'loop-boundary'},()=>baseline),baseline);
 });
+
+test('F37 observed routing replaces stale lookup outcomes without guessing shared-successor labels',()=>{
+  const branch=(code,outcomes)=>({id:code,code,type:'SWITCH',outcomes,inputs:[{name:'caseExpression',value:'{{$context.$variables.route}}'}]});
+  const all=[branch('ROUTE_OPERATION',{site:'GET_SITE',supplier:'GET_SUPPLIER'}),
+    {id:'GET_SITE',code:'GET_SITE',type:'BO_FUNCTION'},
+    branch('ROUTE_SITE_ADDRESS',{address:'RESOLVE_ADDRESS',bu:'SITE_BU_INPUT',display:'SITE_BU_INPUT'}),
+    {id:'SITE_BU_INPUT',code:'SITE_BU_INPUT',type:'CODE'},
+    branch('ROUTE_SITE_BU',{bu:'LIST_BU',display:'DISPLAY'}),
+    {id:'DISPLAY',code:'DISPLAY',type:'LLM'},
+    ...['GET_SUPPLIER','RESOLVE_ADDRESS','LIST_BU'].map(code=>({id:code,code,type:'BO_FUNCTION'}))];
+  const byCode=new Map(all.map(n=>[n.code,n]));
+  const s={...scenario(),pathSource:'observed',targetBranch:{nodeCode:'ROUTE_OPERATION',outcome:'site'},
+    expectedPath:{mustExecute:['ROUTE_OPERATION','GET_SITE','ROUTE_SITE_ADDRESS','SITE_BU_INPUT','ROUTE_SITE_BU','DISPLAY'],mustNotExecute:['GET_SUPPLIER','RESOLVE_ADDRESS','LIST_BU']},
+    routingDecisionContext:[{nodeCode:'ROUTE_SITE_ADDRESS',expectedOutcome:'address'},{nodeCode:'ROUTE_SITE_BU',expectedOutcome:'bu'},{nodeCode:'SKIPPED_ROUTER',expectedOutcome:'wrong'}]};
+  const before=JSON.stringify(s),actual=ctx.atlasObservedScenarioData(s,byCode),routing=actual.routingDecisionContext;
+  assert(routing.find(r=>r.nodeCode==='ROUTE_OPERATION'),'Observed routing must be rebuilt from the adopted path');
+  assert.equal(routing.find(r=>r.nodeCode==='ROUTE_OPERATION').expectedOutcome,'site');
+  assert.equal(routing.find(r=>r.nodeCode==='ROUTE_SITE_BU').expectedOutcome,'display');
+  assert.equal(Object.hasOwn(routing.find(r=>r.nodeCode==='ROUTE_SITE_ADDRESS'),'expectedOutcome'),false);
+  assert.equal(routing.some(r=>r.nodeCode==='SKIPPED_ROUTER'),false);
+  assert.deepEqual(plain(actual.targetBranch),s.targetBranch);
+  assert.deepEqual(plain(actual.recordablePath),['GET_SITE']);
+  assert.equal(JSON.stringify(s),before);
+});
+
+function genericBranchBinding(){
+  const s={...scenario(),id:'ROUTE_SITE-parent-path',suggestedTestName:'route-site-parent-path',scenarioKind:'branch-path',targetBranch:{nodeCode:'ROUTE_SITE',outcome:'parent'}};
+  delete s.appStage;
+  const input={message:'Show site 784 for supplier 1512',triggerType:'app',parameters:{appHint:'Query'}};
+  const testFile={input,scenario:{custom:false,source:'sync-plan',id:s.id,kind:'branch-path'},pathAssertions:{mustExecute:['FETCH_DETAIL','DISPLAY'],mustNotExecute:['FETCH_SUPPLIERS','XDX_FAILURE_READ']}};
+  testFile.pathBinding={derivedFrom:'live_execution',inputHash:ctx.Hn(input),workflowDefinitionHash:'current-workflow'};
+  return{scenario:s,testFile,currentWorkflowDefHash:'current-workflow'};
+}
+test('F37 generic branch adopts current matching persisted input when no authoritative suggestion exists',()=>{
+  const e=genericBranchBinding(),actual=ctx.Wce(e);
+  assert.equal(actual.pathSource,'observed');
+  assert.equal(actual.requiresRuntimePathValidation,false);
+  assert.deepEqual(plain(actual.expectedPath),e.testFile.pathAssertions);
+  assert.deepEqual(plain(actual.targetBranch),e.scenario.targetBranch);
+});
+test('F37 generic fallback rejects stale hashes and custom or mismatched scenario identity',()=>{
+  for(const change of [
+    e=>e.testFile.input.message='Changed input',
+    e=>e.testFile.pathBinding.workflowDefinitionHash='stale-workflow',
+    e=>e.testFile.scenario.custom=true,
+    e=>e.testFile.scenario.source='user',
+    e=>e.testFile.scenario.id='OTHER-parent-path',
+    e=>e.testFile.scenario.kind='primary-path',
+    e=>e.scenario.scenarioKind='switch-value',
+    e=>e.scenario.appStage='InitDisplay',
+    e=>delete e.testFile.scenario
+  ]){const e=genericBranchBinding();change(e);assert.equal(ctx.Wce(e).pathSource,'predicted');}
+});
+test('F37 generic branch keeps authoritative suggested input precedence',()=>{
+  const e=genericBranchBinding();e.scenario.suggestedInput={message:'Authoritative input'};
+  assert.equal(ctx.Wce(e).pathSource,'predicted');
+  e.scenario.suggestedInput=e.testFile.input;
+  assert.equal(ctx.Wce(e).pathSource,'observed');
+  for(const input of [null,{}]){const f=genericBranchBinding();f.scenario.suggestedInput=input;assert.equal(ctx.Wce(f).pathSource,'predicted');}
+});

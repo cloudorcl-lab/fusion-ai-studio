@@ -1,0 +1,22 @@
+{
+  "observedUtc": "2026-09-28T18:27:59.820Z",
+  "surface": "Separate native saved BO GetContact",
+  "objectId": "300000334172851",
+  "parentSupplierId": "300000334073700",
+  "inputContactId": "300000334073756",
+  "returned": {
+    "SupplierContactId": 300000334073756,
+    "ContactName": "XDX Lee A Core 20260928, XDX Ryan",
+    "FirstName": "XDX Ryan",
+    "LastName": "XDX Lee A Core 20260928",
+    "Email": "xdx.core.contact.20260928.a@example.invalid",
+    "PersonProfileId": 300000334073756,
+    "Status": "ACTIVE",
+    "InactiveDate": null,
+    "UserName": null,
+    "UserAccountStatus": null
+  },
+  "allThreeFieldsMatched": true,
+  "accountFieldsNull": true,
+  "generatedIdsOmittedFromPost": true
+}

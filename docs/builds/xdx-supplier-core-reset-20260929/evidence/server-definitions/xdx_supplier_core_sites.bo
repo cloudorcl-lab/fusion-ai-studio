@@ -1,0 +1,220 @@
+{
+  "supportedObjectId": "300000334173583",
+  "name": "XDX Supplier Core Sites",
+  "description": "Parent-scoped site reads and exact-reviewed four-field purchasing site creation.",
+  "objectCode": "XDX_SUPPLIER_CORE_SITES",
+  "family": "PRC",
+  "product": "SUPPLIER",
+  "objectSource": "ADF_BC",
+  "restResourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites",
+  "seededFlag": false,
+  "mandatoryFlag": false,
+  "objectProperties": {
+    "jsonSchemaName": "supportedObjectProperties",
+    "jsonSchemaVersion": 1,
+    "tools": [
+      {
+        "name": "ListSites",
+        "description": "List sites under one verified supplier using allowlisted framework4 filters, stable ordering and bounded independent paging. Preserve errors and the complete envelope.",
+        "operationId": "getall_suppliers-sites",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites?q={q}&limit={limit}&offset={offset}&orderBy=SupplierSiteId:asc&onlyData=true&fields=SupplierSiteId,SupplierSite,ProcurementBUId,SupplierAddressName,SitePurposePurchasingFlag,ProcurementBU,SupplierAddressId,Status,InactiveDate",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "Explicit verified internal SupplierId, canonical positive decimal; never a displayed SupplierNumber or sample default.",
+            "id": 2,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "q",
+            "dataType": "string",
+            "description": "Trusted allowlisted framework4 expression with escaped values; blank means unfiltered. Never treat service errors as empty results.",
+            "id": 3,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "limit",
+            "dataType": "integer",
+            "description": "Validated integer page size from 1 to 25.",
+            "id": 4,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "offset",
+            "dataType": "integer",
+            "description": "Validated nonnegative integer row offset; next offset advances by returned count.",
+            "id": 5,
+            "isToken": true,
+            "location": "query",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "Historical synthetic site collection projected from retained 1497 GET; schema basis only, not current acceptance.",
+            "query": {
+              "items": [
+                {
+                  "SupplierSiteId": 300000333813859,
+                  "SupplierSite": "XDX Lee US1 1497 20260917201046",
+                  "ProcurementBUId": 300000046987012,
+                  "SupplierAddressName": "XDX Lee US1 1497 20260917201046",
+                  "SitePurposePurchasingFlag": true,
+                  "ProcurementBU": "US1 Business Unit",
+                  "SupplierAddressId": 300000333813850,
+                  "Status": "ACTIVE",
+                  "InactiveDate": null
+                }
+              ],
+              "count": 1,
+              "hasMore": false,
+              "limit": 25,
+              "offset": 0
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "GetSite",
+        "description": "Read one site by verified same-parent SupplierId and internal SupplierSiteId; retain address and BU relationship fields.",
+        "operationId": "get_suppliers-sites",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites/{suppliers_sites_Id}?onlyData=true&fields=SupplierSiteId,SupplierSite,ProcurementBUId,SupplierAddressName,SitePurposePurchasingFlag,ProcurementBU,SupplierAddressId,Status,InactiveDate",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "Explicit verified internal SupplierId, canonical positive decimal; never a displayed SupplierNumber or sample default.",
+            "id": 9,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "suppliers_sites_Id",
+            "dataType": "string",
+            "description": "Verified internal SupplierSiteId under the selected supplier; no default.",
+            "id": 10,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4"
+        },
+        "sampleQueries": [
+          {
+            "description": "Historical synthetic site projected to scalar shape; not current scalar endpoint proof.",
+            "query": {
+              "SupplierSiteId": 300000333813859,
+              "SupplierSite": "XDX Lee US1 1497 20260917201046",
+              "ProcurementBUId": 300000046987012,
+              "SupplierAddressName": "XDX Lee US1 1497 20260917201046",
+              "SitePurposePurchasingFlag": true,
+              "ProcurementBU": "US1 Business Unit",
+              "SupplierAddressId": 300000333813850,
+              "Status": "ACTIVE",
+              "InactiveDate": null
+            },
+            "sampleType": "response"
+          }
+        ]
+      },
+      {
+        "name": "CreateSite",
+        "description": "Create exactly SupplierSite, dynamically selected numeric ProcurementBUId, same-parent SupplierAddressName and purchasing true. Omit generated keys; never replay accepted or uncertain writes.",
+        "operationId": "create_suppliers-sites",
+        "operationType": "POST",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites",
+        "resourceType": "ADF_BC_FIXED_QUERY",
+        "bodyTemplate": "{\"SupplierSite\":\"{SupplierSite}\",\"ProcurementBUId\":\"{ProcurementBUId}\",\"SupplierAddressName\":\"{SupplierAddressName}\",\"SitePurposePurchasingFlag\":true}",
+        "useNativeAuthentication": true,
+        "type": "BUS_OBJECT",
+        "parameterDefinitions": [
+          {
+            "name": "suppliers_Id",
+            "dataType": "string",
+            "description": "Explicit verified internal SupplierId, canonical positive decimal; never a displayed SupplierNumber or sample default.",
+            "id": 14,
+            "isToken": true,
+            "location": "path",
+            "source": "openapi",
+            "defaultValue": ""
+          },
+          {
+            "name": "SupplierSite",
+            "dataType": "string",
+            "description": "Exact-approved distinct site name, maximum 240 characters; duplicate-key scope unresolved.",
+            "id": 15,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "ProcurementBUId",
+            "dataType": "integer",
+            "description": "Dynamic current complete-lookup choice; positive safe integer. Whole-token template replacement produces numeric JSON; never send a quoted numeric ID.",
+            "id": 16,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          },
+          {
+            "name": "SupplierAddressName",
+            "dataType": "string",
+            "description": "Exact name resolved to one address under this same supplier; retain its ID for independent relationship comparison.",
+            "id": 17,
+            "isToken": true,
+            "location": "body",
+            "source": "placeholder",
+            "defaultValue": ""
+          }
+        ],
+        "headers": {
+          "REST-Framework-Version": "4",
+          "Content-Type": "application/json",
+          "Upsert-Mode": "false"
+        },
+        "sampleQueries": [
+          {
+            "description": "Historical four-field sample for schema only. Never submit these retained IDs/names; current BU and same-parent address must be resolved and exact new payload approved.",
+            "query": {
+              "SupplierSite": "XDX Lee US1 1497 20260917201046",
+              "ProcurementBUId": 300000046987012,
+              "SupplierAddressName": "XDX Lee US1 1497 20260917201046",
+              "SitePurposePurchasingFlag": true
+            },
+            "sampleType": "request"
+          }
+        ]
+      }
+    ]
+  }
+}

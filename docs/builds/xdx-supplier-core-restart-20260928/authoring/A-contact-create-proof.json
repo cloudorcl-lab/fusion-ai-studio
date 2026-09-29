@@ -1,0 +1,30 @@
+{
+  "observedUtc": "2026-09-28T18:26:02.365Z",
+  "surface": "Native saved BO Fetch Sample Data CreateContact",
+  "objectId": "300000334172851",
+  "operationId": "A-contact",
+  "parentSupplierId": "300000334073700",
+  "submittedPayload": {
+    "FirstName": "XDX Ryan",
+    "LastName": "XDX Lee A Core 20260928",
+    "Email": "xdx.core.contact.20260928.a@example.invalid"
+  },
+  "responseExcerpt": {
+    "SupplierContactId": 300000334073756,
+    "PersonProfileId": 300000334073756,
+    "FirstName": "XDX Ryan",
+    "LastName": "XDX Lee A Core 20260928",
+    "Email": "xdx.core.contact.20260928.a@example.invalid",
+    "Status": "ACTIVE",
+    "InactiveDate": null,
+    "UserName": null,
+    "UserAccountStatus": null,
+    "ContactName": null,
+    "CreationDate": "2026-09-28T18:25:11+00:00"
+  },
+  "responseParentPath": "/suppliers/300000334073700/child/contacts/300000334073756",
+  "omissions": "Unsubmitted optional fields, audit details and link metadata omitted from this evidence excerpt.",
+  "accepted": true,
+  "independentGet": "pending",
+  "noReplay": true
+}

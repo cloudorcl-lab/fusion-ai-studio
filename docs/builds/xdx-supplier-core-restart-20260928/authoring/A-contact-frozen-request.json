@@ -1,0 +1,29 @@
+{
+  "utc": "2026-09-28T18:24:15.721Z",
+  "operationId": "A-contact",
+  "surface": "direct saved BO native Fetch Sample Data",
+  "objectCode": "XDX_SUPPLIER_CORE_CONTACTS",
+  "objectId": "300000334172851",
+  "parentSupplierId": "300000334073700",
+  "parentSupplierNumber": "1511",
+  "payload": {
+    "FirstName": "XDX Ryan",
+    "LastName": "XDX Lee A Core 20260928",
+    "Email": "xdx.core.contact.20260928.a@example.invalid"
+  },
+  "omitted": [
+    "SupplierContactId",
+    "PersonProfileId",
+    "InactiveDate",
+    "all account/security fields"
+  ],
+  "provenance": {
+    "FirstName": "Retained synthetic XDX contact basis",
+    "LastName": "Fresh A-chain identity",
+    "Email": "Fresh non-deliverable controlled destination"
+  },
+  "authority": "User-invoked original goal-prompt.txt AUTHORITY lines38-46 and direct-BO execution lines61-63; exact one A-contact allocation",
+  "preflight": "Current complete parent collection empty; raw template and three-field local checks PASS; saved known-hit exact/contains/paging/scalar GET PASS",
+  "dispatchLimit": 1,
+  "uncertaintyRule": "Never replay; freeze and reconcile any missing response by parent-scoped read"
+}

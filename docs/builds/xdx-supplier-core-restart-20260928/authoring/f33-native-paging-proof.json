@@ -1,0 +1,32 @@
+{
+  "utc": "2026-09-28T21:49:09.8631560Z",
+  "result": "PASS",
+  "workflowVersion": 86564577,
+  "businessWrites": 0,
+  "surface": "Native Run app preview in reused Chrome tab676648843 after normal authorized sign-in",
+  "checks": [
+    "Exact static greeting before Query",
+    "Explicit List suppliers gives10 rows1252-1261 and exact offset10 command",
+    "Displayed offset10 command gives10 distinct rows1262-1271 and exact offset20 command",
+    "Terminal exact supplier A search gives1511 and no copy/next command"
+  ],
+  "evidence": [
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/f33-native-greeting-ax.txt",
+      "sha256": "383e6ff1cd39465585fe5e32abff625f5c8b74bc28687a61121b3640540a7784"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/f33-native-list-ax.txt",
+      "sha256": "95eb3decd439984552b571f29cd16e7990b70f59514cc7b692c9baddbee455e4"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/f33-native-next-ax.txt",
+      "sha256": "ffb85aa4b971bc54369aba8fbe0527544aa6dc1a7cf60a98c0c90e3f0a55435a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/f33-native-terminal-ax.txt",
+      "sha256": "135b2902fe4ffe514026a6b8217b39366a0f2e7f322c5a9cce716d0d17e1d49f"
+    }
+  ],
+  "limits": "No internal native node trace; configured semantic coverage and post-optimization final acceptance remain separate"
+}

@@ -26,6 +26,7 @@ Follow the canonical playbook's **Continuous failure prevention gate** during ev
 - Optimize architecture for accuracy first and speed second.
 - Unless another application form is required, build applications as web apps.
 - For a new project or architecture, brainstorm and recommend an implementation design before implementation. This design-first gate is not required for code fixes or QA-result reporting.
+- Before expanding resource slices, satisfy the canonical playbook's Mandatory first-slice fast-fail gate, including configured conversation tests and attached semantic judgments.
 - Preserve unrelated working-tree changes and never include them in a scoped commit.
 - Use the canonical playbook as the detailed lifecycle owner. Use `docs/lessons/objects/` for operation-level GET, POST, request/response JSON, schema, filter, paging and resource-key guidance. Do not create a competing build playbook.
 
@@ -74,4 +75,4 @@ Recorded 2026-09-27: the user authorizes login and reauthentication whenever req
 - Use the active checkout's configuration; keep worktree configuration synchronized with the base as authorized. Do not search unrelated repositories for credentials.
 - Clear both username and password fields before filling them once. Submit once, then inspect the actual result before deciding whether another attempt is justified.
 - Never print credentials, include them in evidence, or stage configuration files as part of recording this approval.
-- If an interactive challenge requires the user, report the exact obstacle and track the wait separately. This approval does not authorize bypassing MFA/CAPTCHA, changing passwords or security settings, or expanding business-write permissions.
+- Reconfirmed 2026-09-28: all logins and reauthentication needed for authorized project work are approved. Use configured accounts and normal sign-in flows without renewed permission. If an interactive challenge or another required human decision prevents progress, stop the run, record its reason and observed stop time, and end the turn instead of waiting or polling. This does not authorize MFA/CAPTCHA bypass, password/security changes, or additional business writes.

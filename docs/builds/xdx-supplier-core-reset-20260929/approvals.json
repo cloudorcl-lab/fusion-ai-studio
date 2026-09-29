@@ -1,0 +1,19 @@
+{
+  "taskId": "xdx-supplier-core-reset-20260929",
+  "observedUtc": "2026-09-29T02:33:53.762Z",
+  "exactUserText": "stop the run. apply the lessons. purge the worktree and server artifacts. then restart the build. the login approval still applies.",
+  "scope": "Retire stopped Supplier Core build; preserve evidence and reusable fixes; remove exact owned worktree and seven DRAFT/server artifact definitions; restart from committed governance. Standing all-project-login approval and no-wait policy continue.",
+  "exclusions": [
+    "Fusion business records",
+    "credentials",
+    "unrelated artifacts and branches",
+    "publication",
+    "push"
+  ],
+  "businessWriteBudget": {
+    "inheritedAccepted": 8,
+    "remaining": 0,
+    "note": "Restart instruction does not expressly replenish consumed business-record allocations."
+  },
+  "interpretation": "Applying lessons authorizes bounded implementation/prevention repairs needed for first-slice testability, subject to existing contract and verification gates; no separate question is pending."
+}

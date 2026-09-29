@@ -1,0 +1,56 @@
+{
+  "utc": "2026-09-28T21:23:14.214Z",
+  "workflowVersion": 86562100,
+  "result": "focused-repair-pass",
+  "test": "route-list-display-path",
+  "recording": {
+    "jobId": "3680327f-ff0f-43ee-91c2-2b1f606c1a83",
+    "boundary": "LIST_SUPPLIERS",
+    "method": "GET",
+    "capture": "raw",
+    "count": 10,
+    "hasMore": true,
+    "noCompactionRequired": true
+  },
+  "commands": [
+    {
+      "runId": "691ddb80-e907-46f3-97e1-68a51f3ead97",
+      "activity": "new-first-ordinary-record",
+      "exitCode": 0
+    },
+    {
+      "runId": "785b082e-3753-4785-925d-8e17855d706e",
+      "activity": "new-first-file-replay",
+      "exitCode": 0
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/new-first-ordinary-record.stdout",
+      "sha256": "0ce3805ce9898a5aacf5dc18726415c1fe87f6f4cea92e799c3c347b27411878"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/new-first-file-boundary.json",
+      "sha256": "5e0c52d598bd579cd840689587ea1ac7d427973597126cb44143dff7832bc11d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/new-first-file-replay.stdout",
+      "sha256": "7ee1b72d145c52fddc540a1b2197fdbbdcce7ca200e8dc6807eab03227626540"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/new-first-success-test.json",
+      "sha256": "94a97c04a7894491016fdd5f8e65f1a3955a472a0c62fe90ae1faa030a794df1"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/new-first-success-recording.json",
+      "sha256": "7737626f514ce8b7d0d9cbb09b255b51b1964babc23fdf6fabaf10c297b3c6d5"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/new-first-success-report.json",
+      "sha256": "53997b3ee92c9600b872ca5e180d73f03c7afbd1c1a976a0b783fc9475c07fb7"
+    }
+  ],
+  "noLivePost": true,
+  "frameworkUnchanged": true,
+  "next": "Await root F32 closure before ordinary plan refresh; no final configured semantic acceptance claimed."
+}

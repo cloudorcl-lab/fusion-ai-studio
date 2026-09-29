@@ -1,0 +1,25 @@
+{
+  "utc": "2026-09-28T20:36:35.472Z",
+  "savedVersion": 86560365,
+  "normalizedWorkflowSha256": "e3ac23702f327d841f9b4300560228d68ca54737041b370ea64487ab9c0bcc0a",
+  "serializedBindingPreservedAfterSave": true,
+  "surface": "Existing native app Chrome tab676648843, no reload",
+  "query": "Find sites containing OD US for supplier 1264",
+  "before": "Same conversation rendered unrelated accepted B-site draft request4b1e6f65-200e-4f96-91ab-fe3ff47398e0 revision2",
+  "after": {
+    "site": "OD US1",
+    "siteId": "300000047507684",
+    "supplierNumber": "1264",
+    "supplier": "Office Depot",
+    "supplierId": "300000047507596",
+    "addressId": "300000047507644",
+    "procurementBUId": "300000046987012",
+    "procurementBU": "US1 Business Unit",
+    "purchasing": true,
+    "workspace": "Showing 1 sites for supplier 1264 at offset 0.",
+    "staleDraftCardAbsent": true
+  },
+  "result": "PASS",
+  "businessWrites": 0,
+  "limitation": "Visible native output observed after save in retained conversation; no internal runtime trace captured. Configured suite remains separate."
+}

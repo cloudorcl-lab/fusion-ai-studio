@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-core-reset-20260929",
+  "scopes": [
+    "governance",
+    "purge",
+    "preservation",
+    "restart",
+    "supplier"
+  ],
+  "noFailuresReason": "Fresh recovery task; prior stopped ledger retained as historical evidence. No implementation or tenant action attempted in this task yet.",
+  "commandReceipts": [
+    "docs/builds/xdx-supplier-core-reset-20260929/commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "RESET-F01",
+      "observedUtc": "2026-09-29T02:34:35.926Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Startup tracker missing explicit task identity",
+      "cause": "Intake initialization omitted taskId from tracker prose",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-core-reset-20260929/evidence/startup-first-failure.txt",
+          "sha256": "492cb85edf61b0cf148ddf6c9a489cf1aeb45ca0e7177ff3f830857256f6530b"
+        }
+      ],
+      "correction": "Add exact task identity, rerun Startup before substantive work; initial closure candidate rejected invalid prevention kind and absent source reference; inspected diagnostics and bound existing verifier source.; second candidate rejection required canonical prevention owner distinct from executable verification source. Read validator rules before corrected submission.",
+      "prevention": {
+        "kind": "gate",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Session conformance requires task identity in tracker; verify initialized template fields before Startup"
+      },
+      "verification": {
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-core-reset-20260929/evidence/startup-corrected.json",
+            "sha256": "669a689da53cecd3aa39e75bda2d8f1345796c3019a24025f2ee016b0af8ccb6"
+          }
+        ],
+        "command": "Current-task Startup gate",
+        "result": "pass",
+        "reviewer": "root",
+        "sources": [
+          {
+            "path": "scripts/verify-session-compliance.cjs",
+            "sha256": "c13073eab98968bfe17ec07a53428a7386f93d957c9a8dd64f56a3080a2cd210"
+          }
+        ]
+      }
+    },
+    {
+      "id": "RESET-F02",
+      "observedUtc": "2026-09-29T02:41:33.164Z",
+      "scope": "preservation",
+      "blocks": [
+        "preservation"
+      ],
+      "status": "closed",
+      "symptom": "Build evidence copy rejected existing destination",
+      "cause": "Existing tracked bootstrap directory not inventoried before exclusive directory copy",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-core-reset-20260929/evidence/promotion-copy-failure.json",
+          "sha256": "2edfc748a2dc645aa0386cc9668fa2cc58ede8e160ada414124b01b65f71e115"
+        }
+      ],
+      "correction": "Preserve differing base files then merge exact historical evidence",
+      "prevention": {
+        "kind": "gate",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Cleanup rules: inventory collisions, preserve differing prior bytes and hash-verify scoped merge before deletion."
+      },
+      "verification": {
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-core-reset-20260929/evidence/lesson-promotion.json",
+            "sha256": "7c0db680baa5761ef56cc7f423d385bdb654a47d91689c00aa38a783074e16c9"
+          }
+        ],
+        "sources": [
+          {
+            "path": "docs/builds/xdx-supplier-core-reset-20260929/apply-lessons.cjs",
+            "sha256": "b3b39e88cb17354ff9f77b6219b468f82149bc4d645d9e2064119c00db84cf7e"
+          }
+        ],
+        "command": "Measured apply-lessons.cjs;4157 copied files hash-verified",
+        "result": "pass",
+        "reviewer": "root"
+      }
+    },
+    {
+      "id": "RESET-F03",
+      "observedUtc": "2026-09-29T02:46:01.463Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Package test missing mandatory ZipPath",
+      "cause": "Invoked test before reading parameter contract",
+      "commandRunIds": [
+        "c8a7b2a9-78a7-45f9-b74e-52f1f1b8af76"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-core-reset-20260929/evidence/package-invocation-failure.txt",
+          "sha256": "169df19f28379dab0d645066eec21dc98ae8e6b65fa22501facd861aa9fec028"
+        }
+      ],
+      "correction": "Read parameter blocks; build packet to new private path, pass that exact ZipPath to test.",
+      "prevention": {
+        "kind": "gate",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Verify current command parameter contracts before invocation; package builder requires OutputPath and regression requires existing ZipPath."
+      },
+      "verification": {
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-core-reset-20260929/evidence/tooling-verification.json",
+            "sha256": "9fccfe390780ed486a5e940b59b9c8b54c16bf0a5cb0ab8d0011c72facae2ee7"
+          }
+        ],
+        "sources": [
+          {
+            "path": "tests/test-agent-app-build-install-packet.ps1",
+            "sha256": "e1b5cb6598c33649cd0c5e031ead7c15f42c74a62ea205b2aca991ba3424b7ee"
+          },
+          {
+            "path": "packaging/agent-app-build-install-packet/Build-AgentAppBuildInstallPacket.ps1",
+            "sha256": "6d8d7dfa11e56b0f3ee2fa70ffbb6a8e007776a50f2417699907bf649e298074"
+          }
+        ],
+        "command": "Measured packet build then test-agent-app-build-install-packet.ps1 -ZipPath .debug/xdx-retired-20260929/restart-install-packet.zip",
+        "result": "pass",
+        "reviewer": "root"
+      }
+    },
+    {
+      "id": "RESET-F04",
+      "observedUtc": "2026-09-29T03:00:40.505716Z",
+      "scope": "purge",
+      "blocks": [
+        "purge"
+      ],
+      "status": "closed",
+      "symptom": "Exact Git unregistration left readonly administrative residuals",
+      "cause": "Readonly attributes on admin directories prevented final directory deletion",
+      "commandRunIds": [
+        "90d015e4-01f6-43d9-858a-0a405894a0ff"
+      ],
+      "occurrenceEvidence": [
+        {
+          "sha256": "198b96070c3e21644fe5c1f7a9bd996cb289f28a0a26d62eea89fe54225e92f5",
+          "path": "docs/builds/xdx-supplier-core-reset-20260929/evidence/worktree-remove-failure.txt"
+        }
+      ],
+      "correction": "Verify physical and registration absence independently; archive exact residual, clear readonly attribute only on verified named residual, remove natively without ACL changes.",
+      "prevention": {
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Windows cleanup verifies exact physical path, Git registration, and readonly administrative residual independently before PASS.",
+        "kind": "gate"
+      },
+      "verification": {
+        "sources": [
+          {
+            "sha256": "21a89928938647c64f65e29e22d090e340034acbf37842989792cbbe02c9ba2e",
+            "path": "docs/builds/xdx-supplier-core-reset-20260929/remove-admin-residual.ps1"
+          }
+        ],
+        "evidence": [
+          {
+            "sha256": "65257c9e1eae8db0a63134d8a80d43d2aa06dcbff5bae67fa0fb331ff2b3f2b4",
+            "path": "docs/builds/xdx-supplier-core-reset-20260929/evidence/worktree-removal.json"
+          }
+        ],
+        "command": "Measured remove-admin-residual.ps1 with exact path confinement and absence checks",
+        "result": "pass",
+        "reviewer": "root"
+      }
+    }
+  ]
+}

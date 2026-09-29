@@ -1,0 +1,21 @@
+{
+  "utc": "2026-09-28T19:39:21.935Z",
+  "workflowVersion": 86556936,
+  "surface": "Native Run app preview",
+  "requestId": "c412a6d5-201a-48c1-94fa-4a6b67e0b84b",
+  "revision": 1,
+  "parentSupplierId": "300000334073731",
+  "parentSupplierNumber": "1512",
+  "supplierAddressId": "300000334073749",
+  "supplierAddressName": "XDX CORE 20260928 B",
+  "lookup": "complete",
+  "choices": [
+    {
+      "ProcurementBUId": 300000046987012,
+      "ProcurementBU": "US1 Business Unit"
+    }
+  ],
+  "provenance": "Saved workflow resolves current parent/address and invokes saved ListProcurementBusinessUnits, q ProcurementBUId>0 limit100 offset0; source checks count/hasMore/paging before rendering complete.",
+  "sitePostPresent": false,
+  "limitations": "Proves required current runtime lookup; does not reproduce or repair the native sample-editor offset1 error or establish live multipage BU data."
+}

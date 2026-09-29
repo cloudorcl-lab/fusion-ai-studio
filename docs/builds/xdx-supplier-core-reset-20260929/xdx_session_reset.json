@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-core-reset-20260929",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Startup",
+  "startedUtc": "2026-09-29T02:33:53.762Z",
+  "checkpointUtc": "2026-09-29T03:02:34.3177805Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "38f22e054327335120c3a82b56fcfe582d6e6dceca6f28ac354ef4b9bdfc988f"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "8e9f15d9d168fa308628e32ee1db0194666dabded8a7ad226b0ec57082e60a47"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "1764cb2a3a8510517bda494207b15cf70b8b7efbb29e08b85cf9e1aa24da3059"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "5c73cb35340f00731e5bcaa7d182454a5c4fbbc6b2a84f2f2d10a28923a30f59"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "00953c31a8e2e731d13110f7dca35bb635a981f12318e4f4bc7504876bf0e947"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "da8c5fda07764b836fe81c9346abd4b086a867d4e9a1b3f4df0eb932c6b83dbe"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "5a1cef18f3d73f57a0fe0272181c8e77ae9e6d97129a55ae4cc8e1fd6b28e5eb"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "f69072288a6ed8a8505fd1aef07d0b23cd314e4663b0d3c50c8c5eea5e8c1540"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "sha256": "e7a05bebaae3e4ef2001b85ab8445cb0325d4027bd1525535f656786e55bffa6"
+    }
+  ],
+  "reviewNotes": "Handoff reviewed first. Full canonical base playbook/registry and five26C references reviewed. Apply lessons and exact retirement; detailed design follows gate. No build completion claimed. Reviewed promoted paragraphs and object-reference diffs; strengthened existing first-slice/timing/cleanup owners. Evidence promotion complete, no server deletion yet.",
+  "objectReferences": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "release": "26C"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-core-reset-20260929/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-supplier-core-reset-20260929/failure-ledger.json",
+  "learningTaskId": "xdx-supplier-core-reset-20260929",
+  "timeTracker": "docs/builds/xdx-supplier-core-reset-20260929/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Instruction 1",
+      "status": "planned",
+      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
+      "evidence": []
+    },
+    {
+      "id": "intake",
+      "rule": "Applicable canonical gates",
+      "status": "planned",
+      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
+      "evidence": []
+    },
+    {
+      "id": "authority",
+      "rule": "Applicable canonical gates",
+      "status": "planned",
+      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
+      "evidence": []
+    },
+    {
+      "id": "objects",
+      "rule": "Applicable canonical gates",
+      "status": "planned",
+      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
+      "evidence": []
+    },
+    {
+      "id": "verification",
+      "rule": "Applicable canonical gates",
+      "status": "planned",
+      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
+      "evidence": []
+    },
+    {
+      "id": "timing",
+      "rule": "Time, token, and AI Unit controls",
+      "status": "planned",
+      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
+      "evidence": []
+    },
+    {
+      "id": "cleanup",
+      "rule": "Applicable canonical gates",
+      "status": "planned",
+      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
+      "evidence": []
+    },
+    {
+      "id": "delivery",
+      "rule": "Applicable canonical gates",
+      "status": "planned",
+      "reason": "Recovery and restart obligation; see intake, plan and approvals. Product acceptance follows fresh first-slice execution.",
+      "evidence": []
+    }
+  ],
+  "unresolved": [
+    "Preservation and purge",
+    "Promote and verify prevention baseline",
+    "Restart first slice"
+  ],
+  "metrics": {
+    "tokens": "No per-turn token telemetry exposed",
+    "aiUnits": "No tenant calls in this task",
+    "timingGaps": "Read-only intake before observed tracker start unallocated; no invented labor."
+  }
+}

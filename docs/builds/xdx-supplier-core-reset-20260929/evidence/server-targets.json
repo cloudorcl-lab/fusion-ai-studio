@@ -1,0 +1,165 @@
+[
+  {
+    "source": "src/apps/xdx_supplier_core.app",
+    "preserved": "docs/builds/xdx-supplier-core-reset-20260929/evidence/server-definitions/xdx_supplier_core.app",
+    "sha256": "c97d119c5e717c923eb315dabc30c6bee7e36daf80e1c1c69a0b843b29d8ec3e",
+    "topKeys": [
+      "name",
+      "internalName",
+      "code",
+      "internalDescription",
+      "status",
+      "version",
+      "specification"
+    ],
+    "identity": {
+      "name": "XDX Supplier Core",
+      "code": "XDX_SUPPLIER_CORE",
+      "status": "DRAFT",
+      "version": 1
+    }
+  },
+  {
+    "source": "src/workflows/xdx_supplier_core.wf",
+    "preserved": "docs/builds/xdx-supplier-core-reset-20260929/evidence/server-definitions/xdx_supplier_core.wf",
+    "sha256": "94cdc5845f6d9f08ac6443aa17fa794d349785608f4f1e7e4e6dc5080e6635a9",
+    "topKeys": [
+      "workflowId",
+      "workflowCode",
+      "name",
+      "description",
+      "specification",
+      "status",
+      "version",
+      "family",
+      "product",
+      "ownerName",
+      "customFlag",
+      "seededFlag",
+      "isTemplate",
+      "hiddenFlag",
+      "useCaseId",
+      "accessModifier",
+      "architecture",
+      "aiAppsCompatibleFlag",
+      "followupEnabledFlag",
+      "header"
+    ],
+    "identity": {
+      "workflowCode": "XDX_SUPPLIER_CORE",
+      "name": "XDX Supplier Core",
+      "status": "DRAFT",
+      "version": 86564577
+    }
+  },
+  {
+    "source": "src/businessObjects/xdx_supplier_core_suppliers.bo",
+    "preserved": "docs/builds/xdx-supplier-core-reset-20260929/evidence/server-definitions/xdx_supplier_core_suppliers.bo",
+    "sha256": "b119bfcdf76bed4cc1dbcc2f4463466c7c3519712b8cf47bb3a9836b812c2462",
+    "topKeys": [
+      "supportedObjectId",
+      "name",
+      "description",
+      "objectCode",
+      "family",
+      "product",
+      "objectSource",
+      "restResourcePath",
+      "seededFlag",
+      "mandatoryFlag",
+      "objectProperties"
+    ],
+    "identity": {
+      "name": "XDX Supplier Core Suppliers",
+      "objectCode": "XDX_SUPPLIER_CORE_SUPPLIERS"
+    }
+  },
+  {
+    "source": "src/businessObjects/xdx_supplier_core_addresses.bo",
+    "preserved": "docs/builds/xdx-supplier-core-reset-20260929/evidence/server-definitions/xdx_supplier_core_addresses.bo",
+    "sha256": "ddc53ae1926d1e8cdb1adb1f5a83877203dbf744d3764fbaddade4ff41db1cf7",
+    "topKeys": [
+      "supportedObjectId",
+      "name",
+      "description",
+      "objectCode",
+      "family",
+      "product",
+      "objectSource",
+      "restResourcePath",
+      "seededFlag",
+      "mandatoryFlag",
+      "objectProperties"
+    ],
+    "identity": {
+      "name": "XDX Supplier Core Addresses",
+      "objectCode": "XDX_SUPPLIER_CORE_ADDRESSES"
+    }
+  },
+  {
+    "source": "src/businessObjects/xdx_supplier_core_sites.bo",
+    "preserved": "docs/builds/xdx-supplier-core-reset-20260929/evidence/server-definitions/xdx_supplier_core_sites.bo",
+    "sha256": "1eaee3c92dd748d9de355490f33d261b4d79e09f3c13f5b6dddacb286aa8be33",
+    "topKeys": [
+      "supportedObjectId",
+      "name",
+      "description",
+      "objectCode",
+      "family",
+      "product",
+      "objectSource",
+      "restResourcePath",
+      "seededFlag",
+      "mandatoryFlag",
+      "objectProperties"
+    ],
+    "identity": {
+      "name": "XDX Supplier Core Sites",
+      "objectCode": "XDX_SUPPLIER_CORE_SITES"
+    }
+  },
+  {
+    "source": "src/businessObjects/xdx_supplier_core_contacts.bo",
+    "preserved": "docs/builds/xdx-supplier-core-reset-20260929/evidence/server-definitions/xdx_supplier_core_contacts.bo",
+    "sha256": "7d5e1e87a5942786f9ddf36af06ef7d37a3b191c9a202e327ac6d8bf87dd2ecb",
+    "topKeys": [
+      "supportedObjectId",
+      "name",
+      "description",
+      "objectCode",
+      "family",
+      "product",
+      "objectSource",
+      "restResourcePath",
+      "seededFlag",
+      "mandatoryFlag",
+      "objectProperties"
+    ],
+    "identity": {
+      "name": "XDX Supplier Core Contacts",
+      "objectCode": "XDX_SUPPLIER_CORE_CONTACTS"
+    }
+  },
+  {
+    "source": "src/businessObjects/xdx_supplier_core_procurement_business_units.bo",
+    "preserved": "docs/builds/xdx-supplier-core-reset-20260929/evidence/server-definitions/xdx_supplier_core_procurement_business_units.bo",
+    "sha256": "6cb243c976589c8fa3840f58e7a17b0585c779e8a25ea8ba43f7e21bcea9aa78",
+    "topKeys": [
+      "supportedObjectId",
+      "name",
+      "description",
+      "objectCode",
+      "family",
+      "product",
+      "objectSource",
+      "restResourcePath",
+      "seededFlag",
+      "mandatoryFlag",
+      "objectProperties"
+    ],
+    "identity": {
+      "name": "XDX Supplier Core Procurement Business Units",
+      "objectCode": "XDX_SUPPLIER_CORE_PROCUREMENT_BUSINESS_UNITS"
+    }
+  }
+]

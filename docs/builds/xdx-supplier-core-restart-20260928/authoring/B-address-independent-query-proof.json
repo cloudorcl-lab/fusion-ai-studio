@@ -1,0 +1,23 @@
+{
+  "allEightFieldsMatched": true,
+  "expectedPayload": {
+    "City": "BOCA RATON",
+    "PostalCode": "33496",
+    "AddressPurposeOrderingFlag": true,
+    "AddressName": "XDX CORE 20260928 B",
+    "State": "FL",
+    "Email": "xdx.core.20260928.b@example.invalid",
+    "AddressLine1": "6600 N MILITARY TRL",
+    "CountryCode": "US"
+  },
+  "subsequentReviewMessage": "This address request is accepted and cannot be replayed. Reconcile any uncertain result by reading.",
+  "draft": 86549974,
+  "observedUtc": "2026-09-28T17:57:50.0787902Z",
+  "subsequentReviewStatus": "accepted",
+  "addressId": "300000334073749",
+  "parentSupplierId": "300000334073731",
+  "newCreateCommandExposed": false,
+  "query": "Show address detail for supplier 1512, address ID 300000334073749",
+  "parentSupplierNumber": "1512",
+  "surface": "separate native app Query"
+}

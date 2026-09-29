@@ -45,6 +45,7 @@ try {
     'scripts/verify-build-learning.cjs','scripts/tests/verify-build-learning.cjs',
     'scripts/workflow-test-continuation.cjs','scripts/tests/workflow-test-continuation.cjs',
     'scripts/parse-aistudio-json.cjs','scripts/tests/parse-aistudio-json.cjs',
+    'scripts/verify-workflow-test-capture-policy.cjs','scripts/tests/verify-workflow-test-capture-policy.cjs',
   'scripts/update-build-learning.cjs','scripts/tests/update-build-learning.cjs',
     'scripts/plan-affected-workflow-tests.cjs','scripts/measure-build-command.cjs',
     'scripts/build-timing-report.cjs','scripts/screen-model-candidate.cjs','scripts/build-evidence-status.cjs',

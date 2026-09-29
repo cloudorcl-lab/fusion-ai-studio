@@ -1,0 +1,26 @@
+{
+  "observedUtc": "2026-09-28T22:36:02.075Z",
+  "result": "pass",
+  "scenarioChecks": 8,
+  "existingBatchRegression": "pass",
+  "tenantCalls": 0,
+  "commands": [
+    "node docs/builds/xdx-supplier-core-restart-20260928/authoring/test-scenario-id-preflight.cjs",
+    "node docs/builds/xdx-supplier-core-restart-20260928/authoring/test-authoring-batch.cjs"
+  ],
+  "sources": [
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/validate-authoring-batch.cjs",
+      "sha256": "36fd8574a12829743fbc4e88ea939ca003d9acc1be0b6e784114adfa7eb494fd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/test-scenario-id-preflight.cjs",
+      "sha256": "cd17705fb5186309a9b57ecd5a516f996aebae6bc346a49a751e0745dda69f51"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/test-authoring-batch.cjs",
+      "sha256": "c856af0b7419188ec6d75dadd87f02517c033684a8c251c2fe1f7801379e9e94"
+    }
+  ],
+  "limitations": "Local pre-dispatch validation only. Direct commands; duration unallocated. Tool output chunk29ecfe. Plan recency still requires sync discipline."
+}

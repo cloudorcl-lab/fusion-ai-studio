@@ -1,0 +1,24 @@
+{
+  "revision": 2,
+  "message": "Created address verified by independent same-parent GET. This request cannot be replayed.",
+  "returnedId": "300000334073749",
+  "nativeStatus": "accepted",
+  "requestId": "1691769a-ddd2-4f93-882f-d0db87e6cb18",
+  "parentSupplierId": "300000334073731",
+  "allEightFieldsVisible": true,
+  "payload": {
+    "City": "BOCA RATON",
+    "PostalCode": "33496",
+    "AddressPurposeOrderingFlag": true,
+    "AddressName": "XDX CORE 20260928 B",
+    "State": "FL",
+    "Email": "xdx.core.20260928.b@example.invalid",
+    "AddressLine1": "6600 N MILITARY TRL",
+    "CountryCode": "US"
+  },
+  "draft": 86549974,
+  "independentSeparateQuery": "pending",
+  "dispatchCount": 1,
+  "observedUtc": "2026-09-28T17:53:10.3456267Z",
+  "parentSupplierNumber": "1512"
+}

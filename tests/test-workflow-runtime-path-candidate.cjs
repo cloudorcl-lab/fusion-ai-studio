@@ -23,7 +23,7 @@ function load(name) {
   loaded.set(name, code);
   for (const m of code.matchAll(/(?<![\w.$])([A-Za-z_$][\w$]*)\s*\(/g)) load(m[1]);
 }
-for (const name of ['atlasRuntimePathCandidate', 'atlasValidateRuntimePathCandidate', 'Zse', 'wle', 'Hn', 'Jo', 'xp']) load(name);
+for (const name of ['atlasRuntimePathCandidate', 'atlasValidateRuntimePathCandidate', 'atlasTopologyBranchNeedsValidation', 'q_', 'Zse', 'wle', 'Hn', 'Jo', 'xp']) load(name);
 const ctx = vm.createContext({ O: new Proxy({}, { get: (_, key) => key }), Dp: createHash, structuredClone });
 const semanticTypesStart = source.indexOf('fse = /*');
 assert(semanticTypesStart >= 0);
@@ -149,4 +149,36 @@ test('retained Supplier InitDisplay structural projection admits candidate witho
   assert.doesNotThrow(()=>validate({candidate:c,workflow,testFile:{...retained,scenario:{id:scenario.id,custom:false}},run}));
   rejects(()=>validate({candidate:c,workflow,testFile:retained,run}));
   assert.equal(fs.readFileSync(fixturePath,'utf8'),snapshot);
+});
+
+test('F37 unresolved flat topology branch is eligible without changing its predicted partition',()=>{
+  assert.equal(typeof ctx.atlasTopologyBranchNeedsValidation,'function');
+  const f=fixture(), nodes=f.workflow.specification.dataPipeline.pipelineNodes;
+  const options={workflow:f.workflow,pathAssertions:f.definition.pathAssertions,input:f.input};
+  const before=JSON.stringify(options);
+  assert.equal(ctx.atlasTopologyBranchNeedsValidation(options),true);
+  assert.equal(JSON.stringify(options),before);
+  assert.match(source,/requiresRuntimePathValidation: atlasTopologyBranchNeedsValidation\(\{ workflow: e, pathAssertions: pt, input: xt \? yy\(e, xt, f\) : \{ message: "" \} \}\)/);
+  const branch={...f.scenario,scenarioKind:'branch-path',targetBranch:{nodeCode:'GUARD',outcome:'false'},requiresRuntimePathValidation:ctx.atlasTopologyBranchNeedsValidation(options)};
+  assert.doesNotThrow(()=>candidate({...f,scenario:branch}));
+  nodes[1].inputs[0].value='{{$context.$app.$OraMessageHint}}'; nodes[1].type='SWITCH';
+  assert.equal(ctx.atlasTopologyBranchNeedsValidation(options),false);
+});
+
+test('F37 nonflat unsupported paths remain outside topology branch eligibility',()=>{
+  assert.equal(typeof ctx.atlasTopologyBranchNeedsValidation,'function');
+  for(const type of ['LOOP','WHILE','PARALLEL','REFERENCE','REFERENCEABLEBLOCK','MULTI_AGENT','HUMAN','WAIT']){
+    const f=fixture();f.workflow.specification.dataPipeline.pipelineNodes[1].type=type;
+    assert.equal(ctx.atlasTopologyBranchNeedsValidation({workflow:f.workflow,pathAssertions:f.definition.pathAssertions,input:f.input}),false);
+  }
+  const f=fixture();f.workflow.specification.dataPipeline.pipelineNodes[1].metadata={dataPipeline:{}};
+  assert.equal(ctx.atlasTopologyBranchNeedsValidation({workflow:f.workflow,pathAssertions:f.definition.pathAssertions,input:f.input}),false);
+});
+
+test('F37 eligibility invalidates only affected deferrals and retains legacy false fingerprints',()=>{
+  const s={id:'site-bu-display',expectedPath:{mustExecute:['DISPLAY'],mustNotExecute:['CREATE']},targetBranch:{nodeCode:'BU',outcome:'display'},recommendedDataCapturePolicy:'model-generated'};
+  const legacy=ctx.q_(s);
+  assert.equal(ctx.q_({...s,requiresRuntimePathValidation:false}),legacy);
+  assert.notEqual(ctx.q_({...s,requiresRuntimePathValidation:true}),legacy);
+  assert.equal(ctx.q_({...s,id:'stateful-create',requiresRuntimePathValidation:false}),ctx.q_({...s,id:'stateful-create'}));
 });

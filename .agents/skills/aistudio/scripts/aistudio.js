@@ -37101,7 +37101,8 @@ function q_(e) {
     scenarioId: e.id,
     expectedPath: e.expectedPath,
     targetBranch: e.targetBranch ?? null,
-    dataCapturePolicy: e.recommendedDataCapturePolicy
+    dataCapturePolicy: e.recommendedDataCapturePolicy,
+    ...e.requiresRuntimePathValidation === true ? { requiresRuntimePathValidation: true } : {}
   });
 }
 function Hn(e) {
@@ -39698,6 +39699,20 @@ function CL(e) {
       `Sync-plan primary scenario ${e.scenario.suggestedTestName} cannot be authored as the existing ${t} app-stage contract ${n.suggestedTestName}. Refresh the workflow test sync plan and use the app-stage action. Create a custom test only when duplicate coverage is explicitly requested.`
     );
 }
+// Topology-only flat branch predictions need the existing bounded candidate
+// protocol when an invocation cannot determine one of their routing decisions.
+// This flag admits validation, not execution evidence or write authority.
+function atlasTopologyBranchNeedsValidation(e) {
+  const nodes = Ct(e.workflow.specification?.dataPipeline?.pipelineNodes), selected = new Set(ee(e.pathAssertions.mustExecute));
+  const path = nodes.filter(node => selected.has(node.code));
+  if (!path.length || path.some(node => node.metadata?.dataPipeline || ["LOOP", "WHILE", "REFERENCE", "REFERENCEABLEBLOCK", "PARALLEL", "MULTI_AGENT", "HUMAN", "WAIT"].includes(node.type))) return false;
+  const nodesByCode = new Map(nodes.map(node => [node.code, node]));
+  return path.some(node => {
+    if (!["CONDITION", "SWITCH", "ROUTER"].includes(node.type)) return false;
+    const prediction = Zse({ node, input: e.input, nodesByCode, dependencies: [] });
+    return prediction.inputDerived === false && prediction.requiresRuntimePathValidation === true;
+  });
+}
 function Di(e) {
   return {
     id: e.id,
@@ -39981,6 +39996,8 @@ function $L(e) {
   return t?.derivedFrom === "live_execution" && t.inputHash === Hn(e.testFile.input) && t.workflowDefinitionHash === e.workflowDefinitionHash;
 }
 function DL(e) {
+  if (e.scenario.scenarioKind === "branch-path" && e.scenario.appStage === void 0 && e.scenario.suggestedInput === void 0 && e.testFile?.scenario?.custom === false && e.testFile.scenario.source === "sync-plan" && e.testFile.scenario.id === e.scenario.id && e.testFile.scenario.kind === "branch-path")
+    return e.testFile.input;
   return e.scenario.appStage === "InvokeAction" || e.scenario.appStage === "Query" || Jh(e.testFile?.input) || Fc(e.scenario) ? e.testFile?.input : e.scenario.suggestedInput;
 }
 function Bce(e) {
@@ -40046,11 +40063,21 @@ function Wce(e) {
 }
 function atlasObservedScenarioData(scenario, nodesByCode) {
   if (scenario.pathSource !== "observed" || scenario.coverage?.role === "loop-boundary") return scenario;
-  const recordablePath = Se(ee(scenario.expectedPath?.mustExecute ?? []).filter(code => {
+  const executed = new Set(ee(scenario.expectedPath?.mustExecute ?? [])), nodesById = new Map([...nodesByCode.values()].map(node => [node.id, node]));
+  const recordablePath = Se([...executed].filter(code => {
     const node = nodesByCode.get(code);
     return node && Ln(node) !== void 0;
   }));
-  return { ...scenario, recordablePath, dataPathSignature: _d(recordablePath, nodesByCode) };
+  const routingDecisionContext = [...executed].map(code => {
+    const node = nodesByCode.get(code);
+    if (!node || !pf(node) || !Dc(node)) return;
+    // An observed node partition cannot distinguish labels sharing a successor.
+    // Omit expectedOutcome when the partition does not establish exactly one
+    // edge; never retain the old prediction or choose a label by reachability.
+    const outcomes = Wo(node).filter(([, id]) => executed.has(nodesById.get(id)?.code));
+    return { nodeCode: code, nodeType: node.type, ...(outcomes.length === 1 ? { expectedOutcome: outcomes[0][0] } : {}), expression: Dc(node) };
+  }).filter(Boolean);
+  return { ...scenario, recordablePath, dataPathSignature: _d(recordablePath, nodesByCode), routingDecisionContext };
 }
 function atlasScenarioCapturePolicy(scenario, ordinaryPolicy) {
   if (scenario.requiresRuntimePathValidation === true && ["primary-path", "app-stage", "branch-path"].includes(scenario.scenarioKind))
@@ -40403,6 +40430,7 @@ function ma(e, t = {}) {
           outcome: ce
         },
         zeroIterationLoops: Le.zeroIterationLoops,
+        requiresRuntimePathValidation: atlasTopologyBranchNeedsValidation({ workflow: e, pathAssertions: pt, input: xt ? yy(e, xt, f) : { message: "" } }),
         appStage: xt?.appStage,
         recordablePath: xt ? vn : void 0,
         dataPathSignature: xt ? _d(yn, a) : void 0,

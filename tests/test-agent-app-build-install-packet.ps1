@@ -66,6 +66,7 @@ try {
     [IO.File]::WriteAllBytes($manifestPath,$manifestBytes)
   }
   foreach ($dependency in @('tests/test-workflow-runtime-path-candidate.cjs','tests/test-workflow-runtime-path-recording.cjs','tests/test-workflow-runtime-path-metadata.cjs','tests/fixtures/workflow-runtime-path-retained.json',
+    'scripts/verify-workflow-test-capture-policy.cjs','scripts/tests/verify-workflow-test-capture-policy.cjs',
     'scripts/workflow-test-continuation.cjs','scripts/tests/workflow-test-continuation.cjs',
     'scripts/build-timing-report.cjs','scripts/screen-model-candidate.cjs','scripts/build-evidence-status.cjs',
     'scripts/refresh-test-report-provenance.cjs','scripts/capture-native-evidence.cjs',
@@ -104,6 +105,7 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "Activated test failed: $command" }
   }
   foreach ($command in @('tests/test-workflow-runtime-path-candidate.cjs','tests/test-workflow-runtime-path-recording.cjs','tests/test-workflow-runtime-path-metadata.cjs',
+    'scripts/tests/verify-workflow-test-capture-policy.cjs',
     'scripts/tests/workflow-test-continuation.cjs','tests/test-session-compliance.cjs','scripts/tests/verify-agentic-app-query-contract.cjs','tests/test-affected-workflow-tests.cjs','tests/test-measure-build-command.cjs','tests/test-workflow-terminal.cjs',
     'tests/test-build-timing-report.cjs','tests/test-build-evidence.cjs','tests/test-report-provenance.cjs','tests/test-native-evidence.cjs')) {
     & node (Join-Path $install $command)

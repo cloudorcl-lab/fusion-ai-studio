@@ -1,0 +1,42 @@
+{
+  "observedUtc": "2026-09-29T00:53:38.171Z",
+  "result": "pass",
+  "unitChecks": 17,
+  "existingBatchChecks": 5,
+  "scenarioChecks": 10,
+  "diffCheck": "pass",
+  "toolReceiptChunk": "744ddc",
+  "rawTestOutputLocation": "Current thread tool output; summary retained here",
+  "actualRejectedDefinitionBlockedBeforeSpawn": true,
+  "correctedBaselineReplayAccepted": true,
+  "scope": "Opt-in positive-baseline profile only; no universal no-baseline/startup policy claim",
+  "sources": [
+    {
+      "path": "scripts/verify-workflow-test-capture-policy.cjs",
+      "sha256": "6479bd429e7083644e3551b892fc60eedd4fc349250f55ac0da4ae6dcfc30e7c"
+    },
+    {
+      "path": "scripts/tests/verify-workflow-test-capture-policy.cjs",
+      "sha256": "530abb46013ba680086a73b73baa458da89290fafe95d08f7c23ae97e04e9865"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/validate-authoring-batch.cjs",
+      "sha256": "f2eed9dda71f8387346e2b0b1bb5bc2574ec02930bbb0d34f21a156e01e4a70e"
+    }
+  ],
+  "currentJobEvidence": {
+    "workflow": {
+      "path": "src/workflows/xdx_supplier_core.wf",
+      "sha256": "94cdc5845f6d9f08ac6443aa17fa794d349785608f4f1e7e4e6dc5080e6635a9"
+    },
+    "baseline": {
+      "path": "test/workflows/xdx_supplier_core/query.json",
+      "sha256": "a2ce5303bdde1f6278fbdad485d4a3268707b6f843d8f44df45e6b265ef61cc7"
+    },
+    "inventory": {
+      "path": "docs/builds/xdx-supplier-core-restart-20260928/authoring/root-capture-policy-inventory.stdout",
+      "sha256": "9506d9044a47d5e34c2665f76063ab7b3a391790d8b1726ccf1e906a939dd9c8"
+    }
+  },
+  "tenantCalls": 0
+}
