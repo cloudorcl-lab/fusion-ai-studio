@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "observedUtc": "2026-09-29T03:21:37.7514933Z",
+  "source": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.worktrees\\xdx-supplier-core-slice-20260929",
+  "archive": ".debug/xdx-paused-slice-20260929/worktree.zip",
+  "manifest": ".debug/xdx-paused-slice-20260929/manifest.json",
+  "files": 1309,
+  "archiveSha256": "325c86f318346ced0c06d6f990ed826583bfda3b75940ed39c75181b5c4d6d34",
+  "reparsePoints": 0,
+  "configuration": "Preserved privately inside ignored archive; never stage archive or credentials",
+  "restoration": "Every file independently hash-verified; tenant IDs and relationships are not restored by this archive"
+}
