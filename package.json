@@ -1,5 +1,5 @@
 {
-  "name": "xdx-supplier-lifecycle-agent",
+  "name": "fusion-ai-studio-workspace",
   "private": true,
   "scripts": {
     "test": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --judge-provider local",

@@ -1,7 +1,0 @@
-{
-  "label": "packet-build",
-  "exitCode": 0,
-  "command": "pwsh -NoProfile -File packaging/agent-app-build-install-packet/Build-AgentAppBuildInstallPacket.ps1 -OutputPath C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.debug\\xdx-playbook-reconciliation-20261012\\verified-packet.zip",
-  "evidence": "docs/builds/xdx-playbook-reconciliation-20261012/evidence/packet-build.txt",
-  "observedUtc": "2026-10-13T01:50:36.1448631Z"
-}

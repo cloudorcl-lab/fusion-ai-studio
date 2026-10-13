@@ -1,0 +1,21 @@
+# Clean restart retirement plan
+
+Model: artifact-purge 1.0.1. Mode: execute. User explicitly requested all worktree retirement and base-reference cleanup, then selected removal of existing custom supplier artifacts, tests and build history.
+
+Surviving checkout: repository root, branch `TestingWFBuildTools`, baseline `9585961`. No server or remote-ref deletion. Oracle samples, reusable skills/tooling/models/lessons, credentials/configuration and existing stashes are retained. Publication, network operations and business writes are excluded.
+
+Exact deletion targets and expected Git tips are inventoried in the private external archive plan before execution. Targets: all registered linked worktrees and their local attempt branches; retired local attempt branches; existing `src` custom supplier content; configured custom `test` content; supplier-specific test scripts; prior `docs/builds` records; old attempt/TODO/installation records; duplicate lesson snapshots and generated debugging/report/scratch history. Keep this current purge record. The base contains only supplier custom artifacts in src/test according to the reviewed inventory.
+
+Preservation: copy and independently SHA-256-verify every base snapshot and every linked checkout file into an archive outside this repository; reject junctions/symlinks. Create and verify a full Git history bundle, including retained refs/stashes. Preserve raw historical provenance externally rather than rewriting it as current evidence. Recheck target paths, tips and source hashes immediately before removal. The explicit purge supersedes the paused-worktree retention disposition for local removal only; no runtime work resumes.
+
+Destruction follows verified preservation. Dirty worktree and unmerged local attempt-ref removal are within the user's purge request; use exact targets only. Do not reset/clean the root, discard its configuration, delete stashes or alter remote refs. Physical-path removal and Git-registration/ref absence require separate readback. Any Windows residuals must remain inside the previously verified target boundary.
+
+Base references: reset active handoff and remove prior mutable build records. Convert Markdown links to retired evidence into explicit archival citations; retain their labels and factual limits. Leave generic worktree instructions/templates intact. Preserve immutable first-success JSON samples byte for byte. Remove supplier-dependent test scripts instead of leaving broken executable references. Neutralize the root package name.
+
+Verification: sole registered checkout is root; every exact retired local ref absent; every target physically absent; no concrete retired-checkout references outside this purge record; deleted-evidence links reconciled; retained sample JSON, source library, CLI/tooling and protected configuration unchanged. Run startup/policy and Closeout plus focused retained governance regressions. Product runtime acceptance is not claimed. Commit only scoped retirement/governance changes; no push.
+
+Reusable regression fixture exception: the original historical supplier projection is preserved externally. Its local identity/state/node vocabulary was anonymized and version normalized without changing control topology or coverage relationships. The one test title now identifies an anonymized projection. All 47 affected candidate/metadata/recording checks passed; no saved runtime or original-source parity is claimed for the transformed fixture.
+
+Evidence review: the first path preflight falsely classified nine ordinary files, and the first Git removal left verified read-only physical/administrative residues after unregistering the checkout. Both are captured with exact failed-command run IDs and verified prevention/recovery in the ledger. A closure-metadata rejection occurred before child dispatch (no run ID); its invalid kind/owner was corrected to the canonical schema and Startup passed before retry. Existing cleanup guidance owned the residual recovery; the canonical playbook now also records the verified literal-file attribute-filter limitation.
+
+Rollback: verified file copies and Git bundle support local recovery; restoration is not exercised. Tenant state is untouched and no tenant rollback is claimed. Keep the external archive private because it contains configuration and historical runtime evidence.

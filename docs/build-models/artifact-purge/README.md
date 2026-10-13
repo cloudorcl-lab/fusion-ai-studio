@@ -34,5 +34,5 @@ current version. Canonical references remain live; this is not a frozen install 
 
 | Version | Date | Change | Validation |
 | --- | --- | --- | --- |
-| 1.0.0 | 2026-09-24 | Parameterized prompt/plan; explicit retention, dependency completeness, preservation and partial recovery | Local document checks and scenario walkthroughs in the [delivery record](../../builds/xdx-purge-model-20260924/intake-and-learning-register.md); no actual purge |
+| 1.0.0 | 2026-09-24 | Parameterized prompt/plan; explicit retention, dependency completeness, preservation and partial recovery | Local document checks and scenario walkthroughs in the delivery record (archived evidence E0103); no actual purge |
 | 1.0.1 | 2026-09-24 | Align startup, scoped test completion and preservation dispositions with canonical governance | Local governance audit; no new tenant build |

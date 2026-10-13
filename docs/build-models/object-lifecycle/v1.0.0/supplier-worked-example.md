@@ -3,7 +3,7 @@
 Model version: **1.0.0**. Status: illustrative, not executable or authorized.
 Historical source: supplier planning commits 83c80da and b5034c6; completed retry
 6c85117. This retrospectively applies the improved structure; it does not claim
-the original build followed it. See the [introspection](../../../builds/xdx-build-introspection-20260924/xdx_introspection_20260924.md).
+the original build followed it. See the introspection (archived evidence E0109).
 Historical IDs, permissions and acceptance are not defaults for a future build.
 
 ## Outcome and scope

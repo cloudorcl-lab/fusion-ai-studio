@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "archive": "C:\\Users\\dasu\\Documents\\CodexArchives\\fusion-ai-studio-clean-restart-20261013-160550",
+  "files": 3090,
+  "linkedWorktrees": 1,
+  "localAttemptBranches": 7,
+  "retirementTargets": 52,
+  "bundleSha256": "682952961fec5c5f45cf5ce4eb98a4efcc2d7dd28398502d3cabb48bef4752d9",
+  "baseManifestSha256": "f37219466b9298e3de715795cb52aeb5b3a5674c8bbaed04429326a1729091ae",
+  "verifiedUtc": "2026-10-13T16:06:09.4346046Z",
+  "privacy": "Private external archive contains configuration; do not stage/publish it",
+  "restoration": "File and full Git-history preservation verified; restore not exercised"
+}

@@ -1,7 +1,0 @@
-{
-  "observedUtc": "2026-10-13T02:00:41.210Z",
-  "symptom": "Post-Closeout timing export returned nonzero. PowerShell ConvertFrom-Json materialized startedUtc as System.DateTime; string conversion was 10/13/2026 01:34:39 rather than UTC ISO.",
-  "diagnostic": "GetType().FullName = System.DateTime; ConvertFrom-Json supports DateKind parameter.",
-  "correction": "Use ConvertFrom-Json -DateKind String; preserve report output before checking its exit code.",
-  "limitation": "Original export output was held in a terminated PowerShell local variable and not retained; no invented verbatim error receipt."
-}

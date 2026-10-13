@@ -1,8 +1,8 @@
 # Supplier Core — worked example
 
 Model version: **1.2.0**. Status: illustrative, not executable or authorized.
-This applies the [Supplier Core introspection](../../../builds/xdx-supplier-core-20260924/xdx_introspection_20260925.md)
-and [process changes](../../../builds/xdx-build-process-optimization-20260925/plan.md).
+This applies the Supplier Core introspection (archived evidence E0113)
+and process changes (archived evidence E0114).
 It does not claim the historical run followed this sequence. Historical IDs,
 permissions and acceptance never become defaults for a future build. Version 1.0.1
 retains the broader example; this example covers four resources only.

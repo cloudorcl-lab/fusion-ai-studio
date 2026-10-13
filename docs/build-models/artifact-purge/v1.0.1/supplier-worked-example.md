@@ -33,5 +33,5 @@ complete catalog. Unique retry naming does not authorize modifying the retained 
   during cleanup, then report the deliberate receipt commit separately.
 - Keep retained BOs valid at every later gate instead of reopening their deletion.
 
-Historical context is retained in the [introspection](../../../builds/xdx-build-introspection-20260924/xdx_introspection_20260924.md)
+Historical context is retained in the introspection (archived evidence E0105)
 and its source manifest. No purge was performed while authoring this model.

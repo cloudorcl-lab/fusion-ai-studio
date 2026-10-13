@@ -1,7 +1,0 @@
-{
-  "label": "startup",
-  "exitCode": 0,
-  "command": "pwsh -NoProfile -File scripts/verify-living-build-contract.ps1 -SessionRecord docs/builds/xdx-playbook-reconciliation-20261012/xdx_session_xdx-playbook-reconciliation-20261012.json -SessionId xdx-playbook-reconciliation-20261012 -Phase Startup",
-  "evidence": "docs/builds/xdx-playbook-reconciliation-20261012/evidence/startup.txt",
-  "observedUtc": "2026-10-13T01:50:29.1022668Z"
-}

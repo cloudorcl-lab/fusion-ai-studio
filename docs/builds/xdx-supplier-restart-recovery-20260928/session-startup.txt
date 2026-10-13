@@ -1,3 +1,0 @@
-Session compliance: FAIL
-- learningRegister must reference this session/task identity
-- timeTracker must reference this session/task identity

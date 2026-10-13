@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-clean-restart-20261013",
+  "scopes": [
+    "purge"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-clean-restart-20261013/commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "P001",
+      "observedUtc": "2026-10-13T16:08:27.447Z",
+      "scope": "purge",
+      "blocks": [
+        "purge"
+      ],
+      "status": "closed",
+      "symptom": "Ordinary explicit file paths were misclassified as reparse points; purge stopped before mutation.",
+      "commandRunIds": [
+        "1e8c8f54-a6f4-402a-97e4-1dce2caa334a"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-clean-restart-20261013/evidence/path-check-failure.json",
+          "sha256": "d9f75d4edfd985f5a131c7b6935d3d416112b5bfd9ca9ca39db61642a0bbb364"
+        }
+      ],
+      "cause": "PowerShell explicit-file Get-ChildItem enumeration bypasses the requested attribute filter.",
+      "correction": "Inspect the target and directory descendants and test the ReparsePoint bit explicitly.",
+      "prevention": {
+        "kind": "regression",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Cleanup rules: literal file and directory targets require explicit reparse attribute-bit checks",
+        "reason": "Actual-target regression reproduces nine prior false positives and verifies zero corrected false positives; attribute predicate still rejects reparse flags."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "pwsh -NoProfile -File docs/builds/xdx-clean-restart-20261013/path-check.ps1",
+        "reviewer": "Codex root review of all target enumeration and source-bound focused result",
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-clean-restart-20261013/evidence/path-contract-pass.json",
+            "sha256": "fd774fcc1a594a1083d5c4ae840ad3a3011814863e23740596bced688a740ed8"
+          }
+        ],
+        "sources": [
+          {
+            "path": "docs/builds/xdx-clean-restart-20261013/path-contract.ps1",
+            "sha256": "617949b17a61952228146e51ba6e4e5a490b6902c55ce2d88e98eb7f422840ad"
+          },
+          {
+            "path": "docs/builds/xdx-clean-restart-20261013/path-check.ps1",
+            "sha256": "cc0d241c05e5fa86cf08201542f4efc10b7f1f057b83918c90e41fcdf4472563"
+          },
+          {
+            "path": "docs/builds/xdx-clean-restart-20261013/execute.ps1",
+            "sha256": "6214257452898c4e840d43d9c245839a1c094be332923c3e1606f43c3a25d781"
+          }
+        ]
+      }
+    },
+    {
+      "id": "P002",
+      "observedUtc": "2026-10-13T16:11:23.997Z",
+      "scope": "purge",
+      "blocks": [
+        "purge"
+      ],
+      "status": "closed",
+      "symptom": "Git unregistered the checkout but left read-only physical and administrative residuals.",
+      "commandRunIds": [
+        "a39b4b23-ba95-4a07-a5b7-4ea814ae9443"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-clean-restart-20261013/evidence/windows-residual-failure.json",
+          "sha256": "ccac1c4a29a78a5e65111bc74cf4b9d4b3848044bc7ca76e6bff7066de0139ff"
+        }
+      ],
+      "cause": "ReadOnly directory attributes blocked physical Git removal; registration and file removal had different outcomes.",
+      "correction": "Use captured exact physical and administrative paths, verify every remaining file against the archive, clear only ReadOnly attributes and remove residuals with native PowerShell.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Cleanup rules / approved Windows worktree purges require separate registration/path proof and bounded readonly residual recovery",
+        "reason": "Environment-specific residual state; full archived-source and actual-pointer preflight passed, with exact-path native recovery and independent final absence checks required."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "pwsh -NoProfile -File docs/builds/xdx-clean-restart-20261013/residual-preflight.ps1",
+        "reviewer": "Codex root review of preserved-pointer confinement, residual hashes and directory attributes",
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-clean-restart-20261013/evidence/residual-preflight.json",
+            "sha256": "f7a8c1f2351e07e55fd33b23ce7f9bf29e2008728ea0f9bca3b06ed122f22afb"
+          }
+        ],
+        "sources": [
+          {
+            "path": "docs/builds/xdx-clean-restart-20261013/residual-preflight.ps1",
+            "sha256": "a765dfe2e0ec5cd0b277ca3c335258c68e2ed9eb9aa61029efeb3eb2e9c0979d"
+          },
+          {
+            "path": "docs/builds/xdx-clean-restart-20261013/remove-residual.ps1",
+            "sha256": "e3221b4ac7f16fb6f0d204f2b3413821a0fdc9548ab723871555117794b14e25"
+          }
+        ]
+      }
+    }
+  ]
+}

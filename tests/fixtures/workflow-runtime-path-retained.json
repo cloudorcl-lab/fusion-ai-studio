@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "projection": "Immutable structural projection of retained Supplier InitDisplay evidence. Preserves graph control fields, input/path assertions and observed node order/completion. Excludes source code, model prompts, business responses and runtime IDs. Not full workflow source parity or a new runtime proof.",
+  "projection": "Anonymized structural regression fixture derived from archived evidence. Preserves control topology, input/path assertions and node-order/completion relationships. Original immutable projection is preserved in the private archive. This transformed fixture is not deployed workflow source or new runtime evidence.",
   "provenance": [
     {
       "role": "workflow",
@@ -16,15 +16,15 @@
     }
   ],
   "workflow": {
-    "workflowCode": "XDX_SUPPLIER_CORE",
+    "workflowCode": "XDX_FIXTURE_WORKFLOW",
     "status": "DRAFT",
-    "version": 86517154,
+    "version": 1,
     "specification": {
       "dataPipeline": {
         "rootNode": "start",
         "variables": [
           {
-            "name": "supplierState",
+            "name": "recordState",
             "type": "object",
             "scope": "CONVERSATION"
           },
@@ -88,7 +88,7 @@
             "inputs": [
               {
                 "name": "condition",
-                "value": "{{!!($context.$variables.supplierState && $context.$variables.supplierState.draft && $context.$variables.supplierState.draft.attempt && ($context.$variables.supplierState.draft.attempt.status === \"reserved\" || $context.$variables.supplierState.draft.attempt.status === \"uncertain\"))}}"
+                "value": "{{!!($context.$variables.recordState && $context.$variables.recordState.draft && $context.$variables.recordState.draft.attempt && ($context.$variables.recordState.draft.attempt.status === \"reserved\" || $context.$variables.recordState.draft.attempt.status === \"uncertain\"))}}"
               }
             ]
           },
@@ -126,7 +126,7 @@
           },
           {
             "id": "1",
-            "code": "FETCH_SUPPLIERS",
+            "code": "FETCH_RECORDS",
             "type": "BO_FUNCTION",
             "outcomes": {
               "success": "8"
@@ -191,7 +191,7 @@
             "inputs": [
               {
                 "name": "condition",
-                "value": "{{$context.$variables.plan.payload !== null && $context.$variables.supplierState.draft.attempt.status === \"reserved\"}}"
+                "value": "{{$context.$variables.plan.payload !== null && $context.$variables.recordState.draft.attempt.status === \"reserved\"}}"
               }
             ]
           },
@@ -301,7 +301,7 @@
           },
           {
             "id": "2",
-            "code": "FETCH_SUPPLIER_DETAIL",
+            "code": "FETCH_RECORD_DETAIL",
             "type": "BO_FUNCTION",
             "outcomes": {
               "success": "9"
@@ -430,9 +430,9 @@
           "nodeCode": "XDX_OPERATION_ROUTER"
         },
         {
-          "id": "path-must-execute-fetch_suppliers",
-          "name": "FETCH_SUPPLIERS executes",
-          "nodeCode": "FETCH_SUPPLIERS"
+          "id": "path-must-execute-fetch_records",
+          "name": "FETCH_RECORDS executes",
+          "nodeCode": "FETCH_RECORDS"
         },
         {
           "id": "path-must-execute-xdx_collection_adapter",
@@ -477,9 +477,9 @@
       ],
       "mustNotExecute": [
         {
-          "id": "path-must-not-execute-fetch_supplier_detail",
-          "name": "FETCH_SUPPLIER_DETAIL does not execute",
-          "nodeCode": "FETCH_SUPPLIER_DETAIL"
+          "id": "path-must-not-execute-fetch_record_detail",
+          "name": "FETCH_RECORD_DETAIL does not execute",
+          "nodeCode": "FETCH_RECORD_DETAIL"
         },
         {
           "id": "path-must-not-execute-xdx_detail_adapter",
@@ -565,7 +565,7 @@
     }
   },
   "run": {
-    "workflowCode": "XDX_SUPPLIER_CORE",
+    "workflowCode": "XDX_FIXTURE_WORKFLOW",
     "finishReason": "stop",
     "nodeResults": {
       "START": {},
@@ -575,7 +575,7 @@
       "XDX_FROZEN_BEFORE_ROUTE": {},
       "XDX_ROUTE": {},
       "XDX_OPERATION_ROUTER": {},
-      "FETCH_SUPPLIERS": {},
+      "FETCH_RECORDS": {},
       "XDX_COLLECTION_ADAPTER": {},
       "XDX_SAVE_COLLECTION_RECEIPT": {},
       "XDX_COLLECTION_NEXT": {},
@@ -608,7 +608,7 @@
         "nodeCode": "XDX_OPERATION_ROUTER"
       },
       {
-        "nodeCode": "FETCH_SUPPLIERS"
+        "nodeCode": "FETCH_RECORDS"
       },
       {
         "nodeCode": "XDX_COLLECTION_ADAPTER"

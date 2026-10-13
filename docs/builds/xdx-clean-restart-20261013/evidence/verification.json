@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "observedUtc": "2026-10-13T16:21:15.047Z",
+  "registeredCheckouts": 1,
+  "retiredLocalRefs": 7,
+  "absentBaseTargets": 52,
+  "protectedFilesHashMatched": 432,
+  "immutableFirstGetSamples": 5,
+  "retainedLinksChecked": 100,
+  "remainingBranches": [
+    "TestingWFBuildTools",
+    "release-26C"
+  ],
+  "runtimeOrTenantChanges": false,
+  "archive": "C:\\Users\\dasu\\Documents\\CodexArchives\\fusion-ai-studio-clean-restart-20261013-160550"
+}

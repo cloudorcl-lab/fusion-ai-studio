@@ -136,7 +136,7 @@ test('stop result with paused node or explicit error still rejects',()=>{
   const error=observation(); error.run.error='failed'; rejects(()=>validate(error));
 });
 
-test('retained Supplier InitDisplay structural projection admits candidate without promoting custom coverage',()=>{
+test('anonymized InitDisplay structural projection admits candidate without promoting custom coverage',()=>{
   const fixturePath=path.join(__dirname,'fixtures/workflow-runtime-path-retained.json');
   const snapshot=fs.readFileSync(fixturePath,'utf8');
   const fixture=JSON.parse(snapshot),{workflow,retained,run}=fixture;

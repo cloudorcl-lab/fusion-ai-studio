@@ -1,6 +1,0 @@
-{
-  "observedUtc": "2026-09-29T02:41:33.162Z",
-  "error": "Node cpSync errorOnExist rejected pre-existing build directory",
-  "effects": "Fourteen selected source/tooling files copied before error; build-directory copy and subsequent lesson edits did not complete.",
-  "correction": "Merge file by file; preserve every differing prior base file in private archive before replacement. No destructive action."
-}

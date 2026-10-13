@@ -1,7 +1,0 @@
-{
-  "status": "PASS",
-  "observedUtc": "2026-09-28T14:54:14.153Z",
-  "command": "pwsh -NoProfile -File scripts/verify-living-build-contract.ps1 -SessionRecord docs/builds/xdx-supplier-restart-recovery-20260928/session.json -SessionId xdx-supplier-restart-recovery-20260928 -Phase Closeout",
-  "scope": "Recovery, preservation, purge and replacement initialization only",
-  "fullBuildComplete": false
-}

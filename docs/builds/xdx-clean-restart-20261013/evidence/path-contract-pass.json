@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "checkedTargets": 52,
+  "originalFileFalsePositives": 9,
+  "correctedFalsePositives": 0,
+  "directoryAndFileScopesChecked": true,
+  "noDeletionPerformed": true,
+  "observedUtc": "2026-10-13T16:09:45.7939822Z"
+}

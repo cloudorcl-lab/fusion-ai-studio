@@ -1,2 +1,0 @@
-PASS: links/anchors, JSON, fences, required contracts, immutable first GET
-Task mode verify observed 2026-10-13T02:37:17.872Z

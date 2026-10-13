@@ -1,0 +1,10 @@
+const fs=require('node:fs');
+const p='tests/fixtures/workflow-runtime-path-retained.json';
+let text=fs.readFileSync(p,'utf8').replaceAll('SUPPLIERS','RECORDS').replaceAll('SUPPLIER','RECORD').replaceAll('Suppliers','Records').replaceAll('Supplier','Record').replaceAll('supplier','record');
+const f=JSON.parse(text);f.projection='Anonymized structural regression fixture derived from archived evidence. Preserves control topology, input/path assertions and node-order/completion relationships. Original immutable projection is preserved in the private archive. This transformed fixture is not deployed workflow source or new runtime evidence.';f.workflow.workflowCode='XDX_FIXTURE_WORKFLOW';f.run.workflowCode='XDX_FIXTURE_WORKFLOW';f.workflow.version=1;
+fs.writeFileSync(p,JSON.stringify(f,null,2)+'\n');
+const test='tests/test-workflow-runtime-path-candidate.cjs';
+text=fs.readFileSync(test,'utf8');const old="retained Supplier InitDisplay structural projection admits candidate without promoting custom coverage";
+if(text.split(old).length!==2)throw Error('Expected one historical fixture title');
+fs.writeFileSync(test,text.replace(old,'anonymized InitDisplay structural projection admits candidate without promoting custom coverage'));
+console.log('Historical supplier identity removed from reusable structural fixture; original archived.');

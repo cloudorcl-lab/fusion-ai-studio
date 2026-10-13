@@ -1,1 +1,0 @@
-Git remove deleted worktree and registration but left ReadOnly admin directories logs/refs and ORIG_HEAD. Physical path absent; worktree list only base. Exit1 run90d015e4-01f6-43d9-858a-0a405894a0ff.

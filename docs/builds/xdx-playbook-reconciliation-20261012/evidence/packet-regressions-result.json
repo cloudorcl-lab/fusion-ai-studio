@@ -1,7 +1,0 @@
-{
-  "label": "packet-regressions",
-  "exitCode": 0,
-  "command": "pwsh -NoProfile -File tests/test-agent-app-build-install-packet.ps1 -ZipPath C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1\\.debug\\xdx-playbook-reconciliation-20261012\\verified-packet.zip",
-  "evidence": "docs/builds/xdx-playbook-reconciliation-20261012/evidence/packet-regressions.txt",
-  "observedUtc": "2026-10-13T01:51:55.8302769Z"
-}

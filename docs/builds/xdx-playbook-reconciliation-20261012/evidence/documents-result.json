@@ -1,7 +1,0 @@
-{
-  "label": "documents",
-  "exitCode": 0,
-  "command": "node docs/builds/xdx-playbook-reconciliation-20261012/audit.cjs verify",
-  "evidence": "docs/builds/xdx-playbook-reconciliation-20261012/evidence/documents.txt",
-  "observedUtc": "2026-10-13T01:50:29.3685196Z"
-}

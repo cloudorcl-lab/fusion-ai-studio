@@ -59,7 +59,7 @@ The native item contains additional scalar fields. The shown fields document the
 
 ## First successful BO GET sample
 
-Captured once from `XDX_SUPPLIER_INFORMATION.ListSupplierAddresses` at `2026-09-16T20:15:25.2865354-05:00`. [Complete retained JSON](../../builds/xdx-supplier-information/live-details/ListSupplierAddresses-baseline.json) contains 25 items. The excerpt below preserves the exact first item and original envelope values; 24 remaining items are omitted from this document. Later address GETs do not replace this sample.
+Captured once from `XDX_SUPPLIER_INFORMATION.ListSupplierAddresses` at `2026-09-16T20:15:25.2865354-05:00`. Complete retained JSON (archived evidence E0035) contains 25 items. The excerpt below preserves the exact first item and original envelope values; 24 remaining items are omitted from this document. Later address GETs do not replace this sample.
 
 ```json
 {
@@ -127,17 +127,17 @@ The create operation ID is `create_suppliers-addresses`. The 26C OpenAPI request
 
 | Field | POST treatment | Evidence and scope |
 | --- | --- | --- |
-| `SupplierAddressId` | Omit the new address ID and capture the returned value | Omitted in successful POST, 2026-09-17, eqih-dev21 / 11.13.18.05; [request and response](../../builds/xdx-supplier-information/live-post/create-address.json). Initial derivation hypothesis confirmed for this scope. |
+| `SupplierAddressId` | Omit the new address ID and capture the returned value | Omitted in successful POST, 2026-09-17, eqih-dev21 / 11.13.18.05; request and response (archived evidence E0036). Initial derivation hypothesis confirmed for this scope. |
 | `AddressPartyNumber` | Omit; retain generated response value | Same successful omitted-field request/response; revalidate across changed tenant numbering configuration. |
 
-Current-task corroboration: on 2026-09-27, saved CreateAddress A omitted SupplierAddressId and AddressPartyNumber and generated 300000334073608/1486641 under supplier300000334073550. Native-app B generated 300000334073619/1486642 under 300000334073601. Independent parent-scoped GetAddress calls confirmed both generated values and all eight approved fields, including ordering true. [A runtime comparison](../../builds/xdx-supplier-core-rebuild-20260926/bo-address-a-runtime-verification.json) and [B independent comparison](../../builds/xdx-supplier-core-rebuild-20260926/native-b-address-independent-verification.json), with [frozen native review](../../builds/xdx-supplier-core-rebuild-20260926/qa-p3-native-address-frozen-release-20260927.json), corroborate existing omission treatment in eqih-dev21 / API 11.13.18.05. Native observations are root-recorded; retained evidence was independently reviewed. No accepted POST replay, broadened requiredness or uniqueness claim; first GET remains unchanged.
+Current-task corroboration: on 2026-09-27, saved CreateAddress A omitted SupplierAddressId and AddressPartyNumber and generated 300000334073608/1486641 under supplier300000334073550. Native-app B generated 300000334073619/1486642 under 300000334073601. Independent parent-scoped GetAddress calls confirmed both generated values and all eight approved fields, including ordering true. A runtime comparison (archived evidence E0037) and B independent comparison (archived evidence E0038), with frozen native review (archived evidence E0039), corroborate existing omission treatment in eqih-dev21 / API 11.13.18.05. Native observations are root-recorded; retained evidence was independently reviewed. No accepted POST replay, broadened requiredness or uniqueness claim; first GET remains unchanged.
 
-2026-09-28 restart corroboration: saved CreateAddress omitted both generated fields and returned SupplierAddressId300000334073742 / AddressPartyNumber1486643 under supplier300000334073700. Independent same-parent GetAddress matched all eight approved fields including literal orderingtrue. [POST receipt](../../builds/xdx-supplier-core-restart-20260928/authoring/A-address-create-proof.json) and [GET comparison](../../builds/xdx-supplier-core-restart-20260928/authoring/A-address-independent-get-proof.json) corroborate existing omission treatment in eqih-dev21 / API11.13.18.05. No new requiredness or uniqueness claim; immutable first GET unchanged.
-Native B address corroboration on 2026-09-28: exact reviewed eight-field payload under supplier300000334073731 generated SupplierAddressId300000334073749. Workflow independent GET and a separate native Query matched all eight fields; later Review retained accepted/frozen state. [Native create](../../builds/xdx-supplier-core-restart-20260928/authoring/B-address-native-create-proof.json) and [independent read/freeze proof](../../builds/xdx-supplier-core-restart-20260928/authoring/B-address-independent-query-proof.json). AddressPartyNumber was not inspected in this B presentation; no new claim about it. Same tenant/API scope; immutable first GET unchanged.
+2026-09-28 restart corroboration: saved CreateAddress omitted both generated fields and returned SupplierAddressId300000334073742 / AddressPartyNumber1486643 under supplier300000334073700. Independent same-parent GetAddress matched all eight approved fields including literal orderingtrue. POST receipt (archived evidence E0040) and GET comparison (archived evidence E0041) corroborate existing omission treatment in eqih-dev21 / API11.13.18.05. No new requiredness or uniqueness claim; immutable first GET unchanged.
+Native B address corroboration on 2026-09-28: exact reviewed eight-field payload under supplier300000334073731 generated SupplierAddressId300000334073749. Workflow independent GET and a separate native Query matched all eight fields; later Review retained accepted/frozen state. Native create (archived evidence E0042) and independent read/freeze proof (archived evidence E0043). AddressPartyNumber was not inspected in this B presentation; no new claim about it. Same tenant/API scope; immutable first GET unchanged.
 
 ### Required and unique field constraints
 
-Additional confirmation: the [1497 address POST](../../builds/xdx-supplier-information/live-post/children-1497-create/address-post.json) again omitted SupplierAddressId and AddressPartyNumber and received both, with [persisted GET](../../builds/xdx-supplier-information/live-post/children-1497-create/address-get.json), on 2026-09-17 in the same tenant/release. This supplements the generated-field evidence without changing the immutable first-success sample.
+Additional confirmation: the 1497 address POST (archived evidence E0044) again omitted SupplierAddressId and AddressPartyNumber and received both, with persisted GET (archived evidence E0045), on 2026-09-17 in the same tenant/release. This supplements the generated-field evidence without changing the immutable first-success sample.
 
 | Field | Requiredness | Uniqueness scope | Test-data treatment | Evidence |
 | --- | --- | --- | --- | --- |
@@ -163,14 +163,14 @@ Do not impose collection-wide address-name uniqueness across different suppliers
 }
 ```
 
-Resolve country and subdivision codes from authorized evidence. Reuse a source physical address only when the user explicitly approves that basis; never copy an operational email destination. Preview the parent supplier and purposes before execution. The authorized 2026-09-17 Lee-based test supplied CountryCode and a non-deliverable Email, succeeded and passed parent-scoped GET verification. This does not resolve whether Email may be omitted. Request fields and evidence are in the [POST review](../../builds/xdx-supplier-information/xdx_supplier_post_review.md).
+Resolve country and subdivision codes from authorized evidence. Reuse a source physical address only when the user explicitly approves that basis; never copy an operational email destination. Preview the parent supplier and purposes before execution. The authorized 2026-09-17 Lee-based test supplied CountryCode and a non-deliverable Email, succeeded and passed parent-scoped GET verification. This does not resolve whether Email may be omitted. Request fields and evidence are in the POST review (archived evidence E0046).
 
-The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierAddressId and AddressPartyNumber, returned300000333814416 and1486638 under supplier300000333814409, and independently verified all eight approved business fields including ordering=true. See [native receipt](../../builds/xdx-supplier-core-20260924/evidence/xdx_p3_native_address.md). This corroborates existing generated-field treatment in eqih-dev21 / 11.13.18.05; it does not broaden requiredness or uniqueness, and the immutable first GET sample is unchanged.
+The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierAddressId and AddressPartyNumber, returned300000333814416 and1486638 under supplier300000333814409, and independently verified all eight approved business fields including ordering=true. See native receipt (archived evidence E0047). This corroborates existing generated-field treatment in eqih-dev21 / 11.13.18.05; it does not broaden requiredness or uniqueness, and the immutable first GET sample is unchanged.
 
 ## Evidence and limits
 
-- [Core live summary](../../builds/xdx-supplier-information/live-details/summary.json) records baseline, ID filter, offset paging and empty-result checks.
-- [Text-filter summary](../../builds/xdx-supplier-information/live-details/text-filter-summary.json) records a City equality check.
+- Core live summary (archived evidence E0048) records baseline, ID filter, offset paging and empty-result checks.
+- Text-filter summary (archived evidence E0049) records a City equality check.
 - The verified baseline contained 25 terminal rows for one authorized supplier. That count is evidence for one run, not a universal cardinality.
 - Partial text, special-character and case behavior remain unverified.
 - Revalidate on API release, OpenAPI, address validation, lookup, parent identity, permission or local BO definition changes.

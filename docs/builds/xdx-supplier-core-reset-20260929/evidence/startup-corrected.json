@@ -1,7 +1,0 @@
-{
-  "observedUtc": "2026-09-29T02:37:00.410Z",
-  "command": "pwsh -NoProfile -File scripts/verify-living-build-contract.ps1 -SessionRecord docs/builds/xdx-supplier-core-reset-20260929/xdx_session_reset.json -SessionId xdx-supplier-core-reset-20260929 -Phase Startup",
-  "exitCode": 0,
-  "result": "Session compliance: PASS; Living build contract: PASS",
-  "preventionVerified": "Existing Startup gate rejected missing tracker identity before substantive work; corrected tracker now passes."
-}
