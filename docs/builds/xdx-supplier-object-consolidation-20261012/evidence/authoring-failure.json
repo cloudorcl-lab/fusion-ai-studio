@@ -1,0 +1,8 @@
+{
+  "observedUtc": "2026-10-13T02:35:55.154Z",
+  "symptom": "Markdown backticks terminated a JavaScript template literal; node reported SyntaxError: Unexpected number before the document write.",
+  "source": "docs/builds/xdx-supplier-object-consolidation-20261012/evidence/failed-authoring-source.txt",
+  "sourceSha256": "c0e7e860bbf5a1a767f9de041a03acd9d19fcd2b60d854b1803ab1a2284c7374",
+  "noDocumentMutation": true,
+  "evidenceGap": "Original tool stderr retained in conversation; this is a captured summary. Unwrapped failed authoring invocation has no timing run ID."
+}

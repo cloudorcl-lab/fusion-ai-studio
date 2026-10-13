@@ -1,0 +1,12 @@
+{
+  "observedUtc": "2026-10-13T02:37:17.872Z",
+  "checkedFiles": [
+    "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+    "docs/lessons/objects/README.md",
+    "docs/handoffs/ACTIVE_HANDOFF.md"
+  ],
+  "errors": [],
+  "sampleUnchanged": true,
+  "sourceHash": "1b42da263f1efa3048dc1e5ede0769f9b6bc5fd3033298c79e5fc0c08e07a7a4",
+  "scope": "Local documentation only; no runtime success or new schema behavior claimed"
+}

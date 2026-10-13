@@ -1,52 +1,75 @@
 # Oracle Fusion Procurement Suppliers object reference
 
+This is the single reusable lessons reference for the parent **Supplier** resource. Any build that reads, searches, resolves or creates suppliers should use it. Historical receipts substantiate the rules; their tenant values, artifact names and IDs are not new-build defaults.
+
+## Reuse in another build
+
+1. Pin the target environment, REST version and documentation release. Review the GET/POST contracts below against the exact operation specification and current saved BO before relying on them.
+2. Declare which supplier operations and business fields the build requires. Use the key/filter/paging contract for reads and the field classification for writes; preserve approved optional fields.
+3. Reuse retained samples only within their demonstrated scope. Resolve current supplier references from authorized source data; historical IDs or display lookup values cannot become defaults.
+4. Record the selected reference and unresolved limits in the build intake. Run applicable local gates, then prove only the required saved-BO and app boundaries within the build's authority.
+5. Add verified operation findings here. Keep full run receipts in build evidence and leave the first-success GET sample unchanged.
+
+The [object registry](README.md) owns shared API evidence and sample policies. The [living playbook](../AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md) owns architecture, approval, first-slice, workflow, native UI and lifecycle gates. This reference grants no read, write or deployment authority.
+
 ## Identity and scope
 
-| Field | Value |
+| Field | Contract |
 | --- | --- |
-| Product | Oracle Fusion Cloud Procurement |
-| Resource object | Suppliers |
-| REST collection | `/fscmRestApi/resources/11.13.18.05/suppliers` |
-| Documentation release | 26C |
-| Stable business key used for item navigation | `SupplierId` |
-| Local BO evidence owner | `XDX_SUPPLIER_INFORMATION` |
-| Last evidence review | 2026-10-12 (retained evidence; no new live calls) |
+| Product / resource | Oracle Fusion Cloud Procurement / Suppliers |
+| Reviewed REST collection | `/fscmRestApi/resources/11.13.18.05/suppliers` |
+| Reviewed documentation release | 26C; revalidate for another release |
+| Collection GET / item GET / create IDs | `getall_suppliers` / `get_suppliers` / `create_suppliers` |
+| Item REST key | `SupplierId` (internal key) |
+| Displayed business identifier | `SupplierNumber`; resolve to the internal key |
+| Evidence review | 2026-10-12; retained evidence only, no new runtime calls |
 
-Sources: [GET suppliers](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-get.html), [POST supplier](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-post.html), and [Oracle 26C OpenAPI](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/openapi.json).
+Operation sources: [GET suppliers](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-get.html), [POST supplier](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/op-suppliers-post.html), [26C OpenAPI](https://docs.oracle.com/en/cloud/saas/procurement/26c/fapra/openapi.json).
+
+Addresses, sites, contacts, DFFs, attachments and other children have separate operation owners in the [registry](README.md#references). Supplier detail does not prove child completeness or child write contracts. Read the matching child reference when a build includes that child.
 
 ## GET operations
 
-Follow the [shared ADF find/search GET framework contract](README.md#adf-find-and-search-get-framework-contract) for every filtered function and its consumers. This build selects explicit header version `4`; retain any independently justified supported version. The current supplier native contains/exact proof does not prove every other query path.
+### Identity and request construction
 
-The collection operation ID is `getall_suppliers`; the item operation ID is `get_suppliers`. The verified local functions cover collection listing, exact-name filtering, contained-name filtering and scalar item detail.
+Treat SupplierNumber and SupplierId as different identifiers even when both contain digits. Resolve a displayed number to exactly one verified supplier row before constructing item or child paths. Preserve the verified number-to-ID mapping in selection state; withhold ambiguous, missing or conflicting selections. Keep explicit internal-ID input distinct. The native repair evidence proves same-conversation selection-based resolution, not a general standalone SupplierNumber filter.
 
-`SupplierNumber` is a displayed business identifier, not the REST `SupplierId`. Resolve a number to exactly one verified supplier row before constructing item or child-resource paths; numeric syntax alone cannot establish identifier identity. In a selection-based conversation, preserve the returned number-to-ID mapping and withhold unresolved or ambiguous references with query-first guidance. Keep explicit ID input distinct. The [Supplier Core manual regression](../../builds/xdx-supplier-core-20260924/evidence/xdx_number404_native.md) reproduced number-as-ID preparation and verified the corrected query, detail and address sequence in the native DRAFT app on 2026-09-25. This does not establish standalone number-filter support or change the immutable first GET sample.
+Generated BO parameter names such as `suppliers_Id` can differ from business field names. Preserve the actual operation parameter name and bind its value to the resolved SupplierId; neither the name nor numeric syntax establishes key meaning. Use no sample-ID default.
 
-| Behavior | Contract |
+| Behavior | Retained contract and reuse rule |
 | --- | --- |
-| Collection projection | `SupplierId`, `SupplierNumber`, `Supplier`, `SupplierType`, `BusinessRelationship`, `InactiveDate` |
-| Exact-name filter | `q=Supplier='<escaped literal>'` |
-| Contained-name filter | `q=Supplier like '%<escaped literal>%'` |
-| Ordering | `SupplierId:asc` for deterministic page traversal |
-| Pagination | Start with `limit=25`, `offset=0`; advance by returned `count` only while `hasMore` is true |
-| Empty result | Valid collection with zero items; transport or service errors remain errors |
-| Item detail | `/suppliers/{SupplierId}?onlyData=true`; returns scalar profile fields and does not prove child-resource completeness |
+| Summary projection | `SupplierId`, `SupplierNumber`, `Supplier`, `SupplierType`, `BusinessRelationship`, `InactiveDate`; extend only for approved consumers |
+| Exact-name query | `q=Supplier='<escaped literal>'` |
+| Contains query | `q=Supplier like '%<escaped literal>%'`; LIKE is not fuzzy matching |
+| Ordering | `SupplierId:asc` for the proven deterministic traversal |
+| Page inputs | Historical baseline `limit=25`, `offset=0`; caller enforces positive bounded limits and nonnegative offsets |
+| Continuation | Advance offset by returned `count` only while `hasMore` is true; a full page or a first page does not prove completeness |
+| Item detail | `/suppliers/{SupplierId}?onlyData=true`; scalar profile, separate from child collections |
+| Empty result | Successful collection with zero items; retain transport, parse, authentication and service errors as errors |
 
-The declarative query template does not escape literals or enforce bounds. Its caller must validate nonempty search text, escape REST query literals, enforce positive limits and nonnegative offsets, and avoid presenting LIKE behavior as fuzzy matching. Special-character and case-collation behavior remain unverified.
+The caller owns nonempty search validation, query-literal escaping and bounds; declarative templates do not enforce them. Special-character escaping, case collation and arbitrary partial filters are not established by the retained simple-name examples.
+
+### Search framework and acceptance
+
+Set an explicit supported `REST-Framework-Version` under the [shared ADF search contract](README.md#adf-find-and-search-get-framework-contract). Version `4` is the retained supplier saved-BO baseline, not a universal forced version. Preserve independently justified versions after their own compatibility review.
+
+The same contains input returned zero before the saved header repair and known rows afterward; this does not establish the original server default. Verify both known-hit exact and contains queries, returned keys and paging through the actual saved BO wherever supported. An empty-only test or local header inspection is insufficient. Include duplicate-name preflight and identifier-resolution consumers in the same function inventory. A header/function/target change invalidates its affected proof.
+
+Before an in-scope save, follow the registry's `node scripts/verify-bo-search-contract.cjs <file.bo>` gate. For an app-bound workflow, the existing `node scripts/verify-agentic-app-query-contract.cjs <workflow.wf>` gate also checks referenced functions. Neither local gate proves live filtering or workflow/UI acceptance.
 
 ### Response JSON
 
-Collection functions preserve the native paging envelope:
+Preserve the native collection envelope. This is a structural example; `0` and angle-bracket values are placeholders:
 
 ```json
 {
   "items": [
     {
       "SupplierId": 0,
-      "SupplierNumber": "<value>",
-      "Supplier": "<value>",
-      "SupplierType": "<value>",
-      "BusinessRelationship": "<value>",
+      "SupplierNumber": "<displayed number>",
+      "Supplier": "<name>",
+      "SupplierType": "<type>",
+      "BusinessRelationship": "<relationship>",
       "InactiveDate": null
     }
   ],
@@ -57,8 +80,84 @@ Collection functions preserve the native paging envelope:
 }
 ```
 
-`SupplierId: 0` is a type placeholder, not a reusable ID. Item detail returns a single scalar object rather than this collection envelope.
+An item GET returns a scalar object rather than this collection envelope. Preserve required fields, types, nulls and any required transport metadata; assert identity, count and unique keys against the actual response. A projected summary is not a full profile, and a full scalar profile is not every nested resource.
 
+## POST operation
+
+### Schema and evidence precedence
+
+The retained 26C OpenAPI schema has 78 request properties and marks `Supplier`, `SupplierNumber` and `SupplierPartyId` required. Its vendor Example Request Body contains eight fields—Supplier, TaxOrganizationType, SupplierType, BusinessRelationship, DUNSNumber, OneTimeSupplierFlag, TaxpayerCountry and TaxpayerId—and omits the last two required identifiers.
+
+Record this discrepancy explicitly. Examples are structural evidence, not exhaustive requirements or generated-field proof. Compare the exact operation schema, descriptions, retained writable GET values and tenant behavior before authoring a payload. Reconcile new contradictions rather than inventing identifiers or copying the whole GET. Vendor legal/tax/D-U-N-S values are not reusable business data.
+
+### Autogenerated fields
+
+These omission rules are verified for the retained eqih-dev21 / API 11.13.18.05 numbering configuration. Revalidate for another tenant or changed numbering configuration. Each additional generated field needs its own evidence.
+
+| Field | Request treatment | Response handling | Evidence |
+| --- | --- | --- | --- |
+| `SupplierId` | Omit the new resource's ID | Capture the returned internal key for verification and child paths | Omitted-field successful POST/readback, 2026-09-17; later direct/native corroboration |
+| `SupplierNumber` | Omit when confirmed service-generated | Capture the displayed number, preserving its response type | User confirmation and omitted-field successful POST, 2026-09-17; retained schema still marks it required |
+| `SupplierPartyId` | Omit when confirmed service-generated | Capture the returned party ID | Same user confirmation and successful omitted-field POST; retained schema still marks it required |
+
+Do not infer generation from a GET value or an absent vendor-example field alone. Parent/foreign references remain independently classified; blanket ID omission is not a contract.
+
+### Required and unique fields
+
+| Field / constraint | Requiredness and scope | Reuse rule |
+| --- | --- | --- |
+| `Supplier` | Required in retained 26C schema; maximum 360 characters | Name uniqueness was user-confirmed for the target supplier collection on 2026-09-17. Generate an approved distinctive name, check collision scope when authorized, and retain unknown normalization rules. No duplicate-name POST test is established. |
+| Business relationship | Name-only creates were rejected; earlier target-tenant success used `BusinessRelationship=Spend Authorized` | Required classification and writable display/code representation must be reconciled for the current operation. The later display-value failure below prevents treating that value as a current default. |
+| Tax organization type | Earlier target-tenant success required `TaxOrganizationType=Corporation` | Reconcile current lookup representation and value; this is not authorization to add tax identifiers. |
+| `SupplierType` | Writable string, maximum 80 characters in retained 26C evidence; optional schema status does not remove approved business intent | If required by the build, preserve it independently of submitted-field comparisons. Successful retained `SupplierType=Supplier` produced `SupplierTypeCode=SUPPLIER`; this pair is scoped evidence, not a universal default. |
+| Other fields | Include only writable, approved business fields | Required-only scope applies when the user selected it. Other builds may require optional fields; preserve their exact values and types. |
+
+Requiredness, lookup membership and uniqueness are different constraints. Historical/partial GET data cannot prove current name absence. Case, whitespace normalization, service duplicate matching and other uniqueness constraints remain unverified. BusinessRelationship is a supplier classification, distinct from third-party payment relationship child operations.
+
+### Display values versus code fields
+
+Earlier approved display-field creates/readbacks passed. A later benchmark attempt on 2026-09-30 submitted `Spend Authorized` and `Corporation` and received HTTP 400 / Oracle `25072` at `/BusinessRelationship`; its receipt reports no confirmed create. The cause is not established as configuration drift, execution-surface difference or another request difference.
+
+The local repair candidate mapped to `BusinessRelationshipCode=SPEND_AUTHORIZED` and `TaxOrganizationTypeCode=CORPORATION` while preserving labels for review. Its record's `acceptedCanonicalValues` name does not establish successful service acceptance: no successful POST/persisted GET for that corrected mapping is retained. Keep both the earlier success and later failure, and reconcile the current saved BO before another authorized create. Do not submit both display and code fields or substitute one for another without a reviewed operation contract.
+
+### Candidate request JSON
+
+Historical three-field display shape, for review only; current reuse requires the lookup reconciliation above:
+
+```json
+{
+  "Supplier": "<unique approved name>",
+  "BusinessRelationship": "<validated current relationship>",
+  "TaxOrganizationType": "<validated current type>"
+}
+```
+
+Extend the writable allowlist only for the approved build's fields; retain SupplierType when required. Omit confirmed generated IDs, read-only/audit fields and unapproved legal, tax, bank or contact data. Build each value's provenance from retained data, resolved references or approved distinctive test values under the [POST preparation policy](README.md#post-test-data-preparation-policy).
+
+For a templated request, validate the exact template and rendered JSON with intended types before dispatch. Request-example authoring and live response capture are separate purposes: follow the registry's `examplePurpose: "response"`, `exampleMode: "fetchResponse"` and `readyToFetch: true` contract when using the applicable bundled CLI live sample route. These flags grant no write authority; do not change business data to bypass a purpose mismatch.
+
+### Persistence and correction lessons
+
+Use `Upsert-Mode: false` for the reviewed first-create test and perform the authorized unique-name precheck. Freeze the exact payload/attempt identity before execution. After success or an uncertain response, reconcile by returned internal ID or unique name before deciding whether another write is safe. Never replay accepted or uncertain creates for documentation or another receipt; deletion/rollback support is not established.
+
+Independently compare every approved field with the persisted item GET, including fields accidentally omitted from the submitted request. Capture generated IDs, defaults and normalization. In the retained SupplierType failure, a CLI placeholder classifier rejected a valid lookup value; dropping the field caused a separate business-intent defect. The repaired classifier, explicitly authorized single-field PATCH and fresh POST/readbacks proved the correction. That history does not authorize automatic PATCH or another create in a future build. Repair the supported contract or seek help while preserving intended fields.
+
+## Evidence and limits
+
+Historical target scope: eqih-dev21 / API 11.13.18.05 unless the linked receipt states otherwise. Evidence is retained once below; run-specific IDs and artifact versions remain in those receipts. Direct source API, saved BO, workflow and native app evidence establish different boundaries.
+
+| Evidence | Established lesson / boundary |
+| --- | --- |
+| [API learning review](../../builds/xdx-supplier-information/api-learning-review.md), [GET verification](../../builds/xdx-supplier-information/verification.md), [list](../../builds/xdx-supplier-information/live-list-suppliers.json), [detail](../../builds/xdx-supplier-information/live-details/GetSupplierDetails-baseline.json) | Source-API collection, exact/contains, paging and scalar identity. A 25-row page had continuation; local/source checks did not prove remote BO deployment or all children. |
+| [Original POST/readback](../../builds/xdx-supplier-information/live-post/create-supplier.json) | Generated identifiers omitted and returned; schema/example discrepancy remains scoped to numbering behavior. |
+| [SupplierType correction](../../builds/xdx-supplier-information/xdx_supplier_type_correction.md) | Valid lookup false positive and independent missing-field coverage; PATCH/readback and fresh POST/readback preserved type/code. Earlier omission receipts did not cover that requirement. |
+| [Number-as-ID native repair](../../builds/xdx-supplier-core-20260924/evidence/xdx_number404_native.md) | Same-conversation query -> supplier detail -> child path used the verified internal key; unknown/ambiguous numbers withheld. No general standalone number-filter proof. |
+| [Native supplier acceptance](../../builds/xdx-supplier-core-20260924/evidence/xdx_p2_native_supplier.md), [direct A readiness](../../builds/xdx-supplier-core-rebuild-20260926/qa-supplier-runtime-readiness.json), [native B independent GET](../../builds/xdx-supplier-core-rebuild-20260926/native-b-supplier-independent-verification.json) | Later generated-ID and exact-field persistence corroboration. Direct A and native B proof remain distinct; no exported native B POST trace is claimed. |
+| 2026-09-28 direct saved-BO [POST input](../../builds/xdx-supplier-core-rebuild-20260928/native-bo-review/A-post-input.txt), [POST result](../../builds/xdx-supplier-core-rebuild-20260928/native-bo-review/A-post-result.txt), [GET input](../../builds/xdx-supplier-core-rebuild-20260928/native-bo-review/A-get-input.txt), [GET result](../../builds/xdx-supplier-core-rebuild-20260928/native-bo-review/A-get-result.txt) | Exact three display fields persisted and three omitted IDs generated. Direct saved-BO A proof only; no native-app, B or concurrent-lock acceptance. |
+| [Supplier query-header repair](../../builds/xdx-supplier-core-rebuild-20260928/supplier-filter-repair.md) | Same contains input began returning known rows after saved header4; exact, paging and detail checks passed. Other resource/number routes require separate proof. |
+| [Later POST rejection](../../builds/xdx-playbook-reconciliation-20261012/evidence/supplier-post-business-relationship-failure.json), [local code-field candidate](../../builds/xdx-playbook-reconciliation-20261012/evidence/supplier-create-code-field-repair.json) | Earlier display success is historical; corrected code mapping has no retained successful POST/readback. No retry authorized by these receipts. |
+
+Revalidate on documentation/API release, schema, numbering, lookup configuration, target, authentication/permission, saved BO function/template/header or consumer-binding changes. Unproven boundaries include special-character/case filtering, current duplicate semantics, corrected code-field creates, deletion/rollback, standalone number lookup and universal concurrency protection. Supplier proof never substitutes for a child resource's own contract and acceptance.
 ## First successful BO GET sample
 
 Captured once from `XDX_SUPPLIER_INFORMATION.ListSuppliers`; evidence run recorded 2026-09-16 19:20:11 -05:00. Source: the retained first response example in [xdx_supplier_information.bo](../../../src/businessObjects/xdx_supplier_information.bo). This sample is immutable; later supplier GETs do not replace it.
@@ -92,86 +191,12 @@ Captured once from `XDX_SUPPLIER_INFORMATION.ListSuppliers`; evidence run record
 
 The later 25-row list retest and supplier-detail GET remain verification evidence; they do not create or refresh this first-success sample.
 
-## POST operation
-
-The create operation ID is `create_suppliers`. The current 26C OpenAPI request schema has 78 properties and marks `Supplier`, `SupplierNumber` and `SupplierPartyId` as required. Oracle's vendor Example Request Body contains eight fields—`Supplier`, `TaxOrganizationType`, `SupplierType`, `BusinessRelationship`, `DUNSNumber`, `OneTimeSupplierFlag`, `TaxpayerCountry` and `TaxpayerId`—and omits `SupplierNumber` and `SupplierPartyId`.
-
-For the current supplier-create testing context, the user confirmed on 2026-09-17 that both fields are autogenerated. The authorized POST subsequently succeeded with both omitted and returned generated values; the published schema still marks them required. Revalidate before applying this behavior to another tenant or changed numbering configuration. Treat vendor tax and D-U-N-S values as structural examples only; do not copy or fabricate legal identifiers.
-
-### Autogenerated fields
-
-| Field | POST request treatment | Result handling | Evidence |
-| --- | --- | --- | --- |
-| `SupplierNumber` | Omit; the service generates the supplier number | Capture the generated value from the successful response | User confirmation and successful omitted-field POST, 2026-09-17, eqih-dev21 / API 11.13.18.05; [request and response](../../builds/xdx-supplier-information/live-post/create-supplier.json) |
-| `SupplierPartyId` | Omit; the service generates the supplier party ID | Capture the generated value from the successful response | User confirmation and successful omitted-field POST, 2026-09-17, eqih-dev21 / API 11.13.18.05; same receipt |
-| `SupplierId` | Omit the new resource ID | Capture the returned ID for child paths and verification | Successful omitted-field POST, 2026-09-17, eqih-dev21 / API 11.13.18.05; same receipt; initial omission hypothesis supported by POST example |
-
-Current-task corroboration: the 20260926 rebuild in eqih-dev21 / API 11.13.18.05 omitted SupplierId, SupplierNumber and SupplierPartyId in both exact three-field creates. Direct saved-BO A generated 300000334073550/1509/300000334073551; native-app B generated 300000334073601/1510/300000334073602. Separate saved supplier GETs matched all three submitted fields and generated identifiers. [A independent readiness](../../builds/xdx-supplier-core-rebuild-20260926/qa-supplier-runtime-readiness.json) and [B independent verification](../../builds/xdx-supplier-core-rebuild-20260926/native-b-supplier-independent-verification.json) preserve distinct direct-BO and native-observed/separate-GET evidence; no exported native POST trace is claimed. These results corroborate existing omission treatment for this tenant; immutable first GET and requiredness/uniqueness limits are unchanged.
-
-Fresh 20260928 A corroboration in eqih-dev21 / API 11.13.18.05: the native saved-BO `XDX_SUPPLIER_CORE_SUPPLIERS.CreateSupplier` [input](../../builds/xdx-supplier-core-rebuild-20260928/native-bo-review/A-post-input.txt) submitted exactly `Supplier=XDX Supplier Core 20260928 A`, `BusinessRelationship=Spend Authorized` and `TaxOrganizationType=Corporation`, omitting all three generated identifiers. Its [POST result](../../builds/xdx-supplier-core-rebuild-20260928/native-bo-review/A-post-result.txt) returned `SupplierId=300000334073700`, `SupplierNumber="1511"` and `SupplierPartyId=300000334073701`. A separate `GetSupplier` [input](../../builds/xdx-supplier-core-rebuild-20260928/native-bo-review/A-get-input.txt) used that internal SupplierId; its [result](../../builds/xdx-supplier-core-rebuild-20260928/native-bo-review/A-get-result.txt) independently matched the three submitted fields and generated identifiers. This is A direct native saved-BO proof only, not B or native-app acceptance. It corroborates the existing table above without changing schema requiredness, uniqueness limits or the immutable first GET sample. The accepted POST must not be replayed.
-
-Do not send placeholder values or copy these fields from a prior GET. Additional autogenerated fields must be documented with their own evidence rather than inferred from their names.
-
-### Required and unique fields
-
-| Field | Requiredness | Uniqueness scope | Test-data treatment | Evidence |
-| --- | --- | --- | --- | --- |
-| `Supplier` | Required by the reviewed 26C request schema | Target supplier collection | Generate a distinctive test name within the documented 360-character limit; do not copy a supplier name from saved GET data | Requiredness/length: reviewed Oracle 26C schema; uniqueness: user confirmation, 2026-09-17; no duplicate-name POST tested |
-| `BusinessRelationship` | Required by the eqih-dev21 runtime for this create route | Tenant lookup | Use a tenant-validated lookup value and show it in the exact review; this supplier classification is separate from the excluded third-party payment relationship child resource | HTTP 400 `POZ_REST_DUAL_ATR_VAL_ERR`, 2026-09-23; earlier successful eqih-dev21 POST used `Spend Authorized` |
-| `TaxOrganizationType` | Required by the eqih-dev21 runtime for this create route | Tenant lookup | Use a tenant-validated lookup value and show it in the exact review; do not add tax identifiers | HTTP 400 `POZ_REST_DUAL_ATR_VAL_ERR`, 2026-09-23; earlier successful eqih-dev21 POST used `Corporation` |
-
-Case, whitespace normalization and the service's exact duplicate-matching behavior remain unverified. Saved GET data can identify known collisions but cannot prove current collection-wide uniqueness.
-
-Later retained evidence limits the historical display-value contract: on 2026-09-30 the benchmark POST submitted `BusinessRelationship=Spend Authorized` and `TaxOrganizationType=Corporation` and received HTTP 400 / Oracle `25072` at `/BusinessRelationship`. The retained [failure receipt](../../builds/xdx-playbook-reconciliation-20261012/evidence/supplier-post-business-relationship-failure.json) reports no confirmed create. This contradicts treating the earlier display values as a currently proven create contract, but does not establish whether the cause is lookup configuration, execution surface or another request difference.
-
-The worktree's [code-field repair record](../../builds/xdx-playbook-reconciliation-20261012/evidence/supplier-create-code-field-repair.json) proposes exactly `Supplier`, `BusinessRelationshipCode=SPEND_AUTHORIZED` and `TaxOrganizationTypeCode=CORPORATION` while preserving display labels for review. Despite its `acceptedCanonicalValues` label, that record is local repair evidence: no successful POST or persisted readback of this corrected mapping was retained. Reconcile the exact saved BO and current operation contract before any newly authorized create; neither this warning nor the candidate authorizes a retry. Earlier accepted display-field writes remain historical evidence.
-
-### Candidate request JSON
-
-Generate the first request from an explicit writable-field allowlist. This is a review shape, not a proven executable payload:
-
-```json
-{
-  "Supplier": "<unique approved test name>",
-  "SupplierType": "<validated tenant value>",
-  "BusinessRelationship": "<validated tenant value>",
-  "TaxOrganizationType": "<validated tenant value>",
-  "OneTimeSupplierFlag": true
-}
-```
-
-For the historical `XDX_SUPPLIER_LIFECYCLE_AGENT` build, the user narrowed the transaction to required fields only and explicitly excluded every optional field. A live 2026-09-23 attempt proved that eqih-dev21 rejects a supplier-name-only payload and requires `BusinessRelationship` plus `TaxOrganizationType`. Its then-accepted three-field shape was:
-
-```json
-{
-  "Supplier": "<unique approved test name>",
-  "BusinessRelationship": "<validated tenant value>",
-  "TaxOrganizationType": "<validated tenant value>"
-}
-```
-
-This historical build-specific scope omits `SupplierType`, `OneTimeSupplierFlag` and every other optional property. It also omits generated `SupplierId`, `SupplierNumber` and `SupplierPartyId`. `BusinessRelationship` here is the supplier's required business classification; it is not the excluded third-party payment relationship child resource. The later rejection above requires current reconciliation before reuse.
-
-Omit `SupplierNumber` and `SupplierPartyId` for this test, following the confirmed autogenerated-field contract above. Omit other confirmed server-generated keys, audit fields and optional legal, tax, bank or contact data unless the test explicitly requires approved values.
-
-Use `Upsert-Mode: false` for the first create test. Check for the unique supplier name before the write. After a response or timeout, reconcile by returned ID or unique name before retrying. Verify persisted values by GET and record any server normalization or defaults. Do not assume deletion or rollback is supported.
-
-The 2026-09-24 XDX Supplier Core native DRAFT acceptance omitted SupplierId and SupplierNumber, returned SupplierId300000333814409 and SupplierNumber1506, and independently verified the exact three submitted fields under eqih-dev21 / 11.13.18.05. See [native receipt](../../builds/xdx-supplier-core-20260924/evidence/xdx_p2_native_supplier.md). This corroborates existing generated-field treatment without broadening requiredness or uniqueness scope; the immutable first GET sample is unchanged.
-
-## Evidence and limits
-
-- The 20260928 A [native saved-BO POST](../../builds/xdx-supplier-core-rebuild-20260928/native-bo-review/A-post-result.txt) and [independent item GET](../../builds/xdx-supplier-core-rebuild-20260928/native-bo-review/A-get-result.txt) corroborate exact three-field persistence and generated identifier omission in this tenant. They establish neither native-app acceptance nor concurrent no-replay protection.
-
-- [Build verification](../../builds/xdx-supplier-information/verification.md) records live GET evidence for list, exact name, contained name and item detail.
-- [List evidence](../../builds/xdx-supplier-information/live-list-suppliers.json) proved one page can have continuation; it did not prove collection completeness.
-- [Detail evidence](../../builds/xdx-supplier-information/live-details/GetSupplierDetails-baseline.json) proved one scalar profile response.
-- The POST page and Example Request Body were retrieved and parsed with normal certificate validation. The original 2026-09-17 POST omitted SupplierType after a CLI false-positive error; this was a business-intent failure, not acceptable optional-field treatment. The CLI classifier was repaired, SupplierType restored to the BO, and the original test supplier repaired by single-field PATCH and verified by GET. A separately authorized fresh POST then preserved SupplierType=Supplier and derived SupplierTypeCode=SUPPLIER, verified by GET. See [SupplierType correction](../../builds/xdx-supplier-information/xdx_supplier_type_correction.md). Never drop a known valid lookup value merely because a tool calls it illustrative.
-- Revalidate on API release, OpenAPI, tenant numbering, lookup configuration, authentication, permission or local BO definition changes.
 
 ## Change history
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-10-12 | Existing Supplier reference and retained source receipts | Consolidate parent lessons for reuse; replace repeated narratives with evidence matrix, preserve unresolved lookup mapping and immutable first GET. No live calls. |
 | 2026-10-12 | [Reconciled benchmark evidence](../../builds/xdx-playbook-reconciliation-20261012/audit.md) | Promote the retained 2026-09-30 display-value POST rejection; distinguish the code-field candidate from accepted behavior, qualify historical payload guidance, and preserve the immutable first GET. No live calls. |
 | 2026-09-28 | Fresh A supplier1511 direct native saved-BO POST and separate GetSupplier | Corroborated omitted/generated SupplierId, SupplierNumber and SupplierPartyId with exact three-field persistence; limited proof to A direct saved BO, preserved immutable first GET and existing requiredness/uniqueness scope. |
 | 2026-09-28 | [Shared query-framework policy and supplier-only native repair](README.md#adf-find-and-search-get-framework-contract) | Link all filtered GET uses to the shared owner; native saved ListSuppliers contains/exact retest confirms header4 repair in this tenant. Other routes remain separately gated; first-success sample unchanged. |

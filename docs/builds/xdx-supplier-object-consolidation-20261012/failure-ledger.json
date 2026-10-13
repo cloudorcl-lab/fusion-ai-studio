@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-object-consolidation-20261012",
+  "scopes": [
+    "supplier-documentation"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-supplier-object-consolidation-20261012/commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "S001",
+      "observedUtc": "2026-10-13T02:35:55.154Z",
+      "symptom": "Supplier document authoring helper failed to parse before mutation.",
+      "scope": "supplier-documentation",
+      "blocks": [
+        "supplier-documentation"
+      ],
+      "status": "closed",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-object-consolidation-20261012/evidence/authoring-failure.json",
+          "sha256": "f7565d6219ce248da1f48470d076af7c3db8427e283e0d295ac9afcfb5463890"
+        }
+      ],
+      "evidenceGap": "Unwrapped authoring command; no measured run ID. Original error summarized with source preserved.",
+      "cause": "Markdown backticks were interpreted as JavaScript template delimiters.",
+      "correction": "Treat the literal document source as data; extract between exact markers without executing the invalid helper.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Literal-file authoring and Playbook self-verification: validate serialized content before claiming completion",
+        "reason": "Task-local document helper; literal source parsing and actual JSON/link/sample verification are sufficient, no runtime code changed."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "node docs/builds/xdx-supplier-object-consolidation-20261012/task.cjs verify",
+        "reviewer": "Codex root review of document and retained source",
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-object-consolidation-20261012/evidence/document-verification.json",
+            "sha256": "dbcf40c96a79a50347c210e48c0ee0f5a8ac450561ac542f421e25b2a9294b3d"
+          }
+        ],
+        "sources": [
+          {
+            "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+            "sha256": "1b42da263f1efa3048dc1e5ede0769f9b6bc5fd3033298c79e5fc0c08e07a7a4"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-object-consolidation-20261012/task.cjs",
+            "sha256": "9aff16a433164b7411be44090849e8af166b04be45b9b4d7b1d8220bebb919c2"
+          }
+        ]
+      }
+    }
+  ],
+  "noFailuresReason": "Editorial consolidation of existing evidence; no failed executions or new runtime defects observed."
+}

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-object-consolidation-20261012",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-10-13T02:30:21.045Z",
+  "checkpointUtc": "2026-10-13T02:38:20.482Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "f6a334eaa439414114e6b079531b1e5b3d21b8849d5442e1aea5535dc6435202"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "7a325e319a62930dc67559b765f6913ef62ca3004c4b2137f2ed9b3ebb90d440"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "42607bcb5450ae835225d7c7c1562f74f2741daca5092e1b1a059cdad717c690"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "02f51e3e5c06a6cfb4ab16a4740c09847df84720e611f5877d998aefb6b4cb28"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "1b42da263f1efa3048dc1e5ede0769f9b6bc5fd3033298c79e5fc0c08e07a7a4"
+    }
+  ],
+  "reviewNotes": "Reviewed consolidated supplier rules against original reference and retained evidence; no new operation contract facts promoted. Child and lifecycle owners preserved.",
+  "objectReferences": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "release": "26C / API 11.13.18.05"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-object-consolidation-20261012/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-supplier-object-consolidation-20261012/failure-ledger.json",
+  "learningTaskId": "xdx-supplier-object-consolidation-20261012",
+  "timeTracker": "docs/builds/xdx-supplier-object-consolidation-20261012/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Instruction 1 / scoped learning obligation",
+      "status": "pass",
+      "reason": "Scoped documentation consolidation accepted; runtime/tenant/app/distribution gates excluded by intake.",
+      "evidence": [
+        "docs/builds/xdx-supplier-object-consolidation-20261012/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-object-consolidation-20261012/evidence/document-verification.json"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Instruction 1 / scoped intake obligation",
+      "status": "pass",
+      "reason": "Scoped documentation consolidation accepted; runtime/tenant/app/distribution gates excluded by intake.",
+      "evidence": [
+        "docs/builds/xdx-supplier-object-consolidation-20261012/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-object-consolidation-20261012/evidence/document-verification.json"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Instruction 1 / scoped authority obligation",
+      "status": "pass",
+      "reason": "Scoped documentation consolidation accepted; runtime/tenant/app/distribution gates excluded by intake.",
+      "evidence": [
+        "docs/builds/xdx-supplier-object-consolidation-20261012/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-object-consolidation-20261012/evidence/document-verification.json"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Object registry and Suppliers reference",
+      "status": "pass",
+      "reason": "Scoped documentation consolidation accepted; runtime/tenant/app/distribution gates excluded by intake.",
+      "evidence": [
+        "docs/builds/xdx-supplier-object-consolidation-20261012/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-object-consolidation-20261012/evidence/document-verification.json"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Instruction 1 / scoped verification obligation",
+      "status": "pass",
+      "reason": "Scoped documentation consolidation accepted; runtime/tenant/app/distribution gates excluded by intake.",
+      "evidence": [
+        "docs/builds/xdx-supplier-object-consolidation-20261012/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-object-consolidation-20261012/evidence/document-verification.json",
+        "docs/builds/xdx-supplier-object-consolidation-20261012/evidence/policy-regression.txt"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "MUST: continuous timing and reconciliation",
+      "status": "pass",
+      "reason": "Scoped documentation consolidation accepted; runtime/tenant/app/distribution gates excluded by intake.",
+      "evidence": [
+        "docs/builds/xdx-supplier-object-consolidation-20261012/time-tracker.md",
+        "docs/builds/xdx-supplier-object-consolidation-20261012/commands.jsonl"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Instruction 1 / scoped cleanup obligation",
+      "status": "pass",
+      "reason": "Scoped documentation consolidation accepted; runtime/tenant/app/distribution gates excluded by intake.",
+      "evidence": [
+        "docs/builds/xdx-supplier-object-consolidation-20261012/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-object-consolidation-20261012/evidence/document-verification.json"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Instruction 1 / scoped delivery obligation",
+      "status": "pass",
+      "reason": "Scoped documentation consolidation accepted; runtime/tenant/app/distribution gates excluded by intake.",
+      "evidence": [
+        "docs/builds/xdx-supplier-object-consolidation-20261012/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-object-consolidation-20261012/evidence/document-verification.json"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Usage unavailable from task tools",
+    "aiUnits": "No tenant calls; counters unavailable",
+    "timingGaps": "Earlier reading duration and unwrapped intervals explained in tracker; final tail separately excluded"
+  }
+}
