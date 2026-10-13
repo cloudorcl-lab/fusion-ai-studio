@@ -1,0 +1,30 @@
+{
+  "copiedUtc": "2026-10-13T01:37:04.848Z",
+  "copies": [
+    {
+      "source": ".worktrees/xdx-supplier-core-benchmark-20260930-175939/docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-post-business-relationship-failure.json",
+      "destination": "docs/builds/xdx-playbook-reconciliation-20261012/evidence/supplier-post-business-relationship-failure.json",
+      "sha256": "908b6aa4693aeafc1d0c1079dd12d5819c288b49f82a5fa2e8bf97efd7a539f0"
+    },
+    {
+      "source": ".worktrees/xdx-supplier-core-benchmark-20260930-175939/docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-create-code-field-repair.json",
+      "destination": "docs/builds/xdx-playbook-reconciliation-20261012/evidence/supplier-create-code-field-repair.json",
+      "sha256": "2bd63a6a43a0d8069c136a9ceab703c224f3c9e7b815f00c7d8f888d5e2cf5bf"
+    },
+    {
+      "source": ".worktrees/xdx-supplier-core-benchmark-20260930-175939/docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-create-conversation-b4-analysis.json",
+      "destination": "docs/builds/xdx-playbook-reconciliation-20261012/evidence/supplier-create-conversation-b4-analysis.json",
+      "sha256": "50a82a773e080e8cde404a59d3597e21efd6f8af81e45c216e495791443a3110"
+    },
+    {
+      "source": ".worktrees/xdx-supplier-core-benchmark-20260930-175939/docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-state-guard-repair-pass.json",
+      "destination": "docs/builds/xdx-playbook-reconciliation-20261012/evidence/supplier-state-guard-repair-pass.json",
+      "sha256": "c29a5075769a3f4aed420bf13bf843aea3f3deddcbc234bf4cbe690ab506e7a7"
+    },
+    {
+      "source": ".worktrees/xdx-supplier-core-benchmark-20260930-175939/docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-state-query-contract-pass.txt",
+      "destination": "docs/builds/xdx-playbook-reconciliation-20261012/evidence/supplier-state-query-contract-pass.txt",
+      "sha256": "636fe6b37a9dde7618bcf8ed547bbd953b96d35705470a8daa839542c7e74250"
+    }
+  ]
+}

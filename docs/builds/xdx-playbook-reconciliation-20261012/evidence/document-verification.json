@@ -1,0 +1,12 @@
+{
+  "checkedUtc": "2026-10-13T02:00:43.645Z",
+  "files": [
+    "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+    "AGENTS.md",
+    "docs/handoffs/ACTIVE_HANDOFF.md",
+    "docs/lessons/objects/README.md",
+    "docs/lessons/objects/oracle-fusion-procurement-suppliers.md"
+  ],
+  "errors": [],
+  "limitations": "Local documentation integrity and scoped source checks; no tenant acceptance or remote-ref refresh."
+}

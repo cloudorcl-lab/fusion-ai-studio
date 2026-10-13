@@ -84,7 +84,7 @@ Update the existing field entry and change history instead of creating duplicate
 
 | Product and resource object | Methods covered | Reference | Evidence status |
 | --- | --- | --- | --- |
-| Oracle Fusion Procurement Suppliers | GET, POST, request and response JSON | [Suppliers](oracle-fusion-procurement-suppliers.md) | GET and one authorized POST/read-back live verified; tenant-scoped limits recorded |
+| Oracle Fusion Procurement Suppliers | GET, POST, request and response JSON | [Suppliers](oracle-fusion-procurement-suppliers.md) | Historical GET/POST/read-back verified; later display-value POST rejection recorded, corrected code-field acceptance pending |
 | Oracle Fusion Procurement Supplier Addresses | GET, POST, request and response JSON | [Supplier addresses](oracle-fusion-procurement-supplier-addresses.md) | GET and one authorized POST/read-back live verified; tenant-scoped limits recorded |
 | Oracle Fusion Procurement Supplier Sites | GET, POST, request and response JSON | [Supplier sites](oracle-fusion-procurement-supplier-sites.md) | GET and one authorized POST/read-back live verified; tenant-scoped limits recorded |
 | Oracle Fusion Procurement Supplier Contacts | GET, POST, request and response JSON | [Supplier contacts](oracle-fusion-procurement-supplier-contacts.md) | GET and one authorized POST/read-back live verified; tenant-scoped limits recorded |

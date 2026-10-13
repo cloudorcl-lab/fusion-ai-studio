@@ -1,0 +1,15 @@
+{
+  "activityId": "a214-execute-create-runtime-attempt2",
+  "runId": "e5218698-5a49-4561-a6c9-d300b832ac51",
+  "requestId": "SUP-799DCF1C",
+  "supplier": "XDX Benchmark Supplier 20260930 A",
+  "httpStatus": 400,
+  "oracleErrorCode": "25072",
+  "errorPath": "/BusinessRelationship",
+  "submittedBusinessRelationship": "Spend Authorized",
+  "submittedTaxOrganizationType": "Corporation",
+  "confirmedCreated": false,
+  "budgetResolution": "failure",
+  "failedConsumed": 1,
+  "available": 14
+}

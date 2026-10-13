@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "workflowPath": "src/workflows/xdx_supplier_core.wf",
+  "workflowSha256": "7e727228eeb360ecbcad555e0209d4d809ac5752405abfd16e3e66c28b2840ad",
+  "requestId": "SUP-4D84EC34",
+  "checks": [
+    {
+      "id": "prepare-pending",
+      "passed": true,
+      "details": "{\"route\":\"create_state\",\"status\":\"pending\",\"revision\":1}"
+    },
+    {
+      "id": "prepare-persisted",
+      "passed": true,
+      "details": "SUP-4D84EC34"
+    },
+    {
+      "id": "exact-approval-executes",
+      "passed": true,
+      "details": "{\"route\":\"execute_create\",\"status\":\"approved\"}"
+    },
+    {
+      "id": "approval-uses-persisted-draft",
+      "passed": true,
+      "details": "XDX State Guard Supplier"
+    },
+    {
+      "id": "missing-state-rejected",
+      "passed": true,
+      "details": "stale_approval"
+    },
+    {
+      "id": "embedded-command-rejected",
+      "passed": true,
+      "details": "stale_approval"
+    },
+    {
+      "id": "wrong-revision-rejected",
+      "passed": true,
+      "details": "stale_approval"
+    },
+    {
+      "id": "edit-invalidates-approval",
+      "passed": true,
+      "details": "{\"route\":\"create_state\",\"revision\":2}"
+    },
+    {
+      "id": "old-approval-after-edit-rejected",
+      "passed": true,
+      "details": "stale_approval"
+    },
+    {
+      "id": "executing-state-not-replayed",
+      "passed": true,
+      "details": "uncertain"
+    },
+    {
+      "id": "uncertain-state-not-replayed",
+      "passed": true,
+      "details": "uncertain"
+    },
+    {
+      "id": "executed-state-not-replayed",
+      "passed": true,
+      "details": "duplicate"
+    },
+    {
+      "id": "state-save-node-present",
+      "passed": true,
+      "details": "SET_FIELDS"
+    },
+    {
+      "id": "prewrite-save-node-present",
+      "passed": true,
+      "details": "SET_FIELDS"
+    },
+    {
+      "id": "postwrite-save-node-present",
+      "passed": true,
+      "details": "SET_FIELDS"
+    },
+    {
+      "id": "route-enters-prewrite-guard",
+      "passed": true,
+      "details": "28"
+    },
+    {
+      "id": "prewrite-save-before-bo",
+      "passed": true,
+      "details": "25"
+    },
+    {
+      "id": "bo-inputs-use-frozen-draft",
+      "passed": true,
+      "details": "[{\"id\":\"25_supplier\",\"name\":\"supplier\",\"type\":\"string\",\"value\":\"{{$context.$nodes.PREPARE_CREATE_ATTEMPT.$output.result.draft.supplier}}\"},{\"id\":\"25_businessRelationship\",\"name\":\"businessRelationshipCode\",\"type\":\"string\",\"value\":\"{{$context.$nodes.PREPARE_CREATE_ATTEMPT.$output.result.draft.businessRelationshipCode}}\"},{\"id\":\"25_taxOrganizationType\",\"name\":\"taxOrganizationTypeCode\",\"type\":\"string\",\"value\":\"{{$context.$nodes.PREPARE_CREATE_ATTEMPT.$output.result.draft.taxOrganizationTypeCode}}\"}]"
+    },
+    {
+      "id": "postwrite-save-before-presentation",
+      "passed": true,
+      "details": "capture -> save -> present"
+    },
+    {
+      "id": "no-direct-chat-history-read",
+      "passed": true,
+      "details": "normalizer excludes unsupported chat history access"
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "attemptId": "supplier-create-conversation-b-4",
+  "workflowVersion": 86735908,
+  "prepare": {
+    "status": "recorded",
+    "jobId": "7034e3de-75c5-4981-8390-aa3ba9444369",
+    "executedNodes": [
+      "APP_STAGE_ROUTER",
+      "EXTRACT_SUPPLIER_REQUEST",
+      "NORMALIZE_SUPPLIER_REQUEST",
+      "PRESENT_CREATE_STATE",
+      "START",
+      "SUPPLIER_ROUTE"
+    ]
+  },
+  "approval": {
+    "status": "route-mismatch",
+    "jobId": "2938c059-0609-46c5-b069-9526fb9b95cf",
+    "finalOutputPreview": "stale_approval",
+    "pausedNode": "PRESENT_CREATE_STATE",
+    "executedNodes": [
+      "APP_STAGE_ROUTER",
+      "EXTRACT_SUPPLIER_REQUEST",
+      "NORMALIZE_SUPPLIER_REQUEST",
+      "START",
+      "SUPPLIER_ROUTE"
+    ]
+  },
+  "createNodeExecuted": false,
+  "postDispatched": false,
+  "budgetResolution": "not-dispatched",
+  "conclusion": "The custom conversation format and shared identity were accepted, but the approval turn did not restore the pending draft into the executable route. This is a probable conversation-state restoration failure; the traces do not expose direct history-load telemetry. Bounded live retries are exhausted."
+}

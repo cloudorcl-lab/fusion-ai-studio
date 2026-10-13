@@ -1,0 +1,3 @@
+Command: node scripts/verify-agentic-app-query-contract.cjs src/workflows/xdx_supplier_core.wf
+Result: PASS after supplierState conversation-variable declaration.
+Checks: no reachable HUMAN/WAIT node; balanced bindings with reachable producers; nonblank REST path tokens; compatible ADF search GET headers.

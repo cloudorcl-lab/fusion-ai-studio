@@ -1,0 +1,35 @@
+PASS open scope blocks child before timing or side effects and keeps arguments private
+PASS unaffected valid scope passes and repair permits structurally valid open work
+PASS Closeout rejects unresolved failures outside requested scope
+PASS unknown scope cannot bypass an open failure with a typo
+PASS missing flags and mismatched task block; explicit ledger task allows worker identity
+PASS closed current evidence passes and stale source reopens before child launch
+PASS exported measure enforces the gate while coordination and wait remain optional
+PASS unregistered output blocks; failed child blocks the next command until learning is captured
+PASS AI Studio cache preflight distinguishes denied missing and accessible metadata without reading contents
+PASS denied AI Studio cache access blocks before child launch or timing append
+PASS explicit fine activity kind is retained and invalid kind never launches
+PASS success, passthrough, metadata and unavailable metrics
+PASS nonzero child exit is preserved
+PASS spawn failure is sanitized and retained
+PASS start is durable before child begins
+PASS args with spaces and shell metacharacters remain literal; receipts redact args, environment and output
+PASS parser rejects missing, duplicate, unknown, oversized and malformed metadata
+PASS output cannot escape cwd or use missing parent; setup failure does not launch child
+PASS stale lock fails without deleting another writer lock or launching child
+PASS completion append failure cannot report successful measured completion
+PASS safe manual interrupt records request and child outcome
+PASS early wrapper exit records unfinished without invented child success
+PASS transient Windows lock-acquisition EPERM retries without lock takeover
+PASS failed concurrent child is retained only after delayed sibling completes
+PASS concurrent writers append complete lines and distinct correlated pairs
+Timing wrapper: 25 checks PASS
+✔ tests\test-measure-build-command.cjs (6718.3774ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6726.6841

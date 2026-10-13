@@ -1,0 +1,1 @@
+Document verification PASS: links, fences, timing flags, first-slice obligations, agnostic main body, immutable GET and whitespace

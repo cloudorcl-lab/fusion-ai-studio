@@ -1,0 +1,22 @@
+{
+  "observedUtc": "2026-10-13T01:42:39.223Z",
+  "findings": [
+    {
+      "id": "G001",
+      "symptom": "Sandbox bootstrap spawnSync git EPERM prevented receipt creation; subsequent Startup had no receipt.",
+      "evidenceGap": "Original tool output retained in conversation, not a filesystem log. Captured summary retrospectively; no child Git ran.",
+      "correction": "Host access rerun created receipt and passed Startup; use verified host context for measured subprocess checks."
+    },
+    {
+      "id": "G002",
+      "symptom": "rg literal directory wildcard arguments scripts/*, tests/* failed on Windows.",
+      "evidenceGap": "Original tool result retained in conversation. Retrospective summary rather than reconstructed raw receipt.",
+      "correction": "Use literal directory paths or rg -g patterns; subsequent source searches succeeded."
+    },
+    {
+      "id": "G003",
+      "symptom": "Governance audit found timing command omissions, conflicting scope/branch requirements, stale handoff, redundant procedures and unpromoted later evidence.",
+      "correction": "Reconcile verified lessons at existing canonical owners; preserve undeployed and paused boundaries."
+    }
+  ]
+}

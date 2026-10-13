@@ -1,0 +1,16 @@
+{
+  "observedUtc": "2026-10-13T01:50:24.261Z",
+  "findings": [
+    {
+      "id": "G004",
+      "symptom": "apply_patch rejected a combined delete/add operation on the same ACTIVE_HANDOFF.md path; no edits applied.",
+      "correction": "Use one Update File operation on the existing path; corrected patch succeeded."
+    },
+    {
+      "id": "G005",
+      "symptom": "Verification orchestration failed publishing verification-results.json: Set-Content reported file in use. Child timing regression had already succeeded.",
+      "correction": "Write separate per-check result files and publish aggregate once after completion; preserve child output/run and resume missing packet checks only."
+    }
+  ],
+  "limitation": "Captured from retained tool output after failure; original orchestration stderr is not a separate filesystem receipt. No cause attributed to a specific locking process."
+}

@@ -1,0 +1,101 @@
+{
+  "observedUtc": "2026-10-13T01:37:04.564Z",
+  "rootHead": "62e741652497bfb7e4018e9d07d4863a3e0f634a",
+  "rootBranch": "TestingWFBuildTools",
+  "worktrees": "worktree C:/Users/dasu/Documents/GitHub/fusion-ai-studio-1\nHEAD 62e741652497bfb7e4018e9d07d4863a3e0f634a\nbranch refs/heads/TestingWFBuildTools\n\nworktree C:/Users/dasu/Documents/GitHub/fusion-ai-studio-1/.worktrees/xdx-supplier-core-benchmark-20260930-175939\nHEAD 9a7aedf95960a751f7985984c1f8830ab4df9850\nbranch refs/heads/codex/xdx-supplier-core-benchmark-20260930-175939",
+  "versions": [
+    {
+      "ref": "refs/heads/TestingWFBuildTools",
+      "playbookBlob": "b5ea372f62edeff3dbe748463eb3256c98f0981f",
+      "lastPlaybookCommit": "c3a5779f526e05cfc740c9ee0400f480ec1bf838 2026-09-28T22:03:29-05:00 Apply Supplier Core lessons and preserve verified retirement evidence"
+    },
+    {
+      "ref": "refs/heads/codex/xdx-agent-app-clean-base",
+      "playbookBlob": "58e105271743cd8e87761894598c39a101d94f62",
+      "lastPlaybookCommit": "99e969d39ea316146a5eef2e268b730509e77cd9 2026-09-22T10:57:51-05:00 chore: preserve clean AI Studio build base"
+    },
+    {
+      "ref": "refs/heads/codex/xdx-supplier-core-benchmark-20260930-175939",
+      "playbookBlob": "b5ea372f62edeff3dbe748463eb3256c98f0981f",
+      "lastPlaybookCommit": "c3a5779f526e05cfc740c9ee0400f480ec1bf838 2026-09-28T22:03:29-05:00 Apply Supplier Core lessons and preserve verified retirement evidence"
+    },
+    {
+      "ref": "refs/heads/codex/xdx-supplier-core-rebuild-20260926",
+      "playbookBlob": "d87c8d5b7ef625538b7d0d7e304097a1f5ec6508",
+      "lastPlaybookCommit": "64271fa9f4bc58fb601c497f8e85a52398f5acae 2026-09-27T02:06:05-05:00 Fix uncertain-attempt reconciliation descriptions and preserve verified evidence"
+    },
+    {
+      "ref": "refs/heads/codex/xdx-supplier-core-restart-20260928",
+      "playbookBlob": "5181dd74695bd28d9b2f1a90469764d8c3b9cd0b",
+      "lastPlaybookCommit": "b91f6f48e03a1c308d282cc877ecaff01c78d72e 2026-09-28T09:47:29-05:00 docs: preserve supplier purge evidence and Windows cleanup prevention"
+    },
+    {
+      "ref": "refs/heads/codex/xdx-supplier-core-slice-20260929",
+      "playbookBlob": "b5ea372f62edeff3dbe748463eb3256c98f0981f",
+      "lastPlaybookCommit": "c3a5779f526e05cfc740c9ee0400f480ec1bf838 2026-09-28T22:03:29-05:00 Apply Supplier Core lessons and preserve verified retirement evidence"
+    },
+    {
+      "ref": "refs/heads/codex/xdx-supplier-lifecycle-agent-retry-20260923-a",
+      "playbookBlob": "07156f1aa6aa683df4da1bdfe9e49a3dd78e421a",
+      "lastPlaybookCommit": "6c851177ca6c652c56348af12f828d6a625d480c 2026-09-23T23:07:10-05:00 fix: stabilize supplier commands and close P9 acceptance"
+    },
+    {
+      "ref": "refs/heads/codex/xdx-supplier-workspace",
+      "playbookBlob": "3716a4601a52afda8fd9ddc7b552404ba08908bd",
+      "lastPlaybookCommit": "48bcd7b2fd6146c93f3c448d17b73e57f4baf076 2026-09-19T22:29:18-05:00 feat: add xdx-supplier-workspace module with business objects, test workflows, and validation scripts"
+    },
+    {
+      "ref": "refs/heads/release-26C",
+      "playbookBlob": null,
+      "lastPlaybookCommit": ""
+    },
+    {
+      "ref": "refs/remotes/origin/HEAD",
+      "playbookBlob": null,
+      "lastPlaybookCommit": ""
+    },
+    {
+      "ref": "refs/remotes/origin/TestingWFBuildTools",
+      "playbookBlob": "72768423cc1434b899bd67e147515ab83c82e176",
+      "lastPlaybookCommit": "6b535b22ff8cd3488a0cd5697573157577aa8ff0 2026-09-25T11:10:45-05:00 Optimize build terminal inference, affected tests and command timing"
+    },
+    {
+      "ref": "refs/remotes/origin/codex/xdx-supplier-core-20260924",
+      "playbookBlob": "72768423cc1434b899bd67e147515ab83c82e176",
+      "lastPlaybookCommit": "6b535b22ff8cd3488a0cd5697573157577aa8ff0 2026-09-25T11:10:45-05:00 Optimize build terminal inference, affected tests and command timing"
+    },
+    {
+      "ref": "refs/remotes/origin/main-legacy",
+      "playbookBlob": null,
+      "lastPlaybookCommit": ""
+    },
+    {
+      "ref": "refs/remotes/origin/release-26C",
+      "playbookBlob": null,
+      "lastPlaybookCommit": ""
+    }
+  ],
+  "playbooks": [
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "1764cb2a3a8510517bda494207b15cf70b8b7efbb29e08b85cf9e1aa24da3059"
+    },
+    {
+      "path": ".worktrees/xdx-supplier-core-benchmark-20260930-175939/docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "28babefdc86ce2eace310bb8fe810cbb9165bca218958371fd42280121465eb0"
+    },
+    {
+      "path": "agent-app-build-startup/repository-seed/docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "29b837e76c98848380dec03dd2e0ab55d95daf219045de99fc77e04b5143288c"
+    }
+  ],
+  "trackedFiles": 1286,
+  "artifactCounts": {
+    ".app": 11,
+    ".wf": 118,
+    ".bo": 104,
+    ".tool": 1
+  },
+  "preservedRootChanges": "M env.properties\n?? .playwright-mcp/",
+  "worktreeStatus": "M .agents/skills/aistudio/references/prompts/workflow-test-authoring.md\n M .agents/skills/aistudio/scripts/aistudio.js\n M AGENTS.md\n M docs/builds/xdx-supplier-core-benchmark-20260930/approvals.json\n M docs/builds/xdx-supplier-core-benchmark-20260930/checkpoint.md\n M docs/builds/xdx-supplier-core-benchmark-20260930/commands.jsonl\n M docs/builds/xdx-supplier-core-benchmark-20260930/failure-ledger.candidate.json\n M docs/builds/xdx-supplier-core-benchmark-20260930/failure-ledger.json\n M docs/builds/xdx-supplier-core-benchmark-20260930/golden-path-test-manifest.md\n M docs/builds/xdx-supplier-core-benchmark-20260930/intake-and-learning-register.md\n M docs/builds/xdx-supplier-core-benchmark-20260930/plan.md\n M docs/builds/xdx-supplier-core-benchmark-20260930/requirement-slice-register.md\n M docs/builds/xdx-supplier-core-benchmark-20260930/xdx_session_xdx-supplier-core-benchmark-20260930-175939.json\n M docs/handoffs/ACTIVE_HANDOFF.md\n M docs/lessons/objects/oracle-fusion-procurement-suppliers.md\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/aistudio-command-catalog.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/aistudio-save-command-history-f044.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/aistudio-save-command-history.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/aistudio-syntax-host-context.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/app-backed-metadata-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/approval-command-exactness-bypass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/bo-operation-args-file-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/bo-operation-inline-json-failure.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/bo-readback/\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/bo-search-verifier-help-failure.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/build-record-path-resolution-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/closed-procedure-reason-gate.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/closed-source-receipt-refresh.md\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/connect-command-discovery-failure.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/conversation-example-files.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/create-state-shared-successor-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/do-record-workflow-test-help.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/duplicate-confirmation-local-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/exact-approval-gate-repair-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/execute-create-runtime-attempt-1.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/execute-create-runtime-attempt-2-recording.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f022-mutable-source-binding-rejection.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f028-ledger-schema-gate.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f039-prevention-schema-rejection.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f042-powershell-parser-error.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f043-create-repair-json-path-error.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f044-inline-powershell-regex-parser-error.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f045-unquoted-rg-alternation.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f046-get-content-spawn-failure.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f047-record-option-mismatch.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f048-conversation-search-regex-error.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f049-budget-help-unsupported.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f050-bo-command-search-no-match.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f052-precheck-literal-assertion.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f053-conversation-kind-rejection.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f054-sync-plan-conversation-id-rejection.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f055-approval-mutation-source-mismatch.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f056-unregistered-combined-learning-scope.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f057-post-budget-resolve-action.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f059-handoff-patch-format-rejection.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f060-f012-prevention-required.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f061-stale-session-review-hashes.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f062-browser-clipboard-bridge-empty.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f063-host-clipboard-keypress-intercepted.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f064-startup-forward-path-pass.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f064-timing-runner-unsafe-relative-path.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f065-preaction-rejection-has-no-run.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f066-noncanonical-prevention-owner.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f067-oracle-invalid-credentials-retry-2.png\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f067-oracle-invalid-credentials-retry-2.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f067-oracle-invalid-credentials.png\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f067-oracle-invalid-credentials.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f068-ledger-reconciliation-after-handoff.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f068-startup-pass.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f069-wf-require-syntax-error.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f070-conversation-context-host-required.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f071-host-guard-no-run-receipt.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f072-post-repair-verification-gate.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f073-missing-conversation-variable-declaration.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f074-close-before-record-prerequisite.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/f075-combined-checkpoint-patch-rejected.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/failure-ledger-patch-targeting-failure.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/idempotent-source-audit-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/init-display-post-repair.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/init-display-recording-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/learning-register-path-lookup-failure.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/ledger-verification-shell-expansion-failure.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/live-post-budget-manager-source.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/mutable-recording-evidence-drift.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/native-browser-restored-auth-required.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/native-browser-unavailable.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/native-login-field-presence.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/no-stale-source-refresh-error.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/node-code-file-argument-unsupported.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/node-code-inline-json-regression.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/node-edge-command-resolution-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/post-budget-authorization.md\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/post-save-source-drift-rejection.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/query-confirmation-stripped.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/query-duplicate-recording-guard.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/query-full-sync-plan.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/query-recording-and-file-replay-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/query-runtime-path-assertions-required.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/repair-supplier-bo-validation-script.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/runner-learning-ledger-path-rejection.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/s1-app-absence.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/s1-supplier-bo-exact-absence.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/s1-workflow-absence.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/session-startup-after-browser-pass.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/shared-successor-runtime-path-rejection.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-b-name-precheck-test.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-b-name-precheck.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-bo-draft-save-local-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-bo-final-local-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-bo-initial-validation-failure.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-bo-node-inspection.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-bo-validation-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-conversation-context-summary.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-create-code-field-repair.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-create-conversation-b3-branch-analysis.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-create-conversation-b3-branch-miss.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-create-conversation-b3-prepare.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-create-conversation-b4-analysis.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-create-conversation-b4-approval-branch-miss.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-create-conversation-b4-debugger-nodes.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-create-conversation-b4-prepare.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-create-schema-field-inspection.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-post-business-relationship-failure.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-state-guard-repair-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-state-node-inventory.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/supplier-state-query-contract-pass.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/test-definition-splatting-failure.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/workflow-reference-inventory-pass.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/workflow-reference-path-lookup-failure.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/evidence/write-path-confirmation-rejection.txt\n?? docs/builds/xdx-supplier-core-benchmark-20260930/inputs/\n?? docs/builds/xdx-supplier-core-benchmark-20260930/live-post-budget.json\n?? docs/builds/xdx-supplier-core-benchmark-20260930/supplier-state-guard-repair-design.md\n?? scripts/manage-live-post-budget.cjs\n?? src/businessObjects/xdx_supplier_core_suppliers.bo\n?? src/workflows/xdx_supplier_core.wf\n?? test/workflows/xdx_supplier_core/"
+}
