@@ -1,0 +1,39 @@
+{
+  "reviewedUtc": "2026-10-14T16:05:52.053Z",
+  "scope": "Written design only; no tenant access or product artifacts",
+  "localRelease": "26C",
+  "restVersion": "11.13.18.05",
+  "confirmedSurface": "App-local Ask Oracle",
+  "officialAppDocumentation": "https://docs.oracle.com/en/cloud/saas/fusion-ai/26c/aiaas/anatomy-of-an-agentic-app.html",
+  "webRetrievalLimit": "Three exact 26C create-operation pages inaccessible through web tool. Search returned different resources/releases; those were not substituted.",
+  "localSources": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "ae4a4058a256192500e7a14398da39c249e9b2b96802da843c78b2b32f8a8dd8"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "c0a11774e555626d5c32dbb3b62d1ead53a21df3c57fffd540421a87b7f4e229"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+      "sha256": "6732a07effd0d424e92e99abd1e119b8ee1e0b08f943cbfac54aebec57116de6"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "d6922e23c7bac3a855de0862b0446873452b35486472ec40f45a44a2cfab3b47"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "604a9bfaee93b59ebf9229201ff5c0b0f58755807d389d8c3b853663845703f0"
+    }
+  ],
+  "templateDiscovery": {
+    "failedGuessedPath": "agent-app-build-startup/templates/architecture-self-review.md",
+    "correctedInventory": "rg --files agent-app-build-startup/templates",
+    "actualRequirementTemplate": "agent-app-build-startup/templates/requirement-slice-register.md",
+    "actualGoldenPathTemplate": "agent-app-build-startup/templates/golden-path-test-manifest.md",
+    "pathsExist": true
+  },
+  "releasePolicy": "Use local contracts as design candidates; implementation must reconcile exact target release, operation and saved-BO evidence. Do not infer current tenant behavior from local snapshots."
+}

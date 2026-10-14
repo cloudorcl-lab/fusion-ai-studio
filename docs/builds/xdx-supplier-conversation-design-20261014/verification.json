@@ -1,0 +1,8 @@
+{
+  "checkedUtc": "2026-10-14T16:11:37.807Z",
+  "ok": true,
+  "errors": [],
+  "spec": "docs/superpowers/specs/2026-10-14-xdx-supplier-conversation-design.md",
+  "sha256": "c25d6d152faf6938bd871afee5a6af9d3739fb9dbe6ee37374cfcc4629d2fe45",
+  "boundary": "Document structure, local links and agreed requirement inventory only; no product/runtime acceptance"
+}

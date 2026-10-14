@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-conversation-design-20261014",
+  "scopes": [
+    "design"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-supplier-conversation-design-20261014/commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "D001",
+      "observedUtc": "2026-10-14T16:05:52.053Z",
+      "scope": "design",
+      "blocks": [
+        "design"
+      ],
+      "status": "closed",
+      "symptom": "Guessed template path missing; current operation pages unavailable in web retrieval.",
+      "commandRunIds": [],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-conversation-design-20261014/source-review.json",
+          "sha256": "b1f70868cdb589b57dacbafb33178313067ccd649d4e2d63fef526f79caed613"
+        }
+      ],
+      "cause": "Template filename inferred without inventory; web tool returned inaccessible pages and search results with different resource/release identities.",
+      "correction": "Use actual template inventory and retain version-scoped local contracts; fresh target-release/API readiness remains a future implementation gate.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Inspect actual shapes and prerequisites; Gate 0 current-product-sensitive assumptions and source identity",
+        "reason": "No product repair: exact local template presence checked and source/release limitation documented. No failed live business operation occurred. Original reads were unmeasured, preserved as a timing/evidence gap."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Local inventory, selected source existence/hash review and scope reconciliation",
+        "reviewer": "Codex root checked exact paths and preserved version limits",
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-conversation-design-20261014/source-review.json",
+            "sha256": "b1f70868cdb589b57dacbafb33178313067ccd649d4e2d63fef526f79caed613"
+          }
+        ],
+        "sources": [
+          {
+            "path": "docs/builds/xdx-supplier-conversation-design-20261014/record.cjs",
+            "sha256": "30788c56b58a05897cb8d3a640d8f8135021d64e2f8f5a649d7655d7aa6aa4ef"
+          }
+        ]
+      }
+    }
+  ]
+}

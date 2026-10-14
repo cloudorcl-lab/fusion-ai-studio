@@ -1,0 +1,21 @@
+{
+  "taskId": "xdx-supplier-conversation-design-20261014",
+  "entries": [
+    {
+      "source": "User: grill with docs, subsequent confirmations Q1-Q13 and go after request to prepare written design",
+      "permitted": [
+        "Read local sources",
+        "Read public documentation",
+        "Write and locally commit written design and task evidence"
+      ],
+      "excluded": [
+        "Create app/BO/workflow artifacts",
+        "Tenant reads or writes",
+        "Save or publish remotely",
+        "Business test creates",
+        "Push or merge"
+      ],
+      "budget": "No tenant write allocation for this design stage"
+    }
+  ]
+}
