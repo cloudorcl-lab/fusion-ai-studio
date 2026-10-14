@@ -38,7 +38,7 @@ try {
     if ($relative -like 'agent-app-build-startup/repository-seed/*') { continue }
     Copy-Source $relative (Join-Path $packet $relative)
   }
-  $canonical = @('AGENTS.md','docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md',
+  $canonical = @('AGENTS.md','BUILD_STANDARD.md','docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md',
     'scripts/verify-living-build-contract.ps1','scripts/verify-session-compliance.cjs',
     'scripts/verify-agentic-app-query-contract.cjs','scripts/tests/verify-agentic-app-query-contract.cjs',
     'scripts/verify-bo-search-contract.cjs','scripts/verify-bo-search-contract.test.cjs',
@@ -86,7 +86,7 @@ try {
       $activated = $resolved.Replace($seed, $packet)
       if ((Test-Path -LiteralPath $resolved) -or ($resolved.StartsWith($seed) -and (Test-Path -LiteralPath $activated))) { return $m.Value }
       $sourceRelative = [IO.Path]::GetRelativePath($seed, $resolved).Replace('\','/')
-      if ($sourceRelative -notmatch '^(docs/builds/|src/)') { throw "Unresolved portable dependency: $link in $($file.FullName)" }
+      if ($sourceRelative -notmatch '^(docs/builds/|src/)' -and $sourceRelative -ne 'docs/lessons/ARCHIVED_EVIDENCE.md') { throw "Unresolved portable dependency: $link in $($file.FullName)" }
       $transforms.Add([ordered]@{path=[IO.Path]::GetRelativePath($packet,$file.FullName).Replace('\','/');link=$m.Groups[2].Value;reason='Source-only reference; target is not in portable payload'})
       return ($m.Groups[1].Value + ' (source-only reference: ' + $m.Groups[2].Value + ')')
     })

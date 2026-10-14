@@ -4,6 +4,8 @@ Review `docs/handoffs/ACTIVE_HANDOFF.md` before any other repository work in eve
 
 ## Instruction 1 — Learn before every build
 
+For implementation, generation, deployment, architecture and substantial verification tasks, read and follow [BUILD_STANDARD.md](BUILD_STANDARD.md) before substantive work. Keep tracking proportionate for brief questions and minor edits. The canonical playbook below remains the detailed AI Studio lifecycle owner.
+
 For every build, deployment, test cycle, substantial modification, or architecture task in every worktree of this repository:
 
 1. Read the entire canonical playbook at `docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md` before planning or modifying artifacts.
@@ -17,6 +19,10 @@ For every build, deployment, test cycle, substantial modification, or architectu
 9. For every Agentic App workflow, run `node scripts/verify-agentic-app-query-contract.cjs <workflow.wf>` before the first remote save, sync, record-now action or runtime test, and rerun it after every graph, producer, BO function or binding change. A failure blocks remote execution. Record the exact command and PASS receipt in the active time tracker. This gate rejects reachable `HUMAN`/`WAIT` nodes, malformed binding expressions, missing or unreachable producers, and missing or blank REST path-token inputs before they consume tenant test time.
 
 After a worktree first receives or updates this contract, verify the target checkout and branch. Reread the active handoff and applicable governance in that checkout, reconcile the current session/task receipt, and rerun the Startup gate before substantive work. A new session is optional; worktree creation or governance changes do not require a restart.
+
+## Build execution and tracking
+
+Maintain one authoritative build ledger per run under `docs/builds/<run-id>/`; reuse it when resuming the same run. Follow BUILD_STANDARD.md for milestones, separate primary time categories, failures and rework, interaction overhead, verification results and reliable usage counters. Link existing failure/command evidence instead of maintaining competing status. Finish with evidence, measurement limitations and a current handoff.
 
 ## Quality and architecture
 

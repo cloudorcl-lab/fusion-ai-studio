@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-build-standard-design-update-20261014",
+  "scopes": [
+    "governance"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-build-standard-design-update-20261014/commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "G001",
+      "observedUtc": "2026-10-14T16:48:54.443Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Existing design diagram sent exact control commands through language interpretation, contradicting its text.",
+      "commandRunIds": [],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-build-standard-design-update-20261014/original-routing.txt",
+          "sha256": "e087818a56c32b2f302458350f40a9316a1179b62988cdf28357847a206bd121"
+        }
+      ],
+      "cause": "Diagram edge did not express the existing deterministic-command branch.",
+      "correction": "Add direct exact-control branch to state validation; ordinary language retains interpretation.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Gate 4 explicit route ownership and deterministic request command handling",
+        "reason": "Review actual diagram edges against the approval contract; scoped current-source check verifies the corrected branch."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "node docs/builds/xdx-build-standard-design-update-20261014/review.cjs",
+        "reviewer": "Codex root compared historical edge and current diagram/text",
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-build-standard-design-update-20261014/review.json",
+            "sha256": "fd6b46fea6b4f0eba8b07028be7c69c87041d74c5c4e2cf2feffcab0ad971acc"
+          }
+        ],
+        "sources": [
+          {
+            "path": "docs/superpowers/specs/2026-10-14-xdx-supplier-conversation-design.md",
+            "sha256": "c8efffc305e67e3a749a75652dfadb31b7bf7e76f1ced2ddec8619ca081b44e3"
+          },
+          {
+            "path": "docs/builds/xdx-build-standard-design-update-20261014/review.cjs",
+            "sha256": "b89d731209b85e59ef3d838c7fbd907c72f31e3a428b166276f5832a578cbb78"
+          }
+        ]
+      }
+    },
+    {
+      "id": "G002",
+      "observedUtc": "2026-10-14T16:50:25.271Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Packet test missing mandatory ZipPath argument.",
+      "commandRunIds": [
+        "5a4e0ea9-6aab-4a56-a00f-1bb80b4233b4"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-build-standard-design-update-20261014/packet-prerequisites.json",
+          "sha256": "5fc35489c4d8f03c8c2b3d14bfb585f92f0e0d9c3c155de98964d15ad0ce5909"
+        }
+      ],
+      "cause": "Agent dispatched existing script without checking required parameters.",
+      "correction": "Inspect supported parameter contract and build the required packet before testing.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Continuous failure prevention: inspect each prerequisite exit status before a dependent command",
+        "reason": "Use builder OutputPath then test ZipPath only after successful build and file existence."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Build-AgentAppBuildInstallPacket.ps1 -OutputPath <task scratch ZIP>; test-agent-app-build-install-packet.ps1 -ZipPath <same ZIP>",
+        "reviewer": "Codex root inspected successful prerequisite and final test output",
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-build-standard-design-update-20261014/packet-proof.json",
+            "sha256": "54f7c353640112fe3718470ea820ca54c8056200f47da10b9900a9d7c3a2615e"
+          }
+        ],
+        "sources": [
+          {
+            "path": "packaging/agent-app-build-install-packet/Build-AgentAppBuildInstallPacket.ps1",
+            "sha256": "62358d4de58f9dc2274f435baf5fe3f6ea7acba3cdfa94160f8829eff0586933"
+          },
+          {
+            "path": "packaging/agent-app-build-install-packet/packet-files/Verify-AgentAppBuildInstallPacket.ps1",
+            "sha256": "50f39559be790fc87d6253c78cfedb19bd38900914f175b35fed41fd25e58a4b"
+          },
+          {
+            "path": "tests/test-agent-app-build-install-packet.ps1",
+            "sha256": "acab82f3222cdbee6ad5367218c68afcc2e1276c5345f69c218bbe6125fcb6a4"
+          }
+        ]
+      }
+    },
+    {
+      "id": "G003",
+      "observedUtc": "2026-10-14T16:51:29.789Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Missing portable archive-locator dependency blocks packet build.",
+      "commandRunIds": [
+        "a63f864e-a60b-426e-85b3-7d9794b60f53"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-build-standard-design-update-20261014/archive-dependency-failure.json",
+          "sha256": "392d19f530b053c2603bad72fb968df2d562da4fac687654fbfd05880b502aea"
+        }
+      ],
+      "cause": "Pre-existing excluded private historical locator was not handled by source-only reference transform.",
+      "correction": "Extend exact historical-reference exclusion at existing packet builder owner.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Dependency hygiene: portable packets retain universal guidance and exclude historical/customer evidence",
+        "reason": "Current packet build/install regressions must pass with exact archive source-only transform; retain rejection of all other missing dependencies."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Current packet build plus extracted/install regressions, including private archive exclusion and source-only transform assertions",
+        "reviewer": "Codex root inspected successful prerequisite and final test output",
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-build-standard-design-update-20261014/packet-proof.json",
+            "sha256": "54f7c353640112fe3718470ea820ca54c8056200f47da10b9900a9d7c3a2615e"
+          }
+        ],
+        "sources": [
+          {
+            "path": "packaging/agent-app-build-install-packet/Build-AgentAppBuildInstallPacket.ps1",
+            "sha256": "62358d4de58f9dc2274f435baf5fe3f6ea7acba3cdfa94160f8829eff0586933"
+          },
+          {
+            "path": "packaging/agent-app-build-install-packet/packet-files/Verify-AgentAppBuildInstallPacket.ps1",
+            "sha256": "50f39559be790fc87d6253c78cfedb19bd38900914f175b35fed41fd25e58a4b"
+          },
+          {
+            "path": "tests/test-agent-app-build-install-packet.ps1",
+            "sha256": "acab82f3222cdbee6ad5367218c68afcc2e1276c5345f69c218bbe6125fcb6a4"
+          }
+        ]
+      }
+    }
+  ]
+}

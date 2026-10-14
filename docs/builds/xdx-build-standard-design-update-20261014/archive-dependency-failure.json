@@ -1,0 +1,8 @@
+{
+  "observedUtc": "2026-10-14T16:51:29.787Z",
+  "runId": "a63f864e-a60b-426e-85b3-7d9794b60f53",
+  "exitCode": 1,
+  "symptom": "Packet builder rejected canonical playbook link to ARCHIVED_EVIDENCE.md because archive locator is not in portable payload.",
+  "cause": "Clean-restart governance introduced a private historical-evidence locator; portability transformer handled only docs/builds and src history references.",
+  "correction": "Treat only the exact excluded archive-locator path as a labeled source-only reference, preserving all other missing-dependency failures."
+}

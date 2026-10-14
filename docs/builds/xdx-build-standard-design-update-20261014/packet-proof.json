@@ -1,0 +1,12 @@
+{
+  "verifiedUtc": "2026-10-14T16:54:24.886Z",
+  "builder": {
+    "runId": "dd7f93aa-efe6-4062-837a-3ac505165f7e",
+    "exitCode": 0
+  },
+  "test": {
+    "runId": "2e606dea-8af0-4454-843f-478eb61a6d7c",
+    "exitCode": 0
+  },
+  "boundary": "Local generated test packet, extracted/install/source parity and existing regressions; no distribution or tenant activity"
+}

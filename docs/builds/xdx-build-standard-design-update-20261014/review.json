@@ -1,0 +1,35 @@
+{
+  "checkedUtc": "2026-10-14T16:48:22.129Z",
+  "ok": true,
+  "errors": [],
+  "sourceHashes": [
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "9fccdc3104ad17c2f011048b60fe34c6e22dca5f40a99a86c35dc6f199f8303e"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "fa1aa8fff43b8834b4db6679ca542229bbe6893efe406878e87ce6fa352e00ed"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-10-14-xdx-supplier-conversation-design.md",
+      "sha256": "c8efffc305e67e3a749a75652dfadb31b7bf7e76f1ced2ddec8619ca081b44e3"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "8f6525deb08a3a6658fd48f61c7bfac6689f4a99b24ebe4cf0d0f39466df489d"
+    }
+  ],
+  "assetInputHashes": [
+    {
+      "path": "assets/BUILD_STANDARD.md",
+      "sha256": "6e6dacf3d6110ac63e9235abe1bd2680ba9d6378b1026c6831fdd247af60c6a8"
+    },
+    {
+      "path": "assets/opening for agents.md",
+      "sha256": "997e3b8def8017b7bbebb0ff2933f65e5c6905ae5beb1dcc811c88cf8d6d686c"
+    }
+  ],
+  "designCorrection": "Prior diagram routed exact controls through language interpretation, contradicting the stated deterministic command contract. Revised diagram routes exact controls directly to state validation.",
+  "boundary": "Document structure, source links, unchanged business requirements and deterministic diagram routing; no runtime acceptance"
+}

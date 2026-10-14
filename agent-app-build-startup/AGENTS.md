@@ -6,7 +6,7 @@ authoritative.
 
 ## Non-negotiable startup order
 
-1. Read the target repository's active handoff, canonical playbook and applicable object references. When installing a ZIP into an unconfigured repository, activate and commit its seed following INSTALL.md. In this already configured repository, use committed current governance; do not reinstall an older seed. A new session is optional.
+1. Read the target repository's active handoff, root `BUILD_STANDARD.md`, canonical playbook and applicable object references. Apply the standard's run ledger, primary timing, milestones, interaction/verification and usage accounting alongside the playbook lifecycle gates. When installing a ZIP into an unconfigured repository, activate and commit its seed following INSTALL.md. In this already configured repository, use committed current governance; do not reinstall an older seed. A new session is optional.
 2. For new/retry builds, create a **new Git worktree** from the reviewed committed ref. For resume, verify the existing build worktree, branch, HEAD and checkpoint; do not create another attempt. Never silently reuse a conflicting path or branch.
 3. Initialize build records from templates/ in the target build directory, including the learning register, time tracker and current-task session receipt. Read the existing handoff before replacing it with the current transition record.
    Complete the canonical **Upfront approval inventory and reuse** at intake: read existing explicit approvals, request foreseeable missing permissions together, and link their exact scope/provenance from the session's authority obligation. Reuse unchanged approvals; new scope and platform rejection still require their supported approval path.

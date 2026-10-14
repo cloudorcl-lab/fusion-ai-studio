@@ -41,6 +41,7 @@ without including unrelated project changes.
    | Seed path | Target path / action |
    | --- | --- |
    | `AGENTS.md` | Root `AGENTS.md`; preserve target instructions while merging learning, naming, verification and completion gates. |
+   | `BUILD_STANDARD.md` | Root execution and measurement standard; review/merge general run accounting while keeping AI Studio lifecycle in its playbook. |
    | `docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md` | Same path; target's single canonical lifecycle owner. Review/merge if already present. |
    | `scripts/` and `tests/` | Merge the supplied policy, session, Query and timing validators and their regression tests at the same paths. |
    | `docs/lessons/objects/` and `docs/build-models/` | Merge the operation references and versioned build/purge models at the same paths. |

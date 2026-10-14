@@ -32,6 +32,11 @@ try {
   $verify = Join-Path $packet 'Verify-AgentAppBuildInstallPacket.ps1'
   & $verify -PacketRoot $packet
   $manifest = Get-Content -Raw (Join-Path $packet 'PACKET-MANIFEST.json') | ConvertFrom-Json
+  if (-not (Test-Path -LiteralPath (Join-Path $packet 'agent-app-build-startup/repository-seed/BUILD_STANDARD.md') -PathType Leaf)) { throw 'Portable build standard missing.' }
+  if (Test-Path -LiteralPath (Join-Path $packet 'agent-app-build-startup/repository-seed/docs/lessons/ARCHIVED_EVIDENCE.md')) { throw 'Private archive locator copied into portable seed.' }
+  if ((Get-Content -Raw -LiteralPath (Join-Path $repo 'docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md')).Contains('](ARCHIVED_EVIDENCE.md)')) {
+    if (-not @($manifest.portableReferenceTransforms | Where-Object { $_.link -match '(^|/)ARCHIVED_EVIDENCE\.md$' }).Count) { throw 'Private archive reference transformation missing.' }
+  }
   foreach ($entry in $manifest.sources) {
     Assert-SourceParity (Join-Path $repo $entry.source) $entry
     $transformed = @($manifest.portableReferenceTransforms | Where-Object path -eq $entry.path).Count -gt 0

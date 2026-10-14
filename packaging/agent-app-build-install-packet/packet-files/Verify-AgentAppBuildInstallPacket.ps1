@@ -24,7 +24,7 @@ $objectLifecycleVersion = $modelMatches[0].Groups[1].Value
 if ($manifest.models.objectLifecycle -cne $objectLifecycleVersion) { throw 'Object lifecycle manifest version differs from canonical current version.' }
 $selectedModelFiles = @('plan-template.md','execution-prompt.md','supplier-worked-example.md') | ForEach-Object { "docs/build-models/object-lifecycle/v$objectLifecycleVersion/$_" }
 foreach ($relative in @(
-  'AGENTS.md', 'docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md',
+  'AGENTS.md', 'BUILD_STANDARD.md', 'docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md',
   'docs/handoffs/ACTIVE_HANDOFF.md', 'scripts/verify-living-build-contract.ps1',
   'tests/test-living-build-contract.ps1', 'scripts/verify-session-compliance.cjs', 'tests/test-session-compliance.cjs',
   'scripts/verify-agentic-app-query-contract.cjs','scripts/tests/verify-agentic-app-query-contract.cjs',

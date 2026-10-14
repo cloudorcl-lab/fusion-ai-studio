@@ -1,6 +1,6 @@
 # XDX Supplier Workspace — conversational lookup and template-based creation
 
-Date: 2026-10-14. Status: written design for user review; implementation has not started.
+Date: 2026-10-14. Revision: 2, incorporating the user-supplied build standard. Status: updated written design for user review; implementation has not started. General execution and measurement follow [BUILD_STANDARD.md](../../../BUILD_STANDARD.md); the existing living playbook retains AI Studio lifecycle ownership.
 
 ## 1. Intended outcome and agreed scope
 
@@ -90,8 +90,9 @@ flowchart TD
   A[App message] --> B{App stage}
   B -->|InitDisplay| C[Fixed getting-started guidance]
   B -->|Query| D[Normalize exact control commands]
-  D --> E[Interpret ordinary language into typed candidates]
-  E --> F[Validate intent, source selection and draft state]
+  D -->|Ordinary language| E[Interpret ordinary language into typed candidates]
+  D -->|Exact control command| F[Validate intent, source selection and draft state]
+  E --> F
   F --> G{Operation}
   G -->|Read| H[Build bounded query and call exact BO function]
   G -->|Prepare or edit| I[Read template, allowlist fields and revise draft]
@@ -187,8 +188,44 @@ Live test authority and budget are separate from runtime end-user confirmation. 
 
 The design is ready for review when the agreed requirements, API paths, source provenance, field allowlists, state transitions, partial-outcome behavior and acceptance obligations are internally consistent. It does not certify the application's feasibility or current tenant behavior.
 
-Before product artifacts: approved written design; reviewed written implementation plan and chosen execution method; fresh XDX build worktree from committed current governance; synchronized authorized configuration without committing secrets; complete startup/intake/requirements/architecture/golden-path records and current-task Startup gate. Resolve source release, current numbering/classification representations, site status/address eligibility, assignment applicability, query compatibility, and conversation/test-runner persistence at their existing owners.
+Before product artifacts: approved written design; reviewed written implementation plan and chosen execution method; fresh XDX build worktree from committed current governance; synchronized authorized configuration without committing secrets; read root BUILD_STANDARD.md; initialize the run ledger before substantive work; complete startup/intake/requirements/architecture/golden-path records and current-task Startup gate. Resolve source release, current numbering/classification representations, site status/address eligibility, assignment applicability, query compatibility, and conversation/test-runner persistence at their existing owners.
 
 Implementation stops at a concrete missing source, incompatible contract, unavailable state/test capability, exhausted write budget or human-only sign-in challenge. No speculative fallback, relaxed approval contract or silent field omission. Delivery requires the canonical first-slice, BO/workflow/app, learning, cleanup and Closeout gates. Publishing, pushing and business writes require their own scoped authority; a local design commit authorizes none of them.
 
 Next action after user approval of this file: prepare the implementation plan under the repository's current startup/build model. No application artifacts or runtime tests are created during this design stage.
+
+## 10. Build execution and measurement contract
+
+Deliver the agreed XDX Supplier Workspace using the reviewed Supplier REST contracts and current target-environment BO definitions to the explicitly authorized AI Studio destination/status. Done requires R01-R13 evidence, the representative supplier journey, current BO/workflow/app validation and judged configured/native acceptance, dependency reconciliation, and the canonical learning/Closeout/handoff gates. Local design verification is a separate deliverable and cannot satisfy these application criteria.
+
+### Prerequisites and first representative result
+
+Before dependent work, record supported CLI/Node/PowerShell/browser modes and versions, target release/environment and authenticated permissions, exact source functions, current configuration without secrets, numbering/lookup/status/reference behavior, conversation-state persistence and ATLAS prior-step binding capability. Existing local contracts, scripts, source artifacts and current verified evidence are reused within their demonstrated boundaries. Request foreseeable missing test/write/publication authority together; retain approved scope and settled business decisions across turns.
+
+The first representative application result is the complete supplier slice already defined in section 8: startup guidance, known-hit supplier search/selection, template draft, field-only edit, exact revision review/confirmation, permitted single-create/readback proof, and configured semantic/native state evidence. Record its full requirement coverage and remaining limitations before site/assignment expansion. Merely rendering startup guidance, validating JSON, or reaching a mocked POST does not satisfy this milestone. Until live-write authority exists, fixture-backed tests establish only their local/configured boundary; the live milestone stays open.
+
+### One run ledger
+
+Create `docs/builds/<run-id>/build-ledger.json` before substantive implementation and reuse it for continuation of that same run. It owns outcome/scope/destination, observable success criteria, exact source and prompt/template versions, relevant supported tool versions, starting branch/commit, observed start time/timezone, primary intervals, milestones, interaction accounting, verification inventory and reliable usage measurements. Link `failure-ledger.json` for authoritative failure/prevention state, `commands.jsonl` for measured tools, and the requirement/evidence manifest for acceptance; do not copy their mutable status into a competing ledger. The time tracker and active handoff cite the ledger and measurement limitations.
+
+Primary time categories are mutually exclusive: active execution including ordinary tool execution; blocking tool/environment wait; required-user-information/approval wait; scheduling/agent idle; paused/interrupted time. Record observed transitions. An outstanding approval while useful work continues is an active interval with an approval-pending tag. Do not add nested tools, parallel work or rework to total elapsed time. Report unmeasured scheduling, interrupted/inter-turn intervals and retrospective gaps explicitly; do not attribute them to the user. Rework is a measured subset and carries its confirmed/suspected/unknown cause category.
+
+Track clarification/approval counts and reasons, already-answered repetitions, user corrections and context-recovery turns. Reuse approved scope and execute routine reversible work without repetitive permission requests. A new missing authority or decision is recorded once with the affected dependency and stop/resume boundary. Security challenges and unchanged credential rejection follow existing sign-in rules.
+
+### Milestones and checks
+
+| Milestone | Evidence required |
+| --- | --- |
+| Prerequisites verified | Exact versions, source/environment/permissions/state/test capability and applicable authority receipts |
+| First representative result verified | Complete first-slice receipt, configured judgments and native Query/BO/create/readback boundaries within write budget |
+| Full implementation completed | All approved resources/routes/current artifacts accounted for; no required unfinished acceptance row hidden |
+| Validation completed | Current scoped BO/workflow/app checks and configured/native reports; failures and pending judges reconciled |
+| Deliverables and handoff completed | Delivered artifact identity/status within authority, verified dependencies, Closeout, branch/commit and next action |
+
+Each milestone records timestamp, outcome and evidence location. Record time to first verified representative result and final verified delivery separately. The check inventory records planned/executed/passed/failed/not-run, first-execution outcome, local/stub versus live provenance and remaining unverified criteria. Repeat broader checks only when changed sources, new failures or unresolved concerns justify them; no fresh tenant call solely to refresh a report or timing counter.
+
+Reliable usage fields include input/cached-input/output/reasoning counters with their source, interval and cumulative status, separating parent, delegated and external-service usage. Cached input and reasoning subsets are not double-counted. Unavailable counters remain unavailable; no inferred cost or repeated history inspection. The measured command runner and current evidence owners are reused; a new tracking framework is outside this design.
+
+### Delivery report
+
+Report deliverable links and proof; completed/unmet criteria; total observed elapsed and the five separate primary category totals; first-result time; failures/rework and avoidable-interaction counts; reliable usage or limitations; branch/commit; and a concise handoff. Include one or two improvements supported by this run's evidence, routed to the existing owner. Required open acceptance remains incomplete even when local tools pass. A blocker report preserves state and identifies its exact dependency, remaining work and enabling action.

@@ -1,0 +1,1 @@
+  D --> E[Interpret ordinary language into typed candidates]

@@ -9,6 +9,7 @@ the delivery snapshot as a second lifecycle policy.
 | --- | --- | --- |
 | Canonical playbook | Exact build-time copy in `repository-seed/docs/lessons/` | Same repository-relative path; merge evidence-backed updates if already present. |
 | Root instruction contract | Exact source `AGENTS.md` in `repository-seed/` | Review and merge at repository root; retains required XDX policy. |
+| Build execution and measurement standard | Exact root `BUILD_STANDARD.md` in `repository-seed/` | Activate at root; reuse one run ledger and retain playbook lifecycle ownership. |
 | Governance verifier and regression test | Exact sources in seed `scripts/` and `tests/` | Same paths; run after activation. |
 | AI Studio skill, CLI, authoring examples and references | All tracked files under seed `.agents/skills/aistudio/` | Same path; carry the complete version together. Recheck help for product-sensitive commands. |
 | Active handoff | Blank `templates/active-handoff.md`, also staged at seed canonical path | Fill current project facts; do not copy this repository's active handoff. |

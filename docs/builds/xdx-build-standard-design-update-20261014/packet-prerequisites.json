@@ -1,0 +1,9 @@
+{
+  "observedUtc": "2026-10-14T16:50:25.269Z",
+  "originalRunId": "5a4e0ea9-6aab-4a56-a00f-1bb80b4233b4",
+  "originalExit": 1,
+  "symptom": "Existing packet test invoked without mandatory ZipPath; no package or test fixtures created.",
+  "cause": "Script parameter header not inspected before dispatch.",
+  "testRequiresZipPath": true,
+  "recovery": "Build one new scratch packet with supported OutputPath, inspect successful builder exit and actual ZIP presence, then test that exact ZIP."
+}
