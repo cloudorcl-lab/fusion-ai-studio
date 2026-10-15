@@ -1,0 +1,80 @@
+{
+  "id": "xdx-checkout-artifact-sync-20261015",
+  "startedUtc": "2026-10-15T21:53:55.605Z",
+  "timezone": "America/Chicago",
+  "source": {
+    "root": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+    "branch": "TestingWFBuildTools",
+    "head": "f6ee480775a76db677ff9940105fb394cfb22bbe",
+    "worktree": "D:/Temp/worktrees/xdx-supplier-workspace-20261014"
+  },
+  "intervals": [
+    {
+      "agentId": "/root",
+      "parentAgentId": null,
+      "assignmentId": "integrate",
+      "activityId": "checkout-sync",
+      "phase": "preflight",
+      "category": "active execution",
+      "startUtc": "2026-10-15T21:53:55.605Z",
+      "endUtc": "2026-10-15T22:04:17.128Z",
+      "outcome": "Selected artifacts, independent reviews, hash/link verification and exact staged-byte preservation verified; five gate/probe/staging corrections recorded."
+    }
+  ],
+  "milestones": [
+    {
+      "observedUtc": "2026-10-15T21:56:50.130Z",
+      "name": "selected-files-synchronized",
+      "agentId": "/root",
+      "assignmentId": "integrate",
+      "outcome": "537 transfer records hash matched; worktree-only validator restored in base; E2E evidence and key docs now both checkouts",
+      "evidence": "docs/builds/xdx-checkout-artifact-sync-20261015/sync-manifest.json"
+    },
+    {
+      "observedUtc": "2026-10-15T22:01:13.238Z",
+      "name": "synchronization-verified",
+      "agentId": "/root",
+      "assignmentId": "integrate",
+      "outcome": "536 immutable transfer records,216links and unchanged source/configuration proof PASS; actual corrected Startup PASS in both checkouts",
+      "evidence": "docs/builds/xdx-checkout-artifact-sync-20261015/verification.json"
+    },
+    {
+      "observedUtc": "2026-10-15T22:04:17.128Z",
+      "name": "exact-staged-byte-verification",
+      "agentId": "/root",
+      "assignmentId": "integrate",
+      "outcome": "Base68/worktree586 selected staged files match raw bytes; five captured issues closed; final gate and commit tail next",
+      "evidence": "docs/builds/xdx-checkout-artifact-sync-20261015/staging-proof.json"
+    }
+  ],
+  "agents": [
+    {
+      "agentId": "/root",
+      "assignmentId": "integrate",
+      "role": "Single writer across both checkouts; governance, evidence, receipts and commits"
+    },
+    {
+      "agentId": "/root/sync_validator_review",
+      "assignmentId": "validator-review",
+      "role": "Read-only validator provenance and focused verification recommendation"
+    },
+    {
+      "agentId": "/root/sync_docs_review",
+      "assignmentId": "docs-review",
+      "role": "Read-only document and evidence synchronization review"
+    }
+  ],
+  "limitations": [
+    "Initial mandatory reading before first prospective timing observation is unallocated.",
+    "No reliable token or AI Unit counters; no application or tenant tests authorized by this sync."
+  ],
+  "cutoffUtc": "2026-10-15T22:04:17.128Z",
+  "recordedElapsedMs": 621523,
+  "workerTimingEvidence": [
+    "docs/builds/xdx-checkout-artifact-sync-20261015/validator-review.json",
+    "docs/builds/xdx-checkout-artifact-sync-20261015/docs-review.json"
+  ],
+  "priorCutoffs": [
+    "2026-10-15T22:01:13.238Z"
+  ]
+}

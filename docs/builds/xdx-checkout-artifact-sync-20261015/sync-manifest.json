@@ -1,0 +1,3234 @@
+{
+  "observedUtc": "2026-10-15T21:56:27.902Z",
+  "result": "pass",
+  "copied": [
+    {
+      "path": "scripts/verify-agentic-app-query-contract.cjs",
+      "from": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "to": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "sha256": "dbd4e320c423fe70e268f895ca108f7515f7130cfa2e1d288d76c0c90087a5f8"
+    },
+    {
+      "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+      "from": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "to": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "sha256": "b4b6d0b62522420fe023cd111a171e2c55af2cfc107f004059f2b501189ff8c3"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-standard-lookups-lov.md",
+      "from": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "to": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "sha256": "8b57d6b96c9273ff742c5a42ee2f628dae34d2e0ed05d92a0158514d3692e4d9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-workspace-20261014/common26c-openapi.json",
+      "from": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "to": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "sha256": "1b84886fd269594014608666d0c9ce55ad94665bb0618ef327228eb01c3e84e4"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-workspace-20261014/classification-first-response.json",
+      "from": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "to": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "sha256": "2ad23466a8f0e7cc4466bd9c64f13e2bef8b3de71eee302f319f2c5add500c17"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-workspace-20261014/classification-readiness.json",
+      "from": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "to": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "sha256": "bcdbfe985e1eb1234d68eb62ff4fd685a5c5a95b20f2b887c1ede526dc18e0fd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-workspace-20261014/classification-saved-functions.txt",
+      "from": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "to": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "sha256": "73972d2e71dff236b92eed485832e0468fd2f03e7446a9e78780f5f95bcc609b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-workspace-20261014/classification-saved-get.txt",
+      "from": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "to": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "sha256": "3b9bb55ecf122a3b3ede5cd1551503d51e00e1180e7968659b5b7aeca9a6c3c8"
+    },
+    {
+      "path": "BUILD_STANDARD.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c007c6eca8368b0475c563e659fe29f5ee36b27aa1ea21950d0742087fa99c90"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9dffec65a40c7d8d30cfe191cb0ed42ea94431e7606009bdb73835a83e41f333"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "81c5aabb4d2fca736fb2eeeb6955be1a9d95a9b499136b7459165f9d882b75db"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_TESTING_GUIDE.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e3cb62bf08139faaf0d52f4fbf42190e2347fff0ff8da54c732ba32b98f70477"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "49a14543e8b0323d48e70949ce925a70d3e194735142d4f8f6637ccaeab0848f"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-standard-lookups-lov.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8b57d6b96c9273ff742c5a42ee2f628dae34d2e0ed05d92a0158514d3692e4d9"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "017e16353dada5bd28539f2dafbd3aadf99d7d5f7d9c8fce5a5b850c5037403a"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "db957459a92cf5b7a457f4587799d7c92b154c7163157b8b2e94d0a371e474f7"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "89345c40b2b57417186e6d4c1f01059c5ece001bc24a132355582a5b8a0767c8"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "10d663bfd2de5004ea28ed76f25e0dbfbb030c0368c4df422c9e0d459893c4b0"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5c4f104fe3860d2a487371e5b37e435c384c893a78cc3d19056e1bf3a94c5ee7"
+    },
+    {
+      "path": "scripts/xdx-supplier-e2e.mjs",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "daf0a904d5975d0fb0796412bdb41bbf3da4bd26edc2b53ce22f4ac1c31de57d"
+    },
+    {
+      "path": "scripts/xdx-supplier-e2e-deck.mjs",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "46b12087ecdc0c64ba21970eed369c19b0c5d90149ac7d219755aa359a1f0600"
+    },
+    {
+      "path": "scripts/xdx_supplier_e2e_journey.mjs",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e888e8f7d6b293614f052be72cef25f91849c0f362bcd8da37bd10ce39478c4b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/actual-capture-proof.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "78544434e46461c5f2447bf7564960da5b459d3c148575a5f267288a99aa51fa"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/approvals.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "91fd1096f0a5a0a643434b2ffc5e52065e33501f83ff3a3c1831ea43b6fa34c4"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/assignment-query-failure.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2f8faee94f4d6c587168f8ec1b4db73f33b67323543879971c13e11dc1a7ef3a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/build-ledger.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "09041ccdc517fceff0737f0a34a67c98ecfa0a597c7271afd441976d8495b92c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/capture-metadata-corrections.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "400c190e19ea506df571c3fbaabddf9411b71db1ab8a6d67e4db2e0e5efaadba"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/capture-metadata-script-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "72e95be1c1ec9121c1b745650ce99f71f0d4ff8e369b0abd8e1717d072490591"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/capture-paint-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ae25ab8c8951610f99323cf64d3f217acb71070a20ccdddf87eac291c565c127"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/commands.jsonl",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "cfebd8b6d123aa28a320603588ef1d1c7526c04fc8549ad181940d150ef937e9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/contact-empty-assertion-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e703c0d641c03924e1191d1f1e26fd610cfc30099b640039019719fda38cd841"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/contact-template-failure.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4f4fcb8269afd10ce649d75f0215884aa9183fc31a161873d7ba77693a929b1f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/cua-import-proof.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "061e5d6fce2b41a1e568be3c8de7432921ffad219efad7d5ddd927c71f50217e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/cua-module-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6a8762108fe7923dbbcbc39f3cfc1ef940416be1d591c5c713beddbc0a8a2f20"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/cua-process-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2f4b40fc7afd7b394964b45c190c120acc0ec0e4a159a366666c020028d850de"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/current-target.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "54e519bc58d2f62705df52b4abbf7bc3c15b408074589c37efff4438f4c9e88f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/output/xdx-supplier-workflow-evidence.pptx",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3dbd91f242bce8c39f89c392fb1c08c8d8f892c7edf232bdc3d46429f98ff5c0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/private/candidate.pptx",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3dbd91f242bce8c39f89c392fb1c08c8d8f892c7edf232bdc3d46429f98ff5c0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/private/candidate.pptx.inspect.ndjson",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "25c9233e7b7b7904e2ff2ec591a1f53f5e59e6f754246755998f7d3e32e5d328"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/private/inspection.ndjson",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "113a508a4e422c764dde0f7999ba3bbdb74f6175daca012eb3491b39fdc04919"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/private/validation.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "09ce16018efa0c6676b50aa5e14bc1d785e123ce4274a4eb340bd98055e55dac"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-001.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "522292c3de08d09806d4955c638741e6aa6eb1704d49729fa45d2de261c9bbbe"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-002.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2c3ee6aa47b20d5492c69588a1df4be097df23988d84862368601bddad626e29"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-003.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5bd63f16b0ac39c5975eedbfcd58cac4c2f0958b45b2e1c7ed81b5a706af17fb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-004.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "14fc0f49942911ebfbd171754ea1d66551465b67ccc3c8e1b7840b067a881ca7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-005.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bfaa990908b57e06d59249add07c8d292735baf9573d3d3df65549ca30d20251"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-006.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "1b383227693aab1cd7e1744d1ce387c8e467f02d2b9f99e74094a3d81cebcf18"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-007.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4e487b858d0aee4dc0c934b8db6c6c2d6cd8c00ab4c420f141f2ba45f10e69ce"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-008.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f347207ccd90ce973aad9f88d35aed66b2dfefe44417b3060189ebf2d6b65886"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-009.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fb50f4eedb976b9bdddc35e207364e3f400d466a23e8c1b839a4ea09108cce60"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-010.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5b6ba866344b2da72d1ca32995a3e3b4a9e25d04b4c31d4de52f80da4f6ef5b7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-011.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "655884238ecd27a336423195f464f348ee37186403e2fc7ae9f9b9eac2c5cf8d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-012.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "66f28c15efad2bf6d6cbe58dee6f50d3ff27fd75972b118ec8adae481dcd28b0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-013.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "818cbf99506f768d6e0e546724b31f5025d7d051bebbee3a0e4960fe30dc1249"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-014.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "cab8f15dda656463cd15c4b0138fa0b0a81856a50c822924e0e11e1403db8d4e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-015.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "43e7f6e0d5e1e95b0c5ca50a5dfc8f2af9e8424db17c878c2b25cdf25088bdb2"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-016.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5b3269decb926ba4d237cd32605849678bd88ec01b2d574c9d54b42095bcd0bd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-017.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3c6ad9946c2bae467e20943205bc9f054b732bd6369e57f4e3c17839a0c48bfb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-018.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "052dd0bd6320c35e9d327416151f26d4f4bbbee8900a77642919a0599239add9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-019.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2f9000318b85ffa49fd8e648fb2d0739128c38551ba176f90840559d874e3c53"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-020.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a6dbe933f501e46c37929a3d275a779505ef75487188f763255918884691f820"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-021.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "50a079fbb5450a262487fe9f03cf59bf850fff902a044e74e7e13414b1ae211f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-022.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e0ca48d972881fa4c0c10753a61e00329d6109d5e77b52a947db92a488668388"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-023.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8736060f80eeec889deca7c25fe86f8b2739a3065eddc3d68619e25f378875d3"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-024.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ef74f7ddfedc5f103399ada37ed9e0b028780435a8ba1c9ed52a54513a196b6b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-025.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "1a073a1d9e9a753bc00f2101f243873e859913084ef477c29f66587e83fa70ef"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-026.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "288fa88c4dcf44ecb4a814ab17fdc4eec01280cb12942f26de02141903c892d6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-027.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a70c3053d01418eff8d84a9d516629e8559fb42f38481400c0a34b86bc7983c3"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-028.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4f520058177dfb1bd38c6f2a111fe3946f7f6c44f2c90a6d22da9c31143918fa"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-029.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fee46c50478dd64a4a4483db927477434679ccef518901d26e84c02be0243551"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-030.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8d46a95e98333c96f8db29d1028a016e911477de417ec7e9002b0b4b794d0cd6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-031.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "46b43089ca321d08811b124e2e8c904b2d8f50911840c26169c2f71b3e363ea5"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-032.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a9a89153b31be8e20759d103ef99936179d2f89a81edf6c331dd80a77bc92b2f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-033.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3e74927dc22f4cf12ba0e21ae4a795dd62041d28472f4c1ebcc9e090a72a6b29"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-034.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6c4672cbc269ef2964209f5ffaff3a7b9779952492214c33b403640e5a67091f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-035.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f86d6bde5e738a35675a8e5a3f75a4df503fe6e95b972834e0b107da538e1bda"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-036.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e8a9dd59e94ad76669e5acc681c2a41af4f29f598aaf239b21f8fde3dfb2d908"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-037.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2032f6a6079c070400f816e6daab6546e4fe93f62bed7369903a2a91cfa9a042"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-038.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "101dad2ff28af40e835561d7b26b17948eb18578999d0062d77162a0ef2d804c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-039.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "04e944d21417e9a97071ae4db9331095afab51e2a8b709c43b1cb59a07cfff04"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-040.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e2f53fc98b1ffb53cb6847adadff3fa7281df9d77bc54e12637df9e0d1c24554"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-041.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c857154983258a8fa51e8fbb916c9da4bc3b2b25e4af2629041db6a7c0f7f6cb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-042.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c990509c07c079c08ca7f3ebd7d038c6705924360714813c2b40301a2e4b8f2b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-043.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a663f54a7224a302b9c660b6fbc14c0229ae74096f270c8d6e42bb411d4e29d8"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-044.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c25f092c47e25c4cf357509ed1d3c0def710f9081b382fd0635c2c33fcbe9831"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-045.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c3e5c43bc654e1e6b86ef99025078ba97a45b6470cadaacc5a7116fe7ec1575e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-046.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "784d024ec15ba6929f67400aaa420ecbcd7f55624009bfc4b320b4419cbeaa53"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-047.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a421473ecd2565c546f5137aef7eb761ff91232a6c11f7e9446ce3a815100ddc"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-048.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9cc18915d1484c1922577df3636fbfd94656865fc4cb9cf7d84a83c8b2297e9a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-049.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9a12ac9cfc6f2b66f5377b6d0eae7af2008e5b0275aa55137ca66dba71915eb6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-050.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c8910c6396d95223842bcd105eaece5e069331bf699ffa2b42052a649060fe92"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-051.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e9785f79d7a22bc5bd4e0ebfc07b9fe488e8ab8d29d1a04b35f533899cf11af9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-052.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4175bd3b70b33af214b44449bebeb449b6e5035c157014d9f878a460a62b95c1"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-053.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ba9b193892f25d9900a3a54e2041d6d67566548327e5b43e81bb88bd75c16c4f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-054.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "178d4c34fc3dbefb9fc6f94000c6859d5a2d6467adf88402ee3452ab956f894e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-055.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "19ad8f07164c1e90119114255732686f67c9b2437758c2ebc02248891a7a1d80"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-056.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a513fff75d4fd18bd746313d6c09402b11520e6da85b8d2f1fcc51bad1dbc030"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-057.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2e3d9e38ff9fd3cb48435ba76e4fc066904d1fa03eaa63e37174a1851cb12186"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-058.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bd9848e75e66b947e6872d5156fe19128afc04b6dd43309c978e389c18998492"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-059.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bb9f294a3890987b303a741c119e362d9448fbc9f5f0e89323e70201b6683318"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-060.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "095b8a0d1e3fa1ff5f3598a6c974fc6790f141835dc078d2a7c37b6856fd6e9c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-061.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bfbf3594fae6783e49d1220134b508d0dc8b0dbdf219f9942595fa1663743081"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-062.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "203db16e1538fbf3b4102776db72c4f75e1239ed715b4ddd8d256a0d8e209826"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-063.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f8d32ad799aacad57bd3b9eca084b6c8935f7f8af0888ca9d98bc0e077dffe9f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-064.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fe53218c0ab777153206f32e8c82b3bec527aa63bdee6887c4bad0f3c00f6399"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-065.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6d7654b81e5062d4942f7829fc4544b49f91f9ec4b171498277c44762ea197d5"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-066.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9b860d910a7678e7b3459bba3549f97a24baf9ac6306d882aa5a4b110b7ae6b7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-067.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "7b000bdbf055a57444e85ca1cb286ea75f31d788d1d843e32aaf2017043dd66e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-068.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8cfdd14294f7fecda7b5d362e7657afa11b0ac45acb6caf3ae4e4ae593869460"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-069.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "953918deaabb88df9bfe00c38b9758f0e492f37026d20360139a2790c3cd4b3c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-070.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "663534f6447368f4ec998cde6b171b3861caae90be453efa9b586da10bc710d8"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-071.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5d8ff01f0788bb0b059145eb0829bfc10468644712270079921b305ab1040945"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-072.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e5a5af324e25035c8d475be2e36f015f8c27caead471530e34a629fe381935b6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-073.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8b049b400a7e672fabdaeb0269d33393fc11f284163c6e1950a69a65308cbd62"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-074.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "b4c257df247e02135c2b3f2bf666a6b86a7a306bd097af48fadb24a8fad5b02d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-075.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bf885e810b7fb7d989a96e80af4628813338140f3e0ebb5af9dd1e13524988fc"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-076.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3ef9ff2fee45ad30f38fe1f07e757bba81bee818f86fa5dd9e825f289d0c78c3"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-077.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fe30f55b4842340aff194a9811a250b3d26d2bd6523d3ea0273e9ccd7c4a0cd9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-078.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "59b297d8d834d68823e3ba3942edd1d7e950ddf905096f3f1cf2421d8673ddc6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-079.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f0d282de4ffb878e85824bb4c95e9880320ac24c88c04938d72bce9515b8a38d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-080.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "b51e3e592ef25a708d01f1a22b359369377a7e2912e3ee4b49f9a65367f62bec"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-081.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3b845656693cd9b9ced8c39bd4fc95d7779c88486cb72d7d5591ba1307b81d0b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-082.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ba53055491768c30040110d8b3f66c67601667da896eef7a4ba1ca5df5b5a72a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/output/xdx-supplier-workflow-evidence.pptx",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "68c0265aba64ee621d221ff814b18a8630ee3122f7746a9c6cd716060575e586"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/private/candidate.pptx",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "68c0265aba64ee621d221ff814b18a8630ee3122f7746a9c6cd716060575e586"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/private/candidate.pptx.inspect.ndjson",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "93dcf762e15852d7f2bc04af4a049bea6868f3ab950860d607bc150750a36585"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/private/inspection.ndjson",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a9d5bc9b2a74f466f7bde2ef12ac1762412754056f692457dca874a4d149c975"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/private/validation.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "71a1d62725fd38a1b2a8cdd6a613d8aa33262301ebe6fc979d2e1c5a01c945ee"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-001.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "522292c3de08d09806d4955c638741e6aa6eb1704d49729fa45d2de261c9bbbe"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-002.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2c3ee6aa47b20d5492c69588a1df4be097df23988d84862368601bddad626e29"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-003.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5bd63f16b0ac39c5975eedbfcd58cac4c2f0958b45b2e1c7ed81b5a706af17fb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-004.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "14fc0f49942911ebfbd171754ea1d66551465b67ccc3c8e1b7840b067a881ca7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-005.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bfaa990908b57e06d59249add07c8d292735baf9573d3d3df65549ca30d20251"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-006.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "1b383227693aab1cd7e1744d1ce387c8e467f02d2b9f99e74094a3d81cebcf18"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-007.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4e487b858d0aee4dc0c934b8db6c6c2d6cd8c00ab4c420f141f2ba45f10e69ce"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-008.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "251da32946f312b7e323e664b669e9f10ece45d7201104b7fbd4acdf1a39927b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-009.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fb50f4eedb976b9bdddc35e207364e3f400d466a23e8c1b839a4ea09108cce60"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-010.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5b6ba866344b2da72d1ca32995a3e3b4a9e25d04b4c31d4de52f80da4f6ef5b7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-011.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "655884238ecd27a336423195f464f348ee37186403e2fc7ae9f9b9eac2c5cf8d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-012.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "66f28c15efad2bf6d6cbe58dee6f50d3ff27fd75972b118ec8adae481dcd28b0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-013.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "818cbf99506f768d6e0e546724b31f5025d7d051bebbee3a0e4960fe30dc1249"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-014.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "cab8f15dda656463cd15c4b0138fa0b0a81856a50c822924e0e11e1403db8d4e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-015.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "43e7f6e0d5e1e95b0c5ca50a5dfc8f2af9e8424db17c878c2b25cdf25088bdb2"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-016.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5b3269decb926ba4d237cd32605849678bd88ec01b2d574c9d54b42095bcd0bd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-017.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5daf88f847d9b7c155ab9c6453b8ba199e7393c5c47dba7935bad2593cd4a67e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-018.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "052dd0bd6320c35e9d327416151f26d4f4bbbee8900a77642919a0599239add9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-019.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f418fc0f2f95bfc11656d2ecb8990ef7dedc33e688989a7a20c5fb2caa707744"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-020.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a6dbe933f501e46c37929a3d275a779505ef75487188f763255918884691f820"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-021.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "71f5910acae4fb74b5e19990cf587b51b286c19bca3849a35fe93375acebb08a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-022.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e0ca48d972881fa4c0c10753a61e00329d6109d5e77b52a947db92a488668388"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-023.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "d2c7be2fe611d5e004bd5e0b5b4672706d028f62e09e241bf93457add9b109a6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-024.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ef74f7ddfedc5f103399ada37ed9e0b028780435a8ba1c9ed52a54513a196b6b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-025.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "1a073a1d9e9a753bc00f2101f243873e859913084ef477c29f66587e83fa70ef"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-026.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "288fa88c4dcf44ecb4a814ab17fdc4eec01280cb12942f26de02141903c892d6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-027.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a70c3053d01418eff8d84a9d516629e8559fb42f38481400c0a34b86bc7983c3"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-028.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4f520058177dfb1bd38c6f2a111fe3946f7f6c44f2c90a6d22da9c31143918fa"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-029.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fee46c50478dd64a4a4483db927477434679ccef518901d26e84c02be0243551"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-030.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8d46a95e98333c96f8db29d1028a016e911477de417ec7e9002b0b4b794d0cd6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-031.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "46b43089ca321d08811b124e2e8c904b2d8f50911840c26169c2f71b3e363ea5"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-032.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a9a89153b31be8e20759d103ef99936179d2f89a81edf6c331dd80a77bc92b2f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-033.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3e74927dc22f4cf12ba0e21ae4a795dd62041d28472f4c1ebcc9e090a72a6b29"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-034.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6c4672cbc269ef2964209f5ffaff3a7b9779952492214c33b403640e5a67091f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-035.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f86d6bde5e738a35675a8e5a3f75a4df503fe6e95b972834e0b107da538e1bda"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-036.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e8a9dd59e94ad76669e5acc681c2a41af4f29f598aaf239b21f8fde3dfb2d908"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-037.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2032f6a6079c070400f816e6daab6546e4fe93f62bed7369903a2a91cfa9a042"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-038.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "101dad2ff28af40e835561d7b26b17948eb18578999d0062d77162a0ef2d804c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-039.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "04e944d21417e9a97071ae4db9331095afab51e2a8b709c43b1cb59a07cfff04"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-040.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e2f53fc98b1ffb53cb6847adadff3fa7281df9d77bc54e12637df9e0d1c24554"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-041.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c857154983258a8fa51e8fbb916c9da4bc3b2b25e4af2629041db6a7c0f7f6cb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-042.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c990509c07c079c08ca7f3ebd7d038c6705924360714813c2b40301a2e4b8f2b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-043.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a663f54a7224a302b9c660b6fbc14c0229ae74096f270c8d6e42bb411d4e29d8"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-044.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8cda6e88257af172040610d3349a7f28097c45057bc4666a741700b99ae6d3ee"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-045.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c3e5c43bc654e1e6b86ef99025078ba97a45b6470cadaacc5a7116fe7ec1575e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-046.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "784d024ec15ba6929f67400aaa420ecbcd7f55624009bfc4b320b4419cbeaa53"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-047.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a421473ecd2565c546f5137aef7eb761ff91232a6c11f7e9446ce3a815100ddc"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-048.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9cc18915d1484c1922577df3636fbfd94656865fc4cb9cf7d84a83c8b2297e9a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-049.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9a12ac9cfc6f2b66f5377b6d0eae7af2008e5b0275aa55137ca66dba71915eb6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-050.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c8910c6396d95223842bcd105eaece5e069331bf699ffa2b42052a649060fe92"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-051.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e9785f79d7a22bc5bd4e0ebfc07b9fe488e8ab8d29d1a04b35f533899cf11af9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-052.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4175bd3b70b33af214b44449bebeb449b6e5035c157014d9f878a460a62b95c1"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-053.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ba9b193892f25d9900a3a54e2041d6d67566548327e5b43e81bb88bd75c16c4f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-054.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "178d4c34fc3dbefb9fc6f94000c6859d5a2d6467adf88402ee3452ab956f894e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-055.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "19ad8f07164c1e90119114255732686f67c9b2437758c2ebc02248891a7a1d80"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-056.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a513fff75d4fd18bd746313d6c09402b11520e6da85b8d2f1fcc51bad1dbc030"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-057.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2e3d9e38ff9fd3cb48435ba76e4fc066904d1fa03eaa63e37174a1851cb12186"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-058.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bd9848e75e66b947e6872d5156fe19128afc04b6dd43309c978e389c18998492"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-059.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bb9f294a3890987b303a741c119e362d9448fbc9f5f0e89323e70201b6683318"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-060.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "095b8a0d1e3fa1ff5f3598a6c974fc6790f141835dc078d2a7c37b6856fd6e9c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-061.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bfbf3594fae6783e49d1220134b508d0dc8b0dbdf219f9942595fa1663743081"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-062.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "203db16e1538fbf3b4102776db72c4f75e1239ed715b4ddd8d256a0d8e209826"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-063.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f8d32ad799aacad57bd3b9eca084b6c8935f7f8af0888ca9d98bc0e077dffe9f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-064.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "88c73fc8e8219abdc1bb512dc56eee5c6a46c9ea0b9932f81d2c129864a1accb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-065.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fe53218c0ab777153206f32e8c82b3bec527aa63bdee6887c4bad0f3c00f6399"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-066.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6d7654b81e5062d4942f7829fc4544b49f91f9ec4b171498277c44762ea197d5"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-067.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c566c43d159cd26e05c1c89365f3ebf0ed4bcaab85329f5c02f62c10732eff6c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-068.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "0384d6a3ec0f35046106eea38467f9e8961a688945f388dd8bcbe709b4163611"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-069.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "24a2ed01a8dbbad507b9124eec8244af26f91dfe590a718dd12fad53b3202a9e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-070.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "0aca01e38f6dc24560ff6f42efa7b06ef13996241e4a40942332bd4ed4e9da17"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-071.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "98966c07a73077f1be1b0a2084b31ac339579356dc86460b0519297f7a0dd4ec"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-072.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fed64dd02c457be19d616034112d18f93e4393cd82fcd0a0478288394c558059"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-073.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "279e95e688230377b188f788b1fc2da71ad227753ffd0e0dd78c9fa083bf7b7f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-074.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8007f6cd386f92c17b63bcdbd3b7c5d6603aa13d3b27982fb1ef875253265e62"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-075.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5d8ff01f0788bb0b059145eb0829bfc10468644712270079921b305ab1040945"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-076.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e5a5af324e25035c8d475be2e36f015f8c27caead471530e34a629fe381935b6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-077.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8b049b400a7e672fabdaeb0269d33393fc11f284163c6e1950a69a65308cbd62"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-078.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "b4c257df247e02135c2b3f2bf666a6b86a7a306bd097af48fadb24a8fad5b02d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-079.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bf885e810b7fb7d989a96e80af4628813338140f3e0ebb5af9dd1e13524988fc"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-080.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3ef9ff2fee45ad30f38fe1f07e757bba81bee818f86fa5dd9e825f289d0c78c3"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-081.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fe30f55b4842340aff194a9811a250b3d26d2bd6523d3ea0273e9ccd7c4a0cd9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-082.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "59b297d8d834d68823e3ba3942edd1d7e950ddf905096f3f1cf2421d8673ddc6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-083.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f0d282de4ffb878e85824bb4c95e9880320ac24c88c04938d72bce9515b8a38d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-084.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "836b12dbdefda94cb9eb99eea61f7c611790658fc8f928c250432fb47ff38d2e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-085.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3b845656693cd9b9ced8c39bd4fc95d7779c88486cb72d7d5591ba1307b81d0b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-086.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ba53055491768c30040110d8b3f66c67601667da896eef7a4ba1ca5df5b5a72a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-087.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8472009fed944bc15a96344b84b03ee1573f7c11f9cd6daa6e11b9e4f8be7522"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-17-12-602Z/renders/slide-088.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a41e015ab54816869dd5f7d22315ae353a408a037c393adae88516121feba51c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/output/xdx-supplier-workflow-evidence.pptx",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ccf292182191c25e938935c47fc0e3038d05dcca0348bfc582bbf53a087907f1"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/private/candidate.pptx",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ccf292182191c25e938935c47fc0e3038d05dcca0348bfc582bbf53a087907f1"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/private/candidate.pptx.inspect.ndjson",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "d53b11c7992ef68be01f815d9a35261a1baac035ea806e9203b8cefe67ef88db"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/private/inspection.ndjson",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6018baf93f89daafe69738548b4262df84f6aed0227d3db033a7fc84f460bbfb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/private/validation.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5d3134429b967bdf3f1957254974421198840358c657231d27995696de938f36"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-001.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "522292c3de08d09806d4955c638741e6aa6eb1704d49729fa45d2de261c9bbbe"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-002.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2c3ee6aa47b20d5492c69588a1df4be097df23988d84862368601bddad626e29"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-003.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5bd63f16b0ac39c5975eedbfcd58cac4c2f0958b45b2e1c7ed81b5a706af17fb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-004.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "14fc0f49942911ebfbd171754ea1d66551465b67ccc3c8e1b7840b067a881ca7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-005.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bfaa990908b57e06d59249add07c8d292735baf9573d3d3df65549ca30d20251"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-006.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "1b383227693aab1cd7e1744d1ce387c8e467f02d2b9f99e74094a3d81cebcf18"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-007.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4e487b858d0aee4dc0c934b8db6c6c2d6cd8c00ab4c420f141f2ba45f10e69ce"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-008.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "251da32946f312b7e323e664b669e9f10ece45d7201104b7fbd4acdf1a39927b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-009.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fb50f4eedb976b9bdddc35e207364e3f400d466a23e8c1b839a4ea09108cce60"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-010.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5b6ba866344b2da72d1ca32995a3e3b4a9e25d04b4c31d4de52f80da4f6ef5b7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-011.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "655884238ecd27a336423195f464f348ee37186403e2fc7ae9f9b9eac2c5cf8d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-012.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "66f28c15efad2bf6d6cbe58dee6f50d3ff27fd75972b118ec8adae481dcd28b0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-013.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "818cbf99506f768d6e0e546724b31f5025d7d051bebbee3a0e4960fe30dc1249"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-014.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "cab8f15dda656463cd15c4b0138fa0b0a81856a50c822924e0e11e1403db8d4e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-015.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "43e7f6e0d5e1e95b0c5ca50a5dfc8f2af9e8424db17c878c2b25cdf25088bdb2"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-016.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5b3269decb926ba4d237cd32605849678bd88ec01b2d574c9d54b42095bcd0bd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-017.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5daf88f847d9b7c155ab9c6453b8ba199e7393c5c47dba7935bad2593cd4a67e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-018.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "052dd0bd6320c35e9d327416151f26d4f4bbbee8900a77642919a0599239add9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-019.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f418fc0f2f95bfc11656d2ecb8990ef7dedc33e688989a7a20c5fb2caa707744"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-020.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a6dbe933f501e46c37929a3d275a779505ef75487188f763255918884691f820"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-021.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "71f5910acae4fb74b5e19990cf587b51b286c19bca3849a35fe93375acebb08a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-022.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e0ca48d972881fa4c0c10753a61e00329d6109d5e77b52a947db92a488668388"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-023.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "d2c7be2fe611d5e004bd5e0b5b4672706d028f62e09e241bf93457add9b109a6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-024.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ef74f7ddfedc5f103399ada37ed9e0b028780435a8ba1c9ed52a54513a196b6b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-025.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "1a073a1d9e9a753bc00f2101f243873e859913084ef477c29f66587e83fa70ef"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-026.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "288fa88c4dcf44ecb4a814ab17fdc4eec01280cb12942f26de02141903c892d6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-027.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a70c3053d01418eff8d84a9d516629e8559fb42f38481400c0a34b86bc7983c3"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-028.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4f520058177dfb1bd38c6f2a111fe3946f7f6c44f2c90a6d22da9c31143918fa"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-029.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fee46c50478dd64a4a4483db927477434679ccef518901d26e84c02be0243551"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-030.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8d46a95e98333c96f8db29d1028a016e911477de417ec7e9002b0b4b794d0cd6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-031.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "46b43089ca321d08811b124e2e8c904b2d8f50911840c26169c2f71b3e363ea5"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-032.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a9a89153b31be8e20759d103ef99936179d2f89a81edf6c331dd80a77bc92b2f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-033.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3e74927dc22f4cf12ba0e21ae4a795dd62041d28472f4c1ebcc9e090a72a6b29"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-034.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6c4672cbc269ef2964209f5ffaff3a7b9779952492214c33b403640e5a67091f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-035.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f86d6bde5e738a35675a8e5a3f75a4df503fe6e95b972834e0b107da538e1bda"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-036.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e8a9dd59e94ad76669e5acc681c2a41af4f29f598aaf239b21f8fde3dfb2d908"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-037.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2032f6a6079c070400f816e6daab6546e4fe93f62bed7369903a2a91cfa9a042"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-038.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "101dad2ff28af40e835561d7b26b17948eb18578999d0062d77162a0ef2d804c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-039.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "04e944d21417e9a97071ae4db9331095afab51e2a8b709c43b1cb59a07cfff04"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-040.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e2f53fc98b1ffb53cb6847adadff3fa7281df9d77bc54e12637df9e0d1c24554"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-041.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c857154983258a8fa51e8fbb916c9da4bc3b2b25e4af2629041db6a7c0f7f6cb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-042.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c990509c07c079c08ca7f3ebd7d038c6705924360714813c2b40301a2e4b8f2b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-043.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a663f54a7224a302b9c660b6fbc14c0229ae74096f270c8d6e42bb411d4e29d8"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-044.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9e0310de8115b6da874ca722cc54313ec17ce235e366dc87d03a5dea0188931a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-045.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c3e5c43bc654e1e6b86ef99025078ba97a45b6470cadaacc5a7116fe7ec1575e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-046.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "784d024ec15ba6929f67400aaa420ecbcd7f55624009bfc4b320b4419cbeaa53"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-047.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a421473ecd2565c546f5137aef7eb761ff91232a6c11f7e9446ce3a815100ddc"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-048.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9cc18915d1484c1922577df3636fbfd94656865fc4cb9cf7d84a83c8b2297e9a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-049.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9a12ac9cfc6f2b66f5377b6d0eae7af2008e5b0275aa55137ca66dba71915eb6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-050.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c8910c6396d95223842bcd105eaece5e069331bf699ffa2b42052a649060fe92"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-051.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e9785f79d7a22bc5bd4e0ebfc07b9fe488e8ab8d29d1a04b35f533899cf11af9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-052.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4175bd3b70b33af214b44449bebeb449b6e5035c157014d9f878a460a62b95c1"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-053.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ba9b193892f25d9900a3a54e2041d6d67566548327e5b43e81bb88bd75c16c4f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-054.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "178d4c34fc3dbefb9fc6f94000c6859d5a2d6467adf88402ee3452ab956f894e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-055.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "19ad8f07164c1e90119114255732686f67c9b2437758c2ebc02248891a7a1d80"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-056.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a513fff75d4fd18bd746313d6c09402b11520e6da85b8d2f1fcc51bad1dbc030"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-057.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2e3d9e38ff9fd3cb48435ba76e4fc066904d1fa03eaa63e37174a1851cb12186"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-058.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bd9848e75e66b947e6872d5156fe19128afc04b6dd43309c978e389c18998492"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-059.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bb9f294a3890987b303a741c119e362d9448fbc9f5f0e89323e70201b6683318"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-060.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "095b8a0d1e3fa1ff5f3598a6c974fc6790f141835dc078d2a7c37b6856fd6e9c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-061.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bfbf3594fae6783e49d1220134b508d0dc8b0dbdf219f9942595fa1663743081"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-062.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "203db16e1538fbf3b4102776db72c4f75e1239ed715b4ddd8d256a0d8e209826"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-063.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f8d32ad799aacad57bd3b9eca084b6c8935f7f8af0888ca9d98bc0e077dffe9f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-064.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "88c73fc8e8219abdc1bb512dc56eee5c6a46c9ea0b9932f81d2c129864a1accb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-065.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fe53218c0ab777153206f32e8c82b3bec527aa63bdee6887c4bad0f3c00f6399"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-066.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6d7654b81e5062d4942f7829fc4544b49f91f9ec4b171498277c44762ea197d5"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-067.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c566c43d159cd26e05c1c89365f3ebf0ed4bcaab85329f5c02f62c10732eff6c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-068.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "0384d6a3ec0f35046106eea38467f9e8961a688945f388dd8bcbe709b4163611"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-069.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "24a2ed01a8dbbad507b9124eec8244af26f91dfe590a718dd12fad53b3202a9e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-070.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "0aca01e38f6dc24560ff6f42efa7b06ef13996241e4a40942332bd4ed4e9da17"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-071.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "98966c07a73077f1be1b0a2084b31ac339579356dc86460b0519297f7a0dd4ec"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-072.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fed64dd02c457be19d616034112d18f93e4393cd82fcd0a0478288394c558059"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-073.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "279e95e688230377b188f788b1fc2da71ad227753ffd0e0dd78c9fa083bf7b7f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-074.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8007f6cd386f92c17b63bcdbd3b7c5d6603aa13d3b27982fb1ef875253265e62"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-075.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5d8ff01f0788bb0b059145eb0829bfc10468644712270079921b305ab1040945"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-076.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e5a5af324e25035c8d475be2e36f015f8c27caead471530e34a629fe381935b6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-077.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5e2c56798b93e4982fd8aec7adfe49d1c168e07144c18c9cee75cc3a41dc5375"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-078.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "adb12be3d1cfcd805d0d8e16be620cabaae84dc223fe5cbfc70a019a9be51033"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-079.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a539abe4afb349b6e97b6d0fb366381a4d2670084ce5f7c11e40f7974e56e294"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-080.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e3fc55508f7f978e3334a6913cdee1828b9c61b2dedc89452662b445db3e4dd3"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-081.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5cc7654c02e96c663d7d284bb644a8e060b24709bbdcd56eff85163e047c1590"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-082.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "46736c5a541d00c2684725f87dff5149711df6356da65fe4497e368df5fc6946"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-083.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8efc807dc947efdfc98c28bd72cb6755078c3a7c5bfabf9383ca43bc41127af6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-084.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "927db829b815ae8806a8ebd6a60194e0731f1fd3acb7bdcae1112b8c08512e0f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-085.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4482e30998e5c1dc097e8f36878e860c109758171bc4f24f1f3ba7ea12e5fadb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-086.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "18f16320933460f3f01f6aa4c0b64197eb7da3bcc43d0f2da54a14898e2e7a03"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-087.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "98b41e8929ee73a748fe984582341d07a94c85d6990327e76059c55dec3a20b5"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-088.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "37dc5e25401e9793f666ebc3665df7a192640e42b1301344b84141e4ed914a48"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-089.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a8471565fd24dbd677f1b10562b2527c20c3cb8c021420b527d3828248a1391f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders/slide-090.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bbe65563876ddfb628b8a4e799ec116d010700754edcc720ae1473a02dbb4be0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/deck-review.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "1a48780f885c17a6c2dc4c97e12e86f4bcc8e03632e466b8a5cd455a7c647c8f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-08-513Z/private/candidate.pptx",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "734bca3dc0ae9ec071b2e15db51b2a326cf7b8a7dc7564d0c856d8fdf98c95c2"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-08-513Z/private/candidate.pptx.inspect.ndjson",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "95429315603810fd119456cd164d94ebebe737a2fb8ca8c3ca078de33ecb80a2"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/output/xdx-supplier-workflow-evidence.pptx",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "532d7495885359db871d8b0519926fa6c32a251d8f450ac9943fe22844530c31"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/private/candidate.pptx",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "532d7495885359db871d8b0519926fa6c32a251d8f450ac9943fe22844530c31"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/private/candidate.pptx.inspect.ndjson",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8bf054bcc43e472ee557df95ff87cc4d54bc7f79356bc30a58cb0d616a1624fb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/private/inspection.ndjson",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5b32a37ef34fbac7e504dd84487e0028e778ba68a241dcfb06d9a5f1fe8c06bf"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/private/validation.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e3e4ce3a3fa7d33e66a5f902e0ba6692f37244b54fb6a9bbaace10b74b5fcdb0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/renders/slide-001.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "7e462aa06e1bbe96cdc784a0b63fb58c7b7c4da4f946b95f834130bff1d92cda"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/renders/slide-002.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8ad706aa8f3c5c27d5d8ac39593e58c4110befcd5ecf0cea7c095153593a90b3"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/renders/slide-003.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "0ac7a7e03e7a7edbd0fb7e6f8a9b9d3dc23486d51bf1be4023a365be987c332d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/renders/slide-004.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bae52785bf829a4ecdb5f9826bf7e74bff8ce67de907fd34d07ee3d82d708258"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/renders/slide-005.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "942a62105d8d5c6e842bcbd647d438b1b8216684bca3f63c02940b118dfd1b9d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/renders/slide-006.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c95fa2d2ae63ba7d81cc48984cb0f6ce668eb3b0ece901ee7b9f32591634b403"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/renders/slide-007.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "d644efe1fd3500d0eeae509dbcd0f8187f828f7982d1d563ae582fd57b2bdc1d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/deck-review.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4716d771d6a6a4d60141d1633040cfa44ebcefba7c2436ba0569f5d776721d99"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/results.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5829b9df1373dc05bc62a93e16d57ed04b2e3438cb4157e9a0d2570467d74d25"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/tooling-image.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "27c81cda72d16fb508c06f92bcd591c65581b8a307f6314e911cbd0da331ad75"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-caption-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9406e72a73a853dea96193d22d4a21489e10cd8267a2e8485b0b186f1b251e10"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-caption-qualification.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5cd084b350feed796b42df63a9b1110874578076a0d4d53f27ebd9795d959ab4"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-caption-qualify.mjs",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "144cd03473d38a566b6d71e584bb0b69edfe48f411ed39bf71c46a8a77b62c4c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-checkpoint.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "44b04116ce60d071222d1d95abcf7f9d95d29c1d4586225671ace56ac5d48da0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-commands.jsonl",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8d156b001f21aa7b1cf82a40c5ce831b074f8d33c43fc45e0f74256fe73cf4d7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-final-failure-ledger-input.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bc2369040dc3f98b5d39e78b8f1b96c0e36aca4ff301b199b43e3bbd27f01ddc"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-final-qualification.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "65da759640cf04b6cdede7a3ee6bebe07298226d495b2d193605e9b01f870465"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-final-render-comparison.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4d8ec47f05e0e21418d5b15ff7bef38d9452433dfde07f5a6e5b05b3dd3e07f5"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-final-results-input.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f54f3e28bc6ddbac11abecf7cdfe1edb13a5ed6d046cf09577d2f6c987841154"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-qualification.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5df354aaacda60d6ba778f2f0d07903d50bc00cb28c0ffd514efde074cd5c30c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-review.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6cc8e40043b5edda1d2aef3a4b8b6b93e8b366558e60ce61c4b93e72ce9990db"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-style-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6d9cd134caebc5cd1dd42b982e956f2a0d8ee50fbf151e01c119900cf377b1f6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-visual-findings.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "52e5835197991b36e5dc05cd27ce1902899e730962f31ad6e3028393dfc00f17"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deliverables/xdx_supplier_workflow_evidence.pptx",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ccf292182191c25e938935c47fc0e3038d05dcca0348bfc582bbf53a087907f1"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/delivery.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "82626e00aa70a361f3e979554836b93e2e1f87fbc743b36c6cd73ae1d552c192"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/discovery-contract-findings.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "87636e9a772d5d803e4e2234b342df87c180104db746be5bb4712eba63510a45"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-assignment.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "54b1b1222ccd6d974024dc8de70710ae7ae945f7f9f2ddb1b2dd8cbdd70e2981"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-caption-open.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "036298d62595a3eb9797423fefc1464783efcdd3dc8f9b3cfc86e58d8e0a6944"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-caption-path.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "dee224eae07e446d5d46231cb702918f953454dce2fc4cd0e3e2df2e63afc203"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-capture-closed.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9bcf32fe02848349c5df8e79da2297321bc7fe9d4e07ea9558e14974d1b90452"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-contact-assertion.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3f03c2e267105046a9c57275214446d16d724735192ce67a448b98f8fdd9bdf6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-contact-template.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "df6623e9416b2cd401dd63488ba8c93477fdcd76c14029cdd5c21387a6288ef6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-cua-closed.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "d31d7e0f561c5fc107f121b2b89edcab4738713605b9b7b7e797b91965dfa186"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-cua-process.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9b9c31407133729544b8b9ebd9b54b72c5c4a708517f672b46dabf18ca275242"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-deck-final-closed.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a47c0041fd111de411386d36989ca332223e13d0deee9b9450b8d9c291595492"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-deck-font.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9cd72a753dde622794a176587b9377ee0bef533f190ff951703ee0d8b2424c87"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-deck-open.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fd61cf3e25d71c9fb74440e73029b4a41bab95ed5016782b39e470a5eb433b88"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-final-guards-closed.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "bc2369040dc3f98b5d39e78b8f1b96c0e36aca4ff301b199b43e3bbd27f01ddc"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-journey-closed.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f910cbf362868851faf687e6d2e2cc75fb1dc766f2d3b71fc243394155888521"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-journey-open.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "adef38ce466abffc4c8d3db718e12b1ddf8631e6a4a02102e013cb7aeabbb8dd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-paint-closed.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8785039a02ab19dc4215d0428c61cf96d72c9ac5fe4d1b9232a9fbb238456f78"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-paint-open.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "41619e4395193b2e6126418def9e5c633a567b1b4f01e120f88b885e06f3bf0c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-plan-current.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "66f30e0757589de4e1eb9c0782870ae5077df4c11d068af6c0e4742ac6a31c4d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-preflight.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "b00c51e1440d7b0be375e1dbeb4229415eeaf24bca3d46f41154dddf4ced4f67"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-runner-final-open.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "7596449f5eaf83af76ab35d4f094ea4b868e9678864260a5166462b9fa6cff50"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-runner-registration.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4be1cbe96811e3897c5e3a809af2214accae59e23ce758a6f596d084c1922267"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-runtime.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2dc93988fd722bf8b19c484f00e2cc6dda58114e0576480460ec5f2577cb9a00"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-screenshot-open.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "df67b5d784f3b0c6f14c2369302f4efacf08742b6c757d87381b1e7d45ded60e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-candidate-startup.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "da66c724d54b0015846e076a58cca66fab4d6753e1c8adc8f8f93d74851ff319"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-ledger.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "66f30e0757589de4e1eb9c0782870ae5077df4c11d068af6c0e4742ac6a31c4d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/intake-and-learning-register.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9311da9a48944cf3b2af974f8247a1bc78524d56575d1e6b7d5cf8fa4b871362"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-current-qualification.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "650bf58b89a633c2d0e3e50fad5bba57615a021d814506130c7bec5f2fa38e46"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-parser-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c618f2fadeb80d1699fd18012001377c9ea1878c6a2765cab0b9da2997becba4"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-plan-impact.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5cefddb8606ff88ac4334b3a24ad5e3972fe1f871845e433ac9492e88fe4f7d4"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-usage.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "d2eb2d80a41d80ee30ad9b9a9bf2c85e59460d5ffff47fca984be3a3040eeb7a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review-commands.jsonl",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e104d7fa8da224e5b214a9ce2b1f1333c0a767451a38fc6cf5e163ec04038a34"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a293b806622e30f147dc2eaedb0230bdab0ad9d33fd0680842f2fecb37e36945"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/prior-root-handoff.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2923f8dd96b122190b4886694ff36c40b742e0b079274a27ae190d166be9c25e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/README.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "129604de7e76d9210df9b087335774779b56b2d5c41beb9e4b4422214aafc898"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/reconcile-capture-labels.cjs",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "dce8d992844428041885791b4e2e366b741d4cdba57847842f0e302971b079db"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/remote-readback/xdx_supplier_conversation.wf",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/results.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "0e80906043c0a2b661328086dc305fd78b95638a388227bb48f95b0d0c264c1f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-commands.jsonl",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a489dd60790e550eebc803c2a50f960957b37eff6750c661017648087b5e995e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-deck-review.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c69a2e98f349f1cce3d6d149dda5cf69e546441f24bdeb7d89fbcb4008aafcb8"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-events.jsonl",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "930464bcdce1fc370e9e3f4998dc568aa4330d25977c22a49374f82f306cf98d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-final-impact-review.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9bec10fdd4af956600d98123bffef01a29de093a195c9d89d5ffa8c9117dd9d2"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof-precloseout-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "004b1ee7490532d0aacda3d0a891bb9642fac51f26f1543fa2d6283c4867e122"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof-state/results.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "38f75cad6faf7b7c5b38bbd87cb38c85ea4cc562783d7abffabce2512118bce8"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof-state/runner-events.jsonl",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "989781b4150e96c986e5ccf8152e99b4c9d9a321ea9b8e3ba3ffacee6ec8cb83"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4716950ec72cfd57fe9834bc252be071cfff3384beab22062c9c35f002ceaf01"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof.mjs",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5a9e30dea85564036a9df7b62ecde41435e79edb8d07d8354463e744beb11962"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-proof-state/results.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a0274e8c41e52f31666efdca31fa6375bf8722f34dfff548e3a2330503929b1d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-proof-state/runner-events.jsonl",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "04fe27cb43bd0709fbea433e906d45947a1fa0be8861c3b02ac2873fc789f079"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-proof.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f373c08780d5734ba3085a5ce047b76c205cdf19fd84cab53a227ba521f36eb9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-proof.mjs",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3c2f9065e6a894afec66e234ae571691be25e244e542b2984f4fe600c8bb26d8"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-resume-finalization-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "998c46a43dead52ae19d2ae2cd203806eadf25a8951e0c5c3cd6ce074a9a465d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-usage.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "81398c02847611efd85c1b0d85780068af9fdbe417041383c938fe5132d2bf71"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-confirm-input-005.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6385e78f5ff3f456d19cbb8b01a69bb3f526c66d1495a7dff556c220b00f7d2c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-confirm-input-005.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2e33d47a4745ff1abd84f4d5a14b8a0f103e723bdc0dbbeb0411803998a0c63c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5f18d4cb391e68d25e77f585e9adf065dda16570b786d6fa341b51784f023f78"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "557448732b2a68d9b78f6638b2965876ead80bec22c270fce49d582169089890"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-draft-ready-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "326d22962df32241f59d3548667e1c34806006a2106efe02998c5fc7bd132d80"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-draft-ready-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4e18cc24cdad726dba75348f204620797941b0c924997a6efcfe82b38640ad17"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-prepare-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "1ed552c91ee4a375f38d531c968355daa35d870ddc3df24885cbddd450106d02"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-prepare-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3a3388723156482fac7a3a00085babf3250b1ea80947634226ef9d46d3228f63"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-input-003.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "360f3a70249fdbe03b79064b12c049f53da3f586c73299290e0444ff1849ea64"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-input-003.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e234d0279661c34cf4cfc3e429866d4e2da3baf80fc06bd722defc63cf38e7fb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-ready-004.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ea27afebed59d5df6bf233a3e81d117ccb84b877719462bd5aa1821d60add570"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-ready-004.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "addb82ebc447bf01430e46246b1f6c31919564e13630dd53284b7966b0d05ea2"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-query-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "df0a0fc757ac2702a09f251cfb40cfd8f8efef95498f32801d9e4b114c4ee393"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-query-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "59a3de21526ee872806fb1d6500a060a2a50e5135ca7bb92bcb39ffd3cb06aa3"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-result-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "d5f0302acd8a132c7b737ddd704b21d5492ffc3f3abf10002f211f591d9f963c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-result-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "798cc546538e8fb30f4e4121f7a9b1b5463da42a240b41dcc8a91dc1138f7d80"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-details-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "0bf2d811b9ffc8c88ccdbb353b564e26d2131fdac90901463eee29e6d7a2f935"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-details-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5e50739d1aa4f1f746ed412d666e5d4c201aefc591954a9368d58d3bc433d748"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-query-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "1b91284e721c4dc8bafe5f31306deda3791a63ff10520d629a661c1c1bee8abd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-query-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "31d3e0d96e635e2c4806dc9ad5139421afdbcdf2ef43718a6bfc84d2d44e1798"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-confirm-input-005.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2008331fee9a10cbba09d5d6111bce456beb90eba239af34c5d951b2b2b4fddd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-confirm-input-005.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9f7de48b1f79caf0331ab029cdf040c4e32eb66fc36458a903191369abc308f5"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-created-readback-006.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "d47da2b742764b8edbad8146764c4c896a80bb27e9943ed018ade4a8c270c3de"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-created-readback-006.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "02ea3677675bced8ffe04b86101b1f4c8f27a217e3b567846733dce233dd57b0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-draft-ready-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2a55ce2cfcbdd447aa91182f21ab499511dfc38671a15e50fd291d9e36f3c9cc"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-draft-ready-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8d1f249009d97e76dabf46c9b856d5c6778878596256d6f2a8dbd7b57c4f80d5"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-prepare-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "57cb9d464e24ad3dc913389bb479b4acf5f4b9dccf3c03c2ad22b485fcbb404c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-prepare-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6122caf7e98ce5daab20ba1d385231028d03d4a7efdf915aecdd771e2772a4a7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-input-003.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "423fd19bff981270608f257e6b97dc45d577775475f7b931c5e3a56f104866ff"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-input-003.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "d54bfba1fa551332ed028aeba00c01af4ae1ff9cccd08d63ea2513db54bf1df8"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-ready-004.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "d1d55a15828c4fe811ad2eb43d0a0cfe38f37cb8def27e8cf0ef9edf2cb19ee6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-ready-004.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c2f2f4861bd222e8c7ab9ad85264b02f979cef990232ee91fb65292ab74cb41e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-connected-dependency-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ba0b1e920a13cbd6b00107c18986d7506698bba8834265f3647fb734eb7d1c55"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-connected-dependency-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c6861b238ced4231303fdecec3219b058cdb7ef495aee6e2abf8ce7d4e728946"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-final-painted-result-003.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "569a7f6b52a9a7a496d09868551ed856d61d4ca5a1416e7562c014ac3ea05e25"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-final-painted-result-003.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6457091d555180e7f248fa65b04748511ebcd8c097779c97048a028850ec5865"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-query-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "426c6ac333c103e6b1b187ceeef23ea017964b25773e966a7f1cdfd145dc157f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-query-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8b07accc74a1bc7693dac535b22d55b346122e8d22c054465afc081e7c60e008"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-result-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9a4d0eb4810a821638c67dc501f43ec1dedd546ca6e8074213a028ed44f03da2"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-result-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6457091d555180e7f248fa65b04748511ebcd8c097779c97048a028850ec5865"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-readback-verified-assignment-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "53567551261435a81d3e5462914507b857a8bed97b0d6108eae3c68f30c23aff"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-readback-verified-assignment-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6e63585542d34e92e56ba16018e5c7bb746d828a866a6cdef7dfea8cd064cffd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-confirm-input-005.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "cf4521a54b0785d0dd3d195a17e4f954b4d3a542f13ffa443eae7aacc1f6fd2d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-confirm-input-005.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "34231174b0993d5e543ee3c47ff3b0477274dee0216e99731a1512be994ad993"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-created-readback-006.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f581bc5d3cd6512c2f22752d35573a47c6efde9aba4db993a2346f5ce6b9add6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-created-readback-006.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c9a44aca18a00e2f0e403c2dbc4598b8918595f30648c54e29f10a3eb86509f0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-draft-ready-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a2defe651b699b0627be1c02579f2d61181b1ffe4151bea75e9eaaa5336b6826"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-draft-ready-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "650403dc5455d7640f44b75cac2bac29b01c2395697b93b725d31c3f92c786b3"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-prepare-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "fe3993e9ffaa0365220543ce8fd312ac925eae82243ee91160a0f52c5c39f4a0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-prepare-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "79e32e4a65bd17b97ccaebecf3b4eaffaf87d65aa0f94a6be7cb9716bd6e5c98"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-input-003.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3f7f62b34d4f34e39b6719c9772397d48dcfb96cadf8189b6b7cb76cf131377f"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-input-003.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "cd802c2bd2a27f5f9b17fbbe0ef346f98541312410e936160bcc9cfc0b1fbea0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-ready-004.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f6b461976e4f7f70496fa9be4c6d8107e74a54b7f4b6611b85beb2a455fe8386"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-ready-004.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a2162a485e1c388d28c73983dd9500e874c5355f2568c760a66ec007bddc274a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-assertion-observed-empty-state-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "33e3e34e46132a2612221aedb5771ed3e9d9397bec2ceaf60ebf1d1c97defde2"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-assertion-observed-empty-state-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a6fa19327a232e0e8e238481063fdbcdceb7304ff2e711e9f110cc0569b9d85b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-query-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6bad25de8271338691490533438fcb28958e1b65d00fa1272f081e8aab2c521a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-query-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "df64af660fa189bd982655a0c81f858532821d113fe460daa4ded1ad748efc71"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-result-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "33e3e34e46132a2612221aedb5771ed3e9d9397bec2ceaf60ebf1d1c97defde2"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-result-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a6fa19327a232e0e8e238481063fdbcdceb7304ff2e711e9f110cc0569b9d85b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-details-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4b3974db96cb2bc1276b78ee9eedbfe58aaa14ed32027c72a33633f7cd4c9cd6"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-details-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "19b556887000426bce6893d22a7b19ebd23be391586925fa01c376bb955b6f06"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-query-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3401683acbfb0fcfdbe9fad44714201420fde3aaf044330a557389448b7c061c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-query-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5cc6fa3111a98711511e808b639fc12081079aa696f548ab06696329bf2421a0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-draft-ready-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "be7b9c2965477baff6e7eae57450440a105cdf9a3018d6f8a3a5c64116588416"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-draft-ready-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "d8f99f66f9e11960d0067d9f3666ccc26cc8b122bcd0ac91a6a722d3e73a8995"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-prepare-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6e79933e7a5277b7346cd156c46723acb786d036b2740f9c4b1f9b96980d52f9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-prepare-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "dcfa64a8f131117c3653080cd8918352ffcad88ccea1c8ab57c40e472ded6795"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-preview-start-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9dc4d10c34729e9debb8848dff3e43d1e3fcd4529573b33715939a742f76517e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-preview-start-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "38b7f2fb7b4e1cb649a6bea212d7b9addbb413529be16d8672536e49e3f09cbd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-studio-identity-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "78a134f73137f1f5236d2a7e6af88b7a15d6b80c550617e97defe5f151bb2918"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-studio-identity-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "71880941c0d1ff7b71c5dbbb0d10afba2e2589f624b49041e01ea0387012b248"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-capability-result-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ba0b1e920a13cbd6b00107c18986d7506698bba8834265f3647fb734eb7d1c55"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-capability-result-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c6861b238ced4231303fdecec3219b058cdb7ef495aee6e2abf8ce7d4e728946"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-prepare-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "c773a5209fdab2bb7589683ca4630565ad3d27ab9711db7e6659824fd3945ee9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-prepare-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "90e96e94dc216d39f09ab7a5fd8c6cc3f0a1f3cc52742f4d1e5a547b5f6f9ff0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-confirm-input-005.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "190709395541905aebe82d925fc75018a33b8845922e7cda1079742b5c7fd438"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-confirm-input-005.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2d03276d5f19e11360dd0183af634daadca3d6a610dad5e862e575a2c4fbb1a2"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "53567551261435a81d3e5462914507b857a8bed97b0d6108eae3c68f30c23aff"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6e63585542d34e92e56ba16018e5c7bb746d828a866a6cdef7dfea8cd064cffd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-draft-ready-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "842a23fd8f0679770aeeb78039351f3f7463ad517bd57c35f692fddb977dc193"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-draft-ready-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e2b4daa1efd0de2c65d177dacb6712e96871bdedb08ead53d8d60153f0ad129a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-prepare-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "dd18fa20b27ebbe1b0650b415f6b60762ece5822c30e992fade5e332f0aafacb"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-prepare-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3f2358a92444b4a37ba37fc4911fd97f7e48466a709e67522398070d6995869e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-input-003.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "dd6b5d9b513715806be1d5f6a7259e6a11734b33cb73ab825fe69b25994ce96a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-input-003.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3cc67ee46e467d447751c5fee9ebdf73f25bbf0e8f2dd97ab6c2988b281b2d9d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-ready-004.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "62af78653f0d1c040254f8219b2f595f2534adf7eb9b3cf699b1c340d1d94a63"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-ready-004.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "be4e7fa0f242c21aca7a5b1862bb23735004e823e48ff5a4bf4f00b350caad02"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-query-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "b47aa9d9aeb7a46c5a0c395b3c34360882ccf1d8cd3318530c1f2f96bdf3acc0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-query-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "f1a855752b6555f610cd0b729fa218c08d3eda0e9bce49d6ae24f6dfa6f4a48a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "cfae03314a6fd24afeae1f5e90e5610e0cf8ac76b2d17cd5fda35f19009b00ec"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "cdff0404184bf60aac2875f2eed1b39332ebb57c9631d3bb9363bb01f51b00e7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-lower-section-003.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "44b94ae6439ee86e2722f3b2459cda4b6665ee96b8c3f40efe933b58dc35dbb9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-lower-section-003.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "cdff0404184bf60aac2875f2eed1b39332ebb57c9631d3bb9363bb01f51b00e7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-details-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "74dee02e45a63d4ff91c1fcf4a1c800e333d4f65e88a98892bc45589aed67a78"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-details-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "333622e5ab7c4bceb1546f298acf60fd65a63db601dc2a2a5a0f8c3b0a4021b1"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-query-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "97dccb61b333e97601dcbc11a0eb128ddf61127bcd9ead7e262526d44f9722da"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-query-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a2e4a8bdfcb22c3c1446fc6b69b2bc8945cc125a651f638bc54c92db1a0cf891"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-query-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "add1180233697bb5007136f4371410656f9743e71aaf8fbf3d52b905e26c53ef"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-query-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "14265465b1aa11c44add05bad68dd00912b1cdd492accc7a198eb26e2bd96d79"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-result-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9681feb417087aa1c6cb673e99601c113a98f149e07d6e480fe7c9593225f4cc"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-result-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ab8553d5a84c5c873758b5c04b7c4cb365aadc20392a42d23b277a6e6a0df0a8"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-confirm-input-006.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "af8fbcbd1992d13f40e322028cd62a014475cada747feb4bb2118f3d2cb4cd5a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-confirm-input-006.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a3a0f4ad2d1ab26fe984529ccaff4f998df5f938eb6081a1800484b3fcdc1aad"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2c278a19c9d9a02cedf7cbd0c6ed462247d2399fb3e9f895882b352273634d29"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "99833cf956f113b3b890d7ad22661df7a5dd8f5ffc321884fef006f99c41264d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-draft-ready-003.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ac6dca70e8bc75239962688ce2df4b6f48d50b2bba811d8b85011c8d4429c3f7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-draft-ready-003.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "a898aa876a9bd99ec4f82cf66ffeefe4849fb18ce00b19239edd49e2165b4583"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepare-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "e6c2117f61a5887be8f2c450f8b78db309200018616b2012aa55fe52b049f796"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepare-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "409887195dbe4627bc04f8dcb6bfb3de95b1c3a11017343c2fa80b36c12b6445"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepared-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3bd169aced73c3cf9ab32ee39b226302fab4f01d9e5bbeb20dcad5e8459f7a76"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepared-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "6c094c52bdf0dc374c70b67a99479068441621c99b3c9e64d2d2a6421acfccc0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-input-004.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "26ec2eda9e949386aa82aaf237eb81391b23067c0230bf51788e43c0bceb98a9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-input-004.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "0ce7ec52f17dee3eba3a2458fb6117e15e76b73a11e1139afae42bd55a2ce2b2"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-ready-005.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "cea932b9c1976dcb8cc7aec900c031dbb33b83c1a5b0f31aabcc4c40beac9851"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-ready-005.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "4f72835f58076b60224074f4e55b77dcd7acdb25b74cc6f09f49507de4349ebf"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-entered-request-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ad7ac14fa4363015673adcf8e82d00f4d0861f2ebc95547081448ac3df32b772"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-entered-request-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9ba2ed703db848a6d718b61e1f906d87cfae1ce7bbe7c40b5c430582c0d6a178"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-result-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "3e0ec9d793dae311b91f43d076b5348c9d3971d740e24256f99be2dfe8e53dbe"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-result-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "8b387fde9ba8c8b9ad17874377ec13d62e5d1c7b8604b9501404e66a1918c53c"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-details-002.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "aff9d6dd98a7046e63d84c002dc9c42fbcdf75e55e289e1b6628129386947fc7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-details-002.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ccf142be21bc49828d0efa24c86c6dc08e3b5e7347945f8e9ec65b24b57a0520"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-query-input-001.jpg",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "b71cb1966a56831144920e08f6e30db68d0edcf0fb7a651faf114cc2f1c314e0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-query-input-001.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "89b57b6f0cd06f2b96dadd83f208b1f4616abfb637a33354524042a37ec5ae30"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screenshot-format-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "127d54aa3d4483d322258883fd698596ec6e2dd46fb746bb229c5d7b92992a7d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screenshots/000-studio-app.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "78a134f73137f1f5236d2a7e6af88b7a15d6b80c550617e97defe5f151bb2918"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screenshots/000-studio-app.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "71880941c0d1ff7b71c5dbbb0d10afba2e2589f624b49041e01ea0387012b248"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screenshots/001-preview-start.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9dc4d10c34729e9debb8848dff3e43d1e3fcd4529573b33715939a742f76517e"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screenshots/001-preview-start.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "38b7f2fb7b4e1cb649a6bea212d7b9addbb413529be16d8672536e49e3f09cbd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screenshots/002-supplier-query-input.png",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "ad7ac14fa4363015673adcf8e82d00f4d0861f2ebc95547081448ac3df32b772"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screenshots/002-supplier-query-input.txt",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "9ba2ed703db848a6d718b61e1f906d87cfae1ce7bbe7c40b5c430582c0d6a178"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/source-preservation.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "b2d0e4727d9d20fd1af04d7ce162414aa9ff61a28f587fd0cfeed00e223dd787"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/startup-ledger-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "eaa9573cca54ef7d9bb9b51b03b3b68a0cdcb2ed8ee5b5b5446d48968c42d0bd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/target-host-finding.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "df94ba98d6fd8914faefa50be2ad9eb33bc691a7c057c705f389451c899dddd1"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/time-tracker.md",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "cdbb14c0ec587509ee7bccc73ebf81b160cf6f0fe31d27136323df3b293edf05"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/timing-report.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "7fd5294daa89ebf11f78f6fc642f73011251ddc52d8c7db37c6d1df7f3b136e9"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/worker-registration-proof.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "61a5f772940fc436a34e187d96d5700cf33cd1829f7347f2607c3727acb80fc7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/xdx_session_xdx-supplier-e2e-evidence-20261015-deck.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5394952167ab4214a54b7954c6cfc184deb216e18e9cf7a2167e1d952f11bd12"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/xdx_session_xdx-supplier-e2e-evidence-20261015-plan-review.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "d0ced0e93b22bf52a02e6b5f7b47a1fda3b2ac9cae73c4f65a797591d301b70a"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/xdx_session_xdx-supplier-e2e-evidence-20261015-runner.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "2d52ae44e3448ac8023bf78a0882b9106ef4d91720c587d916f9723826710dbf"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/xdx_session_xdx-supplier-e2e-evidence-20261015.json",
+      "from": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+      "to": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+      "sha256": "5bd7fa0652647d7b7742760d905446a796fea9f375b8ad1c95fd56852a9250e4"
+    }
+  ],
+  "decisions": [
+    "Supplier app/workflow/BO/product fixtures remain worktree-owned",
+    "Coupled conversation-control CLI adapter remains worktree-owned; not part of shared governance/E2E runner",
+    "Historical receipts retain original source checkout identity; copying is not a new execution",
+    "No reusable main-path policy added: existing propagation/collision ownership governs this sync"
+  ]
+}

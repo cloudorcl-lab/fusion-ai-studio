@@ -393,3 +393,21 @@ test('real CLI accepts resolved nested BO bindings without requiring query-only 
   assert.equal(result.status, 0, result.output);
   assert.match(result.output, /contract: PASS/);
 });
+
+// Assignment metadata is checked in every pipeline, including nested loop bodies.
+for (const field of ['type', 'scope', 'typeSpecification']) {
+  for (const nested of [false, true]) {
+    const nodes = baseNodes();
+    const assignment = { id: '5', code: 'PERSIST_STATE', type: 'SET_FIELDS', inputs: [{ name: 'state', value: '{}', [field]: 'declaration-only' }], outcomes: {} };
+    if (nested) nodes.push({ id: '6', code: 'LOOP', type: 'LOOP', body: { pipelineNodes: [assignment] }, outcomes: {} });
+    else nodes.push(assignment);
+    assert.ok(validateWorkflow(workflow(nodes)).some(f => f.code === 'SET_FIELDS_DECLARATION_METADATA' && f.message.includes(field)), `${field} must be rejected in ${nested ? 'nested' : 'root'} assignments`);
+  }
+}
+const leanNodes = baseNodes();
+leanNodes.push({ id: '5', code: 'PERSIST_STATE', type: 'SET_FIELDS', inputs: [{ id: 'state-input', name: 'state', value: '{}' }], outcomes: {} });
+const declaredWorkflow = workflow(leanNodes);
+declaredWorkflow.specification.dataPipeline.variables = [{ id: 'state', name: 'state', type: 'object', scope: 'CONVERSATION', typeSpecification: '{"type":"object"}' }];
+assert.deepEqual(validateWorkflow(declaredWorkflow), []);
+
+

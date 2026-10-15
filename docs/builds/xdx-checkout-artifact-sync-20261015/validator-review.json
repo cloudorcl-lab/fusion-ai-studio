@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-checkout-artifact-sync-20261015",
+  "agentId": "/root/sync_validator_review",
+  "parentAgentId": "/root",
+  "assignmentId": "validator-review",
+  "activityId": "validator-provenance-review",
+  "phase": "preflight",
+  "category": "active execution",
+  "observedStartUtc": "2026-10-15T21:55:13.000Z",
+  "observedEndUtc": "2026-10-15T21:55:41.000Z",
+  "timingLimitations": "Initial assigned reading and normalized diff review occurred before first explicit UTC observation; that initial duration remains unallocated. Tool time is nested in observed review, not added to it. Report serialization tail excluded. No reliable token/AI Unit counters.",
+  "scope": "Read-only validator, test and retained qualification comparison; independent bootstrap prevention review. Only this report written. No source edits, tests, tenant calls or commits.",
+  "result": "pass",
+  "canonicalRecommendation": "Copy the supplier worktree validator and test bytes into root. D is a strict additive semantic superset of root after CRLF/LF normalization.",
+  "source": {
+    "root": "C:/Users/dasu/Documents/GitHub/fusion-ai-studio-1",
+    "rootBranch": "TestingWFBuildTools",
+    "worktree": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+    "worktreeBranch": "codex/xdx-supplier-workspace-20261014",
+    "rootLastPathCommit": "f28950ed15bef03e94e0d29b16d54be771be4295",
+    "worktreeLastPathCommit": "a97d7940ae2f8baf0eafc673eedb576d5e98030d"
+  },
+  "files": [
+    {
+      "path": "scripts/verify-agentic-app-query-contract.cjs",
+      "rootSha256": "ea393bbc51a4eb18187eb591e8610b1d821ff537a17e193da9a2db4cd5d7607e",
+      "worktreeSha256": "dbd4e320c423fe70e268f895ca108f7515f7130cfa2e1d288d76c0c90087a5f8",
+      "normalizedDelta": "Adds validateVariableAssignments and invokes it in validateWorkflow. Recursively inspects all pipelineCollections for SET_FIELDS inputs owning type, scope or typeSpecification, emits SET_FIELDS_DECLARATION_METADATA. Existing graph/binding/BO logic unchanged."
+    },
+    {
+      "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+      "rootSha256": "b948443f7b951774642562e5e0911af6965fb029c8662809c87a90bfb852990b",
+      "worktreeSha256": "b4b6d0b62522420fe023cd111a171e2c55af2cfc107f004059f2b501189ff8c3",
+      "normalizedDelta": "Appends six top-level assertions covering three declaration metadata keys in root and nested SET_FIELDS and one positive assertion preserving proper dataPipeline.variables declarations. Existing 45 reported cases unchanged. Appended assertions are not separately named node:test cases."
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "scripts/verify-bo-search-contract.cjs",
+      "rootSha256": "842cdc1450a0dc0faae10594ec36c841c63b78e8347029e297a9a4bed4ad3f07",
+      "worktreeSha256": "a1c51cdab87531352eaba375232710b585a05e37d5b2c6634893a21b73293d99",
+      "normalizedDelta": "None; line ending difference only. Direct shared module import."
+    },
+    {
+      "description": "Runtime uses Node built-ins fs/path; test uses assert, node:test and fixture subprocess/temp-directory helpers. CLI fixture BO files are generated locally. No product workflow or tenant dependency is required for the retained validator regressions. Production CLI separately loads workflow JSON and sibling businessObjects/*.bo."
+    }
+  ],
+  "retainedQualification": {
+    "path": "docs/builds/xdx-supplier-child-create-20261015/governance-qualification.json",
+    "sha256BothCheckouts": "902c7721ff6dbf49e71d9ae492df35cd2cca37c3cb810099daa52d1db1e90c0e",
+    "result": "ok true, exitCode 0",
+    "observedUtc": "2026-10-15T13:01:44.090Z",
+    "sourceHashesMatchCurrentWorktree": true,
+    "claimedScope": "45 reported focused cases plus retained SET_FIELDS assertions, no tenant operation",
+    "limitation": "Reviewed retained qualification record, not a new test execution. This proves recorded local qualification and source continuity only, not tenant acceptance."
+  },
+  "smallestNecessaryCheck": "After byte-for-byte copy, independently hash root validator/test and match retained qualification; verify search dependency normalized equality or preserve canonical reviewed bytes. Reuse existing passing qualification. No regression rerun justified when source logic and relevant dependency logic remain unchanged. If integration alters logic, run only node --test scripts/tests/verify-agentic-app-query-contract.cjs once after the change; no tenant tests.",
+  "bootstrapIndependentReview": {
+    "failureId": "F001",
+    "result": "pass with source-inventory recommendation",
+    "occurrence": "bootstrap-finding.json retains original missing noFailuresReason and tracker identity diagnostics with explicit original command timing gap.",
+    "correction": "Current tracker includes literal task identity. Ledger has an actual failure row, so no empty-ledger noFailuresReason is required. Corrected measured Startup run a1fe86b1-fc85-4a7a-89b7-2ca46c8ea38d ended succeeded exitCode 0 at 2026-10-15T21:54:24.278Z.",
+    "preventionOwner": "Canonical Session conformance receipt step 4 already requires actual serialized receipt validation; installed automated gates already reject both omissions. No new validator logic is needed.",
+    "sources": [
+      {
+        "path": "scripts/verify-session-compliance.cjs",
+        "sha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e",
+        "responsibility": "Requires tracker text to include literal sessionId; invokes learning validator."
+      },
+      {
+        "path": "scripts/verify-build-learning.cjs",
+        "sha256": "411033ad51e8f5f7dd56c57d16e246e98e0b44d1aab56944726f9aed69361f32",
+        "responsibility": "Rejects empty ledger without noFailuresReason, line 46."
+      }
+    ],
+    "recommendation": "Add verify-build-learning.cjs to F001 current verification source inventory so both actual automated owners are bound; coordinator notified. No unchanged gate/test rerun requested."
+  }
+}

@@ -1,0 +1,31 @@
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "get-business-object-functions",
+  "result": {
+    "businessObjectCode": "XDX_SUPPLIER_CLASSIFICATIONS",
+    "found": true,
+    "businessObjectName": "XDX Supplier Classifications",
+    "family": "PRC",
+    "product": "SUPPLIER",
+    "functionCount": 1,
+    "functions": [
+      {
+        "functionName": "ListSupplierClassifications",
+        "description": "Retrieve current supplier type, business relationship and tax organization choices using the active-date finder. Preserve collection paging and validate each lookup type before use.",
+        "operationType": "GET",
+        "resourcePath": "/fscmRestApi/resources/11.13.18.05/standardLookupsLOV?finder=LookupTypeFinder;ActiveDate={activeDate}&q=LookupType='POZ_VENDOR_TYPE' or LookupType='ORA_POZ_BUSINESS_RELATIONSHIP' or LookupType='POZ_ORGANIZATION_TYPE'&limit={limit}&offset={offset}&onlyData=true&fields=LookupType,LookupCode,Meaning&orderBy=LookupType:asc,LookupCode:asc",
+        "requiredTokenParameters": [
+          "activeDate",
+          "limit",
+          "offset"
+        ],
+        "hasSavedExample": true
+      }
+    ]
+  }
+}

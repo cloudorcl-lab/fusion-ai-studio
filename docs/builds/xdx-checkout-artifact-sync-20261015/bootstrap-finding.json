@@ -1,0 +1,11 @@
+{
+  "observedUtc": "2026-10-15T21:54:23.350Z",
+  "command": "verify-living-build-contract Startup",
+  "result": "FAIL",
+  "diagnostics": [
+    "Learning: empty ledger requires noFailuresReason",
+    "timeTracker must reference this session/task identity"
+  ],
+  "cause": "Bootstrap omitted required empty-ledger reason and literal task identity in tracker",
+  "correction": "Add explicit task identity and retain a failure row; validate actual serialized prerequisites before retry"
+}

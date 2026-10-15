@@ -1,0 +1,196 @@
+{
+  "items": [
+    {
+      "LookupType": "ORA_POZ_BUSINESS_RELATIONSHIP",
+      "LookupCode": "NONE",
+      "Meaning": "None"
+    },
+    {
+      "LookupType": "ORA_POZ_BUSINESS_RELATIONSHIP",
+      "LookupCode": "PROSPECTIVE",
+      "Meaning": "Prospective"
+    },
+    {
+      "LookupType": "ORA_POZ_BUSINESS_RELATIONSHIP",
+      "LookupCode": "SPEND_AUTHORIZED",
+      "Meaning": "Spend Authorized"
+    },
+    {
+      "LookupType": "POZ_ORGANIZATION_TYPE",
+      "LookupCode": "CORPORATION",
+      "Meaning": "Corporation"
+    },
+    {
+      "LookupType": "POZ_ORGANIZATION_TYPE",
+      "LookupCode": "FOREIGN CORPORATION",
+      "Meaning": "Foreign Corporation"
+    },
+    {
+      "LookupType": "POZ_ORGANIZATION_TYPE",
+      "LookupCode": "FOREIGN GOVERNMENT AGENCY",
+      "Meaning": "Foreign Government Agency"
+    },
+    {
+      "LookupType": "POZ_ORGANIZATION_TYPE",
+      "LookupCode": "FOREIGN INDIVIDUAL",
+      "Meaning": "Foreign Individual"
+    },
+    {
+      "LookupType": "POZ_ORGANIZATION_TYPE",
+      "LookupCode": "FOREIGN INVESTOR",
+      "Meaning": "Foreign Investor"
+    },
+    {
+      "LookupType": "POZ_ORGANIZATION_TYPE",
+      "LookupCode": "FOREIGN PARTNERSHIP",
+      "Meaning": "Foreign Partnership"
+    },
+    {
+      "LookupType": "POZ_ORGANIZATION_TYPE",
+      "LookupCode": "GOVERNMENT AGENCY",
+      "Meaning": "Government Agency"
+    },
+    {
+      "LookupType": "POZ_ORGANIZATION_TYPE",
+      "LookupCode": "INDIVIDUAL",
+      "Meaning": "Individual"
+    },
+    {
+      "LookupType": "POZ_ORGANIZATION_TYPE",
+      "LookupCode": "PARTNERSHIP",
+      "Meaning": "Partnership"
+    },
+    {
+      "LookupType": "POZ_ORGANIZATION_TYPE",
+      "LookupCode": "SUPPLER GLOBAL",
+      "Meaning": "Supplier - Global"
+    },
+    {
+      "LookupType": "POZ_ORGANIZATION_TYPE",
+      "LookupCode": "SUPPLIER LOCAL",
+      "Meaning": "Supplier Local"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "ATTORNEY",
+      "Meaning": "Attorney"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "BUY_AGENT",
+      "Meaning": "Retail Buying Agent"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "CONTRACTOR",
+      "Meaning": "Contractor"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "EXP_VENDOR",
+      "Meaning": "Retail Misc. Vendor"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "FEDERAL",
+      "Meaning": "Federal"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "FFORWARDER",
+      "Meaning": "Retail Forwarder"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "FINISHER",
+      "Meaning": "Retail Finisher"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "FOSTER CARE PROVIDER",
+      "Meaning": "Foster Care Provider"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "GOVERNMENT",
+      "Meaning": "Government"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "GRANT APPLICANT",
+      "Meaning": "Grant Applicant"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "INSURANCE",
+      "Meaning": "Insurance Company"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "INTERCOMPANY",
+      "Meaning": "Intercompany"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "MANUFACTURING",
+      "Meaning": "Manufacturing"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "MERCH_SUPPLIER",
+      "Meaning": "Retail Supplier"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "PUBLIC SECTOR COMPANIES",
+      "Meaning": "Public Sector"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "SERVICES",
+      "Meaning": "Services"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "SUB-CONTRACTOR",
+      "Meaning": "Subcontractor"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "SUPPLIER",
+      "Meaning": "Supplier"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "TAX AUTHORITY",
+      "Meaning": "Tax Authority"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "TRANSPORTADOR",
+      "Meaning": "Carrier"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "TRUST",
+      "Meaning": "Trust"
+    },
+    {
+      "LookupType": "POZ_VENDOR_TYPE",
+      "LookupCode": "UTILITY",
+      "Meaning": "Utility"
+    }
+  ],
+  "count": 36,
+  "hasMore": false,
+  "limit": 100,
+  "offset": 0,
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://fa-eqil-dev21-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/standardLookupsLOV",
+      "name": "standardLookupsLOV",
+      "kind": "collection"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+# Preserve supplier build evidence bytes and the observed newline conventions of its dependencies.
+# Exact task paths only; no global normalization or configuration-file rule.
+/.gitattributes text eol=lf
+/docs/builds/xdx-supplier-workspace-20261014/** -text
+/.agents/skills/aistudio/SKILL.md text eol=crlf
+/.agents/skills/aistudio/references/prompts/artifact-conventions.md text eol=crlf
+/.agents/skills/aistudio/references/prompts/business-object-builder.md text eol=crlf
+/.agents/skills/aistudio/references/prompts/workflow-conversation-test-authoring.md -text
+/.agents/skills/aistudio/references/prompts/workflow-node-prompts/set-variables.md text eol=crlf
+/.agents/skills/aistudio/references/prompts/workflow-test-authoring.md text eol=crlf
+/.agents/skills/aistudio/scripts/aistudio.js text eol=crlf
+/.agents/skills/aistudio/scripts/conversation-control-binding.cjs -text
+/AGENTS.md text eol=crlf
+/BUILD_STANDARD.md text eol=crlf
+/agent-app-build-startup/AGENTS.md text eol=crlf
+/docs/handoffs/ACTIVE_HANDOFF.md text eol=lf
+/docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md -text
+/docs/lessons/AI_STUDIO_TESTING_GUIDE.md text eol=lf
+/docs/lessons/objects/README.md -text
+/docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md text eol=crlf
+/docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md text eol=crlf
+/docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md -text
+/docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md -text
+/docs/lessons/objects/oracle-fusion-procurement-suppliers.md -text
+/docs/lessons/objects/oracle-fusion-standard-lookups-lov.md text eol=lf
+/docs/superpowers/specs/2026-10-14-xdx-supplier-conversation-design.md text eol=crlf
+/scripts/tests/verify-agentic-app-query-contract.cjs -text
+/scripts/update-build-learning.cjs text eol=crlf
+/scripts/verify-agentic-app-query-contract.cjs -text
+/scripts/verify-session-compliance.cjs text eol=crlf
+/src/apps/xdx_supplier_workspace.app text eol=lf
+/src/businessObjects/xdx_supplier_addresses.bo text eol=lf
+/src/businessObjects/xdx_supplier_classifications.bo text eol=lf
+/src/businessObjects/xdx_supplier_contacts.bo text eol=lf
+/src/businessObjects/xdx_supplier_site_assignments.bo text eol=lf
+/src/businessObjects/xdx_supplier_sites.bo text eol=lf
+/src/businessObjects/xdx_suppliers.bo text eol=lf
+/src/workflows/xdx_supplier_conversation.wf text eol=lf
+/test/apps/xdx_supplier_workspace/init_display_xdx_supplier_advisor.json text eol=lf
+/test/workflows/xdx_supplier_conversation/init-display.json text eol=lf
+/test/workflows/xdx_supplier_conversation/query.json text eol=lf
+/test/workflows/xdx_supplier_conversation/required-child-read-journey.json text eol=lf
+/test/workflows/xdx_supplier_conversation/site-missing-assignment-recovery.json text eol=lf
+/test/workflows/xdx_supplier_conversation/site-required-creation.json text eol=lf
+/test/workflows/xdx_supplier_conversation/site-required-name-edit.json text eol=lf
+/test/workflows/xdx_supplier_conversation/supplier-child-read-continuity.json text eol=lf
+/test/workflows/xdx_supplier_conversation/supplier-child-to-template.json text eol=lf
+/test/workflows/xdx_supplier_conversation/supplier-draft-edit-boundaries.json text eol=lf
+/test/workflows/xdx_supplier_conversation/supplier-draft-review-cancel.json text eol=lf
+/test/workflows/xdx_supplier_conversation/supplier-exact-name.json text eol=lf
+/test/workflows/xdx_supplier_conversation/supplier-mismatch-boundary.json text eol=lf
+/test/workflows/xdx_supplier_conversation/supplier-required-confirmation.json text eol=lf
+/test/workflows/xdx_supplier_conversation/supplier-required-edit-and-uncertainty.json text eol=lf
+/test/workflows/xdx_supplier_conversation/supplier-required-search.json text eol=lf
+/test/workflows/xdx_supplier_conversation/supplier-search-paging.json text eol=lf
+/test/workflows/xdx_supplier_conversation/supplier-template-selection.json text eol=lf
+/test/workflows/xdx_supplier_conversation/supplier-uncertain-boundary.json text eol=lf
+/test/workflows/xdx_supplier_conversation/xdx-route-control-language-path.json text eol=lf
+/test/workflows/xdx_supplier_conversation/xdx-route-detail-result-addresses-get-path.json text eol=lf
+/test/workflows/xdx_supplier_conversation/xdx-route-detail-result-addresses-list-path.json text eol=lf
+/test/workflows/xdx_supplier_conversation/xdx-route-detail-result-contacts-get-path.json text eol=lf
+/test/workflows/xdx_supplier_conversation/xdx-route-detail-result-contacts-list-path.json text eol=lf
+/test/workflows/xdx_supplier_conversation/xdx-route-detail-result-sites-get-path.json text eol=lf
+/test/workflows/xdx_supplier_conversation/xdx-route-detail-result-sites-list-path.json text eol=lf
+/test/workflows/xdx_supplier_conversation/xdx-route-request-classifications-path.json text eol=lf
+/test/workflows/xdx_supplier_conversation/xdx-route-search-result-get-path.json text eol=lf
+/tests/xdx-conversation-control-binding.cjs -text
+/tests/xdx-site-confirmation-flow.cjs -text
+/tests/xdx-site-continuation.cjs text eol=lf
+/tests/xdx-site-draft-contracts.cjs text eol=crlf
+/tests/xdx-site-serial-assignments.cjs -text
+/tests/xdx-site-source-flow.cjs -text
+/tests/xdx-site-terminal-topology.cjs -text
+/tests/xdx-supplier-attempt-presentation.cjs text eol=lf
+/tests/xdx-supplier-child-read-contracts.cjs -text
+/tests/xdx-supplier-child-workflow.cjs -text
+/tests/xdx-supplier-classifications.cjs -text
+/tests/xdx-supplier-contracts.cjs -text
+/tests/xdx-supplier-required-creation.cjs -text
+/tests/xdx-supplier-selected-template.cjs text eol=lf
+/tests/xdx-supplier-status-schema.cjs text eol=lf
+
+/docs/builds/xdx-supplier-child-create-20261015/** -text
+
+/docs/builds/xdx-supplier-retro-20261015/** -text

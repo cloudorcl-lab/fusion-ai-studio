@@ -1,0 +1,41 @@
+{
+  "observedUtc": "2026-10-14T23:20:23.997Z",
+  "supportedObjectId": "300000340666053",
+  "objectCode": "XDX_SUPPLIER_CLASSIFICATIONS",
+  "functionName": "ListSupplierClassifications",
+  "result": "pass",
+  "rowCount": 36,
+  "hasMore": false,
+  "knownHitTriples": [
+    [
+      "POZ_VENDOR_TYPE",
+      "SUPPLIER",
+      "Supplier"
+    ],
+    [
+      "ORA_POZ_BUSINESS_RELATIONSHIP",
+      "SPEND_AUTHORIZED",
+      "Spend Authorized"
+    ],
+    [
+      "POZ_ORGANIZATION_TYPE",
+      "CORPORATION",
+      "Corporation"
+    ]
+  ],
+  "source": {
+    "path": "src/businessObjects/xdx_supplier_classifications.bo",
+    "sha256": "6c9dc6b5ae146edf57f12be2bcc0c95cb0253c411a4439b106bfff6ff4e1c974"
+  },
+  "evidence": [
+    {
+      "path": "docs/builds/xdx-supplier-workspace-20261014/classification-saved-functions.txt",
+      "sha256": "73972d2e71dff236b92eed485832e0468fd2f03e7446a9e78780f5f95bcc609b"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-workspace-20261014/classification-saved-get.txt",
+      "sha256": "3b9bb55ecf122a3b3ede5cd1551503d51e00e1180e7968659b5b7aeca9a6c3c8"
+    }
+  ],
+  "limits": "Read-only lookup membership; alternate classification POST combinations not tested or authorized."
+}

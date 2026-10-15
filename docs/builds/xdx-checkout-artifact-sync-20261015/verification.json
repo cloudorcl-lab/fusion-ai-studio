@@ -1,0 +1,15 @@
+{
+  "observedUtc": "2026-10-15T22:00:07.336Z",
+  "result": "pass",
+  "transfersVerified": 536,
+  "mutableMasterCheck": "Current masters match exactly; original transfer hash remains historical",
+  "linksVerified": 216,
+  "retainedValidatorQualification": "Exact source/test hashes current; reuse existing 45 cases plus 7 SET_FIELDS assertions; no test rerun",
+  "preservation": "Before-copy hashes, source app/workflow and active configs unchanged; colliding bytes preserved",
+  "productDelta": "",
+  "reviewReports": [
+    "docs/builds/xdx-checkout-artifact-sync-20261015/validator-review.json",
+    "docs/builds/xdx-checkout-artifact-sync-20261015/docs-review.json"
+  ],
+  "pptSha256": "ccf292182191c25e938935c47fc0e3038d05dcca0348bfc582bbf53a087907f1"
+}

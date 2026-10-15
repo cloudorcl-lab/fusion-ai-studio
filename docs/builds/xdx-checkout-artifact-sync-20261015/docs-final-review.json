@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "agentId": "/root/sync_docs_review",
+  "observedUtc": "2026-10-15T22:01:04.616Z",
+  "result": "APPROVED",
+  "scope": "Independent read-only review of final synchronization verifier correction and F002/F003 byte/receipt prevention. No verifier execution, tests, business calls or source edits.",
+  "f004": {
+    "disposition": "APPROVE",
+    "review": "Final verifier exempts only the exact docs/handoffs/ACTIVE_HANDOFF.md path from copy-time immutable transfer hashing. Every other copied record retains the same exact destination SHA256 requirement. The current master is independently compared root-to-worktree in the shared-file equality loop. Historical master hash remains unchanged in original sync-manifest. This is appropriate separation of mutable current state from immutable transferred evidence, not relaxation of captured PPT/screens/results or source proof.",
+    "regex": "Final literal /[[^]]*](([^)]+))/g correctly captures Markdown link targets; the original compressed probe regex was malformed. Final fence regex remains unchanged. 216 links are reported by retained verification.json, not a claim of this review rerunning that check.",
+    "counts": "537 original transfer records minus 1 mutable master = 536 immutable verified transfers, consistent with verification.json."
+  },
+  "f002": {
+    "disposition": "APPROVE",
+    "backupPath": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/scripts/verify-build-learning.cjs",
+    "backupSha256": "a7ebf753e45ba9034f47a8f32c0eaccf98d89eae60cb8448c4245e329bd84148",
+    "currentRootSha256": "411033ad51e8f5f7dd56c57d16e246e98e0b44d1aab56944726f9aed69361f32",
+    "currentWorktreeSha256": "411033ad51e8f5f7dd56c57d16e246e98e0b44d1aab56944726f9aed69361f32",
+    "normalizedEqualityObserved": true,
+    "review": "Backup hash matches dependency-byte-proof.beforeSha256; normalized content matches root, exact copied source hash matches both current checkouts and failure verification. Worktree .gitattributes includes trailing exact -text rule. Source hash gate was preserved, not weakened."
+  },
+  "f003": {
+    "disposition": "APPROVE",
+    "normalizedAgentsEqualityObserved": true,
+    "targetReceipt": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+    "targetReadCount": 5,
+    "drift": [],
+    "review": "AGENTS normalized content is equal while raw bytes differ. Target receipt read entries were compared with the actual target checkout, not inherited root hashes. No document content or session validator changed to bypass drift."
+  },
+  "beforeBackups": "Original verifier and corrected verifier both retain before-manifest backup SHA validation and preserveOnly current source/config SHA checks. Extra F002 dependency backup was independently compared here and its proof retained. Source/app/workflow preservation and empty productDelta are reported in verification.json; no product source mutation observed in this review.",
+  "remaining": "Root owns capture/closure of F004, current master milestone updates, both-checkout Closeout and scoped commits. This approval is not a replacement for those gates."
+}

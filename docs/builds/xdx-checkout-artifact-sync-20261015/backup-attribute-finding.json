@@ -1,0 +1,7 @@
+{
+  "observedUtc": "2026-10-15T22:02:22.196Z",
+  "symptom": "Precommit exact-byte check rejected backup worktree BUILD_STANDARD blob",
+  "cause": "Preserved nested .gitattributes backup was active Git policy inside before/worktree and overrode enclosing -text rule",
+  "correction": "Retain attribute bytes as .gitattributes.snapshot and update backup manifest; no executable nested policy remains",
+  "scope": "Only staging metadata; no commit or source mutation occurred"
+}

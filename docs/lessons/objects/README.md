@@ -139,3 +139,5 @@ One file owns one resource object. Parent and child resources receive separate r
 | 2026-09-25 | Native address POST sample preflight rejection and exact-field fixed-ordering repair | Require unrendered native-template JSON and rendered typed-payload checks; allow a literal only for an approved invariant contract without coercion or field loss. |
 | 2026-09-17 | Supplier 1497 local preparation and successful POST/GET receipts | Explicit response-example mode for live POST execution; distinguish request-authoring mode from missing business inputs. |
 | 2026-09-17 | Explicit user clarification during Supplier POST extension | Require a recorded local-sample suitability check before missing-data live reads; cross-reference schema, descriptions and vendor example; test omitted own-resource IDs as provisional derivation assumptions and request help after a failed assumption test. |
+
+Supplemental read-only reference: [Standard Lookups LOV](oracle-fusion-standard-lookups-lov.md);26C source contract, supplier-family compatibility pending.

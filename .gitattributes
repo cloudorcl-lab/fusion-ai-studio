@@ -22,3 +22,25 @@
 /scripts/xdx-supplier-e2e-deck.mjs -text
 
 /scripts/xdx_supplier_e2e_journey.mjs -text
+
+# Qualified checkout synchronization: preserve exact transferred bytes.
+/BUILD_STANDARD.md -text
+/docs/handoffs/ACTIVE_HANDOFF.md -text
+/docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md -text
+/docs/lessons/AI_STUDIO_TESTING_GUIDE.md -text
+/docs/lessons/objects/README.md -text
+/docs/lessons/objects/oracle-fusion-standard-lookups-lov.md -text
+/docs/lessons/objects/oracle-fusion-procurement-suppliers.md -text
+/docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md -text
+/docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md -text
+/docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md -text
+/docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md -text
+/scripts/xdx-supplier-e2e.mjs -text
+/scripts/xdx-supplier-e2e-deck.mjs -text
+/scripts/xdx_supplier_e2e_journey.mjs -text
+/scripts/verify-agentic-app-query-contract.cjs -text
+/scripts/tests/verify-agentic-app-query-contract.cjs -text
+/docs/builds/xdx-supplier-e2e-evidence-20261015/** -text
+/docs/builds/xdx-checkout-artifact-sync-20261015/** -text
+/docs/builds/xdx-supplier-workspace-20261014/** -text
+/scripts/verify-build-learning.cjs -text

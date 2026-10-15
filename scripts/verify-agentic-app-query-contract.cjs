@@ -347,6 +347,21 @@ function validateQueryPipeline(nodes, label = 'root') {
   return failures;
 }
 
+function validateVariableAssignments(workflow) {
+  const failures = [];
+  for (const nodes of pipelineCollections(workflow)) for (const node of nodes) {
+    if (node.type !== 'SET_FIELDS') continue;
+    for (const input of node.inputs || []) {
+      const fields = ['type', 'scope', 'typeSpecification'].filter(field => Object.hasOwn(input, field));
+      if (fields.length) failures.push({
+        code: 'SET_FIELDS_DECLARATION_METADATA',
+        message: `${node.code || node.id}.${input.name} contains declaration-only metadata: ${fields.join(', ')}. Declare variable types and scope in dataPipeline.variables.`
+      });
+    }
+  }
+  return failures;
+}
+
 function validateWorkflow(workflow) {
   const rootNodes = workflow?.specification?.dataPipeline?.pipelineNodes;
   if (!Array.isArray(rootNodes)) {
@@ -354,6 +369,7 @@ function validateWorkflow(workflow) {
   }
   const failures = [
     ...validateQueryPipeline(rootNodes),
+    ...validateVariableAssignments(workflow),
     ...validateBindingExpressions(rootNodes, 'root', workflow.specification.dataPipeline),
   ];
   const queryRouter = findQueryRouter(rootNodes);

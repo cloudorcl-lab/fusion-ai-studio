@@ -1,0 +1,5 @@
+# Selective checkout synchronization
+
+User-authorized synchronization of the living playbook and key artifacts between base and supplier worktree. [Manifest](sync-manifest.json) owns transfer hashes, [verification](verification.json) verifies transfer/document/source preservation and retained validator qualification. [Before manifest](before-manifest.json) identifies original bytes; before/ retains colliding documents. [Failures](failure-ledger.json) owns bootstrap and local probe corrections. No application tests or tenant calls were performed.
+
+Supplier product source and coupled AI Studio CLI adapter remain worktree-owned; this task does not claim full repository parity. Historical evidence retains its original checkout and timing identities. The current task has separate target-specific session receipts. [Ledger](build-ledger.json) owns primary timing; worker observed boundaries and limitations are in their review reports. No new lifecycle rule was needed; existing canonical propagation, collision, exact-byte and handoff requirements were applied.

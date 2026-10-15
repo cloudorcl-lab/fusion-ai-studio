@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-checkout-artifact-sync-20261015",
+  "agentId": "/root/sync_docs_review",
+  "ownership": "Read-only source review; this report is the sole owned output.",
+  "result": "APPROVE SELECTIVE SYNC WITH REQUIRED DEPENDENCIES",
+  "observedUtc": {
+    "firstExplicitBoundary": "2026-10-15T21:55:49.751Z",
+    "end": "2026-10-15T21:56:27.912Z",
+    "earlierReview": "First handoff/intake/build-standard reads preceded the explicit timestamp; elapsed and active effort unavailable, not inferred."
+  },
+  "directions": {
+    "rootToWorktree": [
+      "BUILD_STANDARD.md",
+      "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+      "scripts/xdx-supplier-e2e.mjs",
+      "scripts/xdx-supplier-e2e-deck.mjs",
+      "scripts/xdx_supplier_e2e_journey.mjs",
+      "docs/builds/xdx-supplier-e2e-evidence-20261015/**",
+      "docs/handoffs/ACTIVE_HANDOFF.md (coordinator current master, after milestones)"
+    ],
+    "worktreeToRoot": [
+      "scripts/verify-agentic-app-query-contract.cjs",
+      "scripts/tests/verify-agentic-app-query-contract.cjs",
+      "docs/lessons/objects/oracle-fusion-standard-lookups-lov.md",
+      "docs/lessons/objects/README.md supplemental Standard Lookups link only",
+      "docs/builds/xdx-supplier-workspace-20261014/common26c-openapi.json",
+      "docs/builds/xdx-supplier-workspace-20261014/classification-first-response.json",
+      "docs/builds/xdx-supplier-workspace-20261014/classification-readiness.json",
+      "docs/builds/xdx-supplier-workspace-20261014/classification-saved-functions.txt",
+      "docs/builds/xdx-supplier-workspace-20261014/classification-saved-get.txt"
+    ]
+  },
+  "provenance": [
+    {
+      "path": "BUILD_STANDARD.md",
+      "source": "root",
+      "sha256": "c007c6eca8368b0475c563e659fe29f5ee36b27aa1ea21950d0742087fa99c90",
+      "destinationExists": true,
+      "destinationSha256": "c007c6eca8368b0475c563e659fe29f5ee36b27aa1ea21950d0742087fa99c90"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "source": "root",
+      "sha256": "81c5aabb4d2fca736fb2eeeb6955be1a9d95a9b499136b7459165f9d882b75db",
+      "destinationExists": true,
+      "destinationSha256": "81c5aabb4d2fca736fb2eeeb6955be1a9d95a9b499136b7459165f9d882b75db"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "source": "root",
+      "sha256": "017e16353dada5bd28539f2dafbd3aadf99d7d5f7d9c8fce5a5b850c5037403a",
+      "destinationExists": true,
+      "destinationSha256": "017e16353dada5bd28539f2dafbd3aadf99d7d5f7d9c8fce5a5b850c5037403a"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "source": "root",
+      "sha256": "db957459a92cf5b7a457f4587799d7c92b154c7163157b8b2e94d0a371e474f7",
+      "destinationExists": true,
+      "destinationSha256": "db957459a92cf5b7a457f4587799d7c92b154c7163157b8b2e94d0a371e474f7"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "source": "root",
+      "sha256": "89345c40b2b57417186e6d4c1f01059c5ece001bc24a132355582a5b8a0767c8",
+      "destinationExists": true,
+      "destinationSha256": "89345c40b2b57417186e6d4c1f01059c5ece001bc24a132355582a5b8a0767c8"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "source": "root",
+      "sha256": "10d663bfd2de5004ea28ed76f25e0dbfbb030c0368c4df422c9e0d459893c4b0",
+      "destinationExists": true,
+      "destinationSha256": "10d663bfd2de5004ea28ed76f25e0dbfbb030c0368c4df422c9e0d459893c4b0"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+      "source": "root",
+      "sha256": "5c4f104fe3860d2a487371e5b37e435c384c893a78cc3d19056e1bf3a94c5ee7",
+      "destinationExists": true,
+      "destinationSha256": "5c4f104fe3860d2a487371e5b37e435c384c893a78cc3d19056e1bf3a94c5ee7"
+    },
+    {
+      "path": "scripts/xdx-supplier-e2e.mjs",
+      "source": "root",
+      "sha256": "daf0a904d5975d0fb0796412bdb41bbf3da4bd26edc2b53ce22f4ac1c31de57d",
+      "destinationExists": true,
+      "destinationSha256": "daf0a904d5975d0fb0796412bdb41bbf3da4bd26edc2b53ce22f4ac1c31de57d"
+    },
+    {
+      "path": "scripts/xdx-supplier-e2e-deck.mjs",
+      "source": "root",
+      "sha256": "46b12087ecdc0c64ba21970eed369c19b0c5d90149ac7d219755aa359a1f0600",
+      "destinationExists": true,
+      "destinationSha256": "46b12087ecdc0c64ba21970eed369c19b0c5d90149ac7d219755aa359a1f0600"
+    },
+    {
+      "path": "scripts/xdx_supplier_e2e_journey.mjs",
+      "source": "root",
+      "sha256": "e888e8f7d6b293614f052be72cef25f91849c0f362bcd8da37bd10ce39478c4b",
+      "destinationExists": true,
+      "destinationSha256": "e888e8f7d6b293614f052be72cef25f91849c0f362bcd8da37bd10ce39478c4b"
+    }
+  ],
+  "lookupEvidence": [
+    {
+      "path": "docs/builds/xdx-supplier-workspace-20261014/common26c-openapi.json",
+      "sha256": "1b84886fd269594014608666d0c9ce55ad94665bb0618ef327228eb01c3e84e4",
+      "bytes": 2286863,
+      "rootExists": true
+    },
+    {
+      "path": "docs/builds/xdx-supplier-workspace-20261014/classification-first-response.json",
+      "sha256": "2ad23466a8f0e7cc4466bd9c64f13e2bef8b3de71eee302f319f2c5add500c17",
+      "bytes": 4823,
+      "rootExists": true
+    },
+    {
+      "path": "docs/builds/xdx-supplier-workspace-20261014/classification-readiness.json",
+      "sha256": "bcdbfe985e1eb1234d68eb62ff4fd685a5c5a95b20f2b887c1ede526dc18e0fd",
+      "bytes": 1210,
+      "rootExists": true
+    },
+    {
+      "path": "docs/builds/xdx-supplier-workspace-20261014/classification-saved-functions.txt",
+      "sha256": "73972d2e71dff236b92eed485832e0468fd2f03e7446a9e78780f5f95bcc609b",
+      "bytes": 1494,
+      "rootExists": true
+    },
+    {
+      "path": "docs/builds/xdx-supplier-workspace-20261014/classification-saved-get.txt",
+      "sha256": "3b9bb55ecf122a3b3ede5cd1551503d51e00e1180e7968659b5b7aeca9a6c3c8",
+      "bytes": 6227,
+      "rootExists": true
+    }
+  ],
+  "requiredActions": [
+    {
+      "id": "DOCS-01",
+      "action": "Preserve raw before copies for each dirty destination and verify against before-manifest; then copy by content/provenance, never mtime.",
+      "reason": "Worktree BUILD_STANDARD and canonical playbook are dirty; source comparison shows root has the additional ledger wording and evidence capture lesson. Neither destination contains an independent missing substantive lesson."
+    },
+    {
+      "id": "DOCS-02",
+      "action": "Merge .gitattributes with existing checkout rules retained; append last-wins -text for every synchronized qualified path and the full new evidence run. Do not replace either complete .gitattributes.",
+      "reason": "Worktree has BUILD_STANDARD text eol=crlf and Address/Contact reference CRLF rules; these can change synchronized bytes when checked out. Root also has prior preservation rules absent from worktree."
+    },
+    {
+      "id": "DOCS-03",
+      "action": "Carry all five Standard Lookups retained evidence files listed here to root with exact bytes; keep BO source SHA and D provenance explicit.",
+      "reason": "Lookup reference currently links root-missing first response and readiness. Readiness additionally binds two saved evidence files; unformatted specification path names common26c-openapi.json. Do not reinterpret retained proof as fresh root or tenant acceptance."
+    },
+    {
+      "id": "DOCS-04",
+      "action": "Copy entire accepted E2E evidence run unchanged, not only PPT and results.",
+      "reason": "The new playbook and all five object refs link into the run. Frozen qualifications, capture hashes, speaker notes, scripts, source/readback records and failure handling require the linked tree. No current destination evidence collision observed."
+    },
+    {
+      "id": "DOCS-05",
+      "action": "Keep source app, workflow, six BOs, product tests and native accepted transactions D-owned; do not run or replay business writes for synchronization.",
+      "reason": "This is a governance/evidence/tooling promotion, not a product source merge."
+    }
+  ],
+  "aistudio": {
+    "normalizedContentDifferences": [
+      ".agents/skills/aistudio/references/prompts/workflow-conversation-test-authoring.md",
+      ".agents/skills/aistudio/scripts/aistudio.js",
+      ".agents/skills/aistudio/scripts/conversation-control-binding.cjs (D only)"
+    ],
+    "otherObservedFiles": "No other substantive aistudio differences under ignore-space-at-eol comparison.",
+    "recommendedDisposition": "Retain the three-file coupled controlMessageBinding extension in D for this selective sync, and name that remaining source ownership in the master. If promoting it separately, promote all three together plus its tests and retained qualification; never publish the authoring guidance by itself.",
+    "reason": "The authoring reference advertises structured Review/Confirm/Cancel binding behavior implemented by aistudio.js importing conversation-control-binding.cjs. Existing E2E evidence scripts do not depend on this CLI extension; copying only guidance would create an unsupported root command contract."
+  },
+  "links": {
+    "reviewed": "Direct Markdown local links in BUILD_STANDARD, canonical playbook and five references, resolving at worktree destination; Standard Lookups resolving at root destination.",
+    "findings": "All absent worktree links are into the approved E2E evidence tree; Standard Lookups root links resolved by listed retained dependency copy. No other direct missing governance links observed in this focused inventory.",
+    "limits": "This is a bounded direct-link/dependency review, not a whole-repository link scan or runtime test."
+  },
+  "tests": "None run, as assigned. No UI, network or business calls.",
+  "failures": "No implementation or test failure observed. git diff --no-index exit 1 is expected difference detection, not failed verification.",
+  "risks": [
+    "Do not erase dirty destination records or unrelated configuration changes.",
+    "Do not normalize immutable evidence bytes or present historical receipts with their old repoRoot as current session conformance.",
+    "Do not assert root product parity while app/workflow/BOs and CLI extension remain worktree-owned.",
+    "Master handoff must be updated at synchronization/verification/commit milestones and identical in both checkouts."
+  ]
+}

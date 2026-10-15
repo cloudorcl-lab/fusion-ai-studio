@@ -1,0 +1,14 @@
+{
+  "result": "pass",
+  "runId": "a1fe86b1-fc85-4a7a-89b7-2ca46c8ea38d",
+  "checks": [
+    "Tracker contains literal session identity",
+    "Ledger contains valid failure occurrence rather than an unexplained empty collection",
+    "Actual corrected session Startup PASS"
+  ],
+  "reviewer": "/root",
+  "source": {
+    "path": "scripts/verify-session-compliance.cjs",
+    "sha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e"
+  }
+}

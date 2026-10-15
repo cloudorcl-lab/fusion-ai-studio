@@ -1,0 +1,182 @@
+[
+  {
+    "side": "base",
+    "path": ".gitattributes",
+    "sha256": "a3025b382c47f7dbf96b05c8c1fa066a6dbf4b3b373b6fb5dfd8d53a302e40e7",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/base/.gitattributes.snapshot"
+  },
+  {
+    "side": "base",
+    "path": "BUILD_STANDARD.md",
+    "sha256": "c007c6eca8368b0475c563e659fe29f5ee36b27aa1ea21950d0742087fa99c90",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/base/BUILD_STANDARD.md"
+  },
+  {
+    "side": "base",
+    "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+    "sha256": "9dffec65a40c7d8d30cfe191cb0ed42ea94431e7606009bdb73835a83e41f333",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/base/docs/handoffs/ACTIVE_HANDOFF.md"
+  },
+  {
+    "side": "base",
+    "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+    "sha256": "81c5aabb4d2fca736fb2eeeb6955be1a9d95a9b499136b7459165f9d882b75db",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/base/docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md"
+  },
+  {
+    "side": "base",
+    "path": "docs/lessons/objects/README.md",
+    "sha256": "a4f649e2ac28c33cc76436661735c3bf32f06b697ea352be3322a4b51e077da7",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/base/docs/lessons/objects/README.md"
+  },
+  {
+    "side": "base",
+    "path": "scripts/verify-agentic-app-query-contract.cjs",
+    "sha256": "ea393bbc51a4eb18187eb591e8610b1d821ff537a17e193da9a2db4cd5d7607e",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/base/scripts/verify-agentic-app-query-contract.cjs"
+  },
+  {
+    "side": "base",
+    "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+    "sha256": "b948443f7b951774642562e5e0911af6965fb029c8662809c87a90bfb852990b",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/base/scripts/tests/verify-agentic-app-query-contract.cjs"
+  },
+  {
+    "side": "base",
+    "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+    "sha256": "017e16353dada5bd28539f2dafbd3aadf99d7d5f7d9c8fce5a5b850c5037403a",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/base/docs/lessons/objects/oracle-fusion-procurement-suppliers.md"
+  },
+  {
+    "side": "base",
+    "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+    "sha256": "db957459a92cf5b7a457f4587799d7c92b154c7163157b8b2e94d0a371e474f7",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/base/docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md"
+  },
+  {
+    "side": "base",
+    "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+    "sha256": "89345c40b2b57417186e6d4c1f01059c5ece001bc24a132355582a5b8a0767c8",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/base/docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md"
+  },
+  {
+    "side": "base",
+    "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+    "sha256": "10d663bfd2de5004ea28ed76f25e0dbfbb030c0368c4df422c9e0d459893c4b0",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/base/docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md"
+  },
+  {
+    "side": "base",
+    "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+    "sha256": "5c4f104fe3860d2a487371e5b37e435c384c893a78cc3d19056e1bf3a94c5ee7",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/base/docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md"
+  },
+  {
+    "side": "base",
+    "path": "env.properties",
+    "sha256": "38d90b229d3acdddf059c220fecb824e6a5f91080c831a09ff801f1cced37926",
+    "preserveOnly": true
+  },
+  {
+    "side": "base",
+    "path": "fusion-ai-studio-1.code-workspace",
+    "sha256": "3a3f177b981233b153e41f02e3c4ed40d4103c796ccfd511b16d65e8641aa469",
+    "preserveOnly": true
+  },
+  {
+    "side": "worktree",
+    "path": ".gitattributes",
+    "sha256": "3c1e07a3f3061673aeac357c525a178276a43dfe6a88396186c3751a5d8a3e31",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/.gitattributes.snapshot"
+  },
+  {
+    "side": "worktree",
+    "path": "BUILD_STANDARD.md",
+    "sha256": "c274c438451ed170dbd83de0adbf3a0c698c0ea3e4eb2b3bef2734e7c3a5cbdc",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/BUILD_STANDARD.md"
+  },
+  {
+    "side": "worktree",
+    "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+    "sha256": "34eeb7ab3a37253c4ee9feb6f9a665a76cbd4918d0d5f88d869efe9a381ca77d",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/docs/handoffs/ACTIVE_HANDOFF.md"
+  },
+  {
+    "side": "worktree",
+    "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+    "sha256": "855fdc07ced983bef8eb04b09dc52ad914926380427727ca02e70322220f8dfa",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md"
+  },
+  {
+    "side": "worktree",
+    "path": "docs/lessons/objects/README.md",
+    "sha256": "9f923b00d3f4ff54022c19a87cdf07a0be9b0bb30b0d3749613d5cfbc0bd9952",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/docs/lessons/objects/README.md"
+  },
+  {
+    "side": "worktree",
+    "path": "scripts/verify-agentic-app-query-contract.cjs",
+    "sha256": "dbd4e320c423fe70e268f895ca108f7515f7130cfa2e1d288d76c0c90087a5f8",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/scripts/verify-agentic-app-query-contract.cjs"
+  },
+  {
+    "side": "worktree",
+    "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+    "sha256": "b4b6d0b62522420fe023cd111a171e2c55af2cfc107f004059f2b501189ff8c3",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/scripts/tests/verify-agentic-app-query-contract.cjs"
+  },
+  {
+    "side": "worktree",
+    "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+    "sha256": "125032fe7b5faff9760440c44a008b44cb606bb63eeda1c5604f60ee254ef23e",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/docs/lessons/objects/oracle-fusion-procurement-suppliers.md"
+  },
+  {
+    "side": "worktree",
+    "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+    "sha256": "eb87ef30b5d75b133c0e321259fab451726b1c347069a682e0091d815fed01fb",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md"
+  },
+  {
+    "side": "worktree",
+    "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+    "sha256": "f8fe65735765af613480e013d7b5a5b0ca333db7cda15d10028b69ba321beef7",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md"
+  },
+  {
+    "side": "worktree",
+    "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+    "sha256": "73803f811eb06ce45cb99ca25dacf3652fa2284380564cf0eaa433896202bf5a",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md"
+  },
+  {
+    "side": "worktree",
+    "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+    "sha256": "1bf94c072453b2cf2e6845ed2f3bcabd5cc790c19303642d2564376b1efdc090",
+    "backup": "docs/builds/xdx-checkout-artifact-sync-20261015/before/worktree/docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md"
+  },
+  {
+    "side": "worktree",
+    "path": "env.properties",
+    "sha256": "38d90b229d3acdddf059c220fecb824e6a5f91080c831a09ff801f1cced37926",
+    "preserveOnly": true
+  },
+  {
+    "side": "worktree",
+    "path": "fusion-ai-studio-1.code-workspace",
+    "sha256": "1ccfb133087107e717ea6d77d21067c61b3aba1369b24d63ccbda239259a3c35",
+    "preserveOnly": true
+  },
+  {
+    "side": "worktree",
+    "path": "src/apps/xdx_supplier_workspace.app",
+    "sha256": "23939eae8f3add68fc823a97b6bbe5ae32619419810446e69a4a0082b2b201a5",
+    "preserveOnly": true
+  },
+  {
+    "side": "worktree",
+    "path": "src/workflows/xdx_supplier_conversation.wf",
+    "sha256": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872",
+    "preserveOnly": true
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "observedUtc": "2026-10-15T21:58:07.868Z",
+  "result": "pass",
+  "runId": "285393f0-8e6a-499e-b72b-c8bbd2b06f0d",
+  "diagnostic": "Missing or stale reviewed document: AGENTS.md",
+  "differences": [
+    {
+      "path": "AGENTS.md",
+      "prior": "fa1aa8fff43b8834b4db6679ca542229bbe6893efe406878e87ce6fa352e00ed",
+      "actual": "316b49bd6960fa4d76a8e6813ac52183a3de4458d5caf27a82730d6ecdc0d846"
+    }
+  ],
+  "correction": "Compute every session reviewed-document hash from its own checkout; unchanged AGENTS differs only by newlines."
+}

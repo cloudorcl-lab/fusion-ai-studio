@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-checkout-artifact-sync-20261015",
+  "scopes": [
+    "governance",
+    "validator",
+    "evidence"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-checkout-artifact-sync-20261015/commands.jsonl",
+    "docs/builds/xdx-checkout-artifact-sync-20261015/review-commands.jsonl",
+    "docs/builds/xdx-checkout-artifact-sync-20261015/worktree-commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "F001",
+      "observedUtc": "2026-10-15T21:54:23.350Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Learning: empty ledger requires noFailuresReason; timeTracker must reference this session/task identity",
+      "evidenceGap": "Initial bootstrap gate was unwrapped; exact diagnostics retained from current tool output, no command timing runID.",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-checkout-artifact-sync-20261015/bootstrap-finding.json",
+          "sha256": "de0d4299c5d9240c32fe737aa681ec5758487f8962feefaddd2f2fde1d8599f9"
+        }
+      ],
+      "cause": "Bootstrap omitted required empty-ledger reason and literal task identity in tracker",
+      "correction": "Add explicit task identity and retain a failure row; validate actual serialized prerequisites before retry",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Inspect actual serialized receipt and tracker identity against installed validator before gate invocation; copy empty-ledger noFailuresReason only when no failures exist.",
+        "reason": "Bootstrap omissions are already rejected by installed automated gates; no validator logic change required."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Corrected actual Startup via measured runner",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/verify-session-compliance.cjs",
+            "sha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e"
+          },
+          {
+            "path": "scripts/verify-build-learning.cjs",
+            "sha256": "411033ad51e8f5f7dd56c57d16e246e98e0b44d1aab56944726f9aed69361f32"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-checkout-artifact-sync-20261015/bootstrap-prevention-proof.json",
+            "sha256": "f17b41fcca5715f4d23dc13230417456f484e5c0233f982ce6bc14d2505b33e9"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F002",
+      "observedUtc": "2026-10-15T21:57:34.850Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Worktree pre-action gate blocked F001 stale source hash before spawning Startup",
+      "evidenceGap": "Pre-action rejection occurred before child dispatch; no child execution or test occurred.",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-checkout-artifact-sync-20261015/dependency-byte-proof.json",
+          "sha256": "a3db0f26b18f9955ac36c81784ac243b84c79da70cdc6b35c31a32a8b26fe87d"
+        }
+      ],
+      "cause": "Learning validator differs only in line endings; copied active ledger intentionally binds exact bytes",
+      "correction": "Preserve original worktree dependency, synchronize reviewed root bytes and add exact attribute rule",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Inventory byte-bound verification dependencies before propagating a session ledger; compare normalized content for provenance and verify exact target bytes after copy.",
+        "reason": "Cross-checkout newline mismatch is already correctly blocked by existing hash gate; no semantic validator change."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Compare normalized source before copy, exact SHA256 after copy, preserve original bytes and exact-byte attribute rule",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/verify-build-learning.cjs",
+            "sha256": "411033ad51e8f5f7dd56c57d16e246e98e0b44d1aab56944726f9aed69361f32"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-checkout-artifact-sync-20261015/dependency-byte-proof.json",
+            "sha256": "a3db0f26b18f9955ac36c81784ac243b84c79da70cdc6b35c31a32a8b26fe87d"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F003",
+      "observedUtc": "2026-10-15T21:58:07.868Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Missing or stale reviewed document: AGENTS.md",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-checkout-artifact-sync-20261015/target-receipt-proof.json",
+          "sha256": "f29b1fada12eabf997f0cde80f11ce270ad81197aa7ce7b5c3c42385b59f599d"
+        }
+      ],
+      "cause": "Worktree receipt inherited root AGENTS raw hash although normalized content is equal",
+      "correction": "Compute every session reviewed-document hash from its own checkout; unchanged AGENTS differs only by newlines. Ledger candidate initially rejected because runIds is not commandRunIds; installed mapping contract inspected and exact field corrected before transactional acceptance.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Bind reviewed-document hashes to the verified target checkout; normalized provenance equality does not establish raw-byte equality.",
+        "reason": "Existing session drift check correctly rejected copied source hash; no validator change needed."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Compare each worktree receipt read entry to actual target SHA256 after normalized content review",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/verify-session-compliance.cjs",
+            "sha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-checkout-artifact-sync-20261015/target-receipt-proof.json",
+            "sha256": "f29b1fada12eabf997f0cde80f11ce270ad81197aa7ce7b5c3c42385b59f599d"
+          }
+        ]
+      },
+      "commandRunIds": [
+        "285393f0-8e6a-499e-b72b-c8bbd2b06f0d"
+      ]
+    },
+    {
+      "id": "F004",
+      "observedUtc": "2026-10-15T22:00:06.450Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Copy-time manifest check incorrectly rejected intentionally advanced master milestone",
+      "commandRunIds": [
+        "71e38f38-f29f-484a-aed5-cfc6280481c6"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-checkout-artifact-sync-20261015/manifest-probe-finding.json",
+          "sha256": "b917bf5929da5ffbf0ac4b44adb6aaec14feda5de0767751ea2157b70a443a18"
+        }
+      ],
+      "cause": "Probe treated required mutable milestone master as immutable transfer evidence",
+      "correction": "Preserve historical transfer hash; verify current mutable master by source/destination equality. Replace one-off probe with literal reviewed file and exact Markdown regex.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Preserve original immutable transfer provenance and verify current mutable milestone owners separately; author exact probe code from literal source and inspect serialized regex.",
+        "reason": "One-off synchronization verifier corrected; runtime and shared validator behavior unchanged."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Measured verify-sync-final.cjs:536 immutable transfer hashes, current master parity,216links, preserved source/configuration",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "docs/builds/xdx-checkout-artifact-sync-20261015/verify-sync-final.cjs",
+            "sha256": "b7bb51a60d3831b3fdf9ec07a105a3e0501d26f094b3ded701e8594068e1a03f"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-checkout-artifact-sync-20261015/verification.json",
+            "sha256": "3903fd087f195c8383774df964049668d189e768c50685ad46b6a2de89141e6d"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F005",
+      "observedUtc": "2026-10-15T22:02:22.196Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Precommit exact-byte check rejected backup worktree BUILD_STANDARD blob",
+      "evidenceGap": "Unwrapped staging verification reported mismatch before either commit; no measured run ID.",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-checkout-artifact-sync-20261015/backup-attribute-finding.json",
+          "sha256": "835c5034f754e88637dfc7922609ef6e462fe4f0c2649595bb88aee997530587"
+        }
+      ],
+      "cause": "Preserved nested .gitattributes backup was active Git policy inside before/worktree and overrode enclosing -text rule",
+      "correction": "Retain attribute bytes as .gitattributes.snapshot and update backup manifest; no executable nested policy remains Effective attributes now -text, but Git cached previously normalized blob without re-cleaning. Add --renormalize only for the explicit task allowlist, then compare every selected blob to raw bytes.",
+      "commandRunIds": [
+        "f458cd22-cdd1-4d58-99fe-3bcb10825961"
+      ],
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Retain archived policy bytes under a non-active snapshot filename; after task-scoped attribute updates re-clean only selected paths and compare staged Git blob hashes with raw evidence bytes.",
+        "reason": "Existing exact-byte release gate caught the mismatch before commit; one-off scoped staging helper repairs affected cached blobs without global normalization."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "stage-sync.cjs explicit allowlist + scoped renormalization + all selected staged blob SHA1 comparisons",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "docs/builds/xdx-checkout-artifact-sync-20261015/stage-sync.cjs",
+            "sha256": "fc1de045dafa624a8a5f1c593d960a2ceec4d9c4cdf70fb34600f029ecd591b4"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-checkout-artifact-sync-20261015/staging-proof.json",
+            "sha256": "2286b11a56252bc8954f163b7a0518b16574f5601c2391878dfaa4c11f1bc991"
+          }
+        ]
+      }
+    }
+  ]
+}

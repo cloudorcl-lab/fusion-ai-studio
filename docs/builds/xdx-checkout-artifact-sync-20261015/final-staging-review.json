@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-checkout-artifact-sync-20261015",
+  "agentId": "/root/sync_validator_review",
+  "assignmentId": "validator-review",
+  "activityId": "final-staging-review",
+  "observedStartUtc": "2026-10-15T22:03:37.000Z",
+  "observedEndUtc": "2026-10-15T22:03:48.000Z",
+  "timingLimitations": "First read preceded explicit start observation; initial read and final schema-inspection/report tail excluded. No tests or source edits; only this report written.",
+  "result": "pass",
+  "failureId": "F005",
+  "reviewedPrevention": {
+    "source": "docs/builds/xdx-checkout-artifact-sync-20261015/stage-sync.cjs",
+    "sha256": "fc1de045dafa624a8a5f1c593d960a2ceec4d9c4cdf70fb34600f029ecd591b4",
+    "findings": [
+      "Staging allows only explicit task paths and rejects preexisting out-of-scope staged content before mutations.",
+      "git add --renormalize uses the same explicit allowlist, preventing checkout-wide normalization.",
+      "Archived .gitattributes filenames removed from index and preserved as .gitattributes.snapshot, which Git does not activate as attribute policy.",
+      "Every selected regular file except live .gitattributes is compared using raw Git blob SHA1 versus index blob; failures abort before commit.",
+      "Live .gitattributes intentionally excluded from raw hash comparison; scoped diff review remains needed for its intended rules."
+    ]
+  },
+  "preservation": {
+    "manifest": "docs/builds/xdx-checkout-artifact-sync-20261015/before-manifest.json",
+    "manifestSha256": "ffd45c0ff3e46363fe1480a98bf4e9faf9efdc48f914b886930e78003259a992",
+    "backupRowsMatchingRawSha256": 24,
+    "backupMismatches": 0,
+    "effectiveGitAttribute": "text unset on before/worktree/BUILD_STANDARD.md in both checkouts; text unset on snapshot path in root",
+    "activeNestedAttributesFound": 0,
+    "auditLimitation": "Optional initial audit assumed all30 rows have backup paths and emitted six null-path diagnostics for preserveOnly rows. Actual schema inspected: those six are deliberately preservation-only and were not backup-hash checked here. No file mutation occurred. Existing main verification covers preserved working sources. This report does not claim a fresh application test or a repeat of successful tests."
+  },
+  "reviewedStagingEvidence": {
+    "path": "docs/builds/xdx-checkout-artifact-sync-20261015/staging-proof.json",
+    "sha256": "2286b11a56252bc8954f163b7a0518b16574f5601c2391878dfaa4c11f1bc991",
+    "observedUtc": "2026-10-15T22:03:25.161Z",
+    "rootSelectedFiles": 68,
+    "worktreeSelectedFiles": 586,
+    "unexpected": [],
+    "exactStagedBytes": true,
+    "limitation": "Reviewed actual source and retained proof; did not rerun staging mutation. Later report/receipt additions require coordinator's final scoped staging pass."
+  },
+  "recommendation": "F005 may close against the exact staging-source hash, staging proof and this independent review. Preserve original occurrence and treat all later staging as subject to the same scoped blob/raw check."
+}

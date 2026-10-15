@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-checkout-artifact-sync-20261015",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-10-15T21:53:55.605Z",
+  "checkpointUtc": "2026-10-15T22:04:17.128Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "fa1aa8fff43b8834b4db6679ca542229bbe6893efe406878e87ce6fa352e00ed"
+    },
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "c007c6eca8368b0475c563e659fe29f5ee36b27aa1ea21950d0742087fa99c90"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "1ee7f7cc5240bacea5dd22189e6119606c9f79b06e6766da8a88458d55cc7cf9"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "81c5aabb4d2fca736fb2eeeb6955be1a9d95a9b499136b7459165f9d882b75db"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "49a14543e8b0323d48e70949ce925a70d3e194735142d4f8f6637ccaeab0848f"
+    }
+  ],
+  "reviewNotes": "Reviewed handoff, general build standard and canonical lifecycle. Governance synchronization only; no resource-operation or runtime changes. Reviewed synchronized canonical capture paragraph, registry supplemental reference and current master; source/destination raw hashes retained. Reviewed final current master and staging correction; archived attributes renamed without changing preserved bytes.",
+  "objectReferences": [],
+  "noObjectsReason": "Transfer existing reference/evidence bytes only; no resource object implementation, payload design, GET or POST execution.",
+  "learningRegister": "docs/builds/xdx-checkout-artifact-sync-20261015/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-checkout-artifact-sync-20261015/failure-ledger.json",
+  "learningTaskId": "xdx-checkout-artifact-sync-20261015",
+  "timeTracker": "docs/builds/xdx-checkout-artifact-sync-20261015/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Scoped governance and evidence propagation",
+      "status": "pass",
+      "reason": "Selective key-artifact sync verified; no product/runtime operation; source/config preserved; retained qualification reused; scoped local commit follows final gate.",
+      "evidence": [
+        "docs/builds/xdx-checkout-artifact-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/verification.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/validator-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/docs-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/build-ledger.json"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Scoped governance and evidence propagation",
+      "status": "pass",
+      "reason": "Selective key-artifact sync verified; no product/runtime operation; source/config preserved; retained qualification reused; scoped local commit follows final gate.",
+      "evidence": [
+        "docs/builds/xdx-checkout-artifact-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/verification.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/validator-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/docs-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/build-ledger.json"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Scoped governance and evidence propagation",
+      "status": "pass",
+      "reason": "Selective key-artifact sync verified; no product/runtime operation; source/config preserved; retained qualification reused; scoped local commit follows final gate.",
+      "evidence": [
+        "docs/builds/xdx-checkout-artifact-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/verification.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/validator-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/docs-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/build-ledger.json"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Scoped governance and evidence propagation",
+      "status": "pass",
+      "reason": "Selective key-artifact sync verified; no product/runtime operation; source/config preserved; retained qualification reused; scoped local commit follows final gate.",
+      "evidence": [
+        "docs/builds/xdx-checkout-artifact-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/verification.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/validator-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/docs-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/build-ledger.json"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Scoped governance and evidence propagation",
+      "status": "pass",
+      "reason": "Selective key-artifact sync verified; no product/runtime operation; source/config preserved; retained qualification reused; scoped local commit follows final gate.",
+      "evidence": [
+        "docs/builds/xdx-checkout-artifact-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/verification.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/validator-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/docs-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/build-ledger.json"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Scoped governance and evidence propagation",
+      "status": "pass",
+      "reason": "Selective key-artifact sync verified; no product/runtime operation; source/config preserved; retained qualification reused; scoped local commit follows final gate.",
+      "evidence": [
+        "docs/builds/xdx-checkout-artifact-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/verification.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/validator-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/docs-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/build-ledger.json"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Scoped governance and evidence propagation",
+      "status": "pass",
+      "reason": "Selective key-artifact sync verified; no product/runtime operation; source/config preserved; retained qualification reused; scoped local commit follows final gate.",
+      "evidence": [
+        "docs/builds/xdx-checkout-artifact-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/verification.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/validator-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/docs-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/build-ledger.json"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Scoped governance and evidence propagation",
+      "status": "pass",
+      "reason": "Selective key-artifact sync verified; no product/runtime operation; source/config preserved; retained qualification reused; scoped local commit follows final gate.",
+      "evidence": [
+        "docs/builds/xdx-checkout-artifact-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/verification.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/validator-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/docs-review.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-checkout-artifact-sync-20261015/build-ledger.json"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Unavailable",
+    "aiUnits": "Unavailable",
+    "timingGaps": "Initial prerequisite reading unallocated"
+  }
+}
