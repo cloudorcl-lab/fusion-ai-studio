@@ -1,0 +1,171 @@
+{
+  "agentId": "/root/address_contract",
+  "parentAgentId": "/root",
+  "assignmentId": "address-contract",
+  "activityId": "address-template-fixture-repair",
+  "file": "test/workflows/xdx_supplier_conversation/xdx-address-required-template-creation.json",
+  "beforeSha256": "6713c4038c0a2d580306fb818fdb46a37d325d89da0a12b5e2e0fa7157c51c87",
+  "afterSha256": "9da7052f093e843c4f0d96b00e6f044d823e7f2c56a9f4677d0e913cbd29b155",
+  "authority": "Explicit root-delegated minimal local test-only repair; no CLI or runtime execution authorized",
+  "cause": "Current prompt explicitly selects source address ID; prior fixture/path expected name lookup",
+  "qualification": {
+    "jsonValid": true,
+    "businessObject": "XDX_SUPPLIER_ADDRESSES",
+    "functionName": "GetSupplierAddress",
+    "operationId": "get_suppliers-addresses",
+    "readPath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses/{suppliers_addresses_Id}?onlyData=true&fields=SupplierAddressId,AddressName,CountryCode,Country,AddressLine1,AddressLine2,City,State,Province,PostalCode,Status,InactiveDate,AddressPurposeOrderingFlag,Email,AddressPartyNumber",
+    "pathInputs": {
+      "suppliers_Id": "300000047414679",
+      "suppliers_addresses_Id": "300000047414694"
+    },
+    "scalarSourceRowExactlyPreserved": true,
+    "readRequired": true,
+    "findForbidden": true,
+    "allLaterStepsUnchanged": true,
+    "businessAssertionsUnchanged": true,
+    "allJudgeCriteriaUnchanged": true,
+    "promptUnchanged": true,
+    "completePathPartitionCount": 200,
+    "onlyAuthorizedDelta": true
+  },
+  "changes": [
+    {
+      "path": "/conversation/steps/0/pathAssertions/mustExecute/40/id",
+      "before": "address-template-prepare-address-draft-path-xdx-find-address-template",
+      "after": "address-template-prepare-address-draft-path-read-address-by-explicit-id"
+    },
+    {
+      "path": "/conversation/steps/0/pathAssertions/mustExecute/40/name",
+      "before": "Run find address template",
+      "after": "Read the explicitly named source address ID"
+    },
+    {
+      "path": "/conversation/steps/0/pathAssertions/mustExecute/40/nodeCode",
+      "before": "XDX_FIND_ADDRESS_TEMPLATE",
+      "after": "XDX_READ_ADDRESS_TEMPLATE"
+    },
+    {
+      "path": "/conversation/steps/0/pathAssertions/mustNotExecute/111/id",
+      "before": "address-template-prepare-address-draft-path-xdx-read-address-template",
+      "after": "address-template-prepare-address-draft-path-no-address-name-search"
+    },
+    {
+      "path": "/conversation/steps/0/pathAssertions/mustNotExecute/111/name",
+      "before": "Do not run read address template",
+      "after": "Do not search by name when the source ID is explicit"
+    },
+    {
+      "path": "/conversation/steps/0/pathAssertions/mustNotExecute/111/nodeCode",
+      "before": "XDX_READ_ADDRESS_TEMPLATE",
+      "after": "XDX_FIND_ADDRESS_TEMPLATE"
+    },
+    {
+      "path": "/conversation/steps/0/executionAssertions/orderedNodeCodes/nodeCodes/3",
+      "before": "XDX_BUILD_CHILD_DRAFT",
+      "after": "XDX_READ_ADDRESS_TEMPLATE"
+    },
+    {
+      "path": "/conversation/steps/0/executionAssertions/orderedNodeCodes/nodeCodes/4",
+      "before": "XDX_CHECK_NEW_ADDRESS_NAME",
+      "after": "XDX_BUILD_CHILD_DRAFT"
+    },
+    {
+      "path": "/conversation/steps/0/executionAssertions/orderedNodeCodes/nodeCodes/5",
+      "before": "XDX_CHILD_QUERY_RESPONSE",
+      "after": "XDX_CHECK_NEW_ADDRESS_NAME"
+    },
+    {
+      "path": "/conversation/steps/0/executionAssertions/orderedNodeCodes/nodeCodes/6",
+      "before": "XDX_RETURN_CHILD_RESPONSE",
+      "after": "XDX_CHILD_QUERY_RESPONSE"
+    },
+    {
+      "path": "/conversation/steps/0/executionAssertions/orderedNodeCodes/nodeCodes/7",
+      "change": "added",
+      "after": "XDX_RETURN_CHILD_RESPONSE"
+    },
+    {
+      "path": "/conversation/steps/0/testData/nodes/XDX_FIND_ADDRESS_TEMPLATE",
+      "change": "removed",
+      "before": {
+        "nodeType": "BO_FUNCTION",
+        "capture": {
+          "mode": "model-generated",
+          "responseTruncated": false
+        },
+        "metadata": {
+          "functionName": "ListSupplierAddresses",
+          "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+        },
+        "input": {
+          "q": "AddressName='Dell US1'",
+          "offset": 0,
+          "suppliers_Id": "300000047414679",
+          "limit": 25
+        },
+        "response": {
+          "items": [
+            {
+              "SupplierAddressId": 300000047414694,
+              "AddressName": "Dell US1",
+              "CountryCode": "US",
+              "Country": "United States",
+              "AddressLine1": "2300 GREENLAWN BLVD",
+              "AddressLine2": null,
+              "City": "ROUND ROCK",
+              "State": "TX",
+              "Province": null,
+              "PostalCode": "78664",
+              "Status": "ACTIVE",
+              "InactiveDate": "4712-12-31",
+              "AddressPurposeOrderingFlag": true
+            }
+          ],
+          "count": 1,
+          "limit": 25,
+          "offset": 0,
+          "links": [],
+          "hasMore": false
+        }
+      }
+    },
+    {
+      "path": "/conversation/steps/0/testData/nodes/XDX_READ_ADDRESS_TEMPLATE",
+      "change": "added",
+      "after": {
+        "nodeType": "BO_FUNCTION",
+        "capture": {
+          "mode": "model-generated",
+          "responseTruncated": false
+        },
+        "metadata": {
+          "functionName": "GetSupplierAddress",
+          "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+        },
+        "input": {
+          "suppliers_Id": "300000047414679",
+          "suppliers_addresses_Id": "300000047414694"
+        },
+        "response": {
+          "SupplierAddressId": 300000047414694,
+          "AddressName": "Dell US1",
+          "CountryCode": "US",
+          "Country": "United States",
+          "AddressLine1": "2300 GREENLAWN BLVD",
+          "AddressLine2": null,
+          "City": "ROUND ROCK",
+          "State": "TX",
+          "Province": null,
+          "PostalCode": "78664",
+          "Status": "ACTIVE",
+          "InactiveDate": "4712-12-31",
+          "AddressPurposeOrderingFlag": true
+        }
+      }
+    }
+  ],
+  "scenarioExecutions": 0,
+  "tenantCalls": 0,
+  "workflowEdits": 0,
+  "observedEndUtc": "2026-10-15T15:36:38.154Z"
+}

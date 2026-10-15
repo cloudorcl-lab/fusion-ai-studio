@@ -1,0 +1,9 @@
+{
+  "functionName": "CreateSupplierAddress",
+  "kind": "token",
+  "parameterName": "AddressName",
+  "patch": {
+    "dataType": "string",
+    "description": "Reviewed new address name, maximum 240 characters; uniqueness is scoped to the locked target supplier."
+  }
+}

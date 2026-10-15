@@ -1,0 +1,12 @@
+{
+  "observedUtc": "2026-10-15T16:30:05.653Z",
+  "failedReads": [
+    "Guessed scripts/measure-command.cjs did not exist",
+    "PowerShell literal rg glob path *.ps1 was rejected"
+  ],
+  "cause": "Optional read-only discovery used unverified path and shell glob",
+  "correction": "rg --files scripts located scripts/measure-build-command.cjs and scripts/build-timing-report.cjs; actual files and documented flags read successfully",
+  "result": "pass",
+  "applicationTests": 0,
+  "businessCalls": 0
+}

@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "command": "do-save-workflow",
+  "result": {
+    "action": "patched",
+    "filePath": "D:\\Temp\\worktrees\\xdx-supplier-workspace-20261014\\src\\workflows\\xdx_supplier_conversation.wf",
+    "workflowCode": "XDX_SUPPLIER_CONVERSATION",
+    "workflowId": "300000340639869",
+    "status": "DRAFT",
+    "version": 88007237,
+    "headerETag": "\"27\"",
+    "localFileUpdated": true,
+    "localFileUpdateMode": "remote-draft"
+  }
+}

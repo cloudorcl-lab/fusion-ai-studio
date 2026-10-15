@@ -1,0 +1,368 @@
+[
+  {
+    "action": "add",
+    "from": "XDX_PREPARE_CHILD_CREATE",
+    "to": "XDX_PERSIST_CHILD_PREPARATION",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_PREPARATION",
+    "to": "XDX_ROUTE_CHILD_SOURCE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ACCEPT_CHILD_SOURCE",
+    "to": "XDX_PERSIST_CHILD_SOURCE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_BUILD_CHILD_DRAFT",
+    "to": "XDX_PERSIST_CHILD_DRAFT",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_VALIDATE_CHILD_DRAFT",
+    "to": "XDX_PERSIST_CHILD_VALIDATION",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ACCEPT_ADDRESS_NAME_CHECK",
+    "to": "XDX_PERSIST_ADDRESS_NAME_CHECK",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_RESERVE_CHILD_CREATE",
+    "to": "XDX_PERSIST_CHILD_RESERVATION",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_CAPTURE_CHILD_CREATION",
+    "to": "XDX_PERSIST_CHILD_CREATION",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_VERIFY_CHILD_RESULT",
+    "to": "XDX_PERSIST_CHILD_VERIFICATION",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_HANDLE_CHILD_WRITE_ERROR",
+    "to": "XDX_PERSIST_CHILD_WRITE_ERROR",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_WRITE_ERROR",
+    "to": "XDX_SUPPLIER_QUERY_RESPONSE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_HANDLE_CHILD_PREPARE_ERROR",
+    "to": "XDX_PERSIST_CHILD_PREPARE_ERROR",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_PREPARE_ERROR",
+    "to": "XDX_SUPPLIER_QUERY_RESPONSE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_FIND_ADDRESS_TEMPLATE",
+    "to": "XDX_ACCEPT_CHILD_SOURCE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_READ_ADDRESS_TEMPLATE",
+    "to": "XDX_ACCEPT_CHILD_SOURCE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_CREATE_ADDRESS_ONCE",
+    "to": "XDX_CAPTURE_CHILD_CREATION",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_GET_CREATED_ADDRESS",
+    "to": "XDX_VERIFY_CHILD_RESULT",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_FIND_CONTACT_TEMPLATE",
+    "to": "XDX_ACCEPT_CHILD_SOURCE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_READ_CONTACT_TEMPLATE",
+    "to": "XDX_ACCEPT_CHILD_SOURCE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_CREATE_CONTACT_ONCE",
+    "to": "XDX_CAPTURE_CHILD_CREATION",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_GET_CREATED_CONTACT",
+    "to": "XDX_VERIFY_CHILD_RESULT",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_CHECK_NEW_ADDRESS_NAME",
+    "to": "XDX_ACCEPT_ADDRESS_NAME_CHECK",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_SOURCE",
+    "to": "XDX_JOIN_CHILD_SOURCE",
+    "label": "child_build"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_SOURCE",
+    "to": "XDX_FIND_ADDRESS_TEMPLATE",
+    "label": "address_source_list"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_SOURCE",
+    "to": "XDX_READ_ADDRESS_TEMPLATE",
+    "label": "address_source_get"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_SOURCE",
+    "to": "XDX_FIND_CONTACT_TEMPLATE",
+    "label": "contact_source_list"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_SOURCE",
+    "to": "XDX_READ_CONTACT_TEMPLATE",
+    "label": "contact_source_get"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_SOURCE",
+    "to": "XDX_JOIN_CHILD_SOURCE",
+    "label": "display"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_SOURCE",
+    "to": "XDX_JOIN_CHILD_SOURCE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_JOIN_CHILD_SOURCE",
+    "to": "XDX_ROUTE_CHILD_BUILD",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_BUILD",
+    "to": "XDX_BUILD_CHILD_DRAFT",
+    "label": "child_build"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_BUILD",
+    "to": "XDX_JOIN_CHILD_BUILD",
+    "label": "display"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_DRAFT",
+    "to": "XDX_JOIN_CHILD_BUILD",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_JOIN_CHILD_BUILD",
+    "to": "XDX_ROUTE_CHILD_VALIDATION",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_VALIDATION",
+    "to": "XDX_VALIDATE_CHILD_DRAFT",
+    "label": "child_validate"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_VALIDATION",
+    "to": "XDX_JOIN_CHILD_VALIDATION",
+    "label": "display"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_VALIDATION",
+    "to": "XDX_JOIN_CHILD_VALIDATION",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_JOIN_CHILD_VALIDATION",
+    "to": "XDX_ROUTE_CHILD_NAME_CHECK",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_NAME_CHECK",
+    "to": "XDX_CHECK_NEW_ADDRESS_NAME",
+    "label": "address_name_check"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_NAME_CHECK",
+    "to": "XDX_JOIN_CHILD_NAME",
+    "label": "child_reserve"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_NAME_CHECK",
+    "to": "XDX_JOIN_CHILD_NAME",
+    "label": "display"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_ADDRESS_NAME_CHECK",
+    "to": "XDX_JOIN_CHILD_NAME",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_JOIN_CHILD_NAME",
+    "to": "XDX_ROUTE_CHILD_RESERVATION",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_RESERVATION",
+    "to": "XDX_RESERVE_CHILD_CREATE",
+    "label": "child_reserve"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_RESERVATION",
+    "to": "XDX_JOIN_CHILD_RESERVATION",
+    "label": "display"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_RESERVATION",
+    "to": "XDX_JOIN_CHILD_RESERVATION",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_JOIN_CHILD_RESERVATION",
+    "to": "XDX_ROUTE_CHILD_DISPATCH",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_DISPATCH",
+    "to": "XDX_CREATE_ADDRESS_ONCE",
+    "label": "create_address"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_DISPATCH",
+    "to": "XDX_CREATE_CONTACT_ONCE",
+    "label": "create_contact"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_DISPATCH",
+    "to": "XDX_JOIN_CHILD_POST",
+    "label": "display"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_CREATION",
+    "to": "XDX_JOIN_CHILD_POST",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_JOIN_CHILD_POST",
+    "to": "XDX_ROUTE_CHILD_READBACK",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_READBACK",
+    "to": "XDX_GET_CREATED_ADDRESS",
+    "label": "verify_address"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_READBACK",
+    "to": "XDX_GET_CREATED_CONTACT",
+    "label": "verify_contact"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CHILD_READBACK",
+    "to": "XDX_JOIN_CHILD_READBACK",
+    "label": "display"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_VERIFICATION",
+    "to": "XDX_JOIN_CHILD_READBACK",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_JOIN_CHILD_READBACK",
+    "to": "XDX_JOIN_LANGUAGE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_DETAIL_RESULT",
+    "to": "XDX_PREPARE_CHILD_CREATE",
+    "label": "child_prepare"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_SEARCH_RESULT",
+    "to": "XDX_JOIN_DETAIL",
+    "label": "child_prepare"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_REQUEST",
+    "to": "XDX_VALIDATE_CHILD_DRAFT",
+    "label": "child_validate"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_CONTROL",
+    "to": "XDX_VALIDATE_CHILD_DRAFT",
+    "label": "child_preflight"
+  }
+]

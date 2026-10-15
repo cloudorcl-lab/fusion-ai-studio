@@ -1,0 +1,51 @@
+{
+  "agentId": "/root/address_contract",
+  "assignmentId": "address-contract",
+  "scenarioTestsUsed": 0,
+  "priorFailureEvidence": "docs/builds/xdx-supplier-child-create-20261015/bo-revalidation.json",
+  "observedEndUtc": "2026-10-15T13:10:32.2613796Z",
+  "parentAgentId": "/root",
+  "activityId": "address-contact-bo-revalidation-after-examples",
+  "precedingChange": "Added one described request-only example per new function; no business logic/template changes",
+  "results": [
+    {
+      "stdout": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_after_example_addresses.stdout.txt",
+      "source": "src/businessObjects/xdx_supplier_addresses.bo",
+      "actual": {
+        "ok": true,
+        "command": "validate-bo",
+        "result": {
+          "ok": true,
+          "errorCount": 0,
+          "issues": []
+        }
+      },
+      "sha256": "e6774fc2cd13990c42e5861cb91f31936df9850961ca25babc5eb17f4cc5448f",
+      "semanticPass": true,
+      "object": "addresses",
+      "parseExit": 0,
+      "stderr": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_after_example_addresses.stderr.txt",
+      "commandExit": 0
+    },
+    {
+      "stdout": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_after_example_contacts.stdout.txt",
+      "source": "src/businessObjects/xdx_supplier_contacts.bo",
+      "actual": {
+        "ok": true,
+        "command": "validate-bo",
+        "result": {
+          "ok": true,
+          "errorCount": 0,
+          "issues": []
+        }
+      },
+      "sha256": "118235491b6f36617d5c1e606141efcc358bac163aec18742ca3d183a178b9d5",
+      "semanticPass": true,
+      "object": "contacts",
+      "parseExit": 0,
+      "stderr": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_after_example_contacts.stderr.txt",
+      "commandExit": 0
+    }
+  ],
+  "mode": "local-authoring-prerequisite"
+}

@@ -1,0 +1,14 @@
+const fs=require('fs'),cp=require('child_process'),crypto=require('crypto');
+const dir='docs/builds/xdx-supplier-child-create-20261015',file='src/workflows/xdx_supplier_conversation.wf';
+const hash=()=>crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+const w=JSON.parse(fs.readFileSync(file)),n=w.specification.dataPipeline.pipelineNodes.find(n=>n.code==='XDX_PREPARE_SUPPLIER_REQUEST'),before=hash();
+const anchor=String.raw`if(!prefix||/[\s:=]$/.test(prefix)){`,replacement=String.raw`if(prefix.trim()&&/[\s:=]$/.test(prefix)){`;
+if(!n.metadata.sourceCode.includes(anchor)||n.metadata.sourceCode.indexOf(anchor)!==n.metadata.sourceCode.lastIndexOf(anchor))throw Error('Unique reviewed condition missing');
+const finding={before,node:n.code,finding:'Empty prose prefix allowed bare whole-message Email token to normalize despite literal-preservation scope.',correction:'Require nonempty trimmed prose prefix and retain whitespace/colon/equals boundary.',priorReceipt:'xdx_child_email_repair_receipt.json'};
+fs.writeFileSync(dir+'/xdx_child_email_literal_finding.json',JSON.stringify(finding,null,2)+'\n');
+const patch=dir+'/xdx_child_email_literal_patch.json';fs.writeFileSync(patch,JSON.stringify({sourceCode:n.metadata.sourceCode.replace(anchor,replacement)},null,2)+'\n');
+const r=cp.spawnSync(process.execPath,['.agents/skills/aistudio/scripts/aistudio.js','do-modify-node','--file',file,'--node-code',n.code,'--metadata-patch','@'+patch],{encoding:'utf8',timeout:300000});
+fs.writeFileSync(dir+'/xdx_child_email_literal_stdout.json',r.stdout||'');fs.writeFileSync(dir+'/xdx_child_email_literal_stderr.txt',r.stderr||'');if(r.status!==0)throw Error('modify exit '+r.status);if(JSON.parse(r.stdout).ok===false)throw Error('modify failed');
+const contract=dir+'/xdx_child_email_contract.cjs',text=fs.readFileSync(contract,'utf8'),test="check('bare whole-message Email token stays literal',()=>{const r=runPrepare('contact','direct',email+'.',email+'.',draft('contact','before@example.invalid'));assert.equal(r.state.draft.payload.Email,email+'.');});\n";
+const mark="check('natural-language active child Email edit";if(!text.includes(mark))throw Error('contract insertion missing');if(text.includes('bare whole-message Email token stays literal'))throw Error('contract already patched');fs.writeFileSync(contract,text.replace(mark,test+mark));
+const receipt={...finding,after:hash(),changedNodes:[n.code],graphChanged:false,remoteCalls:0,runtimeAttempts:0};fs.writeFileSync(dir+'/xdx_child_email_literal_repair_receipt.json',JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify(receipt));

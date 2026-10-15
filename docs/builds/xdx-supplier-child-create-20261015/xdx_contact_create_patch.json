@@ -1,0 +1,8 @@
+{
+  "patch": {
+    "description": "Create one reviewed business contact under the resolved supplier using only FirstName, LastName and Email; omit generated identifiers and all account/security fields. Caller owns exact payload approval, duplicate protection and uncertain-outcome reconciliation.",
+    "name": "CreateSupplierContact",
+    "bodyTemplate": "{\"FirstName\":\"{FirstName}\",\"LastName\":\"{LastName}\",\"Email\":\"{Email}\"}"
+  },
+  "functionName": "create_suppliers_contacts"
+}

@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "command": "do-modify-node-edges",
+  "result": {
+    "ok": true,
+    "applied": 2,
+    "skipped": 0,
+    "details": [
+      {
+        "action": "add",
+        "from": "XDX_PERSIST_CHILD_WRITE_ERROR",
+        "to": "XDX_RETURN_CHILD_WRITE_ERROR",
+        "label": "success",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "XDX_PERSIST_CHILD_PREPARE_ERROR",
+        "to": "XDX_RETURN_CHILD_PREPARE_ERROR",
+        "label": "success",
+        "status": "applied"
+      }
+    ],
+    "message": "Edges updated."
+  }
+}

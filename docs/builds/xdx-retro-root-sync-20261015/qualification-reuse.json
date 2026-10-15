@@ -1,0 +1,47 @@
+{
+  "observedUtc": "2026-10-15T18:06:12.516Z",
+  "result": "pass",
+  "dependencies": [
+    {
+      "path": "scripts/verify-session-compliance.cjs",
+      "rootSha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e",
+      "sourceSha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e",
+      "normalizedIdentical": true
+    },
+    {
+      "path": "tests/test-session-compliance.cjs",
+      "rootSha256": "2fb026a6c888913b892d506f340ac389a6888fc936b6982dd3908b0e6519b561",
+      "sourceSha256": "2fb026a6c888913b892d506f340ac389a6888fc936b6982dd3908b0e6519b561",
+      "normalizedIdentical": true
+    },
+    {
+      "path": "scripts/verify-build-learning.cjs",
+      "rootSha256": "411033ad51e8f5f7dd56c57d16e246e98e0b44d1aab56944726f9aed69361f32",
+      "sourceSha256": "a7ebf753e45ba9034f47a8f32c0eaccf98d89eae60cb8448c4245e329bd84148",
+      "normalizedIdentical": true
+    },
+    {
+      "path": "scripts/measure-build-command.cjs",
+      "rootSha256": "1e4786829e0e79568ff34202745f963e48726dcdec8d49052388f001eaf011f9",
+      "sourceSha256": "b872ed74362b305c59d9d3bf760ddd0f3fdad2b0430e43eb5785708f0fc06e66",
+      "normalizedIdentical": true
+    },
+    {
+      "path": "scripts/verify-living-build-contract.ps1",
+      "rootSha256": "518c67f301c362f23044040bb7522d9d0e459cd24a6ab526102f99b033dc98a3",
+      "sourceSha256": "6145b2374f63e2cd760632462dd04347d8e5fa406b509563cd40be3b437e3f80",
+      "normalizedIdentical": true
+    },
+    {
+      "path": "tests/test-living-build-contract.ps1",
+      "rootSha256": "6677822c2f1e0da859cf2aad2bd61dcf6921281fd82e6fc56c0fb001de47a45c",
+      "sourceSha256": "846d9a9065b6b47bed4a966f0a163b7d7ed92d94e16d3f176847cceba359f03e",
+      "normalizedIdentical": true
+    }
+  ],
+  "qualification": "docs/builds/xdx-supplier-retro-20261015/session-array-qualification.json",
+  "policyQualification": "Copied original commands.jsonl scoped-policy-regression exit0",
+  "reason": "No guardrail/test/dependency logic changed; source/current target contents match (line-ending-only differences separately hashed). Reuse focused PASS per no-unchanged-rerun rule; current root Startup/Closeout and file/link/closure checks remain required.",
+  "productTestsRun": 0,
+  "sensitiveFilesUnchanged": true
+}

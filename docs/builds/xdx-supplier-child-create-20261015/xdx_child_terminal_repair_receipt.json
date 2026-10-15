@@ -1,0 +1,19 @@
+{
+  "before": "edbebc3e1e7e6bc0c4957073837dd956d66738a0fd79d8337e79c6f61ddfa116",
+  "after": "d43b1e169b0e3076e6dd2e42503554ae247390d2026fd0d0b18770bf5207d2d7",
+  "removed": [
+    "XDX_ROUTE_CHILD_BUILD",
+    "XDX_JOIN_CHILD_BUILD",
+    "XDX_ROUTE_CHILD_VALIDATION",
+    "XDX_JOIN_CHILD_VALIDATION",
+    "XDX_ROUTE_CHILD_RESERVATION",
+    "XDX_JOIN_CHILD_RESERVATION"
+  ],
+  "added": [
+    "XDX_CHILD_QUERY_RESPONSE",
+    "XDX_RETURN_CHILD_RESPONSE"
+  ],
+  "effect": "Child invocations use one semantic response followed by explicit terminal RETURN; no traversal of unrelated site chain. Four essential BO selection switches remain, with independent joins; deterministic stages guard nonmatching phases.",
+  "testsRun": 0,
+  "remoteCalls": 0
+}

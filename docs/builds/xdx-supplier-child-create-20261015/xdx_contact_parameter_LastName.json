@@ -1,0 +1,10 @@
+{
+  "kind": "token",
+  "parameterName": "LastName",
+  "patch": {
+    "description": "Reviewed contact last name, maximum150 characters; retained complete minimum contact identity. Caller validates JSON-safe rendering and nonblank input.",
+    "defaultValue": "",
+    "dataType": "string"
+  },
+  "functionName": "CreateSupplierContact"
+}

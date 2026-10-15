@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "repoRoot": "D:\\Temp\\worktrees\\xdx-supplier-workspace-20261014",
+  "branch": "codex/xdx-supplier-workspace-20261014",
+  "phase": "Closeout",
+  "startedUtc": "2026-10-15T12:49:53.017Z",
+  "checkpointUtc": "2026-10-15T16:29:27.0415830Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "316b49bd6960fa4d76a8e6813ac52183a3de4458d5caf27a82730d6ecdc0d846"
+    },
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "f17f988c1df277c9a27cd94f69908d0726d0b30fdc12d1099a816aa6662e9b63"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "a0af052bacfae7325d4a81f10ac9759db3e9ce2eb3aa8eca1921f14ab4f81bc1"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "cdf55631271322158e19320fd1835ae11f14bc36a864fc285de5dd8c539859e5"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "9f923b00d3f4ff54022c19a87cdf07a0be9b0bb30b0d3749613d5cfbc0bd9952"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "125032fe7b5faff9760440c44a008b44cb606bb63eeda1c5604f60ee254ef23e"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "eb87ef30b5d75b133c0e321259fab451726b1c347069a682e0091d815fed01fb"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "a2491c5d5056d2426281d2b1fcaa3cad18b2ba9ed5b903014f9b573d3ff1f213"
+    }
+  ],
+  "reviewNotes": "Prior canon reviewed with complete target delta review; selected object refs and testing guide read. Apply bounded extension, both user-agreed modes, five attempts/object, preserve accepted writes and prior policy edits. Governance convergence reviewed by root; worker guidance deltas communicated, same explicit scope. Reviewed current topology-growth and normalizederrorRETURN prevention refinement at existing terminal-reachability owner; source evidence qualified, no extra scenario authorization. Latest user reset policy reconciled: per successful test; history and no-replay preserved. Reviewed existing display owner refinement for distinct trusted source/created IDs, fresh/frozen accepted rendering and no replay. Bounded role Closeout: workflow implementation, local/static qualification, independent review, delivery audit and acceptance assessment only. Reviewed current handoff, learning-review and applicable session/display/DoD governance delta. Root retains whole-build delivery and unresolved native Contact corrected-display disposition; this role receipt does not claim that acceptance or global completion. Reviewed frozen handoff after F011 timeout mapping; F020 is Contact-role receipt-only and does not block integration scope. Evidence arrays independently checked as literal existing leaf paths before bounded scoped Closeout. Global native Contact display and root completion remain excluded. Reviewed current handoff after F020 closure. Earlier pre-action blocked attempts produced tool output only and no JSONL start/runId; no recorded run identity is claimed. Bounded integration role only; root retains unresolved native Contact display and global completion.",
+  "objectReferences": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "release": "26C"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-child-create-20261015/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-supplier-child-create-20261015/failure-ledger.json",
+  "learningTaskId": "xdx-supplier-child-create-20261015",
+  "timeTracker": "docs/builds/xdx-supplier-child-create-20261015/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Bounded workflow integration/static/review role completed; evidence retained. No whole-build or missing native Contact display acceptance claim.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/learning-review.md"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Bounded workflow integration/static/review role completed; evidence retained. No whole-build or missing native Contact display acceptance claim.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/intake-and-learning-register.md"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Bounded workflow integration/static/review role completed; evidence retained. No whole-build or missing native Contact display acceptance claim.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/approvals.json"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Bounded workflow integration/static/review role completed; evidence retained. No whole-build or missing native Contact display acceptance claim.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/local-bo-contracts.json"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Owned workflow/static and CODE/RETURN qualification passed; four current fixture conversations have attached judges. Root owns native acceptance, including blocked corrected Contact display, and final summary.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/identity-final-static-readiness.json",
+        "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_contract_receipt.json",
+        "docs/builds/xdx-supplier-child-create-20261015/current-child-fixture-acceptance.json",
+        "docs/builds/xdx-supplier-child-create-20261015/identity-saved-readback.json"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Observed worker intervals and command receipts returned to root; missing read-only audit/assessment boundaries explicitly unavailable, never inferred.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/integration-commands.jsonl",
+        "docs/builds/xdx-supplier-child-create-20261015/time-tracker.md"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Read-only delivery audit returned exact stale-state/dependency concerns; root reconciled learning review and preserves historical source/command evidence and unrelated changes.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/learning-review.md"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Bounded-role handoff complete. Global build remains incomplete: native Contact corrected display and user disposition owned by root, explicitly retained in active handoff.",
+      "evidence": [
+        "docs/handoffs/ACTIVE_HANDOFF.md",
+        "docs/builds/xdx-supplier-child-create-20261015/contact-display-session-loss.json"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Parent and worker counters unavailable",
+    "aiUnits": "Current run includes authorized DRAFT saves, saved/native creates and configured tests; use build ledger for current evidence/limits.",
+    "timingGaps": "Initial root start unallocated; agent-attributed intervals recorded prospectively; context telemetry unavailable"
+  },
+  "sessionId": "xdx-supplier-child-create-20261015-create-integration",
+  "learningScope": "integration"
+}

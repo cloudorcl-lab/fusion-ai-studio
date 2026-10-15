@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "command": "do-prettify-workflow",
+  "result": {
+    "ok": true,
+    "orientation": "vertical",
+    "nodeCount": 204,
+    "noteCount": 0,
+    "message": "Workflow layout prettified."
+  }
+}

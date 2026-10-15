@@ -1,0 +1,59 @@
+{
+  "caseId": "ADDR-01",
+  "object": "addresses",
+  "status": "accepted-verified",
+  "atUtc": "2026-10-15T13:21:47.128Z",
+  "surface": "actual saved BO native Fetch Sample Data",
+  "target": "eqil-dev21",
+  "supportedObjectId": "300000340669151",
+  "suppliers_Id": "300000047414679",
+  "functionName": "CreateSupplierAddress",
+  "payload": {
+    "AddressName": "XDX Address BO Direct 20261015",
+    "CountryCode": "US",
+    "AddressLine1": "2300 GREENLAWN BLVD",
+    "City": "ROUND ROCK",
+    "State": "TX",
+    "PostalCode": "78664",
+    "Email": "xdx.address.bo.20261015@example.invalid",
+    "AddressPurposeOrderingFlag": true
+  },
+  "preflight": {
+    "surface": "native saved ListSupplierAddresses",
+    "q": "AddressName='XDX Address BO Direct 20261015'",
+    "response": {
+      "items": [],
+      "count": 0,
+      "hasMore": false,
+      "limit": 1,
+      "offset": 0
+    },
+    "observed": "Actual browser sample response, parent self-link same SupplierId"
+  },
+  "approval": "approvals.json five-tests/both-modes plus coordinator frozen manifest",
+  "automaticRetry": false,
+  "SupplierAddressId": "300000340604810",
+  "AddressPartyNumber": "1501634",
+  "acceptedObservedUtc": "2026-10-15T13:22:45.684Z",
+  "response": {
+    "SupplierAddressId": 300000340604810,
+    "AddressName": "XDX Address BO Direct 20261015",
+    "CountryCode": "US",
+    "Country": "United States",
+    "AddressLine1": "2300 GREENLAWN BLVD",
+    "AddressLine2": null,
+    "City": "ROUND ROCK",
+    "State": "TX",
+    "PostalCode": "78664",
+    "AddressPurposeOrderingFlag": true,
+    "Email": "xdx.address.bo.20261015@example.invalid",
+    "InactiveDate": "4712-12-31",
+    "Status": "ACTIVE",
+    "CreationDate": "2026-10-15T13:21:58.001+00:00",
+    "CreatedBy": "CASEY.BROWN",
+    "AddressPartyNumber": "1501634"
+  },
+  "responseExcerpt": "Exact native sample response fields retained; omitted other null optional fields, audit update details and links. Browser full response showed parent300000047414679 and own ID300000340604810 self/canonical links.",
+  "verifiedUtc": "2026-10-15T13:24:13.297Z",
+  "readback": "docs/builds/xdx-supplier-child-create-20261015/address-bo-readback.json"
+}

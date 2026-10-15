@@ -1,0 +1,9 @@
+{
+  "functionName": "CreateSupplierAddress",
+  "kind": "token",
+  "parameterName": "CountryCode",
+  "patch": {
+    "dataType": "string",
+    "description": "Reviewed country code, exactly 2 characters; source-backed template value or explicit direct input."
+  }
+}

@@ -1,0 +1,15 @@
+# Active handoff — master
+
+Current objective: implement and verify direct-entry AND same-supplier template CREATE for Addresses and Contacts in XDX Supplier Workspace. Goal ACTIVE. Worktree D:/Temp/worktrees/xdx-supplier-workspace-20261014, branch codex/xdx-supplier-workspace-20261014, starting HEAD9f8f02b4. Base preserved.
+
+Current checkpoint 2026-10-15T13:19:54.029Z: validated Address BO300000340669151 andContact BO300000340669150 updates saved DRAFT; inner validators and search header gates PASS. Child graph implemented and independently reviewed snapshot edbebc3e1e7e6bc0c4957073837dd956d66738a0fd79d8337e79c6f61ddfa116; direct/template controls/reservation/readback coherent. Shared Query validator convergence qualified.
+
+Open integration issues F006(join bridge) andF007(local metadata timeouts). Both long commands stopped task-owned after bounded cutoff; no tenant execution. Static graph has37,937,154 theoretical paths caused by child switches multiplying unrelated sitechain. Sole workflow writer correcting child completion to its own semantic terminal and RETURN, with no additional LLM hop; normalization/Query proof pending. Old supplier/site paths must remain.
+
+Address scenario ADDR-01 PASS 2026-10-15T13:24:13.297Z: actual saved native BO POST accepted once; SupplierAddressId300000340604810 andAddressPartyNumber1501634 independently read back by parent+ownkey. All8submittedfields match. Addresses1/5,Contacts0/5; no reset until fullobjectcompletion. Exact six live payloads and five-case accounting frozen in run/exact-test-transaction-manifest.json under existing user authorization; configured conversations fixture-backed. No accepted/uncertain replay; reset only after successful complete object.
+
+Owners/evidence: [ledger](../builds/xdx-supplier-child-create-20261015/build-ledger.json), [failures](../builds/xdx-supplier-child-create-20261015/failure-ledger.json), [timing](../builds/xdx-supplier-child-create-20261015/checkpoint-timing.json), [transaction manifest](../builds/xdx-supplier-child-create-20261015/exact-test-transaction-manifest.json). Root owns ledger/browser/transactions; integration agent sole workflow writer; address agent independent static review; contact staged test preparation pending current conversation context.
+
+Next: prove contact saved BO create/readback; complete topology repair then bounded metadata/Query gates before any workflow save/runtime; finish four configured hybrid conversations and four native journeys within budgets; lessons/cleanup/Closeout remain. Target eqil-dev21/26C, CASEY.BROWN verified. No publication/push/deletion/unrelated changes. Previous accepted product and exhausted old budgets remain frozen in run/prior-handoff.md and prior build. This master is sole active transition record; run snapshots historical.
+
+Topology repair independently reviewed: structural paths reduced37,937,154→483,996 (HEAD483,330), no outcome cycles; old supplier/site topology preserved. Bounded prettify currenthandle running; no unchanged retries.

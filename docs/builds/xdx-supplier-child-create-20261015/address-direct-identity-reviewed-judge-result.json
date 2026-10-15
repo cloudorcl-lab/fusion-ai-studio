@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "kind": "workflow-conversation-judge-result",
+  "evaluations": [
+    {
+      "evaluationId": "step:prepare-address-draft",
+      "result": {
+        "score": 5,
+        "passed": true,
+        "criterionResults": [
+          {
+            "criterion": "The output is grounded in the replayed test data.",
+            "passed": true,
+            "notes": "All eight required displayed values match the initial direct payload and retained physical-data fixtures, including the initial controlled Email without sentence punctuation."
+          },
+          {
+            "criterion": "Distinguish the proposed new address from the selected supplier and any source address; communicate that no address has been created.",
+            "passed": true,
+            "notes": "The opening explicitly states Nothing has been created, the new record is labeled Proposed address, and Dell Inc.1255 is identified separately as its parent."
+          },
+          {
+            "criterion": "Present the exact required proposed fields, parent supplier, mode and supplied current request/revision control commands without inventing identifiers.",
+            "passed": true,
+            "notes": "The exact new name, complete required fields, direct mode and current request/revision1 Review/Cancel commands are present, without any invented child or source identifier."
+          }
+        ],
+        "unsupportedClaims": [],
+        "summary": "The complete direct draft is clearly uncreated under Dell Inc.1255, with correct controlled initial Email and exact revision1 controls."
+      }
+    },
+    {
+      "evaluationId": "step:edit-address-email",
+      "result": {
+        "score": 5,
+        "passed": true,
+        "criterionResults": [
+          {
+            "criterion": "The output is grounded in the replayed test data.",
+            "passed": true,
+            "notes": "The final controlled Email and unchanged name, country, physical fields and ordering purpose match the edited draft payload."
+          },
+          {
+            "criterion": "Resolve the field-only follow-up against the existing draft without asking again for its supplier or physical address and without switching its owner.",
+            "passed": true,
+            "notes": "The short field-only request updates the earlier Dell Inc.1255 draft without asking again for parent or address values and without changing ownership."
+          },
+          {
+            "criterion": "Preserve unchanged required values and draft identity; reflect the controlled Email replacement, newer revision and current review command without claiming creation.",
+            "passed": true,
+            "notes": "Only Email changes, the same request ID remains, revision advances to2 and exact current Review/Cancel commands are displayed while creation remains unperformed."
+          }
+        ],
+        "unsupportedClaims": [],
+        "summary": "The Email-only edit preserves the parent, physical values, name and request ID while advancing to revision2 and requiring fresh review."
+      }
+    },
+    {
+      "evaluationId": "step:review-current-address",
+      "result": {
+        "score": 5,
+        "passed": true,
+        "criterionResults": [
+          {
+            "criterion": "The output is grounded in the replayed test data.",
+            "passed": true,
+            "notes": "The eight reviewed required values match the edited payload and preceding draft, including the final controlled Email."
+          },
+          {
+            "criterion": "Make the exact proposed required-field payload and destination supplier clear for approval without presenting source identifiers as created-address identifiers.",
+            "passed": true,
+            "notes": "The response makes the proposed new address and Dell Inc.1255 destination clear, assigns no source or generated child ID, and states Nothing has been created."
+          },
+          {
+            "criterion": "Expose the supplied exact Confirm command intact and require that explicit action; do not imply that review or generic yes submits a create.",
+            "passed": true,
+            "notes": "The exact request ID and Confirm revision2 command are shown intact; review is not described as submission and generic yes is not treated as authorization."
+          }
+        ],
+        "unsupportedClaims": [],
+        "summary": "The exact revision2 direct payload remains proposed under the correct supplier and includes its exact generated Confirm command."
+      }
+    },
+    {
+      "evaluationId": "step:confirm-reviewed-address",
+      "result": {
+        "score": 5,
+        "passed": true,
+        "criterionResults": [
+          {
+            "criterion": "The output is grounded in the replayed test data.",
+            "passed": true,
+            "notes": "Created address900000000015201, party number990015201 and all eight business fields match the POST and independent GET fixtures."
+          },
+          {
+            "criterion": "Report verified completion only after the independent readback and present the returned own address identity with the intended required fields under the correct supplier.",
+            "passed": true,
+            "notes": "The opening reports created and independently verified; accepted/verified status, Dell Inc.1255, returned own address ID and all required values are explicit after the observed readback path."
+          },
+          {
+            "criterion": "Keep the source/template and newly created record distinct, preserve edited Email and approved payload, and avoid unrelated supplier/site/contact or account-creation claims.",
+            "passed": true,
+            "notes": "The output uses the fixture-returned own ID, invents no source identity for direct mode, preserves edited Email and approved payload, and contains no unrelated supplier/site/contact or account-creation claims."
+          }
+        ],
+        "unsupportedClaims": [],
+        "summary": "The deterministic completion output clearly reports accepted and independently verified creation, with the correct own ID and every reviewed field under Dell Inc.1255."
+      }
+    },
+    {
+      "evaluationId": "conversation",
+      "result": {
+        "score": 5,
+        "passed": true,
+        "criterionResults": [
+          {
+            "criterion": "The output is grounded in the replayed test data.",
+            "passed": true,
+            "notes": "Initial, edited, reviewed and final values are grounded in the request payloads, parent fixture and synthetic create/readback records; generated controls match the same executed conversation."
+          },
+          {
+            "criterion": "Later field-only and exact-control turns use the earlier supplier, physical fields and draft identity without reconstructing or switching the parent.",
+            "passed": true,
+            "notes": "The Email-only edit and exact control turns retain Dell Inc.1255, prior physical fields, new address name and request ID, with revision2 used for review and confirmation."
+          },
+          {
+            "criterion": "The conversation distinguishes proposed, reviewed, reserved, accepted and independently verified states; source IDs never become created IDs and creation occurs only after exact confirmation of the current revision.",
+            "passed": true,
+            "notes": "Preparation, edit and review remain explicitly uncreated; only exact current-revision confirmation reaches reservation/create/readback, followed by accepted/verified status and the actual fixture-returned own ID."
+          }
+        ],
+        "unsupportedClaims": [],
+        "summary": "All four turns preserve one direct supplier-owned draft through Email-only revision, exact review/confirmation, one fixture-backed creation and independent verification with unambiguous final identity."
+      }
+    }
+  ]
+}

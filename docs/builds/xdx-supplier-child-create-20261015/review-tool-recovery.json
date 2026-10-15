@@ -1,0 +1,12 @@
+{
+  "productEffect": "None; no source edits or tests/tenant calls",
+  "prevention": "resolve helper returns null before lookup when optional key is null; all graph metadata reads now use resolver",
+  "observedUtc": "2026-10-15T13:13:44.7973274Z",
+  "correctedEvidence": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_graph_static_review.json",
+  "correctedResult": "Graph read completed without missing-key errors",
+  "cause": "Helper assumed optional graph metadata always existed",
+  "failure": "Read-only graph summary indexed a hashtable with null optional convergence/error metadata; PowerShell reported InvalidOperation",
+  "agentId": "/root/address_contract",
+  "activityId": "address-static-readiness",
+  "scenarioTestsUsed": 0
+}

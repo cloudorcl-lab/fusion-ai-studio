@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "command": "validate-bo",
+  "result": {
+    "ok": false,
+    "errorCount": 1,
+    "issues": [
+      {
+        "message": "At least one example is required.",
+        "focusId": "bo-fn-13-section-examples",
+        "functionName": "CreateSupplierAddress"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "command": "validate-workflow",
+  "result": {
+    "ok": true,
+    "errorCount": 0,
+    "errors": [],
+    "message": "Workflow validation passed."
+  }
+}

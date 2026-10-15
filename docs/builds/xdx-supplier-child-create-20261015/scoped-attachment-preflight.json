@@ -1,0 +1,201 @@
+{
+  "observedUtc": "2026-10-15T16:07:48.580Z",
+  "result": "PASS",
+  "exactPending": [
+    "xdx-address-required-direct-creation",
+    "xdx-address-required-template-creation",
+    "xdx-contact-required-direct-creation",
+    "xdx-contact-required-template-creation"
+  ],
+  "allOtherReportsPassed": true,
+  "inventory": [
+    {
+      "testName": "init-display",
+      "status": "passed",
+      "version": 87967452,
+      "report": "test-reports/workflows/xdx_supplier_conversation/init-display/result.json"
+    },
+    {
+      "testName": "query",
+      "status": "passed",
+      "version": 87962227,
+      "report": "test-reports/workflows/xdx_supplier_conversation/query/result.json"
+    },
+    {
+      "testName": "required-child-read-journey",
+      "status": "passed",
+      "version": 87982277,
+      "report": "test-reports/workflows/xdx_supplier_conversation/required-child-read-journey/result.json"
+    },
+    {
+      "testName": "site-missing-assignment-recovery",
+      "status": "passed",
+      "version": 87978190,
+      "report": "test-reports/workflows/xdx_supplier_conversation/site-missing-assignment-recovery/result.json"
+    },
+    {
+      "testName": "site-required-creation",
+      "status": "passed",
+      "version": 87974055,
+      "report": "test-reports/workflows/xdx_supplier_conversation/site-required-creation/result.json"
+    },
+    {
+      "testName": "site-required-name-edit",
+      "status": "passed",
+      "version": 87978190,
+      "report": "test-reports/workflows/xdx_supplier_conversation/site-required-name-edit/result.json"
+    },
+    {
+      "testName": "supplier-child-read-continuity",
+      "status": "passed",
+      "version": 87962227,
+      "report": "test-reports/workflows/xdx_supplier_conversation/supplier-child-read-continuity/result.json"
+    },
+    {
+      "testName": "supplier-child-to-template",
+      "status": "passed",
+      "version": 87962227,
+      "report": "test-reports/workflows/xdx_supplier_conversation/supplier-child-to-template/result.json"
+    },
+    {
+      "testName": "supplier-draft-edit-boundaries",
+      "status": "passed",
+      "version": 87954284,
+      "report": "test-reports/workflows/xdx_supplier_conversation/supplier-draft-edit-boundaries/result.json"
+    },
+    {
+      "testName": "supplier-draft-review-cancel",
+      "status": "passed",
+      "version": 87954284,
+      "report": "test-reports/workflows/xdx_supplier_conversation/supplier-draft-review-cancel/result.json"
+    },
+    {
+      "testName": "supplier-exact-name",
+      "status": "passed",
+      "version": 87982277,
+      "report": "test-reports/workflows/xdx_supplier_conversation/supplier-exact-name/result.json"
+    },
+    {
+      "testName": "supplier-mismatch-boundary",
+      "status": "passed",
+      "version": 87948839,
+      "report": "test-reports/workflows/xdx_supplier_conversation/supplier-mismatch-boundary/result.json"
+    },
+    {
+      "testName": "supplier-required-confirmation",
+      "status": "passed",
+      "version": 87982277,
+      "report": "test-reports/workflows/xdx_supplier_conversation/supplier-required-confirmation/result.json"
+    },
+    {
+      "testName": "supplier-required-edit-and-uncertainty",
+      "status": "passed",
+      "version": 87982277,
+      "report": "test-reports/workflows/xdx_supplier_conversation/supplier-required-edit-and-uncertainty/result.json"
+    },
+    {
+      "testName": "supplier-required-search",
+      "status": "passed",
+      "version": 87967452,
+      "report": "test-reports/workflows/xdx_supplier_conversation/supplier-required-search/result.json"
+    },
+    {
+      "testName": "supplier-search-paging",
+      "status": "passed",
+      "version": 87974055,
+      "report": "test-reports/workflows/xdx_supplier_conversation/supplier-search-paging/result.json"
+    },
+    {
+      "testName": "supplier-template-selection",
+      "status": "passed",
+      "version": 87982277,
+      "report": "test-reports/workflows/xdx_supplier_conversation/supplier-template-selection/result.json"
+    },
+    {
+      "testName": "supplier-uncertain-boundary",
+      "status": "passed",
+      "version": 87954284,
+      "report": "test-reports/workflows/xdx_supplier_conversation/supplier-uncertain-boundary/result.json"
+    },
+    {
+      "testName": "xdx-address-required-direct-creation",
+      "status": "needs-judge",
+      "version": 88010729,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-address-required-direct-creation/result.json"
+    },
+    {
+      "testName": "xdx-address-required-template-creation",
+      "status": "needs-judge",
+      "version": 88010729,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-address-required-template-creation/result.json"
+    },
+    {
+      "testName": "xdx-contact-required-direct-creation",
+      "status": "needs-judge",
+      "version": 88010729,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-contact-required-direct-creation/result.json"
+    },
+    {
+      "testName": "xdx-contact-required-template-creation",
+      "status": "needs-judge",
+      "version": 88010729,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-contact-required-template-creation/result.json"
+    },
+    {
+      "testName": "xdx-route-control-language-path",
+      "status": "passed",
+      "version": 87959423,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-route-control-language-path/result.json"
+    },
+    {
+      "testName": "xdx-route-detail-result-addresses-get-path",
+      "status": "passed",
+      "version": 87962227,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-route-detail-result-addresses-get-path/result.json"
+    },
+    {
+      "testName": "xdx-route-detail-result-addresses-list-path",
+      "status": "passed",
+      "version": 87962227,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-route-detail-result-addresses-list-path/result.json"
+    },
+    {
+      "testName": "xdx-route-detail-result-contacts-get-path",
+      "status": "passed",
+      "version": 87962227,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-route-detail-result-contacts-get-path/result.json"
+    },
+    {
+      "testName": "xdx-route-detail-result-contacts-list-path",
+      "status": "passed",
+      "version": 87962227,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-route-detail-result-contacts-list-path/result.json"
+    },
+    {
+      "testName": "xdx-route-detail-result-sites-get-path",
+      "status": "passed",
+      "version": 87962227,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-route-detail-result-sites-get-path/result.json"
+    },
+    {
+      "testName": "xdx-route-detail-result-sites-list-path",
+      "status": "passed",
+      "version": 87962227,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-route-detail-result-sites-list-path/result.json"
+    },
+    {
+      "testName": "xdx-route-request-classifications-path",
+      "status": "passed",
+      "version": 87959423,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-route-request-classifications-path/result.json"
+    },
+    {
+      "testName": "xdx-route-search-result-get-path",
+      "status": "passed",
+      "version": 87959423,
+      "report": "test-reports/workflows/xdx_supplier_conversation/xdx-route-search-result-get-path/result.json"
+    }
+  ],
+  "reviewedJudgesStaged": 4,
+  "action": "One supported workflow-filtered attachment; no runtime replay or unrelated attachment."
+}

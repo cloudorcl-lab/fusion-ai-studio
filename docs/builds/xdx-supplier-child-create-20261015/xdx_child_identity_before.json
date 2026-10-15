@@ -1,0 +1,65 @@
+{
+  "sha256": "5e07494edbc3000dcdfb72566342d49b48b3f277f64351fcc01759ae57e6a827",
+  "nodes": [
+    {
+      "id": "18",
+      "code": "XDX_PRESENT_CONTROL_RESULT",
+      "type": "CODE",
+      "metadata": {
+        "name": "XDX Present Control Result",
+        "sourceCode": "const evaluation=$context.$nodes.XDX_EVALUATE_CONTROL.$output.result;\nconst state=JSON.parse(JSON.stringify(evaluation.state));\nstate.nextOperation=evaluation.operation;\nstate.response={message:evaluation.reason||'Describe a supplier search or draft change.'};\n['kind','mode','requestId','revision','payload','source','confirmCommand','attempts','supplier','address','assignments','writeCount','writeOrder','site','SupplierSiteId','continuationCommand'].forEach(function(k){if(Object.prototype.hasOwnProperty.call(evaluation,k))state.response[k]=evaluation[k];});\nif(Array.isArray(state.response.attempts))state.response.attempts=state.response.attempts.map(function(attempt){const shown=JSON.parse(JSON.stringify(attempt));if(shown.kind==='supplier')delete shown.sourceSupplierId;return shown;});\nif(evaluation.operation==='create_supplier')state.dispatch=JSON.parse(JSON.stringify(evaluation.attempt));\nreturn {operation:evaluation.operation,state:state};\r\n",
+        "returnType": "object"
+      },
+      "outcomes": {
+        "success": "9"
+      },
+      "inputs": [],
+      "diagram": {
+        "x": 6727.5,
+        "y": 6538
+      },
+      "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"result\": {\n      \"type\": \"object\"\n    },\n    \"timeout\": {\n      \"type\": \"boolean\"\n    },\n    \"error\": {\n      \"type\": \"string\"\n    }\n  },\n  \"additionalProperties\": false,\n  \"required\": [\n    \"result\",\n    \"timeout\",\n    \"error\"\n  ]\n}"
+    },
+    {
+      "id": "162",
+      "code": "XDX_VERIFY_CHILD_RESULT",
+      "type": "CODE",
+      "metadata": {
+        "name": "XDX VERIFY CHILD RESULT",
+        "returnType": "object",
+        "sourceCode": "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),p=state.childDispatch||{},a=state.attempts.filter(function(a){return a.kind===p.kind&&a.requestId===p.requestId&&a.revision===p.revision;})[0],address=p.kind==='address',key=address?'SupplierAddressId':'SupplierContactId',r=$context.$nodes[address?'XDX_GET_CREATED_ADDRESS':'XDX_GET_CREATED_CONTACT'].$output;\n if(!a||a.status!=='accepted')throw new Error('No matching accepted child attempt exists.');\n function decimal(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0?String(v):typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;}\n const fields=address?['AddressName','CountryCode','AddressLine1','City','State','PostalCode','Email','AddressPurposeOrderingFlag']:['FirstName','LastName','Email'];\n const generatedMatch=r&&(address?(a.AddressPartyNumber===undefined||String(r.AddressPartyNumber)===String(a.AddressPartyNumber)):(a.PersonProfileId===undefined||decimal(r.PersonProfileId)===decimal(a.PersonProfileId)));\n const matches=generatedMatch&&r&&decimal(r[key])===a[key]&&String(a.suppliers_Id)===String(p.suppliers_Id)&&fields.every(function(f){return r[f]===a.payload[f];})&&(address||Object.prototype.hasOwnProperty.call(r,'PersonProfileId')&&!!decimal(r.PersonProfileId)&&Object.prototype.hasOwnProperty.call(r,'UserName')&&r.UserName===null&&Object.prototype.hasOwnProperty.call(r,'UserAccountStatus')&&r.UserAccountStatus===null);\n a.verification=matches?'verified':'mismatch-or-unavailable';state.nextOperation='display';state.response={message:matches?(address?'Address':'Contact')+' created and independently verified.':'The '+p.kind+' was created, but its saved required fields or relationships could not be verified. It will not be created again.',kind:p.kind,requestId:a.requestId,revision:a.revision,supplier:state.draft&&state.draft.supplier,attempt:JSON.parse(JSON.stringify(a)),verification:a.verification};\n if(matches){state.response.item=JSON.parse(JSON.stringify(r));const resource=address?'addresses':'contacts';state.childSelections=state.childSelections||{};state.childSelections[resource]={suppliers_Id:p.suppliers_Id,item:JSON.parse(JSON.stringify(r))};state.draft=null;delete state.childDispatch;}return {state:state,operation:'display'};",
+        "errorNodeId": "164"
+      },
+      "inputs": [],
+      "outputSpecification": "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"result\": {\n      \"type\": \"object\"\n    },\n    \"timeout\": {\n      \"type\": \"boolean\"\n    },\n    \"error\": {\n      \"type\": \"string\"\n    }\n  },\n  \"additionalProperties\": false,\n  \"required\": [\n    \"result\",\n    \"timeout\",\n    \"error\"\n  ]\n}",
+      "outcomes": {
+        "success": "163"
+      },
+      "diagram": {
+        "x": 6277.5,
+        "y": 17026
+      }
+    },
+    {
+      "id": "192",
+      "code": "XDX_RETURN_CHILD_RESPONSE",
+      "type": "RETURN",
+      "metadata": {
+        "name": "XDX Return Child Response"
+      },
+      "outcomes": {},
+      "inputs": [
+        {
+          "id": "192_returnValue",
+          "name": "returnValue",
+          "type": "string",
+          "value": "{{$context.$nodes.XDX_CHILD_QUERY_RESPONSE.$output}}"
+        }
+      ],
+      "diagram": {
+        "x": 6952.5,
+        "y": 17914
+      }
+    }
+  ]
+}

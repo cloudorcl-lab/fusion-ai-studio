@@ -1,0 +1,2922 @@
+{
+  "observedUtc": "2026-10-15T18:04:19.258Z",
+  "result": "pass",
+  "sourceWorktree": "D:/Temp/worktrees/xdx-supplier-workspace-20261014/",
+  "sourceCommit": "91ddb80664cd74bf976dbd090222b606d5f89984",
+  "rootBranch": "TestingWFBuildTools",
+  "primary": [
+    {
+      "path": "BUILD_STANDARD.md",
+      "sourceSha256": "c274c438451ed170dbd83de0adbf3a0c698c0ea3e4eb2b3bef2734e7c3a5cbdc",
+      "targetSha256": "c007c6eca8368b0475c563e659fe29f5ee36b27aa1ea21950d0742087fa99c90",
+      "action": "source-policy-plus-root-run-ledger-wording"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sourceSha256": "855fdc07ced983bef8eb04b09dc52ad914926380427727ca02e70322220f8dfa",
+      "targetSha256": "855fdc07ced983bef8eb04b09dc52ad914926380427727ca02e70322220f8dfa",
+      "action": "exact-source-copy"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_TESTING_GUIDE.md",
+      "sourceSha256": "e3cb62bf08139faaf0d52f4fbf42190e2347fff0ff8da54c732ba32b98f70477",
+      "targetSha256": "e3cb62bf08139faaf0d52f4fbf42190e2347fff0ff8da54c732ba32b98f70477",
+      "action": "exact-source-copy"
+    },
+    {
+      "path": "package.json",
+      "sourceSha256": "e2809de0e57beb8fd76887cbacca9ff1dda7295764fe19f23d3803b720d2fc1f",
+      "targetSha256": "e2809de0e57beb8fd76887cbacca9ff1dda7295764fe19f23d3803b720d2fc1f",
+      "action": "exact-source-copy"
+    },
+    {
+      "path": "scripts/verify-session-compliance.cjs",
+      "sourceSha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e",
+      "targetSha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e",
+      "action": "exact-source-copy"
+    },
+    {
+      "path": "tests/test-session-compliance.cjs",
+      "sourceSha256": "2fb026a6c888913b892d506f340ac389a6888fc936b6982dd3908b0e6519b561",
+      "targetSha256": "2fb026a6c888913b892d506f340ac389a6888fc936b6982dd3908b0e6519b561",
+      "action": "exact-source-copy"
+    }
+  ],
+  "evidenceFiles": [
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/apply-retro-docs.cjs",
+      "sha256": "54dce9123c5f0ff168aff928c067fe981362d1786c84e8154d8f46141f046646",
+      "bytes": 12351
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/build-ledger.json",
+      "sha256": "1b8f5921ee203f5c08c4d54620f21ac54044642a30f164b3a267a290cbbb1394",
+      "bytes": 5291
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/check-docs.cjs",
+      "sha256": "325d7921c746f99f134c8669f235f06ebce46d55f8039e2545576d5672b5658e",
+      "bytes": 1732
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/commands.jsonl",
+      "sha256": "597a34bffbd5bcb921a015b440d4e8c5caa31cb5a44783aeeda3f0fd03ea70bb",
+      "bytes": 17202
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/document-check.json",
+      "sha256": "ebf4dc23506c7b7e508c1444684d093b5467daba525fdc970c969105914051b4",
+      "bytes": 1083
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/evidence-array-finding.json",
+      "sha256": "d558dda6386b1f8cd93cb7b24926368f08efc2f6b29452119bc3cb4dbcd61347",
+      "bytes": 776
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/evidence-commands.jsonl",
+      "sha256": "52ee36b90c0f5449c63de8b542595f201c43538c276ed7ebbbf17bf233a31df2",
+      "bytes": 2653
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/evidence-review.json",
+      "sha256": "eb3a835d77164d11df7c3d8cc42e45ad1871153c40bf2d71b6fec7c3b4cbc022",
+      "bytes": 6152
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/failure-candidate-evidence-array-open.json",
+      "sha256": "baf399f92b6aafe6b432a03e96085177d7935eb0887247b7dd183187b3cb8d85",
+      "bytes": 5725
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/failure-candidate-evidence-discovery.json",
+      "sha256": "5e22dd633e2df55456b434ddfd20bddfe196da3906288f385d7f1d096b1973da",
+      "bytes": 4494
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/failure-candidate-local-check-dispatch-open.json",
+      "sha256": "86fa3d605696c8d8129ae4dc0eba2f4b38feca89848e9ffaf83d13cc09abcc4c",
+      "bytes": 6944
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/failure-candidate-package-inventory-current.json",
+      "sha256": "4947877e9bc7f0ec43a0170be998ad3fe1c7668c37ed3d94a4195e3a68370512",
+      "bytes": 8878
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/failure-candidate-session-array-closed.json",
+      "sha256": "0a24e34d0709a68470b9ae21fe4300692a1adf2ebb0ec944299ce645be80859d",
+      "bytes": 8521
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/failure-candidate-worker-context-closed.json",
+      "sha256": "48515919704ed639e285c9b0d1803c417cbfd667c59c276155d02bdf50546031",
+      "bytes": 4280
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/failure-candidate-worker-context-open.json",
+      "sha256": "469de6a24af3632fd93b6f14b9c873be44c34f5bdd4719a4fc6af587583eb5fa",
+      "bytes": 3678
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/failure-candidate-worker-discovery.json",
+      "sha256": "fd387573a797984f580d3a49f83864634b1ed6e3bb6db8a066d2d64e0b9aee65",
+      "bytes": 2513
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/failure-ledger.json",
+      "sha256": "4947877e9bc7f0ec43a0170be998ad3fe1c7668c37ed3d94a4195e3a68370512",
+      "bytes": 8878
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/guardrails-commands.jsonl",
+      "sha256": "f05843ad49261f70aca893bf3e233cfca55d6bd363b6a80396e079028f73d766",
+      "bytes": 3999
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/guardrails-review.json",
+      "sha256": "7fe42d13e4f6035d4f22fa416a118cf7985be5d023e7132d80f2b6a968f935d5",
+      "bytes": 4306
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/intake-and-learning-register.md",
+      "sha256": "9b215b386176f0809c3e39f415b0712c8c072600f79d5a75141353b7873147c4",
+      "bytes": 3084
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/local-check-dispatch-finding.json",
+      "sha256": "ddf061aa56378c70a2d0ca24cf21df3a7989e7c7a01c8c9cb87524feda87f64f",
+      "bytes": 446
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/prior-handoff.md",
+      "sha256": "4974056bde36bfede359be7aeb2564cd0dad0db012ed47624e586cf814fff952",
+      "bytes": 3624
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/retrospective.md",
+      "sha256": "fdd3ae4791aa449479a7a8d2a9cb1ccae80f2bdf8d3118ccf7abe7d0d251d50b",
+      "bytes": 7737
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/scoped-delivery.json",
+      "sha256": "c22dbba9dc2f66534110bde6c2834233c138697588686a90146dc86d7395ba19",
+      "bytes": 3546
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/session-array-qualification.json",
+      "sha256": "e9974b1885b728bc009bc631cb849e253d347ac586554a2ab1f2facac8dbe517",
+      "bytes": 1631
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/staged-build-standard.md",
+      "sha256": "7fc131d3fb93a71e89d90e7feedfd50b059345e9b65b7f1f60954dac2ae668f4",
+      "bytes": 8206
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/staged-playbook.md",
+      "sha256": "b753ef704b785d2741ea04242e79727d9eb0dbe19fbd326739820c2527a12ff4",
+      "bytes": 157877
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/startup-inventory.json",
+      "sha256": "0cfa40c3f37876ef1464520512fd9e8fb8f958c4baab2ea009f5993daa2841a6",
+      "bytes": 2923
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/task-start-recovery.json",
+      "sha256": "7c51a0d6228cbe1e6c5f5b9886a4526ae312e6b0a69fc3ed06490410813cbc1d",
+      "bytes": 564
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/time-tracker.md",
+      "sha256": "a5ae119d236e295f4710c328b4e8075d29fe6c33f534e17aff692e705764a270",
+      "bytes": 1351
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/timing-report.json",
+      "sha256": "0bb5ee548d094ad07e483ee95fdffd7a489f1d2a04a37c3fad90f3ad53e9becb",
+      "bytes": 1690
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/worker-context-finding.json",
+      "sha256": "76987d45d37f726f2c4aa1962e59517cee8dec54e0ebf8c04c2500d20e401fcf",
+      "bytes": 515
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/worker-discovery-correction.json",
+      "sha256": "51308d347d4e75bd2eff075d676f46d01942133de9341c0a45aa8dc914746b9d",
+      "bytes": 525
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/worker-evidence-path-correction.json",
+      "sha256": "4ab2424c04e9111d306fff0c6bdfc68c879a91174e33021f22312557faabf722",
+      "bytes": 378
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/worker-host-startup-proof.json",
+      "sha256": "0b3174ff3b0763704bc2a0c557fd1e2a0537ecb94e84fb4329687a9319d5673d",
+      "bytes": 2283
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/xdx_session_xdx-supplier-retro-20261015-evidence.json",
+      "sha256": "5e4c8bb7fa2f13a6b117361e5e3510fe175b0d0079209d8444b56ff3ab531603",
+      "bytes": 7159
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/xdx_session_xdx-supplier-retro-20261015-guardrails.json",
+      "sha256": "9d5b63ae96d74cc2f35e3f1a932c90acce74b81975f6060a40c093d6ef4a8e39",
+      "bytes": 8326
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/xdx_session_xdx-supplier-retro-20261015.json",
+      "sha256": "68434ee509005af4d6de4d971ec9c067540124fe5b38a86dc83ca85160699fca",
+      "bytes": 5918
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-bo-post-attempt.json",
+      "sha256": "6db9b971d4535cc0cbc634749b209337ec0758c65dbddc25f9007b2ba8ee91d5",
+      "bytes": 2176
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-bo-readback.json",
+      "sha256": "389b70252b882d59bfff6c9568e5d187dd8311d56f133919f37c9ad95b811f9f",
+      "bytes": 865
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-bo-save.json",
+      "sha256": "3c657b4336ddee1f4dffb7dfba67c2e793e9fba2d7eb1937b59b2adb012ec108",
+      "bytes": 295
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-bo-save.meta.json",
+      "sha256": "99bb8b18b1009d1757470260a36e03f677196c3bf709ec39ae18132954dcc275",
+      "bytes": 70
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-bo-save.stderr.txt",
+      "sha256": "b227cc244ed2eab417966beda59e215176f987122253e2bca47a8b0a8ff36ba8",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-bo-save.stdout.txt",
+      "sha256": "05c34d43b65ebb53d1b63d4dc3780c4bb400fa6eab84ef133b05238e2c8e00fb",
+      "bytes": 660
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-commands.jsonl",
+      "sha256": "aab939c4822313c312e05859a03c546fd24138b6d94b6420144386742609be44",
+      "bytes": 39388
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-definition-helper-parse-failure.json",
+      "sha256": "6e618f235d9d2365d5610bc2854cd815eb0b5e89b6b450958b6bbfdcfc2c3cfc",
+      "bytes": 624
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-before-execution.json",
+      "sha256": "4dfd57f2f25ae8e25129166a7d62e9a57861fd6b77eeccc248fda6e79dc6f758",
+      "bytes": 215634
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-before-supported-update.json",
+      "sha256": "3916daf3e1048ab7b59382510b9d254096368d2a1c0eafef4109c95919eadd9f",
+      "bytes": 217480
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-current-definition.json",
+      "sha256": "163204c582343906a8f128e0fed18e31f359c27f297e80d76bbdac63f2518295",
+      "bytes": 214937
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-execution-contract.json",
+      "sha256": "1e1c387987b1df624ba5ce4e679aad6f6194ea8d6edd2a5c20e1f05478ad4d81",
+      "bytes": 1396
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-failed-result.json",
+      "sha256": "bec45abf3e82ecd7df1827c8b3b903e8962bde9914d1a1a08db5208ba7c0a26b",
+      "bytes": 1058477
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-attached-result.json",
+      "sha256": "d3f94def541dd3ae29238b85f4abd58d3c2cf781dcfba4b517bc14ce7ae88883",
+      "bytes": 1075180
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-before-execution.json",
+      "sha256": "1d81a00fe2c67e214f7d999474a6591ccd5c233eba45913e7fb71239eec11732",
+      "bytes": 375
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-command-bound-judge-proof.json",
+      "sha256": "f61a61dd8195968a259d26eb0dfc927bd1ebf6695d6414f9abb67404beca5763",
+      "bytes": 1007
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-execution-contract.json",
+      "sha256": "eb47fde55070ed27241a11d233a25c4715deda4b365559cb6872729a7a9dc37d",
+      "bytes": 1512
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-failure-candidate-localjudge.json",
+      "sha256": "69614ea9f78260a7ce60033175205844c757873080ee337f6b658fa3120a2a4d",
+      "bytes": 62127
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-request-needs-judge.json",
+      "sha256": "9a3a74b8985cc36492a7523bca4bb6f567f67272eb6c19eae92b7372ac9081c7",
+      "bytes": 785595
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-reviewed-judge-result.json",
+      "sha256": "df9ddaa9ea15916c8baaccbee122c80caaa638d29e59d8b9d33ba77e767368a2",
+      "bytes": 7910
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-runtime-needs-judge.json",
+      "sha256": "e6b6ed01c9790b4664d2ae800f124dd2557f1c528c4f1b3aba7d5aa86ec3ed98",
+      "bytes": 1057717
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-matched-test-generation.meta.json",
+      "sha256": "6cd6872693d38cc5e0fd84742cdd57ae043ea9401430a216088bd67d45c62981",
+      "bytes": 155
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-matched-test-generation.stderr.txt",
+      "sha256": "1be668b74021874022ad9219e362282d66e67740ba4f6cfd94cd10d4929c498b",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-matched-test-generation.stdout.txt",
+      "sha256": "57a8e63ba9262b8d91c5cf3ac80e932436987f264b8c87ec37ee0c3a52a75623",
+      "bytes": 326
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-materialize-commands.jsonl",
+      "sha256": "152cf69e70c7abb7ea7ec8a4d87691f8617497e112882a430610496b8d097254",
+      "bytes": 4203
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repair-before-execution.json",
+      "sha256": "4dfd57f2f25ae8e25129166a7d62e9a57861fd6b77eeccc248fda6e79dc6f758",
+      "bytes": 215634
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repair-execution-contract.json",
+      "sha256": "fca4e86e9f5ffeae3b940dc2ecb2173356725efbeca8dd3ce36594e56ced6039",
+      "bytes": 1534
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repaired-attached-result.json",
+      "sha256": "6ee5ddfc538d250c637396921d58b3665abe1eb36f6e9771235e5da1f3116be8",
+      "bytes": 1074701
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repaired-command-bound-judge-proof.json",
+      "sha256": "b1133cdb60f87b4e5135068a920432cc8249ab2c6e27d9fde3dc02f29192f77e",
+      "bytes": 1655
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repaired-request-needs-judge.json",
+      "sha256": "ef1b787c791b8b52dfad79950bc6480cec02ec5d63b7049f46322c222315243a",
+      "bytes": 786462
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repaired-reviewed-judge-result.json",
+      "sha256": "128ecb4f8facfe257e846bcbbc5c66564cdc164165ff8f3406b9e4602a4d3cc6",
+      "bytes": 8042
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repaired-runtime-needs-judge.json",
+      "sha256": "3d4b566b918d67510b2a83815260fdbae6af3bf1f76acb48f6069c295094e8a9",
+      "bytes": 1057040
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-short-test-generation.meta.json",
+      "sha256": "5d89620efe11bc9cd9e4bffe1805e97d61e945e62889c1fe6d7f001825a0b9cc",
+      "bytes": 155
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-short-test-generation.stderr.txt",
+      "sha256": "c7e391a82846ae1961344f5db5ecc12c7f9d516c37130582e19f1a6ec91d0d3c",
+      "bytes": 672
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-short-test-generation.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-test-generation.meta.json",
+      "sha256": "e2d2e3c5ba5b454400fa4b3e975e8a0e6bcf95ad29f3fc624a2341b9ad916297",
+      "bytes": 155
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-test-generation.stderr.txt",
+      "sha256": "8abb4d2616d333c77e8a03577f4a7d65e41b9ea981b5cc7e5fdd7675816f5d2b",
+      "bytes": 789
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-test-generation.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-invocation-length-observation.json",
+      "sha256": "9f0f1831617ac0dee6a6209f8677bf3f2550c7bdb624ef919d721c6b04f2dd61",
+      "bytes": 652
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-native-direct-observation.json",
+      "sha256": "cc406c75e18f6873b1437e6033044e26c5f43ce8ce92e7bd07a11f39c1fc7fb4",
+      "bytes": 1883
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-native-frozen-display-observation.json",
+      "sha256": "9205371357b2cb6d0dc83c021b20d0fdbaaf9d53790891d203304abc6b56c794",
+      "bytes": 1137
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-native-template-observation.json",
+      "sha256": "103e801ccd5ba381ba0f74432357ed0a29d49ad243b52e0c47c7469aabf67f9b",
+      "bytes": 1642
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-response-guidance.json",
+      "sha256": "4b4b45fb84c27a383ffb4c777adc8fbb98e661a15bc0738524e8817601609558",
+      "bytes": 6313
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-response-guidance.meta.json",
+      "sha256": "87deb268b731cee972c7c1440cda46bc3f0f10caad40a3a3ad3769cfc4be8c33",
+      "bytes": 70
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-response-guidance.stderr.txt",
+      "sha256": "91e61c6e234017458872ff3854a791377be45b8fc21cae483ef9a18091964446",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-response-guidance.stdout.txt",
+      "sha256": "9951950e83e50d57eb2f50c8adafc3bc3cd50b0a80fc6293686054f7061637e9",
+      "bytes": 6314
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-before-execution.json",
+      "sha256": "ec55a450fe2dd262ccbe7c96dc9bad5f5e8b7555973e94237bcbe2ce8d3739df",
+      "bytes": 276
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-execution-contract.json",
+      "sha256": "d566c397fd0857d2635139f6214045b57ec1c3af79bfb52915b2ab6b098f79c7",
+      "bytes": 1404
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-failed-result.json",
+      "sha256": "e3d266c1ebb2b9e48954514a01ba2b2ee828f1def1199138b2cc87059b255149",
+      "bytes": 410700
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-fixture-finding.json",
+      "sha256": "83099697bb418a5c8007b4b09baccf9c4fdf5b51b39a508d7a0e18f7e4e79032",
+      "bytes": 546
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-matched-test-generation.meta.json",
+      "sha256": "bd4d08383b01ba0d98109c9380ec1d634e73977012f8888f4cbad8e6f5139cb2",
+      "bytes": 155
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-matched-test-generation.stderr.txt",
+      "sha256": "e0e68fec4c206b615f950505826de1be474d32834a7522b4a67c5daa6efd6485",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-matched-test-generation.stdout.txt",
+      "sha256": "49edee720efcd8e628a48e32558f80868e759897d45b47c88d2cbd3045b40cdb",
+      "bytes": 330
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-materialize-commands.jsonl",
+      "sha256": "84078c6858c46f7093a5476ebe0d55fcb7fcf8d31265db642c428ea5c3c6fa8e",
+      "bytes": 4227
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-attached-result.json",
+      "sha256": "64891eb0a7610d7cb9aeb7894588f2022afcaa37742e824d8c256d2cafb97dc4",
+      "bytes": 1090956
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-before-execution.json",
+      "sha256": "158f9ff2098dc761ebacafbcce3ab29c7e0fee0fd92d9e7ebeda47bed0e72837",
+      "bytes": 375
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-command-bound-judge-proof.json",
+      "sha256": "8f9361e4e7d7f778de9eebb5feb3bd9b4b603e8c135bf63480652f41fa9155bb",
+      "bytes": 1012
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-execution-contract.json",
+      "sha256": "3ac879500c215e09e6ba776b91ea98f8b2c348d7fa603e206940e8ce6e2c9474",
+      "bytes": 1516
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-failure-candidate-localjudge.json",
+      "sha256": "4375e464ea262a4e1050d3cd11f14f89c6b4884935fb0c5d5cf83c84c916475c",
+      "bytes": 59803
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-request-needs-judge.json",
+      "sha256": "0ce17bdc9cee4e049a36361d00f217a0e29b0b4713c43963b1e7e193bbcb9cda",
+      "bytes": 795192
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-reviewed-judge-result.json",
+      "sha256": "69d124e865d342b5794c5c9ec72372532e3f44fc1f124e0fcca5ad7f0efc6ad2",
+      "bytes": 7995
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-runtime-needs-judge.json",
+      "sha256": "11cc6aa55ebb8be9f1dbe8126e2ec16f09b1358ba0ee98bb911cd8e05db51295",
+      "bytes": 1073305
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-short-test-generation.meta.json",
+      "sha256": "19346b5c45e38263db99fe6351c59734c3027306570ba8b114100e9f4664b4a1",
+      "bytes": 155
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-short-test-generation.stderr.txt",
+      "sha256": "6782fb9b94dd4da3daef2aa7bddc5f8a285c00b1fd10c2a987cba137b1631518",
+      "bytes": 677
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-short-test-generation.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-test-generation.meta.json",
+      "sha256": "ffad10733b19486c8f6c236faa4c6840c172c71e741bdc0007021894208ef434",
+      "bytes": 155
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-test-generation.stderr.txt",
+      "sha256": "700c2c7642bb2d9b9e9cee7655b87ede585425337db85ad8f1fac3b39e577418",
+      "bytes": 789
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-template-test-generation.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/address-test-name-mismatch-observation.json",
+      "sha256": "a5dace19705e62d5b0d5d8eada5a9c10e134bcd8e6acff0aa0bfa8389cd3321c",
+      "bytes": 404
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/addresses-response-guidance-args.json",
+      "sha256": "dd39e9e609ef0df5a360598ebeb1aada2f974efe786f2029621bad0c38f36d47",
+      "bytes": 68
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/approvals.json",
+      "sha256": "c433a4d1e232a40fff1a54a659f8781b2658de3aced09e4f0c44b3c7e2ba5188",
+      "bytes": 3424
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/bind-scripted-judge-continuation.cjs",
+      "sha256": "94c2d423600c3a5e5e763170b293e6284c5a4ad1ee9cbd42f68ce7fececa6f08",
+      "bytes": 2249
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/bo-example-validation-failure.json",
+      "sha256": "135952d562988046397f429e91cd34962c22c347c3598b503386b07dec810f5d",
+      "bytes": 782
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/bo-revalidation-after-example.json",
+      "sha256": "4075c5cd9b9121a57242c8f7b6ea08088e9af31e50a768ce67f72911c9542f7c",
+      "bytes": 1977
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/bo-revalidation.json",
+      "sha256": "a0f79236e9b35591c7f288de5f2d92d5ec179ac350292e4051064d88e05a596c",
+      "bytes": 2063
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/build-ledger.json",
+      "sha256": "f110189792d7fbcb6a45996e3936d8476a3024f90a6eeaca65bf0925acce8bbb",
+      "bytes": 87288
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/capture-contact-closeout-metadata.cjs",
+      "sha256": "209c87aedec369ad98ef072cc9b054949b71ecea046224f930a85cf6534b536d",
+      "bytes": 2243
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/capture-final-summary-boundary.cjs",
+      "sha256": "77dd20b81be8fce6957b57b1524d824933f88e301f2e5c35944d004d80ffc2d8",
+      "bytes": 2203
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/capture-final-summary.cjs",
+      "sha256": "c2f7fb2938ee28c1745bc0cbe69292ab17ea24f387ff5595a200f2eb41af3b7c",
+      "bytes": 908
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/capture-fixture-and-session-findings.cjs",
+      "sha256": "32ce580f60fd525c5d33d9b9f08c4c12817e33369d4827e48351737c239914f1",
+      "bytes": 4962
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/checkpoint-delivery-review.json",
+      "sha256": "45c9b51fc0b4244756da3d1546662dedcdc180276da6923ba3d5334adc10ed0f",
+      "bytes": 2399
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/checkpoint-independent-audit.json",
+      "sha256": "f05836260030bda10c866f0b4da556981f4dc5711afb14731daafc33652cbb40",
+      "bytes": 1559
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/checkpoint-staged-BUILD_STANDARD.md",
+      "sha256": "01dfbc7e6ee7bc5e6cad3d243dd9290c3ba29d6f4759dac4c07e4c84c78457bb",
+      "bytes": 7014
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/checkpoint-staged-playbook.md",
+      "sha256": "ecf7a2d6044013ffebb7ced3a066632503c8b1feb60ba7a0a4e3cf8fc0e8a292",
+      "bytes": 155953
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/checkpoint-timing.json",
+      "sha256": "5469a58831621ca665c60b6064005fe4b4fcb36a27ecd1b8650eb08139fec521",
+      "bytes": 4296
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/checkpoint.md",
+      "sha256": "365810e3be9a3930ae3140d05ee47779b7f4552d8135eeebf9a7533d629f72f4",
+      "bytes": 3576
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/child-test-scope-plan.meta.json",
+      "sha256": "3a8a42a07663bf4f6ce19464ceb826d5ff947fb9e3ae79d47b6912bd9c43e7c2",
+      "bytes": 98
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/child-test-scope-plan.stderr.txt",
+      "sha256": "271631f54b64516763f45da8109462dde9f11cf021be28a7fcfd739bf673658a",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/child-test-scope-plan.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/child-workflow-save.json",
+      "sha256": "c48165c985feeca345a2de4aa1003589edd57e1c798dc9e5cc5011fde90b25dd",
+      "bytes": 445
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/child-workflow-save.meta.json",
+      "sha256": "4a9a8fbb2fcee0d71633071a92af6867e671f81c95cac078bb076a7e8937ec61",
+      "bytes": 70
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/child-workflow-save.stderr.txt",
+      "sha256": "a211dbc828eb9bdad64b91e8a388184313b141d73ec96b83de8c4ee9fe387ab2",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/child-workflow-save.stdout.txt",
+      "sha256": "bb1bffcbc3782de9cf2d45c9b4eea45afdc2d6f8f56c566fa70c1f22c9f3376e",
+      "bytes": 810
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/cli-discovery-errors.md",
+      "sha256": "8a73312b4fc5ccf5662b9b595eeb59d218b05736c2aa1ebb53f2a8396c620ff9",
+      "bytes": 593
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/cli-help-verification.json",
+      "sha256": "300a95ea5781292ad3ecb6b5aa93bd749468fb3020479cd02f203e7f642c0ba2",
+      "bytes": 171
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/cli-help.txt",
+      "sha256": "537b52130ab9ef81d64bd368ada4aa56cd7f13888d29abcac089e04a5a2ea61c",
+      "bytes": 25162
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/close-identity-prevention.cjs",
+      "sha256": "bbd11ae55ee8b644b37ddea2beb0b634a3f633d089d344bf1a5019e38217144d",
+      "bytes": 4372
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/closeout-read-discovery-correction.json",
+      "sha256": "8553b51f09c3baf943ef902bc61345790753b04e00b2af9285aa630c7b81a61c",
+      "bytes": 501
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/command-length-observation.md",
+      "sha256": "39930f4845df945131449b0f91516bf13b1989559d0728e679e4a79bec689ae2",
+      "bytes": 499
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/commands.jsonl",
+      "sha256": "469e9fe48368f443ed1feda150143da54fc46038bcbdc91027964638f8adc34d",
+      "bytes": 71247
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/completion-acceptance.json",
+      "sha256": "ad262fdc89d17b03c4e3e003fa511b844610fc98a597831613ce0572a19d0738",
+      "bytes": 743
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-bo-post-attempt.json",
+      "sha256": "4b81931ccdc633f6796eaca09a3eeefb6b4107011077c12db0f0213cee529243",
+      "bytes": 1742
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-bo-readback.json",
+      "sha256": "e84f44b42cd3aee1d833d7dcaf2326b216d11c935f0b2497a765737834237b01",
+      "bytes": 925
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-bo-save.json",
+      "sha256": "150707d7d760da62a07ecfbfd3708afb86bc10220595f8c2d0cf088467b1e0e9",
+      "bytes": 293
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-bo-save.meta.json",
+      "sha256": "52f250e431620dd43bab03f822b88b5bbd04329f3f5e8122baf404e75325d937",
+      "bytes": 70
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-bo-save.stderr.txt",
+      "sha256": "b8e6682f4579c81eff5b9f5a06f19079100ff412bcde2117e472c202d5e1c1e9",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-bo-save.stdout.txt",
+      "sha256": "00cefc53215675b33007dc6a22d794c0ba8c51ecc7fd8edad45e73194842a5fe",
+      "bytes": 658
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-closeout-evidence-array-finding.json",
+      "sha256": "1ca1830bb9e3d076095049e435905e9fdd2c3fcc317bebb98a60fe26e22b623c",
+      "bytes": 557
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-closeout-evidence-qualification.json",
+      "sha256": "5c6c540bab3ca1352128821f697293b6336a883cadfb1d696af737189e080a9b",
+      "bytes": 5736
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-closeout-invalid-evidence-receipt.json",
+      "sha256": "4caf29f1c3ab76f024348202bb77a8f3304861a51dfe1343aefbe516d5471bc6",
+      "bytes": 9027
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-closeout-repaired-evidence-receipt.json",
+      "sha256": "40a318b4f42d33ee52fe31fdb4b87554c433fd7881bba4b9578468b1e9970ab6",
+      "bytes": 9332
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-commands.jsonl",
+      "sha256": "db55882855f31d4832ec350f32086e452a5f6441eac00cc44e91b50a7976d1f2",
+      "bytes": 23744
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-attached-result.json",
+      "sha256": "450704ea89762e98a9478f510576104aa04ffc396786702fdab97ca68ca1d7ae",
+      "bytes": 1124812
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-before-supported-update.json",
+      "sha256": "25cb70b29ae44cfe9a89bb0b555fc56f4f5938fa87d36a38b479fb1870208001",
+      "bytes": 232985
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-command-bound-judge-proof.json",
+      "sha256": "94d4da3198b664805efe5841c98821ab24d0793d9951a788399cfe0c5ee17405",
+      "bytes": 1655
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-current-definition.json",
+      "sha256": "19d5ff6fb200cf31362b51b3d13c7fff4911a9c99d8f0143fbdd4332ca241795",
+      "bytes": 230380
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-execution-contract.json",
+      "sha256": "e3fc5a9d775d893202fd458fc1dd9f4230e1213b3a0974de6d335b9d4a2c86ce",
+      "bytes": 1395
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-before-execution.json",
+      "sha256": "ba85d5019ee2adc167d225f38f0b66cc2e94aa1f31790b8359c2be6b2282dba8",
+      "bytes": 375
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-execution-contract.json",
+      "sha256": "f945183d09aa70193e139e595629c071e7f670a87f9396d1ffa9cd29d3756936",
+      "bytes": 1512
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-attached-result.json",
+      "sha256": "8accfee8dcf4e5fd4792486ac959a3aa91c6bb846006087fe3db859d2f3f3a92",
+      "bytes": 1123837
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-before-execution.json",
+      "sha256": "6534850d43f716312084777eb91374f6ec2b08efa4ad8c7cb5a5f2fd5b4e4295",
+      "bytes": 375
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-command-bound-judge-proof.json",
+      "sha256": "b1032b99ff9a672eade6169ac8d85138578acee7ef5b83647bae04cf6b406740",
+      "bytes": 1034
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-execution-contract.json",
+      "sha256": "f599341de9d7d51919855c83dc22ac77633e03de490f3d1279dc15250718deea",
+      "bytes": 1514
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-failure-candidate-localjudge.json",
+      "sha256": "4a31ac3796f5cc0a55ecfc7d7038d5debb4aaf2164d16beb0eef2727191e0ea1",
+      "bytes": 58637
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-request-needs-judge.json",
+      "sha256": "1d6461e0c208f91dea7e4d0cf5b8cdce7f996fdf111d730f8938b3207052b002",
+      "bytes": 429147
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-runtime-needs-judge.json",
+      "sha256": "d1f994be9322e7fbd776c5c58f2bc1fb51b94dfea1fba24ca66bbf797c4b648c",
+      "bytes": 1113383
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-reviewed-judge-result.json",
+      "sha256": "66cd1e2a8e41543effb6966e077b8d97edd6972ea8ec1aaea14fee46cf1708e6",
+      "bytes": 4886
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-materialization-readback.json",
+      "sha256": "4ceee30ccd9f2a6c66db144a78b43d7778689c621444668ee98970e6ae670c3d",
+      "bytes": 542
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-request-needs-judge.json",
+      "sha256": "dc6b78f99810769882fe870e9e0a1a96d9ba3392e9cc4d638544b1b28df5f8db",
+      "bytes": 430037
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-reviewed-judge-result.json",
+      "sha256": "60bbf710643b646adaf84398a6e3c20a6086e960148eb99095268202e6ec79a7",
+      "bytes": 5406
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-runtime-needs-judge.json",
+      "sha256": "1cd9eb48e9f893821dc69d2a072e3c648a1a3adae2a210ef7b53647a0b543fd9",
+      "bytes": 1113474
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-supported-update.meta.json",
+      "sha256": "787af46af19e40f290580160080da90a2e65350b50b891be26041f110fcab607",
+      "bytes": 93
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-supported-update.stderr.txt",
+      "sha256": "2e76b03c57c35215b35e9266b2ca624ff0b6f7656a03910a5bcbff704152d6de",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-supported-update.stdout.txt",
+      "sha256": "0ea9849c0782a02634b4c409a9134fc83f5d3d49c2a5039b48f1299227020542",
+      "bytes": 378
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-test-generation.meta.json",
+      "sha256": "7a9b4164fdeb67b99c4814957f0440c9cdcc87bcb8b519fd2e390d84f8f55087",
+      "bytes": 93
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-test-generation.stderr.txt",
+      "sha256": "44590e3624dae2763e9a967e10f628197d4664cfe0222330e028e90372267f8a",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-test-generation.stdout.txt",
+      "sha256": "46c8b9eda8a333efd12ec08fb1cf87e15e76e5cf32d15bc833c2f6b93b0de69b",
+      "bytes": 370
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-display-session-loss.json",
+      "sha256": "061b505c7cea435e9d7c036bc72cac33f9ce536aca65fc0b309f14e2e5a9901f",
+      "bytes": 790
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-native-direct-observation.json",
+      "sha256": "2c7b9c89b52332df700db4185d8cc594ad68907a70d0d87d96970de4c6f31e07",
+      "bytes": 1430
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-native-template-observation.json",
+      "sha256": "c0393bf85a2154f7110a6480075f3c717e29b2cf64dd8375c6467ed8d5e7782f",
+      "bytes": 1647
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-attached-result.json",
+      "sha256": "9c36d5b995c0616191f61443875fc3723700e331c3f78c8d8d0ffa50e41dd23a",
+      "bytes": 1145716
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-before-execution.json",
+      "sha256": "e0fb961c3e6c03686e9e4a483df5f4ea36b2e6a51b2bc48d6c04c9d9b768a357",
+      "bytes": 235567
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-before-supported-update.json",
+      "sha256": "59927cac58b76a0e31a988b0eaada7538a0907509d1ac363d7d0ff7efcf78dac",
+      "bytes": 237413
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-command-bound-judge-proof.json",
+      "sha256": "01b858d831e9aaa49f0b05993ab467e3c7d7b49cc5dc89e90b1669a365f6f99a",
+      "bytes": 1529
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-current-definition.json",
+      "sha256": "7e49747c211722d9f9e5dc79df7e80e979b16fbc211d6b64e7d502ee73d2605c",
+      "bytes": 234801
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-execution-contract.json",
+      "sha256": "bbf0617faed9db0a43338aa58e74bc32e7ac85548e2c8165732325de7488ea6d",
+      "bytes": 1444
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-attached-result.json",
+      "sha256": "3f38be577fbd540637eb1a6a122460567e64dffaf518ed5d501d2e4d5b5f113f",
+      "bytes": 1143262
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-before-execution.json",
+      "sha256": "b89baff748e306ab2affe1a7ef7228e7fdcaa37e86360e9acf94eff618fed258",
+      "bytes": 375
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-command-bound-judge-proof.json",
+      "sha256": "e1cb1d7538eb3f53a1fb2dc89486634d57fb406cfdc82e2ad72bafbfe8f05066",
+      "bytes": 1013
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-execution-contract.json",
+      "sha256": "5a823015d80e5e8fd7b2303758897634c548c99908202c2fe2201ed196f549a4",
+      "bytes": 1520
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-failure-candidate-localjudge.json",
+      "sha256": "ac3aca087ecf99fd3fdd7ff32a0c1851e4a035378767d6f3d230e591e34e4116",
+      "bytes": 60969
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-request-needs-judge.json",
+      "sha256": "b7b7bcc6c2ced840b363b45643e2580c0637c7a2180a718a541f1b7bbc0a4295",
+      "bytes": 435655
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-reviewed-judge-result.json",
+      "sha256": "8d02794f67d1ed932345daf0e0a38619af0183554a31759a54023d26a90a3354",
+      "bytes": 5007
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-runtime-needs-judge.json",
+      "sha256": "441c184b6fbc0828c5bf51bbd62495989e2209b27f0dacf4122c535870a85dad",
+      "bytes": 1132566
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-materialization-readback.json",
+      "sha256": "000836a370d230ed073a8cccea7f257faf3095f3d31cbad2eb6821ba3c2366cb",
+      "bytes": 479
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-materialize-commands.jsonl",
+      "sha256": "99b7d91d460980dc41888d80b82620749692258d7067c70f37f2c2b28ffc917d",
+      "bytes": 1375
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-request-needs-judge.json",
+      "sha256": "cf9077f718e4b17b94e9f127ee059d9775b74e569fb7e3dcbf0214ff6a7cc671",
+      "bytes": 437126
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-reviewed-judge-result.json",
+      "sha256": "f24517f5336555579b5b0df187753b939997aa97aedfebc8c67e01f7c907a56f",
+      "bytes": 5755
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-runtime-needs-judge.json",
+      "sha256": "973766c2544c13010f7cf530e8ebb53d7a928a8adb013d0322a43bcce8f32def",
+      "bytes": 1133706
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-test-generation.meta.json",
+      "sha256": "2dcce5152cfa8dee2643136526900319a4b927cca3be50f3cb0008b3c2c110c2",
+      "bytes": 155
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-test-generation.stderr.txt",
+      "sha256": "859bbae64f0e9aad6f47dc87ce76c23236070890932ebd410f2259b47e6af64d",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-test-generation.stdout.txt",
+      "sha256": "f85a66643a81e180ea9d17c212a173ffb0d8cfa296a15ab0ab463670c49b810d",
+      "bytes": 374
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contacts-response-guidance-args.json",
+      "sha256": "0f0c4d6a85bb1a5894879b3eb7f9e1fac8dcc5558be048cd71621e42da43ec46",
+      "bytes": 68
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/current-bo-contracts.json",
+      "sha256": "60e906d6f7060668f1b8980ffb77a53bf9eea0a767f96d66e7552d6fe32d2a22",
+      "bytes": 3369
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/current-child-fixture-acceptance.json",
+      "sha256": "101a80dd99ecd832c172b6b195b04ba9d1e52f09ac1153ba34db3c49b884370a",
+      "bytes": 7624
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/current-final-summary-timeout.json",
+      "sha256": "ffa568d1a02292d54479ea75d9b1edeaf30795c5148f57c45208b52713f6565a",
+      "bytes": 1295
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/current-final-summary.meta.json",
+      "sha256": "3ccaf3e21bdbea9b633c63cd2093aab84254521bdb3cb1f96a3dc4c96448d11c",
+      "bytes": 238
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/current-final-summary.stderr.txt",
+      "sha256": "e26bad6060e6a687486024e1572fe18f957299a70a06009078172c03d0c75826",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/current-final-summary.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/current-reviewed-judge-staging.json",
+      "sha256": "4137afa0b5e83cef92b2a8104de38cf138eaf2c99cdb15a62c7e7be705803f00",
+      "bytes": 2321
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/current-target-identity.json",
+      "sha256": "b5debc31f0cd0ac2f1285daf98a4307896137a14e7a28d87dd4b6b44999f805e",
+      "bytes": 258
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/email-before-remote-save.wf",
+      "sha256": "0fcd7afc2566bce5372b150528b5a2cbdef006c720e779d443671ae0e58c753d",
+      "bytes": 438947
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/email-delta-impact-review.json",
+      "sha256": "9c67b93a51cb91a56aae12e620795c289bb8830fc47bf1f2960fd1bd727bf24e",
+      "bytes": 984
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/email-final-static-readiness.json",
+      "sha256": "c9d819e9175af802fb544bb379fa83a6f96f7a5110a0c26587e6d5cc45e9ca99",
+      "bytes": 1048
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/email-final-validation.json",
+      "sha256": "85c97a7bf33ef4fff922721354d992cc05b7243d0299cb01675220cc25f661b6",
+      "bytes": 169
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/email-final-validation.meta.json",
+      "sha256": "9b0c3e7edd36444fac2e4da35b53b6f18222f8ae2e0caef911f06ee268a3b283",
+      "bytes": 70
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/email-final-validation.stderr.txt",
+      "sha256": "ab6b232fcf5395a2dc6715bc30e581ad8dc496aea4c24330a2768710cd738943",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/email-final-validation.stdout.txt",
+      "sha256": "695873573b088cfe2d0658168f4dba1cbec4bb4a21aaa83670b776fdfee3e9b7",
+      "bytes": 170
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/email-saved-readback.json",
+      "sha256": "0f021ddafd2725575119286686b3981725a660bfd0a6b9caf81039c3e7d871d5",
+      "bytes": 597
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/email-workflow-save.json",
+      "sha256": "23f20a092352de51f050e00bbe1b32f3eda284a279e4ed68872510243bf7bf0d",
+      "bytes": 445
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/email-workflow-save.meta.json",
+      "sha256": "99d9e96a5ae3e04f9d37f06bceb4cebe61d5abfb9e0cb0dec5833b1440d24bb3",
+      "bytes": 70
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/email-workflow-save.stderr.txt",
+      "sha256": "18ab2f47aad5cf33417b4a66b3dbb171f8b1b0216766dcb258babf98de7c5373",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/email-workflow-save.stdout.txt",
+      "sha256": "78715a965ac0af72322138489f3b917a491312070186908513476835cf688f94",
+      "bytes": 810
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/exact-test-transaction-manifest.json",
+      "sha256": "5917fb55f3f83a0cb2e1ade8969fc2658b79b925cbb9f71431222a4a2c425f8d",
+      "bytes": 3728
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-address-repaired-localjudge.json",
+      "sha256": "423717513fc9ef17cc1b765c49a5e6787a26fafd383175c97563b8b1b5a6d32f",
+      "bytes": 42879
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-address-template-fixture-closed.json",
+      "sha256": "4b30fd35c1671882383bec8e5aa0220a1c6266971b54c9a8041a16d6489b4ac0",
+      "bytes": 57443
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-address-template-fixture-open.json",
+      "sha256": "7de8abdbf4e94a276e24c438d9dc2661d5d2116e9282013fcf7a52c82ff170d4",
+      "bytes": 53459
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-checkpoint-read-audit.json",
+      "sha256": "218774dd7769b8e21d0c239b461fe73a3030483c8deda408f9279c9b73456189",
+      "bytes": 66825
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-close-f005.json",
+      "sha256": "de2ef9b0a671d9fc76072d729d4d8d428bee698bef707f060ce39687511c20f4",
+      "bytes": 11888
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-close-f006.json",
+      "sha256": "485185e15254f35adb976b72b4ac6c6c2c7cc07f857ad9c1a50b1e45c30810f8",
+      "bytes": 16540
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-close-f007.json",
+      "sha256": "64eb8f135dafae563d57f0143fd2b6471ce0fe538e21b12999fe466a9a2d2e01",
+      "bytes": 18609
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-close-f008-open-f009.json",
+      "sha256": "c2d9f350ed0f9521808a27cf1c3938b9579c24d4fe04d7e29018003ddafd1783",
+      "bytes": 22169
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-close-f011-f013.json",
+      "sha256": "40b3674c7b2f0b01ec4d129963c4d2cf757e00fa9e7826b8798f8eff654173b8",
+      "bytes": 32793
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-contact-attachment-reconciled.json",
+      "sha256": "b3604249856295466ed0d8580199cd7c8ca959784d70f08934a2d4e309598438",
+      "bytes": 41716
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-contact-closeout-evidence-closed.json",
+      "sha256": "e42a7dfe014dd1766b6207694d5c1531833e265a5601259476fdb6f993030423",
+      "bytes": 66383
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-contact-closeout-evidence-open.json",
+      "sha256": "932f339024f46919c5b2d8aecc7b14f3eff9281f71d6c1ecf75992f4e94cc3a2",
+      "bytes": 65396
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-contact-localjudge.json",
+      "sha256": "dee3033e9daca660639964bdfa71ec9064c468da6d332d77e78b0e671c7c3f82",
+      "bytes": 33972
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-contact-template-localjudge.json",
+      "sha256": "13fd8a7d3d03a4b564464ba03bbf931ca17995d83173467bdd2ca2400a4b02e8",
+      "bytes": 44823
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-current-four-attached.json",
+      "sha256": "924bb80445366becc93d5be7065b11651e392cc7827cf1d5afc50a73f0de10d2",
+      "bytes": 62864
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-email-closed.json",
+      "sha256": "8334a16a4eb8a56f1ccd61266772d2f79f0e52b396244e9bef026d176d9cff4b",
+      "bytes": 38141
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-email-qualified.json",
+      "sha256": "04ca0ba3c82b501a3559736ef3f1913f1c673d6b2522d620a76534717d94ace9",
+      "bytes": 37453
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-email-saved.json",
+      "sha256": "ba835f73b279e3328c632d962e5cb1b167ec894ed9772250bdff7702a80dc104",
+      "bytes": 38771
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f006.json",
+      "sha256": "8ad39671c269d3dd9a7e110a148ef6eaefdb46e138f559359aed715e813201c3",
+      "bytes": 12801
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f007-prettify.json",
+      "sha256": "dca6916d1ab17e3489ef7f2c4d6836528b8c697c3dcfb9ac4cf16852996d1728",
+      "bytes": 14155
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f007.json",
+      "sha256": "51a35ef03d104c84c4f406468810e759a7ef79a609cbe3be299df560499801be",
+      "bytes": 13784
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f009-evidence-lookup.json",
+      "sha256": "7483df810ee1a7a4b8659a23f780e42734fea081c0036f5cb9f0be1235e8cb9c",
+      "bytes": 43497
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f009-read-correction.json",
+      "sha256": "9148ef514491ae896b9a8fe59fbaff9164df76de9b79dea10deb6912aa9a6ea5",
+      "bytes": 35689
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f010-f011.json",
+      "sha256": "a1f0d8d09612a1261be96990faea176d5f0e47ecf13666ed9c22d7bdd4a853d0",
+      "bytes": 25384
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f010.json",
+      "sha256": "0d34e897d4db0330677a7de3967ea7c7a333e4da4064cec76ab79046bf348b5e",
+      "bytes": 24374
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f012.json",
+      "sha256": "a692a7bea48c264a44f18a4ee06ec55815ef8946034525139038ef22781aad72",
+      "bytes": 26501
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f013-name.json",
+      "sha256": "c1100da9601478f1674ffe18586b8641795fbaaf6a8d79278cf923894fe56b27",
+      "bytes": 30161
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f013.json",
+      "sha256": "24e219cf4f87b8d59fb1688b3f1dde95d67f7fc0bb0c2cd2d7022ae489226bb4",
+      "bytes": 29750
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f014-open.json",
+      "sha256": "2cbe4d7c92e5e3ba7371824b0fa4b013916b56403329ed61edb408b51c1f1f29",
+      "bytes": 35330
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f015-capture-closed.json",
+      "sha256": "3fb9ca0df75c71ace99098953f0005b97862fd0d964072899839c3666629ae80",
+      "bytes": 41369
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f016-open.json",
+      "sha256": "78e2505ab95e5867238088ddfef277a027615bbc9b31e4d40dd00ce0009b641f",
+      "bytes": 46448
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-f017-context-closed.json",
+      "sha256": "876b1166db567949706dcb2f0d57ec27a864fc393d27b16ab55bd160d39879b7",
+      "bytes": 48883
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-final-summary-bounded.json",
+      "sha256": "39c2bb2efefdd5f24bffb11b7b6f0dc4e4050243d5b6a7372984f29399ee4153",
+      "bytes": 63839
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-identity-saved.json",
+      "sha256": "fb43b73e739554fda782fe5070f5cb0c8c05fbbe938fcd2b193c98aaf0e5b692",
+      "bytes": 52230
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-identity-static-closed.json",
+      "sha256": "4a7a1d8e93f7a5157629c7bf5e6e6feb4ef9e9431b83f0f594aebd720e3d8620",
+      "bytes": 51378
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-read-discovery-closeout.json",
+      "sha256": "ea5112d7bb4d8f1856e6f4fecc32af08e36541db70381c511e588740f1ca0b13",
+      "bytes": 66607
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-reset-source-continuity.json",
+      "sha256": "125dadbff1fb3020ae16d98b24df15279d996b59c8386793b9a3ad59dd75f24d",
+      "bytes": 50025
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-saved-reconcile-f008.json",
+      "sha256": "b6595f7c6e7d1b9c44f50a2f0f222e190dafd5d23f8711c7e2c532bef5c07071",
+      "bytes": 20056
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-stale-binding-closed.json",
+      "sha256": "215b2a4633ff90772e525c37ea3926c8e5c517885e96aef9e0a293ca7a9c5139",
+      "bytes": 56316
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-stale-binding-open.json",
+      "sha256": "c1edd66333890e2f2b869f6e673c32d156c1a96c5891d4d8079cd7a6ecab554a",
+      "bytes": 54917
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-candidate-supported-update-capture-reconciled.json",
+      "sha256": "69ccdad4d1d454cfed00917d8e74e8da52dff05f76ae798ea5a4bb73777f7d3d",
+      "bytes": 55194
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-ledger.candidate.json",
+      "sha256": "f1ed917a904a59d02d3228d74a27806f111998e9b10af29e3809471852ca130a",
+      "bytes": 10270
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/failure-ledger.json",
+      "sha256": "218774dd7769b8e21d0c239b461fe73a3030483c8deda408f9279c9b73456189",
+      "bytes": 66825
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/file-dispatch-recovery.json",
+      "sha256": "8f0068429123794deaf72ca4b8702f521153f08a2682b888e08320c8a445a943",
+      "bytes": 426
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/frozen-workflow-readiness.json",
+      "sha256": "0340acce98b71e86ec48ba8d1aa9debfa77b28a8bc0e85c70422560e3422a454",
+      "bytes": 860
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/goal-blocked-audit.json",
+      "sha256": "c3d92094af521a69e1ee8f40da9896da1a89071deae61b6ab7cfa5daf5dc0ea5",
+      "bytes": 1564
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/governance-before/.gitattributes",
+      "sha256": "ad9d048585fb6c43873317b8234d61e2d3b5d57051598e49b2a4869bf78b8b5a",
+      "bytes": 5608
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/governance-before/BUILD_STANDARD.md",
+      "sha256": "2943e13470d17ba5f9cd9064d4649dcad0cd4fa6b3a1db820b48dfdf89725f6b",
+      "bytes": 10718
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/governance-before/docs__lessons__AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "3cfba93af5223777e8f97853e58a51d33ec96290637acd7abdc9af008dbe1f55",
+      "bytes": 154130
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/governance-before/scripts__tests__verify-agentic-app-query-contract.cjs",
+      "sha256": "b13262d97909c670dd35e202bf6d1136ed49fa9f830a1e5184010989ad2538e7",
+      "bytes": 5490
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/governance-before/scripts__verify-agentic-app-query-contract.cjs",
+      "sha256": "73d7865335b48a1d4e5a089f820ee7faf58ec0adc7938ff71a32cf65540eb59d",
+      "bytes": 11427
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/governance-convergence.json",
+      "sha256": "a4e990ff82cb0aaf1eeae93665bc941e0fadcf7daeb0fc08f2823226aa66f400",
+      "bytes": 1190
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/governance-qualification-reuse-review.json",
+      "sha256": "6c813aeecfac14572943976a8844acc84136dc4d07a566b766d4f35ceef6ca1c",
+      "bytes": 1210
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/governance-qualification.json",
+      "sha256": "902c7721ff6dbf49e71d9ae492df35cd2cca37c3cb810099daa52d1db1e90c0e",
+      "bytes": 559
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/governance-qualification.output.txt",
+      "sha256": "88881c2d3091764e802bede26677189c45e7c831296bff6bf7395862bad29763",
+      "bytes": 3745
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/handoff-01.md",
+      "sha256": "90416bafc8272b080bb0cb83c5250d2d4769be64d5373729b0c9b02226b6ff54",
+      "bytes": 2201
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/handoff-02.md",
+      "sha256": "a360e11e118c3011e365ae5bf2e7823452edd7e5d6ef61090f772a55c51a1239",
+      "bytes": 2439
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/handoff-03.md",
+      "sha256": "1cc5dc777f8c041b9c70542a861053f206488eba6cc044c18b5b9b9e275944ce",
+      "bytes": 2645
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/handoff-04.md",
+      "sha256": "b43f84b88ed89be424fd79af1ac568cc75ad7a1e6e93bfde768ee7b6192d2532",
+      "bytes": 3131
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/handoff-05.md",
+      "sha256": "168b391f9fdf8cc7409c9cc32e0a66a3d99ebfda71d656e85db00930f29f9d2c",
+      "bytes": 3027
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/handoff-06.md",
+      "sha256": "24ee5c597c64ad32d9b9efcdcaa9f75117cd73e6aa4349c2596a0bf6b98300d1",
+      "bytes": 3570
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/handoff-07.md",
+      "sha256": "760faba1e9741e17535f3f910ba5e090cf9315866eb928211f3f894f05f27cd8",
+      "bytes": 2951
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/handoff-08.md",
+      "sha256": "8112a6c0a987e3e9b5ec15b9d9ba14cf7bbce7df33c2b63be9b6c2fbd215f209",
+      "bytes": 3381
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-before-remote-save.wf",
+      "sha256": "ba13a9bb99f252c810cd52a420988ac2718eec9b9c85b2c0209ecc324ca188b0",
+      "bytes": 443921
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-delta-impact-review.json",
+      "sha256": "13f1d70ddbcaa2e4c4f6e7523b71a55026d513487cbdc9d415907a2cb389cfdb",
+      "bytes": 939
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-final-static-readiness.json",
+      "sha256": "dd72dfa9217e55974480c96fca855b32cb0d93815f0529b5f5c3e8124123c578",
+      "bytes": 836
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-final-validation.json",
+      "sha256": "85c97a7bf33ef4fff922721354d992cc05b7243d0299cb01675220cc25f661b6",
+      "bytes": 169
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-final-validation.meta.json",
+      "sha256": "7f41804be6f7f07a88b9292839ce5c6d40d4aed9f91b964ffe453eebf28996ad",
+      "bytes": 70
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-final-validation.stderr.txt",
+      "sha256": "256f66b93b92dc7c613d1ac9be9882a8b6de095448aa73d1045d1c924fdda9ca",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-final-validation.stdout.txt",
+      "sha256": "695873573b088cfe2d0658168f4dba1cbec4bb4a21aaa83670b776fdfee3e9b7",
+      "bytes": 170
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-remote-save.json",
+      "sha256": "f4862948ab148e27d253b592deb88e9b56a7e447411e207acb7f392a55f3db73",
+      "bytes": 445
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-remote-save.meta.json",
+      "sha256": "cd3b52e179643d04781536a22a1bc293618b27b105fdd40b765edf458a116224",
+      "bytes": 70
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-remote-save.stderr.txt",
+      "sha256": "8b132c8a0526374ca5c291eea2c9db04dffd423ecbe7ad93279f931f8f6ffe0e",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-remote-save.stdout.txt",
+      "sha256": "69933b4c6ad0e0004c7cf7ed44aadc4da8f060f929ca460e1d6b5cb39738758b",
+      "bytes": 810
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-saved-readback.json",
+      "sha256": "533cbf67f9d58d4bd19a85a8232d339f016c7fef35386c15439de8d4008433e0",
+      "bytes": 494
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/identity-startup-context-correction.json",
+      "sha256": "22bb3a7ab68caba8dcf2f215128629c0fb345c7c9cc289fffbac7df178792f2d",
+      "bytes": 971
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/intake-and-learning-register.md",
+      "sha256": "23c2f3ab37e33786a31683efbb6ceb4ea66412e537b11073b69fe9787bc0e738",
+      "bytes": 3109
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/integration-commands.jsonl",
+      "sha256": "cdc4e2f32fe14808fb83bf1e5bbda14f8fa155782ab74403043170b9dd9249d6",
+      "bytes": 37951
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/learning-review.md",
+      "sha256": "aca705541c85cb279b48de08b41ecb499b1ebf366a228355d68f44d7d8889504",
+      "bytes": 2232
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/local-bo-contracts.json",
+      "sha256": "233118aeb6fce6a77cbdc8583f297b67291437c660908fca612b1c0255e85fc3",
+      "bytes": 3221
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/native-journey-messages.json",
+      "sha256": "efc3e5ee5bc656786793f71f838dc696e5ff8d442e93ea6207a931662609ca9e",
+      "bytes": 3389
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/openapi-parser-observation.md",
+      "sha256": "13bb4cb032f0d6f07954a7267a5a0703579bb9be5c1be19ee4c2bc1dd9a1a752",
+      "bytes": 462
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/outer-join-review-finding.json",
+      "sha256": "d62a8519ef134dc371628ccb05082ed2328aa23fcaab633b1369d38ffd2d2390",
+      "bytes": 539
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/parallel-receipt-registration-correction.json",
+      "sha256": "35d1f4696fa74af757dbb01f589618bf05b0f68fd8c4b4edef4d89ce25c3ecea",
+      "bytes": 847
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/prepare-address-template-execution.cjs",
+      "sha256": "b2e654225504265935c6bf76dbdc097b91cf51d11b0f7b15abb6e924fe05a5cb",
+      "bytes": 1491
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/prepare-changed-renderer-execution.cjs",
+      "sha256": "c9da0944018b0d1555984ce3bf1506d16b2bcef050a8ee6bc642ff350f9b9220",
+      "bytes": 2325
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/prepare-stale-binding-repair.cjs",
+      "sha256": "8ca6ea9d8cff8cabfd73aa96f3b5b4ae5446d8fd87dc06b389c2528c9ba0daaa",
+      "bytes": 2761
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/prior-handoff.md",
+      "sha256": "a2c19dc3720bdd3626e408b8da8c67648dd278b09a8862fb4e6cdac976fc14ee",
+      "bytes": 6664
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/qualify-address-template-fixture.cjs",
+      "sha256": "d2e3f3cae6d5e6a0d5a658c69b342d9e85f6b6358b46200ae7a15c0c4ec5e5fb",
+      "bytes": 2002
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/qualify-governance.cjs",
+      "sha256": "58accc30388e03ebb754967ac97324907a3eabe231210946aefeac625e81163f",
+      "bytes": 1002
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/qualify-supported-binding-update.cjs",
+      "sha256": "1b50797b58541e00a745a8bc6cbecb2d9d8f6a8b12eecc07c4996520df34939a",
+      "bytes": 2627
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/README.md",
+      "sha256": "fd97162f42a6cab422f582aa8dd34255ac8c73eaec85fd32b8ac24cb59385715",
+      "bytes": 1100
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/reconcile-final-learning-and-usage.cjs",
+      "sha256": "507a7cc9994a9e8d180f46d5c7e2dddb9a399d683502332e16c2b972d8b0958e",
+      "bytes": 9901
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/reconcile-identity-save.cjs",
+      "sha256": "ee2f6e715189fcd3f22157c5ec630c823d91b54295a377a8a9895e949b58a91b",
+      "bytes": 3098
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/reconcile-identity-source.cjs",
+      "sha256": "0bcb74c29530b7b03e1de261a4f0e6d3fa6bca06900c5a88d5330b0a31725c8e",
+      "bytes": 3020
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/reconcile-observed-timing.cjs",
+      "sha256": "331890d9c3cac9eac9223d9571d0f1569f9aa2abb448a40e0f3dc163c34c3641",
+      "bytes": 4215
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/reconcile-successful-test-reset.cjs",
+      "sha256": "e6ce06f41480a866a4c771d466e7bb08eb3353591a01ace01e9e68e7fb2d8382",
+      "bytes": 6452
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/reconcile-supported-update-text.cjs",
+      "sha256": "eff6fa6e2dffeaf46b0db31b2e7c5720d152eff8c7fba2cf5e060cf182a12a34",
+      "bytes": 2095
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/record-address-template-success.cjs",
+      "sha256": "9c3c9ced9d1337617d5d4257385b7311f914a68649bde7d646b7f4ea3b1f52c5",
+      "bytes": 6102
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/record-current-four-attachment.cjs",
+      "sha256": "ed850b96774fa868be43e13752f88701e2194e8d2e139dd7260a60f46d2b4767",
+      "bytes": 6054
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/record-native-frozen-display.cjs",
+      "sha256": "8414ec6f21087f45bcd74ad748b0baf804a1d41833c434575040cd47520b00f0",
+      "bytes": 4308
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/refreshed-author-syntax.json",
+      "sha256": "d81dfb28faa9c351e33f9f2f21ea4c2f868671ccff0089864f94bf07c9b45eb2",
+      "bytes": 498
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/reset-read-discovery-correction.json",
+      "sha256": "a11f3640171ad5cd66fa62873b59069d8710c80cb07840da7056707d768f20d5",
+      "bytes": 385
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/review-tool-recovery.json",
+      "sha256": "8e8bdd1fde6b87be01dfd4f3069dfb15b26231eefffcd870cc967356b143a5e3",
+      "bytes": 763
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/root-read-path-correction.json",
+      "sha256": "2d0ca887bfd25d9fe6e1d6e35eb2adc348bb742cc0f09687b5a3a30f306d87e3",
+      "bytes": 519
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/saved-workflow-readback.json",
+      "sha256": "f47a5c4bd6f0df2fb1946d6851710b81d519841476a9a5ce26ed0e97c8559496",
+      "bytes": 884
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/schema-parser-recovery.json",
+      "sha256": "9b1582b44420ba8983b8c4eeea246bfbde051aeb1b7ec527f9b7854d06f41c37",
+      "bytes": 450
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/scoped-attachment-preflight.json",
+      "sha256": "7be1776ab8097bf54f03962828600b14bd59f4ecc20fb2e1938ba3e9cfcc42fe",
+      "bytes": 7569
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/scoped-completion-receipt.json",
+      "sha256": "bace4bb3bbee6129de3a011e87b78080855d8c05b972861be558ec478895136c",
+      "bytes": 21884
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/scoped-materialized-test-inventory.json",
+      "sha256": "b46f774af22e77a168acaa2ebb7fb844bdbc503fd1d08b78153ff81b6fd02bfa",
+      "bytes": 2440
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/source-discovery-recurrences.json",
+      "sha256": "5ae2a831b3dff0a5955cc9cef56d5fa5a779e3a5ed56d33df30d301f1a95baef",
+      "bytes": 816
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/stage-current-reviewed-judges.cjs",
+      "sha256": "01540d6b065348cb0bb5390bd8be735142cb8fa6bf7a4df14d9d8700097af58b",
+      "bytes": 1495
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/staged-definitions-readiness.json",
+      "sha256": "8badfef49954ea5c8201c89161c50d48b5a0bdf998b6b8061e4ad53dd45a3754",
+      "bytes": 1720
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/stale-binding-preflight-observation.json",
+      "sha256": "5f34e300ae94267ea40f44496824d6dfda2df8ed14c147cecdfb425b454dbd9d",
+      "bytes": 607
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/startup-address-contract.txt",
+      "sha256": "3a047d8d2be603ed2fc4ceef50505393795c004be05b0311e8814ba68d0b15d8",
+      "bytes": 524
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/startup-contact-contract.txt",
+      "sha256": "3a047d8d2be603ed2fc4ceef50505393795c004be05b0311e8814ba68d0b15d8",
+      "bytes": 524
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/startup-create-integration.txt",
+      "sha256": "3a047d8d2be603ed2fc4ceef50505393795c004be05b0311e8814ba68d0b15d8",
+      "bytes": 524
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/startup-identity-correction.md",
+      "sha256": "b2b5e4f7b7df7b105809771f5c097c46f6836fa5da5c2b9e415c8bf9e28a1995",
+      "bytes": 400
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/startup-worker-results.json",
+      "sha256": "cf68c540d0721ea4a1380799c189277198cd6a4bb73767622947456254c87d74",
+      "bytes": 286
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/successful-test-reset-policy.json",
+      "sha256": "a45ca39b209f2ce57d1bc4524c2eb0f07a87347aeaa80bdd76019b976068a3bd",
+      "bytes": 1190
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/supported-binding-update-qualification.json",
+      "sha256": "6821b5f5f80d9caeaefa4f96dc758541a9a8952dc87464b233bda8b41f83c40f",
+      "bytes": 1335
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/supported-update-text-contract-recovery.json",
+      "sha256": "42a8febeb76e6e8b2998216e3486da4cb8ad759e0047b7690c7e9c77438c9235",
+      "bytes": 455
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/text-command-parser-observation.json",
+      "sha256": "b9cc9407bc0c77fb0030726b77f93219d57dd53aa52641652dd5613bcd6128d9",
+      "bytes": 899
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/time-tracker.md",
+      "sha256": "d0a93d3351c1aa3a9bd9ce07a463e33f7631819511138d9bd43c828bf2227027",
+      "bytes": 6734
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/timestamp-capture-correction.json",
+      "sha256": "446bc764e281e04a87bc24d7e6e25aa309af0585d3a5d2815be079f2dce9b361",
+      "bytes": 815
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/unscoped-sync-inventory-timeout.json",
+      "sha256": "95ad51ee60787186d52221ed194924da01c120fe13c2bfdb98e223fc815abd8f",
+      "bytes": 1009
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/update-current-fixture-milestone.cjs",
+      "sha256": "6d97f4322b6cac3d229411ba4993c049c2c28981f0b2d54e0b9300237622f964",
+      "bytes": 7645
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/verify-scoped-attachment-preflight.cjs",
+      "sha256": "e4b71e6baa1f6c3314ea83edaba804634a9ee515d2272ada994bb632e99a84c9",
+      "bytes": 1624
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_conversation_fixtures.json",
+      "sha256": "c10ccd378d8949ac8fbf038df952a3f299b341d5fa629dad6d38a8f6260365ef",
+      "bytes": 20745
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_create_patch.json",
+      "sha256": "dfa3983ec73880bed37fed638115300f9fb8ceaa68ae64168d6df31edfe224ec",
+      "bytes": 514
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_direct_definition.json",
+      "sha256": "913e0d4242139b67d07781334efc9cc803bf30bd25fb2f2f3a29b6b6112127d0",
+      "bytes": 215312
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_five_case_proposal.json",
+      "sha256": "0008f62051267e2411dc420ce6a997759b07fcbf6fe09f4ff484a28cf5bdfab0",
+      "bytes": 5819
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_get_patch.json",
+      "sha256": "03112a9b3fe3c895d73369a3ebdc75501c9b7a51dc7d8a5b4f062bb8b39bb540",
+      "bytes": 390
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_graph_static_review.json",
+      "sha256": "30a7d5c1ff940336c71b363aabcf0d55f3a5fbc97680d1562d90f64177cfa471",
+      "bytes": 14405
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_header_content-type.json",
+      "sha256": "3ed01717e21e3b2087d4b093a662f86dfbef426c9340206ca2f64d89bd692bb4",
+      "bytes": 132
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_header_rest-framework-version.json",
+      "sha256": "7dcc1e47f9cb1ffceda2f104c90f177409b1e2eb1b42c9c3304fddd610a2eaff",
+      "bytes": 127
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_header_upsert-mode.json",
+      "sha256": "785b111ac9a1ce942325b2727fdb7ff1f54dc85a8be90f2d29dbf7b366175cec",
+      "bytes": 120
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_local_readiness_review.json",
+      "sha256": "60dd011f26a90bfff012525b2af4ce044a0c0b2fc9085d30f1f96b85eeb5b9ed",
+      "bytes": 6470
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_parameter_addressline1.json",
+      "sha256": "f69b7bf3b5e44da8d5fe39416717e0843b9c9a5e126e70effdf46433e66fc7fb",
+      "bytes": 275
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_parameter_addressname.json",
+      "sha256": "53fee0f6dbc76499aecc179bf44e8ad630a8b82b50bea8e0eae07a2d1dd021bc",
+      "bytes": 276
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_parameter_city.json",
+      "sha256": "d8c07b7a7746348a3c8bbafefc5bf785c53f3fafe6c6cc4e05008aa6bb8135ce",
+      "bytes": 246
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_parameter_countrycode.json",
+      "sha256": "6870d56e6683257768c5cafe32912d22341620f6fee7854a77acd62f50f623c7",
+      "bytes": 273
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_parameter_email.json",
+      "sha256": "fb257396bb892dbfbb5ee2f486fd3e12d34737841e7894d37b8f8c1c728257b3",
+      "bytes": 283
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_parameter_postalcode.json",
+      "sha256": "babc5c3d5f75f88737c3c6c92aa99b32c015a016b2421da6da338e121397710f",
+      "bytes": 259
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_parameter_state.json",
+      "sha256": "e46ae5a66813561d7ad0c25bb84f1d66fc7da377121c51e9a0e7a9670f516618",
+      "bytes": 248
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_parameter_suppliers_id.json",
+      "sha256": "e5f569af057ff300e6973d60d377b9c7fa8b95423ae83ef316b723fad2550f96",
+      "bytes": 283
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_addresses_request_example.json",
+      "sha256": "089faa0f6506bcb13bef854a32d857a9ec365a6b78bac342d845de6d64c94e19",
+      "bytes": 660
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_contacts_request_example.json",
+      "sha256": "64d3165dcc2b34c5ceb00305ece4c14e5da0b76416eb5ace4a84279b589104a5",
+      "bytes": 513
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_addresses.parsed.json",
+      "sha256": "30930a12ccd3c22d8894d8d2a55c6a2c5912b35424437a3eb15d0936dd40f238",
+      "bytes": 209
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_addresses.parser.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_addresses.stderr.txt",
+      "sha256": "e57abe4719c1fb4ed6d036dc5bb3478427051b597553d09ea6633e3a626feb97",
+      "bytes": 507
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_addresses.stdout.txt",
+      "sha256": "e90b50044ed3fe54920487071d71eeb4e9cc26e171176e529d0b3436f87eec4b",
+      "bytes": 292
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_after_example_addresses.parsed.json",
+      "sha256": "ce6dddc4614c57ece4bc88abb3eb0b549ab2b2ab1074bbc73de8a0bb0ffff918",
+      "bytes": 84
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_after_example_addresses.parser.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_after_example_addresses.stderr.txt",
+      "sha256": "e2026835dc88c1d58985b1e01e58c4883dd6f03485f709eb66c74287703fbb29",
+      "bytes": 507
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_after_example_addresses.stdout.txt",
+      "sha256": "dd93164909515fb3fbe1a8c56cfe198d2f024ac4a20bddc88ea582eb6f03c89b",
+      "bytes": 118
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_after_example_contacts.parsed.json",
+      "sha256": "ce6dddc4614c57ece4bc88abb3eb0b549ab2b2ab1074bbc73de8a0bb0ffff918",
+      "bytes": 84
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_after_example_contacts.parser.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_after_example_contacts.stderr.txt",
+      "sha256": "f23347c0c72255b846e0ef4fd650873b907c4e2a218e62288d976249b153200f",
+      "bytes": 507
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_after_example_contacts.stdout.txt",
+      "sha256": "dd93164909515fb3fbe1a8c56cfe198d2f024ac4a20bddc88ea582eb6f03c89b",
+      "bytes": 118
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_contacts.parsed.json",
+      "sha256": "fb6da5208ac60992dea9beb37ec69c30ba733e6d00234b90af5a5e46ef296e1d",
+      "bytes": 209
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_contacts.parser.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_contacts.stderr.txt",
+      "sha256": "fd1fd6fac4b9b19e3d71017c36391c84974d4e6576cb3ad3e59a386c5b9750b7",
+      "bytes": 507
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_contacts.stdout.txt",
+      "sha256": "09a9b44d9345e9f2f22f30cf9adfbede9bded411b16c4d4c8471541de8b12aa9",
+      "bytes": 292
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_review_git_recovery.json",
+      "sha256": "5782d512f68e284300d8ef0bfb100312314f48094f4cca9c6683928e6ba7215a",
+      "bytes": 713
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_stage_definitions.cjs",
+      "sha256": "ef9ae033046470c2a8c7cc31f09ed753eaab3d16cc55ba05f71a6e38bcd20f53",
+      "bytes": 12609
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_template_definition.json",
+      "sha256": "812c90a482290394c9da6131517d2c340ce6417c35b938b43d9ad5d5f61e2fb9",
+      "bytes": 219231
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_template_fixture_repair.cjs",
+      "sha256": "29b91da8f3adc231ede788e645c54986c38d8ad4cbee7d779f16e309cfeb5d0e",
+      "bytes": 5349
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_template_fixture_repair_receipt.json",
+      "sha256": "46043cf9c2cde2219afabd658f15d18e7300adbd949d1a31168a5d961ea7d63a",
+      "bytes": 6303
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_topology_repair_review.json",
+      "sha256": "23d9de8109acbaa4db5d7bea7824c63363c04e7e4284cd5fdadbf971c38a420a",
+      "bytes": 1942
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_workflow_static_review.json",
+      "sha256": "8f4f10ba299210cc5367cb75341a2b1f30919dce4ec4ff92af4bbc4def2504b2",
+      "bytes": 2824
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_before_remote_save.wf",
+      "sha256": "abf9a9a618234f7258a6636697b5b330ac4a27efc67055fc8d1921c77edca567",
+      "bytes": 438049
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_capture_cli.cjs",
+      "sha256": "0010bf3db3c15c82edf2088ea6aa06845bf4bd18b401ddf15e34916e7a1e4f7d",
+      "bytes": 1105
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_capture_text_cli.cjs",
+      "sha256": "e3d86151406ccbe8d76a2f7ae539b0f3c88cbde53f2afdcb8da106f68dc3f310",
+      "bytes": 822
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_attempts_presentation.json",
+      "sha256": "117b47f20363ca8d0852fb883a6bcecb60f0dbc3cf934de475bea244b1e8fd40",
+      "bytes": 5662
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_authoring_receipt.json",
+      "sha256": "6bf54689dba40023afd650cbc781ca2fcad427216812f1f27fb89fea6c6425c6",
+      "bytes": 4950
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_context.cjs",
+      "sha256": "a4c6e92419f8bfac474ee418736998f5dc627c67761883967da9b298fdaee7f3",
+      "bytes": 1143
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_context_receipt.json",
+      "sha256": "edacb243489a1d9b62ff187ec412db169bc35e2d4386fea0e24684c6a31e8196",
+      "bytes": 669
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_context_stderr.txt",
+      "sha256": "97800e1cf6eec10fd9610e733feddc7ac4b7932e24841f9232ab8b71d9919fdf",
+      "bytes": 502
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_context_stdout.txt",
+      "sha256": "1e246ba1700acb6f2e8101965103a9e0c021b8db6c891163870fecc578d71e68",
+      "bytes": 182085
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_create_prepare_error_return_stderr.txt",
+      "sha256": "c8e49c0f9870841d01eff94537b20904cea04c6cd8ae1584c1d140d39ee8e0ea",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_create_prepare_error_return_stdout.json",
+      "sha256": "acc10b38ca9afa038486bab86c5942d76148c0fa18de3b1baae429748b607793",
+      "bytes": 180
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_create_write_error_return_stderr.txt",
+      "sha256": "b8a2e8b5fe3cf8dc097c40df426cd2645c3de7f9505dafb71415a0c2560d82ec",
+      "bytes": 502
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_create_write_error_return_stdout.json",
+      "sha256": "f15db5dcc78f46f1566665696813cbf88c4715e75b2ce29f1ad50c5eb7279350",
+      "bytes": 176
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_delete_xdx_join_child_build_stderr.txt",
+      "sha256": "3269602da29e42efb7d648d329544911636f25e1fac2b3269f5d5908f28dd3ae",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_delete_xdx_join_child_build_stdout.json",
+      "sha256": "8ed96c798c70a5b0cce9e0a06f424f54ec1afc48e275d511a950eb9f43c72de9",
+      "bytes": 392
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_delete_xdx_join_child_reservation_stderr.txt",
+      "sha256": "dea95726cf68e647778f1ded64d4a7d17b649eeb25759583f0d7172940057c62",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_delete_xdx_join_child_reservation_stdout.json",
+      "sha256": "8376ebb6c9591751b1a4c1ba602856499b43cc36c2bc78d734d7b00aca477d2b",
+      "bytes": 402
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_delete_xdx_join_child_validation_stderr.txt",
+      "sha256": "31d86e23d979a629436d203dea5723bbfafae9025a7917a572e995261202bfe4",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_delete_xdx_join_child_validation_stdout.json",
+      "sha256": "95b4a4efb15fed732f6b83a1b6df81ab23567011713d2b3e140722a9712ac2a6",
+      "bytes": 402
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_delete_xdx_route_child_build_stderr.txt",
+      "sha256": "4d0e0f281d9a4268fef1d28cd0ead075e02f6a91030fb1e957b068bd0116a9cf",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_delete_xdx_route_child_build_stdout.json",
+      "sha256": "f324262125c327822e0d1d4b7738803a05eb258ca45969f0b76d214a6beffb5b",
+      "bytes": 472
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_delete_xdx_route_child_reservation_stderr.txt",
+      "sha256": "36c046896664f432df101292b1dacb3975dc346b933d62d73926460865302c15",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_delete_xdx_route_child_reservation_stdout.json",
+      "sha256": "182c84bdb5c9ea66702985cb7d3247d70ccbf009513164f7ec8da05e41331701",
+      "bytes": 487
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_delete_xdx_route_child_validation_stderr.txt",
+      "sha256": "a96f82edc9a770a55251114dbe13ca5453a9067db5603c5b2dfbef4a820d706e",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_delete_xdx_route_child_validation_stdout.json",
+      "sha256": "84e1550a43266dda38fe96a91c48772eea60faae55cfe2e5e2d505ba45797c20",
+      "bytes": 399
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_edges.json",
+      "sha256": "b6b04359789f4a1bb90ea343ca28c6ae1902e2f89150d1cbaa588de0bec983eb",
+      "bytes": 8148
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_before.json",
+      "sha256": "167033ce1007a02a1b9be35bc8451c0c2f0c655e779bd202763474604ecf3e7a",
+      "bytes": 20060
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_contract.cjs",
+      "sha256": "eb3e16a69f0cc0a005dcca020ae823fb23862efab5fc06ca4adf46ce0e165d60",
+      "bytes": 7084
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_contract_receipt.json",
+      "sha256": "f946261ee120a20812c79365f463e5ac4e1e606616b162ccbf322f28da3f8c67",
+      "bytes": 2621
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_literal_finding.json",
+      "sha256": "5c39929933ee05f2f9fa5b7fdb130b08969e6ad3c9c066175e610602774956e3",
+      "bytes": 407
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_literal_patch.json",
+      "sha256": "f3b8ec6e8660649143070b5247831b1f3da869c1a9aea85034d178444d628800",
+      "bytes": 15114
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_literal_repair.cjs",
+      "sha256": "e7b126d3256085ef5cef4f321b33174914858a994f1d96a0f9c9bbc6570fbd99",
+      "bytes": 2627
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_literal_repair_receipt.json",
+      "sha256": "4ab9083a0efc2058ed0738f89eca9e2bb6ebc9948dd11a2d502cff1483d06fce",
+      "bytes": 615
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_literal_stderr.txt",
+      "sha256": "b6d937ec832a3a94214afb74168e7c12ce016cdbb343645cf8f2afa2de44af15",
+      "bytes": 502
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_literal_stdout.json",
+      "sha256": "e6bd30b33db6ac438dc970fb72663f050d7815afab5fbf16ee3469c4b94b5d5b",
+      "bytes": 151
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_normalization_patch.json",
+      "sha256": "d45b346530e984585480cf1f0b30c26ec2726df0a03197391fa136f3256315cc",
+      "bytes": 15108
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_normalization_stderr.txt",
+      "sha256": "08c744b65f03e3d1270056e0e51655552b72c2c2285669ece4c0d91a1d9742de",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_normalization_stdout.json",
+      "sha256": "e6bd30b33db6ac438dc970fb72663f050d7815afab5fbf16ee3469c4b94b5d5b",
+      "bytes": 151
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_query_contract_receipt.json",
+      "sha256": "e13a31890220d781884833408af9dd68ff2867eea5711173d0ca1466248e8692",
+      "bytes": 733
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_query_contract_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_query_contract_stdout.txt",
+      "sha256": "5c8ff4046d0ace1a08dbf44e0f0b25d691a370ca666cb682aa87172d1ffa242a",
+      "bytes": 400
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_repair.cjs",
+      "sha256": "592b3e6de536af944bb5151845bb06a76d010b54a337afac2d383de5c79165dc",
+      "bytes": 3363
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_repair_receipt.json",
+      "sha256": "f5784a0cd164b25ceff034d38d7feba567b2ab582ab60861b1f8e61e4b61b28d",
+      "bytes": 540
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_validation_patch.json",
+      "sha256": "71217bab0feb8e863a92cce3ae596db017109d87e712d0f3bb64d2b57ac0c84a",
+      "bytes": 4197
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_validation_receipt.json",
+      "sha256": "8366036fa73f3b182fb693f64b776c8ca28d107b1a6cf905772d3a90368395f4",
+      "bytes": 500
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_validation_stderr.txt",
+      "sha256": "cf79a5b48e9429fc9c0eae66b9842e5110993c8061147629af9ed33bacf93fee",
+      "bytes": 501
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_validation_stdout.json",
+      "sha256": "c63bd79a4aa74d9e42f890d4d253f2abf6a46e1cc7cb3909a691516c127b2a58",
+      "bytes": 147
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_validation_stdout.txt",
+      "sha256": "695873573b088cfe2d0658168f4dba1cbec4bb4a21aaa83670b776fdfee3e9b7",
+      "bytes": 170
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_error_finding.json",
+      "sha256": "62e6fa787c68e000af3cb30d173f01f16b21a1eb943f663d3d258cfef8a14f57",
+      "bytes": 731
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_error_repair.cjs",
+      "sha256": "65ca1c2deec48c93b2015dfe7090628dd2096051b94eedef465ec87c7b9ec735",
+      "bytes": 3603
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_error_repair_receipt.json",
+      "sha256": "010fac5d90a75a5f41c4ade99a209a1372fbc7d4278cb23558ffc3f818ac262d",
+      "bytes": 291
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_error_terminal_edges.json",
+      "sha256": "1ca112b96e7225cc2a19b77ca2d87d72523f8860926445497d3be44617d6d125",
+      "bytes": 287
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_error_terminal_edges_stderr.txt",
+      "sha256": "df8a987be4323b7d8b1b0b875ff57594fe56d03c611aaeeb86e28b98219b515c",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_error_terminal_edges_stdout.json",
+      "sha256": "f42dea489f9d0a71c8b392d9675d6588583432d838b592f3404a3809d9b7b7f7",
+      "bytes": 570
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_error_terminal_prettify_receipt.json",
+      "sha256": "4c407cfb220dd03641a92cb5d8498c478e3fd07b8df23b84bfd3428c717bc69a",
+      "bytes": 560
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_error_terminal_prettify_stderr.txt",
+      "sha256": "f767b8de82d19d723d351898d7a5650626d25889c2d5b138a07a2bed77c83604",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_error_terminal_prettify_stdout.txt",
+      "sha256": "dfd0a4f926b118bb6a1439814042a48d15152ce1aa9d9cb60171338f1c8463b8",
+      "bytes": 207
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_generated_comparison.json",
+      "sha256": "ca56fa3cc8de20bed55ca478666e3230e4e5ac5c70c9f3804a86809111467a4c",
+      "bytes": 2293
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_generated_comparison_apply_stderr.txt",
+      "sha256": "2ce6597272a583d8df43665ef13d2d24fe09754958fce2e58d4ab01dc1917d85",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_generated_comparison_apply_stdout.json",
+      "sha256": "ec2530eff18823c19549aec09514eced9bf861026b7e24642ee0961ce3fc90d7",
+      "bytes": 146
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_graph_repair.cjs",
+      "sha256": "9cbb204ecd9e3d7d306a34199332d628c458a3ad7bfd39a01c589f47ced2c614",
+      "bytes": 2274
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_guard_xdx_build_child_draft.json",
+      "sha256": "dcb62ca30d4b21304237a9373bbbdf005a19b2ea474a5938138ecd5e83c49c88",
+      "bytes": 2548
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_guard_xdx_build_child_draft_stderr.txt",
+      "sha256": "5055b40fcac5b7c28c739008c4e43f0fb539de9673d98cc10a166a80832dfb76",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_guard_xdx_build_child_draft_stdout.json",
+      "sha256": "02c948371bacd449251a1a4fd3e1da6f78bbf4a6789653e1ad85aaff0c59d46f",
+      "bytes": 144
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_guard_xdx_reserve_child_create.json",
+      "sha256": "a431a076ea9ce5b74cdbb345cc8ca908e891752f06602a5f73ab9ba210381b22",
+      "bytes": 1782
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_guard_xdx_reserve_child_create_stderr.txt",
+      "sha256": "82530d3ef5c3a1694c91278cdb30c901f6e896f689ee8274bc3b8928612e1c37",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_guard_xdx_reserve_child_create_stdout.json",
+      "sha256": "2079944c8d94b6312a735a6dd0ffa79e3d71d456a055f2b5f8bb121419fa2b6b",
+      "bytes": 147
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_guard_xdx_validate_child_draft.json",
+      "sha256": "248e0bc2bfd2b68beb8169a96db50100cfb5af9b14b15e22bdb676947dd428de",
+      "bytes": 4102
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_guard_xdx_validate_child_draft_stderr.txt",
+      "sha256": "ef7051c4d81a75eaec5219c7eb6c41267813bd371df764ceea4e633464d304ee",
+      "bytes": 502
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_guard_xdx_validate_child_draft_stdout.json",
+      "sha256": "c63bd79a4aa74d9e42f890d4d253f2abf6a46e1cc7cb3909a691516c127b2a58",
+      "bytes": 147
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_addqualification.cjs",
+      "sha256": "9958544543fdb37cc913431cbc355407ac93401651e546b8db8e3cc9da92082f",
+      "bytes": 3248
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_before.json",
+      "sha256": "9be28a37564684d29058a7ff317c3be8e1952a1a22f8d8c8a5377bef263f00b9",
+      "bytes": 5428
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_contract.cjs",
+      "sha256": "a7d547a15901133236550318fd75a22181748a1a553c422f86329cd4c09353a4",
+      "bytes": 9540
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_contract_receipt.json",
+      "sha256": "1bb6abc82e353b3207ac11cbbb996ba4ccbbf830dd80cf2f2bc9132891ed6da3",
+      "bytes": 1500
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_parent_162_patch.json",
+      "sha256": "c1deffdf460ef1c36d036fa22fe1f146f734c11939c0ba748160d7c3d82587dc",
+      "bytes": 4665
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_parent_162_stderr.txt",
+      "sha256": "1215955ce224007563b5228eda07eeca632c5e975a4d041128ad247e313a401f",
+      "bytes": 502
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_parent_162_stdout.json",
+      "sha256": "ec2530eff18823c19549aec09514eced9bf861026b7e24642ee0961ce3fc90d7",
+      "bytes": 146
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_parent_18_patch.json",
+      "sha256": "df0a9db01458a1cded3cec190991131aa069b02791c0238e3d0c8d8eba04ca7a",
+      "bytes": 3477
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_parent_18_stderr.txt",
+      "sha256": "4a7f75926f1657e73db0f9f76da1ed3fc79f53be8109642b76cc708e5ded4e07",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_parent_18_stdout.json",
+      "sha256": "3eca8055b5448c1d32835b34f0e0ed1e996f4364288b0178a10a6fd11e125b7a",
+      "bytes": 149
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_parent_finding.json",
+      "sha256": "a5911b4019c6029d34dfa35a877db4e6e4e03cb38f6ef7b9cb1f6f175d4360c8",
+      "bytes": 308
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_parent_receipt.json",
+      "sha256": "72534c109ba64b8b314603ae9326742d300ac9e35c6e2fea0a21457399d7cea5",
+      "bytes": 320
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_parent_repair.cjs",
+      "sha256": "308a50149742c8845a98779b261a3a30a308dbdfa7db904eb44b551caeb3c2cc",
+      "bytes": 2977
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_present_patch.json",
+      "sha256": "859143eeaf98e91c14e78fa3a4abafedbe1e5b1d206c227680571263ef94e2f5",
+      "bytes": 3129
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_present_stderr.txt",
+      "sha256": "381edd2d5c3f2ac3407ec49906956704d53a2d6991b963511445160968bf0bff",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_present_stdout.json",
+      "sha256": "3eca8055b5448c1d32835b34f0e0ed1e996f4364288b0178a10a6fd11e125b7a",
+      "bytes": 149
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_repair.cjs",
+      "sha256": "29f30a7a41aad91698654c284ca9c8c8110b79a51f67d250ed2347bc18a65960",
+      "bytes": 4862
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_repair_receipt.json",
+      "sha256": "86fad1c6754a0dd56c2f4ad38e24e17ab1d8b77d70224bde8e407b3b9c8df36f",
+      "bytes": 673
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_return_patch.json",
+      "sha256": "dab41fb89e16df2ed1314f21251aac51c694e4e307586f6303fdd6c15f6790d8",
+      "bytes": 192
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_return_stderr.txt",
+      "sha256": "143f761a9a63bcbdb2f3ca5e55c6de2d84219bd47704a090cb5aa7855a000194",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_return_stdout.json",
+      "sha256": "cdb67f22a38414ec4da7eeabae4529900f8d69ad0dc868a4b8813d8a3da3b947",
+      "bytes": 148
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_verify_patch.json",
+      "sha256": "87334b3913891997c22932e5f09a7cddb6bf0cfcd51901615d6118080d35caf8",
+      "bytes": 4317
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_verify_stderr.txt",
+      "sha256": "7b39aae4fbb365424a80d40e8160a49a9cc990c6a31fbafb8cd31eb4aaadac19",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_verify_stdout.json",
+      "sha256": "ec2530eff18823c19549aec09514eced9bf861026b7e24642ee0961ce3fc90d7",
+      "bytes": 146
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_inputs_5.json",
+      "sha256": "e5b15d96dc39af9950af1dba4b94dba455bf02a508fef970130be32d8895a592",
+      "bytes": 7382
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_inputs_6.json",
+      "sha256": "53fbd67d606fcc50477656c4482cdeab9d75ea454a2ad83a6da455da2157d596",
+      "bytes": 5626
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_integration_receipt.json",
+      "sha256": "058f4fe8cdf0eb123201f65abf8a3b24e97dc7e42909e2805e1ecf61ba5cc853",
+      "bytes": 5035
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_local_check.cjs",
+      "sha256": "ae7144e0aa72ad6312f44a177b46115747deac8495e6a71b750a9a48c130fc66",
+      "bytes": 927
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_normalized_before_error_repair.wf",
+      "sha256": "3559cdcf26420360756d5db460d3aa4cec83513fcac8515843888bda17ab4fa5",
+      "bytes": 436740
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_outer_join_apply_stderr.txt",
+      "sha256": "a42cbadee959adc6e9addbf162d0c7127945fbf0c69633d5f9eec53894c42fab",
+      "bytes": 502
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_outer_join_apply_stdout.json",
+      "sha256": "476438682b4229d3b0a4077f2934c298baa8ed77dbadbec13f17db427882ff5c",
+      "bytes": 911
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_outer_join_edges.json",
+      "sha256": "42890339b7c1646308f15f37d39e4411c336d8af663878bb9bfe39e9e025130f",
+      "bytes": 522
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_patch_0.json",
+      "sha256": "7a8653f9d0b01503b867590a7a8c90255ef1388acc2932e22f35ee17f5049770",
+      "bytes": 14302
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_patch_1.json",
+      "sha256": "c70b7d45755e8eaa2c9b04efd0af5a8859f188421aa373bf73e9ab863ca0aafd",
+      "bytes": 2678
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_patch_2.json",
+      "sha256": "a8ea6e7ae40b47294ed797cca93c6faa24c456ec2dcb23a01715eee0bcfea79c",
+      "bytes": 3416
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_patch_3.json",
+      "sha256": "4f0603600b326bca73423c2219c44dcca861c12226016f827abdeeb7faab33f0",
+      "bytes": 11467
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_patch_4.json",
+      "sha256": "f2af1b4c0f50d2fe8881c8301f1e6edc747e82644448db88413aba452e8f0c5e",
+      "bytes": 991
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_prepare_error_inputs.json",
+      "sha256": "514695ee83c9ae040411b8a041e1ac49197d66149ce5e5bd377fd3547454c5cc",
+      "bytes": 78
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_prettify_receipt.json",
+      "sha256": "f4239004d6b3f06107a229a5584fea5f1c5bc6d45ac03e0bdc12883bb6093467",
+      "bytes": 292
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_prettify_stderr.txt",
+      "sha256": "d5f5cd6995cf811d1e480cfbe6218c63306d4bed823343cf705e5fdac26049b1",
+      "bytes": 673
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_prettify_stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_query_contract_receipt.json",
+      "sha256": "b79d9820bd73357203303da83afb32da9701267059493057c1a0c0b269944318",
+      "bytes": 715
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_query_contract_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_query_contract_stdout.txt",
+      "sha256": "5c8ff4046d0ace1a08dbf44e0f0b25d691a370ca666cb682aa87172d1ffa242a",
+      "bytes": 400
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_reconcile.cjs",
+      "sha256": "ad714bdbe852c19f94fd70614bc8b6ba689eaac75e1f74630bb8b35bcc804311",
+      "bytes": 4896
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_5.json",
+      "sha256": "8131ffd558666ecb387d777d612375a020eb4cc2959afa1225c9b87cda09f322",
+      "bytes": 3469
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_receipt.json",
+      "sha256": "e2542a66e8f62b7cb630c006a042abca11ef04857e07edcc97648a4f2310aea9",
+      "bytes": 1249
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_check_new_address_name.json",
+      "sha256": "02b78b75a06079cd1c19b23f058b59f4f44562eb72e6c5a25204b5a540332d03",
+      "bytes": 2204
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_create_address_once.json",
+      "sha256": "ab34e9ee34c9b9579e3299596103a669fadb9702638af428992d648d07093d86",
+      "bytes": 1011
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_create_contact_once.json",
+      "sha256": "64e4c6bc2e6ab14b3f4f66b46fda44bf0d4a75a0d1ebb58c850aa7466d9f8dd6",
+      "bytes": 593
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_find_address_template.json",
+      "sha256": "02b78b75a06079cd1c19b23f058b59f4f44562eb72e6c5a25204b5a540332d03",
+      "bytes": 2204
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_find_contact_template.json",
+      "sha256": "0805014a6c904e2c389d8d1b8e3cba8de7ee49c4233fab25880d1fc07bf3142c",
+      "bytes": 1470
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_get_created_address.json",
+      "sha256": "3613c4174e5fa73319156dd89db40c9bac55a471ff0cfce98fe8618876e483cd",
+      "bytes": 1421
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_get_created_contact.json",
+      "sha256": "f7949695c9ec6c798f58b0e4fe68e9f842674f442b2554c1d175e5bcb5234d20",
+      "bytes": 1101
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_get_supplier_addresses.json",
+      "sha256": "3613c4174e5fa73319156dd89db40c9bac55a471ff0cfce98fe8618876e483cd",
+      "bytes": 1421
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_get_supplier_contacts.json",
+      "sha256": "f7949695c9ec6c798f58b0e4fe68e9f842674f442b2554c1d175e5bcb5234d20",
+      "bytes": 1101
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_list_supplier_addresses.json",
+      "sha256": "02b78b75a06079cd1c19b23f058b59f4f44562eb72e6c5a25204b5a540332d03",
+      "bytes": 2204
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_list_supplier_contacts.json",
+      "sha256": "0805014a6c904e2c389d8d1b8e3cba8de7ee49c4233fab25880d1fc07bf3142c",
+      "bytes": 1470
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_read_address_template.json",
+      "sha256": "3613c4174e5fa73319156dd89db40c9bac55a471ff0cfce98fe8618876e483cd",
+      "bytes": 1421
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_read_contact_template.json",
+      "sha256": "f7949695c9ec6c798f58b0e4fe68e9f842674f442b2554c1d175e5bcb5234d20",
+      "bytes": 1101
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_schema_xdx_read_site_source_address.json",
+      "sha256": "3613c4174e5fa73319156dd89db40c9bac55a471ff0cfce98fe8618876e483cd",
+      "bytes": 1421
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_selected_parent_apply_stderr.txt",
+      "sha256": "9b8bb784abb9de9ad5f74371d239215b0658c991c05d9a4d93cf03a168f60ce9",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_selected_parent_apply_stdout.json",
+      "sha256": "e6bd30b33db6ac438dc970fb72663f050d7815afab5fbf16ee3469c4b94b5d5b",
+      "bytes": 151
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_selected_parent_patch.json",
+      "sha256": "aeba7150084b7d1f86bfa39693342b80ea4ac6a6c538594e906d0edaa9d8a20d",
+      "bytes": 14311
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_source_decimal.json",
+      "sha256": "e914e7bcffbdf0e80b9047a0f4081886f340b3fde3681cff3f3f29662bb49ecc",
+      "bytes": 1547
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_create_stderr.txt",
+      "sha256": "c7170cd5779955dc976c2d85ca5efc78b3f8f1d16fb08a0b0834fbe93aa5c513",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_create_stdout.json",
+      "sha256": "45bf8a8bc04e2dbb5526a28137fa5690ec8f16961abb4bcc2bab402d857e2ab9",
+      "bytes": 147
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_edges.json",
+      "sha256": "9f16a6518300178ccc85487e86581ac08423772b87e1049ccd5b26b38303248c",
+      "bytes": 1193
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_edges_stderr.txt",
+      "sha256": "1aca2e261b3865719ad4d114806be4435517bde13eafea2dad03611e3554b260",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_edges_stdout.json",
+      "sha256": "0007d74805839fa3dc6d5a957286e1178582c6fbdd20b9c6d747156b8beff745",
+      "bytes": 1847
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_inputs.json",
+      "sha256": "1b57a5cb4b1a3dbc875ee36f73bdf4bbc9b704df43319c05c82c06f4be490258",
+      "bytes": 6195
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_metadata.json",
+      "sha256": "1445fd69adab2859f6e6d456567ea74a7b3e051ffeaa3bdffe91f1dd10fa027f",
+      "bytes": 325
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_prettify_receipt.json",
+      "sha256": "c9464e3e6dd1c15d2a9aa7be8b65a46c82b3abba562aba750fd5c3276cc5b72b",
+      "bytes": 542
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_prettify_stderr.txt",
+      "sha256": "21afed5ee544db396f35af23665bdaa08a16c167e8e8019044ddd79abba2a428",
+      "bytes": 675
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_prettify_stdout.txt",
+      "sha256": "c1cf4aa9b5a9fc25564658f7a42c477ec23f6d2c7dc50ef47c6fdf58d9129a77",
+      "bytes": 207
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_repair.cjs",
+      "sha256": "dd72307593973223f650463e8148aca8283b70da1d2c90096980a0acc0c92a4f",
+      "bytes": 4406
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_repair_receipt.json",
+      "sha256": "63187d00f47043dc31f6a35db2d649a3910f0efb15f812a482ae1f4e82c7c921",
+      "bytes": 744
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_return_create_stderr.txt",
+      "sha256": "ad014871069dc04adf3ff633eba87a8c27560c3038481faa1c40ec9fb1cc9a63",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_return_create_stdout.json",
+      "sha256": "b9dc19187cffccc5678ee0b4db33426db58c862aeb91d2576551c8b8a347e26b",
+      "bytes": 148
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_return_inputs.json",
+      "sha256": "d590e1ae6c487fb9cf38abc685b7a84aae4ac98a9f1996e925ff8825fd09c3d4",
+      "bytes": 76
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_us_scope.json",
+      "sha256": "4ccab88a157c4e8d209d8aa32730c4b4115f34606a6c9e277a3dd99b7c7a45d3",
+      "bytes": 3869
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_validation_receipt.json",
+      "sha256": "8f9507ccf87bf6647b30210b392501933249412202ae1910080b3af3e44f0b5d",
+      "bytes": 482
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_validation_stderr.txt",
+      "sha256": "57006ba072b50947ab7e23e9c40dc57a987b2bddbee476a27de6bbb0fcc10b4b",
+      "bytes": 503
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_validation_stdout.txt",
+      "sha256": "695873573b088cfe2d0658168f4dba1cbec4bb4a21aaa83670b776fdfee3e9b7",
+      "bytes": 170
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_workflow_author.cjs",
+      "sha256": "0ae92fb30efbe81eaa4ef150ff1655a6f8a01fd25f3a69e4d55add0699792519",
+      "bytes": 40011
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_write_error_inputs.json",
+      "sha256": "514695ee83c9ae040411b8a041e1ac49197d66149ce5e5bd377fd3547454c5cc",
+      "bytes": 78
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_configured_fixture_basis.json",
+      "sha256": "4d6083357456311b0c9acf35bf0626924cb632cb0b87f1837f83de4daab330c4",
+      "bytes": 2946
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_configured_staging_receipt.json",
+      "sha256": "48e5b19ccda5fdd9ea28c28e1b16aa8ea5c6e1da7c08731649a16af2b8adf792",
+      "bytes": 4402
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_context_timeout_observation.json",
+      "sha256": "da9d837b5db4bc4f27e8b1c063f873fa628f90973d826ca419c61ae3d7afe0c5",
+      "bytes": 1850
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_conversation_context.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_create_operation.json",
+      "sha256": "7432f5b0d0edd311db055d869cfbe2c05dde777b166992946fa8eb096a8b56d4",
+      "bytes": 45
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_create_patch.json",
+      "sha256": "97342386de3c65006292fdd7c8586496783e1c1b387b44ad3c3b836a3e912143",
+      "bytes": 501
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_direct_before_execution.json",
+      "sha256": "237ac5bf774d6525ff9572d244ef0e23343a6a548a1e0fdd67b748e0e19b8c53",
+      "bytes": 231139
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_direct_definition.json",
+      "sha256": "94994236a36543a80bb9d778fb9515e9e4b0dfe67cfc77173a213413461f3afd",
+      "bytes": 230765
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_get_verification_patch.json",
+      "sha256": "bd340a0139ce92a86af3a857657751412ceac7b314e3d0f6889630c94a507f05",
+      "bytes": 546
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_header_content.json",
+      "sha256": "7757b7ea3702821a458170ece0b3700d1e50296bf432ab795980c85b29f8c643",
+      "bytes": 132
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_header_framework.json",
+      "sha256": "701d97c245801ab67310b48915b1f574df114dbf200ba60998f709b0e6790eaa",
+      "bytes": 127
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_header_upsert.json",
+      "sha256": "5be6cf148a6a4a177607453aec9e87f63574a41ba52238a038e62e6b85ab53c5",
+      "bytes": 120
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_native_journey_checklist.json",
+      "sha256": "feff41a794b61fb23825c40b72bf20f5e3c67bdfca1a05ff56c7ae0865d1015d",
+      "bytes": 7073
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_parameter_Email.json",
+      "sha256": "4195365a698f45b8b3716b2c55f3d4c0b33a7a6869638cf168cb13023b16674d",
+      "bytes": 379
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_parameter_FirstName.json",
+      "sha256": "d79063a793f855cf3886313dac0a25ea57d85cda43abdde25f7fa20147caf819",
+      "bytes": 346
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_parameter_LastName.json",
+      "sha256": "cef4581e9e7166158bf0dc0446dd5ffce5c861bc21e0532e463d466c0d7e8888",
+      "bytes": 347
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_parameter_suppliers_Id.json",
+      "sha256": "7e03fcbd5e4f337f5b28babee1e55b29249063a1f9ce051e3a1be5378c8c8e11",
+      "bytes": 357
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_payload_proposals.json",
+      "sha256": "bb6b027be1361d512554b397da97c6bbf28f031d8c5b6966569919932dba4162",
+      "bytes": 2020
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_remove_blank_example.json",
+      "sha256": "ed7fc89d4a0f88a50d2ca6b9dad8c690dcf1286e6056a4403a97564d5780f76a",
+      "bytes": 71
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_stage_configured.cjs",
+      "sha256": "9a96353b342b092748f546bbea55cc2e09faf0e61db32ad20fff73f70d93966b",
+      "bytes": 15151
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_template_definition.json",
+      "sha256": "f92994b355b8cea9f2898872aa4cc19a8e1bd99bc392f835c7ae97ead85009e6",
+      "bytes": 235188
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_session_xdx-supplier-child-create-20261015-address-contract.json",
+      "sha256": "bccc30a15678b8d1fc4c8799693c825221466869a8fadfb0595506969be2d8e6",
+      "bytes": 8950
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_session_xdx-supplier-child-create-20261015-contact-contract.json",
+      "sha256": "42abac5ddb72bdf69418601925352beb1da04a3231a38a9046e38709b317ad97",
+      "bytes": 9332
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_session_xdx-supplier-child-create-20261015-create-integration.json",
+      "sha256": "35a57499223d59be44e9ee39aad27f73b7cbff4b07f723646ea139455c87515c",
+      "bytes": 8462
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_session_xdx-supplier-child-create-20261015.json",
+      "sha256": "1ea1391683b56520cb3cc165e4b0567cee500796d0626852c67191bc79780ccc",
+      "bytes": 7309
+    }
+  ],
+  "evidenceCount": 574,
+  "evidenceBytes": 29959379,
+  "scope": "Governance, guardrails and historical linked evidence only; no app/runtime source or environment copied",
+  "rootSpecificWordingPreserved": true,
+  "sourceLeftUnchanged": true
+}

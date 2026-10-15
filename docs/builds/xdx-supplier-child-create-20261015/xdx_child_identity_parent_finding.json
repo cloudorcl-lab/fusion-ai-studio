@@ -1,0 +1,5 @@
+{
+  "before": "4409e150a02105912dd331dd92d0b32c98752c73db8708d1d075754b75aa60f2",
+  "finding": "Fresh deterministic result omitted supplied verified parent business name/number.",
+  "correction": "Include only from response.supplier whose SupplierId matches attempt.suppliers_Id; never current selection."
+}

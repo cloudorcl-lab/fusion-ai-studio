@@ -1,0 +1,95 @@
+{
+  "kind": "workflow-conversation-judge-result",
+  "evaluations": [
+    {
+      "evaluationId": "step:prepare-direct-contact",
+      "result": {
+        "score": 5,
+        "passed": true,
+        "summary": "Pass: correct uncreated direct draft and exact revision1 controls.",
+        "criterionResults": [
+          {
+            "criterion": "Describe the correct uncreated contact and Dell parent using every supplied required field; preserve template inheritance and overrides when applicable.",
+            "passed": true,
+            "notes": "Shows all exact initial required fields, Dell Inc./1255 and direct mode as an uncreated draft."
+          },
+          {
+            "criterion": "Distinguish any source contact from the proposed contact; do not present a generated ID or claim creation before confirmation.",
+            "passed": true,
+            "notes": "Explicitly states Nothing has been created, labels Proposed contact, and attaches neither source nor generated new contact identity."
+          },
+          {
+            "criterion": "Reproduce supplied current request/revision and exact Review/Cancel commands without inventing control tokens.",
+            "passed": true,
+            "notes": "Review/Cancel commands consistently use the actual generated request ending-1 and revision1."
+          }
+        ],
+        "unsupportedClaims": []
+      }
+    },
+    {
+      "evaluationId": "step:edit-direct-contact",
+      "result": {
+        "score": 5,
+        "passed": true,
+        "summary": "Pass: earlier parent/names/request persist through Email-only edit and revision2.",
+        "criterionResults": [
+          {
+            "criterion": "Use the earlier turn to preserve Dell parent and both names while changing only Email; retain the same request identity and advance to revision2.",
+            "passed": true,
+            "notes": "Email-only follow-up preserves Dell1255, XDXFixture, ContactDirect20261015 and the exact prior request identity; replaces only Email and advances revision1to2."
+          },
+          {
+            "criterion": "Show the edited contact as uncreated with supplied current Review/Cancel commands and no obsolete approval command.",
+            "passed": true,
+            "notes": "Edited output remains explicitly uncreated and supplies only current revision2 Review/Cancel controls."
+          }
+        ],
+        "unsupportedClaims": []
+      }
+    },
+    {
+      "evaluationId": "step:review-direct-contact",
+      "result": {
+        "score": 5,
+        "passed": true,
+        "summary": "Pass: exact complete reviewed payload remains uncreated, with correct revision2 Confirm command.",
+        "criterionResults": [
+          {
+            "criterion": "Present all three current required contact fields and Dell parent as reviewed but uncreated.",
+            "passed": true,
+            "notes": "Presents all three final required values and Dell1255 while explicitly withholding creation."
+          },
+          {
+            "criterion": "Preserve the exact supplied Confirm command for the current requestID and revision2.",
+            "passed": true,
+            "notes": "Displayed Confirm command uses the same actual request identity and reviewed revision2; matches subsequent resolved Confirm input."
+          }
+        ],
+        "unsupportedClaims": []
+      }
+    },
+    {
+      "evaluationId": "step:confirm-direct-contact",
+      "result": {
+        "score": 5,
+        "passed": true,
+        "summary": "Pass: factual clean created/verified result, correct parent and required fields, and distinct returned contact/profile identities; no unsupported claim or stale draft heading.",
+        "criterionResults": [
+          {
+            "criterion": "Report the independently verified creation accurately, preserving returned contact identity and required values.",
+            "passed": true,
+            "notes": "Clean accepted-result output states created and independently verified, identifies correct Dell1255/internal parent, accepted/verified status, created contact900000000000101 and all three saved required values. No Proposed heading remains."
+          },
+          {
+            "criterion": "Keep source, returned contact and returned profile identities distinct; describe account evidence only as supplied and do not claim account provisioning or universal notification silence.",
+            "passed": true,
+            "notes": "Created contact900000000000101 is distinguished from profile900000000000201; direct mode introduces no source identity. No account-provisioning or notification-silence claim is made. Profile display is supported, not required by the rubric."
+          }
+        ],
+        "unsupportedClaims": []
+      }
+    }
+  ],
+  "schemaVersion": 1
+}

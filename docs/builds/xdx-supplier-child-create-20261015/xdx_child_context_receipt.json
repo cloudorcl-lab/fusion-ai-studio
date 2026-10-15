@@ -1,0 +1,24 @@
+{
+  "sourceHash": "abf9a9a618234f7258a6636697b5b330ac4a27efc67055fc8d1921c77edca567",
+  "exitCode": 0,
+  "error": null,
+  "timeoutMs": 300000,
+  "stdoutPath": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_context_stdout.txt",
+  "stderrPath": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_context_stderr.txt",
+  "ok": true,
+  "resultKeys": [
+    "workflowFile",
+    "workflow",
+    "definitionHash",
+    "conversationVariables",
+    "semanticNodes",
+    "stateRoutingNodes",
+    "recordableNodes",
+    "assertableNodes",
+    "suspensionPoints",
+    "requiredInteractions",
+    "runProfiles",
+    "existingCoverage",
+    "authoringContract"
+  ]
+}

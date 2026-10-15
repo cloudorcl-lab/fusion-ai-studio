@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "repoRoot": "D:\\Temp\\worktrees\\xdx-supplier-workspace-20261014",
+  "branch": "codex/xdx-supplier-workspace-20261014",
+  "phase": "Closeout",
+  "startedUtc": "2026-10-15T12:49:53.017Z",
+  "checkpointUtc": "2026-10-15T16:29:50.152Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "316b49bd6960fa4d76a8e6813ac52183a3de4458d5caf27a82730d6ecdc0d846"
+    },
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "f17f988c1df277c9a27cd94f69908d0726d0b30fdc12d1099a816aa6662e9b63"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "a0af052bacfae7325d4a81f10ac9759db3e9ce2eb3aa8eca1921f14ab4f81bc1"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "cdf55631271322158e19320fd1835ae11f14bc36a864fc285de5dd8c539859e5"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "9f923b00d3f4ff54022c19a87cdf07a0be9b0bb30b0d3749613d5cfbc0bd9952"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "125032fe7b5faff9760440c44a008b44cb606bb63eeda1c5604f60ee254ef23e"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "eb87ef30b5d75b133c0e321259fab451726b1c347069a682e0091d815fed01fb"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "a2491c5d5056d2426281d2b1fcaa3cad18b2ba9ed5b903014f9b573d3ff1f213"
+    }
+  ],
+  "reviewNotes": "Bounded /root/address_contract role only, parent/root and assignment address-contract. Reviewed original full canonical/registry/references and current BUILD_STANDARD, handoff and governance/object deltas. Applied required-only scope, typed payloads, correct parent/source/own IDs, no replay, literal Email boundary and actual attached judgments. F001-F020 are closed per frozen current handoff. Full build is NOT complete: corrected Contact-specific native display remains blocked by unavailable original conversation and root/user disposition, outside worker duties. No tests/business calls during Closeout; root owns shared records and final delivery.",
+  "objectReferences": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "release": "26C"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-child-create-20261015/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-supplier-child-create-20261015/failure-ledger.json",
+  "learningTaskId": "xdx-supplier-child-create-20261015",
+  "timeTracker": "docs/builds/xdx-supplier-child-create-20261015/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Bounded worker obligations under canonical learning owner",
+      "status": "pass",
+      "reason": "Original entire canonical playbook and current governance/object deltas reviewed; observed failures reported before corrective retry, with reusable Email/topology/identity prevention reviewed. Root owns canonical/failure integration.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/learning-review.md",
+        "docs/builds/xdx-supplier-child-create-20261015/failure-ledger.json"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Bounded worker obligations under canonical intake owner",
+      "status": "pass",
+      "reason": "Bounded Address BO contract, required-only direct/template fixtures and parent/source provenance delivered under root intake; optional fields/DFF/KFF/unrelated resources excluded.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-supplier-child-create-20261015/xdx_address_five_case_proposal.json"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Bounded worker obligations under canonical authority owner",
+      "status": "pass",
+      "reason": "Only delegated local authoring, prerequisite qualification, independent review and local judging performed. Root owns tenant/browser/scenario dispatch and global meters; reset-after-success does not authorize accepted-write replay.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/approvals.json",
+        "docs/builds/xdx-supplier-child-create-20261015/successful-test-reset-policy.json"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Bounded worker obligations under canonical objects owner",
+      "status": "pass",
+      "reason": "Exact eight-field Address payload/raw+typed template, parent SupplierId versus displayed number, generated omissions and scoped uniqueness reviewed. Current eqil corroboration remains separate from eqih history; immutable first GET samples retained. Contact BO peer-reviewed.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/bo-revalidation-after-example.json",
+        "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+        "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Bounded worker obligations under canonical verification owner",
+      "status": "pass",
+      "reason": "Local BO qualification, context-bound fixture definitions, minimal explicit-ID GET correction and current source-bound judgments delivered. Both current Address conversations have actual attached judgments. Native Contact display and whole-build acceptance are root-owned and excluded; not relabeled PASS.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/current-child-fixture-acceptance.json",
+        "docs/builds/xdx-supplier-child-create-20261015/xdx_address_template_fixture_repair_receipt.json",
+        "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-reviewed-judge-result.json",
+        "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-reviewed-judge-result.json"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Bounded worker obligations under canonical timing owner",
+      "status": "pass",
+      "reason": "Canonical worker identity /root/address_contract returned observed intervals and gaps. Root ledger owns exclusive timing; command elapsed is diagnostic, inter-turn/dispatch gaps and mixed holds are not continuous active effort. Token counters unavailable.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/build-ledger.json",
+        "docs/builds/xdx-supplier-child-create-20261015/time-tracker.md",
+        "docs/builds/xdx-supplier-child-create-20261015/address-commands.jsonl"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Bounded worker obligations under canonical cleanup owner",
+      "status": "pass",
+      "reason": "Evidence-linked helpers, fixtures, original failures and judgments retained; no persistent data, configuration, immutable GET samples or unrelated changes deleted. Shared cleanup/checkpoint commit root-owned.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/learning-review.md"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Bounded worker obligations under canonical delivery owner",
+      "status": "pass",
+      "reason": "All bounded BO/fixture repair/review/judgment deliverables handed to root with hashes and limitations. Only this worker role closes; global Contact-native corrected-display decision, full root acceptance and final commit/delivery remain pending. No push/publication or whole-build completion claimed.",
+      "evidence": [
+        "docs/handoffs/ACTIVE_HANDOFF.md",
+        "docs/builds/xdx-supplier-child-create-20261015/current-child-fixture-acceptance.json"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Actual worker token counters unavailable; tenant runtime tokens are not worker counters.",
+    "aiUnits": "No reliable worker-local AI-unit counter; root current-child-fixture-acceptance.json separately owns configured runtime usage.",
+    "timingGaps": "Earliest worker observation12:44:59.8558213Z previously returned to root; existing receipt startedUtc retained. Root ledger owns reported activity intervals and mixed/unallocated waits. Closeout review began16:20:27Z; shared F020 blocked writes and dependency holds are not active. Prior resumed blocked window16:27:43-16:28:47Z retained; changed-precondition current continuation begins16:29:14Z through checkpoint. Command/final-response tail remains separately reconcilable; dispatch-to-return is not continuous effort."
+  },
+  "sessionId": "xdx-supplier-child-create-20261015-address-contract",
+  "learningScope": "addresses"
+}

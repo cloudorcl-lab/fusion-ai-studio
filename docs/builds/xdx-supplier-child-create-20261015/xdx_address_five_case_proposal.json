@@ -1,0 +1,112 @@
+{
+  "status": "proposal-not-executed",
+  "agentId": "/root/address_contract",
+  "assignmentId": "address-contract",
+  "object": "addresses",
+  "scenarioBudget": 5,
+  "scenarioTestsExecuted": 0,
+  "plannedDistinctLiveCreates": 3,
+  "accounting": "Root must approve exact scenario/transaction accounting before dispatch; prerequisite static checks and local artifact validation are separately recorded authoring gates, not business scenarios. No automatic budget reset; only successful object completion.",
+  "source": {
+    "retainedSourceAddressName": "Dell US1",
+    "retainedParentSupplierNumber": "1255",
+    "evidence": "src/businessObjects/xdx_supplier_addresses.bo retained GetSupplierAddress response",
+    "retainedParentSupplierId": "300000047414679",
+    "retainedSourceAddressId": "300000047414694",
+    "sha256": "e6774fc2cd13990c42e5861cb91f31936df9850961ca25babc5eb17f4cc5448f",
+    "bo": "src/businessObjects/xdx_supplier_addresses.bo",
+    "limitation": "Retained source establishes field provenance, not current name absence or create acceptance"
+  },
+  "physicalFields": {
+    "CountryCode": "US",
+    "AddressLine1": "2300 GREENLAWN BLVD",
+    "City": "ROUND ROCK",
+    "State": "TX",
+    "PostalCode": "78664"
+  },
+  "payloadFields": [
+    "AddressName",
+    "CountryCode",
+    "AddressLine1",
+    "City",
+    "State",
+    "PostalCode",
+    "Email",
+    "AddressPurposeOrderingFlag"
+  ],
+  "literalOrderingFlag": true,
+  "exclude": [
+    "Generated IDs in POST",
+    "Optional field variations",
+    "DFF/KFF",
+    "Sequential omission probes",
+    "Duplicate POST",
+    "Accepted or uncertain create replay",
+    "Account or notification operations"
+  ],
+  "collision": "Exact AddressName query under resolved target SupplierId; preserve transport/error outcomes; no claim that distinctive proposed names prove absence",
+  "requiredFieldQualifier": "CountryCode/Email are exact26C schema-required; other fields form selected complete US ordering business flow. Purpose condition established historically in eqih; eqil acceptance remains pending.",
+  "cases": [
+    {
+      "proof": "All eight reviewed fields persist, parent path is correct, generated address/party IDs captured",
+      "newCreateCount": 1,
+      "requires": "Separate authorized direct-BO transaction allocation",
+      "name": "Saved BO direct address create and independent readback",
+      "id": "ADDR-01",
+      "mode": "saved-bo-live",
+      "entry": "direct",
+      "newAddressName": "XDX Address BO Direct 20261015",
+      "email": "xdx.address.bo.20261015@example.invalid",
+      "writeBoundary": "One exact frozen CreateSupplierAddress call only after authorized parent-scoped name precheck; GetSupplierAddress by returned own key"
+    },
+    {
+      "proof": "Prepare complete direct fields, field-only edit, exact review/revision confirmation, reserve once, capture fixture, independent GET and display; attached semantic judgment",
+      "newCreateCount": 0,
+      "requires": "Frozen workflow and supported prior-step request/revision bindings",
+      "name": "Configured direct-entry conversation",
+      "id": "ADDR-02",
+      "mode": "configured-file-replay-with-judge",
+      "entry": "direct",
+      "newAddressName": "XDX Address Replay Direct 20261015",
+      "email": "xdx.address.replay.direct.20261015@example.invalid",
+      "writeBoundary": "Every BO POST fixture-backed or explicitly excluded"
+    },
+    {
+      "proof": "Resolve retained template, copy only required physical values, override controlled Email and new name, retain locked target parent through field-only edit/review/confirm, capture fixture, independent GET and display; attached semantic judgment",
+      "newCreateCount": 0,
+      "requires": "Frozen workflow and supported prior-step request/revision bindings",
+      "name": "Configured existing-address template conversation",
+      "id": "ADDR-03",
+      "mode": "configured-file-replay-with-judge",
+      "entry": "template",
+      "newAddressName": "XDX Address Replay Template 20261015",
+      "email": "xdx.address.replay.template.20261015@example.invalid",
+      "writeBoundary": "Every BO POST fixture-backed or explicitly excluded"
+    },
+    {
+      "proof": "Actual app Query prepare/edit/review/exact-confirm, one create, parent-scoped independent GET and final widget with all eight intended values",
+      "newCreateCount": 1,
+      "requires": "Current saved BO readiness, configured direct acceptance and separate authorized native transaction",
+      "name": "Native direct-entry full creation journey",
+      "id": "ADDR-04",
+      "mode": "native-draft-app",
+      "entry": "direct",
+      "newAddressName": "XDX Address Native Direct 20261015",
+      "email": "xdx.address.native.direct.20261015@example.invalid",
+      "writeBoundary": "One native exact-payload approval create; no replay after accepted or uncertain result"
+    },
+    {
+      "proof": "Actual app Query template prepare/edit/review/exact-confirm, visible exact inherited physical fields, new name and controlled Email, one create, parent-scoped independent GET and final widget",
+      "newCreateCount": 1,
+      "requires": "Current saved BO readiness, configured template acceptance and separate authorized native transaction",
+      "name": "Native template full creation journey",
+      "id": "ADDR-05",
+      "mode": "native-draft-app",
+      "entry": "template",
+      "newAddressName": "XDX Address Native Template 20261015",
+      "email": "xdx.address.native.template.20261015@example.invalid",
+      "writeBoundary": "One native exact-payload approval create; no replay after accepted or uncertain result"
+    }
+  ],
+  "observedEndUtc": "2026-10-15T13:11:19.7454107Z"
+}

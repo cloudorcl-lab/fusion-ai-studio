@@ -1,0 +1,30 @@
+{
+  "source": "Observed validate-bo structured results in tool conversation; semantic failure despite process exit0 and wrapperoktrue",
+  "objects": [
+    {
+      "object": "addresses",
+      "function": "CreateSupplierAddress",
+      "errors": [
+        "Example description is required.",
+        "Example payload is required."
+      ],
+      "focus": [
+        "bo-fn-13-example-25-description",
+        "bo-fn-13-example-25-payload"
+      ]
+    },
+    {
+      "object": "contacts",
+      "function": "CreateSupplierContact",
+      "errors": [
+        "Example description is required.",
+        "Example payload is required."
+      ],
+      "focus": [
+        "bo-fn-13-example-21-description",
+        "bo-fn-13-example-21-payload"
+      ]
+    }
+  ],
+  "scenarioTestsUsed": 0
+}

@@ -1,0 +1,45 @@
+{
+  "caseId": "CONT-1",
+  "object": "contacts",
+  "status": "accepted-verified",
+  "atUtc": "2026-10-15T13:27:12.601Z",
+  "surface": "actual saved BO native Fetch Sample Data",
+  "target": "eqil-dev21",
+  "supportedObjectId": "300000340669150",
+  "suppliers_Id": "300000047414679",
+  "functionName": "CreateSupplierContact",
+  "payload": {
+    "LastName": "ChildBO20261015",
+    "Email": "xdx.child.bo.20261015@example.invalid",
+    "FirstName": "XDXContact"
+  },
+  "approval": "Existing user five-tests/both-modes authority; coordinator frozen exact manifest",
+  "automaticRetry": false,
+  "generatedFieldsOmitted": [
+    "SupplierContactId",
+    "PersonProfileId"
+  ],
+  "accountFieldsOmitted": true,
+  "SupplierContactId": "300000340604817",
+  "PersonProfileId": "300000340604817",
+  "acceptedObservedUtc": "2026-10-15T13:27:44.464Z",
+  "response": {
+    "SupplierContactId": 300000340604817,
+    "FirstName": "XDXContact",
+    "LastName": "ChildBO20261015",
+    "Email": "xdx.child.bo.20261015@example.invalid",
+    "Status": "ACTIVE",
+    "InactiveDate": null,
+    "PersonProfileId": 300000340604817,
+    "CreationDate": "2026-10-15T13:27:22+00:00",
+    "CreatedBy": "CASEY.BROWN",
+    "DataAccessLevel": null,
+    "UserName": null,
+    "UserAccountStatus": null,
+    "ContactName": null
+  },
+  "responseExcerpt": "Exact native sample response fields retained; omitted optional nulls, update audit and links. Full browser response self/parent URLs confirm submitted supplier parent300000047414679.",
+  "identityRule": "Own/profile IDs happened to match in this test; do not assume equality generally.",
+  "verifiedUtc": "2026-10-15T13:29:14.682Z",
+  "readback": "docs/builds/xdx-supplier-child-create-20261015/contact-bo-readback.json"
+}

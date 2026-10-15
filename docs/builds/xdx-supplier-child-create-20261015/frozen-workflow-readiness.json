@@ -1,0 +1,27 @@
+{
+  "observedUtc": "2026-10-15T13:35:03.698Z",
+  "workflow": "src/workflows/xdx_supplier_conversation.wf",
+  "sha256": "abf9a9a618234f7258a6636697b5b330ac4a27efc67055fc8d1921c77edca567",
+  "specificationSha256": "c5a91138f1eed1ea7f42fcda4cca58fa0c8c8ef3c455027983df4b64a87f8f75",
+  "terminalEdges": [
+    [
+      "165",
+      "xdx_child_write_error_return"
+    ],
+    [
+      "167",
+      "xdx_child_prepare_error_return"
+    ],
+    [
+      "190",
+      "191"
+    ],
+    [
+      "191",
+      "192"
+    ]
+  ],
+  "rootReview": "Actual normalized persisted error RETURNs and success semantic terminal checked; exact selected-parent precedence reviewed in source",
+  "validation": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_validation_receipt.json",
+  "query": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_query_contract_receipt.json"
+}

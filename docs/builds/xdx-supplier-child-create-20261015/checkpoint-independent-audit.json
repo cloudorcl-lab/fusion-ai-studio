@@ -1,0 +1,34 @@
+{
+  "observedUtc": "2026-10-15T16:34:45.138Z",
+  "reviewer": "/root/create_integration",
+  "result": "pass for incomplete implementation checkpoint",
+  "workflow": {
+    "sha256": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872",
+    "savedDraft": 88010729,
+    "unchanged": true
+  },
+  "businessObjects": {
+    "address": "e6774fc2cd13990c42e5861cb91f31936df9850961ca25babc5eb17f4cc5448f",
+    "contact": "118235491b6f36617d5c1e606141efcc358bac163aec18742ca3d183a178b9d5",
+    "unchanged": true
+  },
+  "configuredTests": {
+    "currentReports": 4,
+    "turns": 16,
+    "allAttached": true,
+    "currentVersion": 88010729,
+    "definitionHash": "5dbfda59fad929e8",
+    "directAddressDirectContactTemplateContact": "Only generated per-step pathBinding differs from dispatched contract",
+    "templateAddress": "Generated pathBinding and permutation of identical unordered mustExecute assertions; restoring prior order reconstructs exact preexecution9da7052f093e843c4f0d96b00e6f044d823e7f2c56a9f4677d0e913cbd29b155. Ordered executionAssertions unchanged.",
+    "logicalAuthoredDrift": false
+  },
+  "minorReadDiagnostic": "Inspection of absent observedPathBinding caused TypeError; actual property pathBinding inspected successfully, no source mutation or retry of tests.",
+  "timing": {
+    "startUtc": "2026-10-15T16:31:42Z",
+    "endUtc": "2026-10-15T16:34:08Z",
+    "observedActiveSeconds": 146
+  },
+  "additionalTests": 0,
+  "remoteCalls": 0,
+  "remaining": "Corrected native Contact display acceptance; full root Closeout remains open"
+}

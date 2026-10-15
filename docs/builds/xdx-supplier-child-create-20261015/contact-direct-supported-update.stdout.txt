@@ -1,0 +1,7 @@
+Workflow test updated.
+Workflow: XDX_SUPPLIER_CONVERSATION (unknown)
+Test: xdx-contact-required-direct-creation
+Tags: xdx-child-required-fixture-acceptance
+Previous workflow identity: undefined vundefined
+Updated fields: conversation
+Test file: D:\Temp\worktrees\xdx-supplier-workspace-20261014\test\workflows\xdx_supplier_conversation\xdx-contact-required-direct-creation.json

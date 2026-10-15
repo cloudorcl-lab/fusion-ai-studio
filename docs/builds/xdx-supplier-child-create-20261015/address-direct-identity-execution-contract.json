@@ -1,0 +1,29 @@
+{
+  "caseId": "ADDR-02-F016",
+  "observedUtc": "2026-10-15T16:00:01.211Z",
+  "testFile": "test/workflows/xdx_supplier_conversation/xdx-address-required-direct-creation.json",
+  "testSha256": "4dfd57f2f25ae8e25129166a7d62e9a57861fd6b77eeccc248fda6e79dc6f758",
+  "workflowCode": "XDX_SUPPLIER_CONVERSATION",
+  "workflowStatus": "DRAFT",
+  "workflowVersion": 88010729,
+  "workflowSha256": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872",
+  "dataSource": "file",
+  "evaluation": "configured hybrid, localjudge default; no override",
+  "arguments": [
+    "run-workflow-test",
+    "--test-file",
+    "test/workflows/xdx_supplier_conversation/xdx-address-required-direct-creation.json",
+    "--workflow-status",
+    "DRAFT",
+    "--data-source",
+    "file",
+    "--refresh-conversation-path-bindings",
+    "true"
+  ],
+  "report": "test-reports/workflows/xdx_supplier_conversation/xdx-address-required-direct-creation/result.json",
+  "judgeRequest": ".debug/xdx-address-required-direct-creation-judge-request.json",
+  "noAutomaticRetry": true,
+  "fixtureSafety": "All recordableBO nodes in eachstep havefixtures; POSTonlyConfirm. No liveBOwriteauthorizedbyconfiguredscenario.",
+  "continuationHandling": "Preserverawexit. Existingv1singleturnhelperrejectsrefreshflag/step-onlyjudge; manuallyinspectexactfreshscriptedreport+judge thenattachwithoutreplay; neverclaimPASSfromprocessstatus.",
+  "precedingLogicChanged": "docs/builds/xdx-supplier-child-create-20261015/identity-delta-impact-review.json"
+}

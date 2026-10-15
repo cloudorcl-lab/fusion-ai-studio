@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "XDX_VALIDATE_CHILD_DRAFT",
+    "updated": true
+  }
+}

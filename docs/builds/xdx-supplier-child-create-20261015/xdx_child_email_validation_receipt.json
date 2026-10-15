@@ -1,0 +1,18 @@
+{
+  "label": "email_validation",
+  "exitCode": 0,
+  "error": null,
+  "timeoutMs": 300000,
+  "stdoutPath": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_validation_stdout.txt",
+  "stderrPath": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_validation_stderr.txt",
+  "result": {
+    "ok": true,
+    "command": "validate-workflow",
+    "result": {
+      "ok": true,
+      "errorCount": 0,
+      "errors": [],
+      "message": "Workflow validation passed."
+    }
+  }
+}

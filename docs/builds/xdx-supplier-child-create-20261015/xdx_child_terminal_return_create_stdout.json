@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "192",
+    "nodeCode": "XDX_RETURN_CHILD_RESPONSE"
+  }
+}

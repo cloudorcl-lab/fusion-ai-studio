@@ -1,0 +1,23 @@
+{
+  "wrapperParentPid": 32492,
+  "status": "blocked-before-definition-authoring",
+  "stdoutBytes": 0,
+  "contextPid": 28204,
+  "assignment": "child-configured-test-staging",
+  "preStopObservation": "Initial restrictedCIM inspection was access-denied, then unchanged exact PID identity inspected using authorized host context. This was a local inspection boundary, not a product test.",
+  "currentWorkflowHash": "edbebc3e1e7e6bc0c4957073837dd956d66738a0fd79d8337e79c6f61ddfa116",
+  "activityId": "contact-conversation-context-repair",
+  "agentId": "/root/contact_contract",
+  "stderr": "Only Node MODULE_TYPELESS_PACKAGE_JSON warning observed in original tool receipt. No separate stderr file retained; no invented verbatim transcript.",
+  "readyArtifact": "xdx_contact_payload_proposals.json",
+  "startedUtc": "2026-10-15T13:10:05.998Z",
+  "initialWorkflowHash": "Not independently captured at process start; writer reported5706a41e649422e9f2fb317cef7755a66961913f562a58e8de3e4b1660631d24 at13:08:34Z and subsequent changes occurred",
+  "sessionId": 89335,
+  "stdoutPath": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_conversation_context.txt",
+  "runId": "1f6a7b02-e17f-4680-9ed0-228ae308a85a",
+  "remaining": "Four configured direct/template definitions cannot be finalized until required current conversation context is available from frozen graph. No definitions claimed ready.",
+  "observedUtc": "2026-10-15T13:15:49Z",
+  "command": "get-workflow-conversation-test-context --file src/workflows/xdx_supplier_conversation.wf",
+  "stop": "Coordinator instructed stop after five minutes of quiet stale-source context. HostCIM verified exact PID/name/command, found no child processes, stopped onlyPID28204. Originalwrapper completed exit1. No restart.",
+  "testCounters": "No scenarios executed;0/5perobject"
+}

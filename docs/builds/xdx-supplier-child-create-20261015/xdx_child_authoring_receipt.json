@@ -1,0 +1,233 @@
+{
+  "before": "0bfea795fd5032f8e8088f366733185f4a31c4ab13cd68f2dd9afeb9bbfcf284",
+  "after": "5706a41e649422e9f2fb317cef7755a66961913f562a58e8de3e4b1660631d24",
+  "modifiedNodes": [
+    "XDX_PREPARE_SUPPLIER_REQUEST",
+    "XDX_ACCEPT_SUPPLIER_SEARCH",
+    "XDX_ACCEPT_SUPPLIER_DETAIL",
+    "XDX_EVALUATE_CONTROL",
+    "XDX_PRESENT_CONTROL_RESULT",
+    "XDX_INTERPRET_SUPPLIER_REQUEST",
+    "XDX_SUPPLIER_QUERY_RESPONSE"
+  ],
+  "newNodes": [
+    {
+      "code": "XDX_PREPARE_CHILD_CREATE",
+      "type": "CODE",
+      "id": "148"
+    },
+    {
+      "code": "XDX_PERSIST_CHILD_PREPARATION",
+      "type": "SET_FIELDS",
+      "id": "149"
+    },
+    {
+      "code": "XDX_ACCEPT_CHILD_SOURCE",
+      "type": "CODE",
+      "id": "150"
+    },
+    {
+      "code": "XDX_PERSIST_CHILD_SOURCE",
+      "type": "SET_FIELDS",
+      "id": "151"
+    },
+    {
+      "code": "XDX_BUILD_CHILD_DRAFT",
+      "type": "CODE",
+      "id": "152"
+    },
+    {
+      "code": "XDX_PERSIST_CHILD_DRAFT",
+      "type": "SET_FIELDS",
+      "id": "153"
+    },
+    {
+      "code": "XDX_VALIDATE_CHILD_DRAFT",
+      "type": "CODE",
+      "id": "154"
+    },
+    {
+      "code": "XDX_PERSIST_CHILD_VALIDATION",
+      "type": "SET_FIELDS",
+      "id": "155"
+    },
+    {
+      "code": "XDX_ACCEPT_ADDRESS_NAME_CHECK",
+      "type": "CODE",
+      "id": "156"
+    },
+    {
+      "code": "XDX_PERSIST_ADDRESS_NAME_CHECK",
+      "type": "SET_FIELDS",
+      "id": "157"
+    },
+    {
+      "code": "XDX_RESERVE_CHILD_CREATE",
+      "type": "CODE",
+      "id": "158"
+    },
+    {
+      "code": "XDX_PERSIST_CHILD_RESERVATION",
+      "type": "SET_FIELDS",
+      "id": "159"
+    },
+    {
+      "code": "XDX_CAPTURE_CHILD_CREATION",
+      "type": "CODE",
+      "id": "160"
+    },
+    {
+      "code": "XDX_PERSIST_CHILD_CREATION",
+      "type": "SET_FIELDS",
+      "id": "161"
+    },
+    {
+      "code": "XDX_VERIFY_CHILD_RESULT",
+      "type": "CODE",
+      "id": "162"
+    },
+    {
+      "code": "XDX_PERSIST_CHILD_VERIFICATION",
+      "type": "SET_FIELDS",
+      "id": "163"
+    },
+    {
+      "code": "XDX_HANDLE_CHILD_WRITE_ERROR",
+      "type": "CODE",
+      "id": "164"
+    },
+    {
+      "code": "XDX_PERSIST_CHILD_WRITE_ERROR",
+      "type": "SET_FIELDS",
+      "id": "165"
+    },
+    {
+      "code": "XDX_HANDLE_CHILD_PREPARE_ERROR",
+      "type": "CODE",
+      "id": "166"
+    },
+    {
+      "code": "XDX_PERSIST_CHILD_PREPARE_ERROR",
+      "type": "SET_FIELDS",
+      "id": "167"
+    },
+    {
+      "code": "XDX_FIND_ADDRESS_TEMPLATE",
+      "type": "BO_FUNCTION",
+      "id": "168"
+    },
+    {
+      "code": "XDX_READ_ADDRESS_TEMPLATE",
+      "type": "BO_FUNCTION",
+      "id": "169"
+    },
+    {
+      "code": "XDX_CREATE_ADDRESS_ONCE",
+      "type": "BO_FUNCTION",
+      "id": "170"
+    },
+    {
+      "code": "XDX_GET_CREATED_ADDRESS",
+      "type": "BO_FUNCTION",
+      "id": "171"
+    },
+    {
+      "code": "XDX_FIND_CONTACT_TEMPLATE",
+      "type": "BO_FUNCTION",
+      "id": "172"
+    },
+    {
+      "code": "XDX_READ_CONTACT_TEMPLATE",
+      "type": "BO_FUNCTION",
+      "id": "173"
+    },
+    {
+      "code": "XDX_CREATE_CONTACT_ONCE",
+      "type": "BO_FUNCTION",
+      "id": "174"
+    },
+    {
+      "code": "XDX_GET_CREATED_CONTACT",
+      "type": "BO_FUNCTION",
+      "id": "175"
+    },
+    {
+      "code": "XDX_CHECK_NEW_ADDRESS_NAME",
+      "type": "BO_FUNCTION",
+      "id": "176"
+    },
+    {
+      "code": "XDX_ROUTE_CHILD_SOURCE",
+      "type": "SWITCH",
+      "id": "177"
+    },
+    {
+      "code": "XDX_JOIN_CHILD_SOURCE",
+      "type": "CODE",
+      "id": "178"
+    },
+    {
+      "code": "XDX_ROUTE_CHILD_BUILD",
+      "type": "SWITCH",
+      "id": "179"
+    },
+    {
+      "code": "XDX_JOIN_CHILD_BUILD",
+      "type": "CODE",
+      "id": "180"
+    },
+    {
+      "code": "XDX_ROUTE_CHILD_VALIDATION",
+      "type": "SWITCH",
+      "id": "181"
+    },
+    {
+      "code": "XDX_JOIN_CHILD_VALIDATION",
+      "type": "CODE",
+      "id": "182"
+    },
+    {
+      "code": "XDX_ROUTE_CHILD_NAME_CHECK",
+      "type": "SWITCH",
+      "id": "183"
+    },
+    {
+      "code": "XDX_JOIN_CHILD_NAME",
+      "type": "CODE",
+      "id": "184"
+    },
+    {
+      "code": "XDX_ROUTE_CHILD_RESERVATION",
+      "type": "SWITCH",
+      "id": "185"
+    },
+    {
+      "code": "XDX_JOIN_CHILD_RESERVATION",
+      "type": "CODE",
+      "id": "186"
+    },
+    {
+      "code": "XDX_ROUTE_CHILD_DISPATCH",
+      "type": "SWITCH",
+      "id": "187"
+    },
+    {
+      "code": "XDX_JOIN_CHILD_POST",
+      "type": "CODE",
+      "id": "188"
+    },
+    {
+      "code": "XDX_ROUTE_CHILD_READBACK",
+      "type": "SWITCH",
+      "id": "189"
+    },
+    {
+      "code": "XDX_JOIN_CHILD_READBACK",
+      "type": "CODE",
+      "id": "190"
+    }
+  ],
+  "offlineGraphReason": "BO node creation has no offline enrichment mode and switch convergence has no public patch option. Frozen local contracts used; root must reconcile ready BO schemas before save.",
+  "testsRun": 0,
+  "remoteCalls": 0
+}

@@ -1,0 +1,7 @@
+{
+  "functionName": "GetSupplierContact",
+  "patch": {
+    "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts/{suppliers_contacts_Id}?onlyData=true&fields=SupplierContactId,ContactName,FirstName,LastName,Email,Status,InactiveDate,PersonProfileId,UserName,UserAccountStatus,DataAccessLevel",
+    "description": "Read one contact under the resolved supplier, including generated profile identity and read-only account fields for post-create verification; preserve API errors and parent scope."
+  }
+}

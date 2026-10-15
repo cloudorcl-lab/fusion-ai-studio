@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-10-15T18:02:25.143Z",
+  "checkpointUtc": "2026-10-15T18:08:23.6061402Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "fa1aa8fff43b8834b4db6679ca542229bbe6893efe406878e87ce6fa352e00ed"
+    },
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "c007c6eca8368b0475c563e659fe29f5ee36b27aa1ea21950d0742087fa99c90"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "5ef66bb1d627675fd1d3ef9ad18b25c32b464b508c45e1126656078ca3960a6d"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "855fdc07ced983bef8eb04b09dc52ad914926380427727ca02e70322220f8dfa"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "a4f649e2ac28c33cc76436661735c3bf32f06b697ea352be3322a4b51e077da7"
+    }
+  ],
+  "reviewNotes": "Read target handoff first, full baseline playbook/registry and updated delta; approved bounded governance sync and unchanged source evidence. Reused focused source qualifications after independently checking all six dependencies normalized-identical. No product, tenant, runtime, browser or source mutation. Root commit/global build Closeout excluded from role acceptance.",
+  "objectReferences": [],
+  "noObjectsReason": "Local governance sync only; no resource operation in scope.",
+  "learningRegister": "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-retro-root-sync-20261015/failure-ledger.json",
+  "learningTaskId": "xdx-retro-root-sync-20261015",
+  "timeTracker": "docs/builds/xdx-retro-root-sync-20261015/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped independent governance review completed; root commit and overall build closure remain coordinator obligations. No resource operation or runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/attribute-scope.json",
+        "docs/builds/xdx-retro-root-sync-20261015/time-tracker.md"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped independent governance review completed; root commit and overall build closure remain coordinator obligations. No resource operation or runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/attribute-scope.json",
+        "docs/builds/xdx-retro-root-sync-20261015/time-tracker.md"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped independent governance review completed; root commit and overall build closure remain coordinator obligations. No resource operation or runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/attribute-scope.json",
+        "docs/builds/xdx-retro-root-sync-20261015/time-tracker.md"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped independent governance review completed; root commit and overall build closure remain coordinator obligations. No resource operation or runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/attribute-scope.json",
+        "docs/builds/xdx-retro-root-sync-20261015/time-tracker.md"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped independent governance review completed; root commit and overall build closure remain coordinator obligations. No resource operation or runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/attribute-scope.json",
+        "docs/builds/xdx-retro-root-sync-20261015/time-tracker.md"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped independent governance review completed; root commit and overall build closure remain coordinator obligations. No resource operation or runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/attribute-scope.json",
+        "docs/builds/xdx-retro-root-sync-20261015/time-tracker.md"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped independent governance review completed; root commit and overall build closure remain coordinator obligations. No resource operation or runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/attribute-scope.json",
+        "docs/builds/xdx-retro-root-sync-20261015/time-tracker.md"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped independent governance review completed; root commit and overall build closure remain coordinator obligations. No resource operation or runtime acceptance claimed.",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md",
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/attribute-scope.json",
+        "docs/builds/xdx-retro-root-sync-20261015/time-tracker.md"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Model/worker counters unavailable",
+    "aiUnits": "No tenant calls in scope",
+    "timingGaps": "Initial diff inspection before first prospective timestamp unallocated"
+  },
+  "sessionId": "xdx-retro-root-sync-20261015-review",
+  "learningScope": "governance"
+}

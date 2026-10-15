@@ -1,0 +1,198 @@
+{
+  "type": "object",
+  "properties": {
+    "intent": {
+      "type": "string",
+      "enum": [
+        "search",
+        "detail",
+        "template",
+        "edit",
+        "next",
+        "unsupported",
+        "choices",
+        "children",
+        "site_template",
+        "child_create"
+      ]
+    },
+    "matchMode": {
+      "type": "string",
+      "enum": [
+        "contains",
+        "exact",
+        "number",
+        "id",
+        "selection"
+      ]
+    },
+    "term": {
+      "type": "string"
+    },
+    "newName": {
+      "type": "string"
+    },
+    "includeInactive": {
+      "type": "boolean"
+    },
+    "patch": {
+      "type": "object",
+      "properties": {
+        "Supplier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "BusinessRelationship": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "TaxOrganizationType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "SupplierSite": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "SupplierType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "Supplier",
+        "BusinessRelationship",
+        "TaxOrganizationType",
+        "SupplierSite",
+        "SupplierType"
+      ]
+    },
+    "resource": {
+      "type": "string",
+      "enum": [
+        "",
+        "sites",
+        "contacts",
+        "addresses"
+      ]
+    },
+    "childMode": {
+      "type": "string",
+      "enum": [
+        "all",
+        "exact",
+        "contains",
+        "id",
+        "selection",
+        "next"
+      ]
+    },
+    "childTerm": {
+      "type": "string"
+    },
+    "creationMode": {
+      "type": "string",
+      "enum": [
+        "",
+        "direct",
+        "template"
+      ]
+    },
+    "childPatch": {
+      "type": "object",
+      "properties": {
+        "AddressName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "CountryCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "AddressLine1": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "City": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "State": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "PostalCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "FirstName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "LastName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "AddressName",
+        "CountryCode",
+        "AddressLine1",
+        "City",
+        "State",
+        "PostalCode",
+        "Email",
+        "FirstName",
+        "LastName"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "intent",
+    "matchMode",
+    "term",
+    "newName",
+    "includeInactive",
+    "patch",
+    "resource",
+    "childMode",
+    "childTerm",
+    "creationMode",
+    "childPatch"
+  ],
+  "additionalProperties": false
+}

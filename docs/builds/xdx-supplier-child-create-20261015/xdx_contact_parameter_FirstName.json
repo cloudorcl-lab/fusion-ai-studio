@@ -1,0 +1,10 @@
+{
+  "kind": "token",
+  "parameterName": "FirstName",
+  "patch": {
+    "description": "Reviewed contact first name, maximum150 characters; tenant-required in retained26C evidence. Caller validates JSON-safe rendering and nonblank input.",
+    "defaultValue": "",
+    "dataType": "string"
+  },
+  "functionName": "CreateSupplierContact"
+}

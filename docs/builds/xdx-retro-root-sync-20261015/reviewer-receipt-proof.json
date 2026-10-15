@@ -1,0 +1,17 @@
+{
+  "observedUtc": "2026-10-15T18:10:58.087Z",
+  "result": "pass",
+  "checks": 8,
+  "pathsPerCheck": 7,
+  "failedRunId": "46606e95-4c62-4eed-a14b-7dabf7a37695",
+  "cause": {
+    "runId": "46606e95-4c62-4eed-a14b-7dabf7a37695",
+    "observedUtc": "2026-10-15T18:07:59.838Z",
+    "symptom": "PowerShell concatenation inside array expression serialized seven paths as one space-joined path; Closeout correctly rejected missing file.",
+    "correction": "Use exact literal path array; deserialize written JSON; assert seven array elements and literal leaf existence for every obligation.",
+    "preventionCheckUtc": "2026-10-15T18:08:23.6709007Z",
+    "preventionResult": "pass",
+    "retry": "Waiting coordinator ledger capture before one repair-category Closeout."
+  },
+  "limitation": "Invalid original receipt was overwritten by reviewer before archival; failed command receipt and finding preserve occurrence."
+}

@@ -1,0 +1,12 @@
+{
+  "observation": "At13:16:32Z restricted Node-to-Git source comparison failed spawnSync git EPERM before child launched",
+  "activityId": "address-topology-repair-review",
+  "scenarioTestsUsed": 0,
+  "cause": "Known restricted subprocess boundary; initial helper omitted existing host-context rule",
+  "agentId": "/root/address_contract",
+  "priorRecovery": "docs/builds/xdx-supplier-child-create-20261015/review-tool-recovery.json",
+  "correction": "One authorized host-context retry of same bounded comparison exited0",
+  "observedEndUtc": "2026-10-15T13:23:11.9900966Z",
+  "productEffect": "None",
+  "prevention": "Use verified host context for Node-based Git subprocesses at first invocation"
+}

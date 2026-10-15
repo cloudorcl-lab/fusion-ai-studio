@@ -1,0 +1,120 @@
+{
+  "observedUtc": "2026-10-15T17:34:58.106Z",
+  "entries": [
+    {
+      "name": ".agents",
+      "type": "directory"
+    },
+    {
+      "name": ".debug",
+      "type": "directory"
+    },
+    {
+      "name": ".git",
+      "type": "file"
+    },
+    {
+      "name": ".gitattributes",
+      "type": "file"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file"
+    },
+    {
+      "name": "agent-app-build-startup",
+      "type": "directory"
+    },
+    {
+      "name": "AGENTS.md",
+      "type": "file"
+    },
+    {
+      "name": "aiapps",
+      "type": "directory"
+    },
+    {
+      "name": "BUILD_STANDARD.md",
+      "type": "file"
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file"
+    },
+    {
+      "name": "docs",
+      "type": "directory"
+    },
+    {
+      "name": "env.properties",
+      "type": "file"
+    },
+    {
+      "name": "extensions",
+      "type": "directory"
+    },
+    {
+      "name": "fusion-ai-studio-1.code-workspace",
+      "type": "file"
+    },
+    {
+      "name": "how-to",
+      "type": "directory"
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file"
+    },
+    {
+      "name": "package.json",
+      "type": "file"
+    },
+    {
+      "name": "packaging",
+      "type": "directory"
+    },
+    {
+      "name": "README.md",
+      "type": "file"
+    },
+    {
+      "name": "scripts",
+      "type": "directory"
+    },
+    {
+      "name": "SECURITY.md",
+      "type": "file"
+    },
+    {
+      "name": "src",
+      "type": "directory"
+    },
+    {
+      "name": "test",
+      "type": "directory"
+    },
+    {
+      "name": "test-reports",
+      "type": "directory"
+    },
+    {
+      "name": "tests",
+      "type": "directory"
+    },
+    {
+      "name": "THIRD_PARTY_LICENSES.txt",
+      "type": "file"
+    }
+  ],
+  "githubDirectoryPresent": false,
+  "packageScripts": {
+    "test": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --judge-provider local",
+    "test:workflows": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --judge-provider local",
+    "test:workflows:file": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --data-source file --judge-provider local",
+    "test:workflows:local": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --data-source file --judge-provider local",
+    "test:workflows:remote": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --data-source file --judge-provider remote",
+    "test:workflows:live": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --data-source live --judge-provider local",
+    "test:workflows:live:remote": "node .agents/skills/aistudio/scripts/aistudio.js run-workflow-tests --data-source live --judge-provider remote"
+  },
+  "discoveryFailure": "Prior batched rg included absent .github directory; exit1, no code/test action; corrected by enumerating existing root entries first."
+}

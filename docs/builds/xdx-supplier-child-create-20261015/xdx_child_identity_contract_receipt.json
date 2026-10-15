@@ -1,0 +1,49 @@
+{
+  "sourceSha256": "ba13a9bb99f252c810cd52a420988ac2718eec9b9c85b2c0209ecc324ca188b0",
+  "checks": 10,
+  "results": [
+    {
+      "name": "contact direct fresh and frozen trusted identity/output/guard contract",
+      "status": "pass"
+    },
+    {
+      "name": "contact template fresh and frozen trusted identity/output/guard contract",
+      "status": "pass"
+    },
+    {
+      "name": "address direct fresh and frozen trusted identity/output/guard contract",
+      "status": "pass"
+    },
+    {
+      "name": "address template fresh and frozen trusted identity/output/guard contract",
+      "status": "pass"
+    },
+    {
+      "name": "mismatched readback never claims verified fields",
+      "status": "pass"
+    },
+    {
+      "name": "missing source never falls back to new selected contact ID",
+      "status": "pass"
+    },
+    {
+      "name": "uncreated response retains old LLM boundary and operation",
+      "status": "pass"
+    },
+    {
+      "name": "graph topology and node inventory unchanged",
+      "status": "pass"
+    },
+    {
+      "name": "frozen accepted Review actual existing graph skips every BO and preserves terminal text",
+      "status": "pass"
+    },
+    {
+      "name": "uncertain nonchild and new-draft responses clear stale text and preserve route",
+      "status": "pass"
+    }
+  ],
+  "qualification": "Actual serialized CODE and RETURN expression, pure local fixtures; no workflow runtime, POST, GET or tenant calls.",
+  "runtimeAttempts": 0,
+  "remoteCalls": 0
+}

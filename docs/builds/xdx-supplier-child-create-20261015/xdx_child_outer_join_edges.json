@@ -1,0 +1,26 @@
+[
+  {
+    "action": "remove",
+    "from": "XDX_ROUTE_REQUEST",
+    "to": "XDX_VALIDATE_CHILD_DRAFT",
+    "label": "child_validate"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_REQUEST",
+    "to": "XDX_JOIN_LIST",
+    "label": "child_validate"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_SEARCH_RESULT",
+    "to": "XDX_JOIN_DETAIL",
+    "label": "child_validate"
+  },
+  {
+    "action": "add",
+    "from": "XDX_ROUTE_DETAIL_RESULT",
+    "to": "XDX_VALIDATE_CHILD_DRAFT",
+    "label": "child_validate"
+  }
+]

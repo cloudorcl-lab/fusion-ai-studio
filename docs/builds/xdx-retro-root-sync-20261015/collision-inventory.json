@@ -1,0 +1,65 @@
+{
+  "observedUtc": "2026-10-15T18:02:25.143Z",
+  "sourceWorktree": "D:/Temp/worktrees/xdx-supplier-workspace-20261014/",
+  "sourceCommit": "91ddb80664cd74bf976dbd090222b606d5f89984",
+  "rootBaseline": "5b4df3ff3e44a4a0d6bb03c9d75a3095b124adbf",
+  "primary": [
+    {
+      "path": "BUILD_STANDARD.md",
+      "rootExists": true,
+      "rootSha256": "887f437a7d87dad5c017cf92e262af99059ae166c26f9b5edafb317f0984a638",
+      "sourceSha256": "c274c438451ed170dbd83de0adbf3a0c698c0ea3e4eb2b3bef2734e7c3a5cbdc",
+      "backup": "docs/builds/xdx-retro-root-sync-20261015/before/BUILD_STANDARD.md",
+      "normalizeEqual": false
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "rootExists": true,
+      "rootSha256": "0fd1a786c1a9dd293e4cb8658ed54206288f7fcd7c0ca21f394d0ebd8abfc626",
+      "sourceSha256": "855fdc07ced983bef8eb04b09dc52ad914926380427727ca02e70322220f8dfa",
+      "backup": "docs/builds/xdx-retro-root-sync-20261015/before/docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "normalizeEqual": false
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_TESTING_GUIDE.md",
+      "rootExists": false,
+      "rootSha256": null,
+      "sourceSha256": "e3cb62bf08139faaf0d52f4fbf42190e2347fff0ff8da54c732ba32b98f70477",
+      "backup": null,
+      "normalizeEqual": false
+    },
+    {
+      "path": "package.json",
+      "rootExists": true,
+      "rootSha256": "2e949444a29b900352f6d03839c4551b63a4ec0bb55bfe491d42e7cf7702170d",
+      "sourceSha256": "e2809de0e57beb8fd76887cbacca9ff1dda7295764fe19f23d3803b720d2fc1f",
+      "backup": "docs/builds/xdx-retro-root-sync-20261015/before/package.json",
+      "normalizeEqual": false
+    },
+    {
+      "path": "scripts/verify-session-compliance.cjs",
+      "rootExists": true,
+      "rootSha256": "c13073eab98968bfe17ec07a53428a7386f93d957c9a8dd64f56a3080a2cd210",
+      "sourceSha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e",
+      "backup": "docs/builds/xdx-retro-root-sync-20261015/before/scripts/verify-session-compliance.cjs",
+      "normalizeEqual": false
+    },
+    {
+      "path": "tests/test-session-compliance.cjs",
+      "rootExists": true,
+      "rootSha256": "dd0ed6f69477c6a5183018a2afcbcc0fa54ee2e3a3fdd5a505b23223896bd3c8",
+      "sourceSha256": "2fb026a6c888913b892d506f340ac389a6888fc936b6982dd3908b0e6519b561",
+      "backup": "docs/builds/xdx-retro-root-sync-20261015/before/tests/test-session-compliance.cjs",
+      "normalizeEqual": false
+    },
+    {
+      "path": ".gitattributes",
+      "rootExists": false,
+      "rootSha256": null,
+      "sourceSha256": "3c1e07a3f3061673aeac357c525a178276a43dfe6a88396186c3751a5d8a3e31",
+      "backup": null,
+      "normalizeEqual": false
+    }
+  ],
+  "policy": "Preserve root bytes independently; promote reviewed governance/current parallel-timing policy; retain root-specific milestone wording. Copy linked evidence without rewriting historical receipts."
+}

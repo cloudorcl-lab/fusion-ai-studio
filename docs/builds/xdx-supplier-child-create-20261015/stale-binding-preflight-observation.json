@@ -1,0 +1,9 @@
+{
+  "observedUtc": "2026-10-15T15:34:39.584Z",
+  "caseId": "CONT-02-F016",
+  "commandRunId": "4ab14eb7-6e60-4822-aab2-00c0d91f6669",
+  "error": "Conversation step prepare-direct-contact has a stale observed path binding. Re-record or update this conversation test.",
+  "runtimeInvoked": false,
+  "source": "workflow-conversation-test-authoring.md final paragraph explicitly requires supported full update before refreshing stale source bindings",
+  "repair": "Use supported full conversation definition update preserving authored business contract; CLI owns generated binding invalidation/recomputation."
+}

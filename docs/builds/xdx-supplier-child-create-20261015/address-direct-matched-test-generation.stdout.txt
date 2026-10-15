@@ -1,0 +1,7 @@
+Workflow test generated.
+Workflow: XDX_SUPPLIER_CONVERSATION
+Test: xdx-address-required-direct-creation
+Test file: D:\Temp\worktrees\xdx-supplier-workspace-20261014\test\workflows\xdx_supplier_conversation\xdx-address-required-direct-creation.json
+Conversation steps: 4
+Data status: ready
+Data capture policy: model-generated

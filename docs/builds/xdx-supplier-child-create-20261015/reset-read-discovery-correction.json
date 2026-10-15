@@ -1,0 +1,7 @@
+{
+  "observedUtc": "2026-10-15T15:24:23.692Z",
+  "failed": "Get-Content scripts/measure-build-command.ps1: nonexistent path",
+  "cause": "Guessed extension instead of rg discovery",
+  "correction": "rg --files scripts located scripts/measure-build-command.cjs; actual documented usage read, no repeated failed command",
+  "result": "PASS read-only discovery; no test or tenant call"
+}

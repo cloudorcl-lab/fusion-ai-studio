@@ -1,0 +1,10 @@
+{
+  "observedUtc": "2026-10-15T13:38:43.488Z",
+  "agentId": "/root/address_contract",
+  "runId": "2408e856-505e-4ebd-a81c-158e78bb8ffe",
+  "symptom": "PowerShell expression used unquoted RETURN constant in -eq expression; parser rejected before any definition write",
+  "cause": "Authoring helper string literal syntax error",
+  "correction": "Use quoted phase/typeconstants or stagedliteralJS; static syntax/generation checks before scenarioexecution",
+  "productEffect": "None; no definitions/scenarios/business execution yet",
+  "evidenceGap": "Original stderr in worker tool conversation; measured failed run retained"
+}

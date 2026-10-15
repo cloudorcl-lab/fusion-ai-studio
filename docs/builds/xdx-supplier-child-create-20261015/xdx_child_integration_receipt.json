@@ -1,0 +1,60 @@
+{
+  "agentId": "/root/create_integration",
+  "parentAgentId": "/root",
+  "assignmentId": "create_integration",
+  "checkout": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+  "branch": "codex/xdx-supplier-workspace-20261014",
+  "startingHead": "9f8f02b495e9d6780960cd1a3e5e64413769a0a8",
+  "source": "src/workflows/xdx_supplier_conversation.wf",
+  "sourceSha256": "abf9a9a618234f7258a6636697b5b330ac4a27efc67055fc8d1921c77edca567",
+  "checkpointUtc": "2026-10-15T13:36:00Z",
+  "outcome": "Local workflow implementation and artifact gates pass; configured/native acceptance and release remain coordinator-owned.",
+  "scope": "Direct-entry and same-supplier template child creation; current complete address flow US only; source children ACTIVE; account/security/generated and optional fields excluded from payloads.",
+  "owners": {
+    "shared": ["XDX_PREPARE_SUPPLIER_REQUEST", "XDX_ACCEPT_SUPPLIER_SEARCH", "XDX_ACCEPT_SUPPLIER_DETAIL", "XDX_EVALUATE_CONTROL", "XDX_PRESENT_CONTROL_RESULT", "XDX_INTERPRET_SUPPLIER_REQUEST", "XDX_SUPPLIER_QUERY_RESPONSE"],
+    "preparation": ["XDX_PREPARE_CHILD_CREATE", "XDX_ACCEPT_CHILD_SOURCE", "XDX_BUILD_CHILD_DRAFT", "XDX_VALIDATE_CHILD_DRAFT", "XDX_ACCEPT_ADDRESS_NAME_CHECK"],
+    "write": ["XDX_RESERVE_CHILD_CREATE", "XDX_PERSIST_CHILD_RESERVATION", "XDX_CREATE_ADDRESS_ONCE", "XDX_CREATE_CONTACT_ONCE", "XDX_CAPTURE_CHILD_CREATION", "XDX_PERSIST_CHILD_CREATION", "XDX_GET_CREATED_ADDRESS", "XDX_GET_CREATED_CONTACT", "XDX_VERIFY_CHILD_RESULT"],
+    "terminal": ["XDX_CHILD_QUERY_RESPONSE", "XDX_RETURN_CHILD_RESPONSE", "XDX_RETURN_CHILD_WRITE_ERROR", "XDX_RETURN_CHILD_PREPARE_ERROR"]
+  },
+  "verification": {
+    "prettify": "xdx_child_error_terminal_prettify_receipt.json: inner ok true, reported204 total nodes; root pipeline184 nodes",
+    "workflow": "xdx_child_validation_receipt.json: inner ok true, errorCount0",
+    "query": "xdx_child_query_contract_receipt.json: PASS",
+    "conversationContext": "xdx_child_context_receipt.json and xdx_child_context_stdout.txt: source-bound ok true",
+    "independentReview": "Address worker verified normalized error and success terminals; coordinator owns review evidence",
+    "scenarioAttemptsByThisAgent": 0,
+    "remoteCallsByThisAgent": 0
+  },
+  "remaining": [
+    "Root reconcile scoped failure closure/PhaseExit and handoff against final source",
+    "Scenario owners finish fixture-backed configured direct/template definitions using frozen context; Review terminal remains XDX_SUPPLIER_QUERY_RESPONSE, prepare/edit/Confirm use child191->192",
+    "Root save normalized DRAFT then execute authorized configured/native cases within remaining object budgets; no accepted or uncertain replay",
+    "Post-save Query/reachability and source/version proof, lessons and overall Closeout remain open"
+  ],
+  "timing": {
+    "source": "Observed UTC checkpoints in worker messages; command timing separately in integration-commands.jsonl",
+    "activeSeconds": 1567,
+    "idleSeconds": 394,
+    "mixedToolWaitAndUnsegmentedReviewSeconds": 926,
+    "interturnUnallocatedSeconds": 148,
+    "observedElapsedSeconds": 3035,
+    "intervals": [
+      ["2026-10-15T12:45:25Z", "2026-10-15T12:46:32Z", "active", "governance reads"],
+      ["2026-10-15T12:46:32Z", "2026-10-15T12:51:09Z", "idle", "scoped Startup gate"],
+      ["2026-10-15T12:51:09Z", "2026-10-15T12:52:36Z", "active", "source diagnosis"],
+      ["2026-10-15T12:52:36Z", "2026-10-15T12:55:04Z", "unallocated", "interturn gap"],
+      ["2026-10-15T12:55:04Z", "2026-10-15T13:06:37Z", "active", "authoring and recovery"],
+      ["2026-10-15T13:06:37Z", "2026-10-15T13:08:34Z", "idle", "failure gate closure"],
+      ["2026-10-15T13:08:34Z", "2026-10-15T13:13:16Z", "active", "workflow writes and review"],
+      ["2026-10-15T13:13:16Z", "2026-10-15T13:17:53Z", "mixed-unallocated", "prettify wait with unsegmented review/coordination"],
+      ["2026-10-15T13:17:53Z", "2026-10-15T13:20:41Z", "active", "terminal/topology correction"],
+      ["2026-10-15T13:20:41Z", "2026-10-15T13:24:39Z", "mixed-unallocated", "prettify wait with unsegmented review/coordination"],
+      ["2026-10-15T13:24:39Z", "2026-10-15T13:26:37Z", "active", "error terminal and parent precedence correction"],
+      ["2026-10-15T13:26:37Z", "2026-10-15T13:30:30Z", "mixed-unallocated", "prettify wait with unsegmented review/coordination"],
+      ["2026-10-15T13:30:30Z", "2026-10-15T13:31:55Z", "active", "normalized checks and context dispatch"],
+      ["2026-10-15T13:31:55Z", "2026-10-15T13:34:53Z", "mixed-unallocated", "context wait with unsegmented review/coordination"],
+      ["2026-10-15T13:34:53Z", "2026-10-15T13:36:00Z", "active", "context handoff and receipt" ]
+    ],
+    "limitations": "No fabricated labor split for mixed wait/review intervals; explicit tool sleeps are diagnostic subsets. No required-user wait observed. Before first observation unknown; final file-write/response tail after checkpoint excluded. Tokens/AI Units unavailable. Command elapsed is not additional labor."
+  }
+}

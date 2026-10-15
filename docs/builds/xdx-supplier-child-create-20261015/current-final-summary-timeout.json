@@ -1,0 +1,24 @@
+{
+  "observedUtc": "2026-10-15T16:22:11.147Z",
+  "commandRunId": "277791dd-0a50-45cd-a336-a2ebe92b2ac4",
+  "command": "get-workflow-test-final-summary --file src/workflows/xdx_supplier_conversation.wf",
+  "actual": {
+    "startedUtc": "2026-10-15T16:15:13.206Z",
+    "endedUtc": "2026-10-15T16:20:13.256Z",
+    "exitCode": null,
+    "errorCode": "ETIMEDOUT",
+    "outputContract": "TEXT",
+    "scope": "Read-only final summary; no test execution or suite replay"
+  },
+  "outcome": "Read-only summary reached300s bound with no stdout; no tests/records/saves/attachments run.",
+  "toolBoundary": ".agents/skills/aistudio/scripts/aistudio.js unchanged; documented summary reads full sync plan. Prior full inventory timedout; three-field identity delta preserves topology.",
+  "prevention": "Do not retry unchanged full planner or invent summary output. Reuse actual four current configured attachments for scoped workflow evidence; retain native Contact required acceptance as blocked. No broad PASS or optimization.",
+  "configuredScope": {
+    "tests": 4,
+    "allPassed": true,
+    "workflowVersion": 88010729,
+    "definitionHash": "5dbfda59fad929e8",
+    "evidence": "docs/builds/xdx-supplier-child-create-20261015/current-child-fixture-acceptance.json"
+  },
+  "overallBuildComplete": false
+}

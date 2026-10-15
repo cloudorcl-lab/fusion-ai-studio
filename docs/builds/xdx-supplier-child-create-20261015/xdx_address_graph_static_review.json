@@ -1,0 +1,635 @@
+[
+  {
+    "code": "XDX_ROUTE_CONTROL",
+    "type": "SWITCH",
+    "outcomes": [
+      {
+        "label": "display",
+        "target": "XDX_JOIN_CONTROL_PREPARATION"
+      },
+      {
+        "label": "language",
+        "target": "XDX_INTERPRET_SUPPLIER_REQUEST"
+      },
+      {
+        "label": "create_supplier",
+        "target": "XDX_CREATE_SUPPLIER_ONCE"
+      },
+      {
+        "label": "site_preflight",
+        "target": "XDX_RECHECK_SITE_REVIEW"
+      },
+      {
+        "label": "site_reconcile",
+        "target": "XDX_PREPARE_SITE_CONTINUATION"
+      },
+      {
+        "label": "child_preflight",
+        "target": "XDX_VALIDATE_CHILD_DRAFT"
+      }
+    ],
+    "convergence": "XDX_JOIN_CONTROL_PREPARATION",
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_READ_SITE_SOURCE_ADDRESS",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_ACCEPT_SITE_SOURCE_ADDRESS"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_READ_ERROR",
+    "function": "GetSupplierAddress"
+  },
+  {
+    "code": "XDX_ROUTE_SITE_ADDRESS",
+    "type": "SWITCH",
+    "outcomes": [
+      {
+        "label": "site_assignments",
+        "target": "XDX_LOAD_SITE_ASSIGNMENTS"
+      },
+      {
+        "label": "skip",
+        "target": "XDX_JOIN_SITE_STAGE_4"
+      }
+    ],
+    "convergence": "XDX_JOIN_SITE_STAGE_4",
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_ROUTE_REQUEST",
+    "type": "SWITCH",
+    "outcomes": [
+      {
+        "label": "display",
+        "target": "XDX_JOIN_LIST"
+      },
+      {
+        "label": "list",
+        "target": "XDX_SEARCH_SUPPLIERS"
+      },
+      {
+        "label": "get",
+        "target": "XDX_JOIN_LIST"
+      },
+      {
+        "label": "duplicate",
+        "target": "XDX_JOIN_LIST"
+      },
+      {
+        "label": "classifications",
+        "target": "XDX_READ_SUPPLIER_CLASSIFICATIONS"
+      },
+      {
+        "label": "children",
+        "target": "XDX_JOIN_LIST"
+      },
+      {
+        "label": "site_name_check",
+        "target": "XDX_JOIN_LIST"
+      },
+      {
+        "label": "child_validate",
+        "target": "XDX_JOIN_LIST"
+      }
+    ],
+    "convergence": "XDX_JOIN_LIST",
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_PERSIST_CHILD_REQUEST",
+    "type": "SET_FIELDS",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_ROUTE_DETAIL_RESULT"
+      }
+    ],
+    "convergence": null,
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_ROUTE_DETAIL_RESULT",
+    "type": "SWITCH",
+    "outcomes": [
+      {
+        "label": "display",
+        "target": "XDX_JOIN_LANGUAGE"
+      },
+      {
+        "label": "duplicate",
+        "target": "XDX_CHECK_SUPPLIER_NAME"
+      },
+      {
+        "label": "sites_list",
+        "target": "XDX_LIST_SUPPLIER_SITES"
+      },
+      {
+        "label": "sites_get",
+        "target": "XDX_GET_SUPPLIER_SITES"
+      },
+      {
+        "label": "contacts_list",
+        "target": "XDX_LIST_SUPPLIER_CONTACTS"
+      },
+      {
+        "label": "contacts_get",
+        "target": "XDX_GET_SUPPLIER_CONTACTS"
+      },
+      {
+        "label": "addresses_list",
+        "target": "XDX_LIST_SUPPLIER_ADDRESSES"
+      },
+      {
+        "label": "addresses_get",
+        "target": "XDX_GET_SUPPLIER_ADDRESSES"
+      },
+      {
+        "label": "site_template",
+        "target": "XDX_PREPARE_SITE_SOURCE"
+      },
+      {
+        "label": "site_name_check",
+        "target": "XDX_JOIN_LANGUAGE"
+      },
+      {
+        "label": "child_prepare",
+        "target": "XDX_PREPARE_CHILD_CREATE"
+      },
+      {
+        "label": "child_validate",
+        "target": "XDX_VALIDATE_CHILD_DRAFT"
+      }
+    ],
+    "convergence": "XDX_JOIN_LANGUAGE",
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_LIST_SUPPLIER_CONTACTS",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_ACCEPT_LIST_CONTACTS"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_READ_ERROR",
+    "function": "ListSupplierContacts"
+  },
+  {
+    "code": "XDX_GET_SUPPLIER_CONTACTS",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_ACCEPT_GET_CONTACTS"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_READ_ERROR",
+    "function": "GetSupplierContact"
+  },
+  {
+    "code": "XDX_LIST_SUPPLIER_ADDRESSES",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_ACCEPT_LIST_ADDRESSES"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_READ_ERROR",
+    "function": "ListSupplierAddresses"
+  },
+  {
+    "code": "XDX_GET_SUPPLIER_ADDRESSES",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_ACCEPT_GET_ADDRESSES"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_READ_ERROR",
+    "function": "GetSupplierAddress"
+  },
+  {
+    "code": "XDX_PERSIST_CHILD_PREPARATION",
+    "type": "SET_FIELDS",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_ROUTE_CHILD_SOURCE"
+      }
+    ],
+    "convergence": null,
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_PERSIST_CHILD_SOURCE",
+    "type": "SET_FIELDS",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_JOIN_CHILD_SOURCE"
+      }
+    ],
+    "convergence": null,
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_PERSIST_CHILD_DRAFT",
+    "type": "SET_FIELDS",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_JOIN_CHILD_BUILD"
+      }
+    ],
+    "convergence": null,
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_PERSIST_CHILD_VALIDATION",
+    "type": "SET_FIELDS",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_JOIN_CHILD_VALIDATION"
+      }
+    ],
+    "convergence": null,
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_PERSIST_CHILD_RESERVATION",
+    "type": "SET_FIELDS",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_JOIN_CHILD_RESERVATION"
+      }
+    ],
+    "convergence": null,
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_PERSIST_CHILD_CREATION",
+    "type": "SET_FIELDS",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_JOIN_CHILD_POST"
+      }
+    ],
+    "convergence": null,
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_PERSIST_CHILD_VERIFICATION",
+    "type": "SET_FIELDS",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_JOIN_CHILD_READBACK"
+      }
+    ],
+    "convergence": null,
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_HANDLE_CHILD_WRITE_ERROR",
+    "type": "CODE",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_PERSIST_CHILD_WRITE_ERROR"
+      }
+    ],
+    "convergence": null,
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_PERSIST_CHILD_WRITE_ERROR",
+    "type": "SET_FIELDS",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_SUPPLIER_QUERY_RESPONSE"
+      }
+    ],
+    "convergence": null,
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_HANDLE_CHILD_PREPARE_ERROR",
+    "type": "CODE",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_PERSIST_CHILD_PREPARE_ERROR"
+      }
+    ],
+    "convergence": null,
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_PERSIST_CHILD_PREPARE_ERROR",
+    "type": "SET_FIELDS",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_SUPPLIER_QUERY_RESPONSE"
+      }
+    ],
+    "convergence": null,
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_FIND_ADDRESS_TEMPLATE",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_ACCEPT_CHILD_SOURCE"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_CHILD_PREPARE_ERROR",
+    "function": "ListSupplierAddresses"
+  },
+  {
+    "code": "XDX_READ_ADDRESS_TEMPLATE",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_ACCEPT_CHILD_SOURCE"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_CHILD_PREPARE_ERROR",
+    "function": "GetSupplierAddress"
+  },
+  {
+    "code": "XDX_CREATE_ADDRESS_ONCE",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_CAPTURE_CHILD_CREATION"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_CHILD_WRITE_ERROR",
+    "function": "CreateSupplierAddress"
+  },
+  {
+    "code": "XDX_GET_CREATED_ADDRESS",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_VERIFY_CHILD_RESULT"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_CHILD_WRITE_ERROR",
+    "function": "GetSupplierAddress"
+  },
+  {
+    "code": "XDX_FIND_CONTACT_TEMPLATE",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_ACCEPT_CHILD_SOURCE"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_CHILD_PREPARE_ERROR",
+    "function": "ListSupplierContacts"
+  },
+  {
+    "code": "XDX_READ_CONTACT_TEMPLATE",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_ACCEPT_CHILD_SOURCE"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_CHILD_PREPARE_ERROR",
+    "function": "GetSupplierContact"
+  },
+  {
+    "code": "XDX_CREATE_CONTACT_ONCE",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_CAPTURE_CHILD_CREATION"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_CHILD_WRITE_ERROR",
+    "function": "CreateSupplierContact"
+  },
+  {
+    "code": "XDX_GET_CREATED_CONTACT",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_VERIFY_CHILD_RESULT"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_CHILD_WRITE_ERROR",
+    "function": "GetSupplierContact"
+  },
+  {
+    "code": "XDX_CHECK_NEW_ADDRESS_NAME",
+    "type": "BO_FUNCTION",
+    "outcomes": [
+      {
+        "label": "success",
+        "target": "XDX_ACCEPT_ADDRESS_NAME_CHECK"
+      }
+    ],
+    "convergence": null,
+    "error": "XDX_HANDLE_CHILD_PREPARE_ERROR",
+    "function": "ListSupplierAddresses"
+  },
+  {
+    "code": "XDX_ROUTE_CHILD_SOURCE",
+    "type": "SWITCH",
+    "outcomes": [
+      {
+        "label": "child_build",
+        "target": "XDX_JOIN_CHILD_SOURCE"
+      },
+      {
+        "label": "address_source_list",
+        "target": "XDX_FIND_ADDRESS_TEMPLATE"
+      },
+      {
+        "label": "address_source_get",
+        "target": "XDX_READ_ADDRESS_TEMPLATE"
+      },
+      {
+        "label": "contact_source_list",
+        "target": "XDX_FIND_CONTACT_TEMPLATE"
+      },
+      {
+        "label": "contact_source_get",
+        "target": "XDX_READ_CONTACT_TEMPLATE"
+      },
+      {
+        "label": "display",
+        "target": "XDX_JOIN_CHILD_SOURCE"
+      }
+    ],
+    "convergence": "XDX_JOIN_CHILD_SOURCE",
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_ROUTE_CHILD_BUILD",
+    "type": "SWITCH",
+    "outcomes": [
+      {
+        "label": "child_build",
+        "target": "XDX_BUILD_CHILD_DRAFT"
+      },
+      {
+        "label": "display",
+        "target": "XDX_JOIN_CHILD_BUILD"
+      }
+    ],
+    "convergence": "XDX_JOIN_CHILD_BUILD",
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_ROUTE_CHILD_VALIDATION",
+    "type": "SWITCH",
+    "outcomes": [
+      {
+        "label": "child_validate",
+        "target": "XDX_VALIDATE_CHILD_DRAFT"
+      },
+      {
+        "label": "display",
+        "target": "XDX_JOIN_CHILD_VALIDATION"
+      }
+    ],
+    "convergence": "XDX_JOIN_CHILD_VALIDATION",
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_ROUTE_CHILD_NAME_CHECK",
+    "type": "SWITCH",
+    "outcomes": [
+      {
+        "label": "address_name_check",
+        "target": "XDX_CHECK_NEW_ADDRESS_NAME"
+      },
+      {
+        "label": "child_reserve",
+        "target": "XDX_JOIN_CHILD_NAME"
+      },
+      {
+        "label": "display",
+        "target": "XDX_JOIN_CHILD_NAME"
+      }
+    ],
+    "convergence": "XDX_JOIN_CHILD_NAME",
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_ROUTE_CHILD_RESERVATION",
+    "type": "SWITCH",
+    "outcomes": [
+      {
+        "label": "child_reserve",
+        "target": "XDX_RESERVE_CHILD_CREATE"
+      },
+      {
+        "label": "display",
+        "target": "XDX_JOIN_CHILD_RESERVATION"
+      }
+    ],
+    "convergence": "XDX_JOIN_CHILD_RESERVATION",
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_ROUTE_CHILD_DISPATCH",
+    "type": "SWITCH",
+    "outcomes": [
+      {
+        "label": "create_address",
+        "target": "XDX_CREATE_ADDRESS_ONCE"
+      },
+      {
+        "label": "create_contact",
+        "target": "XDX_CREATE_CONTACT_ONCE"
+      },
+      {
+        "label": "display",
+        "target": "XDX_JOIN_CHILD_POST"
+      }
+    ],
+    "convergence": "XDX_JOIN_CHILD_POST",
+    "error": null,
+    "function": null
+  },
+  {
+    "code": "XDX_ROUTE_CHILD_READBACK",
+    "type": "SWITCH",
+    "outcomes": [
+      {
+        "label": "verify_address",
+        "target": "XDX_GET_CREATED_ADDRESS"
+      },
+      {
+        "label": "verify_contact",
+        "target": "XDX_GET_CREATED_CONTACT"
+      },
+      {
+        "label": "display",
+        "target": "XDX_JOIN_CHILD_READBACK"
+      }
+    ],
+    "convergence": "XDX_JOIN_CHILD_READBACK",
+    "error": null,
+    "function": null
+  }
+]

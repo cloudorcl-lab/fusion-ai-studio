@@ -1,0 +1,8 @@
+{
+  "observedUtc": "2026-10-15T18:02:25.143Z",
+  "result": "pass",
+  "branch": "TestingWFBuildTools",
+  "head": "5b4df3ff3e44a4a0d6bb03c9d75a3095b124adbf",
+  "actualQuery": "Node execFileSync git branch and rev-parse in host context",
+  "partiallyCreatedFilesInspected": true
+}

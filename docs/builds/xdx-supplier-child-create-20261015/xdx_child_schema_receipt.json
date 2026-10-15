@@ -1,0 +1,31 @@
+{
+  "before": "5706a41e649422e9f2fb317cef7755a66961913f562a58e8de3e4b1660631d24",
+  "after": "c1d195f5d9e462f72b556cb0e96439bdb8c4378c09146be9c0526512be158eab",
+  "updatedNodes": [
+    "XDX_READ_SITE_SOURCE_ADDRESS",
+    "XDX_LIST_SUPPLIER_CONTACTS",
+    "XDX_GET_SUPPLIER_CONTACTS",
+    "XDX_LIST_SUPPLIER_ADDRESSES",
+    "XDX_GET_SUPPLIER_ADDRESSES",
+    "XDX_FIND_ADDRESS_TEMPLATE",
+    "XDX_READ_ADDRESS_TEMPLATE",
+    "XDX_CREATE_ADDRESS_ONCE",
+    "XDX_GET_CREATED_ADDRESS",
+    "XDX_FIND_CONTACT_TEMPLATE",
+    "XDX_READ_CONTACT_TEMPLATE",
+    "XDX_CREATE_CONTACT_ONCE",
+    "XDX_GET_CREATED_CONTACT",
+    "XDX_CHECK_NEW_ADDRESS_NAME",
+    "XDX_VALIDATE_CHILD_DRAFT",
+    "XDX_ACCEPT_CHILD_SOURCE",
+    "XDX_SUPPLIER_QUERY_RESPONSE"
+  ],
+  "boHashes": {
+    "addresses": "e6774fc2cd13990c42e5861cb91f31936df9850961ca25babc5eb17f4cc5448f",
+    "contacts": "118235491b6f36617d5c1e606141efcc358bac163aec18742ca3d183a178b9d5"
+  },
+  "source": "Exact local BO function method, request template and GET fields projection; object-reference ID/string/null semantics. No live metadata fetched.",
+  "scope": "US complete address flow; contacts required identity only. Existing read paths retain all geographies.",
+  "testsRun": 0,
+  "remoteCalls": 0
+}

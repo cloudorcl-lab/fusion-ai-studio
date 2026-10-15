@@ -1,0 +1,293 @@
+{
+  "observedUtc": "2026-10-15T16:12:36.258Z",
+  "scope": "Only four approved child direct/template configured conversations; no broader test suite executed.",
+  "sourceHash": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872",
+  "workflowVersion": 88010729,
+  "tests": 4,
+  "turns": 16,
+  "assertions": 3398,
+  "localEvaluations": 18,
+  "rows": [
+    {
+      "caseId": "ADDR-02-F016",
+      "testName": "xdx-address-required-direct-creation",
+      "object": "addresses",
+      "mode": "direct",
+      "workflowVersion": 88010729,
+      "definitionHash": "5dbfda59fad929e8",
+      "startedAt": "2026-10-15T16:00:01.814Z",
+      "finishedAt": "2026-10-15T16:00:29.528Z",
+      "durationMs": 27714,
+      "assertions": 835,
+      "judgeScore": 5,
+      "judgmentAttachedUtc": "2026-10-15T16:07:49.338Z",
+      "steps": [
+        {
+          "stepId": "prepare-address-draft",
+          "status": "passed"
+        },
+        {
+          "stepId": "edit-address-email",
+          "status": "passed"
+        },
+        {
+          "stepId": "review-current-address",
+          "status": "passed"
+        },
+        {
+          "stepId": "confirm-reviewed-address",
+          "status": "passed"
+        }
+      ],
+      "status": "passed",
+      "evidence": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-attached-result.json",
+      "sha256": "d3f94def541dd3ae29238b85f4abd58d3c2cf781dcfba4b517bc14ce7ae88883",
+      "metricsKeys": [
+        "durationMs",
+        "workflowTimeMs",
+        "tokenUsage",
+        "nodeDurations",
+        "observed",
+        "aiUnits"
+      ],
+      "observedUsage": {
+        "inputTokens": [
+          2670,
+          1513,
+          3178,
+          1512,
+          1461,
+          1826
+        ],
+        "outputTokens": [
+          365,
+          391,
+          337,
+          390,
+          249,
+          312
+        ]
+      },
+      "aiUnits": 30,
+      "usage": {
+        "inputTokens": 12160,
+        "outputTokens": 2044,
+        "aiUnits": 30,
+        "workflowTimeMs": 11701,
+        "runtimeDurationMs": 27714,
+        "totalTokens": 14204
+      }
+    },
+    {
+      "caseId": "ADDR-03R",
+      "testName": "xdx-address-required-template-creation",
+      "object": "addresses",
+      "mode": "template",
+      "workflowVersion": 88010729,
+      "definitionHash": "5dbfda59fad929e8",
+      "startedAt": "2026-10-15T15:43:48.506Z",
+      "finishedAt": "2026-10-15T15:44:20.335Z",
+      "durationMs": 31829,
+      "assertions": 837,
+      "judgeScore": 5,
+      "judgmentAttachedUtc": "2026-10-15T16:07:49.376Z",
+      "steps": [
+        {
+          "stepId": "prepare-address-draft",
+          "status": "passed"
+        },
+        {
+          "stepId": "edit-address-email",
+          "status": "passed"
+        },
+        {
+          "stepId": "review-current-address",
+          "status": "passed"
+        },
+        {
+          "stepId": "confirm-reviewed-address",
+          "status": "passed"
+        }
+      ],
+      "status": "passed",
+      "evidence": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-attached-result.json",
+      "sha256": "64891eb0a7610d7cb9aeb7894588f2022afcaa37742e824d8c256d2cafb97dc4",
+      "metricsKeys": [
+        "durationMs",
+        "workflowTimeMs",
+        "tokenUsage",
+        "nodeDurations",
+        "observed",
+        "aiUnits"
+      ],
+      "observedUsage": {
+        "inputTokens": [
+          2658,
+          1597,
+          3252,
+          1596,
+          1545,
+          1842
+        ],
+        "outputTokens": [
+          364,
+          482,
+          337,
+          486,
+          345,
+          323
+        ]
+      },
+      "aiUnits": 30,
+      "usage": {
+        "inputTokens": 12490,
+        "outputTokens": 2337,
+        "aiUnits": 30,
+        "workflowTimeMs": 15504,
+        "runtimeDurationMs": 31829,
+        "totalTokens": 14827
+      }
+    },
+    {
+      "caseId": "CONT-02-F016-R",
+      "testName": "xdx-contact-required-direct-creation",
+      "object": "contacts",
+      "mode": "direct",
+      "workflowVersion": 88010729,
+      "definitionHash": "5dbfda59fad929e8",
+      "startedAt": "2026-10-15T15:36:09.330Z",
+      "finishedAt": "2026-10-15T15:36:35.944Z",
+      "durationMs": 26614,
+      "assertions": 861,
+      "judgeScore": 5,
+      "judgmentAttachedUtc": "2026-10-15T16:07:49.403Z",
+      "steps": [
+        {
+          "stepId": "prepare-direct-contact",
+          "status": "passed"
+        },
+        {
+          "stepId": "edit-direct-contact",
+          "status": "passed"
+        },
+        {
+          "stepId": "review-direct-contact",
+          "status": "passed"
+        },
+        {
+          "stepId": "confirm-direct-contact",
+          "status": "passed"
+        }
+      ],
+      "status": "passed",
+      "evidence": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-attached-result.json",
+      "sha256": "8accfee8dcf4e5fd4792486ac959a3aa91c6bb846006087fe3db859d2f3f3a92",
+      "metricsKeys": [
+        "durationMs",
+        "workflowTimeMs",
+        "tokenUsage",
+        "nodeDurations",
+        "observed",
+        "aiUnits"
+      ],
+      "observedUsage": {
+        "inputTokens": [
+          2654,
+          1482,
+          3098,
+          1485,
+          1431,
+          1738
+        ],
+        "outputTokens": [
+          344,
+          347,
+          347,
+          355,
+          212,
+          278
+        ]
+      },
+      "aiUnits": 30,
+      "usage": {
+        "inputTokens": 11888,
+        "outputTokens": 1883,
+        "aiUnits": 30,
+        "workflowTimeMs": 11324,
+        "runtimeDurationMs": 26614,
+        "totalTokens": 13771
+      }
+    },
+    {
+      "caseId": "CONT-03-F016",
+      "testName": "xdx-contact-required-template-creation",
+      "object": "contacts",
+      "mode": "template",
+      "workflowVersion": 88010729,
+      "definitionHash": "5dbfda59fad929e8",
+      "startedAt": "2026-10-15T15:51:49.936Z",
+      "finishedAt": "2026-10-15T15:52:19.148Z",
+      "durationMs": 29212,
+      "assertions": 865,
+      "judgeScore": 5,
+      "judgmentAttachedUtc": "2026-10-15T16:07:49.427Z",
+      "steps": [
+        {
+          "stepId": "prepare-template-contact",
+          "status": "passed"
+        },
+        {
+          "stepId": "edit-template-contact",
+          "status": "passed"
+        },
+        {
+          "stepId": "review-template-contact",
+          "status": "passed"
+        },
+        {
+          "stepId": "confirm-template-contact",
+          "status": "passed"
+        }
+      ],
+      "status": "passed",
+      "evidence": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-attached-result.json",
+      "sha256": "3f38be577fbd540637eb1a6a122460567e64dffaf518ed5d501d2e4d5b5f113f",
+      "metricsKeys": [
+        "durationMs",
+        "workflowTimeMs",
+        "tokenUsage",
+        "nodeDurations",
+        "observed",
+        "aiUnits"
+      ],
+      "observedUsage": {
+        "inputTokens": [
+          2655,
+          1541,
+          3176,
+          1544,
+          1495,
+          1741
+        ],
+        "outputTokens": [
+          349,
+          385,
+          349,
+          403,
+          273,
+          284
+        ]
+      },
+      "aiUnits": 30,
+      "usage": {
+        "inputTokens": 12152,
+        "outputTokens": 2043,
+        "aiUnits": 30,
+        "workflowTimeMs": 14312,
+        "runtimeDurationMs": 29212,
+        "totalTokens": 14195
+      }
+    }
+  ],
+  "nativeContactCorrectedDisplay": "Blocked by unavailable original conversation; separate required acceptance, user disposition pending."
+}

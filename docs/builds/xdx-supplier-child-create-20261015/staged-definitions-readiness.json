@@ -1,0 +1,31 @@
+{
+  "observedUtc": "2026-10-15T13:43:17.300Z",
+  "sourceContext": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_context_receipt.json",
+  "definitions": [
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_direct_definition.json",
+      "sha256": "897228f54be05475385eee2bafe67fb6c83996fba216f33494b3f2109d10446c",
+      "review": "Four turns, hybrid, complete unique200node partitions, exactrecordablefixtures, supported structured controlbinding",
+      "scenarioExecuted": false
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_template_definition.json",
+      "sha256": "4116691cc787cf0ab7467d0b53843af7461db36dbc1b5aa92b14c5d7871feef9",
+      "review": "Four turns, hybrid, complete unique200node partitions, exactrecordablefixtures, supported structured controlbinding",
+      "scenarioExecuted": false
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_direct_definition.json",
+      "sha256": "94994236a36543a80bb9d778fb9515e9e4b0dfe67cfc77173a213413461f3afd",
+      "review": "Four turns, hybrid, complete unique200node partitions, exactrecordablefixtures, supported structured controlbinding",
+      "scenarioExecuted": false
+    },
+    {
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_template_definition.json",
+      "sha256": "f92994b355b8cea9f2898872aa4cc19a8e1bd99bc392f835c7ae97ead85009e6",
+      "review": "Four turns, hybrid, complete unique200node partitions, exactrecordablefixtures, supported structured controlbinding",
+      "scenarioExecuted": false
+    }
+  ],
+  "scope": "Static artifact authoring checks only; no scenario invocation or business calls"
+}

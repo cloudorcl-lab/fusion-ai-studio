@@ -1,0 +1,8 @@
+{
+  "example": {
+    "description": "Reviewed request-shape example for the complete three-field contact identity. Uses distinctive proposed test names and a controlled non-operational email; no request has been submitted, no generated identifiers or account fields are included.",
+    "sampleType": "request",
+    "payload": "{\"FirstName\":\"XDX Jordan\",\"LastName\":\"Supplier Contact 20261015\",\"Email\":\"xdx.contact.bo.20261015@example.invalid\"}"
+  },
+  "functionName": "CreateSupplierContact"
+}

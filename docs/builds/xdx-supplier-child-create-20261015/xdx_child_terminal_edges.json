@@ -1,0 +1,56 @@
+[
+  {
+    "action": "add",
+    "from": "XDX_JOIN_CHILD_SOURCE",
+    "to": "XDX_BUILD_CHILD_DRAFT",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_DRAFT",
+    "to": "XDX_VALIDATE_CHILD_DRAFT",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_VALIDATION",
+    "to": "XDX_ROUTE_CHILD_NAME_CHECK",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_JOIN_CHILD_NAME",
+    "to": "XDX_RESERVE_CHILD_CREATE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_RESERVATION",
+    "to": "XDX_ROUTE_CHILD_DISPATCH",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_JOIN_CHILD_READBACK",
+    "to": "XDX_CHILD_QUERY_RESPONSE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_WRITE_ERROR",
+    "to": "XDX_CHILD_QUERY_RESPONSE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_PREPARE_ERROR",
+    "to": "XDX_CHILD_QUERY_RESPONSE",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_CHILD_QUERY_RESPONSE",
+    "to": "XDX_RETURN_CHILD_RESPONSE",
+    "label": "success"
+  }
+]

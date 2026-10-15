@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "agentId": "/root/retro_guardrails",
+  "parentAgentId": "/root",
+  "assignmentId": "guardrails",
+  "observedStartUtc": "2026-10-15T17:36:07Z",
+  "checkpointUtc": "2026-10-15T17:38:16Z",
+  "timingLimitations": "Prerequisite reads before first clock observation unallocated; short clearance wait mixed with read recovery; no continuous effort inferred before17:36:07. Await final receipt refresh after root changes.",
+  "startup": "PASS host-context unchanged retry; predispatch restricted lock EPERM reported to coordinator; registered receipt guardrails-commands.jsonl",
+  "findings": [
+    {
+      "severity": "medium",
+      "id": "G1",
+      "source": "scripts/verify-session-compliance.cjs:69-70",
+      "evidence": "docs/builds/xdx-supplier-child-create-20261015/contact-closeout-evidence-array-finding.json",
+      "gap": "Array shape enforced only for pass; planned/not-applicable object evidence throws TypeError; falsey missing/null bypass shape and strings iterate characters",
+      "recommendation": "Unconditionally require Array.isArray(c.evidence), report explicit disposition error, continue after invalid shape; retain nonempty requirement only for pass",
+      "tests": "tests/test-session-compliance.cjs actual verify(): malformed object/string/null/missing across planned/NA/pass; empty valid planned/NA; pass empty rejection; directory element rejected",
+      "alreadyGuarded": "local() line15 already rejects directories. Do not add duplicate regular-file implementation."
+    },
+    {
+      "severity": "medium",
+      "id": "G2",
+      "source": "package.json:5; packaging/agent-app-build-install-packet/packet-files/Verify-AgentAppBuildInstallPacket.ps1:29,41-42,86-93",
+      "evidence": "Root entry inventory has no .github; git common hooks directory contains pre-push,xdx-no-push.cjs,pre-commit.sample",
+      "gap": "No root lint/check/local-guardrail script or CI/precommit executes these focused regressions. Existing pre-push checks retired history and nested worktree publication only. Packet verifier inventories test files without running those tests.",
+      "recommendation": "Keep patch verification explicit and local-only. If adding automatic wiring, use a narrowly named local regression command with isolated tests; never npm test, whose current target invokes tenant workflows."
+    },
+    {
+      "severity": "medium",
+      "id": "G3",
+      "source": "docs/builds/xdx-supplier-child-create-20261015/checkpoint-timing.json:1-30; time-tracker.md:31; scripts/build-timing-report.cjs:137-150",
+      "evidence": "wall15733.377s, overlap-aware active13139.768s, blocking413.475s, unallocated2180.134s",
+      "gap": "Reported goal3h55 is not authoritative run elapsed; original goal counter receipt not retained in reviewed repo. Generic timing tool consumes command receipts and returns overlap-aware coverage, not primary ledger categories.",
+      "recommendation": "Report final cutoff and ledger-derived wall4h22m13, active3h38m59, gaps36m20 separately; identify goal counter as goal-scoped telemetry and never substitute. Existing overlap union tests cover arithmetic; source selection is procedural reporting issue."
+    },
+    {
+      "severity": "low",
+      "id": "G4",
+      "source": "failure-ledger F009; source-discovery-recurrences.json; current-retro F001",
+      "gap": "Repeated guessed command/path despite inventory rule; reviewer also guessed nonexistent final-timing.json and reported failure before corrected inventory",
+      "recommendation": "Coordinator dispatch includes exact existing receipt paths and command/output contract; worker inventories before use. Do not add duplicate navigation rule."
+    },
+    {
+      "severity": "low",
+      "id": "G5",
+      "source": "failure-ledger F010/F019; scripts/parse-aistudio-json.cjs:15-23",
+      "gap": "Text authoring output sent to strictJSON capture; stale full conversation definition sent with refresh flag",
+      "recommendation": "Keep strictJSON parser and existing stale-binding rejection unchanged; select explicit text capture plus persisted artifact readback and supported full conversation update at their current owners."
+    }
+  ],
+  "noTenantActions": true,
+  "sharedSourceWrites": false
+}

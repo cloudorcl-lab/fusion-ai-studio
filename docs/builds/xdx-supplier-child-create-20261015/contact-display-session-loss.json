@@ -1,0 +1,12 @@
+{
+  "observedUtc": "2026-10-15T15:32:41.507Z",
+  "caseId": "CONT-6",
+  "status": "blocked-session-state",
+  "request": "Review request REQ-844b3249-a864-4a44-8dda-9d1dd96d0c17-XDX_SUPPLIER_CONVERSATION-3 revision 2",
+  "actualResponse": "That request or revision is not current. Review the current draft.",
+  "cause": "Existing task tab had redirected to Oracle home; authorized app preview reopened with new empty conversation. Prior accepted attempt state unavailable through current UI.",
+  "productDefectClaim": false,
+  "newContactPost": false,
+  "automaticReviewTimeout": "First action not submitted; inspected unchanged UI, retried once as permitted; exact Review submitted once.",
+  "remaining": "Native corrected accepted rendering unverified; do not recreate accepted Contact."
+}

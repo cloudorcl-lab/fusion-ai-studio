@@ -1,0 +1,22 @@
+{
+  "observedUtc": "2026-10-15T16:07:47.715Z",
+  "runId": "2eaba4e7-1582-44e5-b067-dd05e2a90e62",
+  "preExecutionContract": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-execution-contract.json",
+  "rawExit": 1,
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CONVERSATION",
+    "status": "DRAFT",
+    "version": 88010729
+  },
+  "definitionHash": "5dbfda59fad929e8",
+  "actualRuntimeStatus": "needs-judge",
+  "deterministicPassed": true,
+  "checks": 835,
+  "startedAt": "2026-10-15T16:00:01.814Z",
+  "finishedAt": "2026-10-15T16:00:29.528Z",
+  "measuredEnd": "2026-10-15T16:06:45.248Z",
+  "measuredDurationMs": 403705.6403,
+  "runtimeArchive": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-runtime-needs-judge.json",
+  "requestArchive": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-request-needs-judge.json",
+  "handling": "Exact scripted local-judge continuation; no workflow replay. Attachment remains required for PASS."
+}

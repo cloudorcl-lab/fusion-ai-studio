@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "command": "do-modify-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "XDX_PREPARE_SUPPLIER_REQUEST",
+    "updated": true
+  }
+}

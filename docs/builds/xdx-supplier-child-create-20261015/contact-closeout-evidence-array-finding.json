@@ -1,0 +1,8 @@
+{
+  "observedUtc": "2026-10-15T16:23:52.109Z",
+  "runId": "2ed98bcf-bfb9-4234-b3a5-3b4a74b2e62b",
+  "failure": "Contact bounded receipt Closeout invalid evidence path arrays",
+  "cause": "PowerShell array addition precedence concatenated paths and split object reference strings",
+  "correction": "Owner repairs only receipt with explicit literal JSON arrays and current reviewed hashes, then validates each evidence entry as a repository-relative existing file before Closeout.",
+  "scope": "Governance metadata only; no product tests or business calls"
+}

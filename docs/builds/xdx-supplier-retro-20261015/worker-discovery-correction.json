@@ -1,0 +1,10 @@
+{
+  "observedUtc": "2026-10-15T17:36:18.627Z",
+  "worker": "/root/retro_evidence",
+  "symptom": "Read-only worker guessed scripts/measure-command.ps1, ENOENT/exit1 before substantive review",
+  "cause": "Dispatch omitted literal runner invocation; existing inventory-first instruction was not applied",
+  "correction": "Coordinator supplied exact scripts/measure-build-command.cjs invocation and explicit worker task IDs; verified runner existing regular file",
+  "verified": true,
+  "productTests": 0,
+  "sourceWrites": 0
+}

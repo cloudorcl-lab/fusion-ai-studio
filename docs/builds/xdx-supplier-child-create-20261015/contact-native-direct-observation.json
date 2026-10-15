@@ -1,0 +1,40 @@
+{
+  "observedUtc": "2026-10-15T14:16:04.936Z",
+  "caseId": "CONT-4",
+  "surface": "Native draft app Query UI",
+  "requestId": "REQ-844b3249-a864-4a44-8dda-9d1dd96d0c17-XDX_SUPPLIER_CONVERSATION-1",
+  "revision": 2,
+  "parent": {
+    "SupplierId": 300000047414679,
+    "SupplierNumber": "1255",
+    "Supplier": "Dell Inc."
+  },
+  "payload": {
+    "FirstName": "XDXContact",
+    "LastName": "ChildDirect20261015",
+    "Email": "xdx.child.direct.20261015@example.invalid"
+  },
+  "attempt": {
+    "status": "accepted",
+    "verification": "verified",
+    "SupplierContactId": 300000340604842
+  },
+  "verified": {
+    "SupplierContactId": 300000340604842,
+    "PersonProfileId": 300000340604842,
+    "FirstName": "XDXContact",
+    "LastName": "ChildDirect20261015",
+    "Email": "xdx.child.direct.20261015@example.invalid",
+    "ContactName": "ChildDirect20261015, XDXContact",
+    "Status": "ACTIVE"
+  },
+  "journey": [
+    "Native InitDisplay showed getting-started guidance",
+    "Prepare direct all three fields under number1255; uncreated revision1",
+    "Email-only edit preserved parent and names, revision2",
+    "Actual exact Review control showed manifest final payload",
+    "Actual exact Confirm sent once",
+    "UI reported accepted + verified and independent GET fields"
+  ],
+  "limitations": "Visible app evidence; screenshot in tool conversation, no raw workflow trace exported. No account operations or POST retry."
+}

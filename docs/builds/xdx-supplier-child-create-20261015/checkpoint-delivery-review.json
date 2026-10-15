@@ -1,0 +1,49 @@
+{
+  "observedUtc": "2026-10-15T16:32:45.957Z",
+  "kind": "implementation-checkpoint-not-completion",
+  "branch": "codex/xdx-supplier-workspace-20261014",
+  "parent": "9f8f02b495e9d6780960cd1a3e5e64413769a0a8",
+  "scope": [
+    ".gitattributes",
+    "docs/handoffs/ACTIVE_HANDOFF.md",
+    "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+    "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+    "scripts/tests/verify-agentic-app-query-contract.cjs",
+    "scripts/verify-agentic-app-query-contract.cjs",
+    "src/businessObjects/xdx_supplier_addresses.bo",
+    "src/businessObjects/xdx_supplier_contacts.bo",
+    "src/workflows/xdx_supplier_conversation.wf",
+    "test/workflows/xdx_supplier_conversation/xdx-address-required-direct-creation.json",
+    "test/workflows/xdx_supplier_conversation/xdx-address-required-template-creation.json",
+    "test/workflows/xdx_supplier_conversation/xdx-contact-required-direct-creation.json",
+    "test/workflows/xdx_supplier_conversation/xdx-contact-required-template-creation.json",
+    "docs/builds/xdx-supplier-child-create-20261015/"
+  ],
+  "partialGovernance": [
+    "BUILD_STANDARD.md",
+    "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md"
+  ],
+  "excluded": [
+    "env.properties",
+    "docs/builds/xdx-supplier-workspace-20261014/",
+    "test/workflows/.gitkeep",
+    "preexisting parallel-agent/timing-policy hunks"
+  ],
+  "globalAcceptance": "Corrected native Contact display remains unverified; full root Closeout remains open",
+  "noAdditionalTests": true,
+  "stagedFiles": 546,
+  "stagedProductBytesMatchWorkingQualification": true,
+  "configuredSensitiveValuesFound": false,
+  "stagedGovernanceExcludesPreexistingPolicyEdits": true,
+  "scopedReviewUtc": "2026-10-15T16:33:40.912Z",
+  "independentAudit": "docs/builds/xdx-supplier-child-create-20261015/checkpoint-independent-audit.json",
+  "acceptanceAudit": {
+    "reviewer": "/root/contact_contract",
+    "onlyFunctionalGap": "Corrected native Contact-template completion display; retained CONT-5presentationFailed and CONT-6notcurrent do not prove the fix UI",
+    "scopeDispositionPending": true
+  },
+  "sourceProvenanceConsultation": {
+    "reviewer": "/root/address_contract",
+    "result": "Exact pre-execution Address test hash recovered by removing generated bindings and restoring unordered assertion order; no logical drift"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "observedUtc": "2026-10-15T17:42:05.424Z",
+  "result": "pass",
+  "run": {
+    "schemaVersion": 1,
+    "runId": "21472217-2c45-47db-be27-9e55acfeaac8",
+    "taskId": "xdx-supplier-retro-20261015",
+    "activityId": "evidence-array-green-supported",
+    "phase": "guardrail",
+    "category": "repair",
+    "activityKind": "execution",
+    "label": "Evidence-array-green-supported",
+    "executable": "cmd",
+    "parentActivityId": null,
+    "dependencyIds": [],
+    "overlapIds": [],
+    "rerunReason": null,
+    "startedUtc": "2026-10-15T17:41:26.391Z",
+    "observedUtc": "2026-10-15T17:41:29.357Z",
+    "elapsedMs": 2966.3066,
+    "event": "end",
+    "endedUtc": "2026-10-15T17:41:29.357Z",
+    "status": "succeeded",
+    "exitCode": 0,
+    "childExitCode": 0,
+    "signal": null,
+    "interruptSignal": null,
+    "spawnError": null,
+    "processStatus": "exited",
+    "semanticOutcome": "unknown",
+    "metrics": {
+      "tokens": null,
+      "aiUnits": null,
+      "workflowElapsedMs": null,
+      "availability": "Not collected by command timing wrapper"
+    }
+  },
+  "command": "cmd /d /c npm run check:session",
+  "actualTest": "tests/test-session-compliance.cjs calls actual exported verify()",
+  "newCases": {
+    "malformedStatusValueCombinations": 15,
+    "validEmptyPlannedAndNotApplicable": 2
+  },
+  "existingIdentityAndScopeCases": "Retained and executed in same focused local test owner",
+  "tenantTests": 0,
+  "businessCalls": 0,
+  "behavior": "All evidence values must be arrays. Invalid shape returns diagnostics; planned/NA empty arrays remain valid; passed checks require nonempty existing file evidence."
+}

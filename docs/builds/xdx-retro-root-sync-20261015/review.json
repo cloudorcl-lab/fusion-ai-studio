@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "agentId": "/root/root_sync_review",
+  "parentAgentId": "/root",
+  "assignmentId": "xdx-retro-root-sync-20261015-review",
+  "activityId": "governance-collision-review",
+  "phase": "review",
+  "task": "xdx-retro-root-sync-20261015",
+  "status": "approved",
+  "observedStartUtc": "2026-10-15T18:03:31.376Z",
+  "checkpointUtc": "2026-10-15T18:04:31Z",
+  "category": "active execution",
+  "outcome": "Primary normalized source deltas approved; root milestone run-ledger wording and restricted evidence attributes confirmed in integration script.",
+  "startupReceipt": "docs/builds/xdx-retro-root-sync-20261015/review-commands.jsonl",
+  "findings": [
+    "Source required parallelism includes verified dispatch inputs, executable/receipt/host/output contracts, supported worker follow-up activation, attribution and concurrent-time accounting. Preserve full policy.",
+    "BUILD_STANDARD root unique milestone wording in the run ledger preserved alongside agentId/assignmentId.",
+    "Source .gitattributes broad product newline rules excluded by root integration script; evidence-only rules retained.",
+    "Session validator actual-code delta requires evidence JSON arrays for all dispositions; focused tests exercise fifteen malformed combinations and two empty-array positive combinations. No tests executed by reviewer.",
+    "Historical native Contact display exception remains explicitly user-accepted and unobserved; do not relabel as PASS."
+  ],
+  "pending": [],
+  "timingLimitations": "First observed worker boundary is measured Startup18:03:31.376Z; earlier prerequisite reads/discovery start unknown and unallocated. Initial copied session start18:02:25.143Z is coordinator task timestamp, not claimed worker activity. Token telemetry unavailable. No browser, tenant, product test, source write, or shared-ledger write.",
+  "observedEndUtc": "2026-10-15T18:05:11Z",
+  "finalHashReadback": {
+    "observedUtc": "2026-10-15T18:05:03.906013Z",
+    "manifest": "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+    "primaryCount": 6,
+    "evidenceCount": 574,
+    "hashMismatches": 0
+  },
+  "finalReview": {
+    "observedStartUtc": "2026-10-15T18:07:27Z",
+    "checkpointUtc": "2026-10-15T18:07:39.788711Z",
+    "result": "pass",
+    "primarySourceAndTargetHashChecks": 6,
+    "evidenceSourceAndTargetHashChecks": 574,
+    "qualifiedDependenciesNormalizedIdentical": 6,
+    "unrelatedBaselineFilesUnchanged": 2,
+    "issues": [],
+    "proofs": [
+      "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json docs/builds/xdx-retro-root-sync-20261015/document-check.json docs/builds/xdx-retro-root-sync-20261015/attribute-scope.json"
+    ],
+    "scope": "Independent bounded sync review; current target content/bytes and linked proof read back. Root build Closeout and commit remain coordinator-owned.",
+    "observedEndUtc": "2026-10-15T18:09:33Z",
+    "timingDisposition": "Observed review/receipt work18:07:27–18:08:43;18:08:43–18:09:33 coordinator-wait with brief status inspections; no human/user wait. Gate tail incomplete."
+  },
+  "receiptConstructionFailure": {
+    "runId": "46606e95-4c62-4eed-a14b-7dabf7a37695",
+    "observedUtc": "2026-10-15T18:07:59.838Z",
+    "symptom": "PowerShell concatenation inside array expression serialized seven paths as one space-joined path; Closeout correctly rejected missing file.",
+    "correction": "Use exact literal path array; deserialize written JSON; assert seven array elements and literal leaf existence for every obligation.",
+    "preventionCheckUtc": "2026-10-15T18:08:23.6709007Z",
+    "preventionResult": "pass",
+    "retry": "Waiting coordinator ledger capture before one repair-category Closeout."
+  }
+}

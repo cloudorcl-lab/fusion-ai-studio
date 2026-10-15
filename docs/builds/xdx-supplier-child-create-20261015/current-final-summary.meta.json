@@ -1,0 +1,8 @@
+{
+  "startedUtc": "2026-10-15T16:15:13.206Z",
+  "endedUtc": "2026-10-15T16:20:13.256Z",
+  "exitCode": null,
+  "errorCode": "ETIMEDOUT",
+  "outputContract": "TEXT",
+  "scope": "Read-only final summary; no test execution or suite replay"
+}

@@ -1,0 +1,22 @@
+{
+  "observedUtc": "2026-10-15T15:51:48.724Z",
+  "runId": "b7d25ba5-81f7-4684-8762-2ed1c9cb6214",
+  "preExecutionContract": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-execution-contract.json",
+  "rawExit": 1,
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CONVERSATION",
+    "status": "DRAFT",
+    "version": 88010729
+  },
+  "definitionHash": "5dbfda59fad929e8",
+  "actualRuntimeStatus": "needs-judge",
+  "deterministicPassed": true,
+  "checks": 837,
+  "startedAt": "2026-10-15T15:43:48.506Z",
+  "finishedAt": "2026-10-15T15:44:20.335Z",
+  "measuredEnd": "2026-10-15T15:50:47.679Z",
+  "measuredDurationMs": 419468.307,
+  "runtimeArchive": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-runtime-needs-judge.json",
+  "requestArchive": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-request-needs-judge.json",
+  "handling": "Exact scripted local-judge continuation; no workflow replay. Attachment remains required for PASS."
+}

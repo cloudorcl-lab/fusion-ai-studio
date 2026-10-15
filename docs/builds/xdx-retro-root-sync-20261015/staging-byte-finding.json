@@ -1,0 +1,8 @@
+{
+  "observedUtc": "2026-10-15T18:14:05.458Z",
+  "badPaths": [
+    "docs/builds/xdx-supplier-child-create-20261015/governance-before/BUILD_STANDARD.md"
+  ],
+  "symptom": "Staged newline normalization differs from qualified working bytes",
+  "commitExecuted": false
+}

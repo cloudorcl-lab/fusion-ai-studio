@@ -1,0 +1,121 @@
+{
+  "status": "staged-not-materialized-not-executed",
+  "agentId": "/root/contact_contract",
+  "workflowFile": "src/workflows/xdx_supplier_conversation.wf",
+  "workflowSha256": "6a2d83dbb12d4b7f2c914a1657b70d03a476bda91f4e36fca849d1f1ed2b0253",
+  "definitionHash": "2955988aaf09cb43",
+  "context": "xdx_child_context_stdout.txt",
+  "contextReceipt": "xdx_child_context_receipt.json",
+  "assertableNodeCount": 200,
+  "outputs": [
+    {
+      "file": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_direct_definition.json",
+      "sha256": "94994236a36543a80bb9d778fb9515e9e4b0dfe67cfc77173a213413461f3afd",
+      "stepPaths": [
+        {
+          "stepId": "prepare-direct-contact",
+          "mustExecute": 43,
+          "mustNotExecute": 157,
+          "fixtureNodes": [
+            "XDX_SEARCH_SUPPLIERS",
+            "XDX_READ_SUPPLIER"
+          ],
+          "terminal": [
+            "XDX_CHILD_QUERY_RESPONSE",
+            "XDX_RETURN_CHILD_RESPONSE"
+          ]
+        },
+        {
+          "stepId": "edit-direct-contact",
+          "mustExecute": 31,
+          "mustNotExecute": 169,
+          "fixtureNodes": [],
+          "terminal": [
+            "XDX_CHILD_QUERY_RESPONSE",
+            "XDX_RETURN_CHILD_RESPONSE"
+          ]
+        },
+        {
+          "stepId": "review-direct-contact",
+          "mustExecute": 37,
+          "mustNotExecute": 163,
+          "fixtureNodes": [],
+          "terminal": [
+            "XDX_SUPPLIER_QUERY_RESPONSE"
+          ]
+        },
+        {
+          "stepId": "confirm-direct-contact",
+          "mustExecute": 27,
+          "mustNotExecute": 173,
+          "fixtureNodes": [
+            "XDX_CREATE_CONTACT_ONCE",
+            "XDX_GET_CREATED_CONTACT"
+          ],
+          "terminal": [
+            "XDX_CHILD_QUERY_RESPONSE",
+            "XDX_RETURN_CHILD_RESPONSE"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_template_definition.json",
+      "sha256": "f92994b355b8cea9f2898872aa4cc19a8e1bd99bc392f835c7ae97ead85009e6",
+      "stepPaths": [
+        {
+          "stepId": "prepare-template-contact",
+          "mustExecute": 46,
+          "mustNotExecute": 154,
+          "fixtureNodes": [
+            "XDX_SEARCH_SUPPLIERS",
+            "XDX_READ_SUPPLIER",
+            "XDX_READ_CONTACT_TEMPLATE"
+          ],
+          "terminal": [
+            "XDX_CHILD_QUERY_RESPONSE",
+            "XDX_RETURN_CHILD_RESPONSE"
+          ]
+        },
+        {
+          "stepId": "edit-template-contact",
+          "mustExecute": 31,
+          "mustNotExecute": 169,
+          "fixtureNodes": [],
+          "terminal": [
+            "XDX_CHILD_QUERY_RESPONSE",
+            "XDX_RETURN_CHILD_RESPONSE"
+          ]
+        },
+        {
+          "stepId": "review-template-contact",
+          "mustExecute": 37,
+          "mustNotExecute": 163,
+          "fixtureNodes": [],
+          "terminal": [
+            "XDX_SUPPLIER_QUERY_RESPONSE"
+          ]
+        },
+        {
+          "stepId": "confirm-template-contact",
+          "mustExecute": 27,
+          "mustNotExecute": 173,
+          "fixtureNodes": [
+            "XDX_CREATE_CONTACT_ONCE",
+            "XDX_GET_CREATED_CONTACT"
+          ],
+          "terminal": [
+            "XDX_CHILD_QUERY_RESPONSE",
+            "XDX_RETURN_CHILD_RESPONSE"
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": "Predicted complete partitions derived from frozen graph and current context; no pathBinding authored or observed runtime acceptance claimed. Root must use supported generation and inspect judge provenance under applicable guide. Configured hybrid runs only, no transient deterministic replay under five-test budget. All BO calls are step-scoped fixtures; no live fallthrough.",
+  "provenance": {
+    "createdResponses": "Model-generated hypothetical POST/GET pairs adapted from current contact-bo-post-attempt.json and contact-bo-readback.json. Synthetic own/profile IDs deliberately differ; no claim these tenant records exist.",
+    "parent": "Retained Dell source from site-required-creation.json; current parent read proof exists in task saved BO receipts",
+    "sourceContact": "contacts-item-example-response.json retained ID/name/FirstName/LastName/Status; Email replaced with explicitly synthetic controlled destination, added profile/account shape from current task contact-bo-readback.json"
+  }
+}

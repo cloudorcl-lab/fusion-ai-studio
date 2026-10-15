@@ -1,0 +1,19 @@
+{
+  "label": "terminal_prettify",
+  "exitCode": 0,
+  "error": null,
+  "timeoutMs": 300000,
+  "stdoutPath": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_prettify_stdout.txt",
+  "stderrPath": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_terminal_prettify_stderr.txt",
+  "result": {
+    "ok": true,
+    "command": "do-prettify-workflow",
+    "result": {
+      "ok": true,
+      "orientation": "vertical",
+      "nodeCount": 202,
+      "noteCount": 0,
+      "message": "Workflow layout prettified."
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "status": "prepared-not-executed",
+  "authority": "Both modes user authorization and frozen exact transaction manifest",
+  "envelope": "Actual app-local Query, not InitDisplay or InvokeAction substitute",
+  "cases": [
+    {
+      "caseId": "ADDR-04",
+      "object": "addresses",
+      "payload": {
+        "AddressName": "XDX Address Native Direct 20261015",
+        "CountryCode": "US",
+        "AddressLine1": "2300 GREENLAWN BLVD",
+        "City": "ROUND ROCK",
+        "State": "TX",
+        "PostalCode": "78664",
+        "Email": "xdx.address.native.direct.20261015@example.invalid",
+        "AddressPurposeOrderingFlag": true
+      },
+      "prepare": "Prepare a new ordering address under supplier number 1255. AddressName: XDX Address Native Direct 20261015. CountryCode: US. AddressLine1: 2300 GREENLAWN BLVD. City: ROUND ROCK. State: TX. PostalCode: 78664. Email: xdx.address.native.direct.draft.20261015@example.invalid.",
+      "edit": "Email: xdx.address.native.direct.20261015@example.invalid"
+    },
+    {
+      "caseId": "ADDR-05",
+      "object": "addresses",
+      "payload": {
+        "AddressName": "XDX Address Native Template 20261015",
+        "CountryCode": "US",
+        "AddressLine1": "2300 GREENLAWN BLVD",
+        "City": "ROUND ROCK",
+        "State": "TX",
+        "PostalCode": "78664",
+        "Email": "xdx.address.native.template.20261015@example.invalid",
+        "AddressPurposeOrderingFlag": true
+      },
+      "prepare": "Prepare a new ordering address under the selected supplier using address ID 300000047414694 as the same-supplier template. New AddressName: XDX Address Native Template 20261015. Email: xdx.address.native.template.draft.20261015@example.invalid.",
+      "edit": "Email: xdx.address.native.template.20261015@example.invalid"
+    },
+    {
+      "caseId": "CONT-4",
+      "object": "contacts",
+      "payload": {
+        "LastName": "ChildDirect20261015",
+        "Email": "xdx.child.direct.20261015@example.invalid",
+        "FirstName": "XDXContact"
+      },
+      "prepare": "Prepare a new contact under supplier number 1255. FirstName: XDXContact. LastName: ChildDirect20261015. Email: xdx.child.direct.draft.20261015@example.invalid.",
+      "edit": "Email: xdx.child.direct.20261015@example.invalid"
+    },
+    {
+      "caseId": "CONT-5",
+      "object": "contacts",
+      "payload": {
+        "LastName": "XDXChildTemplate20261015",
+        "Email": "xdx.child.template.20261015@example.invalid",
+        "FirstName": "Noah"
+      },
+      "prepare": "Prepare a new contact under the selected supplier using contact ID 300000047414707 as the same-supplier template. Keep its first name Noah. New LastName: XDXChildTemplate20261015. Email: xdx.child.template.draft.20261015@example.invalid.",
+      "edit": "Email: xdx.child.template.20261015@example.invalid"
+    }
+  ],
+  "controls": "Read actual generated request/revision from current preparation, exact Review then actual Confirm; never use fixture or guessed IDs. Verify displayed parent and all frozen final fields before Confirm. Precreate draft Email differs deliberately; final submitted payload must exactly match manifest. No account/optional field expansion. Abort/freeze after accepted/uncertain POST; no retry.",
+  "scenarioCounters": "1/5each consumed by passed native savedBO; each native journey consumes one additional scenario only when dispatched"
+}

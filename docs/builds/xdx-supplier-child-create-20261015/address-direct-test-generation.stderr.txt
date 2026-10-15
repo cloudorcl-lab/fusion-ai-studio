@@ -1,0 +1,5 @@
+(node:32484) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Temp/worktrees/xdx-supplier-workspace-20261014/.agents/skills/aistudio/scripts/aistudio.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Temp\worktrees\xdx-supplier-workspace-20261014\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+workflow conversation test definition conversation.steps[0].input.message must be a short user-facing workflow invocation; it is 284 characters, above the 240 character limit. Do not copy workflow node prompts, LLM task text, assertions, judge rubrics, or test data into input.message.

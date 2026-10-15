@@ -1,0 +1,8 @@
+{
+  "example": {
+    "description": "Reviewed request-shape example for a complete US ordering address. Uses retained Dell US1 physical values, a distinct proposed name and a controlled non-operational email. No request has been submitted and no generated identifiers are included.",
+    "sampleType": "request",
+    "payload": "{\"AddressName\":\"XDX Address BO Direct 20261015\",\"CountryCode\":\"US\",\"AddressLine1\":\"2300 GREENLAWN BLVD\",\"City\":\"ROUND ROCK\",\"State\":\"TX\",\"PostalCode\":\"78664\",\"Email\":\"xdx.address.bo.20261015@example.invalid\",\"AddressPurposeOrderingFlag\":true}"
+  },
+  "functionName": "CreateSupplierAddress"
+}

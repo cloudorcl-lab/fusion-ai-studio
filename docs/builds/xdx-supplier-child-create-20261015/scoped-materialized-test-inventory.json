@@ -1,0 +1,55 @@
+{
+  "observedUtc": "2026-10-15T13:52:30.803Z",
+  "workflowCode": "XDX_SUPPLIER_CONVERSATION",
+  "workflowVersion": 88004239,
+  "sourceContext": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_context_receipt.json",
+  "savedReadback": "docs/builds/xdx-supplier-child-create-20261015/saved-workflow-readback.json",
+  "tests": [
+    {
+      "object": "addresss",
+      "mode": "direct",
+      "testName": "xdx-address-required-direct-creation",
+      "testFile": "test/workflows/xdx_supplier_conversation/xdx-address-required-direct-creation.json",
+      "sha256": "4dfd57f2f25ae8e25129166a7d62e9a57861fd6b77eeccc248fda6e79dc6f758",
+      "ready": true,
+      "steps": 4,
+      "configuredMode": "hybrid",
+      "executed": false
+    },
+    {
+      "object": "addresss",
+      "mode": "template",
+      "testName": "xdx-address-required-template-creation",
+      "testFile": "test/workflows/xdx_supplier_conversation/xdx-address-required-template-creation.json",
+      "sha256": "6713c4038c0a2d580306fb818fdb46a37d325d89da0a12b5e2e0fa7157c51c87",
+      "ready": true,
+      "steps": 4,
+      "configuredMode": "hybrid",
+      "executed": false
+    },
+    {
+      "object": "contacts",
+      "mode": "direct",
+      "testName": "xdx-contact-required-direct-creation",
+      "testFile": "test/workflows/xdx_supplier_conversation/xdx-contact-required-direct-creation.json",
+      "sha256": "237ac5bf774d6525ff9572d244ef0e23343a6a548a1e0fdd67b748e0e19b8c53",
+      "ready": true,
+      "steps": 4,
+      "configuredMode": "hybrid",
+      "executed": false
+    },
+    {
+      "object": "contacts",
+      "mode": "template",
+      "testName": "xdx-contact-required-template-creation",
+      "testFile": "test/workflows/xdx_supplier_conversation/xdx-contact-required-template-creation.json",
+      "sha256": "e0fb961c3e6c03686e9e4a483df5f4ea36b2e6a51b2bc48d6c04c9d9b768a357",
+      "ready": true,
+      "steps": 4,
+      "configuredMode": "hybrid",
+      "executed": false
+    }
+  ],
+  "authority": "Userbothmodesand5tests/object; existingboundedextension. CanonicalGate6 approvedmanifestboundsATLASactions andpermits documentedscopedcompletion withallrequiredexecutedjudgments.",
+  "limitation": "Broadautomaticinventory timedout300s; no broadPASSclaimed or hiddenactioninvented. Currentfourcustomcases authoritative from explicitusergoal; scopedcompletion remainsincompleteuntilallfourcurrentjudgedpassesandfourrequestednativejourneys."
+}

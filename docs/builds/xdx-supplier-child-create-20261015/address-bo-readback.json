@@ -1,0 +1,27 @@
+{
+  "observedUtc": "2026-10-15T13:24:13.297Z",
+  "surface": "actual saved BO native GetSupplierAddress Fetch Sample Data",
+  "supportedObjectId": "300000340669151",
+  "input": {
+    "suppliers_Id": "300000047414679",
+    "suppliers_addresses_Id": "300000340604810"
+  },
+  "response": {
+    "SupplierAddressId": 300000340604810,
+    "AddressName": "XDX Address BO Direct 20261015",
+    "CountryCode": "US",
+    "Country": "United States",
+    "AddressLine1": "2300 GREENLAWN BLVD",
+    "AddressLine2": null,
+    "City": "ROUND ROCK",
+    "State": "TX",
+    "Province": null,
+    "PostalCode": "78664",
+    "Status": "ACTIVE",
+    "InactiveDate": "4712-12-31",
+    "AddressPurposeOrderingFlag": true,
+    "Email": "xdx.address.bo.20261015@example.invalid",
+    "AddressPartyNumber": "1501634"
+  },
+  "comparison": "all8submittedfields+ownID+AddressPartyNumber PASS"
+}

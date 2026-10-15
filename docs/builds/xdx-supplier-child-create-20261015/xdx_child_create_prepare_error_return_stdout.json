@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "command": "do-create-node",
+  "result": {
+    "ok": true,
+    "nodeId": "xdx_child_prepare_error_return",
+    "nodeCode": "XDX_RETURN_CHILD_PREPARE_ERROR"
+  }
+}

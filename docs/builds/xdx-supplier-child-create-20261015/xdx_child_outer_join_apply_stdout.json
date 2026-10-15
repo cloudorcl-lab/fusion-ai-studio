@@ -1,0 +1,40 @@
+{
+  "ok": true,
+  "command": "do-modify-node-edges",
+  "result": {
+    "ok": true,
+    "applied": 4,
+    "skipped": 0,
+    "details": [
+      {
+        "action": "remove",
+        "from": "XDX_ROUTE_REQUEST",
+        "to": "XDX_VALIDATE_CHILD_DRAFT",
+        "label": "child_validate",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "XDX_ROUTE_REQUEST",
+        "to": "XDX_JOIN_LIST",
+        "label": "child_validate",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "XDX_ROUTE_SEARCH_RESULT",
+        "to": "XDX_JOIN_DETAIL",
+        "label": "child_validate",
+        "status": "applied"
+      },
+      {
+        "action": "add",
+        "from": "XDX_ROUTE_DETAIL_RESULT",
+        "to": "XDX_VALIDATE_CHILD_DRAFT",
+        "label": "child_validate",
+        "status": "applied"
+      }
+    ],
+    "message": "Edges updated."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "observedUtc": "2026-10-15T13:45:04.069Z",
+  "agentId": "/root",
+  "runId": "67270727-7fcf-4e60-becc-6da9020741b5",
+  "symptom": "Capturehelperwronglyparsedtext-onlydo-generateasJSON, wrapperexit1afteractualCLIexit0andsuccessfulartifactcreation",
+  "effect": "Testartifactcreatedonceandreadbackverified; NOscenarioinvoked; mustnotregenerateacceptedlocalmutation",
+  "cause": "CoordinatorreusedJSONcapturewithoutcheckingcommandoutputcontract",
+  "correction": "Separateexplicittextcapturehelper; checkprocessstatusandactualpersistedartifact, no genericJSONfallback or outputstripping",
+  "evidence": [
+    "docs/builds/xdx-supplier-child-create-20261015/contact-direct-test-generation.stdout.txt",
+    "docs/builds/xdx-supplier-child-create-20261015/contact-direct-test-generation.meta.json",
+    "docs/builds/xdx-supplier-child-create-20261015/contact-direct-materialization-readback.json"
+  ]
+}

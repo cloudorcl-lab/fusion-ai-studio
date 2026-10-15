@@ -1,0 +1,14 @@
+{
+  "source": "docs/builds/xdx-retro-root-sync-20261015/build-ledger.json",
+  "cutoffUtc": "2026-10-15T18:12:18.935Z",
+  "wallMs": 957868,
+  "rootActiveMs": 846784,
+  "initialUnallocatedMs": 111084,
+  "workerObservedActiveMs": 188836,
+  "workerObservedCoordinationWaitMs": 50000,
+  "limitations": [
+    "Initial diff inspection before first prospective timestamp unallocated",
+    "No model/worker token telemetry",
+    "Cutoff 2026-10-15T18:12:18.935Z; subsequent final gate/staging/commit delivery tail excluded from this report. Worker gaps unallocated; concurrent labor not wall time."
+  ]
+}

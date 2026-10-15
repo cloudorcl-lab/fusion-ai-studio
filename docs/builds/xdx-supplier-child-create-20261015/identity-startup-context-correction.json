@@ -1,0 +1,14 @@
+{
+  "observedUtc": "2026-10-15T15:10:57.758Z",
+  "agent": "/root/create_integration",
+  "failedAction": "Restricted-context Startup gate reported Session branch mismatch before source edits",
+  "checkedBranch": "codex/xdx-supplier-workspace-20261014",
+  "receiptBranch": "codex/xdx-supplier-workspace-20261014",
+  "sourceChangesBeforeRecovery": false,
+  "correction": "Same Startup command in established authorized host execution context, explicit target workdir and require_escalated",
+  "result": "Session compliance PASS and living build contract PASS",
+  "measuredInnerSeconds": 1.178,
+  "toolSeconds": 4.3,
+  "limitation": "Initial restricted gate failed to establish branch observation; no branch drift found. Exact child spawn error not exported, so permission-context cause is supported by successful context change rather than low-level error telemetry.",
+  "evidenceGap": "Worker gate output retained in current task conversation; no original commandRunId."
+}

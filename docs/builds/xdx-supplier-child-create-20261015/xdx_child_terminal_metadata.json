@@ -1,0 +1,15 @@
+{
+  "name": "XDX Supplier Query Response",
+  "modelConfiguration": {
+    "code": "ORA_LLM_PREMIUM",
+    "provider": "CERT_PREMIUM",
+    "model": "OPEN_AI_GPT_4_1_MINI",
+    "modelProperties": {
+      "k": 0,
+      "max_tokens": 1800,
+      "p": 0.75
+    }
+  },
+  "chatHistoryEnabled": false,
+  "answerInUserLanguage": true
+}

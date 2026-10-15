@@ -1,0 +1,12 @@
+{
+  "observedUtc": "2026-10-15T13:43:17.302Z",
+  "observations": [
+    "Contactworker guessed nonexistent validate-workflow-test help despite installedcatalog; no mutation",
+    "Contactworker rg wildcard in directory path Windows123; no mutation",
+    "Root guessed nonexistent address stagingreceipt filename; read failed; root used confirmed actualhelper/definitionpaths instead"
+  ],
+  "cause": "Catalog/literalpath instructions not applied consistently during read-only discovery",
+  "correction": "Root takes materialization; exact allowlist do-generate-workflow-test only, builtinvalidation/readback; no nonexistent standalonevalidator, no wildcarddirectorypaths",
+  "evidenceGap": "Unmeasured read/help output in toolconversation; no measuredrunIDs; exactstarttimes unavailable",
+  "businessEffect": "None"
+}

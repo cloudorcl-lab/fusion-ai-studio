@@ -1,0 +1,80 @@
+{
+  "agentId": "/root/retro_evidence",
+  "parentAgentId": "/root",
+  "assignmentId": "retro-evidence",
+  "taskId": "xdx-supplier-retro-20261015-evidence",
+  "status": "final-frozen-delta-review-pass",
+  "reviewStartLimitation": "First substantive read followed root host Startup confirmation; exact dispatch clock unavailable, so no exact active interval claimed.",
+  "lastObservedUtc": "2026-10-15T17:47:21.9372788Z",
+  "scope": "Read-only completed-run evidence retrospective; no tests or tenant calls",
+  "evidence": [
+    "docs/builds/xdx-supplier-child-create-20261015/failure-ledger.json",
+    "docs/builds/xdx-supplier-child-create-20261015/build-ledger.json",
+    "docs/builds/xdx-supplier-child-create-20261015/checkpoint-timing.json",
+    "docs/builds/xdx-supplier-child-create-20261015/current-child-fixture-acceptance.json",
+    "docs/builds/xdx-supplier-child-create-20261015/contact-display-session-loss.json",
+    "docs/builds/xdx-supplier-child-create-20261015/completion-acceptance.json",
+    "docs/builds/xdx-supplier-child-create-20261015/current-final-summary-timeout.json",
+    "docs/builds/xdx-supplier-child-create-20261015/successful-test-reset-policy.json"
+  ],
+  "findings": [
+    {
+      "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md:681",
+      "recommendation": "After saved renderer repair, prioritize safe accepted recall in original native conversation before unrelated planner/report work; checkpoint exact tab, artifact, request/revision and accepted IDs; retain explicit verification exception separately from native PASS",
+      "impact": "Corrected native Contact display never observed; completion required explicit user acceptance, not UI PASS",
+      "severity": "high",
+      "classification": "Existing keep-alive and state-continuity obligations apply; add execution-order specificity at existing Gate7 owner, not another policy",
+      "cause": "Observed original tab redirected to Oracle home and reopened preview had empty conversation; expiration mechanism unknown",
+      "subject": "Preserve accepted native conversation while changed display acceptance is pending"
+    },
+    {
+      "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md:610",
+      "recommendation": "Use current frozen scoped context and manifest before broad metadata; bound mandatory summary once, preserve raw timeout, apply existing scoped-completion acceptance without replay or fabricated summary",
+      "impact": "F007 context343.5s and prettify319.98CPU seconds; F011 inventory300s and final summary300.050s; intervals may overlap and are not additive labor",
+      "severity": "medium",
+      "classification": "Gate6 and unnecessary-test controls already exist; refine smallest-evidence selection and timeout reconciliation",
+      "cause": "Topology crossproduct observed; whole-workflow planner broader than four-case scope; internal CPU algorithm uninspected",
+      "subject": "Bound metadata work to current scope"
+    },
+    {
+      "owner": "BUILD_STANDARD.md",
+      "recommendation": "At intake name meter unit, consume point, reset condition, cumulative attempts, current remaining and separate real-write cap; reset only under exact recorded user authority",
+      "impact": "18historical attempts retained; current meters0/5 do not mean zero cumulative attempts or restored business-write allowance; six successful POST journeys total",
+      "severity": "medium",
+      "classification": "Existing authority/BO write-budget owner needs explicit meter fields, no evidence of unauthorized POST overrun",
+      "cause": "Initial interpretation reset after whole object completion; user later clarified reset after successful test",
+      "subject": "Make budget units and reset semantics explicit"
+    },
+    {
+      "owner": "docs/lessons/AI_STUDIO_TESTING_GUIDE.md",
+      "recommendation": "Define scenario attempt, turn, deterministic assertion, semantic judgment and business write once in testing guide; delivery reports counts separately without inferring calls from assertions",
+      "impact": "Current4configured conversations,16turns,3398assertions,18local evaluations;837Address checks include800node-path+37otherchecks",
+      "severity": "medium",
+      "classification": "General measurement presentation clarification, testing-guide is terminology owner",
+      "cause": "Detailed report counts require interpretation to avoid labeling checks as calls",
+      "subject": "Separate scenarios from trace assertion counts"
+    }
+  ],
+  "nonRecommendations": [
+    "Do not duplicate exact-catalog/path-inventory rules: F003/F009 and this worker recurrence are existing-rule nonconformance.",
+    "Do not infer lost Contact state is a product defect or assert session-expiry cause.",
+    "Do not turn accepted verification exception into native UI pass or reexecute accepted business writes.",
+    "Do not revise immutable prior completed-run status artifacts."
+  ],
+  "timing": {
+    "prerequisiteStart": "unallocated",
+    "firstActualObservedUtc": "2026-10-15T17:35:32.5933259Z",
+    "tokens": "unavailable",
+    "exactExclusiveCategories": "Unavailable for prerequisite/governance mixed intervals; do not count dispatch-to-return as continuous active",
+    "gateWait": "Own restricted Startup lock creation failed before confirmed child; root host Startup PASS; shared ledger F002",
+    "rootWillRefreshReceiptHashes": "after shared doc freeze"
+  },
+  "finalReview": {
+    "limitation": "Role-only Closeout does not establish root delivery/commit/global completion",
+    "result": "PASS",
+    "findings": "No blocking critique in integrated evidence-governance delta",
+    "observedReviewStartUtc": "2026-10-15T17:46:45.3173576Z",
+    "startLimitation": "First final-review read preceded this timestamp, earlier short interval unallocated",
+    "preserved": "Five attempts per object reset only after fully successful judged result; accepted/uncertain writes never replayed; Contact native correction unobserved, explicit acceptance separate; elapsed and CPU units distinct"
+  }
+}

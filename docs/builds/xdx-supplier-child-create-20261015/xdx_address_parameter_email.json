@@ -1,0 +1,9 @@
+{
+  "functionName": "CreateSupplierAddress",
+  "kind": "token",
+  "parameterName": "Email",
+  "patch": {
+    "dataType": "string",
+    "description": "Reviewed required email, maximum 320 characters; testing always uses an explicitly controlled destination override."
+  }
+}

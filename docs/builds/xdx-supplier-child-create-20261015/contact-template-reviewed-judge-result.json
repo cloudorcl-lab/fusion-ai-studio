@@ -1,0 +1,95 @@
+{
+  "evaluations": [
+    {
+      "result": {
+        "score": 5,
+        "passed": true,
+        "summary": "Pass: correct same-parent source inheritance and reviewed overrides, explicit uncreated status, source/new-identity separation and exact revision1 controls.",
+        "criterionResults": [
+          {
+            "criterion": "Describe the correct uncreated contact and Dell parent using every supplied required field; preserve template inheritance and overrides when applicable.",
+            "passed": true,
+            "notes": "Output presents Dell Inc./1255, template mode, inherited FirstNameNoah and reviewed new LastNameXDXFixtureTemplate20261015 with controlled draft Email; all agree with the supplied source/fixture payload."
+          },
+          {
+            "criterion": "Distinguish any source contact from the proposed contact; do not present a generated ID or claim creation before confirmation.",
+            "passed": true,
+            "notes": "Source300000047414707/GillNoah is explicitly labeled Source contact, distinct from the uncreated proposed fields; opening text explicitly states nothing has been created and no generated new contact ID is asserted."
+          },
+          {
+            "criterion": "Reproduce supplied current request/revision and exact Review/Cancel commands without inventing control tokens.",
+            "passed": true,
+            "notes": "Displayed Review and Cancel commands consistently use actual generated request identity ending-1 and current revision1."
+          }
+        ],
+        "unsupportedClaims": []
+      },
+      "evaluationId": "step:prepare-template-contact"
+    },
+    {
+      "result": {
+        "score": 5,
+        "passed": true,
+        "summary": "Pass: field-only Email edit preserves prior parent/names/source and request identity while advancing to revision2.",
+        "criterionResults": [
+          {
+            "criterion": "Use the earlier turn to preserve Dell parent and both names while changing only Email; retain the same request identity and advance to revision2.",
+            "passed": true,
+            "notes": "The Email-only input relies on prior state: output preserves Dell1255, Noah, XDXFixtureTemplate20261015 and the exact request identity, changes only Email to the requested controlled template destination and advances revision1to2. Source identity remains separately labeled."
+          },
+          {
+            "criterion": "Show the edited contact as uncreated with supplied current Review/Cancel commands and no obsolete approval command.",
+            "passed": true,
+            "notes": "Opening text still withholds creation, and displayed Review/Cancel controls use only current revision2; no stale Confirm approval is advertised."
+          }
+        ],
+        "unsupportedClaims": []
+      },
+      "evaluationId": "step:edit-template-contact"
+    },
+    {
+      "result": {
+        "score": 5,
+        "passed": true,
+        "summary": "Pass: exact current template payload remains uncreated and the displayed Confirm command binds request/revision2.",
+        "criterionResults": [
+          {
+            "criterion": "Present all three current required contact fields and Dell parent as reviewed but uncreated.",
+            "passed": true,
+            "notes": "Review retains the exact final three-field payload and Dell1255, labels the source separately and explicitly states nothing has been created."
+          },
+          {
+            "criterion": "Preserve the exact supplied Confirm command for the current requestID and revision2.",
+            "passed": true,
+            "notes": "Exact Confirm command retains the request identity established by prepare/edit and current revision2; subsequent actual Confirm input uses that command."
+          }
+        ],
+        "unsupportedClaims": []
+      },
+      "evaluationId": "step:review-template-contact"
+    },
+    {
+      "result": {
+        "score": 4,
+        "passed": true,
+        "summary": "Pass with minor presentation limitation: Proposed contact heading lingers and extra grounded supplier detail is unnecessary, but explicit accepted/verified creation and distinct source/contact/profile identities are factual and complete.",
+        "criterionResults": [
+          {
+            "criterion": "Report the independently verified creation accurately, preserving returned contact identity and required values.",
+            "passed": true,
+            "notes": "Actual report and nested request outputs match: leading statement says created and independently verified, attempt is accepted/verified, returned contact900000000000102 and all final required values match the POST/independentGET fixtures under Dell1255. Lingering Proposed contact heading is mildly ambiguous; extra grounded supplier details add noise without contradicting the explicit completion."
+          },
+          {
+            "criterion": "Keep source, returned contact and returned profile identities distinct; describe account evidence only as supplied and do not claim account provisioning or universal notification silence.",
+            "passed": true,
+            "notes": "Source300000047414707 is distinct from returned contact900000000000102 and profile900000000000202. Displayed profile is supported by the GET fixture; no account-provisioning or notification-silence claim appears. Explicit null account fields need not be displayed under this requested contract."
+          }
+        ],
+        "unsupportedClaims": []
+      },
+      "evaluationId": "step:confirm-template-contact"
+    }
+  ],
+  "schemaVersion": 1,
+  "kind": "workflow-conversation-judge-result"
+}

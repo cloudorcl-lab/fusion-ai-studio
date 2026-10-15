@@ -1,0 +1,174 @@
+{
+  "pathCount": 20,
+  "observedUtc": "2026-10-15T16:28:00.2595378Z",
+  "status": "pass",
+  "receiptSha256": "40a318b4f42d33ee52fe31fdb4b87554c433fd7881bba4b9578468b1e9970ab6",
+  "receipt": "docs/builds/xdx-supplier-child-create-20261015/xdx_session_xdx-supplier-child-create-20261015-contact-contract.json",
+  "scope": "F020 literal evidence-array repair only, not application runtime or worker Closeout",
+  "obligationGroups": 8,
+  "agentId": "/root/contact_contract",
+  "pathChecks": [
+    {
+      "group": "learning",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/learning-review.md",
+      "existingFile": true
+    },
+    {
+      "group": "learning",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "existingFile": true
+    },
+    {
+      "group": "intake",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/intake-and-learning-register.md",
+      "existingFile": true
+    },
+    {
+      "group": "intake",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_configured_staging_receipt.json",
+      "existingFile": true
+    },
+    {
+      "group": "authority",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/approvals.json",
+      "existingFile": true
+    },
+    {
+      "group": "authority",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/successful-test-reset-policy.json",
+      "existingFile": true
+    },
+    {
+      "group": "objects",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "existingFile": true
+    },
+    {
+      "group": "objects",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-bo-post-attempt.json",
+      "existingFile": true
+    },
+    {
+      "group": "objects",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-bo-readback.json",
+      "existingFile": true
+    },
+    {
+      "group": "verification",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/current-child-fixture-acceptance.json",
+      "existingFile": true
+    },
+    {
+      "group": "verification",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-reviewed-judge-result.json",
+      "existingFile": true
+    },
+    {
+      "group": "verification",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-reviewed-judge-result.json",
+      "existingFile": true
+    },
+    {
+      "group": "timing",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/build-ledger.json",
+      "existingFile": true
+    },
+    {
+      "group": "timing",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/time-tracker.md",
+      "existingFile": true
+    },
+    {
+      "group": "timing",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-commands.jsonl",
+      "existingFile": true
+    },
+    {
+      "group": "cleanup",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/learning-review.md",
+      "existingFile": true
+    },
+    {
+      "group": "cleanup",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_context_timeout_observation.json",
+      "existingFile": true
+    },
+    {
+      "group": "delivery",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/current-child-fixture-acceptance.json",
+      "existingFile": true
+    },
+    {
+      "group": "delivery",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/builds/xdx-supplier-child-create-20261015/contact-display-session-loss.json",
+      "existingFile": true
+    },
+    {
+      "group": "delivery",
+      "contained": true,
+      "repositoryRelative": true,
+      "stringType": true,
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "existingFile": true
+    }
+  ],
+  "scopeLimit": "Root owns global blocked Contact-specific native acceptance and pending user disposition. No Closeout retry or business call in this qualification.",
+  "schemaVersion": 1
+}

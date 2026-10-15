@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "SupplierContactId": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "ContactName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "FirstName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "LastName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Email": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Status": {
+      "type": "string"
+    },
+    "InactiveDate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "PersonProfileId": {
+      "type": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "UserName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "UserAccountStatus": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "DataAccessLevel": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "SupplierContactId"
+  ],
+  "additionalProperties": true
+}

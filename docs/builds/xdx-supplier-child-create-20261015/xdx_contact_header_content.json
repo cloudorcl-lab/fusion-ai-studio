@@ -1,0 +1,7 @@
+{
+  "header": {
+    "name": "Content-Type",
+    "value": "application/json"
+  },
+  "functionName": "CreateSupplierContact"
+}

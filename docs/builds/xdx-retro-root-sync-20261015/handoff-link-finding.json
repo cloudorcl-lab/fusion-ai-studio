@@ -1,0 +1,8 @@
+{
+  "runId": "3adc8692-0e66-4c5c-ad79-663f054a7819",
+  "observedUtc": "2026-10-15T18:12:20.109Z",
+  "symptom": "Final master omitted direct active time-tracker link while linking derived timing",
+  "cause": "Master rewrite omitted required owner link",
+  "correction": "Restore direct owner link and assert serialized current master contains tracker basename",
+  "verification": "pass"
+}

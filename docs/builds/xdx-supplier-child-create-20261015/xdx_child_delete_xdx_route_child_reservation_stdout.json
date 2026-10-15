@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "command": "do-delete-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "XDX_ROUTE_CHILD_RESERVATION",
+    "removedEdges": 3,
+    "removedIncomingEdges": [
+      {
+        "from": "XDX_JOIN_CHILD_NAME",
+        "label": "success"
+      }
+    ],
+    "removedOutgoingEdges": [
+      {
+        "to": "XDX_RESERVE_CHILD_CREATE",
+        "label": "child_reserve"
+      },
+      {
+        "to": "XDX_JOIN_CHILD_RESERVATION",
+        "label": "display"
+      }
+    ]
+  }
+}

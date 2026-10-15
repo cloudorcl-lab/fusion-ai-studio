@@ -1,0 +1,2331 @@
+{
+  "ok": true,
+  "command": "get-workflow-conversation-test-context",
+  "result": {
+    "workflowFile": "src/workflows/xdx_supplier_conversation.wf",
+    "workflow": {
+      "workflowCode": "XDX_SUPPLIER_CONVERSATION",
+      "status": "DRAFT",
+      "version": 87982277,
+      "name": "XDX Supplier Conversation",
+      "description": "Supplier search and reviewed template requests for the Supplier Workspace",
+      "family": "PRC",
+      "product": "SUPPLIER"
+    },
+    "definitionHash": "2955988aaf09cb43",
+    "conversationVariables": [
+      {
+        "name": "supplierState",
+        "type": "object",
+        "readers": [
+          "XDX_INIT_SUPPLIER_STATE",
+          "XDX_EVALUATE_CONTROL",
+          "XDX_ROUTE_SITE_PREPARATION",
+          "XDX_FIND_SITE_TEMPLATE",
+          "XDX_ACCEPT_SITE_TEMPLATE_SEARCH",
+          "XDX_ROUTE_SITE_SEARCH",
+          "XDX_READ_SITE_TEMPLATE",
+          "XDX_ACCEPT_SITE_TEMPLATE",
+          "XDX_ROUTE_SITE_SOURCE",
+          "XDX_READ_SITE_SOURCE_ADDRESS",
+          "XDX_ACCEPT_SITE_SOURCE_ADDRESS",
+          "XDX_ROUTE_SITE_ADDRESS",
+          "XDX_LOAD_SITE_ASSIGNMENTS",
+          "XDX_SITE_ASSIGNMENT_PAGE",
+          "XDX_ACCUMULATE_SITE_ASSIGNMENTS",
+          "XDX_ROUTE_SITE_ASSIGNMENTS",
+          "XDX_PREPARE_SITE_NAME_CHECK",
+          "XDX_ROUTE_SITE_NAME_REQUEST",
+          "XDX_CHECK_NEW_SITE_NAME",
+          "XDX_ACCEPT_SITE_NAME_CHECK",
+          "XDX_ROUTE_SITE_NAME_RESULT",
+          "XDX_BUILD_SITE_DRAFT",
+          "XDX_ROUTE_SITE_DRAFT_RESULT",
+          "XDX_CREATE_SITE_ONCE",
+          "XDX_CAPTURE_SITE_CREATION",
+          "XDX_ROUTE_SITE_CREATION",
+          "XDX_VERIFY_CREATED_SITE",
+          "XDX_ACCEPT_CREATED_SITE",
+          "XDX_ROUTE_CONTINUATION_REQUEST",
+          "XDX_READ_CONTINUATION_SITE",
+          "XDX_ACCEPT_CONTINUATION_SITE",
+          "XDX_ROUTE_CONTINUATION_SITE",
+          "XDX_LOAD_EXISTING_ASSIGNMENTS",
+          "XDX_EXISTING_ASSIGNMENT_PAGE",
+          "XDX_ACCUMULATE_EXISTING_ASSIGNMENTS",
+          "XDX_ROUTE_EXISTING_ASSIGNMENTS",
+          "XDX_BUILD_SITE_CONTINUATION",
+          "XDX_ROUTE_SITE_VERIFICATION",
+          "XDX_CREATE_SITE_ASSIGNMENTS",
+          "XDX_RESERVE_ASSIGNMENT",
+          "XDX_ROUTE_ASSIGNMENT_RESERVATION",
+          "XDX_CREATE_ASSIGNMENT_ONCE",
+          "XDX_CAPTURE_ASSIGNMENT",
+          "XDX_ROUTE_ASSIGNMENT_CAPTURE",
+          "XDX_VERIFY_CREATED_ASSIGNMENT",
+          "XDX_ACCEPT_CREATED_ASSIGNMENT",
+          "XDX_PRESENT_SITE_COMPLETION",
+          "XDX_SUPPLIER_QUERY_RESPONSE",
+          "XDX_INTERPRET_SUPPLIER_REQUEST",
+          "XDX_PREPARE_SUPPLIER_REQUEST",
+          "XDX_ROUTE_SEARCH_RESULT",
+          "XDX_PREPARE_CHILD_READ",
+          "XDX_ROUTE_DETAIL_RESULT",
+          "XDX_CHECK_SUPPLIER_NAME",
+          "XDX_ACCEPT_NAME_CHECK",
+          "XDX_LIST_SUPPLIER_SITES",
+          "XDX_ACCEPT_LIST_SITES",
+          "XDX_GET_SUPPLIER_SITES",
+          "XDX_ACCEPT_GET_SITES",
+          "XDX_LIST_SUPPLIER_CONTACTS",
+          "XDX_ACCEPT_LIST_CONTACTS",
+          "XDX_GET_SUPPLIER_CONTACTS",
+          "XDX_ACCEPT_GET_CONTACTS",
+          "XDX_LIST_SUPPLIER_ADDRESSES",
+          "XDX_ACCEPT_LIST_ADDRESSES",
+          "XDX_GET_SUPPLIER_ADDRESSES",
+          "XDX_ACCEPT_GET_ADDRESSES",
+          "XDX_PREPARE_SITE_SOURCE",
+          "XDX_PREPARE_CHILD_CREATE",
+          "XDX_ROUTE_CHILD_SOURCE",
+          "XDX_BUILD_CHILD_DRAFT",
+          "XDX_VALIDATE_CHILD_DRAFT",
+          "XDX_ROUTE_CHILD_NAME_CHECK",
+          "XDX_CHECK_NEW_ADDRESS_NAME",
+          "XDX_ACCEPT_ADDRESS_NAME_CHECK",
+          "XDX_RESERVE_CHILD_CREATE",
+          "XDX_ROUTE_CHILD_DISPATCH",
+          "XDX_CREATE_ADDRESS_ONCE",
+          "XDX_CAPTURE_CHILD_CREATION",
+          "XDX_ROUTE_CHILD_READBACK",
+          "XDX_GET_CREATED_ADDRESS",
+          "XDX_VERIFY_CHILD_RESULT",
+          "XDX_CHILD_QUERY_RESPONSE",
+          "XDX_GET_CREATED_CONTACT",
+          "XDX_CREATE_CONTACT_ONCE",
+          "XDX_FIND_ADDRESS_TEMPLATE",
+          "XDX_ACCEPT_CHILD_SOURCE",
+          "XDX_READ_ADDRESS_TEMPLATE",
+          "XDX_FIND_CONTACT_TEMPLATE",
+          "XDX_READ_CONTACT_TEMPLATE",
+          "XDX_READ_SUPPLIER",
+          "XDX_ACCEPT_SUPPLIER_DETAIL",
+          "XDX_SEARCH_SUPPLIERS",
+          "XDX_ACCEPT_SUPPLIER_SEARCH",
+          "XDX_READ_SUPPLIER_CLASSIFICATIONS",
+          "XDX_ACCEPT_SUPPLIER_CLASSIFICATIONS",
+          "XDX_CREATE_SUPPLIER_ONCE",
+          "XDX_ACCEPT_CREATE_RESULT",
+          "XDX_VERIFY_CREATED_SUPPLIER",
+          "XDX_ACCEPT_CREATE_VERIFICATION",
+          "XDX_RECHECK_SITE_REVIEW",
+          "XDX_PREPARE_SITE_CONTINUATION",
+          "XDX_HANDLE_CREATE_ERROR",
+          "XDX_RETURN_CREATE_ERROR",
+          "XDX_HANDLE_READ_ERROR",
+          "XDX_RETURN_READ_ERROR",
+          "XDX_HANDLE_VERIFY_ERROR",
+          "XDX_RETURN_VERIFY_ERROR",
+          "XDX_HANDLE_SITE_WRITE_ERROR",
+          "XDX_RETURN_SITE_WRITE_ERROR",
+          "XDX_HANDLE_ASSIGNMENT_ERROR",
+          "XDX_RETURN_ASSIGNMENT_ERROR",
+          "XDX_HANDLE_CHILD_WRITE_ERROR",
+          "XDX_RETURN_CHILD_WRITE_ERROR",
+          "XDX_HANDLE_CHILD_PREPARE_ERROR",
+          "XDX_RETURN_CHILD_PREPARE_ERROR"
+        ],
+        "writers": [
+          "XDX_INITIALIZE_CONVERSATION",
+          "XDX_PERSIST_CONTROL_STATE",
+          "XDX_PERSIST_SITE_TEMPLATE_SEARCH",
+          "XDX_PERSIST_SITE_TEMPLATE",
+          "XDX_PERSIST_SITE_SOURCE_ADDRESS",
+          "XDX_PERSIST_SITE_ASSIGNMENT_PAGE",
+          "XDX_PERSIST_SITE_NAME_REQUEST",
+          "XDX_PERSIST_SITE_NAME_CHECK",
+          "XDX_PERSIST_SITE_DRAFT",
+          "XDX_PERSIST_SITE_CREATION",
+          "XDX_PERSIST_SITE_VERIFICATION",
+          "XDX_PERSIST_CONTINUATION_SITE",
+          "XDX_PERSIST_EXISTING_ASSIGNMENTS",
+          "XDX_PERSIST_SITE_CONTINUATION",
+          "XDX_PERSIST_ASSIGNMENT_RESERVATION",
+          "XDX_PERSIST_ASSIGNMENT_CAPTURE",
+          "XDX_PERSIST_ASSIGNMENT_VERIFICATION",
+          "XDX_PERSIST_SITE_COMPLETION",
+          "XDX_PERSIST_REQUEST",
+          "XDX_PERSIST_CHILD_REQUEST",
+          "XDX_PERSIST_NAME_CHECK",
+          "XDX_PERSIST_LIST_SITES",
+          "XDX_PERSIST_GET_SITES",
+          "XDX_PERSIST_LIST_CONTACTS",
+          "XDX_PERSIST_GET_CONTACTS",
+          "XDX_PERSIST_LIST_ADDRESSES",
+          "XDX_PERSIST_GET_ADDRESSES",
+          "XDX_PERSIST_SITE_SOURCE_REQUEST",
+          "XDX_PERSIST_CHILD_PREPARATION",
+          "XDX_PERSIST_CHILD_DRAFT",
+          "XDX_PERSIST_CHILD_VALIDATION",
+          "XDX_PERSIST_ADDRESS_NAME_CHECK",
+          "XDX_PERSIST_CHILD_RESERVATION",
+          "XDX_PERSIST_CHILD_CREATION",
+          "XDX_PERSIST_CHILD_VERIFICATION",
+          "XDX_PERSIST_CHILD_SOURCE",
+          "XDX_PERSIST_DETAIL",
+          "XDX_PERSIST_SEARCH",
+          "XDX_PERSIST_SUPPLIER_CLASSIFICATIONS",
+          "XDX_PERSIST_CREATE_RESULT",
+          "XDX_PERSIST_VERIFICATION",
+          "XDX_PERSIST_SITE_RECHECK",
+          "XDX_PERSIST_CONTINUATION_REQUEST",
+          "XDX_PERSIST_CREATE_ERROR",
+          "XDX_PERSIST_READ_ERROR",
+          "XDX_PERSIST_VERIFY_ERROR",
+          "XDX_PERSIST_SITE_WRITE_ERROR",
+          "XDX_PERSIST_ASSIGNMENT_ERROR",
+          "XDX_PERSIST_CHILD_WRITE_ERROR",
+          "XDX_PERSIST_CHILD_PREPARE_ERROR"
+        ]
+      }
+    ],
+    "semanticNodes": [
+      {
+        "nodeCode": "XDX_WELCOME",
+        "nodeType": "LLM",
+        "name": "XDX Welcome",
+        "chatHistoryEnabled": false,
+        "promptReference": "Run get-workflow-test-judge-context with --detail full --node-code XDX_WELCOME for the complete node contract."
+      },
+      {
+        "nodeCode": "XDX_SUPPLIER_QUERY_RESPONSE",
+        "nodeType": "LLM",
+        "name": "XDX Supplier Query Response",
+        "chatHistoryEnabled": false,
+        "promptReference": "Run get-workflow-test-judge-context with --detail full --node-code XDX_SUPPLIER_QUERY_RESPONSE for the complete node contract."
+      },
+      {
+        "nodeCode": "XDX_INTERPRET_SUPPLIER_REQUEST",
+        "nodeType": "LLM",
+        "name": "XDX Interpret Supplier Request",
+        "chatHistoryEnabled": false,
+        "promptReference": "Run get-workflow-test-judge-context with --detail full --node-code XDX_INTERPRET_SUPPLIER_REQUEST for the complete node contract."
+      },
+      {
+        "nodeCode": "XDX_CHILD_QUERY_RESPONSE",
+        "nodeType": "LLM",
+        "name": "XDX Supplier Query Response",
+        "chatHistoryEnabled": false,
+        "promptReference": "Run get-workflow-test-judge-context with --detail full --node-code XDX_CHILD_QUERY_RESPONSE for the complete node contract."
+      }
+    ],
+    "stateRoutingNodes": [
+      {
+        "nodeCode": "XDX_INIT_SUPPLIER_STATE",
+        "nodeType": "CODE",
+        "expressions": [
+          "let state = $context.$variables && $context.$variables.supplierState; if (state === undefined || state === null || state === '') return {selection:null,draft:null,attempts:[],nextRequestSequence:1}; if (typeof state === 'string') state = JSON.parse(state); if (!state || typeof state !== 'object' || Array.isArray(state) || !Array.isArray(state.attempts) || !Object.prototype.hasOwnProperty.call(state,'draft') || !Object.prototype.hasOwnProperty.call(state,'selection')) throw new Error('Conversation state is invalid; existing transaction history must not be reset.'); return JSON.parse(JSON.stringify(state));"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_EVALUATE_CONTROL",
+        "nodeType": "CODE",
+        "expressions": [
+          "const command = $context.$nodes.XDX_PARSE_CONTROL.$output.result; const original = $context.$variables && $context.$variables.supplierState; if (!original || typeof original !== 'object' || !Array.isArray(original.attempts)) return {operation:'display',state:original || null,reason:'Conversation state is not ready; no request can be submitted.'}; const state = JSON.parse(JSON.stringify(original)); const result = {operation:'display',state:state,reason:''}; if(command&&command.kind==='continuation'){ const matches=state.attempts.filter(function(a){return a.kind==='site'&&a.SupplierSiteId&&a.siteVerification==='verified'&&a.status!=='complete'&&(!command.requestId?!a.continuationOf:a.requestId===command.requestId);}); if(matches.length!==1){result.reason='Specify the request ID for the incomplete site assignments. No new write was submitted.';return result;} const candidate=matches[0],originId=candidate.continuationOf||candidate.requestId,origin=state.attempts.filter(function(a){return a.requestId===originId&&a.kind==='site'&&!a.continuationOf;})[0]; if(!origin){result.reason='The original site request could not be identified. No new write was submitted.';return result;} if(state.draft&&state.draft.requestId!==originId&&state.draft.kind!=='site_continuation'&&!state.attempts.some(function(a){return a.requestId===state.draft.requestId&&a.continuationOf===originId;})){result.reason='Finish or cancel the other draft before preparing this continuation.';return result;} if(state.draft&&state.draft.kind==='site_continuation'&&state.draft.originRequestId!==originId){result.reason='Finish or cancel the other continuation draft first.';return result;} state.continuationRequest={mode:'prepare',originRequestId:originId};result.operation='site_reconcile';result.reason='Checking the existing site and all existing assignment pairs before preparing a separate continuation.';return result; } if (!command || command.kind !== 'control') { result.operation = command && command.kind === 'language' ? 'language' : 'display'; return result; } const draft = state.draft; const attempt = state.attempts.filter(function(item){return item.requestId === command.requestId;}); if (attempt.length) {if(['address','contact'].indexOf(attempt[0].kind)>=0)result.kind=attempt[0].kind;result.reason='This request already has a recorded attempt; it will not be submitted again.';result.attempts=attempt;return result;} if (!draft || draft.requestId !== command.requestId || draft.revision !== command.revision) {result.reason='That request or revision is not current. Review the current draft.';return result;} result.requestId=draft.requestId;result.revision=draft.revision; if (draft.status !== 'editing' && draft.status !== 'reviewed') {result.reason='This draft cannot be changed or submitted in its current state.';return result;} if (command.action === 'cancel'&&draft.kind==='site_continuation'){state.draft=null;delete state.continuationRequest;result.reason='Continuation cancelled. The existing site and assignments remain unchanged; no additional assignment was submitted.';return result;} if (command.action === 'cancel') {state.draft=null;delete state.childConfirmation;result.reason='Draft cancelled. No '+(draft.kind||'supplier')+' was created.';return result;} if(draft.kind==='address'||draft.kind==='contact'){ const address=draft.kind==='address',fields=address?['AddressName','CountryCode','AddressLine1','City','State','PostalCode','Email','AddressPurposeOrderingFlag']:['FirstName','LastName','Email'],p=draft.payload; if(!p||Object.keys(p).length!==fields.length||Object.keys(p).some(function(f){return fields.indexOf(f)<0;})||draft.fieldsVerifiedRevision!==draft.revision||address&&draft.duplicateCheckedRevision!==draft.revision||!draft.supplier||String(draft.supplier.SupplierId)!==draft.suppliers_Id||draft.mode==='template'&&(!draft.source||draft.sourceParentId!==draft.suppliers_Id||!draft.sourceId)){result.reason='Complete and validate the required child fields and parent before review.';return result;} result.kind=draft.kind;result.mode=draft.mode;result.supplier=draft.supplier;result.payload=JSON.parse(JSON.stringify(p));result.source=draft.source; if(command.action==='review'){draft.status='reviewed';draft.reviewedRevision=draft.revision;result.confirmCommand='Confirm request '+draft.requestId+' revision '+draft.revision;result.reason='Review this exact proposed '+draft.kind+' under the displayed supplier. Nothing has been created.';return result;} if(command.action!=='confirm'||draft.status!=='reviewed'||draft.reviewedRevision!==draft.revision){result.reason='Review the current child revision before confirming.';return result;} state.childConfirmation={kind:draft.kind,requestId:draft.requestId,revision:draft.revision,suppliers_Id:draft.suppliers_Id,payload:JSON.parse(JSON.stringify(p))};result.operation='child_preflight';result.reason='Rechecking the exact reviewed child request before reservation.';return result; } if(draft.kind==='site_continuation'){ const pairs=draft.assignments,seen={}; if(!draft.originRequestId||!draft.SupplierSiteId||!draft.suppliers_Id||draft.reconciled!==true||!Array.isArray(pairs)||!pairs.length||pairs.some(function(p){if(!p||Object.keys(p).length!==2||!Number.isSafeInteger(p.ClientBUId)||p.ClientBUId<=0||!Number.isSafeInteger(p.BillToBUId)||p.BillToBUId<=0)return true;const k=p.ClientBUId+':'+p.BillToBUId;if(seen[k])return true;seen[k]=true;return false;})){result.reason='Reconcile the site assignments again before reviewing a continuation.';return result;} if(command.action==='review'){draft.status='reviewed';draft.reviewedRevision=draft.revision;result.assignments=JSON.parse(JSON.stringify(pairs));result.site=draft.site;result.SupplierSiteId=draft.SupplierSiteId;result.writeCount=pairs.length;result.writeOrder='Create and independently verify only the missing assignment pairs, serially. The existing site is retained.';result.confirmCommand='Confirm request '+draft.requestId+' revision '+draft.revision;result.reason='Review this separate continuation for the missing assignments. No new write has been submitted.';return result;} if(command.action!=='confirm'||draft.status!=='reviewed'||draft.reviewedRevision!==draft.revision){result.reason='Review the current continuation revision before confirming.';return result;} state.continuationRequest={mode:'confirm',originRequestId:draft.originRequestId,requestId:draft.requestId,revision:draft.revision,assignments:JSON.parse(JSON.stringify(pairs))};result.operation='site_reconcile';result.reason='Rechecking existing assignments before reserving this missing-only continuation.';return result; } if(draft.kind==='site'){ function siteKey(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;} const p=draft.payload,fields=['SupplierSite','ProcurementBUId','SupplierAddressName','SitePurposePurchasingFlag']; const pairs=draft.assignments,seen={}; if(!p||Object.keys(p).length!==4||Object.keys(p).some(function(k){return fields.indexOf(k)<0;})||typeof p.SupplierSite!=='string'||!p.SupplierSite.trim()||p.SupplierSite.length>240||/[\\x00-\\x1f]/.test(p.SupplierSite)||!siteKey(p.ProcurementBUId)||typeof p.SupplierAddressName!=='string'||!p.SupplierAddressName.trim()||p.SupplierAddressName.length>240||p.SitePurposePurchasingFlag!==true||!draft.supplier||!siteKey(draft.supplier.SupplierId)||!draft.source||!siteKey(draft.source.SupplierSiteId)||draft.source.Status!=='ACTIVE'||draft.source.ProcurementBUId!==p.ProcurementBUId||draft.source.SitePurposePurchasingFlag!==true||!draft.address||draft.address.Status!=='ACTIVE'||draft.address.SupplierAddressId!==draft.source.SupplierAddressId||draft.address.AddressName!==p.SupplierAddressName||draft.source.SupplierAddressName!==p.SupplierAddressName||draft.assignmentsComplete!==true||draft.eligibilityVerified!==true||draft.duplicateCheckedRevision!==draft.revision||!Array.isArray(pairs)||pairs.some(function(pair){if(!pair||Object.keys(pair).length!==2||!siteKey(pair.ClientBUId)||!siteKey(pair.BillToBUId))return true;const key=pair.ClientBUId+':'+pair.BillToBUId;if(seen[key])return true;seen[key]=true;return false;})){ result.reason='The site draft needs verified source/address/assignment pairs and a current name check before review.';return result; } if(command.action==='review'){ draft.status='reviewed';draft.reviewedRevision=draft.revision;result.payload=JSON.parse(JSON.stringify(p));result.source=JSON.parse(JSON.stringify(draft.source));result.supplier=draft.supplier;result.address=draft.address;result.assignments=JSON.parse(JSON.stringify(pairs));result.writeCount=1+pairs.length;result.writeOrder='Create site, independently verify it, then create and verify each assignment serially.';result.confirmCommand='Confirm request '+draft.requestId+' revision '+draft.revision;result.reason='Review the proposed site and exact assignments. Nothing has been created.';return result; } if(command.action!=='confirm'||draft.status!=='reviewed'||draft.reviewedRevision!==draft.revision){result.reason='Review the current site revision before confirming it.';return result;} state.siteConfirmation={requestId:draft.requestId,revision:draft.revision,payload:JSON.parse(JSON.stringify(p)),assignments:JSON.parse(JSON.stringify(pairs)),suppliers_Id:String(draft.supplier.SupplierId),sourceSiteId:String(draft.source.SupplierSiteId),addressId:String(draft.address.SupplierAddressId)}; result.operation='site_preflight';result.reason='Rechecking the reviewed site source, address, assignments and name before reserving creation.';return result; } const fields=['Supplier','SupplierType','BusinessRelationship','TaxOrganizationType']; const payload=draft.payload; const keys=payload && typeof payload==='object' && !Array.isArray(payload) ? Object.keys(payload) : []; if (draft.classificationsVerified!==true || draft.kind!=='supplier' || !draft.source || ['ACTIVE','INACTIVE'].indexOf(draft.source.Status)<0 || !draft.source.SupplierId || keys.length!==fields.length || keys.some(function(key){return fields.indexOf(key)<0;}) || fields.some(function(key){return typeof payload[key]!=='string' || !payload[key].trim() || payload[key].length>(key==='Supplier'?360:80);}) || draft.duplicateCheckedRevision!==draft.revision) {result.reason='The draft needs a verified source, all approved fields, and a current duplicate-name check before review.';return result;} if (command.action==='review') {draft.status='reviewed';draft.reviewedRevision=draft.revision;result.payload=JSON.parse(JSON.stringify(payload));result.source=JSON.parse(JSON.stringify(draft.source));result.confirmCommand='Confirm request '+draft.requestId+' revision '+draft.revision;result.reason='Review the proposed supplier. Nothing has been created.';return result;} if (command.action!=='confirm' || draft.status!=='reviewed' || draft.reviewedRevision!==draft.revision) {result.reason='Review the current revision before confirming it.';return result;} const frozen={requestId:draft.requestId,revision:draft.revision,kind:'supplier',status:'reserved',sourceSupplierId:draft.source.SupplierId,payload:JSON.parse(JSON.stringify(payload))}; state.attempts.push(frozen);draft.status='reserved';result.operation='create_supplier';result.attempt=JSON.parse(JSON.stringify(frozen));result.reason='Request reserved; persist this state before dispatch.'; return result;"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_PREPARATION",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation === 'site_source_list' ? 'site_source_list' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SITE_TEMPLATE_SEARCH",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const p=state.sitePreparation||{};function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function literal(v){return \"'\"+v.replace(/'/g,\"''\")+\"'\";} const r=$context.$nodes.XDX_FIND_SITE_TEMPLATE.$output;if(!r||!Array.isArray(r.items)||r.count!==r.items.length||r.limit!==25||r.offset!==0||typeof r.hasMore!=='boolean'||r.items.some(function(x){return !x||!key(x.SupplierSiteId)||typeof x.SupplierSite!=='string';}))return done('display','The source-site search could not be verified.');state.childCandidates=state.childCandidates||{};state.childCandidates.sites={suppliers_Id:p.suppliers_Id,items:r.items};if(r.count!==1||r.hasMore){state.nextOperation='display';state.response={message:r.count?'Choose the source site by its returned site ID; include its procurement BU when names repeat.':'No matching source site was found.',supplier:p.supplier,resource:'sites',items:r.items,hasMore:r.hasMore};return {state:state,operation:'display'};}p.siteId=String(r.items[0].SupplierSiteId);return done('site_source_get');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_SEARCH",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation === 'site_source_get' ? 'site_source_get' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SITE_TEMPLATE",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const p=state.sitePreparation||{};function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function literal(v){return \"'\"+v.replace(/'/g,\"''\")+\"'\";} const r=$context.$nodes.XDX_READ_SITE_TEMPLATE.$output;if(!r||!key(r.SupplierSiteId)||String(r.SupplierSiteId)!==p.siteId||r.Status!=='ACTIVE'||r.SitePurposePurchasingFlag!==true||!key(r.ProcurementBUId)||!key(r.SupplierAddressId)||typeof r.SupplierAddressName!=='string'||!r.SupplierAddressName.trim())return done('display','Choose an active purchasing site with a valid procurement BU and address.');p.source=r;p.addressId=String(r.SupplierAddressId);return done('site_address_get');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_SOURCE",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation === 'site_address_get' ? 'site_address_get' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SITE_SOURCE_ADDRESS",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const p=state.sitePreparation||{};function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function literal(v){return \"'\"+v.replace(/'/g,\"''\")+\"'\";} const r=$context.$nodes.XDX_READ_SITE_SOURCE_ADDRESS.$output;if(!r||r.SupplierAddressId!==p.source.SupplierAddressId||r.AddressName!==p.source.SupplierAddressName||r.Status!=='ACTIVE')return done('display','The source site address is not active or does not match this supplier.');p.address=r;p.addressParentId=p.suppliers_Id;p.assignmentParentId=p.suppliers_Id;p.assignmentSiteId=p.siteId;p.assignments=[];p.assignmentOffset=0;p.assignmentPages=0;p.assignmentPaging=true;p.assignmentsComplete=false;p.assignmentSeen={};return done('site_assignments');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_ADDRESS",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation === 'site_assignments' ? 'site_assignments' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCUMULATE_SITE_ASSIGNMENTS",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const p=state.sitePreparation||{};function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function literal(v){return \"'\"+v.replace(/'/g,\"''\")+\"'\";} const r=$context.$nodes.XDX_LOAD_SITE_ASSIGNMENTS.XDX_SITE_ASSIGNMENT_PAGE.$output;function fail(){p.assignmentPaging=false;p.assignmentsComplete=false;return done('display','The complete source assignments could not be verified. No draft was created.');}if(!r||!Array.isArray(r.items)||r.count!==r.items.length||r.limit!==25||r.offset!==p.assignmentOffset||typeof r.hasMore!=='boolean'||r.hasMore&&r.count===0||r.items.some(function(row){return !row||!key(row.AssignmentId)||!key(row.ClientBUId)||!key(row.BillToBUId);}))return fail();for(let i=0;i<r.items.length;i++){const row=r.items[i],pair=row.ClientBUId+':'+row.BillToBUId;if(p.assignmentSeen[pair])return fail();p.assignmentSeen[pair]=true;p.assignments.push(row);}p.assignmentOffset+=r.count;p.assignmentPages++;if(r.hasMore&&p.assignmentPages>=100)return fail();p.assignmentPaging=r.hasMore;p.assignmentsComplete=!r.hasMore;return done(r.hasMore?'site_assignments':'site_name_check');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_ASSIGNMENTS",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation === 'site_name_check' ? 'site_name_check' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PREPARE_SITE_NAME_CHECK",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const p=state.sitePreparation||{};function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function literal(v){return \"'\"+v.replace(/'/g,\"''\")+\"'\";} if(!p.assignmentsComplete)return done('display','The complete source assignments are required before review.');p.nameQ='SupplierSite='+literal(p.newName);return done('site_name_read');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_NAME_REQUEST",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation === 'site_name_read' ? 'site_name_read' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SITE_NAME_CHECK",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const p=state.sitePreparation||{};function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function literal(v){return \"'\"+v.replace(/'/g,\"''\")+\"'\";} const r=$context.$nodes.XDX_CHECK_NEW_SITE_NAME.$output;if(!r||!Array.isArray(r.items)||r.count!==r.items.length||r.limit!==1||r.offset!==0||typeof r.hasMore!=='boolean')return done('display','The new site name could not be checked.');if(r.count||r.hasMore){p.nameConflict=true;return done('display','A site with that name already exists under this supplier. Choose a different name; nothing was created.');}p.nameChecked=p.newName;p.nameConflict=false;if(p.editingRequestId){const draft=state.draft;if(!draft||draft.kind!=='site'||draft.requestId!==p.editingRequestId||draft.revision!==p.editingRevision||draft.payload.SupplierSite!==p.newName)return done('display','The site draft changed while checking its name; review the current draft.');draft.duplicateCheckedRevision=draft.revision;state.nextOperation='display';state.response={message:'Site name updated. Review the new revision before confirming.',requestId:draft.requestId,revision:draft.revision,payload:draft.payload,assignments:draft.assignments,writeCount:1+draft.assignments.length,reviewCommand:'Review request '+draft.requestId+' revision '+draft.revision};return {state:state,operation:'display'};}return done('site_build');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_NAME_RESULT",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation === 'site_build' ? 'site_build' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_BUILD_SITE_DRAFT",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)); const p=state.sitePreparation||{}; function done(message){state.nextOperation='display';state.response={message:message};return {state:state,operation:'display'};} function id(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;} if(state.draft&&p.mode!=='confirm')return done('A draft already exists. Edit it or cancel its exact request and revision before starting another.'); const source=p.source,address=p.address,parent=p.supplier,rows=p.assignments; if(!parent||!id(parent.SupplierId)||String(parent.SupplierId)!==p.suppliers_Id||!source||!id(source.SupplierSiteId)||source.Status!=='ACTIVE'||source.SitePurposePurchasingFlag!==true||!id(source.ProcurementBUId)||!id(source.SupplierAddressId))return done('Choose an active purchasing site under the selected supplier. Nothing was created.'); if(!address||address.Status!=='ACTIVE'||address.SupplierAddressId!==source.SupplierAddressId||address.AddressName!==source.SupplierAddressName||p.addressParentId!==p.suppliers_Id)return done('The source site address could not be verified under this supplier. Nothing was created.'); if(p.assignmentsComplete!==true||!Array.isArray(rows)||p.assignmentParentId!==p.suppliers_Id||p.assignmentSiteId!==String(source.SupplierSiteId))return done('The complete source assignments must be resolved before preparing this site.'); const seen={};if(rows.some(function(row){if(!row||!id(row.AssignmentId)||!id(row.ClientBUId)||!id(row.BillToBUId))return true;const pair=String(row.ClientBUId)+':'+String(row.BillToBUId);if(seen[pair])return true;seen[pair]=true;return false;}))return done('The source assignment pairs are incomplete or ambiguous. Nothing was created.'); const name=typeof p.newName==='string'?p.newName:''; if(!name.trim()||name.length>240||/[\\x00-\\x1f]/.test(name))return done('Provide a new site name of up to 240 characters.'); if(p.nameChecked!==name||p.nameConflict!==false)return done('A complete name-conflict check is required for the proposed site.'); if(p.mode==='confirm'){ const c=p.confirmation,draft=state.draft; if(!c||!draft||draft.kind!=='site'||draft.status!=='reviewed'||draft.requestId!==c.requestId||draft.revision!==c.revision||draft.reviewedRevision!==c.revision||!Array.isArray(state.attempts)||state.attempts.some(function(a){return a.requestId===c.requestId;}))return done('This site request is no longer eligible for submission. Review the current draft; recorded attempts are never replayed.'); const pairs=rows.map(function(row){return {ClientBUId:row.ClientBUId,BillToBUId:row.BillToBUId};}); const payload={SupplierSite:name,ProcurementBUId:source.ProcurementBUId,SupplierAddressName:address.AddressName,SitePurposePurchasingFlag:true}; function pairKeys(values){return values.map(function(row){return row.ClientBUId+':'+row.BillToBUId;}).sort().join('|');} if(c.suppliers_Id!==p.suppliers_Id||c.sourceSiteId!==String(source.SupplierSiteId)||String(draft.supplier.SupplierId)!==c.suppliers_Id||String(draft.source.SupplierSiteId)!==c.sourceSiteId)return done('The source supplier or site no longer matches the reviewed request. Nothing was created.'); if(JSON.stringify(draft.payload)!==JSON.stringify(c.payload)||pairKeys(draft.assignments)!==pairKeys(c.assignments))return done('The draft changed after confirmation. Review it again.'); if(c.addressId!==String(address.SupplierAddressId)||JSON.stringify(payload)!==JSON.stringify(c.payload)||pairKeys(pairs)!==pairKeys(c.assignments)){ draft.revision++;draft.status='editing';draft.source=source;draft.address=address;draft.payload=payload;draft.assignments=pairs;draft.sourceAssignmentIds=rows.map(function(row){return row.AssignmentId;});draft.assignmentsComplete=true;draft.eligibilityVerified=true;draft.duplicateCheckedRevision=draft.revision;delete draft.reviewedRevision;delete state.siteConfirmation;delete state.sitePreparation; state.nextOperation='display';state.response={message:'The source changed after review. Review the updated site and assignment pairs before confirming. Nothing was created.',requestId:draft.requestId,revision:draft.revision,payload:payload,supplier:draft.supplier,source:source,address:address,assignments:pairs,writeCount:1+pairs.length,reviewCommand:'Review request '+draft.requestId+' revision '+draft.revision};return {state:state,operation:'display'}; } const attempt={kind:'site',requestId:draft.requestId,revision:draft.revision,status:'reserved',suppliers_Id:c.suppliers_Id,sourceSiteId:c.sourceSiteId,addressId:c.addressId,payload:JSON.parse(JSON.stringify(c.payload)),assignments:c.assignments.map(function(pair){return {payload:JSON.parse(JSON.stringify(pair)),status:'pending'};}),siteVerification:'pending'}; state.attempts.push(attempt);draft.status='reserved';state.siteDispatch={requestId:attempt.requestId,revision:attempt.revision,suppliers_Id:attempt.suppliers_Id,addressId:attempt.addressId,payload:JSON.parse(JSON.stringify(attempt.payload)),assignmentIndex:0,moreAssignments:false};delete state.siteConfirmation;delete state.sitePreparation;state.nextOperation='create_site';state.response={message:'The reviewed site request is reserved for one creation attempt.',requestId:attempt.requestId,revision:attempt.revision};return {state:state,operation:'create_site'}; } const conversation=$context.$workflow&&$context.$workflow.$conversationId,sequence=state.nextRequestSequence,requestId='REQ-'+conversation+'-'+sequence; if(typeof conversation!=='string'||! /^[A-Za-z0-9_-]+$/.test(conversation)||requestId.length>96||!Number.isSafeInteger(sequence)||sequence<1||sequence>=9007199254740991)return done('A unique site draft could not be initialized. Nothing was created.'); const pairs=rows.map(function(row){return {ClientBUId:row.ClientBUId,BillToBUId:row.BillToBUId};}); const draft={kind:'site',requestId:requestId,revision:1,status:'editing',supplier:parent,source:source,address:address,payload:{SupplierSite:name,ProcurementBUId:source.ProcurementBUId,SupplierAddressName:address.AddressName,SitePurposePurchasingFlag:true},assignments:pairs,sourceAssignmentIds:rows.map(function(row){return row.AssignmentId;}),assignmentsComplete:true,duplicateCheckedRevision:1,eligibilityVerified:true}; state.draft=draft;state.nextRequestSequence=sequence+1;state.nextOperation='display';state.response={message:'Site draft prepared. Nothing has been created.',requestId:requestId,revision:1,payload:draft.payload,supplier:parent,source:source,address:address,assignments:pairs,writeCount:1+pairs.length,writeOrder:'Create site, independently verify it, then create and verify each assignment serially.',omitted:'Generated IDs and optional settings, including DFFs and KFFs, are not copied.',reviewCommand:'Review request '+requestId+' revision 1'}; return {state:state,operation:'display'};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_DRAFT_RESULT",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation === 'create_site' ? 'create_site' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_CAPTURE_SITE_CREATION",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function copy(v){return JSON.parse(JSON.stringify(v));}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;} const dispatch=state.siteDispatch||{},attempt=(state.attempts||[]).filter(function(a){return a.kind==='site'&&a.requestId===dispatch.requestId&&a.revision===dispatch.revision;})[0];function decimal(v){if(typeof v==='number')return key(v)?String(v):null;return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;} const r=$context.$nodes.XDX_CREATE_SITE_ONCE.$output;if(!attempt||attempt.status!=='reserved')return done('display','The site outcome could not be matched to its reserved request. No further write is permitted.');const siteId=r&&decimal(r.SupplierSiteId);if(!siteId){state.nextOperation='display';attempt.status='uncertain';dispatch.moreAssignments=false;if(state.draft&&state.draft.requestId===attempt.requestId)state.draft.status='uncertain';state.response={message:'The site creation response did not establish its generated ID. Its outcome is uncertain; no assignment was started and the site will not be submitted again.',attempt:attempt,requestId:attempt.requestId,revision:attempt.revision};return {state:state,operation:'display'};}attempt.status='accepted';attempt.SupplierSiteId=siteId;attempt.siteVerification='pending';dispatch.SupplierSiteId=siteId;if(state.draft&&state.draft.requestId===attempt.requestId)state.draft.status='accepted';return done('site_verify');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_CREATION",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation === 'site_verify' ? 'site_verify' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_CREATED_SITE",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function copy(v){return JSON.parse(JSON.stringify(v));}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;} const dispatch=state.siteDispatch||{},attempt=(state.attempts||[]).filter(function(a){return a.kind==='site'&&a.requestId===dispatch.requestId&&a.revision===dispatch.revision;})[0];function decimal(v){if(typeof v==='number')return key(v)?String(v):null;return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;} const r=$context.$nodes.XDX_VERIFY_CREATED_SITE.$output;if(!attempt||attempt.status!=='accepted'||!attempt.SupplierSiteId)return done('display','The recorded site acceptance could not be verified. No further write is permitted.');const p=attempt.payload,verified=r&&decimal(r.SupplierSiteId)===attempt.SupplierSiteId&&r.SupplierSite===p.SupplierSite&&decimal(r.ProcurementBUId)===String(p.ProcurementBUId)&&r.SupplierAddressName===p.SupplierAddressName&&r.SitePurposePurchasingFlag===p.SitePurposePurchasingFlag&&decimal(r.SupplierAddressId)===attempt.addressId;attempt.siteVerification=verified?'verified':'mismatch';dispatch.moreAssignments=verified&&attempt.assignments.length>0;if(!verified){state.nextOperation='display';state.response={message:'The site was accepted, but independent verification did not match the reviewed fields. No assignments were started. The site will not be created again.',attempt:attempt,SupplierSiteId:attempt.SupplierSiteId,requestId:attempt.requestId,revision:attempt.revision};return {state:state,operation:'display'};}attempt.site={SupplierSiteId:attempt.SupplierSiteId,SupplierSite:r.SupplierSite,ProcurementBUId:p.ProcurementBUId,SupplierAddressName:r.SupplierAddressName,SupplierAddressId:attempt.addressId,SitePurposePurchasingFlag:r.SitePurposePurchasingFlag};attempt.status=dispatch.moreAssignments?'assignments-pending':'complete';if(state.draft&&state.draft.requestId===attempt.requestId)state.draft.status=attempt.status;state.nextOperation=dispatch.moreAssignments?'site_assignments_create':'display';state.response={message:dispatch.moreAssignments?'Site created and independently verified. Assignment creation is pending.':'Site created and independently verified. No source assignments were required.',attempt:attempt,site:attempt.site,SupplierSiteId:attempt.SupplierSiteId,requestId:attempt.requestId,revision:attempt.revision};return {state:state,operation:state.nextOperation};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CONTINUATION_REQUEST",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation === 'continuation_site_get' ? 'continuation_site_get' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_CONTINUATION_SITE",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function copy(v){return JSON.parse(JSON.stringify(v));}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function decimal(v){if(typeof v==='number')return key(v)?String(v):null;return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;} const p=state.continuationPreparation,origin=state.attempts.filter(function(a){return a.requestId===p.originRequestId;})[0],r=$context.$nodes.XDX_READ_CONTINUATION_SITE.$output,b=origin.payload;if(!r||decimal(r.SupplierSiteId)!==p.SupplierSiteId||r.SupplierSite!==b.SupplierSite||decimal(r.ProcurementBUId)!==String(b.ProcurementBUId)||r.SupplierAddressName!==b.SupplierAddressName||r.SitePurposePurchasingFlag!==true||decimal(r.SupplierAddressId)!==origin.addressId)return done('display','The existing site no longer matches the verified request. No continuation was submitted.');p.site={SupplierSiteId:p.SupplierSiteId,SupplierSite:r.SupplierSite,ProcurementBUId:b.ProcurementBUId,SupplierAddressName:r.SupplierAddressName,SupplierAddressId:origin.addressId,SitePurposePurchasingFlag:true};p.paging=true;return done('continuation_pairs');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CONTINUATION_SITE",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation === 'continuation_pairs' ? 'continuation_pairs' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCUMULATE_EXISTING_ASSIGNMENTS",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function copy(v){return JSON.parse(JSON.stringify(v));}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function decimal(v){if(typeof v==='number')return key(v)?String(v):null;return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;} const p=state.continuationPreparation,r=$context.$nodes.XDX_LOAD_EXISTING_ASSIGNMENTS.XDX_EXISTING_ASSIGNMENT_PAGE.$output;function fail(){p.paging=false;p.complete=false;return done('display','Existing assignments could not be completely reconciled. No new write was submitted.');}if(!r||!Array.isArray(r.items)||r.count!==r.items.length||r.limit!==25||r.offset!==p.offset||typeof r.hasMore!=='boolean'||r.hasMore&&r.count===0||r.items.some(function(x){return !x||!decimal(x.AssignmentId)||!decimal(x.ClientBUId)||!decimal(x.BillToBUId);}))return fail();for(let i=0;i<r.items.length;i++){const row=r.items[i],k=decimal(row.ClientBUId)+':'+decimal(row.BillToBUId);if(p.seen[k])return fail();p.seen[k]=true;p.rows.push({AssignmentId:decimal(row.AssignmentId),ClientBUId:decimal(row.ClientBUId),BillToBUId:decimal(row.BillToBUId)});}p.offset+=r.count;p.pages++;if(r.hasMore&&p.pages>=100)return fail();p.paging=r.hasMore;p.complete=!r.hasMore;return done(r.hasMore?'continuation_pairs':'continuation_build');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_EXISTING_ASSIGNMENTS",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation === 'continuation_build' ? 'continuation_build' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_BUILD_SITE_CONTINUATION",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function copy(v){return JSON.parse(JSON.stringify(v));}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function decimal(v){if(typeof v==='number')return key(v)?String(v):null;return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;} const p=state.continuationPreparation,request=p&&p.request,origin=p&&state.attempts.filter(function(a){return a.requestId===p.originRequestId&&!a.continuationOf;})[0];if(!p||!p.complete||!origin||!p.site)return done('display','Complete assignment reconciliation is required before continuation. No new write was submitted.');const lineage=state.attempts.filter(function(a){return a.kind==='site'&&a.suppliers_Id===p.suppliers_Id&&a.SupplierSiteId===p.SupplierSiteId;});const missing=[],existing=[];let unresolved=false;function pairKey(pair){return String(pair.ClientBUId)+':'+String(pair.BillToBUId);}for(let i=0;i<origin.assignments.length;i++){const pair=origin.assignments[i].payload,k=pairKey(pair),found=p.rows.filter(function(row){return pairKey(row)===k;});if(found.length===1){existing.push(found[0]);continue;}if(lineage.some(function(a){return a.assignments.some(function(row){return pairKey(row.payload)===k&&['reserved','uncertain','accepted','verified'].indexOf(row.status)>=0;});})){unresolved=true;continue;}missing.push(copy(pair));}origin.reconciliation={complete:true,existing:existing,missing:copy(missing),unresolved:unresolved};if(unresolved)return done('display','Site created; assignments incomplete. A previously attempted pair is still unresolved or no longer present. No retry is permitted until its outcome is reconciled.');if(!missing.length){origin.status='complete';if(state.draft&&(state.draft.requestId===origin.requestId||state.draft.originRequestId===origin.requestId||lineage.some(function(a){return a.requestId===state.draft.requestId;})))state.draft=null;state.response={message:'The existing site and all required assignment pairs are verified. No new write was submitted.',site:p.site,SupplierSiteId:p.SupplierSiteId,assignments:existing,requestId:origin.requestId};return done('display');} if(request.mode==='confirm'){ const draft=state.draft;function keys(pairs){return pairs.map(pairKey).sort().join('|');}if(!draft||draft.kind!=='site_continuation'||draft.requestId!==request.requestId||draft.revision!==request.revision||draft.status!=='reviewed'||draft.reviewedRevision!==request.revision||draft.originRequestId!==origin.requestId||draft.SupplierSiteId!==p.SupplierSiteId||draft.suppliers_Id!==p.suppliers_Id||state.attempts.some(function(a){return a.requestId===draft.requestId;}))return done('display','The continuation changed or has already been attempted. Review its current state.'); if(keys(missing)!==keys(request.assignments)||keys(draft.assignments)!==keys(request.assignments)){draft.revision++;draft.status='editing';draft.assignments=missing;draft.reconciled=true;delete draft.reviewedRevision;state.response={message:'The missing assignment pairs changed. Review this revised continuation before confirming. No new write was submitted.',requestId:draft.requestId,revision:draft.revision,site:p.site,SupplierSiteId:p.SupplierSiteId,assignments:missing,writeCount:missing.length,reviewCommand:'Review request '+draft.requestId+' revision '+draft.revision};return done('display');} const attempt={kind:'site',continuationOf:origin.requestId,requestId:draft.requestId,revision:draft.revision,status:'assignments-pending',suppliers_Id:p.suppliers_Id,SupplierSiteId:p.SupplierSiteId,sourceSiteId:origin.sourceSiteId,addressId:origin.addressId,payload:copy(origin.payload),site:copy(p.site),siteVerification:'verified',assignments:missing.map(function(pair){return {payload:copy(pair),status:'pending'};})};state.attempts.push(attempt);draft.status='reserved';state.siteDispatch={requestId:attempt.requestId,revision:attempt.revision,suppliers_Id:attempt.suppliers_Id,SupplierSiteId:attempt.SupplierSiteId,addressId:attempt.addressId,assignmentIndex:0,moreAssignments:true};delete state.continuationRequest;delete state.continuationPreparation;return done('continuation_create'); } const conversation=$context.$workflow&&$context.$workflow.$conversationId,sequence=state.nextRequestSequence,id='REQ-'+conversation+'-'+sequence;if(typeof conversation!=='string'||!/^[A-Za-z0-9_-]+$/.test(conversation)||id.length>96||!Number.isSafeInteger(sequence)||sequence<1||sequence>=9007199254740991)return done('display','A unique continuation request could not be initialized. No new write was submitted.');const draft={kind:'site_continuation',requestId:id,revision:1,status:'editing',originRequestId:origin.requestId,suppliers_Id:p.suppliers_Id,SupplierSiteId:p.SupplierSiteId,site:copy(p.site),assignments:missing,reconciled:true};state.draft=draft;state.nextRequestSequence=sequence+1;state.response={message:'Separate continuation prepared for only the missing assignment pairs. The existing site and completed pairs are retained. No new write was submitted.',requestId:id,revision:1,site:p.site,SupplierSiteId:p.SupplierSiteId,assignments:missing,writeCount:missing.length,writeOrder:'Create and independently verify only these missing assignment pairs, serially.',reviewCommand:'Review request '+id+' revision 1'};return done('display');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_VERIFICATION",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{($context.$variables.supplierState.nextOperation === 'site_assignments_create' || $context.$variables.supplierState.nextOperation === 'continuation_create') ? 'run' : 'skip'}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_RESERVE_ASSIGNMENT",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),dispatch=state.siteDispatch||{},attempt=(state.attempts||[]).filter(function(a){return a.kind==='site'&&a.requestId===dispatch.requestId&&a.revision===dispatch.revision;})[0];function done(op){state.nextOperation=op;return {state:state,operation:op};}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function decimal(v){if(typeof v==='number')return key(v)?String(v):null;return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;}function stop(message){dispatch.moreAssignments=false;if(attempt)attempt.status='assignments-incomplete';if(state.draft&&attempt&&state.draft.requestId===attempt.requestId)state.draft.status='assignments-incomplete';state.response={message:message,requestId:attempt&&attempt.requestId,revision:attempt&&attempt.revision,SupplierSiteId:attempt&&attempt.SupplierSiteId,site:attempt&&attempt.site,attempt:attempt};return done('display');} const index=dispatch.assignmentIndex,row=attempt&&Array.isArray(attempt.assignments)&&attempt.assignments[index];if(!attempt||attempt.siteVerification!=='verified'||attempt.SupplierSiteId!==dispatch.SupplierSiteId||attempt.suppliers_Id!==dispatch.suppliers_Id||!Number.isSafeInteger(index)||index<0||!row||row.status!=='pending'||!row.payload||Object.keys(row.payload).length!==2||!key(row.payload.ClientBUId)||!key(row.payload.BillToBUId))return stop('Site created; assignments incomplete. The next pair is not eligible for a new attempt. No assignment was submitted.');row.status='reserved';dispatch.assignmentPayload=JSON.parse(JSON.stringify(row.payload));delete dispatch.AssignmentId;return done('assignment_create');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_ASSIGNMENT_RESERVATION",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_CAPTURE_ASSIGNMENT",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),dispatch=state.siteDispatch||{},attempt=(state.attempts||[]).filter(function(a){return a.kind==='site'&&a.requestId===dispatch.requestId&&a.revision===dispatch.revision;})[0];function done(op){state.nextOperation=op;return {state:state,operation:op};}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function decimal(v){if(typeof v==='number')return key(v)?String(v):null;return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;}function stop(message){dispatch.moreAssignments=false;if(attempt)attempt.status='assignments-incomplete';if(state.draft&&attempt&&state.draft.requestId===attempt.requestId)state.draft.status='assignments-incomplete';state.response={message:message,requestId:attempt&&attempt.requestId,revision:attempt&&attempt.revision,SupplierSiteId:attempt&&attempt.SupplierSiteId,site:attempt&&attempt.site,attempt:attempt};return done('display');} const row=attempt&&attempt.assignments[dispatch.assignmentIndex],r=$context.$nodes.XDX_CREATE_SITE_ASSIGNMENTS.XDX_CREATE_ASSIGNMENT_ONCE.$output;if(!row||row.status!=='reserved')return stop('Site created; assignments incomplete. The current assignment response could not be matched to a reservation. No further write is permitted.');const id=r&&decimal(r.AssignmentId);if(!id){row.status='uncertain';return stop('Site created; assignments incomplete. The assignment response did not establish its generated ID. It will not be replayed; reconcile before continuing.');}row.status='accepted';row.AssignmentId=id;row.verification='pending';dispatch.AssignmentId=id;return done('assignment_verify');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_ASSIGNMENT_CAPTURE",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_CREATED_ASSIGNMENT",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),dispatch=state.siteDispatch||{},attempt=(state.attempts||[]).filter(function(a){return a.kind==='site'&&a.requestId===dispatch.requestId&&a.revision===dispatch.revision;})[0];function done(op){state.nextOperation=op;return {state:state,operation:op};}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function decimal(v){if(typeof v==='number')return key(v)?String(v):null;return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;}function stop(message){dispatch.moreAssignments=false;if(attempt)attempt.status='assignments-incomplete';if(state.draft&&attempt&&state.draft.requestId===attempt.requestId)state.draft.status='assignments-incomplete';state.response={message:message,requestId:attempt&&attempt.requestId,revision:attempt&&attempt.revision,SupplierSiteId:attempt&&attempt.SupplierSiteId,site:attempt&&attempt.site,attempt:attempt};return done('display');} const row=attempt&&attempt.assignments[dispatch.assignmentIndex],r=$context.$nodes.XDX_CREATE_SITE_ASSIGNMENTS.XDX_VERIFY_CREATED_ASSIGNMENT.$output;if(!row||row.status!=='accepted')return stop('Site created; assignments incomplete. Assignment verification did not match its recorded attempt.');const good=r&&decimal(r.AssignmentId)===row.AssignmentId&&decimal(r.ClientBUId)===String(row.payload.ClientBUId)&&decimal(r.BillToBUId)===String(row.payload.BillToBUId);row.verification=good?'verified':'mismatch';if(!good)return stop('Site created; assignments incomplete. The accepted assignment did not match both reviewed BU values on independent readback. No further assignment was submitted.');row.status='verified';dispatch.assignmentIndex++;dispatch.moreAssignments=dispatch.assignmentIndex<attempt.assignments.length;attempt.status=dispatch.moreAssignments?'assignments-pending':'complete';if(state.draft&&state.draft.requestId===attempt.requestId)state.draft.status=attempt.status;return done(dispatch.moreAssignments?'assignment_next':'display');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PRESENT_SITE_COMPLETION",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),dispatch=state.siteDispatch||{},attempt=(state.attempts||[]).filter(function(a){return a.kind==='site'&&a.requestId===dispatch.requestId&&a.revision===dispatch.revision;})[0];function done(op){state.nextOperation=op;return {state:state,operation:op};}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function decimal(v){if(typeof v==='number')return key(v)?String(v):null;return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;}function stop(message){dispatch.moreAssignments=false;if(attempt)attempt.status='assignments-incomplete';if(state.draft&&attempt&&state.draft.requestId===attempt.requestId)state.draft.status='assignments-incomplete';state.response={message:message,requestId:attempt&&attempt.requestId,revision:attempt&&attempt.revision,SupplierSiteId:attempt&&attempt.SupplierSiteId,site:attempt&&attempt.site,attempt:attempt};if(attempt)state.response.continuationCommand='Continue assignments for request '+(attempt.continuationOf||attempt.requestId);return done('display');} if(!attempt)return stop('The site request journal could not be read. No new write was submitted.');const complete=attempt.siteVerification==='verified'&&attempt.assignments.every(function(a){return a.status==='verified'&&a.verification==='verified';});if(!complete){if(state.response&&state.response.message&&state.response.message.indexOf('Site created; assignments incomplete.')===0)return done('display');return stop('Site created; assignments incomplete. Retain the created site and verified assignments. Reconcile existing pairs before separately reviewing a continuation.');}attempt.status='complete';dispatch.moreAssignments=false;if(state.draft&&state.draft.requestId===attempt.requestId)state.draft=null;state.response={message:'Site created and independently verified. All '+attempt.assignments.length+' assignment pairs were created and independently verified.',requestId:attempt.requestId,revision:attempt.revision,SupplierSiteId:attempt.SupplierSiteId,site:attempt.site,assignments:attempt.assignments.map(function(a){return {AssignmentId:a.AssignmentId,ClientBUId:a.payload.ClientBUId,BillToBUId:a.payload.BillToBUId,verification:a.verification};}),attempt:attempt};return done('display');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PREPARE_SUPPLIER_REQUEST",
+        "nodeType": "CODE",
+        "expressions": [
+          "function finalize(){state.nextOperation=result.operation;return result;} let extractedIntent = $context.$nodes.XDX_INTERPRET_SUPPLIER_REQUEST.$output; const selectedDetail = /^\\s*(?:show|get|view)\\s+(?:the\\s+)?details\\s+(?:for|of)\\s+the\\s+selected\\s+(site|contact|address)\\s*[.!?]?\\s*$/i.exec($context.$system.$inputMessage||''); const explicitChildDetail = /^\\s*(?:show|get|view)\\s+(site|contact|address)\\s+details\\s+for\\s+\\1\\s+ID\\s+([1-9][0-9]{0,17})\\s+for\\s+supplier\\s+(number|ID)\\s+([1-9][0-9]{0,17})\\s*[.!?]?\\s*$/i.exec($context.$system.$inputMessage||''); let intent = selectedDetail ? {intent:'children',resource:{site:'sites',contact:'contacts',address:'addresses'}[selectedDetail[1].toLowerCase()],matchMode:'selection',term:'',childMode:'selection',childTerm:'',includeInactive:false} : explicitChildDetail ? {intent:'children',resource:{site:'sites',contact:'contacts',address:'addresses'}[explicitChildDetail[1].toLowerCase()],matchMode:explicitChildDetail[3].toLowerCase()==='number'?'number':'id',term:explicitChildDetail[4],childMode:'id',childTerm:explicitChildDetail[2],includeInactive:false} : extractedIntent; const state = JSON.parse(JSON.stringify($context.$variables.supplierState)); const result = {operation:'display',state:state}; state.response={message:'Describe the supplier you want to find, or the change to your current draft.'}; function stop(message){state.response={message:message};return finalize();} function literal(value){return \"'\"+value.replace(/'/g,\"''\")+\"'\";} function key(value){return (typeof value==='string' && /^[1-9][0-9]{0,17}$/.test(value)) || (typeof value==='number' && value>0 && value<=9007199254740991 && Math.floor(value)===value);} const actions=['search','detail','template','edit','choices','children','site_template','child_create','next','unsupported']; const activeChild=state.draft&&['address','contact'].indexOf(state.draft.kind)>=0?state.draft:null; const raw=$context.$system.$inputMessage||'',fieldEdit=/^\\s*(?:change|set)\\s+(AddressName|CountryCode|AddressLine1|City|State|PostalCode|Email|FirstName|LastName)\\s+to\\s+([\\s\\S]+?)\\s*$/i.exec(raw)||/^\\s*(AddressName|CountryCode|AddressLine1|City|State|PostalCode|Email|FirstName|LastName)\\s*:\\s*([\\s\\S]+?)\\s*$/i.exec(raw); if(activeChild&&(fieldEdit||intent&&intent.intent==='edit')){ const d=activeChild,fields=d.kind==='address'?['AddressName','CountryCode','AddressLine1','City','State','PostalCode','Email']:['FirstName','LastName','Email']; if(['editing','reviewed'].indexOf(d.status)<0||state.attempts.some(function(a){return a.requestId===d.requestId;}))return stop('This child request cannot be edited after an attempt.'); let patch={};if(fieldEdit){const f=fields.filter(function(f){return f.toLowerCase()===fieldEdit[1].toLowerCase();})[0];if(!f)return stop('That field does not belong to the active '+d.kind+' draft.');patch[f]=fieldEdit[2];}else{patch=intent.childPatch;if(!patch||typeof patch!=='object'||Array.isArray(patch)||Object.keys(patch).some(function(f){return fields.indexOf(f)<0&&patch[f]!==null;}))return stop('Supply only required fields for the active '+d.kind+' draft.');} const changes=Object.keys(patch).filter(function(f){return patch[f]!==null;});if(!changes.length||changes.some(function(f){return typeof patch[f]!=='string'||!patch[f].trim();}))return stop('Specify the required draft field and its replacement value.'); if(!Number.isSafeInteger(d.revision)||d.revision>=9007199254740991)return stop('Cancel this draft before starting a new revision.');changes.forEach(function(f){d.payload[f]=patch[f];});d.revision++;d.status='editing';delete d.reviewedRevision;delete d.fieldsVerifiedRevision;delete d.duplicateCheckedRevision;delete state.childConfirmation;result.operation='child_validate';return finalize(); } if(!intent || actions.indexOf(intent.intent)<0 || typeof intent.includeInactive!=='boolean')return stop('Please describe the supplier search or draft change.'); if(intent.intent==='unsupported')return finalize(); function lookup(purpose){const date=$context.$system.$currentDate;if(typeof date!=='string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(date))return stop('The current business date is unavailable. Your draft is retained.');state.pending={purpose:purpose,activeDate:date,limit:100,offset:0};if(purpose==='classifications'){state.pending.requestId=state.draft.requestId;state.pending.revision=state.draft.revision;}result.operation='classifications';return finalize();} if(intent.intent==='choices')return lookup('choices'); if(intent.intent==='edit'&&state.draft&&state.draft.kind==='site'){ const draft=state.draft;if(['editing','reviewed'].indexOf(draft.status)<0||state.attempts.some(function(a){return a.requestId===draft.requestId;}))return stop('This site request cannot be edited after an attempt.'); const patch=intent.patch;if(!patch||typeof patch!=='object'||Array.isArray(patch)||Object.keys(patch).some(function(k){return k!=='SupplierSite'&&patch[k]!==null;}))return stop('Change the new site name; the source address, procurement BU and reviewed assignment pairs remain attached to this source.'); const name=patch.SupplierSite;if(typeof name!=='string'||!name.trim()||name.length>240||/[\\x00-\\x1f]/.test(name))return stop('Provide a new site name of up to 240 characters.'); if(!Number.isSafeInteger(draft.revision)||draft.revision>=9007199254740991)return stop('Cancel this draft and start again; its revision cannot advance.'); draft.payload.SupplierSite=name;draft.revision++;draft.status='editing';delete draft.reviewedRevision;delete draft.duplicateCheckedRevision;delete state.siteConfirmation; state.sitePreparation={suppliers_Id:String(draft.supplier.SupplierId),supplier:draft.supplier,source:draft.source,address:draft.address,newName:name,assignmentsComplete:draft.assignmentsComplete,editingRequestId:draft.requestId,editingRevision:draft.revision}; result.operation='site_name_check';return finalize(); } if(intent.intent==='edit'){ const draft=state.draft; if(!draft || ['editing','reviewed'].indexOf(draft.status)<0 || state.attempts.some(function(a){return a.requestId===draft.requestId;}))return stop('There is no editable supplier draft. Start by choosing a supplier template.'); const patch=intent.patch,fields=['Supplier','SupplierType','BusinessRelationship','TaxOrganizationType']; if(!patch || typeof patch!=='object' || Array.isArray(patch) || Object.keys(patch).some(function(k){return fields.indexOf(k)<0 && !(k==='SupplierSite' && patch[k]===null);}))return stop('Only the new supplier name and the three reviewed classifications can be edited.'); const changes=Object.keys(patch).filter(function(k){return patch[k]!==null;}); if(!changes.length)return stop('Tell me which draft field to change.'); if(changes.some(function(k){return typeof patch[k]!=='string' || !patch[k].trim() || patch[k].length>(k==='Supplier'?360:80);}))return stop('Supply a nonempty name of up to 360 characters and classification values of up to 80 characters.'); if(!Number.isSafeInteger(draft.revision) || draft.revision>=9007199254740991)return stop('The draft revision cannot be advanced. Cancel this draft and start again.'); const classificationsUnchanged=changes.every(function(k){return k==='Supplier' || patch[k]===draft.payload[k];});const wasVerified=draft.classificationsVerified===true; changes.forEach(function(k){draft.payload[k]=patch[k];});draft.revision+=1;draft.status='editing';delete draft.reviewedRevision;delete draft.duplicateCheckedRevision; draft.classificationsVerified=(wasVerified && classificationsUnchanged) || ['SupplierType','BusinessRelationship','TaxOrganizationType'].every(function(k){return draft.payload[k]===draft.source[k];}); state.response={message:'Draft updated. Review the new revision before confirming.',requestId:draft.requestId,revision:draft.revision,payload:draft.payload}; if(!draft.classificationsVerified)return lookup('classifications'); if(!draft.payload.Supplier || !draft.payload.Supplier.trim())return stop('Classifications updated. What name should the new supplier have?'); state.pending={purpose:'duplicate',q:'Supplier='+literal(draft.payload.Supplier),limit:1,offset:0,requestId:draft.requestId,revision:draft.revision,name:draft.payload.Supplier};result.operation='duplicate';return finalize(); } if(intent.intent==='next' && ['sites','contacts','addresses'].indexOf(state.activeRead)>=0){state.pending={purpose:'children',childRequest:{resource:state.activeRead,childMode:'next',childTerm:''}};result.operation='children';return finalize();} if(intent.intent==='next'){ const search=state.search; if(!search || search.hasMore!==true || !Number.isSafeInteger(search.nextOffset) || search.nextOffset<0 || typeof search.q!=='string' || !Number.isSafeInteger(search.limit) || search.limit<1 || search.limit>25)return stop('There is no next supplier page to retrieve.'); state.pending={purpose:'search',q:search.q,limit:search.limit,offset:search.nextOffset,includeInactive:search.includeInactive===true};result.operation='list';return finalize(); } if((intent.intent==='template'||intent.intent==='site_template'||intent.intent==='child_create') && state.draft)return stop('A draft already exists. Edit it, or cancel its exact request and revision before starting another.'); const selectedTemplateParent=(intent.intent==='template'||intent.intent==='site_template'||intent.intent==='child_create') && /\\b(?:based on|from|for)\\s+(?:the\\s+)?selected supplier\\b/i.test($context.$system.$inputMessage||''); const selectedReference=selectedTemplateParent || intent.intent==='child_create'&&/\\bselected (?:supplier|address|contact)\\b/i.test($context.$system.$inputMessage||'') || intent.intent==='children' && /\\bselected (?:supplier|site|contact|address)\\b/i.test($context.$system.$inputMessage||''); const mode=selectedReference?'selection':intent.matchMode; const term=typeof intent.term==='string'?intent.term.trim():''; const newName=typeof intent.newName==='string'?intent.newName:''; if(newName.length>360)return stop('The new supplier name must be at most 360 characters.'); const pending={purpose:intent.intent,newName:newName,includeInactive:intent.intent==='template' || intent.includeInactive===true && /\\binactive\\b/i.test($context.$system.$inputMessage||'')}; if(intent.intent==='child_create'){ if(!/\\b(?:create|new|copy|clone|prepare)\\b/i.test($context.$system.$inputMessage||''))return stop('An explicit request to prepare a new address or contact is required.'); const kind=intent.resource==='addresses'?'address':intent.resource==='contacts'?'contact':null,creationMode=intent.creationMode; if(!kind||['direct','template'].indexOf(creationMode)<0)return stop('Choose direct-entry or same-supplier template creation for an address or contact.'); const fields=kind==='address'?['AddressName','CountryCode','AddressLine1','City','State','PostalCode','Email']:['FirstName','LastName','Email'],patch=intent.childPatch||{}; if(typeof patch!=='object'||Array.isArray(patch)||Object.keys(patch).some(function(f){return fields.indexOf(f)<0&&patch[f]!==null;}))return stop('Supply only the required fields for this child.'); const clean={};fields.forEach(function(f){if(Object.prototype.hasOwnProperty.call(patch,f)&&patch[f]!==null)clean[f]=patch[f];});if(kind==='address'&&newName)clean.AddressName=newName; const selectedSource=/\\bselected (?:address|contact)\\b/i.test($context.$system.$inputMessage||'');pending.childCreateRequest={kind:kind,mode:creationMode,patch:clean,sourceMode:selectedSource?'selection':intent.childMode,sourceTerm:typeof intent.childTerm==='string'?intent.childTerm:''}; } if(intent.intent==='site_template'){ if(newName.length>240)return stop('The new site name must be at most 240 characters.'); const sm=intent.childMode||'contains',st=typeof intent.childTerm==='string'?intent.childTerm:''; if(['exact','contains','id','selection'].indexOf(sm)<0)return stop('Choose a source site by name, site ID or the selected site.'); pending.siteRequest={mode:sm,term:st}; } if(intent.intent==='children'){ const resource=intent.resource; if(['sites','contacts','addresses'].indexOf(resource)<0)return stop('Ask for supplier sites, contacts or addresses.'); const selectedChild=/\\bselected (?:site|contact|address)\\b/i.test($context.$system.$inputMessage||''); const childMode=selectedChild?'selection':intent.childMode||'all'; if(['all','exact','contains','id','selection','next'].indexOf(childMode)<0)return stop('Describe which '+resource+' to show.'); pending.childRequest={resource:resource,childMode:childMode,childTerm:typeof intent.childTerm==='string'?intent.childTerm:'',includeInactive:pending.includeInactive}; state.pending=pending; if(childMode==='next'){result.operation='children';return finalize();} } if(mode==='selection'){ if(!state.selection || !key(state.selection.SupplierId))return stop('Search for and select a supplier first.'); pending.suppliers_Id=String(state.selection.SupplierId);state.pending=pending;result.operation='get';return finalize(); } if(mode==='id'){ if(!key(term))return stop('Supply a valid internal supplier ID, or search by supplier name or displayed supplier number.'); pending.suppliers_Id=term;state.pending=pending;result.operation='get';return finalize(); } if(['contains','exact','number'].indexOf(mode)<0 || !term || term.length>360 || /[\\x00-\\x1f]/.test(term))return stop('Supply a supplier name or displayed supplier number to search.'); if(mode==='contains' && /[%_\\\\]/.test(term))return stop('For this name, use an exact supplier-name search or the displayed supplier number.'); let q=mode==='number'?'SupplierNumber='+literal(term):mode==='exact'?'Supplier='+literal(term):'Supplier like '+literal('%'+term+'%'); if(!pending.includeInactive){const date=$context.$system.$currentDate;if(typeof date!=='string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(date))return stop('The current business date is unavailable. The supplier search was not run.');q+=\" and (InactiveDate is null or InactiveDate > '\"+date+\"')\";} pending.q=q;pending.limit=25;pending.offset=0;state.pending=pending;result.operation='list';return finalize();"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SEARCH_RESULT",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PREPARE_CHILD_READ",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));let operation=state.nextOperation||'display'; function done(){state.nextOperation=operation;return {operation:operation,state:state};} function stop(message){operation='display';state.response={message:message};return done();} if(operation!=='children' && (!state.pending||state.pending.purpose!=='children'))return done(); if(operation!=='children')return done(); const request=state.pending.childRequest||{},resource=request.resource; const defs={sites:['SupplierSiteId','SupplierSite'],contacts:['SupplierContactId','ContactName'],addresses:['SupplierAddressId','AddressName']};const def=defs[resource]; if(!def)return stop('Choose sites, contacts or addresses.'); function key(v){return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)||typeof v==='number'&&Number.isSafeInteger(v)&&v>0;} function literal(v){return \"'\"+v.replace(/'/g,\"''\")+\"'\";} let p={resource:resource,suppliers_Id:state.pending.suppliers_Id,supplier:state.selection,includeInactive:request.includeInactive===true,limit:25,offset:0,q:def[0]+' > 0'}; if(request.childMode==='next'){ const cursor=state.childSearches&&state.childSearches[resource]; if(!cursor||cursor.hasMore!==true||!Number.isSafeInteger(cursor.nextOffset)||cursor.nextOffset<0||!key(cursor.suppliers_Id)||typeof cursor.q!=='string'||cursor.limit!==25)return stop('There is no next '+resource+' page to retrieve.'); p=JSON.parse(JSON.stringify(cursor));p.offset=cursor.nextOffset;operation=resource+'_list';state.childPending=p;return done(); } if(!key(p.suppliers_Id)||!state.selection||String(state.selection.SupplierId)!==String(p.suppliers_Id))return stop('Search for and select the supplier whose '+resource+' you want.'); p.suppliers_Id=String(p.suppliers_Id);const term=typeof request.childTerm==='string'?request.childTerm.trim():''; if(request.childMode==='id'||request.childMode==='selection'){ let id=term; if(request.childMode==='selection'){const selected=state.childSelections&&state.childSelections[resource];if(!selected||selected.suppliers_Id!==p.suppliers_Id)return stop('Choose a '+resource+' record from this supplier first.');id=selected.item[def[0]];} if(!key(id))return stop('Choose a valid '+resource+' record under this supplier.');p.itemId=String(id);operation=resource+'_get'; }else{ if(request.childMode==='exact'||request.childMode==='contains'){ if(!term||term.length>360||/[\\x00-\\x1f]/.test(term))return stop('Supply a valid '+resource+' name.'); if(request.childMode==='contains'&&/[%_\\\\]/.test(term))return stop('Use an exact name for this '+resource+' search.'); p.q=def[1]+(request.childMode==='exact'?' = ':' like ')+literal(request.childMode==='exact'?term:'%'+term+'%'); } operation=resource+'_list'; } state.childPending=p;return done();"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_DETAIL_RESULT",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_NAME_CHECK",
+        "nodeType": "CODE",
+        "expressions": [
+          "const response=$context.$nodes.XDX_CHECK_SUPPLIER_NAME.$output; const state=JSON.parse(JSON.stringify($context.$variables.supplierState)); const draft=state.draft,pending=state.pending||{}; function finish(message){state.response={message:message,requestId:draft&&draft.requestId,revision:draft&&draft.revision,payload:draft&&draft.payload};return {operation:'display',state:state};} if(!draft || draft.requestId!==pending.requestId || draft.revision!==pending.revision || draft.payload.Supplier!==pending.name)return finish('The draft changed during the name check. Review the current draft again.'); delete draft.duplicateCheckedRevision; if(!response || !Array.isArray(response.items) || !Number.isSafeInteger(response.count) || response.count!==response.items.length || response.limit!==1 || response.offset!==0 || typeof response.hasMore!=='boolean')return finish('The duplicate-name check failed. This draft cannot be reviewed yet.'); if(response.count!==0 || response.hasMore)return finish('That supplier name is already in use or the check was incomplete. Choose a different new name.'); if(!draft.classificationsVerified)return finish('Verify the classification choices before reviewing this draft.'); draft.duplicateCheckedRevision=draft.revision; const result=finish('Draft prepared. Nothing has been created. Review the exact request and revision to continue.'); state.response.source=draft.source;state.response.reviewCommand='Review request '+draft.requestId+' revision '+draft.revision;state.response.cancelCommand='Cancel request '+draft.requestId+' revision '+draft.revision;return result;"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_LIST_SITES",
+        "nodeType": "CODE",
+        "expressions": [
+          "const response=$context.$nodes.XDX_LIST_SUPPLIER_SITES.$output;const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const p=state.childPending||{};state.nextOperation='display'; function fail(){state.response={message:'The sites response could not be verified. Your draft is unchanged.'};return {state:state,operation:'display'};} function valid(row){return row&&Number.isSafeInteger(row.SupplierSiteId)&&row.SupplierSiteId>0&&typeof row.Status==='string';} if(!response||!Array.isArray(response.items)||!Number.isSafeInteger(response.count)||response.count!==response.items.length||response.count>p.limit||response.limit!==p.limit||response.offset!==p.offset||typeof response.hasMore!=='boolean'||response.hasMore&&response.count===0)return fail();const seen={};if(response.items.some(function(row){if(!valid(row)||seen[row.SupplierSiteId])return true;seen[row.SupplierSiteId]=true;return false;}))return fail();const rows=response.items.filter(function(row){return p.includeInactive||row.Status==='ACTIVE';});state.childSearches=state.childSearches||{};state.childSearches.sites={resource:'sites',suppliers_Id:p.suppliers_Id,supplier:p.supplier,q:p.q,limit:p.limit,offset:p.offset,nextOffset:p.offset+response.count,hasMore:response.hasMore,includeInactive:p.includeInactive};state.childCandidates=state.childCandidates||{};state.childCandidates.sites={suppliers_Id:p.suppliers_Id,items:rows};state.childSelections=state.childSelections||{};delete state.childSelections.sites;if(rows.length===1&&!response.hasMore)state.childSelections.sites={suppliers_Id:p.suppliers_Id,item:rows[0]};state.response={message:rows.length?'Supplier sites.':'No matching sites on this page.',resource:'sites',supplier:p.supplier,items:rows,hasMore:response.hasMore,nextCommand:response.hasMore?'Next sites page':'',returnedCount:rows.length}; state.activeRead='sites';return {state:state,operation:'display'};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_GET_SITES",
+        "nodeType": "CODE",
+        "expressions": [
+          "const response=$context.$nodes.XDX_GET_SUPPLIER_SITES.$output;const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const p=state.childPending||{};state.nextOperation='display'; function fail(){state.response={message:'The sites response could not be verified. Your draft is unchanged.'};return {state:state,operation:'display'};} function valid(row){return row&&Number.isSafeInteger(row.SupplierSiteId)&&row.SupplierSiteId>0&&typeof row.Status==='string';} if(!valid(response)||String(response.SupplierSiteId)!==p.itemId)return fail();if(!p.includeInactive&&response.Status!=='ACTIVE'){state.response={message:'This site is inactive. Ask explicitly to view inactive records.'};return {state:state,operation:'display'};}state.childSelections=state.childSelections||{};state.childSelections.sites={suppliers_Id:p.suppliers_Id,item:response};state.response={message:'Supplier site details.',resource:'sites',supplier:p.supplier,item:response}; state.activeRead='sites';return {state:state,operation:'display'};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_LIST_CONTACTS",
+        "nodeType": "CODE",
+        "expressions": [
+          "const response=$context.$nodes.XDX_LIST_SUPPLIER_CONTACTS.$output;const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const p=state.childPending||{};state.nextOperation='display'; function fail(){state.response={message:'The contacts response could not be verified. Your draft is unchanged.'};return {state:state,operation:'display'};} function valid(row){return row&&Number.isSafeInteger(row.SupplierContactId)&&row.SupplierContactId>0&&typeof row.Status==='string';} if(!response||!Array.isArray(response.items)||!Number.isSafeInteger(response.count)||response.count!==response.items.length||response.count>p.limit||response.limit!==p.limit||response.offset!==p.offset||typeof response.hasMore!=='boolean'||response.hasMore&&response.count===0)return fail();const seen={};if(response.items.some(function(row){if(!valid(row)||seen[row.SupplierContactId])return true;seen[row.SupplierContactId]=true;return false;}))return fail();const rows=response.items.filter(function(row){return p.includeInactive||row.Status==='ACTIVE';});state.childSearches=state.childSearches||{};state.childSearches.contacts={resource:'contacts',suppliers_Id:p.suppliers_Id,supplier:p.supplier,q:p.q,limit:p.limit,offset:p.offset,nextOffset:p.offset+response.count,hasMore:response.hasMore,includeInactive:p.includeInactive};state.childCandidates=state.childCandidates||{};state.childCandidates.contacts={suppliers_Id:p.suppliers_Id,items:rows};state.childSelections=state.childSelections||{};delete state.childSelections.contacts;if(rows.length===1&&!response.hasMore)state.childSelections.contacts={suppliers_Id:p.suppliers_Id,item:rows[0]};state.response={message:rows.length?'Supplier contacts.':'No matching contacts on this page.',resource:'contacts',supplier:p.supplier,items:rows,hasMore:response.hasMore,nextCommand:response.hasMore?'Next contacts page':'',returnedCount:rows.length}; state.activeRead='contacts';return {state:state,operation:'display'};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_GET_CONTACTS",
+        "nodeType": "CODE",
+        "expressions": [
+          "const response=$context.$nodes.XDX_GET_SUPPLIER_CONTACTS.$output;const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const p=state.childPending||{};state.nextOperation='display'; function fail(){state.response={message:'The contacts response could not be verified. Your draft is unchanged.'};return {state:state,operation:'display'};} function valid(row){return row&&Number.isSafeInteger(row.SupplierContactId)&&row.SupplierContactId>0&&typeof row.Status==='string';} if(!valid(response)||String(response.SupplierContactId)!==p.itemId)return fail();if(!p.includeInactive&&response.Status!=='ACTIVE'){state.response={message:'This contact is inactive. Ask explicitly to view inactive records.'};return {state:state,operation:'display'};}state.childSelections=state.childSelections||{};state.childSelections.contacts={suppliers_Id:p.suppliers_Id,item:response};state.response={message:'Supplier contact details.',resource:'contacts',supplier:p.supplier,item:response}; state.activeRead='contacts';return {state:state,operation:'display'};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_LIST_ADDRESSES",
+        "nodeType": "CODE",
+        "expressions": [
+          "const response=$context.$nodes.XDX_LIST_SUPPLIER_ADDRESSES.$output;const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const p=state.childPending||{};state.nextOperation='display'; function fail(){state.response={message:'The addresses response could not be verified. Your draft is unchanged.'};return {state:state,operation:'display'};} function valid(row){return row&&Number.isSafeInteger(row.SupplierAddressId)&&row.SupplierAddressId>0&&typeof row.Status==='string';} if(!response||!Array.isArray(response.items)||!Number.isSafeInteger(response.count)||response.count!==response.items.length||response.count>p.limit||response.limit!==p.limit||response.offset!==p.offset||typeof response.hasMore!=='boolean'||response.hasMore&&response.count===0)return fail();const seen={};if(response.items.some(function(row){if(!valid(row)||seen[row.SupplierAddressId])return true;seen[row.SupplierAddressId]=true;return false;}))return fail();const rows=response.items.filter(function(row){return p.includeInactive||row.Status==='ACTIVE';});state.childSearches=state.childSearches||{};state.childSearches.addresses={resource:'addresses',suppliers_Id:p.suppliers_Id,supplier:p.supplier,q:p.q,limit:p.limit,offset:p.offset,nextOffset:p.offset+response.count,hasMore:response.hasMore,includeInactive:p.includeInactive};state.childCandidates=state.childCandidates||{};state.childCandidates.addresses={suppliers_Id:p.suppliers_Id,items:rows};state.childSelections=state.childSelections||{};delete state.childSelections.addresses;if(rows.length===1&&!response.hasMore)state.childSelections.addresses={suppliers_Id:p.suppliers_Id,item:rows[0]};state.response={message:rows.length?'Supplier addresses.':'No matching addresses on this page.',resource:'addresses',supplier:p.supplier,items:rows,hasMore:response.hasMore,nextCommand:response.hasMore?'Next addresses page':'',returnedCount:rows.length}; state.activeRead='addresses';return {state:state,operation:'display'};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_GET_ADDRESSES",
+        "nodeType": "CODE",
+        "expressions": [
+          "const response=$context.$nodes.XDX_GET_SUPPLIER_ADDRESSES.$output;const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const p=state.childPending||{};state.nextOperation='display'; function fail(){state.response={message:'The addresses response could not be verified. Your draft is unchanged.'};return {state:state,operation:'display'};} function valid(row){return row&&Number.isSafeInteger(row.SupplierAddressId)&&row.SupplierAddressId>0&&typeof row.Status==='string';} if(!valid(response)||String(response.SupplierAddressId)!==p.itemId)return fail();if(!p.includeInactive&&response.Status!=='ACTIVE'){state.response={message:'This address is inactive. Ask explicitly to view inactive records.'};return {state:state,operation:'display'};}state.childSelections=state.childSelections||{};state.childSelections.addresses={suppliers_Id:p.suppliers_Id,item:response};state.response={message:'Supplier address details.',resource:'addresses',supplier:p.supplier,item:response}; state.activeRead='addresses';return {state:state,operation:'display'};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PREPARE_SITE_SOURCE",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function literal(v){return \"'\"+v.replace(/'/g,\"''\")+\"'\";}const request=state.pending||{},r=request.siteRequest||{},supplier=state.selection;if(state.draft)return done('display','A draft already exists. Edit or cancel it before starting another.');if(!supplier||!key(supplier.SupplierId)||String(supplier.SupplierId)!==request.suppliers_Id)return done('display','Choose the supplier whose site you want to copy.');const name=request.newName;if(typeof name!=='string'||!name.trim()||name.length>240||/[\\x00-\\x1f]/.test(name))return done('display','What name should the new site have? Use up to 240 characters.');const p={supplier:JSON.parse(JSON.stringify(supplier)),suppliers_Id:request.suppliers_Id,newName:name,limit:25,offset:0,assignments:[],assignmentsComplete:false};state.sitePreparation=p;const mode=r.mode,term=typeof r.term==='string'?r.term.trim():'';if(mode==='selection'){const selected=state.childSelections&&state.childSelections.sites;if(!selected||selected.suppliers_Id!==p.suppliers_Id||!selected.item||!key(selected.item.SupplierSiteId))return done('display','Select a source site under this supplier first.');p.siteId=String(selected.item.SupplierSiteId);return done('site_source_get');}if(mode==='id'){if(!/^[1-9][0-9]{0,17}$/.test(term))return done('display','Supply the source site ID under this supplier.');p.siteId=term;return done('site_source_get');}if(['exact','contains'].indexOf(mode)<0||!term||term.length>240||/[\\x00-\\x1f]/.test(term)||mode==='contains'&&/[%_\\\\]/.test(term))return done('display','Supply an exact source site name or a simple name to search.');p.q='SupplierSite'+(mode==='exact'?'=':' like ')+literal(mode==='exact'?term:'%'+term+'%');return done('site_source_list');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PREPARE_CHILD_CREATE",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),p=state.pending||{},request=p.childCreateRequest,parent=state.selection; function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};} function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;} if(!request||['address','contact'].indexOf(request.kind)<0||['direct','template'].indexOf(request.mode)<0||!parent||!key(parent.SupplierId)||String(parent.SupplierId)!==p.suppliers_Id)return done('display','Choose the supplier for this new child record. Your current draft is unchanged.'); if(state.draft)return done('display','A draft already exists. Edit or cancel its exact request and revision first.'); const prep={kind:request.kind,mode:request.mode,suppliers_Id:p.suppliers_Id,supplier:JSON.parse(JSON.stringify(parent)),patch:JSON.parse(JSON.stringify(request.patch||{})),limit:25,offset:0};state.childPreparation=prep; if(request.mode==='direct')return done('child_build'); const resource=request.kind==='address'?'addresses':'contacts',keyField=request.kind==='address'?'SupplierAddressId':'SupplierContactId',nameField=request.kind==='address'?'AddressName':'ContactName';const mode=request.sourceMode,term=request.sourceTerm; if(mode==='selection'){const selected=state.childSelections&&state.childSelections[resource];if(!selected||selected.suppliers_Id!==prep.suppliers_Id||!selected.item||!key(selected.item[keyField]))return done('display','Select a source '+request.kind+' under this supplier first.');prep.itemId=String(selected.item[keyField]);return done(request.kind+'_source_get');} if(mode==='id'){if(typeof term!=='string'||!/^[1-9][0-9]{0,17}$/.test(term))return done('display','Supply the source '+request.kind+' ID under this supplier.');prep.itemId=term;return done(request.kind+'_source_get');} if(['exact','contains'].indexOf(mode)<0||typeof term!=='string'||!term.trim()||term.length>360||/[\\x00-\\x1f]/.test(term)||mode==='contains'&&/[%_\\\\]/.test(term))return done('display','Choose the source '+request.kind+' by exact name, simple search, or its current same-supplier selection.'); prep.q=nameField+(mode==='exact'?'=':' like ')+\"'\"+(mode==='exact'?term:'%'+term+'%').replace(/'/g,\"''\")+\"'\";return done(request.kind+'_source_list');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CHILD_SOURCE",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_BUILD_CHILD_DRAFT",
+        "nodeType": "CODE",
+        "expressions": [
+          "const childPhase=$context.$variables.supplierState.nextOperation; if([\"child_build\"].indexOf(childPhase)<0)return {state:JSON.parse(JSON.stringify($context.$variables.supplierState)),operation:childPhase}; const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),p=state.childPreparation||{},address=p.kind==='address',fields=address?['AddressName','CountryCode','AddressLine1','City','State','PostalCode','Email']:['FirstName','LastName','Email']; function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};} if(['address','contact'].indexOf(p.kind)<0||!p.supplier||String(p.supplier.SupplierId)!==p.suppliers_Id||state.draft)return done('display','The child draft could not be initialized. Existing requests remain unchanged.'); if(p.mode==='template'&&(!p.source||p.sourceParentId!==p.suppliers_Id||!p.sourceId))return done('display','The template must be verified under the selected supplier.'); const payload={};fields.forEach(function(f){payload[f]=p.mode==='template'&&p.source&&typeof p.source[f]==='string'?p.source[f]:null;});if(address)payload.AddressName=null; const patch=p.patch||{};if(Object.keys(patch).some(function(f){return fields.indexOf(f)<0;}))return done('display','Only the required child creation fields may be supplied.');Object.keys(patch).forEach(function(f){if(patch[f]!==null)payload[f]=patch[f];});if(address)payload.AddressPurposeOrderingFlag=true; const conversation=$context.$workflow&&$context.$workflow.$conversationId,sequence=state.nextRequestSequence,requestId='REQ-'+conversation+'-'+sequence; if(typeof conversation!=='string'||!/^[A-Za-z0-9_-]+$/.test(conversation)||requestId.length>96||!Number.isSafeInteger(sequence)||sequence<1||sequence>=9007199254740991)return done('display','A unique child draft request could not be initialized.'); const draft={kind:p.kind,mode:p.mode,requestId:requestId,revision:1,status:'editing',suppliers_Id:p.suppliers_Id,supplier:p.supplier,payload:payload,source:p.source||null,sourceId:p.sourceId||null,sourceParentId:p.sourceParentId||null}; state.draft=draft;state.nextRequestSequence=sequence+1;delete state.childPreparation;state.nextOperation='child_validate';state.response={message:'A proposed '+draft.kind+' draft is ready for required-field validation. Nothing has been created.',kind:draft.kind,mode:draft.mode,supplier:draft.supplier,payload:payload,requestId:requestId,revision:1};return {state:state,operation:'child_validate'};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_VALIDATE_CHILD_DRAFT",
+        "nodeType": "CODE",
+        "expressions": [
+          "const childPhase=$context.$variables.supplierState.nextOperation; if([\"child_validate\",\"child_preflight\"].indexOf(childPhase)<0)return {state:JSON.parse(JSON.stringify($context.$variables.supplierState)),operation:childPhase}; const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),d=state.draft; function done(op,message){state.nextOperation=op;state.response={message:message};if(d){state.response.kind=d.kind;state.response.mode=d.mode;state.response.supplier=d.supplier;state.response.payload=d.payload;state.response.requestId=d.requestId;state.response.revision=d.revision;state.response.source=d.source;state.response.reviewCommand='Review request '+d.requestId+' revision '+d.revision;state.response.cancelCommand='Cancel request '+d.requestId+' revision '+d.revision;}return {state:state,operation:op,requestId:d&&d.requestId,revision:d&&d.revision};} if(!d||['address','contact'].indexOf(d.kind)<0||['editing','reviewed'].indexOf(d.status)<0||state.attempts.some(function(a){return a.requestId===d.requestId;}))return done('display','This child request cannot be changed after an attempt.'); const address=d.kind==='address',fields=address?['AddressName','CountryCode','AddressLine1','City','State','PostalCode','Email','AddressPurposeOrderingFlag']:['FirstName','LastName','Email'],p=d.payload,limits={AddressName:240,CountryCode:2,AddressLine1:240,City:60,State:60,PostalCode:60,Email:320,FirstName:150,LastName:150}; if(!p||Object.keys(p).length!==fields.length||Object.keys(p).some(function(f){return fields.indexOf(f)<0;}))return done('display','The draft has unsupported fields; only the required creation fields are allowed.'); const missing=fields.filter(function(f){return f!=='AddressPurposeOrderingFlag'&&(typeof p[f]!=='string'||!p[f].trim());});if(missing.length)return done('display','Provide '+missing.join(', ')+'. This remains an uncreated '+d.kind+' draft.'); if(address&&p.CountryCode!=='US')return done('display','This complete address creation flow currently supports US addresses only. Choose a US source or supply the required US address fields. Nothing has been created.'); if(fields.some(function(f){return f!=='AddressPurposeOrderingFlag'&&(p[f].length>limits[f]||/[\\x00-\\x1f]/.test(p[f]));})||!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(p.Email)||address&&(!/^[A-Z]{2}$/.test(p.CountryCode)||p.AddressPurposeOrderingFlag!==true))return done('display','Provide valid required-field values within their documented lengths and a valid email address.'); if(!d.supplier||!Number.isSafeInteger(d.supplier.SupplierId)||d.supplier.SupplierId<=0||String(d.supplier.SupplierId)!==d.suppliers_Id||['direct','template'].indexOf(d.mode)<0||d.mode==='template'&&(!d.source||d.sourceParentId!==d.suppliers_Id||!d.sourceId))return done('display','The supplier and same-parent template identity must be verified before review.'); if(d.mode==='template'&&(address&&p.AddressName===d.source.AddressName||!address&&p.FirstName===d.source.FirstName&&p.LastName===d.source.LastName&&p.Email===d.source.Email))return done('display','Give this new '+d.kind+' a distinctive identity before review. The source record will not be changed.'); if(state.attempts.some(function(a){return a.kind===d.kind&&a.suppliers_Id===d.suppliers_Id&&JSON.stringify(a.payload)===JSON.stringify(p);}))return done('display','An identical child payload already has a recorded attempt. Reconcile that attempt; it will not be submitted again.'); d.fieldsVerifiedRevision=d.revision; if(address){state.childNameCheck={suppliers_Id:d.suppliers_Id,q:\"AddressName='\"+p.AddressName.replace(/'/g,\"''\")+\"'\",limit:1,offset:0,requestId:d.requestId,revision:d.revision,name:p.AddressName};return done('address_name_check','Checking the proposed address name under its supplier. Nothing has been created.');} if(state.childConfirmation)return done('child_reserve','The exact reviewed contact request is ready to reserve.'); return done('display','Contact draft prepared. Nothing has been created. Review the current revision before confirming.');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CHILD_NAME_CHECK",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_ADDRESS_NAME_CHECK",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),d=state.draft,p=state.childNameCheck||{},r=$context.$nodes.XDX_CHECK_NEW_ADDRESS_NAME.$output; function done(op,message){state.nextOperation=op;state.response={message:message,kind:d&&d.kind,mode:d&&d.mode,supplier:d&&d.supplier,payload:d&&d.payload,requestId:d&&d.requestId,revision:d&&d.revision,source:d&&d.source};if(d){state.response.reviewCommand='Review request '+d.requestId+' revision '+d.revision;state.response.cancelCommand='Cancel request '+d.requestId+' revision '+d.revision;}return {state:state,operation:op,requestId:d&&d.requestId,revision:d&&d.revision};} if(!d||d.kind!=='address'||d.requestId!==p.requestId||d.revision!==p.revision||d.suppliers_Id!==p.suppliers_Id||d.payload.AddressName!==p.name)return done('display','The address changed during its name check. Review the current draft.'); if(!r||!Array.isArray(r.items)||r.count!==r.items.length||typeof r.hasMore!=='boolean'||r.limit!==p.limit||r.offset!==p.offset||r.items.length||r.hasMore){delete d.duplicateCheckedRevision;delete state.childConfirmation;return done('display',r&&Array.isArray(r.items)&&(r.items.length||r.hasMore)?'That address name is already in use under this supplier. Choose a different name.':'The address-name check could not be verified. No create was submitted.');} d.duplicateCheckedRevision=d.revision;if(state.childConfirmation)return done('child_reserve','The exact reviewed address request is ready to reserve.');return done('display','Address draft prepared. Nothing has been created. Review the current revision before confirming.');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_RESERVE_CHILD_CREATE",
+        "nodeType": "CODE",
+        "expressions": [
+          "const childPhase=$context.$variables.supplierState.nextOperation; if([\"child_reserve\"].indexOf(childPhase)<0)return {state:JSON.parse(JSON.stringify($context.$variables.supplierState)),operation:childPhase}; const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),d=state.draft,c=state.childConfirmation; function stop(message){state.nextOperation='display';state.response={message:message};delete state.childConfirmation;return {state:state,operation:'display'};} if(!d||!c||['address','contact'].indexOf(d.kind)<0||d.status!=='reviewed'||d.requestId!==c.requestId||d.revision!==c.revision||d.reviewedRevision!==c.revision||d.fieldsVerifiedRevision!==d.revision||d.kind!==c.kind||d.suppliers_Id!==c.suppliers_Id||JSON.stringify(d.payload)!==JSON.stringify(c.payload)||d.kind==='address'&&d.duplicateCheckedRevision!==d.revision||state.attempts.some(function(a){return a.requestId===d.requestId||a.kind===d.kind&&a.suppliers_Id===d.suppliers_Id&&JSON.stringify(a.payload)===JSON.stringify(d.payload);}))return stop('The reviewed child request is no longer eligible. Review the current draft; recorded attempts are never replayed.'); const attempt={kind:d.kind,mode:d.mode,requestId:d.requestId,revision:d.revision,status:'reserved',suppliers_Id:d.suppliers_Id,payload:JSON.parse(JSON.stringify(d.payload)),sourceId:d.sourceId||null,verification:'pending'};state.attempts.push(attempt);d.status='reserved';state.childDispatch=JSON.parse(JSON.stringify(attempt));delete state.childConfirmation;state.nextOperation='create_'+d.kind;state.response={message:'The reviewed '+d.kind+' request is reserved for one creation attempt.',kind:d.kind,requestId:d.requestId,revision:d.revision};return {state:state,operation:state.nextOperation};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CHILD_DISPATCH",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_CAPTURE_CHILD_CREATION",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),p=state.childDispatch||{},a=state.attempts.filter(function(a){return a.kind===p.kind&&a.requestId===p.requestId&&a.revision===p.revision;})[0],address=p.kind==='address',key=address?'SupplierAddressId':'SupplierContactId',r=$context.$nodes[address?'XDX_CREATE_ADDRESS_ONCE':'XDX_CREATE_CONTACT_ONCE'].$output; if(!a||a.status!=='reserved')throw new Error('No matching reserved child attempt exists.'); function decimal(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0?String(v):typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;} const id=r&&decimal(r[key]);if(!id){a.status='uncertain';if(state.draft)state.draft.status='uncertain';state.nextOperation='display';state.response={message:'The '+p.kind+' creation outcome is uncertain. This request will not be submitted again. Reconcile it before another write.',kind:p.kind,attempt:a,requestId:a.requestId,revision:a.revision};return {state:state,operation:'display'};} a.status='accepted';a[key]=id;if(address&&r.AddressPartyNumber!==undefined)a.AddressPartyNumber=r.AddressPartyNumber;if(!address&&r.PersonProfileId!==undefined)a.PersonProfileId=r.PersonProfileId;a.verification='pending';state.draft.status='accepted';state.childDispatch.itemId=id;state.nextOperation='verify_'+p.kind;state.response={message:'The '+p.kind+' was accepted. Checking the independently saved fields.',kind:p.kind,attempt:a,requestId:a.requestId,revision:a.revision};return {state:state,operation:state.nextOperation};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CHILD_READBACK",
+        "nodeType": "SWITCH",
+        "expressions": [
+          "{{$context.$variables.supplierState.nextOperation}}"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_VERIFY_CHILD_RESULT",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),p=state.childDispatch||{},a=state.attempts.filter(function(a){return a.kind===p.kind&&a.requestId===p.requestId&&a.revision===p.revision;})[0],address=p.kind==='address',key=address?'SupplierAddressId':'SupplierContactId',r=$context.$nodes[address?'XDX_GET_CREATED_ADDRESS':'XDX_GET_CREATED_CONTACT'].$output; if(!a||a.status!=='accepted')throw new Error('No matching accepted child attempt exists.'); function decimal(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0?String(v):typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;} const fields=address?['AddressName','CountryCode','AddressLine1','City','State','PostalCode','Email','AddressPurposeOrderingFlag']:['FirstName','LastName','Email']; const generatedMatch=r&&(address?(a.AddressPartyNumber===undefined||String(r.AddressPartyNumber)===String(a.AddressPartyNumber)):(a.PersonProfileId===undefined||decimal(r.PersonProfileId)===decimal(a.PersonProfileId))); const matches=generatedMatch&&r&&decimal(r[key])===a[key]&&String(a.suppliers_Id)===String(p.suppliers_Id)&&fields.every(function(f){return r[f]===a.payload[f];})&&(address||Object.prototype.hasOwnProperty.call(r,'PersonProfileId')&&!!decimal(r.PersonProfileId)&&Object.prototype.hasOwnProperty.call(r,'UserName')&&r.UserName===null&&Object.prototype.hasOwnProperty.call(r,'UserAccountStatus')&&r.UserAccountStatus===null); a.verification=matches?'verified':'mismatch-or-unavailable';state.nextOperation='display';state.response={message:matches?(address?'Address':'Contact')+' created and independently verified.':'The '+p.kind+' was created, but its saved required fields or relationships could not be verified. It will not be created again.',kind:p.kind,requestId:a.requestId,revision:a.revision,supplier:state.draft&&state.draft.supplier,attempt:JSON.parse(JSON.stringify(a)),verification:a.verification}; if(matches){state.response.item=JSON.parse(JSON.stringify(r));const resource=address?'addresses':'contacts';state.childSelections=state.childSelections||{};state.childSelections[resource]={suppliers_Id:p.suppliers_Id,item:JSON.parse(JSON.stringify(r))};state.draft=null;delete state.childDispatch;}return {state:state,operation:'display'};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_CHILD_SOURCE",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),p=state.childPreparation||{},address=p.kind==='address',node=address?(p.itemId?'XDX_READ_ADDRESS_TEMPLATE':'XDX_FIND_ADDRESS_TEMPLATE'):(p.itemId?'XDX_READ_CONTACT_TEMPLATE':'XDX_FIND_CONTACT_TEMPLATE'),response=$context.$nodes[node].$output,idField=address?'SupplierAddressId':'SupplierContactId'; function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};} let row=response;if(!p.itemId){if(!response||!Array.isArray(response.items)||response.count!==response.items.length||response.hasMore!==false||response.limit!==p.limit||response.offset!==p.offset||response.items.length!==1){state.childTemplateCandidates={kind:p.kind,suppliers_Id:p.suppliers_Id,items:response&&Array.isArray(response.items)?response.items:[]};return done('display','Choose exactly one source '+p.kind+' under this supplier, then repeat the template request with its ID. Nothing was created.');}row=response.items[0];} if(!row||!(typeof row[idField]==='number'&&Number.isSafeInteger(row[idField])&&row[idField]>0||typeof row[idField]==='string'&&/^[1-9][0-9]{0,17}$/.test(row[idField]))||p.itemId&&String(row[idField])!==p.itemId||row.Status!=='ACTIVE')return done('display','The source '+p.kind+' could not be verified under this supplier. No draft was created.'); p.source=JSON.parse(JSON.stringify(row));p.sourceId=String(row[idField]);p.sourceParentId=p.suppliers_Id;return done('child_build');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SUPPLIER_DETAIL",
+        "nodeType": "CODE",
+        "expressions": [
+          "function finalize(){state.nextOperation=result.operation;return result;} const response=$context.$nodes.XDX_READ_SUPPLIER.$output; const state=JSON.parse(JSON.stringify($context.$variables.supplierState)); const pending=state.pending||{}; const result={operation:'display',state:state}; function stop(message){state.response={message:message};return finalize();} if(!response || typeof response.SupplierId!=='number' || !Number.isSafeInteger(response.SupplierId) || response.SupplierId<=0 || String(response.SupplierId)!==pending.suppliers_Id || typeof response.Supplier!=='string' || typeof response.SupplierNumber!=='string' || typeof response.Status!=='string')return stop('The supplier detail could not be verified. The draft was not changed.'); if(pending.purpose!=='template' && response.Status!=='ACTIVE' && pending.includeInactive!==true)return stop('This supplier is inactive. Ask explicitly to view inactive suppliers.'); state.selection=JSON.parse(JSON.stringify(response)); if(pending.purpose==='child_create'){result.operation='child_prepare';return finalize();} if(pending.purpose==='children'){result.operation='children';return finalize();} if(pending.purpose==='site_template'){result.operation='site_template';return finalize();} state.activeRead='suppliers'; if(pending.purpose!=='template'){state.response={message:'Supplier details.',supplier:state.selection};return finalize();} if(['ACTIVE','INACTIVE'].indexOf(response.Status)<0)return stop('The source supplier status could not be verified.'); if(state.draft)return stop('A draft already exists. Edit or cancel it before starting another.'); const fields=['SupplierType','BusinessRelationship','TaxOrganizationType']; const missing=fields.filter(function(k){return typeof response[k]!=='string' || !response[k].trim() || response[k].length>80;}); const conversation=$context.$workflow && $context.$workflow.$conversationId; const sequence=state.nextRequestSequence; const requestId='REQ-'+conversation+'-'+sequence; if(typeof conversation!=='string' || !/^[A-Za-z0-9_-]+$/.test(conversation) || requestId.length>96 || !Number.isSafeInteger(sequence) || sequence<1 || sequence>=9007199254740991)return stop('A unique draft request could not be initialized. Nothing was created.'); const name=typeof pending.newName==='string'?pending.newName:''; if(name.length>360)return stop('The new supplier name must be at most 360 characters.'); const draft={kind:'supplier',requestId:requestId,revision:1,status:'editing',source:JSON.parse(JSON.stringify(response)),payload:{Supplier:name,SupplierType:missing.indexOf('SupplierType')<0?response.SupplierType:null,BusinessRelationship:response.BusinessRelationship,TaxOrganizationType:response.TaxOrganizationType},classificationsVerified:missing.length===0}; state.nextRequestSequence=sequence+1;state.draft=draft; state.response={message:missing.length?'Choose values for '+missing.join(', ')+'. The new supplier remains a draft.':'Review the inherited classifications and enter the new supplier name.',requestId:draft.requestId,revision:1,payload:draft.payload,source:draft.source}; if(missing.length || !name.trim())return finalize(); state.pending={purpose:'duplicate',q:\"Supplier='\"+name.replace(/'/g,\"''\")+\"'\",limit:1,offset:0,requestId:draft.requestId,revision:draft.revision,name:name};result.operation='duplicate';return finalize();"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SUPPLIER_SEARCH",
+        "nodeType": "CODE",
+        "expressions": [
+          "function finalize(){state.nextOperation=result.operation;return result;} const response=$context.$nodes.XDX_SEARCH_SUPPLIERS.$output; const state=JSON.parse(JSON.stringify($context.$variables.supplierState)); const pending=state.pending||{}; const result={operation:'display',state:state}; function stop(message){state.response={message:message};return finalize();} function validKey(value){return typeof value==='number' && value>0 && value<=9007199254740991 && Math.floor(value)===value;} if(!response || !Array.isArray(response.items) || !Number.isSafeInteger(response.count) || response.count!==response.items.length || response.count>pending.limit || typeof response.hasMore!=='boolean' || response.offset!==pending.offset || response.limit!==pending.limit || (response.hasMore && response.count===0))return stop('The supplier search returned an incomplete or invalid response. No supplier was selected.'); const keys={}; if(response.items.some(function(row){if(!row || !validKey(row.SupplierId) || typeof row.SupplierNumber!=='string' || typeof row.Supplier!=='string' || typeof row.Status!=='string' || keys[String(row.SupplierId)])return true;keys[String(row.SupplierId)]=true;return false;}))return stop('Supplier identity could not be verified. No supplier was selected.'); const rows=response.items.filter(function(row){return pending.includeInactive===true || row.Status==='ACTIVE';}); if(pending.purpose!=='children'){state.activeRead='suppliers';state.search={q:pending.q,limit:pending.limit,offset:pending.offset,nextOffset:pending.offset+response.count,hasMore:response.hasMore,includeInactive:pending.includeInactive===true};} state.candidates=JSON.parse(JSON.stringify(rows)); state.response={message:rows.length?'Supplier search results.':'No suppliers matched on this page.',suppliers:state.candidates,hasMore:response.hasMore,nextCommand:response.hasMore?'Next page':'',returnedCount:rows.length}; if(rows.length!==1 || response.hasMore){if(pending.purpose==='template' || pending.purpose==='detail' || pending.purpose==='children' || (pending.purpose==='site_template'||pending.purpose==='child_create'))state.response.message=rows.length?'Choose a supplier by its displayed supplier number before continuing.':'No matching supplier was found on this page.';return finalize();} if(pending.purpose==='template' || pending.purpose==='detail' || pending.purpose==='children' || (pending.purpose==='site_template'||pending.purpose==='child_create')){state.pending.suppliers_Id=String(rows[0].SupplierId);result.operation='get';return finalize();} state.selection=JSON.parse(JSON.stringify(rows[0]));return finalize();"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SUPPLIER_CLASSIFICATIONS",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)); const pending=state.pending||{},draft=state.draft; const output=$context.$nodes.XDX_READ_SUPPLIER_CLASSIFICATIONS.$output; const groups={SupplierType:'POZ_VENDOR_TYPE',BusinessRelationship:'ORA_POZ_BUSINESS_RELATIONSHIP',TaxOrganizationType:'POZ_ORGANIZATION_TYPE'}; const fields=Object.keys(groups),choices={}; function done(message){state.nextOperation='display';state.response={message:message};return {operation:'display',state:state};} if(!output || !Array.isArray(output.items) || output.count!==output.items.length || output.hasMore!==false || output.limit!==100 || output.offset!==0)return done('The classification choices could not be retrieved completely. Your draft is retained; try the choice request again.'); const seen={}; for(let i=0;i<output.items.length;i++){ const row=output.items[i]; if(!row || typeof row.LookupType!=='string' || typeof row.LookupCode!=='string' || !row.LookupCode.trim() || typeof row.Meaning!=='string' || !row.Meaning.trim())return done('The classification response was invalid. Your draft is retained.'); const field=fields.filter(function(k){return groups[k]===row.LookupType;})[0]; const key=row.LookupType+':'+row.LookupCode; if(!field || seen[key])return done('The classification response was ambiguous. Your draft is retained.'); seen[key]=true;if(!choices[field])choices[field]=[];choices[field].push({code:row.LookupCode,label:row.Meaning}); } if(fields.some(function(k){return !choices[k] || !choices[k].length;}))return done('Some classification choices were unavailable. Your draft is retained.'); if(pending.purpose==='choices'){const r=done('Available supplier classifications are listed below. Tell me which field and value to use.');r.state.response.choices=choices;return r;} if(pending.purpose!=='classifications' || !draft || draft.requestId!==pending.requestId || draft.revision!==pending.revision || draft.status!=='editing' || state.attempts.some(function(a){return a.requestId===draft.requestId;}))return done('The draft changed before classification validation. Review your current draft.'); const normalized={},invalid=[]; fields.forEach(function(k){const value=draft.payload[k];const matches=typeof value==='string'?choices[k].filter(function(c){return c.label.toLowerCase()===value.trim().toLowerCase() || c.code.toLowerCase()===value.trim().toLowerCase();}):[];if(matches.length!==1)invalid.push(k);else normalized[k]=matches[0].label;}); if(invalid.length){draft.classificationsVerified=false;const r=done('Choose an available value for '+invalid.join(', ')+'. Your draft changes are retained.');r.state.response.choices=choices;r.state.response.payload=draft.payload;return r;} fields.forEach(function(k){draft.payload[k]=normalized[k];});draft.classificationsVerified=true; if(typeof draft.payload.Supplier!=='string' || !draft.payload.Supplier.trim())return done('Classifications updated. What name should the new supplier have?'); state.pending={purpose:'duplicate',q:\"Supplier='\"+draft.payload.Supplier.replace(/'/g,\"''\")+\"'\",limit:1,offset:0,requestId:draft.requestId,revision:draft.revision,name:draft.payload.Supplier}; state.nextOperation='duplicate';state.response={message:'Classifications updated. Checking the new supplier name before review.',requestId:draft.requestId,revision:draft.revision,payload:draft.payload}; return {operation:'duplicate',state:state};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_CREATE_RESULT",
+        "nodeType": "CODE",
+        "expressions": [
+          "const response=$context.$nodes.XDX_CREATE_SUPPLIER_ONCE.$output; const state=JSON.parse(JSON.stringify($context.$variables.supplierState)); const dispatch=state.dispatch; const attempt=dispatch && state.attempts.filter(function(a){return a.requestId===dispatch.requestId && a.revision===dispatch.revision;})[0]; if(!attempt || attempt.status!=='reserved')throw new Error('No reserved supplier attempt matches this result'); const result={operation:'display',state:state}; if(!response || typeof response.SupplierId!=='number' || !Number.isSafeInteger(response.SupplierId) || response.SupplierId<=0){attempt.status='uncertain';if(state.draft)state.draft.status='uncertain';state.response={message:'The creation outcome is uncertain. This request will not be submitted again. Reconcile the supplier before taking another action.',requestId:attempt.requestId,revision:attempt.revision};return result;} attempt.status='accepted';attempt.SupplierId=response.SupplierId;attempt.SupplierNumber=typeof response.SupplierNumber==='string'?response.SupplierNumber:null;attempt.verification='pending'; if(state.draft)state.draft.status='accepted'; state.pending={purpose:'verify_created',suppliers_Id:String(response.SupplierId),requestId:attempt.requestId,revision:attempt.revision}; state.response={message:'The supplier was accepted. Checking the saved fields.',requestId:attempt.requestId,revision:attempt.revision,SupplierId:attempt.SupplierId,SupplierNumber:attempt.SupplierNumber};result.operation='verify';return result;"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_CREATE_VERIFICATION",
+        "nodeType": "CODE",
+        "expressions": [
+          "const response=$context.$nodes.XDX_VERIFY_CREATED_SUPPLIER.$output; const state=JSON.parse(JSON.stringify($context.$variables.supplierState)); const pending=state.pending||{}; const attempt=state.attempts.filter(function(a){return a.requestId===pending.requestId && a.revision===pending.revision;})[0]; if(!attempt || attempt.status!=='accepted')throw new Error('No accepted supplier attempt matches verification'); const fields=['Supplier','SupplierType','BusinessRelationship','TaxOrganizationType']; const matches=response && response.SupplierId===attempt.SupplierId && typeof response.SupplierNumber==='string' && fields.every(function(k){return response[k]===attempt.payload[k];}); attempt.verification=matches?'verified':'mismatch-or-unavailable'; if(!matches){state.response={message:'The supplier was created, but its saved details could not be verified against every requested field. It will not be created again.',requestId:attempt.requestId,revision:attempt.revision,SupplierId:attempt.SupplierId,SupplierNumber:attempt.SupplierNumber,expected:attempt.payload};return {state:state};} attempt.SupplierNumber=response.SupplierNumber;state.selection=JSON.parse(JSON.stringify(response));state.draft=null;delete state.dispatch; state.response={message:'Supplier created and independently verified.',supplier:state.selection,requestId:attempt.requestId,revision:attempt.revision,verification:'verified'};return {state:state};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_RECHECK_SITE_REVIEW",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function copy(v){return JSON.parse(JSON.stringify(v));}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;} const c=state.siteConfirmation,draft=state.draft;if(!c||!draft||draft.kind!=='site'||draft.status!=='reviewed'||draft.requestId!==c.requestId||draft.revision!==c.revision||draft.reviewedRevision!==c.revision||!Array.isArray(state.attempts)||state.attempts.some(function(a){return a.requestId===c.requestId;}))return done('display','Review the current site draft before confirming; a recorded attempt cannot be submitted again.');if(String(draft.supplier.SupplierId)!==c.suppliers_Id||String(draft.source.SupplierSiteId)!==c.sourceSiteId||String(draft.address.SupplierAddressId)!==c.addressId||JSON.stringify(draft.payload)!==JSON.stringify(c.payload)||JSON.stringify(draft.assignments)!==JSON.stringify(c.assignments))return done('display','The site draft changed after review. Review its current revision.');state.sitePreparation={mode:'confirm',confirmation:copy(c),supplier:copy(draft.supplier),suppliers_Id:c.suppliers_Id,siteId:c.sourceSiteId,newName:c.payload.SupplierSite,assignments:[],assignmentsComplete:false,limit:25,offset:0};return done('site_source_get');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PREPARE_SITE_CONTINUATION",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function copy(v){return JSON.parse(JSON.stringify(v));}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function decimal(v){if(typeof v==='number')return key(v)?String(v):null;return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;} const request=state.continuationRequest,origin=request&&(state.attempts||[]).filter(function(a){return a.kind==='site'&&a.requestId===request.originRequestId&&!a.continuationOf;})[0];if(!origin||origin.siteVerification!=='verified'||!decimal(origin.SupplierSiteId)||!decimal(origin.suppliers_Id)||!Array.isArray(origin.assignments))return done('display','The original accepted site is not ready for assignment reconciliation. No new write was submitted.');if(request.mode==='confirm'){const draft=state.draft;if(!draft||draft.kind!=='site_continuation'||draft.requestId!==request.requestId||draft.revision!==request.revision||draft.reviewedRevision!==request.revision||draft.status!=='reviewed'||state.attempts.some(function(a){return a.requestId===request.requestId;}))return done('display','Review the current continuation before confirming. Recorded attempts are never replayed.');}state.continuationPreparation={request:copy(request),suppliers_Id:origin.suppliers_Id,SupplierSiteId:origin.SupplierSiteId,originRequestId:origin.requestId,rows:[],seen:{},offset:0,pages:0,paging:false,complete:false};return done('continuation_site_get');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_HANDLE_CREATE_ERROR",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)); const dispatch=state.dispatch; const attempt=dispatch && state.attempts.filter(function(a){return a.requestId===dispatch.requestId && a.revision===dispatch.revision;})[0]; if(attempt && attempt.status==='reserved')attempt.status='uncertain'; if(state.draft && attempt && state.draft.requestId===attempt.requestId)state.draft.status=attempt.status; state.response={message:'The creation request failed or its outcome is uncertain. It will not be submitted again automatically. Reconcile the supplier before another write.',requestId:attempt&&attempt.requestId,revision:attempt&&attempt.revision};return {state:state};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_HANDLE_READ_ERROR",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)); state.response={message:'Supplier information could not be retrieved. Existing selection, drafts and submitted requests are retained.'}; if(state.pending && state.pending.purpose==='duplicate' && state.draft)delete state.draft.duplicateCheckedRevision; return {state:state};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_HANDLE_VERIFY_ERROR",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));const pending=state.pending||{};const attempt=state.attempts.filter(function(a){return a.requestId===pending.requestId && a.revision===pending.revision;})[0]; if(attempt && attempt.status==='accepted')attempt.verification='readback-failed'; state.response={message:'The supplier was accepted, but the independent verification could not finish. It will not be created again.',requestId:attempt&&attempt.requestId,revision:attempt&&attempt.revision,SupplierId:attempt&&attempt.SupplierId,SupplierNumber:attempt&&attempt.SupplierNumber};return {state:state};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_HANDLE_SITE_WRITE_ERROR",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));function done(op,message){state.nextOperation=op;if(message)state.response={message:message};return {state:state,operation:op};}function copy(v){return JSON.parse(JSON.stringify(v));}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;} const dispatch=state.siteDispatch||{},attempt=(state.attempts||[]).filter(function(a){return a.kind==='site'&&a.requestId===dispatch.requestId&&a.revision===dispatch.revision;})[0];function decimal(v){if(typeof v==='number')return key(v)?String(v):null;return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;} if(attempt){if(attempt.status==='reserved')attempt.status='uncertain';attempt.siteVerification=attempt.SupplierSiteId?'readback-pending':attempt.siteVerification;dispatch.moreAssignments=false;if(state.draft&&state.draft.requestId===attempt.requestId)state.draft.status=attempt.status;}state.nextOperation='display';state.response={message:attempt&&attempt.SupplierSiteId?'The site was accepted, but verification could not finish. Assignments have not started. The site will not be created again.':'The site creation outcome is uncertain. No assignment was started and this site request will not be submitted again. Reconcile it before any further write.',requestId:attempt&&attempt.requestId,revision:attempt&&attempt.revision,SupplierSiteId:attempt&&attempt.SupplierSiteId,attempt:attempt};state.response.errorText=state.response.message+' Site ID: '+(state.response.SupplierSiteId||'unresolved')+'. '+(state.response.continuationCommand||'');return {state:state,operation:'display'};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_HANDLE_ASSIGNMENT_ERROR",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),dispatch=state.siteDispatch||{},attempt=(state.attempts||[]).filter(function(a){return a.kind==='site'&&a.requestId===dispatch.requestId&&a.revision===dispatch.revision;})[0];function done(op){state.nextOperation=op;return {state:state,operation:op};}function key(v){return typeof v==='number'&&Number.isSafeInteger(v)&&v>0;}function decimal(v){if(typeof v==='number')return key(v)?String(v):null;return typeof v==='string'&&/^[1-9][0-9]{0,17}$/.test(v)?v:null;}function stop(message){dispatch.moreAssignments=false;if(attempt)attempt.status='assignments-incomplete';if(state.draft&&attempt&&state.draft.requestId===attempt.requestId)state.draft.status='assignments-incomplete';state.response={message:message,requestId:attempt&&attempt.requestId,revision:attempt&&attempt.revision,SupplierSiteId:attempt&&attempt.SupplierSiteId,site:attempt&&attempt.site,attempt:attempt};if(attempt)state.response.continuationCommand='Continue assignments for request '+(attempt.continuationOf||attempt.requestId);state.response.errorText=state.response.message+' Site ID: '+(state.response.SupplierSiteId||'unresolved')+'. '+(state.response.continuationCommand||'');return done('display');} const row=attempt&&attempt.assignments[dispatch.assignmentIndex];if(row&&row.status==='reserved')row.status='uncertain';if(row&&row.status==='accepted')row.verification='readback-pending';return stop('Site created; assignments incomplete. The current assignment failed or could not be verified. Completed assignments remain intact. No automatic retry or further assignment was submitted. Reconcile existing pairs before separately reviewing a continuation.');"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_HANDLE_CHILD_WRITE_ERROR",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState)),p=state.childDispatch||{},a=state.attempts.filter(function(a){return a.kind===p.kind&&a.requestId===p.requestId&&a.revision===p.revision;})[0]; if(a&&a.status==='reserved')a.status='uncertain';if(a&&a.status==='accepted')a.verification='readback-failed';if(a&&state.draft&&state.draft.requestId===a.requestId)state.draft.status=a.status; state.nextOperation='display';state.response={message:a&&a.status==='accepted'?'The '+p.kind+' was accepted, but independent verification could not finish. It will not be created again.':'The '+(p.kind||'child')+' create failed or its outcome is uncertain. It will not be submitted again automatically. Reconcile the existing attempt before another write.',kind:p.kind,attempt:a||null,requestId:a&&a.requestId,revision:a&&a.revision};return {state:state,operation:'display'};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      },
+      {
+        "nodeCode": "XDX_HANDLE_CHILD_PREPARE_ERROR",
+        "nodeType": "CODE",
+        "expressions": [
+          "const state=JSON.parse(JSON.stringify($context.$variables.supplierState));if(state.draft&&state.draft.kind==='address')delete state.draft.duplicateCheckedRevision;delete state.childConfirmation;state.nextOperation='display';state.response={message:'The child source or address-name check could not finish. Existing drafts and accepted or uncertain attempts are retained. No new create was submitted.'};return {state:state,operation:'display'};"
+        ],
+        "referencedConversationVariables": [
+          "supplierState"
+        ]
+      }
+    ],
+    "recordableNodes": [
+      {
+        "nodeCode": "XDX_FIND_SITE_TEMPLATE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_READ_SITE_TEMPLATE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_READ_SITE_SOURCE_ADDRESS",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_SITE_ASSIGNMENT_PAGE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_CHECK_NEW_SITE_NAME",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_CREATE_SITE_ONCE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_VERIFY_CREATED_SITE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_READ_CONTINUATION_SITE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_EXISTING_ASSIGNMENT_PAGE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_CREATE_ASSIGNMENT_ONCE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_VERIFY_CREATED_ASSIGNMENT",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_CHECK_SUPPLIER_NAME",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_LIST_SUPPLIER_SITES",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_GET_SUPPLIER_SITES",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_LIST_SUPPLIER_CONTACTS",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_GET_SUPPLIER_CONTACTS",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_LIST_SUPPLIER_ADDRESSES",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_GET_SUPPLIER_ADDRESSES",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_CHECK_NEW_ADDRESS_NAME",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_CREATE_ADDRESS_ONCE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_GET_CREATED_ADDRESS",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_GET_CREATED_CONTACT",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_CREATE_CONTACT_ONCE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_FIND_ADDRESS_TEMPLATE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_READ_ADDRESS_TEMPLATE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_FIND_CONTACT_TEMPLATE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_READ_CONTACT_TEMPLATE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_READ_SUPPLIER",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_SEARCH_SUPPLIERS",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_READ_SUPPLIER_CLASSIFICATIONS",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_CREATE_SUPPLIER_ONCE",
+        "nodeType": "BO_FUNCTION"
+      },
+      {
+        "nodeCode": "XDX_VERIFY_CREATED_SUPPLIER",
+        "nodeType": "BO_FUNCTION"
+      }
+    ],
+    "assertableNodes": [
+      {
+        "nodeCode": "XDX_APP_STAGE",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_APP_STAGE",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_WELCOME",
+        "nodeType": "LLM",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PARSE_CONTROL",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_INIT_SUPPLIER_STATE",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_INITIALIZE_CONVERSATION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_EVALUATE_CONTROL",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PRESENT_CONTROL_RESULT",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CONTROL_STATE",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CONTROL",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_CONTROL_PREPARATION",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_PREPARATION",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_FIND_SITE_TEMPLATE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SITE_TEMPLATE_SEARCH",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_TEMPLATE_SEARCH",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_1",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_SEARCH",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_READ_SITE_TEMPLATE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SITE_TEMPLATE",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_TEMPLATE",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_2",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_SOURCE",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_READ_SITE_SOURCE_ADDRESS",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SITE_SOURCE_ADDRESS",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_SOURCE_ADDRESS",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_3",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_ADDRESS",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_LOAD_SITE_ASSIGNMENTS",
+        "nodeType": "WHILE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_SITE_ASSIGNMENT_PAGE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": [
+          "XDX_LOAD_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCUMULATE_SITE_ASSIGNMENTS",
+        "nodeType": "CODE",
+        "containerNodeCodes": [
+          "XDX_LOAD_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_ASSIGNMENT_PAGE",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": [
+          "XDX_LOAD_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_4",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_ASSIGNMENTS",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PREPARE_SITE_NAME_CHECK",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_NAME_REQUEST",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_5",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_NAME_REQUEST",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_CHECK_NEW_SITE_NAME",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SITE_NAME_CHECK",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_NAME_CHECK",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_6",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_NAME_RESULT",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_BUILD_SITE_DRAFT",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_DRAFT",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_7",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_DRAFT_RESULT",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_CREATE_SITE_ONCE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_CAPTURE_SITE_CREATION",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_CREATION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_8",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_CREATION",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_VERIFY_CREATED_SITE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_CREATED_SITE",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_VERIFICATION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_9",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CONTINUATION_REQUEST",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_READ_CONTINUATION_SITE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_CONTINUATION_SITE",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CONTINUATION_SITE",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_10",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CONTINUATION_SITE",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_LOAD_EXISTING_ASSIGNMENTS",
+        "nodeType": "WHILE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_EXISTING_ASSIGNMENT_PAGE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": [
+          "XDX_LOAD_EXISTING_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCUMULATE_EXISTING_ASSIGNMENTS",
+        "nodeType": "CODE",
+        "containerNodeCodes": [
+          "XDX_LOAD_EXISTING_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PERSIST_EXISTING_ASSIGNMENTS",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": [
+          "XDX_LOAD_EXISTING_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_11",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_EXISTING_ASSIGNMENTS",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_BUILD_SITE_CONTINUATION",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_CONTINUATION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_12",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SITE_VERIFICATION",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_CREATE_SITE_ASSIGNMENTS",
+        "nodeType": "WHILE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_RESERVE_ASSIGNMENT",
+        "nodeType": "CODE",
+        "containerNodeCodes": [
+          "XDX_CREATE_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PERSIST_ASSIGNMENT_RESERVATION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": [
+          "XDX_CREATE_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_ASSIGNMENT_RESERVATION",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": [
+          "XDX_CREATE_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_CREATE_ASSIGNMENT_ONCE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": [
+          "XDX_CREATE_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_CAPTURE_ASSIGNMENT",
+        "nodeType": "CODE",
+        "containerNodeCodes": [
+          "XDX_CREATE_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PERSIST_ASSIGNMENT_CAPTURE",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": [
+          "XDX_CREATE_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ROUTE_ASSIGNMENT_CAPTURE",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": [
+          "XDX_CREATE_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_VERIFY_CREATED_ASSIGNMENT",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": [
+          "XDX_CREATE_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_CREATED_ASSIGNMENT",
+        "nodeType": "CODE",
+        "containerNodeCodes": [
+          "XDX_CREATE_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PERSIST_ASSIGNMENT_VERIFICATION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": [
+          "XDX_CREATE_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_JOIN_ASSIGNMENT_RESERVED",
+        "nodeType": "CODE",
+        "containerNodeCodes": [
+          "XDX_CREATE_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_JOIN_ASSIGNMENT_VERIFIED",
+        "nodeType": "CODE",
+        "containerNodeCodes": [
+          "XDX_CREATE_SITE_ASSIGNMENTS"
+        ]
+      },
+      {
+        "nodeCode": "XDX_PRESENT_SITE_COMPLETION",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_COMPLETION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_SITE_STAGE_13",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_SUPPLIER_QUERY_RESPONSE",
+        "nodeType": "LLM",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_INTERPRET_SUPPLIER_REQUEST",
+        "nodeType": "LLM",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PREPARE_SUPPLIER_REQUEST",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_REQUEST",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_REQUEST",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_LIST",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_SEARCH_RESULT",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_DETAIL",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PREPARE_CHILD_READ",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CHILD_REQUEST",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_DETAIL_RESULT",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_LANGUAGE",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_CHECK_SUPPLIER_NAME",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_NAME_CHECK",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_NAME_CHECK",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_LIST_SUPPLIER_SITES",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_LIST_SITES",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_LIST_SITES",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_GET_SUPPLIER_SITES",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_GET_SITES",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_GET_SITES",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_LIST_SUPPLIER_CONTACTS",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_LIST_CONTACTS",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_LIST_CONTACTS",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_GET_SUPPLIER_CONTACTS",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_GET_CONTACTS",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_GET_CONTACTS",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_LIST_SUPPLIER_ADDRESSES",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_LIST_ADDRESSES",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_LIST_ADDRESSES",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_GET_SUPPLIER_ADDRESSES",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_GET_ADDRESSES",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_GET_ADDRESSES",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PREPARE_SITE_SOURCE",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_SOURCE_REQUEST",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PREPARE_CHILD_CREATE",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CHILD_PREPARATION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CHILD_SOURCE",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_CHILD_SOURCE",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_BUILD_CHILD_DRAFT",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CHILD_DRAFT",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_VALIDATE_CHILD_DRAFT",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CHILD_VALIDATION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CHILD_NAME_CHECK",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_CHECK_NEW_ADDRESS_NAME",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_ADDRESS_NAME_CHECK",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_ADDRESS_NAME_CHECK",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_CHILD_NAME",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_RESERVE_CHILD_CREATE",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CHILD_RESERVATION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CHILD_DISPATCH",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_CREATE_ADDRESS_ONCE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_CAPTURE_CHILD_CREATION",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CHILD_CREATION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_CHILD_POST",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CHILD_READBACK",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_GET_CREATED_ADDRESS",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_VERIFY_CHILD_RESULT",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CHILD_VERIFICATION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_CHILD_READBACK",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_CHILD_QUERY_RESPONSE",
+        "nodeType": "LLM",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_RETURN_CHILD_RESPONSE",
+        "nodeType": "RETURN",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_GET_CREATED_CONTACT",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_CREATE_CONTACT_ONCE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_FIND_ADDRESS_TEMPLATE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_CHILD_SOURCE",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CHILD_SOURCE",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_READ_ADDRESS_TEMPLATE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_FIND_CONTACT_TEMPLATE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_READ_CONTACT_TEMPLATE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_READ_SUPPLIER",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SUPPLIER_DETAIL",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_DETAIL",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_SEARCH_SUPPLIERS",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SUPPLIER_SEARCH",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SEARCH",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_READ_SUPPLIER_CLASSIFICATIONS",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_SUPPLIER_CLASSIFICATIONS",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SUPPLIER_CLASSIFICATIONS",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_CREATE_SUPPLIER_ONCE",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_CREATE_RESULT",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CREATE_RESULT",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ROUTE_CREATE_RESULT",
+        "nodeType": "SWITCH",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_JOIN_CREATE",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_VERIFY_CREATED_SUPPLIER",
+        "nodeType": "BO_FUNCTION",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_ACCEPT_CREATE_VERIFICATION",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_VERIFICATION",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_RECHECK_SITE_REVIEW",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_RECHECK",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PREPARE_SITE_CONTINUATION",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CONTINUATION_REQUEST",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_UNSUPPORTED_STAGE",
+        "nodeType": "RETURN",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_HANDLE_CREATE_ERROR",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CREATE_ERROR",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_RETURN_CREATE_ERROR",
+        "nodeType": "RETURN",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_HANDLE_READ_ERROR",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_READ_ERROR",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_RETURN_READ_ERROR",
+        "nodeType": "RETURN",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_HANDLE_VERIFY_ERROR",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_VERIFY_ERROR",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_RETURN_VERIFY_ERROR",
+        "nodeType": "RETURN",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_HANDLE_SITE_WRITE_ERROR",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_SITE_WRITE_ERROR",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_RETURN_SITE_WRITE_ERROR",
+        "nodeType": "RETURN",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_HANDLE_ASSIGNMENT_ERROR",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_ASSIGNMENT_ERROR",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_RETURN_ASSIGNMENT_ERROR",
+        "nodeType": "RETURN",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_HANDLE_CHILD_WRITE_ERROR",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CHILD_WRITE_ERROR",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_RETURN_CHILD_WRITE_ERROR",
+        "nodeType": "RETURN",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_HANDLE_CHILD_PREPARE_ERROR",
+        "nodeType": "CODE",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_PERSIST_CHILD_PREPARE_ERROR",
+        "nodeType": "SET_FIELDS",
+        "containerNodeCodes": []
+      },
+      {
+        "nodeCode": "XDX_RETURN_CHILD_PREPARE_ERROR",
+        "nodeType": "RETURN",
+        "containerNodeCodes": []
+      }
+    ],
+    "suspensionPoints": [],
+    "requiredInteractions": [],
+    "runProfiles": [],
+    "existingCoverage": [
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/init-display.json",
+        "testName": "init-display",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "Verify the workflow routes the Agentic App InitDisplay trigger context through its dedicated app-stage path and returns the expected app-stage output."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/query.json",
+        "testName": "query",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "Verify the workflow routes the Agentic App Query trigger context through its dedicated app-stage path and returns the expected app-stage output."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/xdx-route-control-language-path.json",
+        "testName": "xdx-route-control-language-path",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "Exercise the Language path of XDX_ROUTE_CONTROL and verify branch-specific downstream behavior."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/xdx-route-request-classifications-path.json",
+        "testName": "xdx-route-request-classifications-path",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "Exercise the Classifications path of XDX_ROUTE_REQUEST and verify branch-specific downstream behavior."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/xdx-route-search-result-get-path.json",
+        "testName": "xdx-route-search-result-get-path",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "Exercise the Get path of XDX_ROUTE_SEARCH_RESULT and verify branch-specific downstream behavior."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/xdx-route-detail-result-sites-list-path.json",
+        "testName": "xdx-route-detail-result-sites-list-path",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "Exercise the Sites List path of XDX_ROUTE_DETAIL_RESULT and verify branch-specific downstream behavior."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/xdx-route-detail-result-sites-get-path.json",
+        "testName": "xdx-route-detail-result-sites-get-path",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "Exercise the Sites Get path of XDX_ROUTE_DETAIL_RESULT and verify branch-specific downstream behavior."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/xdx-route-detail-result-contacts-list-path.json",
+        "testName": "xdx-route-detail-result-contacts-list-path",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "Exercise the Contacts List path of XDX_ROUTE_DETAIL_RESULT and verify branch-specific downstream behavior."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/xdx-route-detail-result-contacts-get-path.json",
+        "testName": "xdx-route-detail-result-contacts-get-path",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "Exercise the Contacts Get path of XDX_ROUTE_DETAIL_RESULT and verify branch-specific downstream behavior."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/xdx-route-detail-result-addresses-list-path.json",
+        "testName": "xdx-route-detail-result-addresses-list-path",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "Exercise the Addresses List path of XDX_ROUTE_DETAIL_RESULT and verify branch-specific downstream behavior."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/xdx-route-detail-result-addresses-get-path.json",
+        "testName": "xdx-route-detail-result-addresses-get-path",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "Exercise the Addresses Get path of XDX_ROUTE_DETAIL_RESULT and verify branch-specific downstream behavior."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/required-child-read-journey.json",
+        "testName": "required-child-read-journey",
+        "executionMode": "conversation",
+        "stepCount": 8,
+        "intent": "Query sites, contacts and addresses with details, then prepare and cancel a required-only supplier draft from the same selected parent."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/site-missing-assignment-recovery.json",
+        "testName": "site-missing-assignment-recovery",
+        "executionMode": "conversation",
+        "stepCount": 6,
+        "intent": "Preserve a created site after assignment uncertainty, reconcile existing pairs, and separately confirm only the never-attempted missing assignment."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/site-required-creation.json",
+        "testName": "site-required-creation",
+        "executionMode": "conversation",
+        "stepCount": 3,
+        "intent": "Create a supplier site like an existing same-parent site with its required assignment, after exact review and confirmation."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/site-required-name-edit.json",
+        "testName": "site-required-name-edit",
+        "executionMode": "conversation",
+        "stepCount": 4,
+        "intent": "Prepare a site like Dell US1, edit its required new name, review the revised draft and cancel without writes."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/supplier-child-read-continuity.json",
+        "testName": "supplier-child-read-continuity",
+        "executionMode": "conversation",
+        "stepCount": 5,
+        "intent": "Verify realistic supplier clarification, child paging, resource switching and selected-child details in Ask Oracle without writes."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/supplier-child-to-template.json",
+        "testName": "supplier-child-to-template",
+        "executionMode": "conversation",
+        "stepCount": 2,
+        "intent": "Verify observed native transition from site detail to supplier draft without business writes."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/supplier-draft-edit-boundaries.json",
+        "testName": "supplier-draft-edit-boundaries",
+        "executionMode": "conversation",
+        "stepCount": 8,
+        "intent": "Verify approved supplier draft edit, selection isolation and stale-confirmation boundaries using retained GET fixtures; zero live writes."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/supplier-draft-review-cancel.json",
+        "testName": "supplier-draft-review-cancel",
+        "executionMode": "conversation",
+        "stepCount": 4,
+        "intent": "Prove supplier selection continuity, generated draft identity, exact review and cancellation without creating a supplier."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/supplier-exact-name.json",
+        "testName": "supplier-exact-name",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "R03 exact supplier-name lookup from a fresh app-local Query; supplier identity only, no business writes."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/supplier-mismatch-boundary.json",
+        "testName": "supplier-mismatch-boundary",
+        "executionMode": "conversation",
+        "stepCount": 6,
+        "intent": "Approved fixture-only accepted-mismatch boundary and no repeated POST; all business responses are fixtures."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/supplier-required-confirmation.json",
+        "testName": "supplier-required-confirmation",
+        "executionMode": "conversation",
+        "stepCount": 6,
+        "intent": "Inspect required classification choices, prepare and review a supplier based on Dell, confirm once with independent verification and reject repeated confirmation."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/supplier-required-edit-and-uncertainty.json",
+        "testName": "supplier-required-edit-and-uncertainty",
+        "executionMode": "conversation",
+        "stepCount": 14,
+        "intent": "Edit a required supplier name, reject stale review, cancel the draft, then preserve an uncertain submission without repeat or cancellation."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/supplier-required-search.json",
+        "testName": "supplier-required-search",
+        "executionMode": "single-turn",
+        "stepCount": 1,
+        "intent": "Find a supplier like Dell from the app-local Ask Oracle Query using the observed read-only route."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/supplier-search-paging.json",
+        "testName": "supplier-search-paging",
+        "executionMode": "conversation",
+        "stepCount": 5,
+        "intent": "R03 supplier search continuation preserves filter and offset, then stops at final page."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/supplier-template-selection.json",
+        "testName": "supplier-template-selection",
+        "executionMode": "conversation",
+        "stepCount": 5,
+        "intent": "Exact create supplier based on Dell request, ambiguous source selection, missing new name and reviewed cancellation."
+      },
+      {
+        "testFile": "test/workflows/xdx_supplier_conversation/supplier-uncertain-boundary.json",
+        "testName": "supplier-uncertain-boundary",
+        "executionMode": "conversation",
+        "stepCount": 6,
+        "intent": "Approved fixture-only uncertain boundary and no repeated POST; all business responses are fixtures."
+      }
+    ],
+    "authoringContract": {
+      "modelAuthorsConversation": true,
+      "minimumSteps": 2,
+      "supportedStepTypes": [
+        "chat",
+        "resume"
+      ],
+      "runtimeManagesConversationState": true,
+      "controlMessageBinding": {
+        "actions": [
+          "Review",
+          "Confirm",
+          "Cancel"
+        ],
+        "source": "earlier successful CODE node structured output",
+        "inputMessage": "empty string",
+        "fields": [
+          "action",
+          "sourceStepId",
+          "nodeCode",
+          "requestIdPath",
+          "revisionPath"
+        ],
+        "resolution": "per execution, never persisted as a literal"
+      },
+      "behavioralContinuityProofRequired": true,
+      "suspensionContextRequiredBeforeAuthoring": true,
+      "retryTargetSource": "suspensionPoints.loopBackNodeCode",
+      "retryLimitSource": "suspensionPoints.maxIterations",
+      "completePathPartitionRequired": true,
+      "scenarioMetadataRequired": true,
+      "syncPlanScenarioIdSource": "requiredInteractions.scenarioId",
+      "fullNodeContextCommand": "get-workflow-test-judge-context --file src/workflows/xdx_supplier_conversation.wf --test-file <conversation-test.json> --step-id <step-id> --node-code <node-code> --detail full"
+    }
+  }
+}

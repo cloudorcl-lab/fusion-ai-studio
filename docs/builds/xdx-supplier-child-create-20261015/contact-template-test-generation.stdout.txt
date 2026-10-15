@@ -1,0 +1,8 @@
+Workflow test generated.
+Workflow: XDX_SUPPLIER_CONVERSATION
+Test: xdx-contact-required-template-creation
+Tags: xdx-child-required-fixture-acceptance
+Test file: D:\Temp\worktrees\xdx-supplier-workspace-20261014\test\workflows\xdx_supplier_conversation\xdx-contact-required-template-creation.json
+Conversation steps: 4
+Data status: ready
+Data capture policy: model-generated

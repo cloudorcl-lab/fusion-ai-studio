@@ -24,6 +24,19 @@ try {
   negative('path escape',r=>r.timeTracker='../outside.md',/timeTracker/);
   negative('wrong branch',r=>r.branch='elsewhere',/branch mismatch/);
   const planned=structuredClone(record);planned.phase='Startup';planned.checks[4].status='planned';assert.deepEqual(run(planned,'Startup'),[]);
+  // Evidence is a serialized array contract even before a pass is claimed.
+  fs.writeFileSync(path.join(root,'x'),'single character path fixture');
+  for(const status of ['pass','planned','not-applicable']) {
+    for(const evidence of [undefined,null,'x',{path:files[5]},42]) {
+      const invalid=structuredClone(record);invalid.phase='Startup';invalid.checks[4].status=status;invalid.checks[4].evidence=evidence;
+      let errors;assert.doesNotThrow(()=>{errors=run(invalid,'Startup');},'Malformed evidence must return diagnostics, not throw');
+      assert(errors.length>0,status+' rejects malformed evidence '+JSON.stringify(evidence));
+    }
+  }
+  for(const status of ['planned','not-applicable']) {
+    const empty=structuredClone(record);empty.phase='Startup';empty.checks[4].status=status;empty.checks[4].evidence=[];
+    assert.deepEqual(run(empty,'Startup'),[],status+' permits an empty evidence array');
+  }
   const ledgerPath=path.join(root,record.failureLedger), ledger=JSON.parse(fs.readFileSync(ledgerPath,'utf8'));
   ledger.taskId='build-root'; ledger.scopes.push('runtime');
   ledger.failures=[{id:'F1',observedUtc:new Date().toISOString(),symptom:'Open runtime failure',scope:'runtime',blocks:['runtime'],status:'open',evidenceGap:'Fixture intentionally models an unresolved runtime finding'}];

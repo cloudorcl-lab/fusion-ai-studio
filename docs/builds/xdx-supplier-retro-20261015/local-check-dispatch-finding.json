@@ -1,0 +1,7 @@
+{
+  "observedUtc": "2026-10-15T17:41:26.141Z",
+  "runId": "72daf98c-d736-488e-b64d-6ec8faafccc3",
+  "actual": "Measured shell-free npm dispatch spawn-failed ENOENT, exit127/child-4058; no test child ran",
+  "cause": "npm resolves to a Windows PowerShell/cmd shim, not a directly spawnable executable",
+  "correction": "Invoke installed Windows cmd with fixed local-only npm run check:session; preserve shell-free runner and no tenant npm test"
+}

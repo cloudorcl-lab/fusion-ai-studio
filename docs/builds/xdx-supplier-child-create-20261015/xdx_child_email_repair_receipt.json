@@ -1,0 +1,12 @@
+{
+  "before": "6a2d83dbb12d4b7f2c914a1657b70d03a476bda91f4e36fca849d1f1ed2b0253",
+  "after": "3735a1c8c19e9a7e591ecfda4ab8fdcab5950e25d341409d7b5427d6b9d5d75a",
+  "changedNodes": [
+    "XDX_PREPARE_SUPPLIER_REQUEST",
+    "XDX_VALIDATE_CHILD_DRAFT"
+  ],
+  "scope": "Only model-extracted unquoted terminal Email punctuation in longer natural-language requests; whole-message explicit field literals and quoted tokens preserved. Final domain label must end alphanumeric.",
+  "graphChanged": false,
+  "remoteCalls": 0,
+  "runtimeAttempts": 0
+}

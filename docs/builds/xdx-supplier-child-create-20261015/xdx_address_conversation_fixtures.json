@@ -1,0 +1,572 @@
+{
+  "tenantWrites": 0,
+  "scenarios": {
+    "template": {
+      "finalPayload": {
+        "AddressName": "XDX Address Replay Template 20261015",
+        "CountryCode": "US",
+        "AddressLine1": "2300 GREENLAWN BLVD",
+        "City": "ROUND ROCK",
+        "State": "TX",
+        "PostalCode": "78664",
+        "Email": "xdx.address.replay.template.20261015@example.invalid",
+        "AddressPurposeOrderingFlag": true
+      },
+      "initialPayload": {
+        "AddressName": "XDX Address Replay Template 20261015",
+        "CountryCode": "US",
+        "AddressLine1": "2300 GREENLAWN BLVD",
+        "City": "ROUND ROCK",
+        "State": "TX",
+        "PostalCode": "78664",
+        "Email": "xdx.address.replay.template.initial.20261015@example.invalid",
+        "AddressPurposeOrderingFlag": true
+      },
+      "syntheticPartyNumber": "990015202",
+      "parentSupplier": {
+        "SupplierId": 300000047414679,
+        "SupplierNumber": "1255",
+        "Supplier": "Dell Inc.",
+        "SupplierType": "Supplier",
+        "SupplierTypeCode": "SUPPLIER",
+        "BusinessRelationship": "Spend Authorized",
+        "BusinessRelationshipCode": "SPEND_AUTHORIZED",
+        "TaxOrganizationType": "Corporation",
+        "TaxOrganizationTypeCode": "CORPORATION",
+        "InactiveDate": null,
+        "Status": "ACTIVE"
+      },
+      "syntheticGeneratedId": 900000000015202,
+      "provenance": "Current retained eqil supplier/address GET values reused for shape and physical provenance; all collection-empty/create/readback outputs are synthetic fixtures. No fixture claims current name absence or successful live write.",
+      "sourceAddress": {
+        "SupplierAddressId": 300000047414694,
+        "AddressName": "Dell US1",
+        "CountryCode": "US",
+        "Country": "United States",
+        "AddressLine1": "2300 GREENLAWN BLVD",
+        "AddressLine2": null,
+        "City": "ROUND ROCK",
+        "State": "TX",
+        "Province": null,
+        "PostalCode": "78664",
+        "Status": "ACTIVE",
+        "InactiveDate": "4712-12-31",
+        "AddressPurposeOrderingFlag": true
+      },
+      "fixturesByTurn": {
+        "confirm": {
+          "XDX_CREATE_ADDRESS_ONCE": {
+            "metadata": {
+              "functionName": "CreateSupplierAddress",
+              "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "City": "ROUND ROCK",
+              "PostalCode": "78664",
+              "CountryCode": "US",
+              "State": "TX",
+              "AddressName": "XDX Address Replay Template 20261015",
+              "Email": "xdx.address.replay.template.20261015@example.invalid",
+              "suppliers_Id": "300000047414679",
+              "AddressLine1": "2300 GREENLAWN BLVD"
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "SupplierAddressId": 900000000015202,
+              "AddressPartyNumber": "990015202",
+              "AddressName": "XDX Address Replay Template 20261015",
+              "CountryCode": "US",
+              "AddressLine1": "2300 GREENLAWN BLVD",
+              "City": "ROUND ROCK",
+              "State": "TX",
+              "PostalCode": "78664",
+              "Email": "xdx.address.replay.template.20261015@example.invalid",
+              "AddressPurposeOrderingFlag": true
+            }
+          },
+          "XDX_CHECK_NEW_ADDRESS_NAME": {
+            "metadata": {
+              "functionName": "ListSupplierAddresses",
+              "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "q": "AddressName='XDX Address Replay Template 20261015'",
+              "offset": 0,
+              "suppliers_Id": "300000047414679",
+              "limit": 1
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "items": [],
+              "count": 0,
+              "limit": 1,
+              "offset": 0,
+              "links": [],
+              "hasMore": false
+            }
+          },
+          "XDX_GET_CREATED_ADDRESS": {
+            "metadata": {
+              "functionName": "GetSupplierAddress",
+              "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "suppliers_addresses_Id": "900000000015202",
+              "suppliers_Id": "300000047414679"
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "SupplierAddressId": 900000000015202,
+              "AddressPartyNumber": "990015202",
+              "AddressName": "XDX Address Replay Template 20261015",
+              "CountryCode": "US",
+              "AddressLine1": "2300 GREENLAWN BLVD",
+              "City": "ROUND ROCK",
+              "State": "TX",
+              "PostalCode": "78664",
+              "Email": "xdx.address.replay.template.20261015@example.invalid",
+              "AddressPurposeOrderingFlag": true,
+              "Status": "ACTIVE",
+              "InactiveDate": null,
+              "Country": "United States",
+              "AddressLine2": null,
+              "Province": null
+            }
+          }
+        },
+        "edit": {
+          "XDX_CHECK_NEW_ADDRESS_NAME": {
+            "metadata": {
+              "functionName": "ListSupplierAddresses",
+              "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "q": "AddressName='XDX Address Replay Template 20261015'",
+              "offset": 0,
+              "suppliers_Id": "300000047414679",
+              "limit": 1
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "items": [],
+              "count": 0,
+              "limit": 1,
+              "offset": 0,
+              "links": [],
+              "hasMore": false
+            }
+          }
+        },
+        "review": {},
+        "prepare": {
+          "XDX_CHECK_NEW_ADDRESS_NAME": {
+            "metadata": {
+              "functionName": "ListSupplierAddresses",
+              "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "q": "AddressName='XDX Address Replay Template 20261015'",
+              "offset": 0,
+              "suppliers_Id": "300000047414679",
+              "limit": 1
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "items": [],
+              "count": 0,
+              "limit": 1,
+              "offset": 0,
+              "links": [],
+              "hasMore": false
+            }
+          },
+          "XDX_SEARCH_SUPPLIERS": {
+            "metadata": {
+              "functionName": "ListSuppliers",
+              "businessObjectCode": "XDX_SUPPLIERS"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "q": "SupplierNumber='1255' and (InactiveDate is null or InactiveDate > '2026-10-15')",
+              "offset": 0,
+              "limit": 25
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "items": [
+                {
+                  "SupplierId": 300000047414679,
+                  "SupplierNumber": "1255",
+                  "Supplier": "Dell Inc.",
+                  "SupplierType": "Supplier",
+                  "SupplierTypeCode": "SUPPLIER",
+                  "BusinessRelationship": "Spend Authorized",
+                  "BusinessRelationshipCode": "SPEND_AUTHORIZED",
+                  "TaxOrganizationType": "Corporation",
+                  "TaxOrganizationTypeCode": "CORPORATION",
+                  "InactiveDate": null,
+                  "Status": "ACTIVE"
+                }
+              ],
+              "count": 1,
+              "limit": 25,
+              "offset": 0,
+              "links": [],
+              "hasMore": false
+            }
+          },
+          "XDX_READ_SUPPLIER": {
+            "metadata": {
+              "functionName": "GetSupplier",
+              "businessObjectCode": "XDX_SUPPLIERS"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "suppliers_Id": "300000047414679"
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "SupplierId": 300000047414679,
+              "SupplierNumber": "1255",
+              "Supplier": "Dell Inc.",
+              "SupplierType": "Supplier",
+              "SupplierTypeCode": "SUPPLIER",
+              "BusinessRelationship": "Spend Authorized",
+              "BusinessRelationshipCode": "SPEND_AUTHORIZED",
+              "TaxOrganizationType": "Corporation",
+              "TaxOrganizationTypeCode": "CORPORATION",
+              "InactiveDate": null,
+              "Status": "ACTIVE"
+            }
+          },
+          "XDX_FIND_ADDRESS_TEMPLATE": {
+            "metadata": {
+              "functionName": "ListSupplierAddresses",
+              "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "q": "AddressName='Dell US1'",
+              "offset": 0,
+              "suppliers_Id": "300000047414679",
+              "limit": 25
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "items": [
+                {
+                  "SupplierAddressId": 300000047414694,
+                  "AddressName": "Dell US1",
+                  "CountryCode": "US",
+                  "Country": "United States",
+                  "AddressLine1": "2300 GREENLAWN BLVD",
+                  "AddressLine2": null,
+                  "City": "ROUND ROCK",
+                  "State": "TX",
+                  "Province": null,
+                  "PostalCode": "78664",
+                  "Status": "ACTIVE",
+                  "InactiveDate": "4712-12-31",
+                  "AddressPurposeOrderingFlag": true
+                }
+              ],
+              "count": 1,
+              "limit": 25,
+              "offset": 0,
+              "links": [],
+              "hasMore": false
+            }
+          }
+        }
+      }
+    },
+    "direct": {
+      "finalPayload": {
+        "AddressName": "XDX Address Replay Direct 20261015",
+        "CountryCode": "US",
+        "AddressLine1": "2300 GREENLAWN BLVD",
+        "City": "ROUND ROCK",
+        "State": "TX",
+        "PostalCode": "78664",
+        "Email": "xdx.address.replay.direct.20261015@example.invalid",
+        "AddressPurposeOrderingFlag": true
+      },
+      "initialPayload": {
+        "AddressName": "XDX Address Replay Direct 20261015",
+        "CountryCode": "US",
+        "AddressLine1": "2300 GREENLAWN BLVD",
+        "City": "ROUND ROCK",
+        "State": "TX",
+        "PostalCode": "78664",
+        "Email": "xdx.address.replay.direct.initial.20261015@example.invalid",
+        "AddressPurposeOrderingFlag": true
+      },
+      "syntheticPartyNumber": "990015201",
+      "parentSupplier": {
+        "SupplierId": 300000047414679,
+        "SupplierNumber": "1255",
+        "Supplier": "Dell Inc.",
+        "SupplierType": "Supplier",
+        "SupplierTypeCode": "SUPPLIER",
+        "BusinessRelationship": "Spend Authorized",
+        "BusinessRelationshipCode": "SPEND_AUTHORIZED",
+        "TaxOrganizationType": "Corporation",
+        "TaxOrganizationTypeCode": "CORPORATION",
+        "InactiveDate": null,
+        "Status": "ACTIVE"
+      },
+      "syntheticGeneratedId": 900000000015201,
+      "provenance": "Current retained eqil supplier/address GET values reused for shape and physical provenance; all collection-empty/create/readback outputs are synthetic fixtures. No fixture claims current name absence or successful live write.",
+      "sourceAddress": null,
+      "fixturesByTurn": {
+        "confirm": {
+          "XDX_CREATE_ADDRESS_ONCE": {
+            "metadata": {
+              "functionName": "CreateSupplierAddress",
+              "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "City": "ROUND ROCK",
+              "PostalCode": "78664",
+              "CountryCode": "US",
+              "State": "TX",
+              "AddressName": "XDX Address Replay Direct 20261015",
+              "Email": "xdx.address.replay.direct.20261015@example.invalid",
+              "suppliers_Id": "300000047414679",
+              "AddressLine1": "2300 GREENLAWN BLVD"
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "SupplierAddressId": 900000000015201,
+              "AddressPartyNumber": "990015201",
+              "AddressName": "XDX Address Replay Direct 20261015",
+              "CountryCode": "US",
+              "AddressLine1": "2300 GREENLAWN BLVD",
+              "City": "ROUND ROCK",
+              "State": "TX",
+              "PostalCode": "78664",
+              "Email": "xdx.address.replay.direct.20261015@example.invalid",
+              "AddressPurposeOrderingFlag": true
+            }
+          },
+          "XDX_CHECK_NEW_ADDRESS_NAME": {
+            "metadata": {
+              "functionName": "ListSupplierAddresses",
+              "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "q": "AddressName='XDX Address Replay Direct 20261015'",
+              "offset": 0,
+              "suppliers_Id": "300000047414679",
+              "limit": 1
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "items": [],
+              "count": 0,
+              "limit": 1,
+              "offset": 0,
+              "links": [],
+              "hasMore": false
+            }
+          },
+          "XDX_GET_CREATED_ADDRESS": {
+            "metadata": {
+              "functionName": "GetSupplierAddress",
+              "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "suppliers_addresses_Id": "900000000015201",
+              "suppliers_Id": "300000047414679"
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "SupplierAddressId": 900000000015201,
+              "AddressPartyNumber": "990015201",
+              "AddressName": "XDX Address Replay Direct 20261015",
+              "CountryCode": "US",
+              "AddressLine1": "2300 GREENLAWN BLVD",
+              "City": "ROUND ROCK",
+              "State": "TX",
+              "PostalCode": "78664",
+              "Email": "xdx.address.replay.direct.20261015@example.invalid",
+              "AddressPurposeOrderingFlag": true,
+              "Status": "ACTIVE",
+              "InactiveDate": null,
+              "Country": "United States",
+              "AddressLine2": null,
+              "Province": null
+            }
+          }
+        },
+        "edit": {
+          "XDX_CHECK_NEW_ADDRESS_NAME": {
+            "metadata": {
+              "functionName": "ListSupplierAddresses",
+              "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "q": "AddressName='XDX Address Replay Direct 20261015'",
+              "offset": 0,
+              "suppliers_Id": "300000047414679",
+              "limit": 1
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "items": [],
+              "count": 0,
+              "limit": 1,
+              "offset": 0,
+              "links": [],
+              "hasMore": false
+            }
+          }
+        },
+        "review": {},
+        "prepare": {
+          "XDX_CHECK_NEW_ADDRESS_NAME": {
+            "metadata": {
+              "functionName": "ListSupplierAddresses",
+              "businessObjectCode": "XDX_SUPPLIER_ADDRESSES"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "q": "AddressName='XDX Address Replay Direct 20261015'",
+              "offset": 0,
+              "suppliers_Id": "300000047414679",
+              "limit": 1
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "items": [],
+              "count": 0,
+              "limit": 1,
+              "offset": 0,
+              "links": [],
+              "hasMore": false
+            }
+          },
+          "XDX_SEARCH_SUPPLIERS": {
+            "metadata": {
+              "functionName": "ListSuppliers",
+              "businessObjectCode": "XDX_SUPPLIERS"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "q": "SupplierNumber='1255' and (InactiveDate is null or InactiveDate > '2026-10-15')",
+              "offset": 0,
+              "limit": 25
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "items": [
+                {
+                  "SupplierId": 300000047414679,
+                  "SupplierNumber": "1255",
+                  "Supplier": "Dell Inc.",
+                  "SupplierType": "Supplier",
+                  "SupplierTypeCode": "SUPPLIER",
+                  "BusinessRelationship": "Spend Authorized",
+                  "BusinessRelationshipCode": "SPEND_AUTHORIZED",
+                  "TaxOrganizationType": "Corporation",
+                  "TaxOrganizationTypeCode": "CORPORATION",
+                  "InactiveDate": null,
+                  "Status": "ACTIVE"
+                }
+              ],
+              "count": 1,
+              "limit": 25,
+              "offset": 0,
+              "links": [],
+              "hasMore": false
+            }
+          },
+          "XDX_READ_SUPPLIER": {
+            "metadata": {
+              "functionName": "GetSupplier",
+              "businessObjectCode": "XDX_SUPPLIERS"
+            },
+            "capture": {
+              "mode": "model-generated",
+              "responseTruncated": false
+            },
+            "input": {
+              "suppliers_Id": "300000047414679"
+            },
+            "nodeType": "BO_FUNCTION",
+            "response": {
+              "SupplierId": 300000047414679,
+              "SupplierNumber": "1255",
+              "Supplier": "Dell Inc.",
+              "SupplierType": "Supplier",
+              "SupplierTypeCode": "SUPPLIER",
+              "BusinessRelationship": "Spend Authorized",
+              "BusinessRelationshipCode": "SPEND_AUTHORIZED",
+              "TaxOrganizationType": "Corporation",
+              "TaxOrganizationTypeCode": "CORPORATION",
+              "InactiveDate": null,
+              "Status": "ACTIVE"
+            }
+          }
+        }
+      }
+    }
+  },
+  "observedEndUtc": "2026-10-15T13:33:52.5492583Z",
+  "scenarioExecutions": 0,
+  "workflowSha256": "abf9a9a618234f7258a6636697b5b330ac4a27efc67055fc8d1921c77edca567",
+  "status": "fixtures-only-pending-conversation-context",
+  "assignmentId": "address-contract",
+  "agentId": "/root/address_contract"
+}

@@ -1,0 +1,9 @@
+{
+  "functionName": "CreateSupplierAddress",
+  "kind": "token",
+  "parameterName": "AddressLine1",
+  "patch": {
+    "dataType": "string",
+    "description": "Reviewed first physical address line, maximum 240 characters; exact inherited value or direct input."
+  }
+}

@@ -1,0 +1,15 @@
+[aistudio-auth] Loading credentials from configured passphrase.
+[aistudio-auth] Resolving credentials (interactive=true, forceReauthorize=false)...
+[aistudio-auth] Loaded cached credentials from disk.
+[aistudio-auth] Encrypted credentials written to C:\Users\dasu\.config\aistudio-cli\credentials.json.
+[aistudio-auth] Credential resolution finished successfully.
+{
+  "ok": true,
+  "command": "do-save-bo",
+  "result": {
+    "action": "patched",
+    "supportedObjectId": "300000340669151",
+    "objectCode": "XDX_SUPPLIER_ADDRESSES",
+    "filePath": "D:\\Temp\\worktrees\\xdx-supplier-workspace-20261014\\src\\businessObjects\\xdx_supplier_addresses.bo"
+  }
+}

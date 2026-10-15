@@ -1,0 +1,62 @@
+{
+  "observedUtc": "2026-10-15T13:00:00.541Z",
+  "objects": [
+    {
+      "path": "src/businessObjects/xdx_supplier_addresses.bo",
+      "sha256": "0e3318ec0099e6b24879b05f8506522dfa8b234c80c104bb90f3025f68ee2fdf",
+      "objectCode": "XDX_SUPPLIER_ADDRESSES",
+      "functions": [
+        {
+          "name": "ListSupplierAddresses",
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses?onlyData=true&fields=SupplierAddressId,AddressName,CountryCode,Country,AddressLine1,AddressLine2,City,State,Province,PostalCode,Status,InactiveDate,AddressPurposeOrderingFlag&q={q}&limit={limit}&offset={offset}&orderBy=SupplierAddressId:asc"
+        },
+        {
+          "name": "GetSupplierAddress",
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses/{suppliers_addresses_Id}?onlyData=true&fields=SupplierAddressId,AddressName,CountryCode,Country,AddressLine1,AddressLine2,City,State,Province,PostalCode,Status,InactiveDate,AddressPurposeOrderingFlag,Email,AddressPartyNumber"
+        },
+        {
+          "name": "CreateSupplierAddress",
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses",
+          "bodyTemplate": "{\"AddressName\":\"{AddressName}\",\"CountryCode\":\"{CountryCode}\",\"AddressLine1\":\"{AddressLine1}\",\"City\":\"{City}\",\"State\":\"{State}\",\"PostalCode\":\"{PostalCode}\",\"Email\":\"{Email}\",\"AddressPurposeOrderingFlag\":true}",
+          "headers": {
+            "REST-Framework-Version": "4",
+            "Content-Type": "application/json",
+            "Upsert-Mode": "false"
+          }
+        }
+      ]
+    },
+    {
+      "path": "src/businessObjects/xdx_supplier_contacts.bo",
+      "sha256": "35b112ea74af907cba88d7d7882f2f89423a9426c4d5ce5bcc869ff11fa9ef2a",
+      "objectCode": "XDX_SUPPLIER_CONTACTS",
+      "functions": [
+        {
+          "name": "ListSupplierContacts",
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts?onlyData=true&fields=SupplierContactId,ContactName,FirstName,LastName,Email,Status,InactiveDate&q={q}&limit={limit}&offset={offset}&orderBy=SupplierContactId:asc"
+        },
+        {
+          "name": "GetSupplierContact",
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts/{suppliers_contacts_Id}?onlyData=true&fields=SupplierContactId,ContactName,FirstName,LastName,Email,Status,InactiveDate,PersonProfileId,UserName,UserAccountStatus,DataAccessLevel"
+        },
+        {
+          "name": "CreateSupplierContact",
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts",
+          "bodyTemplate": "{\"FirstName\":\"{FirstName}\",\"LastName\":\"{LastName}\",\"Email\":\"{Email}\"}",
+          "headers": {
+            "REST-Framework-Version": "4",
+            "Content-Type": "application/json",
+            "Upsert-Mode": "false"
+          }
+        }
+      ]
+    }
+  ],
+  "proof": "Local artifacts only; no savedBO/runtime acceptance"
+}

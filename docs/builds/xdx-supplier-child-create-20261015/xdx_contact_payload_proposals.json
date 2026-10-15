@@ -1,0 +1,50 @@
+{
+  "fieldProvenance": {
+    "FirstName": "Generated controlled test identity for direct cases; retained source FirstName for template",
+    "LastName": "Generated distinctive reviewed test value for each transaction",
+    "suppliers_Id": "Retained verified parent internal key, path only",
+    "Email": "Generated non-operational example.invalid controlled destination; never copied from source",
+    "PersonProfileId": "Omitted generated profile ID",
+    "SupplierContactId": "Omitted generated own ID"
+  },
+  "status": "proposed-not-executed",
+  "transactions": [
+    {
+      "allocation": "saved-bo",
+      "payload": {
+        "LastName": "ChildBO20261015",
+        "Email": "xdx.child.bo.20261015@example.invalid",
+        "FirstName": "XDXContact"
+      }
+    },
+    {
+      "allocation": "native-direct",
+      "payload": {
+        "LastName": "ChildDirect20261015",
+        "Email": "xdx.child.direct.20261015@example.invalid",
+        "FirstName": "XDXContact"
+      }
+    },
+    {
+      "payload": {
+        "LastName": "XDXChildTemplate20261015",
+        "Email": "xdx.child.template.20261015@example.invalid",
+        "FirstName": "Noah"
+      },
+      "sourceContactId": "300000047414707",
+      "allocation": "native-template"
+    }
+  ],
+  "parent": {
+    "SupplierNumber": "1255",
+    "provenance": "docs/builds/xdx-supplier-workspace-20261014/contacts-item-example-response.json; retained same-parent contact sample, not current collision proof",
+    "SupplierId": "300000047414679",
+    "Supplier": "Dell Inc."
+  },
+  "boundaries": "Three proposed distinct transactions need separate allocations and exact reviewed approval. Required-only. No account, roles, dataaccess, phone, optional date, notification operation. Historical eqih generation proof does not establish current eqil acceptance. Distinctive names/emails do not establish documented uniqueness or absence.",
+  "limits": {
+    "LastName": 150,
+    "Email": 320,
+    "FirstName": 150
+  }
+}

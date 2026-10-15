@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "command": "validate-bo",
+  "result": {
+    "ok": true,
+    "errorCount": 0,
+    "issues": []
+  }
+}

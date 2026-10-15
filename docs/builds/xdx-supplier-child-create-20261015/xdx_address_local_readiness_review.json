@@ -1,0 +1,215 @@
+{
+  "workflowSha256": "edbebc3e1e7e6bc0c4957073837dd956d66738a0fd79d8337e79c6f61ddfa116",
+  "recoveryEvidence": "docs/builds/xdx-supplier-child-create-20261015/review-tool-recovery.json",
+  "assignmentId": "address-contract",
+  "parentAgentId": "/root",
+  "templates": [
+    {
+      "parameters": [
+        {
+          "isToken": true,
+          "defaultIsBlank": true,
+          "location": "path",
+          "type": "string",
+          "name": "suppliers_Id"
+        },
+        {
+          "isToken": true,
+          "defaultIsBlank": true,
+          "location": "body",
+          "type": "string",
+          "name": "AddressName"
+        },
+        {
+          "isToken": true,
+          "defaultIsBlank": true,
+          "location": "body",
+          "type": "string",
+          "name": "CountryCode"
+        },
+        {
+          "isToken": true,
+          "defaultIsBlank": true,
+          "location": "body",
+          "type": "string",
+          "name": "AddressLine1"
+        },
+        {
+          "isToken": true,
+          "defaultIsBlank": true,
+          "location": "body",
+          "type": "string",
+          "name": "City"
+        },
+        {
+          "isToken": true,
+          "defaultIsBlank": true,
+          "location": "body",
+          "type": "string",
+          "name": "State"
+        },
+        {
+          "isToken": true,
+          "defaultIsBlank": true,
+          "location": "body",
+          "type": "string",
+          "name": "PostalCode"
+        },
+        {
+          "isToken": true,
+          "defaultIsBlank": true,
+          "location": "body",
+          "type": "string",
+          "name": "Email"
+        }
+      ],
+      "renderedPayload": {
+        "AddressName": "XDX Address BO Direct 20261015",
+        "CountryCode": "US",
+        "AddressLine1": "2300 GREENLAWN BLVD",
+        "City": "ROUND ROCK",
+        "State": "TX",
+        "PostalCode": "78664",
+        "Email": "xdx.address.bo.20261015@example.invalid",
+        "AddressPurposeOrderingFlag": true
+      },
+      "object": "addresses",
+      "sha256": "e6774fc2cd13990c42e5861cb91f31936df9850961ca25babc5eb17f4cc5448f",
+      "limitations": "Local raw/structural-render metadata inspection only; does not establish native renderer or service acceptance",
+      "headers": {
+        "REST-Framework-Version": "4",
+        "Content-Type": "application/json",
+        "Upsert-Mode": "false"
+      },
+      "provenance": "Rendering uses described request-only example, never a submitted request or live API response",
+      "renderedFieldTypes": [
+        {
+          "type": "String",
+          "field": "AddressName"
+        },
+        {
+          "type": "String",
+          "field": "CountryCode"
+        },
+        {
+          "type": "String",
+          "field": "AddressLine1"
+        },
+        {
+          "type": "String",
+          "field": "City"
+        },
+        {
+          "type": "String",
+          "field": "State"
+        },
+        {
+          "type": "String",
+          "field": "PostalCode"
+        },
+        {
+          "type": "String",
+          "field": "Email"
+        },
+        {
+          "type": "Boolean",
+          "field": "AddressPurposeOrderingFlag"
+        }
+      ],
+      "function": "CreateSupplierAddress",
+      "source": "src/businessObjects/xdx_supplier_addresses.bo",
+      "rawFieldNames": [
+        "AddressName",
+        "CountryCode",
+        "AddressLine1",
+        "City",
+        "State",
+        "PostalCode",
+        "Email",
+        "AddressPurposeOrderingFlag"
+      ],
+      "generatedIDsInBody": [],
+      "rawTemplateParsed": true,
+      "operation": "create_suppliers-addresses",
+      "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses"
+    },
+    {
+      "parameters": [
+        {
+          "isToken": true,
+          "defaultIsBlank": true,
+          "location": "path",
+          "type": "string",
+          "name": "suppliers_Id"
+        },
+        {
+          "isToken": true,
+          "defaultIsBlank": true,
+          "location": "body",
+          "type": "string",
+          "name": "FirstName"
+        },
+        {
+          "isToken": true,
+          "defaultIsBlank": true,
+          "location": "body",
+          "type": "string",
+          "name": "LastName"
+        },
+        {
+          "isToken": true,
+          "defaultIsBlank": true,
+          "location": "body",
+          "type": "string",
+          "name": "Email"
+        }
+      ],
+      "renderedPayload": {
+        "FirstName": "XDX Jordan",
+        "LastName": "Supplier Contact 20261015",
+        "Email": "xdx.contact.bo.20261015@example.invalid"
+      },
+      "object": "contacts",
+      "sha256": "118235491b6f36617d5c1e606141efcc358bac163aec18742ca3d183a178b9d5",
+      "limitations": "Local raw/structural-render metadata inspection only; does not establish native renderer or service acceptance",
+      "headers": {
+        "REST-Framework-Version": "4",
+        "Content-Type": "application/json",
+        "Upsert-Mode": "false"
+      },
+      "provenance": "Rendering uses described request-only example, never a submitted request or live API response",
+      "renderedFieldTypes": [
+        {
+          "type": "String",
+          "field": "FirstName"
+        },
+        {
+          "type": "String",
+          "field": "LastName"
+        },
+        {
+          "type": "String",
+          "field": "Email"
+        }
+      ],
+      "function": "CreateSupplierContact",
+      "source": "src/businessObjects/xdx_supplier_contacts.bo",
+      "rawFieldNames": [
+        "FirstName",
+        "LastName",
+        "Email"
+      ],
+      "generatedIDsInBody": [],
+      "rawTemplateParsed": true,
+      "operation": "create_suppliers-contacts",
+      "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts"
+    }
+  ],
+  "workflow": "src/workflows/xdx_supplier_conversation.wf",
+  "observedEndUtc": "2026-10-15T13:13:44.9008256Z",
+  "agentId": "/root/address_contract",
+  "graphEvidence": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_graph_static_review.json",
+  "classification": "local-prerequisite-review-not-scenario-acceptance",
+  "activityId": "address-static-readiness",
+  "scenarioTestsUsed": 0
+}

@@ -1,0 +1,105 @@
+{
+  "id": "xdx-retro-root-sync-20261015",
+  "startedUtc": "2026-10-15T17:56:21.067Z",
+  "source": {
+    "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+    "branch": "TestingWFBuildTools",
+    "head": "5b4df3ff3e44a4a0d6bb03c9d75a3095b124adbf",
+    "fromWorktree": "D:/Temp/worktrees/xdx-supplier-workspace-20261014",
+    "fromCommit": "91ddb80664cd74bf976dbd090222b606d5f89984"
+  },
+  "agents": [
+    {
+      "agentId": "/root",
+      "parentAgentId": null,
+      "assignmentId": "root-sync",
+      "role": "Collision preservation, integration and final gates"
+    },
+    {
+      "agentId": "/root/root_sync_review",
+      "parentAgentId": "/root",
+      "assignmentId": "xdx-retro-root-sync-20261015-review",
+      "role": "Independent content and parity audit"
+    }
+  ],
+  "intervals": [
+    {
+      "agentId": "/root",
+      "parentAgentId": null,
+      "assignmentId": "root-sync",
+      "activityId": "root-sync-execution",
+      "phase": "governance-sync",
+      "object": "governance",
+      "category": "active execution",
+      "startUtc": "2026-10-15T17:58:12.151Z",
+      "endUtc": "2026-10-15T18:12:18.935Z",
+      "outcome": "Governance/evidence sync verified; source unchanged and unrelated state preserved",
+      "evidence": "docs/builds/xdx-retro-root-sync-20261015/time-tracker.md"
+    },
+    {
+      "agentId": "/root/root_sync_review",
+      "parentAgentId": "/root",
+      "assignmentId": "xdx-retro-root-sync-20261015-review",
+      "phase": "review",
+      "category": "active execution",
+      "startUtc": "2026-10-15T18:03:31.376Z",
+      "endUtc": "2026-10-15T18:05:11Z",
+      "evidence": "docs/builds/xdx-retro-root-sync-20261015/review.json"
+    },
+    {
+      "agentId": "/root/root_sync_review",
+      "parentAgentId": "/root",
+      "assignmentId": "xdx-retro-root-sync-20261015-review",
+      "phase": "review",
+      "category": "active execution",
+      "startUtc": "2026-10-15T18:07:27Z",
+      "endUtc": "2026-10-15T18:08:43Z",
+      "evidence": "docs/builds/xdx-retro-root-sync-20261015/review.json"
+    },
+    {
+      "agentId": "/root/root_sync_review",
+      "parentAgentId": "/root",
+      "assignmentId": "xdx-retro-root-sync-20261015-review",
+      "phase": "review",
+      "category": "coordination wait",
+      "startUtc": "2026-10-15T18:08:43Z",
+      "endUtc": "2026-10-15T18:09:33Z",
+      "evidence": "docs/builds/xdx-retro-root-sync-20261015/review.json"
+    },
+    {
+      "agentId": "/root/root_sync_review",
+      "parentAgentId": "/root",
+      "assignmentId": "xdx-retro-root-sync-20261015-review",
+      "phase": "review",
+      "category": "active execution",
+      "startUtc": "2026-10-15T18:11:09Z",
+      "endUtc": "2026-10-15T18:11:22.212Z",
+      "evidence": "docs/builds/xdx-retro-root-sync-20261015/review.json"
+    }
+  ],
+  "timingLimitations": [
+    "Initial diff inspection before first prospective timestamp unallocated",
+    "No model/worker token telemetry",
+    "Cutoff 2026-10-15T18:12:18.935Z; subsequent final gate/staging/commit delivery tail excluded from this report. Worker gaps unallocated; concurrent labor not wall time."
+  ],
+  "milestones": [
+    {
+      "observedUtc": "2026-10-15T18:06:12.516Z",
+      "name": "artifacts-integrated",
+      "agentId": "/root",
+      "assignmentId": "root-sync",
+      "outcome": "6primary targets plus574evidence files integrated; parity and unrelated hashes verified",
+      "evidence": "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json"
+    },
+    {
+      "observedUtc": "2026-10-15T18:12:18.935Z",
+      "name": "sync-qualified",
+      "agentId": "/root",
+      "assignmentId": "root-sync",
+      "outcome": "Independent review and bounded worker Closeout PASS; final580file parity PASS; root gate and scoped commit delivery tail",
+      "evidence": "docs/builds/xdx-retro-root-sync-20261015/final-parity.json"
+    }
+  ],
+  "firstProspectiveStartUtc": "2026-10-15T17:58:12.151Z",
+  "startRecovery": "docs/builds/xdx-retro-root-sync-20261015/start-recovery.json"
+}

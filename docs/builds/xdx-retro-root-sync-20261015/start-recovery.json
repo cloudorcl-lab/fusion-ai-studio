@@ -1,0 +1,12 @@
+{
+  "observedUtc": "2026-10-15T18:08:10.889Z",
+  "source": "Current session rollout bounded matching initial task commentary only",
+  "recoveredStartedUtc": "2026-10-15T17:56:21.067Z",
+  "evidence": {
+    "timestamp": "2026-10-15T17:56:21.067Z",
+    "line": 6721,
+    "text": "I’ll compare the retrospective changes with the root checkout, preserve any differing root content, and sync the scoped governance and guardrail artifacts."
+  },
+  "classification": "Elapsed start recovered; pre-prospective inspection time remains unallocated",
+  "noFullTranscriptCopied": true
+}

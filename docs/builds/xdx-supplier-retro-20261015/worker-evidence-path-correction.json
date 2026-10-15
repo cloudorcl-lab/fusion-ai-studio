@@ -1,0 +1,6 @@
+{
+  "observedUtc": "2026-10-15T17:39:56.191Z",
+  "symptom": "Guardrails reviewer guessed absent final-timing.json during read-only rg; exit2",
+  "cause": "Retained path guessed instead of exact existing completed-run checkpoint-timing.json",
+  "correction": "Use root-supplied literal completed-run inventory and existing checkpoint-timing.json; no product operation or test"
+}

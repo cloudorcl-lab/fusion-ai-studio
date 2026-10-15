@@ -1,0 +1,9 @@
+{
+  "observedUtc": "2026-10-15T15:35:30.438Z",
+  "innerExit": 0,
+  "stdout": "Workflow test updated.",
+  "parser": "JSON capture rejected documented/observed text output; outer exit1",
+  "mutationVerified": "Exact entire artifact unchanged after excluding generated pathBinding; current4steps have0bindings.",
+  "noMutationReplay": true,
+  "prevention": "Use direct measured CLI TEXT output for do-update-workflow-test; JSON helper only JSON commands."
+}

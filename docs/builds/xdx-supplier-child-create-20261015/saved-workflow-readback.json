@@ -1,0 +1,18 @@
+{
+  "observedUtc": "2026-10-15T13:38:43.481Z",
+  "source": "src/workflows/xdx_supplier_conversation.wf",
+  "sha256": "6a2d83dbb12d4b7f2c914a1657b70d03a476bda91f4e36fca849d1f1ed2b0253",
+  "beforeSource": "docs/builds/xdx-supplier-child-create-20261015/xdx_before_remote_save.wf",
+  "beforeSha256": "abf9a9a618234f7258a6636697b5b330ac4a27efc67055fc8d1921c77edca567",
+  "specificationUnchanged": true,
+  "changedTopLevelKeys": [
+    "version",
+    "header"
+  ],
+  "version": 88004239,
+  "headerETag": "26",
+  "status": "DRAFT",
+  "terminalReadback": "165→ownwriteerrorRETURN,167→ownprepareerrorRETURN,190→191LLM→192RETURN actualsourceverified",
+  "queryEvidence": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_query_contract_receipt.json",
+  "queryReuse": "Exact specification and BO files unchanged by save; previous QueryPASS applies. No extra scenario executed."
+}

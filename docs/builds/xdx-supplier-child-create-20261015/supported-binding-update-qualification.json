@@ -1,0 +1,32 @@
+{
+  "observedUtc": "2026-10-15T15:36:08.013Z",
+  "result": "PASS",
+  "rows": [
+    {
+      "path": "test/workflows/xdx_supplier_conversation/xdx-contact-required-direct-creation.json",
+      "sha256": "237ac5bf774d6525ff9572d244ef0e23343a6a548a1e0fdd67b748e0e19b8c53",
+      "authoredBusinessContractUnchanged": true,
+      "steps": 4,
+      "completeNodePartitions": 200,
+      "generatedBindingsRemovedBySupportedUpdate": true
+    },
+    {
+      "path": "test/workflows/xdx_supplier_conversation/xdx-contact-required-template-creation.json",
+      "sha256": "e0fb961c3e6c03686e9e4a483df5f4ea36b2e6a51b2bc48d6c04c9d9b768a357",
+      "authoredBusinessContractUnchanged": true,
+      "steps": 4,
+      "completeNodePartitions": 200,
+      "generatedBindingsRemovedBySupportedUpdate": true
+    },
+    {
+      "path": "test/workflows/xdx_supplier_conversation/xdx-address-required-direct-creation.json",
+      "sha256": "4dfd57f2f25ae8e25129166a7d62e9a57861fd6b77eeccc248fda6e79dc6f758",
+      "authoredBusinessContractUnchanged": true,
+      "steps": 4,
+      "completeNodePartitions": 200,
+      "generatedBindingsRemovedBySupportedUpdate": true
+    }
+  ],
+  "independentReview": "/root/contact_contract: supported documented full-update; preserve all authored contracts and Address overall judge",
+  "noRuntimeOrBusinessCalls": true
+}

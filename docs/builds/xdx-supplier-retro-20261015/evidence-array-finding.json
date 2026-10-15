@@ -1,0 +1,9 @@
+{
+  "observedUtc": "2026-10-15T17:40:43.767Z",
+  "runId": "000c77fd-bb63-46a7-a5f1-61303fedcccc",
+  "actualRedFailure": "New explicit-array diagnostic assertion rejected current pass/undefined handling; existing verifier rejects that pass as Missing evidence but lacks unconditional schema validation.",
+  "confirmedSourceGap": "Only pass checks Array.isArray; planned/not-applicable permit falsey nonarrays and singlechar string can iterate into existing file; object evidence can throw unhandled TypeError.",
+  "testRefinement": "Use semantic errors.length>0 and doesNotThrow rather than requiring new implementation wording; preserve valid empty arrays for planned/not-applicable.",
+  "expectedNegative": true,
+  "scope": "Actual session validator, no app/runtime tests"
+}

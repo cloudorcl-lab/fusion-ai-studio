@@ -1,0 +1,11 @@
+# Scoped learning and delivery review
+
+Reusable product lessons were integrated at existing owners: deterministic Email literal handling, terminal topology/error returns, strict Query preflight dependencies, and distinct authoritative source/created identities for fresh and frozen accepted rendering. Current evidence is linked from the canonical playbook and object POST references; immutable first-success GET samples were preserved. No competing playbook was created.
+
+F018 was a test-contract mismatch: an explicit source ID needs the item GET fixture/scalar envelope. The minimal repair preserved every business assertion and judge. F019 applied the existing supported full-update owner before regenerating stale observed bindings; no accepted POST was recorded again.
+
+Operational recovery review: nonexistent optional path reads were stopped and replaced with inventory-backed paths; JSON parsing of the TEXT update output was corrected by checking the already successful mutation rather than replaying it. Printing rich report metrics was unnecessarily verbose; final usage extraction selects only numeric counters. Activating a completed worker requires followup_task; dispatch gaps are not counted as active work. Existing discovery, compact-evidence and delegated-time owners cover these recurrences, so no duplicate lifecycle rule was added.
+
+All four current configured conversations and eighteen judgments pass with actual attachments. Both objects and both creation modes have native persisted-field evidence. Corrected Contact-specific native display remains unobserved because the accepted conversation became unavailable; static/configured/shared native proof does not relabel that row PASS. User accepted completion with this documented verification exception (“flag a completed”); see completion-acceptance.json. No more business writes or tests are authorized/planned in this closeout.
+
+Cleanup preserves linked source/command/candidate snapshots. The copied checkpoint is explicitly historical. Preserve env.properties, prior-run records, .gitkeep and preexisting parallel/timing-policy hunks outside any scoped commit. Parent/subagent token counters and some worker timing boundaries remain unavailable.

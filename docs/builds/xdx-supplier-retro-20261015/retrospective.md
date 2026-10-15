@@ -1,0 +1,38 @@
+# Supplier creation retrospective
+
+Scope: completed Address/Contact direct and same-parent template creation run. User invoked Matt Pocock retro and explicitly authorized integrating recommendations in the playbook, build standard and testing guide. No product behavior, accepted transaction or first-success GET sample changed.
+
+## Findings, highest impact first
+
+| Priority | Evidence and cause | Applied change and owner |
+| --- | --- | --- |
+| High | [Lost accepted Contact conversation](../xdx-supplier-child-create-20261015/contact-display-session-loss.json) prevented corrected native display verification. Home redirect/new empty conversation is observed; expiry mechanism is unknown. Existing browser-continuity rules were already applicable. | Refined Gate7 to finish required native display/no-write recall before unrelated lengthy metadata work; retain exact request/revision/tab/recall command. Explicit user acceptance remains separate from observed PASS. |
+| High | F007 in [prior failure ledger](../xdx-supplier-child-create-20261015/failure-ledger.json): unrelated serial switches grew structural paths483330→37937154. Context retrieval exceeded343.5seconds and formatting recorded319.98CPU seconds; isolated topology483996 completed bounded metadata operations. F011 [summary timeout](../xdx-supplier-child-create-20261015/current-final-summary-timeout.json) retained a separate300s timeout. Internal CLI cause was not inspected. | Retained existing topology repair and scoped Gate6 exception; refined smallest supported metadata scope and separate metadata/report versus scenario timing. Moved app-specific path numbers from universal main-path prose into this evidence record. No weakened coverage or invented CLI fix. |
+| Medium | F020 malformed serialized evidence paths plus actual validator inspection: only pass checked array shape; planned/NA could accept missing/null/single-character string or throw on objects. Existing local() already requires regular files. | Fixed existing verify-session-compliance.cjs to require arrays before iteration for every status. Existing tests call actual verify():15 malformed combinations and2 valid empty-array combinations; prior scope/identity checks retained. Added local-only check:session package entrypoint. No duplicate file-type guard. |
+| Medium | Prior checkpoint wall15733.377s and [final commit receipt](../xdx-supplier-child-create-20261015/commands.jsonl) extend run to15766.676s. Earlier user-facing goal-counter duration was a different measurement. Primary ledger has13139.768s overlap-aware active,413.475s blocking and2180.134s unallocated at cutoff. | BUILD_STANDARD names authoritative ledger start/cutoff, distinct goal/command/runtime/agent metrics, qualified commit tails and mixed phase labels. Historical gaps stay unknown. No new counter or fabricated labor split. |
+| Medium | [Current4 acceptance](../xdx-supplier-child-create-20261015/current-child-fixture-acceptance.json):4 scenarios,16turns,3398assertions,18local evaluations. Address837 is800node-path checks plus37other checks.18historical attempts and6successful business POSTs are different inventories. [Reset authority](../xdx-supplier-child-create-20261015/successful-test-reset-policy.json) clarified meters after success. | Testing guide now owns count definitions and explicit charge/pass/reset rules. BUILD_STANDARD links these units. Resets preserve historical attempts and never replenish write authority. No old attempt reclassified or rerun. |
+| Medium | F018 explicit source-ID prompt used name-FIND collection fixture instead of item-READ scalar; F019 refresh flag preceded supported full update; F010 JSON capture parsed successful TEXT mutation. | Testing guide adds exact prompt/function/envelope/key readiness, supported full-update ordering, authored-vs-generated metadata distinction and output-contract-aware capture. Existing strict parsers and CLI checks stay intact. |
+| Medium | F003/F009 path/catalog guessing recurred despite existing rules, including this retro; restricted worker Startup dispatch EPERM also recurred. A message to a completed worker did not activate it. | BUILD_STANDARD now makes exact verified inputs, runner/receipt/host/output contract part of dispatch. Canonical delegation points there. Existing navigation/host-context rules retained; no added AGENTS.md prose. |
+
+## Existing guardrails and boundaries
+
+The repository has executable session/living-build/learning gates and focused tests. package.json default test scripts execute tenant workflows, not lint or local governance. No .github workflow directory was present; common Git hooks include an existing pre-push publication-exclusion guard, while pre-commit was only a sample. Thus this is not a repository with no guardrail at all. Added an explicit local check entrypoint and enforced the shape check in the already-required session gate; no global hook was installed or replaced and no tenant npm test was run. A future CI/pre-commit integration should call the narrow local checks explicitly, preserve the existing push guard and exclude tenant tests; it remains a recommendation, not a claim of automatic CI coverage.
+
+Existing evidence-status and command-timing tools already validate hash-bound evidence and overlap/gap math. Another status owner or timing counter would duplicate them. The response's primary-source choice, native conversation continuity and evidence-surface acceptance require coordinator judgment; the doc changes address those decisions rather than inventing a linter for prose.
+
+## Verification and no-op decisions
+
+- [Session array qualification](session-array-qualification.json): actual local entrypoint PASS; independent guardrails review approved the focused patch. No broad artifact suite, BO/workflow validation, native test, remote save, GET refresh or business POST.
+- Preserve the prior completion exception: [user acceptance](../xdx-supplier-child-create-20261015/completion-acceptance.json) resolves acceptance without turning the unobserved native Contact display into PASS.
+- Preserve operation references: no new API/schema/autogenerated-field fact was discovered, so no resource-reference edit is warranted.
+- Keep AGENTS.md and the base aistudio skill unchanged. Existing lifecycle owners are refined; this file is a dated retrospective, not a competing playbook.
+- New retro failures and recurrences are captured at [failure ledger](failure-ledger.json), including Windows npm shim dispatch. Raw failing exits are retained and corrected before affected execution.
+- Preserve unrelated environment, prior-run and parallel/timing-policy edits outside the scoped commit. Immutable run evidence is retained by hash; no blanket cleanup.
+
+## Measurement limits
+
+Prior app-run durations overlap: do not add343.5elapsed to319.98CPU, agent effort to wall or command duration to enclosing primary intervals. The current4scenario runtime totals115.369s versus1648.2178785s whole test commands, plus380.2050938s attachment. This identifies surrounding command/report overhead, not its exact internal cause. Current4 usage56997CLI-reported tokens/120AIunits; agent/model counters and some timing boundaries unavailable.
+
+This retrospective has a separate [build ledger](build-ledger.json) and [time-tracker.md](time-tracker.md). Full prerequisite reads before the first timestamp and mixed worker clearance/recovery intervals remain qualified; no historical elapsed is added to active labor.
+
+Final verification:50local Markdown links/anchors and balanced fences PASS; existing living-build contract positive/negative fixtures PASS; both independent bounded roleCloseouts PASS. Root Closeout and exact scoped commit readback complete delivery.

@@ -1,0 +1,36 @@
+{
+  "observedUtc": "2026-10-15T12:57:20.307Z",
+  "baseCommit": "5b4df3ff3e44a4a0d6bb03c9d75a3095b124adbf",
+  "preserved": [
+    "target SET_FIELDS assignment validation/regressions",
+    "target parallel/time policy",
+    "target current-parent precedence and required-only testing guide",
+    "all unrelated environment and previous evidence"
+  ],
+  "changed": [
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "f17f988c1df277c9a27cd94f69908d0726d0b30fdc12d1099a816aa6662e9b63"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "af9557fb1fc74dd78d18ada1f062843e27ede5bcb73dc73599d3371a731bbd4c"
+    },
+    {
+      "path": "scripts/verify-agentic-app-query-contract.cjs",
+      "sha256": "dbd4e320c423fe70e268f895ca108f7515f7130cfa2e1d288d76c0c90087a5f8"
+    },
+    {
+      "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+      "sha256": "b4b6d0b62522420fe023cd111a171e2c55af2cfc107f004059f2b501189ff8c3"
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "0ac19191a2fe176e072bf1ba4645cf977fbcb4ca0b40934452ab13566283c1cc"
+    }
+  ],
+  "scenarioTestsUsed": {
+    "addresses": 0,
+    "contacts": 0
+  }
+}

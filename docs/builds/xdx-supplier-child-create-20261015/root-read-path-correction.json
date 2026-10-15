@@ -1,0 +1,7 @@
+{
+  "observedUtc": "2026-10-15T14:19:50.076Z",
+  "action": "Read-only prompt search used a nonexistent guessed prompts directory",
+  "result": "rg exit1, no file mutation or tenant call",
+  "correction": "Stopped path search. Used retained global CLI catalog and exact documented run-workflow-tests --help, exit0. No alternate guessed paths.",
+  "prevention": "Resolve filenames with rg --files before reads; public CLI help command shape now verified. Existing F009 occurrence expanded; scenario budget unaffected."
+}

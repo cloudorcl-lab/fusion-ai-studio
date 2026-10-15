@@ -1,0 +1,10 @@
+{
+  "kind": "token",
+  "parameterName": "Email",
+  "patch": {
+    "description": "Reviewed contact email, maximum320 characters. Tests must use an approved controlled destination rather than inherited operational email; no account or notification operation is invoked.",
+    "defaultValue": "",
+    "dataType": "string"
+  },
+  "functionName": "CreateSupplierContact"
+}

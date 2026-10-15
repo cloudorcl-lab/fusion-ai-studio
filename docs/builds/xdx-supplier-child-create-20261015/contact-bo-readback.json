@@ -1,0 +1,24 @@
+{
+  "observedUtc": "2026-10-15T13:29:14.682Z",
+  "surface": "actual saved BO native GetSupplierContact Fetch Sample Data",
+  "supportedObjectId": "300000340669150",
+  "input": {
+    "suppliers_Id": "300000047414679",
+    "suppliers_contacts_Id": "300000340604817"
+  },
+  "response": {
+    "SupplierContactId": 300000340604817,
+    "ContactName": "ChildBO20261015, XDXContact",
+    "FirstName": "XDXContact",
+    "LastName": "ChildBO20261015",
+    "Email": "xdx.child.bo.20261015@example.invalid",
+    "Status": "ACTIVE",
+    "InactiveDate": null,
+    "PersonProfileId": 300000340604817,
+    "UserName": null,
+    "UserAccountStatus": null,
+    "DataAccessLevel": null
+  },
+  "comparison": "all3submittedfields+ownID+generatedprofileID+explicitnullUserName/UserAccountStatus PASS; ContactName computed on GET, POSTnull preserved",
+  "limits": "Null account fields are observed; no broad notification or global account claim"
+}

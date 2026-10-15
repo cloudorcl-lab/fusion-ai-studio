@@ -1,0 +1,23 @@
+{
+  "observedUtc": "2026-10-15T14:43:18.497Z",
+  "reviewer": "/root/contact_contract and /root",
+  "command": "node scripts/tests/verify-agentic-app-query-contract.cjs",
+  "reportedTests": 45,
+  "reportedPassed": 45,
+  "reportedFailed": 0,
+  "additionalAssertions": "Retained top-level SET_FIELDS assertions also covered by exit0; not additional reported node:test cases.",
+  "source": {
+    "path": "scripts/verify-agentic-app-query-contract.cjs",
+    "sha256": "dbd4e320c423fe70e268f895ca108f7515f7130cfa2e1d288d76c0c90087a5f8"
+  },
+  "test": {
+    "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+    "sha256": "b4b6d0b62522420fe023cd111a171e2c55af2cfc107f004059f2b501189ff8c3"
+  },
+  "currentHashesMatch": true,
+  "qualification": "docs/builds/xdx-supplier-child-create-20261015/governance-qualification.json",
+  "output": "docs/builds/xdx-supplier-child-create-20261015/governance-qualification.output.txt",
+  "commandRunId": "2305f766-0800-4cc9-8ca2-2216e2d2c72e",
+  "action": "Reused unchanged-source qualification; no test rerun",
+  "discoveryLimitation": "Worker first looked for nonexistent root-commands.jsonl, then used inventoried commands.jsonl. No mutation or tenant operation."
+}

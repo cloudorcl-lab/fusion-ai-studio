@@ -1,0 +1,39 @@
+{
+  "caseId": "ADDR-05",
+  "recordedUtc": "2026-10-15T15:45:57.376Z",
+  "status": "passed",
+  "surface": "Actual app-local Query native preview",
+  "workflowVersion": 88010729,
+  "sourceHash": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872",
+  "requestId": "REQ-2b0bd036-1436-4ba0-8588-06fe72d5d4c2-XDX_SUPPLIER_CONVERSATION-1",
+  "revision": 2,
+  "parent": {
+    "SupplierId": "300000047414679",
+    "Supplier": "Dell Inc.",
+    "SupplierNumber": "1255"
+  },
+  "sourceAddressId": "300000047414694",
+  "createdAddressId": "300000340604918",
+  "AddressPartyNumber": "1501636",
+  "payload": {
+    "AddressName": "XDX Address Native Template 20261015",
+    "CountryCode": "US",
+    "AddressLine1": "2300 GREENLAWN BLVD",
+    "City": "ROUND ROCK",
+    "State": "TX",
+    "PostalCode": "78664",
+    "Email": "xdx.address.native.template.20261015@example.invalid",
+    "AddressPurposeOrderingFlag": true
+  },
+  "observations": [
+    "Resolved parent1255 in actual fresh conversation",
+    "Prepared same-parent source ID and complete draft",
+    "Email-only edit retained all other fields, revision1 to2",
+    "Exact Review showed all8 final fields and literal Confirm token",
+    "Sent exact Confirm once",
+    "Terminal deterministic accepted/verified response displayed both distinct source and own IDs, generated party number and all8 independently verified saved fields"
+  ],
+  "acceptedWriteFrozen": true,
+  "noReplay": true,
+  "backendTraceLimitation": "Native UI status and actual verified-result CODE contract establish independent readback; raw service transcript/timing unavailable. No extra GET for documentation."
+}

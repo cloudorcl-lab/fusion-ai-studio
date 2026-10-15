@@ -1,0 +1,32 @@
+{
+  "observedUtc": "2026-10-15T15:23:47.774Z",
+  "source": "Latest user: reset the successful tests; approved Allow one extra Address attempt and Allow one extra display-only check",
+  "rule": "Reset each object counter after a successfully completed test, including required attached judgment. Retain every historical attempt and failure. Do not repeat unchanged preceding logic. Meter reset does not authorize accepted-write replay or increase business POST limits.",
+  "supersedes": "Earlier interpretation reset only after full object completion",
+  "resets": [
+    {
+      "object": "addresses",
+      "successfulCase": "ADDR-04",
+      "currentUsed": 0,
+      "allocated": 5
+    },
+    {
+      "object": "contacts",
+      "successfulCase": "CONT-03",
+      "subsequentFailedCase": "CONT-5",
+      "currentUsed": 1,
+      "allocated": 5
+    }
+  ],
+  "approvedExtras": [
+    {
+      "object": "addresses",
+      "action": "One additional Address attempt"
+    },
+    {
+      "object": "contacts",
+      "action": "One display-only check on accepted CONT-5; no new POST"
+    }
+  ],
+  "independentReview": "/root/contact_contract: PASS; observed15:22:28–15:22:37Z; no tests or writes"
+}

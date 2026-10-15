@@ -1,0 +1,51 @@
+{
+  "observedUtc": "2026-10-15T14:45:25.700Z",
+  "caseId": "ADDR-04",
+  "surface": "Native draft app Query UI",
+  "workflowVersion": 88007237,
+  "requestId": "REQ-844b3249-a864-4a44-8dda-9d1dd96d0c17-XDX_SUPPLIER_CONVERSATION-2",
+  "revision": 2,
+  "parent": {
+    "SupplierId": 300000047414679,
+    "SupplierNumber": "1255",
+    "Supplier": "Dell Inc."
+  },
+  "payload": {
+    "AddressName": "XDX Address Native Direct 20261015",
+    "CountryCode": "US",
+    "AddressLine1": "2300 GREENLAWN BLVD",
+    "City": "ROUND ROCK",
+    "State": "TX",
+    "PostalCode": "78664",
+    "Email": "xdx.address.native.direct.20261015@example.invalid",
+    "AddressPurposeOrderingFlag": true
+  },
+  "attempt": {
+    "status": "accepted",
+    "verification": "verified",
+    "SupplierAddressId": 300000340604867
+  },
+  "verified": {
+    "SupplierAddressId": 300000340604867,
+    "AddressPartyNumberDisplay": "1501635",
+    "AddressName": "XDX Address Native Direct 20261015",
+    "CountryCode": "US",
+    "AddressLine1": "2300 GREENLAWN BLVD",
+    "City": "ROUND ROCK",
+    "State": "TX",
+    "PostalCode": "78664",
+    "Email": "xdx.address.native.direct.20261015@example.invalid",
+    "AddressPurposeOrderingFlag": true,
+    "Country": "United States",
+    "Status": "ACTIVE",
+    "InactiveDate": "4712-12-31"
+  },
+  "journey": [
+    "Prepared uncreated direct draft; all eight fields correct and Email prose punctuation absent",
+    "Email-only edit preserved seven other fields and parent; revision2",
+    "Actual exact Review displayed approved manifest final payload",
+    "Exact Confirm sent once after Execute gatePASS",
+    "Native UI showed accepted/verified and independent GET fields"
+  ],
+  "limitations": "Visible UI plus saved graph; no raw POST/GET trace exported. Party number transport type not established from UI. Screenshot retained in tool conversation. No accepted replay."
+}

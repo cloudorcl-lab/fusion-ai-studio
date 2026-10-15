@@ -1,0 +1,437 @@
+{
+  "observedUtc": "2026-10-15T17:06:14.996Z",
+  "scope": "Only approved required-field Address and Contact direct/template creation",
+  "result": "pass with explicitly accepted native Contact display verification exception",
+  "workflowVersion": 88010729,
+  "sourceSha256": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872",
+  "requiredConfiguredTests": 4,
+  "requiredTurns": 16,
+  "requiredJudgesOutstanding": 0,
+  "configuredEvidence": [
+    {
+      "testName": "xdx-address-required-direct-creation",
+      "object": "addresses",
+      "mode": "direct",
+      "version": 88010729,
+      "definitionHash": "5dbfda59fad929e8",
+      "report": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-attached-result.json",
+      "reportSha256": "d3f94def541dd3ae29238b85f4abd58d3c2cf781dcfba4b517bc14ce7ae88883",
+      "steps": [
+        {
+          "id": "prepare-address-draft",
+          "intent": "Prepare the complete required address under the displayed supplier without creating it.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-attached-result.json#/steps/0/run/executionTrace",
+          "priorContextSteps": [],
+          "exactControlBinding": null
+        },
+        {
+          "id": "edit-address-email",
+          "intent": "Change only required Email while relying on the earlier supplier, physical address, mode and request identity.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-attached-result.json#/steps/1/run/executionTrace",
+          "priorContextSteps": [
+            "prepare-address-draft"
+          ],
+          "exactControlBinding": null
+        },
+        {
+          "id": "review-current-address",
+          "intent": "Review the exact edited request and revision using the prior structured output.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-attached-result.json#/steps/2/run/executionTrace",
+          "priorContextSteps": [
+            "prepare-address-draft",
+            "edit-address-email"
+          ],
+          "exactControlBinding": {
+            "binding": {
+              "action": "Review",
+              "sourceStepId": "edit-address-email",
+              "nodeCode": "XDX_ACCEPT_ADDRESS_NAME_CHECK",
+              "requestIdPath": [
+                "result",
+                "requestId"
+              ],
+              "revisionPath": [
+                "result",
+                "revision"
+              ]
+            },
+            "sourceStepId": "edit-address-email",
+            "nodeCode": "XDX_ACCEPT_ADDRESS_NAME_CHECK",
+            "workflowHash": "5dbfda59fad929e8",
+            "conversationId": "workflow-test-xdx-address-required-direct-creation-af8a5e86-41f8-43c2-9008-99b8544fe6ef",
+            "sourceValueHash": "b3064f525cc595317a05bf489783ff0ccabb8c33fa11455f6c1444b2193aee7c",
+            "resolvedInputHash": "e225e94648932d84ae4f60f6caed586b66ce7432d78ec30e6f11e914b01ae69f",
+            "resolvedMessage": "Review request REQ-workflow-test-xdx-address-required-direct-creation-af8a5e86-41f8-43c2-9008-99b8544fe6ef-1 revision 2"
+          }
+        },
+        {
+          "id": "confirm-reviewed-address",
+          "intent": "Confirm the exact reviewed request, reserve one attempt and independently verify the fixture-backed created address.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-attached-result.json#/steps/3/run/executionTrace",
+          "priorContextSteps": [
+            "prepare-address-draft",
+            "edit-address-email",
+            "review-current-address"
+          ],
+          "exactControlBinding": {
+            "binding": {
+              "action": "Confirm",
+              "sourceStepId": "review-current-address",
+              "nodeCode": "XDX_EVALUATE_CONTROL",
+              "requestIdPath": [
+                "result",
+                "requestId"
+              ],
+              "revisionPath": [
+                "result",
+                "revision"
+              ]
+            },
+            "sourceStepId": "review-current-address",
+            "nodeCode": "XDX_EVALUATE_CONTROL",
+            "workflowHash": "5dbfda59fad929e8",
+            "conversationId": "workflow-test-xdx-address-required-direct-creation-af8a5e86-41f8-43c2-9008-99b8544fe6ef",
+            "sourceValueHash": "b3064f525cc595317a05bf489783ff0ccabb8c33fa11455f6c1444b2193aee7c",
+            "resolvedInputHash": "ed68a0282b48e880814975dd18ab50c3cbd613c96c2799ed96ee98a6365109c6",
+            "resolvedMessage": "Confirm request REQ-workflow-test-xdx-address-required-direct-creation-af8a5e86-41f8-43c2-9008-99b8544fe6ef-1 revision 2"
+          }
+        }
+      ],
+      "obligationExplanation": "Prepare resolves parent and selected template if applicable; Email-only edit preserves parent/revision; Review binds prior edit request/revision; Confirm binds reviewed current request/revision, fixture-backed POST then independent persisted-field GET. Each observed executionTrace and semantic judge is retained."
+    },
+    {
+      "testName": "xdx-address-required-template-creation",
+      "object": "addresses",
+      "mode": "template",
+      "version": 88010729,
+      "definitionHash": "5dbfda59fad929e8",
+      "report": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-attached-result.json",
+      "reportSha256": "64891eb0a7610d7cb9aeb7894588f2022afcaa37742e824d8c256d2cafb97dc4",
+      "steps": [
+        {
+          "id": "prepare-address-draft",
+          "intent": "Prepare the complete required address under the displayed supplier without creating it.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-attached-result.json#/steps/0/run/executionTrace",
+          "priorContextSteps": [],
+          "exactControlBinding": null
+        },
+        {
+          "id": "edit-address-email",
+          "intent": "Change only required Email while relying on the earlier supplier, physical address, mode and request identity.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-attached-result.json#/steps/1/run/executionTrace",
+          "priorContextSteps": [
+            "prepare-address-draft"
+          ],
+          "exactControlBinding": null
+        },
+        {
+          "id": "review-current-address",
+          "intent": "Review the exact edited request and revision using the prior structured output.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-attached-result.json#/steps/2/run/executionTrace",
+          "priorContextSteps": [
+            "prepare-address-draft",
+            "edit-address-email"
+          ],
+          "exactControlBinding": {
+            "binding": {
+              "action": "Review",
+              "sourceStepId": "edit-address-email",
+              "nodeCode": "XDX_ACCEPT_ADDRESS_NAME_CHECK",
+              "requestIdPath": [
+                "result",
+                "requestId"
+              ],
+              "revisionPath": [
+                "result",
+                "revision"
+              ]
+            },
+            "sourceStepId": "edit-address-email",
+            "nodeCode": "XDX_ACCEPT_ADDRESS_NAME_CHECK",
+            "workflowHash": "5dbfda59fad929e8",
+            "conversationId": "workflow-test-xdx-address-required-template-creation-5e864f87-0290-4c2a-8e12-462c13425dd3",
+            "sourceValueHash": "047cdae632a73535e98943231ba4f7bb29dc381e4d17bca679ca411c64505350",
+            "resolvedInputHash": "4fbb9037ab46063535b23faee3c81782ef3a81841db6ea0603716f4991e0e05f",
+            "resolvedMessage": "Review request REQ-workflow-test-xdx-address-required-template-creation-5e864f87-0290-4c2a-8e12-462c13425dd3-1 revision 2"
+          }
+        },
+        {
+          "id": "confirm-reviewed-address",
+          "intent": "Confirm the exact reviewed request, reserve one attempt and independently verify the fixture-backed created address.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-attached-result.json#/steps/3/run/executionTrace",
+          "priorContextSteps": [
+            "prepare-address-draft",
+            "edit-address-email",
+            "review-current-address"
+          ],
+          "exactControlBinding": {
+            "binding": {
+              "action": "Confirm",
+              "sourceStepId": "review-current-address",
+              "nodeCode": "XDX_EVALUATE_CONTROL",
+              "requestIdPath": [
+                "result",
+                "requestId"
+              ],
+              "revisionPath": [
+                "result",
+                "revision"
+              ]
+            },
+            "sourceStepId": "review-current-address",
+            "nodeCode": "XDX_EVALUATE_CONTROL",
+            "workflowHash": "5dbfda59fad929e8",
+            "conversationId": "workflow-test-xdx-address-required-template-creation-5e864f87-0290-4c2a-8e12-462c13425dd3",
+            "sourceValueHash": "047cdae632a73535e98943231ba4f7bb29dc381e4d17bca679ca411c64505350",
+            "resolvedInputHash": "62893b5ade50d80e9c0e658b24fbedf7b3a8d405a5db0cd069f0b486b7c5c4c2",
+            "resolvedMessage": "Confirm request REQ-workflow-test-xdx-address-required-template-creation-5e864f87-0290-4c2a-8e12-462c13425dd3-1 revision 2"
+          }
+        }
+      ],
+      "obligationExplanation": "Prepare resolves parent and selected template if applicable; Email-only edit preserves parent/revision; Review binds prior edit request/revision; Confirm binds reviewed current request/revision, fixture-backed POST then independent persisted-field GET. Each observed executionTrace and semantic judge is retained."
+    },
+    {
+      "testName": "xdx-contact-required-direct-creation",
+      "object": "contacts",
+      "mode": "direct",
+      "version": 88010729,
+      "definitionHash": "5dbfda59fad929e8",
+      "report": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-attached-result.json",
+      "reportSha256": "8accfee8dcf4e5fd4792486ac959a3aa91c6bb846006087fe3db859d2f3f3a92",
+      "steps": [
+        {
+          "id": "prepare-direct-contact",
+          "intent": "Prepare an uncreated direct contact draft with controlled email under Dell.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-attached-result.json#/steps/0/run/executionTrace",
+          "priorContextSteps": [],
+          "exactControlBinding": null
+        },
+        {
+          "id": "edit-direct-contact",
+          "intent": "Change only the draft email while preserving prior parent and names.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-attached-result.json#/steps/1/run/executionTrace",
+          "priorContextSteps": [
+            "prepare-direct-contact"
+          ],
+          "exactControlBinding": null
+        },
+        {
+          "id": "review-direct-contact",
+          "intent": "Review the exact edited request and revision without writing.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-attached-result.json#/steps/2/run/executionTrace",
+          "priorContextSteps": [
+            "prepare-direct-contact",
+            "edit-direct-contact"
+          ],
+          "exactControlBinding": {
+            "binding": {
+              "action": "Review",
+              "sourceStepId": "edit-direct-contact",
+              "nodeCode": "XDX_VALIDATE_CHILD_DRAFT",
+              "requestIdPath": [
+                "result",
+                "requestId"
+              ],
+              "revisionPath": [
+                "result",
+                "revision"
+              ]
+            },
+            "sourceStepId": "edit-direct-contact",
+            "nodeCode": "XDX_VALIDATE_CHILD_DRAFT",
+            "workflowHash": "5dbfda59fad929e8",
+            "conversationId": "workflow-test-xdx-contact-required-direct-creation-6d17effd-d7e7-479a-9c8c-0e25fbfcf7b5",
+            "sourceValueHash": "e2bb4e7a72ce9a2d995553045d2287ad623d503150d5b92059bc61db2ac3c4b6",
+            "resolvedInputHash": "6380054bab8ad1eeff99ba722090a3b2dbdae9e22511217b2f972423ac057d60",
+            "resolvedMessage": "Review request REQ-workflow-test-xdx-contact-required-direct-creation-6d17effd-d7e7-479a-9c8c-0e25fbfcf7b5-1 revision 2"
+          }
+        },
+        {
+          "id": "confirm-direct-contact",
+          "intent": "Confirm the exact reviewed revision once and independently verify the created contact.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-repaired-attached-result.json#/steps/3/run/executionTrace",
+          "priorContextSteps": [
+            "prepare-direct-contact",
+            "edit-direct-contact",
+            "review-direct-contact"
+          ],
+          "exactControlBinding": {
+            "binding": {
+              "action": "Confirm",
+              "sourceStepId": "review-direct-contact",
+              "nodeCode": "XDX_EVALUATE_CONTROL",
+              "requestIdPath": [
+                "result",
+                "requestId"
+              ],
+              "revisionPath": [
+                "result",
+                "revision"
+              ]
+            },
+            "sourceStepId": "review-direct-contact",
+            "nodeCode": "XDX_EVALUATE_CONTROL",
+            "workflowHash": "5dbfda59fad929e8",
+            "conversationId": "workflow-test-xdx-contact-required-direct-creation-6d17effd-d7e7-479a-9c8c-0e25fbfcf7b5",
+            "sourceValueHash": "e2bb4e7a72ce9a2d995553045d2287ad623d503150d5b92059bc61db2ac3c4b6",
+            "resolvedInputHash": "77d096f09bba949a81cc44870ff4091f9f40d94e482f64d2e76fe2baeaf101a0",
+            "resolvedMessage": "Confirm request REQ-workflow-test-xdx-contact-required-direct-creation-6d17effd-d7e7-479a-9c8c-0e25fbfcf7b5-1 revision 2"
+          }
+        }
+      ],
+      "obligationExplanation": "Prepare resolves parent and selected template if applicable; Email-only edit preserves parent/revision; Review binds prior edit request/revision; Confirm binds reviewed current request/revision, fixture-backed POST then independent persisted-field GET. Each observed executionTrace and semantic judge is retained."
+    },
+    {
+      "testName": "xdx-contact-required-template-creation",
+      "object": "contacts",
+      "mode": "template",
+      "version": 88010729,
+      "definitionHash": "5dbfda59fad929e8",
+      "report": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-attached-result.json",
+      "reportSha256": "3f38be577fbd540637eb1a6a122460567e64dffaf518ed5d501d2e4d5b5f113f",
+      "steps": [
+        {
+          "id": "prepare-template-contact",
+          "intent": "Prepare an uncreated template contact draft with controlled email under Dell.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-attached-result.json#/steps/0/run/executionTrace",
+          "priorContextSteps": [],
+          "exactControlBinding": null
+        },
+        {
+          "id": "edit-template-contact",
+          "intent": "Change only the draft email while preserving prior parent and names.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-attached-result.json#/steps/1/run/executionTrace",
+          "priorContextSteps": [
+            "prepare-template-contact"
+          ],
+          "exactControlBinding": null
+        },
+        {
+          "id": "review-template-contact",
+          "intent": "Review the exact edited request and revision without writing.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-attached-result.json#/steps/2/run/executionTrace",
+          "priorContextSteps": [
+            "prepare-template-contact",
+            "edit-template-contact"
+          ],
+          "exactControlBinding": {
+            "binding": {
+              "action": "Review",
+              "sourceStepId": "edit-template-contact",
+              "nodeCode": "XDX_VALIDATE_CHILD_DRAFT",
+              "requestIdPath": [
+                "result",
+                "requestId"
+              ],
+              "revisionPath": [
+                "result",
+                "revision"
+              ]
+            },
+            "sourceStepId": "edit-template-contact",
+            "nodeCode": "XDX_VALIDATE_CHILD_DRAFT",
+            "workflowHash": "5dbfda59fad929e8",
+            "conversationId": "workflow-test-xdx-contact-required-template-creation-5adcbb62-9c81-4933-9ad8-d21a8acbae48",
+            "sourceValueHash": "ac79446138179c8ce1d758068ba0955755d887e24e748b752fa1f2e48ee02457",
+            "resolvedInputHash": "deeb766935c9c9efcfc232f56fc0c00b98c034eb3675cb55fef04895d03acc3a",
+            "resolvedMessage": "Review request REQ-workflow-test-xdx-contact-required-template-creation-5adcbb62-9c81-4933-9ad8-d21a8acbae48-1 revision 2"
+          }
+        },
+        {
+          "id": "confirm-template-contact",
+          "intent": "Confirm the exact reviewed revision once and independently verify the created contact.",
+          "status": "passed",
+          "stateValid": true,
+          "judge": "passed",
+          "observedBranchEvidence": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-attached-result.json#/steps/3/run/executionTrace",
+          "priorContextSteps": [
+            "prepare-template-contact",
+            "edit-template-contact",
+            "review-template-contact"
+          ],
+          "exactControlBinding": {
+            "binding": {
+              "action": "Confirm",
+              "sourceStepId": "review-template-contact",
+              "nodeCode": "XDX_EVALUATE_CONTROL",
+              "requestIdPath": [
+                "result",
+                "requestId"
+              ],
+              "revisionPath": [
+                "result",
+                "revision"
+              ]
+            },
+            "sourceStepId": "review-template-contact",
+            "nodeCode": "XDX_EVALUATE_CONTROL",
+            "workflowHash": "5dbfda59fad929e8",
+            "conversationId": "workflow-test-xdx-contact-required-template-creation-5adcbb62-9c81-4933-9ad8-d21a8acbae48",
+            "sourceValueHash": "ac79446138179c8ce1d758068ba0955755d887e24e748b752fa1f2e48ee02457",
+            "resolvedInputHash": "64e873c82a8451a4e7e22d7e091d32b638487d3de1e6a526381a7f10b58b069f",
+            "resolvedMessage": "Confirm request REQ-workflow-test-xdx-contact-required-template-creation-5adcbb62-9c81-4933-9ad8-d21a8acbae48-1 revision 2"
+          }
+        }
+      ],
+      "obligationExplanation": "Prepare resolves parent and selected template if applicable; Email-only edit preserves parent/revision; Review binds prior edit request/revision; Confirm binds reviewed current request/revision, fixture-backed POST then independent persisted-field GET. Each observed executionTrace and semantic judge is retained."
+    }
+  ],
+  "toolingBoundary": "docs/builds/xdx-supplier-child-create-20261015/current-final-summary-timeout.json",
+  "toolingDisposition": "Bounded supported final-summary command timed out; raw result retained under F011. No unchanged retry, no fabricated CLI summary, no broad31test claim.",
+  "nativeEvidence": [
+    "docs/builds/xdx-supplier-child-create-20261015/address-native-template-observation.json",
+    "docs/builds/xdx-supplier-child-create-20261015/address-native-frozen-display-observation.json",
+    "docs/builds/xdx-supplier-child-create-20261015/contact-native-direct-observation.json",
+    "docs/builds/xdx-supplier-child-create-20261015/contact-native-template-observation.json"
+  ],
+  "acceptedException": "docs/builds/xdx-supplier-child-create-20261015/completion-acceptance.json",
+  "newRuntimeTests": 0,
+  "newBusinessWrites": 0,
+  "appScope": "Existing app binding/layout unchanged; native child creation journeys in scope, broader app synchronization and unrelated routes excluded by approved manifest.",
+  "retainedHistoricalFailures": "All20 prevention rows closed with current evidence; historical failed attempts retained, current required conversations all PASS"
+}

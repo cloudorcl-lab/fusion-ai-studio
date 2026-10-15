@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-10-15T18:02:25.143Z",
+  "checkpointUtc": "2026-10-15T18:14:55.198Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "fa1aa8fff43b8834b4db6679ca542229bbe6893efe406878e87ce6fa352e00ed"
+    },
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "c007c6eca8368b0475c563e659fe29f5ee36b27aa1ea21950d0742087fa99c90"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "2923f8dd96b122190b4886694ff36c40b742e0b079274a27ae190d166be9c25e"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "855fdc07ced983bef8eb04b09dc52ad914926380427727ca02e70322220f8dfa"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "a4f649e2ac28c33cc76436661735c3bf32f06b697ea352be3322a4b51e077da7"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_TESTING_GUIDE.md",
+      "sha256": "e3cb62bf08139faaf0d52f4fbf42190e2347fff0ff8da54c732ba32b98f70477"
+    }
+  ],
+  "reviewNotes": "Reviewed source retrospective and target canonical governance/deltas; collision backups and source scope verified. Governance-only hand-forward; current source policy/source proof preserved, no tenant operation. Reviewed exact integrated source/current parallel/timing policy and root-specific run-ledger wording; prior source fullreview applies to copied content, target files compared by hash.",
+  "objectReferences": [],
+  "noObjectsReason": "Local governance sync only; no resource operation in scope.",
+  "learningRegister": "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-retro-root-sync-20261015/failure-ledger.json",
+  "learningTaskId": "xdx-retro-root-sync-20261015",
+  "timeTracker": "docs/builds/xdx-retro-root-sync-20261015/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped governance synchronization verified; no resource operations; local commit is delivery action",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/final-parity.json",
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/build-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped governance synchronization verified; no resource operations; local commit is delivery action",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/final-parity.json",
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/build-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped governance synchronization verified; no resource operations; local commit is delivery action",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/final-parity.json",
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/build-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped governance synchronization verified; no resource operations; local commit is delivery action",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/final-parity.json",
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/build-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped governance synchronization verified; no resource operations; local commit is delivery action",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/final-parity.json",
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/build-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped governance synchronization verified; no resource operations; local commit is delivery action",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/final-parity.json",
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/build-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped governance synchronization verified; no resource operations; local commit is delivery action",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/final-parity.json",
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/build-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Canonical governance synchronization/session conformance",
+      "status": "pass",
+      "reason": "Scoped governance synchronization verified; no resource operations; local commit is delivery action",
+      "evidence": [
+        "docs/builds/xdx-retro-root-sync-20261015/sync-manifest.json",
+        "docs/builds/xdx-retro-root-sync-20261015/final-parity.json",
+        "docs/builds/xdx-retro-root-sync-20261015/review.json",
+        "docs/builds/xdx-retro-root-sync-20261015/qualification-reuse.json",
+        "docs/builds/xdx-retro-root-sync-20261015/document-check.json",
+        "docs/builds/xdx-retro-root-sync-20261015/build-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/failure-ledger.json",
+        "docs/builds/xdx-retro-root-sync-20261015/intake-and-learning-register.md"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Model/worker counters unavailable",
+    "aiUnits": "No tenant calls in scope",
+    "timingGaps": "Initial diff inspection before first prospective timestamp unallocated"
+  },
+  "sessionId": "xdx-retro-root-sync-20261015"
+}

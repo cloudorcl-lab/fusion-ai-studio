@@ -1,0 +1,15 @@
+{
+  "before": "5e07494edbc3000dcdfb72566342d49b48b3f277f64351fcc01759ae57e6a827",
+  "after": "4409e150a02105912dd331dd92d0b32c98752c73db8708d1d075754b75aa60f2",
+  "changedNodes": [
+    "XDX_VERIFY_CHILD_RESULT",
+    "XDX_PRESENT_CONTROL_RESULT",
+    "XDX_RETURN_CHILD_RESPONSE"
+  ],
+  "graphChanged": false,
+  "terminalShape": "plaintext, matching retained configured run.finalOutput",
+  "helperSha256": "1d63bf764889777668525dd8e50d5e5b73f6514bbc8b892c99180d0f9887746e",
+  "frozenRouting": "Returned control operation child_preflight; persisted nextOperation remains display so child phase guards no-op and BO switches skip.",
+  "runtimeAttempts": 0,
+  "remoteCalls": 0
+}

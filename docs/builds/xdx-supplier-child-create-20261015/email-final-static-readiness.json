@@ -1,0 +1,23 @@
+{
+  "observedUtc": "2026-10-15T14:27:14.393Z",
+  "sourceHash": "0fcd7afc2566bce5372b150528b5a2cbdef006c720e779d443671ae0e58c753d",
+  "validation": {
+    "path": "docs/builds/xdx-supplier-child-create-20261015/email-final-validation.json",
+    "sha256": "85c97a7bf33ef4fff922721354d992cc05b7243d0299cb01675220cc25f661b6"
+  },
+  "query": {
+    "command": "node scripts/verify-agentic-app-query-contract.cjs src/workflows/xdx_supplier_conversation.wf",
+    "result": "PASS",
+    "receiptFile": "docs/builds/xdx-supplier-child-create-20261015/commands.jsonl",
+    "activityId": "email-final-query-gate"
+  },
+  "focusedCodeQualification": {
+    "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_contract_receipt.json",
+    "sha256": "f946261ee120a20812c79365f463e5ac4e1e606616b162ccbf322f28da3f8c67"
+  },
+  "deltaReview": {
+    "path": "docs/builds/xdx-supplier-child-create-20261015/email-delta-impact-review.json",
+    "sha256": "9c67b93a51cb91a56aae12e620795c289bb8830fc47bf1f2960fd1bd727bf24e"
+  },
+  "noRuntimeReplay": true
+}

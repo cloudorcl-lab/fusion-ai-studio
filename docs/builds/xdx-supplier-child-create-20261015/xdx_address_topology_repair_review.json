@@ -1,0 +1,47 @@
+{
+  "assignmentId": "address-contract",
+  "remainingSwitchJoins": [
+    "SOURCE -> JOIN_CHILD_SOURCE",
+    "NAME_CHECK -> JOIN_CHILD_NAME",
+    "DISPATCH -> JOIN_CHILD_POST",
+    "READBACK -> JOIN_CHILD_READBACK"
+  ],
+  "beforeRepair": {
+    "edges": 225,
+    "reachableNodes": 167,
+    "cycles": [],
+    "paths": "37937154",
+    "nodes": 186
+  },
+  "observedEndUtc": "2026-10-15T13:23:11.9722931Z",
+  "limits": "Structural repair removes unrelated8192tailfactor; does not identify CLIinternal bottleneck or establish remote normalized/native acceptance. Root owns ongoing bounded prettify evidence.",
+  "countAlgorithm": "Memoized unique explicit outcome-edge path count, active-stack cycle detection, no predicate pruning or implicit metadata edges; each changed source counted once",
+  "workflowSha256": "d43b1e169b0e3076e6dd2e42503554ae247390d2026fd0d0b18770bf5207d2d7",
+  "guardedLinearStages": [
+    "BUILD only child_build",
+    "VALIDATE only child_validate/child_preflight",
+    "RESERVE only child_reserve; all other phases retain copied state without effects"
+  ],
+  "result": "No actionable source defect found; old supplier/site outcome destinations and convergence preserved if existingOuterTopologyChanges is empty",
+  "parentAgentId": "/root",
+  "existingOuterTopologyChanges": [],
+  "afterRepair": {
+    "edges": 217,
+    "reachableNodes": 163,
+    "cycles": [],
+    "paths": "483996",
+    "nodes": 182
+  },
+  "returnBinding": "{{$context.$nodes.XDX_CHILD_QUERY_RESPONSE.$output}}",
+  "head": {
+    "edges": 167,
+    "reachableNodes": 128,
+    "cycles": [],
+    "paths": "483330",
+    "nodes": 143
+  },
+  "activityId": "address-topology-repair-review",
+  "agentId": "/root/address_contract",
+  "childTerminal": "XDX_JOIN_CHILD_READBACK -> XDX_CHILD_QUERY_RESPONSE (LLM) -> XDX_RETURN_CHILD_RESPONSE (RETURN); errors persist then same child terminal",
+  "scenarioTestsUsed": 0
+}

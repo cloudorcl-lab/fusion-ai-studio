@@ -1,0 +1,14 @@
+{
+  "before": "3735a1c8c19e9a7e591ecfda4ab8fdcab5950e25d341409d7b5427d6b9d5d75a",
+  "node": "XDX_PREPARE_SUPPLIER_REQUEST",
+  "finding": "Empty prose prefix allowed bare whole-message Email token to normalize despite literal-preservation scope.",
+  "correction": "Require nonempty trimmed prose prefix and retain whitespace/colon/equals boundary.",
+  "priorReceipt": "xdx_child_email_repair_receipt.json",
+  "after": "0fcd7afc2566bce5372b150528b5a2cbdef006c720e779d443671ae0e58c753d",
+  "changedNodes": [
+    "XDX_PREPARE_SUPPLIER_REQUEST"
+  ],
+  "graphChanged": false,
+  "remoteCalls": 0,
+  "runtimeAttempts": 0
+}

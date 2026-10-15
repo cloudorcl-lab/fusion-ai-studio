@@ -1,0 +1,31 @@
+{
+  "observedUtc": "2026-10-15T18:06:13.513Z",
+  "result": "pass",
+  "files": [
+    "BUILD_STANDARD.md",
+    "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+    "docs/lessons/AI_STUDIO_TESTING_GUIDE.md",
+    "docs/builds/xdx-supplier-retro-20261015/retrospective.md"
+  ],
+  "localLinksChecked": 50,
+  "issues": [],
+  "scope": "Scoped local-link/anchor/fence inspection only; no product tests or remote evidence claims",
+  "sourceHashes": [
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "c007c6eca8368b0475c563e659fe29f5ee36b27aa1ea21950d0742087fa99c90"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "855fdc07ced983bef8eb04b09dc52ad914926380427727ca02e70322220f8dfa"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_TESTING_GUIDE.md",
+      "sha256": "e3cb62bf08139faaf0d52f4fbf42190e2347fff0ff8da54c732ba32b98f70477"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-retro-20261015/retrospective.md",
+      "sha256": "fdd3ae4791aa449479a7a8d2a9cb1ccae80f2bdf8d3118ccf7abe7d0d251d50b"
+    }
+  ]
+}

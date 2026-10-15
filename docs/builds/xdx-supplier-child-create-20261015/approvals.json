@@ -1,0 +1,79 @@
+{
+  "entries": [
+    {
+      "id": "current-goal",
+      "source": "Current user goal and followups in thread",
+      "wording": "implement create for Addresses and contacts. apply all previous lessons. use sub-agents. optimize context as specified. always track time as specified. report status at milestones. update active handoff at every major milestone.",
+      "actions": [
+        "Extend existing supplier app in current isolated worktree",
+        "Necessary local authoring and scoped test preparation",
+        "Sub-agent collaboration"
+      ],
+      "limits": [
+        "Preserve base checkout and unrelated target changes",
+        "No publication/push or replay accepted/uncertain operations"
+      ]
+    },
+    {
+      "id": "both-modes",
+      "source": "Current user messages",
+      "wording": "test both scenarios and implement both since both are valid in business. agreed. proceed",
+      "actions": [
+        "Direct-entry and same-supplier template creation for Addresses and Contacts",
+        "Review inherited required fields and confirm exact revision"
+      ],
+      "limits": [
+        "No generated IDs/account/security cloning",
+        "Required-only verification per existing testing guide"
+      ]
+    },
+    {
+      "id": "five-tests",
+      "source": "Current user message",
+      "wording": "reset the test budget. You are allowed 5 tests for each object. reset at every successful completion and do NOT repeat unless preceding logic has changed.",
+      "actions": [
+        "Reset new Addresses and Contacts test counters0/5",
+        "Up to5 dispatched test attempts per object per completed cycle"
+      ],
+      "interpretation": "Reset after successful object completion; no automatic unlimited replenishment after each passing test. Include accepted/uncertain create attempts in retained evidence and never replay.",
+      "limits": [
+        "Count actual attempts with source/logic identity",
+        "New exact payloads and test cases must be reviewable; no optional/DFF/KFF scope expansion"
+      ]
+    },
+    {
+      "id": "standing-authority",
+      "source": "Prior build approvals and current user worktree confirmation",
+      "actions": [
+        "Continue current isolated worktree",
+        "Normal configured sign-in when needed"
+      ],
+      "limits": [
+        "No credentials in records",
+        "Do not reuse exhausted historical business-write allocations"
+      ]
+    },
+    {
+      "id": "successful-test-reset-and-extras",
+      "source": "Latest user instructions",
+      "wording": "reset the successful tests; Allow one extra Address attempt; Allow one extra display-only check",
+      "observedUtc": "2026-10-15T15:23:47.774Z",
+      "interpretation": "Reset each object counter after a successfully completed test, including required attached judgment. Retain every historical attempt and failure. Do not repeat unchanged preceding logic. Meter reset does not authorize accepted-write replay or increase business POST limits.",
+      "actions": [
+        {
+          "object": "addresses",
+          "action": "One additional Address attempt"
+        },
+        {
+          "object": "contacts",
+          "action": "One display-only check on accepted CONT-5; no new POST"
+        }
+      ],
+      "limits": [
+        "No additional Contact POST",
+        "Do not repeat unchanged logic",
+        "Retain all historical evidence"
+      ]
+    }
+  ]
+}

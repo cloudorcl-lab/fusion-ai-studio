@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "SupplierContactId": {
+            "type": [
+              "number",
+              "string"
+            ]
+          },
+          "ContactName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "FirstName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "LastName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "Email": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "Status": {
+            "type": "string"
+          },
+          "InactiveDate": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "SupplierContactId"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "count": {
+      "type": "integer"
+    },
+    "hasMore": {
+      "type": "boolean"
+    },
+    "limit": {
+      "type": "integer"
+    },
+    "offset": {
+      "type": "integer"
+    },
+    "links": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "items",
+    "count",
+    "hasMore",
+    "limit",
+    "offset"
+  ],
+  "additionalProperties": true
+}

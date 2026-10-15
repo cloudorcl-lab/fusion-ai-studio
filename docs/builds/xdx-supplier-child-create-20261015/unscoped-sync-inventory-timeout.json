@@ -1,0 +1,12 @@
+{
+  "observedUtc": "2026-10-15T13:46:37.364Z",
+  "runId": "9fd2a3c4-6d59-4455-a348-70a057b20b70",
+  "command": "get-workflow-test-sync-plan --file src/workflows/xdx_supplier_conversation.wf --format focused-json",
+  "elapsedMs": 300148.5852,
+  "stdout": "empty",
+  "exitCode": null,
+  "captureMeta": "docs/builds/xdx-supplier-child-create-20261015/child-test-scope-plan.meta.json",
+  "symptom": "Wholeworkflowautomaticinventory exceeded300s; originalboundedchildterminated, no mutation or scenario",
+  "scopeDecision": "User authorized exactlyfivecases/object for thisboundedexistingapp extension, both businessmodes. Current-flow customconversationinventory from successfulfrozencontext+fourexplicitdefinitions is authoritative selectedscope; do not expand into unrelatedsuppliers/sites or replay broadinventory unchanged.",
+  "correction": "Finish scopedlocalgeneration and verify exactfourcase inventory before affectedscenarios. Retain failedbroaderinventory asmeasurementlimitation, not coverageproof."
+}

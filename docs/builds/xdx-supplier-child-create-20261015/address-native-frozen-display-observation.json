@@ -1,0 +1,17 @@
+{
+  "caseId": "ADDR-06-DISPLAY",
+  "recordedUtc": "2026-10-15T15:48:42.170Z",
+  "status": "passed",
+  "workflowVersion": 88010729,
+  "requestId": "REQ-2b0bd036-1436-4ba0-8588-06fe72d5d4c2-XDX_SUPPLIER_CONVERSATION-1",
+  "revision": 2,
+  "sourceAddressId": "300000047414694",
+  "createdAddressId": "300000340604918",
+  "AddressPartyNumber": "1501636",
+  "actualOpening": "This request already has a recorded attempt; it will not be submitted again. Previously recorded creation outcome. No new creation or verification was performed for this display.",
+  "observed": "Accepted/verified frozen status, correct distinct source/created/parent IDs, all8previously approved fields; no fresh verification claim.",
+  "noNewPost": true,
+  "noNewGet": "Actual serialized frozen Review graph qualification proves zeroBO nodes; native UI explicitly states no new verification. Raw transport unavailable.",
+  "screenshot": "Observed in browser tool at completion; no local image file available",
+  "sharedFixEvidence": "Same deterministic frozen accepted renderer as Contact; Contact-specific native recall remains unavailable after session loss."
+}

@@ -22,6 +22,16 @@ Continue through routine reversible work and retain authorization within scope.
 Ask only when missing information or a required approval blocks progress.
 Run checks appropriate to the change. Repeat broader checks when new changes, failures or unresolved concerns justify them.
 
+For delegated work, supply verified literal input/evidence paths, the exact executable and registered command-receipt path, the required host execution context, and each command’s JSON or TEXT output contract. Register scoped task identities in the shared intake and tracker before dispatch. Use the supported follow-up operation to activate a completed worker; an unacknowledged message is not active execution.
+
+## Required parallel-agent execution
+
+For every build, deployment and test run, use parallel agents wherever independent, authorized work can proceed safely. This is the default execution requirement. At intake and each phase transition, identify independent work packages, assign available agents and record ownership and dependencies in the run ledger. If work must remain serial, record the specific dependency, shared-resource conflict, unavailable agent capacity or disproportionate coordination overhead; reassess when that constraint changes.
+
+Give each agent a bounded task, exact checkout/branch, owned files or artifacts, inputs, permitted actions, expected evidence and stop conditions. Keep one coordinator accountable for integration and one writer per shared file, remote artifact, browser session or dependent transaction chain. Parallelize independent build modules, deployment preparation or independent deployment targets, and authorized isolated tests or evidence review. Serialize conflicting mutations and dependent rollout steps. Delegation preserves all approval, test-scope and business-write limits, including an instruction not to test.
+
+The canonical playbook's Delegated build ownership section owns AI Studio-specific execution controls. Record each assignment and its timing using the attribution requirements below; reconcile all workers before phase exit.
+
 ## Mandatory handoff master
 
 `docs/handoffs/ACTIVE_HANDOFF.md` is the repository-wide **handoff master** and single authoritative current transition record. Keeping it current is a **MUST for effective build execution**, in every session and worktree.
@@ -55,6 +65,27 @@ Record category transitions as they occur. Avoid overlapping categories. Report 
 
 Label inferred intervals and gaps. Do not attribute scheduling latency to the user or present estimates as exact measurements. For unavailable scheduling or interruption telemetry, record the limitation; do not manufacture category transitions or continuous active work across turns.
 
+Report run duration from the authoritative build ledger, naming its start and cutoff. Goal-tracker elapsed, command coverage, scenario runtime and summed agent effort are separate measurements. Recover later gate/commit tails from retained receipts without inventing their category; preserve earlier cutoffs and qualify missing intervals. Phase labels must describe mixed work rather than imply an unsupported coding-versus-testing labor split.
+
+### Time-recording procedure
+
+Use the active run's build-ledger.json as the sole timing source; time-tracker.md and status messages summarize it. Apply this procedure prospectively; never fill historical gaps with estimated labor.
+
+1. At the first observed timestamp of each working turn, open a primary interval with UTC start, category, task/object and activity. Record any earlier discovery or recovery time as unallocated when its start is unknown.
+2. On a category change, close the previous interval and open the next at the same observed timestamp. Keep active execution, blocking tool/environment wait, required-user wait, idle and interruption mutually exclusive. Ordinary tool execution stays inside active execution; command durations are diagnostic subsets and must not be added again.
+3. Close the interval before yielding, stopping or handing off. Never leave an active interval running across turns. After an unexpected interruption, use the last reliable observation as the cutoff, label it retrospective, and leave the remaining gap unallocated.
+4. At approximately 30 minutes of recorded active execution, and whenever an object or phase completes, record a checkpoint with object, completed work, remaining work, blocker, category totals and estimate to finish. Label estimates as forecasts. Routine progress messages can be more frequent; a checkpoint does not authorize tests.
+5. At each status checkpoint, show recorded active execution, blocking wait, required-user wait, idle/interrupted time, unallocated time and wall-clock elapsed separately. A missing observation is unknown, not zero. Report command/test elapsed separately and retain any test-meter reset boundary.
+6. At task end, close all intervals and report timing coverage and limitations. Do not call wall-clock elapsed, command elapsed or a goal tracker labor time. Historical incomplete coverage remains incomplete.
+
+### Agent attribution and concurrent time
+
+Every activity and timing interval must identify agentId (actual canonical agent identity, including the primary agent), parentAgentId (null for the primary), assignmentId, activityId, phase, task/object, category, observed startUtc/endUtc, outcome and evidence reference. Record agent roles and assignment ownership in the run ledger. Link command receipts by activityId when the timing tool has no agent metadata field; do not invent unsupported CLI flags. Unknown historical agent identities remain unknown.
+
+Workers return their observed intervals and timing limitations with each checkpoint and final receipt. The coordinator merges these into the authoritative ledger; workers must not concurrently edit that shared ledger. Record dispatch-to-return elapsed separately from observed active execution: an outstanding agent can be idle or waiting.
+
+Keep categories exclusive within each agent. Agent intervals may overlap across agents. Preserve the exclusive run-level wall-clock timeline separately: any observed active worker makes that period run-level active execution, even if the coordinator is waiting. Report per-agent active/wait totals, summed agent effort, and overlap-aware run elapsed separately; summed agent effort can exceed wall-clock elapsed and is not human labor. Do not add nested tool durations again or infer speedup without comparable baseline evidence. Checkpoints and final reports identify which agent completed each object/activity and disclose missing timing coverage.
+
 Track milestones:
 
 - Prerequisites verified.
@@ -63,7 +94,7 @@ Track milestones:
 - Validation completed.
 - Deliverables and handoff completed.
 
-For each milestone, record its timestamp, outcome and evidence location in the run ledger and apply the mandatory handoff-master update above. Report time to the first verified result and time to final verified delivery. Keep design/document verification distinct from a working application's first end-to-end result.
+For each milestone, record its timestamp, executing agentId and assignmentId, outcome and evidence location in the run ledger, and apply the mandatory handoff-master update above. Report time to the first verified result and time to final verified delivery. Keep design/document verification distinct from a working application's first end-to-end result.
 
 Track failures and rework:
 
@@ -89,6 +120,8 @@ Track verification:
 - Checks planned, executed, passed, failed and not run.
 - Whether each check passed on its first execution.
 - Local/stub results separately from live environment results.
+- Scenario attempts, conversation turns, assertions, judgments and business writes as separate counts, using the [testing guide](docs/lessons/AI_STUDIO_TESTING_GUIDE.md#attempt-budgets-and-result-counts).
+- User-accepted verification exceptions separately from observed test PASS; retain the original unobserved or failed result.
 - Remaining defects, limitations and unverified success criteria.
 
 Track usage only when reliable counters are available:

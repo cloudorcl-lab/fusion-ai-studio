@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "command": "do-delete-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "XDX_ROUTE_CHILD_VALIDATION",
+    "removedEdges": 2,
+    "removedIncomingEdges": [],
+    "removedOutgoingEdges": [
+      {
+        "to": "XDX_VALIDATE_CHILD_DRAFT",
+        "label": "child_validate"
+      },
+      {
+        "to": "XDX_JOIN_CHILD_VALIDATION",
+        "label": "display"
+      }
+    ]
+  }
+}

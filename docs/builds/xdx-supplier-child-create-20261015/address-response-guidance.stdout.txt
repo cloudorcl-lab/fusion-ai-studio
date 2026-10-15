@@ -1,0 +1,172 @@
+{
+  "ok": true,
+  "command": "get-bo-function-example-guidance",
+  "result": {
+    "functionName": "CreateSupplierAddress",
+    "operationType": "POST",
+    "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses",
+    "examplePurpose": "response",
+    "exampleMode": "fetchResponse",
+    "defaultSampleInputValues": {},
+    "currentSampleInputValues": {},
+    "requiredSampleInputs": [
+      {
+        "name": "suppliers_Id",
+        "location": "path",
+        "dataType": "string",
+        "description": "Locked target SupplierId resolved from current supplier selection; never SupplierNumber or a sample default.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "AddressName",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed new address name, maximum 240 characters; uniqueness is scoped to the locked target supplier.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "CountryCode",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed country code, exactly 2 characters; source-backed template value or explicit direct input.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "AddressLine1",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed first physical address line, maximum 240 characters; exact inherited value or direct input.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "City",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed city for the selected complete US address flow, maximum 60 characters.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "State",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed state for the selected complete US address flow, maximum 60 characters.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "PostalCode",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed postal code for the selected complete US address flow, maximum 60 characters.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "Email",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed required email, maximum 320 characters; testing always uses an explicitly controlled destination override.",
+        "defaultValue": "",
+        "required": true
+      }
+    ],
+    "optionalSampleInputs": [],
+    "missingRequiredInputs": [
+      {
+        "name": "suppliers_Id",
+        "location": "path",
+        "dataType": "string",
+        "description": "Locked target SupplierId resolved from current supplier selection; never SupplierNumber or a sample default.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "AddressName",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed new address name, maximum 240 characters; uniqueness is scoped to the locked target supplier.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "CountryCode",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed country code, exactly 2 characters; source-backed template value or explicit direct input.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "AddressLine1",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed first physical address line, maximum 240 characters; exact inherited value or direct input.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "City",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed city for the selected complete US address flow, maximum 60 characters.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "State",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed state for the selected complete US address flow, maximum 60 characters.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "PostalCode",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed postal code for the selected complete US address flow, maximum 60 characters.",
+        "defaultValue": "",
+        "required": true
+      },
+      {
+        "name": "Email",
+        "location": "body",
+        "dataType": "string",
+        "description": "Reviewed required email, maximum 320 characters; testing always uses an explicitly controlled destination override.",
+        "defaultValue": "",
+        "required": true
+      }
+    ],
+    "conflictingInputs": [],
+    "needsClarification": false,
+    "promptText": "To fetch a sample response for CreateSupplierAddress, I need values for these required sample inputs:\nsuppliers_Id\nAddressName\nCountryCode\nAddressLine1\nCity\nState\nPostalCode\nEmail\nReply in one message using:\nsuppliers_Id=VALUE1\nAddressName=VALUE2\nCountryCode=VALUE3\nAddressLine1=VALUE4\nCity=VALUE5\nState=VALUE6\nPostalCode=VALUE7\nEmail=VALUE8",
+    "promptLines": [
+      "To fetch a sample response for CreateSupplierAddress, I need values for these required sample inputs:",
+      "suppliers_Id",
+      "AddressName",
+      "CountryCode",
+      "AddressLine1",
+      "City",
+      "State",
+      "PostalCode",
+      "Email",
+      "Reply in one message using:",
+      "suppliers_Id=VALUE1",
+      "AddressName=VALUE2",
+      "CountryCode=VALUE3",
+      "AddressLine1=VALUE4",
+      "City=VALUE5",
+      "State=VALUE6",
+      "PostalCode=VALUE7",
+      "Email=VALUE8"
+    ],
+    "replyExample": "suppliers_Id=VALUE1 AddressName=VALUE2 CountryCode=VALUE3 AddressLine1=VALUE4 City=VALUE5 State=VALUE6 PostalCode=VALUE7 Email=VALUE8",
+    "readyToFetch": false,
+    "guidance": "This POST function should use a fetched sample response for its example. Collect any missing required sample input values before calling the fetch command."
+  }
+}

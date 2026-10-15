@@ -1,0 +1,14 @@
+{
+  "observedUtc": "2026-10-15T15:25:58.671Z",
+  "result": "PASS",
+  "sourceSha256": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872",
+  "beforeSha256": "ba13a9bb99f252c810cd52a420988ac2718eec9b9c85b2c0209ecc324ca188b0",
+  "workflowId": "300000340639869",
+  "version": 88010729,
+  "status": "DRAFT",
+  "header": {
+    "ETag": "\"28\""
+  },
+  "canonicalSpecificationUnchanged": true,
+  "remoteSave": "docs/builds/xdx-supplier-child-create-20261015/identity-remote-save.json"
+}

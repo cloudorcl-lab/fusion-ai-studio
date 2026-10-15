@@ -1,0 +1,9 @@
+{
+  "observedUtc": "2026-10-15T13:49:11.028Z",
+  "artifact": "test/workflows/xdx_supplier_conversation/xdx-contact-required-template-creation.json",
+  "sha256": "e0fb961c3e6c03686e9e4a483df5f4ea36b2e6a51b2bc48d6c04c9d9b768a357",
+  "cliOutput": "docs/builds/xdx-supplier-child-create-20261015/contact-template-test-generation.stdout.txt",
+  "actualProcessExit": 0,
+  "outputContract": "textcapturedwithoutJSONparsing",
+  "semantic": "Ready4stepfixturehybridtest; no scenariorun"
+}

@@ -1,0 +1,11 @@
+{
+  "observedUtc": "2026-10-15T13:49:11.025Z",
+  "symptom": "Both Address testgenerations rejected initialmessage length284/242 aboveCLI240limit; no testartifactcreated",
+  "cause": "Stageddefinition review missed supportedshortinvocation length",
+  "correction": "Shorten only user-facinginvocation text whilepreserving allrequiredvalues/templateparent/source; checkallmessages <=240 before generation",
+  "actualStderr": [
+    "docs/builds/xdx-supplier-child-create-20261015/address-direct-test-generation.stderr.txt",
+    "docs/builds/xdx-supplier-child-create-20261015/address-template-test-generation.stderr.txt"
+  ],
+  "scenarioConsumed": false
+}

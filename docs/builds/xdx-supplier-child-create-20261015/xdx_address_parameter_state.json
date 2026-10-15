@@ -1,0 +1,9 @@
+{
+  "functionName": "CreateSupplierAddress",
+  "kind": "token",
+  "parameterName": "State",
+  "patch": {
+    "dataType": "string",
+    "description": "Reviewed state for the selected complete US address flow, maximum 60 characters."
+  }
+}

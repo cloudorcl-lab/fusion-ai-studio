@@ -1,0 +1,15 @@
+{
+  "observedUtc": "2026-10-15T14:32:39.292Z",
+  "failedAction": "One-off archival guard rejected a fresh successful report before any copies or ledger mutations",
+  "cause": "Lexical string comparison of fractional .983Z against second-only Z orders punctuation rather than time",
+  "correction": "Use Date.parse for report versus pre-execution contract time; actual version and passed===true checked independently",
+  "verification": {
+    "contractUtc": "2026-10-15T14:28:25.490Z",
+    "reportUtc": "2026-10-15T14:28:25.983Z",
+    "chronologicalFresh": true,
+    "workflowVersion": 88007237,
+    "deterministicPassed": true
+  },
+  "impact": "No runtime retry, source mutation or business operation; evidence capture only",
+  "evidenceGap": "Unmeasured inline guard exit1 retained in current tool conversation"
+}

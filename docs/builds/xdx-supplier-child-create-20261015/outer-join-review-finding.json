@@ -1,0 +1,9 @@
+{
+  "observedUtc": "2026-10-15T13:11:18.098Z",
+  "agentId": "/root/create_integration",
+  "symptom": "Static graph review found child edit route bypasses existing XDX_ROUTE_REQUEST convergence41 by routing directly to validation154",
+  "source": "src/workflows/xdx_supplier_conversation.wf",
+  "sha256": "c1d195f5d9e462f72b556cb0e96439bdb8c4378c09146be9c0526512be158eab",
+  "correction": "Route child_validate through existing joins41 then42 and detail router to154; preserve structured switch convergence",
+  "noScenarioExecution": true
+}

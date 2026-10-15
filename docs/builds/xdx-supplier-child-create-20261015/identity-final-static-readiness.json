@@ -1,0 +1,16 @@
+{
+  "observedUtc": "2026-10-15T15:25:25.520Z",
+  "sourceSha256": "ba13a9bb99f252c810cd52a420988ac2718eec9b9c85b2c0209ecc324ca188b0",
+  "validation": {
+    "path": "docs/builds/xdx-supplier-child-create-20261015/identity-final-validation.json",
+    "sha256": "85c97a7bf33ef4fff922721354d992cc05b7243d0299cb01675220cc25f661b6",
+    "innerOk": true,
+    "errorCount": 0
+  },
+  "queryCommand": "node scripts/verify-agentic-app-query-contract.cjs src/workflows/xdx_supplier_conversation.wf",
+  "queryResult": "PASS",
+  "queryEvidence": "docs/builds/xdx-supplier-child-create-20261015/commands.jsonl",
+  "focusedGroups": 10,
+  "focusedReceipt": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_contract_receipt.json",
+  "scope": "Static prevention verified; accepted native display acceptance pending. No business calls."
+}

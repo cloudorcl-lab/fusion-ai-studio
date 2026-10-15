@@ -1,0 +1,6 @@
+{
+  "patch": {
+    "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses/{suppliers_addresses_Id}?onlyData=true&fields=SupplierAddressId,AddressName,CountryCode,Country,AddressLine1,AddressLine2,City,State,Province,PostalCode,Status,InactiveDate,AddressPurposeOrderingFlag,Email,AddressPartyNumber"
+  },
+  "functionName": "GetSupplierAddress"
+}

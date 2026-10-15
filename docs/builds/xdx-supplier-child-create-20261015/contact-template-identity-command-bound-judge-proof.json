@@ -1,0 +1,22 @@
+{
+  "observedUtc": "2026-10-15T16:00:00.427Z",
+  "runId": "3e46ce4e-511b-4d08-a272-fdd5fc85493c",
+  "preExecutionContract": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-execution-contract.json",
+  "rawExit": 1,
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CONVERSATION",
+    "status": "DRAFT",
+    "version": 88010729
+  },
+  "definitionHash": "5dbfda59fad929e8",
+  "actualRuntimeStatus": "needs-judge",
+  "deterministicPassed": true,
+  "checks": 865,
+  "startedAt": "2026-10-15T15:51:49.936Z",
+  "finishedAt": "2026-10-15T15:52:19.148Z",
+  "measuredEnd": "2026-10-15T15:58:36.061Z",
+  "measuredDurationMs": 406366.2999,
+  "runtimeArchive": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-runtime-needs-judge.json",
+  "requestArchive": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-request-needs-judge.json",
+  "handling": "Exact scripted local-judge continuation; no workflow replay. Attachment remains required for PASS."
+}

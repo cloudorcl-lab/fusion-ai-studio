@@ -1,0 +1,14 @@
+{
+  "observedUtc": "2026-10-15T13:47:33.069Z",
+  "symptom": "Threeparalleltestgenerationchildren blocked beforedispatch because newreceiptfiles notyetregistered",
+  "childDispatched": false,
+  "scenarioConsumed": false,
+  "cause": "Coordinator introducedper-commandparallelreceipts withoutfirstregisteringthem",
+  "correction": "Createdexactreceiptfiles and registeredallthree transactionallybeforeanyretry",
+  "paths": [
+    "docs/builds/xdx-supplier-child-create-20261015/contact-template-materialize-commands.jsonl",
+    "docs/builds/xdx-supplier-child-create-20261015/address-direct-materialize-commands.jsonl",
+    "docs/builds/xdx-supplier-child-create-20261015/address-template-materialize-commands.jsonl"
+  ],
+  "prevention": "Provision+registerreceipts beforespawningparallelmeasuredchildren; no sharedappendfile duringparallelcommands"
+}

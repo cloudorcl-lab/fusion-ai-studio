@@ -1,0 +1,8 @@
+{
+  "patch": {
+    "name": "CreateSupplierAddress",
+    "description": "Create one reviewed ordering address under the locked resolved supplier; omit generated IDs and verify independently.",
+    "bodyTemplate": "{\"AddressName\":\"{AddressName}\",\"CountryCode\":\"{CountryCode}\",\"AddressLine1\":\"{AddressLine1}\",\"City\":\"{City}\",\"State\":\"{State}\",\"PostalCode\":\"{PostalCode}\",\"Email\":\"{Email}\",\"AddressPurposeOrderingFlag\":true}"
+  },
+  "functionName": "create_suppliers_addresses"
+}

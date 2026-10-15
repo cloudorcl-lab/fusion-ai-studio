@@ -1,0 +1,48 @@
+{
+  "observedUtc": "2026-10-15T15:05:27.556Z",
+  "caseId": "CONT-5",
+  "surface": "Native draft app Query UI",
+  "workflowVersion": 88007237,
+  "requestId": "REQ-844b3249-a864-4a44-8dda-9d1dd96d0c17-XDX_SUPPLIER_CONVERSATION-3",
+  "revision": 2,
+  "parent": {
+    "SupplierId": 300000047414679,
+    "SupplierNumber": "1255",
+    "Supplier": "Dell Inc."
+  },
+  "reviewedSource": {
+    "SupplierContactId": 300000047414707,
+    "FirstName": "Noah",
+    "LastName": "Gill",
+    "Status": "ACTIVE"
+  },
+  "payload": {
+    "FirstName": "Noah",
+    "LastName": "XDXChildTemplate20261015",
+    "Email": "xdx.child.template.20261015@example.invalid"
+  },
+  "attempt": {
+    "status": "accepted",
+    "verification": "verified",
+    "SupplierContactId": 300000340604889
+  },
+  "verified": {
+    "SupplierContactId": 300000340604889,
+    "PersonProfileId": 300000340604889,
+    "FirstName": "Noah",
+    "LastName": "XDXChildTemplate20261015",
+    "Email": "xdx.child.template.20261015@example.invalid",
+    "ContactName": "XDXChildTemplate20261015, Noah",
+    "Status": "ACTIVE"
+  },
+  "dataPersistencePassed": true,
+  "presentationPassed": false,
+  "presentationFailure": {
+    "label": "Source contact: SupplierContactId",
+    "observed": 300000340604889,
+    "expected": 300000047414707,
+    "meaning": "Completion prose mislabeled new own ID as source; actual source/own state remains distinct per inspectedCODE"
+  },
+  "freeze": "Accepted write and ownID are frozen. No POST replay. Contacts5/5 consumed; no object reset until fix acceptance.",
+  "limitations": "Visible UI plus saved graph; raw POST/GET trace and account-null values not exported."
+}

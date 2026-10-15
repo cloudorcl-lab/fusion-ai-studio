@@ -1,0 +1,10 @@
+{
+  "kind": "token",
+  "parameterName": "suppliers_Id",
+  "patch": {
+    "description": "Resolved destination SupplierId internal key; never a displayed SupplierNumber or source contact/profile ID. Caller must validate nonblank scope before POST.",
+    "defaultValue": "",
+    "dataType": "string"
+  },
+  "functionName": "CreateSupplierContact"
+}

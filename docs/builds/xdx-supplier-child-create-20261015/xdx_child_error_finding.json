@@ -1,0 +1,10 @@
+{
+  "sourceHash": "3559cdcf26420360756d5db460d3aa4cec83513fcac8515843888bda17ab4fa5",
+  "observations": [
+    "XDX_PERSIST_CHILD_WRITE_ERROR.success=end after prettify; intended displayed error is absent",
+    "XDX_PERSIST_CHILD_PREPARE_ERROR.success=end after prettify; intended displayed error is absent",
+    "child selectedReference excludes supplier except narrow based-on/from/for phrase"
+  ],
+  "correction": "Each error receives its own deterministic terminal RETURN after persisted state. Extend only child selected-reference alternatives to supplier/address/contact. No POST replay or weakened approval.",
+  "sourceEvidence": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_normalized_before_error_repair.wf"
+}

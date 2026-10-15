@@ -1,0 +1,80 @@
+{
+  "status": "review-checklist-only-not-executed",
+  "agentId": "/root/contact_contract",
+  "manifest": "docs/builds/xdx-supplier-child-create-20261015/exact-test-transaction-manifest.json",
+  "manifestSha256": "5917fb55f3f83a0cb2e1ade8969fc2658b79b925cbb9f71431222a4a2c425f8d",
+  "target": "eqil-dev21",
+  "parent": {
+    "suppliers_Id": "300000047414679",
+    "SupplierNumber": "1255",
+    "Supplier": "Dell Inc."
+  },
+  "transactions": [
+    {
+      "id": "CONT-1",
+      "allocation": "saved-bo",
+      "payload": {
+        "LastName": "ChildBO20261015",
+        "Email": "xdx.child.bo.20261015@example.invalid",
+        "FirstName": "XDXContact"
+      },
+      "status": "allocated-not-dispatched"
+    },
+    {
+      "id": "CONT-4",
+      "allocation": "native-direct",
+      "payload": {
+        "LastName": "ChildDirect20261015",
+        "Email": "xdx.child.direct.20261015@example.invalid",
+        "FirstName": "XDXContact"
+      },
+      "status": "allocated-not-dispatched"
+    },
+    {
+      "id": "CONT-5",
+      "payload": {
+        "LastName": "XDXChildTemplate20261015",
+        "Email": "xdx.child.template.20261015@example.invalid",
+        "FirstName": "Noah"
+      },
+      "sourceContactId": "300000047414707",
+      "allocation": "native-template",
+      "status": "allocated-not-dispatched"
+    }
+  ],
+  "preflight": [
+    "Coordinator reserves scenario and exact manifest transaction once before dispatch; contact five-scenario cycle has saved BO, configured direct hybrid, configured template hybrid, native direct, native template. No transient replay.",
+    "Verify saved XDX_SUPPLIER_CONTACTS identity, DRAFT/version and CreateSupplierContact configuration against current reviewed local BO; no save or fetch implicit in checklist.",
+    "Verify parent Dell Inc. displayed1255 resolves to internal300000047414679 using adequate current authorized retained proof or only missing in-scenario read. Historical IDs are references requiring current identity agreement.",
+    "Three-body-field exact allowlist FirstName/LastName/Email; maxima150/150/320, nonblank strings. Omit SupplierContactId/PersonProfileId/InactiveDate and every account/security/role/dataaccess/phone/admin/nested field. Header4/json/Upsertfalse.",
+    "Parse exact unrendered JSON template and rendered payload with intended string types; compare rendered fields against manifest, including intended absent-field checks. No collision POST or omission probe."
+  ],
+  "savedBoJourney": [
+    "Open exact saved XDX_SUPPLIER_CONTACTS Business Object in AI Agent Studio; choose CreateSupplierContact Fetch Sample Data. Record surface, saved identity/version and function before action.",
+    "Request response-example purpose explicitly. For applicable guidance/preparation tooling use examplePurpose:response; require fetchResponse and readyToFetch:true. Request authoring is not response capture. UI must show correct parent and exact CONT-1 payload before its single dispatch.",
+    "Submit once; retain actual request and response, observedUTC, status and generated SupplierContactId/PersonProfileId separately. If timeout/error/partial response might cross POST, freeze identity/payload and reconcile read-only; never retry POST automatically.",
+    "Independently invoke saved GetSupplierContact with path suppliers_Id300000047414679 and suppliers_contacts_Id equal returned SupplierContactId. This separate GET must execute, not merely reuse POST response.",
+    "Compare exact allthree persisted fields with CONT-1; require returned contactID equals POSTID, positive profileID (equals POSTprofileID when POST supplies it), own UserName/UserAccountStatus properties explicitly null. Capture DataAccessLevel and InactiveDate response as evidence without inventing optional-field variation.",
+    "ContactName may be null in POST and computed in GET; do not assert fixed formatting or contactID==profileID. Record current-target generation only if omissions and returned IDs are evidenced."
+  ],
+  "nativeDirect": [
+    "Open XDX Supplier Workspace Run app preview DRAFT, bound to saved XDX_SUPPLIER_CONVERSATION; record artifact/surface/state. Global Ask chat does not qualify.",
+    "In one conversation request new direct-entry contact for supplier number1255 with exact CONT-4 fields. Review shows uncreated contact, Dell parent, three fields and exact requestID/revision.",
+    "If field-only email edit is needed, supply only Email with CONT-4 final controlled value; verify other fields and parent unchanged, same requestID and incrementedrevision. Never confirm stale revision.",
+    "Use the exact displayed Review request ID revision N command, inspect reviewed payload equal CONT-4, then exact displayed Confirm command once. Require saved POST and independent parent-scoped GET before verified success display.",
+    "Retain rendered final widget, correct contact identity and fields; record separately whether raw POST/GET traces are available. No raw trace claim from UI text alone. Preserve completed frozen state; never repeat accepted confirmation."
+  ],
+  "nativeTemplate": [
+    "Same target Run app preview, fresh intended conversation. Select Dell supplier and same-parent source contact300000047414707; verify current source identity, not merely historic ContactName text.",
+    "Request new contact from source with exact CONT-5 reviewed overrides LastNameXDXChildTemplate20261015 and Emailxdx.child.template.20261015@example.invalid, retaining FirstNameNoah. Operational source email must not reach proposed test POST.",
+    "Verify source and destination parent remain Dell1255/internal300000047414679, source unchanged and generated IDs/account/security fields absent from new payload. Source ID is provenance only, never POSTbody.",
+    "Review exact current requestID/revision, compare complete three-field payload to CONT-5, Confirm once, and require separate same-parent GET plus account/profile comparisons before reporting verified creation."
+  ],
+  "acceptance": [
+    "No account provisioning or notification operation invoked. Null account fields support observed no-account boundary for that record; they do not prove universal notification silence.",
+    "Missing profile/account fields are unavailable evidence, never equivalent to null. On mismatch preserve accepted identity and report creation accepted but verification incomplete, with no replay.",
+    "Native BO readiness, configured fixture-backed semantic acceptance and native app transaction journeys are distinct evidence surfaces. Checklist preparation consumes no test attempt.",
+    "Retain exact source/BO/workflow hashes at actual execution; current local-bo-contracts.json describes earlier hashes and must not be used as latest source identity without reconciliation."
+  ],
+  "discoveryObservation": "Initial guessed test-manifest.json read was missing; exact inventory owner is exact-test-transaction-manifest.json. Corrected by using file inventory; no mutation or test was attempted."
+}

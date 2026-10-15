@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "command": "do-delete-node",
+  "result": {
+    "ok": true,
+    "nodeCode": "XDX_JOIN_CHILD_BUILD",
+    "removedEdges": 2,
+    "removedIncomingEdges": [
+      {
+        "from": "XDX_PERSIST_CHILD_DRAFT",
+        "label": "success"
+      }
+    ],
+    "removedOutgoingEdges": [
+      {
+        "to": "XDX_ROUTE_CHILD_VALIDATION",
+        "label": "success"
+      }
+    ]
+  }
+}

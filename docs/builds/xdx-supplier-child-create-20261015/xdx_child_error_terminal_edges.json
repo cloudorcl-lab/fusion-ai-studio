@@ -1,0 +1,14 @@
+[
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_WRITE_ERROR",
+    "to": "XDX_RETURN_CHILD_WRITE_ERROR",
+    "label": "success"
+  },
+  {
+    "action": "add",
+    "from": "XDX_PERSIST_CHILD_PREPARE_ERROR",
+    "to": "XDX_RETURN_CHILD_PREPARE_ERROR",
+    "label": "success"
+  }
+]

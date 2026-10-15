@@ -1,0 +1,45 @@
+{
+  "observedUtc": "2026-10-15T14:54:45.976Z",
+  "runId": "a52b8ba5-dfda-4e6d-a165-5f7d14274138",
+  "rawExit": 1,
+  "preExecutionContract": "docs/builds/xdx-supplier-child-create-20261015/contact-template-execution-contract.json",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CONVERSATION",
+    "status": "DRAFT",
+    "version": 88007237
+  },
+  "definitionHash": "d1d403a056a86f48",
+  "actualRuntimeStatus": "needs-judge",
+  "deterministicPassed": true,
+  "checks": 865,
+  "startedAt": "2026-10-15T14:46:21.117Z",
+  "finishedAt": "2026-10-15T14:46:51.246Z",
+  "measuredEnd": "2026-10-15T14:53:02.178Z",
+  "measuredDurationMs": 401284.5202,
+  "judgeEvaluations": [
+    {
+      "id": "step:prepare-template-contact",
+      "score": 5,
+      "passed": true
+    },
+    {
+      "id": "step:edit-template-contact",
+      "score": 5,
+      "passed": true
+    },
+    {
+      "id": "step:review-template-contact",
+      "score": 5,
+      "passed": true
+    },
+    {
+      "id": "step:confirm-template-contact",
+      "score": 4,
+      "passed": true
+    }
+  ],
+  "runtimeArchive": "docs/builds/xdx-supplier-child-create-20261015/contact-template-runtime-needs-judge.json",
+  "requestArchive": "docs/builds/xdx-supplier-child-create-20261015/contact-template-request-needs-judge.json",
+  "judgeArchive": "docs/builds/xdx-supplier-child-create-20261015/contact-template-reviewed-judge-result.json",
+  "handling": "Original process naturally ended needs-judge; exact fresh scripted local continuation, no replay. Attachment pending."
+}

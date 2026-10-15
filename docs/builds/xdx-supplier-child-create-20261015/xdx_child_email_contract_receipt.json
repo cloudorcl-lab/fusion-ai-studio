@@ -1,0 +1,93 @@
+{
+  "sourceSha256": "0fcd7afc2566bce5372b150528b5a2cbdef006c720e779d443671ae0e58c753d",
+  "checks": 21,
+  "results": [
+    {
+      "name": "retained failure reproduced against prior actual CODE",
+      "status": "pass"
+    },
+    {
+      "name": "retained Address prose strips only final sentence period",
+      "status": "pass"
+    },
+    {
+      "name": "address direct unquoted labeled prose normalizes Email only",
+      "status": "pass"
+    },
+    {
+      "name": "address template unquoted labeled prose normalizes Email only",
+      "status": "pass"
+    },
+    {
+      "name": "contact direct unquoted labeled prose normalizes Email only",
+      "status": "pass"
+    },
+    {
+      "name": "contact template unquoted labeled prose normalizes Email only",
+      "status": "pass"
+    },
+    {
+      "name": "embedded Email= prose without separator space normalizes",
+      "status": "pass"
+    },
+    {
+      "name": "quoted terminal literal retains malformed punctuation",
+      "status": "pass"
+    },
+    {
+      "name": "already valid case and plus local part remain unchanged",
+      "status": "pass"
+    },
+    {
+      "name": "explicit Email= whole-message literal is preserved",
+      "status": "pass"
+    },
+    {
+      "name": "explicit field-only Change value is preserved",
+      "status": "pass"
+    },
+    {
+      "name": "explicit field-only Email: value is preserved",
+      "status": "pass"
+    },
+    {
+      "name": "bare whole-message Email token stays literal",
+      "status": "pass"
+    },
+    {
+      "name": "natural-language active child Email edit normalizes without parent change",
+      "status": "pass"
+    },
+    {
+      "name": "validator rejects invalid final label .",
+      "status": "pass"
+    },
+    {
+      "name": "validator rejects invalid final label !",
+      "status": "pass"
+    },
+    {
+      "name": "validator rejects invalid final label ?",
+      "status": "pass"
+    },
+    {
+      "name": "validator rejects invalid final label -",
+      "status": "pass"
+    },
+    {
+      "name": "validator rejects invalid final label _",
+      "status": "pass"
+    },
+    {
+      "name": "address valid Email retains required payload and validates",
+      "status": "pass"
+    },
+    {
+      "name": "contact valid Email retains required payload and validates",
+      "status": "pass"
+    }
+  ],
+  "source": "Actual serialized PREPARE_SUPPLIER_REQUEST and VALIDATE_CHILD_DRAFT; retained failed input/expected payload plus documented malformed extracted candidate. Local pure-CODE qualification only, no runtime or tenant execution.",
+  "runtimeAttempts": 0,
+  "remoteCalls": 0
+}

@@ -1,0 +1,9 @@
+{
+  "observedUtc": "2026-10-15T18:14:29.563Z",
+  "result": "pass",
+  "paths": [
+    "docs/builds/xdx-supplier-child-create-20261015/governance-before/BUILD_STANDARD.md"
+  ],
+  "method": "Raw no-filters Git object indexed to retain immutable archived bytes",
+  "limitation": "Archived nested attributes remain unchanged; future checkout newline behavior follows those historical attributes."
+}

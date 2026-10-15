@@ -1,0 +1,9 @@
+{
+  "observedUtc": "2026-10-15T15:32:41.507Z",
+  "result": "diagnosed",
+  "firstFailure": "Replay paused before XDX_READ_ADDRESS_TEMPLATE",
+  "cause": "Explicit source-ID prompt correctly routes item GET but fixture/path contract inherited name-based FIND collection route",
+  "repair": "Replace prepare FIND fixture with READ scalar matching same source row and exact parent/path IDs; exchange expected path buckets; keep business assertions and semantic criteria unchanged.",
+  "reviewer": "/root/address_contract",
+  "noLiveGetOrPost": true
+}

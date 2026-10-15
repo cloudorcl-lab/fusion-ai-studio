@@ -1,0 +1,8 @@
+{
+  "observedUtc": "2026-10-15T17:37:34.269Z",
+  "symptom": "Both worker restricted-context measured Startup attempts rejected EPERM at lock acquisition before child dispatch",
+  "evidence": "Both registered JSONL files remain length0; no .lock files; no runIDs/child outputs exist",
+  "cause": "Host access requirement for D: checkout; low-level OS cause not independently established",
+  "correction": "Use already authorized host execution context for exact same registered commands",
+  "sourceChanged": false
+}

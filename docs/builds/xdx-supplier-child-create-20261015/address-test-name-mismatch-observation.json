@@ -1,0 +1,7 @@
+{
+  "observedUtc": "2026-10-15T13:50:11.491Z",
+  "symptom": "Aftershorteninginputs CLIrejecteddefinitions.testName differentfrom --test-name; noartifactcreated",
+  "cause": "CoordinatorselectedconsistentfilenameswithoutreconcilingAddressdefinitionexplicitname",
+  "correction": "Setexplicitdefinition.testName to exactselectedcommandname; assertboth match beforegeneration",
+  "scenarioConsumed": false
+}

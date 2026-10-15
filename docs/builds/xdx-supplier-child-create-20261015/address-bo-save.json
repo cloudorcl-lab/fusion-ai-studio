@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "command": "do-save-bo",
+  "result": {
+    "action": "patched",
+    "supportedObjectId": "300000340669151",
+    "objectCode": "XDX_SUPPLIER_ADDRESSES",
+    "filePath": "D:\\Temp\\worktrees\\xdx-supplier-workspace-20261014\\src\\businessObjects\\xdx_supplier_addresses.bo"
+  }
+}

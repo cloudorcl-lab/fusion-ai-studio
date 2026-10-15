@@ -1,0 +1,16 @@
+
+/.gitattributes text eol=lf
+
+/docs/builds/xdx-supplier-retro-20261015/** -text
+
+/docs/builds/xdx-supplier-child-create-20261015/** -text
+
+/docs/builds/xdx-retro-root-sync-20261015/** -text
+
+# Preserve the exact qualified bytes of the synchronized governance/guardrail files.
+/BUILD_STANDARD.md -text
+/docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md -text
+/docs/lessons/AI_STUDIO_TESTING_GUIDE.md -text
+/package.json -text
+/scripts/verify-session-compliance.cjs -text
+/tests/test-session-compliance.cjs -text

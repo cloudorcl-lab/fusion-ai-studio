@@ -66,8 +66,9 @@ function verify(root, recordPath, sessionId, phase) {
     const c = matches[0];
     if (matches.length !== 1 || !c?.reason?.trim() || !c?.rule?.trim()) { fail('Missing obligation disposition: ' + id); continue; }
     if (!(phase === 'Startup' ? ['pass','planned','not-applicable'] : ['pass','not-applicable']).includes(c.status)) fail('Unresolved obligation: ' + id);
-    if (c.status === 'pass' && (!Array.isArray(c.evidence) || c.evidence.length === 0)) fail('Missing evidence for ' + id);
-    for (const p of c.evidence || []) { try { local(p); } catch(e) { fail(id + ': ' + e.message); } }
+    if (!Array.isArray(c.evidence)) { fail('Evidence must be an array for ' + id); continue; }
+    if (c.status === 'pass' && c.evidence.length === 0) fail('Missing evidence for ' + id);
+    for (const p of c.evidence) { try { local(p); } catch(e) { fail(id + ': ' + e.message); } }
   }
   if (phase === 'Closeout') {
     if (r.phase !== 'Closeout') fail('Record is not at closeout');

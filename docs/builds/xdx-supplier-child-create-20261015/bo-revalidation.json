@@ -1,0 +1,59 @@
+{
+  "agentId": "/root/address_contract",
+  "mode": "local-authoring-prerequisite",
+  "results": [
+    {
+      "stdout": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_addresses.stdout.txt",
+      "parseExit": 0,
+      "stderr": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_addresses.stderr.txt",
+      "object": "addresses",
+      "commandExit": 0,
+      "actual": {
+        "ok": true,
+        "command": "validate-bo",
+        "result": {
+          "ok": false,
+          "errorCount": 1,
+          "issues": [
+            {
+              "message": "At least one example is required.",
+              "focusId": "bo-fn-13-section-examples",
+              "functionName": "CreateSupplierAddress"
+            }
+          ]
+        }
+      },
+      "source": "src/businessObjects/xdx_supplier_addresses.bo",
+      "sha256": "e694cb324d88dfb6c20d4e5fc26e7466ed1e13369630a02dedb431e5b2c5b8cc"
+    },
+    {
+      "stdout": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_contacts.stdout.txt",
+      "parseExit": 0,
+      "stderr": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_peer_validate_contacts.stderr.txt",
+      "object": "contacts",
+      "commandExit": 0,
+      "actual": {
+        "ok": true,
+        "command": "validate-bo",
+        "result": {
+          "ok": false,
+          "errorCount": 1,
+          "issues": [
+            {
+              "message": "At least one example is required.",
+              "focusId": "bo-fn-13-section-examples",
+              "functionName": "CreateSupplierContact"
+            }
+          ]
+        }
+      },
+      "source": "src/businessObjects/xdx_supplier_contacts.bo",
+      "sha256": "7a50d27d95ccf30a48e8f96780594242bf7084a0403b40527559511b99c636c7"
+    }
+  ],
+  "parentAgentId": "/root",
+  "scenarioTestsUsed": 0,
+  "observedEndUtc": "2026-10-15T13:09:16.5868028Z",
+  "activityId": "address-contact-bo-revalidation",
+  "assignmentId": "address-contract"
+}

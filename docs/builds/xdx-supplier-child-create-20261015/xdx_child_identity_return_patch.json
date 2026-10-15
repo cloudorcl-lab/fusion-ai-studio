@@ -1,0 +1,3 @@
+{
+  "returnValue": "{{$context.$variables.supplierState.response.acceptedText ? $context.$variables.supplierState.response.acceptedText : $context.$nodes.XDX_CHILD_QUERY_RESPONSE.$output}}"
+}

@@ -1,0 +1,16 @@
+{
+  "observedUtc": "2026-10-15T15:24:23.692Z",
+  "result": "PASS",
+  "oldCanonicalSource": "email-before-remote-save.wf (canonical equivalence to saved5e proven in email-saved-readback.json)",
+  "sourceSha256": "ba13a9bb99f252c810cd52a420988ac2718eec9b9c85b2c0209ecc324ca188b0",
+  "changed": [
+    "XDX_VERIFY_CHILD_RESULT",
+    "XDX_PRESENT_CONTROL_RESULT",
+    "XDX_RETURN_CHILD_RESPONSE"
+  ],
+  "otherSpecificationUnchanged": true,
+  "preserved": "All Email normalization/validation, graph/joins/edges/node inventory, BO functions, binding topology and existing guards outside the three named fields remain identical.",
+  "scope": "Accepted child identity rendering, including frozen accepted Review; no fresh writes replayed.",
+  "focusedEvidence": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_identity_contract_receipt.json",
+  "independentReview": "/root/address_contract final accepted-identity contract review PASS"
+}

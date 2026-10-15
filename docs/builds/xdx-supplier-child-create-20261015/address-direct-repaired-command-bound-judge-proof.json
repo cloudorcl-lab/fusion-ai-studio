@@ -1,0 +1,50 @@
+{
+  "observedUtc": "2026-10-15T14:36:58.825Z",
+  "runId": "504b2d11-c76d-4dc3-bc52-d64826a9710b",
+  "rawExit": 1,
+  "preExecutionContract": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repair-execution-contract.json",
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CONVERSATION",
+    "status": "DRAFT",
+    "version": 88007237
+  },
+  "definitionHash": "d1d403a056a86f48",
+  "actualRuntimeStatus": "needs-judge",
+  "deterministicPassed": true,
+  "checks": 835,
+  "startedAt": "2026-10-15T14:28:25.983Z",
+  "finishedAt": "2026-10-15T14:30:14.155Z",
+  "measuredEnd": "2026-10-15T14:36:16.080Z",
+  "measuredDurationMs": 470325.092,
+  "judgeEvaluations": [
+    {
+      "id": "step:prepare-address-draft",
+      "score": 5,
+      "passed": true
+    },
+    {
+      "id": "step:edit-address-email",
+      "score": 5,
+      "passed": true
+    },
+    {
+      "id": "step:review-current-address",
+      "score": 5,
+      "passed": true
+    },
+    {
+      "id": "step:confirm-reviewed-address",
+      "score": 4,
+      "passed": true
+    },
+    {
+      "id": "conversation",
+      "score": 4,
+      "passed": true
+    }
+  ],
+  "runtimeArchive": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repaired-runtime-needs-judge.json",
+  "requestArchive": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repaired-request-needs-judge.json",
+  "judgeArchive": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repaired-reviewed-judge-result.json",
+  "handling": "Original process ended naturally NEEDS-JUDGE; preserve rawexit1. Exact fresh scripted local judgment continuation, no replay, attachment pending."
+}

@@ -1,0 +1,12 @@
+{
+  "observedUtc": "2026-10-15T18:00:28.584Z",
+  "actual": "Restricted Node metadata bootstrap spawnSync git rejected EPERM before root-baseline/collision/handoff writes",
+  "exit": 1,
+  "childGitStatus": null,
+  "confirmedCompletedWrites": [
+    "Empty commands.jsonl",
+    "Empty review-commands.jsonl"
+  ],
+  "rootArtifactsCopied": false,
+  "correction": "Inspect partial files; use already verified authorized host context for Node/subprocess-based metadata and gates"
+}

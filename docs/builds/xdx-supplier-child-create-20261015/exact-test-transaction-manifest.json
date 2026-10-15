@@ -1,0 +1,105 @@
+{
+  "status": "coordinator-reviewed-under-existing-user-five-tests-and-both-modes-authority",
+  "reviewedUtc": "2026-10-15T13:17:09.986Z",
+  "authority": "approvals.json: both-modes/five-tests/current-goal; no renewed permission requested",
+  "target": "eqil-dev21",
+  "parent": {
+    "suppliers_Id": "300000047414679",
+    "SupplierNumber": "1255",
+    "Supplier": "Dell Inc."
+  },
+  "objects": {
+    "addresses": {
+      "scenarioBudget": 5,
+      "maxLiveCreates": 3,
+      "transactions": [
+        {
+          "id": "ADDR-01",
+          "mode": "direct",
+          "surface": "saved-bo-live",
+          "payload": {
+            "AddressName": "XDX Address BO Direct 20261015",
+            "CountryCode": "US",
+            "AddressLine1": "2300 GREENLAWN BLVD",
+            "City": "ROUND ROCK",
+            "State": "TX",
+            "PostalCode": "78664",
+            "Email": "xdx.address.bo.20261015@example.invalid",
+            "AddressPurposeOrderingFlag": true
+          },
+          "status": "allocated-not-dispatched"
+        },
+        {
+          "id": "ADDR-04",
+          "mode": "direct",
+          "surface": "native-draft-app",
+          "payload": {
+            "AddressName": "XDX Address Native Direct 20261015",
+            "CountryCode": "US",
+            "AddressLine1": "2300 GREENLAWN BLVD",
+            "City": "ROUND ROCK",
+            "State": "TX",
+            "PostalCode": "78664",
+            "Email": "xdx.address.native.direct.20261015@example.invalid",
+            "AddressPurposeOrderingFlag": true
+          },
+          "status": "allocated-not-dispatched"
+        },
+        {
+          "id": "ADDR-05",
+          "mode": "template",
+          "surface": "native-draft-app",
+          "payload": {
+            "AddressName": "XDX Address Native Template 20261015",
+            "CountryCode": "US",
+            "AddressLine1": "2300 GREENLAWN BLVD",
+            "City": "ROUND ROCK",
+            "State": "TX",
+            "PostalCode": "78664",
+            "Email": "xdx.address.native.template.20261015@example.invalid",
+            "AddressPurposeOrderingFlag": true
+          },
+          "status": "allocated-not-dispatched"
+        }
+      ]
+    },
+    "contacts": {
+      "scenarioBudget": 5,
+      "maxLiveCreates": 3,
+      "transactions": [
+        {
+          "id": "CONT-1",
+          "allocation": "saved-bo",
+          "payload": {
+            "LastName": "ChildBO20261015",
+            "Email": "xdx.child.bo.20261015@example.invalid",
+            "FirstName": "XDXContact"
+          },
+          "status": "allocated-not-dispatched"
+        },
+        {
+          "id": "CONT-4",
+          "allocation": "native-direct",
+          "payload": {
+            "LastName": "ChildDirect20261015",
+            "Email": "xdx.child.direct.20261015@example.invalid",
+            "FirstName": "XDXContact"
+          },
+          "status": "allocated-not-dispatched"
+        },
+        {
+          "id": "CONT-5",
+          "payload": {
+            "LastName": "XDXChildTemplate20261015",
+            "Email": "xdx.child.template.20261015@example.invalid",
+            "FirstName": "Noah"
+          },
+          "sourceContactId": "300000047414707",
+          "allocation": "native-template",
+          "status": "allocated-not-dispatched"
+        }
+      ]
+    }
+  },
+  "boundaries": "Native saved BO POST once +nativeappdirectonce+nativeapptemplateonce/object. Two configured conversations fixture-backed. Parent/name preflight inside firstscenario, count attempts before dispatch, no accepted/uncertain replay. Exact source+requiredtypes verified local readiness; source operational email replaced. Generated IDs omitted. No account/role/business-payment/security operations."
+}

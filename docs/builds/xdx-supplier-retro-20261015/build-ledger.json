@@ -1,0 +1,125 @@
+{
+  "id": "xdx-supplier-retro-20261015",
+  "objective": "Retro completed supplier-child creation run; integrate verified recommendations in existing owners",
+  "source": {
+    "repoRoot": "D:\\Temp\\worktrees\\xdx-supplier-workspace-20261014",
+    "branch": "codex/xdx-supplier-workspace-20261014",
+    "head": "2e65059445c2cdbcd993e7a6f9c8657888205077"
+  },
+  "startedUtc": "2026-10-15T17:32:17.279Z",
+  "timezone": "America/Chicago",
+  "agents": [
+    {
+      "agentId": "/root",
+      "parentAgentId": null,
+      "assignmentId": "retro-integration",
+      "role": "Shared docs, intake, evidence and integration writer"
+    },
+    {
+      "agentId": "/root/retro_evidence",
+      "parentAgentId": "/root",
+      "assignmentId": "retro-evidence",
+      "role": "Independent evidence review"
+    },
+    {
+      "agentId": "/root/retro_guardrails",
+      "parentAgentId": "/root",
+      "assignmentId": "guardrails",
+      "role": "Independent existing-check and patch review"
+    }
+  ],
+  "intervals": [
+    {
+      "agentId": "/root",
+      "parentAgentId": null,
+      "assignmentId": "retro-integration",
+      "activityId": "retro-execution",
+      "phase": "retro-review-implementation-verification-delivery",
+      "object": "governance",
+      "category": "active execution",
+      "startUtc": "2026-10-15T17:34:58.106Z",
+      "endUtc": "2026-10-15T17:51:52.428Z",
+      "outcome": "Completed evidence-backed retrospective, focused checks/reviews and scoped source commit",
+      "evidence": "docs/builds/xdx-supplier-retro-20261015/intake-and-learning-register.md"
+    },
+    {
+      "agentId": "/root/retro_guardrails",
+      "parentAgentId": "/root",
+      "assignmentId": "guardrails",
+      "activityId": "session-array-independent-diff-review",
+      "phase": "review",
+      "object": "governance",
+      "category": "active execution",
+      "startUtc": "2026-10-15T17:41:52Z",
+      "endUtc": "2026-10-15T17:41:57Z",
+      "outcome": "APPROVED focused guard patch; no tests",
+      "evidence": "docs/builds/xdx-supplier-retro-20261015/guardrails-review.json"
+    },
+    {
+      "agentId": "/root/retro_evidence",
+      "parentAgentId": "/root",
+      "assignmentId": "retro-evidence",
+      "activityId": "final-evidence-review-closeout",
+      "phase": "review",
+      "object": "governance",
+      "category": "active execution",
+      "startUtc": "2026-10-15T17:46:45.317Z",
+      "endUtc": "2026-10-15T17:47:38.137Z",
+      "outcome": "Independent review APPROVE and bounded roleCloseout PASS; no app tests",
+      "evidence": "docs/builds/xdx-supplier-retro-20261015/evidence-review.json"
+    },
+    {
+      "agentId": "/root/retro_guardrails",
+      "parentAgentId": "/root",
+      "assignmentId": "guardrails",
+      "activityId": "final-guardrails-review-closeout",
+      "phase": "review",
+      "object": "governance",
+      "category": "active execution",
+      "startUtc": "2026-10-15T17:46:49Z",
+      "endUtc": "2026-10-15T17:47:29.782Z",
+      "outcome": "Independent review APPROVE and bounded roleCloseout PASS; no app tests",
+      "evidence": "docs/builds/xdx-supplier-retro-20261015/guardrails-review.json"
+    }
+  ],
+  "milestones": [
+    {
+      "observedUtc": "2026-10-15T17:46:21.435Z",
+      "agentId": "/root",
+      "assignmentId": "retro-integration",
+      "name": "recommendations-integrated",
+      "outcome": "3existing docs plus focused session guard, actual check PASS",
+      "evidence": "docs/builds/xdx-supplier-retro-20261015/retrospective.md"
+    },
+    {
+      "observedUtc": "2026-10-15T17:49:52.628Z",
+      "agentId": "/root",
+      "assignmentId": "retro-integration",
+      "name": "verification-complete",
+      "outcome": "50local links/anchors/fencesPASS; focused session testsPASS; existing governance-contract regressionPASS; both independent roleCloseoutsPASS",
+      "evidence": "docs/builds/xdx-supplier-retro-20261015/document-check.json"
+    }
+  ],
+  "timingLimitations": [
+    "Prerequisite reads before first observed timestamp unallocated",
+    "Worker dispatch gaps and token telemetry not inferred",
+    "Initial prospective intake interval covered mixed review/implementation/verification/delivery; relabeled as mixed phase rather than inventing a code/test labor split. Final handoff gate/commit/response tail after cutoff excluded."
+  ],
+  "testScope": "Only changed mechanical guardrails and governance; no app/BO/native tests",
+  "workerTimingGaps": [
+    "Evidence worker first17:35:32.593Z→17:39:45.339Z mixed prerequisites/clearance/review, exact active split unknown; not booked entirelyactive",
+    "Guardrails17:36:07Z→17:39:38Z mixed recovery/review/clearance; two10s idle waits observed after review, precise placement unavailable",
+    "Guardrails focused patch review17:41:52Z→17:41:57Z actual5sactive; earlier17:39:38→17:41:52idle reported"
+  ],
+  "firstProspectiveStartUtc": "2026-10-15T17:34:58.106Z",
+  "startSource": "docs/builds/xdx-supplier-retro-20261015/task-start-recovery.json",
+  "completedUtc": "2026-10-15T17:51:52.428Z",
+  "delivery": {
+    "commit": "e738078d946969588d3b942570438a99858bc038",
+    "verifiedUtc": "2026-10-15T17:51:52.428Z",
+    "branch": "codex/xdx-supplier-workspace-20261014",
+    "status": "complete",
+    "remoteActions": 0,
+    "productTests": 0
+  }
+}

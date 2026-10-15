@@ -1,0 +1,14 @@
+{
+  "observedUtc": "2026-10-15T14:27:53.895Z",
+  "sourceHash": "5e07494edbc3000dcdfb72566342d49b48b3f277f64351fcc01759ae57e6a827",
+  "preSaveHash": "0fcd7afc2566bce5372b150528b5a2cbdef006c720e779d443671ae0e58c753d",
+  "specificationUnchanged": true,
+  "version": 88007237,
+  "header": {
+    "ETag": "\"27\""
+  },
+  "status": "DRAFT",
+  "source": "src/workflows/xdx_supplier_conversation.wf",
+  "queryReuse": "Current static readiness applies: only canonical version/header changed by save",
+  "staticReadiness": "docs/builds/xdx-supplier-child-create-20261015/email-final-static-readiness.json"
+}

@@ -1,0 +1,9 @@
+{
+  "functionName": "CreateSupplierAddress",
+  "kind": "token",
+  "parameterName": "suppliers_Id",
+  "patch": {
+    "dataType": "string",
+    "description": "Locked target SupplierId resolved from current supplier selection; never SupplierNumber or a sample default."
+  }
+}

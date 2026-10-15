@@ -1,0 +1,7 @@
+{
+  "observedUtc": "2026-10-15T18:02:24.928Z",
+  "actual": "Collision backup initializer attempted to copy absent root AI_STUDIO_TESTING_GUIDE.md; ENOENT before target mutation",
+  "completedSteps": "Root metadata baseline and existing BUILD_STANDARD/playbook backups; no guidance copied",
+  "cause": "Initializer treated incoming new files as existing collisions",
+  "correction": "Inventory source and target existence independently; preserve existing targets only, record absent targets as new files"
+}

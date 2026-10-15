@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-retro-20261015",
+  "scopes": [
+    "governance"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-supplier-retro-20261015/commands.jsonl",
+    "docs/builds/xdx-supplier-retro-20261015/evidence-commands.jsonl",
+    "docs/builds/xdx-supplier-retro-20261015/guardrails-commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "F001",
+      "observedUtc": "2026-10-15T17:34:58.106Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Read-only discovery included nonexistent .github directory and rg exited1; worker repeated guessed nonexistent timing-runner path before Startup",
+      "evidenceGap": "Original unwrapped discovery output remains in current conversation; exact invocation time unavailable before run initialization",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-retro-20261015/startup-inventory.json",
+          "sha256": "0cfa40c3f37876ef1464520512fd9e8fb8f958c4baab2ea009f5993daa2841a6"
+        }
+      ],
+      "cause": "Directory search preceded existence inventory",
+      "correction": "Enumerated actual root entries and checked .github presence; use existing literal directories for further searches",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Inventory planned paths before reading/searching; use existing literal directories",
+        "reason": "Read-only discovery scope; existing canonical Windows discovery owner applies. CI files must be found from actual inventory, not assumed."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "fs.readdirSync root inventory and fs.existsSync .github; retained package scripts inspected",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "package.json",
+            "sha256": "d1c6ec7259647c82b578ea6d6f786abe4863a9f3b796b3e1575a5e3b13c42f32"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-retro-20261015/startup-inventory.json",
+            "sha256": "0cfa40c3f37876ef1464520512fd9e8fb8f958c4baab2ea009f5993daa2841a6"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-retro-20261015/worker-discovery-correction.json",
+            "sha256": "51308d347d4e75bd2eff075d676f46d01942133de9341c0a45aa8dc914746b9d"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-retro-20261015/worker-evidence-path-correction.json",
+            "sha256": "4ab2424c04e9111d306fff0c6bdfc68c879a91174e33021f22312557faabf722"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F002",
+      "observedUtc": "2026-10-15T17:37:34.271Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Both restricted worker Startup dispatches blocked before child by EPERM lock creation",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-retro-20261015/worker-context-finding.json",
+          "sha256": "76987d45d37f726f2c4aa1962e59517cee8dec54e0ebf8c04c2500d20e401fcf"
+        }
+      ],
+      "cause": "Execution context could not acquire registered command receipt lock; underlying OS cause qualified",
+      "correction": "Both exact worker Startup commands completedPASS in verified hostcontext; registered receipt locks created/released normally, no source or branch changes.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Reuse verified host context after predispatch EPERM; retain actual child/receipt observations",
+        "reason": "Existing documented environment boundary; no product test justified"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Exact measured worker Startup in authorized host context",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/measure-build-command.cjs",
+            "sha256": "b872ed74362b305c59d9d3bf760ddd0f3fdad2b0430e43eb5785708f0fc06e66"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-retro-20261015/worker-host-startup-proof.json",
+            "sha256": "0b3174ff3b0763704bc2a0c557fd1e2a0537ecb94e84fb4329687a9319d5673d"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F003",
+      "observedUtc": "2026-10-15T17:40:43.768Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "open",
+      "symptom": "Session evidence-array contract is conditional on pass status; malformed planned/NA evidence can bypass or throw",
+      "commandRunIds": [
+        "000c77fd-bb63-46a7-a5f1-61303fedcccc"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-retro-20261015/evidence-array-finding.json",
+          "sha256": "d558dda6386b1f8cd93cb7b24926368f08efc2f6b29452119bc3cb4dbcd61347"
+        }
+      ],
+      "cause": "Unconditional for-of over unvalidated evidence; array type checked only within pass branch",
+      "correction": "Pending unconditional evidence-array validation and semantic actual-function regressions",
+      "prevention": {
+        "kind": "regression",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Every obligation carries an evidence array; malformed serialized metadata fails with diagnostics before iteration"
+      },
+      "verification": {
+        "result": "pending",
+        "sources": [],
+        "evidence": []
+      }
+    }
+  ]
+}

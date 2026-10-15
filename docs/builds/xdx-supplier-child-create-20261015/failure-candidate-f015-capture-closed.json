@@ -1,0 +1,800 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-child-create-20261015",
+  "scopes": [
+    "governance",
+    "addresses",
+    "contacts",
+    "integration"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-supplier-child-create-20261015/commands.jsonl",
+    "docs/builds/xdx-supplier-child-create-20261015/address-commands.jsonl",
+    "docs/builds/xdx-supplier-child-create-20261015/contact-commands.jsonl",
+    "docs/builds/xdx-supplier-child-create-20261015/integration-commands.jsonl",
+    "docs/builds/xdx-supplier-child-create-20261015/contact-template-materialize-commands.jsonl",
+    "docs/builds/xdx-supplier-child-create-20261015/address-direct-materialize-commands.jsonl",
+    "docs/builds/xdx-supplier-child-create-20261015/address-template-materialize-commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "F001",
+      "observedUtc": "2026-10-15T12:50:47.332Z",
+      "scope": "governance",
+      "blocks": [
+        "governance",
+        "addresses",
+        "contacts",
+        "integration"
+      ],
+      "status": "closed",
+      "symptom": "Shared intake omitted explicit task identity for three scoped worker receipts",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/startup-identity-correction.md",
+          "sha256": "b2b5e4f7b7df7b105809771f5c097c46f6836fa5da5c2b9e415c8bf9e28a1995"
+        }
+      ],
+      "evidenceGap": "Bootstrap checks preceded measured receipts; original output retained in tool conversation; no commandRunIds.",
+      "cause": "Coordinator bootstrap included worker IDs in tracker but omitted them from shared learning register",
+      "correction": "Added exact task identities and reran all three scoped Startup gates successfully before delegation",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Verify shared intake and tracker reference each scoped identity before worker Startup; current successful gates prove correction",
+        "reason": "Receipt identity bookkeeping; existing gate detects omission, no product test needed"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "pwsh scripts/verify-living-build-contract.ps1 -SessionRecord <each worker receipt> -SessionId <exact worker> -Phase Startup",
+        "reviewer": "/root observed all three actual exit0 outputs",
+        "sources": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/intake-and-learning-register.md",
+            "sha256": "23c2f3ab37e33786a31683efbb6ceb4ea66412e537b11073b69fe9787bc0e738"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/startup-worker-results.json",
+            "sha256": "cf68c540d0721ea4a1380799c189277198cd6a4bb73767622947456254c87d74"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F002",
+      "observedUtc": "2026-10-15T12:52:00.321Z",
+      "scope": "addresses",
+      "blocks": [
+        "addresses"
+      ],
+      "status": "closed",
+      "symptom": "Read-only schema inspection rejected case-distinct OpenAPI property keys with default PowerShell object conversion",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/openapi-parser-observation.md",
+          "sha256": "13bb4cb032f0d6f07954a7267a5a0703579bb9be5c1be19ee4c2bc1dd9a1a752"
+        }
+      ],
+      "evidenceGap": "Original worker stdout retained in worker tool conversation only; observedUtc here is recording time; command preceded worker measured source command registration.",
+      "cause": "PowerShell object property names are case-insensitive; distinct schema keys collide",
+      "correction": "Read exact retained schema using -AsHashtable; no schema/source mutation",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Inspect actual source shape; preserve case-distinct OpenAPI map keys using -AsHashtable or native JSON parser",
+        "reason": "Read-only schema introspection; native parser compatibility, no product behavior to test"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "ConvertFrom-Json -AsHashtable -Depth100 on retained procurement26c-openapi.json",
+        "reviewer": "/root/address_contract reported corrected parse; root verified retained source hash",
+        "sources": [
+          {
+            "path": "docs/builds/xdx-supplier-workspace-20261014/procurement26c-openapi.json",
+            "sha256": "05795f56651be627fb8b41a7aa1fd503f6af93fe5ade90987d80e08b54550f49"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/schema-parser-recovery.json",
+            "sha256": "9b1582b44420ba8983b8c4eeea246bfbde051aeb1b7ec527f9b7854d06f41c37"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F003",
+      "observedUtc": "2026-10-15T12:56:22.170Z",
+      "scope": "governance",
+      "blocks": [
+        "contacts",
+        "integration"
+      ],
+      "status": "closed",
+      "symptom": "Two workers guessed nonexistent CLI help commands rather than use installed catalog; one incompatible read flag pair",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/cli-discovery-errors.md",
+          "sha256": "8a73312b4fc5ccf5662b9b595eeb59d218b05736c2aa1ebb53f2a8396c620ff9"
+        }
+      ],
+      "evidenceGap": "Original outputs retained in worker tool conversations only, unmeasured help/read discovery; no commandRunIds.",
+      "cause": "Worker instructions did not provide exact catalog path; workers guessed interface names instead of consulting supported help",
+      "correction": "Capture installed CLI help once and require exact supported names; use compatible source read flags",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Existing Windows discovery rule requires exact installed command catalog before help calls; catalog retained for all workers",
+        "reason": "CLI name/read flag usage; inspect actual supported help, no product scenario needed"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "node .agents/skills/aistudio/scripts/aistudio.js --help",
+        "reviewer": "/root verified process exit and exact supported command names",
+        "sources": [
+          {
+            "path": ".agents/skills/aistudio/scripts/aistudio.js",
+            "sha256": "72c3bd6886200d487eab6eb8f8513f4db59c0e9a8eef93212bca443cfda70d78"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/cli-help-verification.json",
+            "sha256": "300a95ea5781292ad3ecb6b5aa93bd749468fb3020479cd02f203e7f642c0ba2"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/cli-help.txt",
+            "sha256": "537b52130ab9ef81d64bd368ada4aa56cd7f13888d29abcac089e04a5a2ea61c"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F004",
+      "observedUtc": "2026-10-15T13:01:01.285Z",
+      "scope": "integration",
+      "blocks": [
+        "integration"
+      ],
+      "status": "closed",
+      "symptom": "Windows error206 prevented long inline authoring script dispatch before process creation",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/command-length-observation.md",
+          "sha256": "39930f4845df945131449b0f91516bf13b1989559d0728e679e4a79bec689ae2"
+        }
+      ],
+      "evidenceGap": "Original platform dispatch error retained in worker tool conversation; child never started and no timingrun emitted.",
+      "cause": "Command length exceeded Windows process creation limit",
+      "correction": "Stage bounded literal file chunks and invoke short file path; no inline code payload in process arguments",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Use literal file-backed expression/code patches and short file invocation, not long inline command arguments",
+        "reason": "Windows process creation length boundary; verified staging and syntax, no product scenario needed"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "node --check docs/builds/xdx-supplier-child-create-20261015/xdx_child_workflow_author.cjs",
+        "reviewer": "/root observed syntax exit0 and read staged file",
+        "sources": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_workflow_author.cjs",
+            "sha256": "0ae92fb30efbe81eaa4ef150ff1655a6f8a01fd25f3a69e4d55add0699792519"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/file-dispatch-recovery.json",
+            "sha256": "8f0068429123794deaf72ca4b8702f521153f08a2682b888e08320c8a445a943"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/refreshed-author-syntax.json",
+            "sha256": "d81dfb28faa9c351e33f9f2f21ea4c2f868671ccff0089864f94bf07c9b45eb2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F005",
+      "observedUtc": "2026-10-15T13:03:19.157Z",
+      "scope": "governance",
+      "blocks": [
+        "addresses",
+        "contacts"
+      ],
+      "status": "closed",
+      "symptom": "Both BO authoring validators semantically failed on blank auto-created request examples, while process exit0/wrapperoktrue",
+      "commandRunIds": [
+        "82022bc0-06c1-4dbc-a2e6-f03d00881dce",
+        "56f658f9-7083-4634-b68a-5ffe4e7d7b70"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/bo-example-validation-failure.json",
+          "sha256": "135952d562988046397f429e91cd34962c22c347c3598b503386b07dec810f5d"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/bo-revalidation.json",
+          "sha256": "a0f79236e9b35591c7f288de5f2d92d5ec179ac350292e4051064d88e05a596c"
+        }
+      ],
+      "cause": "Create-from-operation generated empty request sample; workers preserved blank sample and metadata review did not validate its completeness",
+      "correction": "Removed blank generated example; affected revalidation identified mandatory minimum example. Added one described request-only example per create, preserving all GET examples; actual inner validators PASS both after changed metadata. No scenario execution.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Inspect actual local validator issues and result.ok/errorCount before claiming readiness. Each new BO function needs at least one complete described example; use approved request payload, never fabricated response.",
+        "reason": "Authoring metadata completeness; existing semantic validator detects defects; no business scenario needed"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "validate-bo --file <each affected BO> via measured repair",
+        "reviewer": "/root reviewed actual structured results and current source hashes",
+        "sources": [
+          {
+            "path": "src/businessObjects/xdx_supplier_addresses.bo",
+            "sha256": "e6774fc2cd13990c42e5861cb91f31936df9850961ca25babc5eb17f4cc5448f"
+          },
+          {
+            "path": "src/businessObjects/xdx_supplier_contacts.bo",
+            "sha256": "118235491b6f36617d5c1e606141efcc358bac163aec18742ca3d183a178b9d5"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/bo-revalidation-after-example.json",
+            "sha256": "4075c5cd9b9121a57242c8f7b6ea08088e9af31e50a768ce67f72911c9542f7c"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F006",
+      "observedUtc": "2026-10-15T13:11:18.098Z",
+      "scope": "integration",
+      "blocks": [
+        "integration"
+      ],
+      "status": "closed",
+      "symptom": "Static graph review found child edit route bypasses existing XDX_ROUTE_REQUEST convergence41 by routing directly to validation154",
+      "cause": "New edit routing edge crossed existing outer switch convergence",
+      "correction": "Route child_validate through existing joins41 then42 and detail router to154; preserve structured switch convergence; normalized graph initially dropped shared error terminal, repaired with two persisted-state own RETURNs; selected-supplier precedence explicitly covers child supplier/address/contact references. Actual prettify, inner validation and Query gates PASS; no runtime claim.",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/outer-join-review-finding.json",
+          "sha256": "d62a8519ef134dc371628ccb05082ed2328aa23fcaab633b1369d38ffd2d2390"
+        }
+      ],
+      "evidenceGap": "Independent writer static review before validation/runtime; no failed execution command",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Existing terminal reachability owner requires each nested switch ownjoin and explicit error RETURN postnormalization. Inspect actual normalized terminal edges, preserve authoritativeparent/producerbindings before remote boundary.",
+        "reason": "Graph/control metadata defect; actual workflowvalidator, Querycontract and normalized terminal assertions provide scoped static verification; configured/native scenario acceptance remains separately required."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "do-prettify-workflow;validate-workflow;node scripts/verify-agentic-app-query-contract.cjs src/workflows/xdx_supplier_conversation.wf;actual normalized terminal readback",
+        "reviewer": "/root reviewed actual receipts and normalized edges; independent address reviewer reported PASS; root actual canonical DRAFT readback retained identical specification; only version/header changed",
+        "sources": [
+          {
+            "path": "src/workflows/xdx_supplier_conversation.wf",
+            "sha256": "5e07494edbc3000dcdfb72566342d49b48b3f277f64351fcc01759ae57e6a827"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/frozen-workflow-readiness.json",
+            "sha256": "0340acce98b71e86ec48ba8d1aa9debfa77b28a8bc0e85c70422560e3422a454"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_validation_receipt.json",
+            "sha256": "8f9507ccf87bf6647b30210b392501933249412202ae1910080b3af3e44f0b5d"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_query_contract_receipt.json",
+            "sha256": "b79d9820bd73357203303da83afb32da9701267059493057c1a0c0b269944318"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_error_terminal_prettify_receipt.json",
+            "sha256": "4c407cfb220dd03641a92cb5d8498c478e3fd07b8df23b84bfd3428c717bc69a"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/saved-workflow-readback.json",
+            "sha256": "f47a5c4bd6f0df2fb1946d6851710b81d519841476a9a5ce26ed0e97c8559496"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/email-delta-impact-review.json",
+            "sha256": "9c67b93a51cb91a56aae12e620795c289bb8830fc47bf1f2960fd1bd727bf24e"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/email-saved-readback.json",
+            "sha256": "0f021ddafd2725575119286686b3981725a660bfd0a6b9caf81039c3e7d871d5"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F007",
+      "observedUtc": "2026-10-15T13:18:02.082Z",
+      "scope": "integration",
+      "blocks": [
+        "integration"
+      ],
+      "status": "closed",
+      "symptom": "Conversation context retrieval produced no output343.5seconds; coordinator stopped verified task-owned process; local prettify also exceeded five-minute cutoff at319.98CPU seconds, stopped task-owned CLI with source unchanged",
+      "commandRunIds": [
+        "1f6a7b02-e17f-4680-9ed0-228ae308a85a",
+        "265388fa-67a6-48e1-bf48-1ca782c730cd"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_contact_context_timeout_observation.json",
+          "sha256": "da9d837b5db4bc4f27e8b1c063f873fa628f90973d826ca419c61ae3d7afe0c5"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_prettify_receipt.json",
+          "sha256": "f4239004d6b3f06107a229a5584fea5f1c5bc6d45ac03e0bdc12883bb6093467"
+        }
+      ],
+      "cause": "Serial child skip/action switches multiplied unrelated supplier/site outcome paths. Structural count grew483330→37937154; both localmetadata commands timedout. After isolating childterminal and guardedlinearstage repair count483996; both bounded prettify and same frozen conversation context now completed. CLIinternal CPU implementation remains uninspected.",
+      "correction": "Changed topology isolates child semantic terminal+explicitRETURN and guarded linear stages, preserves ownjoins and oldpaths. Bounded300s formatting and context retrieval both completed; no unchanged retry or runtimeclaim.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Keep unrelated state-dependent transaction stages out of one serial skip-switch crossproduct; inspect structural growth and postnormalizationterminal reachability, bound metadata commands and preserve originalhandles/evidence.",
+        "reason": "Topology/authoring performance. Actual changed-graph metadata commands PASS with sourcehash and structural review; no additional business scenario test needed."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "bounded do-prettify-workflow;get-workflow-conversation-test-context;independent structural path review",
+        "reviewer": "/root verified actual successful formatter/context receipts and unchanged frozen source; root actual canonical DRAFT readback retained identical specification; only version/header changed",
+        "sources": [
+          {
+            "path": "src/workflows/xdx_supplier_conversation.wf",
+            "sha256": "5e07494edbc3000dcdfb72566342d49b48b3f277f64351fcc01759ae57e6a827"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_context_receipt.json",
+            "sha256": "edacb243489a1d9b62ff187ec412db169bc35e2d4386fea0e24684c6a31e8196"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_error_terminal_prettify_receipt.json",
+            "sha256": "4c407cfb220dd03641a92cb5d8498c478e3fd07b8df23b84bfd3428c717bc69a"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_topology_repair_review.json",
+            "sha256": "23d9de8109acbaa4db5d7bea7824c63363c04e7e4284cd5fdadbf971c38a420a"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/saved-workflow-readback.json",
+            "sha256": "f47a5c4bd6f0df2fb1946d6851710b81d519841476a9a5ce26ed0e97c8559496"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/email-delta-impact-review.json",
+            "sha256": "9c67b93a51cb91a56aae12e620795c289bb8830fc47bf1f2960fd1bd727bf24e"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/email-saved-readback.json",
+            "sha256": "0f021ddafd2725575119286686b3981725a660bfd0a6b9caf81039c3e7d871d5"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F008",
+      "observedUtc": "2026-10-15T13:38:43.489Z",
+      "scope": "addresses",
+      "blocks": [
+        "addresses"
+      ],
+      "status": "closed",
+      "symptom": "Address configured-definition authoring helper parse failure before writes",
+      "commandRunIds": [
+        "2408e856-505e-4ebd-a81c-158e78bb8ffe"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/address-definition-helper-parse-failure.json",
+          "sha256": "6e618f235d9d2365d5610bc2854cd815eb0b5e89b6b450958b6bbfdcfc2c3cfc"
+        }
+      ],
+      "cause": "Unquoted PowerShell literal RETURN in comparison",
+      "correction": "StagedliteralJS or quotedtypeconstants; actual staticgeneration/definitionvalidation needed before affectedscenario",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Use file-backed literal scripts with explicit stringconstants; syntaxcheck before generation, inspect actualproduceddefinitionJSON before execution",
+        "reason": "Local staginghelper syntax, no productbehavior changed. Actualsyntax/generationPASS retained in addresscommands, root parsedbothoutputs andcheckedpartition/fixtures."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "node --check xdx_address_stage_definitions.cjs;node xdx_address_stage_definitions.cjs;root staticdefinitionreadback",
+        "reviewer": "/root reviewed four resultingdefinitionJSONs and staticcontracts",
+        "sources": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_address_stage_definitions.cjs",
+            "sha256": "ef9ae033046470c2a8c7cc31f09ed753eaab3d16cc55ba05f71a6e38bcd20f53"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/staged-definitions-readiness.json",
+            "sha256": "8badfef49954ea5c8201c89161c50d48b5a0bdf998b6b8061e4ad53dd45a3754"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F009",
+      "observedUtc": "2026-10-15T13:43:17.302Z",
+      "scope": "governance",
+      "blocks": [
+        "contacts"
+      ],
+      "status": "closed",
+      "symptom": "Repeated read-only CLI/path guessing during testauthoring; no scenario calls",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/source-discovery-recurrences.json",
+          "sha256": "5ae2a831b3dff0a5955cc9cef56d5fa5a779e3a5ed56d33df30d301f1a95baef"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/root-read-path-correction.json",
+          "sha256": "2d0ca887bfd25d9fe6e1d6e35eb2adc348bb742cc0f09687b5a3a30f306d87e3"
+        }
+      ],
+      "evidenceGap": "Unmeasuredhelp/read errors, originaloutputs retained in toolconversation",
+      "cause": "Worker ignored exactcatalog/literalpaths; coordinator guessed unstatedreceiptfilename",
+      "correction": "Root exactcommandallowlist materialization and actualpersistedreadback before phaseexit; Root later read-only wrong prompts-path search stopped; public catalog and documented command --help used successfully without guessed alternate path.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Coordinator supplies exactinstalledcommandallowlist and confirmedliteralfilepaths; no standaloneworkflowtestvalidator exists here. do-generate builtinvalidation+persistedartifactreadback isauthoringowner.",
+        "reason": "Read-onlydiscoveryerrors, no productbehavior. Actualsupportedgenerationcreatedcorrectreadytest; no repeatedunknowncommand/path."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Exactcatalogreview;do-generate-workflow-test;actualpersistedtestreadback",
+        "reviewer": "/root inspected installedcatalog and actualgenerationoutput+persistedJSON",
+        "sources": [
+          {
+            "path": ".agents/skills/aistudio/scripts/aistudio.js",
+            "sha256": "72c3bd6886200d487eab6eb8f8513f4db59c0e9a8eef93212bca443cfda70d78"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-materialization-readback.json",
+            "sha256": "4ceee30ccd9f2a6c66db144a78b43d7778689c621444668ee98970e6ae670c3d"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/cli-help.txt",
+            "sha256": "537b52130ab9ef81d64bd368ada4aa56cd7f13888d29abcac089e04a5a2ea61c"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F010",
+      "observedUtc": "2026-10-15T13:45:04.070Z",
+      "scope": "contacts",
+      "blocks": [
+        "contacts"
+      ],
+      "status": "closed",
+      "symptom": "Text-onlygenerationmisparsedasJSONafterlocalsuccess; artifactretained",
+      "commandRunIds": [
+        "67270727-7fcf-4e60-becc-6da9020741b5"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/text-command-parser-observation.json",
+          "sha256": "b9cc9407bc0c77fb0030726b77f93219d57dd53aa52641652dd5613bcd6128d9"
+        }
+      ],
+      "cause": "OutputcontractnotcheckedbeforegenericJSONcapture",
+      "correction": "Usespecifictextcaptureandactualartifactreadback; doNOTregenerateexistingdirecttest",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Useexplicitcommandoutputcontract; textgenerationusesdedicatedtextcapture plusactualpersistedartifactreadback,nevergenericJSONfallback",
+        "reason": "Coordinatorcapture/registrationdefect. Correctedactualcontacttemplategenerationandregisteredchildreceiptssucceeded; no productscenario needed."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Exactregisteredparallelgenerationwithtextcapture;actualContacttemplateJSONreadback",
+        "reviewer": "/root reviewedprocess0/textoutputandcorrectreadyhybridartifact; directtestnotregenerated",
+        "sources": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_capture_text_cli.cjs",
+            "sha256": "e3d86151406ccbe8d76a2f7ae539b0f3c88cbde53f2afdcb8da106f68dc3f310"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-materialization-readback.json",
+            "sha256": "000836a370d230ed073a8cccea7f257faf3095f3d31cbad2eb6821ba3c2366cb"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F011",
+      "observedUtc": "2026-10-15T13:46:37.365Z",
+      "scope": "integration",
+      "blocks": [
+        "integration"
+      ],
+      "status": "closed",
+      "symptom": "Wholeworkflowautomaticinventory exceededbounded300s withoutoutput; no scenario",
+      "commandRunIds": [
+        "9fd2a3c4-6d59-4455-a348-70a057b20b70"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/unscoped-sync-inventory-timeout.json",
+          "sha256": "95ad51ee60787186d52221ed194924da01c120fe13c2bfdb98e223fc815abd8f"
+        }
+      ],
+      "cause": "Unscopedautomaticinventory is broader than currentfourcustomconversations; exactCPUcauseuninspected. SelectedcontextretrievalalreadyPASS.",
+      "correction": "Retire unchangedbroadautoinventory for explicitlyboundedcurrentflow. Require exactfourmaterializedcustomconversations +currentcontext, allstaticcontracts and configured/nativeacceptance; no unrelatedsuite execution.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Gate6: approvedrequirement/testmanifestboundsactions; usecurrentfrozencontextandexplicitcustominventory forboundedcoverage,retainbroaderplannerlimitation; finalscopedreceiptmustproveallrequiredcurrentexecutedjudgedcases",
+        "reason": "Retireanunscopedmetadataaction thatexceededbound; supportedgenerationmaterializedall4user-scopedcasesfromcurrentcontext. No runtimecoverageorsyncPASSclaimed; actualrequiredexecutionremainsopen."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "supporteddo-generate-workflow-testfor4customcases;actualpersistedtestreadback",
+        "reviewer": "/root checkedexact4readytestfiles,currentcontext/savedversion,4turns/200-nodepartitions/hybridjudgesandshortmatchedinvocations",
+        "sources": [
+          {
+            "path": ".agents/skills/aistudio/scripts/aistudio.js",
+            "sha256": "72c3bd6886200d487eab6eb8f8513f4db59c0e9a8eef93212bca443cfda70d78"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/scoped-materialized-test-inventory.json",
+            "sha256": "b46f774af22e77a168acaa2ebb7fb844bdbc503fd1d08b78153ff81b6fd02bfa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F012",
+      "observedUtc": "2026-10-15T13:47:33.070Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Parallelmeasureddispatch blocked prechild due unregisteredreceiptpaths",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/parallel-receipt-registration-correction.json",
+          "sha256": "35d1f4696fa74af757dbb01f589618bf05b0f68fd8c4b4edef4d89ce25c3ecea"
+        }
+      ],
+      "evidenceGap": "Pre-dispatchgate producedno measuredchildrunID; originaloutputsretained",
+      "cause": "Coordinator omittednewreceiptregistration",
+      "correction": "Exactthreeexistingreceipts nowregistered; affectedlocalmaterialization willverify dispatch. No scenarioexecuted.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Createandregister exactreceiptfiles beforeparallelmeasureddispatch; retainseparatefilesperparallelmutation",
+        "reason": "Coordinatorcapture/registrationdefect. Correctedactualcontacttemplategenerationandregisteredchildreceiptssucceeded; no productscenario needed."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Exactregisteredparallelgenerationwithtextcapture;actualContacttemplateJSONreadback",
+        "reviewer": "/root reviewedprocess0/textoutputandcorrectreadyhybridartifact; directtestnotregenerated",
+        "sources": [
+          {
+            "path": "scripts/measure-build-command.cjs",
+            "sha256": "b872ed74362b305c59d9d3bf760ddd0f3fdad2b0430e43eb5785708f0fc06e66"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/contact-template-materialization-readback.json",
+            "sha256": "000836a370d230ed073a8cccea7f257faf3095f3d31cbad2eb6821ba3c2366cb"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F013",
+      "observedUtc": "2026-10-15T13:49:11.026Z",
+      "scope": "addresses",
+      "blocks": [
+        "addresses"
+      ],
+      "status": "closed",
+      "symptom": "Localtestauthoring rejected message lengths before artifactcreation",
+      "commandRunIds": [
+        "507c0612-bf0a-4ee2-874d-369cd55021e1",
+        "6594f408-ebd9-45c3-8ff2-977853a6b0a1",
+        "5dcc43ea-8034-47a3-9dd1-862528823cfe",
+        "765e554c-e727-4b67-870b-efbc95d37433"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/address-invocation-length-observation.json",
+          "sha256": "9f0f1831617ac0dee6a6209f8677bf3f2550c7bdb624ef919d721c6b04f2dd61"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/address-test-name-mismatch-observation.json",
+          "sha256": "a5dace19705e62d5b0d5d8eada5a9c10e134bcd8e6acff0aa0bfa8389cd3321c"
+        }
+      ],
+      "cause": "Invocation charlimit omitted from staticstagingcheck",
+      "correction": "Condense only wording, keepallbusinessinputs andassertions unchanged; supportedgenerationmustpass; exactdefinition.testName/CLIargumentmustmatch; confirmednameschangedbeforecorrectedgeneration",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "UseCLIauthoringvalidation beforeexpensivescenarios; initialinvocations <=240characters, exactdefinition/commandnamesmatch, readyfixtureandjudgecontractsverified",
+        "reason": "Authoringmetadataonly; actualgenerationcreatedbothcorrectedtestsandpersistedreadbackqualifiesartifacts, no productsourcechange or scenarioattempt."
+      },
+      "verification": {
+        "result": "pass",
+        "command": "supporteddo-generate-workflow-testfor4customcases;actualpersistedtestreadback",
+        "reviewer": "/root checkedexact4readytestfiles,currentcontext/savedversion,4turns/200-nodepartitions/hybridjudgesandshortmatchedinvocations",
+        "sources": [
+          {
+            "path": ".agents/skills/aistudio/scripts/aistudio.js",
+            "sha256": "72c3bd6886200d487eab6eb8f8513f4db59c0e9a8eef93212bca443cfda70d78"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/scoped-materialized-test-inventory.json",
+            "sha256": "b46f774af22e77a168acaa2ebb7fb844bdbc503fd1d08b78153ff81b6fd02bfa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F014",
+      "observedUtc": "2026-10-15T14:14:04.001Z",
+      "scope": "addresses",
+      "blocks": [
+        "addresses",
+        "contacts"
+      ],
+      "status": "closed",
+      "symptom": "ADDR-02 deterministic prepare payload mismatch at Email; 834 of 835 other checks passed, runtime ended failed after 30552ms. No live business write.",
+      "commandRunIds": [
+        "f17aac55-0c09-40ee-86d3-0ce3ee0afec2"
+      ],
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-failed-result.json",
+          "sha256": "bec45abf3e82ecd7df1827c8b3b903e8962bde9914d1a1a08db5208ba7c0a26b"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_literal_finding.json",
+          "sha256": "5c39929933ee05f2f9fa5b7fdb130b08969e6ad3c9c066175e610602774956e3"
+        }
+      ],
+      "cause": "Model-extracted Email retained sentence-final period; common draft validator allowed invalid final domain-label punctuation. Independent review also required a nonempty prose prefix to protect a bare literal.",
+      "correction": "Two CODE owners now normalize only matching unquoted terminal Email punctuation in longer prose; bare/quoted/explicit literals remain unchanged and invalid final labels are rejected. Actual serialized CODE qualification21/21, current workflow validation/Query still pending. Final current-source validate-workflow inner PASS/errorCount0 and Query preflight PASS; runtime repair acceptance remains a separate pending test attempt.",
+      "prevention": {
+        "kind": "regression",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Apply typed deterministic field normalization with literal preservation and current actual-CODE regression evidence before affected execution."
+      },
+      "verification": {
+        "result": "pass",
+        "sources": [
+          {
+            "path": "src/workflows/xdx_supplier_conversation.wf",
+            "sha256": "5e07494edbc3000dcdfb72566342d49b48b3f277f64351fcc01759ae57e6a827"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_contract.cjs",
+            "sha256": "eb3e16a69f0cc0a005dcca020ae823fb23862efab5fc06ca4adf46ce0e165d60"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_contract_receipt.json",
+            "sha256": "f946261ee120a20812c79365f463e5ac4e1e606616b162ccbf322f28da3f8c67"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/email-delta-impact-review.json",
+            "sha256": "9c67b93a51cb91a56aae12e620795c289bb8830fc47bf1f2960fd1bd727bf24e"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/email-final-static-readiness.json",
+            "sha256": "c9d819e9175af802fb544bb379fa83a6f96f7a5110a0c26587e6d5cc45e9ca99"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/email-saved-readback.json",
+            "sha256": "0f021ddafd2725575119286686b3981725a660bfd0a6b9caf81039c3e7d871d5"
+          }
+        ],
+        "command": "node docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_contract.cjs; current validate-workflow; current verify-agentic-app-query-contract",
+        "reviewer": "/root reviewed actual two-CODE delta and21qualifications; independent Address review boundary issue repaired before save"
+      }
+    },
+    {
+      "id": "F015",
+      "observedUtc": "2026-10-15T14:33:25.219Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Evidence-only fresh-runtime archival guard falsely rejected report with fractional-second timestamp before any copies or mutations",
+      "commandRunIds": [],
+      "evidenceGap": "Unmeasured inline Node guard exit1 in tool conversation; corrected capture output and exact values retained in timestamp-capture-correction.json",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/timestamp-capture-correction.json",
+          "sha256": "446bc764e281e04a87bc24d7e6e25aa309af0585d3a5d2815be079f2dce9b361"
+        }
+      ],
+      "cause": "Compared ISO timestamps lexically across differing fractional precision",
+      "correction": "Parsed instants with Date.parse and compared against actual pre-execution contract timestamp; independently checked exact workflow version and deterministic passed=true; archived existing report without runtime replay",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Normalize typed machine-readable fields before dependent decisions; compare timestamp instants rather than textual formatting",
+        "reason": "One-off evidence capture guard only; exact failed and corrected checks retained in receipt, no product logic affected"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Date.parse(report.startedAt)>=Date.parse(preExecutionContract.observedUtc); exact current workflow version; deterministic.passed===true",
+        "reviewer": "/root inspected actual timestamps and successful archive output; no scenario replay",
+        "sources": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repair-execution-contract.json",
+            "sha256": "fca4e86e9f5ffeae3b940dc2ecb2173356725efbeca8dd3ce36594e56ced6039"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/timestamp-capture-correction.json",
+            "sha256": "446bc764e281e04a87bc24d7e6e25aa309af0585d3a5d2815be079f2dce9b361"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-child-create-20261015/address-direct-repaired-runtime-needs-judge.json",
+            "sha256": "3d4b566b918d67510b2a83815260fdbae6af3bf1f76acb48f6069c295094e8a9"
+          }
+        ]
+      }
+    }
+  ],
+  "expectedFailureRuns": [
+    {
+      "runId": "efb2e520-d1fb-4a9d-bcee-e8f17a76b157",
+      "reason": "Documentedscriptedlocalhybridneedsjudgeexit1; exactprecontract/fresh4step861checkPASSreportandcompositerequestverified; no workflowfailure. Attachpending, no rerun.",
+      "evidence": [
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-command-bound-judge-proof.json",
+          "sha256": "94d4da3198b664805efe5841c98821ab24d0793d9951a788399cfe0c5ee17405"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-execution-contract.json",
+          "sha256": "e3fc5a9d775d893202fd458fc1dd9f4230e1213b3a0974de6d335b9d4a2c86ce"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-runtime-needs-judge.json",
+          "sha256": "1cd9eb48e9f893821dc69d2a072e3c648a1a3adae2a210ef7b53647a0b543fd9"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-request-needs-judge.json",
+          "sha256": "dc6b78f99810769882fe870e9e0a1a96d9ba3392e9cc4d638544b1b28df5f8db"
+        }
+      ]
+    }
+  ]
+}

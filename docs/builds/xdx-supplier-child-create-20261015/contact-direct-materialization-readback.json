@@ -1,0 +1,10 @@
+{
+  "observedUtc": "2026-10-15T13:45:04.060Z",
+  "actualCliProcessExit": 0,
+  "actualCliText": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-test-generation.stdout.txt",
+  "artifact": "test/workflows/xdx_supplier_conversation/xdx-contact-required-direct-creation.json",
+  "sha256": "237ac5bf774d6525ff9572d244ef0e23343a6a548a1e0fdd67b748e0e19b8c53",
+  "semanticReadback": "Correctname/workflow, foursteps, readyfixtures, hybrid+allstepjudges, no fabricatedpathbindings",
+  "generatedOnce": true,
+  "scenarioExecuted": false
+}

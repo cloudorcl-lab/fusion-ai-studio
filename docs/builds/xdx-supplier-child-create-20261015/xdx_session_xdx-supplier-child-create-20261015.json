@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "repoRoot": "D:\\Temp\\worktrees\\xdx-supplier-workspace-20261014",
+  "branch": "codex/xdx-supplier-workspace-20261014",
+  "phase": "Closeout",
+  "startedUtc": "2026-10-15T12:49:53.017Z",
+  "checkpointUtc": "2026-10-15T17:07:13.232Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "316b49bd6960fa4d76a8e6813ac52183a3de4458d5caf27a82730d6ecdc0d846"
+    },
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "f17f988c1df277c9a27cd94f69908d0726d0b30fdc12d1099a816aa6662e9b63"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "4974056bde36bfede359be7aeb2564cd0dad0db012ed47624e586cf814fff952"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "57e31c6f758bc7df01047c87c711e2df4b45db2ea64a3b3870245ea2b76f2433"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "9f923b00d3f4ff54022c19a87cdf07a0be9b0bb30b0d3749613d5cfbc0bd9952"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "125032fe7b5faff9760440c44a008b44cb606bb63eeda1c5604f60ee254ef23e"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "eb87ef30b5d75b133c0e321259fab451726b1c347069a682e0091d815fed01fb"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "f8fe65735765af613480e013d7b5a5b0ca333db7cda15d10028b69ba321beef7"
+    }
+  ],
+  "reviewNotes": "Prior canon reviewed with complete target delta review; selected object refs and testing guide read. Apply bounded extension, both user-agreed modes, five attempts/object, preserve accepted writes and prior policy edits. Governance convergence reviewed by root; worker guidance deltas communicated, same explicit scope. Reviewed current topology-growth and normalizederrorRETURN prevention refinement at existing terminal-reachability owner; source evidence qualified, no extra scenario authorization. Latest user reset policy reconciled: per successful test; history and no-replay preserved. Reviewed existing display owner refinement for distinct trusted source/created IDs, fresh/frozen accepted rendering and no replay. Current four attached results reviewed; F020 receipt-only literal-array prevention qualified independently; full native acceptance boundary preserved.",
+  "objectReferences": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "release": "26C"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-child-create-20261015/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-supplier-child-create-20261015/failure-ledger.json",
+  "learningTaskId": "xdx-supplier-child-create-20261015",
+  "timeTracker": "docs/builds/xdx-supplier-child-create-20261015/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Current bounded work reconciled; see linked evidence.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/learning-review.md",
+        "docs/builds/xdx-supplier-child-create-20261015/failure-ledger.json"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Current bounded work reconciled; see linked evidence.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/intake-and-learning-register.md"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Current bounded work reconciled; see linked evidence.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/approvals.json",
+        "docs/builds/xdx-supplier-child-create-20261015/successful-test-reset-policy.json",
+        "docs/builds/xdx-supplier-child-create-20261015/completion-acceptance.json"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Current bounded work reconciled; see linked evidence.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/address-bo-readback.json",
+        "docs/builds/xdx-supplier-child-create-20261015/contact-bo-readback.json"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Current4 configured conversations PASS; native persisted-field evidence present; user explicitly accepts unobserved corrected native Contact display exception.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/current-child-fixture-acceptance.json",
+        "docs/builds/xdx-supplier-child-create-20261015/contact-display-session-loss.json",
+        "docs/builds/xdx-supplier-child-create-20261015/completion-acceptance.json",
+        "docs/builds/xdx-supplier-child-create-20261015/scoped-completion-receipt.json"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Current bounded work reconciled; see linked evidence.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/build-ledger.json",
+        "docs/builds/xdx-supplier-child-create-20261015/checkpoint-timing.json"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Current bounded work reconciled; see linked evidence.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/learning-review.md"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Canonical session conformance; bounded existing app extension",
+      "status": "pass",
+      "reason": "Implementation checkpointa97d794 committed; explicit user acceptance resolves the sole functional verification exception. Current scoped completion receipt reconciles required acceptance and summary-tool limitation.",
+      "evidence": [
+        "docs/builds/xdx-supplier-child-create-20261015/identity-saved-readback.json",
+        "docs/builds/xdx-supplier-child-create-20261015/completion-acceptance.json",
+        "docs/builds/xdx-supplier-child-create-20261015/scoped-completion-receipt.json"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Parent and worker counters unavailable",
+    "aiUnits": "Four current configured tests:120 CLI-computed AI units;56997 total tokens (48690 input,8307 output). Parent/subagent model tokens unavailable.",
+    "timingGaps": "Initial root start unallocated; agent-attributed intervals recorded prospectively; context telemetry unavailable"
+  },
+  "sessionId": "xdx-supplier-child-create-20261015"
+}

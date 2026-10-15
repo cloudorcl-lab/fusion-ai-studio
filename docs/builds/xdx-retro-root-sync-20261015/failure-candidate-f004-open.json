@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-retro-root-sync-20261015",
+  "scopes": [
+    "governance"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-retro-root-sync-20261015/commands.jsonl",
+    "docs/builds/xdx-retro-root-sync-20261015/review-commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "F001",
+      "observedUtc": "2026-10-15T18:00:28.586Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Restricted Node bootstrap could not spawn git metadata query; partial initialization only",
+      "evidenceGap": "Unwrapped failed metadata call has no measured runID; raw output in current session",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-retro-root-sync-20261015/bootstrap-context-finding.json",
+          "sha256": "9f112b804fcc9d0b71876a52e671797006e38c11e214372d4aed9a02dd9bf46f"
+        }
+      ],
+      "cause": "Restricted subprocess observation rejected; underlying OS cause not proven",
+      "correction": "Verified unchanged git metadata queries in authorized host context, root branch/HEAD match; inspected partial initialization before continuing.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Reuse verified host context after predispatch EPERM and inspect partial local effects before retry",
+        "reason": "Existing execution-context requirement; no code, schema or runtime behavior changed"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Node execFileSync git branch --show-current and rev-parse HEAD in authorized host context",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/measure-build-command.cjs",
+            "sha256": "1e4786829e0e79568ff34202745f963e48726dcdec8d49052388f001eaf011f9"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-retro-root-sync-20261015/bootstrap-host-proof.json",
+            "sha256": "a78261f708f50989529cb982f10925e331e716d52c04a92f4dc62d684ab8ada0"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F002",
+      "observedUtc": "2026-10-15T18:02:24.929Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Backup initializer did not distinguish new root target from differing existing file",
+      "evidenceGap": "Unwrapped metadata initializer has no measured runID; raw ENOENT retained in session",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-retro-root-sync-20261015/new-target-baseline-finding.json",
+          "sha256": "f5ae1513ea8dd2fae9c98ff72ede6f35947a17f28842040270959f6ea5c80895"
+        }
+      ],
+      "cause": "Target-presence assumption in collision inventory",
+      "correction": "Presence-aware seven-target inventory completed; new testingguide (and any absent attributes file) recorded without backup, existing bytes preserved.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Inventory destination collisions before promotion; preserve only existing differing bytes and distinguish new targets",
+        "reason": "Bootstrap-local metadata correction; no product operation or regression required"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Seven-target presence/backup assertions against actual collision-inventory.json",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "docs/builds/xdx-retro-root-sync-20261015/initialize-root-sync.cjs",
+            "sha256": "b658fe43f7fca988b1a3e5ed6d6162bf00890d89b74dde5e127dad76cd3fa4fb"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-retro-root-sync-20261015/collision-inventory.json",
+            "sha256": "1b521f4d57706d1e3fe368a176d4e597dac30eb2fb788d1af45b99e5f0d3e6b7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F003",
+      "observedUtc": "2026-10-15T18:07:59.838Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "commandRunIds": [
+        "46606e95-4c62-4eed-a14b-7dabf7a37695"
+      ],
+      "symptom": "Reviewer Closeout rejected space-joined evidence path",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-retro-root-sync-20261015/reviewer-receipt-proof.json",
+          "sha256": "7de21bdb55648da4f2af2783403185f7a34cb6cfce62d60cebc42162ca91fc4f"
+        }
+      ],
+      "cause": "PowerShell array concatenation joined paths; serialized validation omitted",
+      "correction": "Literal evidence array serialized and independently checked for all eight obligations",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Validate serialized evidence arrays and individual literal file paths before Closeout",
+        "reason": "Existing canonical receipt procedure; no product change"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Independent Node validation of serialized arrays and literal existing regular files",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/verify-session-compliance.cjs",
+            "sha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-retro-root-sync-20261015/reviewer-receipt-proof.json",
+            "sha256": "7de21bdb55648da4f2af2783403185f7a34cb6cfce62d60cebc42162ca91fc4f"
+          },
+          {
+            "path": "docs/builds/xdx-retro-root-sync-20261015/reviewer-repaired-receipt.json",
+            "sha256": "8f7e553a8295c10427e7021fc755e231dd95cd00b7310ce0acb30f4fec5b2868"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F004",
+      "observedUtc": "2026-10-15T18:12:20.109Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "open",
+      "commandRunIds": [
+        "3adc8692-0e66-4c5c-ad79-663f054a7819"
+      ],
+      "symptom": "Required handoff time-tracker link missing",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-retro-root-sync-20261015/handoff-link-finding.json",
+          "sha256": "fe16965f3ff20b01abf123ece4d7600b4575606a5ab9c3287ebc7447d9ddd81c"
+        }
+      ]
+    }
+  ]
+}

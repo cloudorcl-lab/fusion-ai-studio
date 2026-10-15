@@ -1,0 +1,6 @@
+{
+  "observedUtc": "2026-10-15T18:07:13.978Z",
+  "scope": "Exact6promoted governance/guardrail files and3evidence run folders only; no src/test/environment/skill-wide normalization",
+  "reason": "Preserve raw copied source and hash-bound evidence bytes across Git checkout; avoid invalidating provenance solely through newline conversion",
+  "attributesSha256": "6a999f37e5e9b472c303c30b6167a73986aabf98ab3955761d868c8695d43584"
+}

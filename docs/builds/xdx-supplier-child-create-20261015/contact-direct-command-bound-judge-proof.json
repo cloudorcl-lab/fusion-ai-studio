@@ -1,0 +1,45 @@
+{
+  "observedUtc": "2026-10-15T14:04:41.973Z",
+  "runId": "efb2e520-d1fb-4a9d-bcee-e8f17a76b157",
+  "preExecutionContract": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-execution-contract.json",
+  "rawExit": 1,
+  "workflow": {
+    "workflowCode": "XDX_SUPPLIER_CONVERSATION",
+    "status": "DRAFT",
+    "version": 88004239
+  },
+  "definitionHash": "2955988aaf09cb43",
+  "actualRuntimeStatus": "needs-judge",
+  "deterministicPassed": true,
+  "checks": 861,
+  "startedAt": "2026-10-15T13:55:13.941Z",
+  "finishedAt": "2026-10-15T13:56:59.663Z",
+  "measuredEnd": "2026-10-15T14:03:11.694Z",
+  "judgeEvaluations": [
+    {
+      "id": "step:prepare-direct-contact",
+      "score": 5,
+      "passed": true
+    },
+    {
+      "id": "step:edit-direct-contact",
+      "score": 5,
+      "passed": true
+    },
+    {
+      "id": "step:review-direct-contact",
+      "score": 5,
+      "passed": true
+    },
+    {
+      "id": "step:confirm-direct-contact",
+      "score": 4,
+      "passed": true
+    }
+  ],
+  "runtimeArchive": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-runtime-needs-judge.json",
+  "requestArchive": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-request-needs-judge.json",
+  "judgeArchive": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-reviewed-judge-result.json",
+  "producerEnd": "CLI ended naturally before guardedstop; no processwasstopped",
+  "handling": "Exactfreshcommand-boundscriptedlocaljudgecontinuation; rawexitretained. Existingoptionalv1helperdoesnotacceptbindingrefresh/step-onlycomposite. Allrequiredassertionspassed; attachmentrequired, noPASScurrentlyclaimed."
+}

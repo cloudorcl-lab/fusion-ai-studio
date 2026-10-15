@@ -1,0 +1,24 @@
+const fs=require('fs'),cp=require('child_process'),crypto=require('crypto');
+const file='src/workflows/xdx_supplier_conversation.wf',dir='docs/builds/xdx-supplier-child-create-20261015',cli='.agents/skills/aistudio/scripts/aistudio.js';
+const w=JSON.parse(fs.readFileSync(file)),nodes=w.specification.dataPipeline.pipelineNodes,by=c=>nodes.find(n=>n.code===c),hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex'),before=hash(file);
+const fieldType=f=>f.endsWith('Id')?{type:['number','string','null']}:f.endsWith('Flag')?{type:['boolean','null']}:{type:['string','null']};
+const updated=[];
+function patch(code,args){const r=cp.spawnSync(process.execPath,[cli,'do-modify-node','--file',file,'--node-code',code,...args],{encoding:'utf8'});if(r.status!==0)throw Error(r.stderr+'\n'+r.stdout);updated.push(code);}
+function save(name,obj){const p=dir+'/xdx_child_'+name+'.json';fs.writeFileSync(p,JSON.stringify(obj,null,2)+'\n');return '@'+p;}
+for(const n of nodes.filter(n=>n.type==='BO_FUNCTION'&&['XDX_SUPPLIER_ADDRESSES','XDX_SUPPLIER_CONTACTS'].includes(n.metadata.businessObjectCode))){
+ const address=n.metadata.businessObjectCode==='XDX_SUPPLIER_ADDRESSES',resource=address?'addresses':'contacts',bpath='src/businessObjects/xdx_supplier_'+resource+'.bo',b=JSON.parse(fs.readFileSync(bpath)),tool=b.objectProperties.tools.find(t=>t.name===n.metadata.functionName);if(!tool)throw Error('Missing local BO function '+n.metadata.functionName);
+ const fields=(tool.resourcePath.split('fields=')[1]||'').split('&')[0].split(',').filter(Boolean),idField=address?'SupplierAddressId':'SupplierContactId';let schema;
+ if(tool.operationType==='POST'){
+  const props=Object.fromEntries([...Object.keys(JSON.parse(tool.bodyTemplate)),idField,address?'AddressPartyNumber':'PersonProfileId'].map(f=>[f,fieldType(f)]));schema={$schema:'http://json-schema.org/draft-07/schema#',type:'object',properties:props,additionalProperties:true};
+ }else{
+  const props=Object.fromEntries(fields.map(f=>[f,fieldType(f)]));props[idField]={type:['number','string']};if(props.Status)props.Status={type:'string'};
+  const item={type:'object',properties:props,required:[idField],additionalProperties:true};schema=tool.resourcePath.includes('orderBy=')?{$schema:'http://json-schema.org/draft-07/schema#',type:'object',properties:{items:{type:'array',items:item},count:{type:'integer'},hasMore:{type:'boolean'},limit:{type:'integer'},offset:{type:'integer'},links:{type:'array'}},required:['items','count','hasMore','limit','offset'],additionalProperties:true}:{$schema:'http://json-schema.org/draft-07/schema#',...item};
+ }
+ patch(n.code,['--output-specification',save('schema_'+n.code.toLowerCase(),schema)]);
+}
+let source=by('XDX_VALIDATE_CHILD_DRAFT').metadata.sourceCode;
+const marker="const missing=fields.filter(function(f){return f!=='AddressPurposeOrderingFlag'&&(typeof p[f]!=='string'||!p[f].trim());});if(missing.length)return done('display','Provide '+missing.join(', ')+'. This remains an uncreated '+d.kind+' draft.');";
+if(!source.includes(marker))throw Error('US-scope anchor missing');source=source.replace(marker,marker+"\n if(address&&p.CountryCode!=='US')return done('display','This complete address creation flow currently supports US addresses only. Choose a US source or supply the required US address fields. Nothing has been created.');");patch('XDX_VALIDATE_CHILD_DRAFT',['--metadata-patch',save('us_scope',{sourceCode:source})]);
+source=by('XDX_ACCEPT_CHILD_SOURCE').metadata.sourceCode;const check="!Number.isSafeInteger(row[idField])||row[idField]<=0";if(!source.includes(check))throw Error('Source ID anchor missing');source=source.replace(check,"!(typeof row[idField]==='number'&&Number.isSafeInteger(row[idField])&&row[idField]>0||typeof row[idField]==='string'&&/^[1-9][0-9]{0,17}$/.test(row[idField]))");patch('XDX_ACCEPT_CHILD_SOURCE',['--metadata-patch',save('source_decimal',{sourceCode:source})]);
+const terminal=by('XDX_SUPPLIER_QUERY_RESPONSE'),prompt=terminal.inputs.find(i=>i.name==='prompt').value;patch(terminal.code,['--inputs-patch',save('attempts_presentation',{prompt:prompt.replace('For response.attempt show its literal status/verification','For response.attempt or every entry in response.attempts show its literal status/verification')})]);
+const boHashes={};for(const r of ['addresses','contacts'])boHashes[r]=hash('src/businessObjects/xdx_supplier_'+r+'.bo');const receipt={before,after:hash(file),updatedNodes:updated,boHashes,source:'Exact local BO function method, request template and GET fields projection; object-reference ID/string/null semantics. No live metadata fetched.',scope:'US complete address flow; contacts required identity only. Existing read paths retain all geographies.',testsRun:0,remoteCalls:0};fs.writeFileSync(dir+'/xdx_child_schema_receipt.json',JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify(receipt));

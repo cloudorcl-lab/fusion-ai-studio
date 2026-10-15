@@ -1,0 +1,13 @@
+# Active handoff — master
+
+Current objective: implement and verify direct-entry AND template-based CREATE for Supplier Addresses and Contacts in the completed XDX Supplier Workspace. User confirmed both modes, five tests per object, subagents, accurate timing and milestone handoff updates. ACTIVE; runtime acceptance remains open.
+
+Checkout: D:/Temp/worktrees/xdx-supplier-workspace-20261014; branch codex/xdx-supplier-workspace-20261014; starting HEAD9f8f02b4. Base checkout preserved. Current milestone at 2026-10-15T13:10:22.896Z: local workflow graph integration completed by /root/create_integration (7sharednodes,43newnodes); BO output schema reconciliation and required-only US address guards underway. Both new BO create functions implemented. Shared Query validator convergence qualification PASS; current configured identity CASEY.BROWN verified. No new remote save or scenario test. Addresses0/5;Contacts0/5.
+
+Open blocker F005: BO authoring validators require a complete described example for each new function. Blank generated examples were removed; affected revalidation confirmed missing-example requirement. Address agent now adding described request examples only; no invented response or business execution. Root must inspect inner result.ok/errorCount and close failure with evidence before affected execution.
+
+Ownership and evidence: [build ledger](../builds/xdx-supplier-child-create-20261015/build-ledger.json), [failure ledger](../builds/xdx-supplier-child-create-20261015/failure-ledger.json), [checkpoint](../builds/xdx-supplier-child-create-20261015/checkpoint.md), approvals.json and per-agent command receipts in the same run. Root owns shared records/browser; integration agent sole workflow writer; address agent BO repair/validation and address payload manifest; contact agent staged configured conversations and contact payload manifest.
+
+Next: complete BO example repair and workflow schemas; validate workflow and Query contract; freeze exact three unique real transactions/object and five-case manifests; save/prove BOs before dependent workflow execution. Count attempts before dispatch, no repeat without preceding-logic change; reset only after successful object completion, retaining history. Configured tests fixture-backed. Never replay accepted/uncertain writes.
+
+Inherited accepted supplier/site product and prior budgets remain frozen in prior-handoff.md and docs/builds/xdx-supplier-workspace-20261014/. Target eqil-dev21/26C, current worktree configuration only. No publication/push/deletion or unrelated changes. This is the single active transition record; milestone snapshots are historical.

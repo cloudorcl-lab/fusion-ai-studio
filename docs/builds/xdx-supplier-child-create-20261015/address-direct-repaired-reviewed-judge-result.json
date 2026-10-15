@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "kind": "workflow-conversation-judge-result",
+  "evaluations": [
+    {
+      "evaluationId": "step:prepare-address-draft",
+      "result": {
+        "score": 5,
+        "passed": true,
+        "criterionResults": [
+          {
+            "criterion": "The output is grounded in the replayed test data.",
+            "passed": true,
+            "notes": "The eight displayed values match the authored initial payload and retained physical-data fixtures; the terminal Email has no extra period."
+          },
+          {
+            "criterion": "Distinguish the proposed new address from the selected supplier and any source address; communicate that no address has been created.",
+            "passed": true,
+            "notes": "The response begins Nothing has been created and labels the content Proposed address, while identifying Dell Inc. separately as the parent."
+          },
+          {
+            "criterion": "Present the exact required proposed fields, parent supplier, mode and supplied current request/revision control commands without inventing identifiers.",
+            "passed": true,
+            "notes": "All eight required values, direct mode, generated request identity, revision1, and exact Review/Cancel commands are present; no new child ID is displayed."
+          }
+        ],
+        "unsupportedClaims": [],
+        "summary": "The complete direct address is clearly uncreated under Dell Inc.1255, with corrected controlled Email, no invented child ID and exact revision1 controls."
+      }
+    },
+    {
+      "evaluationId": "step:edit-address-email",
+      "result": {
+        "score": 5,
+        "passed": true,
+        "criterionResults": [
+          {
+            "criterion": "The output is grounded in the replayed test data.",
+            "passed": true,
+            "notes": "The final controlled Email and all seven unchanged fields match the edited payload and existing draft evidence."
+          },
+          {
+            "criterion": "Resolve the field-only follow-up against the existing draft without asking again for its supplier or physical address and without switching its owner.",
+            "passed": true,
+            "notes": "The short Email-only message yields the existing Dell Inc.1255 draft without repeating or switching its parent or physical address."
+          },
+          {
+            "criterion": "Preserve unchanged required values and draft identity; reflect the controlled Email replacement, newer revision and current review command without claiming creation.",
+            "passed": true,
+            "notes": "The same request ID remains, revision advances from1 to2, only Email changes, and current Review/Cancel commands are supplied while creation remains explicitly unperformed."
+          }
+        ],
+        "unsupportedClaims": [],
+        "summary": "The Email-only follow-up preserves the supplier, physical fields, new name and request identity while advancing to revision2 and requiring a fresh review."
+      }
+    },
+    {
+      "evaluationId": "step:review-current-address",
+      "result": {
+        "score": 5,
+        "passed": true,
+        "criterionResults": [
+          {
+            "criterion": "The output is grounded in the replayed test data.",
+            "passed": true,
+            "notes": "All eight reviewed fields match the edited payload and the preceding draft; the supplier remains Dell Inc.1255."
+          },
+          {
+            "criterion": "Make the exact proposed required-field payload and destination supplier clear for approval without presenting source identifiers as created-address identifiers.",
+            "passed": true,
+            "notes": "The response explicitly identifies the exact proposed address and displayed parent, without assigning any source or generated child identity."
+          },
+          {
+            "criterion": "Expose the supplied exact Confirm command intact and require that explicit action; do not imply that review or generic yes submits a create.",
+            "passed": true,
+            "notes": "It states Nothing has been created and prints the same request ID with Confirm revision2 intact; no generic approval or submission claim appears."
+          }
+        ],
+        "unsupportedClaims": [],
+        "summary": "The reviewed revision2 payload remains uncreated and exposes the exact generated Confirm command under the correct supplier."
+      }
+    },
+    {
+      "evaluationId": "step:confirm-reviewed-address",
+      "result": {
+        "score": 4,
+        "passed": true,
+        "criterionResults": [
+          {
+            "criterion": "The output is grounded in the replayed test data.",
+            "passed": true,
+            "notes": "Returned SupplierAddressId900000000015201 and AddressPartyNumber990015201, edited Email and all required fields match the POST and independent GET fixtures."
+          },
+          {
+            "criterion": "Report verified completion only after the independent readback and present the returned own address identity with the intended required fields under the correct supplier.",
+            "passed": true,
+            "notes": "The opening says Address created and independently verified; attempt status is accepted and verification verified, followed by the independent verified item with the correct own ID and parent1255."
+          },
+          {
+            "criterion": "Keep the source/template and newly created record distinct, preserve edited Email and approved payload, and avoid unrelated supplier/site/contact or account-creation claims.",
+            "passed": true,
+            "notes": "The returned own ID is used instead of source300000047414694, and all reviewed values persist without unrelated record or account claims. The extra Proposed address heading is mildly ambiguous but is outweighed by explicit verified completion and verified-item details."
+          }
+        ],
+        "unsupportedClaims": [],
+        "summary": "Verified completion, all reviewed values and the fixture-returned own ID are clear. A retained Proposed address heading after completion slightly weakens presentation clarity."
+      }
+    },
+    {
+      "evaluationId": "conversation",
+      "result": {
+        "score": 4,
+        "passed": true,
+        "criterionResults": [
+          {
+            "criterion": "The output is grounded in the replayed test data.",
+            "passed": true,
+            "notes": "Displayed initial, edited, reviewed and final fields are grounded in the authored payloads and fixture data; generated request controls match the same executed conversation."
+          },
+          {
+            "criterion": "Later field-only and exact-control turns use the earlier supplier, physical fields and draft identity without reconstructing or switching the parent.",
+            "passed": true,
+            "notes": "The Email-only edit and bound Review/Confirm turns retain Dell Inc.1255, the earlier physical fields, new address name and request ID, with revision2 used consistently."
+          },
+          {
+            "criterion": "The conversation distinguishes proposed, reviewed, reserved, accepted and independently verified states; source IDs never become created IDs and creation occurs only after exact confirmation of the current revision.",
+            "passed": true,
+            "notes": "Preparation/edit/review explicitly remain uncreated; only exact revision2 confirmation executes the reserved create and independent GET, and the final own ID is distinct from the source. The final Proposed address heading introduces minor labeling ambiguity while explicit accepted/verified status preserves the outcome distinction."
+          }
+        ],
+        "unsupportedClaims": [],
+        "summary": "All four turns retain one supplier-owned request through Email-only revision, exact review/confirmation, one fixture-backed create and independent verification. The final proposed-heading wording is a minor clarity limitation."
+      }
+    }
+  ]
+}

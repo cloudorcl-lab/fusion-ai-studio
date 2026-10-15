@@ -1,0 +1,13 @@
+{
+  "observedUtc": "2026-10-15T14:26:24.452Z",
+  "reviewer": "/root",
+  "currentHash": "0fcd7afc2566bce5372b150528b5a2cbdef006c720e779d443671ae0e58c753d",
+  "changedNodes": [
+    "XDX_PREPARE_SUPPLIER_REQUEST",
+    "XDX_VALIDATE_CHILD_DRAFT"
+  ],
+  "proof": "Actual entire specification equals previously qualified specification after removing only the two reviewed CODE source strings; all graph edges, BO nodes, bindings, output schemas and terminal prompts unchanged.",
+  "scope": "Normalization affects Address and Contact preparation/edit; final validation affects both. Previous Contact direct evidence retained as prior-version evidence; focused code checks preserve valid final payload and later template cases qualify current boundary. No accepted write replay.",
+  "priorSavedReadback": "docs/builds/xdx-supplier-child-create-20261015/saved-workflow-readback.json",
+  "qualification": "docs/builds/xdx-supplier-child-create-20261015/xdx_child_email_contract_receipt.json"
+}

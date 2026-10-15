@@ -1,0 +1,68 @@
+{
+  "observedUtc": "2026-10-15T16:05:36.258Z",
+  "rows": [
+    {
+      "testName": "xdx-contact-required-direct-creation",
+      "workflowVersion": 88010729,
+      "judgeSource": "docs/builds/xdx-supplier-child-create-20261015/contact-direct-identity-reviewed-judge-result.json",
+      "judgeSha256": "66cd1e2a8e41543effb6966e077b8d97edd6972ea8ec1aaea14fee46cf1708e6",
+      "requestSha256": "1d6461e0c208f91dea7e4d0cf5b8cdce7f996fdf111d730f8938b3207052b002",
+      "evaluations": 4,
+      "scores": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "status": "reviewed-staged-not-attached"
+    },
+    {
+      "testName": "xdx-address-required-template-creation",
+      "workflowVersion": 88010729,
+      "judgeSource": "docs/builds/xdx-supplier-child-create-20261015/address-template-repaired-reviewed-judge-result.json",
+      "judgeSha256": "69d124e865d342b5794c5c9ec72372532e3f44fc1f124e0fcca5ad7f0efc6ad2",
+      "requestSha256": "0ce17bdc9cee4e049a36361d00f217a0e29b0b4713c43963b1e7e193bbcb9cda",
+      "evaluations": 5,
+      "scores": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "status": "reviewed-staged-not-attached"
+    },
+    {
+      "testName": "xdx-contact-required-template-creation",
+      "workflowVersion": 88010729,
+      "judgeSource": "docs/builds/xdx-supplier-child-create-20261015/contact-template-identity-reviewed-judge-result.json",
+      "judgeSha256": "8d02794f67d1ed932345daf0e0a38619af0183554a31759a54023d26a90a3354",
+      "requestSha256": "b7b7bcc6c2ced840b363b45643e2580c0637c7a2180a718a541f1b7bbc0a4295",
+      "evaluations": 4,
+      "scores": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "status": "reviewed-staged-not-attached"
+    },
+    {
+      "testName": "xdx-address-required-direct-creation",
+      "workflowVersion": 88010729,
+      "judgeSource": "docs/builds/xdx-supplier-child-create-20261015/address-direct-identity-reviewed-judge-result.json",
+      "judgeSha256": "df9ddaa9ea15916c8baaccbee122c80caaa638d29e59d8b9d33ba77e767368a2",
+      "requestSha256": "9a3a74b8985cc36492a7523bca4bb6f567f67272eb6c19eae92b7372ac9081c7",
+      "evaluations": 5,
+      "scores": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "status": "reviewed-staged-not-attached"
+    }
+  ],
+  "noWorkflowExecution": true
+}

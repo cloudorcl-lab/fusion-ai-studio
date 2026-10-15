@@ -1,0 +1,69 @@
+{
+  "status": "staged-model-generated-fixtures-not-executed",
+  "workflowSha256": "abf9a9a618234f7258a6636697b5b330ac4a27efc67055fc8d1921c77edca567",
+  "parent": {
+    "BusinessRelationship": "Spend Authorized",
+    "BusinessRelationshipCode": "SPEND_AUTHORIZED",
+    "InactiveDate": null,
+    "Status": "ACTIVE",
+    "Supplier": "Dell Inc.",
+    "SupplierId": 300000047414679,
+    "SupplierNumber": "1255",
+    "SupplierType": "Supplier",
+    "SupplierTypeCode": "SUPPLIER",
+    "TaxOrganizationType": "Corporation",
+    "TaxOrganizationTypeCode": "CORPORATION"
+  },
+  "sourceContact": {
+    "SupplierContactId": 300000047414707,
+    "ContactName": "Gill, Noah",
+    "FirstName": "Noah",
+    "LastName": "Gill",
+    "Email": "xdx.source.contact.fixture@example.invalid",
+    "Status": "ACTIVE",
+    "InactiveDate": null,
+    "PersonProfileId": 300000047414707,
+    "UserName": null,
+    "UserAccountStatus": null,
+    "DataAccessLevel": null
+  },
+  "provenance": {
+    "createdResponses": "Model-generated hypothetical POST/GET pairs adapted from current contact-bo-post-attempt.json and contact-bo-readback.json. Synthetic own/profile IDs deliberately differ; no claim these tenant records exist.",
+    "parent": "Retained Dell source from site-required-creation.json; current parent read proof exists in task saved BO receipts",
+    "sourceContact": "contacts-item-example-response.json retained ID/name/FirstName/LastName/Status; Email replaced with explicitly synthetic controlled destination, added profile/account shape from current task contact-bo-readback.json"
+  },
+  "cases": [
+    {
+      "initialPayload": {
+        "FirstName": "XDXFixture",
+        "Email": "xdx.contact.fixture.draft@example.invalid",
+        "LastName": "ContactDirect20261015"
+      },
+      "PersonProfileId": 900000000000201,
+      "SupplierContactId": 900000000000101,
+      "finalPayload": {
+        "FirstName": "XDXFixture",
+        "Email": "xdx.contact.fixture.direct.20261015@example.invalid",
+        "LastName": "ContactDirect20261015"
+      },
+      "mode": "direct"
+    },
+    {
+      "finalPayload": {
+        "FirstName": "Noah",
+        "Email": "xdx.contact.fixture.template.20261015@example.invalid",
+        "LastName": "XDXFixtureTemplate20261015"
+      },
+      "PersonProfileId": 900000000000202,
+      "sourceContactId": "300000047414707",
+      "mode": "template",
+      "SupplierContactId": 900000000000102,
+      "initialPayload": {
+        "FirstName": "Noah",
+        "Email": "xdx.contact.fixture.draft@example.invalid",
+        "LastName": "XDXFixtureTemplate20261015"
+      }
+    }
+  ],
+  "safety": "Every BO boundary in each staged scenario needs complete step-scoped fixtures. No live fallback, current-source path bindings or runtime acceptance claimed. Exact review/confirm IDs resolved from prior actual CODE outputs by supported controlMessageBinding."
+}
