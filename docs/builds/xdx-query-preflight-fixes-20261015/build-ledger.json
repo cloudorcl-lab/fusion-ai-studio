@@ -72,6 +72,11 @@
       "name": "Delivery verified",
       "utc": "2026-10-15T11:45:07.078Z",
       "detail": "Four fixes complete:45/45 focused cases, independent review approval, hash-bound evidence and all delegated/root Closeout gates PASS. Active handoff updated at every recorded milestone. No broader tests, tenant calls or push. Scoped local commit follows this delivery checkpoint; no further repair remains in authorized scope."
+    },
+    {
+      "name": "Commit status reconciled",
+      "utc": "2026-10-15T12:40:23.223Z",
+      "detail": "Verified source commit and recovered tail timing; corrected active handoff and playbook review-date metadata. No code/test change or additional product test."
     }
   ],
   "interactions": {
@@ -105,5 +110,13 @@
     "firstGreenPassed": false,
     "firstGreenFailure": "Qualified diagnostic identity; preserved original evidence",
     "broadTests": "Not run per user instruction"
+  },
+  "commitTiming": {
+    "sourceCommit": "f28950ed15bef03e94e0d29b16d54be771be4295",
+    "committedUtc": "2026-10-15T11:46:25Z",
+    "startToCommitSeconds": 867.493,
+    "tailBeyondDeliveryCheckpointSeconds": 77.835,
+    "source": "git show -s --format=%cI f28950e; second-resolution Git committer timestamp",
+    "limitation": "Wall-time recovery only; no isolated labor allocation. Does not extend original active-execution interval or cover follow-up turns."
   }
 }

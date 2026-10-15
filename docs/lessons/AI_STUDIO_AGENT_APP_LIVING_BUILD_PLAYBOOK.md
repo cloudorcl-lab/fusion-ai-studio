@@ -126,7 +126,7 @@ Verify policy and session tests, including stale identity/content, missing timin
 - **Canonical owner:** This file
 - **Temporary steward:** The owner of each active agent-app build
 - **Applies to:** Every AI Studio agent app and its backing tools, workflows, tests, data, runtime dependencies, and release evidence
-- **Last reviewed:** 2026-10-12
+- **Last reviewed:** 2026-10-15
 
 ## Purpose
 
