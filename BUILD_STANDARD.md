@@ -22,6 +22,16 @@ Continue through routine reversible work and retain authorization within scope.
 Ask only when missing information or a required approval blocks progress.
 Run checks appropriate to the change. Repeat broader checks when new changes, failures or unresolved concerns justify them.
 
+## Mandatory handoff master
+
+`docs/handoffs/ACTIVE_HANDOFF.md` is the repository-wide **handoff master** and single authoritative current transition record. Keeping it current is a **MUST for effective build execution**, in every session and worktree.
+
+Update the master at build start, at every milestone before starting the next, whenever scope, decisions, approvals, status or blockers materially change, on pause/resume, and before ending a work turn or handing work forward. Reconcile verified commit, save, deployment and validation results as soon as they are known; replace pending-action wording when the action completes.
+
+Each update must identify the current objective, checkout/branch, verified state, evidence links, unresolved work or blockers, and exact next action. Include source/artifact identifiers and commit references when available. Link the authoritative run ledger and failure/evidence records rather than duplicate their mutable details. Replace stale current-state content; retain history in run records instead of creating competing active handoffs.
+
+A milestone or build is incomplete while the handoff master is stale. Reconcile it with the actual delivered state before reporting completion.
+
 ## Build tracking
 
 Start tracking before substantive work. Assign a unique run ID and record:
@@ -53,7 +63,7 @@ Track milestones:
 - Validation completed.
 - Deliverables and handoff completed.
 
-For each milestone, record its timestamp, outcome and evidence location, and update `docs/handoffs/ACTIVE_HANDOFF.md` with the current state, evidence and next action before starting the next milestone. Keep one active handoff; retain historical milestone evidence in the run ledger. Report time to the first verified result and time to final verified delivery. Keep design/document verification distinct from a working application's first end-to-end result.
+For each milestone, record its timestamp, outcome and evidence location in the run ledger and apply the mandatory handoff-master update above. Report time to the first verified result and time to final verified delivery. Keep design/document verification distinct from a working application's first end-to-end result.
 
 Track failures and rework:
 

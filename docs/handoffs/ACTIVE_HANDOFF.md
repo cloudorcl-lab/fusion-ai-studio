@@ -1,5 +1,7 @@
 # Active handoff
 
+Latest instruction applied: BUILD_STANDARD.md now explicitly designates this file as the repository-wide **handoff master**. Keeping it current is a **MUST for effective build execution**. Its mandatory update triggers, required contents and completion gate are owned by the standard's Mandatory handoff master section. This is a documentation-only refinement; the verified validator repair and product-design status below remain the current source state.
+
 Completed work: xdx-query-preflight-fixes-20261015, branch TestingWFBuildTools; verified source repair commit f28950ed15bef03e94e0d29b16d54be771be4295 (starting HEAD 179d0061f275755af2384dd4f6e4699afebb7451). User explicitly authorized fixing four Query preflight gaps using sub-agents and TEST ONLY the fixes, and required updating this handoff at every milestone.
 
 Milestone: **Commit status reconciled**. Four fixes committed locally:45/45 focused cases, independent review approval, hash-bound evidence and all delegated/root Closeout gates PASS. Source commit readback confirms f28950ed15bef03e94e0d29b16d54be771be4295, committed 2026-10-15T11:46:25Z. Active handoff updated at every recorded milestone. No broader tests, tenant calls or push. No further validator repair remains in authorized scope.
