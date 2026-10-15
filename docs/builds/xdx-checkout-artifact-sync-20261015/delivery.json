@@ -1,0 +1,18 @@
+{
+  "observedUtc": "2026-10-15T22:05:28.618Z",
+  "status": "complete",
+  "commits": {
+    "base": "b4de9fb7cae0dbb15e1f683aa1d491903d7a2c4b",
+    "supplier": "36059eac16e3fbe1b8182a47ed45fc1c3893ddad"
+  },
+  "masterSha256": "9875a2088f3998223430c1ad45c7c0c5ea8720fad8e99cabf86617e5c8b54790",
+  "scope": "Shared governance, validators, reference closure, E2E scripts and complete evidence tree",
+  "remainingOwnership": "Supplier app/workflow/6 BOs/product fixtures and coupled AI Studio CLI extension remain worktree-owned; no full source merge",
+  "verification": "Both Closeout PASS;536 immutable transfers/216links/exact staged bytes; retained validator tests reused",
+  "businessTestsRun": 0,
+  "businessWrites": 0,
+  "pushed": false,
+  "timingCutoff": "2026-10-15T22:04:17.128Z",
+  "initialReading": "Unallocated",
+  "deliveryTail": "Command receipts retain gate/commit intervals after primary cutoff"
+}

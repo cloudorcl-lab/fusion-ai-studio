@@ -45,6 +45,14 @@
       "assignmentId": "integrate",
       "outcome": "Base68/worktree586 selected staged files match raw bytes; five captured issues closed; final gate and commit tail next",
       "evidence": "docs/builds/xdx-checkout-artifact-sync-20261015/staging-proof.json"
+    },
+    {
+      "observedUtc": "2026-10-15T22:05:28.618Z",
+      "name": "synchronization-committed-both-branches",
+      "agentId": "/root",
+      "assignmentId": "integrate",
+      "outcome": "Verified base b4de9fb7cae0dbb15e1f683aa1d491903d7a2c4b and supplier 36059eac16e3fbe1b8182a47ed45fc1c3893ddad; final receipts/master reconciled; no app/BO/workflow changes",
+      "evidence": "docs/builds/xdx-checkout-artifact-sync-20261015/delivery.json"
     }
   ],
   "agents": [
@@ -76,5 +84,9 @@
   ],
   "priorCutoffs": [
     "2026-10-15T22:01:13.238Z"
-  ]
+  ],
+  "deliveryCommits": {
+    "base": "b4de9fb7cae0dbb15e1f683aa1d491903d7a2c4b",
+    "supplier": "36059eac16e3fbe1b8182a47ed45fc1c3893ddad"
+  }
 }
