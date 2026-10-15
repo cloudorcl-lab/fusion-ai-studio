@@ -119,6 +119,14 @@
       "assignmentId": "execute",
       "outcome": "PPT90slides/62images/90notes verified; scripts qualified; allworkersroleCloseoutPASS;6generatedfieldrefs/capturelessons applied; scopedrootgate/commitnext",
       "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/delivery.json"
+    },
+    {
+      "observedUtc": "2026-10-15T21:32:55.964Z",
+      "name": "scoped-evidence-commit-verified",
+      "agentId": "/root",
+      "assignmentId": "execute",
+      "outcome": "Verified local code/evidence commit 885e47838a751a8f516e1ab2a3efc5003c298c60; master reconciled; final receipt-only hand-forward follows. Delivery tail excluded from primary cutoff.",
+      "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/commands.jsonl"
     }
   ],
   "limitations": [
@@ -833,5 +841,6 @@
       "elapsedMs": 1054.7986,
       "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-commands.jsonl"
     }
-  ]
+  ],
+  "deliveryCommit": "885e47838a751a8f516e1ab2a3efc5003c298c60"
 }
