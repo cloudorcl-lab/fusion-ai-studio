@@ -1,0 +1,13 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),crypto=require('node:crypto');
+const phase=process.argv[2],label=process.argv[3]||phase;
+if(!['red','green'].includes(phase)||!/^[-a-z0-9]+$/.test(label))throw Error('Expected red|green and safe unique label');
+const test='scripts/tests/verify-agentic-app-query-contract.cjs',source='scripts/verify-agentic-app-query-contract.cjs';
+const result=cp.spawnSync(process.execPath,[test],{encoding:'utf8',timeout:60000});
+const output=(result.stdout||'')+(result.stderr||'');
+const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const expectedRed=phase==='red'&&result.status===1&&!/SyntaxError|MODULE_NOT_FOUND|ReferenceError/.test(output)&&/fail|not ok|AssertionError/i.test(output);
+const ok=phase==='red'?expectedRed:result.status===0;
+fs.writeFileSync(path.join(__dirname,label+'.output.txt'),output);
+fs.writeFileSync(path.join(__dirname,label+'.json'),JSON.stringify({phase,label,observedUtc:new Date().toISOString(),command:'node '+test,childExitCode:result.status,signal:result.signal,error:result.error?.message||null,expectedRed,ok,source:{path:source,sha256:hash(source)},test:{path:test,sha256:hash(test)},output:label+'.output.txt',scope:'Only Query preflight validator regression tests; real local CLI synthetic fixtures may run within that test.'},null,2)+'\n');
+console.log(output);console.log(JSON.stringify({phase,label,childExitCode:result.status,expectedRed,ok}));process.exitCode=ok?0:1;

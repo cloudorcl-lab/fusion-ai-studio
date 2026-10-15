@@ -1,0 +1,52 @@
+Agentic App Query validator tests: PASS
+✔ producer output must exist on every incoming consumer route (1.5767ms)
+✔ a disconnected producer cannot qualify through a path to the consumer (0.252ms)
+✔ an upstream error path cannot bypass the required producer (0.868ms)
+✔ a failed producer cannot supply its success output to its error handler (0.2366ms)
+✔ self references cannot use output from an earlier loop iteration as current output (0.1904ms)
+✔ a producer shared before both consumer branches remains valid (0.1761ms)
+✔ root BO dependency fails closed when object cannot be resolved (0.2536ms)
+✔ root BO dependency fails closed when function cannot be resolved (0.1086ms)
+✔ nested BO dependency fails closed when object cannot be resolved (0.2185ms)
+✔ nested BO dependency fails closed when function cannot be resolved (0.2019ms)
+✔ nested BO path token rejects missing input (0.2082ms)
+✔ nested BO path token rejects "" (0.1111ms)
+✔ nested BO path token rejects "  " (0.0905ms)
+✔ nested BO path token rejects null (0.0641ms)
+✔ nested malformed binding is checked by the workflow entry point (0.2328ms)
+✔ nested binding rejects a stale missing producer (0.1343ms)
+✔ nested binding rejects a parent producer bypassed before the container (0.1763ms)
+✔ nested binding rejects local producer bypass (0.175ms)
+✔ nested binding accepts available PREPARE_PARENT output (0.1845ms)
+✔ nested binding accepts available PREPARE_LOCAL output (0.7185ms)
+✔ nested producer names resolve to the nearest scope (0.1755ms)
+✔ an unavailable local shadow cannot fall back to an available ancestor (0.1808ms)
+✔ a cycle cannot make a producer that runs after the consumer available (0.1198ms)
+✔ parallel convergence may consume an output guaranteed by a completed branch (0.2279ms)
+✔ parallel convergence rejects a producer skipped inside its own branch (0.1503ms)
+✔ documented loop context $currentItem.id is available within the body (0.1926ms)
+✔ documented loop context $currentItemIndex is available within the body (0.0992ms)
+✔ qualified inner producer output is available after its local execution (0.1762ms)
+✔ qualified inner producer names must resolve beyond the existing container (0.1275ms)
+✔ qualified inner producer must execute before its local consumer (0.1327ms)
+✔ interpolation rejects malformed delimiter order or content: "}} text {{" (0.1083ms)
+✔ interpolation rejects malformed delimiter order or content: "{{ outer {{ inner }} end }}" (0.0869ms)
+✔ interpolation rejects malformed delimiter order or content: "{{}}" (0.0562ms)
+✔ interpolation rejects malformed delimiter order or content: "{{  }}" (0.0697ms)
+✔ interpolation rejects malformed delimiter order or content: "prefix }} middle {{ 1 }} suffix {{" (0.0491ms)
+✔ interpolation preserves valid expressions: "prefix {{ 1 }} middle {{ 2 }} suffix" (0.1173ms)
+✔ interpolation preserves valid expressions: "{{ ({ parent: { id: 42 } }) }}" (0.1302ms)
+✔ interpolation preserves valid expressions: "{{ ({parent:{id:42}}) }}" (0.0581ms)
+✔ interpolation preserves valid expressions: "{{ \"literal {{ and }}\" }}" (0.0623ms)
+✔ real CLI rejects a BO reference when the local BO directory is absent (93.6028ms)
+✔ real CLI rejects an unresolved nested BO function (92.2038ms)
+✔ real CLI rejects a nested missing path token (90.343ms)
+✔ real CLI accepts resolved nested BO bindings without requiring query-only parameters (93.4147ms)
+ℹ tests 43
+ℹ suites 0
+ℹ pass 43
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 385.9382

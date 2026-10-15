@@ -1,0 +1,22 @@
+[
+  {
+    "session": "xdx-query-preflight-fixes-20261015-tests",
+    "exitCode": 0,
+    "error": null
+  },
+  {
+    "session": "xdx-query-preflight-fixes-20261015-implementation",
+    "exitCode": 0,
+    "error": null
+  },
+  {
+    "session": "xdx-query-preflight-fixes-20261015-review",
+    "exitCode": 0,
+    "error": null
+  },
+  {
+    "session": "xdx-query-preflight-fixes-20261015",
+    "exitCode": 0,
+    "error": null
+  }
+]

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-query-preflight-fixes-20261015",
+  "sources": [
+    {
+      "path": "scripts/verify-agentic-app-query-contract.cjs",
+      "sha256": "ea393bbc51a4eb18187eb591e8610b1d821ff537a17e193da9a2db4cd5d7607e"
+    },
+    {
+      "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+      "sha256": "b948443f7b951774642562e5e0911af6965fb029c8662809c87a90bfb852990b"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "Q01",
+      "description": "Use pipeline-entry completed-output state traversal and parallel summaries preserving special edges",
+      "status": "passed",
+      "evidence": [
+        {
+          "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.json",
+          "sha256": "b42018cfd02c97060c3ff201e8f03e7ec301d11fadc2e4e7d02a2cd360f2844b",
+          "checks": [
+            {
+              "pointer": "/ok",
+              "equals": true
+            },
+            {
+              "pointer": "/childExitCode",
+              "equals": 0
+            },
+            {
+              "pointer": "/source/sha256",
+              "equals": "ea393bbc51a4eb18187eb591e8610b1d821ff537a17e193da9a2db4cd5d7607e"
+            },
+            {
+              "pointer": "/test/sha256",
+              "equals": "b948443f7b951774642562e5e0911af6965fb029c8662809c87a90bfb852990b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q02",
+      "description": "Fail closed with BO_OBJECT_UNRESOLVED and BO_FUNCTION_UNRESOLVED",
+      "status": "passed",
+      "evidence": [
+        {
+          "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.json",
+          "sha256": "b42018cfd02c97060c3ff201e8f03e7ec301d11fadc2e4e7d02a2cd360f2844b",
+          "checks": [
+            {
+              "pointer": "/ok",
+              "equals": true
+            },
+            {
+              "pointer": "/childExitCode",
+              "equals": 0
+            },
+            {
+              "pointer": "/source/sha256",
+              "equals": "ea393bbc51a4eb18187eb591e8610b1d821ff537a17e193da9a2db4cd5d7607e"
+            },
+            {
+              "pointer": "/test/sha256",
+              "equals": "b948443f7b951774642562e5e0911af6965fb029c8662809c87a90bfb852990b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q03",
+      "description": "Recurse nested BO inputs and scope-aware expression producers with shadowing/ancestor rules",
+      "status": "passed",
+      "evidence": [
+        {
+          "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.json",
+          "sha256": "b42018cfd02c97060c3ff201e8f03e7ec301d11fadc2e4e7d02a2cd360f2844b",
+          "checks": [
+            {
+              "pointer": "/ok",
+              "equals": true
+            },
+            {
+              "pointer": "/childExitCode",
+              "equals": 0
+            },
+            {
+              "pointer": "/source/sha256",
+              "equals": "ea393bbc51a4eb18187eb591e8610b1d821ff537a17e193da9a2db4cd5d7607e"
+            },
+            {
+              "pointer": "/test/sha256",
+              "equals": "b948443f7b951774642562e5e0911af6965fb029c8662809c87a90bfb852990b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q04",
+      "description": "Scan ordered nonempty expressions with quote escapes and object braces",
+      "status": "passed",
+      "evidence": [
+        {
+          "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.json",
+          "sha256": "b42018cfd02c97060c3ff201e8f03e7ec301d11fadc2e4e7d02a2cd360f2844b",
+          "checks": [
+            {
+              "pointer": "/ok",
+              "equals": true
+            },
+            {
+              "pointer": "/childExitCode",
+              "equals": 0
+            },
+            {
+              "pointer": "/source/sha256",
+              "equals": "ea393bbc51a4eb18187eb591e8610b1d821ff537a17e193da9a2db4cd5d7607e"
+            },
+            {
+              "pointer": "/test/sha256",
+              "equals": "b948443f7b951774642562e5e0911af6965fb029c8662809c87a90bfb852990b"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -53,7 +53,7 @@ Track milestones:
 - Validation completed.
 - Deliverables and handoff completed.
 
-For each milestone, record its timestamp, outcome and evidence location. Report time to the first verified result and time to final verified delivery. Keep design/document verification distinct from a working application's first end-to-end result.
+For each milestone, record its timestamp, outcome and evidence location, and update `docs/handoffs/ACTIVE_HANDOFF.md` with the current state, evidence and next action before starting the next milestone. Keep one active handoff; retain historical milestone evidence in the run ledger. Report time to the first verified result and time to final verified delivery. Keep design/document verification distinct from a working application's first end-to-end result.
 
 Track failures and rework:
 

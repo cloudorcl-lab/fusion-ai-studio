@@ -1,0 +1,21 @@
+{
+  "phase": "red",
+  "label": "review-red",
+  "observedUtc": "2026-10-15T11:40:49.491Z",
+  "command": "node scripts/tests/verify-agentic-app-query-contract.cjs",
+  "childExitCode": 1,
+  "signal": null,
+  "error": null,
+  "expectedRed": true,
+  "ok": true,
+  "source": {
+    "path": "scripts/verify-agentic-app-query-contract.cjs",
+    "sha256": "a5dc569dcf1291bd9e4d000529df19d294f1723f141741e360e3100fdbbca510"
+  },
+  "test": {
+    "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+    "sha256": "b948443f7b951774642562e5e0911af6965fb029c8662809c87a90bfb852990b"
+  },
+  "output": "review-red.output.txt",
+  "scope": "Only Query preflight validator regression tests; real local CLI synthetic fixtures may run within that test."
+}

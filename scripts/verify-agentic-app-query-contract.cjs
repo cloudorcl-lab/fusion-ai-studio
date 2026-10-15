@@ -40,65 +40,218 @@ function edgeTargets(node) {
   return [...new Set(targets)];
 }
 
-function countOccurrences(value, token) {
-  return value.split(token).length - 1;
+// Keep lexical pipeline ownership: flattening these collections loses both entry
+// semantics and the distinction between an ancestor and a sibling producer.
+function bindingScope(pipeline, parent = null, container = null, label = 'root') {
+  const nodes = pipeline.pipelineNodes;
+  const scope = { nodes, parent, container, label, children: [],
+    byCode: new Map(nodes.map(node => [node.code, node])),
+    byId: new Map(nodes.map(node => [String(node.id), node])) };
+  const root = pipeline.rootNode;
+  if (root !== undefined && root !== null && String(root).trim()) {
+    scope.entries = [String(typeof root === 'object' ? root.id : root)];
+  } else {
+    const starts = nodes.filter(node => node.type === 'START');
+    const router = findQueryRouter(nodes);
+    const incoming = new Set(nodes.flatMap(edgeTargets));
+    scope.entries = starts.length ? starts.map(node => String(node.id))
+      : router ? [String(router.id)]
+        : nodes.filter(node => !incoming.has(String(node.id))).map(node => String(node.id));
+  }
+  function collect(value, owner) {
+    if (!value || typeof value !== 'object') return;
+    if (Array.isArray(value.pipelineNodes)) {
+      scope.children.push(bindingScope(value, scope, owner, `${label}/${owner.code || owner.id}`));
+      return;
+    }
+    for (const child of Object.values(value)) collect(child, owner);
+  }
+  for (const node of nodes) for (const value of Object.values(node)) collect(value, node);
+  return scope;
 }
 
-function validateBindingExpressions(nodes, label = 'root') {
-  const failures = [];
-  const byCode = new Map(nodes.map((node) => [node.code, node]));
-  const byId = new Map(nodes.map((node) => [String(node.id), node]));
-
-  function canReach(source, target) {
-    const queue = [String(source.id)];
-    const visited = new Set();
-    while (queue.length) {
-      const id = queue.shift();
-      if (visited.has(id)) continue;
-      visited.add(id);
-      if (id === String(target.id)) return true;
-      const node = byId.get(id);
-      if (node) queue.push(...edgeTargets(node));
+function expressionsAreOrdered(value) {
+  let inExpression = false;
+  let braces = 0;
+  let quote = null;
+  let escaped = false;
+  let expressionStart = 0;
+  for (let i = 0; i < value.length; i++) {
+    const char = value[i];
+    const pair = value.slice(i, i + 2);
+    if (!inExpression) {
+      if (pair === '}}') return false;
+      if (pair === '{{') { inExpression = true; expressionStart = i + 2; i++; }
+      continue;
     }
-    return false;
+    if (quote) {
+      if (escaped) escaped = false;
+      else if (char === '\\') escaped = true;
+      else if (char === quote) quote = null;
+      continue;
+    }
+    if (char === '"' || char === "'" || char === '`') { quote = char; continue; }
+    if (pair === '{{') return false;
+    if (pair === '}}' && braces === 0) {
+      if (!value.slice(expressionStart, i).trim()) return false;
+      inExpression = false;
+      i++;
+      continue;
+    }
+    if (char === '{') braces++;
+    else if (char === '}' && braces > 0) braces--;
   }
+  return !inExpression;
+}
 
-  for (const node of nodes) {
+function availabilityTargets(node) {
+  // A convergence declaration is a join, not a shortcut around the branches.
+  const branchTargets = Object.values(node.outcomes || {}).filter(target => typeof target === 'string' && target.trim()).map(target => target.trim());
+  const hasBranchJoin = ['SWITCH', 'CONDITION', 'PARALLEL'].includes(node.type) && branchTargets.length > 0;
+  return [...new Set([...branchTargets,
+    ...(!hasBranchJoin && node.convergenceTargetId ? [String(node.convergenceTargetId)] : []),
+    ...[node.metadata?.loopBackNodeId, node.metadata?.errorNodeId].filter(target => typeof target === 'string' && target.trim()).map(target => target.trim())])];
+}
+
+function reachesBefore(scope, entries, target, stop) {
+  const pending = [...entries];
+  const seen = new Set();
+  while (pending.length) {
+    const id = pending.pop();
+    if (id === stop || seen.has(id)) continue;
+    if (id === target) return true;
+    seen.add(id);
+    const node = scope.byId.get(id);
+    if (node) pending.push(...availabilityTargets(node));
+  }
+  return false;
+}
+
+function outputAvailability(scope, producer, consumer, entries = scope.entries, activeParallels = new Set()) {
+  const target = String(consumer.id);
+  const pending = entries.map(id => ({ id, available: false }));
+  const seen = new Set();
+  const result = { reached: false, unavailable: false, escaped: false };
+  while (pending.length) {
+    const { id, available } = pending.pop();
+    const key = `${id}:${available}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    if (id === target) {
+      result.reached = true;
+      if (!available) result.unavailable = true;
+      continue;
+    }
+    const node = scope.byId.get(id);
+    if (!node) { result.escaped = true; continue; }
+    const branches = Object.values(node.outcomes || {}).map(String);
+    const join = String(node.convergenceTargetId || '');
+    if (node.type === 'PARALLEL' && branches.length >= 2 && scope.byId.has(join) && !activeParallels.has(id)
+      && !reachesBefore(scope, branches, target, join)) {
+      const nested = new Set([...activeParallels, id]);
+      const summaries = branches.map(entry => outputAvailability(scope, producer, scope.byId.get(join), [entry], nested));
+      if (summaries.every(summary => summary.reached && !summary.escaped)) {
+        // All branches complete before fan-in; any guaranteed branch output is
+        // then available. A conditional producer within a branch is insufficient.
+        pending.push({ id: join, available: available || node === producer || summaries.some(summary => !summary.unavailable) });
+        const error = node.metadata?.errorNodeId;
+        if (error) pending.push({ id: String(error), available: node === producer ? false : available });
+        const loopBack = node.metadata?.loopBackNodeId;
+        if (loopBack) pending.push({ id: String(loopBack), available: node === producer ? false : available });
+        continue;
+      }
+    }
+    const targets = availabilityTargets(node);
+    if (!targets.length) result.escaped = true;
+    for (const next of targets) {
+      const failed = next === String(node.metadata?.errorNodeId || '');
+      pending.push({ id: next, available: node === producer ? !failed && node.type !== 'PARALLEL' : available });
+    }
+  }
+  return result;
+}
+
+function resolveProducer(scope, parts, consumer) {
+  let owner = scope;
+  let boundary = consumer;
+  while (owner && !owner.byCode.has(parts[0])) {
+    boundary = owner.container;
+    owner = owner.parent;
+  }
+  if (!owner) return null;
+  let producer = owner.byCode.get(parts[0]);
+  let index = 1;
+  // Within a loop body, its item/index exist while the container is running;
+  // the container's completed $output does not yet exist.
+  if (producer === boundary && owner !== scope && producer.type === 'LOOP'
+    && (parts[index] === '$currentItem' || parts[index] === '$currentItemIndex')) return { currentItem: true };
+  while (parts[index] && !parts[index].startsWith('$')) {
+    const child = owner.children.find(candidate => candidate.container === producer && candidate.byCode.has(parts[index]));
+    if (!child) return null;
+    producer = child.byCode.get(parts[index++]);
+    if (child === scope) { owner = child; boundary = consumer; }
+    else if (isScopeAncestor(child, scope)) {
+      owner = child;
+      let descendant = scope;
+      while (descendant.parent !== child) descendant = descendant.parent;
+      boundary = descendant.container;
+    } else return null; // An inner iteration's output is not a root-scope producer.
+  }
+  if (producer === boundary && owner !== scope && producer.type === 'LOOP'
+    && (parts[index] === '$currentItem' || parts[index] === '$currentItemIndex')) return { currentItem: true };
+  return { scope: owner, producer, consumer: boundary };
+}
+
+function isScopeAncestor(candidate, scope) {
+  for (let current = scope.parent; current; current = current.parent) if (current === candidate) return true;
+  return false;
+}
+
+function validateBindingExpressions(nodes, label = 'root', pipeline = { pipelineNodes: nodes }) {
+  const failures = [];
+  const root = bindingScope(pipeline, null, null, label);
+  function validateScope(scope) {
+  for (const node of scope.nodes) {
     for (const input of node.inputs || []) {
       if (typeof input.value !== 'string') continue;
       const value = input.value;
-      const opens = countOccurrences(value, '{{');
-      const closes = countOccurrences(value, '}}');
-      if (opens !== closes) {
+      if (!expressionsAreOrdered(value)) {
         failures.push({
           code: 'WORKFLOW_BINDING_EXPRESSION_MALFORMED',
-          message: `${label}: ${node.code || node.id}.${input.name} has an incomplete or unbalanced binding expression.`
+          message: `${scope.label}: ${node.code || node.id}.${input.name} has an incomplete or unbalanced binding expression.`
         });
         continue;
       }
 
-      const referencedCodes = [...value.matchAll(/\$nodes\.([A-Za-z0-9_]+)/g)].map((match) => match[1]);
-      for (const referencedCode of new Set(referencedCodes)) {
-        const producer = byCode.get(referencedCode);
-        if (!producer) {
+      const references = [...value.matchAll(/\$nodes\.([A-Za-z0-9_]+(?:\.[A-Za-z0-9_$]+)*)/g)].map(match => match[1]);
+      for (const reference of new Set(references)) {
+        const resolved = resolveProducer(scope, reference.split('.'), node);
+        if (!resolved) {
           failures.push({
             code: 'WORKFLOW_BINDING_PRODUCER_MISSING',
-            message: `${label}: ${node.code || node.id}.${input.name} references missing producer ${referencedCode}.`
+            message: `${scope.label}: ${node.code || node.id}.${input.name} references missing producer ${reference}.`
           });
-        } else if (!canReach(producer, node)) {
+        } else if (!resolved.currentItem) {
+          const { scope: producerScope, producer, consumer } = resolved;
+          const availability = outputAvailability(producerScope, producer, consumer);
+          if (producer !== consumer && availability.reached && !availability.unavailable) continue;
+          const reachable = reachesBefore(producerScope, [String(producer.id)], String(consumer.id));
           failures.push({
-            code: 'WORKFLOW_BINDING_PRODUCER_UNREACHABLE',
-            message: `${label}: ${node.code || node.id}.${input.name} references ${referencedCode}, which cannot reach the consumer.`
+            code: reachable ? 'WORKFLOW_BINDING_PRODUCER_NOT_DOMINATING' : 'WORKFLOW_BINDING_PRODUCER_UNREACHABLE',
+            message: `${scope.label}: ${node.code || node.id}.${input.name} references ${reference}, whose completed output is not available on every incoming route to the consumer.`
           });
         }
       }
     }
   }
+  for (const child of scope.children) validateScope(child);
+  }
+  validateScope(root);
   return failures;
 }
 
 function validateBoFunctionBindings(workflow, businessObjects, label = 'root') {
-  const nodes = workflow?.specification?.dataPipeline?.pipelineNodes || [];
+  const collections = pipelineCollections(workflow);
   const objectTools = new Map();
   for (const businessObject of businessObjects) {
     objectTools.set(businessObject.objectCode, new Map(
@@ -107,11 +260,21 @@ function validateBoFunctionBindings(workflow, businessObjects, label = 'root') {
   }
 
   const failures = [];
-  for (const node of nodes.filter((candidate) => candidate.type === 'BO_FUNCTION')) {
+  for (const nodes of collections) for (const node of nodes.filter((candidate) => candidate.type === 'BO_FUNCTION')) {
     const objectCode = node.metadata?.businessObjectCode;
     const functionName = node.metadata?.functionName;
-    const tool = objectTools.get(objectCode)?.get(functionName);
-    if (!tool) continue;
+    const tools = objectTools.get(objectCode);
+    if (!tools) {
+      failures.push({ code: 'BO_OBJECT_UNRESOLVED',
+        message: `${label}: ${node.code || node.id} references unresolved local business object ${objectCode || '<blank>'} (${functionName || '<blank>'}).` });
+      continue;
+    }
+    const tool = tools.get(functionName);
+    if (!tool) {
+      failures.push({ code: 'BO_FUNCTION_UNRESOLVED',
+        message: `${label}: ${node.code || node.id} references unresolved function ${objectCode}.${functionName || '<blank>'}.` });
+      continue;
+    }
     const pathOnly = String(tool.resourcePath || '').split('?', 1)[0];
     const pathTokens = [...pathOnly.matchAll(/\{([^{}]+)\}/g)].map((match) => match[1]);
     const inputs = new Map((node.inputs || []).map((input) => [input.name, input]));
@@ -191,7 +354,7 @@ function validateWorkflow(workflow) {
   }
   const failures = [
     ...validateQueryPipeline(rootNodes),
-    ...validateBindingExpressions(rootNodes),
+    ...validateBindingExpressions(rootNodes, 'root', workflow.specification.dataPipeline),
   ];
   const queryRouter = findQueryRouter(rootNodes);
   if (queryRouter) {
@@ -248,8 +411,8 @@ function main(argv) {
   console.log('Agentic App Query contract: PASS');
   console.log(`- Workflow: ${workflow.workflowCode || path.basename(file)}`);
   console.log('- Query route has no reachable HUMAN or WAIT node.');
-  console.log('- Workflow binding expressions are balanced and reference reachable producers.');
-  console.log('- Local BO path tokens have nonblank workflow inputs.');
+  console.log('- Workflow binding expressions are ordered and reference available producers in their pipeline scopes.');
+  console.log('- Referenced local BO functions resolve and their path tokens have nonblank workflow inputs.');
   console.log('- Referenced ADF search GET functions declare a compatible REST framework header.');
   return 0;
 }

@@ -1,0 +1,21 @@
+{
+  "phase": "green",
+  "label": "focused-green",
+  "observedUtc": "2026-10-15T11:38:15.446Z",
+  "command": "node scripts/tests/verify-agentic-app-query-contract.cjs",
+  "childExitCode": 1,
+  "signal": null,
+  "error": null,
+  "expectedRed": false,
+  "ok": false,
+  "source": {
+    "path": "scripts/verify-agentic-app-query-contract.cjs",
+    "sha256": "c667950ea225de4e07f1350aecfefd73097bbdf73855e8fa639e57da59c4186e"
+  },
+  "test": {
+    "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+    "sha256": "8aa172842b63024dceadd175d2e8cc5af1a58196d5f6132bb6c70262bd74d695"
+  },
+  "output": "focused-green.output.txt",
+  "scope": "Only Query preflight validator regression tests; real local CLI synthetic fixtures may run within that test."
+}

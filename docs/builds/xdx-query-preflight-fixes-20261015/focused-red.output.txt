@@ -1,0 +1,646 @@
+Agentic App Query validator tests: PASS
+✖ producer output must exist on every incoming consumer route (1.6304ms)
+✖ a disconnected producer cannot qualify through a path to the consumer (0.2298ms)
+✖ an upstream error path cannot bypass the required producer (0.1656ms)
+✖ a failed producer cannot supply its success output to its error handler (0.1803ms)
+✖ self references cannot use output from an earlier loop iteration as current output (0.1822ms)
+✔ a producer shared before both consumer branches remains valid (0.2394ms)
+✖ root BO dependency fails closed when object cannot be resolved (0.1987ms)
+✖ root BO dependency fails closed when function cannot be resolved (0.1447ms)
+✖ nested BO dependency fails closed when object cannot be resolved (1.0482ms)
+✖ nested BO dependency fails closed when function cannot be resolved (0.2412ms)
+✖ nested BO path token rejects missing input (0.2652ms)
+✖ nested BO path token rejects "" (0.1276ms)
+✖ nested BO path token rejects "  " (0.1044ms)
+✖ nested BO path token rejects null (0.0944ms)
+✖ nested malformed binding is checked by the workflow entry point (0.2747ms)
+✖ nested binding rejects a stale missing producer (0.166ms)
+✖ nested binding rejects a parent producer bypassed before the container (0.1709ms)
+✖ nested binding rejects local producer bypass (0.1783ms)
+✔ nested binding accepts available PREPARE_PARENT output (0.1673ms)
+✔ nested binding accepts available PREPARE_LOCAL output (0.1057ms)
+✔ nested producer names resolve to the nearest scope (0.1249ms)
+✖ an unavailable local shadow cannot fall back to an available ancestor (0.185ms)
+✖ a cycle cannot make a producer that runs after the consumer available (0.1701ms)
+✔ parallel convergence may consume an output guaranteed by a completed branch (0.1624ms)
+✖ parallel convergence rejects a producer skipped inside its own branch (0.1598ms)
+✖ interpolation rejects malformed delimiter order or content: "}} text {{" (0.1777ms)
+✖ interpolation rejects malformed delimiter order or content: "{{ outer {{ inner }} end }}" (0.0988ms)
+✖ interpolation rejects malformed delimiter order or content: "{{}}" (0.1061ms)
+✖ interpolation rejects malformed delimiter order or content: "{{  }}" (0.0829ms)
+✖ interpolation rejects malformed delimiter order or content: "prefix }} middle {{ 1 }} suffix {{" (0.0831ms)
+✔ interpolation preserves valid expressions: "prefix {{ 1 }} middle {{ 2 }} suffix" (0.0859ms)
+✔ interpolation preserves valid expressions: "{{ ({ parent: { id: 42 } }) }}" (0.0507ms)
+✖ interpolation preserves valid expressions: "{{ ({parent:{id:42}}) }}" (0.8311ms)
+✔ interpolation preserves valid expressions: "{{ \"literal {{ and }}\" }}" (0.066ms)
+✖ real CLI rejects a BO reference when the local BO directory is absent (90.7759ms)
+✖ real CLI rejects an unresolved nested BO function (93.1187ms)
+✖ real CLI rejects a nested missing path token (92.5804ms)
+✔ real CLI accepts resolved nested BO bindings without requiring query-only parameters (114.351ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 9
+ℹ fail 29
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 408.4337
+
+✖ failing tests:
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:115:1
+✖ producer output must exist on every incoming consumer route (1.6304ms)
+  AssertionError [ERR_ASSERTION]: []
+      at bindingFailure (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:111:10)
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:119:3)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:122:1
+✖ a disconnected producer cannot qualify through a path to the consumer (0.2298ms)
+  AssertionError [ERR_ASSERTION]: []
+      at bindingFailure (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:111:10)
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:125:3)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:128:1
+✖ an upstream error path cannot bypass the required producer (0.1656ms)
+  AssertionError [ERR_ASSERTION]: []
+      at bindingFailure (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:111:10)
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:131:3)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:134:1
+✖ a failed producer cannot supply its success output to its error handler (0.1803ms)
+  AssertionError [ERR_ASSERTION]: []
+      at bindingFailure (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:111:10)
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:138:3)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:141:1
+✖ self references cannot use output from an earlier loop iteration as current output (0.1822ms)
+  AssertionError [ERR_ASSERTION]: []
+      at bindingFailure (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:111:10)
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:144:3)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:177:5
+✖ root BO dependency fails closed when object cannot be resolved (0.1987ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:183:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:177:5
+✖ root BO dependency fails closed when function cannot be resolved (0.1447ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:183:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:177:5
+✖ nested BO dependency fails closed when object cannot be resolved (1.0482ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:183:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:177:5
+✖ nested BO dependency fails closed when function cannot be resolved (0.2412ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:183:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:190:3
+✖ nested BO path token rejects missing input (0.2652ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:195:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:190:3
+✖ nested BO path token rejects "" (0.1276ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:195:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:190:3
+✖ nested BO path token rejects "  " (0.1044ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:195:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:190:3
+✖ nested BO path token rejects null (0.0944ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:195:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:200:1
+✖ nested malformed binding is checked by the workflow entry point (0.2747ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:202:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:206:1
+✖ nested binding rejects a stale missing producer (0.166ms)
+  AssertionError [ERR_ASSERTION]: []
+      at bindingFailure (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:111:10)
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:207:3)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:211:1
+✖ nested binding rejects a parent producer bypassed before the container (0.1709ms)
+  AssertionError [ERR_ASSERTION]: []
+      at bindingFailure (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:111:10)
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:214:3)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:217:1
+✖ nested binding rejects local producer bypass (0.1783ms)
+  AssertionError [ERR_ASSERTION]: []
+      at bindingFailure (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:111:10)
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:221:3)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:240:1
+✖ an unavailable local shadow cannot fall back to an available ancestor (0.185ms)
+  AssertionError [ERR_ASSERTION]: []
+      at bindingFailure (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:111:10)
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:245:3)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:248:1
+✖ a cycle cannot make a producer that runs after the consumer available (0.1701ms)
+  AssertionError [ERR_ASSERTION]: []
+      at bindingFailure (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:111:10)
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:252:3)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:270:1
+✖ parallel convergence rejects a producer skipped inside its own branch (0.1598ms)
+  AssertionError [ERR_ASSERTION]: []
+      at bindingFailure (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:111:10)
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:271:3)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:275:3
+✖ interpolation rejects malformed delimiter order or content: "}} text {{" (0.1777ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:277:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:275:3
+✖ interpolation rejects malformed delimiter order or content: "{{ outer {{ inner }} end }}" (0.0988ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:277:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:275:3
+✖ interpolation rejects malformed delimiter order or content: "{{}}" (0.1061ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:277:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:275:3
+✖ interpolation rejects malformed delimiter order or content: "{{  }}" (0.0829ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:277:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:275:3
+✖ interpolation rejects malformed delimiter order or content: "prefix }} middle {{ 1 }} suffix {{" (0.0831ms)
+  AssertionError [ERR_ASSERTION]: []
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:277:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:287:3
+✖ interpolation preserves valid expressions: "{{ ({parent:{id:42}}) }}" (0.8311ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   {
+  +     code: 'WORKFLOW_BINDING_EXPRESSION_MALFORMED',
+  +     message: 'root: LIST_CHILDREN.parents_Id has an incomplete or unbalanced binding expression.'
+  +   }
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:288:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [Array],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:309:1
+✖ real CLI rejects a BO reference when the local BO directory is absent (90.7759ms)
+  AssertionError [ERR_ASSERTION]: Agentic App Query contract: PASS
+  - Workflow: xdx_query_fixture.wf
+  - Query route has no reachable HUMAN or WAIT node.
+  - Workflow binding expressions are balanced and reference reachable producers.
+  - Local BO path tokens have nonblank workflow inputs.
+  - Referenced ADF search GET functions declare a compatible REST framework header.
+  
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:311:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:316:1
+✖ real CLI rejects an unresolved nested BO function (93.1187ms)
+  AssertionError [ERR_ASSERTION]: Agentic App Query contract: PASS
+  - Workflow: xdx_query_fixture.wf
+  - Query route has no reachable HUMAN or WAIT node.
+  - Workflow binding expressions are balanced and reference reachable producers.
+  - Local BO path tokens have nonblank workflow inputs.
+  - Referenced ADF search GET functions declare a compatible REST framework header.
+  
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:320:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at scripts\tests\verify-agentic-app-query-contract.cjs:324:1
+✖ real CLI rejects a nested missing path token (92.5804ms)
+  AssertionError [ERR_ASSERTION]: Agentic App Query contract: PASS
+  - Workflow: xdx_query_fixture.wf
+  - Query route has no reachable HUMAN or WAIT node.
+  - Workflow binding expressions are balanced and reference reachable producers.
+  - Local BO path tokens have nonblank workflow inputs.
+  - Referenced ADF search GET functions declare a compatible REST framework header.
+  
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (C:\Users\dasu\Documents\GitHub\fusion-ai-studio-1\scripts\tests\verify-agentic-app-query-contract.cjs:328:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

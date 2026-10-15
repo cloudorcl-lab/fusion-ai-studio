@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-query-preflight-fixes-20261015",
+  "scopes": [
+    "validator",
+    "tests",
+    "review"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-query-preflight-fixes-20261015/commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "F01",
+      "observedUtc": "2026-10-15T11:31:57.507Z",
+      "scope": "validator",
+      "blocks": [
+        "validator"
+      ],
+      "status": "closed",
+      "symptom": "Producer reachability permits a bypass route",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-query-preflight-fixes-20261015/baseline-diagnostics.json",
+          "sha256": "6157c9bcbe53a7f76ba4283108694eb9775f7fed3c5f88b5c084362f774d1964"
+        },
+        {
+          "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-red.output.txt",
+          "sha256": "edc67e380de3a00eabdb2bddff22d4fe8902fafddca6e0cdc2428d37d3f3ddc6"
+        }
+      ],
+      "evidenceGap": "Original occurrence recorded by earlier local analysis; recording time here is task intake.",
+      "repairObservation": "Independent review found omitted non-control convergence edge and PARALLEL summary loopback.45-case review RED observed exactly2 expected failures/43passes before patch. Minimal fix restores both incoming edges while preserving documented control joins.",
+      "cause": "Any-path producer reachability and incomplete special-edge handling did not establish completed output on all routes",
+      "correction": "Use pipeline-entry completed-output state traversal and parallel summaries preserving special edges",
+      "prevention": {
+        "kind": "regression",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Existing REST binding preflight owner refined; focused actual-export and local CLI positive/negative regressions retained in packaged validator test owner"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "node scripts/tests/verify-agentic-app-query-contract.cjs",
+        "reviewer": "Independent preflight_review plus parent source/evidence reconciliation",
+        "sources": [
+          {
+            "path": "scripts/verify-agentic-app-query-contract.cjs",
+            "sha256": "ea393bbc51a4eb18187eb591e8610b1d821ff537a17e193da9a2db4cd5d7607e"
+          },
+          {
+            "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+            "sha256": "b948443f7b951774642562e5e0911af6965fb029c8662809c87a90bfb852990b"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.json",
+            "sha256": "b42018cfd02c97060c3ff201e8f03e7ec301d11fadc2e4e7d02a2cd360f2844b"
+          },
+          {
+            "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.output.txt",
+            "sha256": "ee844af2d9a0256fffe7eb75a07de968b550a6b8e2fea5ec1ef2d93dedb5d5fb"
+          },
+          {
+            "path": "docs/builds/xdx-query-preflight-fixes-20261015/review.md",
+            "sha256": "19b9a9f2c2629175d97d961e2b99a5ea9c65a151eb2b5edb82debefcb5058cc1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F02",
+      "observedUtc": "2026-10-15T11:31:57.507Z",
+      "scope": "validator",
+      "blocks": [
+        "validator"
+      ],
+      "status": "closed",
+      "symptom": "Missing BO/function silently skips contract validation",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-query-preflight-fixes-20261015/baseline-diagnostics.json",
+          "sha256": "6157c9bcbe53a7f76ba4283108694eb9775f7fed3c5f88b5c084362f774d1964"
+        }
+      ],
+      "evidenceGap": "Original occurrence recorded by earlier local analysis; recording time here is task intake.",
+      "cause": "Unresolved definitions were silently skipped",
+      "correction": "Fail closed with BO_OBJECT_UNRESOLVED and BO_FUNCTION_UNRESOLVED",
+      "prevention": {
+        "kind": "regression",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Existing REST binding preflight owner refined; focused actual-export and local CLI positive/negative regressions retained in packaged validator test owner"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "node scripts/tests/verify-agentic-app-query-contract.cjs",
+        "reviewer": "Independent preflight_review plus parent source/evidence reconciliation",
+        "sources": [
+          {
+            "path": "scripts/verify-agentic-app-query-contract.cjs",
+            "sha256": "ea393bbc51a4eb18187eb591e8610b1d821ff537a17e193da9a2db4cd5d7607e"
+          },
+          {
+            "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+            "sha256": "b948443f7b951774642562e5e0911af6965fb029c8662809c87a90bfb852990b"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.json",
+            "sha256": "b42018cfd02c97060c3ff201e8f03e7ec301d11fadc2e4e7d02a2cd360f2844b"
+          },
+          {
+            "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.output.txt",
+            "sha256": "ee844af2d9a0256fffe7eb75a07de968b550a6b8e2fea5ec1ef2d93dedb5d5fb"
+          },
+          {
+            "path": "docs/builds/xdx-query-preflight-fixes-20261015/review.md",
+            "sha256": "19b9a9f2c2629175d97d961e2b99a5ea9c65a151eb2b5edb82debefcb5058cc1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F03",
+      "observedUtc": "2026-10-15T11:31:57.507Z",
+      "scope": "validator",
+      "blocks": [
+        "validator"
+      ],
+      "status": "closed",
+      "symptom": "Nested BO path-token bindings are skipped",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-query-preflight-fixes-20261015/baseline-diagnostics.json",
+          "sha256": "6157c9bcbe53a7f76ba4283108694eb9775f7fed3c5f88b5c084362f774d1964"
+        },
+        {
+          "path": "docs/builds/xdx-query-preflight-fixes-20261015/focused-green.output.txt",
+          "sha256": "212b786d149e06fcee400634d7927efb22fb297c4e37003b69b0ab6d935775ab"
+        }
+      ],
+      "evidenceGap": "Original occurrence recorded by earlier local analysis; recording time here is task intake.",
+      "commandRunIds": [
+        "6e431284-590d-4ca3-8e09-d25aaaac1b8a"
+      ],
+      "repairObservation": "First GREEN:42/43 pass. Validator correctly rejects unavailable qualified inner producer but diagnostic identifies only outer container; regression requires full producer identity. Correct message to preserve qualified path before rerun.",
+      "cause": "BO bindings and expression checks omitted nested lexical pipelines",
+      "correction": "Recurse nested BO inputs and scope-aware expression producers with shadowing/ancestor rules",
+      "prevention": {
+        "kind": "regression",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Existing REST binding preflight owner refined; focused actual-export and local CLI positive/negative regressions retained in packaged validator test owner"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "node scripts/tests/verify-agentic-app-query-contract.cjs",
+        "reviewer": "Independent preflight_review plus parent source/evidence reconciliation",
+        "sources": [
+          {
+            "path": "scripts/verify-agentic-app-query-contract.cjs",
+            "sha256": "ea393bbc51a4eb18187eb591e8610b1d821ff537a17e193da9a2db4cd5d7607e"
+          },
+          {
+            "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+            "sha256": "b948443f7b951774642562e5e0911af6965fb029c8662809c87a90bfb852990b"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.json",
+            "sha256": "b42018cfd02c97060c3ff201e8f03e7ec301d11fadc2e4e7d02a2cd360f2844b"
+          },
+          {
+            "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.output.txt",
+            "sha256": "ee844af2d9a0256fffe7eb75a07de968b550a6b8e2fea5ec1ef2d93dedb5d5fb"
+          },
+          {
+            "path": "docs/builds/xdx-query-preflight-fixes-20261015/review.md",
+            "sha256": "19b9a9f2c2629175d97d961e2b99a5ea9c65a151eb2b5edb82debefcb5058cc1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F04",
+      "observedUtc": "2026-10-15T11:31:57.507Z",
+      "scope": "validator",
+      "blocks": [
+        "validator"
+      ],
+      "status": "closed",
+      "symptom": "Equal delimiter counts permit malformed order",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-query-preflight-fixes-20261015/baseline-diagnostics.json",
+          "sha256": "6157c9bcbe53a7f76ba4283108694eb9775f7fed3c5f88b5c084362f774d1964"
+        }
+      ],
+      "evidenceGap": "Original occurrence recorded by earlier local analysis; recording time here is task intake.",
+      "cause": "Equal delimiter counts ignored ordering, empty expressions and object/quoted braces",
+      "correction": "Scan ordered nonempty expressions with quote escapes and object braces",
+      "prevention": {
+        "kind": "regression",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Existing REST binding preflight owner refined; focused actual-export and local CLI positive/negative regressions retained in packaged validator test owner"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "node scripts/tests/verify-agentic-app-query-contract.cjs",
+        "reviewer": "Independent preflight_review plus parent source/evidence reconciliation",
+        "sources": [
+          {
+            "path": "scripts/verify-agentic-app-query-contract.cjs",
+            "sha256": "ea393bbc51a4eb18187eb591e8610b1d821ff537a17e193da9a2db4cd5d7607e"
+          },
+          {
+            "path": "scripts/tests/verify-agentic-app-query-contract.cjs",
+            "sha256": "b948443f7b951774642562e5e0911af6965fb029c8662809c87a90bfb852990b"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.json",
+            "sha256": "b42018cfd02c97060c3ff201e8f03e7ec301d11fadc2e4e7d02a2cd360f2844b"
+          },
+          {
+            "path": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.output.txt",
+            "sha256": "ee844af2d9a0256fffe7eb75a07de968b550a6b8e2fea5ec1ef2d93dedb5d5fb"
+          },
+          {
+            "path": "docs/builds/xdx-query-preflight-fixes-20261015/review.md",
+            "sha256": "19b9a9f2c2629175d97d961e2b99a5ea9c65a151eb2b5edb82debefcb5058cc1"
+          }
+        ]
+      }
+    }
+  ]
+}

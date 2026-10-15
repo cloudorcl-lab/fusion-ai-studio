@@ -1,6 +1,16 @@
 # Active handoff
 
-Current state: user-supplied build-standard integration and supplier design revision 2 on branch TestingWFBuildTools. User authorized reviewing assets, updating AGENTS.md/build standard and adjusting the design. Written-spec approval and implementation-plan/execution selection remain the next product-build gates. No product artifact, tenant record or remote ref changed.
+Current task: xdx-query-preflight-fixes-20261015, branch TestingWFBuildTools; starting HEAD 179d0061f275755af2384dd4f6e4699afebb7451. User explicitly authorized fixing four Query preflight gaps using sub-agents and TEST ONLY the fixes, and required updating this handoff at every milestone.
+
+Milestone: **Delivery verified**, observed 2026-10-15T11:45:07.078Z. Four fixes complete:45/45 focused cases, independent review approval, hash-bound evidence and all delegated/root Closeout gates PASS. Active handoff updated at every recorded milestone. No broader tests, tenant calls or push. Scoped local commit follows this delivery checkpoint; no further repair remains in authorized scope.
+
+Scope: producer availability on every incoming route; unresolved BO/function dependencies; nested BO path inputs and bindings; expression delimiter order. One production-file writer, separate focused-test writer, independent reviewer. No app build, tenant calls, runtime tests, broad suites, deployment or push. Existing env/workspace edits, assets and prior analysis preserved.
+
+Run owners: [build ledger](../builds/xdx-query-preflight-fixes-20261015/build-ledger.json), [intake/learning](../builds/xdx-query-preflight-fixes-20261015/intake-and-learning-register.md), [failure ledger](../builds/xdx-query-preflight-fixes-20261015/failure-ledger.json), [time-tracker.md](../builds/xdx-query-preflight-fixes-20261015/time-tracker.md). Milestone snapshots in this run preserve handoff history; this file remains the only active handoff.
+
+Prior analysis: [report](../builds/xdx-codebase-analysis-20261015/analysis.md). Its results are historical and do not prove the fixes.
+
+Product context retained: user-supplied build-standard integration and supplier design revision 2. Written-spec approval and implementation-plan/execution selection remain the next product-build gates. The analysis does not authorize implementation or change the design's acceptance status.
 
 Current revision record: [build ledger](../builds/xdx-build-standard-design-update-20261014/build-ledger.json), [self-review](../builds/xdx-build-standard-design-update-20261014/self-review.md), [failure ledger](../builds/xdx-build-standard-design-update-20261014/failure-ledger.json), [time-tracker.md](../builds/xdx-build-standard-design-update-20261014/time-tracker.md). Task identity: xdx-build-standard-design-update-20261014. Root BUILD_STANDARD.md now owns general execution/measurement; the canonical playbook remains AI Studio lifecycle owner. Primary timing categories are exclusive; nested command/activity totals are diagnostic. Current design has upfront prerequisites, a complete first-slice milestone, run-ledger/milestone/check/usage accounting and corrected deterministic control-command routing.
 

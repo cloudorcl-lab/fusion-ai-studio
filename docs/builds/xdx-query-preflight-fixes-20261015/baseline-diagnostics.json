@@ -1,0 +1,2503 @@
+{
+  "trackedFiles": 543,
+  "counts": {
+    ".md": 249,
+    ".yaml": 2,
+    ".js": 2,
+    "": 1,
+    ".txt": 4,
+    ".ps1": 22,
+    ".json": 27,
+    ".app": 4,
+    ".bo": 70,
+    ".wf": 107,
+    ".dl": 1,
+    ".tool": 1,
+    ".zip": 2,
+    ".jsonl": 3,
+    ".cjs": 44,
+    ".properties": 1,
+    ".vsix": 1,
+    ".sha256": 1,
+    ".code-workspace": 1
+  },
+  "domains": {
+    "fin/ledger-insights": 25,
+    "hcm/absences": 5,
+    "hcm/benefits": 4,
+    "hcm/career-development": 6,
+    "hcm/compensation": 5,
+    "hcm/employment": 16,
+    "hcm/human-resources": 45,
+    "hcm/journeys": 14,
+    "hcm/learning": 9,
+    "hcm/recruiting": 4,
+    "hcm/succession-management": 29,
+    "hcm/talent-management": 4,
+    "hcm/time-and-labor": 10,
+    "prc/purchasing": 12,
+    "scm/cost-management": 6,
+    "scm/inventory": 11,
+    "scm/maintenance": 14
+  },
+  "artifactCount": 183,
+  "parseErrors": [],
+  "largestWorkflows": [
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_search.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_SEARCH",
+      "nodeCount": 80,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "CONDITION",
+        "SET_FIELDS",
+        "SWITCH",
+        "BO_FUNCTION",
+        "RETURN",
+        "LLM",
+        "WHILE",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/employment/workflows/xx_top_leavers_by_reason.wf",
+      "ext": ".wf",
+      "code": "XX_TOP_LEAVERS_BY_REASON",
+      "nodeCount": 74,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "SWITCH",
+        "CONDITION",
+        "RETURN",
+        "LLM",
+        "TOOL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_succession_overview_advisor.wf",
+      "ext": ".wf",
+      "code": "XX_SUCCESSION_OVERVIEW_ADVISOR",
+      "nodeCount": 71,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SWITCH",
+        "WORKFLOW",
+        "CODE",
+        "LLM",
+        "CONDITION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_clearing_account_workflow.wf",
+      "ext": ".wf",
+      "code": "XX_FIN_GL_CLEARING_ACCOUNT_WORKFLOW",
+      "nodeCount": 66,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "WORKFLOW",
+        "SET_FIELDS",
+        "SWITCH",
+        "BO_FUNCTION",
+        "LLM",
+        "CONDITION",
+        "PARALLEL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_controls_compliance_workflow.wf",
+      "ext": ".wf",
+      "code": "XX_FIN_GL_CONTROLS_COMPLIANCE_WORKFLOW",
+      "nodeCount": 57,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "WORKFLOW",
+        "SET_FIELDS",
+        "SWITCH",
+        "BO_FUNCTION",
+        "LLM",
+        "CONDITION",
+        "PARALLEL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/employment/workflows/xx_top_leavers_by_job.wf",
+      "ext": ".wf",
+      "code": "XX_TOP_LEAVERS_BY_JOB",
+      "nodeCount": 48,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "SWITCH",
+        "CONDITION",
+        "LLM",
+        "RETURN",
+        "TOOL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/employment/workflows/xx_top_leavers_by_location.wf",
+      "ext": ".wf",
+      "code": "XX_TOP_LEAVERS_BY_LOCATION",
+      "nodeCount": 47,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "CONDITION",
+        "RETURN",
+        "SWITCH",
+        "LLM",
+        "TOOL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/employment/workflows/xx_top_leavers_by_tenure.wf",
+      "ext": ".wf",
+      "code": "XX_TOP_LEAVERS_BY_TENURE",
+      "nodeCount": 43,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "SWITCH",
+        "CONDITION",
+        "LLM",
+        "RETURN",
+        "TOOL",
+        "END"
+      ]
+    }
+  ],
+  "cliBytes": 2883076,
+  "findings": {
+    "producerBypass": {
+      "description": "Consumer has an incoming route bypassing referenced producer",
+      "failures": []
+    },
+    "missingBusinessObject": {
+      "description": "Referenced BO cannot be resolved locally",
+      "failures": []
+    },
+    "nestedMissingPathInput": {
+      "description": "BO inside nested pipeline omits required parentId",
+      "failures": []
+    },
+    "malformedBalancedExpression": {
+      "description": "Closing delimiter precedes opening delimiter",
+      "failures": []
+    }
+  },
+  "artifacts": [
+    {
+      "file": "aiapps/fin/ledger-insights/apps/xx_fin_gl_ledger_insights_workspace.app",
+      "ext": ".app",
+      "code": "XX_FIN_GL_LEDGER_INSIGHTS_WORKSPACE",
+      "nodeCount": 0,
+      "functionCount": 0,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_accountingexceptions_lookup.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_ACCOUNTINGEXCEPTIONS_LOOKUP",
+      "nodeCount": 0,
+      "functionCount": 3,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_accountingexceptionsessjobs.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_ACCOUNTINGEXCEPTIONSESSJOBS",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_chart_of_accounts_details.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_CHART_OF_ACCOUNTS_DETAILS",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_execute_boss_query_helper.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_EXECUTE_BOSS_QUERY_HELPER",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_fetch_accounting_periods.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_FETCH_ACCOUNTING_PERIODS",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_general_standard_lookups.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_GENERAL_STANDARD_LOOKUPS",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_insight_review_actions.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_INSIGHT_REVIEW_ACTIONS",
+      "nodeCount": 0,
+      "functionCount": 3,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_insights_list.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_INSIGHTS_LIST",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_ledger_lookup.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_LEDGER_LOOKUP",
+      "nodeCount": 0,
+      "functionCount": 6,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_ledger_open_periods.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_LEDGER_OPEN_PERIODS",
+      "nodeCount": 0,
+      "functionCount": 3,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_ledger_preference_settings.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_LEDGER_PREFERENCE_SETTINGS",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_period_expression_resolver.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_PERIOD_EXPRESSION_RESOLVER",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/businessObjects/ora_fin_gl_period_status.bo",
+      "ext": ".bo",
+      "code": "ORA_FIN_GL_XX_PERIOD_STATUS",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_accounting_exceptions_workflow.wf",
+      "ext": ".wf",
+      "code": "XX_FIN_GL_ACCOUNTING_EXCEPTIONS_WORKFLOW",
+      "nodeCount": 35,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "LLM",
+        "BO_FUNCTION",
+        "CONDITION",
+        "WORKFLOW",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_clearing_account_workflow.wf",
+      "ext": ".wf",
+      "code": "XX_FIN_GL_CLEARING_ACCOUNT_WORKFLOW",
+      "nodeCount": 66,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "WORKFLOW",
+        "SET_FIELDS",
+        "SWITCH",
+        "BO_FUNCTION",
+        "LLM",
+        "CONDITION",
+        "PARALLEL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_controls_compliance_workflow.wf",
+      "ext": ".wf",
+      "code": "XX_FIN_GL_CONTROLS_COMPLIANCE_WORKFLOW",
+      "nodeCount": 57,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "WORKFLOW",
+        "SET_FIELDS",
+        "SWITCH",
+        "BO_FUNCTION",
+        "LLM",
+        "CONDITION",
+        "PARALLEL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_ledger_closure_workflow.wf",
+      "ext": ".wf",
+      "code": "XX_FIN_GL_LEDGER_CLOSURE_WORKFLOW",
+      "nodeCount": 13,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "WORKFLOW",
+        "CODE",
+        "SWITCH",
+        "PARALLEL",
+        "LLM",
+        "RETURN",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_ledger_insights_context_workflow.wf",
+      "ext": ".wf",
+      "code": "XX_FIN_GL_LEDGER_INSIGHTS_CONTEXT_WORKFLOW",
+      "nodeCount": 31,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "PARALLEL",
+        "CODE",
+        "BO_FUNCTION",
+        "LLM",
+        "CONDITION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_ledger_insights_query_helper.wf",
+      "ext": ".wf",
+      "code": "XX_FIN_GL_LEDGER_INSIGHTS_QUERY_HELPER",
+      "nodeCount": 9,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_ledger_switch_workflow.wf",
+      "ext": ".wf",
+      "code": "XX_FIN_GL_LEDGER_SWITCH_WORKFLOW",
+      "nodeCount": 16,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "WORKFLOW",
+        "CODE",
+        "CONDITION",
+        "LLM",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_period_status_workflow.wf",
+      "ext": ".wf",
+      "code": "XX_FIN_GL_PERIOD_STATUS_WORKFLOW",
+      "nodeCount": 9,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "WORKFLOW",
+        "CODE",
+        "SWITCH",
+        "LLM",
+        "PARALLEL",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/fin/ledger-insights/workflows/xx_fin_gl_variance_analysis_workflow.wf",
+      "ext": ".wf",
+      "code": "XX_FIN_GL_VARIANCE_ANALYSIS_WORKFLOW",
+      "nodeCount": 40,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "WORKFLOW",
+        "SET_FIELDS",
+        "SWITCH",
+        "BO_FUNCTION",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/absences/businessObjects/ora_hcm_absence_absence_details.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_ABSENCES_XX_ABSENCEDETAILS",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/absences/workflows/xx_my_upcoming_absences.wf",
+      "ext": ".wf",
+      "code": "XX_MY_UPCOMING_ABSENCES",
+      "nodeCount": 10,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "CODE",
+        "CONDITION",
+        "BO_FUNCTION",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/absences/workflows/xx_team_upcoming_absences.wf",
+      "ext": ".wf",
+      "code": "XX_TEAM_UPCOMING_ABSENCES",
+      "nodeCount": 16,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "CODE",
+        "CONDITION",
+        "BO_FUNCTION",
+        "LOOP",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/benefits/businessObjects/ora_hcm_benefits_personlifeeventstatusaggregations.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_BENEFITS_XX_PERSONLIFEEVENTSTATUSAGGREGATIONS",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/benefits/workflows/xx_benefits_person_life_events.wf",
+      "ext": ".wf",
+      "code": "XX_BENEFITS_PERSON_LIFE_EVENTS",
+      "nodeCount": 6,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "LLM",
+        "SWITCH",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/career-development/businessObjects/ora_hcm_careerdevelopment_career_development_skills_lookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_CAREER_XX_CAREERDEVELOPMENTSKILLSLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/career-development/workflows/xx_my_career_development_tasks.wf",
+      "ext": ".wf",
+      "code": "XX_MY_CAREER_DEVELOPMENT_TASKS",
+      "nodeCount": 5,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/career-development/workflows/xx_my_current_learning.wf",
+      "ext": ".wf",
+      "code": "XX_MY_CURRENT_LEARNING",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "BO_FUNCTION",
+        "CODE",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/career-development/workflows/xx_my_self_developing_skills.wf",
+      "ext": ".wf",
+      "code": "XX_MY_SELF_DEVELOPING_SKILLS",
+      "nodeCount": 9,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "CODE",
+        "CONDITION",
+        "BO_FUNCTION",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/compensation/businessObjects/ora_hcm_comp_myteamcompensationdetailslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_COMP_XX_MYTEAMCOMPENSATIONDETAILSLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/compensation/workflows/xx_direct_reports_below_compa_ratio.wf",
+      "ext": ".wf",
+      "code": "XX_DIRECT_REPORTS_BELOW_COMPA_RATIO",
+      "nodeCount": 9,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "LLM",
+        "CONDITION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/compensation/workflows/xx_team_overdue_salary_reviews.wf",
+      "ext": ".wf",
+      "code": "XX_TEAM_OVERDUE_SALARY_REVIEWS",
+      "nodeCount": 9,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "CONDITION",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/employment/apps/xx_attrition_analysis.app",
+      "ext": ".app",
+      "code": "XX_ATTRITION_ANALYSIS",
+      "nodeCount": 0,
+      "functionCount": 0,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/employment/businessObjects/ora_hcm_globalhuma_xx_hr_attrition_all_reports.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_GLOBALHUMA_XX_HR_ATTRITION_ALL_REPORTS",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/employment/businessObjects/ora_hcm_globalhuma_xx_hr_attrition_analytic_reports.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_GLOBALHUMA_XX_HR_ATTRITION_ANALYTIC_REPORTS",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/employment/businessObjects/ora_hcm_globalhuma_xx_hr_attrition_person_searches.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_GLOBALHUMA_XX_HR_ATTRITION_PERSON_SEARCHES",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/employment/deeplinks/ora_hcm_globalhuma_xx_hrattritionactiondeeplink.dl",
+      "ext": ".dl",
+      "nodeCount": 0,
+      "functionCount": 0,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/employment/tools/xx_hr_attrition_action_tool.tool",
+      "ext": ".tool",
+      "nodeCount": 0,
+      "functionCount": 0,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/employment/workflows/xx_attrition_advisor.wf",
+      "ext": ".wf",
+      "code": "XX_ATTRITION_ADVISOR",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "WORKFLOW",
+        "LLM",
+        "RETURN",
+        "CONDITION",
+        "CODE",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/employment/workflows/xx_attrition_summary.wf",
+      "ext": ".wf",
+      "code": "XX_ATTRITION_SUMMARY",
+      "nodeCount": 14,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "SWITCH",
+        "LLM",
+        "RETURN",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/employment/workflows/xx_smartanswersexpert.wf",
+      "ext": ".wf",
+      "code": "XX_SMARTANSWERSEXPERT",
+      "nodeCount": 8,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "LLM",
+        "SET_FIELDS",
+        "CODE",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/employment/workflows/xx_top_leavers_by_job.wf",
+      "ext": ".wf",
+      "code": "XX_TOP_LEAVERS_BY_JOB",
+      "nodeCount": 48,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "SWITCH",
+        "CONDITION",
+        "LLM",
+        "RETURN",
+        "TOOL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/employment/workflows/xx_top_leavers_by_location.wf",
+      "ext": ".wf",
+      "code": "XX_TOP_LEAVERS_BY_LOCATION",
+      "nodeCount": 47,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "CONDITION",
+        "RETURN",
+        "SWITCH",
+        "LLM",
+        "TOOL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/employment/workflows/xx_top_leavers_by_manager.wf",
+      "ext": ".wf",
+      "code": "XX_TOP_LEAVERS_BY_MANAGER",
+      "nodeCount": 32,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "SWITCH",
+        "LLM",
+        "RETURN",
+        "TOOL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/employment/workflows/xx_top_leavers_by_reason.wf",
+      "ext": ".wf",
+      "code": "XX_TOP_LEAVERS_BY_REASON",
+      "nodeCount": 74,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "SWITCH",
+        "CONDITION",
+        "RETURN",
+        "LLM",
+        "TOOL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/employment/workflows/xx_top_leavers_by_tenure.wf",
+      "ext": ".wf",
+      "code": "XX_TOP_LEAVERS_BY_TENURE",
+      "nodeCount": 43,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "SWITCH",
+        "CONDITION",
+        "LLM",
+        "RETURN",
+        "TOOL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_documentrecordsexpiringlookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_GLOBALHUMA_XX_DOCUMENTRECORDSEXPIRINGLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_employmentghr.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_GLOBALHUMA_XX_EMPLOYMENTGHR",
+      "nodeCount": 0,
+      "functionCount": 16,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_persondirectreportsV2.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_GLOBALHUMA_XX_PERSONDIRECTREPORTSV2",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_personnotesv2.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_GLOBALHUMA_XX_PERSONNOTESV2",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_personsearchesghr.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_GLOBALHUMA_XX_PERSONSEARCHESGHR",
+      "nodeCount": 0,
+      "functionCount": 29,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_representativessearchv2.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_GLOBALHUMA_XX_REPRESENTATIVESSEARCHV2",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_talentpersonprofiles.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_GLOBALHUMA_XX_TALENTPERSONPROFILES",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/human-resources/businessObjects/ora_hcm_globalhuma_workerdetailsghr.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_GLOBALHUMA_XX_WORKERDETAILSGHR",
+      "nodeCount": 0,
+      "functionCount": 9,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_team_document_records_near_expiry.wf",
+      "ext": ".wf",
+      "code": "XX_TEAM_DOCUMENT_RECORDS_NEAR_EXPIRY",
+      "nodeCount": 10,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "BO_FUNCTION",
+        "LLM",
+        "TOOL",
+        "CONDITION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_aboutme.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_ABOUTME",
+      "nodeCount": 10,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SWITCH",
+        "CODE",
+        "LLM",
+        "CONDITION",
+        "SET_FIELDS",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_address_by_person.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_ADDRESS_BY_PERSON",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_asg_history_by_person.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_ASG_HISTORY_BY_PERSON",
+      "nodeCount": 9,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "CONDITION",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_asg_info_by_person.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_ASG_INFO_BY_PERSON",
+      "nodeCount": 4,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "END",
+        "BO_FUNCTION",
+        "CODE"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_card.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_CARD",
+      "nodeCount": 10,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "LLM",
+        "PARALLEL",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_bu.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_CNT_BY_BU",
+      "nodeCount": 6,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "CONDITION",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_dept.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_CNT_BY_DEPT",
+      "nodeCount": 6,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "CONDITION",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_grd.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_CNT_BY_GRD",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "END",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_job.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_CNT_BY_JOB",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_location.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_CNT_BY_LOCATION",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_pos.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_CNT_BY_POS",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "END",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_by_workstr.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_CNT_BY_WORKSTR",
+      "nodeCount": 6,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "BO_FUNCTION",
+        "RETURN",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_grd_by_mgr.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_CNT_GRD_BY_MGR",
+      "nodeCount": 6,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "CONDITION",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_job_by_mgr.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_CNT_JOB_BY_MGR",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "END",
+        "CODE",
+        "CONDITION",
+        "BO_FUNCTION",
+        "ADD"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_cnt_loc_by_mgr.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_CNT_LOC_BY_MGR",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "END",
+        "CODE",
+        "CONDITION",
+        "ADD",
+        "BO_FUNCTION"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_directs.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_DIRECTS",
+      "nodeCount": 27,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "CODE",
+        "BO_FUNCTION",
+        "LLM",
+        "PARALLEL",
+        "CONDITION",
+        "SET_FIELDS",
+        "RETURN",
+        "WORKFLOW",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_document_record_expiry.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_DOCUMENT_RECORD_EXPIRY",
+      "nodeCount": 10,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "TOOL",
+        "CODE",
+        "CONDITION",
+        "LLM",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_email_by_person.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_EMAIL_BY_PERSON",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_bu.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_LIST_BY_BU",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_dept.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_LIST_BY_DEPT",
+      "nodeCount": 6,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "CONDITION",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_grd.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_LIST_BY_GRD",
+      "nodeCount": 8,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_job.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_LIST_BY_JOB",
+      "nodeCount": 8,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_location.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_LIST_BY_LOCATION",
+      "nodeCount": 8,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_pos.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_LIST_BY_POS",
+      "nodeCount": 8,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "END",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_list_by_workstr.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_LIST_BY_WORKSTR",
+      "nodeCount": 5,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_manager_by_person.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_MANAGER_BY_PERSON",
+      "nodeCount": 8,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "END",
+        "BO_FUNCTION",
+        "CODE",
+        "CONDITION",
+        "ADD"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_mngr_hierarchy_by_person.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_MNGR_HIERARCHY_BY_PERSON",
+      "nodeCount": 9,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "END",
+        "BO_FUNCTION",
+        "CODE",
+        "CONDITION",
+        "ADD"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_phone_by_person.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_PHONE_BY_PERSON",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_reps.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_REPS",
+      "nodeCount": 24,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "CODE",
+        "LLM",
+        "BO_FUNCTION",
+        "CONDITION",
+        "SET_FIELDS",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_search.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_SEARCH",
+      "nodeCount": 80,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "CONDITION",
+        "SET_FIELDS",
+        "SWITCH",
+        "BO_FUNCTION",
+        "RETURN",
+        "LLM",
+        "WHILE",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_senr_info_by_mgr.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_SENR_INFO_BY_MGR",
+      "nodeCount": 4,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_senr_info_by_person.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_SENR_INFO_BY_PERSON",
+      "nodeCount": 4,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_srch_by_name.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_SRCH_BY_NAME",
+      "nodeCount": 4,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "END",
+        "BO_FUNCTION",
+        "CODE"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/human-resources/workflows/xx_worker_wrk_loc_weather.wf",
+      "ext": ".wf",
+      "code": "XX_WORKER_WRK_LOC_WEATHER",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "BO_FUNCTION",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/journeys/businessObjects/ora_hcm_journeys_careerdevelopmentjourneysearchesandaggregation.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_JOURNEYS_XX_CAREERDEVELOPMENTTASKS",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/journeys/businessObjects/ora_hcm_journeys_journeysearchesandaggregation.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_JOURNEYS_XX_JOURNEYSEARCHESANDAGGREGATION",
+      "nodeCount": 0,
+      "functionCount": 3,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/journeys/businessObjects/ora_hcm_journeys_xx_collectiontaskaggregations.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_JOURNEYS_XX_COLLECTIONTASKAGGREGATIONS",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/journeys/businessObjects/ora_hcm_journeys_xx_journeytaskcollections.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_JOURNEYS_XX_JOURNEYTASKCOLLECTIONS",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/journeys/workflows/xx_add_to_collection.wf",
+      "ext": ".wf",
+      "code": "XX_ADD_TO_COLLECTION",
+      "nodeCount": 20,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "CONDITION",
+        "LLM",
+        "RETURN",
+        "BO_FUNCTION",
+        "TOOL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/journeys/workflows/xx_display_insights.wf",
+      "ext": ".wf",
+      "code": "XX_DISPLAY_INSIGHTS",
+      "nodeCount": 8,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "LOOP",
+        "SWITCH",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/journeys/workflows/xx_overdue_onboarding_team_journeys.wf",
+      "ext": ".wf",
+      "code": "XX_OVERDUE_ONBOARDING_TEAM_JOURNEYS",
+      "nodeCount": 5,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SWITCH",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/journeys/workflows/xx_overdue_onboarding_team_journeys_tasks.wf",
+      "ext": ".wf",
+      "code": "XX_OVERDUE_ONBOARDING_TEAM_JOURNEYS_TASKS",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SWITCH",
+        "LLM",
+        "CODE",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/journeys/workflows/xx_overdue_team_journey_tasks.wf",
+      "ext": ".wf",
+      "code": "XX_OVERDUE_TEAM_JOURNEY_TASKS",
+      "nodeCount": 6,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SWITCH",
+        "LLM",
+        "CODE",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/journeys/workflows/xx_overdue_team_journeys.wf",
+      "ext": ".wf",
+      "code": "XX_OVERDUE_TEAM_JOURNEYS",
+      "nodeCount": 6,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SWITCH",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/journeys/workflows/xx_team_journey_aggregation_chart.wf",
+      "ext": ".wf",
+      "code": "XX_TEAM_JOURNEY_AGGREGATION_CHART",
+      "nodeCount": 5,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SWITCH",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/learning/businessObjects/ora_hcm_learning_learning_searches.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_LEARNING_XX_LEARNINGSEARCHES",
+      "nodeCount": 0,
+      "functionCount": 5,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/learning/businessObjects/ora_hcm_learning_learningitemsearcheslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_LEARNING_XX_LEARNINGITEMSEARCHESLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/learning/businessObjects/ora_hcm_learning_wlfrecommendationaggregationslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_LEARNING_XX_WLFRECOMMENDATIONAGGREGATIONSLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/learning/workflows/xx_team_learning_item_recommendations.wf",
+      "ext": ".wf",
+      "code": "XX_TEAM_LEARNING_ITEM_RECOMMENDATIONS",
+      "nodeCount": 10,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "LLM",
+        "CONDITION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/learning/workflows/xx_team_learning_status.wf",
+      "ext": ".wf",
+      "code": "XX_TEAM_LEARNING_STATUS",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "BO_FUNCTION",
+        "CODE",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/learning/workflows/xx_team_overdue_learners.wf",
+      "ext": ".wf",
+      "code": "XX_TEAM_OVERDUE_LEARNERS",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "BO_FUNCTION",
+        "CODE",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/learning/workflows/xx_team_overdue_learning_items.wf",
+      "ext": ".wf",
+      "code": "XX_TEAM_OVERDUE_LEARNING_ITEMS",
+      "nodeCount": 15,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "BO_FUNCTION",
+        "LLM",
+        "SET_FIELDS",
+        "CODE",
+        "CONDITION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/recruiting/businessObjects/ora_hcm_recruiting_expiredjobrequisitions.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_RECRUITING_XX_EXPIREDJOBREQUISITIONS",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/recruiting/workflows/xx_expired_job_requisition_assistant.wf",
+      "ext": ".wf",
+      "code": "XX_EXPIRED_JOB_REQUISITION_ASSISTANT",
+      "nodeCount": 6,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "BO_FUNCTION",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/apps/xx_person_succession_readiness_workspace.app",
+      "ext": ".app",
+      "code": "XX_PERSON_SUCCESSION_READINESS_WORKSPACE",
+      "nodeCount": 0,
+      "functionCount": 0,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/succession-management/apps/xx_succession_readiness_workspace.app",
+      "ext": ".app",
+      "code": "XX_SUCCESSION_READINESS_WORKSPACE",
+      "nodeCount": 0,
+      "functionCount": 0,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/succession-management/businessObjects/ora_hcm_empinfo_directreportscontext.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_EMPINFO_XX_DIRECTREPORTSCONTEXT",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/succession-management/businessObjects/ora_hcm_empinfo_employeetreecontext.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_EMPINFO_XX_EMPLOYEETREECONTEXT",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/succession-management/businessObjects/ora_hcm_empinfo_loggedinemployeecontext.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_EMPINFO_XX_LOGGEDINEMPLOYEECONTEXT",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/succession-management/businessObjects/ora_hcm_empinfo_successionorgchartscreatepayloadinfo.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_EMPINFO_XX_SUCCESSIONORGCHARTSCREATEPAYLOADINFO",
+      "nodeCount": 0,
+      "functionCount": 4,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/succession-management/businessObjects/ora_hcm_globalpayr_compensationdetailslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_GLOBALPAYR_XX_COMPENSATIONDETAILSLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 3,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/succession-management/businessObjects/ora_hcm_succession_successiondetailslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_SUCCESSION_XX_SUCCESSIONDETAILSLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/succession-management/businessObjects/ora_hcm_succession_successionplancreation.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_SUCCESSION_XX_SUCCESSIONPLANCREATION",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/succession-management/businessObjects/ora_hcm_talent_jobcompetencieslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_TALENT_XX_JOBCOMPETENCIESLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/succession-management/businessObjects/ora_hcm_talent_skillsandcompetencieslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_TALENT_XX_SKILLSANDCOMPETENCIESLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/succession-management/businessObjects/ora_hcm_talent_talentratingslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_TALENT_XX_TALENTRATINGSLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_bottom_talent_advisor.wf",
+      "ext": ".wf",
+      "code": "XX_BOTTOM_TALENT_ADVISOR",
+      "nodeCount": 11,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SWITCH",
+        "WORKFLOW",
+        "LLM",
+        "CODE",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_compensation_advisor.wf",
+      "ext": ".wf",
+      "code": "XX_COMPENSATION_ADVISOR",
+      "nodeCount": 13,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "WORKFLOW",
+        "LLM",
+        "BO_FUNCTION",
+        "CODE",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_compensation_analysis.wf",
+      "ext": ".wf",
+      "code": "XX_COMPENSATION_ANALYSIS",
+      "nodeCount": 13,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SET_FIELDS",
+        "BO_FUNCTION",
+        "CODE",
+        "LLM",
+        "CONDITION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_fetch_compensation_details.wf",
+      "ext": ".wf",
+      "code": "XX_FETCH_COMPENSATION_DETAILS",
+      "nodeCount": 14,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "SET_FIELDS",
+        "SWITCH",
+        "LLM",
+        "CONDITION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_fetch_performers.wf",
+      "ext": ".wf",
+      "code": "XX_FETCH_PERFORMERS",
+      "nodeCount": 15,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "SET_FIELDS",
+        "SWITCH",
+        "LLM",
+        "CONDITION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_impact_of_loss_advisor.wf",
+      "ext": ".wf",
+      "code": "XX_IMPACT_OF_LOSS_ADVISOR",
+      "nodeCount": 10,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SWITCH",
+        "WORKFLOW",
+        "LLM",
+        "END",
+        "CODE"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_impact_of_loss_analysis.wf",
+      "ext": ".wf",
+      "code": "XX_IMPACT_OF_LOSS_ANALYSIS",
+      "nodeCount": 15,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SET_FIELDS",
+        "SWITCH",
+        "BO_FUNCTION",
+        "WORKFLOW",
+        "LLM",
+        "CODE",
+        "CONDITION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_potential_succession_candidates.wf",
+      "ext": ".wf",
+      "code": "XX_POTENTIAL_SUCCESSION_CANDIDATES",
+      "nodeCount": 22,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SET_FIELDS",
+        "CODE",
+        "CONDITION",
+        "LLM",
+        "LOOP",
+        "SWITCH",
+        "DOCUMENT_PROCESSOR",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_risk_of_loss_advisor.wf",
+      "ext": ".wf",
+      "code": "XX_RISK_OF_LOSS_ADVISOR",
+      "nodeCount": 10,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SWITCH",
+        "WORKFLOW",
+        "LLM",
+        "END",
+        "CODE"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_risk_of_loss_analysis.wf",
+      "ext": ".wf",
+      "code": "XX_RISK_OF_LOSS_ANALYSIS",
+      "nodeCount": 15,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SET_FIELDS",
+        "SWITCH",
+        "BO_FUNCTION",
+        "WORKFLOW",
+        "LLM",
+        "CODE",
+        "CONDITION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_succession_analysis.wf",
+      "ext": ".wf",
+      "code": "XX_SUCCESSION_ANALYSIS",
+      "nodeCount": 19,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SWITCH",
+        "WORKFLOW",
+        "LLM",
+        "CODE",
+        "CONDITION",
+        "SET_FIELDS",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_succession_overview_advisor.wf",
+      "ext": ".wf",
+      "code": "XX_SUCCESSION_OVERVIEW_ADVISOR",
+      "nodeCount": 71,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SWITCH",
+        "WORKFLOW",
+        "CODE",
+        "LLM",
+        "CONDITION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_succession_overview_agent_team.wf",
+      "ext": ".wf",
+      "code": "XX_SUCCESSION_OVERVIEW_AGENT_TEAM",
+      "nodeCount": 13,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "LLM",
+        "SWITCH",
+        "CODE",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/succession-management/workflows/xx_top_talent_advisor.wf",
+      "ext": ".wf",
+      "code": "XX_TOP_TALENT_ADVISOR",
+      "nodeCount": 11,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "LLM",
+        "BO_FUNCTION",
+        "WORKFLOW",
+        "END",
+        "CODE"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/talent-management/businessObjects/ora_hcm_talent_teamunscheduledcheckin.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_TALENT_XX_TEAMUNSCHEDULEDCHECKIN",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/talent-management/workflows/xx_team_unscheduled_check_ins.wf",
+      "ext": ".wf",
+      "code": "XX_TEAM_UNSCHEDULED_CHECK_INS",
+      "nodeCount": 9,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "SET_FIELDS",
+        "CODE",
+        "LLM",
+        "SWITCH",
+        "RETURN",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/time-and-labor/businessObjects/ora_hcm_timeandlab_missingpersontimecardaggregationslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_TIMEANDLAB_XX_MISSINGPERSONTIMECARDAGGREGATIONSLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/time-and-labor/businessObjects/ora_hcm_timeandlab_timecardexceptionaggregationslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_TIMEANDLAB_XX_TIMECARDEXCEPTIONAGGREGATIONSLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/time-and-labor/businessObjects/ora_hcm_timeandlab_timecardexceptionsearcheslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_TIMEANDLAB_XX_TIMECARDEXCEPTIONSEARCHESLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/time-and-labor/businessObjects/ora_hcm_timeandlab_timecardsearcheslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_TIMEANDLAB_XX_TIMECARDSEARCHESLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/time-and-labor/businessObjects/ora_hcm_timeandlab_timecardstatusaggregationslookup.bo",
+      "ext": ".bo",
+      "code": "ORA_HCM_TIMEANDLAB_XX_TIMECARDSTATUSAGGREGATIONSLOOKUP",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/hcm/time-and-labor/workflows/xx_team_under_reported_timecards.wf",
+      "ext": ".wf",
+      "code": "XX_TEAM_UNDER_REPORTED_TIME_CARDS",
+      "nodeCount": 9,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "CONDITION",
+        "LLM",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/time-and-labor/workflows/xx_time_card_exception_summary.wf",
+      "ext": ".wf",
+      "code": "XX_TIME_CARD_EXCEPTION_SUMMARY",
+      "nodeCount": 18,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "CONDITION",
+        "LLM",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/hcm/time-and-labor/workflows/xx_time_card_status_aggregation.wf",
+      "ext": ".wf",
+      "code": "XX_TIME_CARD_STATUS_AGGREGATION",
+      "nodeCount": 10,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "CONDITION",
+        "LLM",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/prc/purchasing/businessObjects/ora_prc_purchasing_xx_compliancechecklist.bo",
+      "ext": ".bo",
+      "code": "ORA_PRC_PURCHASING_XX_COMPLIANCECHECKLIST",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/prc/purchasing/businessObjects/ora_prc_purchasing_xx_managepurchaseagreements.bo",
+      "ext": ".bo",
+      "code": "ORA_PRC_PURCHASING_XX_MANAGEPURCHASEAGREEMENTS",
+      "nodeCount": 0,
+      "functionCount": 7,
+      "types": []
+    },
+    {
+      "file": "aiapps/prc/purchasing/businessObjects/ora_prc_purchasing_xx_managepurchaseorders.bo",
+      "ext": ".bo",
+      "code": "ORA_PRC_PURCHASING_XX_MANAGEPURCHASEORDERS",
+      "nodeCount": 0,
+      "functionCount": 6,
+      "types": []
+    },
+    {
+      "file": "aiapps/prc/purchasing/businessObjects/ora_prc_purchasing_xx_myrequisitions.bo",
+      "ext": ".bo",
+      "code": "ORA_PRC_PURCHASING_XX_MYREQUISITIONS",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/prc/purchasing/workflows/xx_compliance_checklist.wf",
+      "ext": ".wf",
+      "code": "XX_COMPLIANCE_CHECKLIST",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "BO_FUNCTION",
+        "CODE",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/prc/purchasing/workflows/xx_my_recent_purchase_requisitions.wf",
+      "ext": ".wf",
+      "code": "XX_MY_RECENT_PURCHASE_REQUISITIONS",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "CODE",
+        "SWITCH",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/prc/purchasing/workflows/xx_purchase_agreement_status_distribution.wf",
+      "ext": ".wf",
+      "code": "XX_PURCHASE_AGREEMENT_STATUS_DISTRIBUTION",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "LLM",
+        "CODE",
+        "SWITCH",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/prc/purchasing/workflows/xx_purchase_agreements.wf",
+      "ext": ".wf",
+      "code": "XX_PURCHASE_AGREEMENTS",
+      "nodeCount": 21,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "SET_FIELDS",
+        "LLM",
+        "BO_FUNCTION",
+        "CONDITION",
+        "RETURN",
+        "PARALLEL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/prc/purchasing/workflows/xx_purchase_order_status_distribution.wf",
+      "ext": ".wf",
+      "code": "XX_PURCHASE_ORDER_STATUS_DISTRIBUTION",
+      "nodeCount": 7,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "BO_FUNCTION",
+        "LLM",
+        "CODE",
+        "SWITCH",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/prc/purchasing/workflows/xx_purchase_orders.wf",
+      "ext": ".wf",
+      "code": "XX_PURCHASE_ORDERS",
+      "nodeCount": 19,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "SWITCH",
+        "BO_FUNCTION",
+        "SET_FIELDS",
+        "LLM",
+        "CONDITION",
+        "RETURN",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/scm/cost-management/businessObjects/ora_scm_costmanage_inventoryvaluationcomparisonadvisor.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_XX_COSTMANAGE_INVENTORYVALUATIONCOMPARISONADVISOR",
+      "nodeCount": 0,
+      "functionCount": 7,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/cost-management/businessObjects/ora_scm_costmanage_periodvalidationexceptionsadvisor.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_XX_COSTMANAGE_VALIDATIONEXCEPTIONSADVISOR",
+      "nodeCount": 0,
+      "functionCount": 3,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/cost-management/workflows/xx_inventory_valuation_comparison_advisor.wf",
+      "ext": ".wf",
+      "code": "XX_INVENTORY_VALUATION_COMPARISON_ADVISOR",
+      "nodeCount": 21,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CONDITION",
+        "LLM",
+        "CODE",
+        "BO_FUNCTION",
+        "SET_FIELDS",
+        "PARALLEL",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/scm/cost-management/workflows/xx_period_validation_exceptions_advisor.wf",
+      "ext": ".wf",
+      "code": "XX_PERIOD_VALIDATION_EXCEPTIONS_ADVISOR",
+      "nodeCount": 14,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CONDITION",
+        "LLM",
+        "CODE",
+        "BO_FUNCTION",
+        "SET_FIELDS",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/scm/inventory/businessObjects/ora_scm_inventorym_expiring_inventory_lots.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_INVENTORYM_XX_EXPIRING_INVENTORY_LOTS",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/inventory/businessObjects/ora_scm_inventorym_fetchesdefaulto.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_INVENTORYM_XX_FETCHESDEFAULTO",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/inventory/businessObjects/ora_scm_inventorym_fetchitemsawaitinginspection.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_INVENTORYM_XX_FETCHITEMSAWAITINGINSPECTION",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/inventory/businessObjects/ora_scm_inventorym_inventoryorganizationslist.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_INVENTORYM_XX_INVENTORYORGANIZATIONSLIST",
+      "nodeCount": 0,
+      "functionCount": 3,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/inventory/businessObjects/ora_scm_inventorym_retrieveitemstockoutsubinventorylocationsbo.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_INVENTORYM_XX_RETRIEVEITEMSTOCKOUTSUBINVENTORYLOCATIONSBO",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/inventory/businessObjects/ora_scm_inventorym_transfer_lots_to_stockout_subinventories.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_INVENTORYM_XX_TRANSFER_LOTS_TO_STOCKOUT_SUBINVENTORIES",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/inventory/workflows/xx_inventory_context_switcher.wf",
+      "ext": ".wf",
+      "code": "XX_INVENTORY_ORGANIZATION_CONTEXT_SWITCHER",
+      "nodeCount": 26,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SWITCH",
+        "SET_FIELDS",
+        "CONDITION",
+        "BO_FUNCTION",
+        "CODE",
+        "LLM",
+        "RETURN",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/scm/inventory/workflows/xx_inventory_item_shortage_monitor.wf",
+      "ext": ".wf",
+      "code": "XX_INVENTORY_ITEM_SHORTAGE_MONITOR",
+      "nodeCount": 12,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "BO_FUNCTION",
+        "SWITCH",
+        "LLM",
+        "SET_FIELDS",
+        "WORKFLOW",
+        "CONDITION",
+        "RETURN",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/scm/inventory/workflows/xx_inventory_item_stockout_monitor.wf",
+      "ext": ".wf",
+      "code": "XX_INVENTORY_ITEM_STOCKOUT_MONITOR",
+      "nodeCount": 12,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "CODE",
+        "BO_FUNCTION",
+        "SWITCH",
+        "LLM",
+        "SET_FIELDS",
+        "WORKFLOW",
+        "CONDITION",
+        "RETURN",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/scm/maintenance/businessObjects/ora_scm_inventory_shortage_uom.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_INVENTORY_XX_SHORTAGE_UOM",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/maintenance/businessObjects/ora_scm_maintenanc_materialitemassignmentsummaries.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_MAINTENANC_XX_MATERIALITEMASSIGNMENTSUMMARIES",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/maintenance/businessObjects/ora_scm_maintenanc_materialworkorderassignmentsequences.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_MAINTENANC_XX_MATERIALWORKORDERASSIGNMENTSEQUENCES",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/maintenance/businessObjects/ora_scm_maintenance_wo_searches.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_MAINTENANC_XX_WO_SEARCHES",
+      "nodeCount": 0,
+      "functionCount": 2,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/maintenance/businessObjects/ora_scm_manufacturing_prod_expv2.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_MANUFACTURING_XX_PROD_EXPV2",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/maintenance/businessObjects/ora_scm_productman_onhandqtybyitem.bo",
+      "ext": ".bo",
+      "code": "ORA_SCM_PRODUCTMAN_XX_ONHANDQTYBYITEM",
+      "nodeCount": 0,
+      "functionCount": 1,
+      "types": []
+    },
+    {
+      "file": "aiapps/scm/maintenance/workflows/xx_maintenance_material_readiness.wf",
+      "ext": ".wf",
+      "code": "XX_MAINTENANCE_MATERIAL_READINESS",
+      "nodeCount": 20,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SET_FIELDS",
+        "CODE",
+        "CONDITION",
+        "SWITCH",
+        "BO_FUNCTION",
+        "LLM",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/scm/maintenance/workflows/xx_maintenance_material_shortage.wf",
+      "ext": ".wf",
+      "code": "XX_MAINTENANCE_MATERIAL_SHORTAGE",
+      "nodeCount": 25,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SET_FIELDS",
+        "CODE",
+        "CONDITION",
+        "BO_FUNCTION",
+        "LLM",
+        "LOOP",
+        "SWITCH",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/scm/maintenance/workflows/xx_work_execution_exceptions.wf",
+      "ext": ".wf",
+      "code": "XX_WORK_EXECUTION_EXCEPTIONS",
+      "nodeCount": 13,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SET_FIELDS",
+        "CODE",
+        "CONDITION",
+        "LLM",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/scm/maintenance/workflows/xx_work_order_current.wf",
+      "ext": ".wf",
+      "code": "XX_WORK_ORDER_CURRENT",
+      "nodeCount": 13,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SET_FIELDS",
+        "CODE",
+        "CONDITION",
+        "LLM",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/scm/maintenance/workflows/xx_work_order_future.wf",
+      "ext": ".wf",
+      "code": "XX_WORK_ORDER_FUTURE",
+      "nodeCount": 13,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SET_FIELDS",
+        "CODE",
+        "CONDITION",
+        "LLM",
+        "BO_FUNCTION",
+        "END"
+      ]
+    },
+    {
+      "file": "aiapps/scm/maintenance/workflows/xx_work_order_overdue.wf",
+      "ext": ".wf",
+      "code": "XX_WORK_ORDER_OVERDUE",
+      "nodeCount": 13,
+      "functionCount": 0,
+      "types": [
+        "START",
+        "SET_FIELDS",
+        "CODE",
+        "CONDITION",
+        "LLM",
+        "BO_FUNCTION",
+        "END"
+      ]
+    }
+  ]
+}

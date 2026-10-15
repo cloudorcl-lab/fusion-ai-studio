@@ -1,0 +1,109 @@
+{
+  "id": "xdx-query-preflight-fixes-20261015",
+  "source": {
+    "branch": "TestingWFBuildTools",
+    "head": "179d0061f275755af2384dd4f6e4699afebb7451"
+  },
+  "startedUtc": "2026-10-15T11:31:57.507Z",
+  "timezone": "America/Chicago",
+  "outcome": "Fix four Query preflight gaps with sub-agents and focused tests only",
+  "successCriteria": [
+    "Each reported invalid case rejected",
+    "Valid route/nested/expression cases preserved",
+    "Focused CLI behavior verified",
+    "Independent review resolved",
+    "Every milestone updates active handoff",
+    "Required Startup/Closeout and scoped commit"
+  ],
+  "tools": {
+    "node": "v25.9.0"
+  },
+  "primaryTiming": [
+    {
+      "category": "active execution",
+      "start": "2026-10-15T11:31:57.507Z",
+      "end": "2026-10-15T11:45:07.165Z",
+      "observedWindowSeconds": 789.658,
+      "limitation": "Scheduling breakdown unavailable; observed active-execution window includes ordinary tool/coordination latency."
+    }
+  ],
+  "milestones": [
+    {
+      "name": "Scope confirmed",
+      "utc": "2026-10-15T11:31:57.507Z",
+      "detail": "Four validator defects accepted for repair; focused tests only. Next: Startup then delegated diagnosis/tests."
+    },
+    {
+      "name": "Prerequisites verified",
+      "utc": "2026-10-15T11:34:04.785Z",
+      "detail": "Root and all three delegated Startup gates passed. Test writer owns the existing packaged validator test file; implementation is held until focused RED. Independent review is active."
+    },
+    {
+      "name": "Focused RED verified",
+      "utc": "2026-10-15T11:35:22.593Z",
+      "detail": "Actual validator regression run: 38 tests, 29 expected failures and 9 passes against unchanged production code. All four defect groups reproduced, including real local CLI fixtures. Implementation may proceed; only focused validator tests will run."
+    },
+    {
+      "name": "Implementation integrated",
+      "utc": "2026-10-15T11:38:10.257Z",
+      "detail": "Single-writer validator repair integrated with 43 focused tests. Root and independent review are checking nested scope, error paths, parallel joins and interpolation; no broad suites or tenant operations. Next: focused GREEN."
+    },
+    {
+      "name": "Focused validation checkpoint",
+      "utc": "2026-10-15T11:38:59.857Z",
+      "detail": "First repaired run passed 42/43; the rejected qualified inner producer diagnostic omitted its inner path. Failure recorded at F03 before the message-only correction. Source re-frozen; next action is focused rerun and independent review."
+    },
+    {
+      "name": "Independent review checkpoint",
+      "utc": "2026-10-15T11:39:51.385Z",
+      "detail": "43/43 focused cases passed. Independent review found one additional incoming-route gap within the producer fix: convergence edges on non-control nodes were suppressed. Implementation held while a focused failing regression is added; no broader tests."
+    },
+    {
+      "name": "Review regressions reproduced",
+      "utc": "2026-10-15T11:41:02.966Z",
+      "detail": "45 focused cases:43 pass and2 expected failures reproduce non-control convergence and parallel loopback bypasses. Evidence recorded at F01 before repair. Next: restore those two incoming edges and rerun only this validator test file."
+    },
+    {
+      "name": "Focused validation verified",
+      "utc": "2026-10-15T11:42:12.795Z",
+      "detail": "45/45 focused cases plus legacy validator assertions pass on final source, including four local CLI fixtures and both review regressions. Independent reviewer reports no blockers. Next: evidence reconciliation, required Closeout and scoped local commit."
+    },
+    {
+      "name": "Delivery verified",
+      "utc": "2026-10-15T11:45:07.078Z",
+      "detail": "Four fixes complete:45/45 focused cases, independent review approval, hash-bound evidence and all delegated/root Closeout gates PASS. Active handoff updated at every recorded milestone. No broader tests, tenant calls or push. Scoped local commit follows this delivery checkpoint; no further repair remains in authorized scope."
+    }
+  ],
+  "interactions": {
+    "clarifications": 0,
+    "repeatedApprovals": 0,
+    "userCorrection": "Keep active handoff current at every milestone"
+  },
+  "usage": {
+    "parentTokens": "Unavailable",
+    "subagentTokens": "Unavailable",
+    "tenantCalls": 0
+  },
+  "failureLedger": "docs/builds/xdx-query-preflight-fixes-20261015/failure-ledger.json",
+  "deliveryCheckpointUtc": "2026-10-15T11:45:07.165Z",
+  "elapsedObservedSeconds": 789.658,
+  "primaryCategoryTotals": {
+    "activeExecutionObservedWindowSeconds": 789.658,
+    "blockingWaitObservedSeconds": 0,
+    "requiredUserWaitObservedSeconds": 0,
+    "idleObservedSeconds": 0,
+    "pausedObservedSeconds": 0,
+    "limitation": "No separate transitions observed; initial read interval unallocated and scheduling telemetry unavailable."
+  },
+  "firstVerifiedFixedResultUtc": "2026-10-15T11:41:43.640Z",
+  "timeToFirstVerifiedFixedResultSeconds": 586.133,
+  "verification": {
+    "focusedCases": 45,
+    "passed": 45,
+    "failed": 0,
+    "finalReceipt": "docs/builds/xdx-query-preflight-fixes-20261015/review-green.json",
+    "firstGreenPassed": false,
+    "firstGreenFailure": "Qualified diagnostic identity; preserved original evidence",
+    "broadTests": "Not run per user instruction"
+  }
+}
