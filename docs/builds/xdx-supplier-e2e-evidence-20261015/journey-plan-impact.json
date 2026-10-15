@@ -1,0 +1,19 @@
+{
+  "observedUtc": "2026-10-15T21:25:36.169Z",
+  "result": "PASS",
+  "scope": "Plan inventory/dependency and exact source-impact check only; original18 parser checks not rerun; no UI call/write",
+  "currentSourceSha256": "e888e8f7d6b293614f052be72cef25f91849c0f362bcd8da37bd10ce39478c4b",
+  "originalSourceSha256": "041efc634a4ff9bd4c6f2aa15c56bd4e9943e02f2091581fa68b5e200cd09664",
+  "qualificationReused": "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-current-qualification.json",
+  "unchangedParserChecksReused": 18,
+  "plannedBusinessSteps": 21,
+  "newStep": "ASN-CON",
+  "dependency": "SITE-CON",
+  "newStepWrite": false,
+  "newStepRequests": 0,
+  "originalEvidenceReused": true,
+  "exactSourceImpact": "Reverse only new plan row, its dependency metadata and its BLOCKED no-action handler reproduces previously qualified source byte-for-byte",
+  "independentReviewUtc": "2026-10-15T21:26:59.214Z",
+  "reviewer": "/root",
+  "review": "New ASN-CON row/dependency and no-action blocked handler inspected; previous18parserproof retained without remote replay"
+}

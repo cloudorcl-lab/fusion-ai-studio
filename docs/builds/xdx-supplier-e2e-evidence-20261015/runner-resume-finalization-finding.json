@@ -1,0 +1,10 @@
+{
+  "observedUtc": "2026-10-15T21:19:23.706Z",
+  "symptoms": [
+    "Resume with different declarative step IDs not rejected before acquiring session",
+    "Queued host renderer callback emitted presentation-finished before an actual artifact existed"
+  ],
+  "evidence": "Independent source review; actual root adaptive results use different IDs from fresh concreteplan; real hostdeck generated separately",
+  "correctionPlan": "Reject nonmatching plan IDs before any lock/write; label queuedhostcallbackpending and require existingoutputartifactforfinished",
+  "impact": "No accepted record replay or live data corruption; currentresults/historicaleventsretained"
+}

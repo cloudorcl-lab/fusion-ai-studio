@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "kind": "Actual caption function qualification, no UI or business test",
+  "observedUtc": "2026-10-15T21:20:26.877Z",
+  "source": {
+    "path": "scripts/xdx-supplier-e2e-deck.mjs",
+    "sha256": "46b12087ecdc0c64ba21970eed369c19b0c5d90149ac7d219755aa359a1f0600"
+  },
+  "checks": [
+    {
+      "key": "address-query/result",
+      "title": "Address query in progress",
+      "passed": true
+    },
+    {
+      "key": "address-direct/draft-ready",
+      "title": "Address preparation in progress",
+      "passed": true
+    },
+    {
+      "key": "address-direct/review-ready",
+      "title": "Address review in progress",
+      "passed": true
+    },
+    {
+      "key": "address-direct/created-readback",
+      "title": "Address confirmation in progress",
+      "passed": true
+    },
+    {
+      "key": "contact-template/draft-ready",
+      "title": "Contact template preparation failed",
+      "passed": true
+    },
+    {
+      "key": "F010",
+      "passed": true,
+      "classification": "Application failure, no repair claim"
+    },
+    {
+      "key": "F011",
+      "passed": true,
+      "classification": "Application failure, no repair claim"
+    }
+  ],
+  "captureCount": 62,
+  "result": "PASS"
+}

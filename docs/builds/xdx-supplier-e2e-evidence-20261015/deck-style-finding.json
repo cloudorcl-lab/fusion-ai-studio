@@ -1,0 +1,7 @@
+{
+  "observedUtc": "2026-10-15T20:45:22.542Z",
+  "runId": "5ef14bca-5360-4e0f-8d78-8ad9895f730c",
+  "symptom": "shape.text.style read undefined; assigning nested bold fails",
+  "cause": "Artifact-tool style facade requires whole assignment",
+  "correctionPlan": "Use full style assignment and audit siblings before one local smoke retry"
+}

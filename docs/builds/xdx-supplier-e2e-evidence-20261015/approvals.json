@@ -1,0 +1,18 @@
+{
+  "taskId": "xdx-supplier-e2e-evidence-20261015",
+  "entries": [
+    {
+      "source": "User confirmed complete Codex prompt with yes",
+      "scope": "One UI supplier query/create/readback journey and four child resources; direct/template where supported; fallback record coverage; screenshots of every screen and PPT; synthetic demo data unmasked",
+      "writes": "New uniquely named demo records approved; preserve IDs and resume without duplicate creates; no deletion/publication/push"
+    },
+    {
+      "source": "User Q9: track only the retries. remove the test limit for this run.",
+      "scope": "No numerical test-attempt limit for this run only; retry requires changed precondition/correction or evidenced temporary failure"
+    },
+    {
+      "source": "Repository standing testing sign-in authority",
+      "scope": "Normal configured sign-in/reauthentication approved; secrets excluded from evidence"
+    }
+  ]
+}

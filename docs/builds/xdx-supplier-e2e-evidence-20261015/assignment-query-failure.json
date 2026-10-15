@@ -1,0 +1,7 @@
+{
+  "observedUtc": "2026-10-15T21:11:22.158Z",
+  "result": "FAIL",
+  "actual": "Standalone Assignment query returned Supplier site details instead of Assignment records; expected Assignment ID, Client BU and Bill To BU were absent. Embedded create/readback remains separately PASS.",
+  "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-result-002.txt",
+  "disposition": "Retain product failure as requested; no app repair or unchanged retry; independent embedded assignment create/readbackPASS"
+}

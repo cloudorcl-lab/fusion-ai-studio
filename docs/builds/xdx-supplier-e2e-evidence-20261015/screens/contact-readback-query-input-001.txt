@@ -1,0 +1,63 @@
+Browser tab: 676657676, Title: "XDX Supplier Workspace", URL: "https://fa-eqil-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/xdx_supplier_workspace?draft=true".
+1 AXWebArea XDX Supplier Workspace, URL: fa-eqil-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/xdx_supplier_workspace?draft=true
+	2 container
+		3 container bF2ZlvceuxGpNACDkYQ6W8pF_ao
+			77 container
+				78 container
+					156 heading XDX Supplier Workspace, Value: 1
+						157 text XDX Supplier Workspace
+					158 container
+						159 button Open chat
+						181 text entry area (settable) Show contact details for contact ID 300000340604973 for supplier number 1503
+						161 button Voice input
+					79 container
+						182 container
+							186 container User message
+								187 text Confirm request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-4 revision 1
+							183 checkbox Description: Share panel, Value: 0
+							184 checkbox Description: Pin panel, Value: 0
+							185 button Dismiss panel
+							188 container XDX Supplier Conversation
+								189 container Panel description
+									190 text Contact created and independently verified.
+									191 text Kind: contact
+									192 text Mode: direct
+									193 text Status: accepted
+									194 text Verification: verified
+									195 text Request: REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-4 revision 1
+									196 text Parent supplier ID: 300000340604948
+									197 text Parent supplier: XDX E2E Evidence 20261015 2054
+									198 text Supplier number: 1503
+									199 text Created contact ID: 300000340604973
+									200 text PersonProfileId: 300000340604973
+									201 text Saved required fields verified against the approved payload:
+									202 text FirstName: XDX
+									203 text LastName: E2E2054
+									204 text Email: xdx.e2e.2054.contact@example.invalid
+						162 container swimlanes-container
+							163 heading XDX Supplier Advisor, Value: 3
+								164 text XDX Supplier Advisor
+							165 container
+								166 heading Supplier Workspace, Value: 3
+									167 text Supplier Workspace
+								168 container Supplier Workspace widget 1
+									169 container Panel description
+										170 text Getting started guidance for supplier search
+									171 heading Supplier Workspace, Value: 3
+										172 text Supplier Workspace
+									173 text Get started by searching for a supplier. Just say: “Find a supplier like Dell.”
+					174 container
+						175 heading Priority Actions (0), Value: 4
+							176 text Priority Actions (0)
+						177 checkbox Description: Alert me when this completes, Value: 0
+						178 checkbox Description: Toggle dark mode, Help: Light mode, Value: 1
+						179 button Hide Panel
+					180 text Nothing requires your attention right now...
+					144 toolbar Application builder toolbar
+						146 container Toolbar actions
+							153 button Edit application
+							154 button Publish application
+							155 button Hide toolbar
+			76 link Description: Ask Oracle, Value: static.oracle.com/cdn/fa/oracle_fai_aiappspublicUI/2607.146.262512339/aiappsweb/#, ID: bF2ZlvceuxGpNACDkYQ6W8pF_ao-brand
+
+The focused UI element is 181 text entry area (settable) Show contact details for contact ID 300000340604973 for supplier number 1503

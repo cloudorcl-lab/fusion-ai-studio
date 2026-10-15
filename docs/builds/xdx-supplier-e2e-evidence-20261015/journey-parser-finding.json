@@ -1,0 +1,7 @@
+{
+  "observedUtc": "2026-10-15T20:58:36.521Z",
+  "symptom": "Independent review found concrete journey demanded internal IDs absent native review/detail widgets and parsed whole AX including echoed prompt",
+  "evidence": "Actual results.json/screens show parent SupplierNumber/name before Confirm; accepted child result shows Parent supplier ID; ordinary Address uses Name/Country labels",
+  "correctionPlan": "Response-subtree parser, surface-specific observedlabels, native parentnumber/name matched acceptedIDmapping, exactpayload/readback assertions, collectionemptyenvelope checks",
+  "impact": "Concrete journey automation not used; root adaptive acceptedwrites and proof unchanged"
+}

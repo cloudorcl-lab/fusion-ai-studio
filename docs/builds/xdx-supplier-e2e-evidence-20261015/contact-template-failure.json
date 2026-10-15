@@ -1,0 +1,10 @@
+{
+  "observedUtc": "2026-10-15T21:04:05.617Z",
+  "result": "FAIL",
+  "kind": "application",
+  "actual": "Template preparation failed: child source/address-name check could not finish. App reports no new create submitted. No Confirm or write reservation issued; screenshot retained.",
+  "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-draft-ready-002.txt",
+  "writeReservations": 0,
+  "disposition": "Preserve failure as requested; do not repair product or retry unchanged; continue independent Site/Assignment steps",
+  "cause": "Unknown; native source check reported incomplete"
+}

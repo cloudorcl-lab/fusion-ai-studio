@@ -1,0 +1,33 @@
+{
+  "observedUtc": "2026-10-15T21:16:18.096Z",
+  "corrections": [
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-result-002.jpg",
+      "previousTitle": "New supplier addresses",
+      "previousNotes": "Address collection under newly created supplier1503."
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-draft-ready-002.jpg",
+      "previousTitle": "Direct address creation",
+      "previousNotes": "Direct Address draft for supplier1503 using required fields and ordering purpose."
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-ready-004.jpg",
+      "previousTitle": "Direct address creation",
+      "previousNotes": "Review direct Address payload, same supplier1503, exact revision1."
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.jpg",
+      "previousTitle": "Direct address creation",
+      "previousNotes": "Direct Address result with independent readback and generated identifier."
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-draft-ready-002.jpg",
+      "previousTitle": "Contact template creation",
+      "previousNotes": "Contact template uses accepted same-parent Contact, new last name and Email."
+    }
+  ],
+  "preservedOriginalImages": true,
+  "uiRequestsReplayed": 0,
+  "captureCount": 62
+}

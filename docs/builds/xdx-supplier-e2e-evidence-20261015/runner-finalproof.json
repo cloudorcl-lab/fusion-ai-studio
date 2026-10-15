@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "observedUtc": "2026-10-15T21:20:40.557Z",
+  "surface": "local retained-results copy only",
+  "branches": [
+    {
+      "name": "Mismatched resume inventory",
+      "result": "PASS",
+      "observations": "Rejected before lock/journal/results mutation; retained copy unchanged"
+    },
+    {
+      "name": "Queued host deck finalizer",
+      "result": "PASS",
+      "observations": "Matching resume allowed; queued callback retained as pending; no presentation-finished event emitted"
+    }
+  ],
+  "actualResultsSha256BeforeAndAfter": "f54f3e28bc6ddbac11abecf7cdfe1edb13a5ed6d046cf09577d2f6c987841154",
+  "runnerSha256": "daf0a904d5975d0fb0796412bdb41bbf3da4bd26edc2b53ce22f4ac1c31de57d",
+  "noBrowserCalls": true,
+  "noBusinessWrites": true,
+  "unchangedCaptureLogic": true
+}

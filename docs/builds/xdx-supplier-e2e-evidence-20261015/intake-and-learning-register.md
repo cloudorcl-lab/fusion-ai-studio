@@ -1,0 +1,21 @@
+# xdx-supplier-e2e-evidence-20261015
+
+Deliver one reusable UI test entry point and execute all supplier/address/contact/site/assignment query-create-readback scenarios with complete screen captures and PowerPoint evidence. User approved prompt and continued execution after failures, labeled fallback coverage, unlimited attempts for this run with retries tracked separately, and unmasked synthetic business data. [Authority](approvals.json).
+
+Root TestingWFBuildTools owns new runner, ledger, deck and handoff. Existing implementation D:/Temp/worktrees/xdx-supplier-workspace-20261014 codex/xdx-supplier-workspace-20261014 is source only; do not modify app logic to fabricate acceptance. Verify configured environment/current saved DRAFT before prompts. Native target Studio Run app preview only; business writes serialized by /root. Resource refs 26C API11.13.18.05: docs/lessons/objects/oracle-fusion-procurement-suppliers.md, docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md, docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md, docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md, docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md, docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md. Retained samples reused; no sample refresh, no new accounts/payment/security changes. Gates reused within matching source boundary; per-run gaps become recorded FAIL/BLOCKED while independent stages continue under user override of stop-on-test-failure. Do not bypass failed safety/preflight gates.
+
+Workers registered: e2e_plan_review (plan-review) and e2e_deck (deck); exact file ownership in build-ledger. Both use root checkout, node/pwsh host credential context; registered receipts plan-review-commands.jsonl and deck-commands.jsonl, shared learning task xdx-supplier-e2e-evidence-20261015. Root is sole ledger/master writer.
+
+Success: all planned steps accounted; original connected outcomes distinguished from fallback; every actual screen in deck with title and action/expected/actual/ID/timing notes; durable IDs and retry history; source identity and readback assertions; render review; final handoff. No claim every product scenario passes when it fails. No application build/deployment/sync/optimization required unless a separate authorized change arises; current preexisting configured proof inspected for reuse, missing proof remains explicit.
+
+Exact delegated session identities: xdx-supplier-e2e-evidence-20261015-deck, xdx-supplier-e2e-evidence-20261015-plan-review.
+
+Registered exact runner task xdx-supplier-e2e-evidence-20261015-runner; assignment runner, agent /root/e2e_runner, registered runner-commands.jsonl, scope runner; sole script owner scripts/xdx-supplier-e2e.mjs; no browser or business write authority delegated.
+
+Material delegated task xdx-supplier-e2e-evidence-20261015-plan-review now additionally owns scripts/xdx_supplier_e2e_journey.mjs and journey-usage.md, full native scenario entrypoint; learningScope runner. No browser or tenant execution delegated.
+
+Material documentation closeout: exact task xdx-supplier-e2e-evidence-20261015-plan-review owns five in-scope Supplier/Address/Contact/Site/Assignment object references and one existing canonical capture paragraph/change record. Scope governance; no app mutation, no test/runtime replay; immutable first GET samples preserved. Root integrates and refreshes reviewed hashes.
+
+Task xdx-supplier-e2e-evidence-20261015-runner finalboundedrepair F014 owns genericrunner resume/finalizer guard and usage/proof; no capture/bizlogic change and noUIwrites; localchangedbranchesonly.
+
+Completionreview: allplannednativeoutcomesaccounted16PASS3FAIL2BLOCKED; UIbusinessretries0 and6POSTsfrozen. User-directed evidence-run completion permits retained applicationFAILs and capabilityBLOCKED; this does notacceptproductQA orclaimtheconnectedjourneyPASS. FinalPPT90slides62images90notesverified; currentconcretewrapper21freshplansteps locallyqualifiedfromactualsnapshots and newdependentrowimpact, notfreshlivewrite-replayed. Generation/runtimedependencies and private diagnostic evidence retained perREADME. Reusablecapturelesson+5objectconfirmations promoted; immutablefirstGETs unchanged. AllworkerroleCloseoutsPASS.

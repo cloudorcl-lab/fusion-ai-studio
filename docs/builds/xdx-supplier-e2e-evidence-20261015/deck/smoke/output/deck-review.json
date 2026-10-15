@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "runId": "TOOLING-SMOKE-NOT-APPLICATION-EVIDENCE",
+  "startedUtc": "2026-10-15T20:46:53.683Z",
+  "endedUtc": "2026-10-15T20:47:02.116Z",
+  "sourceResults": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/results.json",
+  "sourceSha256": "5829b9df1373dc05bc62a93e16d57ed04b2e3438cb4157e9a0d2570467d74d25",
+  "finalPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/output/xdx-supplier-workflow-evidence.pptx",
+  "finalSha256": "532d7495885359db871d8b0519926fa6c32a251d8f450ac9943fe22844530c31",
+  "renderDirectory": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/renders",
+  "slideCount": 7,
+  "plannedCaptureCount": 1,
+  "mappedCaptureCount": 1,
+  "embeddedCaptureCount": 1,
+  "notesCount": 7,
+  "captureIssues": [],
+  "slides": [
+    {
+      "slide": 1,
+      "kind": "opening",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 2,
+      "kind": "scope",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 3,
+      "kind": "capture",
+      "stepId": "SMOKE",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/tooling-image.png",
+      "captureSha256": "27c81cda72d16fb508c06f92bcd591c65581b8a307f6314e911cbd0da331ad75",
+      "embedded": true
+    },
+    {
+      "slide": 4,
+      "kind": "no-capture",
+      "stepId": "BLOCKED-SMOKE",
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 5,
+      "kind": "coverage",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 6,
+      "kind": "records",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 7,
+      "kind": "closing",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    }
+  ],
+  "visualReview": "PENDING. Inspect every final slide PNG before delivery.",
+  "applicationAcceptance": "Determined only by source result assertions, not deck generation.",
+  "toolingSmoke": true
+}

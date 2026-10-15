@@ -1,0 +1,86 @@
+Browser tab: 676657676, Title: "XDX Supplier Workspace", URL: "https://fa-eqil-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/xdx_supplier_workspace?draft=true".
+1 AXWebArea XDX Supplier Workspace, URL: fa-eqil-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/xdx_supplier_workspace?draft=true
+	2 container
+		3 container bF2ZlvceuxGpNACDkYQ6W8pF_ao
+			77 container
+				78 container
+					79 container
+						80 heading XDX Supplier Workspace, Value: 1
+							81 text XDX Supplier Workspace
+						82 button Open property panel
+						83 heading Ask Oracle, Value: 3
+							84 image
+							85 text Ask Oracle
+						86 heading Summary, Value: 3
+							87 text Summary
+						88 container swimlanes-container-builder
+							89 container
+								90 heading XDX Supplier Advisor, Value: 3
+									91 text XDX Supplier Advisor
+								92 text Using draft
+								93 container Agent configuration for XDX Supplier Conversation
+									94 text XDX_SUPPLIER_CONVERSATION
+									95 heading XDX Supplier Conversation, Value: 3
+										96 text XDX Supplier Conversation
+									97 text Supplier search and reviewed template requests for the Supplier Workspace
+							98 text Add Section
+						99 heading Communications, Value: 4
+							100 text Communications
+						101 button Add Communication
+						102 button Close property panel
+						103 container
+							104 heading App Settings, Value: 3
+								105 text App Settings
+							106 text Title
+							107 text field (settable) Description: Application title, Value: XDX Supplier Workspace, ID: app-title-input
+							108 text Subtitle
+							109 text field (settable) Description: Application subtitle, ID: app-subtitle-input
+							110 text Dynamic Subtitle Agent
+							111 container
+								112 combo box (collapsed, settable) Dynamic Subtitle Agent, ID: app-dynamic-subtitle-agent, Secondary Actions: Expand
+								113 button Clear selection
+									114 image
+								115 button Toggle dropdown
+									116 image
+							117 text Security Roles
+							118 container
+								119 combo box (collapsed, settable) Security Roles, ID: app-security-roles, Secondary Actions: Expand
+								120 button Toggle dropdown
+									121 image
+							122 switch Description: Initially hide actions panel when empty, Value: 0, ID: hide-actions-panel-toggle
+								123 text Initially hide actions panel when empty
+							124 switch Description: Prefer single priority actions, Value: 0, ID: prefer-single-priority-actions-toggle
+								125 text Prefer single priority actions
+							126 switch Description: Automatically translate agent responses, Value: 0, ID: auto-translate-toggle
+								127 text Automatically translate agent responses
+							128 switch Description: Enable file upload, Value: 0, ID: enable-file-upload-toggle
+								129 text Enable file upload
+							130 switch Description: Enable email attachments, Value: 1, ID: enable-email-attachments-toggle
+								131 text Enable email attachments
+							132 switch Description: Enable Context Switching, Value: 0, ID: enable-unified-view
+								133 text Enable Context Switching
+							134 heading Share Response Channels, Value: 3
+								135 text Share Response Channels
+							136 button Edit Email channel
+							137 button add channel
+							138 heading Page Options, Value: 3
+								139 text Page Options
+							140 button 1 Column (Full Width)
+							141 button 2 Columns (Equal)
+							142 button 2 Columns (Left 2/3, Right 1/3)
+							143 button 2 Columns (Left 1/3, Right 2/3)
+					144 toolbar Application builder toolbar
+						145 button Description: Go to homepage, Help: Home
+						146 container Toolbar actions
+							147 pop up button (collapsed) Description: Browse app components, Secondary Actions: Expand
+							148 container Undo and redo
+								149 button (disabled) Undo
+								150 button (disabled) Redo
+							151 container Vibe agent
+								152 button Toggle vibe chat popup
+							153 button Run app preview
+							154 button Publish application
+							155 button Hide toolbar
+			76 link Description: Ask Oracle, Value: static.oracle.com/cdn/fa/oracle_fai_aiappspublicUI/2607.146.262512339/aiappsweb/#, ID: bF2ZlvceuxGpNACDkYQ6W8pF_ao-brand
+
+The focused UI element is 1 AXWebArea XDX Supplier Workspace, URL: fa-eqil-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/xdx_supplier_workspace?draft=true

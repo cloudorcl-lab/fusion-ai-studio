@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-e2e-evidence-20261015",
+  "scopes": [
+    "governance",
+    "runner",
+    "supplier",
+    "address",
+    "contact",
+    "site",
+    "assignment",
+    "deck"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-supplier-e2e-evidence-20261015/commands.jsonl",
+    "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review-commands.jsonl",
+    "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "F001",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "observedUtc": "2026-10-15T20:40:06.821Z",
+      "symptom": "Empty-ledger rationale omitted",
+      "evidenceGap": "Predispatch blocked; no child or timing runID",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/startup-ledger-finding.json",
+          "sha256": "eaa9573cca54ef7d9bb9b51b03b3b68a0cdcb2ed8ee5b5b5446d48968c42d0bd"
+        }
+      ],
+      "cause": "Initializer omitted required empty-ledger field",
+      "correction": "Captured actual issue; future zero-failure initialization must state noFailuresReason",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Validate initial failure-ledger structure before dependent commands",
+        "reason": "Existing requirement; no product defect"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Transactional candidate Startup integrity check",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/verify-build-learning.cjs",
+            "sha256": "411033ad51e8f5f7dd56c57d16e246e98e0b44d1aab56944726f9aed69361f32"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/startup-ledger-finding.json",
+            "sha256": "eaa9573cca54ef7d9bb9b51b03b3b68a0cdcb2ed8ee5b5b5446d48968c42d0bd"
+          }
+        ]
+      }
+    }
+  ]
+}

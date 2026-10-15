@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "agentId": "/root/e2e_plan_review",
+  "assignmentId": "plan-review",
+  "observedUtc": "2026-10-15T20:45:16.982Z",
+  "scope": "Independent static native journey plan; no tenant reads/writes/tests",
+  "source": {
+    "root": "D:/Temp/worktrees/xdx-supplier-workspace-20261014/",
+    "branch": "codex/xdx-supplier-workspace-20261014",
+    "head": "91ddb80664cd74bf976dbd090222b606d5f89984",
+    "app": {
+      "path": "src/apps/xdx_supplier_workspace.app",
+      "code": "XDX_SUPPLIER_WORKSPACE",
+      "sha256": "23939eae8f3add68fc823a97b6bbe5ae32619419810446e69a4a0082b2b201a5"
+    },
+    "workflow": {
+      "path": "src/workflows/xdx_supplier_conversation.wf",
+      "code": "XDX_SUPPLIER_CONVERSATION",
+      "sha256": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872",
+      "retainedSavedVersion": 88010729,
+      "status": "DRAFT",
+      "currentRuntimeIdentity": "Coordinator must freshly reconcile target/version"
+    }
+  },
+  "environment": {
+    "retainedTarget": "eqil-dev21",
+    "retainedIdentity": "CASEY.BROWN",
+    "evidence": "docs/builds/xdx-supplier-child-create-20261015/current-target-identity.json",
+    "note": "Historical object references eqih are not current environment authority; saved final workflow source hash matches current bytes"
+  },
+  "coverage": [
+    {
+      "object": "Supplier",
+      "query": true,
+      "create": [
+        "template"
+      ],
+      "unsupported": [
+        "direct"
+      ],
+      "readback": "Independent GetSupplier after create; ordinary supplier detail separately required"
+    },
+    {
+      "object": "Address",
+      "query": true,
+      "create": [
+        "direct",
+        "same-parent template"
+      ],
+      "readback": "GetAddress after create; ordinary collection/detail separately required"
+    },
+    {
+      "object": "Contact",
+      "query": true,
+      "create": [
+        "direct",
+        "same-parent template"
+      ],
+      "readback": "GetContact after create; ordinary collection/detail separately required"
+    },
+    {
+      "object": "Site",
+      "query": true,
+      "create": [
+        "same-parent template"
+      ],
+      "unsupported": [
+        "direct",
+        "first site on new supplier through current UI"
+      ],
+      "requirements": "Existing ACTIVE purchasing source Site with numeric BU, ACTIVE same-parent address matching source, complete assignment pairs and unique new Site name",
+      "readback": "Independent GetSite compares 4 payload fields; inherits source address, cannot point at a different newly created address"
+    },
+    {
+      "object": "Site Assignment",
+      "query": "No ordinary user-facing assignment resource in interpreter enum",
+      "create": [
+        "serial source-site assignment copying as part of Site transaction",
+        "missing-only continuation"
+      ],
+      "unsupported": [
+        "standalone user-facing direct/template assignment request"
+      ],
+      "readback": "ListSupplierSiteAssignments by AssignmentId verifies ClientBUId/BillToBUId; ordinary assignment query remains explicit capability gap"
+    }
+  ],
+  "prompts": {
+    "search": "Find a supplier like <verified existing name>",
+    "supplierTemplate": "Create supplier based on supplier number <source number> with new name <unique run supplier name>",
+    "supplierDetail": "Show supplier details for supplier number <created number>",
+    "addressDirect": "Create address for supplier number <new number> with AddressName <unique name>, CountryCode US, AddressLine1 2300 GREENLAWN BLVD, City ROUND ROCK, State TX, PostalCode 78664, Email <run-specific>@example.invalid",
+    "addressQuery": "Show addresses for supplier number <new number>",
+    "addressTemplate": "Create address for supplier number <new number> based on address ID <new same-parent address ID> with new name <unique second name> and Email <second-run-specific>@example.invalid",
+    "contactDirect": "Create contact for supplier number <new number> with FirstName XDX, LastName <unique run family name>, Email <run-specific>@example.invalid",
+    "contactQuery": "Show contacts for supplier number <new number>",
+    "contactTemplate": "Create contact for supplier number <new number> based on contact ID <new same-parent contact ID> with LastName <distinct family name> and Email <second-run-specific>@example.invalid",
+    "siteQuery": "Show sites for supplier number <new number>",
+    "siteConnectedAttempt": "Create site for supplier number <new number> based on selected site with new name <unique site name>",
+    "siteFallback": "Create a new site for supplier number <verified fallback number> based on site ID <verified active purchasing same-parent site ID> with new name <unique fallback site name>",
+    "siteDetail": "Show site details for site ID <created site ID> for supplier number <fallback number>",
+    "review": "Review request <exact displayed request ID> revision <exact displayed revision>",
+    "confirm": "Confirm request <same request ID> revision <same reviewed revision>",
+    "cancel": "Cancel request <current request ID> revision <current revision>",
+    "continuation": "Continue assignments for request <original incomplete Site request ID>"
+  },
+  "stateAndSafety": {
+    "owner": "conversation supplierState; one browser owner, one in-flight draft",
+    "controls": "Exact case-sensitive full-message Review/Confirm/Cancel; approval is Confirm, not Approve/Create",
+    "capture": "Screenshot prepared draft, review, post/readback completion immediately; save request/revision/IDs before unrelated work",
+    "uncertainty": "Recorded attempts freeze replay. Read-only reconcile uncertain outcomes. Continuation reconciles accepted Site and existing BU pairs; never recreate Site.",
+    "freshConversation": "Query-to-query state persists only within original conversation; do not assume selection/draft across reload/new preview"
+  },
+  "evidence": [
+    {
+      "path": "src/workflows/xdx_supplier_conversation.wf",
+      "line": 129,
+      "node": "XDX_PARSE_CONTROL"
+    },
+    {
+      "path": "src/workflows/xdx_supplier_conversation.wf",
+      "line": 189,
+      "node": "XDX_EVALUATE_CONTROL"
+    },
+    {
+      "path": "src/workflows/xdx_supplier_conversation.wf",
+      "line": 3116,
+      "node": "XDX_PREPARE_SITE_SOURCE"
+    },
+    {
+      "path": "src/workflows/xdx_supplier_conversation.wf",
+      "line": 485,
+      "node": "XDX_ACCEPT_SITE_TEMPLATE"
+    },
+    {
+      "path": "src/workflows/xdx_supplier_conversation.wf",
+      "line": 3157,
+      "node": "XDX_PREPARE_CHILD_CREATE"
+    },
+    {
+      "path": "src/workflows/xdx_supplier_conversation.wf",
+      "line": 4140,
+      "node": "XDX_ACCEPT_SUPPLIER_DETAIL"
+    },
+    {
+      "path": "src/workflows/xdx_supplier_conversation.wf",
+      "line": 2279,
+      "node": "XDX_INTERPRET_SUPPLIER_REQUEST"
+    },
+    {
+      "path": "src/workflows/xdx_supplier_conversation.wf",
+      "line": 1311,
+      "node": "XDX_VERIFY_CREATED_SITE"
+    },
+    {
+      "path": "src/workflows/xdx_supplier_conversation.wf",
+      "line": 2028,
+      "node": "XDX_VERIFY_CREATED_ASSIGNMENT"
+    },
+    {
+      "path": "src/workflows/xdx_supplier_conversation.wf",
+      "line": 3682,
+      "node": "XDX_GET_CREATED_ADDRESS"
+    },
+    {
+      "path": "src/workflows/xdx_supplier_conversation.wf",
+      "line": 3838,
+      "node": "XDX_GET_CREATED_CONTACT"
+    }
+  ],
+  "retainedProof": {
+    "workflowExact": true,
+    "workflowEvidence": "docs/builds/xdx-supplier-child-create-20261015/identity-saved-readback.json",
+    "nativeLimitation": "Corrected Contact-template identity display unobserved historically; explicit user completion exception is not native PASS",
+    "testHashCaution": "Current direct Address, direct Contact and template Contact files differ execution-contract test hashes. Generated binding/reorder provenance must be reconciled before current test qualification reuse; no re-execution here."
+  },
+  "reviewResult": "Plan supported with explicit capability gaps; connected new supplier Site/address chain cannot complete with current template-only Site implementation. Continue and record BLOCKED connected rows plus labeled fallback, without modifying app behavior.",
+  "timing": {
+    "firstObservedCommandStartUtc": "2026-10-15T20:41:53.192Z",
+    "precision": "Earliest retained measured command boundary; earlier governance reading start unknown and unallocated",
+    "knownStartupFailure": [
+      "2026-10-15T20:41:53.192Z",
+      "2026-10-15T20:41:54.043Z"
+    ],
+    "timingLimitations": "Coordinator owns authoritative ledger. Reading and gate coordination include unallocated gaps; report generation endpoint observedUtc."
+  }
+}

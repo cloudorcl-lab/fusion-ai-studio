@@ -1,0 +1,33 @@
+{
+  "owner": "docs/builds/xdx-supplier-e2e-evidence-20261015/build-ledger.json",
+  "startedUtc": "2026-10-15T20:39:48.773Z",
+  "cutoffUtc": "2026-10-15T21:29:37.472Z",
+  "runWallMs": 2988699,
+  "rootRecordedActiveMs": 2988699,
+  "rootRecordedBlockingWaitMs": 0,
+  "rootRecordedRequiredUserWaitMs": 0,
+  "rootIdleOrInterruptedMs": 0,
+  "initialUnallocatedMs": null,
+  "initialUnallocatedReason": "Governance reading preceded firstprospectivestart; exactfirstactiontimestampnotrecovered, notestimated",
+  "nativeUi": {
+    "from": "2026-10-15T20:46:53.218Z",
+    "to": "2026-10-15T21:09:17.973Z",
+    "elapsedMs": 1344755,
+    "businessRetries": 0,
+    "acceptedPOSTs": 6
+  },
+  "perAgentObservedCommandMs": {
+    "/root": 6246.9024,
+    "/root/e2e_plan_review": 9059.7179,
+    "/root/e2e_deck": 95464.3413,
+    "/root/e2e_runner": 6512.8378999999995
+  },
+  "perAgentFullActiveAndWaitTotals": "Unavailable; commandtimingdoesnotmeasureunwrappedworkeractivity/idle",
+  "tokens": "Unavailable",
+  "aiUnits": "Notexposed inretainednativeUIevidence",
+  "limitations": [
+    "Prerequisite reading before first prospective timestamp has unknown start and remains unallocated",
+    "Token and context-usage telemetry unavailable; manual checkpoints at slices; no automated browser reminder available",
+    "Final rootgate/commit/response tail after 2026-10-15T21:29:37.472Z excluded from prospective primary totals; retained receipts permit later recovery. Worker command intervals are observed diagnostic subsets; unwrapped worker activity/wait gaps are unknown, not continuous effort."
+  ]
+}

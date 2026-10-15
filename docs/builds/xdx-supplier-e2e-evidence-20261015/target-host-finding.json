@@ -1,0 +1,10 @@
+{
+  "observedUtc": "2026-10-15T20:42:30.521Z",
+  "observed": "Browser sign-in rejected credentials on historical eqih host",
+  "cause": "Coordinator used historical hardcoded host rather than configured eqil target",
+  "rootAndWorktreeHost": "https://fa-eqil-dev21-saasfademo1.ds-fa.oraclepdemos.com",
+  "credentialsEqual": true,
+  "correction": "Use exact configured eqil URL; do not retry credentials on historical host",
+  "businessWrites": 0,
+  "limitation": "No screenshot of populated credential page retained"
+}

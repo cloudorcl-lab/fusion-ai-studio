@@ -1,0 +1,45 @@
+{
+  "observedUtc": "2026-10-15T21:12:49.7853550Z",
+  "reviewer": "/root/e2e_deck",
+  "reviewedSlides": "1-45",
+  "draft": "deck/2026-10-15T21-11-13-020Z/output/xdx-supplier-workflow-evidence.pptx",
+  "layout": "PASS, all images contained and titles readable",
+  "metadataFindings": [
+    {
+      "stage": "result",
+      "actualScreen": "Loading",
+      "requiredLabel": "Query in progress",
+      "step": "address-query",
+      "slide": 17
+    },
+    {
+      "stage": "draft-ready",
+      "actualScreen": "Loading",
+      "requiredLabel": "Preparation in progress",
+      "step": "address-direct",
+      "slide": 19
+    },
+    {
+      "stage": "review-ready",
+      "actualScreen": "Loading",
+      "requiredLabel": "Review in progress",
+      "step": "address-direct",
+      "slide": 21
+    },
+    {
+      "stage": "created-readback",
+      "actualScreen": "Loading",
+      "requiredLabel": "Confirmation in progress",
+      "step": "address-direct",
+      "slide": 23
+    },
+    {
+      "stage": "draft-ready",
+      "actualScreen": "Source/address-name check error",
+      "requiredLabel": "Preparation error",
+      "step": "contact-template",
+      "slide": 44
+    }
+  ],
+  "preservation": "Retain all original61JPEGs, final step outcomes and later completion evidence. No UI replay required."
+}

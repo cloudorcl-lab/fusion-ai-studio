@@ -1,0 +1,14 @@
+{
+  "observedUtc": "2026-10-15T20:42:30.519Z",
+  "result": "pass",
+  "identities": [
+    "xdx-supplier-e2e-evidence-20261015-deck",
+    "xdx-supplier-e2e-evidence-20261015-plan-review"
+  ],
+  "failedRunIds": [
+    "34cc2c2e-de69-4a18-9935-0001b01a3df5",
+    "2ce7eb32-b93b-47f8-911a-d77c49c7419a"
+  ],
+  "cause": "Coordinator registered short aliases rather than literal scoped session IDs",
+  "correction": "Exact identities in both shared owner documents; serialized substring checks passed"
+}

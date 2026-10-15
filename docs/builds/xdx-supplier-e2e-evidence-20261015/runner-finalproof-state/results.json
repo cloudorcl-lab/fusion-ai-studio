@@ -1,0 +1,3108 @@
+{
+  "schemaVersion": 1,
+  "runId": "xdx-supplier-e2e-evidence-20261015",
+  "startedUtc": "2026-10-15T20:50:49.397Z",
+  "endedUtc": "2026-10-15T21:20:40.534Z",
+  "target": {
+    "appCode": "XDX_SUPPLIER_WORKSPACE",
+    "workflowCode": "XDX_SUPPLIER_CONVERSATION",
+    "version": "88010729",
+    "host": "https://fa-eqil-dev21-saasfademo1.ds-fa.oraclepdemos.com",
+    "surface": "app-preview"
+  },
+  "steps": [
+    {
+      "id": "setup",
+      "object": "Supplier",
+      "scenario": "identity",
+      "title": "Supplier Workspace draft preview",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "PASS",
+      "actual": "Correct signed-in app preview and current DRAFT88010729 verified.",
+      "recordIds": {},
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T20:50:49.410Z",
+          "status": "PASS",
+          "actual": "Correct signed-in app preview and current DRAFT88010729 verified.",
+          "endedUtc": "2026-10-15T20:54:00.969Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-studio-identity-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-studio-identity-001.txt",
+          "title": "Supplier Workspace draft preview",
+          "stage": "studio-identity",
+          "observedUtc": "2026-10-15T20:53:14.566Z",
+          "notes": "Actual app configuration; current saved draft88010729 verified.",
+          "mimeType": "image/jpeg",
+          "sha256": "78a134f73137f1f5236d2a7e6af88b7a15d6b80c550617e97defe5f151bb2918",
+          "semanticSha256": "71880941c0d1ff7b71c5dbbb0d10afba2e2589f624b49041e01ea0387012b248"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-preview-start-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-preview-start-002.txt",
+          "title": "Supplier Workspace draft preview",
+          "stage": "preview-start",
+          "observedUtc": "2026-10-15T20:53:14.578Z",
+          "notes": "Actual Studio Run app preview startup.",
+          "mimeType": "image/jpeg",
+          "sha256": "9dc4d10c34729e9debb8848dff3e43d1e3fcd4529573b33715939a742f76517e",
+          "semanticSha256": "38b7f2fb7b4e1cb649a6bea212d7b9addbb413529be16d8672536e49e3f09cbd"
+        }
+      ],
+      "reservations": [],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/current-target.json"
+        }
+      ],
+      "endedUtc": "2026-10-15T20:54:00.969Z"
+    },
+    {
+      "id": "supplier-query",
+      "object": "Supplier",
+      "scenario": "query",
+      "title": "Supplier search",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "PASS",
+      "actual": "Known-hit Dell search returned three suppliers with no more results.",
+      "recordIds": {
+        "sourceSupplierNumber": "1255"
+      },
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T20:54:00.976Z",
+          "status": "PASS",
+          "actual": "Known-hit Dell search returned three suppliers with no more results.",
+          "endedUtc": "2026-10-15T20:54:03.841Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-entered-request-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-entered-request-001.txt",
+          "title": "Supplier search",
+          "stage": "entered-request",
+          "observedUtc": "2026-10-15T20:54:00.985Z",
+          "notes": "Find a supplier like Dell",
+          "mimeType": "image/jpeg",
+          "sha256": "ad7ac14fa4363015673adcf8e82d00f4d0861f2ebc95547081448ac3df32b772",
+          "semanticSha256": "9ba2ed703db848a6d718b61e1f906d87cfae1ce7bbe7c40b5c430582c0d6a178"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-result-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-result-002.txt",
+          "title": "Supplier search",
+          "stage": "result",
+          "observedUtc": "2026-10-15T20:54:03.836Z",
+          "notes": "Dell Inc. number1255 and two XDX clones; complete three-row response.",
+          "mimeType": "image/jpeg",
+          "sha256": "3e0ec9d793dae311b91f43d076b5348c9d3971d740e24256f99be2dfe8e53dbe",
+          "semanticSha256": "8b387fde9ba8c8b9ad17874377ec13d62e5d1c7b8604b9501404e66a1918c53c"
+        }
+      ],
+      "reservations": [],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-result-002.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T20:54:03.841Z"
+    },
+    {
+      "id": "supplier-create",
+      "object": "Supplier",
+      "scenario": "template",
+      "title": "Supplier template creation",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": true,
+      "status": "PASS",
+      "actual": "Created supplier1503 once; workflow independently verified name, type, relationship and tax organization type.",
+      "recordIds": {
+        "supplierId": "300000340604948",
+        "supplierNumber": "1503"
+      },
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T20:54:03.847Z",
+          "status": "PASS",
+          "actual": "Created supplier1503 once; workflow independently verified name, type, relationship and tax organization type.",
+          "endedUtc": "2026-10-15T20:55:30.012Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepare-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepare-input-001.txt",
+          "title": "Supplier template creation",
+          "stage": "prepare-input",
+          "observedUtc": "2026-10-15T20:54:04.006Z",
+          "notes": "Entered request: Create supplier based on supplier number 1255 with new name XDX E2E Evidence 20261015 2054",
+          "mimeType": "image/jpeg",
+          "sha256": "e6c2117f61a5887be8f2c450f8b78db309200018616b2012aa55fe52b049f796",
+          "semanticSha256": "409887195dbe4627bc04f8dcb6bfb3de95b1c3a11017343c2fa80b36c12b6445"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepared-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepared-002.txt",
+          "title": "Supplier preparation in progress",
+          "stage": "prepared",
+          "observedUtc": "2026-10-15T20:54:13.592Z",
+          "notes": "Actual intermediate loading screen. Final draft is captured separately at draft-ready.",
+          "mimeType": "image/jpeg",
+          "sha256": "3bd169aced73c3cf9ab32ee39b226302fab4f01d9e5bbeb20dcad5e8459f7a76",
+          "semanticSha256": "6c094c52bdf0dc374c70b67a99479068441621c99b3c9e64d2d2a6421acfccc0"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-draft-ready-003.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-draft-ready-003.txt",
+          "title": "Supplier template creation",
+          "stage": "draft-ready",
+          "observedUtc": "2026-10-15T20:54:41.241Z",
+          "notes": "New supplier draft with source1255, expected classifications, exact request/revision; no record created.",
+          "mimeType": "image/jpeg",
+          "sha256": "ac6dca70e8bc75239962688ce2df4b6f48d50b2bba811d8b85011c8d4429c3f7",
+          "semanticSha256": "a898aa876a9bd99ec4f82cf66ffeefe4849fb18ce00b19239edd49e2165b4583"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-input-004.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-input-004.txt",
+          "title": "Supplier template creation",
+          "stage": "review-input",
+          "observedUtc": "2026-10-15T20:54:41.413Z",
+          "notes": "Entered request: Review request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-1 revision 1",
+          "mimeType": "image/jpeg",
+          "sha256": "26ec2eda9e949386aa82aaf237eb81391b23067c0230bf51788e43c0bceb98a9",
+          "semanticSha256": "0ce7ec52f17dee3eba3a2458fb6117e15e76b73a11e1139afae42bd55a2ce2b2"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-ready-005.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-ready-005.txt",
+          "title": "Supplier template creation",
+          "stage": "review-ready",
+          "observedUtc": "2026-10-15T20:54:57.203Z",
+          "notes": "Exact supplier request reviewed before confirmation.",
+          "mimeType": "image/jpeg",
+          "sha256": "cea932b9c1976dcb8cc7aec900c031dbb33b83c1a5b0f31aabcc4c40beac9851",
+          "semanticSha256": "4f72835f58076b60224074f4e55b77dcd7acdb25b74cc6f09f49507de4349ebf"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-confirm-input-006.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-confirm-input-006.txt",
+          "title": "Supplier template creation",
+          "stage": "confirm-input",
+          "observedUtc": "2026-10-15T20:55:08.851Z",
+          "notes": "Entered request: Confirm request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-1 revision 1",
+          "mimeType": "image/jpeg",
+          "sha256": "af8fbcbd1992d13f40e322028cd62a014475cada747feb4bb2118f3d2cb4cd5a",
+          "semanticSha256": "a3a0f4ad2d1ab26fe984529ccaff4f998df5f938eb6081a1800484b3fcdc1aad"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.txt",
+          "title": "Supplier template creation",
+          "stage": "created-readback",
+          "observedUtc": "2026-10-15T20:55:19.657Z",
+          "notes": "Supplier creation response and independent workflow verification.",
+          "mimeType": "image/jpeg",
+          "sha256": "2c278a19c9d9a02cedf7cbd0c6ed462247d2399fb3e9f895882b352273634d29",
+          "semanticSha256": "99833cf956f113b3b890d7ad22661df7a5dd8f5ffc321884fef006f99c41264d"
+        }
+      ],
+      "reservations": [
+        {
+          "operationId": "supplier-template-20261015-2054",
+          "requestId": "REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-1",
+          "revision": 1,
+          "payload": {
+            "Supplier": "XDX E2E Evidence 20261015 2054",
+            "SupplierType": "Supplier",
+            "BusinessRelationship": "Spend Authorized",
+            "TaxOrganizationType": "Corporation"
+          },
+          "reservedUtc": "2026-10-15T20:55:08.606Z",
+          "disposition": "accepted",
+          "recordIds": {
+            "supplierId": "300000340604948",
+            "supplierNumber": "1503"
+          },
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.txt",
+          "reconciledUtc": "2026-10-15T20:55:30.002Z"
+        }
+      ],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T20:55:30.012Z"
+    },
+    {
+      "id": "supplier-readback",
+      "object": "Supplier",
+      "scenario": "readback",
+      "title": "Created supplier details",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "PASS",
+      "actual": "Ordinary detail query returned supplier1503 and all intended classifications.",
+      "recordIds": {},
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T20:55:30.017Z",
+          "status": "PASS",
+          "actual": "Ordinary detail query returned supplier1503 and all intended classifications.",
+          "endedUtc": "2026-10-15T20:56:20.430Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-query-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-query-input-001.txt",
+          "title": "Created supplier details",
+          "stage": "query-input",
+          "observedUtc": "2026-10-15T20:55:30.312Z",
+          "notes": "Entered request: Show supplier details for supplier number 1503",
+          "mimeType": "image/jpeg",
+          "sha256": "b71cb1966a56831144920e08f6e30db68d0edcf0fb7a651faf114cc2f1c314e0",
+          "semanticSha256": "89b57b6f0cd06f2b96dadd83f208b1f4616abfb637a33354524042a37ec5ae30"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-details-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-details-002.txt",
+          "title": "Created supplier details",
+          "stage": "details",
+          "observedUtc": "2026-10-15T20:55:57.167Z",
+          "notes": "Ordinary supplier detail query by displayed supplier number1503.",
+          "mimeType": "image/jpeg",
+          "sha256": "aff9d6dd98a7046e63d84c002dc9c42fbcdf75e55e289e1b6628129386947fc7",
+          "semanticSha256": "ccf142be21bc49828d0efa24c86c6dc08e3b5e7347945f8e9ec65b24b57a0520"
+        }
+      ],
+      "reservations": [],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-details-002.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T20:56:20.430Z"
+    },
+    {
+      "id": "address-query",
+      "object": "Address",
+      "scenario": "query",
+      "title": "New supplier addresses",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "PASS",
+      "actual": "New supplier1503 has an empty Address collection with Has more false.",
+      "recordIds": {},
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T20:56:20.446Z",
+          "status": "PASS",
+          "actual": "New supplier1503 has an empty Address collection with Has more false.",
+          "endedUtc": "2026-10-15T20:56:44.456Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-query-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-query-input-001.txt",
+          "title": "New supplier addresses",
+          "stage": "query-input",
+          "observedUtc": "2026-10-15T20:56:20.640Z",
+          "notes": "Entered request: Show addresses for supplier number 1503",
+          "mimeType": "image/jpeg",
+          "sha256": "df0a0fc757ac2702a09f251cfb40cfd8f8efef95498f32801d9e4b114c4ee393",
+          "semanticSha256": "59a3de21526ee872806fb1d6500a060a2a50e5135ca7bb92bcb39ffd3cb06aa3"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-result-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-result-002.txt",
+          "title": "Address query in progress",
+          "stage": "result",
+          "observedUtc": "2026-10-15T20:56:31.326Z",
+          "notes": "Actual image shows intermediate processing. Its AX snapshot already reports completion, so image and semantics are separate observations. The following entered-request screen visibly retains the completed prior result. No request or accepted create was repeated.",
+          "mimeType": "image/jpeg",
+          "sha256": "d5f0302acd8a132c7b737ddd704b21d5492ffc3f3abf10002f211f591d9f963c",
+          "semanticSha256": "798cc546538e8fb30f4e4121f7a9b1b5463da42a240b41dcc8a91dc1138f7d80",
+          "imageObservation": "intermediate-loading"
+        }
+      ],
+      "reservations": [],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-result-002.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T20:56:44.456Z"
+    },
+    {
+      "id": "address-direct",
+      "object": "Address",
+      "scenario": "direct",
+      "title": "Direct address creation",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": true,
+      "status": "PASS",
+      "actual": "Created Address300000340604955 once under supplier1503; all eight approved fields independently verified.",
+      "recordIds": {
+        "addressId": "300000340604955"
+      },
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T20:56:44.464Z",
+          "status": "PASS",
+          "actual": "Created Address300000340604955 once under supplier1503; all eight approved fields independently verified.",
+          "endedUtc": "2026-10-15T20:58:09.973Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-prepare-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-prepare-input-001.txt",
+          "title": "Direct address creation",
+          "stage": "prepare-input",
+          "observedUtc": "2026-10-15T20:56:44.672Z",
+          "notes": "Entered request: Create address for supplier number 1503 with AddressName XDX E2E A 2054, CountryCode US, AddressLine1 2300 GREENLAWN BLVD, City ROUND ROCK, State TX, PostalCode 78664, Email xdx.e2e.2054@example.invalid",
+          "mimeType": "image/jpeg",
+          "sha256": "1ed552c91ee4a375f38d531c968355daa35d870ddc3df24885cbddd450106d02",
+          "semanticSha256": "3a3388723156482fac7a3a00085babf3250b1ea80947634226ef9d46d3228f63"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-draft-ready-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-draft-ready-002.txt",
+          "title": "Address preparation in progress",
+          "stage": "draft-ready",
+          "observedUtc": "2026-10-15T20:56:57.294Z",
+          "notes": "Actual image shows intermediate processing. Its AX snapshot already reports completion, so image and semantics are separate observations. The following entered-request screen visibly retains the completed prior result. No request or accepted create was repeated.",
+          "mimeType": "image/jpeg",
+          "sha256": "326d22962df32241f59d3548667e1c34806006a2106efe02998c5fc7bd132d80",
+          "semanticSha256": "4e18cc24cdad726dba75348f204620797941b0c924997a6efcfe82b38640ad17",
+          "imageObservation": "intermediate-loading"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-input-003.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-input-003.txt",
+          "title": "Direct address creation",
+          "stage": "review-input",
+          "observedUtc": "2026-10-15T20:57:16.860Z",
+          "notes": "Entered request: Review request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-2 revision 1",
+          "mimeType": "image/jpeg",
+          "sha256": "360f3a70249fdbe03b79064b12c049f53da3f586c73299290e0444ff1849ea64",
+          "semanticSha256": "e234d0279661c34cf4cfc3e429866d4e2da3baf80fc06bd722defc63cf38e7fb"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-ready-004.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-ready-004.txt",
+          "title": "Address review in progress",
+          "stage": "review-ready",
+          "observedUtc": "2026-10-15T20:57:24.875Z",
+          "notes": "Actual image shows intermediate processing. Its AX snapshot already reports completion, so image and semantics are separate observations. The following entered-request screen visibly retains the completed prior result. No request or accepted create was repeated.",
+          "mimeType": "image/jpeg",
+          "sha256": "ea27afebed59d5df6bf233a3e81d117ccb84b877719462bd5aa1821d60add570",
+          "semanticSha256": "addb82ebc447bf01430e46246b1f6c31919564e13630dd53284b7966b0d05ea2",
+          "imageObservation": "intermediate-loading"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-confirm-input-005.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-confirm-input-005.txt",
+          "title": "Direct address creation",
+          "stage": "confirm-input",
+          "observedUtc": "2026-10-15T20:57:49.990Z",
+          "notes": "Entered request: Confirm request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-2 revision 1",
+          "mimeType": "image/jpeg",
+          "sha256": "6385e78f5ff3f456d19cbb8b01a69bb3f526c66d1495a7dff556c220b00f7d2c",
+          "semanticSha256": "2e33d47a4745ff1abd84f4d5a14b8a0f103e723bdc0dbbeb0411803998a0c63c"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.txt",
+          "title": "Address confirmation in progress",
+          "stage": "created-readback",
+          "observedUtc": "2026-10-15T20:57:59.569Z",
+          "notes": "Actual image shows intermediate processing. Its AX snapshot already reports completion, so image and semantics are separate observations. The following entered-request screen visibly retains the completed prior result. No request or accepted create was repeated.",
+          "mimeType": "image/jpeg",
+          "sha256": "5f18d4cb391e68d25e77f585e9adf065dda16570b786d6fa341b51784f023f78",
+          "semanticSha256": "557448732b2a68d9b78f6638b2965876ead80bec22c270fce49d582169089890",
+          "imageObservation": "intermediate-loading"
+        }
+      ],
+      "reservations": [
+        {
+          "operationId": "address-direct-2054",
+          "requestId": "REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-2",
+          "revision": 1,
+          "payload": {
+            "AddressName": "XDX E2E A 2054",
+            "CountryCode": "US",
+            "AddressLine1": "2300 GREENLAWN BLVD",
+            "City": "ROUND ROCK",
+            "State": "TX",
+            "PostalCode": "78664",
+            "Email": "xdx.e2e.2054@example.invalid",
+            "AddressPurposeOrderingFlag": true
+          },
+          "reservedUtc": "2026-10-15T20:57:49.715Z",
+          "disposition": "accepted",
+          "recordIds": {
+            "addressId": "300000340604955"
+          },
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.txt",
+          "reconciledUtc": "2026-10-15T20:58:09.966Z"
+        }
+      ],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T20:58:09.973Z"
+    },
+    {
+      "id": "address-readback",
+      "object": "Address",
+      "scenario": "readback",
+      "title": "Created address details",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "PASS",
+      "actual": "Separate Address detail query returned saved name, physical address, email and supplier1503; generatedID/ordering verified in independent create readback.",
+      "recordIds": {},
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T20:58:09.978Z",
+          "status": "PASS",
+          "actual": "Separate Address detail query returned saved name, physical address, email and supplier1503; generatedID/ordering verified in independent create readback.",
+          "endedUtc": "2026-10-15T20:58:59.938Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-query-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-query-input-001.txt",
+          "title": "Created address details",
+          "stage": "query-input",
+          "observedUtc": "2026-10-15T20:58:10.269Z",
+          "notes": "Entered request: Show address details for address ID 300000340604955 for supplier number 1503",
+          "mimeType": "image/jpeg",
+          "sha256": "1b91284e721c4dc8bafe5f31306deda3791a63ff10520d629a661c1c1bee8abd",
+          "semanticSha256": "31d3e0d96e635e2c4806dc9ad5139421afdbcdf2ef43718a6bfc84d2d44e1798"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-details-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-details-002.txt",
+          "title": "Created address details",
+          "stage": "details",
+          "observedUtc": "2026-10-15T20:58:20.483Z",
+          "notes": "Separate ordinary Address query using returned key and supplier1503.",
+          "mimeType": "image/jpeg",
+          "sha256": "0bf2d811b9ffc8c88ccdbb353b564e26d2131fdac90901463eee29e6d7a2f935",
+          "semanticSha256": "5e50739d1aa4f1f746ed412d666e5d4c201aefc591954a9368d58d3bc433d748"
+        }
+      ],
+      "reservations": [],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-details-002.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T20:58:59.938Z"
+    },
+    {
+      "id": "address-template",
+      "object": "Address",
+      "scenario": "template",
+      "title": "Address template creation",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": true,
+      "status": "PASS",
+      "actual": "Template Address300000340604962 created once under supplier1503; distinct source/created IDs and all eight fields independently verified.",
+      "recordIds": {
+        "templateAddressId": "300000340604962"
+      },
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T20:58:59.945Z",
+          "status": "PASS",
+          "actual": "Template Address300000340604962 created once under supplier1503; distinct source/created IDs and all eight fields independently verified.",
+          "endedUtc": "2026-10-15T21:00:14.745Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-prepare-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-prepare-input-001.txt",
+          "title": "Address template creation",
+          "stage": "prepare-input",
+          "observedUtc": "2026-10-15T20:59:00.328Z",
+          "notes": "Entered request: Create address for supplier number 1503 based on address ID 300000340604955 with new name XDX E2E T 2054 and Email xdx.e2e.2054.template@example.invalid",
+          "mimeType": "image/jpeg",
+          "sha256": "57cb9d464e24ad3dc913389bb479b4acf5f4b9dccf3c03c2ad22b485fcbb404c",
+          "semanticSha256": "6122caf7e98ce5daab20ba1d385231028d03d4a7efdf915aecdd771e2772a4a7"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-draft-ready-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-draft-ready-002.txt",
+          "title": "Address template creation",
+          "stage": "draft-ready",
+          "observedUtc": "2026-10-15T20:59:14.980Z",
+          "notes": "Same-parent Address template, distinct name and Email; required physical fields inherited.",
+          "mimeType": "image/jpeg",
+          "sha256": "2a55ce2cfcbdd447aa91182f21ab499511dfc38671a15e50fd291d9e36f3c9cc",
+          "semanticSha256": "8d1f249009d97e76dabf46c9b856d5c6778878596256d6f2a8dbd7b57c4f80d5"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-input-003.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-input-003.txt",
+          "title": "Address template creation",
+          "stage": "review-input",
+          "observedUtc": "2026-10-15T20:59:44.061Z",
+          "notes": "Entered request: Review request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-3 revision 1",
+          "mimeType": "image/jpeg",
+          "sha256": "423fd19bff981270608f257e6b97dc45d577775475f7b931c5e3a56f104866ff",
+          "semanticSha256": "d54bfba1fa551332ed028aeba00c01af4ae1ff9cccd08d63ea2513db54bf1df8"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-ready-004.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-ready-004.txt",
+          "title": "Address template creation",
+          "stage": "review-ready",
+          "observedUtc": "2026-10-15T20:59:53.176Z",
+          "notes": "Same-parent template Address payload reviewed, exact revision1.",
+          "mimeType": "image/jpeg",
+          "sha256": "d1d55a15828c4fe811ad2eb43d0a0cfe38f37cb8def27e8cf0ef9edf2cb19ee6",
+          "semanticSha256": "c2f2f4861bd222e8c7ab9ad85264b02f979cef990232ee91fb65292ab74cb41e"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-confirm-input-005.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-confirm-input-005.txt",
+          "title": "Address template creation",
+          "stage": "confirm-input",
+          "observedUtc": "2026-10-15T20:59:53.511Z",
+          "notes": "Entered request: Confirm request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-3 revision 1",
+          "mimeType": "image/jpeg",
+          "sha256": "2008331fee9a10cbba09d5d6111bce456beb90eba239af34c5d951b2b2b4fddd",
+          "semanticSha256": "9f7de48b1f79caf0331ab029cdf040c4e32eb66fc36458a903191369abc308f5"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-created-readback-006.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-created-readback-006.txt",
+          "title": "Address template creation",
+          "stage": "created-readback",
+          "observedUtc": "2026-10-15T21:00:03.459Z",
+          "notes": "Template Address accepted response and independent persisted verification.",
+          "mimeType": "image/jpeg",
+          "sha256": "d47da2b742764b8edbad8146764c4c896a80bb27e9943ed018ade4a8c270c3de",
+          "semanticSha256": "02ea3677675bced8ffe04b86101b1f4c8f27a217e3b567846733dce233dd57b0"
+        }
+      ],
+      "reservations": [
+        {
+          "operationId": "address-template-2054",
+          "requestId": "REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-3",
+          "revision": 1,
+          "payload": {
+            "AddressName": "XDX E2E T 2054",
+            "CountryCode": "US",
+            "AddressLine1": "2300 GREENLAWN BLVD",
+            "City": "ROUND ROCK",
+            "State": "TX",
+            "PostalCode": "78664",
+            "Email": "xdx.e2e.2054.template@example.invalid",
+            "AddressPurposeOrderingFlag": true
+          },
+          "reservedUtc": "2026-10-15T20:59:53.183Z",
+          "disposition": "accepted",
+          "recordIds": {
+            "templateAddressId": "300000340604962"
+          },
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-created-readback-006.txt",
+          "reconciledUtc": "2026-10-15T21:00:14.738Z"
+        }
+      ],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-created-readback-006.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T21:00:14.745Z"
+    },
+    {
+      "id": "contact-query",
+      "object": "Contact",
+      "scenario": "query",
+      "title": "New supplier contacts",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "PASS",
+      "actual": "Supplier1503 returned an explicit No contacts found empty state. Paging is not rendered on this Contact screen.",
+      "recordIds": {},
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T21:00:36.989Z",
+          "status": "PASS",
+          "actual": "Supplier1503 returned an explicit No contacts found empty state. Paging is not rendered on this Contact screen.",
+          "endedUtc": "2026-10-15T21:01:23.650Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-query-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-query-input-001.txt",
+          "title": "New supplier contacts",
+          "stage": "query-input",
+          "observedUtc": "2026-10-15T21:00:37.359Z",
+          "notes": "Entered request: Show contacts for supplier number 1503",
+          "mimeType": "image/jpeg",
+          "sha256": "6bad25de8271338691490533438fcb28958e1b65d00fa1272f081e8aab2c521a",
+          "semanticSha256": "df64af660fa189bd982655a0c81f858532821d113fe460daa4ded1ad748efc71"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-result-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-result-002.txt",
+          "title": "New supplier contacts",
+          "stage": "result",
+          "observedUtc": "2026-10-15T21:00:48.611Z",
+          "notes": "Contact collection for newly created supplier1503.",
+          "mimeType": "image/jpeg",
+          "sha256": "33e3e34e46132a2612221aedb5771ed3e9d9397bec2ceaf60ebf1d1c97defde2",
+          "semanticSha256": "a6fa19327a232e0e8e238481063fdbcdceb7304ff2e711e9f110cc0569b9d85b"
+        }
+      ],
+      "reservations": [],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-result-002.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T21:01:23.650Z"
+    },
+    {
+      "id": "contact-direct",
+      "object": "Contact",
+      "scenario": "direct",
+      "title": "Direct contact creation",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": true,
+      "status": "PASS",
+      "actual": "Contact300000340604973 created once under supplier1503; all three fields and parent independently verified.",
+      "recordIds": {
+        "contactId": "300000340604973"
+      },
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T21:01:23.656Z",
+          "status": "PASS",
+          "actual": "Contact300000340604973 created once under supplier1503; all three fields and parent independently verified.",
+          "endedUtc": "2026-10-15T21:02:39.172Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-prepare-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-prepare-input-001.txt",
+          "title": "Direct contact creation",
+          "stage": "prepare-input",
+          "observedUtc": "2026-10-15T21:01:23.990Z",
+          "notes": "Entered request: Create contact for supplier number 1503 with FirstName XDX, LastName E2E2054, Email xdx.e2e.2054.contact@example.invalid",
+          "mimeType": "image/jpeg",
+          "sha256": "fe3993e9ffaa0365220543ce8fd312ac925eae82243ee91160a0f52c5c39f4a0",
+          "semanticSha256": "79e32e4a65bd17b97ccaebecf3b4eaffaf87d65aa0f94a6be7cb9716bd6e5c98"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-draft-ready-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-draft-ready-002.txt",
+          "title": "Direct contact creation",
+          "stage": "draft-ready",
+          "observedUtc": "2026-10-15T21:01:33.995Z",
+          "notes": "Direct Contact draft under supplier1503, three intended fields.",
+          "mimeType": "image/jpeg",
+          "sha256": "a2defe651b699b0627be1c02579f2d61181b1ffe4151bea75e9eaaa5336b6826",
+          "semanticSha256": "650403dc5455d7640f44b75cac2bac29b01c2395697b93b725d31c3f92c786b3"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-input-003.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-input-003.txt",
+          "title": "Direct contact creation",
+          "stage": "review-input",
+          "observedUtc": "2026-10-15T21:02:03.905Z",
+          "notes": "Entered request: Review request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-4 revision 1",
+          "mimeType": "image/jpeg",
+          "sha256": "3f7f62b34d4f34e39b6719c9772397d48dcfb96cadf8189b6b7cb76cf131377f",
+          "semanticSha256": "cd802c2bd2a27f5f9b17fbbe0ef346f98541312410e936160bcc9cfc0b1fbea0"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-ready-004.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-ready-004.txt",
+          "title": "Direct contact creation",
+          "stage": "review-ready",
+          "observedUtc": "2026-10-15T21:02:12.387Z",
+          "notes": "Direct Contact exact revision reviewed under supplier1503.",
+          "mimeType": "image/jpeg",
+          "sha256": "f6b461976e4f7f70496fa9be4c6d8107e74a54b7f4b6611b85beb2a455fe8386",
+          "semanticSha256": "a2162a485e1c388d28c73983dd9500e874c5355f2568c760a66ec007bddc274a"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-confirm-input-005.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-confirm-input-005.txt",
+          "title": "Direct contact creation",
+          "stage": "confirm-input",
+          "observedUtc": "2026-10-15T21:02:21.979Z",
+          "notes": "Entered request: Confirm request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-4 revision 1",
+          "mimeType": "image/jpeg",
+          "sha256": "cf4521a54b0785d0dd3d195a17e4f954b4d3a542f13ffa443eae7aacc1f6fd2d",
+          "semanticSha256": "34231174b0993d5e543ee3c47ff3b0477274dee0216e99731a1512be994ad993"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-created-readback-006.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-created-readback-006.txt",
+          "title": "Direct contact creation",
+          "stage": "created-readback",
+          "observedUtc": "2026-10-15T21:02:30.439Z",
+          "notes": "Direct Contact accepted response and independent persisted field/parent verification.",
+          "mimeType": "image/jpeg",
+          "sha256": "f581bc5d3cd6512c2f22752d35573a47c6efde9aba4db993a2346f5ce6b9add6",
+          "semanticSha256": "c9a44aca18a00e2f0e403c2dbc4598b8918595f30648c54e29f10a3eb86509f0"
+        }
+      ],
+      "reservations": [
+        {
+          "operationId": "contact-direct-2054",
+          "requestId": "REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-4",
+          "revision": 1,
+          "payload": {
+            "FirstName": "XDX",
+            "LastName": "E2E2054",
+            "Email": "xdx.e2e.2054.contact@example.invalid"
+          },
+          "reservedUtc": "2026-10-15T21:02:21.567Z",
+          "disposition": "accepted",
+          "recordIds": {
+            "contactId": "300000340604973"
+          },
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-created-readback-006.txt",
+          "reconciledUtc": "2026-10-15T21:02:39.165Z"
+        }
+      ],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-created-readback-006.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T21:02:39.172Z"
+    },
+    {
+      "id": "contact-readback",
+      "object": "Contact",
+      "scenario": "readback",
+      "title": "Created contact details",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "PASS",
+      "actual": "Ordinary Contact detail shows correct first/last name, email and supplier1503.",
+      "recordIds": {},
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T21:02:39.179Z",
+          "status": "PASS",
+          "actual": "Ordinary Contact detail shows correct first/last name, email and supplier1503.",
+          "endedUtc": "2026-10-15T21:03:00.934Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-query-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-query-input-001.txt",
+          "title": "Created contact details",
+          "stage": "query-input",
+          "observedUtc": "2026-10-15T21:02:39.596Z",
+          "notes": "Entered request: Show contact details for contact ID 300000340604973 for supplier number 1503",
+          "mimeType": "image/jpeg",
+          "sha256": "3401683acbfb0fcfdbe9fad44714201420fde3aaf044330a557389448b7c061c",
+          "semanticSha256": "5cc6fa3111a98711511e808b639fc12081079aa696f548ab06696329bf2421a0"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-details-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-details-002.txt",
+          "title": "Created contact details",
+          "stage": "details",
+          "observedUtc": "2026-10-15T21:02:50.903Z",
+          "notes": "Separate ordinary Contact query under supplier1503 by returned identifier.",
+          "mimeType": "image/jpeg",
+          "sha256": "4b3974db96cb2bc1276b78ee9eedbfe58aaa14ed32027c72a33633f7cd4c9cd6",
+          "semanticSha256": "19b556887000426bce6893d22a7b19ebd23be391586925fa01c376bb955b6f06"
+        }
+      ],
+      "reservations": [],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-details-002.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T21:03:00.934Z"
+    },
+    {
+      "id": "contact-template",
+      "object": "Contact",
+      "scenario": "template",
+      "title": "Contact template creation",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "FAIL",
+      "actual": "Template preparation failed: child source/address-name check could not finish. App reports no new create submitted. No Confirm or write reservation issued; screenshot retained.",
+      "recordIds": {},
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T21:03:00.941Z",
+          "status": "FAIL",
+          "actual": "Template preparation failed: child source/address-name check could not finish. App reports no new create submitted. No Confirm or write reservation issued; screenshot retained.",
+          "endedUtc": "2026-10-15T21:03:45.831Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-prepare-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-prepare-input-001.txt",
+          "title": "Contact template creation",
+          "stage": "prepare-input",
+          "observedUtc": "2026-10-15T21:03:01.341Z",
+          "notes": "Entered request: Create contact for supplier number 1503 based on contact ID 300000340604973 with LastName E2E2054Template and Email xdx.e2e.2054.contact.template@example.invalid",
+          "mimeType": "image/jpeg",
+          "sha256": "6e79933e7a5277b7346cd156c46723acb786d036b2740f9c4b1f9b96980d52f9",
+          "semanticSha256": "dcfa64a8f131117c3653080cd8918352ffcad88ccea1c8ab57c40e472ded6795"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-draft-ready-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-draft-ready-002.txt",
+          "title": "Contact template preparation failed",
+          "stage": "draft-ready",
+          "observedUtc": "2026-10-15T21:03:08.702Z",
+          "notes": "Actual source-check error before any new create. No Review, Confirm or write reservation was issued.",
+          "mimeType": "image/jpeg",
+          "sha256": "be7b9c2965477baff6e7eae57450440a105cdf9a3018d6f8a3a5c64116588416",
+          "semanticSha256": "d8f99f66f9e11960d0067d9f3666ccc26cc8b122bcd0ac91a6a722d3e73a8995",
+          "imageObservation": "preparation-error"
+        }
+      ],
+      "reservations": [],
+      "assertions": [],
+      "failureKind": "application",
+      "endedUtc": "2026-10-15T21:03:45.831Z"
+    },
+    {
+      "id": "site-query",
+      "object": "Site",
+      "scenario": "query",
+      "title": "New supplier sites",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "PASS",
+      "actual": "New supplier1503 has no Site records; parent and empty state explicitly displayed.",
+      "recordIds": {},
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T21:04:20.683Z",
+          "status": "PASS",
+          "actual": "New supplier1503 has no Site records; parent and empty state explicitly displayed.",
+          "endedUtc": "2026-10-15T21:04:44.363Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-query-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-query-input-001.txt",
+          "title": "New supplier sites",
+          "stage": "query-input",
+          "observedUtc": "2026-10-15T21:04:24.345Z",
+          "notes": "Entered request: Show sites for supplier number 1503",
+          "mimeType": "image/jpeg",
+          "sha256": "add1180233697bb5007136f4371410656f9743e71aaf8fbf3d52b905e26c53ef",
+          "semanticSha256": "14265465b1aa11c44add05bad68dd00912b1cdd492accc7a198eb26e2bd96d79"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-result-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-result-002.txt",
+          "title": "New supplier sites",
+          "stage": "result",
+          "observedUtc": "2026-10-15T21:04:35.687Z",
+          "notes": "Site collection for new supplier1503 before attempting a first Site.",
+          "mimeType": "image/jpeg",
+          "sha256": "9681feb417087aa1c6cb673e99601c113a98f149e07d6e480fe7c9593225f4cc",
+          "semanticSha256": "ab8553d5a84c5c873758b5c04b7c4cb365aadc20392a42d23b277a6e6a0df0a8"
+        }
+      ],
+      "reservations": [],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-result-002.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T21:04:44.363Z"
+    },
+    {
+      "id": "site-connected",
+      "object": "Site",
+      "scenario": "connected-template",
+      "title": "First site on the new supplier",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "BLOCKED",
+      "actual": "New supplier1503 has no source Site; UI requires selecting a source Site under this same supplier. Current template-only behavior cannot bootstrap the connected first Site.",
+      "recordIds": {},
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T21:04:44.369Z",
+          "status": "BLOCKED",
+          "actual": "New supplier1503 has no source Site; UI requires selecting a source Site under this same supplier. Current template-only behavior cannot bootstrap the connected first Site.",
+          "endedUtc": "2026-10-15T21:05:08.051Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-prepare-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-prepare-input-001.txt",
+          "title": "First site on the new supplier",
+          "stage": "prepare-input",
+          "observedUtc": "2026-10-15T21:04:44.674Z",
+          "notes": "Entered request: Create site for supplier number 1503 based on selected site with new name XDX E2E S 2054",
+          "mimeType": "image/jpeg",
+          "sha256": "c773a5209fdab2bb7589683ca4630565ad3d27ab9711db7e6659824fd3945ee9",
+          "semanticSha256": "90e96e94dc216d39f09ab7a5fd8c6cc3f0a1f3cc52742f4d1e5a547b5f6f9ff0"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-capability-result-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-capability-result-002.txt",
+          "title": "First site on the new supplier",
+          "stage": "capability-result",
+          "observedUtc": "2026-10-15T21:04:53.557Z",
+          "notes": "Attempt first Site for new supplier; inspect template dependency and preserve any validation.",
+          "mimeType": "image/jpeg",
+          "sha256": "ba0b1e920a13cbd6b00107c18986d7506698bba8834265f3647fb734eb7d1c55",
+          "semanticSha256": "c6861b238ced4231303fdecec3219b058cdb7ef495aee6e2abf8ce7d4e728946"
+        }
+      ],
+      "reservations": [],
+      "assertions": [],
+      "failureKind": "capability",
+      "endedUtc": "2026-10-15T21:05:08.051Z"
+    },
+    {
+      "id": "assignment-connected",
+      "object": "Site Assignment",
+      "scenario": "connected",
+      "title": "Assignments for the new supplier site",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "BLOCKED",
+      "actual": "Connected Assignment create/readback depends on a new supplier Site, which could not be prepared. Continue on clearly labeled existing-supplier fallback.",
+      "recordIds": {},
+      "fallback": false,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T21:05:08.060Z",
+          "status": "BLOCKED",
+          "actual": "Connected Assignment create/readback depends on a new supplier Site, which could not be prepared. Continue on clearly labeled existing-supplier fallback.",
+          "endedUtc": "2026-10-15T21:05:08.078Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-connected-dependency-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-connected-dependency-001.txt",
+          "title": "Assignments for the new supplier site",
+          "stage": "dependency",
+          "observedUtc": "2026-10-15T21:05:08.071Z",
+          "notes": "Assignments on the new supplier cannot execute because the first Site is blocked by same-parent template requirement.",
+          "mimeType": "image/jpeg",
+          "sha256": "ba0b1e920a13cbd6b00107c18986d7506698bba8834265f3647fb734eb7d1c55",
+          "semanticSha256": "c6861b238ced4231303fdecec3219b058cdb7ef495aee6e2abf8ce7d4e728946"
+        }
+      ],
+      "reservations": [],
+      "assertions": [],
+      "failureKind": "dependency",
+      "endedUtc": "2026-10-15T21:05:08.078Z"
+    },
+    {
+      "id": "site-fallback-query",
+      "object": "Site",
+      "scenario": "fallback-query",
+      "title": "Fallback supplier sites",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "PASS",
+      "actual": "Fallback Dell supplier1255 first Site page returned Dell US1 ID300000047414699 and explicit continuation; full collection completeness not claimed.",
+      "recordIds": {
+        "fallbackSourceSiteId": "300000047414699"
+      },
+      "fallback": true,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T21:05:08.083Z",
+          "status": "PASS",
+          "actual": "Fallback Dell supplier1255 first Site page returned Dell US1 ID300000047414699 and explicit continuation; full collection completeness not claimed.",
+          "endedUtc": "2026-10-15T21:05:43.187Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-query-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-query-input-001.txt",
+          "title": "Fallback supplier sites",
+          "stage": "query-input",
+          "observedUtc": "2026-10-15T21:05:08.409Z",
+          "notes": "Entered request: Show sites for supplier number 1255",
+          "mimeType": "image/jpeg",
+          "sha256": "b47aa9d9aeb7a46c5a0c395b3c34360882ccf1d8cd3318530c1f2f96bdf3acc0",
+          "semanticSha256": "f1a855752b6555f610cd0b729fa218c08d3eda0e9bce49d6ae24f6dfa6f4a48a"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-002.txt",
+          "title": "Fallback supplier sites",
+          "stage": "result",
+          "observedUtc": "2026-10-15T21:05:23.660Z",
+          "notes": "Fallback coverage: existing Dell supplier1255 Site collection, not the new supplier1503.",
+          "mimeType": "image/jpeg",
+          "sha256": "cfae03314a6fd24afeae1f5e90e5610e0cf8ac76b2d17cd5fda35f19009b00ec",
+          "semanticSha256": "cdff0404184bf60aac2875f2eed1b39332ebb57c9631d3bb9363bb01f51b00e7"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-lower-section-003.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-lower-section-003.txt",
+          "title": "Fallback supplier sites",
+          "stage": "result-lower-section",
+          "observedUtc": "2026-10-15T21:05:42.321Z",
+          "notes": "Lower section of first25Site results and advertised continuation; this is a partial collection, not a claim all Sites were listed.",
+          "mimeType": "image/jpeg",
+          "sha256": "44b94ae6439ee86e2722f3b2459cda4b6665ee96b8c3f40efe933b58dc35dbb9",
+          "semanticSha256": "cdff0404184bf60aac2875f2eed1b39332ebb57c9631d3bb9363bb01f51b00e7"
+        }
+      ],
+      "reservations": [],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-002.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T21:05:43.187Z"
+    },
+    {
+      "id": "site-fallback-create",
+      "object": "Site",
+      "scenario": "fallback-template",
+      "title": "Fallback site and assignment creation",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": true,
+      "status": "PASS",
+      "actual": "Fallback Dell1255 Site300000340604984 and Assignment300000340604987 created once, independently verified serially. This is not connected supplier1503 coverage.",
+      "recordIds": {
+        "siteId": "300000340604984",
+        "assignmentId": "300000340604987",
+        "fallbackSupplierId": "300000047414679"
+      },
+      "fallback": true,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T21:05:43.193Z",
+          "status": "PASS",
+          "actual": "Fallback Dell1255 Site300000340604984 and Assignment300000340604987 created once, independently verified serially. This is not connected supplier1503 coverage.",
+          "endedUtc": "2026-10-15T21:07:36.400Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-prepare-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-prepare-input-001.txt",
+          "title": "Fallback site and assignment creation",
+          "stage": "prepare-input",
+          "observedUtc": "2026-10-15T21:05:43.645Z",
+          "notes": "Entered request: Create a new site for supplier number 1255 based on site ID 300000047414699 with new name XDX E2E S 2054",
+          "mimeType": "image/jpeg",
+          "sha256": "dd18fa20b27ebbe1b0650b415f6b60762ece5822c30e992fade5e332f0aafacb",
+          "semanticSha256": "3f2358a92444b4a37ba37fc4911fd97f7e48466a709e67522398070d6995869e"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-draft-ready-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-draft-ready-002.txt",
+          "title": "Fallback site and assignment creation",
+          "stage": "draft-ready",
+          "observedUtc": "2026-10-15T21:05:58.234Z",
+          "notes": "Fallback Site template under existing supplier1255; cannot claim connected supplier1503 creation.",
+          "mimeType": "image/jpeg",
+          "sha256": "842a23fd8f0679770aeeb78039351f3f7463ad517bd57c35f692fddb977dc193",
+          "semanticSha256": "e2b4daa1efd0de2c65d177dacb6712e96871bdedb08ead53d8d60153f0ad129a"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-input-003.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-input-003.txt",
+          "title": "Fallback site and assignment creation",
+          "stage": "review-input",
+          "observedUtc": "2026-10-15T21:06:15.593Z",
+          "notes": "Entered request: Review request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-5 revision 1",
+          "mimeType": "image/jpeg",
+          "sha256": "dd6b5d9b513715806be1d5f6a7259e6a11734b33cb73ab825fe69b25994ce96a",
+          "semanticSha256": "3cc67ee46e467d447751c5fee9ebdf73f25bbf0e8f2dd97ab6c2988b281b2d9d"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-ready-004.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-ready-004.txt",
+          "title": "Fallback site and assignment creation",
+          "stage": "review-ready",
+          "observedUtc": "2026-10-15T21:06:23.815Z",
+          "notes": "Fallback Site+oneAssignment exact request/revision review under Dell1255; two planned business writes.",
+          "mimeType": "image/jpeg",
+          "sha256": "62af78653f0d1c040254f8219b2f595f2534adf7eb9b3cf699b1c340d1d94a63",
+          "semanticSha256": "be4e7fa0f242c21aca7a5b1862bb23735004e823e48ff5a4bf4f00b350caad02"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-confirm-input-005.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-confirm-input-005.txt",
+          "title": "Fallback site and assignment creation",
+          "stage": "confirm-input",
+          "observedUtc": "2026-10-15T21:06:56.082Z",
+          "notes": "Entered request: Confirm request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-5 revision 1",
+          "mimeType": "image/jpeg",
+          "sha256": "190709395541905aebe82d925fc75018a33b8845922e7cda1079742b5c7fd438",
+          "semanticSha256": "2d03276d5f19e11360dd0183af634daadca3d6a610dad5e862e575a2c4fbb1a2"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.txt",
+          "title": "Fallback site and assignment creation",
+          "stage": "created-readback",
+          "observedUtc": "2026-10-15T21:07:13.820Z",
+          "notes": "Fallback Site then one Assignment accepted/verified serially under existing Dell1255.",
+          "mimeType": "image/jpeg",
+          "sha256": "53567551261435a81d3e5462914507b857a8bed97b0d6108eae3c68f30c23aff",
+          "semanticSha256": "6e63585542d34e92e56ba16018e5c7bb746d828a866a6cdef7dfea8cd064cffd"
+        }
+      ],
+      "reservations": [
+        {
+          "operationId": "site-and-assignment-fallback-2054",
+          "requestId": "REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-5",
+          "revision": 1,
+          "payload": {
+            "site": {
+              "SupplierSite": "XDX E2E S 2054",
+              "ProcurementBUId": 300000046987012,
+              "SupplierAddressName": "Dell US1",
+              "SitePurposePurchasingFlag": true
+            },
+            "assignments": [
+              {
+                "ClientBUId": 300000046987012,
+                "BillToBUId": 300000046987012
+              }
+            ],
+            "plannedBusinessWrites": 2
+          },
+          "reservedUtc": "2026-10-15T21:06:55.535Z",
+          "disposition": "accepted",
+          "recordIds": {
+            "siteId": "300000340604984",
+            "assignmentId": "300000340604987",
+            "fallbackSupplierId": "300000047414679"
+          },
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.txt",
+          "reconciledUtc": "2026-10-15T21:07:36.393Z"
+        }
+      ],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T21:07:36.400Z"
+    },
+    {
+      "id": "site-fallback-readback",
+      "object": "Site",
+      "scenario": "fallback-readback",
+      "title": "Fallback site details",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "PASS",
+      "actual": "Ordinary fallback Site detail verifies Site984, Dell1255, BU300000046987012, DellUS1 address and purchasing purpose Yes.",
+      "recordIds": {},
+      "fallback": true,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T21:07:36.438Z",
+          "status": "PASS",
+          "actual": "Ordinary fallback Site detail verifies Site984, Dell1255, BU300000046987012, DellUS1 address and purchasing purpose Yes.",
+          "endedUtc": "2026-10-15T21:08:20.166Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-query-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-query-input-001.txt",
+          "title": "Fallback site details",
+          "stage": "query-input",
+          "observedUtc": "2026-10-15T21:07:36.948Z",
+          "notes": "Entered request: Show site details for site ID 300000340604984 for supplier number 1255",
+          "mimeType": "image/jpeg",
+          "sha256": "97dccb61b333e97601dcbc11a0eb128ddf61127bcd9ead7e262526d44f9722da",
+          "semanticSha256": "a2e4a8bdfcb22c3c1446fc6b69b2bc8945cc125a651f638bc54c92db1a0cf891"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-details-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-details-002.txt",
+          "title": "Fallback site details",
+          "stage": "details",
+          "observedUtc": "2026-10-15T21:07:47.876Z",
+          "notes": "Separate ordinary Site detail query under fallback supplier1255 using newly created SiteID.",
+          "mimeType": "image/jpeg",
+          "sha256": "74dee02e45a63d4ff91c1fcf4a1c800e333d4f65e88a98892bc45589aed67a78",
+          "semanticSha256": "333622e5ab7c4bceb1546f298acf60fd65a63db601dc2a2a5a0f8c3b0a4021b1"
+        }
+      ],
+      "reservations": [],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-details-002.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T21:08:20.166Z"
+    },
+    {
+      "id": "assignment-query",
+      "object": "Site Assignment",
+      "scenario": "query",
+      "title": "Standalone assignment query",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "FAIL",
+      "actual": "Standalone Assignment query returned Supplier site details instead of Assignment records; expected Assignment ID, Client BU and Bill To BU were absent. Embedded create/readback remains separately PASS.",
+      "recordIds": {},
+      "fallback": true,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T21:08:20.175Z",
+          "status": "FAIL",
+          "actual": "Standalone Assignment query returned Supplier site details instead of Assignment records; expected Assignment ID, Client BU and Bill To BU were absent. Embedded create/readback remains separately PASS.",
+          "endedUtc": "2026-10-15T21:08:59.352Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-query-input-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-query-input-001.txt",
+          "title": "Standalone assignment query",
+          "stage": "query-input",
+          "observedUtc": "2026-10-15T21:08:20.755Z",
+          "notes": "Entered request: Show assignments for site ID 300000340604984 for supplier number 1255",
+          "mimeType": "image/jpeg",
+          "sha256": "426c6ac333c103e6b1b187ceeef23ea017964b25773e966a7f1cdfd145dc157f",
+          "semanticSha256": "8b07accc74a1bc7693dac535b22d55b346122e8d22c054465afc081e7c60e008"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-result-002.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-result-002.txt",
+          "title": "Standalone assignment query",
+          "stage": "result",
+          "observedUtc": "2026-10-15T21:08:37.912Z",
+          "notes": "Standalone Assignment query attempt; compare with separately passing embedded create/readback evidence.",
+          "mimeType": "image/jpeg",
+          "sha256": "9a4d0eb4810a821638c67dc501f43ec1dedd546ca6e8074213a028ed44f03da2",
+          "semanticSha256": "6457091d555180e7f248fa65b04748511ebcd8c097779c97048a028850ec5865"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-final-painted-result-003.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-final-painted-result-003.txt",
+          "title": "Assignment query returned Site details",
+          "stage": "final-painted-result",
+          "observedUtc": "2026-10-15T21:13:41.628Z",
+          "notes": "Read-only capture after the UI had fully painted. No request or business write repeated. Expected Assignment records remain absent; Site detail response is the observed failure.",
+          "mimeType": "image/jpeg",
+          "sha256": "569a7f6b52a9a7a496d09868551ed856d61d4ca5a1416e7562c014ac3ea05e25",
+          "semanticSha256": "6457091d555180e7f248fa65b04748511ebcd8c097779c97048a028850ec5865"
+        }
+      ],
+      "reservations": [],
+      "assertions": [
+        {
+          "passed": false,
+          "expected": "Assignment ID 300000340604987 plus Client BU and Bill To BU",
+          "actual": "Site detail response only",
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-result-002.txt"
+        }
+      ],
+      "failureKind": "application",
+      "endedUtc": "2026-10-15T21:08:59.352Z"
+    },
+    {
+      "id": "assignment-readback",
+      "object": "Site Assignment",
+      "scenario": "embedded-readback",
+      "title": "Copied assignment verification",
+      "expected": "Execute declared business operation with current parent relationships and retained evidence",
+      "dependencies": [],
+      "write": false,
+      "status": "PASS",
+      "actual": "Original fallback workflow independently read back Assignment300000340604987 and both Client/Bill BU300000046987012.",
+      "recordIds": {
+        "assignmentId": "300000340604987"
+      },
+      "fallback": true,
+      "retries": [],
+      "attempts": [
+        {
+          "number": 1,
+          "startedUtc": "2026-10-15T21:07:36.408Z",
+          "status": "PASS",
+          "actual": "Original fallback workflow independently read back Assignment300000340604987 and both Client/Bill BU300000046987012.",
+          "endedUtc": "2026-10-15T21:07:36.431Z"
+        }
+      ],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-readback-verified-assignment-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-readback-verified-assignment-001.txt",
+          "title": "Copied assignment verification",
+          "stage": "verified-assignment",
+          "observedUtc": "2026-10-15T21:07:36.423Z",
+          "notes": "Observed independent Assignment verification in the original Site completion, not a repeated POST; assignmentID and both BU keys visible.",
+          "mimeType": "image/jpeg",
+          "sha256": "53567551261435a81d3e5462914507b857a8bed97b0d6108eae3c68f30c23aff",
+          "semanticSha256": "6e63585542d34e92e56ba16018e5c7bb746d828a866a6cdef7dfea8cd064cffd"
+        }
+      ],
+      "reservations": [],
+      "assertions": [
+        {
+          "passed": true,
+          "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.txt"
+        }
+      ],
+      "endedUtc": "2026-10-15T21:07:36.431Z"
+    },
+    {
+      "id": "contact-query-assertion",
+      "object": "Test harness",
+      "scenario": "assertion-correction",
+      "title": "Contact query assertion mismatch",
+      "expected": "Assess the actual Contact empty-state renderer without assuming Address paging labels",
+      "dependencies": [],
+      "write": false,
+      "status": "FAIL",
+      "actual": "Harness assertion incorrectly expected Address-specific paging text in the Contact screen. Corrected assessment uses observed Contact empty-state and parent; no application failure or extra request.",
+      "recordIds": {},
+      "fallback": false,
+      "retries": [],
+      "attempts": [],
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-assertion-observed-empty-state-001.jpg",
+          "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-assertion-observed-empty-state-001.txt",
+          "title": "Contact query assertion mismatch",
+          "stage": "observed-empty-state",
+          "observedUtc": "2026-10-15T21:01:23.633Z",
+          "notes": "Initial assessment expected Items:none and Has more:false from Address rendering. Contact instead renders No contacts found. No UI request retried; assertion corrected against actual Contact output.",
+          "mimeType": "image/jpeg",
+          "sha256": "33e3e34e46132a2612221aedb5771ed3e9d9397bec2ceaf60ebf1d1c97defde2",
+          "semanticSha256": "a6fa19327a232e0e8e238481063fdbcdceb7304ff2e711e9f110cc0569b9d85b"
+        }
+      ],
+      "reservations": [],
+      "assertions": [],
+      "failureKind": "assertion",
+      "endedUtc": "2026-10-15T21:01:23.644Z"
+    }
+  ],
+  "events": [
+    {
+      "observedUtc": "2026-10-15T20:50:49.403Z",
+      "type": "run-started"
+    },
+    {
+      "observedUtc": "2026-10-15T20:50:49.410Z",
+      "type": "begin",
+      "id": "setup",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T20:53:14.556Z",
+      "type": "run-resumed"
+    },
+    {
+      "observedUtc": "2026-10-15T20:53:14.567Z",
+      "type": "capture",
+      "id": "setup",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-studio-identity-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-studio-identity-001.txt",
+        "title": "Supplier Workspace draft preview",
+        "stage": "studio-identity",
+        "observedUtc": "2026-10-15T20:53:14.566Z",
+        "notes": "Actual app configuration; current saved draft88010729 verified.",
+        "mimeType": "image/jpeg",
+        "sha256": "78a134f73137f1f5236d2a7e6af88b7a15d6b80c550617e97defe5f151bb2918",
+        "semanticSha256": "71880941c0d1ff7b71c5dbbb0d10afba2e2589f624b49041e01ea0387012b248"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:53:14.578Z",
+      "type": "capture",
+      "id": "setup",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-preview-start-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-preview-start-002.txt",
+        "title": "Supplier Workspace draft preview",
+        "stage": "preview-start",
+        "observedUtc": "2026-10-15T20:53:14.578Z",
+        "notes": "Actual Studio Run app preview startup.",
+        "mimeType": "image/jpeg",
+        "sha256": "9dc4d10c34729e9debb8848dff3e43d1e3fcd4529573b33715939a742f76517e",
+        "semanticSha256": "38b7f2fb7b4e1cb649a6bea212d7b9addbb413529be16d8672536e49e3f09cbd"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:54:00.969Z",
+      "type": "outcome",
+      "id": "setup",
+      "status": "PASS",
+      "actual": "Correct signed-in app preview and current DRAFT88010729 verified.",
+      "recordIds": {},
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T20:54:00.976Z",
+      "type": "begin",
+      "id": "supplier-query",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T20:54:00.985Z",
+      "type": "capture",
+      "id": "supplier-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-entered-request-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-entered-request-001.txt",
+        "title": "Supplier search",
+        "stage": "entered-request",
+        "observedUtc": "2026-10-15T20:54:00.985Z",
+        "notes": "Find a supplier like Dell",
+        "mimeType": "image/jpeg",
+        "sha256": "ad7ac14fa4363015673adcf8e82d00f4d0861f2ebc95547081448ac3df32b772",
+        "semanticSha256": "9ba2ed703db848a6d718b61e1f906d87cfae1ce7bbe7c40b5c430582c0d6a178"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:54:03.836Z",
+      "type": "capture",
+      "id": "supplier-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-result-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-result-002.txt",
+        "title": "Supplier search",
+        "stage": "result",
+        "observedUtc": "2026-10-15T20:54:03.836Z",
+        "notes": "Dell Inc. number1255 and two XDX clones; complete three-row response.",
+        "mimeType": "image/jpeg",
+        "sha256": "3e0ec9d793dae311b91f43d076b5348c9d3971d740e24256f99be2dfe8e53dbe",
+        "semanticSha256": "8b387fde9ba8c8b9ad17874377ec13d62e5d1c7b8604b9501404e66a1918c53c"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:54:03.841Z",
+      "type": "outcome",
+      "id": "supplier-query",
+      "status": "PASS",
+      "actual": "Known-hit Dell search returned three suppliers with no more results.",
+      "recordIds": {
+        "sourceSupplierNumber": "1255"
+      },
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T20:54:03.847Z",
+      "type": "begin",
+      "id": "supplier-create",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T20:54:04.006Z",
+      "type": "capture",
+      "id": "supplier-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepare-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepare-input-001.txt",
+        "title": "Supplier template creation",
+        "stage": "prepare-input",
+        "observedUtc": "2026-10-15T20:54:04.006Z",
+        "notes": "Entered request: Create supplier based on supplier number 1255 with new name XDX E2E Evidence 20261015 2054",
+        "mimeType": "image/jpeg",
+        "sha256": "e6c2117f61a5887be8f2c450f8b78db309200018616b2012aa55fe52b049f796",
+        "semanticSha256": "409887195dbe4627bc04f8dcb6bfb3de95b1c3a11017343c2fa80b36c12b6445"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:54:13.592Z",
+      "type": "capture",
+      "id": "supplier-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepared-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepared-002.txt",
+        "title": "Supplier preparation in progress",
+        "stage": "prepared",
+        "observedUtc": "2026-10-15T20:54:13.592Z",
+        "notes": "Actual intermediate loading screen. Final draft is captured separately at draft-ready.",
+        "mimeType": "image/jpeg",
+        "sha256": "3bd169aced73c3cf9ab32ee39b226302fab4f01d9e5bbeb20dcad5e8459f7a76",
+        "semanticSha256": "6c094c52bdf0dc374c70b67a99479068441621c99b3c9e64d2d2a6421acfccc0"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:54:41.241Z",
+      "type": "capture",
+      "id": "supplier-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-draft-ready-003.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-draft-ready-003.txt",
+        "title": "Supplier template creation",
+        "stage": "draft-ready",
+        "observedUtc": "2026-10-15T20:54:41.241Z",
+        "notes": "New supplier draft with source1255, expected classifications, exact request/revision; no record created.",
+        "mimeType": "image/jpeg",
+        "sha256": "ac6dca70e8bc75239962688ce2df4b6f48d50b2bba811d8b85011c8d4429c3f7",
+        "semanticSha256": "a898aa876a9bd99ec4f82cf66ffeefe4849fb18ce00b19239edd49e2165b4583"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:54:41.413Z",
+      "type": "capture",
+      "id": "supplier-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-input-004.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-input-004.txt",
+        "title": "Supplier template creation",
+        "stage": "review-input",
+        "observedUtc": "2026-10-15T20:54:41.413Z",
+        "notes": "Entered request: Review request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-1 revision 1",
+        "mimeType": "image/jpeg",
+        "sha256": "26ec2eda9e949386aa82aaf237eb81391b23067c0230bf51788e43c0bceb98a9",
+        "semanticSha256": "0ce7ec52f17dee3eba3a2458fb6117e15e76b73a11e1139afae42bd55a2ce2b2"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:54:57.203Z",
+      "type": "capture",
+      "id": "supplier-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-ready-005.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-ready-005.txt",
+        "title": "Supplier template creation",
+        "stage": "review-ready",
+        "observedUtc": "2026-10-15T20:54:57.203Z",
+        "notes": "Exact supplier request reviewed before confirmation.",
+        "mimeType": "image/jpeg",
+        "sha256": "cea932b9c1976dcb8cc7aec900c031dbb33b83c1a5b0f31aabcc4c40beac9851",
+        "semanticSha256": "4f72835f58076b60224074f4e55b77dcd7acdb25b74cc6f09f49507de4349ebf"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:55:08.606Z",
+      "type": "write-reserved",
+      "id": "supplier-create",
+      "reservation": {
+        "operationId": "supplier-template-20261015-2054",
+        "requestId": "REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-1",
+        "revision": 1,
+        "payload": {
+          "Supplier": "XDX E2E Evidence 20261015 2054",
+          "SupplierType": "Supplier",
+          "BusinessRelationship": "Spend Authorized",
+          "TaxOrganizationType": "Corporation"
+        },
+        "reservedUtc": "2026-10-15T20:55:08.606Z",
+        "disposition": "accepted",
+        "recordIds": {
+          "supplierId": "300000340604948",
+          "supplierNumber": "1503"
+        },
+        "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.txt",
+        "reconciledUtc": "2026-10-15T20:55:30.002Z"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:55:08.851Z",
+      "type": "capture",
+      "id": "supplier-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-confirm-input-006.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-confirm-input-006.txt",
+        "title": "Supplier template creation",
+        "stage": "confirm-input",
+        "observedUtc": "2026-10-15T20:55:08.851Z",
+        "notes": "Entered request: Confirm request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-1 revision 1",
+        "mimeType": "image/jpeg",
+        "sha256": "af8fbcbd1992d13f40e322028cd62a014475cada747feb4bb2118f3d2cb4cd5a",
+        "semanticSha256": "a3a0f4ad2d1ab26fe984529ccaff4f998df5f938eb6081a1800484b3fcdc1aad"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:55:19.657Z",
+      "type": "capture",
+      "id": "supplier-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.txt",
+        "title": "Supplier template creation",
+        "stage": "created-readback",
+        "observedUtc": "2026-10-15T20:55:19.657Z",
+        "notes": "Supplier creation response and independent workflow verification.",
+        "mimeType": "image/jpeg",
+        "sha256": "2c278a19c9d9a02cedf7cbd0c6ed462247d2399fb3e9f895882b352273634d29",
+        "semanticSha256": "99833cf956f113b3b890d7ad22661df7a5dd8f5ffc321884fef006f99c41264d"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:55:30.002Z",
+      "type": "write-reconciled",
+      "id": "supplier-create",
+      "disposition": "accepted",
+      "recordIds": {
+        "supplierId": "300000340604948",
+        "supplierNumber": "1503"
+      },
+      "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.txt"
+    },
+    {
+      "observedUtc": "2026-10-15T20:55:30.012Z",
+      "type": "outcome",
+      "id": "supplier-create",
+      "status": "PASS",
+      "actual": "Created supplier1503 once; workflow independently verified name, type, relationship and tax organization type.",
+      "recordIds": {
+        "supplierId": "300000340604948",
+        "supplierNumber": "1503"
+      },
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T20:55:30.017Z",
+      "type": "begin",
+      "id": "supplier-readback",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T20:55:30.313Z",
+      "type": "capture",
+      "id": "supplier-readback",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-query-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-query-input-001.txt",
+        "title": "Created supplier details",
+        "stage": "query-input",
+        "observedUtc": "2026-10-15T20:55:30.312Z",
+        "notes": "Entered request: Show supplier details for supplier number 1503",
+        "mimeType": "image/jpeg",
+        "sha256": "b71cb1966a56831144920e08f6e30db68d0edcf0fb7a651faf114cc2f1c314e0",
+        "semanticSha256": "89b57b6f0cd06f2b96dadd83f208b1f4616abfb637a33354524042a37ec5ae30"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:55:57.168Z",
+      "type": "capture",
+      "id": "supplier-readback",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-details-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-details-002.txt",
+        "title": "Created supplier details",
+        "stage": "details",
+        "observedUtc": "2026-10-15T20:55:57.167Z",
+        "notes": "Ordinary supplier detail query by displayed supplier number1503.",
+        "mimeType": "image/jpeg",
+        "sha256": "aff9d6dd98a7046e63d84c002dc9c42fbcdf75e55e289e1b6628129386947fc7",
+        "semanticSha256": "ccf142be21bc49828d0efa24c86c6dc08e3b5e7347945f8e9ec65b24b57a0520"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:56:20.430Z",
+      "type": "outcome",
+      "id": "supplier-readback",
+      "status": "PASS",
+      "actual": "Ordinary detail query returned supplier1503 and all intended classifications.",
+      "recordIds": {},
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T20:56:20.446Z",
+      "type": "begin",
+      "id": "address-query",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T20:56:20.640Z",
+      "type": "capture",
+      "id": "address-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-query-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-query-input-001.txt",
+        "title": "New supplier addresses",
+        "stage": "query-input",
+        "observedUtc": "2026-10-15T20:56:20.640Z",
+        "notes": "Entered request: Show addresses for supplier number 1503",
+        "mimeType": "image/jpeg",
+        "sha256": "df0a0fc757ac2702a09f251cfb40cfd8f8efef95498f32801d9e4b114c4ee393",
+        "semanticSha256": "59a3de21526ee872806fb1d6500a060a2a50e5135ca7bb92bcb39ffd3cb06aa3"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:56:31.326Z",
+      "type": "capture",
+      "id": "address-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-result-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-result-002.txt",
+        "title": "New supplier addresses",
+        "stage": "result",
+        "observedUtc": "2026-10-15T20:56:31.326Z",
+        "notes": "Address collection under newly created supplier1503.",
+        "mimeType": "image/jpeg",
+        "sha256": "d5f0302acd8a132c7b737ddd704b21d5492ffc3f3abf10002f211f591d9f963c",
+        "semanticSha256": "798cc546538e8fb30f4e4121f7a9b1b5463da42a240b41dcc8a91dc1138f7d80"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:56:44.456Z",
+      "type": "outcome",
+      "id": "address-query",
+      "status": "PASS",
+      "actual": "New supplier1503 has an empty Address collection with Has more false.",
+      "recordIds": {},
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T20:56:44.464Z",
+      "type": "begin",
+      "id": "address-direct",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T20:56:44.672Z",
+      "type": "capture",
+      "id": "address-direct",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-prepare-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-prepare-input-001.txt",
+        "title": "Direct address creation",
+        "stage": "prepare-input",
+        "observedUtc": "2026-10-15T20:56:44.672Z",
+        "notes": "Entered request: Create address for supplier number 1503 with AddressName XDX E2E A 2054, CountryCode US, AddressLine1 2300 GREENLAWN BLVD, City ROUND ROCK, State TX, PostalCode 78664, Email xdx.e2e.2054@example.invalid",
+        "mimeType": "image/jpeg",
+        "sha256": "1ed552c91ee4a375f38d531c968355daa35d870ddc3df24885cbddd450106d02",
+        "semanticSha256": "3a3388723156482fac7a3a00085babf3250b1ea80947634226ef9d46d3228f63"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:56:57.294Z",
+      "type": "capture",
+      "id": "address-direct",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-draft-ready-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-draft-ready-002.txt",
+        "title": "Direct address creation",
+        "stage": "draft-ready",
+        "observedUtc": "2026-10-15T20:56:57.294Z",
+        "notes": "Direct Address draft for supplier1503 using required fields and ordering purpose.",
+        "mimeType": "image/jpeg",
+        "sha256": "326d22962df32241f59d3548667e1c34806006a2106efe02998c5fc7bd132d80",
+        "semanticSha256": "4e18cc24cdad726dba75348f204620797941b0c924997a6efcfe82b38640ad17"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:57:16.861Z",
+      "type": "capture",
+      "id": "address-direct",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-input-003.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-input-003.txt",
+        "title": "Direct address creation",
+        "stage": "review-input",
+        "observedUtc": "2026-10-15T20:57:16.860Z",
+        "notes": "Entered request: Review request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-2 revision 1",
+        "mimeType": "image/jpeg",
+        "sha256": "360f3a70249fdbe03b79064b12c049f53da3f586c73299290e0444ff1849ea64",
+        "semanticSha256": "e234d0279661c34cf4cfc3e429866d4e2da3baf80fc06bd722defc63cf38e7fb"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:57:24.875Z",
+      "type": "capture",
+      "id": "address-direct",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-ready-004.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-ready-004.txt",
+        "title": "Direct address creation",
+        "stage": "review-ready",
+        "observedUtc": "2026-10-15T20:57:24.875Z",
+        "notes": "Review direct Address payload, same supplier1503, exact revision1.",
+        "mimeType": "image/jpeg",
+        "sha256": "ea27afebed59d5df6bf233a3e81d117ccb84b877719462bd5aa1821d60add570",
+        "semanticSha256": "addb82ebc447bf01430e46246b1f6c31919564e13630dd53284b7966b0d05ea2"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:57:49.715Z",
+      "type": "write-reserved",
+      "id": "address-direct",
+      "reservation": {
+        "operationId": "address-direct-2054",
+        "requestId": "REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-2",
+        "revision": 1,
+        "payload": {
+          "AddressName": "XDX E2E A 2054",
+          "CountryCode": "US",
+          "AddressLine1": "2300 GREENLAWN BLVD",
+          "City": "ROUND ROCK",
+          "State": "TX",
+          "PostalCode": "78664",
+          "Email": "xdx.e2e.2054@example.invalid",
+          "AddressPurposeOrderingFlag": true
+        },
+        "reservedUtc": "2026-10-15T20:57:49.715Z",
+        "disposition": "accepted",
+        "recordIds": {
+          "addressId": "300000340604955"
+        },
+        "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.txt",
+        "reconciledUtc": "2026-10-15T20:58:09.966Z"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:57:49.990Z",
+      "type": "capture",
+      "id": "address-direct",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-confirm-input-005.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-confirm-input-005.txt",
+        "title": "Direct address creation",
+        "stage": "confirm-input",
+        "observedUtc": "2026-10-15T20:57:49.990Z",
+        "notes": "Entered request: Confirm request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-2 revision 1",
+        "mimeType": "image/jpeg",
+        "sha256": "6385e78f5ff3f456d19cbb8b01a69bb3f526c66d1495a7dff556c220b00f7d2c",
+        "semanticSha256": "2e33d47a4745ff1abd84f4d5a14b8a0f103e723bdc0dbbeb0411803998a0c63c"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:57:59.569Z",
+      "type": "capture",
+      "id": "address-direct",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.txt",
+        "title": "Direct address creation",
+        "stage": "created-readback",
+        "observedUtc": "2026-10-15T20:57:59.569Z",
+        "notes": "Direct Address result with independent readback and generated identifier.",
+        "mimeType": "image/jpeg",
+        "sha256": "5f18d4cb391e68d25e77f585e9adf065dda16570b786d6fa341b51784f023f78",
+        "semanticSha256": "557448732b2a68d9b78f6638b2965876ead80bec22c270fce49d582169089890"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:58:09.966Z",
+      "type": "write-reconciled",
+      "id": "address-direct",
+      "disposition": "accepted",
+      "recordIds": {
+        "addressId": "300000340604955"
+      },
+      "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.txt"
+    },
+    {
+      "observedUtc": "2026-10-15T20:58:09.973Z",
+      "type": "outcome",
+      "id": "address-direct",
+      "status": "PASS",
+      "actual": "Created Address300000340604955 once under supplier1503; all eight approved fields independently verified.",
+      "recordIds": {
+        "addressId": "300000340604955"
+      },
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T20:58:09.978Z",
+      "type": "begin",
+      "id": "address-readback",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T20:58:10.269Z",
+      "type": "capture",
+      "id": "address-readback",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-query-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-query-input-001.txt",
+        "title": "Created address details",
+        "stage": "query-input",
+        "observedUtc": "2026-10-15T20:58:10.269Z",
+        "notes": "Entered request: Show address details for address ID 300000340604955 for supplier number 1503",
+        "mimeType": "image/jpeg",
+        "sha256": "1b91284e721c4dc8bafe5f31306deda3791a63ff10520d629a661c1c1bee8abd",
+        "semanticSha256": "31d3e0d96e635e2c4806dc9ad5139421afdbcdf2ef43718a6bfc84d2d44e1798"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:58:20.484Z",
+      "type": "capture",
+      "id": "address-readback",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-details-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-details-002.txt",
+        "title": "Created address details",
+        "stage": "details",
+        "observedUtc": "2026-10-15T20:58:20.483Z",
+        "notes": "Separate ordinary Address query using returned key and supplier1503.",
+        "mimeType": "image/jpeg",
+        "sha256": "0bf2d811b9ffc8c88ccdbb353b564e26d2131fdac90901463eee29e6d7a2f935",
+        "semanticSha256": "5e50739d1aa4f1f746ed412d666e5d4c201aefc591954a9368d58d3bc433d748"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:58:59.938Z",
+      "type": "outcome",
+      "id": "address-readback",
+      "status": "PASS",
+      "actual": "Separate Address detail query returned saved name, physical address, email and supplier1503; generatedID/ordering verified in independent create readback.",
+      "recordIds": {},
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T20:58:59.945Z",
+      "type": "begin",
+      "id": "address-template",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T20:59:00.328Z",
+      "type": "capture",
+      "id": "address-template",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-prepare-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-prepare-input-001.txt",
+        "title": "Address template creation",
+        "stage": "prepare-input",
+        "observedUtc": "2026-10-15T20:59:00.328Z",
+        "notes": "Entered request: Create address for supplier number 1503 based on address ID 300000340604955 with new name XDX E2E T 2054 and Email xdx.e2e.2054.template@example.invalid",
+        "mimeType": "image/jpeg",
+        "sha256": "57cb9d464e24ad3dc913389bb479b4acf5f4b9dccf3c03c2ad22b485fcbb404c",
+        "semanticSha256": "6122caf7e98ce5daab20ba1d385231028d03d4a7efdf915aecdd771e2772a4a7"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:59:14.980Z",
+      "type": "capture",
+      "id": "address-template",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-draft-ready-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-draft-ready-002.txt",
+        "title": "Address template creation",
+        "stage": "draft-ready",
+        "observedUtc": "2026-10-15T20:59:14.980Z",
+        "notes": "Same-parent Address template, distinct name and Email; required physical fields inherited.",
+        "mimeType": "image/jpeg",
+        "sha256": "2a55ce2cfcbdd447aa91182f21ab499511dfc38671a15e50fd291d9e36f3c9cc",
+        "semanticSha256": "8d1f249009d97e76dabf46c9b856d5c6778878596256d6f2a8dbd7b57c4f80d5"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:59:44.062Z",
+      "type": "capture",
+      "id": "address-template",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-input-003.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-input-003.txt",
+        "title": "Address template creation",
+        "stage": "review-input",
+        "observedUtc": "2026-10-15T20:59:44.061Z",
+        "notes": "Entered request: Review request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-3 revision 1",
+        "mimeType": "image/jpeg",
+        "sha256": "423fd19bff981270608f257e6b97dc45d577775475f7b931c5e3a56f104866ff",
+        "semanticSha256": "d54bfba1fa551332ed028aeba00c01af4ae1ff9cccd08d63ea2513db54bf1df8"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:59:53.177Z",
+      "type": "capture",
+      "id": "address-template",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-ready-004.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-ready-004.txt",
+        "title": "Address template creation",
+        "stage": "review-ready",
+        "observedUtc": "2026-10-15T20:59:53.176Z",
+        "notes": "Same-parent template Address payload reviewed, exact revision1.",
+        "mimeType": "image/jpeg",
+        "sha256": "d1d55a15828c4fe811ad2eb43d0a0cfe38f37cb8def27e8cf0ef9edf2cb19ee6",
+        "semanticSha256": "c2f2f4861bd222e8c7ab9ad85264b02f979cef990232ee91fb65292ab74cb41e"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:59:53.183Z",
+      "type": "write-reserved",
+      "id": "address-template",
+      "reservation": {
+        "operationId": "address-template-2054",
+        "requestId": "REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-3",
+        "revision": 1,
+        "payload": {
+          "AddressName": "XDX E2E T 2054",
+          "CountryCode": "US",
+          "AddressLine1": "2300 GREENLAWN BLVD",
+          "City": "ROUND ROCK",
+          "State": "TX",
+          "PostalCode": "78664",
+          "Email": "xdx.e2e.2054.template@example.invalid",
+          "AddressPurposeOrderingFlag": true
+        },
+        "reservedUtc": "2026-10-15T20:59:53.183Z",
+        "disposition": "accepted",
+        "recordIds": {
+          "templateAddressId": "300000340604962"
+        },
+        "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-created-readback-006.txt",
+        "reconciledUtc": "2026-10-15T21:00:14.738Z"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T20:59:53.511Z",
+      "type": "capture",
+      "id": "address-template",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-confirm-input-005.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-confirm-input-005.txt",
+        "title": "Address template creation",
+        "stage": "confirm-input",
+        "observedUtc": "2026-10-15T20:59:53.511Z",
+        "notes": "Entered request: Confirm request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-3 revision 1",
+        "mimeType": "image/jpeg",
+        "sha256": "2008331fee9a10cbba09d5d6111bce456beb90eba239af34c5d951b2b2b4fddd",
+        "semanticSha256": "9f7de48b1f79caf0331ab029cdf040c4e32eb66fc36458a903191369abc308f5"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:00:03.459Z",
+      "type": "capture",
+      "id": "address-template",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-created-readback-006.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-created-readback-006.txt",
+        "title": "Address template creation",
+        "stage": "created-readback",
+        "observedUtc": "2026-10-15T21:00:03.459Z",
+        "notes": "Template Address accepted response and independent persisted verification.",
+        "mimeType": "image/jpeg",
+        "sha256": "d47da2b742764b8edbad8146764c4c896a80bb27e9943ed018ade4a8c270c3de",
+        "semanticSha256": "02ea3677675bced8ffe04b86101b1f4c8f27a217e3b567846733dce233dd57b0"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:00:14.738Z",
+      "type": "write-reconciled",
+      "id": "address-template",
+      "disposition": "accepted",
+      "recordIds": {
+        "templateAddressId": "300000340604962"
+      },
+      "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-created-readback-006.txt"
+    },
+    {
+      "observedUtc": "2026-10-15T21:00:14.745Z",
+      "type": "outcome",
+      "id": "address-template",
+      "status": "PASS",
+      "actual": "Template Address300000340604962 created once under supplier1503; distinct source/created IDs and all eight fields independently verified.",
+      "recordIds": {
+        "templateAddressId": "300000340604962"
+      },
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T21:00:36.989Z",
+      "type": "begin",
+      "id": "contact-query",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T21:00:37.359Z",
+      "type": "capture",
+      "id": "contact-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-query-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-query-input-001.txt",
+        "title": "New supplier contacts",
+        "stage": "query-input",
+        "observedUtc": "2026-10-15T21:00:37.359Z",
+        "notes": "Entered request: Show contacts for supplier number 1503",
+        "mimeType": "image/jpeg",
+        "sha256": "6bad25de8271338691490533438fcb28958e1b65d00fa1272f081e8aab2c521a",
+        "semanticSha256": "df64af660fa189bd982655a0c81f858532821d113fe460daa4ded1ad748efc71"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:00:48.612Z",
+      "type": "capture",
+      "id": "contact-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-result-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-result-002.txt",
+        "title": "New supplier contacts",
+        "stage": "result",
+        "observedUtc": "2026-10-15T21:00:48.611Z",
+        "notes": "Contact collection for newly created supplier1503.",
+        "mimeType": "image/jpeg",
+        "sha256": "33e3e34e46132a2612221aedb5771ed3e9d9397bec2ceaf60ebf1d1c97defde2",
+        "semanticSha256": "a6fa19327a232e0e8e238481063fdbcdceb7304ff2e711e9f110cc0569b9d85b"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:01:23.633Z",
+      "type": "capture",
+      "id": "contact-query-assertion",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-assertion-observed-empty-state-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-assertion-observed-empty-state-001.txt",
+        "title": "Contact query assertion mismatch",
+        "stage": "observed-empty-state",
+        "observedUtc": "2026-10-15T21:01:23.633Z",
+        "notes": "Initial assessment expected Items:none and Has more:false from Address rendering. Contact instead renders No contacts found. No UI request retried; assertion corrected against actual Contact output.",
+        "mimeType": "image/jpeg",
+        "sha256": "33e3e34e46132a2612221aedb5771ed3e9d9397bec2ceaf60ebf1d1c97defde2",
+        "semanticSha256": "a6fa19327a232e0e8e238481063fdbcdceb7304ff2e711e9f110cc0569b9d85b"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:01:23.644Z",
+      "type": "outcome",
+      "id": "contact-query-assertion",
+      "status": "FAIL",
+      "actual": "Harness assertion incorrectly expected Address-specific paging text in the Contact screen. Corrected assessment uses observed Contact empty-state and parent; no application failure or extra request.",
+      "recordIds": {},
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T21:01:23.650Z",
+      "type": "outcome",
+      "id": "contact-query",
+      "status": "PASS",
+      "actual": "Supplier1503 returned an explicit No contacts found empty state. Paging is not rendered on this Contact screen.",
+      "recordIds": {},
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T21:01:23.656Z",
+      "type": "begin",
+      "id": "contact-direct",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T21:01:23.991Z",
+      "type": "capture",
+      "id": "contact-direct",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-prepare-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-prepare-input-001.txt",
+        "title": "Direct contact creation",
+        "stage": "prepare-input",
+        "observedUtc": "2026-10-15T21:01:23.990Z",
+        "notes": "Entered request: Create contact for supplier number 1503 with FirstName XDX, LastName E2E2054, Email xdx.e2e.2054.contact@example.invalid",
+        "mimeType": "image/jpeg",
+        "sha256": "fe3993e9ffaa0365220543ce8fd312ac925eae82243ee91160a0f52c5c39f4a0",
+        "semanticSha256": "79e32e4a65bd17b97ccaebecf3b4eaffaf87d65aa0f94a6be7cb9716bd6e5c98"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:01:33.995Z",
+      "type": "capture",
+      "id": "contact-direct",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-draft-ready-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-draft-ready-002.txt",
+        "title": "Direct contact creation",
+        "stage": "draft-ready",
+        "observedUtc": "2026-10-15T21:01:33.995Z",
+        "notes": "Direct Contact draft under supplier1503, three intended fields.",
+        "mimeType": "image/jpeg",
+        "sha256": "a2defe651b699b0627be1c02579f2d61181b1ffe4151bea75e9eaaa5336b6826",
+        "semanticSha256": "650403dc5455d7640f44b75cac2bac29b01c2395697b93b725d31c3f92c786b3"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:02:03.905Z",
+      "type": "capture",
+      "id": "contact-direct",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-input-003.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-input-003.txt",
+        "title": "Direct contact creation",
+        "stage": "review-input",
+        "observedUtc": "2026-10-15T21:02:03.905Z",
+        "notes": "Entered request: Review request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-4 revision 1",
+        "mimeType": "image/jpeg",
+        "sha256": "3f7f62b34d4f34e39b6719c9772397d48dcfb96cadf8189b6b7cb76cf131377f",
+        "semanticSha256": "cd802c2bd2a27f5f9b17fbbe0ef346f98541312410e936160bcc9cfc0b1fbea0"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:02:12.387Z",
+      "type": "capture",
+      "id": "contact-direct",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-ready-004.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-ready-004.txt",
+        "title": "Direct contact creation",
+        "stage": "review-ready",
+        "observedUtc": "2026-10-15T21:02:12.387Z",
+        "notes": "Direct Contact exact revision reviewed under supplier1503.",
+        "mimeType": "image/jpeg",
+        "sha256": "f6b461976e4f7f70496fa9be4c6d8107e74a54b7f4b6611b85beb2a455fe8386",
+        "semanticSha256": "a2162a485e1c388d28c73983dd9500e874c5355f2568c760a66ec007bddc274a"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:02:21.567Z",
+      "type": "write-reserved",
+      "id": "contact-direct",
+      "reservation": {
+        "operationId": "contact-direct-2054",
+        "requestId": "REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-4",
+        "revision": 1,
+        "payload": {
+          "FirstName": "XDX",
+          "LastName": "E2E2054",
+          "Email": "xdx.e2e.2054.contact@example.invalid"
+        },
+        "reservedUtc": "2026-10-15T21:02:21.567Z",
+        "disposition": "accepted",
+        "recordIds": {
+          "contactId": "300000340604973"
+        },
+        "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-created-readback-006.txt",
+        "reconciledUtc": "2026-10-15T21:02:39.165Z"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:02:21.979Z",
+      "type": "capture",
+      "id": "contact-direct",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-confirm-input-005.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-confirm-input-005.txt",
+        "title": "Direct contact creation",
+        "stage": "confirm-input",
+        "observedUtc": "2026-10-15T21:02:21.979Z",
+        "notes": "Entered request: Confirm request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-4 revision 1",
+        "mimeType": "image/jpeg",
+        "sha256": "cf4521a54b0785d0dd3d195a17e4f954b4d3a542f13ffa443eae7aacc1f6fd2d",
+        "semanticSha256": "34231174b0993d5e543ee3c47ff3b0477274dee0216e99731a1512be994ad993"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:02:30.439Z",
+      "type": "capture",
+      "id": "contact-direct",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-created-readback-006.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-created-readback-006.txt",
+        "title": "Direct contact creation",
+        "stage": "created-readback",
+        "observedUtc": "2026-10-15T21:02:30.439Z",
+        "notes": "Direct Contact accepted response and independent persisted field/parent verification.",
+        "mimeType": "image/jpeg",
+        "sha256": "f581bc5d3cd6512c2f22752d35573a47c6efde9aba4db993a2346f5ce6b9add6",
+        "semanticSha256": "c9a44aca18a00e2f0e403c2dbc4598b8918595f30648c54e29f10a3eb86509f0"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:02:39.165Z",
+      "type": "write-reconciled",
+      "id": "contact-direct",
+      "disposition": "accepted",
+      "recordIds": {
+        "contactId": "300000340604973"
+      },
+      "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-created-readback-006.txt"
+    },
+    {
+      "observedUtc": "2026-10-15T21:02:39.172Z",
+      "type": "outcome",
+      "id": "contact-direct",
+      "status": "PASS",
+      "actual": "Contact300000340604973 created once under supplier1503; all three fields and parent independently verified.",
+      "recordIds": {
+        "contactId": "300000340604973"
+      },
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T21:02:39.179Z",
+      "type": "begin",
+      "id": "contact-readback",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T21:02:39.596Z",
+      "type": "capture",
+      "id": "contact-readback",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-query-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-query-input-001.txt",
+        "title": "Created contact details",
+        "stage": "query-input",
+        "observedUtc": "2026-10-15T21:02:39.596Z",
+        "notes": "Entered request: Show contact details for contact ID 300000340604973 for supplier number 1503",
+        "mimeType": "image/jpeg",
+        "sha256": "3401683acbfb0fcfdbe9fad44714201420fde3aaf044330a557389448b7c061c",
+        "semanticSha256": "5cc6fa3111a98711511e808b639fc12081079aa696f548ab06696329bf2421a0"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:02:50.903Z",
+      "type": "capture",
+      "id": "contact-readback",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-details-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-details-002.txt",
+        "title": "Created contact details",
+        "stage": "details",
+        "observedUtc": "2026-10-15T21:02:50.903Z",
+        "notes": "Separate ordinary Contact query under supplier1503 by returned identifier.",
+        "mimeType": "image/jpeg",
+        "sha256": "4b3974db96cb2bc1276b78ee9eedbfe58aaa14ed32027c72a33633f7cd4c9cd6",
+        "semanticSha256": "19b556887000426bce6893d22a7b19ebd23be391586925fa01c376bb955b6f06"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:03:00.934Z",
+      "type": "outcome",
+      "id": "contact-readback",
+      "status": "PASS",
+      "actual": "Ordinary Contact detail shows correct first/last name, email and supplier1503.",
+      "recordIds": {},
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T21:03:00.941Z",
+      "type": "begin",
+      "id": "contact-template",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T21:03:01.341Z",
+      "type": "capture",
+      "id": "contact-template",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-prepare-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-prepare-input-001.txt",
+        "title": "Contact template creation",
+        "stage": "prepare-input",
+        "observedUtc": "2026-10-15T21:03:01.341Z",
+        "notes": "Entered request: Create contact for supplier number 1503 based on contact ID 300000340604973 with LastName E2E2054Template and Email xdx.e2e.2054.contact.template@example.invalid",
+        "mimeType": "image/jpeg",
+        "sha256": "6e79933e7a5277b7346cd156c46723acb786d036b2740f9c4b1f9b96980d52f9",
+        "semanticSha256": "dcfa64a8f131117c3653080cd8918352ffcad88ccea1c8ab57c40e472ded6795"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:03:08.703Z",
+      "type": "capture",
+      "id": "contact-template",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-draft-ready-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-draft-ready-002.txt",
+        "title": "Contact template creation",
+        "stage": "draft-ready",
+        "observedUtc": "2026-10-15T21:03:08.702Z",
+        "notes": "Contact template uses accepted same-parent Contact, new last name and Email.",
+        "mimeType": "image/jpeg",
+        "sha256": "be7b9c2965477baff6e7eae57450440a105cdf9a3018d6f8a3a5c64116588416",
+        "semanticSha256": "d8f99f66f9e11960d0067d9f3666ccc26cc8b122bcd0ac91a6a722d3e73a8995"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:03:45.831Z",
+      "type": "outcome",
+      "id": "contact-template",
+      "status": "FAIL",
+      "actual": "Template preparation failed: child source/address-name check could not finish. App reports no new create submitted. No Confirm or write reservation issued; screenshot retained.",
+      "recordIds": {},
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T21:04:20.683Z",
+      "type": "begin",
+      "id": "site-query",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T21:04:24.345Z",
+      "type": "capture",
+      "id": "site-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-query-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-query-input-001.txt",
+        "title": "New supplier sites",
+        "stage": "query-input",
+        "observedUtc": "2026-10-15T21:04:24.345Z",
+        "notes": "Entered request: Show sites for supplier number 1503",
+        "mimeType": "image/jpeg",
+        "sha256": "add1180233697bb5007136f4371410656f9743e71aaf8fbf3d52b905e26c53ef",
+        "semanticSha256": "14265465b1aa11c44add05bad68dd00912b1cdd492accc7a198eb26e2bd96d79"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:04:35.688Z",
+      "type": "capture",
+      "id": "site-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-result-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-result-002.txt",
+        "title": "New supplier sites",
+        "stage": "result",
+        "observedUtc": "2026-10-15T21:04:35.687Z",
+        "notes": "Site collection for new supplier1503 before attempting a first Site.",
+        "mimeType": "image/jpeg",
+        "sha256": "9681feb417087aa1c6cb673e99601c113a98f149e07d6e480fe7c9593225f4cc",
+        "semanticSha256": "ab8553d5a84c5c873758b5c04b7c4cb365aadc20392a42d23b277a6e6a0df0a8"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:04:44.363Z",
+      "type": "outcome",
+      "id": "site-query",
+      "status": "PASS",
+      "actual": "New supplier1503 has no Site records; parent and empty state explicitly displayed.",
+      "recordIds": {},
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T21:04:44.369Z",
+      "type": "begin",
+      "id": "site-connected",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T21:04:44.674Z",
+      "type": "capture",
+      "id": "site-connected",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-prepare-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-prepare-input-001.txt",
+        "title": "First site on the new supplier",
+        "stage": "prepare-input",
+        "observedUtc": "2026-10-15T21:04:44.674Z",
+        "notes": "Entered request: Create site for supplier number 1503 based on selected site with new name XDX E2E S 2054",
+        "mimeType": "image/jpeg",
+        "sha256": "c773a5209fdab2bb7589683ca4630565ad3d27ab9711db7e6659824fd3945ee9",
+        "semanticSha256": "90e96e94dc216d39f09ab7a5fd8c6cc3f0a1f3cc52742f4d1e5a547b5f6f9ff0"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:04:53.558Z",
+      "type": "capture",
+      "id": "site-connected",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-capability-result-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-capability-result-002.txt",
+        "title": "First site on the new supplier",
+        "stage": "capability-result",
+        "observedUtc": "2026-10-15T21:04:53.557Z",
+        "notes": "Attempt first Site for new supplier; inspect template dependency and preserve any validation.",
+        "mimeType": "image/jpeg",
+        "sha256": "ba0b1e920a13cbd6b00107c18986d7506698bba8834265f3647fb734eb7d1c55",
+        "semanticSha256": "c6861b238ced4231303fdecec3219b058cdb7ef495aee6e2abf8ce7d4e728946"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:05:08.051Z",
+      "type": "outcome",
+      "id": "site-connected",
+      "status": "BLOCKED",
+      "actual": "New supplier1503 has no source Site; UI requires selecting a source Site under this same supplier. Current template-only behavior cannot bootstrap the connected first Site.",
+      "recordIds": {},
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T21:05:08.060Z",
+      "type": "begin",
+      "id": "assignment-connected",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T21:05:08.071Z",
+      "type": "capture",
+      "id": "assignment-connected",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-connected-dependency-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-connected-dependency-001.txt",
+        "title": "Assignments for the new supplier site",
+        "stage": "dependency",
+        "observedUtc": "2026-10-15T21:05:08.071Z",
+        "notes": "Assignments on the new supplier cannot execute because the first Site is blocked by same-parent template requirement.",
+        "mimeType": "image/jpeg",
+        "sha256": "ba0b1e920a13cbd6b00107c18986d7506698bba8834265f3647fb734eb7d1c55",
+        "semanticSha256": "c6861b238ced4231303fdecec3219b058cdb7ef495aee6e2abf8ce7d4e728946"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:05:08.078Z",
+      "type": "outcome",
+      "id": "assignment-connected",
+      "status": "BLOCKED",
+      "actual": "Connected Assignment create/readback depends on a new supplier Site, which could not be prepared. Continue on clearly labeled existing-supplier fallback.",
+      "recordIds": {},
+      "fallback": false
+    },
+    {
+      "observedUtc": "2026-10-15T21:05:08.083Z",
+      "type": "begin",
+      "id": "site-fallback-query",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T21:05:08.410Z",
+      "type": "capture",
+      "id": "site-fallback-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-query-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-query-input-001.txt",
+        "title": "Fallback supplier sites",
+        "stage": "query-input",
+        "observedUtc": "2026-10-15T21:05:08.409Z",
+        "notes": "Entered request: Show sites for supplier number 1255",
+        "mimeType": "image/jpeg",
+        "sha256": "b47aa9d9aeb7a46c5a0c395b3c34360882ccf1d8cd3318530c1f2f96bdf3acc0",
+        "semanticSha256": "f1a855752b6555f610cd0b729fa218c08d3eda0e9bce49d6ae24f6dfa6f4a48a"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:05:23.661Z",
+      "type": "capture",
+      "id": "site-fallback-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-002.txt",
+        "title": "Fallback supplier sites",
+        "stage": "result",
+        "observedUtc": "2026-10-15T21:05:23.660Z",
+        "notes": "Fallback coverage: existing Dell supplier1255 Site collection, not the new supplier1503.",
+        "mimeType": "image/jpeg",
+        "sha256": "cfae03314a6fd24afeae1f5e90e5610e0cf8ac76b2d17cd5fda35f19009b00ec",
+        "semanticSha256": "cdff0404184bf60aac2875f2eed1b39332ebb57c9631d3bb9363bb01f51b00e7"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:05:42.322Z",
+      "type": "capture",
+      "id": "site-fallback-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-lower-section-003.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-lower-section-003.txt",
+        "title": "Fallback supplier sites",
+        "stage": "result-lower-section",
+        "observedUtc": "2026-10-15T21:05:42.321Z",
+        "notes": "Lower section of first25Site results and advertised continuation; this is a partial collection, not a claim all Sites were listed.",
+        "mimeType": "image/jpeg",
+        "sha256": "44b94ae6439ee86e2722f3b2459cda4b6665ee96b8c3f40efe933b58dc35dbb9",
+        "semanticSha256": "cdff0404184bf60aac2875f2eed1b39332ebb57c9631d3bb9363bb01f51b00e7"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:05:43.188Z",
+      "type": "outcome",
+      "id": "site-fallback-query",
+      "status": "PASS",
+      "actual": "Fallback Dell supplier1255 first Site page returned Dell US1 ID300000047414699 and explicit continuation; full collection completeness not claimed.",
+      "recordIds": {
+        "fallbackSourceSiteId": "300000047414699"
+      },
+      "fallback": true
+    },
+    {
+      "observedUtc": "2026-10-15T21:05:43.193Z",
+      "type": "begin",
+      "id": "site-fallback-create",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T21:05:43.646Z",
+      "type": "capture",
+      "id": "site-fallback-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-prepare-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-prepare-input-001.txt",
+        "title": "Fallback site and assignment creation",
+        "stage": "prepare-input",
+        "observedUtc": "2026-10-15T21:05:43.645Z",
+        "notes": "Entered request: Create a new site for supplier number 1255 based on site ID 300000047414699 with new name XDX E2E S 2054",
+        "mimeType": "image/jpeg",
+        "sha256": "dd18fa20b27ebbe1b0650b415f6b60762ece5822c30e992fade5e332f0aafacb",
+        "semanticSha256": "3f2358a92444b4a37ba37fc4911fd97f7e48466a709e67522398070d6995869e"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:05:58.235Z",
+      "type": "capture",
+      "id": "site-fallback-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-draft-ready-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-draft-ready-002.txt",
+        "title": "Fallback site and assignment creation",
+        "stage": "draft-ready",
+        "observedUtc": "2026-10-15T21:05:58.234Z",
+        "notes": "Fallback Site template under existing supplier1255; cannot claim connected supplier1503 creation.",
+        "mimeType": "image/jpeg",
+        "sha256": "842a23fd8f0679770aeeb78039351f3f7463ad517bd57c35f692fddb977dc193",
+        "semanticSha256": "e2b4daa1efd0de2c65d177dacb6712e96871bdedb08ead53d8d60153f0ad129a"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:06:15.593Z",
+      "type": "capture",
+      "id": "site-fallback-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-input-003.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-input-003.txt",
+        "title": "Fallback site and assignment creation",
+        "stage": "review-input",
+        "observedUtc": "2026-10-15T21:06:15.593Z",
+        "notes": "Entered request: Review request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-5 revision 1",
+        "mimeType": "image/jpeg",
+        "sha256": "dd6b5d9b513715806be1d5f6a7259e6a11734b33cb73ab825fe69b25994ce96a",
+        "semanticSha256": "3cc67ee46e467d447751c5fee9ebdf73f25bbf0e8f2dd97ab6c2988b281b2d9d"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:06:23.815Z",
+      "type": "capture",
+      "id": "site-fallback-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-ready-004.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-ready-004.txt",
+        "title": "Fallback site and assignment creation",
+        "stage": "review-ready",
+        "observedUtc": "2026-10-15T21:06:23.815Z",
+        "notes": "Fallback Site+oneAssignment exact request/revision review under Dell1255; two planned business writes.",
+        "mimeType": "image/jpeg",
+        "sha256": "62af78653f0d1c040254f8219b2f595f2534adf7eb9b3cf699b1c340d1d94a63",
+        "semanticSha256": "be4e7fa0f242c21aca7a5b1862bb23735004e823e48ff5a4bf4f00b350caad02"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:06:55.535Z",
+      "type": "write-reserved",
+      "id": "site-fallback-create",
+      "reservation": {
+        "operationId": "site-and-assignment-fallback-2054",
+        "requestId": "REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-5",
+        "revision": 1,
+        "payload": {
+          "site": {
+            "SupplierSite": "XDX E2E S 2054",
+            "ProcurementBUId": 300000046987012,
+            "SupplierAddressName": "Dell US1",
+            "SitePurposePurchasingFlag": true
+          },
+          "assignments": [
+            {
+              "ClientBUId": 300000046987012,
+              "BillToBUId": 300000046987012
+            }
+          ],
+          "plannedBusinessWrites": 2
+        },
+        "reservedUtc": "2026-10-15T21:06:55.535Z",
+        "disposition": "accepted",
+        "recordIds": {
+          "siteId": "300000340604984",
+          "assignmentId": "300000340604987",
+          "fallbackSupplierId": "300000047414679"
+        },
+        "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.txt",
+        "reconciledUtc": "2026-10-15T21:07:36.393Z"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:06:56.082Z",
+      "type": "capture",
+      "id": "site-fallback-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-confirm-input-005.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-confirm-input-005.txt",
+        "title": "Fallback site and assignment creation",
+        "stage": "confirm-input",
+        "observedUtc": "2026-10-15T21:06:56.082Z",
+        "notes": "Entered request: Confirm request REQ-5bebcffd-f244-4c41-b1d0-fdc01eb21cbf-XDX_SUPPLIER_CONVERSATION-5 revision 1",
+        "mimeType": "image/jpeg",
+        "sha256": "190709395541905aebe82d925fc75018a33b8845922e7cda1079742b5c7fd438",
+        "semanticSha256": "2d03276d5f19e11360dd0183af634daadca3d6a610dad5e862e575a2c4fbb1a2"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:07:13.820Z",
+      "type": "capture",
+      "id": "site-fallback-create",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.txt",
+        "title": "Fallback site and assignment creation",
+        "stage": "created-readback",
+        "observedUtc": "2026-10-15T21:07:13.820Z",
+        "notes": "Fallback Site then one Assignment accepted/verified serially under existing Dell1255.",
+        "mimeType": "image/jpeg",
+        "sha256": "53567551261435a81d3e5462914507b857a8bed97b0d6108eae3c68f30c23aff",
+        "semanticSha256": "6e63585542d34e92e56ba16018e5c7bb746d828a866a6cdef7dfea8cd064cffd"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:07:36.393Z",
+      "type": "write-reconciled",
+      "id": "site-fallback-create",
+      "disposition": "accepted",
+      "recordIds": {
+        "siteId": "300000340604984",
+        "assignmentId": "300000340604987",
+        "fallbackSupplierId": "300000047414679"
+      },
+      "evidence": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.txt"
+    },
+    {
+      "observedUtc": "2026-10-15T21:07:36.400Z",
+      "type": "outcome",
+      "id": "site-fallback-create",
+      "status": "PASS",
+      "actual": "Fallback Dell1255 Site300000340604984 and Assignment300000340604987 created once, independently verified serially. This is not connected supplier1503 coverage.",
+      "recordIds": {
+        "siteId": "300000340604984",
+        "assignmentId": "300000340604987",
+        "fallbackSupplierId": "300000047414679"
+      },
+      "fallback": true
+    },
+    {
+      "observedUtc": "2026-10-15T21:07:36.408Z",
+      "type": "begin",
+      "id": "assignment-readback",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T21:07:36.423Z",
+      "type": "capture",
+      "id": "assignment-readback",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-readback-verified-assignment-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-readback-verified-assignment-001.txt",
+        "title": "Copied assignment verification",
+        "stage": "verified-assignment",
+        "observedUtc": "2026-10-15T21:07:36.423Z",
+        "notes": "Observed independent Assignment verification in the original Site completion, not a repeated POST; assignmentID and both BU keys visible.",
+        "mimeType": "image/jpeg",
+        "sha256": "53567551261435a81d3e5462914507b857a8bed97b0d6108eae3c68f30c23aff",
+        "semanticSha256": "6e63585542d34e92e56ba16018e5c7bb746d828a866a6cdef7dfea8cd064cffd"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:07:36.431Z",
+      "type": "outcome",
+      "id": "assignment-readback",
+      "status": "PASS",
+      "actual": "Original fallback workflow independently read back Assignment300000340604987 and both Client/Bill BU300000046987012.",
+      "recordIds": {
+        "assignmentId": "300000340604987"
+      },
+      "fallback": true
+    },
+    {
+      "observedUtc": "2026-10-15T21:07:36.438Z",
+      "type": "begin",
+      "id": "site-fallback-readback",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T21:07:36.948Z",
+      "type": "capture",
+      "id": "site-fallback-readback",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-query-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-query-input-001.txt",
+        "title": "Fallback site details",
+        "stage": "query-input",
+        "observedUtc": "2026-10-15T21:07:36.948Z",
+        "notes": "Entered request: Show site details for site ID 300000340604984 for supplier number 1255",
+        "mimeType": "image/jpeg",
+        "sha256": "97dccb61b333e97601dcbc11a0eb128ddf61127bcd9ead7e262526d44f9722da",
+        "semanticSha256": "a2e4a8bdfcb22c3c1446fc6b69b2bc8945cc125a651f638bc54c92db1a0cf891"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:07:47.876Z",
+      "type": "capture",
+      "id": "site-fallback-readback",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-details-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-details-002.txt",
+        "title": "Fallback site details",
+        "stage": "details",
+        "observedUtc": "2026-10-15T21:07:47.876Z",
+        "notes": "Separate ordinary Site detail query under fallback supplier1255 using newly created SiteID.",
+        "mimeType": "image/jpeg",
+        "sha256": "74dee02e45a63d4ff91c1fcf4a1c800e333d4f65e88a98892bc45589aed67a78",
+        "semanticSha256": "333622e5ab7c4bceb1546f298acf60fd65a63db601dc2a2a5a0f8c3b0a4021b1"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:08:20.166Z",
+      "type": "outcome",
+      "id": "site-fallback-readback",
+      "status": "PASS",
+      "actual": "Ordinary fallback Site detail verifies Site984, Dell1255, BU300000046987012, DellUS1 address and purchasing purpose Yes.",
+      "recordIds": {},
+      "fallback": true
+    },
+    {
+      "observedUtc": "2026-10-15T21:08:20.175Z",
+      "type": "begin",
+      "id": "assignment-query",
+      "attempt": 1
+    },
+    {
+      "observedUtc": "2026-10-15T21:08:20.756Z",
+      "type": "capture",
+      "id": "assignment-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-query-input-001.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-query-input-001.txt",
+        "title": "Standalone assignment query",
+        "stage": "query-input",
+        "observedUtc": "2026-10-15T21:08:20.755Z",
+        "notes": "Entered request: Show assignments for site ID 300000340604984 for supplier number 1255",
+        "mimeType": "image/jpeg",
+        "sha256": "426c6ac333c103e6b1b187ceeef23ea017964b25773e966a7f1cdfd145dc157f",
+        "semanticSha256": "8b07accc74a1bc7693dac535b22d55b346122e8d22c054465afc081e7c60e008"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:08:37.912Z",
+      "type": "capture",
+      "id": "assignment-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-result-002.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-result-002.txt",
+        "title": "Standalone assignment query",
+        "stage": "result",
+        "observedUtc": "2026-10-15T21:08:37.912Z",
+        "notes": "Standalone Assignment query attempt; compare with separately passing embedded create/readback evidence.",
+        "mimeType": "image/jpeg",
+        "sha256": "9a4d0eb4810a821638c67dc501f43ec1dedd546ca6e8074213a028ed44f03da2",
+        "semanticSha256": "6457091d555180e7f248fa65b04748511ebcd8c097779c97048a028850ec5865"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:08:59.353Z",
+      "type": "outcome",
+      "id": "assignment-query",
+      "status": "FAIL",
+      "actual": "Standalone Assignment query returned Supplier site details instead of Assignment records; expected Assignment ID, Client BU and Bill To BU were absent. Embedded create/readback remains separately PASS.",
+      "recordIds": {},
+      "fallback": true
+    },
+    {
+      "observedUtc": "2026-10-15T21:09:17.973Z",
+      "type": "run-finished",
+      "summary": {
+        "counts": {
+          "PASS": 16,
+          "FAIL": 3,
+          "BLOCKED": 2
+        },
+        "retryCount": 0,
+        "connectedJourneyPassed": false
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:09:17.980Z",
+      "type": "presentation-finished"
+    },
+    {
+      "observedUtc": "2026-10-15T21:13:41.282Z",
+      "type": "run-resumed"
+    },
+    {
+      "observedUtc": "2026-10-15T21:13:41.628Z",
+      "type": "capture",
+      "id": "assignment-query",
+      "capture": {
+        "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-final-painted-result-003.jpg",
+        "semanticPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-final-painted-result-003.txt",
+        "title": "Assignment query returned Site details",
+        "stage": "final-painted-result",
+        "observedUtc": "2026-10-15T21:13:41.628Z",
+        "notes": "Read-only capture after the UI had fully painted. No request or business write repeated. Expected Assignment records remain absent; Site detail response is the observed failure.",
+        "mimeType": "image/jpeg",
+        "sha256": "569a7f6b52a9a7a496d09868551ed856d61d4ca5a1416e7562c014ac3ea05e25",
+        "semanticSha256": "6457091d555180e7f248fa65b04748511ebcd8c097779c97048a028850ec5865"
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:20:40.526Z",
+      "type": "run-resumed"
+    },
+    {
+      "observedUtc": "2026-10-15T21:20:40.534Z",
+      "type": "run-finished",
+      "summary": {
+        "counts": {
+          "PASS": 16,
+          "FAIL": 3,
+          "BLOCKED": 2
+        },
+        "retryCount": 0,
+        "connectedJourneyPassed": false
+      }
+    },
+    {
+      "observedUtc": "2026-10-15T21:20:40.542Z",
+      "type": "presentation-pending",
+      "artifactCompletionVerified": false
+    }
+  ],
+  "records": {
+    "sourceSupplierNumber": "1255",
+    "supplierId": "300000340604948",
+    "supplierNumber": "1503",
+    "addressId": "300000340604955",
+    "templateAddressId": "300000340604962",
+    "contactId": "300000340604973",
+    "fallbackSourceSiteId": "300000047414699",
+    "siteId": "300000340604984",
+    "assignmentId": "300000340604987",
+    "fallbackSupplierId": "300000047414679"
+  },
+  "uiFirstSubmittedUtc": "2026-10-15T20:46:53.218Z",
+  "executionMode": "Supported CUA adaptive execution using reusable durable runner; concrete journey entrypoint qualified separately against captured evidence.",
+  "limitations": [
+    "Connected first Site/Assignment blocked by same-parent Site template requirement.",
+    "Contact template preparation failed before create; no retry without changed prerequisite.",
+    "Standalone Assignment query returned Site details.",
+    "One Contact empty-state harness assertion failure retained separately; no UI request repeated.",
+    "Six accepted business writes retained: Supplier1 Address2 Contact1 fallbackSite1 fallbackAssignment1.",
+    "Some setup/query-input screenshots retained from earlier observations; capture metadata records persistence time, not original acquisition time."
+  ],
+  "summary": {
+    "counts": {
+      "PASS": 16,
+      "FAIL": 3,
+      "BLOCKED": 2
+    },
+    "retryCount": 0,
+    "connectedJourneyPassed": false
+  },
+  "presentation": {
+    "status": "host-render-requested",
+    "resultsPath": "fixture-only",
+    "artifactCompletionVerified": false
+  },
+  "captureLimitations": [
+    "AX and screenshot paint are not atomic. Four Address images show loading while AX reports completion. Completed screens remain visible in the following entered-request captures. Titles identify processing honestly.",
+    "Retained setup/query-input observations were acquired earlier than persistence timestamps.",
+    "Final Assignment failure has an additional fully painted read-only capture. No test request was repeated."
+  ]
+}

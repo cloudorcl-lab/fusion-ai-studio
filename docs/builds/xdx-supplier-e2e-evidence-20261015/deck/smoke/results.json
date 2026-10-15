@@ -1,0 +1,49 @@
+{
+  "steps": [
+    {
+      "captures": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/tooling-image.png",
+          "notes": "Bundled skill icon used exclusively for generator smoke proof. Not an application screenshot.",
+          "observedUtc": "2026-10-15T20:00:00Z",
+          "title": "Tooling fixture image",
+          "stage": "Tooling only"
+        }
+      ],
+      "id": "SMOKE",
+      "scenario": "Generator",
+      "retries": [],
+      "fallback": false,
+      "recordIds": {},
+      "status": "PASS",
+      "title": "Tooling fixture image",
+      "object": "Tooling",
+      "actual": "Synthetic generator input, no application test",
+      "expected": "Embedded image and speaker notes"
+    },
+    {
+      "captures": [],
+      "id": "BLOCKED-SMOKE",
+      "scenario": "No capture",
+      "retries": [],
+      "fallback": false,
+      "recordIds": {},
+      "status": "BLOCKED",
+      "title": "Blocked tooling step",
+      "object": "Tooling",
+      "actual": "Synthetic blocked condition",
+      "expected": "Explicit no capture status slide"
+    }
+  ],
+  "endedUtc": "2026-10-15T20:00:01Z",
+  "toolingSmoke": true,
+  "startedUtc": "2026-10-15T20:00:00Z",
+  "runId": "TOOLING-SMOKE-NOT-APPLICATION-EVIDENCE",
+  "target": {
+    "workflowCode": "NONE",
+    "surface": "NO APPLICATION",
+    "appCode": "TOOLING ONLY",
+    "host": "LOCAL",
+    "version": "NONE"
+  }
+}

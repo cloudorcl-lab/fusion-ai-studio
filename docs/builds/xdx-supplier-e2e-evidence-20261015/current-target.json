@@ -1,0 +1,15 @@
+{
+  "observedUtc": "2026-10-15T20:47:03.621Z",
+  "host": "https://fa-eqil-dev21-saasfademo1.ds-fa.oraclepdemos.com",
+  "identity": "CASEY.BROWN",
+  "appCode": "XDX_SUPPLIER_WORKSPACE",
+  "workflowCode": "XDX_SUPPLIER_CONVERSATION",
+  "version": "88010729",
+  "status": "DRAFT",
+  "remoteSourceSha256": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872",
+  "implementationSha256": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872",
+  "specEqual": true,
+  "surface": "Studio Run app preview",
+  "tabId": "676657676",
+  "queryPreflight": "PASS"
+}

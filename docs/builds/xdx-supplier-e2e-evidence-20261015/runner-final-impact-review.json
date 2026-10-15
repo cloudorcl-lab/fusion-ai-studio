@@ -1,0 +1,17 @@
+{
+  "observedUtc": "2026-10-15T21:21:52.376Z",
+  "reviewer": "/root",
+  "result": "pass",
+  "currentSource": {
+    "path": "scripts/xdx-supplier-e2e.mjs",
+    "sha256": "daf0a904d5975d0fb0796412bdb41bbf3da4bd26edc2b53ce22f4ac1c31de57d"
+  },
+  "changed": "Early resume step-ID inventory check and truthful queued/finalized hostartifact disposition with realpath/file/hash checks",
+  "unchanged": "Browser import and capture, actual JPEG bytes, write reservation, approval/accepted-ID and request behavior; no runtime product change",
+  "proof": {
+    "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof.json",
+    "sha256": "4716950ec72cfd57fe9834bc252be071cfff3384beab22062c9c35f002ceaf01"
+  },
+  "actualBusinessResultsUnchanged": true,
+  "qualificationReuse": "Actual CUA import/capture proofs retained for unchanged boundaries; only changed branches locally executed"
+}

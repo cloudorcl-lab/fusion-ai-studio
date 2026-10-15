@@ -1,0 +1,15 @@
+{
+  "observedUtc": "2026-10-15T20:50:28.036Z",
+  "result": "pass",
+  "actualRuntime": "mcp__cua_repl/node_repl",
+  "exports": {
+    "start": "function",
+    "run": "function"
+  },
+  "corrections": [
+    "createRequire reuses existing CJS PNGvalidator",
+    "Explicit repoRoot; no process global during browser import/start",
+    "node:process disallowed; removed rather than bypassed"
+  ],
+  "scope": "Actual import only; host durable-state test is separate; native actions and final host deck still required"
+}

@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-e2e-evidence-20261015-plan-review",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-10-15T20:41:53.0767283Z",
+  "checkpointUtc": "2026-10-15T21:27:38.616Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "fa1aa8fff43b8834b4db6679ca542229bbe6893efe406878e87ce6fa352e00ed"
+    },
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "c007c6eca8368b0475c563e659fe29f5ee36b27aa1ea21950d0742087fa99c90"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "60b7c1a427d3fbf09d1a21e3d4975dbd76a0a3f132b89f64a4decf9b32474c8f"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "81c5aabb4d2fca736fb2eeeb6955be1a9d95a9b499136b7459165f9d882b75db"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "a4f649e2ac28c33cc76436661735c3bf32f06b697ea352be3322a4b51e077da7"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "sha256": "017e16353dada5bd28539f2dafbd3aadf99d7d5f7d9c8fce5a5b850c5037403a"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "sha256": "db957459a92cf5b7a457f4587799d7c92b154c7163157b8b2e94d0a371e474f7"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "sha256": "89345c40b2b57417186e6d4c1f01059c5ece001bc24a132355582a5b8a0767c8"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "sha256": "10d663bfd2de5004ea28ed76f25e0dbfbb030c0368c4df422c9e0d459893c4b0"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+      "sha256": "5c4f104fe3860d2a487371e5b37e435c384c893a78cc3d19056e1bf3a94c5ee7"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "sha256": "014480b3253976e623f3937dc851e9ded07ce90962edf8db05ed58001c7fa37a"
+    }
+  ],
+  "reviewNotes": "Final scoped worker Closeout: reviewed current master and accepted final deck milestone; one connected Assignment dependency row current with exact source-impact reuse of unchanged18 parser checks. Five object references/native capture paragraph promoted with68 local links and5 exact sample hashes accepted. No UI/business replay; full orchestrator remains locally qualified on actual snapshots rather than live replay. Root owns final run completion/commit.",
+  "objectReferences": [
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+      "release": "26C"
+    },
+    {
+      "path": "docs/lessons/objects/oracle-fusion-procurement-procurement-business-units-lov.md",
+      "release": "26C"
+    }
+  ],
+  "learningRegister": "docs/builds/xdx-supplier-e2e-evidence-20261015/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-ledger.json",
+  "learningTaskId": "xdx-supplier-e2e-evidence-20261015",
+  "timeTracker": "docs/builds/xdx-supplier-e2e-evidence-20261015/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "All assigned worker deliverables and accepted scoped qualifications complete; no runtime/application PASS implied by role completion.",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-plan-impact.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-current-qualification.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/results.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review-commands.jsonl"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "All assigned worker deliverables and accepted scoped qualifications complete; no runtime/application PASS implied by role completion.",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-plan-impact.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-current-qualification.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/results.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review-commands.jsonl"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "All assigned worker deliverables and accepted scoped qualifications complete; no runtime/application PASS implied by role completion.",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-plan-impact.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-current-qualification.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/results.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review-commands.jsonl"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "All assigned worker deliverables and accepted scoped qualifications complete; no runtime/application PASS implied by role completion.",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-plan-impact.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-current-qualification.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/results.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review-commands.jsonl"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "All assigned worker deliverables and accepted scoped qualifications complete; no runtime/application PASS implied by role completion.",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-plan-impact.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-current-qualification.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/results.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review-commands.jsonl"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "All assigned worker deliverables and accepted scoped qualifications complete; no runtime/application PASS implied by role completion.",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-plan-impact.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-current-qualification.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/results.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review-commands.jsonl"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "All assigned worker deliverables and accepted scoped qualifications complete; no runtime/application PASS implied by role completion.",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-plan-impact.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-current-qualification.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/results.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review-commands.jsonl"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "All assigned worker deliverables and accepted scoped qualifications complete; no runtime/application PASS implied by role completion.",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-plan-impact.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-current-qualification.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/results.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review-commands.jsonl"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Unavailable",
+    "aiUnits": "Record only observed counters",
+    "timingGaps": "Documentation Startup and scoped check retained in command receipts; doc verification observed21:21:44.524Z. Governance reads before measured Startup not separately timed. Earlier idle/assignment gaps are not continuous active effort; root owns authoritative ledger. No reliable token/AI-unit counters.",
+    "firstGetSamplesBefore": [
+      {
+        "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+        "sha256": "822f2cb5d0e7fb8826ddd8c4734b73bf6da097af32568b07f3877da04c1c0efe"
+      },
+      {
+        "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+        "sha256": "4c1eb73b2f280ef7add548dbdf1ad02907d596da5a7d10c5e7f6854b75ed4314"
+      },
+      {
+        "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+        "sha256": "bab15c17c6d71ede657477b50c0369bd3e3173af5a86835fbaba6f1f41834ad6"
+      },
+      {
+        "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+        "sha256": "3e63fafbc04b94c9d0b373d33ad0faa517d52fad0a2aa54a53c5cf8d66bbbbe3"
+      },
+      {
+        "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+        "sha256": "242e555796b32a5e6e0bcfd87c1be442c55f1bda9e07a0c245aa9a57842eaaec"
+      }
+    ],
+    "reviewedPostContracts": {
+      "observedUtc": "2026-10-15T21:21:09.497Z",
+      "root": "D:/Temp/worktrees/xdx-supplier-workspace-20261014/",
+      "branch": "codex/xdx-supplier-workspace-20261014",
+      "head": "91ddb80664cd74bf976dbd090222b606d5f89984",
+      "files": [
+        {
+          "path": "src/businessObjects/xdx_suppliers.bo",
+          "sha256": "0038a3a1be6f101ce1065439dd968ff4f8917f92268b4b312f4a57186ac73878",
+          "functions": [
+            {
+              "name": "CreateSupplier",
+              "operation": "create_suppliers",
+              "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers",
+              "bodyFields": [
+                "Supplier",
+                "SupplierType",
+                "BusinessRelationship",
+                "TaxOrganizationType"
+              ]
+            }
+          ]
+        },
+        {
+          "path": "src/businessObjects/xdx_supplier_addresses.bo",
+          "sha256": "e6774fc2cd13990c42e5861cb91f31936df9850961ca25babc5eb17f4cc5448f",
+          "functions": [
+            {
+              "name": "CreateSupplierAddress",
+              "operation": "create_suppliers-addresses",
+              "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/addresses",
+              "bodyFields": [
+                "AddressName",
+                "CountryCode",
+                "AddressLine1",
+                "City",
+                "State",
+                "PostalCode",
+                "Email",
+                "AddressPurposeOrderingFlag"
+              ]
+            }
+          ]
+        },
+        {
+          "path": "src/businessObjects/xdx_supplier_contacts.bo",
+          "sha256": "118235491b6f36617d5c1e606141efcc358bac163aec18742ca3d183a178b9d5",
+          "functions": [
+            {
+              "name": "CreateSupplierContact",
+              "operation": "create_suppliers-contacts",
+              "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/contacts",
+              "bodyFields": [
+                "FirstName",
+                "LastName",
+                "Email"
+              ]
+            }
+          ]
+        },
+        {
+          "path": "src/businessObjects/xdx_supplier_sites.bo",
+          "sha256": "2b27e7e029fe61183613435998ef5ff646ba5bc4e9e6e1d4b919a49d27472f25",
+          "functions": [
+            {
+              "name": "CreateSupplierSite",
+              "operation": "create_suppliers-sites",
+              "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites",
+              "bodyFields": [
+                "SupplierSite",
+                "ProcurementBUId",
+                "SupplierAddressName",
+                "SitePurposePurchasingFlag"
+              ]
+            }
+          ]
+        },
+        {
+          "path": "src/businessObjects/xdx_supplier_site_assignments.bo",
+          "sha256": "a2940fbca1f9a4216450d712c8d84818fb358afad99c7a7e4a41af03cb46055a",
+          "functions": [
+            {
+              "name": "CreateSupplierSiteAssignment",
+              "operation": "create_suppliers-sites-assignments",
+              "resourcePath": "/fscmRestApi/resources/11.13.18.05/suppliers/{suppliers_Id}/child/sites/{suppliers_sites_Id}/child/assignments",
+              "bodyFields": [
+                "ClientBUId",
+                "BillToBUId"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "documentationChecks": {
+      "observedUtc": "2026-10-15T21:21:44.524Z",
+      "result": "PASS",
+      "scope": "Six changed documentation files only; no application or regression tests",
+      "localLinksChecked": 68,
+      "firstGetSamples": [
+        {
+          "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+          "sha256": "822f2cb5d0e7fb8826ddd8c4734b73bf6da097af32568b07f3877da04c1c0efe",
+          "afterSha256": "822f2cb5d0e7fb8826ddd8c4734b73bf6da097af32568b07f3877da04c1c0efe"
+        },
+        {
+          "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+          "sha256": "4c1eb73b2f280ef7add548dbdf1ad02907d596da5a7d10c5e7f6854b75ed4314",
+          "afterSha256": "4c1eb73b2f280ef7add548dbdf1ad02907d596da5a7d10c5e7f6854b75ed4314"
+        },
+        {
+          "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+          "sha256": "bab15c17c6d71ede657477b50c0369bd3e3173af5a86835fbaba6f1f41834ad6",
+          "afterSha256": "bab15c17c6d71ede657477b50c0369bd3e3173af5a86835fbaba6f1f41834ad6"
+        },
+        {
+          "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+          "sha256": "3e63fafbc04b94c9d0b373d33ad0faa517d52fad0a2aa54a53c5cf8d66bbbbe3",
+          "afterSha256": "3e63fafbc04b94c9d0b373d33ad0faa517d52fad0a2aa54a53c5cf8d66bbbbe3"
+        },
+        {
+          "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+          "sha256": "242e555796b32a5e6e0bcfd87c1be442c55f1bda9e07a0c245aa9a57842eaaec",
+          "afterSha256": "242e555796b32a5e6e0bcfd87c1be442c55f1bda9e07a0c245aa9a57842eaaec"
+        }
+      ],
+      "files": [
+        {
+          "path": "docs/lessons/objects/oracle-fusion-procurement-suppliers.md",
+          "sha256": "017e16353dada5bd28539f2dafbd3aadf99d7d5f7d9c8fce5a5b850c5037403a"
+        },
+        {
+          "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-addresses.md",
+          "sha256": "db957459a92cf5b7a457f4587799d7c92b154c7163157b8b2e94d0a371e474f7"
+        },
+        {
+          "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-contacts.md",
+          "sha256": "89345c40b2b57417186e6d4c1f01059c5ece001bc24a132355582a5b8a0767c8"
+        },
+        {
+          "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-sites.md",
+          "sha256": "10d663bfd2de5004ea28ed76f25e0dbfbb030c0368c4df422c9e0d459893c4b0"
+        },
+        {
+          "path": "docs/lessons/objects/oracle-fusion-procurement-supplier-site-assignments.md",
+          "sha256": "5c4f104fe3860d2a487371e5b37e435c384c893a78cc3d19056e1bf3a94c5ee7"
+        },
+        {
+          "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+          "sha256": "81c5aabb4d2fca736fb2eeeb6955be1a9d95a9b499136b7459165f9d882b75db"
+        }
+      ]
+    },
+    "connectedAssignmentBefore": {
+      "sourceSha256": "041efc634a4ff9bd4c6f2aa15c56bd4e9943e02f2091581fa68b5e200cd09664",
+      "usageSha256": "a5e29583adfd64a5957b21072c8ce337851d8f86b08d290a0f89962aea9ce84c"
+    },
+    "connectedAssignmentImpact": {
+      "observedUtc": "2026-10-15T21:25:36.169Z",
+      "result": "PASS",
+      "scope": "Plan inventory/dependency and exact source-impact check only; original18 parser checks not rerun; no UI call/write",
+      "currentSourceSha256": "e888e8f7d6b293614f052be72cef25f91849c0f362bcd8da37bd10ce39478c4b",
+      "originalSourceSha256": "041efc634a4ff9bd4c6f2aa15c56bd4e9943e02f2091581fa68b5e200cd09664",
+      "qualificationReused": "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-current-qualification.json",
+      "unchangedParserChecksReused": 18,
+      "plannedBusinessSteps": 21,
+      "newStep": "ASN-CON",
+      "dependency": "SITE-CON",
+      "newStepWrite": false,
+      "newStepRequests": 0,
+      "originalEvidenceReused": true,
+      "exactSourceImpact": "Reverse only new plan row, its dependency metadata and its BLOCKED no-action handler reproduces previously qualified source byte-for-byte"
+    }
+  },
+  "learningScope": "runner"
+}

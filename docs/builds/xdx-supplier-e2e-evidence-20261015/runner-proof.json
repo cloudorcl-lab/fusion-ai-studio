@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "surface": "local state fixture only",
+  "observedUtc": "2026-10-15T20:48:00.509Z",
+  "checks": [
+    "uncertain-reservation-durable-and-blocks-replay",
+    "accepted-id-durable-and-cannot-be-cleared",
+    "finalizer-invoked",
+    "one-retry-counted-and-pending-accounted-finalizer-always-called"
+  ],
+  "noBrowserCalls": true,
+  "noBusinessWrites": true
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "result": "PASS",
+  "qualifiedUtc": "2026-10-15T21:23:53.7102318Z",
+  "reviewer": "/root/e2e_deck",
+  "source": {
+    "path": "scripts/xdx-supplier-e2e-deck.mjs",
+    "sha256": "46b12087ecdc0c64ba21970eed369c19b0c5d90149ac7d219755aa359a1f0600"
+  },
+  "final": {
+    "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/output/xdx-supplier-workflow-evidence.pptx",
+    "sha256": "ccf292182191c25e938935c47fc0e3038d05dcca0348bfc582bbf53a087907f1"
+  },
+  "checks": {
+    "noFixtureImages": true,
+    "all14FindingAppendices": true,
+    "caption44": true,
+    "applicationFailureTitles": true,
+    "originalCaptureHashMismatches": 0,
+    "deliveredImages": 62,
+    "deliveredSlides": 90,
+    "captureNotesWithExpectedActualSource": 62,
+    "deliveredNotes": 90,
+    "allCapturedScreensMapped": true,
+    "plannedCaptures": 62
+  },
+  "inputSnapshot": {
+    "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-final-results-input.json",
+    "sha256": "f54f3e28bc6ddbac11abecf7cdfe1edb13a5ed6d046cf09577d2f6c987841154"
+  },
+  "ledgerSnapshot": {
+    "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-final-failure-ledger-input.json",
+    "sha256": "bc2369040dc3f98b5d39e78b8f1b96c0e36aca4ff301b199b43e3bbd27f01ddc"
+  },
+  "validation": {
+    "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/private/validation.json",
+    "sha256": "5d3134429b967bdf3f1957254974421198840358c657231d27995696de938f36"
+  },
+  "inspection": {
+    "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/private/inspection.ndjson",
+    "sha256": "6018baf93f89daafe69738548b4262df84f6aed0227d3db033a7fc84f460bbfb"
+  },
+  "review": {
+    "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-review.json",
+    "sha256": "6cc8e40043b5edda1d2aef3a4b8b6b93e8b366558e60ce61c4b93e72ce9990db"
+  },
+  "renderComparison": {
+    "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-final-render-comparison.json",
+    "sha256": "4d8ec47f05e0e21418d5b15ff7bef38d9452433dfde07f5a6e5b05b3dd3e07f5"
+  },
+  "limitations": "Application outcomes remain16PASS2FAIL2BLOCKED including setup in20plannedsteps, plus1separate harnessFAIL. Business retries0. No app/browser operations by deckworker. Build effort unavailable from PPT timestamps; UI/durable windows labeled separately. Native PowerPoint was not opened."
+}

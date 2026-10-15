@@ -1,0 +1,795 @@
+{
+  "schemaVersion": 1,
+  "runId": "xdx-supplier-e2e-evidence-20261015",
+  "startedUtc": "2026-10-15T21:22:13.711Z",
+  "endedUtc": "2026-10-15T21:22:38.206Z",
+  "sourceResults": "docs/builds/xdx-supplier-e2e-evidence-20261015/results.json",
+  "sourceSha256": "f54f3e28bc6ddbac11abecf7cdfe1edb13a5ed6d046cf09577d2f6c987841154",
+  "failureLedgerSnapshotSha256": "bc2369040dc3f98b5d39e78b8f1b96c0e36aca4ff301b199b43e3bbd27f01ddc",
+  "implementationFindingIds": [
+    "F001",
+    "F002",
+    "F003",
+    "F004",
+    "F005",
+    "F006",
+    "F007",
+    "F008",
+    "F009",
+    "F010",
+    "F011",
+    "F012",
+    "F013",
+    "F014"
+  ],
+  "finalPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/output/xdx-supplier-workflow-evidence.pptx",
+  "finalSha256": "ccf292182191c25e938935c47fc0e3038d05dcca0348bfc582bbf53a087907f1",
+  "renderDirectory": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-22-13-718Z/renders",
+  "slideCount": 90,
+  "plannedCaptureCount": 62,
+  "mappedCaptureCount": 62,
+  "embeddedCaptureCount": 62,
+  "notesCount": 90,
+  "deliveredNotesCount": 90,
+  "deliveredImageCount": 62,
+  "captureIssues": [],
+  "slides": [
+    {
+      "slide": 1,
+      "kind": "opening",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 2,
+      "kind": "scope",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 3,
+      "kind": "capture",
+      "stepId": "setup",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-studio-identity-001.jpg",
+      "captureSha256": "78a134f73137f1f5236d2a7e6af88b7a15d6b80c550617e97defe5f151bb2918",
+      "embedded": true
+    },
+    {
+      "slide": 4,
+      "kind": "capture",
+      "stepId": "setup",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-preview-start-002.jpg",
+      "captureSha256": "9dc4d10c34729e9debb8848dff3e43d1e3fcd4529573b33715939a742f76517e",
+      "embedded": true
+    },
+    {
+      "slide": 5,
+      "kind": "capture",
+      "stepId": "supplier-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-entered-request-001.jpg",
+      "captureSha256": "ad7ac14fa4363015673adcf8e82d00f4d0861f2ebc95547081448ac3df32b772",
+      "embedded": true
+    },
+    {
+      "slide": 6,
+      "kind": "capture",
+      "stepId": "supplier-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-query-result-002.jpg",
+      "captureSha256": "3e0ec9d793dae311b91f43d076b5348c9d3971d740e24256f99be2dfe8e53dbe",
+      "embedded": true
+    },
+    {
+      "slide": 7,
+      "kind": "capture",
+      "stepId": "supplier-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepare-input-001.jpg",
+      "captureSha256": "e6c2117f61a5887be8f2c450f8b78db309200018616b2012aa55fe52b049f796",
+      "embedded": true
+    },
+    {
+      "slide": 8,
+      "kind": "capture",
+      "stepId": "supplier-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-prepared-002.jpg",
+      "captureSha256": "3bd169aced73c3cf9ab32ee39b226302fab4f01d9e5bbeb20dcad5e8459f7a76",
+      "embedded": true
+    },
+    {
+      "slide": 9,
+      "kind": "capture",
+      "stepId": "supplier-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-draft-ready-003.jpg",
+      "captureSha256": "ac6dca70e8bc75239962688ce2df4b6f48d50b2bba811d8b85011c8d4429c3f7",
+      "embedded": true
+    },
+    {
+      "slide": 10,
+      "kind": "capture",
+      "stepId": "supplier-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-input-004.jpg",
+      "captureSha256": "26ec2eda9e949386aa82aaf237eb81391b23067c0230bf51788e43c0bceb98a9",
+      "embedded": true
+    },
+    {
+      "slide": 11,
+      "kind": "capture",
+      "stepId": "supplier-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-review-ready-005.jpg",
+      "captureSha256": "cea932b9c1976dcb8cc7aec900c031dbb33b83c1a5b0f31aabcc4c40beac9851",
+      "embedded": true
+    },
+    {
+      "slide": 12,
+      "kind": "capture",
+      "stepId": "supplier-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-confirm-input-006.jpg",
+      "captureSha256": "af8fbcbd1992d13f40e322028cd62a014475cada747feb4bb2118f3d2cb4cd5a",
+      "embedded": true
+    },
+    {
+      "slide": 13,
+      "kind": "capture",
+      "stepId": "supplier-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.jpg",
+      "captureSha256": "2c278a19c9d9a02cedf7cbd0c6ed462247d2399fb3e9f895882b352273634d29",
+      "embedded": true
+    },
+    {
+      "slide": 14,
+      "kind": "capture",
+      "stepId": "supplier-readback",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-query-input-001.jpg",
+      "captureSha256": "b71cb1966a56831144920e08f6e30db68d0edcf0fb7a651faf114cc2f1c314e0",
+      "embedded": true
+    },
+    {
+      "slide": 15,
+      "kind": "capture",
+      "stepId": "supplier-readback",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-readback-details-002.jpg",
+      "captureSha256": "aff9d6dd98a7046e63d84c002dc9c42fbcdf75e55e289e1b6628129386947fc7",
+      "embedded": true
+    },
+    {
+      "slide": 16,
+      "kind": "capture",
+      "stepId": "address-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-query-input-001.jpg",
+      "captureSha256": "df0a0fc757ac2702a09f251cfb40cfd8f8efef95498f32801d9e4b114c4ee393",
+      "embedded": true
+    },
+    {
+      "slide": 17,
+      "kind": "capture",
+      "stepId": "address-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-query-result-002.jpg",
+      "captureSha256": "d5f0302acd8a132c7b737ddd704b21d5492ffc3f3abf10002f211f591d9f963c",
+      "embedded": true
+    },
+    {
+      "slide": 18,
+      "kind": "capture",
+      "stepId": "address-direct",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-prepare-input-001.jpg",
+      "captureSha256": "1ed552c91ee4a375f38d531c968355daa35d870ddc3df24885cbddd450106d02",
+      "embedded": true
+    },
+    {
+      "slide": 19,
+      "kind": "capture",
+      "stepId": "address-direct",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-draft-ready-002.jpg",
+      "captureSha256": "326d22962df32241f59d3548667e1c34806006a2106efe02998c5fc7bd132d80",
+      "embedded": true
+    },
+    {
+      "slide": 20,
+      "kind": "capture",
+      "stepId": "address-direct",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-input-003.jpg",
+      "captureSha256": "360f3a70249fdbe03b79064b12c049f53da3f586c73299290e0444ff1849ea64",
+      "embedded": true
+    },
+    {
+      "slide": 21,
+      "kind": "capture",
+      "stepId": "address-direct",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-review-ready-004.jpg",
+      "captureSha256": "ea27afebed59d5df6bf233a3e81d117ccb84b877719462bd5aa1821d60add570",
+      "embedded": true
+    },
+    {
+      "slide": 22,
+      "kind": "capture",
+      "stepId": "address-direct",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-confirm-input-005.jpg",
+      "captureSha256": "6385e78f5ff3f456d19cbb8b01a69bb3f526c66d1495a7dff556c220b00f7d2c",
+      "embedded": true
+    },
+    {
+      "slide": 23,
+      "kind": "capture",
+      "stepId": "address-direct",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.jpg",
+      "captureSha256": "5f18d4cb391e68d25e77f585e9adf065dda16570b786d6fa341b51784f023f78",
+      "embedded": true
+    },
+    {
+      "slide": 24,
+      "kind": "capture",
+      "stepId": "address-readback",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-query-input-001.jpg",
+      "captureSha256": "1b91284e721c4dc8bafe5f31306deda3791a63ff10520d629a661c1c1bee8abd",
+      "embedded": true
+    },
+    {
+      "slide": 25,
+      "kind": "capture",
+      "stepId": "address-readback",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-readback-details-002.jpg",
+      "captureSha256": "0bf2d811b9ffc8c88ccdbb353b564e26d2131fdac90901463eee29e6d7a2f935",
+      "embedded": true
+    },
+    {
+      "slide": 26,
+      "kind": "capture",
+      "stepId": "address-template",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-prepare-input-001.jpg",
+      "captureSha256": "57cb9d464e24ad3dc913389bb479b4acf5f4b9dccf3c03c2ad22b485fcbb404c",
+      "embedded": true
+    },
+    {
+      "slide": 27,
+      "kind": "capture",
+      "stepId": "address-template",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-draft-ready-002.jpg",
+      "captureSha256": "2a55ce2cfcbdd447aa91182f21ab499511dfc38671a15e50fd291d9e36f3c9cc",
+      "embedded": true
+    },
+    {
+      "slide": 28,
+      "kind": "capture",
+      "stepId": "address-template",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-input-003.jpg",
+      "captureSha256": "423fd19bff981270608f257e6b97dc45d577775475f7b931c5e3a56f104866ff",
+      "embedded": true
+    },
+    {
+      "slide": 29,
+      "kind": "capture",
+      "stepId": "address-template",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-review-ready-004.jpg",
+      "captureSha256": "d1d55a15828c4fe811ad2eb43d0a0cfe38f37cb8def27e8cf0ef9edf2cb19ee6",
+      "embedded": true
+    },
+    {
+      "slide": 30,
+      "kind": "capture",
+      "stepId": "address-template",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-confirm-input-005.jpg",
+      "captureSha256": "2008331fee9a10cbba09d5d6111bce456beb90eba239af34c5d951b2b2b4fddd",
+      "embedded": true
+    },
+    {
+      "slide": 31,
+      "kind": "capture",
+      "stepId": "address-template",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-template-created-readback-006.jpg",
+      "captureSha256": "d47da2b742764b8edbad8146764c4c896a80bb27e9943ed018ade4a8c270c3de",
+      "embedded": true
+    },
+    {
+      "slide": 32,
+      "kind": "capture",
+      "stepId": "contact-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-query-input-001.jpg",
+      "captureSha256": "6bad25de8271338691490533438fcb28958e1b65d00fa1272f081e8aab2c521a",
+      "embedded": true
+    },
+    {
+      "slide": 33,
+      "kind": "capture",
+      "stepId": "contact-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-result-002.jpg",
+      "captureSha256": "33e3e34e46132a2612221aedb5771ed3e9d9397bec2ceaf60ebf1d1c97defde2",
+      "embedded": true
+    },
+    {
+      "slide": 34,
+      "kind": "capture",
+      "stepId": "contact-query-assertion",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-assertion-observed-empty-state-001.jpg",
+      "captureSha256": "33e3e34e46132a2612221aedb5771ed3e9d9397bec2ceaf60ebf1d1c97defde2",
+      "embedded": true
+    },
+    {
+      "slide": 35,
+      "kind": "capture",
+      "stepId": "contact-direct",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-prepare-input-001.jpg",
+      "captureSha256": "fe3993e9ffaa0365220543ce8fd312ac925eae82243ee91160a0f52c5c39f4a0",
+      "embedded": true
+    },
+    {
+      "slide": 36,
+      "kind": "capture",
+      "stepId": "contact-direct",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-draft-ready-002.jpg",
+      "captureSha256": "a2defe651b699b0627be1c02579f2d61181b1ffe4151bea75e9eaaa5336b6826",
+      "embedded": true
+    },
+    {
+      "slide": 37,
+      "kind": "capture",
+      "stepId": "contact-direct",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-input-003.jpg",
+      "captureSha256": "3f7f62b34d4f34e39b6719c9772397d48dcfb96cadf8189b6b7cb76cf131377f",
+      "embedded": true
+    },
+    {
+      "slide": 38,
+      "kind": "capture",
+      "stepId": "contact-direct",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-review-ready-004.jpg",
+      "captureSha256": "f6b461976e4f7f70496fa9be4c6d8107e74a54b7f4b6611b85beb2a455fe8386",
+      "embedded": true
+    },
+    {
+      "slide": 39,
+      "kind": "capture",
+      "stepId": "contact-direct",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-confirm-input-005.jpg",
+      "captureSha256": "cf4521a54b0785d0dd3d195a17e4f954b4d3a542f13ffa443eae7aacc1f6fd2d",
+      "embedded": true
+    },
+    {
+      "slide": 40,
+      "kind": "capture",
+      "stepId": "contact-direct",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-created-readback-006.jpg",
+      "captureSha256": "f581bc5d3cd6512c2f22752d35573a47c6efde9aba4db993a2346f5ce6b9add6",
+      "embedded": true
+    },
+    {
+      "slide": 41,
+      "kind": "capture",
+      "stepId": "contact-readback",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-query-input-001.jpg",
+      "captureSha256": "3401683acbfb0fcfdbe9fad44714201420fde3aaf044330a557389448b7c061c",
+      "embedded": true
+    },
+    {
+      "slide": 42,
+      "kind": "capture",
+      "stepId": "contact-readback",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-readback-details-002.jpg",
+      "captureSha256": "4b3974db96cb2bc1276b78ee9eedbfe58aaa14ed32027c72a33633f7cd4c9cd6",
+      "embedded": true
+    },
+    {
+      "slide": 43,
+      "kind": "capture",
+      "stepId": "contact-template",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-prepare-input-001.jpg",
+      "captureSha256": "6e79933e7a5277b7346cd156c46723acb786d036b2740f9c4b1f9b96980d52f9",
+      "embedded": true
+    },
+    {
+      "slide": 44,
+      "kind": "capture",
+      "stepId": "contact-template",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-draft-ready-002.jpg",
+      "captureSha256": "be7b9c2965477baff6e7eae57450440a105cdf9a3018d6f8a3a5c64116588416",
+      "embedded": true
+    },
+    {
+      "slide": 45,
+      "kind": "capture",
+      "stepId": "site-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-query-input-001.jpg",
+      "captureSha256": "add1180233697bb5007136f4371410656f9743e71aaf8fbf3d52b905e26c53ef",
+      "embedded": true
+    },
+    {
+      "slide": 46,
+      "kind": "capture",
+      "stepId": "site-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-result-002.jpg",
+      "captureSha256": "9681feb417087aa1c6cb673e99601c113a98f149e07d6e480fe7c9593225f4cc",
+      "embedded": true
+    },
+    {
+      "slide": 47,
+      "kind": "capture",
+      "stepId": "site-connected",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-prepare-input-001.jpg",
+      "captureSha256": "c773a5209fdab2bb7589683ca4630565ad3d27ab9711db7e6659824fd3945ee9",
+      "embedded": true
+    },
+    {
+      "slide": 48,
+      "kind": "capture",
+      "stepId": "site-connected",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-connected-capability-result-002.jpg",
+      "captureSha256": "ba0b1e920a13cbd6b00107c18986d7506698bba8834265f3647fb734eb7d1c55",
+      "embedded": true
+    },
+    {
+      "slide": 49,
+      "kind": "capture",
+      "stepId": "assignment-connected",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-connected-dependency-001.jpg",
+      "captureSha256": "ba0b1e920a13cbd6b00107c18986d7506698bba8834265f3647fb734eb7d1c55",
+      "embedded": true
+    },
+    {
+      "slide": 50,
+      "kind": "capture",
+      "stepId": "site-fallback-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-query-input-001.jpg",
+      "captureSha256": "b47aa9d9aeb7a46c5a0c395b3c34360882ccf1d8cd3318530c1f2f96bdf3acc0",
+      "embedded": true
+    },
+    {
+      "slide": 51,
+      "kind": "capture",
+      "stepId": "site-fallback-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-002.jpg",
+      "captureSha256": "cfae03314a6fd24afeae1f5e90e5610e0cf8ac76b2d17cd5fda35f19009b00ec",
+      "embedded": true
+    },
+    {
+      "slide": 52,
+      "kind": "capture",
+      "stepId": "site-fallback-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-lower-section-003.jpg",
+      "captureSha256": "44b94ae6439ee86e2722f3b2459cda4b6665ee96b8c3f40efe933b58dc35dbb9",
+      "embedded": true
+    },
+    {
+      "slide": 53,
+      "kind": "capture",
+      "stepId": "site-fallback-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-prepare-input-001.jpg",
+      "captureSha256": "dd18fa20b27ebbe1b0650b415f6b60762ece5822c30e992fade5e332f0aafacb",
+      "embedded": true
+    },
+    {
+      "slide": 54,
+      "kind": "capture",
+      "stepId": "site-fallback-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-draft-ready-002.jpg",
+      "captureSha256": "842a23fd8f0679770aeeb78039351f3f7463ad517bd57c35f692fddb977dc193",
+      "embedded": true
+    },
+    {
+      "slide": 55,
+      "kind": "capture",
+      "stepId": "site-fallback-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-input-003.jpg",
+      "captureSha256": "dd6b5d9b513715806be1d5f6a7259e6a11734b33cb73ab825fe69b25994ce96a",
+      "embedded": true
+    },
+    {
+      "slide": 56,
+      "kind": "capture",
+      "stepId": "site-fallback-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-review-ready-004.jpg",
+      "captureSha256": "62af78653f0d1c040254f8219b2f595f2534adf7eb9b3cf699b1c340d1d94a63",
+      "embedded": true
+    },
+    {
+      "slide": 57,
+      "kind": "capture",
+      "stepId": "site-fallback-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-confirm-input-005.jpg",
+      "captureSha256": "190709395541905aebe82d925fc75018a33b8845922e7cda1079742b5c7fd438",
+      "embedded": true
+    },
+    {
+      "slide": 58,
+      "kind": "capture",
+      "stepId": "site-fallback-create",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.jpg",
+      "captureSha256": "53567551261435a81d3e5462914507b857a8bed97b0d6108eae3c68f30c23aff",
+      "embedded": true
+    },
+    {
+      "slide": 59,
+      "kind": "capture",
+      "stepId": "assignment-readback",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-readback-verified-assignment-001.jpg",
+      "captureSha256": "53567551261435a81d3e5462914507b857a8bed97b0d6108eae3c68f30c23aff",
+      "embedded": true
+    },
+    {
+      "slide": 60,
+      "kind": "capture",
+      "stepId": "site-fallback-readback",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-query-input-001.jpg",
+      "captureSha256": "97dccb61b333e97601dcbc11a0eb128ddf61127bcd9ead7e262526d44f9722da",
+      "embedded": true
+    },
+    {
+      "slide": 61,
+      "kind": "capture",
+      "stepId": "site-fallback-readback",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-details-002.jpg",
+      "captureSha256": "74dee02e45a63d4ff91c1fcf4a1c800e333d4f65e88a98892bc45589aed67a78",
+      "embedded": true
+    },
+    {
+      "slide": 62,
+      "kind": "capture",
+      "stepId": "assignment-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-query-input-001.jpg",
+      "captureSha256": "426c6ac333c103e6b1b187ceeef23ea017964b25773e966a7f1cdfd145dc157f",
+      "embedded": true
+    },
+    {
+      "slide": 63,
+      "kind": "capture",
+      "stepId": "assignment-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-result-002.jpg",
+      "captureSha256": "9a4d0eb4810a821638c67dc501f43ec1dedd546ca6e8074213a028ed44f03da2",
+      "embedded": true
+    },
+    {
+      "slide": 64,
+      "kind": "capture",
+      "stepId": "assignment-query",
+      "notesPresent": true,
+      "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-final-painted-result-003.jpg",
+      "captureSha256": "569a7f6b52a9a7a496d09868551ed856d61d4ca5a1416e7562c014ac3ea05e25",
+      "embedded": true
+    },
+    {
+      "slide": 65,
+      "kind": "coverage",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 66,
+      "kind": "coverage",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 67,
+      "kind": "records",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 68,
+      "kind": "records",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 69,
+      "kind": "records",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 70,
+      "kind": "records",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 71,
+      "kind": "closing",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 72,
+      "kind": "outcomes",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 73,
+      "kind": "outcomes",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 74,
+      "kind": "outcomes",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 75,
+      "kind": "limitations",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 76,
+      "kind": "limitations",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 77,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 78,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 79,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 80,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 81,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 82,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 83,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 84,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 85,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 86,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 87,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 88,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 89,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    },
+    {
+      "slide": 90,
+      "kind": "implementation",
+      "stepId": null,
+      "notesPresent": true,
+      "capturePath": null
+    }
+  ],
+  "visualReview": "PENDING. Inspect every final slide PNG before delivery.",
+  "applicationAcceptance": "Determined only by source result assertions, not deck generation.",
+  "toolingSmoke": false
+}

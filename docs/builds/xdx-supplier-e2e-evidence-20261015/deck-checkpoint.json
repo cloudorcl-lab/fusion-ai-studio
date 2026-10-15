@@ -1,0 +1,12 @@
+{
+  "agentId": "/root/e2e_deck",
+  "assignmentId": "deck",
+  "checkpointUtc": "2026-10-15T20:47:59.5333095Z",
+  "state": "Generator qualified, awaiting actual results",
+  "firstPreciseObservationUtc": "2026-10-15T20:41:32.735Z",
+  "lastPreciseQualificationUtc": "2026-10-15T20:47:32.0326729Z",
+  "timingLimitations": "Earlier governance/dependency read start unknown. Command times in registered deck-commands.jsonl are diagnostic subsets. Coordination waits not separately observed, so whole window must not be represented as exact active effort.",
+  "nextAction": "Coordinator closes F004 after independent qualification review, executes UI plan, then activates deck worker with final results.json for generation and visual review",
+  "qualifiedSource": "scripts/xdx-supplier-e2e-deck.mjs",
+  "proof": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-qualification.json"
+}

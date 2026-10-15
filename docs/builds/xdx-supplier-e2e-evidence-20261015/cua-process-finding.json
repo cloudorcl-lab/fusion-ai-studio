@@ -1,0 +1,8 @@
+{
+  "observedUtc": "2026-10-15T20:49:27.471Z",
+  "symptom": "Second actual CUA import: process is not defined",
+  "cause": "CUA REPL does not provide Node process global to imported module",
+  "sessionInitialized": false,
+  "businessWrites": 0,
+  "correctionPlan": "Explicit supported node:process import and audit global process dependencies"
+}

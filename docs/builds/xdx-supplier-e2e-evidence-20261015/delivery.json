@@ -1,0 +1,23 @@
+{
+  "observedUtc": "2026-10-15T21:25:32.665Z",
+  "result": "pass",
+  "powerPoint": {
+    "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deliverables/xdx_supplier_workflow_evidence.pptx",
+    "sha256": "ccf292182191c25e938935c47fc0e3038d05dcca0348bfc582bbf53a087907f1"
+  },
+  "slides": 90,
+  "screenshots": 62,
+  "speakerNotes": 90,
+  "sourceQualification": {
+    "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-final-qualification.json",
+    "sha256": "65da759640cf04b6cdede7a3ee6bebe07298226d495b2d193605e9b01f870465"
+  },
+  "runResult": {
+    "PASS": 16,
+    "FAIL": 3,
+    "BLOCKED": 2
+  },
+  "nativeRetries": 0,
+  "acceptedBusinessWrites": 6,
+  "boundary": "Native live run used adaptive supported-CUA durable helpers; reusable concrete orchestration qualified against retained actual snapshots without replaying accepted business writes"
+}

@@ -1,0 +1,7 @@
+{
+  "observedUtc": "2026-10-15T20:48:25.549Z",
+  "symptom": "Actual CUA node_repl rejects static relative .cjs import; module not loaded, no run state initialized",
+  "cause": "Supported CUA module loader permits .js/.mjs only",
+  "correctionPlan": "Reuse existing CJS PNG validator through node:module createRequire; qualify actual CUA import before UI operations",
+  "businessWrites": 0
+}

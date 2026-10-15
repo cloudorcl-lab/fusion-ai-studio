@@ -1,0 +1,12 @@
+{
+  "observedUtc": "2026-10-15T20:51:53.467Z",
+  "symptom": "First actual capture rejected by PNG-only adapter",
+  "observed": {
+    "constructor": "Uint8Array",
+    "byteLength": 89258,
+    "firstByte": 255
+  },
+  "cause": "Actual browser screenshot payload uses JPEG, not assumed PNG",
+  "state": "Runner initialized20steps; setupattemptbegun;captures0;businesswrites0",
+  "correctionPlan": "PreserveJPEGoriginalbytes withcorrectextension; validatePNGonlyforPNG; actualcapturequalificationbeforebusinesswrites"
+}

@@ -1,0 +1,8 @@
+{
+  "observedUtc": "2026-10-15T20:40:06.819Z",
+  "symptom": "Startup wrapper predispatch rejected empty ledger without noFailuresReason",
+  "childExecuted": false,
+  "runId": null,
+  "correction": "Use explicit empty-ledger rationale or actual captured failure",
+  "scope": "governance"
+}

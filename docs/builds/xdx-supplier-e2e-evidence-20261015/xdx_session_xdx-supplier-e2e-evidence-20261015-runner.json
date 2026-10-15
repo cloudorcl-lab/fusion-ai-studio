@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-supplier-e2e-evidence-20261015-runner",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-10-15T20:45:04.3419185Z",
+  "checkpointUtc": "2026-10-15T21:27:28.9594268Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "fa1aa8fff43b8834b4db6679ca542229bbe6893efe406878e87ce6fa352e00ed"
+    },
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "c007c6eca8368b0475c563e659fe29f5ee36b27aa1ea21950d0742087fa99c90"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "60b7c1a427d3fbf09d1a21e3d4975dbd76a0a3f132b89f64a4decf9b32474c8f"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "81c5aabb4d2fca736fb2eeeb6955be1a9d95a9b499136b7459165f9d882b75db"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "a4f649e2ac28c33cc76436661735c3bf32f06b697ea352be3322a4b51e077da7"
+    }
+  ],
+  "reviewNotes": "Read master first, current build standard, canonical lifecycle, registry, intake and approval inventory. Implement generic runner; no tenant access or app logic changes. Current master reviewed: fresh eqil DRAFT88010729 identity, known-hit Dell query, F006 CUA module boundary being corrected; root remains sole browser owner. Resumed material repair: F007 actual browser JPEG capture rejected by PNG-only boundary, no writes. Same scope/authority; preserve format and bytes; coordinator qualifies capture. Root actual CUA resume and two native JPEG captures verified, F006/F007 closed; runner source frozen; no business writes delegated. Bounded independent deck review requested by coordinator: actual renders46-82 inspected, findings in runner-deck-review.json. No UI/business actions or source edits. Parent owns metadata repair and final regenerated deck. Global Closeout not claimed while F008 open. F014 scoped safety repair released by coordinator: early exact resume ID inventory and honest pending-versus-verified finalizer events. Existing capture boundary unchanged. One focused two-branch local proof on retained-run copy only. Final scoped runner role cutoff: F014 closed and source impact reviewed; F008 frozen e888 qualification reconciled by coordinator; final deck90 slides62screens90notes observed in current master. No new tests. Worker acceptance is scoped to this reviewed cutoff, root owns later delivery/master updates.",
+  "objectReferences": [],
+  "learningRegister": "docs/builds/xdx-supplier-e2e-evidence-20261015/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-supplier-e2e-evidence-20261015/failure-ledger.json",
+  "learningTaskId": "xdx-supplier-e2e-evidence-20261015",
+  "timeTracker": "docs/builds/xdx-supplier-e2e-evidence-20261015/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "Scoped runner implementation, safety repair, actual capture reuse and bounded deck review delivered; root owns overall delivery",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-usage.md",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-final-impact-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-deck-review.json"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "Scoped runner implementation, safety repair, actual capture reuse and bounded deck review delivered; root owns overall delivery",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-usage.md",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-final-impact-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-deck-review.json"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "Scoped runner implementation, safety repair, actual capture reuse and bounded deck review delivered; root owns overall delivery",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-usage.md",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-final-impact-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-deck-review.json"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "Scoped runner implementation, safety repair, actual capture reuse and bounded deck review delivered; root owns overall delivery",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-usage.md",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-final-impact-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-deck-review.json"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "Scoped runner implementation, safety repair, actual capture reuse and bounded deck review delivered; root owns overall delivery",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-usage.md",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-final-impact-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-deck-review.json"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "Scoped runner implementation, safety repair, actual capture reuse and bounded deck review delivered; root owns overall delivery",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-usage.md",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-final-impact-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-deck-review.json"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "Scoped runner implementation, safety repair, actual capture reuse and bounded deck review delivered; root owns overall delivery",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-usage.md",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-final-impact-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-deck-review.json"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Canonical lifecycle scoped UI test and evidence delivery",
+      "status": "pass",
+      "reason": "Scoped runner implementation, safety repair, actual capture reuse and bounded deck review delivered; root owns overall delivery",
+      "evidence": [
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-usage.md",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-finalproof.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-final-impact-review.json",
+        "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-deck-review.json"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Unavailable",
+    "aiUnits": "Record only observed counters",
+    "timingGaps": "Exact measured command bounds in runner-commands.jsonl; earlier governance start unavailable; root owns merge of observed worker intervals. No usage counters available."
+  },
+  "learningScope": "runner",
+  "noObjectsReason": "Generic UI evidence runner only; business object assertions and payloads owned by coordinator"
+}

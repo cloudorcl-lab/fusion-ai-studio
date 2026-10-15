@@ -1,0 +1,20 @@
+{
+  "observedUtc": "2026-10-15T20:53:35.614Z",
+  "result": "pass",
+  "runtime": "CUA",
+  "session": "Resumed same20-step run; no businesswrites",
+  "captureCount": 2,
+  "captures": [
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-studio-identity-001.jpg",
+      "sha256": "78a134f73137f1f5236d2a7e6af88b7a15d6b80c550617e97defe5f151bb2918"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-preview-start-002.jpg",
+      "sha256": "9dc4d10c34729e9debb8848dff3e43d1e3fcd4529573b33715939a742f76517e"
+    }
+  ],
+  "mimeType": "image/jpeg",
+  "method": "Original browser bytes preserved; actual NodeREPL module resumes/captures/persists",
+  "additionalFinding": "A same-cell var redeclaration shadowed old session handle; reusing existing handle with distinct new binding allowed orderly close/resume, no lock removal"
+}

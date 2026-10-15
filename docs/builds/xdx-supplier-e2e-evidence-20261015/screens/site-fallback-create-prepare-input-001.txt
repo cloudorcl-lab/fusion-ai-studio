@@ -1,0 +1,128 @@
+Browser tab: 676657676, Title: "XDX Supplier Workspace", URL: "https://fa-eqil-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/xdx_supplier_workspace?draft=true".
+1 AXWebArea XDX Supplier Workspace, URL: fa-eqil-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI/xdx_supplier_workspace?draft=true
+	2 container
+		3 container bF2ZlvceuxGpNACDkYQ6W8pF_ao
+			77 container
+				78 container
+					156 heading XDX Supplier Workspace, Value: 1
+						157 text XDX Supplier Workspace
+					158 container
+						159 button Open chat
+						181 text entry area (settable) Create a new site for supplier number 1255 based on site ID 300000047414699 with new name XDX E2E S 2054
+						161 button Voice input
+					79 container
+						182 container
+							183 container User message
+								184 text Show sites for supplier number 1255
+							185 checkbox Description: Share panel, Value: 0
+							186 checkbox Description: Pin panel, Value: 0
+							187 button Dismiss panel
+							188 container XDX Supplier Conversation
+								189 container Panel description
+									190 text Supplier sites.
+									191 text Supplier: Dell Inc. (Supplier Number: 1255)
+									192 text Sites:
+									194 content list
+										195 container
+											196 AXListMarker 1. 
+											197 text Dell US1 - Site ID: 300000047414699, Address: Dell US1, Procurement BU: US1 Business Unit
+										198 container
+											199 AXListMarker 2. 
+											200 text Dell UK - Site ID: 300000049521381, Address: Dell UK, Procurement BU: UK Business Unit
+										201 container
+											202 AXListMarker 3. 
+											203 text Dell France - Site ID: 300000051066129, Address: Dell France, Procurement BU: France Business Unit
+										204 container
+											205 AXListMarker 4. 
+											206 text Dell Prog US - Site ID: 300000076246837, Address: Dell Progress US, Procurement BU: Progress US Business Unit
+										207 container
+											208 AXListMarker 5. 
+											209 text Dell (China) - Site ID: 300000085772150, Address: Dell (China), Procurement BU: China Business Unit
+										210 container
+											211 AXListMarker 6. 
+											212 text Dell Univ US - Site ID: 300000095598227, Address: Dell Univ US, Procurement BU: University US Business Unit
+										213 container
+											214 AXListMarker 7. 
+											215 text Dell Japan - Site ID: 300000101110412, Address: Dell Japan, Procurement BU: Japan Business Unit
+										216 container
+											217 AXListMarker 8. 
+											218 text Dell Italy - Site ID: 300000115699226, Address: Dell Italy, Procurement BU: Italy Business Unit
+										219 container
+											220 AXListMarker 9. 
+											221 text Dell Healthcare - Site ID: 300000129800123, Address: Dell Healthcare, Procurement BU: Healthcare US Business Unit
+										222 container
+											223 AXListMarker 10. 
+											224 text Dell Australia - Site ID: 300000131060269, Address: Dell Australia, Procurement BU: Australia Business Unit
+										225 container
+											226 AXListMarker 11. 
+											227 text Dell Netherland - Site ID: 300000132468538, Address: Dell Netherlands, Procurement BU: Netherlands Business Unit
+										228 container
+											229 AXListMarker 12. 
+											230 text Dell FinSvcs US - Site ID: 300000136563038, Address: Dell Fin Svcs US, Procurement BU: Fin Svcs US Business Unit
+										231 container
+											232 AXListMarker 13. 
+											233 text Dell FinSvcs UK - Site ID: 300000136589859, Address: Dell Fin Svcs UK, Procurement BU: Fin Svcs UK Business Unit
+										234 container
+											235 AXListMarker 14. 
+											236 text Dell US INS - Site ID: 300000136834047, Address: Dell US INS, Procurement BU: US INS Business Unit
+										237 container
+											238 AXListMarker 15. 
+											239 text Dell Sweden - Site ID: 300000138008015, Address: Dell Sweden, Procurement BU: Sweden Business Unit
+										240 container
+											241 AXListMarker 16. 
+											242 text Dell Supremo US - Site ID: 300000180147434, Address: Dell Supremo US, Procurement BU: Supremo US Business Unit
+										243 container
+											244 AXListMarker 17. 
+											245 text Dell Germany - Site ID: 300000202897443, Address: Dell Germany, Procurement BU: Germany Business Unit
+										246 container
+											247 AXListMarker 18. 
+											248 text Dell Prog UK - Site ID: 300000223873823, Address: Dell Prog UK, Procurement BU: Progress UK Business Unit
+										249 container
+											250 AXListMarker 19. 
+											251 text Dell Fed US - Site ID: 300000224618718, Address: Dell Fed US, Procurement BU: Federal US Business Unit
+										252 container
+											253 AXListMarker 20. 
+											254 text Dell AU Council - Site ID: 300000245707697, Address: Dell AU Council, Procurement BU: AU Council Business Unit
+										255 container
+											256 AXListMarker 21. 
+											257 text Dell Supremo Energy US - Site ID: 300000260366014, Address: Dell Supremo Energy US, Procurement BU: Supremo Energy US BU
+										258 container
+											259 AXListMarker 22. 
+											260 text Dell SA PS - Site ID: 300000267142580, Address: Dell SA PS, Procurement BU: SA PS Business Unit
+										261 container
+											262 AXListMarker 23. 
+											263 text Dell-ITPS - Site ID: 300000282918448, Address: Dell Italy, Procurement BU: Italy Public Sector BU
+										264 container
+											265 AXListMarker 24. 
+											266 text Dell Mexico PS - Site ID: 300000287090725, Address: Dell Mexico PS, Procurement BU: Subsecretaría de Hacienda y Crédito Público
+										267 container
+											268 AXListMarker 25. 
+											269 text Dell Progress CA - Site ID: 300000311369172, Address: Dell Progress CA, Procurement BU: Progress CA Business Unit
+									193 text There are more sites available. To see the next page, use the command: Next sites page.
+						162 container swimlanes-container
+							163 heading XDX Supplier Advisor, Value: 3
+								164 text XDX Supplier Advisor
+							165 container
+								166 heading Supplier Workspace, Value: 3
+									167 text Supplier Workspace
+								168 container Supplier Workspace widget 1
+									169 container Panel description
+										170 text Getting started guidance for supplier search
+									171 heading Supplier Workspace, Value: 3
+										172 text Supplier Workspace
+									173 text Get started by searching for a supplier. Just say: “Find a supplier like Dell.”
+					174 container
+						175 heading Priority Actions (0), Value: 4
+							176 text Priority Actions (0)
+						177 checkbox Description: Alert me when this completes, Value: 0
+						178 checkbox Description: Toggle dark mode, Help: Light mode, Value: 1
+						179 button Hide Panel
+					180 text Nothing requires your attention right now...
+					144 toolbar Application builder toolbar
+						146 container Toolbar actions
+							153 button Edit application
+							154 button Publish application
+							155 button Hide toolbar
+			76 link Description: Ask Oracle, Value: static.oracle.com/cdn/fa/oracle_fai_aiappspublicUI/2607.146.262512339/aiappsweb/#, ID: bF2ZlvceuxGpNACDkYQ6W8pF_ao-brand
+
+The focused UI element is 181 text entry area (settable) Create a new site for supplier number 1255 based on site ID 300000047414699 with new name XDX E2E S 2054

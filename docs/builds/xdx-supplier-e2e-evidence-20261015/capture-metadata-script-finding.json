@@ -1,0 +1,7 @@
+{
+  "observedUtc": "2026-10-15T21:16:18.218Z",
+  "symptom": "Inline metadata correction had syntax error before execution; no partial write",
+  "cause": "Compressed loop omitted separator between of and iterable",
+  "correction": "Moved exact correction to readable literal .cjs file; measured run completed",
+  "productWrites": 0
+}

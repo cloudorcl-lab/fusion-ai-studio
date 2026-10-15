@@ -1,0 +1,12 @@
+{"observedUtc":"2026-10-15T20:48:00.440Z","type":"run-started"}
+{"observedUtc":"2026-10-15T20:48:00.448Z","type":"begin","id":"write","attempt":1}
+{"observedUtc":"2026-10-15T20:48:00.454Z","type":"write-reserved","id":"write","reservation":{"operationId":"fixture-op","requestId":"fixture-request","revision":1,"payload":{"Name":"synthetic"},"reservedUtc":"2026-10-15T20:48:00.454Z","disposition":"uncertain","recordIds":{}}}
+{"observedUtc":"2026-10-15T20:48:00.460Z","type":"write-reconciled","id":"write","disposition":"accepted","recordIds":{"fixtureId":"fixture-123"},"evidence":"local fixture only"}
+{"observedUtc":"2026-10-15T20:48:00.465Z","type":"outcome","id":"write","status":"FAIL","actual":"Intentional local display failure after accepted fixture write","recordIds":{},"fallback":false}
+{"observedUtc":"2026-10-15T20:48:00.471Z","type":"begin","id":"read","attempt":1}
+{"observedUtc":"2026-10-15T20:48:00.476Z","type":"outcome","id":"read","status":"FAIL","actual":"Intentional local initial failure","recordIds":{},"fallback":false}
+{"observedUtc":"2026-10-15T20:48:00.481Z","type":"begin","id":"read","attempt":2}
+{"observedUtc":"2026-10-15T20:48:00.485Z","type":"outcome","id":"read","status":"PASS","actual":"Local explicit assertion","recordIds":{},"fallback":false}
+{"observedUtc":"2026-10-15T20:48:00.490Z","type":"outcome","id":"dependent","status":"BLOCKED","actual":"No executable action completed; see dependency/capability evidence","recordIds":{},"fallback":false}
+{"observedUtc":"2026-10-15T20:48:00.495Z","type":"run-finished","summary":{"counts":{"PASS":1,"FAIL":1,"BLOCKED":1},"retryCount":1,"connectedJourneyPassed":false}}
+{"observedUtc":"2026-10-15T20:48:00.501Z","type":"presentation-finished"}

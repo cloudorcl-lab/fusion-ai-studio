@@ -1,0 +1,44 @@
+{
+  "observedUtc": "2026-10-15T21:14:22.789Z",
+  "result": "PASS",
+  "checks": 18,
+  "scope": "Final built-in native observer and deferred Site reconciliation; no custom business callbacks; resource-specific empty/populated page, wrong-route classification, Site readback mismatch and original-assignment-evidence negatives; no UI/tenant calls",
+  "sourceSha256": "041efc634a4ff9bd4c6f2aa15c56bd4e9943e02f2091581fa68b5e200cd09664",
+  "fixtures": [
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.txt",
+      "sha256": "99833cf956f113b3b890d7ad22661df7a5dd8f5ffc321884fef006f99c41264d"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/address-direct-created-readback-006.txt",
+      "sha256": "557448732b2a68d9b78f6638b2965876ead80bec22c270fce49d582169089890"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-direct-created-readback-006.txt",
+      "sha256": "c9a44aca18a00e2f0e403c2dbc4598b8918595f30648c54e29f10a3eb86509f0"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-query-result-002.txt",
+      "sha256": "ab8553d5a84c5c873758b5c04b7c4cb365aadc20392a42d23b277a6e6a0df0a8"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-query-result-lower-section-003.txt",
+      "sha256": "cdff0404184bf60aac2875f2eed1b39332ebb57c9631d3bb9363bb01f51b00e7"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-create-created-readback-006.txt",
+      "sha256": "6e63585542d34e92e56ba16018e5c7bb746d828a866a6cdef7dfea8cd064cffd"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/site-fallback-readback-details-002.txt",
+      "sha256": "333622e5ab7c4bceb1546f298acf60fd65a63db601dc2a2a5a0f8c3b0a4021b1"
+    },
+    {
+      "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-result-002.txt",
+      "sha256": "6457091d555180e7f248fa65b04748511ebcd8c097779c97048a028850ec5865"
+    }
+  ],
+  "independentReviewUtc": "2026-10-15T21:16:18.215Z",
+  "reviewer": "/root",
+  "review": "Source response-scoping, actual resource labels, exact controls/payload/parent, deferred Site field readback, original assignment proof, retry/no-replay and wrong-route classification reviewed. Full final orchestration not replayed against tenant; actual native journey used adaptive durable helpers."
+}

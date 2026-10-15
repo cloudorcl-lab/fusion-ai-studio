@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "kind": "TOOLING-SMOKE-ONLY",
+  "qualifiedUtc": "2026-10-15T20:47:32.0326729Z",
+  "generator": {
+    "path": "scripts/xdx-supplier-e2e-deck.mjs",
+    "sha256": "18ce14be93ab51897819b03ed68520179408c9c7d3b5d63218d57486fb9f7ce8"
+  },
+  "smokeRunId": "c88447ce-b830-4d87-af9d-6dbe879bcebe",
+  "slideCount": 7,
+  "deliveredNotesCount": 7,
+  "deliveredImageCount": 1,
+  "notesContainExpectedActualAndSource": true,
+  "allSevenFinalRendersInspected": true,
+  "visualResult": "PASS, no clipping/overlap. Bundled icon is tooling fixture only, never application evidence.",
+  "siblingAudit": "Only body() text.style write remains; all keys typeface,fontSize,color,bold are documented TextStyleConfig fields.",
+  "validation": {
+    "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/private/validation.json",
+    "sha256": "e3e4ce3a3fa7d33e66a5f902e0ba6692f37244b54fb6a9bbaace10b74b5fcdb0"
+  },
+  "inspection": {
+    "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/private/inspection.ndjson",
+    "sha256": "5b32a37ef34fbac7e504dd84487e0028e778ba68a241dcfb06d9a5f1fe8c06bf"
+  }
+}

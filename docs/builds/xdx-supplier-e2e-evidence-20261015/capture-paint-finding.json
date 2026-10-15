@@ -1,0 +1,14 @@
+{
+  "observedUtc": "2026-10-15T21:13:10.470Z",
+  "symptom": "Actual deck visual review caught semantic-ready but screenshot still shows intermediate loading",
+  "slides": [
+    17,
+    19,
+    21,
+    23
+  ],
+  "mislabelledErrorSlide": 44,
+  "evidence": "Later entered-request screenshots retain actual complete previous results; originalimagebytes preserved",
+  "correctionPlan": "Rootannotatescapturetitles/notes to actualvisibleframe, addfreshfinalAssignmentresultcapture; noUIrequest/POSTreplay",
+  "cause": "AX readiness and screenshotpaint not atomic; mustindependentlyreview renderedimage"
+}

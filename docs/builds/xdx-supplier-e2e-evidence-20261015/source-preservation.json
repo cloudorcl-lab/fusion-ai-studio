@@ -1,0 +1,20 @@
+{
+  "observedUtc": "2026-10-15T21:29:37.472Z",
+  "result": "pass",
+  "implementationHead": "91ddb80664cd74bf976dbd090222b606d5f89984",
+  "sources": [
+    {
+      "path": "D:/Temp/worktrees/xdx-supplier-workspace-20261014/src/apps/xdx_supplier_workspace.app",
+      "expectedSha256": "23939eae8f3add68fc823a97b6bbe5ae32619419810446e69a4a0082b2b201a5",
+      "actualSha256": "23939eae8f3add68fc823a97b6bbe5ae32619419810446e69a4a0082b2b201a5"
+    },
+    {
+      "path": "D:/Temp/worktrees/xdx-supplier-workspace-20261014/src/workflows/xdx_supplier_conversation.wf",
+      "expectedSha256": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872",
+      "actualSha256": "069657df834ae9c13111aee80d2ee6a5f9cbf62bee1cc8e6e143e8aafc315872"
+    }
+  ],
+  "rootUnrelatedPolicy": "Explicit scoped staging excludes env.properties, code-workspace, assets, prioranalysisruns and historicalarchiveattribute-status; no initial per-filehashbaselinewasrecorded for thisnewtask, so no new byte-equalityclaim",
+  "noRemoteArtifactMutations": true,
+  "noPublishOrPush": true
+}

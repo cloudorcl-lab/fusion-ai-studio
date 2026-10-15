@@ -14,3 +14,11 @@
 /package.json -text
 /scripts/verify-session-compliance.cjs -text
 /tests/test-session-compliance.cjs -text
+
+/docs/builds/xdx-supplier-e2e-evidence-20261015/** -text
+
+/scripts/xdx-supplier-e2e.mjs -text
+
+/scripts/xdx-supplier-e2e-deck.mjs -text
+
+/scripts/xdx_supplier_e2e_journey.mjs -text

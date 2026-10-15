@@ -102,6 +102,8 @@ These omission rules are verified for the retained eqih-dev21 / API 11.13.18.05 
 
 Do not infer generation from a GET value or an absent vendor-example field alone. Parent/foreign references remain independently classified; blanket ID omission is not a contract.
 
+2026-10-15 eqil-dev21 corroboration (26C / API11.13.18.05): the native DRAFT88010729 journey's [frozen reservation](../../builds/xdx-supplier-e2e-evidence-20261015/results.json) supplied only Supplier, SupplierType, BusinessRelationship and TaxOrganizationType, consistent with the [reviewed POST source contract](../../builds/xdx-supplier-e2e-evidence-20261015/xdx_session_xdx-supplier-e2e-evidence-20261015-plan-review.json). The [accepted independent-readback display](../../builds/xdx-supplier-e2e-evidence-20261015/screens/supplier-create-created-readback-007.txt) returned generated SupplierId300000340604948 and SupplierNumber1503 and verified all four fields. SupplierPartyId was not displayed and receives no new corroboration. This confirms the tested display-field payload in eqil only; earlier eqih failures remain distinct. Requiredness, uniqueness and immutable first-GET evidence are unchanged; no accepted POST was replayed.
+
 ### Required and unique fields
 
 | Field / constraint | Requiredness and scope | Reuse rule |
@@ -196,6 +198,7 @@ The later 25-row list retest and supplier-detail GET remain verification evidenc
 
 | Date | Evidence | Change |
 | --- | --- | --- |
+| 2026-10-15 | Native eqil supplier1503 frozen four-field reservation and accepted readback | Corroborate generated SupplierId/Number only; preserve unobserved SupplierPartyId, historical lookup failures and first GET. |
 | 2026-10-12 | Existing Supplier reference and retained source receipts | Consolidate parent lessons for reuse; replace repeated narratives with evidence matrix, preserve unresolved lookup mapping and immutable first GET. No live calls. |
 | 2026-10-12 | Reconciled benchmark evidence (archived evidence E0098) | Promote the retained 2026-09-30 display-value POST rejection; distinguish the code-field candidate from accepted behavior, qualify historical payload guidance, and preserve the immutable first GET. No live calls. |
 | 2026-09-28 | Fresh A supplier1511 direct native saved-BO POST and separate GetSupplier | Corroborated omitted/generated SupplierId, SupplierNumber and SupplierPartyId with exact three-field persistence; limited proof to A direct saved BO, preserved immutable first GET and existing requiredness/uniqueness scope. |

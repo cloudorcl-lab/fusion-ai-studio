@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-supplier-e2e-evidence-20261015",
+  "scopes": [
+    "governance",
+    "runner",
+    "supplier",
+    "address",
+    "contact",
+    "site",
+    "assignment",
+    "deck"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-supplier-e2e-evidence-20261015/commands.jsonl",
+    "docs/builds/xdx-supplier-e2e-evidence-20261015/plan-review-commands.jsonl",
+    "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-commands.jsonl",
+    "docs/builds/xdx-supplier-e2e-evidence-20261015/runner-commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "F001",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "observedUtc": "2026-10-15T20:40:06.821Z",
+      "symptom": "Empty-ledger rationale omitted",
+      "evidenceGap": "Predispatch blocked; no child or timing runID",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/startup-ledger-finding.json",
+          "sha256": "eaa9573cca54ef7d9bb9b51b03b3b68a0cdcb2ed8ee5b5b5446d48968c42d0bd"
+        }
+      ],
+      "cause": "Initializer omitted required empty-ledger field",
+      "correction": "Captured actual issue; future zero-failure initialization must state noFailuresReason",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Validate initial failure-ledger structure before dependent commands",
+        "reason": "Existing requirement; no product defect"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Transactional candidate Startup integrity check",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/verify-build-learning.cjs",
+            "sha256": "411033ad51e8f5f7dd56c57d16e246e98e0b44d1aab56944726f9aed69361f32"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/startup-ledger-finding.json",
+            "sha256": "eaa9573cca54ef7d9bb9b51b03b3b68a0cdcb2ed8ee5b5b5446d48968c42d0bd"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F002",
+      "observedUtc": "2026-10-15T20:41:33.488Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "commandRunIds": [
+        "34cc2c2e-de69-4a18-9935-0001b01a3df5",
+        "2ce7eb32-b93b-47f8-911a-d77c49c7419a"
+      ],
+      "symptom": "Worker Startup rejected missing exact task registrations",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/worker-registration-proof.json",
+          "sha256": "61a5f772940fc436a34e187d96d5700cf33cd1829f7347f2607c3727acb80fc7"
+        }
+      ],
+      "cause": "Short aliases did not satisfy full session-ID contract",
+      "correction": "Both full worker IDs registered in intake and tracker; candidate owner corrected to canonical lessons after transactional validator rejected BUILD_STANDARD owner, active ledger remained unchanged.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Register exact delegated task identities and literal output contracts before dispatch",
+        "reason": "Existing delegated ownership rule; checked actual serialized documents"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Node exact task-ID presence in both owner documents",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/verify-session-compliance.cjs",
+            "sha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/worker-registration-proof.json",
+            "sha256": "61a5f772940fc436a34e187d96d5700cf33cd1829f7347f2607c3727acb80fc7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F003",
+      "observedUtc": "2026-10-15T20:42:30.522Z",
+      "scope": "runner",
+      "blocks": [
+        "runner"
+      ],
+      "status": "closed",
+      "symptom": "Wrong historical environment selected before login",
+      "evidenceGap": "Browser action unwrapped; no command runID",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/target-host-finding.json",
+          "sha256": "df94ba98d6fd8914faefa50be2ad9eb33bc691a7c057c705f389451c899dddd1"
+        }
+      ],
+      "cause": "Historical handoff URL mistaken for active configuration",
+      "correction": "Root/worktree configuration compared without secrets; exact eqil target selected for subsequent testing",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Resolve active configured host before opening test surface; compare runtime URL to it",
+        "reason": "Existing environment identity gate; no app logic change"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Root and worktree configured host and credential equality comparison",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/verify-session-compliance.cjs",
+            "sha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/target-host-finding.json",
+            "sha256": "df94ba98d6fd8914faefa50be2ad9eb33bc691a7c057c705f389451c899dddd1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F004",
+      "observedUtc": "2026-10-15T20:45:22.544Z",
+      "scope": "deck",
+      "blocks": [
+        "deck"
+      ],
+      "status": "closed",
+      "commandRunIds": [
+        "5ef14bca-5360-4e0f-8d78-8ad9895f730c",
+        "b2066a62-9354-4016-a7d8-9f283af9fa62",
+        "286ab3ca-3700-462c-a394-4b8e40dfbc6f"
+      ],
+      "symptom": "Deck tooling smoke API style usage failed; dependent worker Startup correctly blocked until shared failure capture; next smoke caught style font field mismatch in finalizer",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-style-finding.json",
+          "sha256": "6d9cd134caebc5cd1dd42b982e956f2a0d8ee50fbf151e01c119900cf377b1f6"
+        }
+      ],
+      "cause": "Unsupported read of style facade and incorrect fontFamily field",
+      "correction": "Assign full documented text style using typeface; source sibling style audit and seven-slide image+notes+render smoke PASS",
+      "prevention": {
+        "kind": "regression",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Use documented presentation API and qualify exported image/notes/layout before real evidence generation",
+        "reason": "Existing first-result and dependency qualification requirements"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Artifact-tool local seven-slide smoke with exported notes/image/finalizer and render review",
+        "reviewer": "/root plus /root/e2e_deck",
+        "sources": [
+          {
+            "path": "scripts/xdx-supplier-e2e-deck.mjs",
+            "sha256": "18ce14be93ab51897819b03ed68520179408c9c7d3b5d63218d57486fb9f7ce8"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck-qualification.json",
+            "sha256": "5df354aaacda60d6ba778f2f0d07903d50bc00cb28c0ffd514efde074cd5c30c"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/private/validation.json",
+            "sha256": "e3e4ce3a3fa7d33e66a5f902e0ba6692f37244b54fb6a9bbaace10b74b5fcdb0"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/smoke/output/2026-10-15T20-46-53-686Z/private/inspection.ndjson",
+            "sha256": "5b32a37ef34fbac7e504dd84487e0028e778ba68a241dcfb06d9a5f1fe8c06bf"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F005",
+      "observedUtc": "2026-10-15T20:45:22.545Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Discovery command/path assumed rather than inventoried",
+      "evidenceGap": "Unwrapped discovery; no measured runIDs",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/discovery-contract-findings.json",
+          "sha256": "87636e9a772d5d803e4e2234b342df87c180104db746be5bb4712eba63510a45"
+        }
+      ],
+      "cause": "Unverified metadata discovery inputs",
+      "correction": "Only use actual CLI catalog and existing inventoried directories",
+      "prevention": {
+        "kind": "procedure",
+        "owner": ".agents/skills/aistudio/SKILL.md",
+        "rule": "Verify documented command and literal existing source path before dispatch",
+        "reason": "Existing supported discovery contract; no runtime defect"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Read installed prompt index and exact inventoried source workflow",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": ".agents/skills/aistudio/SKILL.md",
+            "sha256": "fd66dff43e918955681b3cc6220f4ee88599e3b056104e0b51f9d4c25205e426"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/discovery-contract-findings.json",
+            "sha256": "87636e9a772d5d803e4e2234b342df87c180104db746be5bb4712eba63510a45"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F006",
+      "observedUtc": "2026-10-15T20:48:25.550Z",
+      "scope": "runner",
+      "blocks": [
+        "runner"
+      ],
+      "status": "closed",
+      "symptom": "Runner CUA module import rejected .cjs dependency",
+      "evidenceGap": "CUA import failure, no shell timing runID",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/cua-module-finding.json",
+          "sha256": "6a8762108fe7923dbbcbc39f3cfc1ef940416be1d591c5c713beddbc0a8a2f20"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/cua-process-finding.json",
+          "sha256": "2f4b40fc7afd7b394964b45c190c120acc0ec0e4a159a366666c020028d850de"
+        }
+      ],
+      "cause": "Browser runtime CJS/process assumptions and actual JPEG screenshot format differed from Node-only fixture",
+      "correction": "Explicit runtime-safe imports and original JPEG support; actual CUA resume and two screenshot/AX captures persisted successfully",
+      "prevention": {
+        "kind": "regression",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Qualify representative capture in actual browser host and preserve observed image format before scaling",
+        "reason": "Existing representative/runtime boundary gate"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Actual CUA resume and capture two observed originalJPEG states",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/xdx-supplier-e2e.mjs",
+            "sha256": "9e6a432a8108e446068a43465742b150f459d836a168356e3ccb30290f5d20dd"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/actual-capture-proof.json",
+            "sha256": "78544434e46461c5f2447bf7564960da5b459d3c148575a5f267288a99aa51fa"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-studio-identity-001.jpg",
+            "sha256": "78a134f73137f1f5236d2a7e6af88b7a15d6b80c550617e97defe5f151bb2918"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-preview-start-002.jpg",
+            "sha256": "9dc4d10c34729e9debb8848dff3e43d1e3fcd4529573b33715939a742f76517e"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F007",
+      "observedUtc": "2026-10-15T20:51:53.469Z",
+      "scope": "runner",
+      "blocks": [
+        "runner"
+      ],
+      "status": "closed",
+      "symptom": "Native screenshot format does not match PNG-only capture assumption",
+      "evidenceGap": "Actual CUA capture failure; no shell runID",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screenshot-format-finding.json",
+          "sha256": "127d54aa3d4483d322258883fd698596ec6e2dd46fb746bb229c5d7b92992a7d"
+        }
+      ],
+      "cause": "Browser runtime CJS/process assumptions and actual JPEG screenshot format differed from Node-only fixture",
+      "correction": "Explicit runtime-safe imports and original JPEG support; actual CUA resume and two screenshot/AX captures persisted successfully",
+      "prevention": {
+        "kind": "regression",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Qualify representative capture in actual browser host and preserve observed image format before scaling",
+        "reason": "Existing representative/runtime boundary gate"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Actual CUA resume and capture two observed originalJPEG states",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/xdx-supplier-e2e.mjs",
+            "sha256": "9e6a432a8108e446068a43465742b150f459d836a168356e3ccb30290f5d20dd"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/actual-capture-proof.json",
+            "sha256": "78544434e46461c5f2447bf7564960da5b459d3c148575a5f267288a99aa51fa"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-studio-identity-001.jpg",
+            "sha256": "78a134f73137f1f5236d2a7e6af88b7a15d6b80c550617e97defe5f151bb2918"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/setup-preview-start-002.jpg",
+            "sha256": "9dc4d10c34729e9debb8848dff3e43d1e3fcd4529573b33715939a742f76517e"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F008",
+      "observedUtc": "2026-10-15T20:58:36.523Z",
+      "scope": "runner",
+      "blocks": [
+        "runner"
+      ],
+      "status": "open",
+      "symptom": "Concrete journey native observation/parser contract mismatch",
+      "evidenceGap": "Independent static review finding before module runtime; no command failure",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/journey-parser-finding.json",
+          "sha256": "c618f2fadeb80d1699fd18012001377c9ea1878c6a2765cab0b9da2997becba4"
+        }
+      ],
+      "commandRunIds": [
+        "64ea2c6e-8bda-45fe-8217-d2bb9485fd12"
+      ]
+    },
+    {
+      "id": "F009",
+      "observedUtc": "2026-10-15T21:01:49.997Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Contact empty-state assertion shape mismatch",
+      "evidenceGap": "CUA assessment rejected PASS; no new request dispatched",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/contact-empty-assertion-finding.json",
+          "sha256": "e703c0d641c03924e1191d1f1e26fd610cfc30099b640039019719fda38cd841"
+        }
+      ],
+      "cause": "Reused Address renderer labels without inspecting Contact output",
+      "correction": "Separate historical harnessFAIL retained in deck; actual parent+Contact-empty-state assertion PASS on samecapture",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Use current actual resource-specific output contract rather than inferred sibling labels",
+        "reason": "Existing source/output readiness owner; pure-observation correction, no runtime change"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Inspect same immutable Contact AX snapshot and assert parent1503+No contacts found",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/verify-session-compliance.cjs",
+            "sha256": "e966739cea0bd72c5d632d3ee3f2b40db68c1c61fe97f8ff1380339b1403562e"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/contact-empty-assertion-finding.json",
+            "sha256": "e703c0d641c03924e1191d1f1e26fd610cfc30099b640039019719fda38cd841"
+          },
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-query-assertion-observed-empty-state-001.txt",
+            "sha256": "a6fa19327a232e0e8e238481063fdbcdceb7304ff2e711e9f110cc0569b9d85b"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F010",
+      "observedUtc": "2026-10-15T21:04:05.618Z",
+      "scope": "contact",
+      "blocks": [
+        "contact"
+      ],
+      "status": "closed",
+      "disposition": "retained-product-failure-no-repair-in-evidence-run",
+      "symptom": "Contact template source check failed before draft/POST",
+      "evidenceGap": "NativeUI failure, no shell runID or exported backend error detail",
+      "occurrenceEvidence": [
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/contact-template-failure.json",
+          "sha256": "4f4fcb8269afd10ce649d75f0215884aa9183fc31a161873d7ba77693a929b1f"
+        },
+        {
+          "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/contact-template-draft-ready-002.txt",
+          "sha256": "d8f99f66f9e11960d0067d9f3666ccc26cc8b122bcd0ac91a6a722d3e73a8995"
+        }
+      ],
+      "cause": "Unknown; current-source lookup failure reported by app",
+      "correction": "No product repair claimed; failed step preserved in results/PPT and unchanged affected path retired from this run",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Freeze failed/uncertain transactions, retain original evidence and do not replay unchanged writes",
+        "reason": "User explicitly requested completed evidence run with failures, not product repair; failed step had no reservation/Confirm"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Inspect durable Contact template step and assert zero reservations; retain applicationFAIL; continue independent stages only",
+        "reviewer": "/root",
+        "sources": [
+          {
+            "path": "scripts/xdx-supplier-e2e.mjs",
+            "sha256": "9e6a432a8108e446068a43465742b150f459d836a168356e3ccb30290f5d20dd"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-supplier-e2e-evidence-20261015/contact-template-failure.json",
+            "sha256": "4f4fcb8269afd10ce649d75f0215884aa9183fc31a161873d7ba77693a929b1f"
+          }
+        ]
+      }
+    }
+  ]
+}

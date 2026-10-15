@@ -1,0 +1,10 @@
+{
+  "id": "runner-readonly-parser-error",
+  "surface": "PowerShell read-only source qualification precheck",
+  "observedUtc": "2026-10-15T21:26:00.000Z",
+  "timestampQualification": "Approximate; actual tool receipt retained by parent session, no exact clock read preceded it",
+  "symptom": "PowerShell ParserError: An empty pipe element is not allowed",
+  "cause": "foreach statement was followed directly by a pipeline without expression wrapping",
+  "effects": "Parser rejected command before executing any statement; no mutation, test, gate or business call",
+  "nextAction": "Use a literal individual hash expression and compare the registered source directly; do not repeat the malformed command"
+}

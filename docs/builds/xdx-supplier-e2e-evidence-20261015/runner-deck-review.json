@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "agentId": "/root/e2e_runner",
+  "assignmentId": "independent-deck-review-46-82",
+  "reviewedRevision": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z",
+  "surface": "Actual exported slide PNG renders, inspected individually at full render size",
+  "inspectedSlides": { "first": 46, "last": 82, "count": 37 },
+  "observedCutoffUtc": "2026-10-15T21:14:08.000Z",
+  "timingLimitations": "Review began at coordinator dispatch; exact first worker timestamp unavailable. Cutoff is observed. Image inspection and report writing are separate from application execution; coordinator owns authoritative intervals.",
+  "result": "Changes requested for text fit and final snapshot reconciliation; screenshots in assigned range match their stated visible stage",
+  "captureTitleMismatches": [],
+  "reviewedCaptureRange": {
+    "slides": "46-63",
+    "finding": "No transient processing frame or misleading completed-result title in this range. Query inputs show entered prompt and prior result, draft/review frames show prepared data, fallback creation/readback shows accepted site and assignment, standalone Assignment query shows incorrect Site details under explicit FAIL label.",
+    "fallbackLabels": "Present on slides 50-63 where fallback coverage applies",
+    "blockedLabels": "Present on slides 47-49; parent Site prerequisite and dependent Assignment retained separately"
+  },
+  "findings": [
+    {
+      "slide": 67,
+      "kind": "text-overflow",
+      "renderPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-067.png",
+      "actual": "The site-fallback-create retained-record JSON line extends beyond the right edge; its complete fallbackSupplierId is not comfortably contained.",
+      "proposal": "Render Site ID 300000340604984, Assignment ID 300000340604987 and fallback Supplier ID 300000047414679 on separate labeled lines. Preserve all identifiers."
+    },
+    {
+      "slide": 69,
+      "kind": "text-fit-risk",
+      "renderPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-069.png",
+      "actual": "Contact template failure paragraph runs to the extreme right boundary; the line ending at No appears crowded/clipped.",
+      "proposal": "Shorten and wrap the explanation into deliberate lines, retaining source-check failure, no Confirm and no POST. Keep BLOCKED connected Site and Assignment explanations."
+    },
+    {
+      "slide": 80,
+      "kind": "snapshot-status",
+      "renderPath": "docs/builds/xdx-supplier-e2e-evidence-20261015/deck/2026-10-15T21-11-13-020Z/renders/slide-080.png",
+      "actual": "F008 is accurately labeled open at this deck snapshot.",
+      "proposal": "When final script qualification closes F008, regenerate appendix from the actual reconciled failure ledger; do not silently label the old snapshot current."
+    }
+  ],
+  "summaryVerification": {
+    "slides": "64-72",
+    "businessPlan": { "steps": 20, "PASS": 16, "FAIL": 2, "BLOCKED": 2 },
+    "separateHarnessFailures": 1,
+    "businessRetries": 0,
+    "originalDeckScreenCount": 61,
+    "acceptedBusinessWrites": 6,
+    "recordIds": {
+      "supplierNumber": "1503",
+      "supplierId": "300000340604948",
+      "addressId": "300000340604955",
+      "templateAddressId": "300000340604962",
+      "contactId": "300000340604973",
+      "fallbackSiteId": "300000340604984",
+      "fallbackAssignmentId": "300000340604987"
+    },
+    "finding": "Counts and record IDs match retained results and visible screenshots. Connected journey remains FAIL, fallback coverage remains separate."
+  },
+  "appendixVerification": {
+    "slides": "73-82",
+    "finding": "Readable text with implementation/preflight findings explicitly separated from business outcomes; closed statuses shown except F008 open at snapshot. No screenshot/result conflation observed."
+  },
+  "newEvidenceAfterRevision": {
+    "capturePath": "docs/builds/xdx-supplier-e2e-evidence-20261015/screens/assignment-query-final-painted-result-003.jpg",
+    "finding": "Current results inventory includes this additional capture after the 61-screen reviewed revision. Include it in final regeneration and revise screenshot/slide counts accordingly."
+  },
+  "actionsPerformed": "Read-only render/result review and this review artifact only; no application tests, UI actions, business writes, screenshot editing or source edits"
+}
