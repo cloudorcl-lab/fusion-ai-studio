@@ -1,0 +1,507 @@
+{
+  "commandReceipts": "docs/builds/xdx-purchase-order-app-20261014/commands.jsonl",
+  "timingLimitations": "Earlier setup/review unallocated; ordinary tools included in active execution; exact task total unavailable",
+  "sourceCommit": "179d0061f275755af2384dd4f6e4699afebb7451",
+  "startedUtc": "2026-10-14T22:25:58.7012848Z",
+  "interactions": {
+    "repeatedRequests": 0,
+    "clarifications": 0,
+    "platformEscalations": 3,
+    "storageTargetQuestion": {
+      "utc": "2026-10-15T02:53:20.567Z",
+      "reason": "New missing storage target after native guarantee review; prior draft/GET approvals retained"
+    },
+    "userCorrections": 1,
+    "sqlclCorrection": "User correctly requested local SQLcl; installed saved TESTER connection proved available.",
+    "manualNativeExport": {
+      "recordedUtc": "2026-10-15T15:24:49.104Z",
+      "userReply": "done",
+      "impact": "Actualfiles verified; independentwork continued, no blockinguserwait assigned"
+    },
+    "fixedDemoPersonaPreference": {
+      "recordedUtc": "2026-10-15T15:49:32.605Z",
+      "status": "superseded-by-concrete-publication-decision",
+      "reason": "Nativeusernameheadernottrusted; concretefixedsyntheticservicepersona vsidentitybridgechoice",
+      "impact": "Independentlocalpreparationcompleted; no activation/publication/ACLapproval inferred"
+    },
+    "fixedDemoCasePublication": {
+      "status": "approved-and-executed",
+      "recordedUtc": "2026-10-15T20:17:38.946Z",
+      "wording": "Approve SQL009 and SQL011",
+      "reason": "Explicit confirmation after auto-review rejection; no migration executed yet"
+    },
+    "actualFieldsMeaning": {
+      "status": "approved-and-retrieved",
+      "wording": "You are approved to retrieve the fields as necessary",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/actual-source-field-readiness.json",
+      "impact": "Necessary header, line and schedule business fields captured for Lee Supplies US165029; unrelated optional fields and flexfields excluded."
+    },
+    "actualReadObjectApproval": {
+      "status": "approved-created-and-saved",
+      "wording": "Approve the read-only object",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/actual-read-object-approval.json",
+      "supportedObjectId": "300000340717584"
+    }
+  },
+  "destination": "D:\\Temp\\worktrees\\xdx-purchase-order-app",
+  "timezone": "America/Chicago",
+  "failureLedger": "docs/builds/xdx-purchase-order-app-20261014/failure-ledger.json",
+  "scope": "Approved PO recovery build with ORDS persistent cases deprecated/excluded; complete transient synthetic journey, native documents, then authorized actual-data phase. No new tests.",
+  "usage": {
+    "tokens": {
+      "source": "get_goal cumulative thread counter",
+      "observedAtUtc": "2026-10-15T10:40:26.13Z",
+      "tokensUsed": 663192,
+      "limitation": "Observed before SQLcl correction work; cumulative all prior goal turns, not current-turn usage or billing cost"
+    },
+    "aiUnits": "CLI/native usage counter not exposed; tenant calls occurred",
+    "latestObservation": {
+      "tokensUsed": 10778977,
+      "source": "User-supplied goal continuation cumulative counter",
+      "observedAtUtc": "2026-10-16T04:03:26.747515Z",
+      "limitation": "Cumulative thread/goal counter, not current-phase usage or cost; input/cache/output split unavailable"
+    }
+  },
+  "milestones": [
+    {
+      "utc": "2026-10-14T22:27:15.3512616Z",
+      "name": "Prerequisites and isolated worktree verified",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/setup-verification.json"
+    },
+    {
+      "utc": "2026-10-14T22:27:15.3512616Z",
+      "name": "Setup validation and handoff",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/delivery-receipt.md"
+    },
+    {
+      "name": "Application first representative result and implementation",
+      "outcome": "Not in setup scope; pending requirements"
+    },
+    {
+      "name": "Approved inventory and initial local implementation",
+      "utc": "2026-10-15T01:11:23.923Z",
+      "outcome": "12 source contracts, GET BO root, synthetic baseline and valid Function; runtime and live GET incomplete",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/acceptance-status.json"
+    },
+    {
+      "name": "Local native app/workflow and document-template structure",
+      "utc": "2026-10-15T01:21:42.741Z",
+      "outcome": "Existing app/workflow validators and Query gate pass; no runtime acceptance",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/local-native-artifact-receipt.json"
+    },
+    {
+      "name": "Local authorization/sort review correction",
+      "utc": "2026-10-15T01:43:15.275Z",
+      "outcome": "Static corrections and existing structural/Query validators pass; supplied T13/T17 runtime unverified",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/local-rules-review.md"
+    },
+    {
+      "name": "Approved DRAFT save and first native business-result observation",
+      "utc": "2026-10-15T02:53:20.567Z",
+      "outcome": "T01 expected totals/date semantics observed; presentation, first slice and full acceptance incomplete",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/native-runtime-checkpoint.md"
+    },
+    {
+      "name": "Actual source JSON capture",
+      "utc": "2026-10-15T02:53:20.567Z",
+      "outcome": "11/12 resources captured; remaining child lacks retained parent navigation",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/resource-inventory.json"
+    },
+    {
+      "name": "ORDS connection scaffold and transport",
+      "utc": "2026-10-15T03:10:25.007Z",
+      "outcome": "Tool saved and structurally valid; HTTPS200 catalog; Basic credential entry/authenticated runtime pending",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/ords-connection-receipt.json"
+    },
+    {
+      "name": "ORDS Basic connection saved",
+      "utc": "2026-10-15T03:13:08.717Z",
+      "outcome": "Native Basic credential save/readback complete; protected-endpoint execution remains separate",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/ords-native-save-observation.md"
+    },
+    {
+      "name": "Private recovery schema created",
+      "utc": "2026-10-15T03:35:17Z",
+      "outcome": "7 tables,16 indexes,3 triggers VALID; zero compilation errors. API and transactional runtime pending.",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/schema-native-execution-observation.md"
+    },
+    {
+      "name": "SQLcl authoritative schema verification",
+      "utc": "2026-10-15T10:40:26.13Z",
+      "outcome": "Saved TESTER connection matches selected target; all objects VALID and constraints ENABLED/VALIDATED; no compile errors",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/evidence/sqlcl-case-readback.stdout.txt"
+    },
+    {
+      "name": "Core durable case API compiled and exercised",
+      "utc": "2026-10-15T10:52:10.718Z",
+      "outcome": "CREATE_CASE accepted and separate-session get/list recovered same case/version/owner/history; not full native T14 or complete case store",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/case-store-persisted-readback.json"
+    },
+    {
+      "utc": "2026-10-15T14:30:34.668Z",
+      "name": "Native selection entry and overdue filter",
+      "outcome": "Saved action2/13nodeworkflow; native entry4exceptions and overduefilter2rows. Selected2checkboxes; formprotocolobservation running; preview/cancel nativeacceptance pending.",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/evidence/native-selection-encoded.txt"
+    },
+    {
+      "utc": "2026-10-15T14:38:14.743Z",
+      "name": "Native supplied T23 selection journey component",
+      "outcome": "Native overduefilter2, matchingPO1001evidence, select2, concreteunsentconfirmationdraft, cancelretains2/clearsactivepreview observed; native failed/completed transaction states and persistent integration remain unqualified.",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/native-t23-selection-qualification.json"
+    },
+    {
+      "utc": "2026-10-15T14:42:25.632Z",
+      "name": "Native five-slide presentation qualified",
+      "outcome": "All5slides readable and exact prepared fields verified",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/native-presentation-final-qualification.json"
+    },
+    {
+      "utc": "2026-10-15T14:58:46.355Z",
+      "name": "Native one-page PDF qualified",
+      "outcome": "Requested/effective/proposed labels distinct, all5bodyfacts match PPT",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/native-pdf-label-qualification.json"
+    },
+    {
+      "utc": "2026-10-15T15:11:09.973Z",
+      "name": "Private case facade installed and compiled",
+      "outcome": "PackageVALID/zeroerrors, activationFALSE/NOT_PUBLISHED; no HTTP/native acceptance",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/case-api-private-deployment.json"
+    },
+    {
+      "utc": "2026-10-15T15:24:49.104Z",
+      "name": "Actual native exports verified",
+      "outcome": "User saved1pagePDF/5slidePPTX; originals hashed, all6pages visually reviewed and bodylines verified; fullT19 persistence open",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/native-export-render-inspection.json"
+    },
+    {
+      "utc": "2026-10-15T15:49:32.605Z",
+      "name": "First-slice case consumer qualified",
+      "outcome": "Local strictdetail/list projection of unchanged suppliedT14/T05/T09 retainedv11detail/historicalv1list; independentstatus/uniqueness/scalarorderingreviewPASS. Nativepersistenceunqualified",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/case-read-consumer-qualification.json"
+    },
+    {
+      "utc": "2026-10-15T15:45:39.321Z",
+      "name": "Private deterministic case-list ordering repaired",
+      "outcome": "010exacttwofragments/fullbody/spec/compilationPASS; nocasecommands/ORDS/ACL changes",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/case-list-order-deployment.json"
+    },
+    {
+      "name": "Native quantity unit and requested date preservation",
+      "utc": "2026-10-15T16:09:44.168Z",
+      "outcome": "Field-preservation components pass; full build incomplete",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/uom-native-qualification.json"
+    },
+    {
+      "name": "Native request fidelity and concrete protected case publication proposal",
+      "utc": "2026-10-15T16:35:19.381Z",
+      "outcome": "T02/T03/T07/T22 scopednativeproof; fullbuildincomplete,009/011localonly",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/query-request-native-qualification.json"
+    },
+    {
+      "utc": "2026-10-15T17:16:36.711Z",
+      "name": "Supplied source-state native qualification and baseline restoration",
+      "outcome": "T16 synthetic source states and T18 explicit boundaries pass; T13 retrieval/T17 currencydedup components pass, broader acceptance open",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/supplied-native-source-qualification.json"
+    },
+    {
+      "utc": "2026-10-15T17:26:47.852Z",
+      "name": "Native Tool authoring boundary inspected and actual-source field gap isolated",
+      "outcome": "Native headers/body controls established and unsaved rows discarded; runtime wrappers/serialization remain unqualified; actual metric fields unavailable under literal optional-field restriction",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/case-tool-native-authoring-inspection.json",
+        "docs/builds/xdx-purchase-order-app-20261014/actual-source-field-readiness.json"
+      ]
+    },
+    {
+      "utc": "2026-10-15T17:33:49.344Z",
+      "name": "26C quantity semantics reviewed and suppliedT15 source defect isolated",
+      "outcome": "Verified cancellation/closure/UOM/service distinctions; normalized REST outstanding formula still unproved. StaticT15 review identified receipt/unknownaggregate/documentnull gaps; F067 repair pending",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/actual-quantity-semantics-research.md",
+        "docs/builds/xdx-purchase-order-app-20261014/t15-source-review.json",
+        "docs/lessons/objects/oracle-fusion-procurement-purchase-orders-lines-schedules-list.md"
+      ]
+    },
+    {
+      "utc": "2026-10-15T18:07:09.875Z",
+      "name": "Supplied T15 missing-evidence qualification and baseline restoration",
+      "outcome": "Native Query/PDF/five-slide PPT/unsent supplier text/exception navigation preserve limits; original source restored and native T01 passes. Full build incomplete.",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/t15-native-qualification.json"
+    },
+    {
+      "utc": "2026-10-15T18:19:18.527Z",
+      "name": "Retained GET-to-POST preparation reconciled",
+      "outcome": "22 existing structures linked to retained path/provenance;11 original sample hashes unchanged; unsupported configuration create identified. No executable payload or new operation enabled.",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/post-retained-preparation-verification.json"
+    },
+    {
+      "utc": "2026-10-15T20:24:28.601Z",
+      "name": "Approved protected DEMO case API published; Studio connection discrepancy isolated",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/case-api-approved-publication.json",
+      "outcome": "009/011pass; current Studio health IP denial despite user unrestricted network mode; original workflow restored exactly"
+    },
+    {
+      "utc": "2026-10-16T04:03:26.7485853Z",
+      "name": "Native T08 rejection and next buyer decision",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/t08-native-guidance-qualification.json",
+      "outcome": "PASS in draft88055744; effective PO unchanged, no actual approver or business execution claim"
+    },
+    {
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/t19-action-integrated-preservation.json",
+      "name": "Action-outcome document local integration",
+      "outcome": "Reviewed pure projection, supplier/internal separation and response preservation integrated locally; exact three-node and helper preservation PASS. Remote save/native qualification pending.",
+      "utc": "2026-10-16T04:32:50.9330627Z"
+    }
+  ],
+  "taskId": "xdx-purchase-order-app-20261014",
+  "primaryTiming": [
+    {
+      "endUtc": "2026-10-14T22:27:15.3512616Z",
+      "startUtc": "2026-10-14T22:25:58.7012848Z",
+      "category": "active-execution"
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T01:04:25.415Z",
+      "endUtc": "2026-10-15T01:11:23.923Z",
+      "limitation": "Current observed turn only; no inter-turn effort inferred"
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T01:12:49.8272224Z",
+      "endUtc": "2026-10-15T01:21:42.741Z",
+      "limitation": "Observed turn window includes ordinary tool and approval-review latency; unavailable category transitions are not assigned to user wait"
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T01:40:34.0267537Z",
+      "endUtc": "2026-10-15T01:43:15.275Z",
+      "limitation": "Observed resumed turn; inter-turn gap excluded, tool execution included; missing category transitions remain unallocated"
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T02:30:26.098Z",
+      "endUtc": "2026-10-15T02:53:20.567Z",
+      "limitation": "Current resumed turn only; earlier review and inter-turn gaps unallocated"
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T03:01:43.932Z",
+      "endUtc": "2026-10-15T03:10:25.007Z",
+      "limitation": "ORDS connection current turn; preceding read-only discovery unallocated"
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T03:18:08.45Z",
+      "endUtc": "2026-10-15T03:35:17Z",
+      "limitation": "Retrospective cutoff at last successful native SQL observation; tail and prolonged browser wait excluded from active time"
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T10:35:05.467Z",
+      "endUtc": "2026-10-15T10:41:07.14Z",
+      "limitation": "Observed post-timeout recovery only. Gap from03:35:17 to this timestamp unallocated; CUA reported25083.4424s wall time but precise boundaries unavailable."
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T10:43:43.624Z",
+      "endUtc": "2026-10-15T10:54:11.972Z",
+      "limitation": "Transactional package implementation turn; gap since prior checkpoint excluded."
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T10:57:20.059Z",
+      "endUtc": "2026-10-15T11:40:42Z",
+      "limitation": "Action state-machine implementation; preceding design/read interval unallocated. End cut conservatively at last pre-download evidence timestamp; subsequent long browser wait unallocated."
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T12:37:42Z",
+      "endUtc": "2026-10-15T12:41:35.465Z",
+      "limitation": "Observed timeout recovery/checkpoint only; no long browser delay assigned to active work."
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T12:45:23Z",
+      "endUtc": "2026-10-15T13:42:38.857Z",
+      "limitation": "Observed document/T05/T23 implementation interval; ordinary native/CLI tool latency included. Earlier extreme download wait remains excluded. Parallel elapsed time not summed."
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T13:44:05.793Z",
+      "endUtc": "2026-10-15T14:15:35.519Z",
+      "limitation": "Retrospective command-bounded continuation window; ordinary tool latency included; category transitions unmetered; parallel elapsed not summed"
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T14:19:16.755Z",
+      "endUtc": "2026-10-15T15:24:49.104Z",
+      "limitation": "Command-bounded continuation and exportQA/checkpoint; ordinary latency included, manual-save assistance nonblocking. Earlier reads/gaps and response tail excluded; parallel elapsed not summed"
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T15:29:56.341Z",
+      "endUtc": "2026-10-15T15:49:32.605Z",
+      "limitation": "Observed firstauthoringcommand throughcurrentcheckpoint; prerequisite reads beforefirstcommand andinterturngap unallocated. Ordinarytool executionincluded; persona questionpendingwhileindependentworkcontinued, no userwait. Parallelagenttimesnotsummed."
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T15:53:20.452Z",
+      "endUtc": "2026-10-15T16:10:29.164Z",
+      "limitation": "Command-bounded source discovery and UOM repair/native verification interval; earlier reads and inter-turn gaps excluded; ordinary tool latency included, parallel times not summed. Pending persona question did not block independent work."
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T16:11:37.957Z",
+      "endUtc": "2026-10-15T16:38:11.482Z",
+      "limitation": "Observed command-bounded native request repair/reauthentication/APIproposal interval; prerequisite reads and interturngap excluded. Ordinarytool latency included, parallel elapsednot summed. Publicationquestionpending whileindependentworkcontinued; no userwait attributed."
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T16:39:29.79Z",
+      "endUtc": "2026-10-15T17:02:12.055Z",
+      "limitation": "Prior command-bounded suppliedinput/presentationrepair interval; native/tool time included, subagent times not summed; finalresponse/interturn tail excluded"
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T17:05:43.789Z",
+      "endUtc": "2026-10-15T17:16:36.711Z",
+      "limitation": "Current command-bounded save/nativequalification/checkpoint interval; initialreads/interturngap unallocated. Pending publicationapproval did not block independentwork."
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T17:19:53.875Z",
+      "endUtc": "2026-10-15T17:26:47.852Z",
+      "limitation": "Command-bounded native editor/retained-source inspection interval; ordinarytool time included, independentagent times not summed. Required clarification and publication decision pending while independentwork continued; no userwait attributed. Prereads/commit tail excluded."
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T17:27:59.257Z",
+      "endUtc": "2026-10-15T17:33:49.344Z",
+      "limitation": "Command-bounded primary-doc research/source review; ordinary tool latency included, parallelagent time not summed; prerequisite/commit tail excluded. Pending decisions did not block independentwork."
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T17:58:24.211Z",
+      "endUtc": "2026-10-15T18:08:49.338Z",
+      "limitation": "Command-bounded restoration, baseline verification and checkpoint interval only. Earlier native rendering/review and interruption gaps retained as diagnostic evidence but not invented primary timing."
+    },
+    {
+      "category": "active-execution",
+      "startUtc": "2026-10-15T18:14:34.405Z",
+      "endUtc": "2026-10-15T18:19:18.527Z",
+      "limitation": "Observed local reconciliation interval; parallel review is included, not added. Earlier discovery and later commit tail unallocated. No blocking user wait assigned."
+    }
+  ],
+  "capturedElapsedSeconds": 68870.643,
+  "measuredBoundary": "Recorded start to latest checkpoint; includes unallocated scheduling/tool interruption gaps, not active effort",
+  "acceptedPlan": "docs/builds/xdx-purchase-order-app-20261014/build-plan.md",
+  "unallocatedIntervals": [
+    {
+      "startUtc": "2026-10-15T11:40:42Z",
+      "endUtc": "2026-10-15T12:37:42Z",
+      "reason": "Browser download observer reported3369.4865s despite30000ms timeout; boundary conservative, not active work or user wait"
+    }
+  ],
+  "latestCheckpointUtc": "2026-10-16T03:25:12.5858067Z",
+  "usageCounterObservations": [
+    {
+      "source": "get_goal",
+      "observedUtc": "2026-10-15T13:42:38.857Z",
+      "tokensUsed": 2449076,
+      "timeUsedSeconds": 38916,
+      "boundary": "Cumulative goal counter, not attributable build-phase/model usage or cost; no subtraction from unavailable counters."
+    },
+    {
+      "source": "get_goal",
+      "observedUtc": "2026-10-15T15:12:37Z",
+      "tokensUsed": 3360610,
+      "timeUsedSeconds": 44558,
+      "boundary": "Historical cumulative goal/thread observation; not phase cost or isolated model usage"
+    },
+    {
+      "source": "get_goal",
+      "counterUpdatedUtc": "2026-10-15T15:47:40Z",
+      "tokensUsed": 4013414,
+      "timeUsedSeconds": 46661,
+      "boundary": "Cumulativegoal/threadcounter; notphasecost orisolatedmodelusage"
+    },
+    {
+      "source": "get_goal",
+      "counterUpdatedUtc": "2026-10-15T16:07:54Z",
+      "tokensUsed": 4196831,
+      "timeUsedSeconds": 47875,
+      "boundary": "Cumulative goal/thread observation; not phase cost or isolated model usage"
+    },
+    {
+      "source": "get_goal",
+      "counterUpdatedUtc": "2026-10-15T16:33:40Z",
+      "tokensUsed": 4571474,
+      "timeUsedSeconds": 49421,
+      "boundary": "Cumulative goal/thread counter; not phase cost or isolated model usage"
+    },
+    {
+      "source": "get_goal",
+      "counterUpdatedUtc": "2026-10-15T17:09:55Z",
+      "tokensUsed": 4901909,
+      "timeUsedSeconds": 51596,
+      "boundary": "Cumulativegoal/threadcounter, not isolated phase/model usage or billing cost"
+    }
+  ],
+  "agentAssignments": [
+    {
+      "agentId": "/root/acceptance_gap_review",
+      "parentAgentId": "/root",
+      "assignmentId": "response-native-acceptance-reconcile",
+      "phase": "native-document-qualification",
+      "scope": "Read-only supplied T01-T23 acceptance evidence comparison",
+      "ownership": "No mutations; root owns browser and ledgers",
+      "recordedUtc": "2026-10-15T21:28:52.546Z",
+      "limitation": "Recorded after dispatch; exact dispatch timestamp unavailable"
+    },
+    {
+      "agentId": "/root/document_generation_diagnosis",
+      "parentAgentId": "/root",
+      "assignmentId": "f081-controlled-text-helper",
+      "phase": "repair",
+      "scope": "Own only src/data/xdx_po_recovery_text_documents.js; root owns workflow, integration and native verification",
+      "recordedUtc": "2026-10-15T21:43:25.59Z",
+      "limitation": "Dispatch precedes recorded ownership timestamp; no inferred labor interval"
+    },
+    {
+      "agentId": "/root/action_review",
+      "assignmentId": "actual-read-adapter",
+      "ownership": "src/data/xdx_po_recovery_actual.js only; coordinated ledger repair ownership",
+      "parentAgentId": "/root",
+      "phase": "actual-read-integration",
+      "recordedUtc": "2026-10-16T02:00:58.802Z",
+      "limitation": "Recorded after dispatch; no inferred active labor interval."
+    },
+    {
+      "agentId": "/root/action_view",
+      "assignmentId": "actual-read-graph",
+      "ownership": "authoring/xdx_actual_read_integration.wf only; no server save",
+      "parentAgentId": "/root",
+      "phase": "actual-read-integration",
+      "recordedUtc": "2026-10-16T02:00:58.802Z",
+      "limitation": "Recorded after dispatch; no inferred active labor interval."
+    }
+  ],
+  "currentContinuation": {
+    "observedUtc": "2026-10-16T03:47:54.0380512Z",
+    "previousTurn": "progress: local repair and independent review",
+    "result": "Saved88054974/ETag59. Full amended native T04 preview/approval/execution passed; F090/F091/F094 closed; scoped native-selection PhaseExitPASS.",
+    "verification": "docs/builds/xdx-purchase-order-app-20261014/action-t04-direct-native-qualification.json",
+    "remaining": "T08–T12 native scenarios, action-state documents, actual coverage and authority, stale/unavailable, cleanup/Closeout",
+    "limitations": "Simulation only, no actual sends/writes; no new tests. Other source-hash drift outside current scope still requires final reconciliation."
+  },
+  "usageObservations": [
+    {
+      "source": "get_goal",
+      "observedUtc": "2026-10-16T02:00:58.802Z",
+      "tokensUsed": 9337742,
+      "timeUsedSeconds": 68411,
+      "boundary": "Cumulative entire goal/thread; not this phase, isolated model usage or billing cost."
+    }
+  ]
+}

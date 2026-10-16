@@ -1,0 +1,24 @@
+{
+  "taskId": "xdx-po-retro-governance-20261016",
+  "startedUtc": "2026-10-16T16:11:21.020Z",
+  "scope": "Base governance documentation only",
+  "branch": "TestingWFBuildTools",
+  "primaryTiming": [
+    {
+      "startUtc": "2026-10-16T16:11:21.020Z",
+      "endUtc": "2026-10-16T16:15:42.627Z",
+      "category": "active-execution",
+      "agentId": "/root",
+      "parentAgentId": null,
+      "assignmentId": "governance",
+      "activityId": "policy-refinement",
+      "phase": "governance",
+      "task": "xdx-po-retro-governance-20261016",
+      "outcome": "Documents refined and independently reviewed",
+      "evidence": "docs/builds/xdx-po-retro-governance-20261016/verification.json"
+    }
+  ],
+  "limitations": "Observed root interval includes ordinary tool latency; initial discovery and delivery tail unallocated. Worker effort not separately measured and not added. No reliable tokens.",
+  "checkpointUtc": "2026-10-16T16:15:42.627Z",
+  "elapsedSeconds": 261.607
+}

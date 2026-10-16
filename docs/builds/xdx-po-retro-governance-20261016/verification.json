@@ -1,0 +1,20 @@
+{
+  "result": "pass",
+  "checks": [
+    "Scoped git diff --check with cr-at-eol matching existing repository CRLF",
+    "Changed policy Markdown fences and whitespace",
+    "New change-log link resolves",
+    "Independent policy review PASS"
+  ],
+  "sources": [
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "a36678328c2863d451431292f536b2da09e9e1b9ecfafcbbb95805ccdafec8da"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "fdfc644d32adde451a6b630a8586c5c2a156688f4f20b0b4556ceab445e48ece"
+    }
+  ],
+  "limitations": "Existing pre-edit links and unrelated files unchanged; no runtime/test execution; procedural controls not automatically enforced"
+}

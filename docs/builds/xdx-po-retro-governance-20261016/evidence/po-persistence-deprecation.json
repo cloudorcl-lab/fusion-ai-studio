@@ -1,0 +1,78 @@
+{
+  "recordedUtc": "2026-10-15T20:37:30.512Z",
+  "source": "Direct user message after requirement explanation",
+  "exactWording": "flag that deprecated and move on",
+  "status": "deprecated-by-user",
+  "scope": "ORDS-backed persistent recovery-case integration",
+  "excludedRequirements": [
+    "Saved recovery cases and reopening across sessions",
+    "Durable case/action/supplier-response history via ORDS",
+    "PDF/PPT consistency against persisted case versions"
+  ],
+  "retainedRequirements": [
+    "Fusion PO review and deterministic evidence analysis",
+    "Transient reviewed snapshot and unsent drafts",
+    "Native PDF and exactly five-slide PPT from reviewed snapshot",
+    "Other supplied T01-T23 obligations except their durable-storage portions"
+  ],
+  "effect": "Not a passing persistence implementation. Remove ORDS connectivity from active first-slice/completion dependencies. Do not replace durable guarantees with unsupported session-memory guarantees.",
+  "existingInfrastructure": "Preserved, already published and protected. No deletion/unpublication/data removal or credential change authorized by this scope flag.",
+  "runtimeProof": {
+    "workflowVersion": 88028488,
+    "workflowHash": "3a934903f926fe0923799f84c336540130b8c07fb07c35ad21980d9127e5ce6c",
+    "nodeCount": 18,
+    "externalRestNodes": 0
+  },
+  "historicalF033": {
+    "id": "F033",
+    "scope": "ords-connection",
+    "blocks": [
+      "ords-connection"
+    ],
+    "observedUtc": "2026-10-15T11:26:44.108Z",
+    "status": "open",
+    "symptom": "Native External REST health call rejected by Autonomous Database network ACL",
+    "cause": "Unresolved Studio-specific IP rejection; user reports unrestricted Secure access from everywhere, local curl and SQLcl success. Exact enforcing layer/routing unknown.",
+    "correction": "Preserve fresh request ID/trace; reconcile actual OCI endpoint and network mode, then use supported platform/network diagnostics. Do not weaken ACL or change working credentials based on message alone.",
+    "commandRunIds": [
+      "e724cfbb-3e89-4b3a-93ef-124eb8be59fb",
+      "829cde78-46bd-43a7-acca-d7a22c4b8e48"
+    ],
+    "occurrenceEvidence": [
+      {
+        "path": "docs/builds/xdx-purchase-order-app-20261014/health-native-execution.json",
+        "sha256": "29a88dc706d99d36ba7488f74d9c03ac25f0ce45acc4353bcd2371066675917a"
+      },
+      {
+        "path": "docs/builds/xdx-purchase-order-app-20261014/evidence/ords-native-health-runtime.stdout.txt",
+        "sha256": "3f694bee436e45e587afdafe0115ab8915b372553f915a50958704dea0ab24ee"
+      },
+      {
+        "path": "docs/builds/xdx-purchase-order-app-20261014/health-resume-runtime-result.json",
+        "sha256": "3e5f7f0267b14e787ee4e10e9a53aee267861152298e2a1b2de50e81d10ed3d1"
+      },
+      {
+        "path": "docs/builds/xdx-purchase-order-app-20261014/evidence/health-resume-runtime.stdout.txt",
+        "sha256": "09cc6004161aef36fc6c8adbc05eb66e9795c621f63d618b2f5acbe9a211d212"
+      },
+      {
+        "path": "docs/builds/xdx-purchase-order-app-20261014/studio-network-discrepancy.json",
+        "sha256": "f5b1620e08d70dbb78ef976a3a0ff75cba93250ba71826b4f50bf59c3d0ed703"
+      }
+    ],
+    "evidenceGap": "Approved Studio egress route unavailable; transport HTTP200 carried finishReason error. Initial evidence JSON parse failed on recognized auth diagnostic prefix; canonical parser recovered without runtime replay.",
+    "prevention": {
+      "kind": "procedure",
+      "owner": ".agents/skills/aistudio/SKILL.md",
+      "rule": "Use canonical CLI JSON parser and inspect semantic outcomes before claiming supported runtime success",
+      "reason": "Raw evidence retained; derived summary uses canonical diagnostic-aware parser. No case API exposed."
+    },
+    "recheck": {
+      "recordedUtc": "2026-10-15T20:21:23.459Z",
+      "reason": "User requested Studio verification after successful local curl/SQLcl",
+      "outcome": "same-ip-denial",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/health-resume-runtime-result.json"
+    }
+  },
+  "discoveryCorrection": "Attempted nonexistent requirement-slice-register.json; rg --files found authoritative requirement-slice-register.md before any edit."
+}

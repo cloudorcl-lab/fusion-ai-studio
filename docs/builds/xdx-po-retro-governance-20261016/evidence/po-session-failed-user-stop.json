@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-16T15:49:04.324Z",
+  "status": "FAILED_SESSION_USER_STOP",
+  "userInstruction": "end this session as a failure and report back to openai",
+  "latestNativeFailure": {
+    "workflowVersion": 88097947,
+    "tab": "676658291",
+    "operation": "Document-only navigation from existing T04/T19 confirmation preview",
+    "message": "Request stopped: INVALID_PREVIEW_ACTION",
+    "result": "Action documents unavailable; current evidence and full simulated history could not be revalidated."
+  },
+  "buildComplete": false,
+  "goalStatus": "paused",
+  "furtherExecution": "Stopped at user request",
+  "openaiReport": "No available OpenAI support/reporting tool identified; no report submitted."
+}

@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-po-retro-governance-20261016",
+  "scopes": [
+    "governance"
+  ],
+  "commandReceipts": [
+    "docs/builds/xdx-po-retro-governance-20261016/commands.jsonl"
+  ],
+  "failures": [
+    {
+      "id": "G01",
+      "observedUtc": "2026-10-16T16:11:52.852Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Startup receipt omitted literal task identity in tracker/register and empty-ledger reason; restricted Git branch probe also rejected identity.",
+      "cause": "Incomplete receipt initialization plus restricted Git context; host branch verified TestingWFBuildTools.",
+      "correction": "Added exact task IDs and recorded failure; use host Git context for session gate.",
+      "evidenceGap": "Original Startup output retained in conversation before measured execution.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Validate exact serialized receipt and use verified host Git context",
+        "reason": "Receipt preparation correction, no product behavior"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "Host session Startup verifier",
+        "reviewer": "/root",
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-po-retro-governance-20261016/startup-recovery.json",
+            "sha256": "3a911238e7edcf1c87346ee6f5bbdb74dc5954de504da839e8e6141d960eb740"
+          }
+        ],
+        "sources": [
+          {
+            "path": "docs/builds/xdx-po-retro-governance-20261016/startup-recovery.json",
+            "sha256": "3a911238e7edcf1c87346ee6f5bbdb74dc5954de504da839e8e6141d960eb740"
+          }
+        ]
+      }
+    },
+    {
+      "id": "G02",
+      "observedUtc": "2026-10-16T16:14:56.109Z",
+      "scope": "governance",
+      "blocks": [
+        "governance"
+      ],
+      "status": "closed",
+      "symptom": "Scoped git diff --check rejected CRLF added policy lines as trailing whitespace.",
+      "cause": "Working-tree CRLF serialization; scoped policy text is otherwise unchanged.",
+      "correction": "Preserved original CRLF to avoid whole-file churn; use explicit cr-at-eol whitespace setting for scoped check.",
+      "commandRunIds": [
+        "50ec49c9-0a27-450d-a111-a65b8e1f9ab9"
+      ],
+      "evidenceGap": "Git diagnostic retained in tool output; measured exit retained.",
+      "prevention": {
+        "kind": "procedure",
+        "owner": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+        "rule": "Verify edited file serialization and scoped diff before delivery",
+        "reason": "Documentation newline normalization only"
+      },
+      "verification": {
+        "result": "pass",
+        "command": "git -c core.whitespace=cr-at-eol diff --check for reviewed policy files",
+        "reviewer": "/root",
+        "evidence": [
+          {
+            "path": "docs/builds/xdx-po-retro-governance-20261016/verification.json",
+            "sha256": "4f68beb1582d6e0a605ca6e92c4c4efc11de2ecc48b99995f255594cd65fb3d3"
+          }
+        ],
+        "sources": [
+          {
+            "path": "BUILD_STANDARD.md",
+            "sha256": "a36678328c2863d451431292f536b2da09e9e1b9ecfafcbbb95805ccdafec8da"
+          },
+          {
+            "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+            "sha256": "fdfc644d32adde451a6b630a8586c5c2a156688f4f20b0b4556ceab445e48ece"
+          }
+        ]
+      }
+    }
+  ]
+}

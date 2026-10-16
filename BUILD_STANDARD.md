@@ -16,11 +16,24 @@ State observable success criteria and unresolved assumptions before dependent wo
 ## Execution
 
 Check prerequisites early: tool availability, supported execution mode, authentication, permissions, environment access and required inputs.
+Inventory installed, supported CLIs and saved connection mechanisms before choosing browser administration. Prefer the direct supported tool for repeatable operations (for example SQLcl for database scripts); record a concrete reason when the browser is required. Local access proves only that execution channel, not access from the application's consuming runtime.
 Prove one representative example end to end before scaling.
 Reuse existing sources, scripts, tests and verified artifacts where applicable.
 Continue through routine reversible work and retain authorization within scope.
 Ask only when missing information or a required approval blocks progress.
 Run checks appropriate to the change. Repeat broader checks when new changes, failures or unresolved concerns justify them.
+
+Before expanding a build, the coordinator must link the current representative-journey acceptance receipt from the existing requirement/evidence record. Feature, output-format and infrastructure expansion count even when they use the same resource. For AI Studio, the playbook's Mandatory first-slice fast-fail gate defines the required proof and permitted discovery/repair while blocked. Component counts, artifact saves and completed reviews are not substitutes for a usable journey.
+
+### Bounded execution and repair decisions
+
+Before a potentially long operation, record its total deadline, progress signal, retained process/session handle when available, and supported cancellation/recovery route in the existing command or activity record. A polling/yield interval is not a total timeout. Default metadata, administrative and download operations to a five-minute total deadline unless documented behavior justifies a different bound before dispatch; do not impose this default on an already budgeted business operation. Use bounded waits and retain the original handle. At the deadline, stop dependent dispatch, inspect completion/side effects and cancel only through supported controls when safe. If the tool cannot yield or honor its deadline, record that limitation before dispatch; use an available supported bounded alternative. After an observed timeout overrun, do not repeat that mechanism until the execution boundary is corrected or a supported alternative is justified. Never infer cancellation or replay an uncertain write.
+
+For each failing contract boundary, record a repair budget before the next attempt: by default, two materially different repair candidates or 30 minutes of observed active repair, whichever occurs first. These are architecture-review triggers, not permission to weaken acceptance or stop all independent work. Preserve the boundary identity and cumulative attempts across renamed failures, agents and turns. At exhaustion, freeze dependent expansion and record the evidence, remaining hypothesis, smallest supported design, and reviewer decision in the existing learning register. Resume only with a reviewed bounded plan; a scope reduction needs user approval unless already authorized. A new patch or a local PASS alone does not reset the budget. Missing elapsed telemetry does not disable the attempt limit.
+
+### Enforcement boundary
+
+Use the existing requirement/evidence manifest, failure ledger and gated command runner; do not add a parallel progress ledger. Before expansion or delivery, the coordinator and reviewer must check the required receipts and explicitly withhold clearance when proof is missing. Existing validators check their declared structural/hash contracts, not whether a buyer completed an unobserved journey. Record manual/native evidence and enforcement limitations honestly. These requirements do not authorize new tests, business writes, or extra approval requests for already authorized work.
 
 For delegated work, supply verified literal input/evidence paths, the exact executable and registered command-receipt path, the required host execution context, and each command’s JSON or TEXT output contract. Register scoped task identities in the shared intake and tracker before dispatch. Use the supported follow-up operation to activate a completed worker; an unacknowledged message is not active execution.
 

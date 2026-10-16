@@ -1,0 +1,433 @@
+{
+  "updatedUtc": "2026-10-16T15:46:44.017Z",
+  "scenarios": [
+    {
+      "id": "T01",
+      "milestone": 5,
+      "status": "native-synthetic-baseline-pass-manual-review",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/evidence/run-supplied-t01-baseline.stdout.txt",
+        "docs/builds/xdx-purchase-order-app-20261014/native-t01-first-observation.md",
+        "docs/builds/xdx-purchase-order-app-20261014/native-t01-repair-observation.md",
+        "docs/builds/xdx-purchase-order-app-20261014/native-runtime-checkpoint.md",
+        "docs/builds/xdx-purchase-order-app-20261014/native-t01-readable-review.json"
+      ],
+      "reason": "Latestnative5rows exactbaselinecounts/values andsupplier/date/provenanceboundaries; F013presentationcorrected/readablereasons. Manualnativeevidencereview; configuredconversationjudgecoverage notcreatedunderusernonewtestsconstraint.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/uom-native-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/supplied-native-source-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/t15-native-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/actual-adapter-t01-t15-component.json"
+      ],
+      "actualDataPhase": {
+        "status": "native-selected-po-read-pass-scope-limited",
+        "selectedPo": "US165029",
+        "supplier": "Lee Supplies",
+        "evidence": [
+          "docs/builds/xdx-purchase-order-app-20261014/actual-native-selected-po-result.json",
+          "docs/builds/xdx-purchase-order-app-20261014/actual-clock-runtime-proof.json"
+        ],
+        "limits": "Only actual selected-PO read and unknown measurement behavior qualified; does not complete full scenario or actual actions/documents."
+      }
+    },
+    {
+      "id": "T02",
+      "milestone": 5,
+      "status": "native-synthetic-disambiguation-pass",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/query-request-native-qualification.json"
+      ],
+      "reason": "Current saveddraftnative ambiguity resolved only by buyer choice; no records combined or silent supplier choice.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/query-request-native-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/supplied-native-source-qualification.json"
+      ]
+    },
+    {
+      "id": "T03",
+      "milestone": 7,
+      "status": "native-synthetic-ranking-pass",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/query-request-native-qualification.json"
+      ],
+      "reason": "Retained native four-row ranking PO1001/1004/1003/1002 preserves age/value/approval/date columns and unique schedule counts. Current additive request-helper integration preserves original ranking path exactly. Durable-case terminology excluded; actual data remains separate.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/query-request-native-qualification.json"
+      ],
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements."
+    },
+    {
+      "id": "T04",
+      "milestone": 8,
+      "status": "native-simulated-grouped-confirmation-pass",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/action-encoded-native-roundtrip.json",
+        "docs/builds/xdx-purchase-order-app-20261014/action-t04-session-form-component.json",
+        "docs/builds/xdx-purchase-order-app-20261014/action-session-independent-review.json",
+        "docs/builds/xdx-purchase-order-app-20261014/action-source-preservation-session-state-saved.json",
+        "docs/builds/xdx-purchase-order-app-20261014/action-t04-direct-native-qualification.json"
+      ],
+      "reason": "One grouped two-schedule preview, explicit approval then one simulated accepted execution; one result/attempt, both responses awaiting, completed controls absent. Successful real email excluded by user; no real send.",
+      "emailAmendment": "No required successful delivery or inbox ingestion under user amendment",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/native-text-drafts-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/uom-native-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/t15-native-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/action-t04-grouping-finding.json",
+        "docs/builds/xdx-purchase-order-app-20261014/action-t04-grouped-form-component.json",
+        "docs/builds/xdx-purchase-order-app-20261014/action-grouped-independent-review.json"
+      ],
+      "localActionComponent": {
+        "result": "PASS",
+        "evidence": "docs/builds/xdx-purchase-order-app-20261014/simulated-actions-supplied-components-corrected.json",
+        "scope": "Historical per-schedule helper component only; does not establish original T04 grouped-message requirement. Current grouped repair and native acceptance pending.",
+        "commit": "f675de0"
+      }
+    },
+    {
+      "id": "T05",
+      "milestone": 7,
+      "status": "native-synthetic-transient-review-pass",
+      "evidence": [],
+      "reason": "Native matched supplier response preserves original promise2026-10-09, records separate stated2026-10-20/rejected expedite with buyer provenance, recommends unsent escalation and leaves recoveryNOT_ESTABLISHED. Response-aware PDF/PPT previews pass; both controlled text previews verified. Persistence excluded.",
+      "emailAmendment": "No required successful delivery or inbox ingestion under user amendment",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/supplied-t05-storage-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/evidence/supplied-t05-new-session-read.stdout.txt",
+        "docs/builds/xdx-purchase-order-app-20261014/transient-response-t05-component.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t05-native-review.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t05-native-pdf-preview.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t05-native-presentation-preview.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t05-native-text-review.json",
+        "docs/builds/xdx-purchase-order-app-20261014/controlled-text-native-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/actual-response-t19-native-formats.json"
+      ],
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements.",
+      "transientReviewStatus": "Native transient response plus response-aware PDF/PPT/text previews pass. Revised export not downloaded; actual-data scope remains.",
+      "actualResponseStatus": "Native actual US165029 L1/S1 qualification-only response preserves effective promise/revision0/unknown facts and unverified provenance; response-aware PDF1page/PPT5slides/both unsent draft wording verified on88063602. No downloaded response exports; no actual supplier message or business write."
+    },
+    {
+      "id": "T06",
+      "milestone": 7,
+      "status": "native-unmatched-and-local-conflict-components-pass",
+      "evidence": [],
+      "reason": "Native unmatched clarification observed; local unmatched/conflicting review and invalid-response empty document bodies verified. Parser excludes raw form from natural-language intent; returned fixed clarification has no action command.",
+      "emailAmendment": "No required successful delivery or inbox ingestion under user amendment",
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/transient-response-t06-component.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t06-retained-native-observation.json",
+        "docs/builds/xdx-purchase-order-app-20261014/controlled-text-supplied-components.json"
+      ],
+      "transientReviewStatus": "Native unmatched observation retained; explicit limitations documented. Controlled text empty on invalid response; no unrelated association."
+    },
+    {
+      "id": "T07",
+      "milestone": 7,
+      "status": "native-synthetic-pending-approval-handoff-pass",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/query-request-native-qualification.json"
+      ],
+      "reason": "Retained native effective10-13 versus proposed10-23,80EA/USD8000,unknownowner/deadline and concrete unsent approver handoff verified; no approval bypass or applied-change claim. Actual submission unavailable/unqualified.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/query-request-native-qualification.json"
+      ]
+    },
+    {
+      "id": "T08",
+      "milestone": 7,
+      "status": "native-simulated-rejection-and-next-decision-pass-actual-open",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/t08-native-rejection-component.json",
+        "docs/builds/xdx-purchase-order-app-20261014/t08-native-guidance-qualification.json"
+      ],
+      "reason": "Current draft88055744 native rejection preserves effective date2026-10-13, proposed2026-10-23 and CO1004; rejected1/failed0, no attempt, next buyer decision explicitly shown. Actual approver outcome and action-state documents remain unqualified.",
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements.",
+      "localActionComponent": {
+        "result": "PASS",
+        "evidence": "docs/builds/xdx-purchase-order-app-20261014/simulated-actions-supplied-components-corrected.json",
+        "scope": "Pure helper only; 18 total checks across supplied T04/T08-T12. Native integration and complete scenario acceptance pending.",
+        "commit": "f675de0"
+      }
+    },
+    {
+      "id": "T09",
+      "milestone": 7,
+      "status": "native-simulated-retry-pass-actual-service-open",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/t09-native-retry-qualification.json"
+      ],
+      "reason": "Native preview/approve/failed execute/explicit retry PASS on88056367. Same action identity, first failed attempt retained, one accepted result on second attempt, no completed controls. Actual service behavior not established; email delivery excluded.",
+      "emailAmendment": "No required successful delivery or inbox ingestion under user amendment",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/action-state-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/evidence/supplied-t09-storage-execution.stdout.txt"
+      ],
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements.",
+      "localActionComponent": {
+        "result": "PASS",
+        "evidence": "docs/builds/xdx-purchase-order-app-20261014/simulated-actions-supplied-components-corrected.json",
+        "scope": "Pure helper only; 18 total checks across supplied T04/T08-T12. Native integration and complete scenario acceptance pending.",
+        "commit": "f675de0"
+      }
+    },
+    {
+      "id": "T10",
+      "milestone": 7,
+      "status": "native-simulated-unknown-reconciliation-pass",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/t10-native-unknown-observation.json",
+        "docs/builds/xdx-purchase-order-app-20261014/t10-native-reconciled-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/t10-normal-policy-restored-saved-parity.json",
+        "docs/builds/xdx-purchase-order-app-20261014/evidence/t10-restored-phase-exit.stdout.txt"
+      ],
+      "reason": "Native UNKNOWN blocked blind retry; reconciliation preserved the original attempt and initial UNKNOWN, then displayed ACCEPTED/COMPLETED with one result. Exact normal policy restored and saved88061194. Synthetic-only evidence; no real service execution or durability claim. F117 UNKNOWN-state document-card omission remains separately open.",
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements.",
+      "localActionComponent": {
+        "result": "PASS",
+        "evidence": "docs/builds/xdx-purchase-order-app-20261014/simulated-actions-supplied-components-corrected.json",
+        "scope": "Pure helper only; 18 total checks across supplied T04/T08-T12. Native integration and complete scenario acceptance pending.",
+        "commit": "f675de0"
+      }
+    },
+    {
+      "id": "T11",
+      "milestone": 7,
+      "status": "pass-native-synthetic-partial-batch-selective-retry",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/simulated-actions-supplied-components-grouped.json",
+        "docs/builds/xdx-purchase-order-app-20261014/t11-native-approval-continuation-failure.json",
+        "docs/builds/xdx-purchase-order-app-20261014/f122-native-malformed-context.json",
+        "docs/builds/xdx-purchase-order-app-20261014/f122-installed-independent-review-corrected.json",
+        "docs/builds/xdx-purchase-order-app-20261014/f122-saved-parity.json",
+        "docs/builds/xdx-purchase-order-app-20261014/t11-condition-native-partial-retry.json",
+        "docs/builds/xdx-purchase-order-app-20261014/f122-condition-native-approval-continuation.json",
+        "docs/builds/xdx-purchase-order-app-20261014/f125-condition-native-routing.json"
+      ],
+      "reason": "Saved88096100 native run:3explicit approvals,2successful first attempts,PO1002 failed NOT_ACCEPTED; only failed action retry offered; retry completed at attempt2 while successful IDs/attempt1 preserved. No execution/retry choices remain. Normal policy restored and saved88097947/81 with exact reviewed combined preservation.",
+      "emailAmendment": "No required successful delivery or inbox ingestion under user amendment",
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements.",
+      "localActionComponent": {
+        "result": "PASS",
+        "evidence": "docs/builds/xdx-purchase-order-app-20261014/simulated-actions-supplied-components-corrected.json",
+        "scope": "Pure helper only; 18 total checks across supplied T04/T08-T12. Native integration and complete scenario acceptance pending.",
+        "commit": "f675de0"
+      }
+    },
+    {
+      "id": "T12",
+      "milestone": 7,
+      "status": "local-changed-source-checks-pass-native-pending",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/simulated-actions-supplied-components-grouped.json"
+      ],
+      "reason": "Retained component checks cover changed canonical payload, stale-approval rejection, completed-result preservation and withheld unsafe context. Native changed-source and replacement-approval lifecycle remains unqualified.",
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements.",
+      "localActionComponent": {
+        "result": "PASS",
+        "evidence": "docs/builds/xdx-purchase-order-app-20261014/simulated-actions-supplied-components-corrected.json",
+        "scope": "Pure helper only; 18 total checks across supplied T04/T08-T12. Native integration and complete scenario acceptance pending.",
+        "commit": "f675de0"
+      }
+    },
+    {
+      "id": "T13",
+      "milestone": 5,
+      "status": "native-restricted-retrieval-component-pass-execution-open",
+      "evidence": [],
+      "reason": "Moved existingPO1004 to disallowedBU2; native4/3/1 andUSD14000/13000/6000, no restricteddetails. Trusted identity and executionauthorization unproved.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/supplied-native-source-qualification.json"
+      ]
+    },
+    {
+      "id": "T14",
+      "milestone": 6,
+      "status": "deprecated-by-user-durable-persistence",
+      "evidence": [],
+      "reason": "Durable recovery-case persistence excluded by explicit user scope amendment; historical component evidence preserved, no native persistence pass claimed.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/case-store-persisted-readback.json",
+        "docs/builds/xdx-purchase-order-app-20261014/evidence/case-demo-baseline-create.stdout.txt",
+        "docs/builds/xdx-purchase-order-app-20261014/supplied-t05-storage-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/evidence/supplied-t05-new-session-read.stdout.txt",
+        "docs/builds/xdx-purchase-order-app-20261014/case-read-consumer-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/case-list-order-deployment.json"
+      ],
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements.",
+      "previousStatus": "not-run"
+    },
+    {
+      "id": "T15",
+      "milestone": 5,
+      "status": "native-synthetic-missing-evidence-pass-actual-access-open",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/t15-native-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/controlled-text-t15-component-corrected.json"
+      ],
+      "reason": "Receipt unavailable and one existing quantity/amount unknown are explicitly qualified across Query, selection and native PDF/PPT/text; recipient unverified and unsent. Actual access/normalization remains unqualified. Current controlled text helper also passes all19 local actual-CODE assertions against unchanged retained supplied T15; assertion-only F083 corrected. This is separate from historical native qualification.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/actual-adapter-t01-t15-component.json"
+      ],
+      "actualDataPhase": {
+        "status": "native-selected-po-read-pass-scope-limited",
+        "selectedPo": "US165029",
+        "supplier": "Lee Supplies",
+        "evidence": [
+          "docs/builds/xdx-purchase-order-app-20261014/actual-native-selected-po-result.json",
+          "docs/builds/xdx-purchase-order-app-20261014/actual-clock-runtime-proof.json"
+        ],
+        "limits": "Only actual selected-PO read and unknown measurement behavior qualified; does not complete full scenario or actual actions/documents."
+      }
+    },
+    {
+      "id": "T16",
+      "milestone": 5,
+      "status": "native-synthetic-source-states-pass-actual-paging-open",
+      "evidence": [],
+      "reason": "Native healthy1/0/0, no-open0/0/0, no-match, failure and qualifiedpartial2/2/2 distinctly displayed. Actual API paging not qualified.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/supplied-native-source-qualification.json"
+      ]
+    },
+    {
+      "id": "T17",
+      "milestone": 5,
+      "status": "native-currency-dedup-component-pass-semantics-open",
+      "evidence": [],
+      "reason": "NativeUSD/EUR totals separate; exact duplicate stable schedule does not inflate5/4/2. Actual cancellation/receipt semantics and distinct schedule variants remain unqualified.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/supplied-native-source-qualification.json"
+      ]
+    },
+    {
+      "id": "T18",
+      "milestone": 5,
+      "status": "native-synthetic-boundary-pass-actual-clock-open",
+      "evidence": [],
+      "reason": "Explicit local23:59/00:01 suppliedyesterday/today/+3/+4 boundaries pass; dueToday not overdue; restoredbaseline missingpromise not overdue. Automatic wall-clock rollover and actual data remain unverified.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/supplied-native-source-qualification.json"
+      ]
+    },
+    {
+      "id": "T19",
+      "milestone": 8,
+      "status": "native-baseline-export-and-response-previews-pass",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/native-runtime-checkpoint.md",
+        "docs/builds/xdx-purchase-order-app-20261014/native-document-context-resolution.md",
+        "docs/builds/xdx-purchase-order-app-20261014/native-document-populated-parameters.json",
+        "docs/builds/xdx-purchase-order-app-20261014/evidence/native-pdf-preview.jpg"
+      ],
+      "reason": "Baseline actual PDF/PPTX exports verified; reviewed-response PDF/PPT previews and both controlled text previews verified. Revised response exports not downloaded; persisted-case consistency excluded.",
+      "emailAmendment": "No required successful delivery or inbox ingestion under user amendment",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/native-text-drafts-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/native-presentation-parameters.json",
+        "docs/builds/xdx-purchase-order-app-20261014/native-presentation-authority-corrected.json",
+        "docs/builds/xdx-purchase-order-app-20261014/native-presentation-compact-parameters.json",
+        "docs/builds/xdx-purchase-order-app-20261014/document-budget-source-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/native-presentation-final-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/native-pdf-final-parameters.json",
+        "docs/builds/xdx-purchase-order-app-20261014/pdf-label-local-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/native-pdf-label-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/native-downloaded-file-inspection.json",
+        "docs/builds/xdx-purchase-order-app-20261014/native-export-render-inspection.json",
+        "docs/builds/xdx-purchase-order-app-20261014/t15-native-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t05-native-review.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t05-native-pdf-preview.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t05-native-presentation-preview.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t05-native-text-review.json",
+        "docs/builds/xdx-purchase-order-app-20261014/controlled-text-native-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/actual-t19-retained-projection.json",
+        "docs/builds/xdx-purchase-order-app-20261014/actual-document-text-encoding-closure.json",
+        "docs/builds/xdx-purchase-order-app-20261014/actual-document-native-parameters.json",
+        "docs/builds/xdx-purchase-order-app-20261014/actual-native-pdf-preview.json",
+        "docs/builds/xdx-purchase-order-app-20261014/actual-native-presentation-preview.json",
+        "docs/builds/xdx-purchase-order-app-20261014/actual-native-text-previews.json",
+        "docs/builds/xdx-purchase-order-app-20261014/f117-native-card-selection-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/f117-native-internal-preview-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/t19-unsent-supplier-native-preview.json",
+        "docs/builds/xdx-purchase-order-app-20261014/t19-unsent-pdf-native-preview.json",
+        "docs/builds/xdx-purchase-order-app-20261014/t19-unsent-presentation-native-preview.json",
+        "docs/builds/xdx-purchase-order-app-20261014/f118-native-unit-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/actual-response-t19-native-formats.json"
+      ],
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements.",
+      "transientReviewStatus": "Native transient response plus response-aware PDF/PPT/text previews pass. Revised export not downloaded; actual-data scope remains.",
+      "actualDocumentStatus": "Native actual selected-PO PDF1page/5sections, PPT5slides and both unsent text previews PASS. Internal text exact parameter equality. No actual downloaded exports in this round; action-state documents and actual stale/unavailable runtime remain open.",
+      "actionDocumentStatus": "Native grouped unsent review: card/7069character context/internal exactaudit/supplier businesscontent/PDF1page/PPT5slides verified. Compact quantities nowincludeEA in saved88059971 and nativePDF/PPT; supplier only trailing-space drift. Other action-outcome and composed-response coverage open.",
+      "actualResponseStatus": "Native actual US165029 L1/S1 qualification-only response preserves effective promise/revision0/unknown facts and unverified provenance; response-aware PDF1page/PPT5slides/both unsent draft wording verified on88063602. No downloaded response exports; no actual supplier message or business write."
+    },
+    {
+      "id": "T20",
+      "milestone": 8,
+      "status": "native-buyer-reported-recovery-flow-pass-runtime-failure-unproven",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/document-recovery-integrated-component.json",
+        "docs/builds/xdx-purchase-order-app-20261014/document-recovery-saved-parity.json",
+        "docs/builds/xdx-purchase-order-app-20261014/document-recovery-native-qualification.json"
+      ],
+      "reason": "Native simulated problem report -> exact reviewed-response context selection -> native brief parameter fill -> one-page PDF/all25bodylines verified. Actual renderer fault, missing attachment, expiry and revised download remain unobserved; no automatic failure detection claimed. Historical error evidence retained separately.",
+      "emailAmendment": "No required successful delivery or inbox ingestion under user amendment",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/native-document-context-resolution.md",
+        "docs/builds/xdx-purchase-order-app-20261014/t20-retained-evidence-review.json"
+      ],
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements."
+    },
+    {
+      "id": "T21",
+      "milestone": 7,
+      "status": "native-synthetic-intermediate-confirmation-component-pass",
+      "evidence": [],
+      "reason": "Native response and PDF/PPT keep confirmation intermediate, no delivery/PO-change/resolution established; durable history and persisted-case closure excluded. Full remaining acceptance tracked separately.",
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/transient-response-t05-component.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t05-native-review.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t05-native-pdf-preview.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t05-native-presentation-preview.json",
+        "docs/builds/xdx-purchase-order-app-20261014/response-t05-native-text-review.json",
+        "docs/builds/xdx-purchase-order-app-20261014/controlled-text-native-qualification.json"
+      ],
+      "transientReviewStatus": "Native transient response plus response-aware PDF/PPT/text previews pass. Revised export not downloaded; actual-data scope remains."
+    },
+    {
+      "id": "T22",
+      "milestone": 7,
+      "status": "native-synthetic-capability-gap-pass",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/query-request-native-qualification.json"
+      ],
+      "reason": "Unavailable alternate-supplier request explicitly explained, concrete unsent manualhandoff grounded in selectedsupplierfacts; no invented availability/prices/execution.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/query-request-native-qualification.json"
+      ]
+    },
+    {
+      "id": "T23",
+      "milestone": 8,
+      "status": "native-synthetic-selection-journey-pass-transaction-state-integration-open",
+      "evidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/native-t23-selection-qualification.json"
+      ],
+      "reason": "Native overduefilter2, matchingPO1001evidence, select2, concreteunsentconfirmationdraft, cancelretains2/clearsactivepreview observed; native failed/completed transient action states remain unqualified; durable persistence is excluded.",
+      "componentEvidence": [
+        "docs/builds/xdx-purchase-order-app-20261014/supplied-t23-selection-component.json",
+        "docs/builds/xdx-purchase-order-app-20261014/uom-native-qualification.json",
+        "docs/builds/xdx-purchase-order-app-20261014/t15-native-qualification.json"
+      ],
+      "persistenceAmendment": "ORDS-backed durability/reopening/persisted-case-version consistency deprecated by user. Retain applicable transient workflow, safety, evidence and document requirements."
+    }
+  ],
+  "createdTests": 0,
+  "scopeAmendments": [
+    {
+      "id": "deprecate-ords-persistence",
+      "evidence": "docs/builds/xdx-purchase-order-app-20261014/persistence-deprecation.json",
+      "effect": "Durable storage portions excluded by user; all other scenario assertions retained. No historical failure converted to pass."
+    }
+  ]
+}
