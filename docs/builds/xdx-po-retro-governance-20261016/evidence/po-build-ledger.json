@@ -43,7 +43,7 @@
       "supportedObjectId": "300000340717584"
     }
   },
-  "destination": "D:\\Temp\\worktrees\\xdx-purchase-order-app",
+  "destination": "[retired checkout; local path removed by user request]",
   "timezone": "America/Chicago",
   "failureLedger": "docs/builds/xdx-purchase-order-app-20261014/failure-ledger.json",
   "scope": "Approved PO recovery build with ORDS persistent cases deprecated/excluded; complete transient synthetic journey, native documents, then authorized actual-data phase. No new tests.",

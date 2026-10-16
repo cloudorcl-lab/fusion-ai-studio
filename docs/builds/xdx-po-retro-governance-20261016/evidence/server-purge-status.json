@@ -1,0 +1,78 @@
+{
+  "task": "User-requested server purge",
+  "status": "Approved purge executed; named Studio and database objects verified absent",
+  "deleted": [
+    "XDX_SUPPLIER_COMMITMENT_PO_RECOVERY",
+    "XDX_PO_RECOVERY_ADVISOR",
+    "XDX_PO_RECOVERY_READS",
+    "XDX_ORDS_RECOVERY_CONNECTION",
+    "XDX_PO_ACCESS",
+    "XDX_PO_SNAPSHOTS",
+    "XDX_PO_CASES",
+    "XDX_PO_ACTIONS",
+    "XDX_PO_ATTEMPTS",
+    "XDX_PO_EVENTS",
+    "XDX_PO_COMMANDS",
+    "XDX_PO_RECOVERY",
+    "XDX_PO_CASE_REST",
+    "XDX_PO_RECOVERY_API",
+    "XDX_PO_RECOVERY_CASES_API",
+    "XDX_PO_RECOVERY_API_PRIV",
+    "XDX_PO_RECOVERY_CASES_PRIV"
+  ],
+  "studio": [
+    "XDX_SUPPLIER_COMMITMENT_PO_RECOVERY",
+    "XDX_PO_RECOVERY_ADVISOR",
+    "XDX_PO_RECOVERY_READS",
+    "XDX_ORDS_RECOVERY_CONNECTION"
+  ],
+  "database": "TESTER / G5338F3AD9CF345_DATP",
+  "tables": [
+    "XDX_PO_ACCESS",
+    "XDX_PO_SNAPSHOTS",
+    "XDX_PO_CASES",
+    "XDX_PO_ACTIONS",
+    "XDX_PO_ATTEMPTS",
+    "XDX_PO_EVENTS",
+    "XDX_PO_COMMANDS"
+  ],
+  "rowCounts": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    11,
+    11
+  ],
+  "packages": [
+    "XDX_PO_RECOVERY",
+    "XDX_PO_CASE_REST"
+  ],
+  "modules": [
+    "XDX_PO_RECOVERY_API",
+    "XDX_PO_RECOVERY_CASES_API"
+  ],
+  "privileges": [
+    "XDX_PO_RECOVERY_API_PRIV",
+    "XDX_PO_RECOVERY_CASES_PRIV"
+  ],
+  "preserve": [
+    "local worktree",
+    "base checkout",
+    "Fusion purchase orders",
+    "shared TESTER account and SQL Developer role",
+    "unrelated Studio artifacts"
+  ],
+  "remainingChecks": [],
+  "timestamp": "2026-10-16T16:02:04.2793246Z",
+  "verification": [
+    "App and workflow delete controls absent after successful deletion",
+    "Recovery BO and ORDS tool searches returned no matches",
+    "Source capture BO search returned no matches",
+    "Functions and Document Templates inventories empty",
+    "SQLcl exit 0; no remaining XDX_PO objects, named modules or privileges",
+    "Lock view unavailable; exclusive NOWAIT table locks succeeded before deletion",
+    "Evidence: evidence/server-purge-execution.txt; schema backup: evidence/server-purge-ddl-snapshot.txt"
+  ]
+}

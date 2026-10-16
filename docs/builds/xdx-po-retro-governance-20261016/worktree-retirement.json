@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-16T16:38:00.755Z",
+  "status": "removed",
+  "scope": "User-named failed PO build checkout and its Git worktree registration",
+  "verification": {
+    "physicalDirectoryAbsent": true,
+    "gitRegistrationAbsent": true,
+    "residualMetadataAbsent": true
+  },
+  "recovery": "Git removed directory and registration but left read-only metadata directories; exact checked residual removed with native PowerShell.",
+  "evidenceAmendment": "Only destination path in retained historical build ledger redacted at user request; other historical values preserved.",
+  "preserved": [
+    "Original prompt outside retired checkout",
+    "Base retrospective and policy changes",
+    "Build branch",
+    "Unrelated worktrees and base changes"
+  ]
+}
