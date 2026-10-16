@@ -13,6 +13,8 @@ Done means [OBSERVABLE CHECKS AND REQUIRED DELIVERABLES].
 
 State observable success criteria and unresolved assumptions before dependent work.
 
+Record a release contract in the existing intake: the buyer outcome, deadline when applicable (otherwise explicitly unset), launch must-haves, approved manual handoffs, exclusions, and acceptance evidence. Separate the first usable release from the broader product vision. A milestone list is not a release contract. Scope reductions or date changes require user approval unless already authorized; schedule pressure never waives safety or turns missing evidence into PASS.
+
 ## Execution
 
 Check prerequisites early: tool availability, supported execution mode, authentication, permissions, environment access and required inputs.
@@ -30,6 +32,8 @@ Before expanding a build, the coordinator must link the current representative-j
 Before a potentially long operation, record its total deadline, progress signal, retained process/session handle when available, and supported cancellation/recovery route in the existing command or activity record. A polling/yield interval is not a total timeout. Default metadata, administrative and download operations to a five-minute total deadline unless documented behavior justifies a different bound before dispatch; do not impose this default on an already budgeted business operation. Use bounded waits and retain the original handle. At the deadline, stop dependent dispatch, inspect completion/side effects and cancel only through supported controls when safe. If the tool cannot yield or honor its deadline, record that limitation before dispatch; use an available supported bounded alternative. After an observed timeout overrun, do not repeat that mechanism until the execution boundary is corrected or a supported alternative is justified. Never infer cancellation or replay an uncertain write.
 
 For each failing contract boundary, record a repair budget before the next attempt: by default, two materially different repair candidates or 30 minutes of observed active repair, whichever occurs first. These are architecture-review triggers, not permission to weaken acceptance or stop all independent work. Preserve the boundary identity and cumulative attempts across renamed failures, agents and turns. At exhaustion, freeze dependent expansion and record the evidence, remaining hypothesis, smallest supported design, and reviewer decision in the existing learning register. Resume only with a reviewed bounded plan; a scope reduction needs user approval unless already authorized. A new patch or a local PASS alone does not reset the budget. Missing elapsed telemetry does not disable the attempt limit.
+
+At each existing milestone/checkpoint, report the currently usable buyer outcome, remaining critical dependencies, forecast and confidence with supporting evidence, and the scope/date trade-off when delivery is at risk. Budget exhaustion or a newly disproven critical assumption requires a delivery decision: a bounded repair, supported architecture change, approved smaller release/manual handoff, or an explicit blocker/date decision. Do not automatically choose another patch. Keep component completion, integrated journey acceptance and release readiness separate; file, fix, review and simulation-pass counts do not establish delivery progress.
 
 ### Enforcement boundary
 

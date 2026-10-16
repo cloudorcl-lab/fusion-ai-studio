@@ -73,16 +73,20 @@
           {
             "path": "docs/builds/xdx-po-retro-governance-20261016/verification.json",
             "sha256": "4f68beb1582d6e0a605ca6e92c4c4efc11de2ecc48b99995f255594cd65fb3d3"
+          },
+          {
+            "path": "docs/builds/xdx-po-retro-governance-20261016/release-simulation-verification.json",
+            "sha256": "0c9b96acf1c0b28846755f45c6baba84b268eb5f99cc159e3ed3d9a21c907028"
           }
         ],
         "sources": [
           {
             "path": "BUILD_STANDARD.md",
-            "sha256": "a36678328c2863d451431292f536b2da09e9e1b9ecfafcbbb95805ccdafec8da"
+            "sha256": "4eec726ab0d3cf80597e906dc548da92f1ace04c0d4d1006e82abe852a018227"
           },
           {
             "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
-            "sha256": "fdfc644d32adde451a6b630a8586c5c2a156688f4f20b0b4556ceab445e48ece"
+            "sha256": "fa2c22a0447c8848f79a583c674bf9f475414d74db4a967a4a9ee9bd6e337732"
           }
         ]
       }

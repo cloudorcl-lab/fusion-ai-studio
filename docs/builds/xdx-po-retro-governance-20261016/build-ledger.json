@@ -16,9 +16,22 @@
       "task": "xdx-po-retro-governance-20261016",
       "outcome": "Documents refined and independently reviewed",
       "evidence": "docs/builds/xdx-po-retro-governance-20261016/verification.json"
+    },
+    {
+      "startUtc": "2026-10-16T16:28:41.087Z",
+      "endUtc": "2026-10-16T16:30:53.995Z",
+      "category": "active-execution",
+      "agentId": "/root",
+      "parentAgentId": null,
+      "assignmentId": "governance-continuation",
+      "activityId": "release-simulation-policy",
+      "phase": "governance",
+      "task": "xdx-po-retro-governance-20261016",
+      "outcome": "Policy/template refinement and review PASS",
+      "evidence": "docs/builds/xdx-po-retro-governance-20261016/release-simulation-verification.json"
     }
   ],
-  "limitations": "Observed root interval includes ordinary tool latency; initial discovery and delivery tail unallocated. Worker effort not separately measured and not added. No reliable tokens.",
-  "checkpointUtc": "2026-10-16T16:15:42.627Z",
+  "limitations": "Observed root interval includes ordinary tool latency; initial discovery and delivery tail unallocated. Worker effort not separately measured and not added. No reliable tokens. Continuation discovery and gate/commit tail excluded; independent reviewer effort not separately timed.",
+  "checkpointUtc": "2026-10-16T16:30:53.995Z",
   "elapsedSeconds": 261.607
 }

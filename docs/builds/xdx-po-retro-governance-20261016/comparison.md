@@ -20,3 +20,7 @@ Copied original run receipts are retained under evidence/ with po- prefixes. The
 ## Enforcement and verification
 
 Mandatory controls are checked by coordinator/reviewer receipts at expansion and delivery. Existing structural/session/hash validators remain unchanged and cannot prove an unobserved native journey or force agent invocation. No new test files, tests, hooks, runtime enforcement or product code were added. Independent reviewer /root/retro_policy_review returned PASS on the exact policy diff. Existing policy and session gates plus scoped diff/link checks provide documentation verification, not evidence of future build success.
+
+## Approved release/component/simulation refinement
+
+Follow-up discussion identified missing release discipline: component contracts before implementation, simulation decisions and exits, product-versus-harness failure classification, and a working baseline preserved through increments. Added these to existing owners and three compact sections to the startup intake template. BUILD_STANDARD owns release commitments and delivery decisions; the playbook owns component and simulation lifecycle. No additional permanent guide or test suite. See release-simulation-verification.json for current exact policy hashes and independent review.

@@ -14,6 +14,27 @@
 | Test authority | MVP golden paths only unless explicitly expanded |
 | Approval inventory | `<BUILD-DIRECTORY>/approvals.json` or one equivalent linked record; read at Startup/resume/delegation |
 
+## Release contract
+
+Complete under BUILD_STANDARD.md Success criteria; this table is the run's single release-contract record.
+
+| Buyer outcome | Deadline or unset | Launch must-have requirement IDs | Approved manual handoffs | Exclusions and approval evidence | Acceptance evidence | Forecast/confidence and critical dependencies |
+| --- | --- | --- | --- | --- | --- | --- |
+
+## Component map
+
+Complete before implementation under the playbook Architecture contract. Components are observable boundaries, not necessarily separate artifacts. Integrate in the listed order into one thin connected journey.
+
+| Component / requirement IDs | Responsibility | Input/output contract | Dependencies and feasibility proof | Owner | Smallest authorized acceptance check | Repair budget | Integration order / accepted candidate |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+## Simulation and decision budget
+
+Complete only for applicable simulations under the playbook Test contract. Use approved supplied scenarios and honor restrictions on new tests. Record exits and decisions here; link failures to the existing failure ledger.
+
+| Component / scenario IDs | Uncertainty or release decision | Minimum fixture / external boundary | Expected evidence and exit condition | Attempt/time budget | Result, limits and next decision |
+| --- | --- | --- | --- | --- | --- |
+
 ## Learning register
 
 | Build / date | Lifecycle stage / slice | Observation | Explicit guidance | Assumption / deviation | Evidence | Root cause | Correction | Cost | Reusable lesson / classification | Playbook action | Dependency action |

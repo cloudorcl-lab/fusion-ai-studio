@@ -5,3 +5,5 @@ User authorizes comparison and refinement of base playbook/build standard. Docum
 Done: comparison, scoped policy refinements, existing policy/session verification, independent review, scoped commit and current handoff. No push requested. Initial discovery timing unallocated.
 
 Task identity: xdx-po-retro-governance-20261016
+
+Approved continuation: release contract, component map, purposeful simulation, failure classification and delivery decisions. Existing templates extended; no new guide. Root owns edits; /root/retro_policy_review independently reviewed exact diff.

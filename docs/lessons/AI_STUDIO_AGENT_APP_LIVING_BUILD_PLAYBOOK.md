@@ -180,6 +180,7 @@ For every observed failure, before retrying or continuing affected work:
 
 1. Record a stable failure ID, observed UTC, symptom, affected scope, blocked scopes and original evidence. Preserve missing historical output as an explicit evidence gap; never reconstruct it as a verbatim receipt. Command failures must link their exact timing run IDs. Intentional negative tests require a separate expected-failure disposition with reason and evidence.
 2. Identify the smallest evidenced cause and check whether an existing canonical rule was omitted. Record the correction and audit all affected sibling routes/functions, not only the failing example. Do not promote a hypothesis as a confirmed cause.
+   Before choosing a repair, classify the responsible boundary as product logic/interaction, simulation or test harness, integration contract, environment/tooling, or unknown. A failure seen with synthetic data is not automatically a simulation defect: calculations, authorization, duplicate prevention and required native controls remain product obligations. For harness-only failures, prefer the simplest supplied fixture or supported injection that preserves the required assertion; record unverified coverage instead of expanding simulation infrastructure. Unknown classification permits bounded diagnosis, not speculative repair. Apply the existing repair budget to the responsible boundary.
 3. Add prevention at the existing owner: operation rules in the object registry/reference, lifecycle rules here, supported CLI usage in its skill. Prefer an automated gate or an actual-artifact regression that reproduces the failure and passes after repair. If automation is unsuitable, record why and require an explicit procedural check with evidence. A generic reminder or a log entry alone does not close the failure.
 4. Execute the focused verification, record its command, result, reviewer and SHA-256-bound source/evidence paths, and independently review material corrections. Preserve the evidence surface: local, saved BO, configured test and native app are distinct. Changing or retiring a covered source makes its current verification stale; it does not reopen the historical failure or require a ledger edit before repair. Rerun the affected focused check and attach reviewed current proof before affected execution. A verified local correction does not claim runtime acceptance. Keep the affected requirement pending in the existing requirement/evidence manifest until its required runtime proof passes or the user accepts a specifically recorded exception. Record local correction and runtime acceptance as separate facts, with exact candidate identities; historical failure closure must not clear that pending requirement. A recurrence is captured before retry and invalidates the affected current acceptance, even if its earlier correction remains historically verified.
 5. Run the learning gate before resuming affected work and at every phase exit. `Startup` validates ledger structure, safe paths and immutable evidence but permits recorded open failures and current source drift so repairs remain possible. `Execute` and `PhaseExit` reject unresolved failures or source drift only for blocked scopes matching the next scope or `*`; unrelated authorized work may continue. `Closeout` rejects every unresolved failure and all stale source verification. Invalid paths or corrupted immutable evidence still block every phase. Never waive an in-scope failure by renaming the activity or its scope.
@@ -288,6 +289,8 @@ Do not authorize remote mutation until all applicable fields are complete.
 - Prohibited claims and actions:
 - Measurable correctness, completeness and elapsed-time targets; optional explicitly requested cost constraints:
 
+Link the release contract required by BUILD_STANDARD.md from this intake; retain launch must-haves, approved handoffs and exclusions in that single record.
+
 ### Data and source contract
 
 For every source:
@@ -323,6 +326,8 @@ For every source:
 - Widget or structured-output contract:
 - Error/fallback ownership:
 - Provisional model per model-backed node:
+
+Before implementation, decompose each approved buyer outcome into independently manageable build components in the existing intake or requirement register. For each component record requirement IDs, one responsibility, input/output contract, dependencies, implementation owner, smallest authorized acceptance check, repair budget and integration order. Feature headings such as actions or documents are not sufficient when several contracts can fail independently. Split at observable boundaries, not arbitrary file sizes; components need not be separate agents, workflows or deployments. Schedule the highest-risk unproven platform/integration boundaries first as bounded feasibility probes. A missing component contract blocks its implementation; a missing prerequisite proof blocks dependent integration under the existing readiness gates.
 
 ### Runtime and authority contract
 
@@ -365,6 +370,8 @@ Before selecting scenarios, follow the [testing guide](AI_STUDIO_TESTING_GUIDE.m
 - Required HTML report and final-summary evidence:
 
 Establish configured testability during transaction design, before expanding resource slices or consuming their live-write budgets. For exact request-ID/revision approval flows, prove that the installed runner can carry real prior-step state and express the next exact command with all write boundaries fixture-backed or excluded. A shared conversation ID alone is insufficient when each attempt generates fresh IDs. If the required input-binding capability is missing, record that contract gap and resolve it at the test-runner owner before expansion; never weaken production approval controls or count native-only evidence as the separately required configured judged coverage. A proposed repair is not acceptance evidence.
+
+For each simulation, record in the existing intake the uncertainty or release decision it addresses, affected component/scenario IDs, minimum fixture and external boundary, expected evidence, exit condition and attempt/time budget. Prefer simulating external dependencies while exercising actual component logic. Once the decision is answered, stop expanding that simulation and advance to the next authorized component or smallest real integration probe. If simulation machinery consumes its budget, classify the failure under Continuous failure prevention before deciding to simplify, repair or defer. Simulation cannot establish live integration, durable state or authorization guarantees. Deferred required coverage stays open and blocks the corresponding release capability unless the user explicitly changes scope or accepts a documented exception; moving on never means marking it passed. These controls do not authorize additional tests or business calls.
 
 ### Learning contract
 
@@ -724,6 +731,8 @@ Model-compacted replay is not proof that a child boundary has one response shape
 ### Gate 8 — Complete app synchronization and regression
 
 App-wide synchronization begins only after all required backing workflow loops are complete.
+
+Integrate completed components into the first connected journey in small increments. Retain the last accepted candidate identity and evidence before each integration. Review the component's interface changes and reverify affected boundaries before accepting the increment; individual component passes do not establish their composition. A failed increment remains a candidate for bounded repair rather than replacing the accepted baseline in status reports. Restoring local artifacts does not roll back external side effects; preserve accepted/uncertain operation receipts and use safe continuation rather than replay.
 
 ```powershell
 node .agents\skills\aistudio\scripts\aistudio.js get-app-test-sync-plan --file src\apps\<app>.app
@@ -1122,6 +1131,7 @@ After every update:
 
 | Date | Evidence | Change | Verification |
 | --- | --- | --- | --- |
+| 2026-10-16 | User-approved follow-up to [PO Recovery retrospective](../builds/xdx-po-retro-governance-20261016/comparison.md) | Add release-contract and delivery-decision requirements at BUILD_STANDARD; refine component decomposition, simulation purpose/exit, failure classification and incremental acceptance here. Extend the existing intake template, not a new guide. | Scoped documentation review and existing session/policy checks; no new tests or runtime operations. |
 | 2026-10-16 | [PO Recovery retrospective comparison](../builds/xdx-po-retro-governance-20261016/comparison.md) | Refine first-slice expansion, consumer connectivity, stage-state transport, candidate-bound connected acceptance and local-versus-runtime closure. BUILD_STANDARD owns tool deadlines and bounded repair decisions. | Independent policy review and existing policy/session checks; documentation-only, no new tests or tenant execution. Procedural receipts are mandatory; no automatic runtime enforcement is claimed. |
 | 2026-10-15 | [Supplier creation retrospective](../builds/xdx-supplier-retro-20261015/retrospective.md) | Refine dispatch, primary timing, test-budget/count terminology, fixture/binding readiness, bounded metadata and accepted native-state ownership. Enforce evidence arrays in the existing session validator; retain explicit user acceptance separately from native PASS. Move app-specific topology numbers out of the main path. | Focused actual-validator regressions, independent review and scoped governance/session checks; no tenant tests or business calls. |
 | 2026-10-15 | Supplier evidence run [format finding](../builds/xdx-supplier-e2e-evidence-20261015/screenshot-format-finding.json), [paint finding](../builds/xdx-supplier-e2e-evidence-20261015/capture-paint-finding.json) and [caption corrections](../builds/xdx-supplier-e2e-evidence-20261015/capture-metadata-corrections.json) | Refine the existing native capture owner: retain actual image format, separate semantic readiness from paint, inspect stage captions and preserve intermediate frames without POST replay. Operation-level generated-field corroboration stays in the five resource references. | Retained actual JPEG/AX captures and independent deck review; documentation-only promotion, no new runtime test or business write. |
