@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "D:/Temp/worktrees/Fusion/inventory-control-command-center"
 		}
 	],
 	"settings": {}
