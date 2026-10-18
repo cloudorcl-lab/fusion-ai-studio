@@ -1,0 +1,30 @@
+{
+  "verifiedUtc": "2026-10-18T02:02:52.095Z",
+  "eqihOutsideHistoricalDocumentation": 0,
+  "remainingEqihFiles": [
+    ".\\docs\\lessons\\objects\\oracle-fusion-procurement-procurement-business-units-lov.md",
+    ".\\docs\\lessons\\objects\\oracle-fusion-procurement-supplier-addresses.md",
+    ".\\docs\\lessons\\objects\\oracle-fusion-procurement-suppliers.md",
+    ".\\docs\\lessons\\objects\\oracle-fusion-procurement-supplier-sites.md",
+    ".\\docs\\lessons\\objects\\oracle-fusion-procurement-supplier-contacts.md",
+    ".\\docs\\builds\\xdx-checkout-artifact-sync-20261015\\before\\worktree\\docs\\lessons\\objects\\oracle-fusion-procurement-suppliers.md",
+    ".\\docs\\builds\\xdx-checkout-artifact-sync-20261015\\before\\worktree\\docs\\lessons\\objects\\oracle-fusion-procurement-supplier-sites.md",
+    ".\\docs\\builds\\xdx-checkout-artifact-sync-20261015\\before\\base\\docs\\lessons\\objects\\oracle-fusion-procurement-supplier-contacts.md",
+    ".\\docs\\builds\\xdx-checkout-artifact-sync-20261015\\before\\base\\docs\\lessons\\objects\\oracle-fusion-procurement-supplier-addresses.md",
+    ".\\docs\\builds\\xdx-checkout-artifact-sync-20261015\\before\\worktree\\docs\\lessons\\objects\\oracle-fusion-procurement-supplier-contacts.md",
+    ".\\docs\\builds\\xdx-checkout-artifact-sync-20261015\\before\\base\\docs\\lessons\\objects\\oracle-fusion-procurement-supplier-sites.md",
+    ".\\docs\\builds\\xdx-checkout-artifact-sync-20261015\\before\\worktree\\docs\\lessons\\objects\\oracle-fusion-procurement-supplier-addresses.md",
+    ".\\docs\\builds\\xdx-checkout-artifact-sync-20261015\\before\\base\\docs\\lessons\\objects\\oracle-fusion-procurement-suppliers.md",
+    ".\\docs\\builds\\xdx-configured-fa-host-20261017\\intake-and-learning-register.md",
+    ".\\docs\\builds\\xdx-supplier-e2e-evidence-20261015\\target-host-finding.json",
+    ".\\docs\\builds\\xdx-supplier-e2e-evidence-20261015\\plan-review.json",
+    ".\\docs\\builds\\xdx-supplier-child-create-20261015\\intake-and-learning-register.md",
+    ".\\docs\\builds\\xdx-supplier-child-create-20261015\\xdx_address_five_case_proposal.json",
+    ".\\docs\\builds\\xdx-supplier-child-create-20261015\\xdx_contact_payload_proposals.json",
+    ".\\docs\\builds\\xdx-supplier-child-create-20261015\\xdx_session_xdx-supplier-child-create-20261015-address-contract.json"
+  ],
+  "cliReadsConfiguredFaHost": true,
+  "diffCheck": "PASS",
+  "runtimeTests": "Not run; no executable changes",
+  "historicalEvidence": "Preserved immutable samples and original archived snapshots"
+}

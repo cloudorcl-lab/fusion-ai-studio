@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "xdx-configured-fa-host-20261017",
+  "repoRoot": "C:\\Users\\dasu\\Documents\\GitHub\\fusion-ai-studio-1",
+  "branch": "TestingWFBuildTools",
+  "phase": "Closeout",
+  "startedUtc": "2026-10-18T02:02:32.770Z",
+  "checkpointUtc": "2026-10-18T02:02:52.099Z",
+  "reads": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d5ab273aa8ebf0148f2e9d8f22e0f6ea5be93f33a69edcd39b123918781bfce6"
+    },
+    {
+      "path": "BUILD_STANDARD.md",
+      "sha256": "4eec726ab0d3cf80597e906dc548da92f1ace04c0d4d1006e82abe852a018227"
+    },
+    {
+      "path": "docs/handoffs/ACTIVE_HANDOFF.md",
+      "sha256": "5bdb15be153fc8abd1349b0d05fa1cf45cdfaa24560a41345b707f8bd895c6b1"
+    },
+    {
+      "path": "docs/lessons/AI_STUDIO_AGENT_APP_LIVING_BUILD_PLAYBOOK.md",
+      "sha256": "fa2c22a0447c8848f79a583c674bf9f475414d74db4a967a4a9ee9bd6e337732"
+    },
+    {
+      "path": "docs/lessons/objects/README.md",
+      "sha256": "49a14543e8b0323d48e70949ce925a70d3e194735142d4f8f6637ccaeab0848f"
+    }
+  ],
+  "reviewNotes": "Bounded instruction correction; CLI config already uses aistudio.fa-host. Preserve frozen evidence and unrelated changes.",
+  "objectReferences": [],
+  "noObjectsReason": "No resource contracts or business operations change.",
+  "learningRegister": "docs/builds/xdx-configured-fa-host-20261017/intake-and-learning-register.md",
+  "failureLedger": "docs/builds/xdx-configured-fa-host-20261017/failure-ledger.json",
+  "learningTaskId": "xdx-configured-fa-host-20261017",
+  "timeTracker": "docs/builds/xdx-configured-fa-host-20261017/time-tracker.md",
+  "checks": [
+    {
+      "id": "learning",
+      "rule": "Scoped configuration authority repair and session conformance",
+      "status": "pass",
+      "reason": "Bounded instruction correction and local audit complete; no runtime/BO artifacts changed.",
+      "evidence": [
+        "docs/builds/xdx-configured-fa-host-20261017/intake-and-learning-register.md",
+        "docs/builds/xdx-configured-fa-host-20261017/verification.json"
+      ]
+    },
+    {
+      "id": "intake",
+      "rule": "Scoped configuration authority repair and session conformance",
+      "status": "pass",
+      "reason": "Bounded instruction correction and local audit complete; no runtime/BO artifacts changed.",
+      "evidence": [
+        "docs/builds/xdx-configured-fa-host-20261017/intake-and-learning-register.md",
+        "docs/builds/xdx-configured-fa-host-20261017/verification.json"
+      ]
+    },
+    {
+      "id": "authority",
+      "rule": "Scoped configuration authority repair and session conformance",
+      "status": "pass",
+      "reason": "Bounded instruction correction and local audit complete; no runtime/BO artifacts changed.",
+      "evidence": [
+        "docs/builds/xdx-configured-fa-host-20261017/intake-and-learning-register.md",
+        "docs/builds/xdx-configured-fa-host-20261017/verification.json"
+      ]
+    },
+    {
+      "id": "objects",
+      "rule": "Scoped configuration authority repair and session conformance",
+      "status": "pass",
+      "reason": "Bounded instruction correction and local audit complete; no runtime/BO artifacts changed.",
+      "evidence": [
+        "docs/builds/xdx-configured-fa-host-20261017/intake-and-learning-register.md",
+        "docs/builds/xdx-configured-fa-host-20261017/verification.json"
+      ]
+    },
+    {
+      "id": "verification",
+      "rule": "Scoped configuration authority repair and session conformance",
+      "status": "pass",
+      "reason": "Bounded instruction correction and local audit complete; no runtime/BO artifacts changed.",
+      "evidence": [
+        "docs/builds/xdx-configured-fa-host-20261017/intake-and-learning-register.md",
+        "docs/builds/xdx-configured-fa-host-20261017/verification.json"
+      ]
+    },
+    {
+      "id": "timing",
+      "rule": "Scoped configuration authority repair and session conformance",
+      "status": "pass",
+      "reason": "Bounded instruction correction and local audit complete; no runtime/BO artifacts changed.",
+      "evidence": [
+        "docs/builds/xdx-configured-fa-host-20261017/intake-and-learning-register.md",
+        "docs/builds/xdx-configured-fa-host-20261017/verification.json"
+      ]
+    },
+    {
+      "id": "cleanup",
+      "rule": "Scoped configuration authority repair and session conformance",
+      "status": "pass",
+      "reason": "Bounded instruction correction and local audit complete; no runtime/BO artifacts changed.",
+      "evidence": [
+        "docs/builds/xdx-configured-fa-host-20261017/intake-and-learning-register.md",
+        "docs/builds/xdx-configured-fa-host-20261017/verification.json"
+      ]
+    },
+    {
+      "id": "delivery",
+      "rule": "Scoped configuration authority repair and session conformance",
+      "status": "pass",
+      "reason": "Bounded instruction correction and local audit complete; no runtime/BO artifacts changed.",
+      "evidence": [
+        "docs/builds/xdx-configured-fa-host-20261017/intake-and-learning-register.md",
+        "docs/builds/xdx-configured-fa-host-20261017/verification.json"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metrics": {
+    "tokens": "Unavailable",
+    "aiUnits": "No tenant calls",
+    "timingGaps": "Read-only discovery before recorded start unallocated"
+  }
+}

@@ -54,3 +54,7 @@ Before declaring a build complete:
 6. Commit the governance and lesson changes to the branch handed to the next build so future worktrees inherit them.
 
 The build is not complete while this gate or any applicable playbook Definition of Done item remains open.
+
+## Configured Fusion host
+
+Resolve the app URL from `aistudio.fa-host` in the active checkout's `env.properties`: trim trailing slashes from that value and append `/hcmUI/redwoodAI`. Derive all active Fusion request, navigation and test URLs from that configured host; never select a target from historical evidence or a hardcoded tenant URL. If the property is missing or invalid, stop with a configuration error.

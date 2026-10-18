@@ -75,7 +75,7 @@ For each new app build, follow `agent-app-build-startup/AGENTS.md`: create a new
 
 ## Standing user approval — testing sign-in
 
-Recorded 2026-09-27: the user authorizes login and reauthentication whenever required by the testing process, using the configured app URL and credentials in this repository's `env.properties`. This includes the configured Oracle application and its normal identity-provider redirects. For the current environment, the app URL is `https://fa-eqih-dev21-saasfademo1.ds-fa.oraclepdemos.com/hcmUI/redwoodAI`.
+Recorded 2026-09-27: the user authorizes login and reauthentication whenever required by the testing process, using the configured app URL and credentials in this repository's `env.properties`. This includes the configured Oracle application and its normal identity-provider redirects. Resolve the app URL from `aistudio.fa-host` in the active checkout's `env.properties`: trim trailing slashes from that value and append `/hcmUI/redwoodAI`. Derive all active Fusion request, navigation and test URLs from that configured host; never select a target from historical evidence or a hardcoded tenant URL. If the property is missing or invalid, stop with a configuration error.
 
 - Attempt the normal authorized sign-in flow before asking the user to log in. Routine login does not require renewed approval.
 - Use the active checkout's configuration; keep worktree configuration synchronized with the base as authorized. Do not search unrelated repositories for credentials.

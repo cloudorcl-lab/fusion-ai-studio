@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "taskId": "xdx-configured-fa-host-20261017",
+  "scopes": [
+    "governance"
+  ],
+  "noFailuresReason": "Baseline policy check passed; no implementation or runtime failures observed in target repository. Stale instruction is the requested repair.",
+  "commandReceipts": [],
+  "failures": []
+}
